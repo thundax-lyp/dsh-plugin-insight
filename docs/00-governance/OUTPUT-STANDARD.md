@@ -2,8 +2,8 @@
 
 本标准适用于初始化、增量更新及后续新增的插件研究 Skill。
 共同输出要求只在本文件维护；Skill 保留流程、触发条件和自身特有约束。
-字段与引用规则以[数据契约](data-contract.md)及 JSON Schema 为准，
-研究判断遵循[研究规范](research-standard.md)，版本管理遵循[Git 操作指令](git-operations.md)。
+字段与引用规则以[数据契约](DATA-CONTRACT.md)及 JSON Schema 为准，
+研究判断遵循[研究规范](RESEARCH-STANDARD.md)，版本管理遵循[Git 操作指令](GIT-OPERATIONS.md)。
 
 ## 文件位置与命名
 

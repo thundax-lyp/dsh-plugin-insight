@@ -9,7 +9,7 @@
 
 固定提交、文件路径、采集截止时间，记录分页、截断与访问失败。
 分别报告目录条目数、去重组件数和仓库数；不能将发现的条目数写成当前可用插件数。
-采集及版本管理按[Git 操作指令](git-operations.md)选择 GD 或 GitHub 插件，不重复定义 Git 流程。
+采集及版本管理按[Git 操作指令](GIT-OPERATIONS.md)选择 GD 或 GitHub 插件，不重复定义 Git 流程。
 
 技术主类：agent-workflow（Agent 与工作流）、context-search（上下文与搜索）、
 memory-knowledge（记忆与知识）、model-provider（模型与供应商）、tools-integration（工具集成）、
@@ -62,5 +62,5 @@ Stars、forks、下载和供给量不等于活跃用户、可靠性或需求；�
 目录覆盖变化也会影响生态判断，即使原有插件代码没有变化。
 旧版本通过的测试保留为历史证据，不能转写为新版本通过。
 
-报告结构、初始化／更新统计及交付校验统一遵循[输出标准](output-standard.md)。
+报告结构、初始化／更新统计及交付校验统一遵循[输出标准](OUTPUT-STANDARD.md)。
 本工程更新本地研究结果，不自动发布推荐或修改第三方仓库。
