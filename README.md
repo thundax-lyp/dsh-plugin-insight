@@ -7,11 +7,12 @@ DSH 插件目录、分类、证据与增量研究。当前提供两个仓库内 
 
 两个 Skill 共享[数据契约](research/data-model.md)、[研究规范](research/research-standard.md)、
 JSON Schema 和 Python 脚本。请将 Skill 与整个工程一起使用，入口里的相对引用依赖工程目录。
+Git 工作流通过 [GD／GitHub 操作指令](research/git-operations.md)处理；研究 Skill 不另建提交流程。
 本仓库未附带真实插件研究结果；`examples/observations.json` 是合成数据，不计入目录。
 
 ## 使用
 
-需要 Python 3.10+；GitHub 采集还需要已认证的 `gh` CLI。
+需要 Python 3.10+。GitHub 采集优先使用 GitHub 插件；使用可选采集脚本时才需要已认证的 `gh` CLI。
 
 ```sh
 python3 -m venv .venv
@@ -21,7 +22,7 @@ python3 scripts/plugin_data.py validate
 python3 -m unittest discover -s tests -v
 ```
 
-采集不会执行目标仓库代码：
+也可通过以下可选脚本采集，它不会执行目标仓库代码：
 
 ```sh
 python3 scripts/capture_github.py OWNER/REPO --out /tmp/repo-snapshot.json

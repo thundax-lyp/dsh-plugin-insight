@@ -1,92 +1,75 @@
-# Shared data contract (version 1)
+# 共享数据契约（版本 1）
 
-The authoritative schemas are [catalog](../schemas/catalog.schema.json) and
-[observations](../schemas/observations.schema.json). JSON is UTF-8; unknown fields,
-duplicate keys and invalid dates are errors. `data/catalog.json` is the current
-catalog and append-only run history. Evidence and source snapshots are append-only
-within each plugin; changing their contents requires a new id. Git retains earlier
-finding text and catalog versions. Commit applied batches with their source artifacts
-and run reports so historical conclusions remain recoverable.
+字段约束以[档案 Schema](../schemas/catalog.schema.json)和
+[观察批次 Schema](../schemas/observations.schema.json)为准。JSON 使用 UTF-8，未知字段、
+重复键及非法日期均应报错。`data/catalog.json` 保存当前档案和追加的运行历史。
+同一插件内的证据与来源快照只追加；内容变化必须使用新 ID。
+历史点评与档案版本由版本管理保留。按[Git 操作指令](git-operations.md)将应用后的档案、
+观察批次、原始证据与报告一起提交，使旧结论可追溯。
 
-## Identity and scope
+## 身份与分类
 
-`id` is `github:<numeric repository_id>:<component_id>`. GitHub repository id survives
-renames. `component_id` is an assigned stable slug (`root` for a single project),
-not a moving directory path. A monorepo may have several components. Preserve the
-component id on moves and record former locations in aliases. Do not assign another
-id merely because a name or URL changes. Resolve ambiguous component matches before
-applying a batch. A repository recreated at the same URL has a different identity.
+`id` 格式为 `github:<数字 repository_id>:<component_id>`。GitHub 仓库数字 ID 在改名后保持稳定。
+`component_id` 是分配后保持稳定的组件标识；单项目可用 `root`，不要用会变化的路径代替身份。
+同仓库的多个子包可分别建档。路径移动保留组件 ID，旧位置记入 `aliases`；身份不明确时先核对。
+同一 URL 下重新创建的仓库具有不同数字 ID，应作为不同身份处理。
 
-`entry_type` distinguishes plugin, skill, tool, client, infrastructure, resource,
-placeholder and unknown. Inclusion in an Awesome list does not prove installability.
-Keep one technical and one business category, plus multiple tags. Use the taxonomy
-in [research-standard.md](research-standard.md); additions need a documented meaning.
+`entry_type` 区分插件、技能、工具、客户端、基础设施、资料、占位和未知类型。
+目录收录不证明可安装。技术主类、业务主类各一个，可有多个标签。
+分类枚举见 Schema，含义见[研究规范](research-standard.md)；扩展分类时同步更新二者。
 
-## Versions, evidence and conclusions
+## 指纹、来源与证据
 
-`fingerprints` contains last successfully observed content revisions by area:
-`directory`, `code`, `release`, `compatibility`, `maintenance`. Use a commit/tree/blob
-SHA or a deterministic content hash; never use fetch time as the fingerprint. Omit
-areas not inspected in a batch: update preserves their previous fingerprints. A
-release fingerprint should describe published version/assets; branch code and
-published packages are separate evidence. Compatibility fingerprint covers host
-support declarations and, when available, the exact validated environment.
+`fingerprints` 保存各方面最后一次成功核查的内容版本：`directory`（目录条目）、`code`（代码）、
+`release`（发布）、`compatibility`（兼容性）、`maintenance`（维护状态）。使用提交／文件树／文件 SHA
+或确定性内容哈希，不要用采集时间充当指纹。批次中省略未检查的方面，更新会保留旧指纹。
+发布指纹描述实际发布版本及产物；默认分支代码和发布包分别核查。
+兼容性指纹覆盖宿主支持声明，以及实际验证过的精确环境。
 
-`sources` records pinned URLs/revisions and retrieval times. Give each snapshot a
-new id; submit only new source snapshots or exact existing objects in observations.
-Directory snapshots may set `membership` to present, removed or unknown. Compare
-the newest successful snapshot for each source URL; one source removing an entry
-does not mean the plugin disappeared from every source. Use removed_from_source
-only after checking the relevant source set; record mixed membership in evidence.
-Store sizeable raw captures under `data/snapshots/<run_id>/` and cite them via evidence
-`artifact`; do not store credentials. `capture_github.py` captures GitHub metadata,
-commit/tree, selected root files and up to 100 releases through authenticated `gh`.
-It does not discover every plugin, follow every dependency or run untrusted code.
-Directory parsing and component matching remain explicit research steps.
+`sources` 记录固定来源 URL、版本和采集时间。新快照用新 ID；观察批次只需提交新快照，
+或与历史完全相同的来源对象。目录快照可使用 `membership` 表示 present、removed 或 unknown。
+按来源 URL 比较最新成功快照：一个目录移除不代表所有目录都已移除。
+只有相关来源集合完成检查后才能标记 `removed_from_source`，混合状态通过证据说明。
 
-Evidence `kind` is one of author_claim, source_inspection, local_test, host_acceptance,
-independent_feedback. Every item binds to a revision and states limitations. Runtime
-evidence also requires an environment and artifact (command log/result). Evidence ids
-are globally unique, e.g. `<plugin-id>:<revision>:<purpose>`.
+较大的原始采集结果保存到 `data/snapshots/<run_id>/`，由证据的 `artifact` 引用，不保存凭据。
+来源采集优先使用 GitHub 插件；插件和工具选择遵循[共享指令](git-operations.md)。
+可选的 `capture_github.py` 使用已认证的 `gh`，采集仓库元数据、固定提交／文件树、部分根目录文件
+及最多 100 个发布记录；它不穷尽插件、不跟踪全部依赖、不执行目标代码。
+目录解析、组件匹配及额外文件采集仍需研究流程完成。
 
-A finding contains a topic, text, evidence ids, basis and dependencies. Dependencies
-bind a plugin id and area to the fingerprint actually reviewed. Cross-plugin
-comparisons and ecosystem-gap findings must include other affected plugins. This
-allows an update to invalidate comparisons outside the changed record. For ecosystem
-claims also track the directory population fingerprint; changes in coverage must
-trigger explicit reconsideration of those claims.
-Represent a tracked source population as a resource record with its own repository
-and stable component id, then depend on its directory fingerprint. This makes new
-entries invalidate gap findings without pretending an individual plugin changed.
+证据 `kind` 分别为作者声明、源码核查、本地测试、真实宿主验收和独立反馈；字段值对应
+`author_claim`、`source_inspection`、`local_test`、`host_acceptance`、`independent_feedback`。
+每项绑定版本，注明边界；执行证据必须提供环境和执行结果文件。
+证据 ID 全局唯一，可采用 `<插件ID>:<版本>:<用途>`。
 
-`needs_review` means a dependency changed, not that a finding became false. Old
-text/evidence are retained. Revalidate by submitting an explicitly reviewed finding
-with refreshed dependencies, evidence and reviewed_at. An already stale finding is
-never automatically promoted by a later update. `research_depth` describes the
-submitted research record: catalog, source, tested, host_verified. Raising it requires
-corresponding evidence; it does not imply that old execution evidence covers the
-current version. Check finding statuses and evidence revisions before recommending.
+## 结论与关联依赖
 
-## Observation batches and application
+每条结论包含主题、正文、证据引用、判断性质、核查时间与依赖。
+依赖绑定插件 ID、核查方面及当时指纹。跨插件比较、生态缺口判断必须记录相关插件依赖，
+使某插件变化能影响其他档案中的比较结论。
 
-An observation contains full current metadata for each successfully checked plugin,
-but only newly collected evidence/sources and newly reviewed findings are needed.
-Use `findings: []` to retain commentary without rewriting it. Unchecked plugin records
-are omitted. Failed fetches go in `errors` with target and message; do not fabricate
-an unavailable/removed state from timeout, 403, 404 or a truncated source. Directory
-removal requires a complete successful source comparison. Preserve removed/archived
-records and history; this version has no destructive delete operation.
+生态供给判断还需跟踪来源总体指纹。可将目录来源作为 `resource` 条目建档，使用该仓库的
+数字 ID 和稳定组件 ID，并让生态结论依赖它的 `directory` 指纹。
+目录覆盖变化时重新考虑缺口判断，不必伪装成某个插件的代码变化。
 
-`run_id` identifies one check. A new unchanged check uses a new run id; replaying an
-already applied id is rejected without writing. `last_checked_at` advances only for
-successful plugin checks. A no-change check records the run and checkpoints, while
-keeping finding text intact. An error-only batch records errors and leaves all
-plugin records unchanged.
+`needs_review` 表示依赖变化后需要复核，不表示原结论已经错误。保留原文与证据；复核后显式提交
+更新了依赖、证据和 `reviewed_at` 的结论。已过期结论不会因后续检查自动恢复为有效。
+`research_depth` 表示提交记录的研究深度：catalog、source、tested、host_verified。
+提高深度须有相应证据，但历史执行证据不自动覆盖当前版本。采用建议应同时检查结论状态和证据版本。
 
-`plan` writes a candidate catalog, base/result digests, semantic changes and errors.
-Review its summary and catalog diff, then `apply` uses a file lock and atomic replace.
-A changed base, corrupted plan or invalid result is rejected. Regenerate from the
-latest catalog rather than overwriting a concurrent update. This local lock supports
-macOS/Linux; multi-machine coordination uses Git branches/PRs. Plans are local data,
-not executable scripts. Initialization requires a genuinely empty catalog. Existing
-baselines always use update, including newly discovered plugins.
+## 观察批次与计划应用
+
+观察批次对成功检查的插件提交完整当前元数据，但来源、证据、点评只需提交新增或已复核部分。
+`findings: []` 表示保留已有点评。未检查的插件不写入批次。
+失败目标写入 `errors`，不要从超时、403、404 或截断结果推断不可用或删除。
+目录移除须来自成功且完整的来源比较。保留被移除或归档的条目；当前版本不提供物理删除操作。
+
+`run_id` 标识一次检查。新检查使用新 ID；重复应用同一 ID 会报错且不写入。
+`last_checked_at` 仅在插件检查成功后更新。无内容变化时记录运行与检查时间，保留点评。
+只有错误的批次只追加失败记录，所有插件档案保持原样。
+
+`plan` 生成候选档案、基础／结果摘要、语义变化与错误列表。
+检查计划与文件差异后，`apply` 通过文件锁和原子替换写入。
+基础档案变化、计划损坏或结果非法都会被拒绝；应基于最新档案重新生成，不能覆盖并发更新。
+文件锁适用于 macOS／Linux；跨机器协作交给共享 Git 工作流。
+计划是本地数据，不是可执行脚本。初始化要求空档案；已有基线及后续新增条目都使用更新模式。

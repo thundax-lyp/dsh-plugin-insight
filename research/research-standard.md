@@ -1,77 +1,67 @@
-# Plugin research standard
+# 插件研究规范
 
-## Discovery and classification
+## 来源、身份与分类
 
-Start with user-selected sources. Default discovery inputs are
-`awesome-dsh-plugin/awesome-dsh-plugin` (prefer structured data/plugins entries over
-its generated README) and `0xsline/awesome-deepseek-harness` (README and CATALOG).
-Capture exact commits, file paths, retrieval times, pagination/truncation and access
-failures. Report entry counts, unique component counts and repository counts
-separately. Do not describe discovered entries as currently usable plugins.
+优先遵守用户指定来源。默认发现入口为：
 
-Use technical categories: agent-workflow, context-search, memory-knowledge,
-model-provider, tools-integration, interface-input, sessions-messages,
-channels-remote, runtime-deployment, observability-cost, security-governance, other.
-Use business categories: software-delivery, research-knowledge, office-operations,
-customer-service, content-creation, personal-productivity, infrastructure, other.
-Keep uncertain entries in other with an uncertainty tag rather than inventing certainty.
-Classify the primary capability and user workflow; add tags for secondary functions.
+- `awesome-dsh-plugin/awesome-dsh-plugin`：优先读取 `data/plugins` 结构化条目，而非生成的 README。
+- `0xsline/awesome-deepseek-harness`：读取 README 和 CATALOG。
 
-## Research depth and evidence
+固定提交、文件路径、采集截止时间，记录分页、截断与访问失败。
+分别报告目录条目数、去重组件数和仓库数；不能将发现的条目数写成当前可用插件数。
+采集及版本管理按[Git 操作指令](git-operations.md)选择 GD 或 GitHub 插件，不重复定义 Git 流程。
 
-Catalog depth covers identity, type, description, classification and source.
-Source depth examines entrypoints, core mechanisms, host APIs, dependencies and
-release/compatibility conditions. Tested depth requires recorded local execution;
-host_verified requires a real host task with exact plugin/host/model/OS versions.
-Do not install or execute every discovered repository as part of basic initialization.
-Use the user's authorized scope and isolate optional runtime experiments.
+技术主类：agent-workflow（Agent 与工作流）、context-search（上下文与搜索）、
+memory-knowledge（记忆与知识）、model-provider（模型与供应商）、tools-integration（工具集成）、
+interface-input（界面与输入）、sessions-messages（会话与消息）、channels-remote（渠道与远程）、
+runtime-deployment（运行与部署）、observability-cost（观测与成本）、security-governance（安全与治理）、other。
 
-Keep author claims, source inspection, local tests, real host acceptance and independent
-feedback separate. Source presence does not prove runtime behavior; passing mocked
-tests does not prove host compatibility. Unsupported claims remain unverified.
-Distinguish confirmed defects, design limits, compatibility risks and missing evidence.
+业务主类：software-delivery（软件交付）、research-knowledge（研究与知识）、
+office-operations（办公与运营）、customer-service（客户服务）、content-creation（内容生产）、
+personal-productivity（个人效率）、infrastructure（基础设施）、other。
+按主要能力和用户流程分类，次要能力使用标签。不确定条目使用 other 并添加不确定性标签。
 
-## Deep review
+## 研究深度与证据边界
 
-For priority plugins assess:
-- Target user, concrete problem, conditions and falsifiable core claims.
-- Input-to-output mechanism, state, algorithms/protocols and upstream attribution.
-- Technical difficulty versus avoidable implementation complexity; original mechanism,
-  adaptation, integration and engineering improvement are distinct kinds of contribution.
-- Technical and business innovation, incremental value and workflow completion.
-- Baselines: native DSH, comparable plugins, simple scripts and current manual process.
-- Evidence for benefit, cost, necessity of complex components, failure cases and reproduction.
-- Engineering completeness: install, configure, complete task, fail, recover, uninstall;
-  test effectiveness, publication consistency, API coupling and observability.
-- Security/data flows, permissions, external side effects, isolation and migration/export.
-- Adoption recommendation: priority trial, conditional adoption, observe or not recommended;
-  state environment, evidence limits and the smallest useful acceptance experiment.
+目录级研究覆盖身份、类型、描述、分类及出处；源码级研究检查入口、核心机制、宿主 API、
+依赖、发布和兼容条件；本地测试必须记录真实执行；真实宿主验收必须绑定插件、宿主、模型及系统版本。
+首次全量建档不要求安装执行全部候选。运行实验遵守用户授权范围，并隔离实验环境。
 
-Record findings by topic rather than one opaque total score. Assess engineering maturity,
-technical increment, business value, differentiation and evidence sufficiency separately.
+明确区分作者声明、源码核查、本地测试、真实宿主验收和独立反馈。
+源码存在某机制不证明运行效果，模拟测试通过不证明宿主兼容。
+不支持的主张保留未验证状态；已确认缺陷、设计限制、兼容风险和证据不足分别表达。
 
-## Engineering updates
+## 重点插件的深度点评
 
-Report 7/30/90-day activity windows only with a cutoff and complete-enough history.
-Separate functional commits, fixes, compatibility, refactors, docs, dependency/robot work.
-Describe code area (modules/effective additions/deletions), functional area (user flows,
-platforms, integrations), and risk area (interfaces, permissions, persistence, migration,
-external side effects). File counts alone do not measure impact.
+- 目标用户、具体问题、成立条件，以及可证伪的核心主张。
+- 从输入到输出的机制、状态、算法、协议与上游来源。
+- 技术难度与可避免的实现复杂度；区分原创、移植、集成及工程改进。
+- 技术创新、业务创新、实际增量价值和用户流程是否办结。
+- 同条件基线：DSH 原生能力、同类插件、简单脚本和当前人工流程。
+- 效果、成本、复杂组件必要性、失效案例、泛化与复现证据。
+- 工程闭环：安装、配置、任务、异常、恢复、卸载；测试有效性、发布一致性、API 耦合和可排障性。
+- 权限、数据流、外部副作用、隔离、迁移与导出成本。
+- 采用建议：优先试用、条件采用、值得观察、暂不推荐；说明环境、证据边界及最小验收实验。
 
-Distinguish original development, integration, verification and ongoing maintenance.
-Exclude vendored/generated/copied code from effective engineering size; never infer
-person-days from line counts. Stars, forks, downloads and supply are not active users,
-reliability or demand. A stale directory is not proof that its ecosystem is declining.
+按主题记录结论，不用不透明总分代替分析。分别判断工程成熟度、技术增量、业务价值、差异化和证据充分度。
 
-## Updating conclusions
+## 工程更新分析
 
-Inspect diffs before revising research. Bind affected findings to fingerprints and mark
-obsolete dependencies needs_review. Recheck dependent comparisons and ecosystem gaps.
-Changes to directory coverage require reconsidering ecosystem conclusions even if
-existing plugin code stayed the same. Old tested versions remain historical evidence.
+近 7／30／90 天活跃度必须有明确截止时间和足够完整的历史。
+区分功能、修复、兼容、重构、文档、依赖及机器人更新。
+更新面积同时描述代码面积（模块与有效增删）、功能面积（用户流程、平台、集成）、
+风险面积（接口、权限、持久化、迁移及外部副作用）。文件数不能单独表示影响。
 
-A complete run report states scope/cutoff, successful and failed sources, new/changed
-entries, affected code/function/risk areas, changed or stale conclusions, validation
-performed and unresolved boundaries. If nothing substantive changed, say so without
-regenerating all prose. This project updates local research artifacts; it does not
-publish recommendations or modify third-party repositories as a side effect.
+区分原始开发、集成适配、验证和长期维护工作。
+有效工程量排除第三方内置代码、生成代码及复制代码，不从行数推算人天。
+Stars、forks、下载和供给量不等于活跃用户、可靠性或需求；目录停更不证明生态降温。
+
+## 结论增量更新与报告
+
+先检查变化，再修改结论。依赖指纹变化时标记 `needs_review`，复核关联比较和生态缺口。
+目录覆盖变化也会影响生态判断，即使原有插件代码没有变化。
+旧版本通过的测试保留为历史证据，不能转写为新版本通过。
+
+每次报告说明范围与截止时间、成功／失败来源、新增／变化条目、代码／功能／风险面积、
+已修订或待复核结论、实际验证和未解决边界。没有实质变化时直接说明，不重新生成全部点评。
+本工程更新本地研究结果，不自动发布推荐或修改第三方仓库。
