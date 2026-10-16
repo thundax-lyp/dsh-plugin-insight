@@ -5,9 +5,10 @@ DSH 插件目录、分类、证据与增量研究。当前提供两个仓库内 
 - [dsh-plugin-init](skills/dsh-plugin-init/SKILL.md)：建立首次数据基线，分层采集与研究。
 - [dsh-plugin-update](skills/dsh-plugin-update/SKILL.md)：检查变化，增量更新并标记受影响结论。
 
-两个 Skill 共享[数据契约](research/data-model.md)、[研究规范](research/research-standard.md)、
-JSON Schema 和 Python 脚本。请将 Skill 与整个工程一起使用，入口里的相对引用依赖工程目录。
-Git 工作流通过 [GD／GitHub 操作指令](research/git-operations.md)处理；研究 Skill 不另建提交流程。
+两个 Skill 共享[数据契约](docs/00-governance/data-contract.md)、[研究规范](docs/00-governance/research-standard.md)、
+[输出标准](docs/00-governance/output-standard.md)、JSON Schema 和 Python 脚本。
+共同规范统一放在 `docs/00-governance/`。请将 Skill 与整个工程一起使用，入口里的相对引用依赖工程目录。
+Git 工作流通过 [GD／GitHub 操作指令](docs/00-governance/git-operations.md)处理；研究 Skill 不另建提交流程。
 本仓库未附带真实插件研究结果；`examples/observations.json` 是合成数据，不计入目录。
 
 ## 使用

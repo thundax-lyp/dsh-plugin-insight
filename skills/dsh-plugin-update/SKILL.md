@@ -6,8 +6,9 @@ description: 检查已有 DSH 插件研究档案的目录、源码、发布、�
 # 检查并增量更新 DSH 插件研究数据
 
 本 Skill 在 `dsh-plugin-insight` 工程根目录运行，依赖工程内的共享资源。
-开始前阅读[数据契约](../../research/data-model.md)、
-[研究规范](../../research/research-standard.md)和[Git 操作指令](../../research/git-operations.md)。
+开始前阅读[数据契约](../../docs/00-governance/data-contract.md)、
+[研究规范](../../docs/00-governance/research-standard.md)、
+[输出标准](../../docs/00-governance/output-standard.md)和[Git 操作指令](../../docs/00-governance/git-operations.md)。
 Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件，不在本 Skill 内另建提交流程。
 
 1. **检查现有基线。** 查看档案、历次检查记录和当前工作区，运行：
@@ -31,7 +32,7 @@ Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件，不在本 S
 5. **复核受影响结论。** 包括本插件点评、其他插件中的比较以及生态缺口判断。
    依赖已变化的结论标记为 `needs_review`；只有完成相应核查后才能更新依赖、证据和
    `reviewed_at`。旧版本测试不能证明新发布版本通过。缺少验证环境时保留待复核状态并说明边界。
-6. **生成并应用更新计划。** 保存观察批次、原始证据和简要报告，然后运行：
+6. **生成并应用更新计划。** 按共享输出标准保存本次产物和更新报告，然后运行：
    ```sh
    python3 scripts/plugin_data.py plan --mode update --observations data/observations/<run_id>.json --out /tmp/dsh-update-plan.json
    ```
@@ -45,6 +46,5 @@ Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件，不在本 S
    基础档案在计划后发生变化时，基于最新档案重新生成；不要强制覆盖或复用已应用的运行 ID。
    再次检查使用新 ID，内容未变时保留原点评。
 
-报告新增／变化条目、受影响结论、无变化检查、失败及验证边界。
-通过共享 Git 指令检查差异，不为统一措辞重写全部研究。用户授权提交或更新 PR 时，将本次
-档案、观察批次、证据与报告一起提交。更新本地研究不自动安排未来检查、发布结果或合并 PR。
+按共享输出标准完成更新统计、报告和交付验收，按共享 Git 指令处理版本管理。
+不为统一措辞重写全部研究；更新本地研究不自动安排未来检查、发布结果或合并 PR。

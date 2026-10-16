@@ -1,11 +1,11 @@
 # 共享数据契约（版本 1）
 
-字段约束以[档案 Schema](../schemas/catalog.schema.json)和
-[观察批次 Schema](../schemas/observations.schema.json)为准。JSON 使用 UTF-8，未知字段、
+字段约束以[档案 Schema](../../schemas/catalog.schema.json)和
+[观察批次 Schema](../../schemas/observations.schema.json)为准。JSON 使用 UTF-8，未知字段、
 重复键及非法日期均应报错。`data/catalog.json` 保存当前档案和追加的运行历史。
 同一插件内的证据与来源快照只追加；内容变化必须使用新 ID。
-历史点评与档案版本由版本管理保留。按[Git 操作指令](git-operations.md)将应用后的档案、
-观察批次、原始证据与报告一起提交，使旧结论可追溯。
+历史点评与档案版本由版本管理保留。文件位置、交付组合及追溯要求统一遵循
+[输出标准](output-standard.md)，版本管理操作遵循[Git 操作指令](git-operations.md)。
 
 ## 身份与分类
 
@@ -31,7 +31,7 @@
 按来源 URL 比较最新成功快照：一个目录移除不代表所有目录都已移除。
 只有相关来源集合完成检查后才能标记 `removed_from_source`，混合状态通过证据说明。
 
-较大的原始采集结果保存到 `data/snapshots/<run_id>/`，由证据的 `artifact` 引用，不保存凭据。
+原始采集结果的路径与命名遵循[输出标准](output-standard.md)，由证据的 `artifact` 引用，不保存凭据。
 来源采集优先使用 GitHub 插件；插件和工具选择遵循[共享指令](git-operations.md)。
 可选的 `capture_github.py` 使用已认证的 `gh`，采集仓库元数据、固定提交／文件树、部分根目录文件
 及最多 100 个发布记录；它不穷尽插件、不跟踪全部依赖、不执行目标代码。

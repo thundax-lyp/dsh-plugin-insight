@@ -6,10 +6,11 @@ description: 从指定目录来源初始化 DSH 插件研究档案，建立稳�
 # 初始化 DSH 插件研究数据
 
 本 Skill 在 `dsh-plugin-insight` 工程中使用，所有数据脚本从工程根目录运行。
-它依赖共享的 `research/`、`schemas/` 和 `scripts/`，不要只复制 Skill 文件夹。
+它依赖共享的 `docs/00-governance/`、`schemas/` 和 `scripts/`，不要只复制 Skill 文件夹。
 
-开始前阅读[数据契约](../../research/data-model.md)、
-[研究规范](../../research/research-standard.md)和[Git 操作指令](../../research/git-operations.md)。
+开始前阅读[数据契约](../../docs/00-governance/data-contract.md)、
+[研究规范](../../docs/00-governance/research-standard.md)、
+[输出标准](../../docs/00-governance/output-standard.md)和[Git 操作指令](../../docs/00-governance/git-operations.md)。
 Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件；本 Skill 不定义另一套提交流程。
 
 1. **检查基线与工作范围。** 检查当前档案、工作区及用户指定的来源和研究范围。
@@ -29,9 +30,8 @@ Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件；本 Skill �
 4. **分层研究。** 为成功识别的条目建立目录级档案；按请求和优先级补充源码核查及深度点评。
    研究问题、机制、创新归属、工程画像、同类差异和采用条件。只有实际执行后才能记录
    本地测试或真实宿主验收，作者声明不能写成已验证结果。
-5. **准备观察批次与证据。** 按 Schema 生成 `data/observations/<run_id>.json`。
-   [合成示例](../../examples/observations.json)仅说明字段，不得作为真实研究数据导入。
-   原始证据保存到 `data/snapshots/<run_id>/`，报告保存到 `data/reports/<run_id>.md`。
+5. **准备观察批次与证据。** 按数据契约生成观察批次，按共享输出标准保存证据和初始化报告。
+   可参考[合成示例](../../examples/observations.json)理解字段。
    采集失败记入 `errors`，不要编造或删除条目；结论绑定实际核查的版本指纹。
 6. **生成并应用初始化计划。**
    ```sh
@@ -45,6 +45,5 @@ Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件；本 Skill �
    python3 -m unittest discover -s tests -v
    ```
 
-交付条目数、组件数、仓库数、实际研究深度、证据边界、失败项及后续核查重点。
-通过共享 Git 指令检查文件差异；用户授权提交或更新 PR 时，将档案、观察批次、证据和报告一起提交。
+按共享输出标准完成初始化统计、报告和交付验收，按共享 Git 指令处理版本管理。
 初始化研究数据不等于安装第三方插件，也不自动安排定期研究或发布结果。
