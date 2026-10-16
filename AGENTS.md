@@ -10,8 +10,8 @@
 | 任务 | 必读依据 |
 |---|---|
 | 编写、迁移或整理工程文档 | [文档规则](docs/00-governance/DOCUMENT-RULES.md)及所修改文档的直接依据 |
-| 首次研究建档 | [初始化 Skill](skills/dsh-plugin-init/SKILL.md)及其引用的共享规范 |
-| 已有基线刷新 | [更新 Skill](skills/dsh-plugin-update/SKILL.md)及其引用的共享规范 |
+| 首次研究建档 | [初始化 Skill](.agents/skills/dsh-plugin-init/SKILL.md)及其引用的共享规范 |
+| 已有基线刷新 | [更新 Skill](.agents/skills/dsh-plugin-update/SKILL.md)及其引用的共享规范 |
 | 数据字段、身份、证据、增量逻辑或 Schema 修改 | [数据契约](docs/00-governance/DATA-CONTRACT.md)及相关 Schema、脚本 |
 | 分类或研究方法调整 | [研究规范](docs/00-governance/RESEARCH-STANDARD.md) |
 | 研究产物或交付验收 | [输出标准](docs/00-governance/OUTPUT-STANDARD.md) |

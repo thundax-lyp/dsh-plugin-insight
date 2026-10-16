@@ -100,7 +100,8 @@ Schema 保留在工程根目录，治理文档以链接引用，不为符合外�
 
 ## Skill 边界
 
-项目 Skill 当前放在 `skills/`，入口由根 AGENTS 路由；不照搬 Convivium 的 `.agents/skills/` 路径。
+项目 Skill 统一放在仓库根 `.agents/skills/`，供当前工程直接使用；根 `AGENTS.md` 提供任务读取路由。
+每个 Skill 使用独立目录及 `SKILL.md` 入口，不在旧 `skills/` 目录保留重复副本。
 Skill 保存触发条件、重复执行步骤及特有约束，共同规则通过链接引用。
 个人跨仓库 Skill 不作为本工程交付；Skill 不充当唯一产品需求或数据契约。
 修改入口及共享资源路径时检查两个 Skill 的相对引用，避免单独复制后依赖失效。

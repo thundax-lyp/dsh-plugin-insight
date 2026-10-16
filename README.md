@@ -1,9 +1,9 @@
 # dsh-plugin-insight
 
-DSH 插件目录、分类、证据与增量研究。当前提供两个仓库内 Skill：
+DSH 插件目录、分类、证据与增量研究。项目 Skill 放在 `.agents/skills/`，当前提供：
 
-- [dsh-plugin-init](skills/dsh-plugin-init/SKILL.md)：建立首次数据基线，分层采集与研究。
-- [dsh-plugin-update](skills/dsh-plugin-update/SKILL.md)：检查变化，增量更新并标记受影响结论。
+- [dsh-plugin-init](.agents/skills/dsh-plugin-init/SKILL.md)：建立首次数据基线，分层采集与研究。
+- [dsh-plugin-update](.agents/skills/dsh-plugin-update/SKILL.md)：检查变化，增量更新并标记受影响结论。
 
 两个 Skill 共享[数据契约](docs/00-governance/DATA-CONTRACT.md)、[研究规范](docs/00-governance/RESEARCH-STANDARD.md)、
 [输出标准](docs/00-governance/OUTPUT-STANDARD.md)、JSON Schema 和 Python 脚本。
