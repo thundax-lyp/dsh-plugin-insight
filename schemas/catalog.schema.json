@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dsh-plugin-insight.local/catalog.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plugins",
+    "runs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "plugins": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/plugin"
+      }
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/run"
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "area": {
+      "enum": [
+        "directory",
+        "code",
+        "release",
+        "compatibility",
+        "maintenance"
+      ]
+    },
+    "fingerprints": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "directory": {
+          "$ref": "#/$defs/text"
+        },
+        "code": {
+          "$ref": "#/$defs/text"
+        },
+        "release": {
+          "$ref": "#/$defs/text"
+        },
+        "compatibility": {
+          "$ref": "#/$defs/text"
+        },
+        "maintenance": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "url",
+        "revision",
+        "retrieved_at"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "revision": {
+          "$ref": "#/$defs/text"
+        },
+        "retrieved_at": {
+          "$ref": "#/$defs/time"
+        },
+        "membership": {
+          "enum": [
+            "present",
+            "removed",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "url",
+        "revision",
+        "captured_at",
+        "summary",
+        "limitations"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "kind": {
+          "enum": [
+            "author_claim",
+            "source_inspection",
+            "local_test",
+            "host_acceptance",
+            "independent_feedback"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "revision": {
+          "$ref": "#/$defs/text"
+        },
+        "captured_at": {
+          "$ref": "#/$defs/time"
+        },
+        "summary": {
+          "$ref": "#/$defs/text"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "artifact": {
+          "$ref": "#/$defs/text"
+        },
+        "environment": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "plugin_id",
+        "area",
+        "fingerprint"
+      ],
+      "properties": {
+        "plugin_id": {
+          "$ref": "#/$defs/text"
+        },
+        "area": {
+          "$ref": "#/$defs/area"
+        },
+        "fingerprint": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "topic",
+        "text",
+        "basis",
+        "evidence_ids",
+        "dependencies",
+        "reviewed_at",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "topic": {
+          "enum": [
+            "positioning",
+            "mechanism",
+            "technical_difficulty",
+            "technical_innovation",
+            "business_value",
+            "business_innovation",
+            "comparison",
+            "engineering",
+            "limitations",
+            "adoption",
+            "ecosystem_gap"
+          ]
+        },
+        "text": {
+          "$ref": "#/$defs/text"
+        },
+        "basis": {
+          "enum": [
+            "supported",
+            "interpretation",
+            "unverified",
+            "confirmed_defect",
+            "design_limit"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/dependency"
+          }
+        },
+        "reviewed_at": {
+          "$ref": "#/$defs/time"
+        },
+        "status": {
+          "enum": [
+            "current",
+            "needs_review"
+          ]
+        }
+      }
+    },
+    "plugin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "repository_id",
+        "component_id",
+        "repository",
+        "path",
+        "aliases",
+        "name",
+        "entry_type",
+        "technical_category",
+        "business_category",
+        "tags",
+        "availability",
+        "research_depth",
+        "fingerprints",
+        "sources",
+        "evidence",
+        "findings",
+        "last_checked_at"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "repository_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "component_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^[^/ ]+/[^/ ]+$"
+        },
+        "path": {
+          "type": "string"
+        },
+        "aliases": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "name": {
+          "$ref": "#/$defs/text"
+        },
+        "entry_type": {
+          "enum": [
+            "plugin",
+            "skill",
+            "tool",
+            "client",
+            "infrastructure",
+            "resource",
+            "placeholder",
+            "unknown"
+          ]
+        },
+        "technical_category": {
+          "enum": [
+            "agent-workflow",
+            "context-search",
+            "memory-knowledge",
+            "model-provider",
+            "tools-integration",
+            "interface-input",
+            "sessions-messages",
+            "channels-remote",
+            "runtime-deployment",
+            "observability-cost",
+            "security-governance",
+            "other"
+          ]
+        },
+        "business_category": {
+          "enum": [
+            "software-delivery",
+            "research-knowledge",
+            "office-operations",
+            "customer-service",
+            "content-creation",
+            "personal-productivity",
+            "infrastructure",
+            "other"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/text"
+          }
+        },
+        "availability": {
+          "enum": [
+            "active",
+            "archived",
+            "removed_from_source",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "research_depth": {
+          "enum": [
+            "catalog",
+            "source",
+            "tested",
+            "host_verified"
+          ]
+        },
+        "fingerprints": {
+          "$ref": "#/$defs/fingerprints"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        },
+        "last_checked_at": {
+          "$ref": "#/$defs/time"
+        }
+      }
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "checked_at",
+        "mode",
+        "changes",
+        "errors"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "checked_at": {
+          "$ref": "#/$defs/time"
+        },
+        "mode": {
+          "enum": [
+            "init",
+            "update"
+          ]
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "plugin_id",
+              "kind",
+              "areas"
+            ],
+            "properties": {
+              "plugin_id": {
+                "$ref": "#/$defs/text"
+              },
+              "kind": {
+                "enum": [
+                  "added",
+                  "changed",
+                  "review_invalidated",
+                  "reviewed"
+                ]
+              },
+              "areas": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "$ref": "#/$defs/area"
+                }
+              }
+            }
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "target",
+              "message"
+            ],
+            "properties": {
+              "target": {
+                "$ref": "#/$defs/text"
+              },
+              "message": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "run_id": "synthetic-init-v1",
+  "checked_at": "2026-10-16T06:00:00Z",
+  "plugins": [
+    {
+      "id": "github:1:root",
+      "repository_id": 1,
+      "component_id": "root",
+      "repository": "example/synthetic-plugin",
+      "path": "",
+      "aliases": [],
+      "name": "Synthetic fixture (not real research)",
+      "entry_type": "plugin",
+      "technical_category": "memory-knowledge",
+      "business_category": "research-knowledge",
+      "tags": [
+        "synthetic"
+      ],
+      "availability": "unknown",
+      "research_depth": "catalog",
+      "fingerprints": {
+        "directory": "synthetic-entry-v1",
+        "code": "synthetic-tree-v1"
+      },
+      "sources": [
+        {
+          "id": "synthetic-source-v1",
+          "url": "https://example.invalid/catalog",
+          "revision": "synthetic-v1",
+          "retrieved_at": "2026-10-16T06:00:00Z"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "synthetic-claim-v1",
+          "kind": "author_claim",
+          "url": "https://example.invalid/plugin",
+          "revision": "synthetic-v1",
+          "captured_at": "2026-10-16T06:00:00Z",
+          "summary": "Synthetic author claims memory support.",
+          "limitations": [
+            "Synthetic fixture; no actual implementation or test."
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "id": "positioning",
+          "topic": "positioning",
+          "text": "Synthetic example of an author-declared memory plugin.",
+          "basis": "supported",
+          "evidence_ids": [
+            "synthetic-claim-v1"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1:root",
+              "area": "directory",
+              "fingerprint": "synthetic-entry-v1"
+            }
+          ],
+          "reviewed_at": "2026-10-16T06:00:00Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-16T06:00:00Z"
+    }
+  ],
+  "errors": []
+}

@@ -28,6 +28,17 @@ jobs:
         run: |
           go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
           "$(go env GOPATH)/bin/actionlint" -color
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Install research data tooling
+        run: npm ci --ignore-scripts
+      - name: Validate research data and observation batches
+        run: npm run validate:data
+      - name: Test incremental research behavior
+        run: npm test
       - name: Check whitespace in changes
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before }}
