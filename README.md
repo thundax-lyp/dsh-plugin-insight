@@ -1,6 +1,26 @@
 # dsh-plugin-insight
 
-DSH 插件目录、分类、证据与增量研究。项目 Skill 放在 `.agents/skills/`，当前提供：
+DSH 插件目录、分类、证据与增量研究。本 README 是研究输出的统一入口。
+
+## 研究出处
+
+插件发现和目录研究以以下两个 GitHub 仓库为起点：
+
+- [awesome-dsh-plugin/awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
+- [0xsline/awesome-deepseek-harness](https://github.com/0xsline/awesome-deepseek-harness)
+
+具体研究会记录实际读取的文件、固定提交及采集时间，并继续追溯到目标插件的源码、发布和验证证据。
+目录收录不等于插件当前可用，也不代表这些来源认可本项目的点评。
+
+## 研究结果入口
+
+目前尚未建立真实研究基线，也没有研究报告；[当前插件档案与运行历史](data/catalog.json)为空。
+初始化完成后，这里提供最新研究报告、分类概览、增量更新和历史报告的入口，并注明范围与截止时间。
+合成示例不计入研究结果。
+
+## 工程与 Skill
+
+项目 Skill 放在 `.agents/skills/`：
 
 - [dsh-plugin-init](.agents/skills/dsh-plugin-init/SKILL.md)：建立首次数据基线，分层采集与研究。
 - [dsh-plugin-update](.agents/skills/dsh-plugin-update/SKILL.md)：检查变化，增量更新并标记受影响结论。
@@ -10,7 +30,6 @@ DSH 插件目录、分类、证据与增量研究。项目 Skill 放在 `.agents
 共同规范统一放在 `docs/00-governance/`，文档分类、命名与维护遵循
 [文档规则](docs/00-governance/DOCUMENT-RULES.md)。请将 Skill 与整个工程一起使用，入口里的相对引用依赖工程目录。
 GitHub 操作复用环境中可用的 GitHub Skill 或插件；仓库级协作约束见 `AGENTS.md`。
-本仓库未附带真实插件研究结果；`examples/observations.json` 是合成数据，不计入目录。
 
 ## 使用
 

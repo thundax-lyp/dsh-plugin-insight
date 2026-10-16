@@ -14,7 +14,7 @@
 | 已有基线刷新 | [更新 Skill](.agents/skills/dsh-plugin-update/SKILL.md)及其引用的共享规范 |
 | 数据字段、身份、证据、增量逻辑或 Schema 修改 | [数据契约](docs/00-governance/DATA-CONTRACT.md)及相关 Schema、脚本 |
 | 分类或研究方法调整 | [研究规范](docs/00-governance/RESEARCH-STANDARD.md) |
-| 研究产物或交付验收 | [输出标准](docs/00-governance/OUTPUT-STANDARD.md) |
+| 研究产物、README 输出入口或交付验收 | [输出标准](docs/00-governance/OUTPUT-STANDARD.md) |
 
 共同要求只在治理真相源维护，Skill 负责应用；新增 Skill 同样遵循共享输出标准。
 修改数据或工具时按文档规则同步相关依据，不因普通任务完成更新根入口。
