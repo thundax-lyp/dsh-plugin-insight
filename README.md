@@ -29,7 +29,8 @@ DSH 插件目录、分类、证据与增量研究。本 README 是研究输出�
 [输出标准](docs/00-governance/OUTPUT-STANDARD.md)、JSON Schema 和 Node.js ES Module 脚本。
 共同规范统一放在 `docs/00-governance/`，文档分类、命名与维护遵循
 [文档规则](docs/00-governance/DOCUMENT-RULES.md)。请将 Skill 与整个工程一起使用，入口里的相对引用依赖工程目录。
-GitHub 操作复用环境中可用的 GitHub Skill 或插件；仓库级协作约束见 `AGENTS.md`。
+GitHub 操作复用环境中可用的 GitHub Skill 或插件；提交与 PR 交付遵循
+[提交规则](docs/00-governance/COMMIT-RULES.md)和[PR 规则](docs/00-governance/PR-RULES.md)，读取路由见 `AGENTS.md`。
 
 ## 使用
 
