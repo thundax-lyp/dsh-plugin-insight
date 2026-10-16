@@ -6,9 +6,9 @@ description: 检查已有 DSH 插件研究档案的目录、源码、发布、�
 # 检查并增量更新 DSH 插件研究数据
 
 本 Skill 在 `dsh-plugin-insight` 工程根目录运行，依赖工程内的共享资源。
-开始前阅读[数据契约](../../../docs/00-governance/DATA-CONTRACT.md)、
-[研究规范](../../../docs/00-governance/RESEARCH-STANDARD.md)、
-[输出标准](../../../docs/00-governance/OUTPUT-STANDARD.md)。
+开始前阅读[数据契约](../../../docs/01-design/DATA-CONTRACT.md)、
+[研究规范](../../../docs/01-design/RESEARCH-STANDARD.md)、
+[输出标准](../../../docs/01-design/OUTPUT-STANDARD.md)。
 GitHub 来源读取、版本比较和 PR 操作依赖当前环境可用的 GitHub Skill 或插件；
 按其实际能力执行，不假设存在特定 Skill 名称。本 Skill 不另定义 Git 工作流，仓库约束见根 `AGENTS.md`。
 

@@ -6,11 +6,11 @@ description: 从指定目录来源初始化 DSH 插件研究档案，建立稳�
 # 初始化 DSH 插件研究数据
 
 本 Skill 在 `dsh-plugin-insight` 工程中使用，所有数据脚本从工程根目录运行。
-它依赖共享的 `docs/00-governance/`、`schemas/` 和 `scripts/`，不要只复制 Skill 文件夹。
+它依赖共享的 `docs/01-design/`、`schemas/` 和 `scripts/`，工程规则见 `docs/00-governance/`；不要只复制 Skill 文件夹。
 
-开始前阅读[数据契约](../../../docs/00-governance/DATA-CONTRACT.md)、
-[研究规范](../../../docs/00-governance/RESEARCH-STANDARD.md)、
-[输出标准](../../../docs/00-governance/OUTPUT-STANDARD.md)。
+开始前阅读[数据契约](../../../docs/01-design/DATA-CONTRACT.md)、
+[研究规范](../../../docs/01-design/RESEARCH-STANDARD.md)、
+[输出标准](../../../docs/01-design/OUTPUT-STANDARD.md)。
 GitHub 来源读取、版本比较和 PR 操作依赖当前环境可用的 GitHub Skill 或插件；
 按其实际能力执行，不假设存在特定 Skill 名称。本 Skill 不另定义 Git 工作流，仓库约束见根 `AGENTS.md`。
 
