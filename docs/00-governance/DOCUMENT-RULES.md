@@ -40,7 +40,6 @@ Convivium 的会议设计、运行时角色和专用工程门禁不构成本工�
 | [DATA-CONTRACT.md](DATA-CONTRACT.md) | 研究身份、字段语义、版本证据、关联依赖及增量不变量 |
 | [RESEARCH-STANDARD.md](RESEARCH-STANDARD.md) | 分类含义、研究维度、证据边界及判断方法 |
 | [OUTPUT-STANDARD.md](OUTPUT-STANDARD.md) | 研究文件位置、命名、报告结构、统计及交付验收 |
-| [GIT-OPERATIONS.md](GIT-OPERATIONS.md) | GD／GitHub 操作指令及版本管理边界 |
 
 机器结构约束以 `schemas/` 内的 JSON Schema 为准，数据契约解释字段和不变量；
 `scripts/` 实现校验和增量行为。修改任何一方时检查其余相关部分，发现不一致须修正。
@@ -88,7 +87,8 @@ Schema 保留在工程根目录，治理文档以链接引用，不为符合外�
 
 变更收口时按影响检查：
 
-- 研究方法、数据语义、输出要求、Git 工作流：对应治理真相源，以及两个 Skill 的相关步骤。
+- 研究方法、数据语义、输出要求：对应治理真相源，以及两个 Skill 的相关步骤。
+- 外部 Skill／插件依赖或仓库协作约束：相关 Skill 入口或根 `AGENTS.md`。
 - 数据字段、枚举、不变量：数据契约、Schema、脚本、示例及相关行为测试。
 - 产品行为、边界契约、实现方案：相关需求、接口或设计，存在时按职责同步。
 - 验证或运行方式：相关验证材料或操作入口，不将新结果写入治理文档。

@@ -9,7 +9,7 @@ DSH 插件目录、分类、证据与增量研究。项目 Skill 放在 `.agents
 [输出标准](docs/00-governance/OUTPUT-STANDARD.md)、JSON Schema 和 Node.js ES Module 脚本。
 共同规范统一放在 `docs/00-governance/`，文档分类、命名与维护遵循
 [文档规则](docs/00-governance/DOCUMENT-RULES.md)。请将 Skill 与整个工程一起使用，入口里的相对引用依赖工程目录。
-Git 工作流通过 [GD／GitHub 操作指令](docs/00-governance/GIT-OPERATIONS.md)处理；研究 Skill 不另建提交流程。
+GitHub 操作复用环境中可用的 GitHub Skill 或插件；仓库级协作约束见 `AGENTS.md`。
 本仓库未附带真实插件研究结果；`examples/observations.json` 是合成数据，不计入目录。
 
 ## 使用

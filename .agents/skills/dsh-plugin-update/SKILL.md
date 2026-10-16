@@ -8,14 +8,15 @@ description: 检查已有 DSH 插件研究档案的目录、源码、发布、�
 本 Skill 在 `dsh-plugin-insight` 工程根目录运行，依赖工程内的共享资源。
 开始前阅读[数据契约](../../../docs/00-governance/DATA-CONTRACT.md)、
 [研究规范](../../../docs/00-governance/RESEARCH-STANDARD.md)、
-[输出标准](../../../docs/00-governance/OUTPUT-STANDARD.md)和[Git 操作指令](../../../docs/00-governance/GIT-OPERATIONS.md)。
-Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件，不在本 Skill 内另建提交流程。
+[输出标准](../../../docs/00-governance/OUTPUT-STANDARD.md)。
+GitHub 来源读取、版本比较和 PR 操作依赖当前环境可用的 GitHub Skill 或插件；
+按其实际能力执行，不假设存在特定 Skill 名称。本 Skill 不另定义 Git 工作流，仓库约束见根 `AGENTS.md`。
 
 1. **检查现有基线。** 查看档案、历次检查记录和当前工作区，运行：
    ```sh
    node scripts/plugin-data.mjs validate
    ```
-   空档案应使用初始化 Skill。保留人工研究与无关修改；受保护分支的变更按共享 Git 指令处理。
+   空档案应使用初始化 Skill。保留人工研究与无关修改；受保护分支的变更遵循根 `AGENTS.md`。
 2. **检查来源和目标仓库。** 使用新的 `run_id` 与截止时间，遵守用户指定的检查范围。
    同时关注目录新增／移除，以及目标插件的源码、发布、兼容性和维护变化。
    优先通过 GitHub 插件获取固定提交、文件、版本和差异；本机有已认证的 `gh` 时也可
@@ -46,5 +47,5 @@ Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件，不在本 S
    基础档案在计划后发生变化时，基于最新档案重新生成；不要强制覆盖或复用已应用的运行 ID。
    再次检查使用新 ID，内容未变时保留原点评。
 
-按共享输出标准完成更新统计、报告和交付验收，按共享 Git 指令处理版本管理。
+按共享输出标准完成更新统计、报告和交付验收。
 不为统一措辞重写全部研究；更新本地研究不自动安排未来检查、发布结果或合并 PR。

@@ -15,7 +15,6 @@
 | 数据字段、身份、证据、增量逻辑或 Schema 修改 | [数据契约](docs/00-governance/DATA-CONTRACT.md)及相关 Schema、脚本 |
 | 分类或研究方法调整 | [研究规范](docs/00-governance/RESEARCH-STANDARD.md) |
 | 研究产物或交付验收 | [输出标准](docs/00-governance/OUTPUT-STANDARD.md) |
-| Git、GitHub 来源采集或 PR 操作 | [Git 操作指令](docs/00-governance/GIT-OPERATIONS.md) |
 
 共同要求只在治理真相源维护，Skill 负责应用；新增 Skill 同样遵循共享输出标准。
 修改数据或工具时按文档规则同步相关依据，不因普通任务完成更新根入口。
@@ -23,8 +22,7 @@
 ## 协作与验证
 
 - 保留无关文件与用户已有修改，合成示例不得导入为真实研究。
-- Git 操作交给可用 GD 指令，GitHub 来源与 PR 操作可使用 GitHub 插件；不猜测 GD 调用语法。
-- 受保护 main 的变更通过分支和 PR 提交，合并沿用用户授权范围。
+- 受保护 main 的变更通过分支和 PR 提交，不绕过保护；只有用户明确授权后才合并 PR。
 - 共享脚本使用 `.mjs`，依赖与命令由根 `package.json` 维护，Node 版本遵循 `.node-version`。
 - 提交前运行 `npm run check`，覆盖档案、观察批次及行为测试。
 - 保留 CI 的 `Repository checks` 名称，main 分支保护依赖该检查；明确区分本地结果和远端 CI。

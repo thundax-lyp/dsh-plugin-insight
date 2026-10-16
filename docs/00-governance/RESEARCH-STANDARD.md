@@ -9,7 +9,6 @@
 
 固定提交、文件路径、采集截止时间，记录分页、截断与访问失败。
 分别报告目录条目数、去重组件数和仓库数；不能将发现的条目数写成当前可用插件数。
-采集及版本管理按[Git 操作指令](GIT-OPERATIONS.md)选择 GD 或 GitHub 插件，不重复定义 Git 流程。
 
 技术主类：agent-workflow（Agent 与工作流）、context-search（上下文与搜索）、
 memory-knowledge（记忆与知识）、model-provider（模型与供应商）、tools-integration（工具集成）、
