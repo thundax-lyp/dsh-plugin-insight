@@ -25,5 +25,6 @@
 - 保留无关文件与用户已有修改，合成示例不得导入为真实研究。
 - Git 操作交给可用 GD 指令，GitHub 来源与 PR 操作可使用 GitHub 插件；不猜测 GD 调用语法。
 - 受保护 main 的变更通过分支和 PR 提交，合并沿用用户授权范围。
-- 提交前运行 `python3 scripts/plugin_data.py validate` 和 `python3 -m unittest discover -s tests -v`。
+- 共享脚本使用 `.mjs`，依赖与命令由根 `package.json` 维护，Node 版本遵循 `.node-version`。
+- 提交前运行 `npm run check`，覆盖档案、观察批次及行为测试。
 - 保留 CI 的 `Repository checks` 名称，main 分支保护依赖该检查；明确区分本地结果和远端 CI。

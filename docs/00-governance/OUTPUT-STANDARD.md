@@ -58,8 +58,8 @@
 交付前必须执行档案校验及工程约定的行为测试，并校验本次观察批次：
 
 ```sh
-python3 scripts/plugin_data.py validate --observations data/observations/<run_id>.json
-python3 -m unittest discover -s tests -v
+node scripts/plugin-data.mjs validate --observations data/observations/<run_id>.json
+npm test
 ```
 
 同时人工核对证据文件是否存在、来源版本是否可追溯、报告与数据是否一致、失败是否被正确保留，

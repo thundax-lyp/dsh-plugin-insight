@@ -13,13 +13,13 @@ Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件，不在本 S
 
 1. **检查现有基线。** 查看档案、历次检查记录和当前工作区，运行：
    ```sh
-   python3 scripts/plugin_data.py validate
+   node scripts/plugin-data.mjs validate
    ```
    空档案应使用初始化 Skill。保留人工研究与无关修改；受保护分支的变更按共享 Git 指令处理。
 2. **检查来源和目标仓库。** 使用新的 `run_id` 与截止时间，遵守用户指定的检查范围。
    同时关注目录新增／移除，以及目标插件的源码、发布、兼容性和维护变化。
    优先通过 GitHub 插件获取固定提交、文件、版本和差异；本机有已认证的 `gh` 时也可
-   使用 `scripts/capture_github.py`。保存新证据并与旧快照比较。
+   使用 `scripts/capture-github.mjs`。保存新证据并与旧快照比较。
    目录仓库提交变化不代表所有插件都变化，应比较具体条目。记录分页限制、截断、
    权限和采集失败；不能从不完整结果中的缺席推断删除。
 3. **匹配身份与来源状态。** 使用稳定仓库／组件 ID 处理改名和路径移动。
@@ -34,14 +34,14 @@ Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件，不在本 S
    `reviewed_at`。旧版本测试不能证明新发布版本通过。缺少验证环境时保留待复核状态并说明边界。
 6. **生成并应用更新计划。** 按共享输出标准保存本次产物和更新报告，然后运行：
    ```sh
-   python3 scripts/plugin_data.py plan --mode update --observations data/observations/<run_id>.json --out /tmp/dsh-update-plan.json
+   node scripts/plugin-data.mjs plan --mode update --observations data/observations/<run_id>.json --out /tmp/dsh-update-plan.json
    ```
    检查计划和候选档案，尤其是其他条目中被标记失效的关联结论。
    增量符合证据及用户授权范围后应用并校验：
    ```sh
-   python3 scripts/plugin_data.py apply --plan /tmp/dsh-update-plan.json
-   python3 scripts/plugin_data.py validate
-   python3 -m unittest discover -s tests -v
+   node scripts/plugin-data.mjs apply --plan /tmp/dsh-update-plan.json
+   node scripts/plugin-data.mjs validate
+   npm test
    ```
    基础档案在计划后发生变化时，基于最新档案重新生成；不要强制覆盖或复用已应用的运行 ID。
    再次检查使用新 ID，内容未变时保留原点评。

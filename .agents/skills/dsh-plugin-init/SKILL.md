@@ -15,13 +15,13 @@ Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件；本 Skill �
 
 1. **检查基线与工作范围。** 检查当前档案、工作区及用户指定的来源和研究范围。
    已有基线时改用更新 Skill，保留无关文件和人工修改。需要新建分支时，按共享 Git
-   指令处理。数据工具需要 Python 环境及 `requirements-dev.txt` 中的依赖。
+   指令处理。数据工具使用工程指定的 Node.js 版本，首次执行前运行 `npm ci --ignore-scripts`。
 2. **固定来源和采集截止时间。** 用户未指定来源时，使用研究规范中的两个默认目录。
    优先通过 GitHub 插件读取仓库、精确提交和该提交下的目录文件，保存原始结果。
    优先采集结构化条目，补充 README 和 CATALOG。记录分页、截断、访问失败及覆盖范围。
    本机有已认证的 `gh` 时，也可使用可选采集脚本：
    ```sh
-   python3 scripts/capture_github.py awesome-dsh-plugin/awesome-dsh-plugin --out data/snapshots/<run_id>/awesome-dsh-plugin.json
+   node scripts/capture-github.mjs awesome-dsh-plugin/awesome-dsh-plugin --out data/snapshots/<run_id>/awesome-dsh-plugin.json
    ```
    脚本仅采集部分根目录文件及文件树，其他目录条目仍需读取；使用 GitHub 插件时无需安装 `gh`。
 3. **识别与分类。** 提取候选条目，核对仓库数字 ID 和稳定组件 ID 后去重。
@@ -35,14 +35,14 @@ Git 与 GitHub 操作交给已安装的 GD 指令或 GitHub 插件；本 Skill �
    采集失败记入 `errors`，不要编造或删除条目；结论绑定实际核查的版本指纹。
 6. **生成并应用初始化计划。**
    ```sh
-   python3 scripts/plugin_data.py plan --mode init --observations data/observations/<run_id>.json --out /tmp/dsh-init-plan.json
+   node scripts/plugin-data.mjs plan --mode init --observations data/observations/<run_id>.json --out /tmp/dsh-init-plan.json
    ```
    检查计划中的重复身份、分类不确定性、来源覆盖和结论证据。需要修正时修改观察批次并重新生成。
    计划符合用户授权的初始化范围后应用并校验：
    ```sh
-   python3 scripts/plugin_data.py apply --plan /tmp/dsh-init-plan.json
-   python3 scripts/plugin_data.py validate
-   python3 -m unittest discover -s tests -v
+   node scripts/plugin-data.mjs apply --plan /tmp/dsh-init-plan.json
+   node scripts/plugin-data.mjs validate
+   npm test
    ```
 
 按共享输出标准完成初始化统计、报告和交付验收，按共享 Git 指令处理版本管理。

@@ -6,7 +6,7 @@ DSH 插件目录、分类、证据与增量研究。项目 Skill 放在 `.agents
 - [dsh-plugin-update](.agents/skills/dsh-plugin-update/SKILL.md)：检查变化，增量更新并标记受影响结论。
 
 两个 Skill 共享[数据契约](docs/00-governance/DATA-CONTRACT.md)、[研究规范](docs/00-governance/RESEARCH-STANDARD.md)、
-[输出标准](docs/00-governance/OUTPUT-STANDARD.md)、JSON Schema 和 Python 脚本。
+[输出标准](docs/00-governance/OUTPUT-STANDARD.md)、JSON Schema 和 Node.js ES Module 脚本。
 共同规范统一放在 `docs/00-governance/`，文档分类、命名与维护遵循
 [文档规则](docs/00-governance/DOCUMENT-RULES.md)。请将 Skill 与整个工程一起使用，入口里的相对引用依赖工程目录。
 Git 工作流通过 [GD／GitHub 操作指令](docs/00-governance/GIT-OPERATIONS.md)处理；研究 Skill 不另建提交流程。
@@ -14,28 +14,29 @@ Git 工作流通过 [GD／GitHub 操作指令](docs/00-governance/GIT-OPERATIONS
 
 ## 使用
 
-需要 Python 3.10+。GitHub 采集优先使用 GitHub 插件；使用可选采集脚本时才需要已认证的 `gh` CLI。
+项目 Node.js 固定为 `24.19.0`，与本次读取的 Codex 工作区依赖运行时一致。
+版本由 `.node-version` 指定，`package.json` 的 `engines.node` 与之同步，CI 读取同一文件。
+当前 shell 的默认 Node 可能不同，执行前切换到指定版本；后续 Codex 运行时升级需重新核实并同步，
+不假设项目会自动跟随升级。GitHub 采集优先使用 GitHub 插件；可选采集脚本才需要已认证的 `gh` CLI。
 
 ```sh
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install -r requirements-dev.txt
-python3 scripts/plugin_data.py validate
-python3 -m unittest discover -s tests -v
+node --version
+npm ci --ignore-scripts
+npm run check
 ```
 
 也可通过以下可选脚本采集，它不会执行目标仓库代码：
 
 ```sh
-python3 scripts/capture_github.py OWNER/REPO --out /tmp/repo-snapshot.json
+node scripts/capture-github.mjs OWNER/REPO --out /tmp/repo-snapshot.json
 ```
 
 按共享规范准备 observation（示例只用于理解结构），然后先计划再应用：
 
 ```sh
-python3 scripts/plugin_data.py plan --mode init --observations YOUR_OBSERVATIONS.json --out /tmp/dsh-plan.json
-python3 scripts/plugin_data.py apply --plan /tmp/dsh-plan.json
-python3 scripts/plugin_data.py validate
+node scripts/plugin-data.mjs plan --mode init --observations YOUR_OBSERVATIONS.json --out /tmp/dsh-plan.json
+node scripts/plugin-data.mjs apply --plan /tmp/dsh-plan.json
+node scripts/plugin-data.mjs validate
 ```
 
 已有基线使用 `--mode update`。计划保存基础档案摘要，基础档案发生变化时必须重新计划。
