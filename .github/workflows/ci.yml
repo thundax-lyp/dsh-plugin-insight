@@ -28,6 +28,18 @@ jobs:
         run: |
           go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
           "$(go env GOPATH)/bin/actionlint" -color
+      - name: Install research data tooling
+        run: python3 -m pip install -r requirements-dev.txt
+      - name: Validate research data and observation batches
+        run: |
+          python3 scripts/plugin_data.py validate --observations examples/observations.json
+          if [ -d data/observations ]; then
+            find data/observations -name '*.json' -print0 | while IFS= read -r -d '' batch; do
+              python3 scripts/plugin_data.py validate --observations "$batch"
+            done
+          fi
+      - name: Test incremental research behavior
+        run: python3 -m unittest discover -s tests -v
       - name: Check whitespace in changes
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before }}
