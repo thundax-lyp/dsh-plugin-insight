@@ -56,9 +56,15 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    按[三层输出](../../../docs/01-design/OUTPUT-STANDARD.md#先分析再归纳与推荐)，先完成详情，
    再归纳分类列表的“用途／亮点／关键质疑／建议”，最后生成推荐页；安装推荐与本周试用候选使用不同证据门槛。
    阶段汇总标注未完成项；会话与原始数据由轮次报告追溯。
-   按输出标准准备 `data/publications/current.json`，保留历史入口，人工填写有依据的推荐摘要，
-   再执行 `npm run render:research` 生成 README 和分类列表，不能手写 README 或添加工程使用内容。
-   README 按范围时间、出处、推荐摘要、分类导航、历史研究组织，细节留给子页面。完成前运行 `npm run check`，
+   按输出标准准备 `data/publications/current.json`，历史文件保留但不进入README，人工填写有依据的推荐摘要，
+   调用 `npm run capture:meta -- OWNER/REPO --out data/snapshots/<run_id>/<plugin>-meta.json` 保存每个 GitHub 仓库 META，
+   对已核实的插件 package.json 名称，在采集命令增加 --npm <exact-package-name>，记录最近30个完整UTC日期的下载数；
+   没有确认的npm包时省略，不猜包名，不用0代替失败。
+   已建立列表后的日常 META 刷新可直接运行 npm run refresh:meta；它只标记脚本更新，不替代洞察或改写检查点。
+   将快照填入发布输入的 metadata 映射；分类页按输出标准生成名字＋用途目录、META及四标签短评。
+   标题、章节与Markdown版式维护 templates/publication/*.md，不写死到生成代码；脚本仅处理数据、排序和填充。
+   再执行 `npm run render:research` 生成 README、分类列表及追加Issue活跃度的详情展示页，不能手写 README 或添加工程使用内容。
+   发布输入引用当前catalog以计算本周首次入档插件；README按本周新增、最新／最热／推荐、每类最热 5 个插件及更多入口的分类列表、研究出处、末尾更新时间合成；不放历史或过程说明。完成前运行 `npm run check`，
    人工检查叙述、采用判断、引用和本轮覆盖；脚本校验不证明实际业务收益。
 
 本 Skill 不自动安装第三方插件、安排周期任务、提交、推送或发布。

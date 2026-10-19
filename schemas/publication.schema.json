@@ -8,8 +8,7 @@
     "report",
     "recommendation_page",
     "catalog_page",
-    "recommendations",
-    "history"
+    "recommendations"
   ],
   "properties": {
     "schema_version": {
@@ -94,6 +93,17 @@
           }
         }
       }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "catalog": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "$schema": "https://json-schema.org/draft/2020-12/schema"

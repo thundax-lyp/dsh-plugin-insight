@@ -125,9 +125,13 @@ GitHub 采集、身份确认、来源完整性和指纹正确性由研究者核�
 发布输入结构见[Schema](../../schemas/publication.schema.json)，不修改原 catalog／observations 字段。
 
 生成器 `scripts/render-research.mjs` 从发布输入引用的会话和已完成观察批次读取范围、分类、详情及证据层级，
-从检查点详情提取唯一四标签短评，结合人工推荐摘要及历史入口生成 README 和分类页。
+从检查点详情提取唯一四标签短评，结合人工推荐摘要生成 README 和分类页；历史字段兼容旧输入但不再渲染为README内容。
 发布输入只负责选取和组织现有成果，不成为业务事实、证据或研究结论的替代真相源。
 `validate:data` 包含生成结果一致性检查；缺页、检查点摘要变化、未完成对象被推荐或无验收证据的安装推荐会报错。
+
+GitHub META 快照由 `schemas/github-meta.schema.json` 约束；发布输入可用 metadata 映射引用。
+采集器独立读取仓库元数据与 Issue 搜索计数，部分失败保留 null 和错误，不改变研究深度、版本指纹或已完成检查点。
+生成器核对仓库数字 ID 及名称，不能把别的仓库的活跃度贴到当前插件。
 
 ## 插件工程统计产物
 
@@ -137,3 +141,15 @@ CLI包装固定使用锁定的 sloc；AST解析使用锁定 TypeScript。仅统�
 候选计数不是 catalog 的正式能力字段；confirmed_count 为 null，研究者在详情核查并解释真实定义与有效范围。
 已有来源与证据使用新的统计 artifact 引用，不能覆盖检查点已绑定的历史详情或观察批次。
 
+META 可选 npm 对象保存 package_name、downloads_30d（失败为null）、window_start／window_end、source_url、captured_at 和 error。
+采集器核对返回包名、窗口及非负整数下载量；不匹配也记为未知。历史无 npm 字段的快照仍有效。
+
+META 的可选 code_update 保存研究基线提交、当前提交、script_changed（三态）、变更路径、核查时间及错误。
+它独立于已确认的 findings 依赖失效状态，仅表示待重新分析，不能伪装成已完成新版本研究。
+refresh-meta 按 publication.session 的列表操作，成功后切换当前 META 映射，失败项保留带错误的新快照以显示未知，旧快照不删除。
+
+研究发布的 Markdown 版式以 `templates/publication/*.md` 为真相源；块脚本仅传入数据和选择结果。
+模板渲染只做严格占位符替换，缺字段失败，不递归解释插入的研究文字；不执行模板表达式或目标代码。
+
+发布输入可引用 catalog 路径，用运行历史中每个稳定插件 ID 的最早 added 时间计算本周新增。
+本周按 Asia/Shanghai 的周一至更新时间计算，重复研究不重置；未提供或缺少首次入档记录时不猜测新增时间。

@@ -1,0 +1,33 @@
+{
+  "repository": "EthanYoQ/Invoice-Downloader",
+  "repository_id": 1170373459,
+  "captured_at": "2026-10-19T08:42:47.289Z",
+  "window_start": "2026-09-19T08:42:47.289Z",
+  "stars": 511,
+  "pushed_at": "2026-09-25T10:06:22Z",
+  "issues": {
+    "open": 1,
+    "closed": 167,
+    "created_30d": 11,
+    "closed_30d": 11,
+    "updated_30d": 12
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "@ethanyoq/dsh-invoice-downloader",
+    "captured_at": "2026-10-19T08:42:47.289Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 1099,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/%40ethanyoq%2Fdsh-invoice-downloader",
+    "error": null
+  },
+  "code_update": {
+    "checked_at": "2026-10-19T08:42:47.289Z",
+    "baseline_revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+    "current_revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}
