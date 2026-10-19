@@ -1,0 +1,37 @@
+{
+  "repository": "0imzero/dsh-workspace-menu",
+  "repository_id": 1339803365,
+  "captured_at": "2026-10-19T09:21:47.181Z",
+  "window_start": "2026-09-19T09:21:47.181Z",
+  "stars": 3,
+  "pushed_at": "2026-08-24T17:02:43Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2616:EBC13:5F1CB:6675C:6AD5E12D and timestamp 2026-10-19 09:21:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 26FA:3C113C:6A2C3:718CE:6AD5E12E and timestamp 2026-10-19 09:21:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20created%3A2026-09-19T09%3A21%3A47.181Z..2026-10-19T09%3A21%3A47.181Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 28E4:33B85B:75EE0:7D583:6AD5E130 and timestamp 2026-10-19 09:21:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T09%3A21%3A47.181Z..2026-10-19T09%3A21%3A47.181Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 29C6:3F4942:75650:7CC61:6AD5E131 and timestamp 2026-10-19 09:21:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20updated%3A2026-09-19T09%3A21%3A47.181Z..2026-10-19T09%3A21%3A47.181Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2A7E:1518E6:62D5B:6A24B:6AD5E132 and timestamp 2026-10-19 09:21:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ]
+}

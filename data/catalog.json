@@ -269,6 +269,831 @@
       "last_checked_at": "2026-10-19T07:46:02.719Z"
     },
     {
+      "id": "github:1333328839:root",
+      "repository_id": 1333328839,
+      "component_id": "root",
+      "repository": "01Virex/dsh-status-rotator",
+      "path": "",
+      "aliases": [],
+      "name": "dsh-status-rotator",
+      "entry_type": "plugin",
+      "technical_category": "interface-input",
+      "business_category": "personal-productivity",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "a3a01a60707263bfde7e9ade923bd1855e4f84743c9671c8de850ba6a6b8ce49",
+        "code": "bffed9364ccbc8b53daa73003aa0e2ae990dc255",
+        "release": "4c656e9b908ee5ac60ad2b0766ef9ec3f1dea81586d1c9d47e6432af9f6dfde2",
+        "maintenance": "d32928f6decdcb30fb2a164494924c56065efeeb803d4f180b1fe781ee2d2cca",
+        "compatibility": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+      },
+      "sources": [
+        {
+          "id": "github:1333328839:root:20261019T091725Z-init10-1333328839:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:10.424Z",
+          "membership": "present"
+        },
+        {
+          "id": "github:1333328839:root:20261019T091725Z-init10-1333328839:directory-1",
+          "url": "https://github.com/0xsline/awesome-deepseek-harness",
+          "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+          "retrieved_at": "2026-10-19T09:30:10.424Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1333328839:root:20261019T091725Z-init10-1333328839:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js",
+          "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+          "captured_at": "2026-10-19T09:30:10.424Z",
+          "summary": "lib/index.js 提供配置读写与 SSE 通知；lib/client.js 负责状态和动效挂载，兼容不同设置 API。README 的 1362 词条和主题数为作者表述，本轮不作为工程能力评分。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/01Virex__dsh-status-rotator-source.json"
+        },
+        {
+          "id": "github:1333328839:root:20261019T091725Z-init10-1333328839:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/01Virex/dsh-status-rotator/tree/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+          "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+          "captured_at": "2026-10-19T09:30:10.424Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/01Virex__dsh-status-rotator-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "用户在等待模型时希望状态更可读或更有趣；合格结果是状态能随阶段变化且不遮挡操作。基线是宿主原生状态栏，不以词库数量或主题数量证明生产效率。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333328839:root:20261019T091725Z-init10-1333328839:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "code",
+              "fingerprint": "bffed9364ccbc8b53daa73003aa0e2ae990dc255"
+            },
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "compatibility",
+              "fingerprint": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.424Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "lib/index.js 提供配置读写与 SSE 通知；lib/client.js 负责状态和动效挂载，兼容不同设置 API。README 的 1362 词条和主题数为作者表述，本轮不作为工程能力评分。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1333328839:root:20261019T091725Z-init10-1333328839:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "code",
+              "fingerprint": "bffed9364ccbc8b53daa73003aa0e2ae990dc255"
+            },
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "compatibility",
+              "fingerprint": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.424Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "装饰层已带来较大的前后端维护面；更多动效是否帮助判断运行状态，还是增加干扰和兼容负担？",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333328839:root:20261019T091725Z-init10-1333328839:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "code",
+              "fingerprint": "bffed9364ccbc8b53daa73003aa0e2ae990dc255"
+            },
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "compatibility",
+              "fingerprint": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.424Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "已读取 npm latest 0.37.0；源码 package.json 为 0.37.0。版本号一致仍不证明 tarball 内容一致。未安装、未比对发布包字节。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333328839:root:20261019T091725Z-init10-1333328839:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "code",
+              "fingerprint": "bffed9364ccbc8b53daa73003aa0e2ae990dc255"
+            },
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "compatibility",
+              "fingerprint": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.424Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "首次主要是外观选择与兼容确认；持续有浏览器动画／定时器、SSE连接、设置存储和注意力成本，无模型收益实测。迁移需保留词库与配置，升级要复核 DOM／客户端契约。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333328839:root:20261019T091725Z-init10-1333328839:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "code",
+              "fingerprint": "bffed9364ccbc8b53daa73003aa0e2ae990dc255"
+            },
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "compatibility",
+              "fingerprint": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.424Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "适合重视界面氛围的个人用户体验；工作环境先关弹幕与动画，比较状态可读性和浏览器负担。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333328839:root:20261019T091725Z-init10-1333328839:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "code",
+              "fingerprint": "bffed9364ccbc8b53daa73003aa0e2ae990dc255"
+            },
+            {
+              "plugin_id": "github:1333328839:root",
+              "area": "compatibility",
+              "fingerprint": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.424Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:10.424Z"
+    },
+    {
+      "id": "github:1333357514:root",
+      "repository_id": 1333357514,
+      "component_id": "root",
+      "repository": "030611/qiushi-dsh-evidence-audit",
+      "path": "",
+      "aliases": [],
+      "name": "Qiushi Evidence Audit",
+      "entry_type": "plugin",
+      "technical_category": "security-governance",
+      "business_category": "software-delivery",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "84bb7cccffe7399106973035fc2d8df8520b286cda630a6b7eeabfb68b9f9bb2",
+        "code": "f32ed3fd149404bf23a7ea9d5303008f3d076c36",
+        "release": "fcf1bb0b482a3442ae15cf7b702564e831e064822082cd654b616b2bc910d7b8",
+        "maintenance": "ac0d6abae7c2b6d63ea8a2d29822fad38e5eac13aa996da1f220a2a47c603c33",
+        "compatibility": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+      },
+      "sources": [
+        {
+          "id": "github:1333357514:root:20261019T091725Z-init10-1333357514:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:11.759Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1333357514:root:20261019T091725Z-init10-1333357514:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/qiushi-dsh-evidence-audit/blob/94fae130b2845309e1dcabac14696fddb18f8f3a/src/index.ts",
+          "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+          "captured_at": "2026-10-19T09:30:11.759Z",
+          "summary": "src/index.ts 分别观察 session/event 和 tools/result，将标识／参数／结果转为哈希；receipt.ts 做规范化JSON、序号／前链hash和同步追加。启动先验证既有文件，运行追加失败隔离于主事件流程。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/030611__qiushi-dsh-evidence-audit-source.json"
+        },
+        {
+          "id": "github:1333357514:root:20261019T091725Z-init10-1333357514:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/qiushi-dsh-evidence-audit/tree/94fae130b2845309e1dcabac14696fddb18f8f3a",
+          "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+          "captured_at": "2026-10-19T09:30:11.759Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/030611__qiushi-dsh-evidence-audit-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "操作者需要核对一批已保存事件或工具结果是否与收据一致。合格结果是能发现未重算链的改动并解释检测不了的情形；基线是原始日志加独立签名／外部存证，而非靠本地哈希满足可信审计。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "src/index.ts 分别观察 session/event 和 tools/result，将标识／参数／结果转为哈希；receipt.ts 做规范化JSON、序号／前链hash和同步追加。启动先验证既有文件，运行追加失败隔离于主事件流程。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "没有外部锚点，完整重写重算、删整文件或完整尾段都可能逃过检测；不等于可信审计账本。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "已读取 npm latest 0.1.0；源码 package.json 为 0.1.0。版本号一致仍不证明 tarball 内容一致。未安装、未比对发布包字节。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "每次观察做规范化、SHA-256和同步I/O，启动校验随历史文件长度增长；需要日志轮转与外部锚点运维。无额外模型调用，但全量内容哈希仍有CPU和磁盘成本，未实测延迟。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "适合单进程、私有目录内的取证流程试验；有合规或多进程诉求时先补外部锚定与写入协调。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:11.759Z"
+    },
+    {
+      "id": "github:1333368566:root",
+      "repository_id": 1333368566,
+      "component_id": "root",
+      "repository": "030611/dsh-telemetry-redactor",
+      "path": "",
+      "aliases": [],
+      "name": "DSH Telemetry Redactor",
+      "entry_type": "plugin",
+      "technical_category": "security-governance",
+      "business_category": "infrastructure",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "0c617d1e74524e0bab65cace438a0a69129bed38786dc4c68f25ed63d6fc8bd8",
+        "code": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa",
+        "release": "fae03e4c9f4ea1c1eaba164c4dccfd1248b3b97b312675faec3f99cedf38abd7",
+        "maintenance": "7015fa5f0c893e440a45edf89d0bef9b040afb1f89703f3aae0d0094071b9c11",
+        "compatibility": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+      },
+      "sources": [
+        {
+          "id": "github:1333368566:root:20261019T091725Z-init10-1333368566:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:11.108Z",
+          "membership": "present"
+        },
+        {
+          "id": "github:1333368566:root:20261019T091725Z-init10-1333368566:directory-1",
+          "url": "https://github.com/0xsline/awesome-deepseek-harness",
+          "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+          "retrieved_at": "2026-10-19T09:30:11.108Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1333368566:root:20261019T091725Z-init10-1333368566:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/src/index.ts",
+          "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+          "captured_at": "2026-10-19T09:30:11.108Z",
+          "summary": "src/index.ts 通过 prepend 的 session-telemetry/record waterfall 对 next() 的结果递归复制脱敏。keyWords 拆分键名并保留 token counters；深度上限64，对循环和访问器拒绝。插件本身不启用后端，也不向模型增加提示。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/030611__dsh-telemetry-redactor-source.json"
+        },
+        {
+          "id": "github:1333368566:root:20261019T091725Z-init10-1333368566:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/dsh-telemetry-redactor/tree/811b0b1abf424e57045ab5a5eaa203660ca43908",
+          "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+          "captured_at": "2026-10-19T09:30:11.108Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/030611__dsh-telemetry-redactor-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "运维希望保留可观测性又降低遥测后端收到凭证的概率。合格结果是支持的假密钥在导出副本被替换、计量字段保留且原始记录不变；基线是不开遥测或后端事后清洗。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "src/index.ts 通过 prepend 的 session-telemetry/record waterfall 对 next() 的结果递归复制脱敏。keyWords 拆分键名并保留 token counters；深度上限64，对循环和访问器拒绝。插件本身不启用后端，也不向模型增加提示。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "过滤规则和监听器顺序都有边界，原始日志仍含原值；它不能作为全面数据防泄漏证明。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "已读取 npm latest 0.1.0；源码 package.json 为 0.1.0。版本号一致仍不证明 tarball 内容一致。未安装、未比对发布包字节。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "不新增模型调用；每条副本同步遍历，成本随内容大小增长。首次成本是规则矩阵与出口盘点，持续成本是格式变化、监听顺序与性能回归；不在本轮编造吞吐或延迟。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "适合已有遥测导出的部署先做合成凭证试用，同时检查完整监听链和本地日志权限。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:11.108Z"
+    },
+    {
+      "id": "github:1333370288:root",
+      "repository_id": 1333370288,
+      "component_id": "root",
+      "repository": "030611/dsh-verification-receipt",
+      "path": "",
+      "aliases": [],
+      "name": "DSH Verification Receipt",
+      "entry_type": "plugin",
+      "technical_category": "observability-cost",
+      "business_category": "software-delivery",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "f8ceec82626464c58775ad101ab1611826df5393f8e78ae8fbf0bf705f5289e8",
+        "code": "4f9a21004fd04ac078bf956b599b68bba71334a5",
+        "release": "ce4b903c9dd9bac74f8003700253286c97b55dd39d4ad278333d2e28e8c1c16a",
+        "maintenance": "92df825f823e5a0c27febd4eb42684c53f1aa3740ae34127f9405f07812dc346",
+        "compatibility": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+      },
+      "sources": [
+        {
+          "id": "github:1333370288:root:20261019T091725Z-init10-1333370288:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:11.566Z",
+          "membership": "present"
+        },
+        {
+          "id": "github:1333370288:root:20261019T091725Z-init10-1333370288:directory-1",
+          "url": "https://github.com/0xsline/awesome-deepseek-harness",
+          "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+          "retrieved_at": "2026-10-19T09:30:11.566Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1333370288:root:20261019T091725Z-init10-1333370288:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/src/index.ts",
+          "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+          "captured_at": "2026-10-19T09:30:11.566Z",
+          "summary": "src/index.ts 在 session/event 的 turn/end 回调 snapshotEvents，交给 receipt.ts 做该轮投影；工具名称／command词法分类测试、lint、build等。JSONL writer 用 promise链串行追加，dispose 时先关gate、取消监听再drain。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/030611__dsh-verification-receipt-source.json"
+        },
+        {
+          "id": "github:1333370288:root:20261019T091725Z-init10-1333370288:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748",
+          "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+          "captured_at": "2026-10-19T09:30:11.566Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/030611__dsh-verification-receipt-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "开发者需要快速发现代理似乎没做验证的回合；合格结果是摘要与原始事件一致、不会把回显文本当验收结论。基线是查看工具日志和真实测试报告。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333370288:root:20261019T091725Z-init10-1333370288:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "code",
+              "fingerprint": "4f9a21004fd04ac078bf956b599b68bba71334a5"
+            },
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "compatibility",
+              "fingerprint": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.566Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "src/index.ts 在 session/event 的 turn/end 回调 snapshotEvents，交给 receipt.ts 做该轮投影；工具名称／command词法分类测试、lint、build等。JSONL writer 用 promise链串行追加，dispose 时先关gate、取消监听再drain。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1333370288:root:20261019T091725Z-init10-1333370288:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "code",
+              "fingerprint": "4f9a21004fd04ac078bf956b599b68bba71334a5"
+            },
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "compatibility",
+              "fingerprint": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.566Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "词法命中 test/check 不证明测试执行或代码正确；独立行哈希也不能证明日志未删改。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333370288:root:20261019T091725Z-init10-1333370288:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "code",
+              "fingerprint": "4f9a21004fd04ac078bf956b599b68bba71334a5"
+            },
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "compatibility",
+              "fingerprint": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.566Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "已读取 npm latest 0.1.0；源码 package.json 为 0.1.1。两者版本不同，默认分支机制不代表当前 npm 包具备相同行为。未安装、未比对发布包字节。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333370288:root:20261019T091725Z-init10-1333370288:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "code",
+              "fingerprint": "4f9a21004fd04ac078bf956b599b68bba71334a5"
+            },
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "compatibility",
+              "fingerprint": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.566Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "不新增模型调用，增加每轮事件投影、哈希和异步磁盘写入；长期有文件保留与分析成本。首次需确认宿主窄版本支持，升级迁移需重验事件结构。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333370288:root:20261019T091725Z-init10-1333370288:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "code",
+              "fingerprint": "4f9a21004fd04ac078bf956b599b68bba71334a5"
+            },
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "compatibility",
+              "fingerprint": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.566Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "适合排查“这一轮记录了什么”的开发者试用，不能替代 CI、测试产物或审计放行。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333370288:root:20261019T091725Z-init10-1333370288:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "code",
+              "fingerprint": "4f9a21004fd04ac078bf956b599b68bba71334a5"
+            },
+            {
+              "plugin_id": "github:1333370288:root",
+              "area": "compatibility",
+              "fingerprint": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.566Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:11.566Z"
+    },
+    {
       "id": "github:1333800488:root",
       "repository_id": 1333800488,
       "component_id": "root",
@@ -543,6 +1368,207 @@
       "last_checked_at": "2026-10-19T07:46:02.738Z"
     },
     {
+      "id": "github:1334899834:root",
+      "repository_id": 1334899834,
+      "component_id": "root",
+      "repository": "02Muller25/dsh-api-balance",
+      "path": "",
+      "aliases": [],
+      "name": "api-balance",
+      "entry_type": "plugin",
+      "technical_category": "observability-cost",
+      "business_category": "personal-productivity",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "568836eaa02bec3f19e584bb4f6a568f99e2f54350a1e4146edd935ae78b5be8",
+        "code": "4c5ea2913dc424014931c4da214e1f813ba9cf40",
+        "release": "802143a5a3e64c43aa1a4c431907cb2d2d46b15d91eca2a7e17f3a23054db658",
+        "maintenance": "a340c46603493d3b61e8a56966b22b7f56ce6c5a4d8b00d101f0ea6e687b06c2",
+        "compatibility": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+      },
+      "sources": [
+        {
+          "id": "github:1334899834:root:20261019T091725Z-init10-1334899834:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:10.915Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1334899834:root:20261019T091725Z-init10-1334899834:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/02Muller25/dsh-api-balance/blob/c27c8b61acf97714ab08d99f97b7be3a9007e52e/lib/index.js",
+          "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+          "captured_at": "2026-10-19T09:30:10.915Z",
+          "summary": "lib/index.js 注册 GET /api/abal-balance，每次解析 DEEPSEEK_API_KEY，用 shell.resolve／run 调用固定 API；lib/client.js 在 composer dock 渲染并轮询，刷新偏好保存在 localStorage。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/02Muller25__dsh-api-balance-source.json"
+        },
+        {
+          "id": "github:1334899834:root:20261019T091725Z-init10-1334899834:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/02Muller25/dsh-api-balance/tree/c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+          "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+          "captured_at": "2026-10-19T09:30:10.915Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/02Muller25__dsh-api-balance-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "用户在开发过程中担心余额不足，需要快速确认可用性；合格结果是展示与官方账户相符且失败时不会把旧值冒充实时值。基线是官方控制台或手动查询余额接口。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "lib/index.js 注册 GET /api/abal-balance，每次解析 DEEPSEEK_API_KEY，用 shell.resolve／run 调用固定 API；lib/client.js 在 composer dock 渲染并轮询，刷新偏好保存在 localStorage。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "余额不是任务预算或成本预警；凭证被拼入 curl 子进程命令，不能将“不发给浏览器”写成“不出宿主进程”。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "根包 private=true，未按同名 npm 包推断发布归属。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "每浏览器每30秒默认最多约120次查询/小时，每次另起 curl；10秒模式约360次，这是配置推算并非实测。没有模型 token 调用增量，但有网络、子进程和故障排查成本。迁移主要是本地刷新偏好。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "适合单账户用户按需查看，先验证凭证处理与轮询负担；需要预算控制时仍要配合计量和限额。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:10.915Z"
+    },
+    {
       "id": "github:1339316901:root",
       "repository_id": 1339316901,
       "component_id": "root",
@@ -554,9 +1580,8 @@
       "technical_category": "memory-knowledge",
       "business_category": "software-delivery",
       "tags": [
-        "project-memory",
-        "cross-session",
-        "source-only"
+        "source-inspected",
+        "runtime-unverified"
       ],
       "availability": "unknown",
       "research_depth": "source",
@@ -564,8 +1589,8 @@
         "code": "0b9d05a22f9c09d50a8ac2a8b38094c41a758b04",
         "release": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006",
         "maintenance": "24ab37eb46b97f7f2c7773c4b8b038b62759e077bd83d3c1f4eca5dd55d7e833",
-        "compatibility": "ada5be2c9d51bfb9dbd3725f6ea54072259a6d7138653e651e68075cba6b2493",
-        "directory": "9231c1fb481b3f60aa59ef4c95ccabaa1eb4779a60992fd3f7ed81d6e28bf30b"
+        "compatibility": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2",
+        "directory": "2d1f405ebecbe8bcd4964ab3f1ff30959c15fa430a41404e8ec90d9e24b5b64a"
       },
       "sources": [
         {
@@ -573,6 +1598,13 @@
           "url": "https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/README.md",
           "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
           "retrieved_at": "2026-10-19T07:46:02.745Z"
+        },
+        {
+          "id": "github:1339316901:root:20261019T091725Z-init10-1339316901:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:10.169Z",
+          "membership": "present"
         }
       ],
       "evidence": [
@@ -611,16 +1643,40 @@
             "公开元数据不证明安装成功或包内容相同。"
           ],
           "artifact": "data/snapshots/20261019T074011Z-smoke/memory-npm.json"
+        },
+        {
+          "id": "github:1339316901:root:20261019T091725Z-init10-1339316901:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/index.js",
+          "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
+          "captured_at": "2026-10-19T09:30:10.169Z",
+          "summary": "src/index.js 显式注册 12 个工具及 /tasks 命令；TaskBridge 对接宿主任务，读取时索引文档与符号，installAutoInject 在 agent/pre-step 注入召回。全量首用索引是单独开关，不把自动注入理解为无条件全库扫描。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/00080000__dsh-project-memory-source.json"
+        },
+        {
+          "id": "github:1339316901:root:20261019T091725Z-init10-1339316901:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/00080000/dsh-project-memory/tree/fe7ac6cab91784a34996aede007d3586f0ff2def",
+          "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
+          "captured_at": "2026-10-19T09:30:10.169Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/00080000__dsh-project-memory-inventory.json"
         }
       ],
       "findings": [
         {
           "id": "scenario",
           "topic": "positioning",
+          "text": "合格交付物是恢复正确的任务状态、引用正确文件并继续完成开发；基线是 AGENTS、任务清单、交接文档和 rg。适用频率是同一项目经常跨会话继续，不适合仅偶尔问答时增加常驻索引。",
           "basis": "interpretation",
-          "text": "面向同项目频繁跨会话恢复开发，用AGENTS/交接文档/rg作低成本基线，验收正确恢复与最终任务质量。",
           "evidence_ids": [
-            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+            "github:1339316901:root:20261019T091725Z-init10-1339316901:source"
           ],
           "dependencies": [
             {
@@ -630,20 +1686,20 @@
             },
             {
               "plugin_id": "github:1339316901:root",
-              "area": "release",
-              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+              "area": "compatibility",
+              "fingerprint": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2"
             }
           ],
-          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "reviewed_at": "2026-10-19T09:30:10.169Z",
           "status": "current"
         },
         {
           "id": "mechanism",
           "topic": "mechanism",
+          "text": "src/index.js 显式注册 12 个工具及 /tasks 命令；TaskBridge 对接宿主任务，读取时索引文档与符号，installAutoInject 在 agent/pre-step 注入召回。全量首用索引是单独开关，不把自动注入理解为无条件全库扫描。",
           "basis": "supported",
-          "text": "确定性文档与符号索引、读时触发、任务文件关联与出处召回；查询扩展和反思默认关闭，leanvec仅重排经验/洞察层。",
           "evidence_ids": [
-            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+            "github:1339316901:root:20261019T091725Z-init10-1339316901:source"
           ],
           "dependencies": [
             {
@@ -653,20 +1709,20 @@
             },
             {
               "plugin_id": "github:1339316901:root",
-              "area": "release",
-              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+              "area": "compatibility",
+              "fingerprint": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2"
             }
           ],
-          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "reviewed_at": "2026-10-19T09:30:10.169Z",
           "status": "current"
         },
         {
           "id": "scope",
           "topic": "limitations",
-          "basis": "design_limit",
-          "text": "存在task/project/global作用域和经验提升，global可参与召回；需验证项目专属经验的泛化边界，源码机制不证明已泄漏。forget无撤销需明确删除范围。",
+          "text": "检索方便不等于任务恢复正确；项目经验进入全局作用域后是否误召回，仍需对照测试。",
+          "basis": "interpretation",
           "evidence_ids": [
-            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+            "github:1339316901:root:20261019T091725Z-init10-1339316901:source"
           ],
           "dependencies": [
             {
@@ -676,20 +1732,20 @@
             },
             {
               "plugin_id": "github:1339316901:root",
-              "area": "release",
-              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+              "area": "compatibility",
+              "fingerprint": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2"
             }
           ],
-          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "reviewed_at": "2026-10-19T09:30:10.169Z",
           "status": "current"
         },
         {
           "id": "distribution",
           "topic": "engineering",
-          "basis": "supported",
-          "text": "源码和npm latest为0.6.2，但目录tarball指0.4.0；实际安装对象须对齐，未安装或核对tarball。",
+          "text": "已读取 npm latest 0.6.2；源码 package.json 为 0.6.2。版本号一致仍不证明 tarball 内容一致。未安装、未比对发布包字节。",
+          "basis": "interpretation",
           "evidence_ids": [
-            "github:1339316901:root:20261019T074011Z-smoke-memory:npm"
+            "github:1339316901:root:20261019T091725Z-init10-1339316901:source"
           ],
           "dependencies": [
             {
@@ -699,20 +1755,20 @@
             },
             {
               "plugin_id": "github:1339316901:root",
-              "area": "release",
-              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+              "area": "compatibility",
+              "fingerprint": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2"
             }
           ],
-          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "reviewed_at": "2026-10-19T09:30:10.169Z",
           "status": "current"
         },
         {
           "id": "cost",
           "topic": "business_value",
+          "text": "首次包括索引与作用域配置；持续包括 CPU、磁盘、注入上下文 token、误召回清理，以及可选查询扩展／反思的模型费用；迁移需要导出／保留本地记忆及任务映射。本轮没有合格任务实测，不输出金额或收益比例。",
           "basis": "interpretation",
-          "text": "索引无LLM调用不等于零成本；默认本地嵌入表、CPU/磁盘、提示占用、噪声清理和可选辅助模型都应计入总负担。",
           "evidence_ids": [
-            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+            "github:1339316901:root:20261019T091725Z-init10-1339316901:source"
           ],
           "dependencies": [
             {
@@ -722,20 +1778,20 @@
             },
             {
               "plugin_id": "github:1339316901:root",
-              "area": "release",
-              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+              "area": "compatibility",
+              "fingerprint": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2"
             }
           ],
-          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "reviewed_at": "2026-10-19T09:30:10.169Z",
           "status": "current"
         },
         {
           "id": "adoption",
           "topic": "adoption",
+          "text": "适合同项目反复中断的开发者小规模试用，先与交接文档加 rg 对照，暂不作安装推荐。",
           "basis": "interpretation",
-          "text": "本轮优先试用候选，尚非安装推荐；固定模型与任务，对照交接文档测恢复时间、误引用、合格率和全部成本。",
           "evidence_ids": [
-            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+            "github:1339316901:root:20261019T091725Z-init10-1339316901:source"
           ],
           "dependencies": [
             {
@@ -745,15 +1801,826 @@
             },
             {
               "plugin_id": "github:1339316901:root",
-              "area": "release",
-              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+              "area": "compatibility",
+              "fingerprint": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2"
             }
           ],
-          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "reviewed_at": "2026-10-19T09:30:10.169Z",
           "status": "current"
         }
       ],
-      "last_checked_at": "2026-10-19T07:46:02.745Z"
+      "last_checked_at": "2026-10-19T09:30:10.169Z"
+    },
+    {
+      "id": "github:1339803365:root",
+      "repository_id": 1339803365,
+      "component_id": "root",
+      "repository": "0imzero/dsh-workspace-menu",
+      "path": "",
+      "aliases": [],
+      "name": "dsh-workspace-menu",
+      "entry_type": "plugin",
+      "technical_category": "interface-input",
+      "business_category": "personal-productivity",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "272cf5e976b720c736a7471c0470d6e77f612da849d596b70e6155fd26050124",
+        "code": "71d2a60f8364a79cdbb2433318cf6c0438e81068",
+        "release": "59ad9ed9e49d3ce49234920984e1ff0ebabb421f424fcb65fcc4014ee97820ba",
+        "maintenance": "ab85ac1178518079ff6ec30099afb76fed1cc2ea38daa7fb9b12dab105927616",
+        "compatibility": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+      },
+      "sources": [
+        {
+          "id": "github:1339803365:root:20261019T091725Z-init10-1339803365:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:12.372Z",
+          "membership": "present"
+        },
+        {
+          "id": "github:1339803365:root:20261019T091725Z-init10-1339803365:directory-1",
+          "url": "https://github.com/0xsline/awesome-deepseek-harness",
+          "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+          "retrieved_at": "2026-10-19T09:30:12.372Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1339803365:root:20261019T091725Z-init10-1339803365:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/0imzero/dsh-workspace-menu/blob/afd55510f82821cde60a8364e42f752e244b5b31/src/index.ts",
+          "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+          "captured_at": "2026-10-19T09:30:12.372Z",
+          "summary": "src/client/index.ts 用DOM事件与React fiber恢复行对象，置顶和未读保存在localStorage；src/index.ts提供打开系统文件管理器和删除目录的两个POST接口。永久会话删除调用dsh-archive-manager，工作区目录由本插件rm递归删除。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/0imzero__dsh-workspace-menu-source.json"
+        },
+        {
+          "id": "github:1339803365:root:20261019T091725Z-init10-1339803365:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/0imzero/dsh-workspace-menu/tree/afd55510f82821cde60a8364e42f752e244b5b31",
+          "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+          "captured_at": "2026-10-19T09:30:12.372Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/0imzero__dsh-workspace-menu-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "经常管理很多会话和项目的用户，希望减少定位和切页。合格交付物是动作作用于正确对象、可区分保留文件与永久删除；基线是宿主原生菜单和系统文件管理器。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "src/client/index.ts 用DOM事件与React fiber恢复行对象，置顶和未读保存在localStorage；src/index.ts提供打开系统文件管理器和删除目录的两个POST接口。永久会话删除调用dsh-archive-manager，工作区目录由本插件rm递归删除。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "React fiber识别依赖界面内部结构；二次确认在浏览器侧，不能证明删除端点被限制在当前工作区。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "根包 private=true，未按同名 npm 包推断发布归属。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "常用动作可能减少点击，但需要界面升级适配、localStorage跨浏览器不一致处理和依赖插件维护。删除误操作成本远高于省下点击；迁移需备份置顶／未读偏好和项目数据。无本轮耗时实测。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "先试非破坏菜单并保持删除关闭；需要删除时必须在临时目录验证路径授权、归档依赖和失败恢复。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:12.372Z"
+    },
+    {
+      "id": "github:1342915339:root",
+      "repository_id": 1342915339,
+      "component_id": "root",
+      "repository": "0QwQ0/dsh-discord-richpresence",
+      "path": "",
+      "aliases": [],
+      "name": "dsh-discord-richpresence",
+      "entry_type": "plugin",
+      "technical_category": "channels-remote",
+      "business_category": "personal-productivity",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "b56e34b7fbe519c60ea24ddd60b68b9b4a2df6071f9c4350999a9cc871e161fc",
+        "code": "f5a40fd73049bd3e44c011321a2d093d54d82795",
+        "release": "dc02cb8f40eb94f07022d2df074324cf5296994ea546e51db75700b4a982e05f",
+        "maintenance": "77dd4fc5a8f641ea0f7828b459eb1e2da90bcacf1a888a27e3b4d824000f2c19",
+        "compatibility": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+      },
+      "sources": [
+        {
+          "id": "github:1342915339:root:20261019T091725Z-init10-1342915339:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:11.953Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1342915339:root:20261019T091725Z-init10-1342915339:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js",
+          "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+          "captured_at": "2026-10-19T09:30:11.953Z",
+          "summary": "lib/index.js 监听 inbox、agent、工具和session等信号，按配置映射状态；lib/discord-rpc.js 用本地IPC握手、SET_ACTIVITY和重连；client设置开关持久化 richMode，丰富模式跟踪最后真实用户输入对应会话。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/0QwQ0__dsh-discord-richpresence-source.json"
+        },
+        {
+          "id": "github:1342915339:root:20261019T091725Z-init10-1342915339:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/0QwQ0/dsh-discord-richpresence/tree/bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+          "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+          "captured_at": "2026-10-19T09:30:11.953Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/0QwQ0__dsh-discord-richpresence-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "个人用户希望在 Discord 显示正在与代理工作，合格结果是好友所见状态与当前粗粒度阶段一致、断开后能恢复。基线是手动状态；不是企业协作审批、任务结果通知或生产监控。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1342915339:root:20261019T091725Z-init10-1342915339:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "code",
+              "fingerprint": "f5a40fd73049bd3e44c011321a2d093d54d82795"
+            },
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "compatibility",
+              "fingerprint": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.953Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "lib/index.js 监听 inbox、agent、工具和session等信号，按配置映射状态；lib/discord-rpc.js 用本地IPC握手、SET_ACTIVITY和重连；client设置开关持久化 richMode，丰富模式跟踪最后真实用户输入对应会话。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1342915339:root:20261019T091725Z-init10-1342915339:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "code",
+              "fingerprint": "f5a40fd73049bd3e44c011321a2d093d54d82795"
+            },
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "compatibility",
+              "fingerprint": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.953Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "社交可见性不是任务完成提醒或效率证明；丰富模式和自定义文案仍可能暴露工作节奏或标量使用信息。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1342915339:root:20261019T091725Z-init10-1342915339:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "code",
+              "fingerprint": "f5a40fd73049bd3e44c011321a2d093d54d82795"
+            },
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "compatibility",
+              "fingerprint": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.953Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "npm latest 404；不能据此判定GitHub release包不可用。未安装发布产物。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1342915339:root:20261019T091725Z-init10-1342915339:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "code",
+              "fingerprint": "f5a40fd73049bd3e44c011321a2d093d54d82795"
+            },
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "compatibility",
+              "fingerprint": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.953Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "持续成本是socket／重连定时器及外部可见信息的管理，无额外模型调用。首次只需少量配置，迁移时保留文案和richMode；无证据支持其节省开发时间。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1342915339:root:20261019T091725Z-init10-1342915339:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "code",
+              "fingerprint": "f5a40fd73049bd3e44c011321a2d093d54d82795"
+            },
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "compatibility",
+              "fingerprint": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.953Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "仅推荐给明确想展示状态的个人用户试用；默认保持模糊模式，先核查实际外发字段。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1342915339:root:20261019T091725Z-init10-1342915339:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "code",
+              "fingerprint": "f5a40fd73049bd3e44c011321a2d093d54d82795"
+            },
+            {
+              "plugin_id": "github:1342915339:root",
+              "area": "compatibility",
+              "fingerprint": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.953Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:11.953Z"
+    },
+    {
+      "id": "github:1343420855:root",
+      "repository_id": 1343420855,
+      "component_id": "root",
+      "repository": "0QwQ0/dsh-ui-auth",
+      "path": "",
+      "aliases": [],
+      "name": "dsh-ui-auth",
+      "entry_type": "plugin",
+      "technical_category": "security-governance",
+      "business_category": "infrastructure",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "749f4c4bd3833e0076db7a421f7b98d02af07d0441d1ba4601d3089046aaccde",
+        "code": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7",
+        "release": "fa64a55690411e8a387e54869dd13b38d4b270cf641db52d58af7ec5f809efbb",
+        "maintenance": "a29570cef2ee4395b9b2eded3ffc91c884cf4371729661c4e69b53ad75982040",
+        "compatibility": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+      },
+      "sources": [
+        {
+          "id": "github:1343420855:root:20261019T091725Z-init10-1343420855:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:12.168Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1343420855:root:20261019T091725Z-init10-1343420855:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/lib/index.js",
+          "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+          "captured_at": "2026-10-19T09:30:12.168Z",
+          "summary": "lib/index.js 接管server request／upgrade并注册/auth路由；modern-gateway.js投影HTTP结果与代理mux帧；profile-kek.js以用户口令派生KEK包装每配置随机DEK，AAD绑定uid/profileId。登录口令不直接持久化为明文key。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/0QwQ0__dsh-ui-auth-source.json"
+        },
+        {
+          "id": "github:1343420855:root:20261019T091725Z-init10-1343420855:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/0QwQ0/dsh-ui-auth/tree/6c5e87b44be4e973b092910968001916bb97d22e",
+          "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+          "captured_at": "2026-10-19T09:30:12.168Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/0QwQ0__dsh-ui-auth-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "小团队想共用DSH Web而隔离工作区、会话和API凭证。合格交付物是用户A无法读取／操作B的资源，撤销与退出立即影响长连接；基线是各用户独立实例与反向代理认证，两者复杂度与隔离强度应同时比较。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "lib/index.js 接管server request／upgrade并注册/auth路由；modern-gateway.js投影HTTP结果与代理mux帧；profile-kek.js以用户口令派生KEK包装每配置随机DEK，AAD绑定uid/profileId。登录口令不直接持久化为明文key。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "共享服务的安全边界依赖宿主路由、传输与升级契约；有登录页不等于所有数据面已隔离，也不抵御控制服务进程的管理员。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "已读取 npm latest 0.7.1；源码 package.json 为 0.7.1。版本号一致仍不证明 tarball 内容一致。未安装、未比对发布包字节。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "首次包括身份策略、TLS、数据迁移与多用户回归；持续包括口令派生、加解密、mux代理、审计留存和宿主适配；迁移需保护加密数据与恢复路径。无新增模型调用不等于无运维成本。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "仅作为隔离测试环境的候选，先做双用户REST／WS／凭证和升级回归，尚无本轮真实宿主安全验收。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:12.168Z"
+    },
+    {
+      "id": "github:1416699252:root",
+      "repository_id": 1416699252,
+      "component_id": "root",
+      "repository": "01men/ybkkasi",
+      "path": "",
+      "aliases": [],
+      "name": "元冰可 ybkkasi",
+      "entry_type": "infrastructure",
+      "technical_category": "security-governance",
+      "business_category": "infrastructure",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "48a9e250413f391d537beacaed07eee5108bf312e10d40e23a108cecd65a0757",
+        "code": "0bd81d64edb177f3f87c592ce3645bf8950bc78c",
+        "release": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "maintenance": "cd93a4b98150583e0c1374f5f8adf47fed8f9e2b62010b34ca0faac8a0e1b239",
+        "compatibility": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+      },
+      "sources": [
+        {
+          "id": "github:1416699252:root:20261019T091725Z-init10-1416699252:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:10.728Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1416699252:root:20261019T091725Z-init10-1416699252:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/01men/ybkkasi/blob/03f74c847c8af9189ce37a73321a730ceb353f2a/src/main.ts",
+          "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+          "captured_at": "2026-10-19T09:30:10.728Z",
+          "summary": "cordis.patch.yml 顺序装配 platform-core、身份、资源、计量、业务域和桥；plugin-workforce/src/index.ts 串联 permit、调用与交付服务，经 workforcePolicy 窄端口注册。独立入口 node src/main.ts 与 DSH 工具桥共享业务代码。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/01men__ybkkasi-source.json"
+        },
+        {
+          "id": "github:1416699252:root:20261019T091725Z-init10-1416699252:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/01men/ybkkasi/tree/03f74c847c8af9189ce37a73321a730ceb353f2a",
+          "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+          "captured_at": "2026-10-19T09:30:10.728Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/01men__ybkkasi-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "面向需要厘清谁能调用什么、费用归谁和出了问题如何追踪的企业平台团队。合格交付物是授权可撤销、调用可归属且账目可核对；基线是现有 IAM、API 网关、费用报表和审批台账，不能直接据作者新品类表述推导市场需求已验证。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "cordis.patch.yml 顺序装配 platform-core、身份、资源、计量、业务域和桥；plugin-workforce/src/index.ts 串联 permit、调用与交付服务，经 workforcePolicy 窄端口注册。独立入口 node src/main.ts 与 DSH 工具桥共享业务代码。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "它是平台型工程而非轻量增效插件；DSH 形态仍为 experimental，治理模型是否贴合现有业务比功能数量更重要。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "根包 private=true，未按同名 npm 包推断发布归属。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "首次成本集中在权限映射、资产录入、账号接入与运维；持续包括数据库与备份、审计留存、渠道费用及策略维护。迁移涉及多域数据和身份关系，远高于装一个 UI 插件。没有实测企业工作负载，不能用作者自测断言数推算可靠性。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "有多团队资产治理痛点时先评估独立测试实例与最小域，个人使用不建议为一个需求部署整个平台。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:10.728Z"
     }
   ],
   "runs": [
@@ -840,6 +2707,198 @@
       "changes": [
         {
           "plugin_id": "github:1339316901:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1339316901",
+      "checked_at": "2026-10-19T09:30:10.169Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1339316901:root",
+          "kind": "changed",
+          "areas": [
+            "compatibility",
+            "directory"
+          ]
+        },
+        {
+          "plugin_id": "github:1339316901:root",
+          "kind": "reviewed",
+          "areas": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1333328839",
+      "checked_at": "2026-10-19T09:30:10.424Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1333328839:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1416699252",
+      "checked_at": "2026-10-19T09:30:10.728Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1334899834",
+      "checked_at": "2026-10-19T09:30:10.915Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1334899834:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1333368566",
+      "checked_at": "2026-10-19T09:30:11.108Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1333368566:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1333370288",
+      "checked_at": "2026-10-19T09:30:11.566Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1333370288:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1333357514",
+      "checked_at": "2026-10-19T09:30:11.759Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1333357514:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1342915339",
+      "checked_at": "2026-10-19T09:30:11.953Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1342915339:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1343420855",
+      "checked_at": "2026-10-19T09:30:12.168Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1343420855:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "20261019T091725Z-init10-1339803365",
+      "checked_at": "2026-10-19T09:30:12.372Z",
+      "mode": "update",
+      "changes": [
+        {
+          "plugin_id": "github:1339803365:root",
           "kind": "added",
           "areas": [
             "code",

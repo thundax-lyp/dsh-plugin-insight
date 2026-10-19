@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "run_id": "20261019T091725Z-init10-1343420855",
+  "checked_at": "2026-10-19T09:30:12.168Z",
+  "plugins": [
+    {
+      "id": "github:1343420855:root",
+      "repository_id": 1343420855,
+      "component_id": "root",
+      "repository": "0QwQ0/dsh-ui-auth",
+      "path": "",
+      "aliases": [],
+      "name": "dsh-ui-auth",
+      "entry_type": "plugin",
+      "technical_category": "security-governance",
+      "business_category": "infrastructure",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "749f4c4bd3833e0076db7a421f7b98d02af07d0441d1ba4601d3089046aaccde",
+        "code": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7",
+        "release": "fa64a55690411e8a387e54869dd13b38d4b270cf641db52d58af7ec5f809efbb",
+        "maintenance": "a29570cef2ee4395b9b2eded3ffc91c884cf4371729661c4e69b53ad75982040",
+        "compatibility": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+      },
+      "sources": [
+        {
+          "id": "github:1343420855:root:20261019T091725Z-init10-1343420855:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:12.168Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1343420855:root:20261019T091725Z-init10-1343420855:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/lib/index.js",
+          "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+          "captured_at": "2026-10-19T09:30:12.168Z",
+          "summary": "lib/index.js 接管server request／upgrade并注册/auth路由；modern-gateway.js投影HTTP结果与代理mux帧；profile-kek.js以用户口令派生KEK包装每配置随机DEK，AAD绑定uid/profileId。登录口令不直接持久化为明文key。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/0QwQ0__dsh-ui-auth-source.json"
+        },
+        {
+          "id": "github:1343420855:root:20261019T091725Z-init10-1343420855:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/0QwQ0/dsh-ui-auth/tree/6c5e87b44be4e973b092910968001916bb97d22e",
+          "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+          "captured_at": "2026-10-19T09:30:12.168Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/0QwQ0__dsh-ui-auth-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "小团队想共用DSH Web而隔离工作区、会话和API凭证。合格交付物是用户A无法读取／操作B的资源，撤销与退出立即影响长连接；基线是各用户独立实例与反向代理认证，两者复杂度与隔离强度应同时比较。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "lib/index.js 接管server request／upgrade并注册/auth路由；modern-gateway.js投影HTTP结果与代理mux帧；profile-kek.js以用户口令派生KEK包装每配置随机DEK，AAD绑定uid/profileId。登录口令不直接持久化为明文key。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "共享服务的安全边界依赖宿主路由、传输与升级契约；有登录页不等于所有数据面已隔离，也不抵御控制服务进程的管理员。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "已读取 npm latest 0.7.1；源码 package.json 为 0.7.1。版本号一致仍不证明 tarball 内容一致。未安装、未比对发布包字节。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "首次包括身份策略、TLS、数据迁移与多用户回归；持续包括口令派生、加解密、mux代理、审计留存和宿主适配；迁移需保护加密数据与恢复路径。无新增模型调用不等于无运维成本。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "仅作为隔离测试环境的候选，先做双用户REST／WS／凭证和升级回归，尚无本轮真实宿主安全验收。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1343420855:root:20261019T091725Z-init10-1343420855:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "code",
+              "fingerprint": "2cfd94c890a9c3007eb81a0506d288ce72a0fbc7"
+            },
+            {
+              "plugin_id": "github:1343420855:root",
+              "area": "compatibility",
+              "fingerprint": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.168Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:12.168Z"
+    }
+  ],
+  "errors": []
+}

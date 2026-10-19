@@ -1,0 +1,130 @@
+{
+  "url": "https://registry.npmjs.org/dsh-status-rotator/latest",
+  "captured_at": "2026-10-19T09:24:52.391Z",
+  "http_status": 200,
+  "package": {
+    "dsh": {
+      "bundle": {
+        "patch": "./cordis.patch.yml"
+      },
+      "client": {
+        "inject": [],
+        "platform": "web",
+        "immediately": true
+      }
+    },
+    "bugs": {
+      "url": "https://github.com/01Virex/dsh-status-rotator/issues"
+    },
+    "dist": {
+      "shasum": "918b8dc3d7e3d72facaa2517642e27daf3dec29d",
+      "tarball": "https://registry.npmjs.org/dsh-status-rotator/-/dsh-status-rotator-0.37.0.tgz",
+      "fileCount": 18,
+      "integrity": "sha512-1lFQx1X20WZarXRY3cy3CvN2NhXDX1LGNaCF8ly/bue+l5Z0/rJlai9q8SWjLU6XSDOFa4ePUnCN9qYcYnWW5A==",
+      "signatures": [
+        {
+          "sig": "MEUCIDu1g9RxCsItlvHHXN23wbnojS6nqBUrhhvLd2j2tTabAiEA0QRFJ5V0lUgvRdYNIO9VCpowiHuLoQ18zvSbbadIeUE=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEYCIQC9qfvSSJbqcoOe1Z7UaluvSiVKGCwp2z7XUwM/au/1egIhALDiR3aSvFATj0p9W6rErL29v56U/E0hb9u/vRHVK0Jt",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 1172413
+    },
+    "main": "lib/index.js",
+    "name": "dsh-status-rotator",
+    "type": "module",
+    "types": "./lib/index.d.ts",
+    "author": {
+      "url": "https://github.com/01Virex",
+      "name": "01Virex"
+    },
+    "exports": {
+      ".": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      },
+      "./client": "./lib/client.js",
+      "./package.json": "./package.json"
+    },
+    "gitHead": "1c599cda7d2c19a8eb620829e9291ec33281ed25",
+    "license": "MIT",
+    "scripts": {
+      "test": "node scripts/smoke-test.cjs",
+      "test:browser": "node scripts/run-danmaku-mount-test.cjs && node scripts/run-danmaku-mount-test.cjs --page=label && node scripts/run-danmaku-mount-test.cjs --page=settings && node scripts/run-danmaku-mount-test.cjs --page=pending && node scripts/run-danmaku-mount-test.cjs --page=title && node scripts/run-danmaku-mount-test.cjs --page=external && node scripts/run-danmaku-mount-test.cjs --page=appearance && node scripts/run-turn-process-test.cjs && node scripts/run-issue-141-coexist-test.cjs && node scripts/run-issue-144-disabled-pack-test.cjs && node scripts/run-issue-151-submit-test.cjs",
+      "fetch-qq-group": "node scripts/fetch-qq-group.cjs",
+      "test:browser:label": "node scripts/run-danmaku-mount-test.cjs --page=label",
+      "test:browser:title": "node scripts/run-danmaku-mount-test.cjs --page=title",
+      "test:browser:pending": "node scripts/run-danmaku-mount-test.cjs --page=pending",
+      "verify:settings-page": "node scripts/verify-settings-page.cjs",
+      "test:browser:external": "node scripts/run-danmaku-mount-test.cjs --page=external",
+      "test:browser:settings": "node scripts/run-danmaku-mount-test.cjs --page=settings",
+      "verify:bank-ownership": "node scripts/verify-external-bank-ownership.cjs",
+      "test:browser:issue-144": "node scripts/run-issue-144-disabled-pack-test.cjs",
+      "test:browser:issue-151": "node scripts/run-issue-151-submit-test.cjs",
+      "verify:appearance-zero": "node scripts/verify-appearance-zero.cjs",
+      "verify:bank-hot-reload": "node scripts/verify-phrase-hot-reload.cjs",
+      "test:browser:appearance": "node scripts/run-danmaku-mount-test.cjs --page=appearance",
+      "verify:bank-auto-update": "node scripts/verify-bank-auto-update.cjs",
+      "verify:phrase-selection": "node scripts/verify-phrase-selection.cjs",
+      "verify:settings-upgrade": "node scripts/verify-settings-survive-upgrade.cjs",
+      "verify:whale-tail-tiers": "node scripts/verify-whale-tail-tiers.cjs",
+      "verify:push-and-conflict": "node scripts/verify-push-and-conflict.cjs",
+      "test:browser:turn-process": "node scripts/run-turn-process-test.cjs"
+    },
+    "_npmUser": {
+      "name": "uent26",
+      "email": "2642244081@qq.com"
+    },
+    "homepage": "https://github.com/01Virex/dsh-status-rotator#readme",
+    "keywords": [
+      "dsh",
+      "deepseek-harness",
+      "dsh-plugin",
+      "plugin",
+      "ui",
+      "status",
+      "status-label",
+      "rotator",
+      "typewriter",
+      "rainbow",
+      "weighted-random",
+      "phrase-bank",
+      "danmaku",
+      "bilibili",
+      "bullet-comment",
+      "meme"
+    ],
+    "repository": {
+      "url": "git+https://github.com/01Virex/dsh-status-rotator.git",
+      "type": "git"
+    },
+    "_npmVersion": "11.19.0",
+    "description": "Turn the DSH Web status line into a 1317-phrase meme machine: phase-aware phrases, typewriter, rainbow gradient, danmaku and 14 theme packs, all editable from the settings page.",
+    "directories": {},
+    "maintainers": [
+      {
+        "name": "uent26",
+        "email": "2642244081@qq.com"
+      }
+    ],
+    "_nodeVersion": "24.21.0",
+    "_hasShrinkwrap": false,
+    "peerDependencies": {
+      "@deepseek-ai/cordis": "*"
+    },
+    "peerDependenciesMeta": {
+      "@deepseek-ai/cordis": {
+        "optional": true
+      }
+    },
+    "_npmOperationalInternal": {
+      "tmp": "tmp/dsh-status-rotator_0.37.0_1792216774313_0.26649116273247153",
+      "host": "s3://npm-registry-packages-npm-production"
+    },
+    "_id": "dsh-status-rotator@0.37.0",
+    "version": "0.37.0"
+  }
+}

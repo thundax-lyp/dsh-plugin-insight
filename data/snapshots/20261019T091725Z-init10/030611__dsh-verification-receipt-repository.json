@@ -1,0 +1,354 @@
+{
+  "captured_at": "2026-10-19T09:19:45.119Z",
+  "repository_id": 1333370288,
+  "repository": "030611/dsh-verification-receipt",
+  "commit": "87f3fb0198090f0f26a37a52840db150609db748",
+  "metadata": {
+    "id": 1333370288,
+    "full_name": "030611/dsh-verification-receipt",
+    "description": "Privacy-minimal heuristic per-turn verification summaries for DeepSeek Harness",
+    "default_branch": "main",
+    "archived": false,
+    "disabled": false,
+    "created_at": "2026-08-13T17:25:09Z",
+    "pushed_at": "2026-09-03T16:29:04Z",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "topics": [
+      "agent-infrastructure",
+      "deepseek-harness",
+      "developer-tools",
+      "dsh-plugin",
+      "verification"
+    ],
+    "html_url": "https://github.com/030611/dsh-verification-receipt"
+  },
+  "tree": {
+    "sha": "4f9a21004fd04ac078bf956b599b68bba71334a5",
+    "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/trees/4f9a21004fd04ac078bf956b599b68bba71334a5",
+    "tree": [
+      {
+        "path": ".github",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e8d2e5e11bf2c8bf39e74487caa94597f8fdbe47",
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/trees/e8d2e5e11bf2c8bf39e74487caa94597f8fdbe47"
+      },
+      {
+        "path": ".github/workflows",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "50cec2024d773474811cdad44799dbe2597369ae",
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/trees/50cec2024d773474811cdad44799dbe2597369ae"
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0938e06c0fcbc4f3a5f951ef443b6057189be894",
+        "size": 770,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/0938e06c0fcbc4f3a5f951ef443b6057189be894"
+      },
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b0e103fd2cf7ce7a535a9e040e0ca74389725045",
+        "size": 61,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/b0e103fd2cf7ce7a535a9e040e0ca74389725045"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bec452fcf98eb7a50e858ce55d513b7053205baa",
+        "size": 1094,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/bec452fcf98eb7a50e858ce55d513b7053205baa"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e61721ade9bb16bf26ad099535aa27e3d2b14cf7",
+        "size": 10195,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/e61721ade9bb16bf26ad099535aa27e3d2b14cf7"
+      },
+      {
+        "path": "README.zh.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d606b04981b9626f5111a29b482a010643c9ea60",
+        "size": 9526,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/d606b04981b9626f5111a29b482a010643c9ea60"
+      },
+      {
+        "path": "RELEASE_CHECKLIST.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b9fff59772b07652e7eba377077dce975941ea9d",
+        "size": 1861,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/b9fff59772b07652e7eba377077dce975941ea9d"
+      },
+      {
+        "path": "SECURITY.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6cd58863e83a22b6fb97818167bc5bab7762f95f",
+        "size": 3136,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/6cd58863e83a22b6fb97818167bc5bab7762f95f"
+      },
+      {
+        "path": "cordis.patch.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a120196b893cf456eceedb3c59c5adcaa2efd01b",
+        "size": 189,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/a120196b893cf456eceedb3c59c5adcaa2efd01b"
+      },
+      {
+        "path": "docs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f3fff1b154ca02c7127540756eb8d33573e54d85",
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/trees/f3fff1b154ca02c7127540756eb8d33573e54d85"
+      },
+      {
+        "path": "docs/compatibility-0.1.1.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a5b4bbede9166bedb7b3818ad620115b49a41261",
+        "size": 1667,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/a5b4bbede9166bedb7b3818ad620115b49a41261"
+      },
+      {
+        "path": "docs/privacy-boundary.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "48518f0b4145d755653643145bb75ee84b12fe5d",
+        "size": 230997,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/48518f0b4145d755653643145bb75ee84b12fe5d"
+      },
+      {
+        "path": "docs/receipt-output.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8708c518ba94bc6f555f302d650fa59252b66b72",
+        "size": 241175,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/8708c518ba94bc6f555f302d650fa59252b66b72"
+      },
+      {
+        "path": "docs/social-preview.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b71f1894f45719df4b2796940f41b3d33fa1a7ac",
+        "size": 111638,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/b71f1894f45719df4b2796940f41b3d33fa1a7ac"
+      },
+      {
+        "path": "docs/verification-flow.svg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "796cefac0356768b5f5a55aff7111f52af527bf9",
+        "size": 3057,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/796cefac0356768b5f5a55aff7111f52af527bf9"
+      },
+      {
+        "path": "dsh.plugin.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0f86430b6149073522fb4cec99b5b36f6bd7a558",
+        "size": 379,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/0f86430b6149073522fb4cec99b5b36f6bd7a558"
+      },
+      {
+        "path": "package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "accae6d66212af130e89900c5959e09111e66c5f",
+        "size": 2739,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/accae6d66212af130e89900c5959e09111e66c5f"
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "82655f25d8264f80a13d952414522378a1102286",
+        "size": 38651,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/82655f25d8264f80a13d952414522378a1102286"
+      },
+      {
+        "path": "pnpm-workspace.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7e05c661711e9cc77c0c763f39aea446e9d36541",
+        "size": 674,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/7e05c661711e9cc77c0c763f39aea446e9d36541"
+      },
+      {
+        "path": "scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "07019260aacf647fdce8ccf4e4e751cfd3384c57",
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/trees/07019260aacf647fdce8ccf4e4e751cfd3384c57"
+      },
+      {
+        "path": "scripts/performance-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "98b1ef0605215e3710d8f723e75bbf7f3e196f66",
+        "size": 1447,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/98b1ef0605215e3710d8f723e75bbf7f3e196f66"
+      },
+      {
+        "path": "scripts/release-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c53a8302de41e8d9c7cd8f0abf29e04ef64c9b69",
+        "size": 3327,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/c53a8302de41e8d9c7cd8f0abf29e04ef64c9b69"
+      },
+      {
+        "path": "src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d0250095b27cc41d2a8b8d2c27c02394f31e2f85",
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/trees/d0250095b27cc41d2a8b8d2c27c02394f31e2f85"
+      },
+      {
+        "path": "src/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a184a5273cd1148bbbe770ad6455db9f08291dd5",
+        "size": 3909,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/a184a5273cd1148bbbe770ad6455db9f08291dd5"
+      },
+      {
+        "path": "src/receipt.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a0407e3fc9c083432ae59f465c8d572600011fb7",
+        "size": 10913,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/a0407e3fc9c083432ae59f465c8d572600011fb7"
+      },
+      {
+        "path": "tests",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "545c3df5fbf48094dffac43b93cd726ecea3b201",
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/trees/545c3df5fbf48094dffac43b93cd726ecea3b201"
+      },
+      {
+        "path": "tests/composition.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b238af0f69da6d42dbb10fc01fd77b676ab6bd90",
+        "size": 4173,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/b238af0f69da6d42dbb10fc01fd77b676ab6bd90"
+      },
+      {
+        "path": "tests/manifest.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "64effe13fddfbdadac6147c2ee7098cdc511f23d",
+        "size": 1684,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/64effe13fddfbdadac6147c2ee7098cdc511f23d"
+      },
+      {
+        "path": "tests/receipt.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0104c53f389bdf29649025cda555c73eaee303ef",
+        "size": 8889,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/0104c53f389bdf29649025cda555c73eaee303ef"
+      },
+      {
+        "path": "tsconfig.build.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ff9782dfd35f0c92f5a54108b6d3a464d9a52cee",
+        "size": 236,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/ff9782dfd35f0c92f5a54108b6d3a464d9a52cee"
+      },
+      {
+        "path": "tsconfig.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "218f095d73380386271f8a4dfb7da69f2d700703",
+        "size": 390,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/218f095d73380386271f8a4dfb7da69f2d700703"
+      },
+      {
+        "path": "vitest.config.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "120bd97f021af8718d575cc792e67a24efcb6e7c",
+        "size": 156,
+        "url": "https://api.github.com/repos/030611/dsh-verification-receipt/git/blobs/120bd97f021af8718d575cc792e67a24efcb6e7c"
+      }
+    ],
+    "truncated": false
+  },
+  "releases": [
+    {
+      "url": "https://api.github.com/repos/030611/dsh-verification-receipt/releases/370369147",
+      "assets_url": "https://api.github.com/repos/030611/dsh-verification-receipt/releases/370369147/assets",
+      "upload_url": "https://uploads.github.com/repos/030611/dsh-verification-receipt/releases/370369147/assets{?name,label}",
+      "html_url": "https://github.com/030611/dsh-verification-receipt/releases/tag/v0.1.0",
+      "id": 370369147,
+      "author": {
+        "login": "030611",
+        "id": 114643959,
+        "node_id": "U_kgDOBtVT9w",
+        "avatar_url": "https://avatars.githubusercontent.com/u/114643959?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/030611",
+        "html_url": "https://github.com/030611",
+        "followers_url": "https://api.github.com/users/030611/followers",
+        "following_url": "https://api.github.com/users/030611/following{/other_user}",
+        "gists_url": "https://api.github.com/users/030611/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/030611/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/030611/subscriptions",
+        "organizations_url": "https://api.github.com/users/030611/orgs",
+        "repos_url": "https://api.github.com/users/030611/repos",
+        "events_url": "https://api.github.com/users/030611/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/030611/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOT3mdsM4WE2J7",
+      "tag_name": "v0.1.0",
+      "target_commitish": "main",
+      "name": "dsh-verification-receipt v0.1.0",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-08-14T05:20:42Z",
+      "updated_at": "2026-08-14T05:21:30Z",
+      "published_at": "2026-08-14T05:21:30Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/030611/dsh-verification-receipt/tarball/v0.1.0",
+      "zipball_url": "https://api.github.com/repos/030611/dsh-verification-receipt/zipball/v0.1.0",
+      "body": "First public release of DSH Verification Receipt.\n\n## Highlights\n\n- Passively observes DSH turn completion and summarizes execution-trace evidence.\n- Produces privacy-minimal heuristic receipts without retaining raw command or output bodies.\n- Exposes `Verified`, `Partial`, and `No evidence`-style signals for downstream UI integrations.\n\n## Install\n\n```bash\ndsh plugin --profile web add dsh-verification-receipt\n```\n\n## Verification\n\n- TypeScript typecheck and production build passed.\n- 21 tests across 3 test files passed.\n- `publint` and package release smoke passed.\n- Published tarball contains 10 files; a clean registry install and package-name import passed on Node.js 24.\n- Published registry shasum: `8698d66aac5cfd5ac6b4cdb883b4581497bf98d8`.\n\n## Boundaries\n\nThis plugin reports heuristic evidence from observable execution traces. It does **not** prove that tests ran, that they passed, or that the resulting code is semantically correct. Supported Node.js versions are `^22.19.0 || >=24.0.0`.\n\nImplementation and release preparation used AI assistance; the published files, claims, and release gates were reviewed before publication."
+    }
+  ],
+  "files": {
+    "README.md": "# DSH Verification Receipt\n\n[中文](README.zh.md)\n\n[![CI](https://github.com/030611/dsh-verification-receipt/actions/workflows/ci.yml/badge.svg)](https://github.com/030611/dsh-verification-receipt/actions/workflows/ci.yml)\n[![npm](https://img.shields.io/npm/v/dsh-verification-receipt)](https://www.npmjs.com/package/dsh-verification-receipt)\n[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![awesome · DSH plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)\n[![featured on dsh-suite](https://img.shields.io/badge/featured%20on-dsh--suite-4d6bfe)](https://whyihaveyou.github.io/dsh-suite/)\n\n![DSH Verification Receipt social preview](docs/social-preview.jpg)\n\n> Ask a smaller, checkable question: what verification-shaped execution signals did DSH record this turn?\n\n```sh\ndsh plugin --profile web add dsh-verification-receipt\n```\n\nThe receipt summarizes recorded tool counts and lexical verification-shaped signals. It does **not** prove that tests ran or that code is correct.\n\n> Community-maintained and not an official DeepSeek project. Related trust-layer plugins: [Telemetry Redactor](https://github.com/030611/dsh-telemetry-redactor), [Evidence Audit](https://github.com/030611/qiushi-dsh-evidence-audit), and [Context Provenance](https://github.com/030611/dsh-context-provenance).\n\nDSH Verification Receipt is a small, passive Profile Bundle for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). After each durable `turn/end`, it appends one privacy-minimal, heuristic execution summary to a local JSONL file.\n\n![Verification Receipt data flow](https://raw.githubusercontent.com/030611/dsh-verification-receipt/main/docs/verification-flow.svg)\n\nIt records execution traces, not semantic correctness. A receipt shows only that DSH logged tool calls and that a lexical heuristic found a possible verification signal. It never proves that a test ran. It cannot show that the right command executed, that assertions were sufficient, that output was truthful, or that the assistant's conclusion was correct.\n\nThis is intentionally not an evidence-audit ledger: rows stay independent and there is no hash chain, artifact capture, claim-evidence linkage, or protocol attestation.\n\n## Compatibility evidence\n\nVersion 0.1.1 supports exactly DSH `0.1.2-alpha.3`, `0.1.2-alpha.4`, and `0.1.2-alpha.5` on Node.js `^22.19.0 || >=24.0.0`. Each release passed local package gates and disposable Windows Web Profile install, composed-config, cold-start, and uninstall acceptance. See [the compatibility evidence](docs/compatibility-0.1.1.md) for the exact boundary. Cordis and Session are optional host peers because DSH supplies their runtime services; Schemastery is included as an exact runtime dependency and also declared as a compatibility peer.\n\n## Install\n\nAdd the published package to every profile that should emit receipts:\n\n```sh\ndsh plugin --profile web add dsh-verification-receipt\ndsh --profile web --dump-config\n```\n\nRepeat the first command with another profile name (for example, `headless`) when that profile also needs receipts. For local development, clone this repository, run `pnpm install --frozen-lockfile && pnpm run check`, and pass the checkout path to `dsh plugin ... add` instead of the package name.\n\n`package.json` declares `dsh.bundle.patch`; `cordis.patch.yml` inserts one ordinary observer plugin. It works on any DSH surface that provides the core Session service.\n\n## Output\n\nThe image below shows a real receipt emitted by the released plugin code over synthetic, non-user DSH events; the right side displays selected persisted fields only. It is not a user conversation and does not prove that tests ran or passed.\n\n![Real Verification Receipt output from a synthetic fixture](docs/receipt-output.png)\n\nThe default file is:\n\n```text\n$DSH_HOME/verification-receipts/v1/receipts.jsonl\n```\n\nWhen `DSH_HOME` is unset, it resolves below `~/.dsh`. Override it with an absolute path in the profile's `cordis.patch.yml`:\n\n```yaml\n- id: verification-receipt\n  config:\n    outputPath: /absolute/private/path/receipts.jsonl\n```\n\nEach line has this form:\n\n```json\n{\n  \"schemaVersion\": 1,\n  \"kind\": \"dsh-verification-receipt\",\n  \"sessionIdHash\": \"sha256:…\",\n  \"turn\": 3,\n  \"turnEndSeq\": 42,\n  \"endedAt\": 1786630000000,\n  \"outcome\": \"completed\",\n  \"tools\": {\n    \"calls\": 4,\n    \"succeeded\": 3,\n    \"failed\": 1,\n    \"unresolved\": 0,\n    \"topLevel\": 2,\n    \"nested\": 2\n  },\n  \"verificationSignals\": [\n    {\n      \"source\": \"command\",\n      \"category\": \"test\",\n      \"status\": \"failed\"\n    }\n  ],\n  \"claim\": \"execution-trace-only\",\n  \"receiptHash\": \"sha256:…\"\n}\n```\n\n### Integrity warning\n\nBoth hashes are unkeyed and recomputable. `receiptHash` is SHA-256 over the exact preceding receipt fields in their emitted order. Anyone who can edit a row can recompute it. Independent rows do not reveal deletion, insertion, reordering, truncation, rollback, or replacement. The hash is neither a signature nor a trusted timestamp, hash chain, commitment, or tamper-evident log.\n\n## Privacy and agent behavior\n\n![Receipt persistence and exclusion boundary](docs/privacy-boundary.png)\n\nThe persisted receipt does not contain:\n\n- tool arguments or call ids;\n- tool result content or error messages;\n- assistant or user message text;\n- raw session ids, working directories, provider names, or model names.\n\nThe plugin temporarily reads tool names, raw arguments, and result status from existing durable events to compute the summary. It does not persist those inputs, append a Session event, register a tool, add a prompt section, inject context, make a model call, or change model history.\n\n`sessionIdHash` is deterministic, unkeyed, and domain-separated so receipts from one Session can be grouped without storing its raw id. It is linkable across files. If a Session id is predictable or low entropy, an observer can guess candidates offline and recompute the hash; this is pseudonymization, not anonymization.\n\n## Verification-signal heuristic\n\nA heuristic signal is emitted when either:\n\n- a tool name resembles test, typecheck, lint, build, check, verify, or validate work; or\n- a shell-like tool's in-memory `command` or `cmd` argument resembles such work.\n\nThe stored signal keeps only `source`, coarse `category`, and observed `status`. Native DSH tool errors and recognized non-zero shell exit markers count as failure. Background commands remain `unresolved` because their later job result may occur outside this turn. Even `status: succeeded` means only that the observed call completed without a recognized failure marker; it does not mean tests passed or even ran.\n\nClassification is lexical; it does not parse shell syntax, expand aliases, or execute commands:\n\n| Input shape | Support | Boundary |\n|---|---|---|\n| JSON-string or object arguments with string `command`/`cmd` | Supported | Only recognized shell-like tool names are inspected. |\n| Upper/lower case, quotes, or visible wrappers such as `bash -lc`/`pwsh -Command` | Supported lexically | A category keyword must remain visible in the string. |\n| Array commands, `argv`, nested command objects, custom shell tool names | Unsupported | No signal is emitted. |\n| Aliases or wrappers with no visible category keyword | Unsupported | False negatives are expected. |\n| Quoted prose such as `echo \"do not run tests\"` | Lexically matched | False positives are expected because intent and execution are not parsed. |\n\nTreat every match as a discovery hint named “heuristic signal,” never as “tests ran,” an attestation, or a quality gate.\n\n## Model experience\n\n| Aspect | Effect |\n|---|---|\n| Token cost | None. |\n| Tool calls | None; the model gets no new tool. |\n| Session log | Unchanged; the plugin reads existing events and adds no events. |\n| Prompt and context | Unchanged. |\n| Turn latency | The listener scans the completed turn synchronously and queues local file I/O; it does not await disk on the turn path. |\n\n## Known limitations\n\n- Receipts cover events observed by the running plugin. Constructor seed history and turns completed while it was unloaded are not backfilled.\n- A process crash can lose a queued receipt because `turn/end` does not synchronously wait for this optional local sink. Normal plugin/application disposal drains accepted writes.\n- Disposal first closes the enqueue gate, then unregisters listeners, then drains accepted writes. Abrupt process termination cannot run that lifecycle.\n- Receipt rows are independent; deletion, reordering, truncation, and rollback are not detectable.\n- Receipt status repeats DSH's recorded tool outcome and recognized shell markers. It does not independently execute or validate anything.\n- Projection cost grows with the number and size of events in a turn; unusually large tool arguments can add end-of-turn CPU time while they are classified in memory.\n- The in-process write queue is ordered but unbounded. A slow or stuck filesystem can grow memory usage until writes recover or the process ends.\n- There is no cross-process lock. Two DSH processes targeting one file have no guaranteed row order or row-boundary integrity; use one file per process. A crash can leave an incomplete final line, which readers must reject or quarantine.\n- Creation modes request `0700`/`0600` on supporting POSIX filesystems only. Existing permissions are not tightened, Windows may ignore POSIX modes, and pre-existing symbolic links are followed. Configure a trusted, private, non-symlink path.\n- The file has no built-in rotation, retention, encryption, signing, or recovery.\n\nSee [SECURITY.md](SECURITY.md) for the trust and disclosure model.\n\n## Development\n\n```sh\npnpm run typecheck\npnpm run test\npnpm run build\npnpm run check\npnpm run release:smoke\npnpm run performance:smoke\n```\n\nTests cover privacy exclusions, deterministic hashing, top-level and Code Mode final states, the supported/unsupported classification matrix, listener disposal, disk draining, and a real DSH `Context + SessionStore` composition. `release:smoke` enforces the exact tarball file list, installs the real `.tgz` into a temporary project, and imports it by package name.\n\n## License\n\nMIT\n",
+    "package.json": "{\n  \"name\": \"dsh-verification-receipt\",\n  \"description\": \"Privacy-minimal heuristic per-turn execution summaries for DeepSeek Harness\",\n  \"version\": \"0.1.1\",\n  \"license\": \"MIT\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh-plugin\",\n    \"verification\",\n    \"observability\",\n    \"privacy\"\n  ],\n  \"homepage\": \"https://github.com/030611/dsh-verification-receipt#readme\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/030611/dsh-verification-receipt.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/030611/dsh-verification-receipt/issues\"\n  },\n  \"publishConfig\": {\n    \"access\": \"public\"\n  },\n  \"packageManager\": \"pnpm@11.19.0\",\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n  },\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"dsh.plugin.json\",\n    \"docs/compatibility-0.1.1.md\",\n    \"README.md\",\n    \"README.zh.md\",\n    \"LICENSE\",\n    \"SECURITY.md\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"compatibility\": {\n      \"dsh\": \"0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5\",\n      \"dshReleases\": {\n        \"0.1.2-alpha.3\": \"compatible\",\n        \"0.1.2-alpha.4\": \"compatible\",\n        \"0.1.2-alpha.5\": \"compatible\"\n      },\n      \"profiles\": [\n        \"web\"\n      ]\n    }\n  },\n  \"scripts\": {\n    \"build\": \"tsc -p tsconfig.build.json && esbuild src/index.ts --bundle --packages=external --platform=node --format=esm --target=node22 --outfile=lib/index.js\",\n    \"prepare\": \"pnpm run build\",\n    \"publint\": \"publint\",\n    \"performance:smoke\": \"node scripts/performance-smoke.mjs\",\n    \"release:smoke\": \"node scripts/release-smoke.mjs\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest run\",\n    \"check\": \"pnpm run typecheck && pnpm run test && pnpm run build && pnpm run publint\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.2\",\n    \"@deepseek-ai/dsh-session\": \"0.1.2-alpha.3 || 0.1.2-alpha.4 || 0.1.2-alpha.5\",\n    \"@deepseek-ai/schemastery\": \"^3.18.2\"\n  },\n  \"peerDependenciesMeta\": {\n    \"@deepseek-ai/cordis\": {\n      \"optional\": true\n    },\n    \"@deepseek-ai/dsh-session\": {\n      \"optional\": true\n    }\n  },\n  \"dependencies\": {\n    \"@deepseek-ai/schemastery\": \"3.18.2\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"4.0.2\",\n    \"@deepseek-ai/dsh-llm\": \"0.1.2-alpha.5\",\n    \"@deepseek-ai/dsh-session\": \"0.1.2-alpha.5\",\n    \"@deepseek-ai/schemastery\": \"3.18.2\",\n    \"@types/node\": \"^24.0.0\",\n    \"esbuild\": \"0.28.2\",\n    \"publint\": \"^0.3.12\",\n    \"typescript\": \"^6.0.3\",\n    \"vitest\": \"^4.1.8\"\n  }\n}\n"
+  },
+  "fingerprints": {
+    "code": "4f9a21004fd04ac078bf956b599b68bba71334a5",
+    "release": "ce4b903c9dd9bac74f8003700253286c97b55dd39d4ad278333d2e28e8c1c16a",
+    "maintenance": "92df825f823e5a0c27febd4eb42684c53f1aa3740ae34127f9405f07812dc346"
+  },
+  "limitations": [
+    "默认分支快照不证明发布包或运行时行为。",
+    "发布接口最多采集 100 条，不声称完整发布历史。",
+    "文件树指纹包括文档和生成文件，判断有效工程量前须检查差异。"
+  ]
+}

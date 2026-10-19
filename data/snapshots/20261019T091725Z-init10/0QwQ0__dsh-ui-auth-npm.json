@@ -1,0 +1,139 @@
+{
+  "url": "https://registry.npmjs.org/dsh-ui-auth/latest",
+  "captured_at": "2026-10-19T09:24:53.809Z",
+  "http_status": 200,
+  "package": {
+    "dsh": {
+      "bundle": {
+        "patch": "./cordis.patch.yml"
+      },
+      "client": {
+        "platform": "web"
+      },
+      "compatibility": {
+        "dsh": ">=0.2.0-rc.2 <0.3.0",
+        "profiles": [
+          "web"
+        ],
+        "dshReleases": {
+          "0.2.0-rc.1": "compatible",
+          "0.2.0-rc.2": "compatible"
+        }
+      }
+    },
+    "bugs": {
+      "url": "https://github.com/0QwQ0/dsh-ui-auth/issues"
+    },
+    "dist": {
+      "shasum": "5fadeed4f95288784ff927521a31b3ac1b8ce1a2",
+      "tarball": "https://registry.npmjs.org/dsh-ui-auth/-/dsh-ui-auth-0.7.1.tgz",
+      "fileCount": 48,
+      "integrity": "sha512-oetUh+ZAWaAyPnf+FLe8byD35kKoqIXm/s89ABhPk4tKLqZtMg4Esk/mgvCCi21Uii3jx9XCmhSOPl2PPVowCA==",
+      "signatures": [
+        {
+          "sig": "MEUCIBB5nhtxuU3zm6rHBIIHzqdFpu9bSfzF8//Rd1Bto7oSAiEAhdpRmkGPgSRCF8dsXhEg7GBTvrYSQoQob0cbFqyMg6g=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEYCIQCVuWxpl1qEMB5bhQ6HQQL/CkwMXwwF0dhHwjXktrXGtgIhAI2cpBeAnVXvBtqH0CiUbWwxgmU3pYLq6TfJbJZ5dvHq",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/dsh-ui-auth@0.7.1",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 1445816
+    },
+    "main": "./lib/index.js",
+    "name": "dsh-ui-auth",
+    "type": "module",
+    "engines": {
+      "node": "^22.19.0 || >=24.0.0"
+    },
+    "exports": {
+      ".": "./lib/index.js",
+      "./client": "./lib/client.js",
+      "./package.json": "./package.json"
+    },
+    "gitHead": "113a102975d0bc416e6dd35a6ff7b556dbe610e7",
+    "license": "MIT",
+    "scripts": {
+      "test": "npm run build && node --check lib/index.js && node --check lib/webauthn.js && node --check lib/client.js && node --check lib/passkey-browser.js && node --check lib/modern-gateway.js && node --check lib/modern-policy.js && node test/crypto-vectors.cjs && node test/totp-vectors.mjs && node test/client-smoke.cjs && node test/host-smoke.mjs && node test/login-page-check.mjs && node test/security-suite.mjs && node test/modern-policy.test.mjs && node test/profile-crypto.test.mjs && node test/profile-envelope.test.mjs && node test/profile-service.test.mjs && node test/user-routes.test.mjs && node test/profile-keys.test.mjs && node test/i18n.test.mjs",
+      "build": "tsc -p tsconfig.json && node build/client.mjs",
+      "assets": "node test/shot.mjs",
+      "prepack": "npm test",
+      "test:ui": "node test/live-ui-check.mjs",
+      "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json",
+      "test:pages": "node test/live-user-pages-check.mjs",
+      "docs:matrix": "node build/docs-matrix.mjs",
+      "store:check": "node test/store-contract-check.mjs",
+      "test:passkey": "node test/live-passkey-check.mjs",
+      "verify:clean": "npm run build && git diff --exit-code -- lib",
+      "test:mux:leak": "node test/live-mux-leak.mjs",
+      "test:i18n:live": "node test/live-i18n-check.mjs",
+      "test:compat:0.1.5": "node test/live-015-check.mjs",
+      "test:compat:0.2.0": "node test/live-020-check.mjs",
+      "test:compat:matrix": "node test/live-compat-matrix.mjs"
+    },
+    "_npmUser": {
+      "name": "GitHub Actions",
+      "email": "npm-oidc-no-reply@github.com",
+      "trustedPublisher": {
+        "id": "github",
+        "oidcConfigId": "33471af9-9896-4a3a-9d91-a8293c2070d6"
+      }
+    },
+    "homepage": "https://github.com/0QwQ0/dsh-ui-auth#readme",
+    "keywords": [
+      "deepseek-harness",
+      "dsh",
+      "dsh-plugin",
+      "auth",
+      "authentication",
+      "login",
+      "passkey",
+      "webauthn",
+      "two-factor"
+    ],
+    "repository": {
+      "url": "git+https://github.com/0QwQ0/dsh-ui-auth.git",
+      "type": "git"
+    },
+    "_npmVersion": "12.2.0",
+    "description": "DSH Web UI 认证网关：登录保护全部 HTTP/WS 接口；用户管理、邀请码注册、TOTP 两步验证与通行密钥（Passkey/WebAuthn）登录。",
+    "directories": {},
+    "maintainers": [
+      {
+        "name": "chocolax",
+        "email": "hackergaocn@outlook.com"
+      }
+    ],
+    "_nodeVersion": "24.21.0",
+    "dependencies": {
+      "ws": "^8.21.0",
+      "qrcode": "^1.5.4",
+      "@simplewebauthn/server": "^14.0.2"
+    },
+    "_hasShrinkwrap": false,
+    "devDependencies": {
+      "esbuild": "^0.28.2",
+      "@types/ws": "^8.18.1",
+      "puppeteer": "^25.9.0",
+      "typescript": "^7.0.2",
+      "@types/node": "^26.5.1",
+      "@simplewebauthn/browser": "^14.0.0"
+    },
+    "peerDependencies": {
+      "@deepseek-ai/cordis": "^4.0.1"
+    },
+    "_npmOperationalInternal": {
+      "tmp": "tmp/dsh-ui-auth_0.7.1_1792161994339_0.6900719727351536",
+      "host": "s3://npm-registry-packages-npm-production"
+    },
+    "_id": "dsh-ui-auth@0.7.1",
+    "version": "0.7.1"
+  }
+}

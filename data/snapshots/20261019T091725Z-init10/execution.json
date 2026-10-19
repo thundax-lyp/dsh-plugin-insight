@@ -1,0 +1,33 @@
+{
+  "run_id": "20261019T091725Z-init10",
+  "checked_at": "2026-10-19T09:32:55.463030+00:00",
+  "research_limit": 10,
+  "listed_components": 6966,
+  "selected": 10,
+  "complete": 10,
+  "blocked": 0,
+  "deferred": 6956,
+  "checks": [
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "tests": 52,
+      "passed": 52,
+      "scope": "research repository schemas, checkpoints, publication consistency and behavior tests; not target plugin runtime"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "target_plugin_execution": false,
+  "target_plugin_installation": false,
+  "committed": false,
+  "pushed": false,
+  "limitations": [
+    "319 unresolved candidate references are retained outside the identity-verified session.",
+    "No target plugin runtime, model workflow or host acceptance was performed.",
+    "Issue recovery uses complete per-repository GraphQL node lists; initial failures are preserved.",
+    "Daily metadata refresh now respects selected_ids and does not query 6956 deferred candidates."
+  ]
+}

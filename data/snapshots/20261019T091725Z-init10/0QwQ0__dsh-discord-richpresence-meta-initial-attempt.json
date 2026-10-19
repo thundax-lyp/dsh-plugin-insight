@@ -1,0 +1,42 @@
+{
+  "repository": "0QwQ0/dsh-discord-richpresence",
+  "repository_id": 1342915339,
+  "captured_at": "2026-10-19T09:21:39.203Z",
+  "window_start": "2026-09-19T09:21:39.203Z",
+  "stars": 2,
+  "pushed_at": "2026-09-19T14:05:45Z",
+  "issues": {
+    "open": 0,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A0QwQ0%2Fdsh-discord-richpresence%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1FF6:15D61A:6DFDF:7566A:6AD5E126 and timestamp 2026-10-19 09:21:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0QwQ0%2Fdsh-discord-richpresence%20is%3Aissue%20created%3A2026-09-19T09%3A21%3A39.203Z..2026-10-19T09%3A21%3A39.203Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2202:15FFDA:5CB7E:63F55:6AD5E129 and timestamp 2026-10-19 09:21:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0QwQ0%2Fdsh-discord-richpresence%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T09%3A21%3A39.203Z..2026-10-19T09%3A21%3A39.203Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 22EE:161F05:69683:70D37:6AD5E12A and timestamp 2026-10-19 09:21:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0QwQ0%2Fdsh-discord-richpresence%20is%3Aissue%20updated%3A2026-09-19T09%3A21%3A39.203Z..2026-10-19T09%3A21%3A39.203Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 23E8:33C580:71258:78877:6AD5E12B and timestamp 2026-10-19 09:21:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-discord-richpresence",
+    "captured_at": "2026-10-19T09:21:48.028Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-discord-richpresence",
+    "error": "HTTP 404"
+  }
+}

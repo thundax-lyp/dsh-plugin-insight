@@ -1,0 +1,21 @@
+{
+  "repository": "01men/ybkkasi",
+  "repository_id": null,
+  "captured_at": "2026-10-19T09:21:28.298Z",
+  "window_start": "2026-09-19T09:21:28.298Z",
+  "stars": null,
+  "pushed_at": null,
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "01men/ybkkasi",
+      "message": "GitHub request failed for repos/01men/ybkkasi: Get \"https://api.github.com/repos/01men/ybkkasi\": net/http: TLS handshake timeout"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "run_id": "20261019T091725Z-init10-1333368566",
+  "checked_at": "2026-10-19T09:30:11.108Z",
+  "plugins": [
+    {
+      "id": "github:1333368566:root",
+      "repository_id": 1333368566,
+      "component_id": "root",
+      "repository": "030611/dsh-telemetry-redactor",
+      "path": "",
+      "aliases": [],
+      "name": "DSH Telemetry Redactor",
+      "entry_type": "plugin",
+      "technical_category": "security-governance",
+      "business_category": "infrastructure",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "0c617d1e74524e0bab65cace438a0a69129bed38786dc4c68f25ed63d6fc8bd8",
+        "code": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa",
+        "release": "fae03e4c9f4ea1c1eaba164c4dccfd1248b3b97b312675faec3f99cedf38abd7",
+        "maintenance": "7015fa5f0c893e440a45edf89d0bef9b040afb1f89703f3aae0d0094071b9c11",
+        "compatibility": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+      },
+      "sources": [
+        {
+          "id": "github:1333368566:root:20261019T091725Z-init10-1333368566:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:11.108Z",
+          "membership": "present"
+        },
+        {
+          "id": "github:1333368566:root:20261019T091725Z-init10-1333368566:directory-1",
+          "url": "https://github.com/0xsline/awesome-deepseek-harness",
+          "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+          "retrieved_at": "2026-10-19T09:30:11.108Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1333368566:root:20261019T091725Z-init10-1333368566:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/src/index.ts",
+          "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+          "captured_at": "2026-10-19T09:30:11.108Z",
+          "summary": "src/index.ts 通过 prepend 的 session-telemetry/record waterfall 对 next() 的结果递归复制脱敏。keyWords 拆分键名并保留 token counters；深度上限64，对循环和访问器拒绝。插件本身不启用后端，也不向模型增加提示。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/030611__dsh-telemetry-redactor-source.json"
+        },
+        {
+          "id": "github:1333368566:root:20261019T091725Z-init10-1333368566:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/dsh-telemetry-redactor/tree/811b0b1abf424e57045ab5a5eaa203660ca43908",
+          "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+          "captured_at": "2026-10-19T09:30:11.108Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/030611__dsh-telemetry-redactor-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "运维希望保留可观测性又降低遥测后端收到凭证的概率。合格结果是支持的假密钥在导出副本被替换、计量字段保留且原始记录不变；基线是不开遥测或后端事后清洗。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "src/index.ts 通过 prepend 的 session-telemetry/record waterfall 对 next() 的结果递归复制脱敏。keyWords 拆分键名并保留 token counters；深度上限64，对循环和访问器拒绝。插件本身不启用后端，也不向模型增加提示。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "过滤规则和监听器顺序都有边界，原始日志仍含原值；它不能作为全面数据防泄漏证明。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "已读取 npm latest 0.1.0；源码 package.json 为 0.1.0。版本号一致仍不证明 tarball 内容一致。未安装、未比对发布包字节。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "不新增模型调用；每条副本同步遍历，成本随内容大小增长。首次成本是规则矩阵与出口盘点，持续成本是格式变化、监听顺序与性能回归；不在本轮编造吞吐或延迟。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "适合已有遥测导出的部署先做合成凭证试用，同时检查完整监听链和本地日志权限。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333368566:root:20261019T091725Z-init10-1333368566:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "code",
+              "fingerprint": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa"
+            },
+            {
+              "plugin_id": "github:1333368566:root",
+              "area": "compatibility",
+              "fingerprint": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.108Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:11.108Z"
+    }
+  ],
+  "errors": []
+}

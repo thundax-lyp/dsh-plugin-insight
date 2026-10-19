@@ -282,7 +282,7 @@ GitHub 与 npm 的独立时间保留在数据中，README与分类页顶部显�
 
 ## 每日 META 刷新
 
-`npm run refresh:meta` 读取发布输入指向的会话列表，逐个按仓库地址采集 GitHub META，
+`npm run refresh:meta` 读取发布输入指向的会话所选列表，逐个按仓库地址采集 GitHub META；未选候选不触发采集，
 只使用前轮已确认的 npm 包名更新下载量，保存新快照并重生成 README／分类页及相对时间。
 没有已确认包名时跳过 npm，不能猜测；自动任务不做列表发现、单插件研究或目标代码执行。
 

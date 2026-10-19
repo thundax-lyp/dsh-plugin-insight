@@ -1,0 +1,178 @@
+{
+  "captured_at": "2026-10-19T09:19:35.578Z",
+  "repository_id": 1334899834,
+  "repository": "02Muller25/dsh-api-balance",
+  "commit": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+  "metadata": {
+    "id": 1334899834,
+    "full_name": "02Muller25/dsh-api-balance",
+    "description": "安装在deepseek的插件，能够实时显示当前api的余额，30秒自动刷新一次",
+    "default_branch": "main",
+    "archived": false,
+    "disabled": false,
+    "created_at": "2026-08-15T07:53:22Z",
+    "pushed_at": "2026-08-15T08:21:59Z",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "topics": [
+      "dsh-plugin"
+    ],
+    "html_url": "https://github.com/02Muller25/dsh-api-balance"
+  },
+  "tree": {
+    "sha": "4c5ea2913dc424014931c4da214e1f813ba9cf40",
+    "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/trees/4c5ea2913dc424014931c4da214e1f813ba9cf40",
+    "tree": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "552f22184f212d5dc7566f5dcaf6ac9ccb2a98d5",
+        "size": 20,
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/blobs/552f22184f212d5dc7566f5dcaf6ac9ccb2a98d5"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c85e7b991622bfe60c83e968d87fe74c0638e2d1",
+        "size": 1067,
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/blobs/c85e7b991622bfe60c83e968d87fe74c0638e2d1"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "019885b6e7660393a81dcb3764b4846a86688dc9",
+        "size": 4204,
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/blobs/019885b6e7660393a81dcb3764b4846a86688dc9"
+      },
+      {
+        "path": "cordis.patch.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "676745ed162b90d15b91c0bf0c895d24ba9455ab",
+        "size": 206,
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/blobs/676745ed162b90d15b91c0bf0c895d24ba9455ab"
+      },
+      {
+        "path": "docs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e5d4d191783586f0d6a80e18ffd2239eb51293ef",
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/trees/e5d4d191783586f0d6a80e18ffd2239eb51293ef"
+      },
+      {
+        "path": "docs/screenshot.svg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "310cf01540e4e379eff9ab850b1708063045ee02",
+        "size": 1753,
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/blobs/310cf01540e4e379eff9ab850b1708063045ee02"
+      },
+      {
+        "path": "lib",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e8b3f0a9877ac168e9cd0dd45a1874877ced2d8e",
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/trees/e8b3f0a9877ac168e9cd0dd45a1874877ced2d8e"
+      },
+      {
+        "path": "lib/client.d.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "faeb3cbc30e7a50ffda27b31db7bffbfe80ea41a",
+        "size": 90,
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/blobs/faeb3cbc30e7a50ffda27b31db7bffbfe80ea41a"
+      },
+      {
+        "path": "lib/client.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c41fdc86213d329d799923e7d7ff07f906591f4b",
+        "size": 12401,
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/blobs/c41fdc86213d329d799923e7d7ff07f906591f4b"
+      },
+      {
+        "path": "lib/index.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bb10504bd994ccd114a11fbf197f47e6ba551cf7",
+        "size": 3520,
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/blobs/bb10504bd994ccd114a11fbf197f47e6ba551cf7"
+      },
+      {
+        "path": "package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0d090c6985d44da35b5e630811799b3686a07812",
+        "size": 751,
+        "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/git/blobs/0d090c6985d44da35b5e630811799b3686a07812"
+      }
+    ],
+    "truncated": false
+  },
+  "releases": [
+    {
+      "url": "https://api.github.com/repos/02Muller25/dsh-api-balance/releases/370996646",
+      "assets_url": "https://api.github.com/repos/02Muller25/dsh-api-balance/releases/370996646/assets",
+      "upload_url": "https://uploads.github.com/repos/02Muller25/dsh-api-balance/releases/370996646/assets{?name,label}",
+      "html_url": "https://github.com/02Muller25/dsh-api-balance/releases/tag/v0.2.1",
+      "id": 370996646,
+      "author": {
+        "login": "02Muller25",
+        "id": 293023674,
+        "node_id": "U_kgDOEXcvug",
+        "avatar_url": "https://avatars.githubusercontent.com/u/293023674?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/02Muller25",
+        "html_url": "https://github.com/02Muller25",
+        "followers_url": "https://api.github.com/users/02Muller25/followers",
+        "following_url": "https://api.github.com/users/02Muller25/following{/other_user}",
+        "gists_url": "https://api.github.com/users/02Muller25/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/02Muller25/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/02Muller25/subscriptions",
+        "organizations_url": "https://api.github.com/users/02Muller25/orgs",
+        "repos_url": "https://api.github.com/users/02Muller25/repos",
+        "events_url": "https://api.github.com/users/02Muller25/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/02Muller25/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOT5D0es4WHPWm",
+      "tag_name": "v0.2.1",
+      "target_commitish": "main",
+      "name": "v0.2.1 — DeepSeek Harness 插件：API 余额实时显示（手动 / 自定义刷新）",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-08-15T08:13:31Z",
+      "updated_at": "2026-08-15T08:20:12Z",
+      "published_at": "2026-08-15T08:17:07Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/02Muller25/dsh-api-balance/tarball/v0.2.1",
+      "zipball_url": "https://api.github.com/repos/02Muller25/dsh-api-balance/zipball/v0.2.1",
+      "body": "# v0.2.1 — DeepSeek Harness 插件：API 余额实时显示（手动 / 自定义刷新）\n\n## ✨ 新功能\n- 刷新模式可选：手动刷新 / 每 10 秒 / 每 30 秒 / 每 1 分钟 / 每 5 分钟 / 自定义间隔（5–3600 秒）\n- 选择「自定义…」弹出输入窗口，明确显示允许范围 5–3600 秒；越界或非数字时显示错误提示，「确定」按钮自动禁用；回车确认，Esc 或点击遮罩取消\n- 手动模式下点击「刷新」按钮即时刷新；自定义间隔确认后即时生效\n- 偏好通过 localStorage 持久化，刷新页面后仍保留\n\n## 📦 其他\n- 首次引入 MIT 许可证与效果示意图\n- README 补充使用、自定义与更新日志说明\n\n## 📥 安装\n见仓库 README：`insert` 补丁条目 + 包放置 + 重启 dsh web 服务。"
+    }
+  ],
+  "files": {
+    "README.md": "# api-balance\n\n实时显示 DeepSeek API 账户余额的 DeepSeek Harness（dsh web）插件。\nReal-time DeepSeek API account balance readout for the DeepSeek Harness web GUI.\n\n在会话输入框下方的读数带（`conversation.composer.dock`）显示：\n\n```\nAPI 余额 CNY 18.22 · 可用 · 14:32:05 更新\n```\n\n![效果示意图](docs/screenshot.svg)\n\n- 每 30 秒自动刷新（挂载时立即查询一次）\n- **刷新模式可选**：手动刷新 / 每 10 秒 / 每 30 秒 / 每 1 分钟 / 每 5 分钟 / 自定义间隔；选择「自定义…」会弹出输入窗口（范围 **5–3600 秒**，含校验与错误提示），偏好保存在浏览器 localStorage，刷新页面后仍保留\n- 手动模式下点击「刷新」按钮即时刷新；自定义间隔确认后即时生效\n- 刷新失败时保留上次数据并显示黄色「刷新失败」，悬停可见具体原因，下一次自动轮询自动恢复\n- 余额不可用时显示红色「不可用」\n- API 密钥通过 dsh 的 credentials 服务按需解析（`DEEPSEEK_API_KEY`），**不出宿主进程**\n\n## 架构\n\n| 文件 | 平台 | 作用 |\n| --- | --- | --- |\n| `lib/index.js` | Host | 注册精确路由 `GET /api/abal-balance`；每次请求实时解析凭证并 curl `https://api.deepseek.com/user/balance` |\n| `lib/client.js` | Client (web) | 手工编写的 `window.__ModuleLoader__.load` 格式 bundle（dsh web 的标准客户端包格式，无需构建管线）；在输入框读数带渲染余额，每 30s `fetch` 刷新 |\n| `lib/client.d.ts` | — | 客户端类型占位 |\n\n依赖的宿主服务：`webServer`、`credentials`、`shell`、`sandboxPolicy`（均为 dsh 标准服务）。\n客户端侧仅依赖 `react`（种子模块）与 `slots` 服务。\n\n> 说明：curl 调用以 `danger-full-access` 策略运行 —— 它是只读网络请求、无文件副作用，绕过平台沙箱 runner 是刻意的（在 Windows ACL 受限令牌下该请求已验证会失败）。\n\n## 安装（在目标 dsh web 部署上）\n\n本仓库声明了 `dsh.bundle` manifest，可直接用 GitHub 依赖安装（推荐）：\n\n```bash\ndsh plugin --profile web add github:02Muller25/dsh-api-balance\n```\n\n或手动放置：\n\n1. 将本包放入 profile 的 node_modules：`$DSH_HOME/profiles/node_modules/api-balance/`（完整目录，含 `package.json`、`cordis.patch.yml` 与 `lib/`）。\n2. 在 profile 的 `cordis.patch.yml` 追加（**必须是 `insert` 块** —— 补丁语义只允许新增行，普通条目只能覆盖已有行；仓库根目录已附一份可直接参考）：\n\n```yaml\n- insert:\n    - id: api-balance\n      name: 'api-balance'\n```\n\n3. 重启 dsh web 服务（组合只在启动时读取）。\n\n## 启用 / 禁用 / 卸载\n\n- 禁用：补丁条目加 `disabled: true`，重启\n- 卸载：删除补丁条目 + 删除 `profiles/node_modules/api-balance/`，重启\n- 设置 → 插件市场中的列表是只读的（对官方插件同样如此），启停均通过补丁 + 重启完成\n\n## 自定义\n\n- 刷新模式与间隔：读数带右侧的下拉框（手动 / 10s / 30s / 1min / 5min / 自定义…），「自定义…」弹出输入窗口，范围 5–3600 秒；偏好持久化在 `localStorage`（键 `dsh.api-balance.refresh`）\n- 读取的凭证：`lib/index.js` 中 `credentials.resolve('DEEPSEEK_API_KEY')`\n- 余额接口：`lib/index.js` 中 `BALANCE_URL`\n\n## 已知限制\n\n- 若对 profile 执行 `pnpm install`，手动放入 `node_modules` 的包可能被清理，需重新放置或改为正式依赖安装。\n\n## 更新日志\n\n### v0.2.1 — DeepSeek Harness 插件：API 余额实时显示（手动 / 自定义刷新）\n\n- 刷新模式可选：手动 / 每 10 秒 / 每 30 秒 / 每 1 分钟 / 每 5 分钟 / 自定义间隔（5–3600 秒）\n- 「自定义…」弹出输入窗口，显示范围并校验（越界/非数字禁用确定，回车确认，Esc/遮罩取消）\n- 偏好持久化在 `localStorage`；手动模式点击「刷新」即时刷新\n\n### v0.2.0\n\n- 首次引入刷新模式控制与 MIT 许可证、效果示意图\n\n### v0.1.0\n\n- 首个版本：实时显示 DeepSeek API 余额（每 30 秒固定刷新）\n\n## 许可证\n\n[MIT](LICENSE) © 2026 02Muller25\n",
+    "package.json": "{\n  \"name\": \"api-balance\",\n  \"version\": \"0.2.1\",\n  \"description\": \"Real-time DeepSeek API account balance readout for the DeepSeek Harness web GUI (dsh web).\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": {\n      \"types\": \"./lib/client.d.ts\",\n      \"default\": \"./lib/client.js\"\n    },\n    \"./package.json\": \"./package.json\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-ui-slots\"\n      ]\n    }\n  },\n  \"keywords\": [\n    \"dsh\",\n    \"deepseek\",\n    \"harness\",\n    \"plugin\",\n    \"balance\"\n  ],\n  \"license\": \"MIT\",\n  \"engines\": {\n    \"node\": \">=20\"\n  }\n}\n"
+  },
+  "fingerprints": {
+    "code": "4c5ea2913dc424014931c4da214e1f813ba9cf40",
+    "release": "802143a5a3e64c43aa1a4c431907cb2d2d46b15d91eca2a7e17f3a23054db658",
+    "maintenance": "a340c46603493d3b61e8a56966b22b7f56ce6c5a4d8b00d101f0ea6e687b06c2"
+  },
+  "limitations": [
+    "默认分支快照不证明发布包或运行时行为。",
+    "发布接口最多采集 100 条，不声称完整发布历史。",
+    "文件树指纹包括文档和生成文件，判断有效工程量前须检查差异。"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "repository": "030611/dsh-verification-receipt",
+  "repository_id": 1333370288,
+  "captured_at": "2026-10-19T09:21:35.499Z",
+  "window_start": "2026-09-19T09:21:35.499Z",
+  "stars": 4,
+  "pushed_at": "2026-09-03T16:29:04Z",
+  "issues": {
+    "open": 2,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20updated%3A2026-09-19T09%3A21%3A35.499Z..2026-10-19T09%3A21%3A35.499Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2114:163D52:58EDC:6028C:6AD5E128 and timestamp 2026-10-19 09:21:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-verification-receipt",
+    "captured_at": "2026-10-19T09:21:44.516Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 873,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-verification-receipt",
+    "error": null
+  }
+}

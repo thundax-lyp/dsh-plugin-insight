@@ -1,0 +1,814 @@
+{
+  "data": {
+    "r0": {
+      "databaseId": 1339316901,
+      "nameWithOwner": "00080000/dsh-project-memory",
+      "stargazerCount": 23,
+      "pushedAt": "2026-10-17T10:40:32Z",
+      "issues": {
+        "totalCount": 4,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": [
+          {
+            "number": 7,
+            "title": "Client half never loads on dsh 0.2.0-rc.2 — top-level inject still names remote / remote.commands, so apply() is never called (no panel, no / menu group, no error)",
+            "url": "https://github.com/00080000/dsh-project-memory/issues/7",
+            "createdAt": "2026-10-07T07:34:31Z",
+            "closedAt": "2026-10-07T08:01:01Z",
+            "updatedAt": "2026-10-07T10:33:14Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "chn677"
+            }
+          },
+          {
+            "number": 5,
+            "title": "这个插件会导致OOM，把DSH撑死",
+            "url": "https://github.com/00080000/dsh-project-memory/issues/5",
+            "createdAt": "2026-09-24T03:05:35Z",
+            "closedAt": "2026-09-26T16:31:51Z",
+            "updatedAt": "2026-09-26T16:31:51Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "jinchaofeiyang"
+            }
+          },
+          {
+            "number": 3,
+            "title": "Cannot compress the context window.",
+            "url": "https://github.com/00080000/dsh-project-memory/issues/3",
+            "createdAt": "2026-08-29T09:40:21Z",
+            "closedAt": "2026-08-29T09:44:18Z",
+            "updatedAt": "2026-08-29T09:44:18Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "Smalldream233"
+            }
+          },
+          {
+            "number": 1,
+            "title": "rc8安装失败",
+            "url": "https://github.com/00080000/dsh-project-memory/issues/1",
+            "createdAt": "2026-08-20T15:59:22Z",
+            "closedAt": "2026-08-21T07:54:35Z",
+            "updatedAt": "2026-08-21T07:54:35Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "lfglfg11"
+            }
+          }
+        ]
+      }
+    },
+    "r1": {
+      "databaseId": 1333328839,
+      "nameWithOwner": "01Virex/dsh-status-rotator",
+      "stargazerCount": 162,
+      "pushedAt": "2026-10-19T08:52:36Z",
+      "issues": {
+        "totalCount": 43,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": [
+          {
+            "number": 154,
+            "title": "词库投稿: 正在变得Q弹…",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/154",
+            "createdAt": "2026-10-18T12:50:18Z",
+            "closedAt": "2026-10-18T15:07:01Z",
+            "updatedAt": "2026-10-18T15:07:01Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "IThinkItsaName"
+            }
+          },
+          {
+            "number": 151,
+            "title": "关于提交新文案",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/151",
+            "createdAt": "2026-10-16T11:26:42Z",
+            "closedAt": "2026-10-17T09:31:07Z",
+            "updatedAt": "2026-10-17T09:31:07Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "IThinkItsaName"
+            }
+          },
+          {
+            "number": 149,
+            "title": "词库投稿: 正在清理藤壶",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/149",
+            "createdAt": "2026-10-16T11:19:44Z",
+            "closedAt": "2026-10-16T14:17:32Z",
+            "updatedAt": "2026-10-16T14:17:32Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "IThinkItsaName"
+            }
+          },
+          {
+            "number": 144,
+            "title": "[Bug] 「文案」编辑框自动落点会选到未启用的词库包：打字确实写盘成功，但状态栏永远不显示（0.35.1）",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/144",
+            "createdAt": "2026-10-14T04:49:35Z",
+            "closedAt": "2026-10-15T14:52:47Z",
+            "updatedAt": "2026-10-15T14:56:57Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "qaz2325698718-dot"
+            }
+          },
+          {
+            "number": 146,
+            "title": "设置开关不持久",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/146",
+            "createdAt": "2026-10-15T09:09:40Z",
+            "closedAt": null,
+            "updatedAt": "2026-10-15T11:06:18Z",
+            "state": "OPEN",
+            "author": {
+              "login": "cxxy161"
+            }
+          },
+          {
+            "number": 141,
+            "title": "和 dsh-claude-style 的等待行打架：状态行被它的 CSS 隐藏了",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/141",
+            "createdAt": "2026-10-11T16:56:54Z",
+            "closedAt": "2026-10-13T14:52:43Z",
+            "updatedAt": "2026-10-13T14:52:43Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "PerseusNana7mi"
+            }
+          },
+          {
+            "number": 131,
+            "title": "外观设置：字号设为 0（跟随宿主）后每次都被自动改写成 8",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/131",
+            "createdAt": "2026-10-02T13:36:23Z",
+            "closedAt": "2026-10-02T16:17:51Z",
+            "updatedAt": "2026-10-02T16:17:51Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "Ztyss"
+            }
+          },
+          {
+            "number": 129,
+            "title": "appearance.fontSize: 0(跟随宿主)被服务端夹成 8,设置页保存后回退",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/129",
+            "createdAt": "2026-10-02T08:04:32Z",
+            "closedAt": "2026-10-02T16:17:43Z",
+            "updatedAt": "2026-10-02T16:17:43Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "yanzhaohui1999"
+            }
+          },
+          {
+            "number": 124,
+            "title": "建议上传至Dsh-Market",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/124",
+            "createdAt": "2026-10-01T05:32:43Z",
+            "closedAt": "2026-10-01T12:45:16Z",
+            "updatedAt": "2026-10-01T13:42:42Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "Mrmiaomrzh"
+            }
+          },
+          {
+            "number": 122,
+            "title": "词库投稿: 正在演奏春日影",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/122",
+            "createdAt": "2026-10-01T02:58:10Z",
+            "closedAt": "2026-10-01T04:45:15Z",
+            "updatedAt": "2026-10-01T04:45:15Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "phdetector"
+            }
+          },
+          {
+            "number": 102,
+            "title": "词库投稿: 正在让提示词变得硬邦邦",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/102",
+            "createdAt": "2026-09-28T16:07:49Z",
+            "closedAt": "2026-09-28T16:45:50Z",
+            "updatedAt": "2026-09-28T16:45:50Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "3418244301q-star"
+            }
+          },
+          {
+            "number": 96,
+            "title": "[Bug] 设置页「接管标签页标题」打开后不落盘：自动落盘 effect 的签名与依赖漏了 titleDraft（0.27.0 新增设置组永不自动保存）",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/96",
+            "createdAt": "2026-09-27T13:06:02Z",
+            "closedAt": "2026-09-28T11:54:26Z",
+            "updatedAt": "2026-09-28T11:54:26Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "Ztyss"
+            }
+          },
+          {
+            "number": 97,
+            "title": "词库投稿: 正在与360对掏",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/97",
+            "createdAt": "2026-09-27T13:48:02Z",
+            "closedAt": "2026-09-28T04:48:49Z",
+            "updatedAt": "2026-09-28T04:48:49Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "IThinkItsaName"
+            }
+          },
+          {
+            "number": 94,
+            "title": "[Bug] <style> 未打 data-plugin，会被别的插件认领后删除（设置页失去样式）",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/94",
+            "createdAt": "2026-09-26T11:48:18Z",
+            "closedAt": "2026-09-26T13:24:27Z",
+            "updatedAt": "2026-09-26T13:24:27Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "IThinkItsaName"
+            }
+          },
+          {
+            "number": 92,
+            "title": "[Bug] 0.27.2 一次设置页保存会把外部词库的内容当成用户改动写进存储，README 承诺的「删掉词库条目即可回到设置页管理」因此失效",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/92",
+            "createdAt": "2026-09-25T17:06:40Z",
+            "closedAt": "2026-09-26T07:29:11Z",
+            "updatedAt": "2026-09-26T07:29:11Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "mulinyang041"
+            }
+          },
+          {
+            "number": 51,
+            "title": "【bug】为啥每次更新都会重置我设置的",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/51",
+            "createdAt": "2026-09-21T06:05:55Z",
+            "closedAt": "2026-09-25T12:09:13Z",
+            "updatedAt": "2026-09-25T17:28:55Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "xiaijiangxue"
+            }
+          },
+          {
+            "number": 87,
+            "title": "内存泄漏:turnLabels Map 只增不减(回合释放 / 插件卸载都漏了清理)",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/87",
+            "createdAt": "2026-09-25T14:42:16Z",
+            "closedAt": "2026-09-25T15:24:51Z",
+            "updatedAt": "2026-09-25T15:58:09Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "yihefeikong-rgb"
+            }
+          },
+          {
+            "number": 79,
+            "title": "词库投稿: 正在试图打开飞行模式；",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/79",
+            "createdAt": "2026-09-25T14:00:16Z",
+            "closedAt": "2026-09-25T14:08:10Z",
+            "updatedAt": "2026-09-25T14:08:28Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "segujushi-lang"
+            }
+          },
+          {
+            "number": 74,
+            "title": "词库投稿: 走，走，走，写入，让我开始，走，走……",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/74",
+            "createdAt": "2026-09-25T13:28:52Z",
+            "closedAt": "2026-09-25T14:01:57Z",
+            "updatedAt": "2026-09-25T14:01:57Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "Clmzz-gra"
+            }
+          },
+          {
+            "number": 76,
+            "title": "词库投稿: 这里需要用户的权限，我先来看看能不能绕过...",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/76",
+            "createdAt": "2026-09-25T13:36:58Z",
+            "closedAt": "2026-09-25T14:00:32Z",
+            "updatedAt": "2026-09-25T14:00:32Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "Clmzz-gra"
+            }
+          },
+          {
+            "number": 72,
+            "title": "词库投稿: 正在向 Major 冠军发起冲击……",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/72",
+            "createdAt": "2026-09-25T13:27:17Z",
+            "closedAt": "2026-09-25T13:39:05Z",
+            "updatedAt": "2026-09-25T13:39:05Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "xialongxl"
+            }
+          },
+          {
+            "number": 60,
+            "title": "设置弹窗持续闪烁：弹幕层在全屏 backdrop-filter 遮罩后面（dsh 0.1.5-rc.3 + Edge 153）",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/60",
+            "createdAt": "2026-09-24T00:49:30Z",
+            "closedAt": "2026-09-24T05:43:26Z",
+            "updatedAt": "2026-09-24T05:43:26Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "Shutiao114514"
+            }
+          },
+          {
+            "number": 56,
+            "title": "词库投稿: 正在中华有为...",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/56",
+            "createdAt": "2026-09-22T06:17:57Z",
+            "closedAt": "2026-09-22T10:21:46Z",
+            "updatedAt": "2026-09-22T10:21:46Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "dengziqi233"
+            }
+          },
+          {
+            "number": 45,
+            "title": "词库投稿: 正在偷看唐÷的备份仓库",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/45",
+            "createdAt": "2026-09-21T05:31:27Z",
+            "closedAt": "2026-09-21T12:00:29Z",
+            "updatedAt": "2026-09-21T12:00:29Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "SQMY-dor"
+            }
+          },
+          {
+            "number": 47,
+            "title": "词库投稿: 正在从oos中还原数据",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/47",
+            "createdAt": "2026-09-21T05:31:54Z",
+            "closedAt": "2026-09-21T11:59:31Z",
+            "updatedAt": "2026-09-21T11:59:31Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "SQMY-dor"
+            }
+          },
+          {
+            "number": 43,
+            "title": "词库投稿: 正在把commits删的只剩两条",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/43",
+            "createdAt": "2026-09-21T05:21:39Z",
+            "closedAt": "2026-09-21T05:28:21Z",
+            "updatedAt": "2026-09-21T05:28:21Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "01Virex"
+            }
+          },
+          {
+            "number": 41,
+            "title": "显示调整",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/41",
+            "createdAt": "2026-09-20T11:13:42Z",
+            "closedAt": "2026-09-21T05:16:57Z",
+            "updatedAt": "2026-09-21T05:21:23Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "xiaijiangxue"
+            }
+          },
+          {
+            "number": 39,
+            "title": "显示优化",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/39",
+            "createdAt": "2026-09-19T14:44:57Z",
+            "closedAt": "2026-09-20T05:21:06Z",
+            "updatedAt": "2026-09-20T05:31:55Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "xiaijiangxue"
+            }
+          },
+          {
+            "number": 33,
+            "title": "词库投稿: 哦鲸鲸",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/33",
+            "createdAt": "2026-09-05T18:40:13Z",
+            "closedAt": "2026-09-06T07:08:17Z",
+            "updatedAt": "2026-09-06T07:08:17Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "xiaozi233"
+            }
+          },
+          {
+            "number": 31,
+            "title": "词库投稿: 正在制作裁决之时.....",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/31",
+            "createdAt": "2026-09-05T18:01:05Z",
+            "closedAt": "2026-09-05T18:01:59Z",
+            "updatedAt": "2026-09-05T18:01:59Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "IThinkItsaName"
+            }
+          },
+          {
+            "number": 29,
+            "title": "词库投稿: 正在使用三角裤定位",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/29",
+            "createdAt": "2026-09-05T17:50:59Z",
+            "closedAt": "2026-09-05T17:54:38Z",
+            "updatedAt": "2026-09-05T17:54:38Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "hu-1145"
+            }
+          },
+          {
+            "number": 21,
+            "title": "词库投稿: 新文案",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/21",
+            "createdAt": "2026-09-05T17:10:42Z",
+            "closedAt": "2026-09-05T17:35:24Z",
+            "updatedAt": "2026-09-05T17:35:24Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "dancha0fan"
+            }
+          },
+          {
+            "number": 27,
+            "title": "词库投稿: 正在陆游",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/27",
+            "createdAt": "2026-09-05T17:30:13Z",
+            "closedAt": "2026-09-05T17:34:46Z",
+            "updatedAt": "2026-09-05T17:34:47Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "laszapens"
+            }
+          },
+          {
+            "number": 22,
+            "title": "词库投稿: 正在自动上传 {provide} 密钥...",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/22",
+            "createdAt": "2026-09-05T17:16:36Z",
+            "closedAt": "2026-09-05T17:22:44Z",
+            "updatedAt": "2026-09-05T17:22:44Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "YunMeng-ink"
+            }
+          },
+          {
+            "number": 24,
+            "title": "词库投稿: 正在不紧不慢，不快不慢地{phaseLabel}",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/24",
+            "createdAt": "2026-09-05T17:18:04Z",
+            "closedAt": "2026-09-05T17:22:07Z",
+            "updatedAt": "2026-09-05T17:22:07Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "achenjins"
+            }
+          },
+          {
+            "number": 19,
+            "title": "词库投稿: 正在吃白饭中",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/19",
+            "createdAt": "2026-09-05T17:08:07Z",
+            "closedAt": "2026-09-05T17:08:23Z",
+            "updatedAt": "2026-09-05T17:08:26Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "dancha0fan"
+            }
+          },
+          {
+            "number": 17,
+            "title": "词库投稿: 正在和洛谷大战300回合",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/17",
+            "createdAt": "2026-09-05T17:03:17Z",
+            "closedAt": "2026-09-05T17:08:15Z",
+            "updatedAt": "2026-09-05T17:08:15Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "TanPowasd"
+            }
+          },
+          {
+            "number": 5,
+            "title": "Design partner: dsh-status-rotator lifecycle compatibility check",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/5",
+            "createdAt": "2026-08-18T03:54:18Z",
+            "closedAt": "2026-08-30T16:37:41Z",
+            "updatedAt": "2026-08-30T16:37:41Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "iiwish"
+            }
+          },
+          {
+            "number": 12,
+            "title": "支持字体字重调节",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/12",
+            "createdAt": "2026-08-30T08:28:53Z",
+            "closedAt": "2026-08-30T10:07:28Z",
+            "updatedAt": "2026-08-30T10:07:28Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "fplj-fplj"
+            }
+          },
+          {
+            "number": 10,
+            "title": "词库投稿: 正在issues区投稿新词库...",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/10",
+            "createdAt": "2026-08-30T05:45:55Z",
+            "closedAt": "2026-08-30T09:47:24Z",
+            "updatedAt": "2026-08-30T09:47:24Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "01Virex"
+            }
+          },
+          {
+            "number": 4,
+            "title": "List dsh-status-rotator on DSH Directory?",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/4",
+            "createdAt": "2026-08-17T11:16:05Z",
+            "closedAt": "2026-08-21T15:12:24Z",
+            "updatedAt": "2026-08-21T15:12:24Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "alexchenzl"
+            }
+          },
+          {
+            "number": 3,
+            "title": "已收录进 DeepSeek Honeys 抽象区（awesome-dshoneys）",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/3",
+            "createdAt": "2026-08-16T15:13:18Z",
+            "closedAt": "2026-08-21T15:12:20Z",
+            "updatedAt": "2026-08-21T15:12:21Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "shinjiyu"
+            }
+          },
+          {
+            "number": 6,
+            "title": "设置页缺少「关闭炫彩渐变」开关；升级插件会清空 config.json 导致设置丢失（桌面端无法用 localStorage）",
+            "url": "https://github.com/01Virex/dsh-status-rotator/issues/6",
+            "createdAt": "2026-08-21T11:07:12Z",
+            "closedAt": "2026-08-21T15:00:21Z",
+            "updatedAt": "2026-08-21T15:04:32Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "Ztyss"
+            }
+          }
+        ]
+      }
+    },
+    "r2": {
+      "databaseId": 1416699252,
+      "nameWithOwner": "01men/ybkkasi",
+      "stargazerCount": 0,
+      "pushedAt": "2026-10-19T07:33:40Z",
+      "issues": {
+        "totalCount": 0,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": []
+      }
+    },
+    "r3": {
+      "databaseId": 1334899834,
+      "nameWithOwner": "02Muller25/dsh-api-balance",
+      "stargazerCount": 12,
+      "pushedAt": "2026-08-15T08:21:59Z",
+      "issues": {
+        "totalCount": 1,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": [
+          {
+            "number": 1,
+            "title": "rc.6 下 entry 永远 pending(等待 webServer 服务)",
+            "url": "https://github.com/02Muller25/dsh-api-balance/issues/1",
+            "createdAt": "2026-08-17T12:16:39Z",
+            "closedAt": "2026-09-21T07:43:59Z",
+            "updatedAt": "2026-09-21T07:43:59Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "yangfei222666-9"
+            }
+          }
+        ]
+      }
+    },
+    "r4": {
+      "databaseId": 1333368566,
+      "nameWithOwner": "030611/dsh-telemetry-redactor",
+      "stargazerCount": 2,
+      "pushedAt": "2026-08-14T13:06:41Z",
+      "issues": {
+        "totalCount": 1,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": [
+          {
+            "number": 2,
+            "title": "List dsh-telemetry-redactor on DSH Directory?",
+            "url": "https://github.com/030611/dsh-telemetry-redactor/issues/2",
+            "createdAt": "2026-08-18T14:58:35Z",
+            "closedAt": null,
+            "updatedAt": "2026-08-18T14:58:35Z",
+            "state": "OPEN",
+            "author": {
+              "login": "alexchenzl"
+            }
+          }
+        ]
+      }
+    },
+    "r5": {
+      "databaseId": 1333370288,
+      "nameWithOwner": "030611/dsh-verification-receipt",
+      "stargazerCount": 4,
+      "pushedAt": "2026-09-03T16:29:04Z",
+      "issues": {
+        "totalCount": 2,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": [
+          {
+            "number": 3,
+            "title": "Published dsh-verification-receipt@0.1.0 runs pnpm build from prepare",
+            "url": "https://github.com/030611/dsh-verification-receipt/issues/3",
+            "createdAt": "2026-08-21T03:36:29Z",
+            "closedAt": null,
+            "updatedAt": "2026-08-21T03:36:29Z",
+            "state": "OPEN",
+            "author": {
+              "login": "MicroMilo"
+            }
+          },
+          {
+            "number": 2,
+            "title": "List dsh-verification-receipt on DSH Directory?",
+            "url": "https://github.com/030611/dsh-verification-receipt/issues/2",
+            "createdAt": "2026-08-18T14:49:09Z",
+            "closedAt": null,
+            "updatedAt": "2026-08-18T14:49:09Z",
+            "state": "OPEN",
+            "author": {
+              "login": "alexchenzl"
+            }
+          }
+        ]
+      }
+    },
+    "r6": {
+      "databaseId": 1333357514,
+      "nameWithOwner": "030611/qiushi-dsh-evidence-audit",
+      "stargazerCount": 3,
+      "pushedAt": "2026-08-14T13:08:45Z",
+      "issues": {
+        "totalCount": 1,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": [
+          {
+            "number": 1,
+            "title": "List qiushi-dsh-evidence-audit on DSH Directory?",
+            "url": "https://github.com/030611/qiushi-dsh-evidence-audit/issues/1",
+            "createdAt": "2026-08-18T14:49:15Z",
+            "closedAt": null,
+            "updatedAt": "2026-08-18T14:49:15Z",
+            "state": "OPEN",
+            "author": {
+              "login": "alexchenzl"
+            }
+          }
+        ]
+      }
+    },
+    "r7": {
+      "databaseId": 1342915339,
+      "nameWithOwner": "0QwQ0/dsh-discord-richpresence",
+      "stargazerCount": 2,
+      "pushedAt": "2026-09-19T14:05:45Z",
+      "issues": {
+        "totalCount": 0,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": []
+      }
+    },
+    "r8": {
+      "databaseId": 1343420855,
+      "nameWithOwner": "0QwQ0/dsh-ui-auth",
+      "stargazerCount": 8,
+      "pushedAt": "2026-10-16T15:32:26Z",
+      "issues": {
+        "totalCount": 3,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": [
+          {
+            "number": 3,
+            "title": "与 @xmanrui/dsh-im 不兼容：默认策略拒绝其非标管理 RPC 信封（连 admin 也被拒），IM 设置页报 management-unreachable",
+            "url": "https://github.com/0QwQ0/dsh-ui-auth/issues/3",
+            "createdAt": "2026-10-14T13:57:56Z",
+            "closedAt": "2026-10-16T12:17:56Z",
+            "updatedAt": "2026-10-16T15:19:40Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "HeathZero"
+            }
+          },
+          {
+            "number": 6,
+            "title": "数据隔离缺口：/api/remote.mux 直通宿主，普通用户能实时收到他人会话的 api-session/* 事件（刷新后消失）",
+            "url": "https://github.com/0QwQ0/dsh-ui-auth/issues/6",
+            "createdAt": "2026-10-16T06:16:44Z",
+            "closedAt": "2026-10-16T14:51:36Z",
+            "updatedAt": "2026-10-16T14:51:37Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "wweggplant"
+            }
+          },
+          {
+            "number": 2,
+            "title": "auth拦截导致任何审批（approval escalation）或提问（ask）卡片，用户点击\"允许/拒绝\"后无响应并反复弹出重连",
+            "url": "https://github.com/0QwQ0/dsh-ui-auth/issues/2",
+            "createdAt": "2026-10-14T13:47:19Z",
+            "closedAt": "2026-10-16T12:17:50Z",
+            "updatedAt": "2026-10-16T12:17:50Z",
+            "state": "CLOSED",
+            "author": {
+              "login": "HeathZero"
+            }
+          }
+        ]
+      }
+    },
+    "r9": {
+      "databaseId": 1339803365,
+      "nameWithOwner": "0imzero/dsh-workspace-menu",
+      "stargazerCount": 3,
+      "pushedAt": "2026-08-24T17:02:43Z",
+      "issues": {
+        "totalCount": 1,
+        "pageInfo": {
+          "hasNextPage": false
+        },
+        "nodes": [
+          {
+            "number": 1,
+            "title": "重命名弹窗输入框使用未定义主题变量 --dsw-alias-bg-input，浅色主题下为黑色",
+            "url": "https://github.com/0imzero/dsh-workspace-menu/issues/1",
+            "createdAt": "2026-08-24T02:04:55Z",
+            "closedAt": null,
+            "updatedAt": "2026-08-24T02:04:55Z",
+            "state": "OPEN",
+            "author": {
+              "login": "goldenvolcano886-boop"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

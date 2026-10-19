@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+  "component": "",
+  "coverage": "git tracked files at exact commit; component scope only",
+  "omitted_non_regular": [],
+  "tools": {
+    "loc": {
+      "name": "sloc",
+      "version": "0.3.2",
+      "command": "node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>"
+    },
+    "parser": {
+      "name": "typescript",
+      "version": "5.9.3"
+    }
+  },
+  "content_digest": "0ff9836dc1caf0da43a4c709aad548310ffb67514ccaba9e4bd3db451095a170",
+  "groups": [
+    {
+      "extension": ".md",
+      "role": "source",
+      "files": 4,
+      "lines": 518,
+      "words": 4632
+    },
+    {
+      "extension": ".js",
+      "role": "source",
+      "files": 3,
+      "lines": 1305,
+      "code": 940,
+      "comments": 270,
+      "blank": 99
+    },
+    {
+      "extension": ".mjs",
+      "role": "test",
+      "files": 7,
+      "lines": 762,
+      "code": 608,
+      "comments": 81,
+      "blank": 77
+    }
+  ],
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 107,
+      "words": 628
+    },
+    {
+      "path": "lib/client.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 320,
+      "code": 244,
+      "comments": 56,
+      "blank": 20
+    },
+    {
+      "path": "lib/discord-rpc.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 381,
+      "code": 279,
+      "comments": 79,
+      "blank": 27
+    },
+    {
+      "path": "lib/index.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 604,
+      "code": 417,
+      "comments": 135,
+      "blank": 52
+    },
+    {
+      "path": "marketplace/README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 37,
+      "words": 224
+    },
+    {
+      "path": "README.en.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 187,
+      "words": 1534
+    },
+    {
+      "path": "README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 187,
+      "words": 2246
+    },
+    {
+      "path": "test/active-session.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 155,
+      "code": 131,
+      "comments": 14,
+      "blank": 12
+    },
+    {
+      "path": "test/client-bundle.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 161,
+      "code": 135,
+      "comments": 15,
+      "blank": 11
+    },
+    {
+      "path": "test/client-inject.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 64,
+      "code": 46,
+      "comments": 10,
+      "blank": 8
+    },
+    {
+      "path": "test/compat-settings.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 101,
+      "code": 77,
+      "comments": 12,
+      "blank": 13
+    },
+    {
+      "path": "test/global-listener.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 48,
+      "code": 32,
+      "comments": 8,
+      "blank": 8
+    },
+    {
+      "path": "test/smoke-v2.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 165,
+      "code": 134,
+      "comments": 15,
+      "blank": 17
+    },
+    {
+      "path": "test/smoke.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 68,
+      "code": 53,
+      "comments": 7,
+      "blank": 8
+    }
+  ],
+  "excluded": [],
+  "skills": {
+    "entry_candidates": [],
+    "non_example_candidates": 0,
+    "status": "ownership_and_runtime_registration_require_review"
+  },
+  "capabilities": {
+    "agents": [],
+    "tools": [],
+    "commands": [],
+    "events": [
+      {
+        "path": "lib/discord-rpc.js",
+        "line": 169,
+        "api": "socket.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 479,
+        "api": "ctx.on",
+        "name": "agent/inbox/inserted",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 496,
+        "api": "ctx.on",
+        "name": "agent/created",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 502,
+        "api": "ctx.on",
+        "name": "agent/status",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 526,
+        "api": "ctx.on",
+        "name": "agent/pre-step",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 553,
+        "api": "ctx.on",
+        "name": "tools/pre-execute",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 566,
+        "api": "ctx.on",
+        "name": "session/created",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 580,
+        "api": "ctx.on",
+        "name": "workflow/start",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "test/global-listener.mjs",
+        "line": 19,
+        "api": "ctx.on",
+        "name": "agent/status",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/global-listener.mjs",
+        "line": 20,
+        "api": "ctx.on",
+        "name": "agent/status",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      }
+    ],
+    "timers": [
+      {
+        "path": "lib/discord-rpc.js",
+        "line": 161,
+        "api": "socket.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/discord-rpc.js",
+        "line": 243,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/discord-rpc.js",
+        "line": 287,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/discord-rpc.js",
+        "line": 304,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 226,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 231,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "test/active-session.mjs",
+        "line": 89,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/active-session.mjs",
+        "line": 95,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/active-session.mjs",
+        "line": 114,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/active-session.mjs",
+        "line": 122,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/active-session.mjs",
+        "line": 130,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/compat-settings.mjs",
+        "line": 38,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/compat-settings.mjs",
+        "line": 73,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/compat-settings.mjs",
+        "line": 84,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/compat-settings.mjs",
+        "line": 95,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/smoke-v2.mjs",
+        "line": 64,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/smoke-v2.mjs",
+        "line": 127,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/smoke-v2.mjs",
+        "line": 161,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/smoke.mjs",
+        "line": 58,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      }
+    ],
+    "ui": [
+      {
+        "path": "lib/client.js",
+        "line": 298,
+        "api": "ctx.slots.register",
+        "name": "settings.general.item",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      }
+    ]
+  },
+  "capability_summary": {
+    "agents": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "tools": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "commands": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "events": {
+      "literal_names": [
+        "agent/created",
+        "agent/inbox/inserted",
+        "agent/pre-step",
+        "agent/status",
+        "data",
+        "session/created",
+        "tools/pre-execute",
+        "workflow/start"
+      ],
+      "unresolved_sites": 0,
+      "literal_count": 8,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "timers": {
+      "literal_names": [],
+      "unresolved_sites": 6,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "ui": {
+      "literal_names": [
+        "settings.general.item"
+      ],
+      "unresolved_sites": 0,
+      "literal_count": 1,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    }
+  },
+  "parse_errors": [],
+  "limitations": [
+    "LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.",
+    "Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.",
+    "Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.",
+    "Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.",
+    "Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review."
+  ]
+}

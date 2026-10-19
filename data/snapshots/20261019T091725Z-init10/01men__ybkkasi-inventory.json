@@ -1,0 +1,7097 @@
+{
+  "schema_version": 1,
+  "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+  "component": "",
+  "coverage": "git tracked files at exact commit; component scope only",
+  "omitted_non_regular": [],
+  "tools": {
+    "loc": {
+      "name": "sloc",
+      "version": "0.3.2",
+      "command": "node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>"
+    },
+    "parser": {
+      "name": "typescript",
+      "version": "5.9.3"
+    }
+  },
+  "content_digest": "2ebe01dea6be6d421f2b293180025f5c170e313ab89f5c09f6d659bf92efd7ae",
+  "groups": [
+    {
+      "extension": ".ts",
+      "role": "source",
+      "files": 142,
+      "lines": 47911,
+      "code": 37479,
+      "comments": 7083,
+      "blank": 3573
+    },
+    {
+      "extension": ".md",
+      "role": "source",
+      "files": 143,
+      "lines": 21547,
+      "words": 371639
+    },
+    {
+      "extension": ".mjs",
+      "role": "source",
+      "files": 25,
+      "lines": 13700,
+      "code": 9306,
+      "comments": 3933,
+      "blank": 836
+    },
+    {
+      "extension": ".js",
+      "role": "source",
+      "files": 54,
+      "lines": 20972,
+      "code": 18829,
+      "comments": 1235,
+      "blank": 1064
+    },
+    {
+      "extension": ".mjs",
+      "role": "test",
+      "files": 21,
+      "lines": 4505,
+      "code": 3624,
+      "comments": 653,
+      "blank": 357
+    },
+    {
+      "extension": ".tsx",
+      "role": "source",
+      "files": 2,
+      "lines": 267,
+      "code": 194,
+      "comments": 53,
+      "blank": 21
+    }
+  ],
+  "files": [
+    {
+      "path": "archive/plugin-billing/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 437,
+      "code": 344,
+      "comments": 61,
+      "blank": 34
+    },
+    {
+      "path": "archive/plugin-billing/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 28,
+      "code": 22,
+      "comments": 3,
+      "blank": 3
+    },
+    {
+      "path": "archive/README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 26,
+      "words": 377
+    },
+    {
+      "path": "CHANGELOG.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 111,
+      "words": 1730
+    },
+    {
+      "path": "cli/dshctl.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 1470,
+      "code": 1396,
+      "comments": 48,
+      "blank": 31
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 55,
+      "words": 622
+    },
+    {
+      "path": "docs/adr-0001-storage-migration.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 300,
+      "words": 3780
+    },
+    {
+      "path": "docs/agent-onboarding.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 104,
+      "words": 2323
+    },
+    {
+      "path": "docs/app-onboarding.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 63,
+      "words": 1348
+    },
+    {
+      "path": "docs/app-org-sync.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 142,
+      "words": 1850
+    },
+    {
+      "path": "docs/app-rbac-guide.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 122,
+      "words": 1786
+    },
+    {
+      "path": "docs/app-sso-integration.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 258,
+      "words": 4051
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 113,
+      "words": 1344
+    },
+    {
+      "path": "docs/billing-archive-register.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 44,
+      "words": 660
+    },
+    {
+      "path": "docs/connector-integration.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 517,
+      "words": 6065
+    },
+    {
+      "path": "docs/contract-c1-modelgw-channel-governance.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 82,
+      "words": 930
+    },
+    {
+      "path": "docs/contract-c2-flow-tf.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 67,
+      "words": 750
+    },
+    {
+      "path": "docs/contract-c3-agent-a2a.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 42,
+      "words": 531
+    },
+    {
+      "path": "docs/contract-j1-panel-invoke.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 71,
+      "words": 1080
+    },
+    {
+      "path": "docs/contract-j2-entry-triage.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 42,
+      "words": 655
+    },
+    {
+      "path": "docs/contract-j3-session-passthrough.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 56,
+      "words": 819
+    },
+    {
+      "path": "docs/contract-j4-usage-report.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 50,
+      "words": 784
+    },
+    {
+      "path": "docs/deploy-enterprise.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 265,
+      "words": 3672
+    },
+    {
+      "path": "docs/entry-switching.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 94,
+      "words": 1551
+    },
+    {
+      "path": "docs/frontend-host-switching.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 66,
+      "words": 1159
+    },
+    {
+      "path": "docs/host-features-ops-notes.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 58,
+      "words": 953
+    },
+    {
+      "path": "docs/i18n/de/product-overview.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 134,
+      "words": 939
+    },
+    {
+      "path": "docs/i18n/en/app-sso-integration.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 253,
+      "words": 3173
+    },
+    {
+      "path": "docs/i18n/en/deploy-enterprise.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 253,
+      "words": 2981
+    },
+    {
+      "path": "docs/i18n/en/dsh-ecosystem.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 216,
+      "words": 2844
+    },
+    {
+      "path": "docs/i18n/en/getting-started.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 199,
+      "words": 2108
+    },
+    {
+      "path": "docs/i18n/en/product-introduction.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 172,
+      "words": 2528
+    },
+    {
+      "path": "docs/i18n/en/README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 385,
+      "words": 4933
+    },
+    {
+      "path": "docs/i18n/en/release-notes-summary.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 200,
+      "words": 3199
+    },
+    {
+      "path": "docs/i18n/en/usage-reporting.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 127,
+      "words": 1457
+    },
+    {
+      "path": "docs/i18n/en/user-guide.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 725,
+      "words": 9905
+    },
+    {
+      "path": "docs/i18n/es/product-overview.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 138,
+      "words": 1378
+    },
+    {
+      "path": "docs/i18n/fr/product-overview.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 138,
+      "words": 1327
+    },
+    {
+      "path": "docs/i18n/GLOSSARY.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 292,
+      "words": 3542
+    },
+    {
+      "path": "docs/i18n/hi/product-overview.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 130,
+      "words": 2594
+    },
+    {
+      "path": "docs/i18n/ja/app-sso-integration.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 253,
+      "words": 3716
+    },
+    {
+      "path": "docs/i18n/ja/deploy-enterprise.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 263,
+      "words": 3884
+    },
+    {
+      "path": "docs/i18n/ja/dsh-ecosystem.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 221,
+      "words": 2621
+    },
+    {
+      "path": "docs/i18n/ja/getting-started.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 211,
+      "words": 2328
+    },
+    {
+      "path": "docs/i18n/ja/product-introduction.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 199,
+      "words": 2442
+    },
+    {
+      "path": "docs/i18n/ja/README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 401,
+      "words": 5310
+    },
+    {
+      "path": "docs/i18n/ja/release-notes-summary.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 222,
+      "words": 4448
+    },
+    {
+      "path": "docs/i18n/ja/usage-reporting.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 152,
+      "words": 1965
+    },
+    {
+      "path": "docs/i18n/ja/user-guide.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 671,
+      "words": 8855
+    },
+    {
+      "path": "docs/i18n/pt/product-overview.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 137,
+      "words": 1370
+    },
+    {
+      "path": "docs/i18n/README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 127,
+      "words": 2521
+    },
+    {
+      "path": "docs/internal/a0-a3-autonomy-ladder-review.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 53,
+      "words": 794
+    },
+    {
+      "path": "docs/internal/action-plan-dsh-frontend.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 241,
+      "words": 5525
+    },
+    {
+      "path": "docs/internal/app-sso-实施计划-执行版.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 114,
+      "words": 2471
+    },
+    {
+      "path": "docs/internal/batch-report-20261016-exec-checklist-closure.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 86,
+      "words": 1820
+    },
+    {
+      "path": "docs/internal/design-adaptation-spec-20261014.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 208,
+      "words": 3782
+    },
+    {
+      "path": "docs/internal/dev-log-connector/ARCH-REVIEW-2026-08-28.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 295,
+      "words": 3401
+    },
+    {
+      "path": "docs/internal/dev-log-connector/CTO-REVIEW.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 197,
+      "words": 5543
+    },
+    {
+      "path": "docs/internal/dev-log-connector/journal.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 145,
+      "words": 4841
+    },
+    {
+      "path": "docs/internal/dev-log-connector/PROGRESS.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 122,
+      "words": 2282
+    },
+    {
+      "path": "docs/internal/dev-log-nas-authz/journal.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 77,
+      "words": 1797
+    },
+    {
+      "path": "docs/internal/dev-plan-access-hardening.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 391,
+      "words": 4794
+    },
+    {
+      "path": "docs/internal/dev-plan-agent-host-unification.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 248,
+      "words": 4077
+    },
+    {
+      "path": "docs/internal/dev-plan-app-sso.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 359,
+      "words": 6265
+    },
+    {
+      "path": "docs/internal/dev-plan-connector.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 406,
+      "words": 11122
+    },
+    {
+      "path": "docs/internal/dev-plan-nas-authz.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 273,
+      "words": 4303
+    },
+    {
+      "path": "docs/internal/dev-plan-nas.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 197,
+      "words": 2940
+    },
+    {
+      "path": "docs/internal/dev-plan.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 121,
+      "words": 2350
+    },
+    {
+      "path": "docs/internal/ecosystem-design-v1.2.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 282,
+      "words": 5406
+    },
+    {
+      "path": "docs/internal/ecosystem-design.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 419,
+      "words": 5573
+    },
+    {
+      "path": "docs/internal/EXEC-CHECKLIST-20261016.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 69,
+      "words": 993
+    },
+    {
+      "path": "docs/internal/handoff-f-remainder-adoption-20260910.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 59,
+      "words": 1182
+    },
+    {
+      "path": "docs/internal/handoff-f-remainder-adoption-20260911.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 43,
+      "words": 1032
+    },
+    {
+      "path": "docs/internal/handoff-iaw-gaps-adoption-20260911.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 44,
+      "words": 910
+    },
+    {
+      "path": "docs/internal/handoff-nas-signed-url-adoption-20260921.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 45,
+      "words": 1422
+    },
+    {
+      "path": "docs/internal/handoff-opt-batch-20260912.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 71,
+      "words": 1279
+    },
+    {
+      "path": "docs/internal/handoff-qa-fixes-host-implementation-20260909.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 162,
+      "words": 2653
+    },
+    {
+      "path": "docs/internal/handoff-w1-marketing-launch-20261017.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 106,
+      "words": 1683
+    },
+    {
+      "path": "docs/internal/qa-report-20260912-group-a-security.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 104,
+      "words": 3383
+    },
+    {
+      "path": "docs/internal/qa-report-20260912-group-b-metering.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 82,
+      "words": 2697
+    },
+    {
+      "path": "docs/internal/qa-report-20260912-group-c-orchestration.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 142,
+      "words": 4028
+    },
+    {
+      "path": "docs/internal/qa-report-20260912-group-e-market.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 103,
+      "words": 2699
+    },
+    {
+      "path": "docs/internal/qa-report-20260912-overview.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 86,
+      "words": 3207
+    },
+    {
+      "path": "docs/internal/qa-report-20261013-group-a-security.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 92,
+      "words": 2955
+    },
+    {
+      "path": "docs/internal/qa-report-20261013-group-b-metering.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 81,
+      "words": 1864
+    },
+    {
+      "path": "docs/internal/qa-report-20261013-group-c-orchestration.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 98,
+      "words": 2175
+    },
+    {
+      "path": "docs/internal/qa-report-20261013-group-e-market.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 124,
+      "words": 3004
+    },
+    {
+      "path": "docs/internal/qa-report-20261013-mobile-responsive.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 93,
+      "words": 2450
+    },
+    {
+      "path": "docs/internal/qa-report-20261013-overall-regression.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 131,
+      "words": 2571
+    },
+    {
+      "path": "docs/internal/qa-report-20261013-overview.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 118,
+      "words": 3907
+    },
+    {
+      "path": "docs/internal/qa-report-20261014-agent-lifecycle.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 76,
+      "words": 2059
+    },
+    {
+      "path": "docs/internal/qa-report-20261014-execution-hub-delivery.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 64,
+      "words": 1339
+    },
+    {
+      "path": "docs/internal/qa-report-20261014-live-overview.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 124,
+      "words": 3454
+    },
+    {
+      "path": "docs/internal/qa-report-20261014-paperclip-six-capabilities.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 197,
+      "words": 4821
+    },
+    {
+      "path": "docs/internal/qa-report-20261014-production-deploy-test.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 131,
+      "words": 2503
+    },
+    {
+      "path": "docs/internal/qa-report-20261016-exec-checklist-acceptance.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 168,
+      "words": 3598
+    },
+    {
+      "path": "docs/internal/README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 21,
+      "words": 307
+    },
+    {
+      "path": "docs/internal/release-notes-2026-09-09-m0.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 77,
+      "words": 1075
+    },
+    {
+      "path": "docs/internal/release-notes-2026-09-11-iaw-batch.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 84,
+      "words": 1568
+    },
+    {
+      "path": "docs/internal/release-notes-2026-09-11-optimization.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 62,
+      "words": 986
+    },
+    {
+      "path": "docs/internal/release-notes-2026-09-12-qa-fixes.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 62,
+      "words": 1536
+    },
+    {
+      "path": "docs/internal/release-notes-2026-09-13-qa-fixes.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 54,
+      "words": 1585
+    },
+    {
+      "path": "docs/internal/release-notes-2026-09-15-approval-relax.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 34,
+      "words": 863
+    },
+    {
+      "path": "docs/internal/release-notes-2026-09-16-m2.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 62,
+      "words": 1518
+    },
+    {
+      "path": "docs/internal/release-notes-20261015-audit-remediation.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 93,
+      "words": 2755
+    },
+    {
+      "path": "docs/internal/release-notes-20261016-ui-i18n.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 82,
+      "words": 1469
+    },
+    {
+      "path": "docs/internal/review-dsh-agent-panel-v2.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 161,
+      "words": 3109
+    },
+    {
+      "path": "docs/internal/roadmap-9-10.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 114,
+      "words": 1706
+    },
+    {
+      "path": "docs/internal/roadmap.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 37,
+      "words": 1086
+    },
+    {
+      "path": "docs/internal/spike-dsh-client-capability.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 424,
+      "words": 4446
+    },
+    {
+      "path": "docs/internal/trial-plan-20261015-quality-analyst.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 145,
+      "words": 2677
+    },
+    {
+      "path": "docs/internal/定制轨冻结公告-20261013.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 37,
+      "words": 586
+    },
+    {
+      "path": "docs/internal/数字员工与平台资源调用-技术关联与施工实施路径-20261015.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 1022,
+      "words": 17357
+    },
+    {
+      "path": "docs/internal/数字员工二期开发计划-20261015.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 188,
+      "words": 2735
+    },
+    {
+      "path": "docs/internal/设计评审-第三方插件SDK-R9-20261013.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 170,
+      "words": 5064
+    },
+    {
+      "path": "docs/internal/重构基线-阶段0-20261013.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 59,
+      "words": 1405
+    },
+    {
+      "path": "docs/internal/重构基线-阶段1-20261013.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 69,
+      "words": 1182
+    },
+    {
+      "path": "docs/internal/重构基线-阶段2-20261013.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 40,
+      "words": 953
+    },
+    {
+      "path": "docs/internal/重构基线-阶段3-20261013.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 42,
+      "words": 919
+    },
+    {
+      "path": "docs/internal/重构方案-对照paperclip-20261013.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 294,
+      "words": 6555
+    },
+    {
+      "path": "docs/nas-authz.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 89,
+      "words": 1647
+    },
+    {
+      "path": "docs/panel-implementation.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 115,
+      "words": 2862
+    },
+    {
+      "path": "docs/portal-integration.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 124,
+      "words": 1723
+    },
+    {
+      "path": "docs/shared-failure-domain-declaration.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 34,
+      "words": 574
+    },
+    {
+      "path": "docs/协议键中文对照总表.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 465,
+      "words": 10785
+    },
+    {
+      "path": "integrations/hermes-patch/README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 24,
+      "words": 453
+    },
+    {
+      "path": "integrations/synology-filestation-mcp/README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 53,
+      "words": 688
+    },
+    {
+      "path": "integrations/synology-filestation-mcp/src/authz.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 317,
+      "code": 252,
+      "comments": 47,
+      "blank": 19
+    },
+    {
+      "path": "integrations/synology-filestation-mcp/test/authz-smoke.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 187,
+      "code": 144,
+      "comments": 28,
+      "blank": 19
+    },
+    {
+      "path": "packages/platform-core/src/behavior.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 362,
+      "code": 300,
+      "comments": 37,
+      "blank": 25
+    },
+    {
+      "path": "packages/platform-core/src/boot-probe.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 121,
+      "code": 75,
+      "comments": 37,
+      "blank": 9
+    },
+    {
+      "path": "packages/platform-core/src/bus.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 146,
+      "code": 118,
+      "comments": 20,
+      "blank": 10
+    },
+    {
+      "path": "packages/platform-core/src/bus.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 417,
+      "code": 317,
+      "comments": 80,
+      "blank": 26
+    },
+    {
+      "path": "packages/platform-core/src/host-bridge.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 167,
+      "code": 72,
+      "comments": 77,
+      "blank": 18
+    },
+    {
+      "path": "packages/platform-core/src/http.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 506,
+      "code": 361,
+      "comments": 111,
+      "blank": 36
+    },
+    {
+      "path": "packages/platform-core/src/ids.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 38,
+      "code": 27,
+      "comments": 5,
+      "blank": 6
+    },
+    {
+      "path": "packages/platform-core/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 77,
+      "code": 56,
+      "comments": 18,
+      "blank": 4
+    },
+    {
+      "path": "packages/platform-core/src/plugin-ctx.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 80,
+      "code": 55,
+      "comments": 18,
+      "blank": 7
+    },
+    {
+      "path": "packages/platform-core/src/rest-gate.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 145,
+      "code": 89,
+      "comments": 44,
+      "blank": 12
+    },
+    {
+      "path": "packages/platform-core/src/scenegraph.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 214,
+      "code": 158,
+      "comments": 38,
+      "blank": 18
+    },
+    {
+      "path": "packages/platform-core/src/sensitive.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 46,
+      "code": 36,
+      "comments": 7,
+      "blank": 3
+    },
+    {
+      "path": "packages/platform-core/src/signature.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 43,
+      "code": 28,
+      "comments": 11,
+      "blank": 4
+    },
+    {
+      "path": "packages/platform-core/src/sqlite.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 145,
+      "code": 105,
+      "comments": 24,
+      "blank": 16
+    },
+    {
+      "path": "packages/platform-core/src/storage-sqlite.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 271,
+      "code": 209,
+      "comments": 35,
+      "blank": 27
+    },
+    {
+      "path": "packages/platform-core/src/storage.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 550,
+      "code": 398,
+      "comments": 102,
+      "blank": 51
+    },
+    {
+      "path": "packages/platform-core/src/tools-lite.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 44,
+      "code": 35,
+      "comments": 4,
+      "blank": 5
+    },
+    {
+      "path": "packages/platform-core/src/tools-lite.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 288,
+      "code": 216,
+      "comments": 48,
+      "blank": 24
+    },
+    {
+      "path": "packages/platform-core/src/version.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 81,
+      "code": 60,
+      "comments": 16,
+      "blank": 9
+    },
+    {
+      "path": "packages/platform-core/src/workforce-port.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 250,
+      "code": 164,
+      "comments": 65,
+      "blank": 21
+    },
+    {
+      "path": "packages/platform-core/src/yaml.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 113,
+      "code": 94,
+      "comments": 12,
+      "blank": 7
+    },
+    {
+      "path": "packages/platform-core/src/zip.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 101,
+      "code": 80,
+      "comments": 21,
+      "blank": 9
+    },
+    {
+      "path": "packages/platform-i18n/locales/README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 10,
+      "words": 183
+    },
+    {
+      "path": "packages/platform-i18n/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 207,
+      "code": 135,
+      "comments": 46,
+      "blank": 26
+    },
+    {
+      "path": "packages/plugin-agent/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 904,
+      "code": 708,
+      "comments": 141,
+      "blank": 59
+    },
+    {
+      "path": "packages/plugin-agent/src/onboarding.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 78,
+      "code": 61,
+      "comments": 9,
+      "blank": 8
+    },
+    {
+      "path": "packages/plugin-agent/src/schema.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 95,
+      "code": 87,
+      "comments": 8,
+      "blank": 1
+    },
+    {
+      "path": "packages/plugin-agent/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 132,
+      "code": 121,
+      "comments": 3,
+      "blank": 8
+    },
+    {
+      "path": "packages/plugin-app/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 682,
+      "code": 531,
+      "comments": 106,
+      "blank": 50
+    },
+    {
+      "path": "packages/plugin-app/src/onboarding.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 121,
+      "code": 100,
+      "comments": 12,
+      "blank": 11
+    },
+    {
+      "path": "packages/plugin-app/src/schema.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 63,
+      "code": 59,
+      "comments": 5,
+      "blank": 1
+    },
+    {
+      "path": "packages/plugin-app/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 102,
+      "code": 92,
+      "comments": 3,
+      "blank": 7
+    },
+    {
+      "path": "packages/plugin-audit/src/approval.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 125,
+      "code": 105,
+      "comments": 10,
+      "blank": 10
+    },
+    {
+      "path": "packages/plugin-audit/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 921,
+      "code": 740,
+      "comments": 123,
+      "blank": 59
+    },
+    {
+      "path": "packages/plugin-audit/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 92,
+      "code": 82,
+      "comments": 3,
+      "blank": 7
+    },
+    {
+      "path": "packages/plugin-authn/src/entry-ticket.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 132,
+      "code": 95,
+      "comments": 26,
+      "blank": 12
+    },
+    {
+      "path": "packages/plugin-authn/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 976,
+      "code": 780,
+      "comments": 125,
+      "blank": 75
+    },
+    {
+      "path": "packages/plugin-authn/src/oidc.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 1114,
+      "code": 911,
+      "comments": 132,
+      "blank": 79
+    },
+    {
+      "path": "packages/plugin-authn/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 136,
+      "code": 125,
+      "comments": 3,
+      "blank": 8
+    },
+    {
+      "path": "packages/plugin-connect/src/client.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 365,
+      "code": 282,
+      "comments": 56,
+      "blank": 31
+    },
+    {
+      "path": "packages/plugin-connect/src/config-page.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 314,
+      "code": 286,
+      "comments": 20,
+      "blank": 15
+    },
+    {
+      "path": "packages/plugin-connect/src/host.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 484,
+      "code": 405,
+      "comments": 46,
+      "blank": 33
+    },
+    {
+      "path": "packages/plugin-connect/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 259,
+      "code": 201,
+      "comments": 47,
+      "blank": 18
+    },
+    {
+      "path": "packages/plugin-connect/src/proxy.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 135,
+      "code": 110,
+      "comments": 13,
+      "blank": 12
+    },
+    {
+      "path": "packages/plugin-connector/src/client.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 333,
+      "code": 257,
+      "comments": 38,
+      "blank": 38
+    },
+    {
+      "path": "packages/plugin-connector/src/errors.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 40,
+      "code": 27,
+      "comments": 8,
+      "blank": 5
+    },
+    {
+      "path": "packages/plugin-connector/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 1793,
+      "code": 1482,
+      "comments": 199,
+      "blank": 117
+    },
+    {
+      "path": "packages/plugin-connector/src/odd.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 92,
+      "code": 73,
+      "comments": 5,
+      "blank": 14
+    },
+    {
+      "path": "packages/plugin-connector/src/odd.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 125,
+      "code": 93,
+      "comments": 22,
+      "blank": 11
+    },
+    {
+      "path": "packages/plugin-connector/src/risk-overrides.generated.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 106,
+      "code": 94,
+      "comments": 11,
+      "blank": 1
+    },
+    {
+      "path": "packages/plugin-connector/src/risk.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 93,
+      "code": 56,
+      "comments": 23,
+      "blank": 14
+    },
+    {
+      "path": "packages/plugin-connector/src/risk.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 105,
+      "code": 69,
+      "comments": 21,
+      "blank": 15
+    },
+    {
+      "path": "packages/plugin-connector/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 157,
+      "code": 143,
+      "comments": 7,
+      "blank": 7
+    },
+    {
+      "path": "packages/plugin-console/public/js/api.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 254,
+      "code": 188,
+      "comments": 50,
+      "blank": 19
+    },
+    {
+      "path": "packages/plugin-console/public/js/app.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 395,
+      "code": 314,
+      "comments": 62,
+      "blank": 26
+    },
+    {
+      "path": "packages/plugin-console/public/js/asset-filters.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 39,
+      "code": 25,
+      "comments": 10,
+      "blank": 4
+    },
+    {
+      "path": "packages/plugin-console/public/js/cmdk.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 183,
+      "code": 169,
+      "comments": 3,
+      "blank": 12
+    },
+    {
+      "path": "packages/plugin-console/public/js/components/asset-drawer.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 525,
+      "code": 465,
+      "comments": 28,
+      "blank": 33
+    },
+    {
+      "path": "packages/plugin-console/public/js/connections.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 91,
+      "code": 61,
+      "comments": 22,
+      "blank": 9
+    },
+    {
+      "path": "packages/plugin-console/public/js/connections.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 103,
+      "code": 81,
+      "comments": 28,
+      "blank": 10
+    },
+    {
+      "path": "packages/plugin-console/public/js/errors.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 377,
+      "code": 319,
+      "comments": 43,
+      "blank": 16
+    },
+    {
+      "path": "packages/plugin-console/public/js/i18n.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 220,
+      "code": 170,
+      "comments": 27,
+      "blank": 25
+    },
+    {
+      "path": "packages/plugin-console/public/js/icons.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 87,
+      "code": 83,
+      "comments": 3,
+      "blank": 1
+    },
+    {
+      "path": "packages/plugin-console/public/js/landing.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 72,
+      "code": 40,
+      "comments": 25,
+      "blank": 8
+    },
+    {
+      "path": "packages/plugin-console/public/js/landing.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 89,
+      "code": 66,
+      "comments": 25,
+      "blank": 11
+    },
+    {
+      "path": "packages/plugin-console/public/js/next-redirect.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 74,
+      "code": 42,
+      "comments": 31,
+      "blank": 4
+    },
+    {
+      "path": "packages/plugin-console/public/js/next-redirect.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 109,
+      "code": 87,
+      "comments": 26,
+      "blank": 10
+    },
+    {
+      "path": "packages/plugin-console/public/js/onboarding.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 172,
+      "code": 147,
+      "comments": 9,
+      "blank": 18
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/access.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 605,
+      "code": 534,
+      "comments": 28,
+      "blank": 52
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/agents.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 839,
+      "code": 802,
+      "comments": 18,
+      "blank": 23
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/approvals.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 302,
+      "code": 271,
+      "comments": 12,
+      "blank": 21
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/apps.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 691,
+      "code": 653,
+      "comments": 21,
+      "blank": 26
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/assets.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 365,
+      "code": 328,
+      "comments": 15,
+      "blank": 24
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/audit.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 286,
+      "code": 279,
+      "comments": 1,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/authn.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 583,
+      "code": 553,
+      "comments": 9,
+      "blank": 22
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/connect.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 11,
+      "code": 5,
+      "comments": 6,
+      "blank": 0
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/connections.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 179,
+      "code": 158,
+      "comments": 13,
+      "blank": 11
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/connectors.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 780,
+      "code": 730,
+      "comments": 28,
+      "blank": 27
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/dashboard.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 1041,
+      "code": 922,
+      "comments": 51,
+      "blank": 70
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/exec.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 873,
+      "code": 805,
+      "comments": 21,
+      "blank": 47
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/finops.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 578,
+      "code": 542,
+      "comments": 13,
+      "blank": 25
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/gateway.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 620,
+      "code": 565,
+      "comments": 28,
+      "blank": 31
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/home.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 617,
+      "code": 561,
+      "comments": 28,
+      "blank": 31
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/iam/conflicts.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 110,
+      "code": 101,
+      "comments": 8,
+      "blank": 1
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/iam/connectors.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 177,
+      "code": 160,
+      "comments": 11,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/iam/groups.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 95,
+      "code": 88,
+      "comments": 4,
+      "blank": 3
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/iam/helpers.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 166,
+      "code": 148,
+      "comments": 16,
+      "blank": 2
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/iam/index.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 43,
+      "code": 34,
+      "comments": 6,
+      "blank": 3
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/iam/members.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 964,
+      "code": 892,
+      "comments": 47,
+      "blank": 29
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/iam/roles.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 117,
+      "code": 109,
+      "comments": 5,
+      "blank": 3
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/login.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 358,
+      "code": 313,
+      "comments": 34,
+      "blank": 19
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/mcp.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 727,
+      "code": 699,
+      "comments": 8,
+      "blank": 23
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/nas-authz.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 687,
+      "code": 643,
+      "comments": 7,
+      "blank": 37
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/nas.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 975,
+      "code": 913,
+      "comments": 17,
+      "blank": 47
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/oauth.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 451,
+      "code": 405,
+      "comments": 38,
+      "blank": 15
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/platform.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 98,
+      "code": 91,
+      "comments": 1,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/register.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 151,
+      "code": 134,
+      "comments": 8,
+      "blank": 10
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/skills.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 700,
+      "code": 649,
+      "comments": 22,
+      "blank": 31
+    },
+    {
+      "path": "packages/plugin-console/public/js/pages/usage.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 199,
+      "code": 181,
+      "comments": 9,
+      "blank": 10
+    },
+    {
+      "path": "packages/plugin-console/public/js/platform.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 23,
+      "code": 15,
+      "comments": 6,
+      "blank": 4
+    },
+    {
+      "path": "packages/plugin-console/public/js/realtime.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 193,
+      "code": 131,
+      "comments": 56,
+      "blank": 13
+    },
+    {
+      "path": "packages/plugin-console/public/js/realtime.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 107,
+      "code": 87,
+      "comments": 18,
+      "blank": 7
+    },
+    {
+      "path": "packages/plugin-console/public/js/ui.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 937,
+      "code": 816,
+      "comments": 71,
+      "blank": 55
+    },
+    {
+      "path": "packages/plugin-console/public/js/update.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 195,
+      "code": 184,
+      "comments": 5,
+      "blank": 7
+    },
+    {
+      "path": "packages/plugin-console/src/demo-mode.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 108,
+      "code": 54,
+      "comments": 48,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-console/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 395,
+      "code": 282,
+      "comments": 82,
+      "blank": 33
+    },
+    {
+      "path": "packages/plugin-console/src/routes/agents.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 419,
+      "code": 353,
+      "comments": 42,
+      "blank": 26
+    },
+    {
+      "path": "packages/plugin-console/src/routes/apps.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 292,
+      "code": 246,
+      "comments": 28,
+      "blank": 19
+    },
+    {
+      "path": "packages/plugin-console/src/routes/audit.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 118,
+      "code": 97,
+      "comments": 8,
+      "blank": 13
+    },
+    {
+      "path": "packages/plugin-console/src/routes/auth.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 334,
+      "code": 290,
+      "comments": 31,
+      "blank": 15
+    },
+    {
+      "path": "packages/plugin-console/src/routes/authn.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 215,
+      "code": 182,
+      "comments": 14,
+      "blank": 19
+    },
+    {
+      "path": "packages/plugin-console/src/routes/bridge.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 265,
+      "code": 206,
+      "comments": 48,
+      "blank": 11
+    },
+    {
+      "path": "packages/plugin-console/src/routes/dashboard.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 543,
+      "code": 485,
+      "comments": 43,
+      "blank": 21
+    },
+    {
+      "path": "packages/plugin-console/src/routes/deps.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 19,
+      "code": 8,
+      "comments": 10,
+      "blank": 1
+    },
+    {
+      "path": "packages/plugin-console/src/routes/entry-tickets.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 268,
+      "code": 217,
+      "comments": 40,
+      "blank": 14
+    },
+    {
+      "path": "packages/plugin-console/src/routes/finops.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 78,
+      "code": 60,
+      "comments": 10,
+      "blank": 8
+    },
+    {
+      "path": "packages/plugin-console/src/routes/fleet.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 258,
+      "code": 212,
+      "comments": 39,
+      "blank": 14
+    },
+    {
+      "path": "packages/plugin-console/src/routes/iam.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 491,
+      "code": 399,
+      "comments": 46,
+      "blank": 46
+    },
+    {
+      "path": "packages/plugin-console/src/routes/market.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 161,
+      "code": 137,
+      "comments": 10,
+      "blank": 15
+    },
+    {
+      "path": "packages/plugin-console/src/routes/mcp.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 652,
+      "code": 537,
+      "comments": 61,
+      "blank": 59
+    },
+    {
+      "path": "packages/plugin-console/src/routes/nas.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 824,
+      "code": 717,
+      "comments": 63,
+      "blank": 46
+    },
+    {
+      "path": "packages/plugin-console/src/routes/ops.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 506,
+      "code": 400,
+      "comments": 78,
+      "blank": 32
+    },
+    {
+      "path": "packages/plugin-console/src/routes/platform.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 71,
+      "code": 46,
+      "comments": 17,
+      "blank": 8
+    },
+    {
+      "path": "packages/plugin-console/src/routes/skills.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 218,
+      "code": 178,
+      "comments": 22,
+      "blank": 18
+    },
+    {
+      "path": "packages/plugin-console/src/routes/usage.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 254,
+      "code": 207,
+      "comments": 30,
+      "blank": 17
+    },
+    {
+      "path": "packages/plugin-console/src/seed.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 721,
+      "code": 620,
+      "comments": 82,
+      "blank": 35
+    },
+    {
+      "path": "packages/plugin-dingtalk-bridge/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 142,
+      "code": 110,
+      "comments": 17,
+      "blank": 15
+    },
+    {
+      "path": "packages/plugin-dingtalk-bridge/src/service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 213,
+      "code": 167,
+      "comments": 35,
+      "blank": 15
+    },
+    {
+      "path": "packages/plugin-dsh-bridge/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 636,
+      "code": 474,
+      "comments": 135,
+      "blank": 36
+    },
+    {
+      "path": "packages/plugin-dsh-bridge/tests/host-bridge.contract.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 188,
+      "code": 135,
+      "comments": 41,
+      "blank": 16
+    },
+    {
+      "path": "packages/plugin-exec-hub/src/domain.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 388,
+      "code": 236,
+      "comments": 116,
+      "blank": 45
+    },
+    {
+      "path": "packages/plugin-exec-hub/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 2034,
+      "code": 1686,
+      "comments": 214,
+      "blank": 144
+    },
+    {
+      "path": "packages/plugin-exec-hub/src/lease-store.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 323,
+      "code": 259,
+      "comments": 37,
+      "blank": 27
+    },
+    {
+      "path": "packages/plugin-exec-hub/src/policy.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 321,
+      "code": 233,
+      "comments": 78,
+      "blank": 25
+    },
+    {
+      "path": "packages/plugin-exec-hub/src/seed.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 83,
+      "code": 68,
+      "comments": 10,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-flow-core/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 513,
+      "code": 405,
+      "comments": 68,
+      "blank": 41
+    },
+    {
+      "path": "packages/plugin-iam/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 2082,
+      "code": 1545,
+      "comments": 390,
+      "blank": 155
+    },
+    {
+      "path": "packages/plugin-iam/src/providers.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 254,
+      "code": 190,
+      "comments": 47,
+      "blank": 20
+    },
+    {
+      "path": "packages/plugin-iam/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 233,
+      "code": 205,
+      "comments": 14,
+      "blank": 14
+    },
+    {
+      "path": "packages/plugin-market/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 599,
+      "code": 482,
+      "comments": 73,
+      "blank": 45
+    },
+    {
+      "path": "packages/plugin-market/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 31,
+      "code": 25,
+      "comments": 3,
+      "blank": 3
+    },
+    {
+      "path": "packages/plugin-mcp/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 1237,
+      "code": 994,
+      "comments": 164,
+      "blank": 85
+    },
+    {
+      "path": "packages/plugin-mcp/src/risk-registry.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 260,
+      "code": 182,
+      "comments": 59,
+      "blank": 20
+    },
+    {
+      "path": "packages/plugin-mcp/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 160,
+      "code": 140,
+      "comments": 10,
+      "blank": 10
+    },
+    {
+      "path": "packages/plugin-modelgw/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 734,
+      "code": 513,
+      "comments": 168,
+      "blank": 54
+    },
+    {
+      "path": "packages/plugin-modelgw/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 30,
+      "code": 24,
+      "comments": 3,
+      "blank": 3
+    },
+    {
+      "path": "packages/plugin-nas/src/authz.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 749,
+      "code": 608,
+      "comments": 92,
+      "blank": 50
+    },
+    {
+      "path": "packages/plugin-nas/src/authz/engine.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 657,
+      "code": 457,
+      "comments": 150,
+      "blank": 52
+    },
+    {
+      "path": "packages/plugin-nas/src/client.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 151,
+      "code": 130,
+      "comments": 13,
+      "blank": 9
+    },
+    {
+      "path": "packages/plugin-nas/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 590,
+      "code": 444,
+      "comments": 84,
+      "blank": 63
+    },
+    {
+      "path": "packages/plugin-nas/src/schema.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 54,
+      "code": 46,
+      "comments": 8,
+      "blank": 1
+    },
+    {
+      "path": "packages/plugin-nas/src/share-link.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 480,
+      "code": 378,
+      "comments": 61,
+      "blank": 43
+    },
+    {
+      "path": "packages/plugin-nas/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 348,
+      "code": 280,
+      "comments": 51,
+      "blank": 19
+    },
+    {
+      "path": "packages/plugin-panel-core/public/js/api.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 99,
+      "code": 85,
+      "comments": 6,
+      "blank": 9
+    },
+    {
+      "path": "packages/plugin-panel-core/public/js/app.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 1322,
+      "code": 1180,
+      "comments": 80,
+      "blank": 73
+    },
+    {
+      "path": "packages/plugin-panel-core/public/js/boot.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 84,
+      "code": 61,
+      "comments": 18,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-panel-core/public/js/deps.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 27,
+      "code": 15,
+      "comments": 8,
+      "blank": 5
+    },
+    {
+      "path": "packages/plugin-panel-core/public/js/i18n.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 220,
+      "code": 170,
+      "comments": 27,
+      "blank": 25
+    },
+    {
+      "path": "packages/plugin-panel-core/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 873,
+      "code": 717,
+      "comments": 82,
+      "blank": 76
+    },
+    {
+      "path": "packages/plugin-panel-core/src/seed/seed.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 160,
+      "code": 128,
+      "comments": 20,
+      "blank": 12
+    },
+    {
+      "path": "packages/plugin-panel-core/src/service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 994,
+      "code": 763,
+      "comments": 166,
+      "blank": 71
+    },
+    {
+      "path": "packages/plugin-portal/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 316,
+      "code": 243,
+      "comments": 55,
+      "blank": 20
+    },
+    {
+      "path": "packages/plugin-portal/src/mapping.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 217,
+      "code": 166,
+      "comments": 28,
+      "blank": 23
+    },
+    {
+      "path": "packages/plugin-resource-core/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 758,
+      "code": 595,
+      "comments": 98,
+      "blank": 66
+    },
+    {
+      "path": "packages/plugin-rq-card/build.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 178,
+      "code": 126,
+      "comments": 40,
+      "blank": 13
+    },
+    {
+      "path": "packages/plugin-rq-card/lib/client.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 678,
+      "code": 629,
+      "comments": 65,
+      "blank": 12
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/controller.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 106,
+      "code": 68,
+      "comments": 30,
+      "blank": 8
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/ExecutionCard.tsx",
+      "extension": ".tsx",
+      "role": "source",
+      "lines": 183,
+      "code": 140,
+      "comments": 31,
+      "blank": 12
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/host-port.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 67,
+      "code": 40,
+      "comments": 23,
+      "blank": 4
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 217,
+      "code": 133,
+      "comments": 67,
+      "blank": 17
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/locales.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 142,
+      "code": 102,
+      "comments": 14,
+      "blank": 26
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/RqFeedback.tsx",
+      "extension": ".tsx",
+      "role": "source",
+      "lines": 84,
+      "code": 54,
+      "comments": 22,
+      "blank": 9
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/slots.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 75,
+      "code": 25,
+      "comments": 43,
+      "blank": 7
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/state.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 135,
+      "code": 107,
+      "comments": 16,
+      "blank": 12
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/state.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 126,
+      "code": 45,
+      "comments": 69,
+      "blank": 12
+    },
+    {
+      "path": "packages/plugin-rq-card/src/client/styles.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 85,
+      "code": 57,
+      "comments": 22,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-rq-card/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 71,
+      "code": 22,
+      "comments": 45,
+      "blank": 4
+    },
+    {
+      "path": "packages/plugin-rq-card/src/wire.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 54,
+      "code": 20,
+      "comments": 24,
+      "blank": 10
+    },
+    {
+      "path": "packages/plugin-rq-card/tests/host-bridge.contract.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 232,
+      "code": 181,
+      "comments": 44,
+      "blank": 15
+    },
+    {
+      "path": "packages/plugin-skillhub/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 651,
+      "code": 530,
+      "comments": 71,
+      "blank": 50
+    },
+    {
+      "path": "packages/plugin-skillhub/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 135,
+      "code": 124,
+      "comments": 3,
+      "blank": 8
+    },
+    {
+      "path": "packages/plugin-update/src/git.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 77,
+      "code": 61,
+      "comments": 11,
+      "blank": 5
+    },
+    {
+      "path": "packages/plugin-update/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 873,
+      "code": 711,
+      "comments": 109,
+      "blank": 59
+    },
+    {
+      "path": "packages/plugin-usage/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 1317,
+      "code": 1010,
+      "comments": 231,
+      "blank": 82
+    },
+    {
+      "path": "packages/plugin-usage/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 68,
+      "code": 57,
+      "comments": 5,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-workforce/src/acceptance-service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 260,
+      "code": 207,
+      "comments": 32,
+      "blank": 21
+    },
+    {
+      "path": "packages/plugin-workforce/src/adapters/app.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 32,
+      "code": 20,
+      "comments": 8,
+      "blank": 4
+    },
+    {
+      "path": "packages/plugin-workforce/src/adapters/connector.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 129,
+      "code": 108,
+      "comments": 15,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-workforce/src/adapters/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 58,
+      "code": 44,
+      "comments": 9,
+      "blank": 5
+    },
+    {
+      "path": "packages/plugin-workforce/src/adapters/mcp.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 124,
+      "code": 98,
+      "comments": 20,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-workforce/src/adapters/model.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 140,
+      "code": 117,
+      "comments": 18,
+      "blank": 5
+    },
+    {
+      "path": "packages/plugin-workforce/src/adapters/nas.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 195,
+      "code": 163,
+      "comments": 21,
+      "blank": 11
+    },
+    {
+      "path": "packages/plugin-workforce/src/adapters/skill.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 88,
+      "code": 70,
+      "comments": 13,
+      "blank": 5
+    },
+    {
+      "path": "packages/plugin-workforce/src/admission-service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 349,
+      "code": 269,
+      "comments": 55,
+      "blank": 25
+    },
+    {
+      "path": "packages/plugin-workforce/src/appointment-service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 459,
+      "code": 347,
+      "comments": 65,
+      "blank": 48
+    },
+    {
+      "path": "packages/plugin-workforce/src/artifact-service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 162,
+      "code": 125,
+      "comments": 21,
+      "blank": 16
+    },
+    {
+      "path": "packages/plugin-workforce/src/capability-manifest.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 193,
+      "code": 150,
+      "comments": 26,
+      "blank": 17
+    },
+    {
+      "path": "packages/plugin-workforce/src/contract.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 793,
+      "code": 568,
+      "comments": 162,
+      "blank": 63
+    },
+    {
+      "path": "packages/plugin-workforce/src/domain.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 420,
+      "code": 284,
+      "comments": 96,
+      "blank": 43
+    },
+    {
+      "path": "packages/plugin-workforce/src/employee-service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 308,
+      "code": 232,
+      "comments": 45,
+      "blank": 33
+    },
+    {
+      "path": "packages/plugin-workforce/src/identity-resolver.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 89,
+      "code": 59,
+      "comments": 20,
+      "blank": 10
+    },
+    {
+      "path": "packages/plugin-workforce/src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 97,
+      "code": 62,
+      "comments": 29,
+      "blank": 6
+    },
+    {
+      "path": "packages/plugin-workforce/src/invocation-service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 507,
+      "code": 429,
+      "comments": 44,
+      "blank": 34
+    },
+    {
+      "path": "packages/plugin-workforce/src/maintenance-service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 135,
+      "code": 90,
+      "comments": 32,
+      "blank": 14
+    },
+    {
+      "path": "packages/plugin-workforce/src/permit-service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 141,
+      "code": 109,
+      "comments": 17,
+      "blank": 15
+    },
+    {
+      "path": "packages/plugin-workforce/src/port.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 226,
+      "code": 184,
+      "comments": 31,
+      "blank": 11
+    },
+    {
+      "path": "packages/plugin-workforce/src/repositories.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 203,
+      "code": 141,
+      "comments": 42,
+      "blank": 21
+    },
+    {
+      "path": "packages/plugin-workforce/src/routes.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 535,
+      "code": 450,
+      "comments": 41,
+      "blank": 44
+    },
+    {
+      "path": "packages/plugin-workforce/src/tools.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 254,
+      "code": 236,
+      "comments": 10,
+      "blank": 8
+    },
+    {
+      "path": "README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 275,
+      "words": 3383
+    },
+    {
+      "path": "scripts/billing-archive-export.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 60,
+      "code": 41,
+      "comments": 12,
+      "blank": 7
+    },
+    {
+      "path": "scripts/boot-drill.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 133,
+      "code": 102,
+      "comments": 22,
+      "blank": 10
+    },
+    {
+      "path": "scripts/boot-trace.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 83,
+      "code": 77,
+      "comments": 7,
+      "blank": 1
+    },
+    {
+      "path": "scripts/check-boot-order.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 312,
+      "code": 233,
+      "comments": 59,
+      "blank": 21
+    },
+    {
+      "path": "scripts/check-docs-consistency.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 96,
+      "code": 80,
+      "comments": 14,
+      "blank": 4
+    },
+    {
+      "path": "scripts/check-dsh-compat.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 392,
+      "code": 298,
+      "comments": 65,
+      "blank": 30
+    },
+    {
+      "path": "scripts/contract-lint.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 389,
+      "code": 305,
+      "comments": 66,
+      "blank": 27
+    },
+    {
+      "path": "scripts/contract-lint.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 187,
+      "code": 150,
+      "comments": 18,
+      "blank": 21
+    },
+    {
+      "path": "scripts/demo-route-audit.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 85,
+      "code": 61,
+      "comments": 16,
+      "blank": 8
+    },
+    {
+      "path": "scripts/dom-smoke.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 336,
+      "code": 296,
+      "comments": 18,
+      "blank": 23
+    },
+    {
+      "path": "scripts/gen-connector-catalog.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 120,
+      "code": 79,
+      "comments": 29,
+      "blank": 13
+    },
+    {
+      "path": "scripts/gen-manifests.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 582,
+      "code": 565,
+      "comments": 6,
+      "blank": 11
+    },
+    {
+      "path": "scripts/lint-cjk-coverage.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 419,
+      "code": 310,
+      "comments": 86,
+      "blank": 23
+    },
+    {
+      "path": "scripts/lint-manifests.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 96,
+      "code": 78,
+      "comments": 11,
+      "blank": 7
+    },
+    {
+      "path": "scripts/lint-timers.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 57,
+      "code": 47,
+      "comments": 8,
+      "blank": 2
+    },
+    {
+      "path": "scripts/live-verify-current-update.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 216,
+      "code": 191,
+      "comments": 10,
+      "blank": 17
+    },
+    {
+      "path": "scripts/page-smoke.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 192,
+      "code": 158,
+      "comments": 26,
+      "blank": 9
+    },
+    {
+      "path": "scripts/register-dsh-agent.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 160,
+      "code": 126,
+      "comments": 26,
+      "blank": 11
+    },
+    {
+      "path": "scripts/release-manifest.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 75,
+      "code": 53,
+      "comments": 13,
+      "blank": 9
+    },
+    {
+      "path": "scripts/selftest.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 7996,
+      "code": 4508,
+      "comments": 3295,
+      "blank": 535
+    },
+    {
+      "path": "scripts/storage-bench.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 98,
+      "code": 69,
+      "comments": 19,
+      "blank": 11
+    },
+    {
+      "path": "scripts/storage-export.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 48,
+      "code": 30,
+      "comments": 13,
+      "blank": 5
+    },
+    {
+      "path": "scripts/syntax-check-oauth-0904.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 16,
+      "code": 14,
+      "comments": 3,
+      "blank": 0
+    },
+    {
+      "path": "scripts/verify-live-host.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 91,
+      "code": 63,
+      "comments": 21,
+      "blank": 8
+    },
+    {
+      "path": "skills/dsh-ops-admin/SKILL.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 52,
+      "words": 896
+    },
+    {
+      "path": "skills/dsh-ops-agent/SKILL.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 42,
+      "words": 566
+    },
+    {
+      "path": "skills/dsh-ops-app/SKILL.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 29,
+      "words": 315
+    },
+    {
+      "path": "skills/dsh-ops-audit/SKILL.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 32,
+      "words": 338
+    },
+    {
+      "path": "skills/dsh-ops-authn/SKILL.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 58,
+      "words": 1013
+    },
+    {
+      "path": "skills/dsh-ops-connector/SKILL.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 64,
+      "words": 1303
+    },
+    {
+      "path": "skills/dsh-ops-iam/SKILL.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 46,
+      "words": 567
+    },
+    {
+      "path": "skills/dsh-ops-mcp/SKILL.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 55,
+      "words": 697
+    },
+    {
+      "path": "skills/dsh-ops-skillhub/SKILL.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 49,
+      "words": 575
+    },
+    {
+      "path": "src/boot-all.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 91,
+      "code": 63,
+      "comments": 26,
+      "blank": 2
+    },
+    {
+      "path": "src/main.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 34,
+      "code": 24,
+      "comments": 5,
+      "blank": 6
+    },
+    {
+      "path": "tests/full-chain-drill.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 425,
+      "code": 347,
+      "comments": 55,
+      "blank": 36
+    },
+    {
+      "path": "tests/morning-peak-entry.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 114,
+      "code": 93,
+      "comments": 15,
+      "blank": 10
+    },
+    {
+      "path": "tests/workforce-loop-drill.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 598,
+      "code": 511,
+      "comments": 66,
+      "blank": 29
+    },
+    {
+      "path": "tests/workforce-rollback-drill.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 494,
+      "code": 424,
+      "comments": 52,
+      "blank": 30
+    },
+    {
+      "path": "tests/workforce-runtime-drill.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 581,
+      "code": 481,
+      "comments": 68,
+      "blank": 41
+    },
+    {
+      "path": "数字员工与平台资源调用-技术关联与施工实施路径-20261015.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 3,
+      "words": 85
+    },
+    {
+      "path": "数字员工二期开发计划-20261015.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 3,
+      "words": 59
+    },
+    {
+      "path": "测试报告-前后端整体适配验收-20261015/00-总测试报告.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 104,
+      "words": 2514
+    },
+    {
+      "path": "测试报告-前后端整体适配验收-20261015/组A-契约对齐报告.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 43,
+      "words": 1594
+    },
+    {
+      "path": "测试报告-前后端整体适配验收-20261015/组B-权限矩阵报告.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 129,
+      "words": 2495
+    },
+    {
+      "path": "测试报告-前后端整体适配验收-20261015/组C-前端完整性报告.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 133,
+      "words": 2542
+    },
+    {
+      "path": "测试报告-前后端整体适配验收-20261015/组D-后端完整性报告.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 198,
+      "words": 4175
+    },
+    {
+      "path": "测试报告-前后端整体适配验收-20261015/组E-Agent层验收报告.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 71,
+      "words": 2023
+    }
+  ],
+  "excluded": [],
+  "skills": {
+    "entry_candidates": [
+      {
+        "path": "skills/dsh-ops-admin/SKILL.md",
+        "name": null,
+        "description": null,
+        "role": "source",
+        "status": "needs_review"
+      },
+      {
+        "path": "skills/dsh-ops-agent/SKILL.md",
+        "name": null,
+        "description": null,
+        "role": "source",
+        "status": "needs_review"
+      },
+      {
+        "path": "skills/dsh-ops-app/SKILL.md",
+        "name": null,
+        "description": null,
+        "role": "source",
+        "status": "needs_review"
+      },
+      {
+        "path": "skills/dsh-ops-audit/SKILL.md",
+        "name": null,
+        "description": null,
+        "role": "source",
+        "status": "needs_review"
+      },
+      {
+        "path": "skills/dsh-ops-authn/SKILL.md",
+        "name": null,
+        "description": null,
+        "role": "source",
+        "status": "needs_review"
+      },
+      {
+        "path": "skills/dsh-ops-connector/SKILL.md",
+        "name": null,
+        "description": null,
+        "role": "source",
+        "status": "needs_review"
+      },
+      {
+        "path": "skills/dsh-ops-iam/SKILL.md",
+        "name": null,
+        "description": null,
+        "role": "source",
+        "status": "needs_review"
+      },
+      {
+        "path": "skills/dsh-ops-mcp/SKILL.md",
+        "name": null,
+        "description": null,
+        "role": "source",
+        "status": "needs_review"
+      },
+      {
+        "path": "skills/dsh-ops-skillhub/SKILL.md",
+        "name": null,
+        "description": null,
+        "role": "source",
+        "status": "needs_review"
+      }
+    ],
+    "non_example_candidates": 0,
+    "status": "ownership_and_runtime_registration_require_review"
+  },
+  "capabilities": {
+    "agents": [],
+    "tools": [
+      {
+        "path": "archive/plugin-billing/src/tools.ts",
+        "line": 13,
+        "api": "defineTool",
+        "name": "billing_wallet_balance",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/platform-core/src/tools-lite.test.mjs",
+        "line": 32,
+        "api": "defineTool",
+        "name": "good_tool",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/tools-lite.test.mjs",
+        "line": 41,
+        "api": "defineTool",
+        "name": "t",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/plugin-agent/src/tools.ts",
+        "line": 14,
+        "api": "defineTool",
+        "name": "agent_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-agent/src/tools.ts",
+        "line": 39,
+        "api": "defineTool",
+        "name": "agent_get",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-agent/src/tools.ts",
+        "line": 59,
+        "api": "defineTool",
+        "name": "agent_offline",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-agent/src/tools.ts",
+        "line": 80,
+        "api": "defineTool",
+        "name": "agent_metrics",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-agent/src/tools.ts",
+        "line": 93,
+        "api": "defineTool",
+        "name": "agent_metrics_report",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-agent/src/tools.ts",
+        "line": 117,
+        "api": "defineTool",
+        "name": "agent_bind_user",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-app/src/tools.ts",
+        "line": 13,
+        "api": "defineTool",
+        "name": "app_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-app/src/tools.ts",
+        "line": 34,
+        "api": "defineTool",
+        "name": "app_topology",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-app/src/tools.ts",
+        "line": 47,
+        "api": "defineTool",
+        "name": "app_metrics",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-app/src/tools.ts",
+        "line": 60,
+        "api": "defineTool",
+        "name": "app_metrics_report",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-app/src/tools.ts",
+        "line": 90,
+        "api": "defineTool",
+        "name": "app_cost_breakdown",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/tools.ts",
+        "line": 13,
+        "api": "defineTool",
+        "name": "audit_logs",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/tools.ts",
+        "line": 29,
+        "api": "defineTool",
+        "name": "audit_alerts_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/tools.ts",
+        "line": 44,
+        "api": "defineTool",
+        "name": "audit_alerts_read_all",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/tools.ts",
+        "line": 55,
+        "api": "defineTool",
+        "name": "approval_decide",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/tools.ts",
+        "line": 78,
+        "api": "defineTool",
+        "name": "audit_cost_report",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/tools.ts",
+        "line": 14,
+        "api": "defineTool",
+        "name": "authn_token_issue",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/tools.ts",
+        "line": 35,
+        "api": "defineTool",
+        "name": "authn_token_revoke",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/tools.ts",
+        "line": 50,
+        "api": "defineTool",
+        "name": "authn_token_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/tools.ts",
+        "line": 75,
+        "api": "defineTool",
+        "name": "authn_credential_create",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/tools.ts",
+        "line": 102,
+        "api": "defineTool",
+        "name": "authn_credential_scopes",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/tools.ts",
+        "line": 119,
+        "api": "defineTool",
+        "name": "authn_credential_rotate",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/host.ts",
+        "line": 387,
+        "api": "defineTool",
+        "name": "connect_code_create",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/host.ts",
+        "line": 418,
+        "api": "defineTool",
+        "name": "connect_codes",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/host.ts",
+        "line": 439,
+        "api": "defineTool",
+        "name": "connect_clients",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/host.ts",
+        "line": 460,
+        "api": "defineTool",
+        "name": "connect_client_disable",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/index.ts",
+        "line": 92,
+        "api": "defineTool",
+        "name": "connect_status",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/index.ts",
+        "line": 103,
+        "api": "defineTool",
+        "name": "connect_setup",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/index.ts",
+        "line": 131,
+        "api": "defineTool",
+        "name": "connect_login",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/index.ts",
+        "line": 153,
+        "api": "defineTool",
+        "name": "connect_test",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/index.ts",
+        "line": 173,
+        "api": "defineTool",
+        "name": "connect_reset",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/proxy.test.mjs",
+        "line": 55,
+        "api": "defineTool",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/plugin-connector/src/tools.ts",
+        "line": 16,
+        "api": "defineTool",
+        "name": "connector_catalog_search",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connector/src/tools.ts",
+        "line": 45,
+        "api": "defineTool",
+        "name": "connector_connection_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connector/src/tools.ts",
+        "line": 72,
+        "api": "defineTool",
+        "name": "connector_execute",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connector/src/tools.ts",
+        "line": 110,
+        "api": "defineTool",
+        "name": "connector_perm_group_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connector/src/tools.ts",
+        "line": 139,
+        "api": "defineTool",
+        "name": "connector_run_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-exec-hub/src/index.ts",
+        "line": 1801,
+        "api": "defineTool",
+        "name": "exec_wakeup_status",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-exec-hub/src/index.ts",
+        "line": 1813,
+        "api": "defineTool",
+        "name": "exec_claim",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-exec-hub/src/index.ts",
+        "line": 1950,
+        "api": "defineTool",
+        "name": "exec_complete",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-exec-hub/src/index.ts",
+        "line": 1996,
+        "api": "defineTool",
+        "name": "exec_lineage",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 56,
+        "api": "defineTool",
+        "name": "iam_org_tree",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 73,
+        "api": "defineTool",
+        "name": "iam_org_create",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 89,
+        "api": "defineTool",
+        "name": "iam_org_update",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 109,
+        "api": "defineTool",
+        "name": "iam_user_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 139,
+        "api": "defineTool",
+        "name": "iam_user_create",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 159,
+        "api": "defineTool",
+        "name": "iam_user_reset_password",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 174,
+        "api": "defineTool",
+        "name": "iam_user_freeze",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 190,
+        "api": "defineTool",
+        "name": "iam_role_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 203,
+        "api": "defineTool",
+        "name": "iam_sync_run",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/tools.ts",
+        "line": 220,
+        "api": "defineTool",
+        "name": "iam_conflict_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-market/src/tools.ts",
+        "line": 13,
+        "api": "defineTool",
+        "name": "market_plugin_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-mcp/src/tools.ts",
+        "line": 44,
+        "api": "defineTool",
+        "name": "mcp_service_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-mcp/src/tools.ts",
+        "line": 65,
+        "api": "defineTool",
+        "name": "mcp_deploy",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-mcp/src/tools.ts",
+        "line": 92,
+        "api": "defineTool",
+        "name": "mcp_offline",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-mcp/src/tools.ts",
+        "line": 114,
+        "api": "defineTool",
+        "name": "mcp_metrics",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-mcp/src/tools.ts",
+        "line": 129,
+        "api": "defineTool",
+        "name": "mcp_invoke",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-mcp/src/tools.ts",
+        "line": 148,
+        "api": "defineTool",
+        "name": "mcp_health_check",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-modelgw/src/tools.ts",
+        "line": 13,
+        "api": "defineTool",
+        "name": "model_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/tools.ts",
+        "line": 25,
+        "api": "defineTool",
+        "name": "nas_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/tools.ts",
+        "line": 46,
+        "api": "defineTool",
+        "name": "nas_get",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/tools.ts",
+        "line": 67,
+        "api": "defineTool",
+        "name": "nas_health_check",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/tools.ts",
+        "line": 80,
+        "api": "defineTool",
+        "name": "nas_fs_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/tools.ts",
+        "line": 99,
+        "api": "defineTool",
+        "name": "nas_fs_search",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/tools.ts",
+        "line": 116,
+        "api": "defineTool",
+        "name": "nas_fs_mkdir",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/tools.ts",
+        "line": 132,
+        "api": "defineTool",
+        "name": "nas_fs_delete",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/tools.ts",
+        "line": 149,
+        "api": "defineTool",
+        "name": "nas_fs_upload",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 691,
+        "api": "ctx.tools.register",
+        "name": "panel_agents_list",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 704,
+        "api": "ctx.tools.register",
+        "name": "panel_msg_send",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 732,
+        "api": "ctx.tools.register",
+        "name": "panel_task_create",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 759,
+        "api": "ctx.tools.register",
+        "name": "panel_task_transition",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 776,
+        "api": "ctx.tools.register",
+        "name": "panel_scene_diag",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 796,
+        "api": "ctx.tools.register",
+        "name": "panel_widget_data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 815,
+        "api": "ctx.tools.register",
+        "name": "panel_agent_invoke",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 841,
+        "api": "ctx.tools.register",
+        "name": "panel_skill_invoke",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-skillhub/src/tools.ts",
+        "line": 14,
+        "api": "defineTool",
+        "name": "skill_search",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-skillhub/src/tools.ts",
+        "line": 37,
+        "api": "defineTool",
+        "name": "skill_submit",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-skillhub/src/tools.ts",
+        "line": 62,
+        "api": "defineTool",
+        "name": "skill_approve",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-skillhub/src/tools.ts",
+        "line": 84,
+        "api": "defineTool",
+        "name": "skill_publish",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-skillhub/src/tools.ts",
+        "line": 100,
+        "api": "defineTool",
+        "name": "skill_install",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-skillhub/src/tools.ts",
+        "line": 116,
+        "api": "defineTool",
+        "name": "skill_deprecate",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-update/src/index.ts",
+        "line": 812,
+        "api": "defineTool",
+        "name": "update_status",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-update/src/index.ts",
+        "line": 823,
+        "api": "defineTool",
+        "name": "update_check",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-update/src/index.ts",
+        "line": 834,
+        "api": "defineTool",
+        "name": "update_apply",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-usage/src/tools.ts",
+        "line": 13,
+        "api": "defineTool",
+        "name": "usage_query",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-usage/src/tools.ts",
+        "line": 34,
+        "api": "defineTool",
+        "name": "usage_reconcile",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-usage/src/tools.ts",
+        "line": 45,
+        "api": "defineTool",
+        "name": "usage_replay",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-usage/src/tools.ts",
+        "line": 58,
+        "api": "defineTool",
+        "name": "usage_deadletter_retry",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-workforce/src/tools.ts",
+        "line": 70,
+        "api": "defineTool",
+        "name": "workforce_claim",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-workforce/src/tools.ts",
+        "line": 124,
+        "api": "defineTool",
+        "name": "workforce_invoke",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-workforce/src/tools.ts",
+        "line": 173,
+        "api": "defineTool",
+        "name": "workforce_renew",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-workforce/src/tools.ts",
+        "line": 213,
+        "api": "defineTool",
+        "name": "workforce_submit",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      }
+    ],
+    "commands": [],
+    "events": [
+      {
+        "path": "integrations/synology-filestation-mcp/test/authz-smoke.mjs",
+        "line": 27,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "integrations/synology-filestation-mcp/test/authz-smoke.mjs",
+        "line": 28,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "integrations/synology-filestation-mcp/test/authz-smoke.mjs",
+        "line": 43,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "integrations/synology-filestation-mcp/test/authz-smoke.mjs",
+        "line": 44,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 30,
+        "api": "bus.on",
+        "name": "t1.a",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 31,
+        "api": "bus.on",
+        "name": "t1.a",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 42,
+        "api": "bus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 43,
+        "api": "bus.on",
+        "name": "t2.boom",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 54,
+        "api": "bus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 56,
+        "api": "bus.on",
+        "name": "t3.die",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 82,
+        "api": "bus.on",
+        "name": "t5.flaky",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 106,
+        "api": "bus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 109,
+        "api": "bus.on",
+        "name": "t7.x",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 134,
+        "api": "bus.on",
+        "name": "t8.ok",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/plugin-ctx.ts",
+        "line": 37,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/platform-core/src/storage.ts",
+        "line": 275,
+        "api": "process.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-agent/src/index.ts",
+        "line": 66,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-agent/src/index.ts",
+        "line": 110,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-app/src/index.ts",
+        "line": 629,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-app/src/index.ts",
+        "line": 635,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 201,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 202,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 203,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 211,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 212,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 213,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 222,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 233,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 248,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 249,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 257,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 258,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 259,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 261,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 276,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 291,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 300,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 301,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 302,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 303,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 304,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 305,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 306,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 307,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 308,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 309,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 317,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 325,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 333,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 341,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 342,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 350,
+        "api": "ctx.platformBus.on",
+        "name": "audit.authz.denied",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 364,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-audit/src/index.ts",
+        "line": 376,
+        "api": "ctx.platformBus.on",
+        "name": "connect.degraded",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/index.ts",
+        "line": 178,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/index.ts",
+        "line": 183,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/index.ts",
+        "line": 189,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/oidc.ts",
+        "line": 156,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/oidc.ts",
+        "line": 160,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/oidc.ts",
+        "line": 164,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/oidc.ts",
+        "line": 168,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/oidc.ts",
+        "line": 173,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/oidc.ts",
+        "line": 177,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/oidc.ts",
+        "line": 182,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/config-page.ts",
+        "line": 96,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/config-page.ts",
+        "line": 97,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/config-page.ts",
+        "line": 98,
+        "api": "req.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/src/routes/dashboard.ts",
+        "line": 95,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/src/routes/dashboard.ts",
+        "line": 101,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/src/routes/dashboard.ts",
+        "line": 107,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/src/routes/dashboard.ts",
+        "line": 121,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/src/routes/dashboard.ts",
+        "line": 133,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/src/routes/dashboard.ts",
+        "line": 143,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-dingtalk-bridge/src/service.ts",
+        "line": 173,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-dingtalk-bridge/src/service.ts",
+        "line": 182,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-dingtalk-bridge/src/service.ts",
+        "line": 193,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-exec-hub/src/index.ts",
+        "line": 236,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/authz.ts",
+        "line": 125,
+        "api": "ctx.platformBus.on",
+        "name": "nas.authz.decision",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/authz.ts",
+        "line": 134,
+        "api": "ctx.platformBus.on",
+        "name": "nas.authz.cGroupDrift",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 637,
+        "api": "exchange.raw.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 649,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 969,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 970,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 971,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 972,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 973,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 974,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 976,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 977,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 978,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 981,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/service.ts",
+        "line": 982,
+        "api": "this.ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-portal/src/index.ts",
+        "line": 297,
+        "api": "ctx.platformBus.on",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-workforce/src/employee-service.ts",
+        "line": 48,
+        "api": "ctx.platformBus.on",
+        "name": "agent.frozen",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/check-dsh-compat.mjs",
+        "line": 89,
+        "api": "child.stdout.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/check-dsh-compat.mjs",
+        "line": 90,
+        "api": "child.stderr.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/check-dsh-compat.mjs",
+        "line": 91,
+        "api": "child.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/check-dsh-compat.mjs",
+        "line": 95,
+        "api": "child.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/dom-smoke.mjs",
+        "line": 20,
+        "api": "vc.on",
+        "name": "jsdomError",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/dom-smoke.mjs",
+        "line": 34,
+        "api": "process.on",
+        "name": "unhandledRejection",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/page-smoke.mjs",
+        "line": 19,
+        "api": "vc.on",
+        "name": "jsdomError",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/page-smoke.mjs",
+        "line": 60,
+        "api": "process.on",
+        "name": "unhandledRejection",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 50,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 51,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 64,
+        "api": "process.on",
+        "name": "unhandledRejection",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 93,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 94,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 96,
+        "api": "req.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 597,
+        "api": "proc.stdout.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 598,
+        "api": "proc.stderr.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 1432,
+        "api": "stateTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5142,
+        "api": "landingTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5146,
+        "api": "nextRedirectTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5150,
+        "api": "contractLintTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5153,
+        "api": "contractLintRepo.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5157,
+        "api": "connectProxyTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5161,
+        "api": "busPipelineTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5165,
+        "api": "toolsLiteTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5169,
+        "api": "connectorRiskTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5173,
+        "api": "approvalTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5177,
+        "api": "oddTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5253,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5254,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5256,
+        "api": "r.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5278,
+        "api": "connectionsTest.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5947,
+        "api": "mountCtx.platformBus.on",
+        "name": "plugin:com.selftest.demo:tick",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 6862,
+        "api": "pwProc.stderr.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 7333,
+        "api": "grayCtx.platformBus.on",
+        "name": "workforce.gray.denied",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 7513,
+        "api": "routeAudit.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/main.ts",
+        "line": 18,
+        "api": "process.on",
+        "name": "unhandledRejection",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/main.ts",
+        "line": 28,
+        "api": "process.on",
+        "name": "SIGINT",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/main.ts",
+        "line": 32,
+        "api": "process.on",
+        "name": "SIGTERM",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 65,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 65,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 89,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 89,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 143,
+        "api": "proc.stderr.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/morning-peak-entry.mjs",
+        "line": 40,
+        "api": "proc.stderr.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-loop-drill.mjs",
+        "line": 49,
+        "api": "process.on",
+        "name": "unhandledRejection",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-loop-drill.mjs",
+        "line": 88,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-loop-drill.mjs",
+        "line": 88,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-loop-drill.mjs",
+        "line": 88,
+        "api": "req.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-loop-drill.mjs",
+        "line": 135,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-loop-drill.mjs",
+        "line": 135,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-loop-drill.mjs",
+        "line": 151,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-loop-drill.mjs",
+        "line": 151,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-rollback-drill.mjs",
+        "line": 59,
+        "api": "process.on",
+        "name": "unhandledRejection",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-rollback-drill.mjs",
+        "line": 89,
+        "api": "proc.stderr.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-rollback-drill.mjs",
+        "line": 229,
+        "api": "wtProc.stderr.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-rollback-drill.mjs",
+        "line": 323,
+        "api": "grayCtx.platformBus.on",
+        "name": "workforce.gray.denied",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 35,
+        "api": "process.on",
+        "name": "unhandledRejection",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 96,
+        "api": "host.stderr.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 144,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 144,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 166,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 166,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      }
+    ],
+    "timers": [
+      {
+        "path": "integrations/synology-filestation-mcp/src/authz.js",
+        "line": 208,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "integrations/synology-filestation-mcp/src/authz.js",
+        "line": 237,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "integrations/synology-filestation-mcp/src/authz.js",
+        "line": 292,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "integrations/synology-filestation-mcp/test/authz-smoke.mjs",
+        "line": 46,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "integrations/synology-filestation-mcp/test/authz-smoke.mjs",
+        "line": 138,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "integrations/synology-filestation-mcp/test/authz-smoke.mjs",
+        "line": 167,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 25,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 45,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 58,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 87,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 93,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 116,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.test.mjs",
+        "line": 136,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/platform-core/src/bus.ts",
+        "line": 407,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/platform-core/src/bus.ts",
+        "line": 416,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/platform-core/src/storage.ts",
+        "line": 426,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/entry-ticket.ts",
+        "line": 54,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/index.ts",
+        "line": 172,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-authn/src/oidc.ts",
+        "line": 149,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/index.ts",
+        "line": 82,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connect/src/index.ts",
+        "line": 84,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connector/src/client.ts",
+        "line": 125,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connector/src/client.ts",
+        "line": 286,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connector/src/index.ts",
+        "line": 252,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connector/src/index.ts",
+        "line": 254,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-connector/src/index.ts",
+        "line": 256,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/api.js",
+        "line": 115,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/app.js",
+        "line": 308,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/cmdk.js",
+        "line": 139,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/i18n.js",
+        "line": 192,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/agents.js",
+        "line": 643,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/assets.js",
+        "line": 188,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/audit.js",
+        "line": 285,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/authn.js",
+        "line": 243,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/connectors.js",
+        "line": 778,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/exec.js",
+        "line": 93,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/iam/connectors.js",
+        "line": 90,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/iam/helpers.js",
+        "line": 165,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/nas.js",
+        "line": 974,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/oauth.js",
+        "line": 438,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/oauth.js",
+        "line": 449,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/skills.js",
+        "line": 666,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/pages/usage.js",
+        "line": 196,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/realtime.js",
+        "line": 110,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/realtime.js",
+        "line": 182,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/realtime.test.mjs",
+        "line": 30,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/plugin-console/public/js/realtime.test.mjs",
+        "line": 81,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/plugin-console/public/js/realtime.test.mjs",
+        "line": 100,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/plugin-console/public/js/realtime.test.mjs",
+        "line": 105,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/plugin-console/public/js/ui.js",
+        "line": 90,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/ui.js",
+        "line": 92,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/ui.js",
+        "line": 154,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/ui.js",
+        "line": 191,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/ui.js",
+        "line": 778,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-console/public/js/ui.js",
+        "line": 878,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-exec-hub/src/index.ts",
+        "line": 253,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-exec-hub/src/index.ts",
+        "line": 255,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-exec-hub/src/index.ts",
+        "line": 258,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/index.ts",
+        "line": 660,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/index.ts",
+        "line": 701,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-iam/src/index.ts",
+        "line": 703,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-mcp/src/index.ts",
+        "line": 272,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-mcp/src/index.ts",
+        "line": 656,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-mcp/src/index.ts",
+        "line": 1168,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-modelgw/src/index.ts",
+        "line": 647,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/authz.ts",
+        "line": 145,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/client.ts",
+        "line": 109,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-nas/src/share-link.ts",
+        "line": 113,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/public/js/api.js",
+        "line": 66,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/public/js/app.js",
+        "line": 1023,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/public/js/i18n.js",
+        "line": 192,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-panel-core/src/index.ts",
+        "line": 634,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-rq-card/lib/client.js",
+        "line": 295,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-rq-card/src/client/RqFeedback.tsx",
+        "line": 49,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-update/src/index.ts",
+        "line": 232,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-update/src/index.ts",
+        "line": 245,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-usage/src/index.ts",
+        "line": 201,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-usage/src/index.ts",
+        "line": 203,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-workforce/src/maintenance-service.ts",
+        "line": 65,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-workforce/src/maintenance-service.ts",
+        "line": 67,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/check-dsh-compat.mjs",
+        "line": 85,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/dom-smoke.mjs",
+        "line": 44,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/dom-smoke.mjs",
+        "line": 81,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/page-smoke.mjs",
+        "line": 69,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 398,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 602,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 616,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 1340,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 1770,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 2825,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 4434,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 4450,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 4705,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 4712,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 4747,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 4973,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5443,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5473,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5503,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5552,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5554,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5813,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5822,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5828,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 5954,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 6258,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 6410,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 6549,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 6675,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 6865,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 6890,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 7371,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 7376,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 7549,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 7597,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 7607,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 7825,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/selftest.mjs",
+        "line": 7852,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 145,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 179,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 239,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 284,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 336,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/full-chain-drill.mjs",
+        "line": 383,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/morning-peak-entry.mjs",
+        "line": 42,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/morning-peak-entry.mjs",
+        "line": 62,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-loop-drill.mjs",
+        "line": 595,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-rollback-drill.mjs",
+        "line": 95,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-rollback-drill.mjs",
+        "line": 107,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-rollback-drill.mjs",
+        "line": 111,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-rollback-drill.mjs",
+        "line": 324,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-rollback-drill.mjs",
+        "line": 474,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 105,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 119,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 124,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 350,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "tests/workforce-runtime-drill.mjs",
+        "line": 578,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      }
+    ],
+    "ui": [
+      {
+        "path": "packages/plugin-rq-card/lib/client.js",
+        "line": 609,
+        "api": "host.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-rq-card/lib/client.js",
+        "line": 637,
+        "api": "host.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-rq-card/lib/client.js",
+        "line": 661,
+        "api": "host.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-rq-card/src/client/index.ts",
+        "line": 137,
+        "api": "host.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-rq-card/src/client/index.ts",
+        "line": 167,
+        "api": "host.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-rq-card/src/client/index.ts",
+        "line": 193,
+        "api": "host.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "packages/plugin-rq-card/tests/host-bridge.contract.mjs",
+        "line": 99,
+        "api": "port.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/plugin-rq-card/tests/host-bridge.contract.mjs",
+        "line": 148,
+        "api": "port.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/plugin-rq-card/tests/host-bridge.contract.mjs",
+        "line": 166,
+        "api": "port.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "packages/plugin-rq-card/tests/host-bridge.contract.mjs",
+        "line": 193,
+        "api": "port.slots.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      }
+    ]
+  },
+  "capability_summary": {
+    "agents": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "tools": {
+      "literal_names": [
+        "agent_bind_user",
+        "agent_get",
+        "agent_list",
+        "agent_metrics",
+        "agent_metrics_report",
+        "agent_offline",
+        "app_cost_breakdown",
+        "app_list",
+        "app_metrics",
+        "app_metrics_report",
+        "app_topology",
+        "approval_decide",
+        "audit_alerts_list",
+        "audit_alerts_read_all",
+        "audit_cost_report",
+        "audit_logs",
+        "authn_credential_create",
+        "authn_credential_rotate",
+        "authn_credential_scopes",
+        "authn_token_issue",
+        "authn_token_list",
+        "authn_token_revoke",
+        "billing_wallet_balance",
+        "connect_client_disable",
+        "connect_clients",
+        "connect_code_create",
+        "connect_codes",
+        "connect_login",
+        "connect_reset",
+        "connect_setup",
+        "connect_status",
+        "connect_test",
+        "connector_catalog_search",
+        "connector_connection_list",
+        "connector_execute",
+        "connector_perm_group_list",
+        "connector_run_list",
+        "exec_claim",
+        "exec_complete",
+        "exec_lineage",
+        "exec_wakeup_status",
+        "iam_conflict_list",
+        "iam_org_create",
+        "iam_org_tree",
+        "iam_org_update",
+        "iam_role_list",
+        "iam_sync_run",
+        "iam_user_create",
+        "iam_user_freeze",
+        "iam_user_list",
+        "iam_user_reset_password",
+        "market_plugin_list",
+        "mcp_deploy",
+        "mcp_health_check",
+        "mcp_invoke",
+        "mcp_metrics",
+        "mcp_offline",
+        "mcp_service_list",
+        "model_list",
+        "nas_fs_delete",
+        "nas_fs_list",
+        "nas_fs_mkdir",
+        "nas_fs_search",
+        "nas_fs_upload",
+        "nas_get",
+        "nas_health_check",
+        "nas_list",
+        "panel_agent_invoke",
+        "panel_agents_list",
+        "panel_msg_send",
+        "panel_scene_diag",
+        "panel_skill_invoke",
+        "panel_task_create",
+        "panel_task_transition",
+        "panel_widget_data",
+        "skill_approve",
+        "skill_deprecate",
+        "skill_install",
+        "skill_publish",
+        "skill_search",
+        "skill_submit",
+        "update_apply",
+        "update_check",
+        "update_status",
+        "usage_deadletter_retry",
+        "usage_query",
+        "usage_reconcile",
+        "usage_replay",
+        "workforce_claim",
+        "workforce_invoke",
+        "workforce_renew",
+        "workforce_submit"
+      ],
+      "unresolved_sites": 0,
+      "literal_count": 92,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "commands": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "events": {
+      "literal_names": [
+        "SIGINT",
+        "SIGTERM",
+        "agent.frozen",
+        "audit.authz.denied",
+        "close",
+        "connect.degraded",
+        "data",
+        "end",
+        "error",
+        "jsdomError",
+        "nas.authz.cGroupDrift",
+        "nas.authz.decision",
+        "plugin:com.selftest.demo:tick",
+        "unhandledRejection",
+        "workforce.gray.denied"
+      ],
+      "unresolved_sites": 71,
+      "literal_count": 15,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "timers": {
+      "literal_names": [],
+      "unresolved_sites": 104,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "ui": {
+      "literal_names": [],
+      "unresolved_sites": 6,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    }
+  },
+  "parse_errors": [],
+  "limitations": [
+    "LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.",
+    "Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.",
+    "Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.",
+    "Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.",
+    "Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review."
+  ]
+}

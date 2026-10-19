@@ -1,0 +1,25 @@
+{
+  "repository": "00080000/dsh-project-memory",
+  "repository_id": 1339316901,
+  "captured_at": "2026-10-19T09:21:18.911Z",
+  "window_start": "2026-09-19T09:21:18.911Z",
+  "stars": 23,
+  "pushed_at": "2026-10-17T10:40:32Z",
+  "issues": {
+    "open": 0,
+    "closed": 4,
+    "created_30d": 2,
+    "closed_30d": 2,
+    "updated_30d": 2
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "@yolk_vat-y/dsh-project-memory",
+    "captured_at": "2026-10-19T09:21:32.344Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 4537,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/%40yolk_vat-y%2Fdsh-project-memory",
+    "error": null
+  }
+}

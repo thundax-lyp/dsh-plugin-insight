@@ -1,0 +1,126 @@
+{
+  "url": "https://registry.npmjs.org/dsh-verification-receipt/latest",
+  "captured_at": "2026-10-19T09:24:52.761Z",
+  "http_status": 200,
+  "package": {
+    "dsh": {
+      "bundle": {
+        "patch": "./cordis.patch.yml"
+      }
+    },
+    "bugs": {
+      "url": "https://github.com/030611/dsh-verification-receipt/issues"
+    },
+    "dist": {
+      "shasum": "8698d66aac5cfd5ac6b4cdb883b4581497bf98d8",
+      "tarball": "https://registry.npmjs.org/dsh-verification-receipt/-/dsh-verification-receipt-0.1.0.tgz",
+      "fileCount": 10,
+      "integrity": "sha512-V/gAvMeSMvaE52WK3BnJlEmfXiKkZH+/YJB0gKTzTsQY+AeWSEUkwc5iCaHBXjxyCk/agnVs9wxrOvkMk9iKmA==",
+      "signatures": [
+        {
+          "sig": "MEUCIDJxBAVg/xkzJRXgpYE4QdxF0lg+yRQd5U+xQc2/qwYmAiEA6GF1+MkJyg06GgCKvFPdaHSAFxDFWXernyihGoYdBc0=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 37173
+    },
+    "main": "lib/index.js",
+    "name": "dsh-verification-receipt",
+    "type": "module",
+    "types": "lib/types/index.d.ts",
+    "engines": {
+      "node": "^22.19.0 || >=24.0.0"
+    },
+    "exports": {
+      ".": {
+        "types": "./lib/types/index.d.ts",
+        "default": "./lib/index.js"
+      },
+      "./package.json": "./package.json"
+    },
+    "gitHead": "9a120d858bb42bb8901e6cf39bdeda846f0f1004",
+    "license": "MIT",
+    "scripts": {
+      "test": "vitest run",
+      "build": "tsc -p tsconfig.build.json && esbuild src/index.ts --bundle --packages=external --platform=node --format=esm --target=node22 --outfile=lib/index.js",
+      "check": "pnpm run typecheck && pnpm run test && pnpm run build && pnpm run publint",
+      "prepare": "pnpm run build",
+      "publint": "publint",
+      "typecheck": "tsc --noEmit",
+      "release:smoke": "node scripts/release-smoke.mjs",
+      "performance:smoke": "node scripts/performance-smoke.mjs"
+    },
+    "_npmUser": {
+      "name": "lukasuka",
+      "email": "2843409461@qq.com"
+    },
+    "homepage": "https://github.com/030611/dsh-verification-receipt#readme",
+    "keywords": [
+      "deepseek-harness",
+      "dsh-plugin",
+      "verification",
+      "observability",
+      "privacy"
+    ],
+    "repository": {
+      "url": "git+https://github.com/030611/dsh-verification-receipt.git",
+      "type": "git"
+    },
+    "_npmVersion": "11.17.0",
+    "description": "Privacy-minimal heuristic per-turn execution summaries for DeepSeek Harness",
+    "directories": {},
+    "maintainers": [
+      {
+        "name": "lukasuka",
+        "email": "2843409461@qq.com"
+      }
+    ],
+    "_nodeVersion": "24.19.0",
+    "dependencies": {
+      "@deepseek-ai/schemastery": "3.18.1"
+    },
+    "publishConfig": {
+      "access": "public"
+    },
+    "_hasShrinkwrap": false,
+    "packageManager": "pnpm@11.19.0",
+    "devDependencies": {
+      "vitest": "^4.1.8",
+      "esbuild": "0.28.2",
+      "publint": "^0.3.12",
+      "typescript": "^6.0.3",
+      "@types/node": "^24.0.0",
+      "@deepseek-ai/cordis": "4.0.1",
+      "@deepseek-ai/dsh-llm": "0.1.0-rc.6",
+      "@deepseek-ai/dsh-session": "0.1.0-rc.6",
+      "@deepseek-ai/schemastery": "3.18.1"
+    },
+    "dshCompatibility": {
+      "testedHead": "47f943859bef60e4160492346772ded9b24f765a",
+      "peersAtTestedHead": {
+        "@deepseek-ai/cordis": "4.0.1",
+        "@deepseek-ai/dsh-session": "0.1.0-rc.5",
+        "@deepseek-ai/schemastery": "3.18.1"
+      }
+    },
+    "peerDependencies": {
+      "@deepseek-ai/cordis": "^4.0.1",
+      "@deepseek-ai/dsh-session": ">=0.1.0-rc.5 <0.1.0",
+      "@deepseek-ai/schemastery": "^3.18.1"
+    },
+    "peerDependenciesMeta": {
+      "@deepseek-ai/cordis": {
+        "optional": true
+      },
+      "@deepseek-ai/dsh-session": {
+        "optional": true
+      }
+    },
+    "_npmOperationalInternal": {
+      "tmp": "tmp/dsh-verification-receipt_0.1.0_1786684678791_0.17679511576365647",
+      "host": "s3://npm-registry-packages-npm-production"
+    },
+    "_id": "dsh-verification-receipt@0.1.0",
+    "version": "0.1.0"
+  }
+}

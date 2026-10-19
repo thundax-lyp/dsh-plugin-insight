@@ -5,7 +5,7 @@ import {parseArgs} from 'node:util';
 import {ROOT,read,atomicWrite} from './plugin-data.mjs';
 import {api} from './capture-github.mjs';
 import {captureMetadata,captureNpmDownloads,validateMetadata} from './capture-plugin-meta.mjs';
-import {validateSession} from './research-session.mjs';
+import {validateSession,selectedItems} from './research-session.mjs';
 import {main as render} from './render-research.mjs';
 const scripts=/\.(?:[cm]?[jt]s|[jt]sx)$/i;
 export function inspectUpdate(item,request=api,at=new Date().toISOString()){
@@ -29,7 +29,7 @@ export async function refresh(inputPath,{request=api,downloads=captureNpmDownloa
  const publication=read(resolve(root,inputPath));const session=validateSession(read(resolve(root,publication.session)),root);
  const stamp=at.replace(/[-:]/g,'').replace(/\.\d+Z$/,'Z');const result=[];const mapping={...publication.metadata};
  // Read the fixed list; no discovery, deep analysis, catalog writes or checkpoint edits.
- for(const item of session.items){
+ for(const item of selectedItems(session)){
   const previous=mapping[item.id]?validateMetadata(read(resolve(root,mapping[item.id]))):null;
   const metadata=captureMetadata(item.repository,request,at);
   if(metadata.repository_id!==null&&metadata.repository_id!==Number(item.id.split(':')[1]))throw Error(`repository identity changed: ${item.id}`);

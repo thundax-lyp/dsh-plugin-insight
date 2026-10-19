@@ -1,0 +1,4662 @@
+{
+  "unresolved": [
+    {
+      "repository": "01men/ybkk-AIOS",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/01men/ybkk-AIOS",
+      "entry": {
+        "url": "https://github.com/01men/ybkk-AIOS",
+        "name": "01men/ybkk-AIOS",
+        "category": "market",
+        "description": {
+          "en": "Enterprise AI resource platform as a 22-plugin cordis bundle: org/account/role IAM, OIDC provider and App SSO, MCP server management with the platform itself exposed as an MCP server, NAS asset storage, skill hub, agent and app registries, SaaS connector management, enterprise portal data channel, department agent workbench panel, DingTalk group bridging for message and approval push, one-click remote dsh enrollment with tool proxying, usage metering, wallet billing, model gateway, audit with alerts, self-update, and a reviewed third-party plugin marketplace — 70+ ops tools become callable by the dsh agent.",
+          "zh": "企业 AI 资源平台，由 22 个 cordis 插件组成：组织/账号/角色 IAM、OIDC 认证与 App SSO、MCP 服务管理（平台自身亦作为 MCP Server 对外提供调用）、NAS 资产存储、Skill 市场、Agent 与应用管理、SaaS 连接器纳管、企业门户数据通道、部门 Agent 工作台面板、钉钉群桥消息与审批推送、远程 dsh 一键接入与工具远程代理、计量、钱包计费、模型网关、审计告警、平台自更新与带审核的第三方插件市场——70+ 个运维工具可直接被 dsh Agent 调用。"
+        }
+      },
+      "entry_file": "data/plugins/01men__ybkk-AIOS.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "2384418321/dsh-integration-settings",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/2384418321/dsh-integration-settings",
+      "entry": {
+        "url": "https://github.com/2384418321/dsh-integration-settings",
+        "name": "2384418321/dsh-integration-settings",
+        "category": "ui",
+        "description": {
+          "en": "Adds three visual pages to DSH Settings: MCP servers (managed by rewriting the profile patch managed block from a JSON source of truth, with YAML validation and timestamped backups), skills (browse, create, edit and delete across DSH global, shared .agents and Claude / Codex directories) and the global AGENTS.md persona (with one-click restore of the last three backups).",
+          "zh": "在 DSH 设置里加三个可视化页面：MCP 服务器（以 JSON 为真理源整体重写 profile patch 受管区块，写入前做 YAML 结构校验与时间戳备份）、技能（浏览 / 新建 / 编辑 / 删除，覆盖 DSH 全局、共享 .agents 与 Claude / Codex 目录）、全局 AGENTS.md 人设（可一键载回最近 3 份备份）。"
+        }
+      },
+      "entry_file": "data/plugins/2384418321__dsh-integration-settings.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "AngLi1997/dsh-plugin-sync",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/AngLi1997/dsh-plugin-sync",
+      "entry": {
+        "url": "https://github.com/AngLi1997/dsh-plugin-sync",
+        "name": "AngLi1997/dsh-plugin-sync",
+        "category": "tools",
+        "description": {
+          "en": "Sync the installed DeepSeek Harness plugin manifest to a GitHub Gist (OAuth login, one-click export/import with automatic dependency install).",
+          "zh": "将已安装的 DeepSeek Harness 插件清单同步到 GitHub Gist（OAuth 登录、一键导出/导入并自动安装依赖）。"
+        }
+      },
+      "entry_file": "data/plugins/AngLi1997__dsh-plugin-sync.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-breaker",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/BOWLUNA/dsh-zcode-breaker",
+      "entry": {
+        "url": "https://github.com/BOWLUNA/dsh-zcode-breaker",
+        "name": "BOWLUNA/dsh-zcode-breaker",
+        "category": "session",
+        "description": {
+          "en": "Rapid-refill circuit breaker for DeepSeek Harness automatic compaction. It refuses a compaction that would be futile — the context refilled within fewer than N tool turns M times in a row, which the unbounded step-pressure trigger cannot detect — and instead of burning a summarization call on every step it reports the situation with advice, usually that a single read or tool output was too large. Shows state and re-arms through /compaction-breaker, and injects one prompt section so the model relays it to the user. Covers host-plane sessions through its profile bundle; ordinary sessions need one row replaced inside an agent preset.",
+          "zh": "自动压缩的 rapid-refill 熔断器。当上下文在连续 M 次压缩中、每次都于不足 N 个工具轮次内又满时，拒绝这次徒劳的压缩——无上限的步压力触发检测不到这种情形——并且不做「每一步都白烧一次摘要调用」的事，而是把情况连同建议一起报告出来，通常是一次读取或一份工具输出过大。用 /compaction-breaker 查看状态与重新武装，并注入一个 prompt 段让模型把它转述给用户。宿主平面会话由 profile bundle 覆盖；普通会话需要在 agent preset 里替换一行。"
+        }
+      },
+      "entry_file": "data/plugins/BOWLUNA__dsh-zcode-breaker.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-farm",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/BOWLUNA/dsh-zcode-farm",
+      "entry": {
+        "url": "https://github.com/BOWLUNA/dsh-zcode-farm",
+        "name": "BOWLUNA/dsh-zcode-farm",
+        "category": "tools",
+        "description": {
+          "en": "Multi-instance ComfyUI orchestration: probes every configured ComfyUI endpoint for its GPU, free VRAM and queue depth, then dispatches a generation job to the idlest eligible instance. Ships three tools (comfyui_farm_status, comfyui_farm_pick, comfyui_farm_run). An instance is eligible only if it is reachable, has at least the requested free VRAM, and its queue is no deeper than the configured ceiling; eligible instances are ranked by free VRAM minus queue depth times a weight, so an idle shallow queue wins over a busy large one. Zero runtime dependencies. Optional retry on probe failure, because a single timeout across an SSH tunnel is not proof that an instance is down.",
+          "zh": "多实例 ComfyUI 编排：探测每个已配置 ComfyUI 端点的 GPU、空闲显存与队列深度，再把生成任务派给最空闲且满足条件的实例。提供三个工具（comfyui_farm_status、comfyui_farm_pick、comfyui_farm_run）。一个实例只有在可达、空闲显存不低于要求、且队列不深于上限时才算候选；候选按「空闲显存 － 队列深 × 权重」排序，因此空闲的浅队列胜过忙碌的大显存。零运行时依赖。探测失败可选重试——跨 SSH 隧道的一次超时不足以证明实例已下线。"
+        }
+      },
+      "entry_file": "data/plugins/BOWLUNA__dsh-zcode-farm.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-git",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/BOWLUNA/dsh-zcode-git",
+      "entry": {
+        "url": "https://github.com/BOWLUNA/dsh-zcode-git",
+        "name": "BOWLUNA/dsh-zcode-git",
+        "category": "git",
+        "description": {
+          "en": "Structured git tools for DeepSeek Harness agents: status, diff, log, branch, commit and stash. Output is pinned with ten `git -c` overrides so a user pager, colour or quotepath setting cannot reshape what the agent reads; every invocation is an argv array, so no shell ever parses an argument; and the mutating actions go through the harness approval service, refusing rather than proceeding when no approval service is mounted.",
+          "zh": "给 DeepSeek Harness 智能体用的结构化 Git 工具：status、diff、log、branch、commit 与 stash。输出由十项 `git -c` 覆盖钉死，因此用户的 pager、颜色或 quotepath 设置无法改变智能体读到的东西；每次调用都是 argv 数组，任何 shell 都不解析参数；写入动作走 harness 的审批服务，没有装审批服务时拒绝执行而不是放行。"
+        }
+      },
+      "entry_file": "data/plugins/BOWLUNA__dsh-zcode-git.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-rewind",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/BOWLUNA/dsh-zcode-rewind",
+      "entry": {
+        "url": "https://github.com/BOWLUNA/dsh-zcode-rewind",
+        "name": "BOWLUNA/dsh-zcode-rewind",
+        "category": "session",
+        "description": {
+          "en": "Workspace checkpoints per tool call: records every file mutation inside the workspace (excluding .git and node_modules by default), including changes made by shell commands rather than by write/edit, and stores the previous content of each changed path in a content-addressed store kept outside the workspace. Restores have two modes — undo one record, or return to a point in time — with a line-level diff preview, a dry run by default, and a rescue record written before every restore so the restore itself can be undone.",
+          "zh": "逐工具调用的工作区检查点:记录工作区内每一次文件改动(默认排除 .git 与 node_modules),包括由 shell 命令而非 write/edit 造成的改动,并把每个被改路径的旧内容存进工作区之外的内容寻址库。恢复有两种模式——撤销单条记录,或回到某个时间点——带行级 diff 预览、默认 dry run,且每次恢复前都先写保护快照,所以恢复本身也能被撤销。"
+        }
+      },
+      "entry_file": "data/plugins/BOWLUNA__dsh-zcode-rewind.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-scribe",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/BOWLUNA/dsh-zcode-scribe",
+      "entry": {
+        "url": "https://github.com/BOWLUNA/dsh-zcode-scribe",
+        "name": "BOWLUNA/dsh-zcode-scribe",
+        "category": "memory",
+        "description": {
+          "en": "Long-term memory for DeepSeek Harness, read-only as of 0.1.0: a scribe_recall tool that reads a plain-markdown memory room, path rules that refuse directory traversal, Unicode smuggling and NTFS alternate data streams, and a bounded index whose truncation is always reported rather than silent.",
+          "zh": "给 DeepSeek Harness 的长期记忆（0.1.0 为只读）：用 scribe_recall 工具读取纯 markdown 记忆房间，路径规则拒绝目录穿越、Unicode 夹带与 NTFS 备用数据流，索引超限必定报告而不静默截断。"
+        }
+      },
+      "entry_file": "data/plugins/BOWLUNA__dsh-zcode-scribe.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "Bainianzzz/dsh-bg-switcher",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/Bainianzzz/dsh-bg-switcher",
+      "entry": {
+        "url": "https://github.com/Bainianzzz/dsh-bg-switcher",
+        "name": "Bainianzzz/dsh-bg-switcher",
+        "category": "theme",
+        "description": {
+          "en": "Adds a Background button above Settings in the sidebar foot that fills the window with one of six preset wallpapers, the theme default, or a custom image URL, remembered across reloads.",
+          "zh": "在侧边栏底部「设置」上方加一个「背景」按钮，可用 6 个预设壁纸、主题默认或自定义图片地址铺满窗口，并记住选择。"
+        }
+      },
+      "entry_file": "data/plugins/Bainianzzz__dsh-bg-switcher.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "Flandern1211/dsh-task-time",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/Flandern1211/dsh-task-time",
+      "entry": {
+        "url": "https://github.com/Flandern1211/dsh-task-time",
+        "name": "Flandern1211/dsh-task-time",
+        "category": "notify",
+        "description": {
+          "en": "Reminders and task timing for DeepSeek Harness: interval alerts while the model runs and overdue alerts past the planned time, plus a persistent red decision alert when the model needs your input (in-app reminder cards with sound while you are in DSH, system toasts when you are away, configurable or keep-until-dismissed card dwell time, and clicking a card jumps to its session); plan time per session, count model runtime only, and report actual vs. planned when the task ends, with a task board and persistent local records.",
+          "zh": "DeepSeek Harness 提醒 + 任务计时插件：提醒——按累计运行间隔定时提醒、超过计划用时发超时提醒，模型需要你确定或选择时发红色常驻提醒（人在 DSH 里走界面提醒卡 + 提示音，不在 DSH 里发系统通知；卡片滞留时长可配置、可设为常驻不自动消散，点击卡片可跳转所属会话）；任务计时——为每个会话设置计划用时，仅模型运行时连续计时，任务结束自动统计实际用时与计划的差距，任务面板支持点击跳转会话，本地记录持久化。"
+        }
+      },
+      "entry_file": "data/plugins/Flandern1211__dsh-task-time.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "Why-147369/dsh-line-pool",
+      "path": "dsh-line-pool",
+      "component_hint": "dsh/line/pool",
+      "url": "https://github.com/Why-147369/dsh-line-pool/tree/main/dsh-line-pool",
+      "entry": {
+        "url": "https://github.com/Why-147369/dsh-line-pool/tree/main/dsh-line-pool",
+        "name": "Why-147369/dsh-line-pool#dsh-line-pool",
+        "category": "dev",
+        "description": {
+          "en": "Outbound route pool for DeepSeek Harness. Ships 15 seed routes plus a 20-entry candidate pool covering 7 target kinds (GitHub raw/codeload/main, npm registry, PyPI index, HuggingFace, general). Routes are verified before use: upstream IP lists go through a TLS handshake with full certificate-chain validation (a bare TCP check can be answered locally and report dead IPs as healthy), and failures advance a cooldown ladder of 2/5/15 minutes with the fastest healthy route picked per target kind. Routes are applied by rewriting the URL with one of four rules (prefix, registry, index, host-replace), reaching git, pip, npm, pnpm, gh, curl and wget through three paths: the shell seam (download commands the model runs through the bash tool are intercepted and rewritten automatically; commands wrapped by the pwsh tool, and fetches made by the host itself or the renderer, are not covered), two registered tools the model can call directly (line_pool_status, line_pool_run), and child-process spawn. Multi-line commands keep their line breaks and only the download segment is touched. URLs carrying credentials (user:token@host) are never rewritten, so tokens are not forwarded to third-party mirrors. No global config is modified. A sidebar panel lists every route with latency, failure reason and cooldown countdown, supports per-route retest and enable/disable, and shows live TUN/proxy status from network-adapter and loopback port checks. The candidate pool is re-verified every 24 hours so newly usable routes are added and dead ones dropped. 570 tests, 87% line coverage.",
+          "zh": "DSH 出站线路池。内置 15 条种子线路 + 20 条候选池，覆盖 7 类目标（GitHub raw/codeload/main、npm registry、PyPI index、HuggingFace、通用）。线路投入使用前均经验证：上游 IP 表走 **TLS 握手 + 完整证书链校验**（纯 TCP 判据会被本地应答伪造，把死 IP 报成可用）；失败沿 2/5/15 分钟冷却阶梯递进，按目标类型选最快健康线路。线路经四种改写规则之一生效（前缀、registry、index、域名替换），并通过三条路径抵达 git/pip/npm/pnpm/gh/curl/wget：**shell 拦截**（模型在 bash 工具里跑的下载命令自动改写；被 pwsh 工具包装的命令、宿主自身与渲染进程发起的 fetch 不在覆盖范围）、**两个注册给模型的工具**（line_pool_status、line_pool_run）、子进程传递。**多行命令保持原有换行、只改下载那一段**；**带凭据的 URL（user:token@host）一律不改写**，避免 token 被转发到第三方镜像；全程不改动任何全局配置。侧边栏面板列出每条线路的延迟、失败原因与冷却倒计时，支持单条重测与启停，并常驻显示 **TUN 开关与本地代理端口**（网卡名 + 回环端口探测，数秒内刷新）；候选池每 24 小时重新验证，自动纳入新可用线路、剔除失效线路。570 项测试、87% 行覆盖率。"
+        }
+      },
+      "entry_file": "data/plugins/Why-147369__dsh-line-pool--dsh-line-pool.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "ZiFan1117/bazidiy",
+      "path": "atoms/bazidiy.plugin/pkg",
+      "component_hint": "atoms/bazidiy.plugin/pkg",
+      "url": "https://github.com/ZiFan1117/bazidiy/tree/main/atoms/bazidiy.plugin/pkg",
+      "entry": {
+        "url": "https://github.com/ZiFan1117/bazidiy/tree/main/atoms/bazidiy.plugin/pkg",
+        "name": "ZiFan1117/bazidiy#ontology",
+        "category": "tools",
+        "description": {
+          "en": "BaziDIY ontology plugin: deterministic bazi/wuxing/bead/style rules as DSH tools (calculate_bazi, propose_designs, generate_design, save_design, load_design), plus bracelet SVG rendering and a bead editor; no LLM calls inside execute.",
+          "zh": "八字DIY 本体插件：把确定性八字/五行/珠子/款式规则暴露为 DSH 工具（calculate_bazi、propose_designs、generate_design、save/load_design），含手串 SVG 渲染与珠子编辑器；execute 内不调用模型。"
+        }
+      },
+      "entry_file": "data/plugins/ZiFan1117__bazidiy--atoms-bazidiy.plugin-pkg.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "ZiFan1117/dsh-atom-market",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/ZiFan1117/dsh-atom-market",
+      "entry": {
+        "url": "https://github.com/ZiFan1117/dsh-atom-market",
+        "name": "ZiFan1117/dsh-atom-market",
+        "category": "tools",
+        "description": {
+          "en": "Software Atom Market for DeepSeek Harness - lets agents browse a shared store of contract-typed capability atoms: search atoms, read full manifests, validate submissions, draft new atoms (atom_search/atom_read/atom_validate/atom_draft); GitHub store as zero-config default source.",
+          "zh": "把软件原子市场接入 DeepSeek Harness：Agent 可检索能力原子、读取完整契约、投稿前校验 manifest、起草新原子（atom_search/atom_read/atom_validate/atom_draft）；默认直连 GitHub 商店，零配置。"
+        }
+      },
+      "entry_file": "data/plugins/ZiFan1117__dsh-atom-market.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "bobostudio/dsh-session-lens",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/bobostudio/dsh-session-lens",
+      "entry": {
+        "url": "https://github.com/bobostudio/dsh-session-lens",
+        "name": "Session Lens",
+        "category": "session",
+        "description": {
+          "en": "Session insights and one-click shareable HTML replay for DeepSeek Harness.",
+          "zh": "DeepSeek Harness 的会话洞察，并可一键导出为可分享的 HTML 回放。"
+        }
+      },
+      "entry_file": "data/plugins/bobostudio__dsh-session-lens.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "cerebrixos-org/tuning-engines-cli",
+      "path": "packages/tuningengines-dsh-plugin",
+      "component_hint": "packages/tuningengines/dsh/plugin",
+      "url": "https://github.com/cerebrixos-org/tuning-engines-cli/tree/main/packages/tuningengines-dsh-plugin",
+      "entry": {
+        "url": "https://github.com/cerebrixos-org/tuning-engines-cli/tree/main/packages/tuningengines-dsh-plugin",
+        "name": "cerebrixos-org/tuning-engines-cli#tuningengines-dsh-plugin",
+        "category": "notify",
+        "description": {
+          "en": "Exports metadata-only DSH turn, model, tool, approval, retry, and error events to Tuning Engines for governed traces, policy evaluation, cost analysis, and Work Session review, with a disk-backed retry queue.",
+          "zh": "将不含原始内容的 DSH 回合、模型、工具、审批、重试和错误事件导出到 Tuning Engines，用于受治理的追踪、策略评估、成本分析和 Work Session 审阅，并提供磁盘持久化重试队列。"
+        }
+      },
+      "entry_file": "data/plugins/cerebrixos-org__tuning-engines-cli--packages-tuningengines-dsh-plugin.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "dannyvan/dsh-file-drop",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/dannyvan/dsh-file-drop",
+      "entry": {
+        "url": "https://github.com/dannyvan/dsh-file-drop",
+        "name": "dannyvan/dsh-file-drop",
+        "category": "ui",
+        "description": {
+          "en": "Drag & drop or click to attach any non-image file (PDF/Word/Excel/ZIP/text) into the composer: in the desktop shell it resolves the real Finder path instantly; otherwise it uploads to the workspace and inserts the path.",
+          "zh": "拖拽/点击上传任意非图片文件（PDF/Word/Excel/ZIP/文本）到输入框：桌面壳下直取 Finder 原始路径；无壳时上传到工作区并插入路径。"
+        }
+      },
+      "entry_file": "data/plugins/dannyvan__dsh-file-drop.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "diqierjia/StrataGate-AgentMemory",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/diqierjia/StrataGate-AgentMemory",
+      "entry": {
+        "url": "https://github.com/diqierjia/StrataGate-AgentMemory",
+        "tarball": "https://github.com/diqierjia/StrataGate-AgentMemory/releases/latest/download/stratagate-dsh.tgz",
+        "name": "diqierjia/StrataGate-AgentMemory",
+        "category": "memory",
+        "description": {
+          "en": "Recent conversations stay vivid. Older ones fade into summaries, not oblivion. StrataGate gives DeepSeek Harness six-layer, time-decaying memory, while lasting events and relationships settle into a knowledge graph. Bring your memories from other AIs with you—no need to start over.",
+          "zh": "近期对话保持清晰，久远记忆逐渐化为摘要，而不是消失。StrataGate 为 DeepSeek Harness 带来六层时间衰减记忆，并将长期事件与关系沉淀进知识图谱。还可以把其他 AI 中的已有记忆一起带过来，不必从头开始。"
+        }
+      },
+      "entry_file": "data/plugins/diqierjia__StrataGate-AgentMemory.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "lunaship/dsh-links",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/lunaship/dsh-links",
+      "entry": {
+        "url": "https://github.com/lunaship/dsh-links",
+        "name": "lunaship/dsh-links",
+        "category": "remote",
+        "description": {
+          "en": "Android companion bridge: QR-code LAN pairing with revocable device tokens and TLS fingerprints, a phone-connection and device-management panel, and an HTTPS access proxy serving sessions, live events and approvals to the paired native app.",
+          "zh": "Android 配套桥接：局域网扫码配对（可吊销的设备 Token 与 TLS 指纹）、手机连接与设备管理面板，以及向配对原生 App 提供会话、实时事件与审批的 HTTPS 接入代理。"
+        }
+      },
+      "entry_file": "data/plugins/lunaship__dsh-links.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "qcsjjjjj/dsh-hero-rightbar",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/qcsjjjjj/dsh-hero-rightbar",
+      "entry": {
+        "url": "https://github.com/qcsjjjjj/dsh-hero-rightbar",
+        "name": "qcsjjjjj/dsh-hero-rightbar",
+        "category": "ui",
+        "description": {
+          "en": "Adds the right sidebar's expand trigger on pages with no conversation, matching the product's own control.",
+          "zh": "在没有对话的页面上补回右侧栏的展开入口，位置与外观对齐产品自带控件。"
+        },
+        "tarball": "https://github.com/qcsjjjjj/dsh-hero-rightbar/releases/latest/download/dsh-hero-rightbar.tgz"
+      },
+      "entry_file": "data/plugins/qcsjjjjj__dsh-hero-rightbar.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "qcsjjjjj/dsh-planner",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/qcsjjjjj/dsh-planner",
+      "entry": {
+        "url": "https://github.com/qcsjjjjj/dsh-planner",
+        "name": "qcsjjjjj/dsh-planner",
+        "category": "ui",
+        "tarball": "https://github.com/qcsjjjjj/dsh-planner/releases/download/v0.1.0/dsh-planner-0.1.0.tgz",
+        "description": {
+          "en": "A planner board as a third tab beside chat and trajectory: a Monday-first month calendar above per-day cards holding title, note, times, three importance levels and a completion checkbox. Plans repeat daily, weekly or on weekdays with an optional end date; editing or deleting asks this occurrence versus the whole series; completion is tracked per day; one button clears a day while only skipping recurrent series. Five model tools let the agent read, write, delete, clear and undo plans in conversation.",
+          "zh": "在中间栏加一个“计划”标签（对话、轨迹的右侧）：周一起始的月历用于选日期，下方是当天的计划卡片，含标题、备注、起止时间、三档重要度与完成勾选框。计划可按每天、每周或工作日重复并带可选截止日期；编辑与删除会询问“仅此一次”还是“整个系列”；完成状态按天独立；一键躺平只跳过重复系列的当天。五个模型工具让 Agent 能在对话里读取、写入、删除、清空与撤销计划。"
+        }
+      },
+      "entry_file": "data/plugins/qcsjjjjj__dsh-planner.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "qinyre/dsh-plugin-archive-manager",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/qinyre/dsh-plugin-archive-manager",
+      "entry": {
+        "url": "https://github.com/qinyre/dsh-plugin-archive-manager",
+        "name": "qinyre/dsh-plugin-archive-manager",
+        "category": "session",
+        "description": {
+          "en": "Settings section for archived sessions: browse by workspace, search, batch unarchive with the sidebar updating live, and optional auto-archive rules (idle days, keep-last-N per workspace) with a dry-run preview — plus a left-edge turn rail for jumping between turns of long conversations and ↑/↓ input history in the composer.",
+          "zh": "设置页的归档会话分区：按工作区分组浏览、搜索、批量取消归档，侧边栏实时恢复；自动归档规则（不活跃天数、每工作区保留条数）可选，执行前可试运行预览。另含长会话的左缘轮次刻度尺（悬停预览、点击跳转、Alt+↑/↓ 逐轮移动）与输入框 ↑/↓ 历史翻找。"
+        }
+      },
+      "entry_file": "data/plugins/qinyre__dsh-plugin-archive-manager.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "semantic-craft/dsh-grokbot-dispatch",
+      "path": "plugin",
+      "component_hint": "plugin",
+      "url": "https://github.com/semantic-craft/dsh-grokbot-dispatch/tree/main/plugin",
+      "entry": {
+        "url": "https://github.com/semantic-craft/dsh-grokbot-dispatch/tree/main/plugin",
+        "name": "semantic-craft/dsh-grokbot-dispatch",
+        "category": "workflow",
+        "description": {
+          "zh": "DSH 双向派活插件：为 Grok Bot / Yobiru 派入的任务打开可见的桌面会话；提供 /dispatch-grok、/dispatch-zcode 斜杠命令向外派活；会话结束时自动把结果回报给派活方（对端由用户自行配置，未配置时不对外发送）。",
+          "en": "Bidirectional dispatch for DSH: opens visible desktop sessions for tasks dispatched in by Grok Bot / Yobiru, adds /dispatch-grok and /dispatch-zcode slash commands to send tasks out, and reports the session result back to the dispatching peer on completion (peers are user-configured; nothing is sent until configured)."
+        }
+      },
+      "entry_file": "data/plugins/semantic-craft__dsh-grokbot-dispatch--plugin.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "shimingming520/dsh-conversation-process-collapse",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/shimingming520/dsh-conversation-process-collapse",
+      "entry": {
+        "url": "https://github.com/shimingming520/dsh-conversation-process-collapse",
+        "name": "shimingming520/dsh-conversation-process-collapse",
+        "category": "ui",
+        "description": {
+          "en": "Collapses each settled turn's process rows into one expandable disclosure in the DeepSeek Harness Web conversation while keeping the final answer visible.",
+          "zh": "将 DeepSeek Harness Web 对话中已结束回合的过程行折叠成一个可展开的总结，同时保留最终答案可见。"
+        }
+      },
+      "entry_file": "data/plugins/shimingming520__dsh-conversation-process-collapse.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "wbin0001/dsh-comfyui-canvas",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/wbin0001/dsh-comfyui-canvas",
+      "entry": {
+        "url": "https://github.com/wbin0001/dsh-comfyui-canvas",
+        "name": "wbin0001/dsh-comfyui-canvas",
+        "category": "tools",
+        "description": {
+          "en": "From chat to canvas to artwork — drive ComfyUI as a visual workflow IDE inside DSH. Embed ComfyUI (local or cloud) as a split-screen canvas in DeepSeek Harness Web: the agent sparks ideas, writes prompts and scripts right in the chat, applies them live to the canvas in front of you, and produces images, music, video, and 3D. From idea to finished output without ever leaving the conversation or switching front-ends: Canvas ops — compose and arrange pipelines, read/write workflows, edit nodes, wire links, run, tune parameters, and debug errors, all live and WYSIWYG on the exact canvas you are looking at; Production tasks — batch parameter sweeps (batch_run) and automatic output-image retrieval back into the chat (get_outputs), powering multi-modal creative and batch generation across images, music, video, and 3D; Environment upkeep — one-click launch of ComfyUI and one-click upgrade of the core plus every custom node (upgrade), keeping the stack healthy without interruption. This package is the DSH-side plugin, and it ships the ComfyUI-side bridge node too.",
+          "zh": "从对话到画布再到作品——DSH 里驾驭 ComfyUI 的可视化工作流 IDE。把 ComfyUI（本地或云端）以画布分屏嵌入 DeepSeek Harness Web，agent 在对话里激发创意、书写提示词与脚本，实时落到你眼前的画布上，产出图像、音乐、视频、3D。从灵感到成品，全程不离开对话，不用切换任何前端工具：画布操作——搭建编排、读写工作流、修改节点、连线、运行、调整参数、工作流查错，所见即所得，实时落在你眼前的画布上；生产任务——批量扫参（batch_run）、自动取回出图（get_outputs）带回对话，实现图像、音乐、视频、3D 等多任务智能创作与批量生产；环境维护——一键启动 ComfyUI、一键升级核心与全部自定义节点（upgrade），省心维护不间断。本仓库集成了 DSH 侧插件（画布副驾）+ ComfyUI 侧桥接节点，无人值守/规模化执行时可配合官方 ComfyUI MCP 服务器使用。"
+        }
+      },
+      "entry_file": "data/plugins/wbin0001__dsh-comfyui-canvas.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "xiaomao49/dsh-model-probe",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/xiaomao49/dsh-model-probe",
+      "entry": {
+        "url": "https://github.com/xiaomao49/dsh-model-probe",
+        "name": "xiaomao49/dsh-model-probe",
+        "category": "model",
+        "description": {
+          "en": "Measures what an llm-pi-ai endpoint really accepts — context window from its own model list, output-token limit and reasoning levels read out of its own range errors, image support from a generated test image — then reports declared values that contradict that evidence and rewrites them only after confirmation.",
+          "zh": "直接实测 llm-pi-ai 端点真正接受的能力——从它自己的模型列表取上下文窗口，从它自己的报错反推输出上限与推理档位，用生成的测试图验证图像支持——再报告与证据不符的声明值，确认后才改写。"
+        }
+      },
+      "entry_file": "data/plugins/xiaomao49__dsh-model-probe.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "xiaweiliang060035/dsh-opencode-go-usage",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/xiaweiliang060035/dsh-opencode-go-usage",
+      "entry": {
+        "url": "https://github.com/xiaweiliang060035/dsh-opencode-go-usage",
+        "name": "xiaweiliang060035/dsh-opencode-go-usage",
+        "category": "usage",
+        "description": {
+          "en": "Floating widget showing real-time OpenCode Go subscription usage (rolling/weekly/monthly) for every API key, with rate-limit alerts and automatic key-pool discovery.",
+          "zh": "悬浮组件实时显示 OpenCode Go 各 key 用量（滚动/每周/每月），限流预警，自动发现 key 池。"
+        }
+      },
+      "entry_file": "data/plugins/xiaweiliang060035__dsh-opencode-go-usage.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "xxww0098/dsh-plugin-oauth-subs",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/xxww0098/dsh-plugin-oauth-subs",
+      "entry": {
+        "url": "https://github.com/xxww0098/dsh-plugin-oauth-subs",
+        "name": "xxww0098/dsh-plugin-oauth-subs",
+        "category": "identity",
+        "description": {
+          "en": "Connect ChatGPT Codex, xAI Grok, Zhipu GLM, AWS Kiro, Google Antigravity, and Cursor subscriptions to DeepSeek Harness through OAuth and a local proxy.",
+          "zh": "通过 OAuth 和本地代理，将 ChatGPT Codex、xAI Grok、智谱 GLM、AWS Kiro、Google Antigravity 与 Cursor 订阅接入 DeepSeek Harness。"
+        }
+      },
+      "entry_file": "data/plugins/xxww0098__dsh-plugin-oauth-subs.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "yeastcloud/dsh-anchor",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/yeastcloud/dsh-anchor",
+      "entry": {
+        "url": "https://github.com/yeastcloud/dsh-anchor",
+        "name": "yeastcloud/dsh-anchor",
+        "category": "session",
+        "description": {
+          "en": "Session instruction anchor for DeepSeek Harness: the first step of a new session injects a freely composed instruction block as a plugin-sourced message, and it is re-anchored after a summarizing compaction, every N turns, or when metered context pressure crosses a threshold. An /anchor command re-anchors on demand without a model call; a settings page manages the paged preset library, injection order, re-anchor source and character limits.",
+          "zh": "DSH 会话指令定锚：新会话的第一个 step 把自由组合的指令块作为插件来源消息注入，之后在完成压缩、跨过设定轮数、或计量到的上下文压力越过阈值时重锚。`/anchor` 命令可按需定锚且不触发模型调用；设置页管理分页预设库、注入顺序、重锚来源与字数上限。"
+        }
+      },
+      "entry_file": "data/plugins/yeastcloud__dsh-anchor.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-artifacts",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-artifacts",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-artifacts",
+        "name": "zoahdev/dsh-artifacts",
+        "category": "tools",
+        "description": {
+          "en": "Render Markdown + JSON into self-contained HTML documents, cards, dashboards, and galleries (CLI + artifact_render tool).",
+          "zh": "把 Markdown + JSON 渲染成自包含 HTML 文档/卡片/仪表盘/画廊（CLI + 内置 artifact_render 工具）。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-artifacts.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-browser-use",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-browser-use",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-browser-use",
+        "name": "zoahdev/dsh-browser-use",
+        "category": "tools",
+        "description": {
+          "en": "Browser Use cloud bridge for dsh: run real web tasks — open pages, click, type, fill forms, and extract data — through the Browser Use API.",
+          "zh": "Browser Use 云端桥接：通过 Browser Use API 让 dsh agent 执行真实网页任务，包括打开页面、点击、输入、填表和提取数据。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-browser-use.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-cn-boot",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-cn-boot",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-cn-boot",
+        "name": "zoahdev/dsh-cn-boot",
+        "category": "dev",
+        "description": {
+          "en": "China-network bootstrap for dsh: probes npm/npmmirror/GitHub/HuggingFace/Gitee and local proxies, reads registry config, recommends mirrors/proxy, and generates a PowerShell + bash bootstrap script. Read-only by default; apply is explicit. CLI plus an agent-callable cn_boot tool.",
+          "zh": "dsh 国内网络引导：探测 npm/npmmirror/GitHub/HuggingFace/Gitee 与本地代理，读取注册表配置，推荐镜像/代理并生成 PowerShell + bash 引导脚本。默认只读，apply 显式。含 CLI 与 agent 可调用 cn_boot 工具。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-cn-boot.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-dep-audit",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-dep-audit",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-dep-audit",
+        "name": "zoahdev/dsh-dep-audit",
+        "category": "dev",
+        "description": {
+          "en": "Dependency supply-chain hygiene audit for dsh projects and profiles: peer-range resolvability, broken dist-tag detection (#2763 class), stale / missing-license / non-registry dependencies, and installed-vs-declared drift — CLI plus an agent-callable dep_audit tool.",
+          "zh": "dsh 项目与 profile 的依赖供应链卫生审计：peer 范围可解析性、坏 dist-tag 检测（#2763 类）、过期/缺许可证/非注册表来源依赖与安装版本漂移——CLI + agent 可调用 dep_audit 工具。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-dep-audit.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-discussions-radar",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-discussions-radar",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-discussions-radar",
+        "name": "zoahdev/dsh-discussions-radar",
+        "category": "dev",
+        "description": {
+          "en": "Official GitHub Discussions radar for DeepSeek Harness: list, filter and search the official boards (Ideas / Q&A / Show Your Plugins! / General / Announcements / Polls) — CLI plus an agent-callable discussions_radar tool, dsh-discussions-radar/v1 reports, zero runtime deps, read-only public API.",
+          "zh": "DeepSeek Harness 官方 Discussions 雷达：列出、筛选、搜索官方讨论区（Ideas / Q&A / Show Your Plugins! / General / Announcements / Polls）——CLI + agent 可调用 discussions_radar 工具，dsh-discussions-radar/v1 报告，零运行时依赖、只读公开 API。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-discussions-radar.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-disk-audit",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-disk-audit",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-disk-audit",
+        "name": "zoahdev/dsh-disk-audit",
+        "category": "dev",
+        "description": {
+          "en": "Disk-usage audit for dsh data directories: total size, per-directory breakdown, largest files, oversized-file warnings (session logs can hit hundreds of MB) and cleanup suggestions — CLI plus an agent-callable disk_audit tool, dsh-disk-audit/v1 reports, zero runtime deps, read-only.",
+          "zh": "dsh 数据目录磁盘占用审计：总大小、按目录拆分、最大文件、超大文件告警（会话日志可达数百 MB）与清理建议——CLI + agent 可调用 disk_audit 工具，dsh-disk-audit/v1 报告，零运行时依赖、只读。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-disk-audit.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-firecrawl",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-firecrawl",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-firecrawl",
+        "name": "zoahdev/dsh-firecrawl",
+        "category": "tools",
+        "description": {
+          "en": "Scrape URLs to LLM-ready Markdown and search the web via the Firecrawl Cloud API.",
+          "zh": "通过 Firecrawl Cloud API 把 URL 抓成 LLM 可用 Markdown，或搜索网页并返回结果内容。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-firecrawl.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-firstrun",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-firstrun",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-firstrun",
+        "name": "zoahdev/dsh-firstrun",
+        "category": "dev",
+        "description": {
+          "en": "First-run health check for DeepSeek Harness: verifies Node/pnpm/dsh toolchain, home, profile, API key (names only, never values), workspace writability and npm registry, then prints actionable next steps — CLI plus an agent-callable quickstart tool, dsh-firstrun/v1 reports, zero runtime deps.",
+          "zh": "DeepSeek Harness 首次运行体检：检查 Node/pnpm/dsh 工具链、home、profile、API Key（只显示名称、绝不显示值）、工作区可写性与 npm 注册表，并给出可执行下一步——CLI + agent 可调用 quickstart 工具，dsh-firstrun/v1 报告，零运行时依赖。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-firstrun.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-github-intelligence",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-github-intelligence",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-github-intelligence",
+        "name": "zoahdev/dsh-github-intelligence",
+        "category": "git",
+        "description": {
+          "en": "The most complete GitHub integration for dsh: repo overview, releases, issues, pull requests, contributors, search, and a deep repo report with TTL caching — no API key needed.",
+          "zh": "目前最完整的 dsh GitHub 整合：仓库概览、Release、Issue、PR、贡献者、搜索与一键深度报告，内置 TTL 缓存，无需 API Key。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-github-intelligence.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-github-release-radar",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-github-release-radar",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-github-release-radar",
+        "name": "zoahdev/dsh-github-release-radar",
+        "category": "git",
+        "description": {
+          "en": "Track releases and stars of any public GitHub repository from inside dsh agents — no API key needed.",
+          "zh": "让 dsh agent 直接查询任意 GitHub 公开仓库的 Release 与星标变化，无需 API Key。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-github-release-radar.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-llms-forge",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-llms-forge",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-llms-forge",
+        "name": "zoahdev/dsh-llms-forge",
+        "category": "dev",
+        "description": {
+          "en": "Generate llms.txt for dsh plugin repositories from package.json + README — AI-readable discovery files, zero runtime deps, read-only by default. CLI plus an agent-callable llms_forge tool.",
+          "zh": "为 dsh 插件仓库从 package.json + README 生成 llms.txt（AI 可读发现文件），零运行时依赖、默认只读，含 CLI 与 agent 可调用 llms_forge 工具。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-llms-forge.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-pet-evolve",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-pet-evolve",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-pet-evolve",
+        "name": "zoahdev/dsh-pet-evolve",
+        "category": "fun",
+        "description": {
+          "en": "The pet that grows with your agent: 5 evolution stages earned from real signals (verified rules, completed sessions, tool calls, compactions), agent-state mirroring, and one-click growth share cards. Zero dependencies, 100% local.",
+          "zh": "会随 agent 成长的宠物：真实信号（已验证规则/会话/工具调用/压缩）驱动 5 阶段进化、镜像 agent 状态、一键导出成长分享卡。零依赖、全本地。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-pet-evolve.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-plugin-doctor",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-plugin-doctor",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-plugin-doctor",
+        "name": "zoahdev/dsh-plugin-doctor",
+        "category": "dev",
+        "description": {
+          "en": "Health checks for DSH plugins: manifest/patch/entry/build/pack/install verification, model-callable plugin_check, profile host-shadowing + BOM detection, environment diagnostics, and poison preflight.",
+          "zh": "DSH 插件体检：manifest/patch/entry/build/pack/install 校验、可被模型调用的 plugin_check、profile 宿主遮蔽与 BOM 检测、环境诊断、投毒预检。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-plugin-doctor.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-poison-guard",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-poison-guard",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-poison-guard",
+        "name": "zoahdev/dsh-poison-guard",
+        "category": "security",
+        "description": {
+          "en": "Pre-install supply-chain poison scanner for DSH plugins: AST (JS-X-Ray) + deobfuscation + regex heuristics, exits non-zero on findings for CI gating.",
+          "zh": "DSH 插件安装前投毒扫描：AST（JS-X-Ray）+ 去混淆解码 + 正则启发式，发现即非零退出，可作 CI 门禁。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-poison-guard.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-quality-score",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-quality-score",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-quality-score",
+        "name": "zoahdev/dsh-quality-score",
+        "category": "dev",
+        "description": {
+          "en": "Plugin quality scorecard for DeepSeek Harness: 0-100 with grade, 6 components, fix suggestions per deduction, batch leaderboard - CLI plus an agent-callable quality_score tool.",
+          "zh": "dsh 插件质量评分卡：0-100 分 + 等级 + 六项分项，逐项修复建议，支持批量榜单 - CLI + agent 可调用 quality_score 工具。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-quality-score.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-readme-forge",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-readme-forge",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-readme-forge",
+        "name": "zoahdev/dsh-readme-forge",
+        "category": "dev",
+        "description": {
+          "en": "Generate README.md for dsh plugin repositories from package.json + cordis.patch.yml + source layout — install/CLI/tools/dev/license sections, deterministic, zero runtime deps, read-only by default. CLI plus an agent-callable readme_forge tool.",
+          "zh": "为 dsh 插件仓库从 package.json + cordis.patch.yml + 源码布局生成 README.md——安装/CLI/工具/开发/许可证章节，确定性输出、零运行时依赖、默认只读。CLI + agent 可调用 readme_forge 工具。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-readme-forge.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-rule-evolve",
+      "path": "plugin",
+      "component_hint": "plugin",
+      "url": "https://github.com/zoahdev/dsh-rule-evolve/tree/main/plugin",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-rule-evolve/tree/main/plugin",
+        "name": "zoahdev/dsh-rule-evolve",
+        "category": "dev",
+        "description": {
+          "en": "Verification-driven self-evolution loop: failure logs become verified AGENTS.md rules; in-session plugin (evolve_learn / evolve_apply / evolve_touch / evolve_recall), tool-verify gate, rule lifecycle, local recall.",
+          "zh": "验证驱动的自我进化循环：失败日志自动变成经过验证的 AGENTS.md 规则；会话内插件（evolve_learn/evolve_apply/evolve_touch/evolve_recall）、工具体检、规则生命周期、本地召回。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-rule-evolve--plugin.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-shelf",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-shelf",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-shelf",
+        "name": "zoahdev/dsh-shelf",
+        "category": "session",
+        "description": {
+          "en": "Session lifecycle CLI: export (md/json/jsonl), archive/restore, trash, search, and stats. Read-only by default; nothing is ever deleted by the engine.",
+          "zh": "会话生命周期 CLI：导出（md/json/jsonl）、归档/恢复、回收站、搜索与统计。默认只读；引擎从不删除任何东西。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-shelf.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-subscribe",
+      "path": "plugin",
+      "component_hint": "plugin",
+      "url": "https://github.com/zoahdev/dsh-subscribe/tree/main/plugin",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-subscribe/tree/main/plugin",
+        "name": "zoahdev/dsh-subscribe#plugin",
+        "category": "market",
+        "description": {
+          "en": "Steam-style plugin storefront: a plugin registry browsable inside DSH with one-click install, uninstall and update, plus a zero-dependency CLI and agent-callable market tools.",
+          "zh": "Steam 风格的插件商店：在 DSH 里浏览插件注册表，一键安装、卸载与更新，另有零依赖 CLI 与可供 agent 调用的市场工具。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-subscribe--plugin.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-timesheet",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-timesheet",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-timesheet",
+        "name": "zoahdev/dsh-timesheet",
+        "category": "dev",
+        "description": {
+          "en": "Turn-based time tracking from dsh session logs: totals, per-day/project/provider/source rollups, tool-call counts, failure rates, and time-to-first-token — CLI plus an agent-callable timesheet tool, dsh-timesheet/v1 reports, zero runtime deps.",
+          "zh": "从 dsh 会话日志做基于 turn 的时间跟踪：总计、按天/项目/供应商/来源汇总、工具调用数、失败率与首 token 延迟——CLI + agent 可调用 timesheet 工具，dsh-timesheet/v1 报告，零运行时依赖。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-timesheet.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-unplug",
+      "path": "",
+      "component_hint": "",
+      "url": "https://github.com/zoahdev/dsh-unplug",
+      "entry": {
+        "url": "https://github.com/zoahdev/dsh-unplug",
+        "name": "zoahdev/dsh-unplug",
+        "category": "dev",
+        "description": {
+          "en": "Plug/unplug any DeepSeek Harness plugin cleanly — list every mounted layer (bundles + patch rows), remove with full cleanup, disable/enable without deleting, and audit for orphaned/dangling state. CLI + agent-callable unplug tool. Read-only by default; destructive operations require explicit confirmation.",
+          "zh": "让 DSH 插件的安装和卸载干净利落——列出所有加载层（Bundle + 补丁行）、完整卸载（清理 Bundle 列表+补丁行+依赖）、临时禁用以调试而不真正删除、以及审计残留的孤立行或悬空引用。CLI 与 agent 均可调用，默认只读，破坏性操作需二次确认。"
+        }
+      },
+      "entry_file": "data/plugins/zoahdev__dsh-unplug.yml",
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ]
+    },
+    {
+      "repository": "topics/dsh-plugin",
+      "path": "",
+      "url": "https://github.com/topics/dsh-plugin",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-plan-execute",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-plan-execute",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-client-ui-plan-execute",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-client-ui-plan-execute",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-kirocrew",
+      "path": "",
+      "url": "https://github.com/zoahdev/dsh-kirocrew",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-session-search",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-session-search",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/cross-harness-cite",
+      "path": "",
+      "url": "https://github.com/dsh-external/cross-harness-cite",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-easy-ctx-manager",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-easy-ctx-manager",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "JohnXu22786/context-pruner",
+      "path": "",
+      "url": "https://github.com/JohnXu22786/context-pruner",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-engram-relay",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-engram-relay",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "sdoygb/geometry-knowledge",
+      "path": "",
+      "url": "https://github.com/sdoygb/geometry-knowledge",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-zh",
+      "path": "",
+      "url": "https://github.com/zoahdev/dsh-zh",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "JohnXu22786/docs-retriever",
+      "path": "",
+      "url": "https://github.com/JohnXu22786/docs-retriever",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "JohnXu22786/snippet-expander",
+      "path": "",
+      "url": "https://github.com/JohnXu22786/snippet-expander",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-paste-input",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-paste-input",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-input-history",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-input-history",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-multimedia-webui-input",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-multimedia-webui-input",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-deepcel",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-deepcel",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-mobileweb-adapter",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-mobileweb-adapter",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-skins",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-skins",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-chat-thumb",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-chat-thumb",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/show-bash-command",
+      "path": "",
+      "url": "https://github.com/dsh-external/show-bash-command",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-replay",
+      "path": "",
+      "url": "https://github.com/zoahdev/dsh-replay",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-session-cluster",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-session-cluster",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/session-chatlog",
+      "path": "",
+      "url": "https://github.com/dsh-external/session-chatlog",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-office",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-office",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "sjh9714/dsh-what-changed",
+      "path": "",
+      "url": "https://github.com/sjh9714/dsh-what-changed",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-live-stats",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-live-stats",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-tps",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-tps",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-web-panel",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-web-panel",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-subagent-tree",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-subagent-tree",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-web-workflow-visualizer",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-web-workflow-visualizer",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-ui-progress",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-ui-progress",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "urzeye/dsh-outline",
+      "path": "",
+      "url": "https://github.com/urzeye/dsh-outline",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-code",
+      "path": "",
+      "url": "https://github.com/zoahdev/dsh-code",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "JohnXu22786/session-titler",
+      "path": "",
+      "url": "https://github.com/JohnXu22786/session-titler",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-cc-tui",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-cc-tui",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Socialist-Sister/dsh-deck",
+      "path": "",
+      "url": "https://github.com/Socialist-Sister/dsh-deck",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-browser-panel",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-browser-panel",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-deeplink",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-deeplink",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/browser4-dsh",
+      "path": "",
+      "url": "https://github.com/dsh-external/browser4-dsh",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-vision",
+      "path": "",
+      "url": "https://github.com/zoahdev/dsh-vision",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-pi-adapter",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-pi-adapter",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-acp",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-acp",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/savemoneybenchmark",
+      "path": "",
+      "url": "https://github.com/dsh-external/savemoneybenchmark",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "JohnXu22786/github-mcp",
+      "path": "",
+      "url": "https://github.com/JohnXu22786/github-mcp",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-gh-bridge",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-gh-bridge",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-alphasolve",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-alphasolve",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "JohnXu22786/docgen",
+      "path": "",
+      "url": "https://github.com/JohnXu22786/docgen",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-feishu-bot",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-feishu-bot",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/tg-bot",
+      "path": "",
+      "url": "https://github.com/dsh-external/tg-bot",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/qqbot",
+      "path": "",
+      "url": "https://github.com/dsh-external/qqbot",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-wecom-bot",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-wecom-bot",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-weixin-bot",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-weixin-bot",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-voice-chat",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-voice-chat",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-opencode-server",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-opencode-server",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-teamwork",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-teamwork",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "sjh9714/clippy-harness",
+      "path": "",
+      "url": "https://github.com/sjh9714/clippy-harness",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-agent-rp",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-agent-rp",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-travel-plugin",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-travel-plugin",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-ui-whale",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-ui-whale",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-qq2006",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-qq2006",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-lazyfish",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-lazyfish",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-tavern-plugin",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-tavern-plugin",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-subscribe",
+      "path": "",
+      "url": "https://github.com/zoahdev/dsh-subscribe",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-hmz",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-hmz",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-plugin-radar",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-plugin-radar",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/marisa",
+      "path": "",
+      "url": "https://github.com/dsh-external/marisa",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/hub",
+      "path": "",
+      "url": "https://github.com/dsh-external/hub",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dshx-update-check",
+      "path": "",
+      "url": "https://github.com/dsh-external/dshx-update-check",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/toybox",
+      "path": "",
+      "url": "https://github.com/dsh-external/toybox",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-github-integration",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-github-integration",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-super-injector",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-super-injector",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "zoahdev/dsh-trace",
+      "path": "",
+      "url": "https://github.com/zoahdev/dsh-trace",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "becomeless/dsh-desktop-launcher",
+      "path": "",
+      "url": "https://github.com/becomeless/dsh-desktop-launcher",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-openmaic",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-openmaic",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "WayneJin0918/dsh-wm",
+      "path": "",
+      "url": "https://github.com/WayneJin0918/dsh-wm",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "JohnXu22786/skill-framework",
+      "path": "",
+      "url": "https://github.com/JohnXu22786/skill-framework",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "JohnXu22786/command-scout",
+      "path": "",
+      "url": "https://github.com/JohnXu22786/command-scout",
+      "entry_file": "README.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-find-plugins",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-find-plugins",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-humanize",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-humanize",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-issue-filer",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-issue-filer",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-issue-like-skill",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-issue-like-skill",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-reuse-first",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-reuse-first",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-session-repair-skill",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-session-repair-skill",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-skill-session-recovery",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-skill-session-recovery",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/7d7d",
+      "path": "",
+      "url": "https://github.com/dsh-external/7d7d",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/DSH-UI4A",
+      "path": "",
+      "url": "https://github.com/dsh-external/DSH-UI4A",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/chat-width",
+      "path": "",
+      "url": "https://github.com/dsh-external/chat-width",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-activity-plugin",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-activity-plugin",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-bash-encoding",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-bash-encoding",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-chat",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-chat",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-code-map",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-code-map",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-codex-bridge",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-codex-bridge",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-computer-use",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-computer-use",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-context7",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-context7",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-cyber-sec",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-cyber-sec",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-design",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-design",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-genui",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-genui",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-grok-tui",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-grok-tui",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-kimi-bridge",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-kimi-bridge",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-kimi-browser",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-kimi-browser",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-latex",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-latex",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-meme",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-meme",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-memory",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-memory",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-minigames",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-minigames",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-music-player",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-music-player",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-nowledge-mem",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-nowledge-mem",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-pet",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-pet",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-pty-windows",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-pty-windows",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-question-collapse",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-question-collapse",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-save-intp",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-save-intp",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-selection-chat",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-selection-chat",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-self-control-guard",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-self-control-guard",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-session-hub",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-session-hub",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-shell-windows",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-shell-windows",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-skill-stats",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-skill-stats",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-skills-manager",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-skills-manager",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-sonar",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-sonar",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-spec-kit",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-spec-kit",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-superpowers",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-superpowers",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-tui-front-door",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-tui-front-door",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-turn-rewind",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-turn-rewind",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-vision-toolkit",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-vision-toolkit",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-visualize",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-visualize",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-web",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-web",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-web-review",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-web-review",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-working-activity",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-working-activity",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/session-teleport",
+      "path": "",
+      "url": "https://github.com/dsh-external/session-teleport",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/Qwen-MM-Plugins",
+      "path": "",
+      "url": "https://github.com/dsh-external/Qwen-MM-Plugins",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-agent-session-sources",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-agent-session-sources",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-cordis-examples",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-cordis-examples",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-cordis-rocks",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-cordis-rocks",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-deep-whale",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-deep-whale",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-edu",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-edu",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-mega",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-mega",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-my-rsi",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-my-rsi",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-plugin-guide",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-plugin-guide",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-plus",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-plus",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-profile-bundle-example",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-profile-bundle-example",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-serenity-plugin",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-serenity-plugin",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-tool-browser",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-tool-browser",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/official-plugins-port",
+      "path": "",
+      "url": "https://github.com/dsh-external/official-plugins-port",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/oh-my-dsh",
+      "path": "",
+      "url": "https://github.com/dsh-external/oh-my-dsh",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/Recall",
+      "path": "",
+      "url": "https://github.com/dsh-external/Recall",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/deepseek-harness-distro",
+      "path": "",
+      "url": "https://github.com/dsh-external/deepseek-harness-distro",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/ds_web_craw",
+      "path": "",
+      "url": "https://github.com/dsh-external/ds_web_craw",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-android",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-android",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-coding-receipt",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-coding-receipt",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-desktop",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-desktop",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-desktop-mac",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-desktop-mac",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-desktop-tools",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-desktop-tools",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-hub",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-hub",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-public-repo-monitor",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-public-repo-monitor",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-tui",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-tui",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-vscode",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-vscode",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-win-port",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-win-port",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/oh-my-dsh-distribution",
+      "path": "",
+      "url": "https://github.com/dsh-external/oh-my-dsh-distribution",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/repo-visibility-guard",
+      "path": "",
+      "url": "https://github.com/dsh-external/repo-visibility-guard",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/tonghuashun-harness",
+      "path": "",
+      "url": "https://github.com/dsh-external/tonghuashun-harness",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/zephyr",
+      "path": "",
+      "url": "https://github.com/dsh-external/zephyr",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-scholar",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-scholar",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-security",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-security",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dshfind",
+      "path": "",
+      "url": "https://github.com/dsh-external/dshfind",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/Top",
+      "path": "",
+      "url": "https://github.com/dsh-external/Top",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-build",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-build",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-fkin-vibe",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-fkin-vibe",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-remote",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-remote",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh-ui-webview",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh-ui-webview",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/dsh_ide",
+      "path": "",
+      "url": "https://github.com/dsh-external/dsh_ide",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dsh-external/oh-my-deepseek",
+      "path": "",
+      "url": "https://github.com/dsh-external/oh-my-deepseek",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "ATchangan/dsh-visual-sidebar",
+      "path": "",
+      "url": "https://github.com/ATchangan/dsh-visual-sidebar",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Bacskat/dsh-claude-ui",
+      "path": "",
+      "url": "https://github.com/Bacskat/dsh-claude-ui",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "lywusichen/dsh-sidebar-buttons",
+      "path": "",
+      "url": "https://github.com/lywusichen/dsh-sidebar-buttons",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "mykeura/dsh-minimalist-themes",
+      "path": "",
+      "url": "https://github.com/mykeura/dsh-minimalist-themes",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "SsTtone1/dsh-message-cleaner",
+      "path": "",
+      "url": "https://github.com/SsTtone1/dsh-message-cleaner",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "maiziman/deepseek-harness-portable",
+      "path": "",
+      "url": "https://github.com/maiziman/deepseek-harness-portable",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "runfali/dsh-paperclip",
+      "path": "",
+      "url": "https://github.com/runfali/dsh-paperclip",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "cslht11/dsh-provider-config",
+      "path": "",
+      "url": "https://github.com/cslht11/dsh-provider-config",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "masknull/dsh-llm-resilience",
+      "path": "",
+      "url": "https://github.com/masknull/dsh-llm-resilience",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Nyzeep/dsh-thinking-level",
+      "path": "",
+      "url": "https://github.com/Nyzeep/dsh-thinking-level",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "xobexo/dsh-auto-model-switcher",
+      "path": "",
+      "url": "https://github.com/xobexo/dsh-auto-model-switcher",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "BaiLiang-233/dsh-off-peak-schedule-widget",
+      "path": "",
+      "url": "https://github.com/BaiLiang-233/dsh-off-peak-schedule-widget",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "iamfitzwu/dsh-localhost-cost",
+      "path": "",
+      "url": "https://github.com/iamfitzwu/dsh-localhost-cost",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Shizuku-keop/dsh-compat-guard",
+      "path": "",
+      "url": "https://github.com/Shizuku-keop/dsh-compat-guard",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "udsy19/dsh-toolcall-stream-repair",
+      "path": "",
+      "url": "https://github.com/udsy19/dsh-toolcall-stream-repair",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "quan-v/dsh-safe-gate",
+      "path": "",
+      "url": "https://github.com/quan-v/dsh-safe-gate",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "NEVSTOP-LAB/dsh-version-inspector",
+      "path": "",
+      "url": "https://github.com/NEVSTOP-LAB/dsh-version-inspector",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "valkia/dsh-plugin-git-log",
+      "path": "",
+      "url": "https://github.com/valkia/dsh-plugin-git-log",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "boxeryao/dsh-mini-tui",
+      "path": "",
+      "url": "https://github.com/boxeryao/dsh-mini-tui",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "c3ll256/dsh-toy",
+      "path": "",
+      "url": "https://github.com/c3ll256/dsh-toy",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "CAPTAIN1275/dsh-ui-web",
+      "path": "",
+      "url": "https://github.com/CAPTAIN1275/dsh-ui-web",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "CC19990113/dsh-plugin-codegraph",
+      "path": "",
+      "url": "https://github.com/CC19990113/dsh-plugin-codegraph",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "ccch1mneyyy/working-activity",
+      "path": "",
+      "url": "https://github.com/ccch1mneyyy/working-activity",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "chainbase-labs/Agentkey",
+      "path": "",
+      "url": "https://github.com/chainbase-labs/Agentkey",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Chang-Tong/dsh-import-agents",
+      "path": "",
+      "url": "https://github.com/Chang-Tong/dsh-import-agents",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "ChangedenCZD/dsh-minimal-turbo",
+      "path": "",
+      "url": "https://github.com/ChangedenCZD/dsh-minimal-turbo",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "chaojixinren/dsh-reviewer-bot",
+      "path": "",
+      "url": "https://github.com/chaojixinren/dsh-reviewer-bot",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "chaos-03x/dsh-agy",
+      "path": "",
+      "url": "https://github.com/chaos-03x/dsh-agy",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "chen731215-dev/dsh-tavern",
+      "path": "",
+      "url": "https://github.com/chen731215-dev/dsh-tavern",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "ChenRuoT/dsh-sidebar-qa",
+      "path": "",
+      "url": "https://github.com/ChenRuoT/dsh-sidebar-qa",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "chenw2759-wq/dsh-IDE",
+      "path": "",
+      "url": "https://github.com/chenw2759-wq/dsh-IDE",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "chenw2759-wq/dsh-plugin-healthcheck",
+      "path": "",
+      "url": "https://github.com/chenw2759-wq/dsh-plugin-healthcheck",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "chumingjun/harness-one",
+      "path": "",
+      "url": "https://github.com/chumingjun/harness-one",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "chunsi-w/dsh-trajectory-governor",
+      "path": "",
+      "url": "https://github.com/chunsi-w/dsh-trajectory-governor",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Clarklevis1995/dsh-mobile",
+      "path": "",
+      "url": "https://github.com/Clarklevis1995/dsh-mobile",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Clizo1209/dsh-playwright-browser",
+      "path": "",
+      "url": "https://github.com/Clizo1209/dsh-playwright-browser",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "cocode-agency/cocode",
+      "path": "",
+      "url": "https://github.com/cocode-agency/cocode",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "cocofhu/anime-find",
+      "path": "",
+      "url": "https://github.com/cocofhu/anime-find",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "CocoSgt/dsh-attachments",
+      "path": "",
+      "url": "https://github.com/CocoSgt/dsh-attachments",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "CocoSgt/dsh-skills",
+      "path": "",
+      "url": "https://github.com/CocoSgt/dsh-skills",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "cosyncing/cosyncing",
+      "path": "",
+      "url": "https://github.com/cosyncing/cosyncing",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "cpj-dev/dsh-plugin-cc",
+      "path": "",
+      "url": "https://github.com/cpj-dev/dsh-plugin-cc",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "crafter-station/petdex",
+      "path": "",
+      "url": "https://github.com/crafter-station/petdex",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "CraZY222123/dsh-ocr-plugin",
+      "path": "",
+      "url": "https://github.com/CraZY222123/dsh-ocr-plugin",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "crazywoola/dsh-balance",
+      "path": "",
+      "url": "https://github.com/crazywoola/dsh-balance",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "cyijun/dsh-surfing-plugin",
+      "path": "",
+      "url": "https://github.com/cyijun/dsh-surfing-plugin",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dabaicai001/star-dsh-desktop",
+      "path": "",
+      "url": "https://github.com/dabaicai001/star-dsh-desktop",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "daha1216/dsh-adult-tension",
+      "path": "",
+      "url": "https://github.com/daha1216/dsh-adult-tension",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "daha1216/dsh-plugin-collection",
+      "path": "",
+      "url": "https://github.com/daha1216/dsh-plugin-collection",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dclichang2022/dsh-green-meter",
+      "path": "",
+      "url": "https://github.com/dclichang2022/dsh-green-meter",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "DingTalk-Real-AI/dsh-dingtalk",
+      "path": "",
+      "url": "https://github.com/DingTalk-Real-AI/dsh-dingtalk",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dqsjqian/Aria",
+      "path": "",
+      "url": "https://github.com/dqsjqian/Aria",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dragonbaba/dsh-routing-suite",
+      "path": "",
+      "url": "https://github.com/dragonbaba/dsh-routing-suite",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "drewnekota/cetus",
+      "path": "",
+      "url": "https://github.com/drewnekota/cetus",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dshbox/cordis-rs",
+      "path": "",
+      "url": "https://github.com/dshbox/cordis-rs",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dshplugin/dsh-plugin-hub",
+      "path": "",
+      "url": "https://github.com/dshplugin/dsh-plugin-hub",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "dundunhan/dsh-video-lens",
+      "path": "",
+      "url": "https://github.com/dundunhan/dsh-video-lens",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "EchoUser005/dsh-fate-spectrum",
+      "path": "",
+      "url": "https://github.com/EchoUser005/dsh-fate-spectrum",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "edison7009/EchoBird",
+      "path": "",
+      "url": "https://github.com/edison7009/EchoBird",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "edonadei/caliper",
+      "path": "",
+      "url": "https://github.com/edonadei/caliper",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "enchangcui340-cloud/dsh-whale-balance",
+      "path": "",
+      "url": "https://github.com/enchangcui340-cloud/dsh-whale-balance",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Ephemeral-AI-Lab/dsh-plugins",
+      "path": "",
+      "url": "https://github.com/Ephemeral-AI-Lab/dsh-plugins",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "eri64/dsh-claude-ux",
+      "path": "",
+      "url": "https://github.com/eri64/dsh-claude-ux",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "ericshang98/Perfect-Web-Clone",
+      "path": "",
+      "url": "https://github.com/ericshang98/Perfect-Web-Clone",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "EricXu20266/dsh-gui",
+      "path": "",
+      "url": "https://github.com/EricXu20266/dsh-gui",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "esengine/DeepSeek-Reasonix",
+      "path": "",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "euanguo/dsh-studio",
+      "path": "",
+      "url": "https://github.com/euanguo/dsh-studio",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "EverMind-AI/EverOS",
+      "path": "",
+      "url": "https://github.com/EverMind-AI/EverOS",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "EverMind-AI/SkillCorpus",
+      "path": "",
+      "url": "https://github.com/EverMind-AI/SkillCorpus",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Ewnscat-ya/dsh-client-ui-skin-denia",
+      "path": "",
+      "url": "https://github.com/Ewnscat-ya/dsh-client-ui-skin-denia",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "ExElectron/dsh-gov-portal",
+      "path": "",
+      "url": "https://github.com/ExElectron/dsh-gov-portal",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "ExElectron/dsh-tool-hongtou",
+      "path": "",
+      "url": "https://github.com/ExElectron/dsh-tool-hongtou",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "feiyang-dev/dsh-usage-plugin",
+      "path": "",
+      "url": "https://github.com/feiyang-dev/dsh-usage-plugin",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Fengze233/dsh-vscode",
+      "path": "",
+      "url": "https://github.com/Fengze233/dsh-vscode",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "firecrawl/dsh-firecrawl",
+      "path": "",
+      "url": "https://github.com/firecrawl/dsh-firecrawl",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Fisfzy/dsh-ego-browser",
+      "path": "",
+      "url": "https://github.com/Fisfzy/dsh-ego-browser",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "flizzywine/dsh-tavern",
+      "path": "",
+      "url": "https://github.com/flizzywine/dsh-tavern",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "foryourhealth111-pixel/Vibe-Skills",
+      "path": "",
+      "url": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "FrankHu-HK/mnemosyne",
+      "path": "",
+      "url": "https://github.com/FrankHu-HK/mnemosyne",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "freestylefly/awesome-gpt-image-2",
+      "path": "",
+      "url": "https://github.com/freestylefly/awesome-gpt-image-2",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "freestylefly/wesight",
+      "path": "",
+      "url": "https://github.com/freestylefly/wesight",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "fufankeji/deepseek-harness-studio",
+      "path": "",
+      "url": "https://github.com/fufankeji/deepseek-harness-studio",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "FuRongJun-1999/CommonTrustProtocol",
+      "path": "",
+      "url": "https://github.com/FuRongJun-1999/CommonTrustProtocol",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "futrime/webdsh",
+      "path": "",
+      "url": "https://github.com/futrime/webdsh",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "fwerkor/local-shell-mcp",
+      "path": "",
+      "url": "https://github.com/fwerkor/local-shell-mcp",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "gameswu/dsh-plugin-vscode-sidebar",
+      "path": "",
+      "url": "https://github.com/gameswu/dsh-plugin-vscode-sidebar",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "GCWing/BitFun",
+      "path": "",
+      "url": "https://github.com/GCWing/BitFun",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "gityuanbao/DSH-Plugins",
+      "path": "",
+      "url": "https://github.com/gityuanbao/DSH-Plugins",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "GraySilver/dsh-evolve-modes",
+      "path": "",
+      "url": "https://github.com/GraySilver/dsh-evolve-modes",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "gtaifu/dsh-wechat-bridge",
+      "path": "",
+      "url": "https://github.com/gtaifu/dsh-wechat-bridge",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "h4dex/opc-nexus",
+      "path": "",
+      "url": "https://github.com/h4dex/opc-nexus",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "HanaAyane/dsh-reasoning-effort",
+      "path": "",
+      "url": "https://github.com/HanaAyane/dsh-reasoning-effort",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "hancao97/hanai-investment-dsh",
+      "path": "",
+      "url": "https://github.com/hancao97/hanai-investment-dsh",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "hanshenmesen/dsh-turn-delete",
+      "path": "",
+      "url": "https://github.com/hanshenmesen/dsh-turn-delete",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "hashgraph-online/hol-guard",
+      "path": "",
+      "url": "https://github.com/hashgraph-online/hol-guard",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "hchao3335-maker/dsh-lan-gate",
+      "path": "",
+      "url": "https://github.com/hchao3335-maker/dsh-lan-gate",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "HiWhaleW/dsh-toolbox",
+      "path": "",
+      "url": "https://github.com/HiWhaleW/dsh-toolbox",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "Horizon215/dsh-plugins",
+      "path": "",
+      "url": "https://github.com/Horizon215/dsh-plugins",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "huey1in/reef",
+      "path": "",
+      "url": "https://github.com/huey1in/reef",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    },
+    {
+      "repository": "statem-li/dsh-webui",
+      "path": "",
+      "url": "https://github.com/statem-li/dsh-webui",
+      "entry_file": "CATALOG.md",
+      "source_urls": [
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "repository": "2384418321/dsh-integration-settings",
+      "error": "Could not resolve to a Repository with the name '2384418321/dsh-integration-settings'."
+    },
+    {
+      "repository": "01men/ybkk-AIOS",
+      "error": "Could not resolve to a Repository with the name '01men/ybkk-AIOS'."
+    },
+    {
+      "repository": "AngLi1997/dsh-plugin-sync",
+      "error": "Could not resolve to a Repository with the name 'AngLi1997/dsh-plugin-sync'."
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-breaker",
+      "error": "Could not resolve to a Repository with the name 'BOWLUNA/dsh-zcode-breaker'."
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-farm",
+      "error": "Could not resolve to a Repository with the name 'BOWLUNA/dsh-zcode-farm'."
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-git",
+      "error": "Could not resolve to a Repository with the name 'BOWLUNA/dsh-zcode-git'."
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-rewind",
+      "error": "Could not resolve to a Repository with the name 'BOWLUNA/dsh-zcode-rewind'."
+    },
+    {
+      "repository": "BOWLUNA/dsh-zcode-scribe",
+      "error": "Could not resolve to a Repository with the name 'BOWLUNA/dsh-zcode-scribe'."
+    },
+    {
+      "repository": "Bainianzzz/dsh-bg-switcher",
+      "error": "Could not resolve to a Repository with the name 'Bainianzzz/dsh-bg-switcher'."
+    },
+    {
+      "repository": "Flandern1211/dsh-task-time",
+      "error": "Could not resolve to a Repository with the name 'Flandern1211/dsh-task-time'."
+    },
+    {
+      "repository": "Why-147369/dsh-line-pool",
+      "error": "Could not resolve to a Repository with the name 'Why-147369/dsh-line-pool'."
+    },
+    {
+      "repository": "ZiFan1117/bazidiy",
+      "error": "Could not resolve to a Repository with the name 'ZiFan1117/bazidiy'."
+    },
+    {
+      "repository": "ZiFan1117/dsh-atom-market",
+      "error": "Could not resolve to a Repository with the name 'ZiFan1117/dsh-atom-market'."
+    },
+    {
+      "repository": "bobostudio/dsh-session-lens",
+      "error": "Could not resolve to a Repository with the name 'bobostudio/dsh-session-lens'."
+    },
+    {
+      "repository": "cerebrixos-org/tuning-engines-cli",
+      "error": "Could not resolve to a Repository with the name 'cerebrixos-org/tuning-engines-cli'."
+    },
+    {
+      "repository": "dannyvan/dsh-file-drop",
+      "error": "Could not resolve to a Repository with the name 'dannyvan/dsh-file-drop'."
+    },
+    {
+      "repository": "diqierjia/StrataGate-AgentMemory",
+      "error": "Could not resolve to a Repository with the name 'diqierjia/StrataGate-AgentMemory'."
+    },
+    {
+      "repository": "lunaship/dsh-links",
+      "error": "Could not resolve to a Repository with the name 'lunaship/dsh-links'."
+    },
+    {
+      "repository": "qcsjjjjj/dsh-hero-rightbar",
+      "error": "Could not resolve to a Repository with the name 'qcsjjjjj/dsh-hero-rightbar'."
+    },
+    {
+      "repository": "qcsjjjjj/dsh-planner",
+      "error": "Could not resolve to a Repository with the name 'qcsjjjjj/dsh-planner'."
+    },
+    {
+      "repository": "qinyre/dsh-plugin-archive-manager",
+      "error": "Could not resolve to a Repository with the name 'qinyre/dsh-plugin-archive-manager'."
+    },
+    {
+      "repository": "semantic-craft/dsh-grokbot-dispatch",
+      "error": "Could not resolve to a Repository with the name 'semantic-craft/dsh-grokbot-dispatch'."
+    },
+    {
+      "repository": "shimingming520/dsh-conversation-process-collapse",
+      "error": "Could not resolve to a Repository with the name 'shimingming520/dsh-conversation-process-collapse'."
+    },
+    {
+      "repository": "wbin0001/dsh-comfyui-canvas",
+      "error": "Could not resolve to a Repository with the name 'wbin0001/dsh-comfyui-canvas'."
+    },
+    {
+      "repository": "xiaomao49/dsh-model-probe",
+      "error": "Could not resolve to a Repository with the name 'xiaomao49/dsh-model-probe'."
+    },
+    {
+      "repository": "xiaweiliang060035/dsh-opencode-go-usage",
+      "error": "Could not resolve to a Repository with the name 'xiaweiliang060035/dsh-opencode-go-usage'."
+    },
+    {
+      "repository": "yeastcloud/dsh-anchor",
+      "error": "Could not resolve to a Repository with the name 'yeastcloud/dsh-anchor'."
+    },
+    {
+      "repository": "xxww0098/dsh-plugin-oauth-subs",
+      "error": "Could not resolve to a Repository with the name 'xxww0098/dsh-plugin-oauth-subs'."
+    },
+    {
+      "repository": "zoahdev/dsh-dep-audit",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-dep-audit'."
+    },
+    {
+      "repository": "zoahdev/dsh-discussions-radar",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-discussions-radar'."
+    },
+    {
+      "repository": "zoahdev/dsh-disk-audit",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-disk-audit'."
+    },
+    {
+      "repository": "zoahdev/dsh-firecrawl",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-firecrawl'."
+    },
+    {
+      "repository": "zoahdev/dsh-firstrun",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-firstrun'."
+    },
+    {
+      "repository": "zoahdev/dsh-github-intelligence",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-github-intelligence'."
+    },
+    {
+      "repository": "zoahdev/dsh-github-release-radar",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-github-release-radar'."
+    },
+    {
+      "repository": "zoahdev/dsh-llms-forge",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-llms-forge'."
+    },
+    {
+      "repository": "zoahdev/dsh-pet-evolve",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-pet-evolve'."
+    },
+    {
+      "repository": "zoahdev/dsh-plugin-doctor",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-plugin-doctor'."
+    },
+    {
+      "repository": "zoahdev/dsh-poison-guard",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-poison-guard'."
+    },
+    {
+      "repository": "zoahdev/dsh-quality-score",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-quality-score'."
+    },
+    {
+      "repository": "zoahdev/dsh-readme-forge",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-readme-forge'."
+    },
+    {
+      "repository": "zoahdev/dsh-rule-evolve",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-rule-evolve'."
+    },
+    {
+      "repository": "zoahdev/dsh-shelf",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-shelf'."
+    },
+    {
+      "repository": "zoahdev/dsh-subscribe",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-subscribe'."
+    },
+    {
+      "repository": "zoahdev/dsh-timesheet",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-timesheet'."
+    },
+    {
+      "repository": "zoahdev/dsh-unplug",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-unplug'."
+    },
+    {
+      "repository": "topics/dsh-plugin",
+      "error": "Could not resolve to a Repository with the name 'topics/dsh-plugin'."
+    },
+    {
+      "repository": "dsh-external/dsh-plan-execute",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-plan-execute'."
+    },
+    {
+      "repository": "dsh-external/dsh-client-ui-plan-execute",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-client-ui-plan-execute'."
+    },
+    {
+      "repository": "zoahdev/dsh-kirocrew",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-kirocrew'."
+    },
+    {
+      "repository": "zoahdev/dsh-artifacts",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-artifacts'."
+    },
+    {
+      "repository": "zoahdev/dsh-browser-use",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-browser-use'."
+    },
+    {
+      "repository": "zoahdev/dsh-cn-boot",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-cn-boot'."
+    },
+    {
+      "repository": "dsh-external/dsh-session-search",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-session-search'."
+    },
+    {
+      "repository": "dsh-external/cross-harness-cite",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/cross-harness-cite'."
+    },
+    {
+      "repository": "dsh-external/dsh-easy-ctx-manager",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-easy-ctx-manager'."
+    },
+    {
+      "repository": "JohnXu22786/context-pruner",
+      "error": "Could not resolve to a Repository with the name 'JohnXu22786/context-pruner'."
+    },
+    {
+      "repository": "dsh-external/dsh-engram-relay",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-engram-relay'."
+    },
+    {
+      "repository": "sdoygb/geometry-knowledge",
+      "error": "Could not resolve to a Repository with the name 'sdoygb/geometry-knowledge'."
+    },
+    {
+      "repository": "zoahdev/dsh-zh",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-zh'."
+    },
+    {
+      "repository": "JohnXu22786/docs-retriever",
+      "error": "Could not resolve to a Repository with the name 'JohnXu22786/docs-retriever'."
+    },
+    {
+      "repository": "JohnXu22786/snippet-expander",
+      "error": "Could not resolve to a Repository with the name 'JohnXu22786/snippet-expander'."
+    },
+    {
+      "repository": "dsh-external/dsh-paste-input",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-paste-input'."
+    },
+    {
+      "repository": "dsh-external/dsh-input-history",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-input-history'."
+    },
+    {
+      "repository": "dsh-external/dsh-multimedia-webui-input",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-multimedia-webui-input'."
+    },
+    {
+      "repository": "dsh-external/dsh-deepcel",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-deepcel'."
+    },
+    {
+      "repository": "dsh-external/dsh-mobileweb-adapter",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-mobileweb-adapter'."
+    },
+    {
+      "repository": "dsh-external/dsh-skins",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-skins'."
+    },
+    {
+      "repository": "dsh-external/dsh-chat-thumb",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-chat-thumb'."
+    },
+    {
+      "repository": "dsh-external/show-bash-command",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/show-bash-command'."
+    },
+    {
+      "repository": "zoahdev/dsh-replay",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-replay'."
+    },
+    {
+      "repository": "dsh-external/dsh-session-cluster",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-session-cluster'."
+    },
+    {
+      "repository": "dsh-external/session-chatlog",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/session-chatlog'."
+    },
+    {
+      "repository": "dsh-external/dsh-office",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-office'."
+    },
+    {
+      "repository": "sjh9714/dsh-what-changed",
+      "error": "Could not resolve to a Repository with the name 'sjh9714/dsh-what-changed'."
+    },
+    {
+      "repository": "dsh-external/dsh-live-stats",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-live-stats'."
+    },
+    {
+      "repository": "dsh-external/dsh-tps",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-tps'."
+    },
+    {
+      "repository": "dsh-external/dsh-web-panel",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-web-panel'."
+    },
+    {
+      "repository": "dsh-external/dsh-subagent-tree",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-subagent-tree'."
+    },
+    {
+      "repository": "dsh-external/dsh-web-workflow-visualizer",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-web-workflow-visualizer'."
+    },
+    {
+      "repository": "dsh-external/dsh-ui-progress",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-ui-progress'."
+    },
+    {
+      "repository": "urzeye/dsh-outline",
+      "error": "Could not resolve to a Repository with the name 'urzeye/dsh-outline'."
+    },
+    {
+      "repository": "zoahdev/dsh-code",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-code'."
+    },
+    {
+      "repository": "JohnXu22786/session-titler",
+      "error": "Could not resolve to a Repository with the name 'JohnXu22786/session-titler'."
+    },
+    {
+      "repository": "dsh-external/dsh-cc-tui",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-cc-tui'."
+    },
+    {
+      "repository": "Socialist-Sister/dsh-deck",
+      "error": "Could not resolve to a Repository with the name 'Socialist-Sister/dsh-deck'."
+    },
+    {
+      "repository": "dsh-external/dsh-browser-panel",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-browser-panel'."
+    },
+    {
+      "repository": "dsh-external/dsh-deeplink",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-deeplink'."
+    },
+    {
+      "repository": "dsh-external/browser4-dsh",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/browser4-dsh'."
+    },
+    {
+      "repository": "zoahdev/dsh-vision",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-vision'."
+    },
+    {
+      "repository": "dsh-external/dsh-pi-adapter",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-pi-adapter'."
+    },
+    {
+      "repository": "dsh-external/dsh-acp",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-acp'."
+    },
+    {
+      "repository": "dsh-external/savemoneybenchmark",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/savemoneybenchmark'."
+    },
+    {
+      "repository": "JohnXu22786/github-mcp",
+      "error": "Could not resolve to a Repository with the name 'JohnXu22786/github-mcp'."
+    },
+    {
+      "repository": "dsh-external/dsh-gh-bridge",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-gh-bridge'."
+    },
+    {
+      "repository": "dsh-external/dsh-alphasolve",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-alphasolve'."
+    },
+    {
+      "repository": "JohnXu22786/docgen",
+      "error": "Could not resolve to a Repository with the name 'JohnXu22786/docgen'."
+    },
+    {
+      "repository": "dsh-external/dsh-feishu-bot",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-feishu-bot'."
+    },
+    {
+      "repository": "dsh-external/tg-bot",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/tg-bot'."
+    },
+    {
+      "repository": "dsh-external/dsh-bash-encoding",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-bash-encoding'."
+    },
+    {
+      "repository": "dsh-external/dsh-chat",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-chat'."
+    },
+    {
+      "repository": "dsh-external/dsh-code-map",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-code-map'."
+    },
+    {
+      "repository": "dsh-external/dsh-codex-bridge",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-codex-bridge'."
+    },
+    {
+      "repository": "dsh-external/dsh-computer-use",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-computer-use'."
+    },
+    {
+      "repository": "dsh-external/dsh-context7",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-context7'."
+    },
+    {
+      "repository": "dsh-external/dsh-cyber-sec",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-cyber-sec'."
+    },
+    {
+      "repository": "dsh-external/dsh-design",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-design'."
+    },
+    {
+      "repository": "dsh-external/dsh-genui",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-genui'."
+    },
+    {
+      "repository": "dsh-external/dsh-grok-tui",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-grok-tui'."
+    },
+    {
+      "repository": "dsh-external/dsh-kimi-bridge",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-kimi-bridge'."
+    },
+    {
+      "repository": "dsh-external/dsh-kimi-browser",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-kimi-browser'."
+    },
+    {
+      "repository": "dsh-external/dsh-latex",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-latex'."
+    },
+    {
+      "repository": "dsh-external/dsh-meme",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-meme'."
+    },
+    {
+      "repository": "dsh-external/dsh-memory",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-memory'."
+    },
+    {
+      "repository": "dsh-external/dsh-minigames",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-minigames'."
+    },
+    {
+      "repository": "dsh-external/dsh-music-player",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-music-player'."
+    },
+    {
+      "repository": "dsh-external/dsh-nowledge-mem",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-nowledge-mem'."
+    },
+    {
+      "repository": "dsh-external/dsh-pet",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-pet'."
+    },
+    {
+      "repository": "dsh-external/dsh-pty-windows",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-pty-windows'."
+    },
+    {
+      "repository": "dsh-external/dsh-question-collapse",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-question-collapse'."
+    },
+    {
+      "repository": "dsh-external/dsh-save-intp",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-save-intp'."
+    },
+    {
+      "repository": "dsh-external/dsh-selection-chat",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-selection-chat'."
+    },
+    {
+      "repository": "dsh-external/dsh-self-control-guard",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-self-control-guard'."
+    },
+    {
+      "repository": "dsh-external/dsh-session-hub",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-session-hub'."
+    },
+    {
+      "repository": "dsh-external/dsh-shell-windows",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-shell-windows'."
+    },
+    {
+      "repository": "dsh-external/dsh-skill-stats",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-skill-stats'."
+    },
+    {
+      "repository": "dsh-external/dsh-skills-manager",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-skills-manager'."
+    },
+    {
+      "repository": "dsh-external/dsh-sonar",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-sonar'."
+    },
+    {
+      "repository": "dsh-external/dsh-spec-kit",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-spec-kit'."
+    },
+    {
+      "repository": "dsh-external/dsh-superpowers",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-superpowers'."
+    },
+    {
+      "repository": "dsh-external/dsh-tui-front-door",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-tui-front-door'."
+    },
+    {
+      "repository": "dsh-external/dsh-turn-rewind",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-turn-rewind'."
+    },
+    {
+      "repository": "dsh-external/dsh-vision-toolkit",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-vision-toolkit'."
+    },
+    {
+      "repository": "dsh-external/dsh-visualize",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-visualize'."
+    },
+    {
+      "repository": "dsh-external/dsh-web",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-web'."
+    },
+    {
+      "repository": "dsh-external/dsh-web-review",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-web-review'."
+    },
+    {
+      "repository": "dsh-external/dsh-working-activity",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-working-activity'."
+    },
+    {
+      "repository": "dsh-external/session-teleport",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/session-teleport'."
+    },
+    {
+      "repository": "dsh-external/Qwen-MM-Plugins",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/Qwen-MM-Plugins'."
+    },
+    {
+      "repository": "dsh-external/dsh-agent-session-sources",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-agent-session-sources'."
+    },
+    {
+      "repository": "dsh-external/dsh-cordis-examples",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-cordis-examples'."
+    },
+    {
+      "repository": "dsh-external/dsh-cordis-rocks",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-cordis-rocks'."
+    },
+    {
+      "repository": "dsh-external/qqbot",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/qqbot'."
+    },
+    {
+      "repository": "dsh-external/dsh-wecom-bot",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-wecom-bot'."
+    },
+    {
+      "repository": "dsh-external/dsh-weixin-bot",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-weixin-bot'."
+    },
+    {
+      "repository": "dsh-external/dsh-voice-chat",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-voice-chat'."
+    },
+    {
+      "repository": "dsh-external/dsh-opencode-server",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-opencode-server'."
+    },
+    {
+      "repository": "dsh-external/dsh-teamwork",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-teamwork'."
+    },
+    {
+      "repository": "sjh9714/clippy-harness",
+      "error": "Could not resolve to a Repository with the name 'sjh9714/clippy-harness'."
+    },
+    {
+      "repository": "dsh-external/dsh-agent-rp",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-agent-rp'."
+    },
+    {
+      "repository": "dsh-external/dsh-travel-plugin",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-travel-plugin'."
+    },
+    {
+      "repository": "dsh-external/dsh-ui-whale",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-ui-whale'."
+    },
+    {
+      "repository": "dsh-external/dsh-qq2006",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-qq2006'."
+    },
+    {
+      "repository": "dsh-external/dsh-lazyfish",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-lazyfish'."
+    },
+    {
+      "repository": "dsh-external/dsh-tavern-plugin",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-tavern-plugin'."
+    },
+    {
+      "repository": "dsh-external/dsh-hmz",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-hmz'."
+    },
+    {
+      "repository": "dsh-external/dsh-plugin-radar",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-plugin-radar'."
+    },
+    {
+      "repository": "dsh-external/marisa",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/marisa'."
+    },
+    {
+      "repository": "dsh-external/hub",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/hub'."
+    },
+    {
+      "repository": "dsh-external/dshx-update-check",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dshx-update-check'."
+    },
+    {
+      "repository": "dsh-external/toybox",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/toybox'."
+    },
+    {
+      "repository": "dsh-external/dsh-github-integration",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-github-integration'."
+    },
+    {
+      "repository": "dsh-external/dsh-super-injector",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-super-injector'."
+    },
+    {
+      "repository": "zoahdev/dsh-trace",
+      "error": "Could not resolve to a Repository with the name 'zoahdev/dsh-trace'."
+    },
+    {
+      "repository": "becomeless/dsh-desktop-launcher",
+      "error": "Could not resolve to a Repository with the name 'becomeless/dsh-desktop-launcher'."
+    },
+    {
+      "repository": "dsh-external/dsh-openmaic",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-openmaic'."
+    },
+    {
+      "repository": "WayneJin0918/dsh-wm",
+      "error": "Could not resolve to a Repository with the name 'WayneJin0918/dsh-wm'."
+    },
+    {
+      "repository": "JohnXu22786/skill-framework",
+      "error": "Could not resolve to a Repository with the name 'JohnXu22786/skill-framework'."
+    },
+    {
+      "repository": "JohnXu22786/command-scout",
+      "error": "Could not resolve to a Repository with the name 'JohnXu22786/command-scout'."
+    },
+    {
+      "repository": "dsh-external/dsh-find-plugins",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-find-plugins'."
+    },
+    {
+      "repository": "dsh-external/dsh-humanize",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-humanize'."
+    },
+    {
+      "repository": "dsh-external/dsh-issue-filer",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-issue-filer'."
+    },
+    {
+      "repository": "dsh-external/dsh-issue-like-skill",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-issue-like-skill'."
+    },
+    {
+      "repository": "dsh-external/dsh-reuse-first",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-reuse-first'."
+    },
+    {
+      "repository": "dsh-external/dsh-session-repair-skill",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-session-repair-skill'."
+    },
+    {
+      "repository": "dsh-external/dsh-skill-session-recovery",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-skill-session-recovery'."
+    },
+    {
+      "repository": "dsh-external/7d7d",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/7d7d'."
+    },
+    {
+      "repository": "dsh-external/DSH-UI4A",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/DSH-UI4A'."
+    },
+    {
+      "repository": "dsh-external/chat-width",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/chat-width'."
+    },
+    {
+      "repository": "dsh-external/dsh-activity-plugin",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-activity-plugin'."
+    },
+    {
+      "repository": "dsh-external/dsh-deep-whale",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-deep-whale'."
+    },
+    {
+      "repository": "dsh-external/dsh-edu",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-edu'."
+    },
+    {
+      "repository": "dsh-external/dsh-mega",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-mega'."
+    },
+    {
+      "repository": "dsh-external/dsh-my-rsi",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-my-rsi'."
+    },
+    {
+      "repository": "dsh-external/dsh-plugin-guide",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-plugin-guide'."
+    },
+    {
+      "repository": "dsh-external/dsh-plus",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-plus'."
+    },
+    {
+      "repository": "dsh-external/dsh-profile-bundle-example",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-profile-bundle-example'."
+    },
+    {
+      "repository": "dsh-external/dsh-serenity-plugin",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-serenity-plugin'."
+    },
+    {
+      "repository": "dsh-external/dsh-tool-browser",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-tool-browser'."
+    },
+    {
+      "repository": "dsh-external/official-plugins-port",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/official-plugins-port'."
+    },
+    {
+      "repository": "dsh-external/oh-my-dsh",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/oh-my-dsh'."
+    },
+    {
+      "repository": "dsh-external/Recall",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/Recall'."
+    },
+    {
+      "repository": "dsh-external/deepseek-harness-distro",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/deepseek-harness-distro'."
+    },
+    {
+      "repository": "dsh-external/ds_web_craw",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/ds_web_craw'."
+    },
+    {
+      "repository": "dsh-external/dsh-android",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-android'."
+    },
+    {
+      "repository": "dsh-external/dsh-coding-receipt",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-coding-receipt'."
+    },
+    {
+      "repository": "dsh-external/dsh-desktop",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-desktop'."
+    },
+    {
+      "repository": "dsh-external/dsh-desktop-mac",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-desktop-mac'."
+    },
+    {
+      "repository": "dsh-external/dsh-desktop-tools",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-desktop-tools'."
+    },
+    {
+      "repository": "dsh-external/dsh-hub",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-hub'."
+    },
+    {
+      "repository": "dsh-external/dsh-public-repo-monitor",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-public-repo-monitor'."
+    },
+    {
+      "repository": "dsh-external/dsh-tui",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-tui'."
+    },
+    {
+      "repository": "dsh-external/dsh-vscode",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-vscode'."
+    },
+    {
+      "repository": "dsh-external/dsh-win-port",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-win-port'."
+    },
+    {
+      "repository": "dsh-external/oh-my-dsh-distribution",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/oh-my-dsh-distribution'."
+    },
+    {
+      "repository": "dsh-external/repo-visibility-guard",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/repo-visibility-guard'."
+    },
+    {
+      "repository": "dsh-external/tonghuashun-harness",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/tonghuashun-harness'."
+    },
+    {
+      "repository": "dsh-external/zephyr",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/zephyr'."
+    },
+    {
+      "repository": "dsh-external/dsh-scholar",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-scholar'."
+    },
+    {
+      "repository": "dsh-external/dsh-security",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-security'."
+    },
+    {
+      "repository": "dsh-external/dshfind",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dshfind'."
+    },
+    {
+      "repository": "dsh-external/Top",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/Top'."
+    },
+    {
+      "repository": "dsh-external/dsh-build",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-build'."
+    },
+    {
+      "repository": "dsh-external/dsh-fkin-vibe",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-fkin-vibe'."
+    },
+    {
+      "repository": "dsh-external/dsh-remote",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-remote'."
+    },
+    {
+      "repository": "dsh-external/dsh-ui-webview",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh-ui-webview'."
+    },
+    {
+      "repository": "dsh-external/dsh_ide",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/dsh_ide'."
+    },
+    {
+      "repository": "dsh-external/oh-my-deepseek",
+      "error": "Could not resolve to a Repository with the name 'dsh-external/oh-my-deepseek'."
+    },
+    {
+      "repository": "ATchangan/dsh-visual-sidebar",
+      "error": "Could not resolve to a Repository with the name 'ATchangan/dsh-visual-sidebar'."
+    },
+    {
+      "repository": "Bacskat/dsh-claude-ui",
+      "error": "Could not resolve to a Repository with the name 'Bacskat/dsh-claude-ui'."
+    },
+    {
+      "repository": "maiziman/deepseek-harness-portable",
+      "error": "Could not resolve to a Repository with the name 'maiziman/deepseek-harness-portable'."
+    },
+    {
+      "repository": "runfali/dsh-paperclip",
+      "error": "Could not resolve to a Repository with the name 'runfali/dsh-paperclip'."
+    },
+    {
+      "repository": "lywusichen/dsh-sidebar-buttons",
+      "error": "Could not resolve to a Repository with the name 'lywusichen/dsh-sidebar-buttons'."
+    },
+    {
+      "repository": "mykeura/dsh-minimalist-themes",
+      "error": "Could not resolve to a Repository with the name 'mykeura/dsh-minimalist-themes'."
+    },
+    {
+      "repository": "SsTtone1/dsh-message-cleaner",
+      "error": "Could not resolve to a Repository with the name 'SsTtone1/dsh-message-cleaner'."
+    },
+    {
+      "repository": "cslht11/dsh-provider-config",
+      "error": "Could not resolve to a Repository with the name 'cslht11/dsh-provider-config'."
+    },
+    {
+      "repository": "masknull/dsh-llm-resilience",
+      "error": "Could not resolve to a Repository with the name 'masknull/dsh-llm-resilience'."
+    },
+    {
+      "repository": "Nyzeep/dsh-thinking-level",
+      "error": "Could not resolve to a Repository with the name 'Nyzeep/dsh-thinking-level'."
+    },
+    {
+      "repository": "xobexo/dsh-auto-model-switcher",
+      "error": "Could not resolve to a Repository with the name 'xobexo/dsh-auto-model-switcher'."
+    },
+    {
+      "repository": "BaiLiang-233/dsh-off-peak-schedule-widget",
+      "error": "Could not resolve to a Repository with the name 'BaiLiang-233/dsh-off-peak-schedule-widget'."
+    },
+    {
+      "repository": "iamfitzwu/dsh-localhost-cost",
+      "error": "Could not resolve to a Repository with the name 'iamfitzwu/dsh-localhost-cost'."
+    },
+    {
+      "repository": "Shizuku-keop/dsh-compat-guard",
+      "error": "Could not resolve to a Repository with the name 'Shizuku-keop/dsh-compat-guard'."
+    },
+    {
+      "repository": "udsy19/dsh-toolcall-stream-repair",
+      "error": "Could not resolve to a Repository with the name 'udsy19/dsh-toolcall-stream-repair'."
+    },
+    {
+      "repository": "quan-v/dsh-safe-gate",
+      "error": "Could not resolve to a Repository with the name 'quan-v/dsh-safe-gate'."
+    },
+    {
+      "repository": "NEVSTOP-LAB/dsh-version-inspector",
+      "error": "Could not resolve to a Repository with the name 'NEVSTOP-LAB/dsh-version-inspector'."
+    },
+    {
+      "repository": "valkia/dsh-plugin-git-log",
+      "error": "Could not resolve to a Repository with the name 'valkia/dsh-plugin-git-log'."
+    },
+    {
+      "repository": "boxeryao/dsh-mini-tui",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "c3ll256/dsh-toy",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "CAPTAIN1275/dsh-ui-web",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "CC19990113/dsh-plugin-codegraph",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "ccch1mneyyy/working-activity",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "chainbase-labs/Agentkey",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "Chang-Tong/dsh-import-agents",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "ChangedenCZD/dsh-minimal-turbo",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "chaojixinren/dsh-reviewer-bot",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "chaos-03x/dsh-agy",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "chen731215-dev/dsh-tavern",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "ChenRuoT/dsh-sidebar-qa",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "chenw2759-wq/dsh-IDE",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "chenw2759-wq/dsh-plugin-healthcheck",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "chumingjun/harness-one",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "chunsi-w/dsh-trajectory-governor",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "Clarklevis1995/dsh-mobile",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "Clizo1209/dsh-playwright-browser",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "cocode-agency/cocode",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "cocofhu/anime-find",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "CocoSgt/dsh-attachments",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "CocoSgt/dsh-skills",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "cosyncing/cosyncing",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "cpj-dev/dsh-plugin-cc",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "crafter-station/petdex",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "CraZY222123/dsh-ocr-plugin",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "crazywoola/dsh-balance",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "cyijun/dsh-surfing-plugin",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "dabaicai001/star-dsh-desktop",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "daha1216/dsh-adult-tension",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "daha1216/dsh-plugin-collection",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "dclichang2022/dsh-green-meter",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "DingTalk-Real-AI/dsh-dingtalk",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "dqsjqian/Aria",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "dragonbaba/dsh-routing-suite",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "drewnekota/cetus",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "dshbox/cordis-rs",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "dshplugin/dsh-plugin-hub",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "dundunhan/dsh-video-lens",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "EchoUser005/dsh-fate-spectrum",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "edison7009/EchoBird",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "edonadei/caliper",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "enchangcui340-cloud/dsh-whale-balance",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "Ephemeral-AI-Lab/dsh-plugins",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "eri64/dsh-claude-ux",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "ericshang98/Perfect-Web-Clone",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "EricXu20266/dsh-gui",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "esengine/DeepSeek-Reasonix",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "euanguo/dsh-studio",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "EverMind-AI/EverOS",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "EverMind-AI/SkillCorpus",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "Ewnscat-ya/dsh-client-ui-skin-denia",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "ExElectron/dsh-gov-portal",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "ExElectron/dsh-tool-hongtou",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "feiyang-dev/dsh-usage-plugin",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "Fengze233/dsh-vscode",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "firecrawl/dsh-firecrawl",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "Fisfzy/dsh-ego-browser",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "flizzywine/dsh-tavern",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "foryourhealth111-pixel/Vibe-Skills",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "FrankHu-HK/mnemosyne",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "freestylefly/awesome-gpt-image-2",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "freestylefly/wesight",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "fufankeji/deepseek-harness-studio",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "FuRongJun-1999/CommonTrustProtocol",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "futrime/webdsh",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "fwerkor/local-shell-mcp",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "gameswu/dsh-plugin-vscode-sidebar",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "GCWing/BitFun",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "gityuanbao/DSH-Plugins",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "GraySilver/dsh-evolve-modes",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "gtaifu/dsh-wechat-bridge",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "h4dex/opc-nexus",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "HanaAyane/dsh-reasoning-effort",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "hancao97/hanai-investment-dsh",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "hanshenmesen/dsh-turn-delete",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "hashgraph-online/hol-guard",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "hchao3335-maker/dsh-lan-gate",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "HiWhaleW/dsh-toolbox",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "Horizon215/dsh-plugins",
+      "error": "GraphQL response unavailable"
+    },
+    {
+      "repository": "statem-li/dsh-webui",
+      "error": "Could not resolve to a Repository with the name 'statem-li/dsh-webui'."
+    },
+    {
+      "repository": "huey1in/reef",
+      "error": "Could not resolve to a Repository with the name 'huey1in/reef'."
+    }
+  ],
+  "limitations": [
+    "Unresolved repository identities excluded from session; no IDs invented.",
+    "README/CATALOG GitHub links include tools/resources; directory membership does not establish entry type or installability.",
+    "Source complete=false prevents inferring removal from identity exclusions; previous scope was only three plugins."
+  ]
+}

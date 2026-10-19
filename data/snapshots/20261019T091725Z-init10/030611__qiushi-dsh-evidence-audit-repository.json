@@ -1,0 +1,402 @@
+{
+  "captured_at": "2026-10-19T09:19:49.785Z",
+  "repository_id": 1333357514,
+  "repository": "030611/qiushi-dsh-evidence-audit",
+  "commit": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+  "metadata": {
+    "id": 1333357514,
+    "full_name": "030611/qiushi-dsh-evidence-audit",
+    "description": "Observe-only hash-chained evidence receipts for DeepSeek Harness",
+    "default_branch": "main",
+    "archived": false,
+    "disabled": false,
+    "created_at": "2026-08-13T17:10:56Z",
+    "pushed_at": "2026-08-14T13:08:45Z",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "topics": [
+      "agent-infrastructure",
+      "ai-agents",
+      "audit",
+      "deepseek-harness",
+      "dsh-plugin",
+      "evidence"
+    ],
+    "html_url": "https://github.com/030611/qiushi-dsh-evidence-audit"
+  },
+  "tree": {
+    "sha": "f32ed3fd149404bf23a7ea9d5303008f3d076c36",
+    "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/trees/f32ed3fd149404bf23a7ea9d5303008f3d076c36",
+    "tree": [
+      {
+        "path": ".github",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "127209cae213168b52cbb4c47d6526901ab351d2",
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/trees/127209cae213168b52cbb4c47d6526901ab351d2"
+      },
+      {
+        "path": ".github/workflows",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "170a7f0a71d92eaf15c05b34aaf8a830d6b5bb60",
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/trees/170a7f0a71d92eaf15c05b34aaf8a830d6b5bb60"
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4161f6453d57b2b9a733c9e0b795fb4679c3340c",
+        "size": 1180,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/4161f6453d57b2b9a733c9e0b795fb4679c3340c"
+      },
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5ec7cf7123e877b4721c894edbca1b313b57927b",
+        "size": 55,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/5ec7cf7123e877b4721c894edbca1b313b57927b"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "177098695baa182c4a0e229258253e10fb481d80",
+        "size": 1095,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/177098695baa182c4a0e229258253e10fb481d80"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e443ae839e99bf002f4d2e061fb1f6f56c632259",
+        "size": 11693,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/e443ae839e99bf002f4d2e061fb1f6f56c632259"
+      },
+      {
+        "path": "README.zh-CN.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10a5ccb0fa42a8fa23ba2ea5bc5015f6ef0d384e",
+        "size": 10925,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/10a5ccb0fa42a8fa23ba2ea5bc5015f6ef0d384e"
+      },
+      {
+        "path": "RELEASE_CHECKLIST.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1c061be1b7190d861a2337cd466f0c0c07261547",
+        "size": 2375,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/1c061be1b7190d861a2337cd466f0c0c07261547"
+      },
+      {
+        "path": "SECURITY.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8787fdd7a26c79884df1b20d8e6c55089eb5da1a",
+        "size": 917,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/8787fdd7a26c79884df1b20d8e6c55089eb5da1a"
+      },
+      {
+        "path": "cordis.patch.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fc3eda9d27308297da9399b2336d60694e3ad9d1",
+        "size": 80,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/fc3eda9d27308297da9399b2336d60694e3ad9d1"
+      },
+      {
+        "path": "docs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6ddf86f5716199346c2ce7b6d957ce9aa1916ff1",
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/trees/6ddf86f5716199346c2ce7b6d957ce9aa1916ff1"
+      },
+      {
+        "path": "docs/dsh.plugin.schema.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e53dd6312b8577b870a89cb37c4aa315c5d24aa6",
+        "size": 1753,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/e53dd6312b8577b870a89cb37c4aa315c5d24aa6"
+      },
+      {
+        "path": "docs/evidence-flow.svg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2c4136188088810ebaf116d3f44ebcfff70392cf",
+        "size": 4238,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/2c4136188088810ebaf116d3f44ebcfff70392cf"
+      },
+      {
+        "path": "docs/social-preview.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "319e02c857a712989ca36767589a1ff44a8df67e",
+        "size": 111766,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/319e02c857a712989ca36767589a1ff44a8df67e"
+      },
+      {
+        "path": "dsh.plugin.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "29f7ee318130f712358cf46b0a42bac881acca3a",
+        "size": 652,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/29f7ee318130f712358cf46b0a42bac881acca3a"
+      },
+      {
+        "path": "package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a994cb4b69326221a2bf259cf1630f56c423b8b5",
+        "size": 2375,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/a994cb4b69326221a2bf259cf1630f56c423b8b5"
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5e495da3787b17c9f70c6deaeb8668d612c8c2cb",
+        "size": 55516,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/5e495da3787b17c9f70c6deaeb8668d612c8c2cb"
+      },
+      {
+        "path": "pnpm-workspace.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ce125a26165a8ffb70077106de3d16a6f7137162",
+        "size": 223,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/ce125a26165a8ffb70077106de3d16a6f7137162"
+      },
+      {
+        "path": "scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6ac8dd5b73ada35f8ab156a23efe007055e718f4",
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/trees/6ac8dd5b73ada35f8ab156a23efe007055e718f4"
+      },
+      {
+        "path": "scripts/built-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "043c3baa8cd415a613f3dae328bf3b6ee5dea074",
+        "size": 1500,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/043c3baa8cd415a613f3dae328bf3b6ee5dea074"
+      },
+      {
+        "path": "scripts/clean-build.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a3e615a1ac3cb103f612e01b904c7b2e05af7fa7",
+        "size": 125,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/a3e615a1ac3cb103f612e01b904c7b2e05af7fa7"
+      },
+      {
+        "path": "scripts/npm-dry-run-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d2e11cb6d9068e7cfc3c1d454b917fa564b9cbfd",
+        "size": 1656,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/d2e11cb6d9068e7cfc3c1d454b917fa564b9cbfd"
+      },
+      {
+        "path": "scripts/tarball-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "57fa13d497a4549e848dec2c5eb88398e48aa148",
+        "size": 2820,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/57fa13d497a4549e848dec2c5eb88398e48aa148"
+      },
+      {
+        "path": "scripts/upstream-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fb69c6f9ffa5600f6dcf9a4fe82ec213fdc3531b",
+        "size": 2200,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/fb69c6f9ffa5600f6dcf9a4fe82ec213fdc3531b"
+      },
+      {
+        "path": "src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e646a003d3e6d282a1362625801f3beadd94c8eb",
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/trees/e646a003d3e6d282a1362625801f3beadd94c8eb"
+      },
+      {
+        "path": "src/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "32592cd944a612f942806d23357b51e01e7cddfd",
+        "size": 6461,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/32592cd944a612f942806d23357b51e01e7cddfd"
+      },
+      {
+        "path": "src/receipt.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0bd07e32cfa405e0ad4016b0cd200a447deb151a",
+        "size": 9707,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/0bd07e32cfa405e0ad4016b0cd200a447deb151a"
+      },
+      {
+        "path": "tests",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "63b8e9d5975a68afef75556bbbd71c2a584ab61f",
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/trees/63b8e9d5975a68afef75556bbbd71c2a584ab61f"
+      },
+      {
+        "path": "tests/concurrency.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c1a412344c80aa56bdd4a771b20712691d93400a",
+        "size": 1971,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/c1a412344c80aa56bdd4a771b20712691d93400a"
+      },
+      {
+        "path": "tests/cordis-smoke.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c9844647e43f3ab83954ee66cadfd42105a7240e",
+        "size": 1824,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/c9844647e43f3ab83954ee66cadfd42105a7240e"
+      },
+      {
+        "path": "tests/fixtures",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "81c849fc8959807a65b1a459352f937b0dfaebfc",
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/trees/81c849fc8959807a65b1a459352f937b0dfaebfc"
+      },
+      {
+        "path": "tests/fixtures/concurrent-writer.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f636ed5bccca1020b9bf15ac6373f2f42e02cca0",
+        "size": 816,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/f636ed5bccca1020b9bf15ac6373f2f42e02cca0"
+      },
+      {
+        "path": "tests/plugin.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6fd3d05149ffb4cc156a74f8c3e60ba93969192a",
+        "size": 5407,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/6fd3d05149ffb4cc156a74f8c3e60ba93969192a"
+      },
+      {
+        "path": "tests/receipt.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b47aa9642274d04882d4803f6fe32054cd13ef63",
+        "size": 8640,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/b47aa9642274d04882d4803f6fe32054cd13ef63"
+      },
+      {
+        "path": "tests/upstream-bundle.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f0a76aae69a011c5d0c1cab367c6c9ee7a3b3596",
+        "size": 1263,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/f0a76aae69a011c5d0c1cab367c6c9ee7a3b3596"
+      },
+      {
+        "path": "tsconfig.build.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "40ca93471f15385ac0c58ab760ef83990639d62b",
+        "size": 187,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/40ca93471f15385ac0c58ab760ef83990639d62b"
+      },
+      {
+        "path": "tsconfig.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "11a163715e3ce05f2ca7dacd78add9d40187e684",
+        "size": 658,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/11a163715e3ce05f2ca7dacd78add9d40187e684"
+      },
+      {
+        "path": "tsdown.config.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b8df96ab4a76f631d94eb98c96686f4c09c8985a",
+        "size": 315,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/b8df96ab4a76f631d94eb98c96686f4c09c8985a"
+      },
+      {
+        "path": "vitest.config.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4aec01578c14395fcab8770740bd918986af3323",
+        "size": 156,
+        "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/git/blobs/4aec01578c14395fcab8770740bd918986af3323"
+      }
+    ],
+    "truncated": false
+  },
+  "releases": [
+    {
+      "url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/releases/370132788",
+      "assets_url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/releases/370132788/assets",
+      "upload_url": "https://uploads.github.com/repos/030611/qiushi-dsh-evidence-audit/releases/370132788/assets{?name,label}",
+      "html_url": "https://github.com/030611/qiushi-dsh-evidence-audit/releases/tag/v0.1.0",
+      "id": 370132788,
+      "author": {
+        "login": "030611",
+        "id": 114643959,
+        "node_id": "U_kgDOBtVT9w",
+        "avatar_url": "https://avatars.githubusercontent.com/u/114643959?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/030611",
+        "html_url": "https://github.com/030611",
+        "followers_url": "https://api.github.com/users/030611/followers",
+        "following_url": "https://api.github.com/users/030611/following{/other_user}",
+        "gists_url": "https://api.github.com/users/030611/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/030611/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/030611/subscriptions",
+        "organizations_url": "https://api.github.com/users/030611/orgs",
+        "repos_url": "https://api.github.com/users/030611/repos",
+        "events_url": "https://api.github.com/users/030611/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/030611/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOT3lrys4WD8c0",
+      "tag_name": "v0.1.0",
+      "target_commitish": "main",
+      "name": "v0.1.0",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-08-13T18:46:04Z",
+      "updated_at": "2026-08-13T18:46:09Z",
+      "published_at": "2026-08-13T18:46:09Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/tarball/v0.1.0",
+      "zipball_url": "https://api.github.com/repos/030611/qiushi-dsh-evidence-audit/zipball/v0.1.0",
+      "body": "First public release. Provides observe-only, hash-chained JSONL evidence receipts for DeepSeek Harness. Hashes are not redaction, encryption, or digital signatures; see the README and SECURITY.md for integrity and concurrency limits. Published on npm as qiushi-dsh-evidence-audit@0.1.0. Registry SHA-1: e743b4729fe361922498fb8b2f989e6438e029af."
+    }
+  ],
+  "files": {
+    "README.md": "# Qiushi DSH Evidence Audit\n\nEnglish | [简体中文](README.zh-CN.md)\n\n[![npm version](https://img.shields.io/npm/v/qiushi-dsh-evidence-audit.svg)](https://www.npmjs.com/package/qiushi-dsh-evidence-audit)\n[![CI](https://github.com/030611/qiushi-dsh-evidence-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/030611/qiushi-dsh-evidence-audit/actions/workflows/ci.yml)\n[![license](https://img.shields.io/npm/l/qiushi-dsh-evidence-audit.svg)](LICENSE)\n[![featured on dsh-suite](https://img.shields.io/badge/featured%20on-dsh--suite-4d6bfe)](https://whyihaveyou.github.io/dsh-suite/)\n\n![Qiushi DSH Evidence Audit social preview](docs/social-preview.jpg)\n\n**Leave a locally checkable execution trail without storing prompts, tool arguments, tool results, or session IDs in plaintext.**\n\n```sh\ndsh plugin --profile web add qiushi-dsh-evidence-audit\n```\n\n> Community-maintained and not an official DeepSeek project. Related trust-layer plugins: [Telemetry Redactor](https://github.com/030611/dsh-telemetry-redactor), [Verification Receipt](https://github.com/030611/dsh-verification-receipt), and [Context Provenance](https://github.com/030611/dsh-context-provenance).\n\nQiushi DSH Evidence Audit is an observe-only DeepSeek Harness Profile Bundle. It listens to the official `tools/result` and `session/event` extension points and appends deterministic, hash-chained JSONL evidence receipts. It never registers a model-facing tool, changes a prompt, transforms a tool result, or appends to a session.\n\n![Evidence Audit data flow: DSH observations are canonicalized and hashed into a private JSONL chain, while observed plaintext is omitted](https://raw.githubusercontent.com/030611/qiushi-dsh-evidence-audit/main/docs/evidence-flow.svg)\n\n## Install from npm\n\nPrerequisites are Node.js `^22.19.0 || >=24.0.0` and a DSH installation built from the [tested commit](#compatibility).\n\n```powershell\ndsh plugin --profile <profile> add qiushi-dsh-evidence-audit\ndsh --profile <profile> --dump-config\n```\n\nThe config dump should contain a row with id `qiushi-evidence-audit` and name `qiushi-dsh-evidence-audit`. Receipts then default to `$DSH_HOME/evidence-audit/evidence-receipts.jsonl`, or `~/.dsh/evidence-audit/evidence-receipts.jsonl` when `DSH_HOME` is unset. If running DSH from its source checkout, replace `dsh` with that checkout's documented `pnpm dsh` launcher.\n\nTo remove the bundle:\n\n```powershell\ndsh plugin --profile <profile> remove qiushi-dsh-evidence-audit\n```\n\n## What it can and cannot establish\n\n- It can make edits to retained records, untouched-prefix removal, broken links, and partial final lines detectable when the existing file is verified.\n- It can show that this observer saw specific event categories and hashes in a particular local sequence.\n- It **cannot** prove that a command ran correctly, that a result was truthful, who produced the file, or that a valid suffix was not deleted.\n- Its hashes are **not** redaction, encryption, digital signatures, or an external trust anchor. Protect the receipt file as sensitive pseudonymous data.\n\n## Compatibility\n\nThis release has one deliberately narrow compatibility claim: it was implemented and tested against `deepseek-ai/deepseek-harness` commit `47f943859bef60e4160492346772ded9b24f765a` on 2026-08-13. That checkout identifies its packages as `0.1.0-rc.5`, but that version was not available from npm during verification. This is therefore a commit-pinned claim, not a promise for npm release `0.0.1-rc.1`, future DSH commits, or a semver range.\n\nThe official installer reads `package.json#dsh.bundle.patch`. [`dsh.plugin.json`](dsh.plugin.json) is additional project metadata with a local schema; the pinned DSH commit does not read that file and this project does not claim otherwise.\n\n## Receipt data\n\nThe default file is `$DSH_HOME/evidence-audit/evidence-receipts.jsonl`, or `~/.dsh/evidence-audit/evidence-receipts.jsonl` when `DSH_HOME` is unset or blank. The plugin creates the default directory with owner-only mode `0700` and the file with owner-only mode `0600` where the operating system honors POSIX modes. It never defaults to the current working directory.\n\nEvery line contains `schemaVersion`, `sequence`, `collectedAt`, `previousRecordHash`, and `recordHash`. `recordHash` is SHA-256 over canonical JSON for every field except `recordHash` itself. The next line commits to it through `previousRecordHash`; the first line uses `null`. Startup verifies the complete existing file and refuses to append if a line, sequence, record hash, or previous-hash link is invalid.\n\nA `session-event` receipt stores the hashed session ID, event type, event sequence and time, a hash of event data, and the optional `ignorable` marker. A `tool-result` receipt stores the tool name, hashed call/root-call/session IDs, argument hash, final outcome hash, error flag, parent-presence flag, and optional error code.\n\n> [!WARNING]\n> **`eventDataHash`, `argumentsHash`, and `outcomeHash` are not redaction, encryption, or digital signatures.** The JSONL excludes the observed plaintext, but an attacker who can guess a low-entropy value can hash candidates and confirm a match offline. Treat the receipt file as sensitive pseudonymous data and protect it accordingly.\n\nEvent types and tool names remain readable because they are the stable audit categories. The two feeds are not deduplicated: DSH may publish one logical tool outcome first on `tools/result` and then durably as a `tool/result` `session/event`. In that case this plugin intentionally writes two receipts describing two observations. Do not sum those receipts as independent tool executions.\n\n### Canonical JSON boundary\n\n`hashObservedValue` accepts only lossless JSON values: `null`, booleans, finite numbers, strings, dense arrays, and plain objects with string keys. Object keys are sorted recursively using JavaScript's default UTF-16 code-unit order. Strings use `JSON.stringify` escaping, SHA-256 consumes the resulting UTF-8 bytes, and Unicode normalization is not performed; canonically equivalent NFC and NFD strings therefore hash differently.\n\n`undefined` (including an object property), `BigInt`, non-finite numbers, functions, symbols, sparse array holes, extra array properties, accessors, non-enumerable or symbol keys, circular references, proxies, array subclasses, and non-plain objects such as `Date`, `Map`, or class instances are rejected. Accessor getters are not invoked. Direct callers receive a path-bearing `TypeError`; observer callbacks catch the failure, log a warning, omit only that receipt, and leave the DSH publication unchanged. Existing-file verification still fails plugin startup loudly.\n\n## Observe-only behavior\n\nBoth listeners are ordinary contained observers. They do not return a waterfall decision and do not mutate either callback argument. A receipt serialization or append error is logged and contained so the tool outcome and session publication continue unchanged. A startup error, including an invalid output path or damaged existing chain, fails plugin loading loudly instead of silently discarding audit records.\n\nOne cleanup effect explicitly unregisters both listeners before closing the writer; Cordis's automatic listener disposers are idempotent with that cleanup. Appends and close are synchronous (`writeSync`/`closeSync`), with no promise-backed write queue left pending at unload. A real Cordis test awaits disposal and verifies that a later emission does not change the file.\n\nModel experience: no prompt text, tool schema, token, model request, result, or KV-cache behavior changes. The only runtime costs are canonical serialization, SHA-256, synchronous append I/O per observed record, and complete chain verification at plugin startup.\n\n## Optional output override\n\nThe override must be absolute. A later profile patch replaces the complete row config, so keep the row name and provide the full config:\n\n```yaml\n- id: qiushi-evidence-audit\n  name: qiushi-dsh-evidence-audit\n  config:\n    outputPath: 'D:\\private-audit\\evidence-receipts.jsonl'\n```\n\nThe configured destination is operator-owned; its parent-directory permissions and link safety are not changed by the plugin. Prefer a private directory that other users cannot write.\n\n## Verify and build\n\n```powershell\npnpm run typecheck\npnpm run test\npnpm run build\npnpm run test:built\npnpm run publint\npnpm pack --dry-run\npnpm run test:tarball\n$env:DSH_UPSTREAM_CHECKOUT='D:\\path\\to\\pinned\\deepseek-harness'\npnpm run test:upstream\n```\n\nTests cover canonical JSON acceptance/rejection and Unicode behavior, a fixed SHA-256 vector, deterministic chain creation, exact mutation/truncation boundaries, a real two-process append race, plaintext exclusion, duplicate feed observations, fail containment, safe default resolution, real Cordis mount/event/disposal, built-artifact loading, publint, an exact pack list, install/import/mount from the tarball, and commit-pinned bundle composition with the byte-identical official `applyEntryPatches` implementation.\n\n## Integrity detection boundaries\n\nThis file is **not generically tamper-evident**. It has an unkeyed, self-contained hash chain with no external anchor. The tested boundaries are:\n\n| Scenario | Detected? | Exact boundary |\n| --- | --- | --- |\n| Edit a retained line or link | Yes, at verification/startup | Unless an attacker recomputes that line and every following hash. |\n| Remove an untouched prefix | Yes, at verification/startup | The first remaining sequence/link no longer starts at `0`/`null`; rewritten and re-chained files can evade this. |\n| Leave a partial final line | Yes, at verification/startup | A non-empty file must end with a newline after a complete JSON record. |\n| Delete the whole file | **No** | Re-creation is indistinguishable from first use without an external anchor. |\n| Remove a complete suffix | **No** | The shorter retained prefix remains a valid chain. |\n| Two processes append one file | Not prevented | There is no cross-process lock. The adversarial test makes two processes open the same head; later verification rejects the resulting duplicate/stale sequence. Use a separate file per process. |\n| Attacker rewrites and re-chains records | **No** | SHA-256 is unkeyed and the file carries no trusted signature/checkpoint. |\n\n## Known limitations and remaining risks\n\n- Hashes do not prove author identity and provide neither a digital signature nor a checkpoint anchored outside the host.\n- A completed `writeSync` is not an `fsync` durability guarantee. A power loss or kernel/storage failure can lose the last receipt.\n- Multiple DSH processes must not write the same file concurrently. Detection occurs only on a later verification and is not recovery; use one output file per process/profile.\n- Startup verification is linear in the existing file size, and synchronous append I/O adds latency to the event publisher.\n- POSIX modes do not express full Windows ACL policy. Verify ACLs for sensitive deployments.\n- The plugin observes live publications after it mounts. Constructor seed/replay events that DSH deliberately does not publish on `session/event` are not backfilled.\n- The compatibility smoke did not perform a model-backed DSH turn: the pinned shallow checkout had no installed/built workspace dependencies or API credential. It did exercise the real Cordis runtime and the official bundle patch parser/application semantics.\n\n## Project links\n\n- [GitHub repository](https://github.com/030611/qiushi-dsh-evidence-audit)\n- [npm package](https://www.npmjs.com/package/qiushi-dsh-evidence-audit)\n- [v0.1.0 release notes](https://github.com/030611/qiushi-dsh-evidence-audit/releases/tag/v0.1.0)\n\n## License\n\n[MIT](LICENSE)\n",
+    "package.json": "{\n  \"name\": \"qiushi-dsh-evidence-audit\",\n  \"version\": \"0.1.0\",\n  \"packageManager\": \"pnpm@11.19.0\",\n  \"description\": \"Observe-only hash-chained evidence receipts for DeepSeek Harness\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/030611/qiushi-dsh-evidence-audit.git\"\n  },\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"sideEffects\": false,\n  \"publishConfig\": {\n    \"access\": \"public\"\n  },\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./dsh.plugin.json\": \"./dsh.plugin.json\",\n    \"./dsh.plugin.schema.json\": \"./docs/dsh.plugin.schema.json\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib/index.js\",\n    \"lib/types/**/*.d.ts\",\n    \"cordis.patch.yml\",\n    \"dsh.plugin.json\",\n    \"docs/dsh.plugin.schema.json\",\n    \"README.md\",\n    \"README.zh-CN.md\",\n    \"LICENSE\"\n  ],\n  \"scripts\": {\n    \"build\": \"tsc -p tsconfig.build.json && tsdown\",\n    \"prebuild\": \"node scripts/clean-build.mjs\",\n    \"prepare\": \"pnpm run build\",\n    \"pretest\": \"pnpm run build\",\n    \"publint\": \"publint\",\n    \"test\": \"vitest run\",\n    \"test:built\": \"node scripts/built-smoke.mjs\",\n    \"test:npm-dry-run\": \"npm publish --dry-run --json --access public --registry=https://registry.npmjs.org/ > .npm-dry-run.json && node scripts/npm-dry-run-smoke.mjs\",\n    \"test:npm-pack\": \"npm pack --dry-run --json > .npm-dry-run.json && node scripts/npm-dry-run-smoke.mjs\",\n    \"test:tarball\": \"node scripts/tarball-smoke.mjs\",\n    \"test:upstream\": \"node scripts/upstream-smoke.mjs\",\n    \"typecheck\": \"tsc -p tsconfig.json --noEmit\"\n  },\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n  },\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh-plugin\",\n    \"audit\",\n    \"evidence\",\n    \"jsonl\"\n  ],\n  \"license\": \"MIT\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"4.0.1\"\n  },\n  \"dependencies\": {\n    \"@deepseek-ai/schemastery\": \"3.18.1\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"4.0.1\",\n    \"@deepseek-ai/cordis-plugin-include\": \"1.0.6\",\n    \"@types/js-yaml\": \"4.0.9\",\n    \"@types/node\": \"^24.0.0\",\n    \"js-yaml\": \"4.1.1\",\n    \"publint\": \"^0.3.23\",\n    \"tsdown\": \"0.22.2\",\n    \"typescript\": \"^5.9.2\",\n    \"vitest\": \"^3.2.4\"\n  }\n}\n"
+  },
+  "fingerprints": {
+    "code": "f32ed3fd149404bf23a7ea9d5303008f3d076c36",
+    "release": "fcf1bb0b482a3442ae15cf7b702564e831e064822082cd654b616b2bc910d7b8",
+    "maintenance": "ac0d6abae7c2b6d63ea8a2d29822fad38e5eac13aa996da1f220a2a47c603c33"
+  },
+  "limitations": [
+    "默认分支快照不证明发布包或运行时行为。",
+    "发布接口最多采集 100 条，不声称完整发布历史。",
+    "文件树指纹包括文档和生成文件，判断有效工程量前须检查差异。"
+  ]
+}

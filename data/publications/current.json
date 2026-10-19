@@ -1,31 +1,38 @@
 {
   "schema_version": 1,
-  "session": "data/sessions/20261019T074011Z-smoke.json",
-  "scope": "仅三个 DSH 插件的定向源码研究；本次验证 README 生成链路，未新增实时研究或运行测评。",
-  "report": "data/reports/20261019-readme-smoke.md",
-  "recommendation_page": "data/reports/20261019T074011Z-smoke-recommendations.md",
-  "catalog_page": "data/reports/20261019-readme-smoke-catalog.md",
+  "session": "data/sessions/20261019T091725Z-init10.json",
+  "scope": "十插件固定源码研究；完整候选与本轮所选范围分开记录",
+  "report": "data/reports/20261019T091725Z-init10.md",
+  "recommendation_page": "data/reports/20261019T091725Z-init10-recommendations.md",
+  "catalog_page": "data/reports/20261019T091725Z-init10-catalog.md",
   "recommendations": [
+    {
+      "plugin_id": "github:1333368566:root",
+      "kind": "trial",
+      "summary": "已有遥测出口时，用合成凭证先验证副本脱敏；未知格式与监听链仍是关键边界。"
+    },
     {
       "plugin_id": "github:1339316901:root",
       "kind": "trial",
-      "summary": "频繁换会话的项目可优先小范围试；关键是恢复是否更快、更准确，记忆维护与提示占用仍有成本。"
+      "summary": "高频跨会话开发先试确定性索引与出处；与交接文档比较恢复质量和总负担。"
     },
     {
-      "plugin_id": "github:1170373459:dsh-invoice-downloader",
-      "kind": "trial",
-      "summary": "高频批量收票者条件试用；先确认配置、纠错与人工核验能否被任务量摊薄。"
-    },
-    {
-      "plugin_id": "github:1333800488:root",
+      "plugin_id": "github:1333370288:root",
       "kind": "observe",
-      "summary": "并行潜力须扣除评审和集成负担；当前 npm 入口不可用，宿主与恢复条件待验。"
+      "summary": "验证信号摘要不等于测试通过；先核对源码0.1.1与npm latest0.1.0的产物差异。"
     }
   ],
   "metadata": {
-    "github:1170373459:dsh-invoice-downloader": "data/snapshots/20261019T084247Z-daily-meta/github-1170373459-dsh-invoice-downloader.json",
-    "github:1333800488:root": "data/snapshots/20261019T084247Z-daily-meta/github-1333800488-root.json",
-    "github:1339316901:root": "data/snapshots/20261019T084247Z-daily-meta/github-1339316901-root.json"
+    "github:1339316901:root": "data/snapshots/20261019T091725Z-init10/00080000__dsh-project-memory-meta.json",
+    "github:1333328839:root": "data/snapshots/20261019T091725Z-init10/01Virex__dsh-status-rotator-meta.json",
+    "github:1416699252:root": "data/snapshots/20261019T091725Z-init10/01men__ybkkasi-meta.json",
+    "github:1334899834:root": "data/snapshots/20261019T091725Z-init10/02Muller25__dsh-api-balance-meta.json",
+    "github:1333368566:root": "data/snapshots/20261019T091725Z-init10/030611__dsh-telemetry-redactor-meta.json",
+    "github:1333370288:root": "data/snapshots/20261019T091725Z-init10/030611__dsh-verification-receipt-meta.json",
+    "github:1333357514:root": "data/snapshots/20261019T091725Z-init10/030611__qiushi-dsh-evidence-audit-meta.json",
+    "github:1342915339:root": "data/snapshots/20261019T091725Z-init10/0QwQ0__dsh-discord-richpresence-meta.json",
+    "github:1343420855:root": "data/snapshots/20261019T091725Z-init10/0QwQ0__dsh-ui-auth-meta.json",
+    "github:1339803365:root": "data/snapshots/20261019T091725Z-init10/0imzero__dsh-workspace-menu-meta.json"
   },
   "catalog": "data/catalog.json"
 }

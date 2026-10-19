@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+  "component": "",
+  "coverage": "git tracked files at exact commit; component scope only",
+  "omitted_non_regular": [],
+  "tools": {
+    "loc": {
+      "name": "sloc",
+      "version": "0.3.2",
+      "command": "node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>"
+    },
+    "parser": {
+      "name": "typescript",
+      "version": "5.9.3"
+    }
+  },
+  "content_digest": "c6e4b9e7c87ae00c97444b83abb427eba4d050b2051b3e018f313c5eaf0a6457",
+  "groups": [
+    {
+      "extension": ".js",
+      "role": "source",
+      "files": 2,
+      "lines": 346,
+      "code": 327,
+      "comments": 16,
+      "blank": 4
+    },
+    {
+      "extension": ".md",
+      "role": "source",
+      "files": 1,
+      "lines": 89,
+      "words": 928
+    }
+  ],
+  "files": [
+    {
+      "path": "lib/client.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 255,
+      "code": 248,
+      "comments": 7,
+      "blank": 0
+    },
+    {
+      "path": "lib/index.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 91,
+      "code": 79,
+      "comments": 9,
+      "blank": 4
+    },
+    {
+      "path": "README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 89,
+      "words": 928
+    }
+  ],
+  "excluded": [
+    {
+      "path": "lib/client.d.ts",
+      "reason": "generated/dependency/vendor/declaration heuristic; review exclusions"
+    }
+  ],
+  "skills": {
+    "entry_candidates": [],
+    "non_example_candidates": 0,
+    "status": "ownership_and_runtime_registration_require_review"
+  },
+  "capabilities": {
+    "agents": [],
+    "tools": [],
+    "commands": [],
+    "events": [],
+    "timers": [
+      {
+        "path": "lib/client.js",
+        "line": 105,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      }
+    ],
+    "ui": []
+  },
+  "capability_summary": {
+    "agents": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "tools": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "commands": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "events": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "timers": {
+      "literal_names": [],
+      "unresolved_sites": 1,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "ui": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    }
+  },
+  "parse_errors": [],
+  "limitations": [
+    "LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.",
+    "Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.",
+    "Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.",
+    "Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.",
+    "Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review."
+  ]
+}

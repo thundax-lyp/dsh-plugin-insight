@@ -1,0 +1,25 @@
+{
+  "repository": "01Virex/dsh-status-rotator",
+  "repository_id": 1333328839,
+  "captured_at": "2026-10-19T09:24:51.200Z",
+  "window_start": "2026-09-19T09:24:51.200Z",
+  "stars": 162,
+  "pushed_at": "2026-10-19T08:52:36Z",
+  "issues": {
+    "open": 1,
+    "closed": 42,
+    "created_30d": 28,
+    "closed_30d": 27,
+    "updated_30d": 28
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-status-rotator",
+    "captured_at": "2026-10-19T09:21:26.522Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 11532,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-status-rotator",
+    "error": null
+  }
+}

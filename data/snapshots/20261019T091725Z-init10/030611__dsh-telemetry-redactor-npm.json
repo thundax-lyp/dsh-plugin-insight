@@ -1,0 +1,119 @@
+{
+  "url": "https://registry.npmjs.org/dsh-telemetry-redactor/latest",
+  "captured_at": "2026-10-19T09:24:52.584Z",
+  "http_status": 200,
+  "package": {
+    "dsh": {
+      "bundle": {
+        "patch": "./cordis.patch.yml"
+      }
+    },
+    "bugs": {
+      "url": "https://github.com/030611/dsh-telemetry-redactor/issues"
+    },
+    "dist": {
+      "shasum": "7974ef9021fe6a95c9a8bad85bb98b327b227454",
+      "tarball": "https://registry.npmjs.org/dsh-telemetry-redactor/-/dsh-telemetry-redactor-0.1.0.tgz",
+      "fileCount": 12,
+      "integrity": "sha512-e/C2uA4UKCFAKprwwOk9inaoWb+YLbZMQik3j6nKTyuE1yv0slq5Hm9ql6qY0rt5gKCSWsiosdIUDkwhYsR/VA==",
+      "signatures": [
+        {
+          "sig": "MEYCIQCPslRGlUMGkcguwQVok6JJ/PNhrZNi0CJ+VN5/Cyl2mgIhANxEG80HRE9lZJ3v3S55OC4Ral/ka2l4GqbQr8zvxWR6",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 32842
+    },
+    "main": "lib/index.js",
+    "name": "dsh-telemetry-redactor",
+    "type": "module",
+    "types": "lib/types/index.d.ts",
+    "engines": {
+      "node": "^22.19.0 || >=24.0.0"
+    },
+    "exports": {
+      ".": {
+        "types": "./lib/types/index.d.ts",
+        "default": "./lib/index.js"
+      },
+      "./package.json": "./package.json",
+      "./dsh.plugin.json": "./dsh.plugin.json",
+      "./cordis.patch.yml": "./cordis.patch.yml"
+    },
+    "gitHead": "89a8196378d6d0e8b98479ff5e7496fb6936f5bf",
+    "license": "MIT",
+    "scripts": {
+      "test": "vitest run",
+      "build": "tsc -p tsconfig.build.json",
+      "check": "pnpm run typecheck && pnpm test && pnpm run build && pnpm run test:smoke && pnpm run test:performance",
+      "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit",
+      "test:smoke": "node scripts/built-smoke.mjs",
+      "test:packed": "node scripts/packed-install-smoke.mjs",
+      "test:performance": "node scripts/performance-smoke.mjs",
+      "test:official-head": "node --import tsx scripts/official-head-smoke.ts",
+      "test:official-patch": "node --import tsx scripts/official-patch-smoke.ts",
+      "test:packed:clean-env": "node scripts/packed-clean-environment-smoke.mjs"
+    },
+    "_npmUser": {
+      "name": "lukasuka",
+      "email": "2843409461@qq.com"
+    },
+    "homepage": "https://github.com/030611/dsh-telemetry-redactor#readme",
+    "keywords": [
+      "deepseek-harness",
+      "dsh",
+      "plugin",
+      "telemetry",
+      "redaction",
+      "privacy",
+      "security"
+    ],
+    "repository": {
+      "url": "git+https://github.com/030611/dsh-telemetry-redactor.git",
+      "type": "git"
+    },
+    "_npmVersion": "11.17.0",
+    "description": "Export-copy redaction for DeepSeek Harness session telemetry",
+    "directories": {},
+    "maintainers": [
+      {
+        "name": "lukasuka",
+        "email": "2843409461@qq.com"
+      }
+    ],
+    "_nodeVersion": "24.19.0",
+    "dependencies": {
+      "@deepseek-ai/schemastery": "3.18.1"
+    },
+    "publishConfig": {
+      "access": "public"
+    },
+    "_hasShrinkwrap": false,
+    "packageManager": "pnpm@11.7.0",
+    "devDependencies": {
+      "tsx": "4.22.4",
+      "vitest": "4.1.8",
+      "js-yaml": "4.2.0",
+      "publint": "0.3.21",
+      "typescript": "6.0.3",
+      "@types/node": "^22.20.0",
+      "@types/js-yaml": "4.0.9",
+      "@deepseek-ai/cordis": "4.0.1",
+      "@deepseek-ai/dsh-llm": "0.1.0-rc.6",
+      "@deepseek-ai/dsh-session": "0.1.0-rc.6",
+      "@deepseek-ai/cordis-plugin-loader": "1.0.2",
+      "@deepseek-ai/cordis-plugin-include": "1.0.6",
+      "@deepseek-ai/dsh-session-telemetry": "0.1.0-rc.6"
+    },
+    "peerDependencies": {
+      "@deepseek-ai/cordis": "^4.0.1",
+      "@deepseek-ai/dsh-session-telemetry": ">=0.1.0-rc.5 <0.2.0"
+    },
+    "_npmOperationalInternal": {
+      "tmp": "tmp/dsh-telemetry-redactor_0.1.0_1786691347711_0.06906163812720201",
+      "host": "s3://npm-registry-packages-npm-production"
+    },
+    "_id": "dsh-telemetry-redactor@0.1.0",
+    "version": "0.1.0"
+  }
+}

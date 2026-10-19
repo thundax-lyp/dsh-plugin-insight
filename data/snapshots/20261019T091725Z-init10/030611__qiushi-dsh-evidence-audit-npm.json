@@ -1,0 +1,116 @@
+{
+  "url": "https://registry.npmjs.org/qiushi-dsh-evidence-audit/latest",
+  "captured_at": "2026-10-19T09:24:52.934Z",
+  "http_status": 200,
+  "package": {
+    "dsh": {
+      "bundle": {
+        "patch": "./cordis.patch.yml"
+      }
+    },
+    "bugs": {
+      "url": "https://github.com/030611/qiushi-dsh-evidence-audit/issues"
+    },
+    "dist": {
+      "shasum": "e743b4729fe361922498fb8b2f989e6438e029af",
+      "tarball": "https://registry.npmjs.org/qiushi-dsh-evidence-audit/-/qiushi-dsh-evidence-audit-0.1.0.tgz",
+      "fileCount": 10,
+      "integrity": "sha512-akVLrAo6Fi9TGfDUEYGqUTPCTdt0htoZDaejlSfiXKVfl4NTtsDatnWJqDYMFtZQhulTvbOm3fm51/zOP5FwKQ==",
+      "signatures": [
+        {
+          "sig": "MEUCIC6Bb3Uza+c18G7gxZaYETPkz7wzpqiPCy2QBIQSEfG+AiEA3VSODp5tcIbZEcryjudlemjJ9W9v55i6oJyYWz6W5lo=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 40334
+    },
+    "main": "lib/index.js",
+    "name": "qiushi-dsh-evidence-audit",
+    "type": "module",
+    "types": "lib/types/index.d.ts",
+    "engines": {
+      "node": "^22.19.0 || >=24.0.0"
+    },
+    "exports": {
+      ".": {
+        "types": "./lib/types/index.d.ts",
+        "default": "./lib/index.js"
+      },
+      "./package.json": "./package.json",
+      "./dsh.plugin.json": "./dsh.plugin.json",
+      "./cordis.patch.yml": "./cordis.patch.yml",
+      "./dsh.plugin.schema.json": "./docs/dsh.plugin.schema.json"
+    },
+    "gitHead": "1833908480f824f54156be1f088d57d2abb19dee",
+    "license": "MIT",
+    "scripts": {
+      "test": "vitest run",
+      "build": "tsc -p tsconfig.build.json && tsdown",
+      "prepare": "pnpm run build",
+      "pretest": "pnpm run build",
+      "publint": "publint",
+      "prebuild": "node scripts/clean-build.mjs",
+      "typecheck": "tsc -p tsconfig.json --noEmit",
+      "test:built": "node scripts/built-smoke.mjs",
+      "test:tarball": "node scripts/tarball-smoke.mjs",
+      "test:npm-pack": "npm pack --dry-run --json > .npm-dry-run.json && node scripts/npm-dry-run-smoke.mjs",
+      "test:upstream": "node scripts/upstream-smoke.mjs",
+      "test:npm-dry-run": "npm publish --dry-run --json --access public --registry=https://registry.npmjs.org/ > .npm-dry-run.json && node scripts/npm-dry-run-smoke.mjs"
+    },
+    "_npmUser": {
+      "name": "lukasuka",
+      "email": "2843409461@qq.com"
+    },
+    "homepage": "https://github.com/030611/qiushi-dsh-evidence-audit#readme",
+    "keywords": [
+      "deepseek-harness",
+      "dsh-plugin",
+      "audit",
+      "evidence",
+      "jsonl"
+    ],
+    "repository": {
+      "url": "git+https://github.com/030611/qiushi-dsh-evidence-audit.git",
+      "type": "git"
+    },
+    "_npmVersion": "11.17.0",
+    "description": "Observe-only hash-chained evidence receipts for DeepSeek Harness",
+    "directories": {},
+    "maintainers": [
+      {
+        "name": "lukasuka",
+        "email": "2843409461@qq.com"
+      }
+    ],
+    "sideEffects": false,
+    "_nodeVersion": "24.19.0",
+    "dependencies": {
+      "@deepseek-ai/schemastery": "3.18.1"
+    },
+    "publishConfig": {
+      "access": "public"
+    },
+    "_hasShrinkwrap": false,
+    "packageManager": "pnpm@11.19.0",
+    "devDependencies": {
+      "tsdown": "0.22.2",
+      "vitest": "^3.2.4",
+      "js-yaml": "4.1.1",
+      "publint": "^0.3.23",
+      "typescript": "^5.9.2",
+      "@types/node": "^24.0.0",
+      "@types/js-yaml": "4.0.9",
+      "@deepseek-ai/cordis": "4.0.1",
+      "@deepseek-ai/cordis-plugin-include": "1.0.6"
+    },
+    "peerDependencies": {
+      "@deepseek-ai/cordis": "4.0.1"
+    },
+    "_npmOperationalInternal": {
+      "tmp": "tmp/qiushi-dsh-evidence-audit_0.1.0_1786646588871_0.6337746121310659",
+      "host": "s3://npm-registry-packages-npm-production"
+    },
+    "_id": "qiushi-dsh-evidence-audit@0.1.0",
+    "version": "0.1.0"
+  }
+}

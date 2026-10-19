@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+  "component": "",
+  "coverage": "git tracked files at exact commit; component scope only",
+  "omitted_non_regular": [],
+  "tools": {
+    "loc": {
+      "name": "sloc",
+      "version": "0.3.2",
+      "command": "node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>"
+    },
+    "parser": {
+      "name": "typescript",
+      "version": "5.9.3"
+    }
+  },
+  "content_digest": "c2d134c7ae0c9606bdac10cb2d42fd3a1bbeac472663f6cc09da05dd301ad9a4",
+  "groups": [
+    {
+      "extension": ".md",
+      "role": "source",
+      "files": 5,
+      "lines": 482,
+      "words": 4515
+    },
+    {
+      "extension": ".mjs",
+      "role": "source",
+      "files": 2,
+      "lines": 131,
+      "code": 124,
+      "comments": 0,
+      "blank": 7
+    },
+    {
+      "extension": ".ts",
+      "role": "source",
+      "files": 3,
+      "lines": 424,
+      "code": 327,
+      "comments": 56,
+      "blank": 41
+    },
+    {
+      "extension": ".ts",
+      "role": "test",
+      "files": 3,
+      "lines": 391,
+      "code": 361,
+      "comments": 0,
+      "blank": 30
+    }
+  ],
+  "files": [
+    {
+      "path": "docs/compatibility-0.1.1.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 37,
+      "words": 247
+    },
+    {
+      "path": "README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 179,
+      "words": 1406
+    },
+    {
+      "path": "README.zh.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 179,
+      "words": 2154
+    },
+    {
+      "path": "RELEASE_CHECKLIST.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 46,
+      "words": 260
+    },
+    {
+      "path": "scripts/performance-smoke.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 53,
+      "code": 51,
+      "comments": 0,
+      "blank": 2
+    },
+    {
+      "path": "scripts/release-smoke.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 78,
+      "code": 73,
+      "comments": 0,
+      "blank": 5
+    },
+    {
+      "path": "SECURITY.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 41,
+      "words": 448
+    },
+    {
+      "path": "src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 111,
+      "code": 74,
+      "comments": 24,
+      "blank": 13
+    },
+    {
+      "path": "src/receipt.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 305,
+      "code": 246,
+      "comments": 32,
+      "blank": 27
+    },
+    {
+      "path": "tests/composition.spec.ts",
+      "extension": ".ts",
+      "role": "test",
+      "lines": 104,
+      "code": 95,
+      "comments": 0,
+      "blank": 9
+    },
+    {
+      "path": "tests/manifest.spec.ts",
+      "extension": ".ts",
+      "role": "test",
+      "lines": 50,
+      "code": 47,
+      "comments": 0,
+      "blank": 3
+    },
+    {
+      "path": "tests/receipt.spec.ts",
+      "extension": ".ts",
+      "role": "test",
+      "lines": 237,
+      "code": 219,
+      "comments": 0,
+      "blank": 18
+    },
+    {
+      "path": "vitest.config.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 8,
+      "code": 7,
+      "comments": 0,
+      "blank": 1
+    }
+  ],
+  "excluded": [],
+  "skills": {
+    "entry_candidates": [],
+    "non_example_candidates": 0,
+    "status": "ownership_and_runtime_registration_require_review"
+  },
+  "capabilities": {
+    "agents": [],
+    "tools": [],
+    "commands": [],
+    "events": [
+      {
+        "path": "src/index.ts",
+        "line": 95,
+        "api": "ctx.on",
+        "name": "session/event",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      }
+    ],
+    "timers": [],
+    "ui": []
+  },
+  "capability_summary": {
+    "agents": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "tools": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "commands": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "events": {
+      "literal_names": [
+        "session/event"
+      ],
+      "unresolved_sites": 0,
+      "literal_count": 1,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "timers": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "ui": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    }
+  },
+  "parse_errors": [],
+  "limitations": [
+    "LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.",
+    "Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.",
+    "Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.",
+    "Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.",
+    "Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review."
+  ]
+}

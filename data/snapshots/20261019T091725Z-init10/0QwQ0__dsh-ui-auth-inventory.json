@@ -1,0 +1,2501 @@
+{
+  "schema_version": 1,
+  "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+  "component": "",
+  "coverage": "git tracked files at exact commit; component scope only",
+  "omitted_non_regular": [],
+  "tools": {
+    "loc": {
+      "name": "sloc",
+      "version": "0.3.2",
+      "command": "node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>"
+    },
+    "parser": {
+      "name": "typescript",
+      "version": "5.9.3"
+    }
+  },
+  "content_digest": "899ef6bf9e10d0f20336ae41438de66b117eb4343f7e61d4c6043911fd2bf986",
+  "groups": [
+    {
+      "extension": ".md",
+      "role": "source",
+      "files": 14,
+      "lines": 3381,
+      "words": 58130
+    },
+    {
+      "extension": ".js",
+      "role": "source",
+      "files": 12,
+      "lines": 9818,
+      "code": 8996,
+      "comments": 849,
+      "blank": 40
+    },
+    {
+      "extension": ".ts",
+      "role": "source",
+      "files": 12,
+      "lines": 8122,
+      "code": 6639,
+      "comments": 1044,
+      "blank": 506
+    },
+    {
+      "extension": ".cjs",
+      "role": "test",
+      "files": 2,
+      "lines": 288,
+      "code": 244,
+      "comments": 19,
+      "blank": 26
+    },
+    {
+      "extension": ".mjs",
+      "role": "test",
+      "files": 35,
+      "lines": 6084,
+      "code": 4406,
+      "comments": 1302,
+      "blank": 457
+    }
+  ],
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 626,
+      "words": 12257
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 62,
+      "words": 891
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 95,
+      "words": 1556
+    },
+    {
+      "path": "docs/DSH-0.1.5-COMPATIBILITY.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 310,
+      "words": 5478
+    },
+    {
+      "path": "docs/DSH-0.2.0-COMPATIBILITY.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 187,
+      "words": 2862
+    },
+    {
+      "path": "docs/INDEX.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 44,
+      "words": 739
+    },
+    {
+      "path": "docs/OPERATIONS.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 109,
+      "words": 1789
+    },
+    {
+      "path": "docs/PUBLISHING.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 123,
+      "words": 1601
+    },
+    {
+      "path": "docs/RBAC-MODEL-PROFILES.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 241,
+      "words": 3849
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 286,
+      "words": 5507
+    },
+    {
+      "path": "docs/SECURITY-VERIFICATION.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 391,
+      "words": 5894
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 168,
+      "words": 3314
+    },
+    {
+      "path": "docs/STORE-EVIDENCE.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 331,
+      "words": 4985
+    },
+    {
+      "path": "lib/client.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 3034,
+      "code": 2964,
+      "comments": 55,
+      "blank": 25
+    },
+    {
+      "path": "lib/i18n-phrases.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 228,
+      "code": 203,
+      "comments": 26,
+      "blank": 0
+    },
+    {
+      "path": "lib/i18n.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 177,
+      "code": 141,
+      "comments": 36,
+      "blank": 0
+    },
+    {
+      "path": "lib/index.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 3334,
+      "code": 3103,
+      "comments": 266,
+      "blank": 0
+    },
+    {
+      "path": "lib/model-profiles.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 245,
+      "code": 205,
+      "comments": 40,
+      "blank": 0
+    },
+    {
+      "path": "lib/modern-gateway.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 675,
+      "code": 585,
+      "comments": 104,
+      "blank": 0
+    },
+    {
+      "path": "lib/modern-policy.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 422,
+      "code": 345,
+      "comments": 77,
+      "blank": 0
+    },
+    {
+      "path": "lib/passkey-browser.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 460,
+      "code": 426,
+      "comments": 23,
+      "blank": 15
+    },
+    {
+      "path": "lib/profile-kek.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 113,
+      "code": 89,
+      "comments": 24,
+      "blank": 0
+    },
+    {
+      "path": "lib/profile-service.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 479,
+      "code": 427,
+      "comments": 52,
+      "blank": 0
+    },
+    {
+      "path": "lib/user-routes.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 174,
+      "code": 132,
+      "comments": 42,
+      "blank": 0
+    },
+    {
+      "path": "lib/webauthn.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 477,
+      "code": 376,
+      "comments": 104,
+      "blank": 0
+    },
+    {
+      "path": "README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 408,
+      "words": 7408
+    },
+    {
+      "path": "src/client.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 1574,
+      "code": 1360,
+      "comments": 143,
+      "blank": 83
+    },
+    {
+      "path": "src/i18n-phrases.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 240,
+      "code": 203,
+      "comments": 26,
+      "blank": 12
+    },
+    {
+      "path": "src/i18n.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 196,
+      "code": 142,
+      "comments": 37,
+      "blank": 17
+    },
+    {
+      "path": "src/index.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 3125,
+      "code": 2686,
+      "comments": 307,
+      "blank": 167
+    },
+    {
+      "path": "src/model-profiles.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 339,
+      "code": 243,
+      "comments": 50,
+      "blank": 46
+    },
+    {
+      "path": "src/modern-gateway.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 674,
+      "code": 536,
+      "comments": 126,
+      "blank": 27
+    },
+    {
+      "path": "src/modern-policy.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 426,
+      "code": 320,
+      "comments": 89,
+      "blank": 17
+    },
+    {
+      "path": "src/passkey-browser.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 11,
+      "code": 1,
+      "comments": 10,
+      "blank": 0
+    },
+    {
+      "path": "src/profile-kek.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 147,
+      "code": 103,
+      "comments": 24,
+      "blank": 20
+    },
+    {
+      "path": "src/profile-service.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 560,
+      "code": 448,
+      "comments": 55,
+      "blank": 57
+    },
+    {
+      "path": "src/user-routes.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 198,
+      "code": 132,
+      "comments": 52,
+      "blank": 15
+    },
+    {
+      "path": "src/webauthn.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 632,
+      "code": 465,
+      "comments": 125,
+      "blank": 45
+    },
+    {
+      "path": "test/client-smoke.cjs",
+      "extension": ".cjs",
+      "role": "test",
+      "lines": 146,
+      "code": 121,
+      "comments": 12,
+      "blank": 13
+    },
+    {
+      "path": "test/crypto-vectors.cjs",
+      "extension": ".cjs",
+      "role": "test",
+      "lines": 142,
+      "code": 123,
+      "comments": 7,
+      "blank": 13
+    },
+    {
+      "path": "test/host-smoke.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 798,
+      "code": 678,
+      "comments": 92,
+      "blank": 33
+    },
+    {
+      "path": "test/i18n.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 64,
+      "code": 56,
+      "comments": 3,
+      "blank": 5
+    },
+    {
+      "path": "test/live-015-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 163,
+      "code": 119,
+      "comments": 20,
+      "blank": 25
+    },
+    {
+      "path": "test/live-015-mux.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 134,
+      "code": 102,
+      "comments": 16,
+      "blank": 17
+    },
+    {
+      "path": "test/live-020-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 197,
+      "code": 145,
+      "comments": 24,
+      "blank": 29
+    },
+    {
+      "path": "test/live-2fa-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 73,
+      "code": 51,
+      "comments": 19,
+      "blank": 4
+    },
+    {
+      "path": "test/live-audit-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 55,
+      "code": 43,
+      "comments": 10,
+      "blank": 3
+    },
+    {
+      "path": "test/live-compat-matrix.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 98,
+      "code": 77,
+      "comments": 17,
+      "blank": 8
+    },
+    {
+      "path": "test/live-i18n-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 73,
+      "code": 64,
+      "comments": 6,
+      "blank": 4
+    },
+    {
+      "path": "test/live-im-envelope-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 99,
+      "code": 71,
+      "comments": 24,
+      "blank": 6
+    },
+    {
+      "path": "test/live-lock-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 55,
+      "code": 40,
+      "comments": 11,
+      "blank": 4
+    },
+    {
+      "path": "test/live-mux-leak.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 248,
+      "code": 200,
+      "comments": 46,
+      "blank": 10
+    },
+    {
+      "path": "test/live-mux-panel.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 45,
+      "code": 40,
+      "comments": 2,
+      "blank": 4
+    },
+    {
+      "path": "test/live-passkey-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 284,
+      "code": 220,
+      "comments": 37,
+      "blank": 31
+    },
+    {
+      "path": "test/live-register-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 77,
+      "code": 63,
+      "comments": 11,
+      "blank": 3
+    },
+    {
+      "path": "test/live-session-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 68,
+      "code": 57,
+      "comments": 9,
+      "blank": 2
+    },
+    {
+      "path": "test/live-totp-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 59,
+      "code": 47,
+      "comments": 10,
+      "blank": 3
+    },
+    {
+      "path": "test/live-ui-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 102,
+      "code": 76,
+      "comments": 17,
+      "blank": 11
+    },
+    {
+      "path": "test/live-user-pages-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 191,
+      "code": 147,
+      "comments": 24,
+      "blank": 22
+    },
+    {
+      "path": "test/live-ws-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 160,
+      "code": 138,
+      "comments": 15,
+      "blank": 8
+    },
+    {
+      "path": "test/login-page-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 200,
+      "code": 163,
+      "comments": 18,
+      "blank": 19
+    },
+    {
+      "path": "test/modern-policy.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 301,
+      "code": 239,
+      "comments": 31,
+      "blank": 32
+    },
+    {
+      "path": "test/port-fidelity.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 97,
+      "code": 73,
+      "comments": 16,
+      "blank": 8
+    },
+    {
+      "path": "test/profile-crypto.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 132,
+      "code": 106,
+      "comments": 14,
+      "blank": 12
+    },
+    {
+      "path": "test/profile-envelope.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 112,
+      "code": 92,
+      "comments": 7,
+      "blank": 13
+    },
+    {
+      "path": "test/profile-keys.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 27,
+      "code": 24,
+      "comments": 1,
+      "blank": 2
+    },
+    {
+      "path": "test/profile-service.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 188,
+      "code": 145,
+      "comments": 20,
+      "blank": 23
+    },
+    {
+      "path": "test/security-suite.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 1036,
+      "code": 375,
+      "comments": 654,
+      "blank": 39
+    },
+    {
+      "path": "test/shot-features.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 46,
+      "code": 41,
+      "comments": 2,
+      "blank": 4
+    },
+    {
+      "path": "test/shot-users.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 56,
+      "code": 46,
+      "comments": 6,
+      "blank": 5
+    },
+    {
+      "path": "test/shot.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 236,
+      "code": 184,
+      "comments": 38,
+      "blank": 16
+    },
+    {
+      "path": "test/store-contract-check.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 172,
+      "code": 126,
+      "comments": 35,
+      "blank": 14
+    },
+    {
+      "path": "test/totp-vectors.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 41,
+      "code": 31,
+      "comments": 8,
+      "blank": 3
+    },
+    {
+      "path": "test/user-routes.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 72,
+      "code": 63,
+      "comments": 1,
+      "blank": 8
+    },
+    {
+      "path": "test/webauthn-probe.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 325,
+      "code": 264,
+      "comments": 38,
+      "blank": 27
+    }
+  ],
+  "excluded": [
+    {
+      "path": "build/client.mjs",
+      "reason": "generated/dependency/vendor/declaration heuristic; review exclusions"
+    },
+    {
+      "path": "build/docs-matrix.mjs",
+      "reason": "generated/dependency/vendor/declaration heuristic; review exclusions"
+    }
+  ],
+  "skills": {
+    "entry_candidates": [],
+    "non_example_candidates": 0,
+    "status": "ownership_and_runtime_registration_require_review"
+  },
+  "capabilities": {
+    "agents": [],
+    "tools": [],
+    "commands": [],
+    "events": [
+      {
+        "path": "lib/client.js",
+        "line": 2966,
+        "api": "ctx.on",
+        "name": "locale/change",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 1006,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 1018,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 1019,
+        "api": "req.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 3083,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 3084,
+        "api": "server.on",
+        "name": "upgrade",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 3089,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 3091,
+        "api": "server.on",
+        "name": "upgrade",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 3269,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 3270,
+        "api": "server.on",
+        "name": "upgrade",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 3308,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 3310,
+        "api": "server.on",
+        "name": "upgrade",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/modern-gateway.js",
+        "line": 426,
+        "api": "muxSockets.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/modern-gateway.js",
+        "line": 583,
+        "api": "upstream.on",
+        "name": "open",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/modern-gateway.js",
+        "line": 649,
+        "api": "upstream.on",
+        "name": "message",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/modern-gateway.js",
+        "line": 654,
+        "api": "client.on",
+        "name": "message",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/modern-gateway.js",
+        "line": 657,
+        "api": "client.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/modern-gateway.js",
+        "line": 658,
+        "api": "client.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/modern-gateway.js",
+        "line": 659,
+        "api": "upstream.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "lib/modern-gateway.js",
+        "line": 660,
+        "api": "upstream.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/client.ts",
+        "line": 1523,
+        "api": "ctx.on",
+        "name": "locale/change",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 1109,
+        "api": "req.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 1118,
+        "api": "req.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 1119,
+        "api": "req.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 2921,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 2922,
+        "api": "server.on",
+        "name": "upgrade",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 2926,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 2927,
+        "api": "server.on",
+        "name": "upgrade",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 3075,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 3076,
+        "api": "server.on",
+        "name": "upgrade",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 3103,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 3104,
+        "api": "server.on",
+        "name": "upgrade",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/modern-gateway.ts",
+        "line": 469,
+        "api": "muxSockets.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/modern-gateway.ts",
+        "line": 604,
+        "api": "upstream.on",
+        "name": "open",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/modern-gateway.ts",
+        "line": 650,
+        "api": "upstream.on",
+        "name": "message",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/modern-gateway.ts",
+        "line": 655,
+        "api": "client.on",
+        "name": "message",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/modern-gateway.ts",
+        "line": 658,
+        "api": "client.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/modern-gateway.ts",
+        "line": 659,
+        "api": "client.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/modern-gateway.ts",
+        "line": 660,
+        "api": "upstream.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/modern-gateway.ts",
+        "line": 661,
+        "api": "upstream.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 24,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 275,
+        "api": "server2.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 351,
+        "api": "serverR.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 379,
+        "api": "serverR2.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 405,
+        "api": "serverR3.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 431,
+        "api": "serverA.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 485,
+        "api": "serverB.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 564,
+        "api": "serverC.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 623,
+        "api": "serverD.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 687,
+        "api": "serverP.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 764,
+        "api": "serverE.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-015-mux.mjs",
+        "line": 44,
+        "api": "ws.on",
+        "name": "message",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-015-mux.mjs",
+        "line": 45,
+        "api": "ws.on",
+        "name": "unexpected-response",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-015-mux.mjs",
+        "line": 46,
+        "api": "ws.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-015-mux.mjs",
+        "line": 50,
+        "api": "ws.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-015-mux.mjs",
+        "line": 51,
+        "api": "ws.on",
+        "name": "open",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-2fa-check.mjs",
+        "line": 28,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-2fa-check.mjs",
+        "line": 29,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-2fa-check.mjs",
+        "line": 31,
+        "api": "r.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-audit-check.mjs",
+        "line": 18,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-audit-check.mjs",
+        "line": 19,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-audit-check.mjs",
+        "line": 21,
+        "api": "r.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-lock-check.mjs",
+        "line": 19,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-lock-check.mjs",
+        "line": 20,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-lock-check.mjs",
+        "line": 22,
+        "api": "r.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-mux-leak.mjs",
+        "line": 98,
+        "api": "cdp.on",
+        "name": "Network.webSocketFrameReceived",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-mux-panel.mjs",
+        "line": 33,
+        "api": "page.on",
+        "name": "console",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-mux-panel.mjs",
+        "line": 34,
+        "api": "page.on",
+        "name": "response",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-passkey-check.mjs",
+        "line": 99,
+        "api": "page.on",
+        "name": "pageerror",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-register-check.mjs",
+        "line": 19,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-register-check.mjs",
+        "line": 20,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-register-check.mjs",
+        "line": 22,
+        "api": "r.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-register-check.mjs",
+        "line": 28,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-register-check.mjs",
+        "line": 29,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-register-check.mjs",
+        "line": 31,
+        "api": "r.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-session-check.mjs",
+        "line": 21,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-session-check.mjs",
+        "line": 22,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-session-check.mjs",
+        "line": 24,
+        "api": "r.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-totp-check.mjs",
+        "line": 18,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-totp-check.mjs",
+        "line": 19,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-totp-check.mjs",
+        "line": 21,
+        "api": "r.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ui-check.mjs",
+        "line": 32,
+        "api": "page.on",
+        "name": "console",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ui-check.mjs",
+        "line": 33,
+        "api": "page.on",
+        "name": "pageerror",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-user-pages-check.mjs",
+        "line": 130,
+        "api": "page.on",
+        "name": "console",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-user-pages-check.mjs",
+        "line": 131,
+        "api": "page.on",
+        "name": "pageerror",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ws-check.mjs",
+        "line": 35,
+        "api": "res.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ws-check.mjs",
+        "line": 36,
+        "api": "res.on",
+        "name": "end",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ws-check.mjs",
+        "line": 38,
+        "api": "r.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ws-check.mjs",
+        "line": 48,
+        "api": "sock.on",
+        "name": "connect",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ws-check.mjs",
+        "line": 51,
+        "api": "sock.on",
+        "name": "data",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ws-check.mjs",
+        "line": 84,
+        "api": "sock.on",
+        "name": "close",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ws-check.mjs",
+        "line": 85,
+        "api": "sock.on",
+        "name": "error",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/login-page-check.mjs",
+        "line": 27,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 77,
+        "api": "server.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 435,
+        "api": "serverBad.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 764,
+        "api": "serverB.on",
+        "name": "request",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/webauthn-probe.mjs",
+        "line": 232,
+        "api": "page.on",
+        "name": "pageerror",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/webauthn-probe.mjs",
+        "line": 233,
+        "api": "page.on",
+        "name": "console",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      }
+    ],
+    "timers": [
+      {
+        "path": "lib/client.js",
+        "line": 2914,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/client.js",
+        "line": 2978,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/client.js",
+        "line": 3026,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 721,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/index.js",
+        "line": 3331,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/modern-gateway.js",
+        "line": 384,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "lib/profile-service.js",
+        "line": 412,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/client.ts",
+        "line": 1467,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/client.ts",
+        "line": 1533,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/client.ts",
+        "line": 1569,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 860,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.ts",
+        "line": 3122,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/modern-gateway.ts",
+        "line": 436,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/profile-service.ts",
+        "line": 494,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "test/client-smoke.cjs",
+        "line": 68,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 152,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 310,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 329,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 330,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 339,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 362,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 365,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 369,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 373,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 390,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 393,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 397,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 416,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 419,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 423,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 442,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 445,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 449,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 456,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 458,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 465,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 472,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 475,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 496,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 499,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 503,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 575,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 578,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 582,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 634,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 637,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 641,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 698,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 701,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 707,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 775,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 778,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 782,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/host-smoke.mjs",
+        "line": 789,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-015-mux.mjs",
+        "line": 60,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-015-mux.mjs",
+        "line": 123,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-2fa-check.mjs",
+        "line": 34,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-audit-check.mjs",
+        "line": 24,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-compat-matrix.mjs",
+        "line": 35,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-i18n-check.mjs",
+        "line": 46,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-i18n-check.mjs",
+        "line": 51,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-i18n-check.mjs",
+        "line": 59,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-lock-check.mjs",
+        "line": 27,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-mux-leak.mjs",
+        "line": 103,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-mux-leak.mjs",
+        "line": 121,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-mux-leak.mjs",
+        "line": 215,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-mux-leak.mjs",
+        "line": 218,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-mux-panel.mjs",
+        "line": 37,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-passkey-check.mjs",
+        "line": 21,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-register-check.mjs",
+        "line": 34,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-session-check.mjs",
+        "line": 35,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-totp-check.mjs",
+        "line": 24,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ui-check.mjs",
+        "line": 19,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-user-pages-check.mjs",
+        "line": 31,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ws-check.mjs",
+        "line": 120,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/live-ws-check.mjs",
+        "line": 149,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/login-page-check.mjs",
+        "line": 99,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/login-page-check.mjs",
+        "line": 109,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 183,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 186,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 446,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 449,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 510,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 580,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 788,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 791,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/security-suite.mjs",
+        "line": 806,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/shot-features.mjs",
+        "line": 9,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/shot-users.mjs",
+        "line": 10,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/shot.mjs",
+        "line": 30,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/webauthn-probe.mjs",
+        "line": 221,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      }
+    ],
+    "ui": []
+  },
+  "capability_summary": {
+    "agents": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "tools": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "commands": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "events": {
+      "literal_names": [
+        "close",
+        "data",
+        "end",
+        "error",
+        "locale/change",
+        "message",
+        "open",
+        "request",
+        "upgrade"
+      ],
+      "unresolved_sites": 0,
+      "literal_count": 9,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "timers": {
+      "literal_names": [],
+      "unresolved_sites": 14,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "ui": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    }
+  },
+  "parse_errors": [],
+  "limitations": [
+    "LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.",
+    "Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.",
+    "Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.",
+    "Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.",
+    "Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review."
+  ]
+}

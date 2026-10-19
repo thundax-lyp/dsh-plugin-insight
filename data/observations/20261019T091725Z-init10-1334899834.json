@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "run_id": "20261019T091725Z-init10-1334899834",
+  "checked_at": "2026-10-19T09:30:10.915Z",
+  "plugins": [
+    {
+      "id": "github:1334899834:root",
+      "repository_id": 1334899834,
+      "component_id": "root",
+      "repository": "02Muller25/dsh-api-balance",
+      "path": "",
+      "aliases": [],
+      "name": "api-balance",
+      "entry_type": "plugin",
+      "technical_category": "observability-cost",
+      "business_category": "personal-productivity",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "568836eaa02bec3f19e584bb4f6a568f99e2f54350a1e4146edd935ae78b5be8",
+        "code": "4c5ea2913dc424014931c4da214e1f813ba9cf40",
+        "release": "802143a5a3e64c43aa1a4c431907cb2d2d46b15d91eca2a7e17f3a23054db658",
+        "maintenance": "a340c46603493d3b61e8a56966b22b7f56ce6c5a4d8b00d101f0ea6e687b06c2",
+        "compatibility": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+      },
+      "sources": [
+        {
+          "id": "github:1334899834:root:20261019T091725Z-init10-1334899834:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:10.915Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1334899834:root:20261019T091725Z-init10-1334899834:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/02Muller25/dsh-api-balance/blob/c27c8b61acf97714ab08d99f97b7be3a9007e52e/lib/index.js",
+          "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+          "captured_at": "2026-10-19T09:30:10.915Z",
+          "summary": "lib/index.js 注册 GET /api/abal-balance，每次解析 DEEPSEEK_API_KEY，用 shell.resolve／run 调用固定 API；lib/client.js 在 composer dock 渲染并轮询，刷新偏好保存在 localStorage。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/02Muller25__dsh-api-balance-source.json"
+        },
+        {
+          "id": "github:1334899834:root:20261019T091725Z-init10-1334899834:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/02Muller25/dsh-api-balance/tree/c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+          "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+          "captured_at": "2026-10-19T09:30:10.915Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/snapshots/20261019T091725Z-init10/02Muller25__dsh-api-balance-inventory.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "用户在开发过程中担心余额不足，需要快速确认可用性；合格结果是展示与官方账户相符且失败时不会把旧值冒充实时值。基线是官方控制台或手动查询余额接口。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "lib/index.js 注册 GET /api/abal-balance，每次解析 DEEPSEEK_API_KEY，用 shell.resolve／run 调用固定 API；lib/client.js 在 composer dock 渲染并轮询，刷新偏好保存在 localStorage。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "余额不是任务预算或成本预警；凭证被拼入 curl 子进程命令，不能将“不发给浏览器”写成“不出宿主进程”。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "根包 private=true，未按同名 npm 包推断发布归属。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "每浏览器每30秒默认最多约120次查询/小时，每次另起 curl；10秒模式约360次，这是配置推算并非实测。没有模型 token 调用增量，但有网络、子进程和故障排查成本。迁移主要是本地刷新偏好。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "适合单账户用户按需查看，先验证凭证处理与轮询负担；需要预算控制时仍要配合计量和限额。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1334899834:root:20261019T091725Z-init10-1334899834:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "code",
+              "fingerprint": "4c5ea2913dc424014931c4da214e1f813ba9cf40"
+            },
+            {
+              "plugin_id": "github:1334899834:root",
+              "area": "compatibility",
+              "fingerprint": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.915Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:10.915Z"
+    }
+  ],
+  "errors": []
+}

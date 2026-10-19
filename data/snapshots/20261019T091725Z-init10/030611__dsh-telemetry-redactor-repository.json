@@ -1,0 +1,410 @@
+{
+  "captured_at": "2026-10-19T09:19:43.959Z",
+  "repository_id": 1333368566,
+  "repository": "030611/dsh-telemetry-redactor",
+  "commit": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+  "metadata": {
+    "id": 1333368566,
+    "full_name": "030611/dsh-telemetry-redactor",
+    "description": "Fail-closed export-copy redaction for DeepSeek Harness session telemetry",
+    "default_branch": "main",
+    "archived": false,
+    "disabled": false,
+    "created_at": "2026-08-13T17:23:09Z",
+    "pushed_at": "2026-08-14T13:06:41Z",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "topics": [
+      "deepseek-harness",
+      "dsh-plugin",
+      "privacy",
+      "redaction",
+      "security",
+      "telemetry"
+    ],
+    "html_url": "https://github.com/030611/dsh-telemetry-redactor"
+  },
+  "tree": {
+    "sha": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa",
+    "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/trees/c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa",
+    "tree": [
+      {
+        "path": ".gitattributes",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea",
+        "size": 19,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/6313b56c57848efce05faa7aa7e901ccfc2886ea"
+      },
+      {
+        "path": ".github",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "58d282bb9b03566f519637069a65b14bf2995346",
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/trees/58d282bb9b03566f519637069a65b14bf2995346"
+      },
+      {
+        "path": ".github/workflows",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "1c73b230c148b33ecccbe58a1282bc227bbc479f",
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/trees/1c73b230c148b33ecccbe58a1282bc227bbc479f"
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a7d7324a80e20188165204395c188149b7727cbc",
+        "size": 562,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/a7d7324a80e20188165204395c188149b7727cbc"
+      },
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e320dfe4a07a35d94e34378f141203eadfba90f1",
+        "size": 31,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/e320dfe4a07a35d94e34378f141203eadfba90f1"
+      },
+      {
+        "path": "COLLISION-AUDIT.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "db452565273b5416d249c9611848de16e19cde68",
+        "size": 2418,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/db452565273b5416d249c9611848de16e19cde68"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ba9da9f19a7a1a10ebe572efecd499b02fb08631",
+        "size": 1092,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/ba9da9f19a7a1a10ebe572efecd499b02fb08631"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "33ab021ce3ca446170761999624f63cd22557f0e",
+        "size": 6486,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/33ab021ce3ca446170761999624f63cd22557f0e"
+      },
+      {
+        "path": "README.zh.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0d4833b9ec8275f938a6a1709197b890cc8d78f5",
+        "size": 6034,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/0d4833b9ec8275f938a6a1709197b890cc8d78f5"
+      },
+      {
+        "path": "RELEASE_CHECKLIST.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b96c595886e304e1556a41ca267d5986c1080355",
+        "size": 1694,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/b96c595886e304e1556a41ca267d5986c1080355"
+      },
+      {
+        "path": "SECRET-MATRIX.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7427a4a4cd36406d4407b1282ea6edc54d78c075",
+        "size": 3092,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/7427a4a4cd36406d4407b1282ea6edc54d78c075"
+      },
+      {
+        "path": "SECRET-MATRIX.zh.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e5bda9db4437e5ed6653b1950b07ae482a271bab",
+        "size": 2924,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/e5bda9db4437e5ed6653b1950b07ae482a271bab"
+      },
+      {
+        "path": "SECURITY.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "82509c54f737bc3d71f17d8114e06f6fc3274273",
+        "size": 2815,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/82509c54f737bc3d71f17d8114e06f6fc3274273"
+      },
+      {
+        "path": "VERIFICATION.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "46fb84e98848787366c8babca407442e1da25062",
+        "size": 6430,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/46fb84e98848787366c8babca407442e1da25062"
+      },
+      {
+        "path": "cordis.patch.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4acb16e4a78295ff345845f0852907355dd253b3",
+        "size": 219,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/4acb16e4a78295ff345845f0852907355dd253b3"
+      },
+      {
+        "path": "docs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e5cddc3c89da54f5ea9e261effc7760f4f0a9d3f",
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/trees/e5cddc3c89da54f5ea9e261effc7760f4f0a9d3f"
+      },
+      {
+        "path": "docs/social-preview.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "124bfd4cb83bf5cbab075b3c20d0974eae45b70b",
+        "size": 110349,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/124bfd4cb83bf5cbab075b3c20d0974eae45b70b"
+      },
+      {
+        "path": "dsh.plugin.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7d73778b19212b09491fd69dff9e7db6dc5df5a9",
+        "size": 552,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/7d73778b19212b09491fd69dff9e7db6dc5df5a9"
+      },
+      {
+        "path": "fixtures",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0410326fc37e62ca746e85dd758db877c46cd422",
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/trees/0410326fc37e62ca746e85dd758db877c46cd422"
+      },
+      {
+        "path": "fixtures/dsh-47f943859bef60e4160492346772ded9b24f765a.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bf903e5effd24da7e5612c9747836e073e77355b",
+        "size": 1554,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/bf903e5effd24da7e5612c9747836e073e77355b"
+      },
+      {
+        "path": "package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0da83e6d1c65a6bb462f819ecff8c166d800e1a5",
+        "size": 2796,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/0da83e6d1c65a6bb462f819ecff8c166d800e1a5"
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9b6466731ff47344989fc2fd70b8bcf90dbdb2a9",
+        "size": 51738,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/9b6466731ff47344989fc2fd70b8bcf90dbdb2a9"
+      },
+      {
+        "path": "pnpm-workspace.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9a5641a79890ec0e30b152271148591d1b4627ec",
+        "size": 745,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/9a5641a79890ec0e30b152271148591d1b4627ec"
+      },
+      {
+        "path": "scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "9bbef8c264c784e4ff5c7d96aac5dee5bfdf430d",
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/trees/9bbef8c264c784e4ff5c7d96aac5dee5bfdf430d"
+      },
+      {
+        "path": "scripts/built-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "036e284a8ef0cb254496a4bed700d3eba2609d2b",
+        "size": 809,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/036e284a8ef0cb254496a4bed700d3eba2609d2b"
+      },
+      {
+        "path": "scripts/official-head-smoke.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3b45c1d82eb116c70e085a4e53ff418d956f3977",
+        "size": 3661,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/3b45c1d82eb116c70e085a4e53ff418d956f3977"
+      },
+      {
+        "path": "scripts/official-patch-smoke.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0ce1d185d0e7c175c7db6a18e237024c7c26f279",
+        "size": 2538,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/0ce1d185d0e7c175c7db6a18e237024c7c26f279"
+      },
+      {
+        "path": "scripts/packed-clean-environment-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cc193f1fe1a71a6aa6aacdc169e26ea046ee8c78",
+        "size": 581,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/cc193f1fe1a71a6aa6aacdc169e26ea046ee8c78"
+      },
+      {
+        "path": "scripts/packed-install-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "378b42ff33d6b303c3e4534350a546ee897d9fa2",
+        "size": 2858,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/378b42ff33d6b303c3e4534350a546ee897d9fa2"
+      },
+      {
+        "path": "scripts/performance-smoke.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3e201d333414a90943ff28d0a4c35d78646423e5",
+        "size": 1000,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/3e201d333414a90943ff28d0a4c35d78646423e5"
+      },
+      {
+        "path": "src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0f6c44ee3701544f74ac97c936d820c51c174389",
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/trees/0f6c44ee3701544f74ac97c936d820c51c174389"
+      },
+      {
+        "path": "src/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e8f9a17f6be514d1880560bab37ac6cd5e722804",
+        "size": 6320,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/e8f9a17f6be514d1880560bab37ac6cd5e722804"
+      },
+      {
+        "path": "tests",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b97143a2aef71a4d96dfdbc6f3842c531da2d35f",
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/trees/b97143a2aef71a4d96dfdbc6f3842c531da2d35f"
+      },
+      {
+        "path": "tests/adversarial.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "91fc8a3c5aa14a64ae618487c6fb5b1dbfe80742",
+        "size": 6712,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/91fc8a3c5aa14a64ae618487c6fb5b1dbfe80742"
+      },
+      {
+        "path": "tests/loader-composition.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3357d51e3cb2b17b4581877795920ea6f84ef504",
+        "size": 4001,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/3357d51e3cb2b17b4581877795920ea6f84ef504"
+      },
+      {
+        "path": "tests/redactor.spec.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1649494d1660bfb87757edcd4892f468748b1772",
+        "size": 3486,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/1649494d1660bfb87757edcd4892f468748b1772"
+      },
+      {
+        "path": "tsconfig.build.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6965a9de96e94029f30b0dc37afbfa73401773f2",
+        "size": 250,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/6965a9de96e94029f30b0dc37afbfa73401773f2"
+      },
+      {
+        "path": "tsconfig.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "22c31b12db4313710f28e718de6f7944c546827f",
+        "size": 425,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/22c31b12db4313710f28e718de6f7944c546827f"
+      },
+      {
+        "path": "tsconfig.test.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d8cb6da83bb2be4633a16909915be24f3dbb4783",
+        "size": 190,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/d8cb6da83bb2be4633a16909915be24f3dbb4783"
+      },
+      {
+        "path": "vitest.config.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5bd46d91752fcb40e9129da65fb71c9b252262be",
+        "size": 175,
+        "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/git/blobs/5bd46d91752fcb40e9129da65fb71c9b252262be"
+      }
+    ],
+    "truncated": false
+  },
+  "releases": [
+    {
+      "url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/releases/370414792",
+      "assets_url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/releases/370414792/assets",
+      "upload_url": "https://uploads.github.com/repos/030611/dsh-telemetry-redactor/releases/370414792/assets{?name,label}",
+      "html_url": "https://github.com/030611/dsh-telemetry-redactor/releases/tag/v0.1.0",
+      "id": 370414792,
+      "author": {
+        "login": "030611",
+        "id": 114643959,
+        "node_id": "U_kgDOBtVT9w",
+        "avatar_url": "https://avatars.githubusercontent.com/u/114643959?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/030611",
+        "html_url": "https://github.com/030611",
+        "followers_url": "https://api.github.com/users/030611/followers",
+        "following_url": "https://api.github.com/users/030611/following{/other_user}",
+        "gists_url": "https://api.github.com/users/030611/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/030611/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/030611/subscriptions",
+        "organizations_url": "https://api.github.com/users/030611/orgs",
+        "repos_url": "https://api.github.com/users/030611/repos",
+        "events_url": "https://api.github.com/users/030611/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/030611/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOT3mW9s4WFBTI",
+      "tag_name": "v0.1.0",
+      "target_commitish": "main",
+      "name": "dsh-telemetry-redactor v0.1.0",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-08-14T07:23:00Z",
+      "updated_at": "2026-08-14T07:23:47Z",
+      "published_at": "2026-08-14T07:23:47Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/tarball/v0.1.0",
+      "zipball_url": "https://api.github.com/repos/030611/dsh-telemetry-redactor/zipball/v0.1.0",
+      "body": "First public release of DSH Telemetry Redactor.\n\n## Highlights\n\n- Mounts the official `session-telemetry/record` waterfall and recursively redacts supported secret patterns from the outbound copy.\n- Preserves the canonical session log and keeps other deployment rules composable through `next()`.\n- Rejects cycles, accessors, excessive nesting, non-plain objects, and redacted-key collisions instead of exporting a partial or meaning-changing copy.\n- Supports a bounded configurable replacement string; detection rules remain fixed security behavior.\n\n## Install\n\n```bash\ndsh plugin --profile web add dsh-telemetry-redactor@0.1.0\ndsh --profile web --dump-config\n```\n\n## Verification\n\n- Node.js 24.19.0 and pnpm 11.19.0.\n- TypeScript typecheck, production build, and 17 tests passed.\n- Built smoke and 50,000-field performance smoke passed (167.2 ms on the release host).\n- Official-head and official-patch fixture checks passed for reviewed DSH commit `47f943859bef60e4160492346772ded9b24f765a`.\n- Clean-environment packed install, public-registry install, and package-name import passed.\n- Published tarball contains 12 files; registry shasum is `7974ef9021fe6a95c9a8bad85bb98b327b227454`.\n- GitHub CI: https://github.com/030611/dsh-telemetry-redactor/actions/runs/31776568953\n\n## Security boundaries\n\n“Fail-closed” has one narrow meaning here: with the official `SessionTelemetryCoordinator`, a thrown rule causes that one export copy to be withheld while the agent loop continues. This is not a guarantee across every telemetry path or listener ordering. Direct backend `emit()` calls and a later outer prepended listener can bypass or reintroduce data. Pattern redaction cannot detect every opaque, encoded, novel, or deployment-specific secret, so exported telemetry remains sensitive. This plugin is not a process sandbox, authorization system, or complete data-loss-prevention service.\n\nThe frozen fixture checks reviewed source hashes and public runtime versions, file hashes, and required API surfaces. It does not prove that an npm package was built from the cited Git commit.\n\nImplementation and release preparation used AI assistance; the published files, security claims, and release gates were reviewed before publication."
+    }
+  ],
+  "files": {
+    "README.md": "# DSH Telemetry Redactor\n\n[![CI](https://github.com/030611/dsh-telemetry-redactor/actions/workflows/ci.yml/badge.svg)](https://github.com/030611/dsh-telemetry-redactor/actions/workflows/ci.yml)\n[![npm](https://img.shields.io/npm/v/dsh-telemetry-redactor)](https://www.npmjs.com/package/dsh-telemetry-redactor)\n[![License](https://img.shields.io/github/license/030611/dsh-telemetry-redactor)](LICENSE)\n[![awesome · DSH plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)\n[![featured on dsh-suite](https://img.shields.io/badge/featured%20on-dsh--suite-4d6bfe)](https://whyihaveyou.github.io/dsh-suite/)\n\nEnglish | [中文](README.zh.md)\n\n![DSH Telemetry Redactor social preview](docs/social-preview.jpg)\n\n**Redact supported credential patterns from outbound telemetry copies before configured backends receive them—without rewriting canonical session logs.**\n\n```sh\ndsh plugin --profile web add dsh-telemetry-redactor\n```\n\n> Community-maintained and not an official DeepSeek project. Related trust-layer plugins: [Verification Receipt](https://github.com/030611/dsh-verification-receipt), [Evidence Audit](https://github.com/030611/qiushi-dsh-evidence-audit), and [Context Provenance](https://github.com/030611/dsh-context-provenance).\n\n`dsh-telemetry-redactor` is a minimal DeepSeek Harness Profile Bundle that redacts sensitive values from session telemetry before a backend receives them. It mounts on the official `session-telemetry/record` waterfall, calls `next()` so other deployment rules still compose, and returns a new recursively redacted record.\n\nThe official telemetry coordinator deep-copies canonical session events before this waterfall and contains thrown rules per record. Therefore this plugin changes only the outbound copy: it never rewrites the canonical session log. In this document, **fail-closed means only that this coordinator withholds one failing export copy** and continues the agent loop. It is not a claim that every telemetry path or listener order is impossible to bypass.\n\n## What it redacts\n\n- Values under high-risk key names such as `authorization`, `cookie`, `credential`, `password`, `secret`, `token`, `apiKey`, `access_token`, `clientSecret`, and `privateKey`; recognized credential patterns in key names are replaced too.\n- Bearer and Basic authorization values embedded in strings.\n- Common credential forms including `sk-...`, GitHub tokens, Slack tokens, JWT-like triples, and `token=...` / `api_key: ...` assignments.\n\nKeys are tokenized before matching, so telemetry counters such as `inputTokens`, `output_tokens`, `tokenUsage`, `tokenCount`, and `contextTokenCount`, and ordinary fields such as `tokenizer`, remain intact. Redaction is a safety filter, not a proof that an arbitrary unknown secret format is absent. The exact supported and unsupported cases are in [SECRET-MATRIX.md](SECRET-MATRIX.md); see [SECURITY.md](SECURITY.md) for the trust boundary.\n\nThe listener is prepended so it normally wraps deployment rules mounted before or after it and redacts their final output. A deliberately prepended outer listener can still add content after this plugin; review the complete waterfall listener set in security-sensitive deployments.\n\n## Install\n\nInstall the public package into the selected DSH profile, then inspect the resolved configuration:\n\n```sh\ndsh plugin --profile web add dsh-telemetry-redactor\ndsh --profile web --dump-config\n```\n\nThe dump must contain the inserted `telemetry-redactor` row. The bundle does not add, replace, or enable a telemetry backend; it only protects records handled by whatever backend the deployment already selected.\n\n## Configuration\n\nThe only option is `replacement`, which defaults to `[REDACTED]`. It must contain 1 to 128 characters and must not itself match a supported credential pattern; invalid values fail loudly when the Cordis plugin fiber is awaited.\n\n```yaml\n- id: telemetry-redactor\n  config:\n    replacement: '[TELEMETRY-REDACTED]'\n```\n\nThe key and pattern rules are fixed security behavior and cannot be disabled through configuration.\n\n## Verification\n\n```sh\npnpm run typecheck\npnpm test\npnpm run build\npnpm run test:smoke\npnpm run test:performance\npnpm run test:official-head\npnpm run test:official-patch\npnpm run test:packed:clean-env\n```\n\nThe tests include a real Cordis Loader composition with the `SessionTelemetryCoordinator`: the backend receives the replacement while the authoritative session event retains the fixture secret, and an over-deep record is withheld without escaping the capture handler. Release smokes use the packaged frozen fixture for official commit `47f943859bef60e4160492346772ded9b24f765a`: it pins the reviewed source hashes, exact published runtime versions and runtime-file hashes, then verifies the required Cordis/session/LLM/coordinator API surface before composing it with the built or tarball-installed plugin. `test:official-patch` similarly pins the reviewed Include source hash before applying `cordis.patch.yml`. No environment variable or installed official checkout is required.\n\n## Model Experience\n\nNone. The plugin observes an outbound telemetry copy after session logging and contributes no prompt text, tool schema, message, or provider request.\n\n#### KV Cache effect\n\nNone; no model request changes.\n\n## Known limitations\n\n- Unknown secret formats that have neither a sensitive key nor a recognized string pattern may pass through. Add deterministic coverage before extending the fixed patterns.\n- Accessor properties and non-plain objects are rejected rather than read or silently converted. Enumerable JSON data in arrays, ordinary objects, and null-prototype objects is supported; non-enumerable fields are outside the telemetry contract.\n- A key-name match redacts the complete value. This favors safety over retaining structure beneath fields named as credentials.\n- Redaction occurs synchronously on the telemetry capture path. The implementation is recursive and bounded to 64 nested containers; very large but shallow records still cost linear CPU time.\n- A Proxy can run or throw from reflection traps before the plugin can inspect its contents. The official coordinator's own `structuredClone` normally rejects a Proxy before this waterfall; direct third-party dispatch is not a supported hostile-object sandbox.\n- `dsh.plugin.json` is supplemental community metadata. DSH installation is controlled by `package.json`'s `dsh.bundle` field and `cordis.patch.yml`.\n\n## License\n\nMIT\n",
+    "package.json": "{\n  \"name\": \"dsh-telemetry-redactor\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Export-copy redaction for DeepSeek Harness session telemetry\",\n  \"license\": \"MIT\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"plugin\",\n    \"telemetry\",\n    \"redaction\",\n    \"privacy\",\n    \"security\"\n  ],\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/030611/dsh-telemetry-redactor.git\"\n  },\n  \"homepage\": \"https://github.com/030611/dsh-telemetry-redactor#readme\",\n  \"bugs\": {\n    \"url\": \"https://github.com/030611/dsh-telemetry-redactor/issues\"\n  },\n  \"publishConfig\": {\n    \"access\": \"public\"\n  },\n  \"type\": \"module\",\n  \"packageManager\": \"pnpm@11.7.0\",\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n  },\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./dsh.plugin.json\": \"./dsh.plugin.json\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib/index.js\",\n    \"lib/types/**/*.d.ts\",\n    \"cordis.patch.yml\",\n    \"dsh.plugin.json\",\n    \"README.md\",\n    \"README.zh.md\",\n    \"fixtures/dsh-47f943859bef60e4160492346772ded9b24f765a.json\",\n    \"SECRET-MATRIX.md\",\n    \"SECRET-MATRIX.zh.md\",\n    \"SECURITY.md\",\n    \"LICENSE\"\n  ],\n  \"scripts\": {\n    \"typecheck\": \"tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit\",\n    \"test\": \"vitest run\",\n    \"build\": \"tsc -p tsconfig.build.json\",\n    \"test:smoke\": \"node scripts/built-smoke.mjs\",\n    \"test:official-head\": \"node --import tsx scripts/official-head-smoke.ts\",\n    \"test:official-patch\": \"node --import tsx scripts/official-patch-smoke.ts\",\n    \"test:performance\": \"node scripts/performance-smoke.mjs\",\n    \"test:packed\": \"node scripts/packed-install-smoke.mjs\",\n    \"test:packed:clean-env\": \"node scripts/packed-clean-environment-smoke.mjs\",\n    \"check\": \"pnpm run typecheck && pnpm test && pnpm run build && pnpm run test:smoke && pnpm run test:performance\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"dependencies\": {\n    \"@deepseek-ai/schemastery\": \"3.18.1\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-session-telemetry\": \">=0.1.0-rc.5 <0.2.0\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"4.0.1\",\n    \"@deepseek-ai/cordis-plugin-include\": \"1.0.6\",\n    \"@deepseek-ai/cordis-plugin-loader\": \"1.0.2\",\n    \"@deepseek-ai/dsh-llm\": \"0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-session\": \"0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-session-telemetry\": \"0.1.0-rc.6\",\n    \"@types/node\": \"^22.20.0\",\n    \"@types/js-yaml\": \"4.0.9\",\n    \"js-yaml\": \"4.2.0\",\n    \"publint\": \"0.3.21\",\n    \"tsx\": \"4.22.4\",\n    \"typescript\": \"6.0.3\",\n    \"vitest\": \"4.1.8\"\n  }\n}\n"
+  },
+  "fingerprints": {
+    "code": "c7749e3ad9ca6dc661179e7e53e2d5dff1dab3aa",
+    "release": "fae03e4c9f4ea1c1eaba164c4dccfd1248b3b97b312675faec3f99cedf38abd7",
+    "maintenance": "7015fa5f0c893e440a45edf89d0bef9b040afb1f89703f3aae0d0094071b9c11"
+  },
+  "limitations": [
+    "默认分支快照不证明发布包或运行时行为。",
+    "发布接口最多采集 100 条，不声称完整发布历史。",
+    "文件树指纹包括文档和生成文件，判断有效工程量前须检查差异。"
+  ]
+}

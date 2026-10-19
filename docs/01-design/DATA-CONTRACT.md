@@ -146,7 +146,7 @@ META 可选 npm 对象保存 package_name、downloads_30d（失败为null）、w
 
 META 的可选 code_update 保存研究基线提交、当前提交、script_changed（三态）、变更路径、核查时间及错误。
 它独立于已确认的 findings 依赖失效状态，仅表示待重新分析，不能伪装成已完成新版本研究。
-refresh-meta 按 publication.session 的列表操作，成功后切换当前 META 映射，失败项保留带错误的新快照以显示未知，旧快照不删除。
+refresh-meta 按 publication.session 的所选列表操作，遵守 research_limit／selected_ids；未选候选不触发采集，成功后切换当前 META 映射，失败项保留带错误的新快照以显示未知，旧快照不删除。
 
 研究发布的 Markdown 版式以 `templates/publication/*.md` 为真相源；块脚本仅传入数据和选择结果。
 模板渲染只做严格占位符替换，缺字段失败，不递归解释插入的研究文字；不执行模板表达式或目标代码。

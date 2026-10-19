@@ -1,0 +1,1716 @@
+{
+  "schema_version": 1,
+  "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
+  "component": "",
+  "coverage": "git tracked files at exact commit; component scope only",
+  "omitted_non_regular": [],
+  "tools": {
+    "loc": {
+      "name": "sloc",
+      "version": "0.3.2",
+      "command": "node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>"
+    },
+    "parser": {
+      "name": "typescript",
+      "version": "5.9.3"
+    }
+  },
+  "content_digest": "64163f3848aaef5b1de7d8aec13e1f1987521df7ea34a937621d7ef980777dbd",
+  "groups": [
+    {
+      "extension": ".md",
+      "role": "source",
+      "files": 4,
+      "lines": 2224,
+      "words": 47141
+    },
+    {
+      "extension": ".js",
+      "role": "source",
+      "files": 52,
+      "lines": 14144,
+      "code": 10338,
+      "comments": 3291,
+      "blank": 732
+    },
+    {
+      "extension": ".mjs",
+      "role": "source",
+      "files": 6,
+      "lines": 1447,
+      "code": 1189,
+      "comments": 156,
+      "blank": 111
+    },
+    {
+      "extension": ".ts",
+      "role": "source",
+      "files": 9,
+      "lines": 1324,
+      "code": 924,
+      "comments": 318,
+      "blank": 86
+    },
+    {
+      "extension": ".tsx",
+      "role": "source",
+      "files": 5,
+      "lines": 1556,
+      "code": 1337,
+      "comments": 140,
+      "blank": 87
+    },
+    {
+      "extension": ".mjs",
+      "role": "test",
+      "files": 40,
+      "lines": 9467,
+      "code": 7577,
+      "comments": 1172,
+      "blank": 788
+    }
+  ],
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 1624,
+      "words": 34604
+    },
+    {
+      "path": "client/client.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 3016,
+      "code": 2574,
+      "comments": 607,
+      "blank": 1
+    },
+    {
+      "path": "README.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 281,
+      "words": 4801
+    },
+    {
+      "path": "README.zh-CN.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 280,
+      "words": 7131
+    },
+    {
+      "path": "scripts/bench-load.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 47,
+      "code": 31,
+      "comments": 10,
+      "blank": 6
+    },
+    {
+      "path": "scripts/bench-store.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 113,
+      "code": 98,
+      "comments": 5,
+      "blank": 12
+    },
+    {
+      "path": "scripts/bench-synthetic.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 365,
+      "code": 300,
+      "comments": 44,
+      "blank": 25
+    },
+    {
+      "path": "scripts/bench.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 434,
+      "code": 366,
+      "comments": 41,
+      "blank": 28
+    },
+    {
+      "path": "scripts/file-peak.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 357,
+      "code": 295,
+      "comments": 36,
+      "blank": 28
+    },
+    {
+      "path": "scripts/tool-schema-size.mjs",
+      "extension": ".mjs",
+      "role": "source",
+      "lines": 131,
+      "code": 99,
+      "comments": 20,
+      "blank": 12
+    },
+    {
+      "path": "src/audit.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 234,
+      "code": 136,
+      "comments": 84,
+      "blank": 14
+    },
+    {
+      "path": "src/auto-inject.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 919,
+      "code": 561,
+      "comments": 308,
+      "blank": 53
+    },
+    {
+      "path": "src/chunker.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 84,
+      "code": 57,
+      "comments": 22,
+      "blank": 5
+    },
+    {
+      "path": "src/client/client.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 161,
+      "code": 88,
+      "comments": 64,
+      "blank": 10
+    },
+    {
+      "path": "src/client/icons.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 63,
+      "code": 40,
+      "comments": 17,
+      "blank": 6
+    },
+    {
+      "path": "src/client/locales.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 191,
+      "code": 182,
+      "comments": 6,
+      "blank": 3
+    },
+    {
+      "path": "src/client/MemoryView.tsx",
+      "extension": ".tsx",
+      "role": "source",
+      "lines": 474,
+      "code": 413,
+      "comments": 46,
+      "blank": 21
+    },
+    {
+      "path": "src/client/paging.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 165,
+      "code": 51,
+      "comments": 104,
+      "blank": 10
+    },
+    {
+      "path": "src/client/services.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 118,
+      "code": 48,
+      "comments": 64,
+      "blank": 6
+    },
+    {
+      "path": "src/client/session-id.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 88,
+      "code": 38,
+      "comments": 46,
+      "blank": 4
+    },
+    {
+      "path": "src/client/ShowTaskPanelNode.tsx",
+      "extension": ".tsx",
+      "role": "source",
+      "lines": 51,
+      "code": 18,
+      "comments": 31,
+      "blank": 2
+    },
+    {
+      "path": "src/client/slash.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 201,
+      "code": 100,
+      "comments": 90,
+      "blank": 11
+    },
+    {
+      "path": "src/client/task-data-store.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 152,
+      "code": 129,
+      "comments": 7,
+      "blank": 16
+    },
+    {
+      "path": "src/client/task-hooks.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 169,
+      "code": 126,
+      "comments": 27,
+      "blank": 17
+    },
+    {
+      "path": "src/client/task-ui-store.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 171,
+      "code": 123,
+      "comments": 38,
+      "blank": 12
+    },
+    {
+      "path": "src/client/TaskCommandNode.tsx",
+      "extension": ".tsx",
+      "role": "source",
+      "lines": 85,
+      "code": 66,
+      "comments": 10,
+      "blank": 9
+    },
+    {
+      "path": "src/client/TaskComponents.tsx",
+      "extension": ".tsx",
+      "role": "source",
+      "lines": 493,
+      "code": 439,
+      "comments": 29,
+      "blank": 25
+    },
+    {
+      "path": "src/client/TaskPanel.tsx",
+      "extension": ".tsx",
+      "role": "source",
+      "lines": 453,
+      "code": 401,
+      "comments": 24,
+      "blank": 30
+    },
+    {
+      "path": "src/commands/insight-actions.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 481,
+      "code": 390,
+      "comments": 78,
+      "blank": 16
+    },
+    {
+      "path": "src/commands/invocation.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 39,
+      "code": 12,
+      "comments": 25,
+      "blank": 2
+    },
+    {
+      "path": "src/commands/task-actions.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 194,
+      "code": 153,
+      "comments": 32,
+      "blank": 11
+    },
+    {
+      "path": "src/commands/tasks.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 76,
+      "code": 65,
+      "comments": 7,
+      "blank": 4
+    },
+    {
+      "path": "src/commands/workflow.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 54,
+      "code": 22,
+      "comments": 30,
+      "blank": 2
+    },
+    {
+      "path": "src/doc-index.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 71,
+      "code": 42,
+      "comments": 22,
+      "blank": 7
+    },
+    {
+      "path": "src/doc-pipeline.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 54,
+      "code": 40,
+      "comments": 10,
+      "blank": 4
+    },
+    {
+      "path": "src/enhancer.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 572,
+      "code": 393,
+      "comments": 123,
+      "blank": 57
+    },
+    {
+      "path": "src/global-seed.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 41,
+      "code": 30,
+      "comments": 9,
+      "blank": 2
+    },
+    {
+      "path": "src/index-pipeline.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 120,
+      "code": 70,
+      "comments": 42,
+      "blank": 8
+    },
+    {
+      "path": "src/index.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 253,
+      "code": 168,
+      "comments": 75,
+      "blank": 10
+    },
+    {
+      "path": "src/insight-store.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 959,
+      "code": 742,
+      "comments": 159,
+      "blank": 61
+    },
+    {
+      "path": "src/lazy.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 96,
+      "code": 75,
+      "comments": 9,
+      "blank": 12
+    },
+    {
+      "path": "src/link.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 120,
+      "code": 82,
+      "comments": 32,
+      "blank": 9
+    },
+    {
+      "path": "src/llm-route.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 95,
+      "code": 54,
+      "comments": 28,
+      "blank": 13
+    },
+    {
+      "path": "src/llm.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 99,
+      "code": 83,
+      "comments": 9,
+      "blank": 7
+    },
+    {
+      "path": "src/ops.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 208,
+      "code": 147,
+      "comments": 47,
+      "blank": 16
+    },
+    {
+      "path": "src/parsers/pdfjs-parser.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 117,
+      "code": 105,
+      "comments": 2,
+      "blank": 10
+    },
+    {
+      "path": "src/project-profile.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 85,
+      "code": 67,
+      "comments": 13,
+      "blank": 6
+    },
+    {
+      "path": "src/readiness.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 513,
+      "code": 300,
+      "comments": 189,
+      "blank": 25
+    },
+    {
+      "path": "src/recall.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 347,
+      "code": 191,
+      "comments": 144,
+      "blank": 16
+    },
+    {
+      "path": "src/reflection-pipeline.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 153,
+      "code": 127,
+      "comments": 16,
+      "blank": 11
+    },
+    {
+      "path": "src/setup/taskbridge.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 293,
+      "code": 216,
+      "comments": 59,
+      "blank": 21
+    },
+    {
+      "path": "src/similarity.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 52,
+      "code": 28,
+      "comments": 21,
+      "blank": 3
+    },
+    {
+      "path": "src/store.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 1046,
+      "code": 721,
+      "comments": 255,
+      "blank": 70
+    },
+    {
+      "path": "src/symbols.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 506,
+      "code": 396,
+      "comments": 57,
+      "blank": 59
+    },
+    {
+      "path": "src/tools/forget.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 56,
+      "code": 53,
+      "comments": 2,
+      "blank": 2
+    },
+    {
+      "path": "src/tools/index-doc.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 85,
+      "code": 77,
+      "comments": 3,
+      "blank": 5
+    },
+    {
+      "path": "src/tools/index-repo.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 162,
+      "code": 135,
+      "comments": 17,
+      "blank": 10
+    },
+    {
+      "path": "src/tools/lesson-tools.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 149,
+      "code": 141,
+      "comments": 2,
+      "blank": 6
+    },
+    {
+      "path": "src/tools/query-memory.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 240,
+      "code": 206,
+      "comments": 27,
+      "blank": 7
+    },
+    {
+      "path": "src/tools/remember.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 72,
+      "code": 68,
+      "comments": 4,
+      "blank": 1
+    },
+    {
+      "path": "src/tools/stats.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 45,
+      "code": 43,
+      "comments": 0,
+      "blank": 2
+    },
+    {
+      "path": "src/tools/task-tools.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 193,
+      "code": 171,
+      "comments": 13,
+      "blank": 11
+    },
+    {
+      "path": "src/tools/watch-repo.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 76,
+      "code": 63,
+      "comments": 10,
+      "blank": 3
+    },
+    {
+      "path": "src/types.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 63,
+      "code": 1,
+      "comments": 59,
+      "blank": 3
+    },
+    {
+      "path": "src/util/entry-id.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 32,
+      "code": 7,
+      "comments": 23,
+      "blank": 2
+    },
+    {
+      "path": "src/util/fs.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 711,
+      "code": 479,
+      "comments": 184,
+      "blank": 53
+    },
+    {
+      "path": "src/util/path-token.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 40,
+      "code": 10,
+      "comments": 28,
+      "blank": 2
+    },
+    {
+      "path": "src/util/search.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 256,
+      "code": 231,
+      "comments": 8,
+      "blank": 17
+    },
+    {
+      "path": "src/util/session-cache.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 72,
+      "code": 46,
+      "comments": 16,
+      "blank": 10
+    },
+    {
+      "path": "src/util/session-dir.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 48,
+      "code": 15,
+      "comments": 30,
+      "blank": 3
+    },
+    {
+      "path": "src/util/task-view.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 66,
+      "code": 30,
+      "comments": 30,
+      "blank": 6
+    },
+    {
+      "path": "src/util/text.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 48,
+      "code": 27,
+      "comments": 16,
+      "blank": 5
+    },
+    {
+      "path": "src/vector-index.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 269,
+      "code": 173,
+      "comments": 88,
+      "blank": 15
+    },
+    {
+      "path": "src/watch.js",
+      "extension": ".js",
+      "role": "source",
+      "lines": 311,
+      "code": 226,
+      "comments": 67,
+      "blank": 20
+    },
+    {
+      "path": "test/atomic-write.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 113,
+      "code": 80,
+      "comments": 19,
+      "blank": 14
+    },
+    {
+      "path": "test/auto-inject.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 130,
+      "code": 105,
+      "comments": 12,
+      "blank": 13
+    },
+    {
+      "path": "test/bugfix-0.5.7.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 231,
+      "code": 187,
+      "comments": 21,
+      "blank": 23
+    },
+    {
+      "path": "test/chunker.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 120,
+      "code": 95,
+      "comments": 17,
+      "blank": 8
+    },
+    {
+      "path": "test/citation-paths.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 114,
+      "code": 84,
+      "comments": 20,
+      "blank": 10
+    },
+    {
+      "path": "test/client-degraded.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 340,
+      "code": 246,
+      "comments": 73,
+      "blank": 30
+    },
+    {
+      "path": "test/client-hints.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 50,
+      "code": 36,
+      "comments": 7,
+      "blank": 7
+    },
+    {
+      "path": "test/client-icons.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 116,
+      "code": 90,
+      "comments": 16,
+      "blank": 10
+    },
+    {
+      "path": "test/client-paging.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 128,
+      "code": 86,
+      "comments": 25,
+      "blank": 17
+    },
+    {
+      "path": "test/client-session-id.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 131,
+      "code": 92,
+      "comments": 24,
+      "blank": 15
+    },
+    {
+      "path": "test/client-slash.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 291,
+      "code": 226,
+      "comments": 41,
+      "blank": 24
+    },
+    {
+      "path": "test/client-toolview.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 160,
+      "code": 119,
+      "comments": 26,
+      "blank": 15
+    },
+    {
+      "path": "test/config-schema.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 42,
+      "code": 29,
+      "comments": 9,
+      "blank": 4
+    },
+    {
+      "path": "test/doc-index.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 146,
+      "code": 118,
+      "comments": 13,
+      "blank": 15
+    },
+    {
+      "path": "test/enhancer.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 335,
+      "code": 247,
+      "comments": 74,
+      "blank": 17
+    },
+    {
+      "path": "test/host-contract.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 246,
+      "code": 196,
+      "comments": 32,
+      "blank": 22
+    },
+    {
+      "path": "test/injection-audit.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 296,
+      "code": 237,
+      "comments": 36,
+      "blank": 24
+    },
+    {
+      "path": "test/injection-budget.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 213,
+      "code": 164,
+      "comments": 31,
+      "blank": 18
+    },
+    {
+      "path": "test/injection-scenarios.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 650,
+      "code": 510,
+      "comments": 129,
+      "blank": 36
+    },
+    {
+      "path": "test/insight-actions.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 167,
+      "code": 142,
+      "comments": 13,
+      "blank": 12
+    },
+    {
+      "path": "test/insight-derive.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 214,
+      "code": 178,
+      "comments": 22,
+      "blank": 16
+    },
+    {
+      "path": "test/insight-paging.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 206,
+      "code": 163,
+      "comments": 24,
+      "blank": 19
+    },
+    {
+      "path": "test/insight-store.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 517,
+      "code": 422,
+      "comments": 55,
+      "blank": 40
+    },
+    {
+      "path": "test/llm-route.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 109,
+      "code": 88,
+      "comments": 9,
+      "blank": 12
+    },
+    {
+      "path": "test/ops.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 143,
+      "code": 122,
+      "comments": 12,
+      "blank": 10
+    },
+    {
+      "path": "test/readiness-eval.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 236,
+      "code": 194,
+      "comments": 26,
+      "blank": 16
+    },
+    {
+      "path": "test/readiness.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 324,
+      "code": 260,
+      "comments": 44,
+      "blank": 23
+    },
+    {
+      "path": "test/recall-vector-fusion.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 157,
+      "code": 115,
+      "comments": 34,
+      "blank": 12
+    },
+    {
+      "path": "test/recall.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 202,
+      "code": 161,
+      "comments": 21,
+      "blank": 20
+    },
+    {
+      "path": "test/reflection-pipeline.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 125,
+      "code": 106,
+      "comments": 8,
+      "blank": 11
+    },
+    {
+      "path": "test/root-guards.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 495,
+      "code": 429,
+      "comments": 25,
+      "blank": 42
+    },
+    {
+      "path": "test/run-test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 1451,
+      "code": 1257,
+      "comments": 89,
+      "blank": 115
+    },
+    {
+      "path": "test/session-dir.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 90,
+      "code": 62,
+      "comments": 16,
+      "blank": 12
+    },
+    {
+      "path": "test/store-cache.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 365,
+      "code": 300,
+      "comments": 46,
+      "blank": 22
+    },
+    {
+      "path": "test/store-gitignore.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 111,
+      "code": 83,
+      "comments": 13,
+      "blank": 15
+    },
+    {
+      "path": "test/task-view.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 101,
+      "code": 72,
+      "comments": 20,
+      "blank": 9
+    },
+    {
+      "path": "test/taskbridge.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 262,
+      "code": 218,
+      "comments": 26,
+      "blank": 22
+    },
+    {
+      "path": "test/vector-index.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 106,
+      "code": 80,
+      "comments": 13,
+      "blank": 13
+    },
+    {
+      "path": "test/watch-idle.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 107,
+      "code": 80,
+      "comments": 16,
+      "blank": 11
+    },
+    {
+      "path": "test/workflow-command.test.mjs",
+      "extension": ".mjs",
+      "role": "test",
+      "lines": 127,
+      "code": 98,
+      "comments": 15,
+      "blank": 14
+    },
+    {
+      "path": "TODO.md",
+      "extension": ".md",
+      "role": "source",
+      "lines": 39,
+      "words": 605
+    },
+    {
+      "path": "tsdown.config.ts",
+      "extension": ".ts",
+      "role": "source",
+      "lines": 98,
+      "code": 88,
+      "comments": 5,
+      "blank": 5
+    }
+  ],
+  "excluded": [
+    {
+      "path": "client/client.d.ts",
+      "reason": "generated/dependency/vendor/declaration heuristic; review exclusions"
+    },
+    {
+      "path": "src/client/css-modules.d.ts",
+      "reason": "generated/dependency/vendor/declaration heuristic; review exclusions"
+    }
+  ],
+  "skills": {
+    "entry_candidates": [],
+    "non_example_candidates": 0,
+    "status": "ownership_and_runtime_registration_require_review"
+  },
+  "capabilities": {
+    "agents": [],
+    "tools": [
+      {
+        "path": "src/index.js",
+        "line": 191,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 192,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 193,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 194,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 207,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 208,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 209,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 210,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 211,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 212,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 213,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 214,
+        "api": "ctx.tools.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/forget.js",
+        "line": 12,
+        "api": "defineTool",
+        "name": "forget",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/index-doc.js",
+        "line": 9,
+        "api": "defineTool",
+        "name": "index_doc",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/index-repo.js",
+        "line": 131,
+        "api": "defineTool",
+        "name": "index_repo",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/lesson-tools.js",
+        "line": 19,
+        "api": "defineTool",
+        "name": "save_lesson",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/query-memory.js",
+        "line": 35,
+        "api": "defineTool",
+        "name": "query_memory",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/remember.js",
+        "line": 10,
+        "api": "defineTool",
+        "name": "remember",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/stats.js",
+        "line": 9,
+        "api": "defineTool",
+        "name": "memory_stats",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/task-tools.js",
+        "line": 19,
+        "api": "defineTool",
+        "name": "list_tasks",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/task-tools.js",
+        "line": 44,
+        "api": "defineTool",
+        "name": "select_task",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/task-tools.js",
+        "line": 149,
+        "api": "defineTool",
+        "name": "show_task_panel",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/task-tools.js",
+        "line": 169,
+        "api": "defineTool",
+        "name": "archive_task",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/tools/watch-repo.js",
+        "line": 7,
+        "api": "defineTool",
+        "name": "watch_repo",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      }
+    ],
+    "commands": [
+      {
+        "path": "src/index.js",
+        "line": 201,
+        "api": "commandsCtx.commands.register",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      }
+    ],
+    "events": [
+      {
+        "path": "client/client.js",
+        "line": 2399,
+        "api": "ctxWithEvents?.events?.on",
+        "name": "dsh:task-panel:show",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/auto-inject.js",
+        "line": 638,
+        "api": "ctx.on",
+        "name": "session/event",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/auto-inject.js",
+        "line": 670,
+        "api": "ctx.on",
+        "name": "agent/pre-step",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/client/TaskPanel.tsx",
+        "line": 277,
+        "api": "ctxWithEvents?.events?.on",
+        "name": "dsh:task-panel:show",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 178,
+        "api": "ctx.on",
+        "name": "session/event",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/index.js",
+        "line": 188,
+        "api": "ctx.on",
+        "name": "session/disposed",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/lazy.js",
+        "line": 87,
+        "api": "ctx.on",
+        "name": "fs/observed",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "src/setup/taskbridge.js",
+        "line": 285,
+        "api": "ctx.on",
+        "name": "session/event",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "source"
+      },
+      {
+        "path": "test/enhancer.test.mjs",
+        "line": 246,
+        "api": "process.on",
+        "name": "unhandledRejection",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      },
+      {
+        "path": "test/enhancer.test.mjs",
+        "line": 288,
+        "api": "process.on",
+        "name": "unhandledRejection",
+        "aliases": [],
+        "status": "literal_candidate",
+        "role": "test"
+      }
+    ],
+    "timers": [
+      {
+        "path": "client/client.js",
+        "line": 374,
+        "api": "ctx.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "client/client.js",
+        "line": 377,
+        "api": "globalThis.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "client/client.js",
+        "line": 732,
+        "api": "window.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "client/client.js",
+        "line": 1108,
+        "api": "window.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "client/client.js",
+        "line": 1638,
+        "api": "window.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "client/client.js",
+        "line": 1782,
+        "api": "window.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "scripts/file-peak.mjs",
+        "line": 39,
+        "api": "setInterval",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/client/MemoryView.tsx",
+        "line": 174,
+        "api": "window.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/client/MemoryView.tsx",
+        "line": 337,
+        "api": "window.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/client/services.ts",
+        "line": 109,
+        "api": "ctx.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/client/services.ts",
+        "line": 112,
+        "api": "(globalThis as any).setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/client/task-hooks.ts",
+        "line": 72,
+        "api": "window.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/client/TaskComponents.tsx",
+        "line": 264,
+        "api": "window.setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/lazy.js",
+        "line": 78,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/llm.js",
+        "line": 26,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "src/watch.js",
+        "line": 157,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "source"
+      },
+      {
+        "path": "test/enhancer.test.mjs",
+        "line": 45,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/run-test.mjs",
+        "line": 1408,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      },
+      {
+        "path": "test/run-test.mjs",
+        "line": 1411,
+        "api": "setTimeout",
+        "name": null,
+        "aliases": [],
+        "status": "dynamic_unresolved",
+        "role": "test"
+      }
+    ],
+    "ui": []
+  },
+  "capability_summary": {
+    "agents": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "tools": {
+      "literal_names": [
+        "archive_task",
+        "forget",
+        "index_doc",
+        "index_repo",
+        "list_tasks",
+        "memory_stats",
+        "query_memory",
+        "remember",
+        "save_lesson",
+        "select_task",
+        "show_task_panel",
+        "watch_repo"
+      ],
+      "unresolved_sites": 12,
+      "literal_count": 12,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "commands": {
+      "literal_names": [],
+      "unresolved_sites": 1,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "events": {
+      "literal_names": [
+        "agent/pre-step",
+        "dsh:task-panel:show",
+        "fs/observed",
+        "session/disposed",
+        "session/event"
+      ],
+      "unresolved_sites": 0,
+      "literal_count": 5,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "timers": {
+      "literal_names": [],
+      "unresolved_sites": 16,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    },
+    "ui": {
+      "literal_names": [],
+      "unresolved_sites": 0,
+      "literal_count": 0,
+      "confirmed_count": null,
+      "status": "static_candidates_require_review"
+    }
+  },
+  "parse_errors": [
+    {
+      "path": "test/insight-store.test.mjs",
+      "start": 1711,
+      "message": "Identifier expected."
+    },
+    {
+      "path": "test/insight-store.test.mjs",
+      "start": 1719,
+      "message": "':' expected."
+    },
+    {
+      "path": "test/insight-store.test.mjs",
+      "start": 1806,
+      "message": "'=>' expected."
+    },
+    {
+      "path": "test/taskbridge.test.mjs",
+      "start": 1313,
+      "message": "'=>' expected."
+    }
+  ],
+  "limitations": [
+    "LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.",
+    "Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.",
+    "Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.",
+    "Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.",
+    "Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review."
+  ]
+}
