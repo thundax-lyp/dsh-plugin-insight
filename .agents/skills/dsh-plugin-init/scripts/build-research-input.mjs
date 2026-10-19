@@ -179,6 +179,8 @@ export async function buildResearchInput({
 }) {
     if (!/^[A-Za-z0-9_-]+$/.test(id)) throw new Error('id must contain only letters, numbers, underscore or hyphen');
     if (!Number.isFinite(Date.parse(checkedAt))) throw new Error('checked-at must be an ISO date-time');
+    const awesomeRevision = gitRevision(awesome);
+    const harnessRevision = gitRevision(harness);
     const parsed = [
         { source: AWESOME_URL, complete: completeAwesome, ...parseAwesomeSource(awesome) },
         { source: HARNESS_URL, complete: completeHarness, ...parseHarnessSource(harness) }
@@ -255,9 +257,11 @@ export async function buildResearchInput({
             maintenance: digest({ archived: meta.archived, disabled: meta.disabled, pushed_at: meta.pushed_at })
         }
     }));
+    if (gitRevision(awesome) !== awesomeRevision || gitRevision(harness) !== harnessRevision)
+        throw new Error('source revision changed while building research input');
     const sources = parsed.map((source) => ({
         url: source.source,
-        revision: source.source === AWESOME_URL ? gitRevision(awesome) : gitRevision(harness),
+        revision: source.source === AWESOME_URL ? awesomeRevision : harnessRevision,
         complete:
             source.complete &&
             !problems.some((problem) => problem.source === source.source || problem.sources?.includes(source.source))
@@ -275,6 +279,11 @@ export async function buildResearchInput({
 
 function gitRevision(path) {
     if (!existsSync(resolve(path, '.git'))) throw new Error(`source is not a Git checkout: ${path}`);
+    const dirty = execFileSync('git', ['-C', path, 'status', '--porcelain=v1', '--untracked-files=all'], {
+        encoding: 'utf8',
+        timeout: 30_000
+    }).trim();
+    if (dirty) throw new Error(`source checkout has uncommitted changes: ${path}`);
     return execFileSync('git', ['-C', path, 'rev-parse', 'HEAD'], { encoding: 'utf8', timeout: 30_000 }).trim();
 }
 

@@ -307,6 +307,7 @@ export function completeItem(session, id, obsPath, reportPath, catalog, root = R
         throw new Error('catalog does not match observations');
     if (
         Date.parse(plugin.last_checked_at) < Date.parse(session.checked_at) ||
+        !plugin.findings.length ||
         !hasFreshAnalysis(current, session.checked_at) ||
         plugin.findings.some((f) => !current.findings.some((c) => digest(c) === digest(f)))
     )

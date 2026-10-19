@@ -38,6 +38,7 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
      --out data/runs/<round>/INPUT.json \
      --problems data/runs/<round>/INPUT-PROBLEMS.json
    ```
+   两个来源 checkout 必须无 tracked 或 untracked 改动，构建器在解析前后校验 HEAD 和工作区状态，拒绝把未提交内容记录为固定 revision。
    只有完整读取并核对相应来源时才增加 `--complete-awesome` 或 `--complete-harness`；解析、身份或默认分支问题会让脚本保守降级该来源为不完整。
    工具必须使用既有档案的仓库数字 ID／组件路径复用稳定组件 ID，合并重定向别名并保留具体条目摘要；未解决身份不得静默丢弃。
 3. **脚本生成本轮队列和变更标记。** 首轮省略 `--previous`；后续轮次必须给出可比的上轮会话。
@@ -91,7 +92,7 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    npm run publication -- plan --manifest data/manifests/<round>.json --input data/runs/<round>/PUBLICATION-INPUT.json --out /tmp/dsh-publication-plan.json
    npm run publication -- apply --plan /tmp/dsh-publication-plan.json
    ```
-   不创建按轮次硬编码的发布脚本，不在生成代码中保存推荐判断；apply 前检查计划摘要，当前发布输入变化后重新生成计划。
+   不创建按轮次硬编码的发布脚本，不在生成代码中保存推荐判断；apply 前检查计划摘要，当前发布输入或对应 manifest 变化后重新生成计划。
    再执行 `npm run render:research` 生成 README、分类列表及追加Issue活跃度的详情展示页，不能手写 README 或添加工程使用内容。
    本周新增以已核实 npm 包的注册表 time.created 首次发布时间计算，不使用本工程入档时间；已有包发新版不算新增；README按本周新增、最新／最热／推荐、每类最热 5 个插件及更多入口的分类列表、研究出处、末尾更新时间合成；不放历史或过程说明。完成前运行 `npm run check`，
    人工检查叙述、采用判断、引用和本轮覆盖；脚本校验不证明实际业务收益。

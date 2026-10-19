@@ -66,11 +66,20 @@ export function planPublication(current, manifest, input, catalog, manifestPath)
         if (recommendationIds.has(recommendation.plugin_id))
             throw new Error(`duplicate recommendation: ${recommendation.plugin_id}`);
         recommendationIds.add(recommendation.plugin_id);
+        const item = byId.get(recommendation.plugin_id);
+        const plugin = catalogById.get(recommendation.plugin_id);
         if (
             recommendation.kind === 'install' &&
-            catalogById.get(recommendation.plugin_id)?.research_depth !== 'host_verified'
+            (plugin?.research_depth !== 'host_verified' ||
+                !plugin.evidence.some(
+                    (evidence) =>
+                        evidence.kind === 'host_acceptance' &&
+                        evidence.revision === item.revision &&
+                        evidence.environment &&
+                        evidence.artifact
+                ))
         )
-            throw new Error(`install recommendation lacks host verification: ${recommendation.plugin_id}`);
+            throw new Error(`install recommendation lacks pinned host verification: ${recommendation.plugin_id}`);
     }
     const recommendations = [
         ...current.recommendations.filter((recommendation) => !selected.has(recommendation.plugin_id)),
@@ -109,8 +118,11 @@ export function planPublication(current, manifest, input, catalog, manifestPath)
     };
 }
 
-export function applyPublication(path, plan) {
+export function applyPublication(path, plan, root = ROOT) {
     if (plan?.plan_version !== 1) throw new Error('unsupported publication plan version');
+    const manifestPath = plan?.summary?.manifest;
+    if (!/^data\/manifests\/\d{4}-\d{2}-\d{2}-\d{2,}\.json$/.test(manifestPath ?? ''))
+        throw new Error('publication plan manifest path is invalid');
     const lockPath = `${path}.lock`;
     let lock;
     try {
@@ -124,6 +136,10 @@ export function applyPublication(path, plan) {
         const current = read(path);
         if (digest(current) !== plan.base_digest)
             throw new Error('publication changed since planning; regenerate the plan');
+        const manifest = read(resolve(root, manifestPath));
+        if (digest(manifest) !== plan.manifest_digest)
+            throw new Error('manifest changed since planning; regenerate the plan');
+        validateManifest(manifest);
         if (digest(plan.result) !== plan.result_digest) throw new Error('publication plan result digest mismatch');
         validatePublication(plan.result);
         atomicWrite(path, plan.result);
