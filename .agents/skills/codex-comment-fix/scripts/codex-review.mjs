@@ -425,7 +425,12 @@ export function applyPlan(plan, { apply = false, currentRepo = currentRepository
     const logins = plan.codex_logins?.length ? plan.codex_logins : DEFAULT_CODEX_LOGINS;
     const isCodex = codexPredicate(logins);
     const results = [];
-    const plannedMarkers = new Set();
+    const plannedReplies = new Map();
+    const rememberReply = (key, threadId) => {
+        const existing = plannedReplies.get(key);
+        if (existing && existing !== threadId) fail(`reply key ${key} is already bound to thread ${existing}`);
+        plannedReplies.set(key, threadId);
+    };
     for (const operation of plan.operations) {
         if (!operation || typeof operation.op !== 'string') fail('each operation requires op');
         if (operation.op === 'reaction') {
@@ -503,13 +508,13 @@ export function applyPlan(plan, { apply = false, currentRepo = currentRepository
             const thread = threadById(plan.repository, plan.pr, operation.thread_id);
             if (thread.comments.nodes.some((c) => (c.body || '').includes(marker))) {
                 results.push({ ...operation, status: 'already_applied' });
-                plannedMarkers.add(key);
+                rememberReply(key, operation.thread_id);
                 continue;
             }
             const body = addOperationMarker(operation.body, key);
             if (!apply) {
                 results.push({ ...operation, status: 'planned' });
-                plannedMarkers.add(key);
+                rememberReply(key, operation.thread_id);
                 continue;
             }
             graphqlMutation(REPLY_MUTATION, { threadId: operation.thread_id, body });
@@ -517,7 +522,7 @@ export function applyPlan(plan, { apply = false, currentRepo = currentRepository
             if (!after.comments.nodes.some((c) => (c.body || '').includes(marker)))
                 fail(`reply readback failed for thread ${operation.thread_id}`);
             results.push({ ...operation, status: 'applied' });
-            plannedMarkers.add(key);
+            rememberReply(key, operation.thread_id);
             continue;
         }
         if (operation.op === 'summary_comment') {
@@ -528,20 +533,17 @@ export function applyPlan(plan, { apply = false, currentRepo = currentRepository
             const comments = paged(plan.repository, `issues/${plan.pr}/comments`);
             if (comments.some((c) => (c.body || '').includes(marker))) {
                 results.push({ ...operation, status: 'already_applied' });
-                plannedMarkers.add(key);
                 continue;
             }
             const body = addOperationMarker(operation.body, key);
             if (!apply) {
                 results.push({ ...operation, status: 'planned' });
-                plannedMarkers.add(key);
                 continue;
             }
             const created = gh(['api', `repos/${plan.repository}/issues/${plan.pr}/comments`, '-f', `body=${body}`]);
             const after = getResource(plan.repository, plan.pr, 'issue_comment', created.id);
             if (!(after.body || '').includes(marker)) fail(`summary comment readback failed for ${created.id}`);
             results.push({ ...operation, status: 'applied', comment_id: created.id });
-            plannedMarkers.add(key);
             continue;
         }
         if (operation.op === 'resolve') {
@@ -552,7 +554,7 @@ export function applyPlan(plan, { apply = false, currentRepo = currentRepository
                 continue;
             }
             const hasReply =
-                plannedMarkers.has(operation.reply_key) ||
+                plannedReplies.get(operation.reply_key) === operation.thread_id ||
                 thread.comments.nodes.some((c) => (c.body || '').includes(OPERATION_RE(operation.reply_key)));
             if (!hasReply) fail(`resolve requires a successful reply with key ${operation.reply_key}`);
             if (!apply) {
