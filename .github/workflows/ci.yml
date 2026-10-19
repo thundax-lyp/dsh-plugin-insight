@@ -1,49 +1,51 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  merge_group:
-  workflow_dispatch:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+    merge_group:
+    workflow_dispatch:
 
 permissions:
-  contents: read
+    contents: read
 
 jobs:
-  repository-checks:
-    name: Repository checks
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          fetch-depth: 0
-      - name: Set up Go
-        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
-        with:
-          go-version: '1.25.x'
-          cache: false
-      - name: Validate GitHub Actions workflows
-        run: |
-          go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
-          "$(go env GOPATH)/bin/actionlint" -color
-      - name: Set up Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version-file: .node-version
-          cache: npm
-      - name: Install research data tooling
-        run: npm ci --ignore-scripts
-      - name: Validate data, checkpoints and generated pages
-        run: npm run check
-      - name: Check whitespace in changes
-        env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before }}
-        run: |
-          if [ -n "$BASE_SHA" ] && [ "$BASE_SHA" != "0000000000000000000000000000000000000000" ]; then
-            git diff --check "$BASE_SHA" HEAD
-          else
-            git show --format= --check HEAD
-          fi
+    repository-checks:
+        name: Repository checks
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  fetch-depth: 0
+            - name: Set up Go
+              uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+              with:
+                  go-version: '1.25.x'
+                  cache: false
+            - name: Validate GitHub Actions workflows
+              run: |
+                  go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
+                  "$(go env GOPATH)/bin/actionlint" -color
+            - name: Set up Node.js
+              uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+              with:
+                  node-version-file: .node-version
+                  cache: npm
+            - name: Install research data tooling
+              run: npm ci --ignore-scripts
+            - name: Check formatting
+              run: npm run format:check
+            - name: Validate data, checkpoints and generated pages
+              run: npm run validate:data
+            - name: Check whitespace in changes
+              env:
+                  BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before }}
+              run: |
+                  if [ -n "$BASE_SHA" ] && [ "$BASE_SHA" != "0000000000000000000000000000000000000000" ]; then
+                    git diff --check "$BASE_SHA" HEAD
+                  else
+                    git show --format= --check HEAD
+                  fi
