@@ -57,7 +57,7 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    来源移除的条目也保留，尝试核查当前仓库及采用影响；无法读到源码时记受阻，不能伪造成功检查点。
    `next` 返回空但 blocked 非零仍未完成；不从“没有待处理项”推断全部成功。
    按[三层输出](references/OUTPUT-STANDARD.md#先分析再归纳与推荐)，先完成详情，
-   再归纳分类列表的“用途／亮点／关键质疑／建议”，最后生成推荐页；安装推荐与本周试用候选使用不同证据门槛。
+   再归纳分类列表的“用途／亮点／思考／建议”，最后生成推荐页；安装推荐与本周试用候选使用不同证据门槛。
    阶段汇总标注未完成项；会话与原始数据由轮次报告追溯。
    按输出标准准备 `data/publications/current.json`，历史文件保留但不进入README，人工填写有依据的推荐摘要，
    调用 `npm run capture:meta -- OWNER/REPO --out data/snapshots/<run_id>/<plugin>-meta.json` 保存每个 GitHub 仓库 META，

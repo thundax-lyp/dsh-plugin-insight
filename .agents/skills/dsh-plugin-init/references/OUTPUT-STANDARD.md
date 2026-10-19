@@ -10,7 +10,8 @@
 
 项目根 `README.md` 是面向读者的研究成果总入口，由 `npm run render:research` 生成，不手工维护。
 生成输入为 `data/publications/current.json`，结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
-README 由独立块函数合成：本周新增 → 最新 → 最热 → 推荐 → 分类导航与每类热门插件 → 研究出处 → 更新时间。
+README 由独立块函数合成：本周新增 → 最新 → 最热 → 推荐 → 分类导航与每类热门插件 → 研究出处 → LICENSE → 更新时间。
+LICENSE 区块链接根 `LICENSE`，标明 CC0-1.0，位于末尾更新时间之前。
 Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORIES／SOURCES 为块模板，
 条目、分类、插件详情入口、META及徽章使用对应小模板。`.agents/skills/dsh-plugin-init/scripts/publication/blocks.mjs` 只负责筛选、排序与装配，不硬编码标题及段落版式。
 总入口读取模板并填充已核验数据，同一列表不维护两份 Markdown。
@@ -18,7 +19,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 
 - **更新时间：** 取当前 META 快照最新北京时间日期；无 META 时用会话检查日期。独立的 META 时间保存在数据中。
 - **本周新增：** 根据档案运行历史首次 added 的时间，展示北京时间本周一至更新时间首次入档且已完成分析的插件，链接本页条目并附一句话用途；不是仓库创建、新发布或代码更新数量。后续复核不重置首次时间，未知时间不猜测，没有则显示本周暂无新增。
-- **最新：** 按已确认的仓库最后推送时间降序，最多3项；缺失时间不参与，默认不是插件创建时间或新发布排名。
+- **最新：** 按已确认的仓库 `pushed_at` 时间降序，页面文案为“最后更新”，最多3项；缺失时间不参与，默认不是插件创建时间或新发布排名。
 - **最热：** 按 GitHub Star 降序，最多3项，同分用稳定身份排序；缺失数量不填0或参与排名，热度不等于质量。
 - **推荐：** 人工选择值得安装或条件试用的插件，保留理由、质疑及条件，observe 项不进入推荐。
   没有验收证据仍不得标“值得装”，脚本变化提示待复核。推荐与最新／最热分开，不能用热度自动推出采用价值。
@@ -31,7 +32,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 - [awesome-dsh-plugin/awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
 - [0xsline/awesome-deepseek-harness](https://github.com/0xsline/awesome-deepseek-harness)
 
-子页面职责：推荐页展开人群、采用理由、关键质疑、条件与试用方法；分类索引页链接各分类，完整分类页按插件名字母顺序呈现短评；
+子页面职责：推荐页展开人群、采用理由、思考、条件与试用方法；分类索引页链接各分类，完整分类页按插件名字母顺序呈现短评；
 单插件详情承担完整采用分析和证据引用；轮次报告说明范围、变化、验证及未完成项。
 原始快照、观察批次和断点清单经详情或轮次报告追溯，不直接堆在 README。
 工程执行另从根 AGENTS 路由到规范、Skill 和脚本，不进入生成的读者导航。
@@ -95,7 +96,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
   使用 `data/reports/<run_id>-<component_id>.md`，由本次报告链接，不复制两份当前分析。
 - **分类列表：** 以业务场景为主分类，技术类别作为辅助信息。每个插件使用下述四标签短评，
   标题链接到对应详细分析；标明范围、截止时间和研究深度，未深评条目明确哪些内容仍未知。
-- **推荐页：** 最后从已完成详情中筛选，链接对应分析。说明推荐给谁、为什么、关键质疑、
+- **推荐页：** 最后从已完成详情中筛选，链接对应分析。说明推荐给谁、为什么、思考、
   必要依赖与成本、证据层级及最小试用方法；未形成推荐时直接说明原因，不凑数。
 
 推荐页区分两个用途：
@@ -178,7 +179,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 
 - **用途：** 谁在什么场景下完成什么具体任务。
 - **亮点：** 相比原有办法，最值得关注的能力或流程改善；注明作者声称、机制推断或实际验证。
-- **关键质疑：** 最影响采用决策的问题及其后果，围绕收益归因、依赖、流程负担、总成本或承诺范围。
+- **思考：** 最影响采用决策的问题及其后果，围绕收益归因、依赖、流程负担、总成本或承诺范围。
   已确认的限制直接陈述，不包装成悬而未决的问题；尚无答案的质疑写清缺口，不能暗示已证实无效。
 - **建议：** 适合谁、在什么条件下安装／试用／继续观察／暂缓采用，以及优先验证什么。
 
@@ -227,11 +228,11 @@ npm run check
 ## 分类页目录与 META
 
 分类页顶部先给插件目录，每项为“插件名＋一句话用途”，链接本页稳定组件锚点。
-下方按业务分类展示插件名、META、用途／亮点／关键质疑／建议，插件标题作为详情入口，不单列“详细分析”行，不单独展示“研究深度：源码级”。
+下方按业务分类展示插件名、META、用途／亮点／思考／建议，插件标题作为详情入口，不单列“详细分析”行，不单独展示“研究深度：源码级”。
 证据与运行边界仍由详情和推荐说明，不能因隐藏标签而升级结论。
 
 GitHub META 使用 `npm run capture:meta -- OWNER/REPO --out data/snapshots/<run_id>/<plugin>-meta.json` 采集，
-通过发布输入 metadata 映射稳定插件 ID 到快照。README和分类条目只展示 Star、npm下载量、最后推送及更新标记。未关闭／已关闭 Issue 累计量、近30天新建／关闭／更新量放到详细分析展示页。
+通过发布输入 metadata 映射稳定插件 ID 到快照。README和分类条目只展示 Star、npm下载量、最后更新及更新标记。未关闭／已关闭 Issue 累计量、近30天新建／关闭／更新量放到详细分析展示页。
 Issue 搜索强制排除 PR；近期关闭指当前已关闭且 closed_at 落在窗口内的 Issue 数，不能等同于解决数或完整关闭事件数。
 累计量是查询当下状态；近期更新包含创建、关闭及其他更新，几个数字不可相加当独立问题数。
 失败或不完整结果保存错误并展示“暂未获取”，不能写成0。仓库级 META 不冒充子插件独立活跃度。
@@ -270,9 +271,9 @@ CI 校验研究数据、会话检查点和生成结果一致性；不维护 test
 
 ### Star 与 npm 下载量
 
-GitHub Star 显示为带仓库链接的 Shields 徽章（GitHub 标志、stars 标签与数字）；确认存在对应 npm 包时，显示带 npm 包页链接的 Shields 徽章（npm 标志、npm 30d 标签及下载数）。
+GitHub Star 显示为带仓库链接的 Shields 徽章（GitHub 标志、GitHub ★ 标签与数字）；确认存在对应 npm 包时，显示带 npm 包页链接的 Shields 徽章（npm 标志、npm 30d 标签及下载数）。
 徽章用 img.shields.io/static/v1 的 flat 样式，由快照数值生成；不使用 GitHub camo 缓存 URL，也不改成随时间漂移的实时下载数。
-数字缺失用灰色“暂未获取”徽章，alt 文本保留计量含义；原始数字、日期与采集时间仍保存在数据中。
+数字缺失用灰色“暂未获取”徽章，alt 文本采用同样的 GitHub ★／npm 30d 标签与数字，保留计量含义；原始数字、日期与采集时间仍保存在数据中。
 未发布 npm 包或包名未核实时不展示下载项，不能从仓库名猜包名；多组件仓库按已核实的插件 package.json 分别对应。
 命令增加 `--npm <exact-package-name>`，包名可含 scope。抓取失败显示“暂未获取”，而非0；返回0才显示0。
 
@@ -314,3 +315,9 @@ GitHub Actions 每天北京时间08:30及手动触发，复用未合并的 META 
 项目头图使用严肃、偏技术的 PNG，位于 `assets/dsh-plugin-insight-banner.png`，标题统一为 DSH Plugin Insight。
 
 init 可带最大研究插件数；完整清单仍保留，报告分别注明清单总数、所选数、完成数、受阻数和未选数。达到上限仅表示所选范围完成，不代表完整清单全部研究完成；新增、更新、删除共用额度，具体选择与恢复语义见数据契约。
+
+读者页的用途／亮点／思考／建议标签采用 `**标签**：正文` 加粗，由 SHORT-ITEM 模板统一生成，避免中文冒号与 Markdown 星号边界导致原样显示。检查点绑定的研究原稿保留原文，展示层转换标签。
+
+历史研究原稿的“关键质疑”标签由展示层兼容读取并显示为“思考”；新研究使用“思考”，同一原稿同时出现两者视为重复标签并拒绝生成。
+
+README 的最后更新使用与 GitHub／npm 同风格的 Shields 徽章，带 GitHub 图标、最后更新标签和相对时间，并链接仓库提交记录；不展示括号中的具体日期。最新区块同样使用此徽章。分类页保留相对时间与具体日期，原始时间仍保存于 META 快照。

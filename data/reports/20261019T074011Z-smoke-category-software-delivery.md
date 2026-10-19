@@ -13,7 +13,7 @@
 
 #### [dsh-project-memory](20261019T074011Z-smoke-1339316901-root-detail.md)
 
-[![GitHub Star 23](https://img.shields.io/static/v1?label=stars&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm近30天下载 4537](https://img.shields.io/static/v1?label=npm+30d&message=4%2C537&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) · 最后推送：前天（2026-10-17）
+[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4537](https://img.shields.io/static/v1?label=npm+30d&message=4%2C537&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) · 最后推送：前天（2026-10-17）
 
 - **用途：**在项目内保留任务、文件关联、文档／符号索引和经验，帮助新会话恢复工作。
 - **亮点：**默认读到再索引，召回附来源；确定性索引不用模型调用，能从较小范围试起。
@@ -24,7 +24,7 @@
 
 #### [TaskSwarm — 并行开发任务编排](20261019T074011Z-smoke-1333800488-root-detail.md)
 
-[![GitHub Star 3](https://img.shields.io/static/v1?label=stars&message=3&color=yellow&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm) · [![npm近30天下载 0](https://img.shields.io/static/v1?label=npm+30d&message=0&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-taskswarm) · 最后推送：2个月前（2026-08-16）
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm) · [![npm 30d 0](https://img.shields.io/static/v1?label=npm+30d&message=0&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-taskswarm) · 最后推送：2个月前（2026-08-16）
 
 - **用途：**把能拆开的开发任务按依赖分波，在 Git worktree 中并行执行，再评审和集成。
 - **亮点：**把任务包、隔离工作区、调度和串行合并组织成可观察流程，适合已有测试标准的独立任务。

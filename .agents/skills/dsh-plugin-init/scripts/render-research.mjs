@@ -37,15 +37,16 @@ export function renderPublication(input,root=ROOT) {
   const obs=read(local(root,i.checkpoint.observations));validateObservations(obs);
   const plugin=obs.plugins.find(p=>p.id===i.id);
   const report=text(i.checkpoint.report);
-  const labels=['用途','亮点','关键质疑','建议'];
+  const labels=['用途','亮点','思考','建议'];
   const short=labels.map(label=>{
-   const matches=[...report.matchAll(new RegExp(`^- \\*\\*${label}：\\*\\*(.+)$`,'gm'))];
+   const sourceLabel=label==='思考'?'(?:思考|关键质疑)':label;
+   const matches=[...report.matchAll(new RegExp(`^- \\*\\*${sourceLabel}(?:：\\*\\*|\\*\\*：)(.+)$`,'gm'))];
    if(matches.length!==1) throw Error(`detail needs one ${label}: ${i.id}`);
-   return `- **${label}：**${matches[0][1]}`;
+   return template('SHORT-ITEM',{label,text:matches[0][1]});
   }).join('\n');
-  const description=report.match(/^- \*\*用途：\*\*(.+)$/m)[1].split(/[。！？]/)[0];
+  const description=report.match(/^- \*\*用途(?:：\*\*|\*\*：)(.+)$/m)[1].split(/[。！？]/)[0];
   const anchor=`plugin-${plugin.repository_id}-${plugin.component_id}`;
-  const path=input.metadata?.[i.id];let meta='META：暂未获取。',needsReview=false,stars=null,starsBadge=null,pushedAt=null,pushedLabel=null,issues='暂未获取。';
+  const path=input.metadata?.[i.id];let meta='META：暂未获取。',homeMeta=null,pushedBadge=null,needsReview=false,stars=null,starsBadge=null,pushedAt=null,pushedLabel=null,issues='暂未获取。';
   if(path){
    const m=validateMetadata(read(local(root,path)));
    if(m.repository_id!==null&&m.repository_id!==plugin.repository_id)throw Error('metadata repository identity differs');
@@ -54,16 +55,20 @@ export function renderPublication(input,root=ROOT) {
    issues=template('ISSUES',{open:n(m.issues.open),closed:n(m.issues.closed),created:n(m.issues.created_30d),closed_recent:n(m.issues.closed_30d),updated:n(m.issues.updated_30d),date:new Date(Date.parse(m.captured_at)+8*3600000).toISOString().slice(0,10)});
    const pushed=m.pushed_at?`${relativeTime(m.pushed_at,m.captured_at)}（${m.pushed_at.slice(0,10)}）`:'暂未获取';
    const badge=m.npm?'https://img.shields.io/static/v1?'+new URLSearchParams({label:'npm 30d',message:m.npm.downloads_30d===null?'暂未获取':m.npm.downloads_30d.toLocaleString('en-US'),color:m.npm.downloads_30d===null?'lightgrey':'blue',logo:'npm',style:'flat'}).toString():null;
-   const downloads=m.npm?' · '+template('BADGE',{alt:`npm近30天下载 ${n(m.npm.downloads_30d)}`,image:badge,url:`https://www.npmjs.com/package/${m.npm.package_name}`}):'';
+   const downloads=m.npm?' · '+template('BADGE',{alt:`npm 30d ${n(m.npm.downloads_30d)}`,image:badge,url:`https://www.npmjs.com/package/${m.npm.package_name}`}):'';
    for(const at of [m.captured_at,m.npm?.captured_at].filter(Boolean)) metadataDates.add(new Date(Date.parse(at)+8*3600000).toISOString().slice(0,10));
-   const starImage='https://img.shields.io/static/v1?'+new URLSearchParams({label:'stars',message:String(n(m.stars)),color:'yellow',logo:'github',style:'flat'}).toString();
+   const starImage='https://img.shields.io/static/v1?'+new URLSearchParams({label:'GitHub ★',message:String(n(m.stars)),color:'yellow',logo:'github',style:'flat'}).toString();
    needsReview=m.code_update?.script_changed===true;
    const update=needsReview?' · **脚本有更新，待重新洞察**':m.code_update?.script_changed===null?' · 脚本更新状态暂未确认':'';
    stars=m.stars;pushedAt=m.pushed_at;pushedLabel=m.pushed_at?relativeTime(m.pushed_at,m.captured_at):null;
-   starsBadge=template('BADGE',{alt:`GitHub Star ${n(m.stars)}`,image:starImage,url:`https://github.com/${m.repository}`});
+   starsBadge=template('BADGE',{alt:`GitHub ★ ${n(m.stars)}`,image:starImage,url:`https://github.com/${m.repository}`});
    meta=template('META',{stars:starsBadge,downloads,open:n(m.issues.open),closed:n(m.issues.closed),created:n(m.issues.created_30d),closed_recent:n(m.issues.closed_30d),updated:n(m.issues.updated_30d),pushed,review:update});
+   const updatedLabel=pushedLabel??'暂未获取';
+   const updatedImage='https://img.shields.io/static/v1?'+new URLSearchParams({label:'最后更新',message:updatedLabel,color:pushedLabel?'blue':'lightgrey',logo:'github',style:'flat'}).toString();
+   pushedBadge=template('BADGE',{alt:`最后更新 ${updatedLabel}`,image:updatedImage,url:`https://github.com/${m.repository}/commits`});
+   homeMeta=template('HOME-META',{stars:starsBadge,downloads,updated:pushedBadge,review:update});
   }
-  return {i,plugin,short,description,anchor,meta,needsReview,stars,starsBadge,pushedAt,pushedLabel,firstAdded:firstAdded.get(i.id)??null,detailPath:`${dirname(i.checkpoint.report)}/${session.id}-${plugin.repository_id}-${plugin.component_id}-detail.md`,detail:template('DETAIL',{analysis:report.trimEnd(),issues})+'\n'};
+  return {i,plugin,short,description,anchor,meta,homeMeta,pushedBadge,needsReview,stars,starsBadge,pushedAt,pushedLabel,firstAdded:firstAdded.get(i.id)??null,detailPath:`${dirname(i.checkpoint.report)}/${session.id}-${plugin.repository_id}-${plugin.component_id}-detail.md`,detail:template('DETAIL',{analysis:report.trimEnd().replace(/^- \*\*(用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)(.*)$/gm,(_,label,text)=>template('SHORT-ITEM',{label:label==='关键质疑'?'思考':label,text})),issues})+'\n'};
  });
  const byId=new Map(items.map(p=>[p.i.id,p]));
  if(input.recommendations.length!==new Set(input.recommendations.map(r=>r.plugin_id)).size) throw Error('duplicate recommendation');
@@ -79,7 +84,7 @@ export function renderPublication(input,root=ROOT) {
  const groups=categoryGroups(items).map(g=>({...g,path:`${directory}/${session.id}-category-${g.key}.md`}));
  const categoryPages=groups.map(g=>({path:g.path,content:template('CATEGORY-PAGE',{name:g.name,home:link(g.path,'README.md'),categories:renderCategories(g.entries,e=>link(g.path,e.detailPath)),updated:renderUpdated(updated)})+'\n'}));
  const catalog=template('CATALOG',{updated:renderUpdated(updated),categories:renderCategoryIndex(groups.map(g=>({...g,href:link(input.catalog_page,g.path)})))})+'\n';
- const homeGroups=groups.map(g=>({...g,href:link('README.md',g.path)}));
+ const homeGroups=groups.map(g=>({...g,href:link('README.md',g.path),entries:g.entries.map(e=>({...e,meta:e.homeMeta??e.meta}))}));
  const homeItems=items.map(e=>({...e,href:e.detailPath}));
  const homeById=new Map(homeItems.map(e=>[e.i.id,e]));
  const readme=template('README',{updated:renderUpdated(updated),weekly_new:renderWeeklyNew(homeItems,updated),latest:renderLatest(homeItems),hot:renderHot(homeItems),recommended:renderRecommended(input.recommendations,homeById),categories:renderHomeCategories(homeGroups,e=>e.detailPath),sources:renderSources(sources)})+'\n';

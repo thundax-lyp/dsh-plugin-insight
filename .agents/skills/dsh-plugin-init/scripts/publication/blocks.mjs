@@ -13,7 +13,7 @@ export function renderWeeklyNew(items,date){
 }
 export function renderLatest(items,limit=3){
  const selected=items.filter(e=>e.pushedAt).sort((a,b)=>Date.parse(b.pushedAt)-Date.parse(a.pushedAt)||a.i.id.localeCompare(b.i.id)).slice(0,limit);
- return template('LATEST',{items:selected.map(e=>template('LATEST-ITEM',{plugin:nameLink(e),time:e.pushedLabel})).join('\n')||'暂无更新信息。'});
+ return template('LATEST',{items:selected.map(e=>template('LATEST-ITEM',{plugin:nameLink(e),time:e.pushedBadge??e.pushedLabel})).join('\n')||'暂无更新信息。'});
 }
 export function renderHot(items,limit=3){
  const selected=items.filter(e=>e.stars!==null&&e.stars!==undefined).sort((a,b)=>b.stars-a.stars||a.i.id.localeCompare(b.i.id)).slice(0,limit);
