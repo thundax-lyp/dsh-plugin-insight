@@ -3,6 +3,7 @@ import { existsSync, readFileSync, openSync, closeSync, unlinkSync, writeFileSyn
 import { resolve, relative, isAbsolute, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
+import {CATALOG} from '../../_shared/scripts/data-paths.mjs';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { ROOT, read, digest, atomicWrite, validate as validateCatalog, validateObservations } from '../../_shared/scripts/plugin-data.mjs';
@@ -125,7 +126,7 @@ export function main(args = process.argv.slice(2)) {
   } else if (command === 'checkpoint' || command === 'block' || command === 'retry') {
     saveSession(need('session'), () => {
       const s = validateSession(read(v.session));
-      if (command === 'checkpoint') return completeItem(s, need('plugin'), need('observations'), need('report'), read(v.catalog ?? resolve(ROOT,'data/catalog.json')));
+      if (command === 'checkpoint') return completeItem(s, need('plugin'), need('observations'), need('report'), read(v.catalog ?? resolve(ROOT,CATALOG)));
       const item = s.items.find(p => p.id === need('plugin'));
       if (!item || !selectedItems(s).includes(item) || item.status === 'complete') throw new Error('item missing or already complete');
       item.status = command === 'block' ? 'blocked' : 'pending';

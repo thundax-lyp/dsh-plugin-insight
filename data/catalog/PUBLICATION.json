@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "session": "data/runs/2026-10-19-03/SESSION.json",
+  "scope": "十插件固定源码研究；完整候选与本轮所选范围分开记录",
+  "report": "data/runs/2026-10-19-03/REPORT.md",
+  "recommendation_page": "data/runs/2026-10-19-03/RECOMMENDATIONS.md",
+  "catalog_page": "data/views/categories/INDEX.md",
+  "recommendations": [
+    {
+      "plugin_id": "github:1333368566:root",
+      "kind": "trial",
+      "summary": "已有遥测出口时，用合成凭证先验证副本脱敏；未知格式与监听链仍是关键边界。"
+    },
+    {
+      "plugin_id": "github:1339316901:root",
+      "kind": "trial",
+      "summary": "高频跨会话开发先试确定性索引与出处；与交接文档比较恢复质量和总负担。"
+    },
+    {
+      "plugin_id": "github:1333370288:root",
+      "kind": "observe",
+      "summary": "验证信号摘要不等于测试通过；先核对源码0.1.1与npm latest0.1.0的产物差异。"
+    }
+  ],
+  "metadata": {
+    "github:1339316901:root": "data/plugins/00080000--dsh-project-memory/META.json",
+    "github:1333328839:root": "data/plugins/01virex--dsh-status-rotator/META.json",
+    "github:1416699252:root": "data/plugins/01men--ybkkasi/META.json",
+    "github:1334899834:root": "data/plugins/02muller25--dsh-api-balance/META.json",
+    "github:1333368566:root": "data/plugins/030611--dsh-telemetry-redactor/META.json",
+    "github:1333370288:root": "data/plugins/030611--dsh-verification-receipt/META.json",
+    "github:1333357514:root": "data/plugins/030611--qiushi-dsh-evidence-audit/META.json",
+    "github:1342915339:root": "data/plugins/0qwq0--dsh-discord-richpresence/META.json",
+    "github:1343420855:root": "data/plugins/0qwq0--dsh-ui-auth/META.json",
+    "github:1339803365:root": "data/plugins/0imzero--dsh-workspace-menu/META.json"
+  },
+  "catalog": "data/catalog/PLUGINS.json"
+}

@@ -1,0 +1,11 @@
+{
+  "repository": "awesome-dsh-plugin/awesome-dsh-plugin",
+  "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+  "captured_at": "2026-10-19T07:40:25.571228+00:00",
+  "files": {
+    "data/plugins/EthanYoQ__Invoice-Downloader--plugins-dsh-invoice-downloader.yml": "url: https://github.com/EthanYoQ/Invoice-Downloader/tree/main/plugins/dsh-invoice-downloader\nname: EthanYoQ/Invoice-Downloader#dsh-invoice-downloader\ncategory: tools\ndescription:\n  en: Local IMAP invoice download, OCR, archive, and Excel reimbursement summaries for DeepSeek Harness.\n  zh: 面向 DeepSeek Harness 的本地 IMAP 发票下载、OCR 识别、归档与 Excel 报销汇总。\n",
+    "data/plugins/00080000__dsh-project-memory.yml": "url: https://github.com/00080000/dsh-project-memory\nname: 00080000/dsh-project-memory\ncategory: memory\ntarball: https://github.com/00080000/dsh-project-memory/releases/download/v0.4.0/dsh-project-memory-0.4.0.tgz\ndescription:\n  zh: \"为 DeepSeek Harness提供持久化的项目级记忆。专门针对项目开发，原生融合 dsh 任务系统，会话内任务清单与读过的文件自动沉淀为跨会话任务记录，任务↔文件自动关联——开发工作流可切换、可续接，无需重复梳理整个项目。文档与代码符号在读取时索引，无需全量预扫；针对不同语言的项目，支持可选功能增强。经验笔记自动去重，避免重复记录。所有数据召回附带出处可溯源。纯 JS、单依赖、静默运行、零操作成本。\"\n  en: \"Project memory for dsh with native task-system integration: session todos and file reads auto-condense into cross-session task records (task↔file links), so workflows are switchable and resumable without re-contextualizing. Read-time memory (no upfront scan): extracts code symbols, summarizes docs, and cross-links docs↔symbols; optional TS semantic enhancement (auto on when TS installed). Experience notes auto-dedup. Every recall includes a traceable citation. Pure JS, single dep, works out of the box, silent operation, zero overhead.\"",
+    "data/plugins/february2015__dsh-taskswarm.yml": "url: https://github.com/february2015/dsh-taskswarm\nname: february2015/dsh-taskswarm\ncategory: workflow\ndescription:\n  en: 'DSH port of TaskPlane: dependency-ordered waves run in parallel git-worktree lanes, with task packets, cross-model review, and crash recovery.'\n  zh: TaskPlane 的 DSH 移植版：按依赖分波、多 lane 并行执行（git worktree 隔离），任务包 + 跨模型评审 + 崩溃可恢复。\n"
+  },
+  "coverage": "只核对三条目标结构化条目，不是全目录普查。"
+}

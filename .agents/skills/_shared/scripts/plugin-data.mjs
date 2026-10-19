@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {CATALOG} from './data-paths.mjs';
 import { createHash, randomUUID } from 'node:crypto';
 import { closeSync, existsSync, fsyncSync, mkdirSync, openSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -234,7 +235,7 @@ export const main = (args = process.argv.slice(2)) => {
   };
   if (!allowed[command]) throw new Error('Usage: plugin-data.mjs validate|plan|apply [options]');
   const { values } = parseArgs({ args: rest, options: Object.fromEntries(allowed[command].map((key) => [key, { type: 'string' }])) });
-  const catalogPath = values.catalog ?? resolve(ROOT, 'data/catalog.json');
+  const catalogPath = values.catalog ?? resolve(ROOT, CATALOG);
   const requireOption = (key) => {
     if (!values[key]) throw new Error(`--${key} is required`);
     return values[key];

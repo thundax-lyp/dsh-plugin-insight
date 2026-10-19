@@ -20,7 +20,7 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
 新会话将此参数传给 `start --limit N`；不传则省略该选项。完整列表仍保留，按清单顺序选取（目录缺席项追加在后），不按变更类型分配额外额度。
 同轮恢复使用已固定的上限和选择，不重置计数；受阻项也占名额，不另找插件补位。
 
-1. **区分新一轮与续跑。** 查看 `data/sessions/` 和工作区。用户要求继续时恢复原会话；明确开始新一轮时使用新 ID，
+1. **区分新一轮与续跑。** 查看 `data/runs/` 和工作区；新轮次分配 YYYY-MM-DD-NN 可读目录，内部 ID 与时间字段仍按数据契约保留。用户要求继续时恢复原会话；明确开始新一轮时使用新 ID，
    以最近可比会话作为 `--previous`，记录其范围差异。不因为已有档案改走另一个 Skill，不清空历史。
 2. **确认来源，整理列表。** 核对用户来源；默认使用研究规范中的两个目录。固定来源版本、截止时间和覆盖边界，
    优先结构化条目，补充 README／CATALOG。使用 GitHub 插件，或可选 `capture-github.mjs`；后者仅采集仓库元数据、固定提交／文件树、部分根文件及最多100条发布记录，不能穷尽目录或跟踪全部依赖。
@@ -30,8 +30,8 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    格式参考[合成输入](assets/research-input.json)，不能将合成数据导入真实档案。
 3. **脚本生成本轮队列和变更标记。** 首轮省略 `--previous`；后续轮次必须给出可比的上轮会话。
    ```sh
-   npm run research -- start --input /tmp/dsh-research-input.json --previous data/sessions/<previous_id>.json --out data/sessions/<session_id>.json
-   npm run research -- next --session data/sessions/<session_id>.json
+   npm run research -- start --input /tmp/dsh-research-input.json --previous data/runs/<previous_round>/SESSION.json --out data/runs/<round>/SESSION.json
+   npm run research -- next --session data/runs/<round>/SESSION.json
    ```
    不覆盖已有会话；续跑直接调用 `next`。脚本比较新增、移除、路径／内容／来源变化、未变及无法确认，
    所有条目在新轮次重新排队，实际处理范围受可选上限限制。未变不代表免于分析；来源不完整不能推断移除。核对标记的语义边界，
@@ -45,10 +45,10 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
 5. **逐项保存、计划和应用。** 为该项保存证据、完整详情和唯一观察批次。空档案第一次写入用 `init`，
    之后一律用 `update`；这只是底层写入模式，不是两种研究流程。检查计划后应用：
    ```sh
-   node .agents/skills/_shared/scripts/plugin-data.mjs plan --mode <init-or-update> --observations data/observations/<run_id>.json --out /tmp/dsh-plan.json
+   node .agents/skills/_shared/scripts/plugin-data.mjs plan --mode <init-or-update> --observations data/runs/<round>/observations/<plugin-slug>.json --out /tmp/dsh-plan.json
    node .agents/skills/_shared/scripts/plugin-data.mjs apply --plan /tmp/dsh-plan.json
-   node .agents/skills/_shared/scripts/plugin-data.mjs validate --observations data/observations/<run_id>.json
-   npm run research -- checkpoint --session data/sessions/<session_id>.json --plugin <plugin_id> --observations data/observations/<run_id>.json --report data/reports/<detail>.md
+   node .agents/skills/_shared/scripts/plugin-data.mjs validate --observations data/runs/<round>/observations/<plugin-slug>.json
+   npm run research -- checkpoint --session data/runs/<round>/SESSION.json --plugin <plugin_id> --observations data/runs/<round>/observations/<plugin-slug>.json --report data/runs/<round>/insights/<plugin-slug>.md
    ```
    checkpoint 核对已应用数据、本轮核查时间、固定源码版本、材料及摘要，成功后才完成该项。
    若 apply 后中断，先核对 `catalog.runs` 和批次，补做校验与 checkpoint，不重复 apply。
@@ -60,12 +60,12 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    按[三层输出](references/OUTPUT-STANDARD.md#先分析再归纳与推荐)，先完成详情，
    再归纳分类列表的“用途／亮点／思考／建议”，最后生成推荐页；安装推荐与本周试用候选使用不同证据门槛。
    阶段汇总标注未完成项；会话与原始数据由轮次报告追溯。
-   按输出标准准备 `data/publications/current.json`，历史文件保留但不进入README，人工填写有依据的推荐摘要，
-   调用 `npm run capture:meta -- OWNER/REPO --out data/snapshots/<run_id>/<plugin>-meta.json` 保存每个 GitHub 仓库 META，
+   按输出标准维护 PLUGIN-PATHS.json 的稳定路径映射并准备 `data/catalog/PUBLICATION.json`，历史文件保留但不进入README，人工填写有依据的推荐摘要，
+   调用 `npm run capture:meta -- OWNER/REPO --out data/runs/<round>/snapshots/<plugin-slug>/META.json` 保存每个 GitHub 仓库 META，
    对已核实的插件 package.json 名称，在采集命令增加 --npm <exact-package-name>，记录最近30个完整UTC日期的下载数；
    没有确认的npm包时省略，不猜包名，不用0代替失败。
    已建立列表后的日常 META 刷新可直接运行 npm run refresh:meta；它只标记脚本更新，不替代洞察或改写检查点。
-   将快照填入发布输入的 metadata 映射；分类页按输出标准生成名字＋用途目录、META及四标签短评。
+   保留轮次 META 快照，并复制为 data/plugins/<plugin-slug>/META.json；发布输入的 metadata 映射引用该当前副本；分类页按输出标准生成名字＋用途目录、META及四标签短评。
    标题、章节与Markdown版式维护 .agents/skills/dsh-plugin-init/assets/templates/publication/*.md，不写死到生成代码；脚本仅处理数据、排序和填充。
    再执行 `npm run render:research` 生成 README、分类列表及追加Issue活跃度的详情展示页，不能手写 README 或添加工程使用内容。
    发布输入引用当前catalog以计算本周首次入档插件；README按本周新增、最新／最热／推荐、每类最热 5 个插件及更多入口的分类列表、研究出处、末尾更新时间合成；不放历史或过程说明。完成前运行 `npm run check`，

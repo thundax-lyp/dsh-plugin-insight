@@ -1,2 +1,11 @@
 node_modules/
-data/catalog.json.lock
+/.idea/
+
+# Rebuildable scratch space; formal research and migration originals stay versioned.
+/data/tmp/
+/data/cache/
+/data/checkouts/
+/data/**/node_modules/
+/data/**/*.lock
+/data/**/*.tmp
+/data/**/.DS_Store

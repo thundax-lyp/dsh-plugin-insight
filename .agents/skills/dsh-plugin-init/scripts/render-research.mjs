@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { resolve, relative, dirname, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -9,6 +9,7 @@ import { ROOT, read, validateObservations, validate as validateCatalog } from '.
 import {validateMetadata} from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import {template} from './publication/template.mjs';
 import {categoryGroups,renderCategoryIndex,renderHomeCategories,renderUpdated,renderWeeklyNew,renderLatest,renderHot,renderRecommended,renderCategories,renderSources} from './publication/blocks.mjs';
+import {CATALOG,REGISTRY,pluginDirectory,rebaseMarkdown} from '../../_shared/scripts/data-paths.mjs';
 import { validateSession } from './research-session.mjs';
 const ajv = new Ajv({ strict:true, allErrors:true }); addFormats(ajv);
 const check = ajv.compile(read(resolve(ROOT,'.agents/skills/_shared/schemas/publication.schema.json')));
@@ -44,6 +45,8 @@ export function renderPublication(input,root=ROOT) {
    if(matches.length!==1) throw Error(`detail needs one ${label}: ${i.id}`);
    return template('SHORT-ITEM',{label,text:matches[0][1]});
   }).join('\n');
+  const detailPath=pluginDirectory(plugin,root)+'/INSIGHT.md';
+  const displayReport=rebaseMarkdown(report,i.checkpoint.report,detailPath);
   const description=report.match(/^- \*\*用途(?:：\*\*|\*\*：)(.+)$/m)[1].split(/[。！？]/)[0];
   const anchor=`plugin-${plugin.repository_id}-${plugin.component_id}`;
   const path=input.metadata?.[i.id];let meta='META：暂未获取。',homeMeta=null,pushedBadge=null,needsReview=false,stars=null,starsBadge=null,pushedAt=null,pushedLabel=null,issues='暂未获取。';
@@ -68,7 +71,7 @@ export function renderPublication(input,root=ROOT) {
    pushedBadge=template('BADGE',{alt:`最后更新 ${updatedLabel}`,image:updatedImage,url:`https://github.com/${m.repository}/commits`});
    homeMeta=template('HOME-META',{stars:starsBadge,downloads,updated:pushedBadge,review:update});
   }
-  return {i,plugin,short,description,anchor,meta,homeMeta,pushedBadge,needsReview,stars,starsBadge,pushedAt,pushedLabel,firstAdded:firstAdded.get(i.id)??null,detailPath:`${dirname(i.checkpoint.report)}/${session.id}-${plugin.repository_id}-${plugin.component_id}-detail.md`,detail:template('DETAIL',{analysis:report.trimEnd().replace(/^- \*\*(用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)(.*)$/gm,(_,label,text)=>template('SHORT-ITEM',{label:label==='关键质疑'?'思考':label,text})),issues})+'\n'};
+  return {i,plugin,short,description,anchor,meta,homeMeta,pushedBadge,needsReview,stars,starsBadge,pushedAt,pushedLabel,firstAdded:firstAdded.get(i.id)??null,detailPath,detail:template('DETAIL',{analysis:displayReport.trimEnd().replace(/^- \*\*(用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)(.*)$/gm,(_,label,text)=>template('SHORT-ITEM',{label:label==='关键质疑'?'思考':label,text})),issues})+'\n'};
  });
  const byId=new Map(items.map(p=>[p.i.id,p]));
  if(input.recommendations.length!==new Set(input.recommendations.map(r=>r.plugin_id)).size) throw Error('duplicate recommendation');
@@ -81,20 +84,33 @@ export function renderPublication(input,root=ROOT) {
  const dates=[...metadataDates].sort();
  const updated=dates.at(-1)??new Date(Date.parse(session.checked_at)+8*3600000).toISOString().slice(0,10);
  const directory=dirname(input.catalog_page);
- const groups=categoryGroups(items).map(g=>({...g,path:`${directory}/${session.id}-category-${g.key}.md`}));
+ const groups=categoryGroups(items).map(g=>({...g,path:`${directory}/${g.key.toUpperCase()}.md`}));
  const categoryPages=groups.map(g=>({path:g.path,content:template('CATEGORY-PAGE',{name:g.name,home:link(g.path,'README.md'),categories:renderCategories(g.entries,e=>link(g.path,e.detailPath)),updated:renderUpdated(updated)})+'\n'}));
  const catalog=template('CATALOG',{updated:renderUpdated(updated),categories:renderCategoryIndex(groups.map(g=>({...g,href:link(input.catalog_page,g.path)})))})+'\n';
  const homeGroups=groups.map(g=>({...g,href:link('README.md',g.path),entries:g.entries.map(e=>({...e,meta:e.homeMeta??e.meta}))}));
  const homeItems=items.map(e=>({...e,href:e.detailPath}));
  const homeById=new Map(homeItems.map(e=>[e.i.id,e]));
  const readme=template('README',{updated:renderUpdated(updated),weekly_new:renderWeeklyNew(homeItems,updated),latest:renderLatest(homeItems),hot:renderHot(homeItems),recommended:renderRecommended(input.recommendations,homeById),categories:renderHomeCategories(homeGroups,e=>e.detailPath),sources:renderSources(sources)})+'\n';
- return {readme,catalog,categoryPages,details:items.map(e=>({path:e.detailPath,content:e.detail}))};
+ const registry=existsSync(local(root,REGISTRY))?read(local(root,REGISTRY)):{};
+ const allPlugins=input.catalog?read(local(root,input.catalog)).plugins:items.map(e=>e.plugin);
+ const outputs=[];
+ for(const p of allPlugins){
+  const directory=pluginDirectory(p,root);registry[p.id]=directory;const history=[];
+  const runs=local(root,'data/runs');
+  if(existsSync(runs))for(const name of readdirSync(runs).sort()){
+   const sessionPath=`data/runs/${name}/SESSION.json`;if(!existsSync(local(root,sessionPath)))continue;
+   const item=read(local(root,sessionPath)).items.find(i=>i.id===p.id&&i.status==='complete');
+   if(item)history.push(`- [${name}](${link(directory+'/HISTORY/INDEX.md',item.checkpoint.report)})`);
+  }
+  outputs.push({path:directory+'/HISTORY/INDEX.md',content:template('HISTORY',{name:clean(p.name),entries:history.join('\n')||'暂无独立会话记录。'})+'\n'});
+ }
+ return {readme,catalog,categoryPages,details:items.map(e=>({path:e.detailPath,content:e.detail})),outputs,registry};
 }
 export function main(args=process.argv.slice(2)) {
  const {values:v}=parseArgs({args,options:{input:{type:'string'},check:{type:'boolean',default:false}}});
  if(!v.input) throw Error('--input is required');const input=read(resolve(v.input));const result=renderPublication(input);
  // Validate all output before writing either artifact.
- for(const [path,content]of [['README.md',result.readme],[input.catalog_page,result.catalog],...result.details.map(d=>[d.path,d.content]),...result.categoryPages.map(d=>[d.path,d.content])]) {
+ for(const [path,content]of [['README.md',result.readme],[input.catalog_page,result.catalog],...result.details.map(d=>[d.path,d.content]),...result.categoryPages.map(d=>[d.path,d.content]),...result.outputs.map(d=>[d.path,d.content]),[REGISTRY,JSON.stringify(result.registry,null,2)+'\n']]) {
   const target=local(ROOT,path);
   if(v.check){if(!existsSync(target)||readFileSync(target,'utf8')!==content) throw Error(`generated output differs: ${path}`);}
   else {mkdirSync(dirname(target),{recursive:true});writeFileSync(target,content);}

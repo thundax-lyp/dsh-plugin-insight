@@ -9,7 +9,7 @@
 ## README 生成物与读者路由
 
 项目根 `README.md` 是面向读者的研究成果总入口，由 `npm run render:research` 生成，不手工维护。
-生成输入为 `data/publications/current.json`，结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
+生成输入为 `data/catalog/PUBLICATION.json`，结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
 README 由独立块函数合成：本周新增 → 最新 → 最热 → 推荐 → 分类导航与每类热门插件 → 研究出处 → LICENSE → 更新时间。
 LICENSE 区块链接根 `LICENSE`，标明 CC0-1.0，位于末尾更新时间之前。
 Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORIES／SOURCES 为块模板，
@@ -49,26 +49,33 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 
 | 产物 | 位置 | 要求 |
 |---|---|---|
-| 研究输出入口 | 根 `README.md` | 脚本生成的研究成果导航，不手工编辑 |
-| 发布输入 | `data/publications/current.json` | 指定本轮会话、子页面、推荐摘要及META引用 |
-| 当前档案与运行历史 | `data/catalog.json` | 由校验后的计划应用生成，不手动绕过增量逻辑覆盖 |
-| 研究清单与进度 | `data/sessions/<session_id>.json` | 固定来源、候选列表及逐项检查点，跨执行恢复 |
-| 观察批次 | `data/observations/<run_id>.json` | 保存本次成功观察和失败目标，与档案运行 ID 对应 |
-| 原始证据 | `data/snapshots/<run_id>/` | 使用可辨识来源／组件和用途的文件名，保留固定版本与采集时间 |
-| 执行结果及日志 | `data/snapshots/<run_id>/` | 标明命令、环境、结果及边界，由执行证据引用 |
-| 研究报告 | `data/reports/<run_id>.md` | 按下述共同结构记录本次研究，不重写历史报告 |
-| 分类列表 | `data/reports/<run_id>-catalog.md` | 按业务分类汇总四标签短评，链接单插件详情 |
-| 推荐页 | `data/reports/<run_id>-recommendations.md` | 从已完成分析中形成采用／试用建议，注明时间、范围及证据层级 |
-| 临时计划 | 系统临时目录 | 用于检查候选档案，不默认纳入版本管理 |
+| 研究入口 | 根 `README.md` | 由模板生成，插件标题链接稳定详情入口 |
+| 当前档案 | `data/catalog/PLUGINS.json` | 保留当前插件档案及追加运行历史 |
+| 当前发布输入 | `data/catalog/PUBLICATION.json` | 引用当前会话、报告、推荐与 META |
+| 插件路径注册表 | `data/catalog/PLUGIN-PATHS.json` | 稳定 ID 到可读插件目录的唯一映射 |
+| 当前详情 | `data/plugins/<plugin-slug>/INSIGHT.md` | 由原稿生成，包含最新 Issue 信息，不手写 |
+| 当前 META | `data/plugins/<plugin-slug>/META.json` | 当前采集结果副本，原始快照在轮次目录保留 |
+| 插件历史入口 | `data/plugins/<plugin-slug>/HISTORY/INDEX.md` | 链接固定轮次原稿，不复制当前结论 |
+| 会话与进度 | `data/runs/<round>/SESSION.json` | 保留来源、候选、所选范围及逐项检查点 |
+| 单插件观察 | `data/runs/<round>/observations/<plugin-slug>.json` | 批次只含本项，历史多项批次可用 MULTI-PLUGIN.json |
+| 研究原稿 | `data/runs/<round>/insights/<plugin-slug>.md` | 检查点绑定，不以更新展示格式为由覆盖 |
+| 轮次报告与推荐 | `data/runs/<round>/REPORT.md`、`RECOMMENDATIONS.md` | 描述范围、依据、判断及未完成项 |
+| 原始材料 | `data/runs/<round>/snapshots/<plugin-slug>/` | 使用 SOURCE、REPOSITORY、NPM、META、INVENTORY 等可辨识名称 |
+| 来源／列表材料 | `data/runs/<round>/snapshots/` | 保留目录快照、INPUT、候选与未确认身份清单 |
+| 分类索引与完整页 | `data/views/categories/INDEX.md`、`<CATEGORY>.md` | 当前分类页按名称排序，与 README 一起生成 |
+| 迁移审计 | `data/catalog/MIGRATION.json` | 保存新旧路径、原始摘要、迁移摘要及原件位置，必须提交 |
+| 临时计划／缓存／源码检出 | 系统临时目录或 `data/tmp/`、`cache/`、`checkouts/` | 可重建且不提交，不放正式证据 |
 
-`run_id` 在工程内唯一，推荐 `YYYYMMDDTHHMMSSZ-init` 或 `YYYYMMDDTHHMMSSZ-update`，
-必要时增加可辨识后缀。ID 只使用字母、数字、连字符和下划线，不能包含路径分隔符或 `..`。
-采集时间与截止时间使用带时区的 ISO 8601；文件名中的时间统一用 UTC 并加 `Z`。
-数据字段继续使用 Schema 中的稳定名称和枚举，报告正文使用中文。
+`plugin-slug` 首次由 owner、repo 组成 `owner--repo`，子组件追加稳定组件名；统一小写。
+首次分配写入注册表，仓库改名或组件移动后保持目录不变，不根据新名字再次创建目录。
+`round` 使用北京时间日期与当日序号，如 `2026-10-19-03`；新轮次使用未占用目录，不能复用历史编号。
+观察 `run_id` 使用轮次与插件标识形成唯一 ID；历史内部 ID、提交 SHA 与精确 ISO 时间保留在字段中，不为改目录而改身份。
 
-原始文件不得含凭据。证据 `artifact` 使用工程根目录下的相对路径；可核查的外部来源另外保存 URL
-和版本。实际已执行的测试才生成执行证据，不以示例日志或作者提供的日志冒充本地执行。
-研究输入示例位于 `.agents/skills/dsh-plugin-init/assets/research-input.json`，仅说明输入格式，不计入真实目录及统计。
+来源采集、执行记录均须保留实际版本、环境与结果边界，不保存凭据，不把作者日志写成本地执行。
+完整源码文本与抽读范围分别标识；输入示例在 init 的 assets 内，不导入真实档案。
+历史原稿及旧生成视图按轮次保留，当前 README 只链接稳定插件入口；历史链接指向固定轮次，不随新发布改变。
+
+.gitignore 仅排除临时目录、缓存、只读检出、锁／临时文件和系统杂项；不得排除正式档案、观察、会话、快照、原稿、生成入口、路径注册表或迁移原件。
 
 ## 研究清单与断点
 
@@ -93,7 +100,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 
 - **单插件详细分析：** 放在本次研究报告的独立小节，提供稳定锚点；覆盖场景与原有办法、
   依赖、使用及失败恢复流程、成本与效果、采用点评、证据和验证边界。规模扩大确需拆分时，
-  使用 `data/reports/<run_id>-<component_id>.md`，由本次报告链接，不复制两份当前分析。
+  使用 `data/runs/<round>/insights/<plugin-slug>.md`，由本次报告链接，不复制两份当前分析。
 - **分类列表：** 以业务场景为主分类，技术类别作为辅助信息。每个插件使用下述四标签短评，
   标题链接到对应详细分析；标明范围、截止时间和研究深度，未深评条目明确哪些内容仍未知。
 - **推荐页：** 最后从已完成详情中筛选，链接对应分析。说明推荐给谁、为什么、思考、
@@ -207,7 +214,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 交付前必须执行档案、观察批次、会话检查点和生成一致性校验：
 
 ```sh
-node .agents/skills/_shared/scripts/plugin-data.mjs validate --observations data/observations/<run_id>.json
+node .agents/skills/_shared/scripts/plugin-data.mjs validate --observations data/runs/<round>/observations/<plugin-slug>.json
 npm run check
 ```
 
@@ -231,7 +238,7 @@ npm run check
 下方按业务分类展示插件名、META、用途／亮点／思考／建议，插件标题作为详情入口，不单列“详细分析”行，不单独展示“研究深度：源码级”。
 证据与运行边界仍由详情和推荐说明，不能因隐藏标签而升级结论。
 
-GitHub META 使用 `npm run capture:meta -- OWNER/REPO --out data/snapshots/<run_id>/<plugin>-meta.json` 采集，
+GitHub META 使用 `npm run capture:meta -- OWNER/REPO --out data/runs/<round>/snapshots/<plugin-slug>/META.json` 采集，
 通过发布输入 metadata 映射稳定插件 ID 到快照。README和分类条目只展示 Star、npm下载量、最后更新及更新标记。未关闭／已关闭 Issue 累计量、近30天新建／关闭／更新量放到详细分析展示页。
 Issue 搜索强制排除 PR；近期关闭指当前已关闭且 closed_at 落在窗口内的 Issue 数，不能等同于解决数或完整关闭事件数。
 累计量是查询当下状态；近期更新包含创建、关闭及其他更新，几个数字不可相加当独立问题数。
@@ -245,18 +252,18 @@ Issue 搜索强制排除 PR；近期关闭指当前已关闭且 closed_at 落在
 ## 单插件工程画像
 
 详细分析增加代码规模、能力清单、代码评价及可借鉴处。使用研究规范的统计口径，不在分类短评中堆砌明细。
-统计结果保存 `data/snapshots/<run_id>/<component>-inventory.json`，源码证据可通过现有 artifact 字段引用，不改 catalog 字段。
+统计结果保存 `data/runs/<round>/snapshots/<plugin-slug>/INVENTORY.json`，源码证据可通过现有 artifact 字段引用，不改 catalog 字段。
 
 固定提交的完整组件统计：
 
 ```sh
-npm run inventory:plugin -- --root /path/to/readonly-checkout --ref <commit> --component <component-path> --out data/snapshots/<run_id>/<component>-inventory.json
+npm run inventory:plugin -- --root /path/to/readonly-checkout --ref <commit> --component <component-path> --out data/runs/<round>/snapshots/<plugin-slug>/INVENTORY.json
 ```
 
 仅有已采集的源码快照时：
 
 ```sh
-npm run inventory:plugin -- --snapshot data/snapshots/<run_id>/<component>-source.json --component <component-path> --out data/snapshots/<run_id>/<component>-inventory.json
+npm run inventory:plugin -- --snapshot data/runs/<round>/snapshots/<plugin-slug>/SOURCE.json --component <component-path> --out data/runs/<round>/snapshots/<plugin-slug>/INVENTORY.json
 ```
 
 后者必须注明抽读子集，不能当作完整组件统计。根组件省略 component；必要共享目录单独统计，不重复相加。
@@ -284,7 +291,7 @@ GitHub 与 npm 的独立时间保留在数据中，README与分类页顶部显�
 ## 每日 META 刷新
 
 `npm run refresh:meta` 读取发布输入指向的会话所选列表，逐个按仓库地址采集 GitHub META；未选候选不触发采集，
-只使用前轮已确认的 npm 包名更新下载量，保存新快照并重生成 README／分类页及相对时间。
+只使用前轮已确认的 npm 包名更新下载量，在当前轮次 snapshots/meta-refresh/<时间>/<plugin-slug>/ 保存新快照，更新稳定 META 副本并重生成 README／分类页及相对时间。
 没有已确认包名时跳过 npm，不能猜测；自动任务不做列表发现、单插件研究或目标代码执行。
 
 对比清单固定研究提交与仓库默认分支当前提交，在组件范围检查 JS／TS 脚本变更（含删除和移出路径）；
@@ -307,9 +314,9 @@ GitHub Actions 每天北京时间08:30及手动触发，复用未合并的 META 
 
 ## 详细分析展示层
 
-生成器以检查点绑定的研究原稿为输入，使用 DETAIL／ISSUES 模板生成 `data/reports/<session_id>-<repository_id>-<component_id>-detail.md`，
+生成器以检查点绑定的研究原稿为输入，使用 DETAIL／ISSUES 模板生成 `data/plugins/<plugin-slug>/INSIGHT.md`，
 追加最新 Issue 活跃度。README和分类页链接此展示页；原稿不改写，不改变证据、结论或检查点摘要。
-当前源稿与展示页位于同一目录，保留原稿相对链接语义；展示页不是第二份人工研究真相源。
+原稿位于轮次 insights，展示页位于稳定插件目录；生成器重新计算相对链接，保留原稿与检查点。展示页不是第二份人工研究真相源。
 展示页与README一起生成并通过 --check 校验，META刷新也更新展示页。Issue数据注明日期，失败显示暂未获取。
 
 项目头图使用严肃、偏技术的 PNG，位于 `assets/dsh-plugin-insight-banner.png`，标题统一为 DSH Plugin Insight。

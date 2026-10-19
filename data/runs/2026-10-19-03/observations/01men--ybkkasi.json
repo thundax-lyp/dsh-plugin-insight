@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "run_id": "20261019T091725Z-init10-1416699252",
+  "checked_at": "2026-10-19T09:30:10.728Z",
+  "plugins": [
+    {
+      "id": "github:1416699252:root",
+      "repository_id": 1416699252,
+      "component_id": "root",
+      "repository": "01men/ybkkasi",
+      "path": "",
+      "aliases": [],
+      "name": "元冰可 ybkkasi",
+      "entry_type": "infrastructure",
+      "technical_category": "security-governance",
+      "business_category": "infrastructure",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "48a9e250413f391d537beacaed07eee5108bf312e10d40e23a108cecd65a0757",
+        "code": "0bd81d64edb177f3f87c592ce3645bf8950bc78c",
+        "release": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "maintenance": "cd93a4b98150583e0c1374f5f8adf47fed8f9e2b62010b34ca0faac8a0e1b239",
+        "compatibility": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+      },
+      "sources": [
+        {
+          "id": "github:1416699252:root:20261019T091725Z-init10-1416699252:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:10.728Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1416699252:root:20261019T091725Z-init10-1416699252:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/01men/ybkkasi/blob/03f74c847c8af9189ce37a73321a730ceb353f2a/src/main.ts",
+          "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+          "captured_at": "2026-10-19T09:30:10.728Z",
+          "summary": "cordis.patch.yml 顺序装配 platform-core、身份、资源、计量、业务域和桥；plugin-workforce/src/index.ts 串联 permit、调用与交付服务，经 workforcePolicy 窄端口注册。独立入口 node src/main.ts 与 DSH 工具桥共享业务代码。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/runs/2026-10-19-03/snapshots/01men--ybkkasi/SOURCE.json"
+        },
+        {
+          "id": "github:1416699252:root:20261019T091725Z-init10-1416699252:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/01men/ybkkasi/tree/03f74c847c8af9189ce37a73321a730ceb353f2a",
+          "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+          "captured_at": "2026-10-19T09:30:10.728Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/runs/2026-10-19-03/snapshots/01men--ybkkasi/INVENTORY.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "面向需要厘清谁能调用什么、费用归谁和出了问题如何追踪的企业平台团队。合格交付物是授权可撤销、调用可归属且账目可核对；基线是现有 IAM、API 网关、费用报表和审批台账，不能直接据作者新品类表述推导市场需求已验证。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "cordis.patch.yml 顺序装配 platform-core、身份、资源、计量、业务域和桥；plugin-workforce/src/index.ts 串联 permit、调用与交付服务，经 workforcePolicy 窄端口注册。独立入口 node src/main.ts 与 DSH 工具桥共享业务代码。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "它是平台型工程而非轻量增效插件；DSH 形态仍为 experimental，治理模型是否贴合现有业务比功能数量更重要。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "根包 private=true，未按同名 npm 包推断发布归属。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "首次成本集中在权限映射、资产录入、账号接入与运维；持续包括数据库与备份、审计留存、渠道费用及策略维护。迁移涉及多域数据和身份关系，远高于装一个 UI 插件。没有实测企业工作负载，不能用作者自测断言数推算可靠性。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "有多团队资产治理痛点时先评估独立测试实例与最小域，个人使用不建议为一个需求部署整个平台。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1416699252:root:20261019T091725Z-init10-1416699252:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "code",
+              "fingerprint": "0bd81d64edb177f3f87c592ce3645bf8950bc78c"
+            },
+            {
+              "plugin_id": "github:1416699252:root",
+              "area": "compatibility",
+              "fingerprint": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:10.728Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:10.728Z"
+    }
+  ],
+  "errors": []
+}

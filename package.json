@@ -11,11 +11,12 @@
     "validate:data": "node .agents/skills/dsh-plugin-init/scripts/validate-data.mjs && npm run render:research -- --check",
     "check": "npm run validate:data",
     "research": "node .agents/skills/dsh-plugin-init/scripts/research-session.mjs",
-    "render:research": "node .agents/skills/dsh-plugin-init/scripts/render-research.mjs --input data/publications/current.json",
+    "render:research": "node .agents/skills/dsh-plugin-init/scripts/render-research.mjs --input data/catalog/PUBLICATION.json",
     "capture:meta": "node .agents/skills/dsh-plugin-insight/scripts/capture-plugin-meta.mjs",
     "inventory:plugin": "node .agents/skills/dsh-plugin-insight/scripts/plugin-inventory.mjs",
     "loc": "sloc",
-    "refresh:meta": "node .agents/skills/dsh-plugin-init/scripts/refresh-meta.mjs"
+    "refresh:meta": "node .agents/skills/dsh-plugin-init/scripts/refresh-meta.mjs",
+    "migrate:data": "node .agents/skills/dsh-plugin-init/scripts/migrate-data.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",

@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "run_id": "20261019T091725Z-init10-1339803365",
+  "checked_at": "2026-10-19T09:30:12.372Z",
+  "plugins": [
+    {
+      "id": "github:1339803365:root",
+      "repository_id": 1339803365,
+      "component_id": "root",
+      "repository": "0imzero/dsh-workspace-menu",
+      "path": "",
+      "aliases": [],
+      "name": "dsh-workspace-menu",
+      "entry_type": "plugin",
+      "technical_category": "interface-input",
+      "business_category": "personal-productivity",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "272cf5e976b720c736a7471c0470d6e77f612da849d596b70e6155fd26050124",
+        "code": "71d2a60f8364a79cdbb2433318cf6c0438e81068",
+        "release": "59ad9ed9e49d3ce49234920984e1ff0ebabb421f424fcb65fcc4014ee97820ba",
+        "maintenance": "ab85ac1178518079ff6ec30099afb76fed1cc2ea38daa7fb9b12dab105927616",
+        "compatibility": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+      },
+      "sources": [
+        {
+          "id": "github:1339803365:root:20261019T091725Z-init10-1339803365:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:12.372Z",
+          "membership": "present"
+        },
+        {
+          "id": "github:1339803365:root:20261019T091725Z-init10-1339803365:directory-1",
+          "url": "https://github.com/0xsline/awesome-deepseek-harness",
+          "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+          "retrieved_at": "2026-10-19T09:30:12.372Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1339803365:root:20261019T091725Z-init10-1339803365:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/0imzero/dsh-workspace-menu/blob/afd55510f82821cde60a8364e42f752e244b5b31/src/index.ts",
+          "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+          "captured_at": "2026-10-19T09:30:12.372Z",
+          "summary": "src/client/index.ts 用DOM事件与React fiber恢复行对象，置顶和未读保存在localStorage；src/index.ts提供打开系统文件管理器和删除目录的两个POST接口。永久会话删除调用dsh-archive-manager，工作区目录由本插件rm递归删除。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/runs/2026-10-19-03/snapshots/0imzero--dsh-workspace-menu/SOURCE.json"
+        },
+        {
+          "id": "github:1339803365:root:20261019T091725Z-init10-1339803365:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/0imzero/dsh-workspace-menu/tree/afd55510f82821cde60a8364e42f752e244b5b31",
+          "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+          "captured_at": "2026-10-19T09:30:12.372Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/runs/2026-10-19-03/snapshots/0imzero--dsh-workspace-menu/INVENTORY.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "经常管理很多会话和项目的用户，希望减少定位和切页。合格交付物是动作作用于正确对象、可区分保留文件与永久删除；基线是宿主原生菜单和系统文件管理器。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "src/client/index.ts 用DOM事件与React fiber恢复行对象，置顶和未读保存在localStorage；src/index.ts提供打开系统文件管理器和删除目录的两个POST接口。永久会话删除调用dsh-archive-manager，工作区目录由本插件rm递归删除。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "React fiber识别依赖界面内部结构；二次确认在浏览器侧，不能证明删除端点被限制在当前工作区。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "根包 private=true，未按同名 npm 包推断发布归属。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "常用动作可能减少点击，但需要界面升级适配、localStorage跨浏览器不一致处理和依赖插件维护。删除误操作成本远高于省下点击；迁移需备份置顶／未读偏好和项目数据。无本轮耗时实测。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "先试非破坏菜单并保持删除关闭；需要删除时必须在临时目录验证路径授权、归档依赖和失败恢复。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1339803365:root:20261019T091725Z-init10-1339803365:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "code",
+              "fingerprint": "71d2a60f8364a79cdbb2433318cf6c0438e81068"
+            },
+            {
+              "plugin_id": "github:1339803365:root",
+              "area": "compatibility",
+              "fingerprint": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:12.372Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:12.372Z"
+    }
+  ],
+  "errors": []
+}

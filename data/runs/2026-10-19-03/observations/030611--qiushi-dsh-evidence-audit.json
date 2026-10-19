@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "run_id": "20261019T091725Z-init10-1333357514",
+  "checked_at": "2026-10-19T09:30:11.759Z",
+  "plugins": [
+    {
+      "id": "github:1333357514:root",
+      "repository_id": 1333357514,
+      "component_id": "root",
+      "repository": "030611/qiushi-dsh-evidence-audit",
+      "path": "",
+      "aliases": [],
+      "name": "Qiushi Evidence Audit",
+      "entry_type": "plugin",
+      "technical_category": "security-governance",
+      "business_category": "software-delivery",
+      "tags": [
+        "source-inspected",
+        "runtime-unverified"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "84bb7cccffe7399106973035fc2d8df8520b286cda630a6b7eeabfb68b9f9bb2",
+        "code": "f32ed3fd149404bf23a7ea9d5303008f3d076c36",
+        "release": "fcf1bb0b482a3442ae15cf7b702564e831e064822082cd654b616b2bc910d7b8",
+        "maintenance": "ac0d6abae7c2b6d63ea8a2d29822fad38e5eac13aa996da1f220a2a47c603c33",
+        "compatibility": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+      },
+      "sources": [
+        {
+          "id": "github:1333357514:root:20261019T091725Z-init10-1333357514:directory-0",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T09:30:11.759Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1333357514:root:20261019T091725Z-init10-1333357514:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/qiushi-dsh-evidence-audit/blob/94fae130b2845309e1dcabac14696fddb18f8f3a/src/index.ts",
+          "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+          "captured_at": "2026-10-19T09:30:11.759Z",
+          "summary": "src/index.ts 分别观察 session/event 和 tools/result，将标识／参数／结果转为哈希；receipt.ts 做规范化JSON、序号／前链hash和同步追加。启动先验证既有文件，运行追加失败隔离于主事件流程。",
+          "limitations": [
+            "静态源码和配置核查；未安装、未执行目标测试、未做真实宿主验收。"
+          ],
+          "artifact": "data/runs/2026-10-19-03/snapshots/030611--qiushi-dsh-evidence-audit/SOURCE.json"
+        },
+        {
+          "id": "github:1333357514:root:20261019T091725Z-init10-1333357514:inventory",
+          "kind": "source_inspection",
+          "url": "https://github.com/030611/qiushi-dsh-evidence-audit/tree/94fae130b2845309e1dcabac14696fddb18f8f3a",
+          "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+          "captured_at": "2026-10-19T09:30:11.759Z",
+          "summary": "锁定版本sloc与TypeScript AST统计；候选数不冒充运行确认。",
+          "limitations": [
+            "全仓统计，生成与源码可重复；不证明质量或独创性。"
+          ],
+          "artifact": "data/runs/2026-10-19-03/snapshots/030611--qiushi-dsh-evidence-audit/INVENTORY.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "text": "操作者需要核对一批已保存事件或工具结果是否与收据一致。合格结果是能发现未重算链的改动并解释检测不了的情形；基线是原始日志加独立签名／外部存证，而非靠本地哈希满足可信审计。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "text": "src/index.ts 分别观察 session/event 和 tools/result，将标识／参数／结果转为哈希；receipt.ts 做规范化JSON、序号／前链hash和同步追加。启动先验证既有文件，运行追加失败隔离于主事件流程。",
+          "basis": "supported",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "text": "没有外部锚点，完整重写重算、删整文件或完整尾段都可能逃过检测；不等于可信审计账本。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "text": "已读取 npm latest 0.1.0；源码 package.json 为 0.1.0。版本号一致仍不证明 tarball 内容一致。未安装、未比对发布包字节。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "text": "每次观察做规范化、SHA-256和同步I/O，启动校验随历史文件长度增长；需要日志轮转与外部锚点运维。无额外模型调用，但全量内容哈希仍有CPU和磁盘成本，未实测延迟。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "text": "适合单进程、私有目录内的取证流程试验；有合规或多进程诉求时先补外部锚定与写入协调。",
+          "basis": "interpretation",
+          "evidence_ids": [
+            "github:1333357514:root:20261019T091725Z-init10-1333357514:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "code",
+              "fingerprint": "f32ed3fd149404bf23a7ea9d5303008f3d076c36"
+            },
+            {
+              "plugin_id": "github:1333357514:root",
+              "area": "compatibility",
+              "fingerprint": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+            }
+          ],
+          "reviewed_at": "2026-10-19T09:30:11.759Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T09:30:11.759Z"
+    }
+  ],
+  "errors": []
+}

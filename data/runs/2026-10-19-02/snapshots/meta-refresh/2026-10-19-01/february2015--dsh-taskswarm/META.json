@@ -1,0 +1,33 @@
+{
+  "repository": "february2015/dsh-taskswarm",
+  "repository_id": 1333800488,
+  "captured_at": "2026-10-19T08:42:47.289Z",
+  "window_start": "2026-09-19T08:42:47.289Z",
+  "stars": 3,
+  "pushed_at": "2026-08-16T17:08:07Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-taskswarm",
+    "captured_at": "2026-10-19T08:42:47.289Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 0,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-taskswarm",
+    "error": null
+  },
+  "code_update": {
+    "checked_at": "2026-10-19T08:42:47.289Z",
+    "baseline_revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+    "current_revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

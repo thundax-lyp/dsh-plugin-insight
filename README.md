@@ -4,33 +4,33 @@
 
 ## 本周新增
 
-- [dsh-workspace-menu](data/reports/20261019T091725Z-init10-1339803365-root-detail.md)：为工作区和会话行补充置顶、重命名、归档、打开目录等菜单操作。
-- [dsh-ui-auth](data/reports/20261019T091725Z-init10-1343420855-root-detail.md)：为多人使用的 DSH Web 增加登录、用户隔离和按用户模型凭证管理。
-- [dsh-discord-richpresence](data/reports/20261019T091725Z-init10-1342915339-root-detail.md)：把 DSH 的粗粒度工作状态展示到本地 Discord 桌面客户端。
-- [Qiushi Evidence Audit](data/reports/20261019T091725Z-init10-1333357514-root-detail.md)：把会话事件与工具结果的哈希收据顺序写入本地链，辅助事后核对记录一致性。
-- [DSH Verification Receipt](data/reports/20261019T091725Z-init10-1333370288-root-detail.md)：为每轮已记录工具活动生成隐私最小化 JSONL 摘要，提示可能发生的验证动作。
-- [DSH Telemetry Redactor](data/reports/20261019T091725Z-init10-1333368566-root-detail.md)：在遥测副本送往已配置后端前遮盖支持的凭证模式，保留原始会话日志。
-- [api-balance](data/reports/20261019T091725Z-init10-1334899834-root-detail.md)：在 DSH Web 输入区显示 DeepSeek API 账户余额与可用状态。
-- [元冰可 ybkkasi](data/reports/20261019T091725Z-init10-1416699252-root-detail.md)：统一管理企业的 MCP、Skill、Agent、应用、权限、用量与审计资产。
-- [dsh-status-rotator](data/reports/20261019T091725Z-init10-1333328839-root-detail.md)：替换 DSH Web 状态文案，提供阶段感知词库、主题、打字机和弹幕效果。
-- [dsh-project-memory](data/reports/20261019T091725Z-init10-1339316901-root-detail.md)：在同一开发项目跨会话恢复任务、文件线索和经验，减少重复梳理。
+- [dsh-workspace-menu](data/plugins/0imzero--dsh-workspace-menu/INSIGHT.md)：为工作区和会话行补充置顶、重命名、归档、打开目录等菜单操作。
+- [dsh-ui-auth](data/plugins/0qwq0--dsh-ui-auth/INSIGHT.md)：为多人使用的 DSH Web 增加登录、用户隔离和按用户模型凭证管理。
+- [dsh-discord-richpresence](data/plugins/0qwq0--dsh-discord-richpresence/INSIGHT.md)：把 DSH 的粗粒度工作状态展示到本地 Discord 桌面客户端。
+- [Qiushi Evidence Audit](data/plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md)：把会话事件与工具结果的哈希收据顺序写入本地链，辅助事后核对记录一致性。
+- [DSH Verification Receipt](data/plugins/030611--dsh-verification-receipt/INSIGHT.md)：为每轮已记录工具活动生成隐私最小化 JSONL 摘要，提示可能发生的验证动作。
+- [DSH Telemetry Redactor](data/plugins/030611--dsh-telemetry-redactor/INSIGHT.md)：在遥测副本送往已配置后端前遮盖支持的凭证模式，保留原始会话日志。
+- [api-balance](data/plugins/02muller25--dsh-api-balance/INSIGHT.md)：在 DSH Web 输入区显示 DeepSeek API 账户余额与可用状态。
+- [元冰可 ybkkasi](data/plugins/01men--ybkkasi/INSIGHT.md)：统一管理企业的 MCP、Skill、Agent、应用、权限、用量与审计资产。
+- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)：替换 DSH Web 状态文案，提供阶段感知词库、主题、打字机和弹幕效果。
+- [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md)：在同一开发项目跨会话恢复任务、文件线索和经验，减少重复梳理。
 
 ## 最新
 
-- [dsh-status-rotator](data/reports/20261019T091725Z-init10-1333328839-root-detail.md) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
-- [元冰可 ybkkasi](data/reports/20261019T091725Z-init10-1416699252-root-detail.md) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01men/ybkkasi/commits)
-- [dsh-project-memory](data/reports/20261019T091725Z-init10-1339316901-root-detail.md) · [![最后更新 前天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E5%89%8D%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/commits)
+- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
+- [元冰可 ybkkasi](data/plugins/01men--ybkkasi/INSIGHT.md) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01men/ybkkasi/commits)
+- [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md) · [![最后更新 前天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E5%89%8D%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/commits)
 
 ## 最热
 
-- [dsh-status-rotator](data/reports/20261019T091725Z-init10-1333328839-root-detail.md) · [![GitHub ★ 162](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=162&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
-- [dsh-project-memory](data/reports/20261019T091725Z-init10-1339316901-root-detail.md) · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory)
-- [api-balance](data/reports/20261019T091725Z-init10-1334899834-root-detail.md) · [![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance)
+- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · [![GitHub ★ 162](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=162&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
+- [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md) · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory)
+- [api-balance](data/plugins/02muller25--dsh-api-balance/INSIGHT.md) · [![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance)
 
 ## 推荐
 
-- **[DSH Telemetry Redactor](data/reports/20261019T091725Z-init10-1333368566-root-detail.md) · 条件试用**：已有遥测出口时，用合成凭证先验证副本脱敏；未知格式与监听链仍是关键边界。
-- **[dsh-project-memory](data/reports/20261019T091725Z-init10-1339316901-root-detail.md) · 条件试用**：高频跨会话开发先试确定性索引与出处；与交接文档比较恢复质量和总负担。
+- **[DSH Telemetry Redactor](data/plugins/030611--dsh-telemetry-redactor/INSIGHT.md) · 条件试用**：已有遥测出口时，用合成凭证先验证副本脱敏；未知格式与监听链仍是关键边界。
+- **[dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md) · 条件试用**：高频跨会话开发先试确定性索引与出处；与交接文档比较恢复质量和总负担。
 
 ## 分类导航
 
@@ -44,7 +44,7 @@
 
 <a id="plugin-1339316901-root"></a>
 
-#### [dsh-project-memory](data/reports/20261019T091725Z-init10-1339316901-root-detail.md)
+#### [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md)
 
 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4537](https://img.shields.io/static/v1?label=npm+30d&message=4%2C537&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) · [![最后更新 前天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E5%89%8D%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/commits)
 
@@ -55,7 +55,7 @@
 
 <a id="plugin-1333370288-root"></a>
 
-#### [DSH Verification Receipt](data/reports/20261019T091725Z-init10-1333370288-root-detail.md)
+#### [DSH Verification Receipt](data/plugins/030611--dsh-verification-receipt/INSIGHT.md)
 
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt) · [![npm 30d 873](https://img.shields.io/static/v1?label=npm+30d&message=873&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/commits)
 
@@ -66,7 +66,7 @@
 
 <a id="plugin-1333357514-root"></a>
 
-#### [Qiushi Evidence Audit](data/reports/20261019T091725Z-init10-1333357514-root-detail.md)
+#### [Qiushi Evidence Audit](data/plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md)
 
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/030611/qiushi-dsh-evidence-audit) · [![npm 30d 1190](https://img.shields.io/static/v1?label=npm+30d&message=1%2C190&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/qiushi-dsh-evidence-audit) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/030611/qiushi-dsh-evidence-audit/commits)
 
@@ -75,7 +75,7 @@
 - **思考**：没有外部锚点，完整重写重算、删整文件或完整尾段都可能逃过检测；不等于可信审计账本。
 - **建议**：适合单进程、私有目录内的取证流程试验；有合规或多进程诉求时先补外部锚定与写入协调。
 
-[更多 软件交付 →](data/reports/20261019T091725Z-init10-category-software-delivery.md)
+[更多 软件交付 →](data/views/categories/SOFTWARE-DELIVERY.md)
 
 <a id="category-personal-productivity"></a>
 
@@ -83,7 +83,7 @@
 
 <a id="plugin-1333328839-root"></a>
 
-#### [dsh-status-rotator](data/reports/20261019T091725Z-init10-1333328839-root-detail.md)
+#### [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)
 
 [![GitHub ★ 162](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=162&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11532](https://img.shields.io/static/v1?label=npm+30d&message=11%2C532&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
 
@@ -94,7 +94,7 @@
 
 <a id="plugin-1334899834-root"></a>
 
-#### [api-balance](data/reports/20261019T091725Z-init10-1334899834-root-detail.md)
+#### [api-balance](data/plugins/02muller25--dsh-api-balance/INSIGHT.md)
 
 [![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance/commits)
 
@@ -105,7 +105,7 @@
 
 <a id="plugin-1339803365-root"></a>
 
-#### [dsh-workspace-menu](data/reports/20261019T091725Z-init10-1339803365-root-detail.md)
+#### [dsh-workspace-menu](data/plugins/0imzero--dsh-workspace-menu/INSIGHT.md)
 
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/0imzero/dsh-workspace-menu) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0imzero/dsh-workspace-menu/commits)
 
@@ -116,7 +116,7 @@
 
 <a id="plugin-1342915339-root"></a>
 
-#### [dsh-discord-richpresence](data/reports/20261019T091725Z-init10-1342915339-root-detail.md)
+#### [dsh-discord-richpresence](data/plugins/0qwq0--dsh-discord-richpresence/INSIGHT.md)
 
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence/commits)
 
@@ -125,7 +125,7 @@
 - **思考**：社交可见性不是任务完成提醒或效率证明；丰富模式和自定义文案仍可能暴露工作节奏或标量使用信息。
 - **建议**：仅推荐给明确想展示状态的个人用户试用；默认保持模糊模式，先核查实际外发字段。
 
-[更多 个人效率 →](data/reports/20261019T091725Z-init10-category-personal-productivity.md)
+[更多 个人效率 →](data/views/categories/PERSONAL-PRODUCTIVITY.md)
 
 <a id="category-infrastructure"></a>
 
@@ -133,7 +133,7 @@
 
 <a id="plugin-1343420855-root"></a>
 
-#### [dsh-ui-auth](data/reports/20261019T091725Z-init10-1343420855-root-detail.md)
+#### [dsh-ui-auth](data/plugins/0qwq0--dsh-ui-auth/INSIGHT.md)
 
 [![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth) · [![npm 30d 1551](https://img.shields.io/static/v1?label=npm+30d&message=1%2C551&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ui-auth) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth/commits)
 
@@ -144,7 +144,7 @@
 
 <a id="plugin-1333368566-root"></a>
 
-#### [DSH Telemetry Redactor](data/reports/20261019T091725Z-init10-1333368566-root-detail.md)
+#### [DSH Telemetry Redactor](data/plugins/030611--dsh-telemetry-redactor/INSIGHT.md)
 
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-telemetry-redactor) · [![npm 30d 1203](https://img.shields.io/static/v1?label=npm+30d&message=1%2C203&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-telemetry-redactor) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/030611/dsh-telemetry-redactor/commits)
 
@@ -155,7 +155,7 @@
 
 <a id="plugin-1416699252-root"></a>
 
-#### [元冰可 ybkkasi](data/reports/20261019T091725Z-init10-1416699252-root-detail.md)
+#### [元冰可 ybkkasi](data/plugins/01men--ybkkasi/INSIGHT.md)
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/01men/ybkkasi) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01men/ybkkasi/commits)
 
@@ -164,7 +164,7 @@
 - **思考**：它是平台型工程而非轻量增效插件；DSH 形态仍为 experimental，治理模型是否贴合现有业务比功能数量更重要。
 - **建议**：有多团队资产治理痛点时先评估独立测试实例与最小域，个人使用不建议为一个需求部署整个平台。
 
-[更多 基础设施 →](data/reports/20261019T091725Z-init10-category-infrastructure.md)
+[更多 基础设施 →](data/views/categories/INFRASTRUCTURE.md)
 
 ## 研究出处
 

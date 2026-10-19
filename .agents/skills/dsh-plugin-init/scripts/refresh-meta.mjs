@@ -2,6 +2,7 @@
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parseArgs} from 'node:util';
+import {PUBLICATION,pluginDirectory} from '../../_shared/scripts/data-paths.mjs';
 import {ROOT,read,atomicWrite} from '../../_shared/scripts/plugin-data.mjs';
 import {api} from '../../_shared/scripts/capture-github.mjs';
 import {captureMetadata,captureNpmDownloads,validateMetadata} from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
@@ -36,14 +37,17 @@ export async function refresh(inputPath,{request=api,downloads=captureNpmDownloa
   // Only use previously confirmed npm identity. Never derive it from repository name.
   if(previous?.npm)metadata.npm=await downloads(previous.npm.package_name,undefined,at);
   metadata.code_update=inspectUpdate(item,request,at);validateMetadata(metadata);
-  const path=`data/snapshots/${stamp}-daily-meta/${item.id.replaceAll(':','-')}.json`;
-  atomicWrite(resolve(root,path),metadata);mapping[item.id]=path;
+  const plugin={...item,component_id:item.id.split(':')[2]};
+  const directory=pluginDirectory(plugin,root);
+  const path=`${publication.session.slice(0,publication.session.lastIndexOf('/'))}/snapshots/meta-refresh/${stamp}/${directory.split('/').at(-1)}/META.json`;
+  atomicWrite(resolve(root,path),metadata);
+  const current=directory+'/META.json';atomicWrite(resolve(root,current),metadata);mapping[item.id]=current;
   result.push({id:item.id,script_changed:metadata.code_update.script_changed,errors:[...metadata.errors.map(e=>e.message),...(metadata.npm?.error?[metadata.npm.error]:[]),...(metadata.code_update.error?[metadata.code_update.error]:[])]});
  }
  publication.metadata=mapping;atomicWrite(resolve(root,inputPath),publication);
  return result;
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- try{const {values:v}=parseArgs({options:{input:{type:'string',default:'data/publications/current.json'}}});const result=await refresh(v.input);render(['--input',v.input]);console.log(JSON.stringify(result));}
+ try{const {values:v}=parseArgs({options:{input:{type:'string',default:PUBLICATION}}});const result=await refresh(v.input);render(['--input',v.input]);console.log(JSON.stringify(result));}
  catch(e){console.error(e.message);process.exitCode=1;}
 }

@@ -56,7 +56,7 @@ jobs:
           git diff --check
       - name: Commit and open or update PR
         run: |
-          git add data/snapshots data/publications/current.json data/reports README.md
+          git add data/runs data/catalog data/plugins data/views README.md
           if git diff --cached --quiet; then
             exit 0
           fi
