@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "session": "data/sessions/20261019T074011Z-smoke.json",
+  "scope": "仅三个 DSH 插件的定向源码研究；本次验证 README 生成链路，未新增实时研究或运行测评。",
+  "report": "data/reports/20261019-readme-smoke.md",
+  "recommendation_page": "data/reports/20261019T074011Z-smoke-recommendations.md",
+  "catalog_page": "data/reports/20261019-readme-smoke-catalog.md",
+  "recommendations": [
+    {
+      "plugin_id": "github:1339316901:root",
+      "kind": "trial",
+      "summary": "频繁换会话的项目可优先小范围试；关键是恢复是否更快、更准确，记忆维护与提示占用仍有成本。"
+    },
+    {
+      "plugin_id": "github:1170373459:dsh-invoice-downloader",
+      "kind": "trial",
+      "summary": "高频批量收票者条件试用；先确认配置、纠错与人工核验能否被任务量摊薄。"
+    },
+    {
+      "plugin_id": "github:1333800488:root",
+      "kind": "observe",
+      "summary": "并行潜力须扣除评审和集成负担；当前 npm 入口不可用，宿主与恢复条件待验。"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-19",
+      "scope": "三插件源码级研究",
+      "changes": "新增项目记忆研究，前两项重新分析，完成3/3；未安装目标插件。",
+      "report": "data/reports/20261019T074011Z-smoke.md"
+    },
+    {
+      "date": "2026-10-19",
+      "scope": "首次两插件样例",
+      "changes": "建立发票整理和并行开发基线。",
+      "report": "data/reports/20261019T065545Z-init.md"
+    }
+  ]
+}

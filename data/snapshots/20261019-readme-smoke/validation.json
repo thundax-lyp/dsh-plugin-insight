@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-19T08:00:20.388954+00:00",
+  "scope": "3个已完成插件的生成链路冒烟；非新一轮研究或目标插件运行",
+  "readme_drift": {
+    "exit_code": 1,
+    "stderr": "generated output differs: README.md\n"
+  },
+  "restored": {
+    "exit_code": 0,
+    "stdout": "Research navigation matches inputs\n"
+  },
+  "plugins": [
+    "InvoiceFlowAI",
+    "TaskSwarm",
+    "dsh-project-memory"
+  ]
+}
