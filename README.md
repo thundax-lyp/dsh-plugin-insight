@@ -65,3 +65,7 @@ node scripts/plugin-data.mjs validate
 
 CI 的必需检查 `Repository checks` 同时运行工作流语法、数据校验、合成示例检查、脚本行为测试
 及变更空白检查。Schema 校验保证结构与引用一致性，不证明研究结论真实，也不等于真实 DSH 验收。
+
+## 许可证
+
+本项目采用 [CC0-1.0](LICENSE)。
