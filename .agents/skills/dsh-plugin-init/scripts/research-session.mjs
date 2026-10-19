@@ -182,7 +182,10 @@ export function createManifest(session, sessionPath, root = ROOT) {
         '.agents/skills/_shared/schemas/research-session.schema.json',
         '.agents/skills/_shared/schemas/run-manifest.schema.json',
         '.agents/skills/_shared/scripts/capture-github.mjs',
+        '.agents/skills/_shared/scripts/github-batch.mjs',
         '.agents/skills/_shared/scripts/plugin-data.mjs',
+        '.agents/skills/dsh-plugin-init/scripts/build-research-input.mjs',
+        '.agents/skills/dsh-plugin-init/scripts/publication-data.mjs',
         '.agents/skills/dsh-plugin-init/scripts/research-session.mjs',
         '.agents/skills/dsh-plugin-init/scripts/render-research.mjs',
         '.agents/skills/dsh-plugin-init/SKILL.md',
@@ -190,6 +193,7 @@ export function createManifest(session, sessionPath, root = ROOT) {
         '.agents/skills/dsh-plugin-insight/SKILL.md',
         '.agents/skills/dsh-plugin-insight/references/RESEARCH-STANDARD.md',
         '.agents/skills/dsh-plugin-insight/scripts/capture-plugin-meta.mjs',
+        '.agents/skills/dsh-plugin-insight/scripts/prepare-plugin-materials.mjs',
         '.agents/skills/dsh-plugin-insight/scripts/plugin-inventory.mjs',
         '.agents/skills/_shared/references/DATA-CONTRACT.md'
     ];
@@ -244,12 +248,16 @@ export function createManifest(session, sessionPath, root = ROOT) {
         },
         commands: [
             'npm ci --ignore-scripts',
+            'npm run research:input -- --source-awesome <checkout> --source-harness <checkout> --id <session-id> --checked-at <iso-time> --out data/runs/<round>/INPUT.json --problems data/runs/<round>/INPUT-PROBLEMS.json',
             'npm run research -- start --input <local-input.json> [--previous <local-previous-session>] [--limit N] --out data/runs/<round>/SESSION.json',
+            'npm run prepare:plugin -- --session data/runs/<round>/SESSION.json --plugin <plugin-id> --checkout <readonly-checkout> --inventory <local-inventory.json> --out data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json',
             'node .agents/skills/_shared/scripts/plugin-data.mjs plan --mode <init-or-update> --observations <local-observations.json> --out <local-plan.json>',
             'node .agents/skills/_shared/scripts/plugin-data.mjs apply --plan <local-plan.json>',
             'npm run research -- checkpoint --session data/runs/<round>/SESSION.json --plugin <plugin-id> --observations <local-observations.json> --report <local-report.md>',
             'npm run research -- publish --session data/runs/<round>/SESSION.json --plugin <plugin-id> --out data/plugins/<plugin-slug>/INSIGHT.md',
-            'npm run research -- manifest --session data/runs/<round>/SESSION.json --out data/manifests/<round>.json'
+            'npm run research -- manifest --session data/runs/<round>/SESSION.json --out data/manifests/<round>.json',
+            'npm run publication -- plan --manifest data/manifests/<round>.json --input data/runs/<round>/PUBLICATION-INPUT.json --out <local-plan.json>',
+            'npm run publication -- apply --plan <local-plan.json>'
         ],
         local_artifacts: { root: `data/runs/${match[1]}`, session_sha256: digest(session) }
     });

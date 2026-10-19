@@ -12,7 +12,10 @@
         "validate": "node .agents/skills/_shared/scripts/plugin-data.mjs validate",
         "validate:data": "node .agents/skills/dsh-plugin-init/scripts/validate-data.mjs && npm run render:research -- --check",
         "check": "npm run format:check && npm run validate:data",
+        "research:input": "node .agents/skills/dsh-plugin-init/scripts/build-research-input.mjs",
         "research": "node .agents/skills/dsh-plugin-init/scripts/research-session.mjs",
+        "prepare:plugin": "node .agents/skills/dsh-plugin-insight/scripts/prepare-plugin-materials.mjs",
+        "publication": "node .agents/skills/dsh-plugin-init/scripts/publication-data.mjs",
         "render:research": "node .agents/skills/dsh-plugin-init/scripts/render-research.mjs --input data/catalog/PUBLICATION.json",
         "capture:meta": "node .agents/skills/dsh-plugin-insight/scripts/capture-plugin-meta.mjs",
         "inventory:plugin": "node .agents/skills/dsh-plugin-insight/scripts/plugin-inventory.mjs",
@@ -25,6 +28,7 @@
     "devDependencies": {
         "ajv": "8.20.0",
         "ajv-formats": "3.0.1",
+        "js-yaml": "5.3.0",
         "jsonc-parser": "3.3.1",
         "prettier": "3.9.10",
         "sloc": "0.3.2",

@@ -10,7 +10,7 @@ description: 显式调用时研究一个固定版本的 DSH 插件，分析场�
 及[输出标准](../dsh-plugin-init/references/OUTPUT-STANDARD.md)。依赖整个工程及当前可用的 GitHub Skill 或插件，不假设特定外部 Skill 名称。
 命令从工程根执行，Node 遵循 `.node-version`；Git 协作按根 AGENTS。
 
-专用工具为 [代码统计脚本](scripts/plugin-inventory.mjs)与 [META 采集脚本](scripts/capture-plugin-meta.mjs)，
+专用工具为 [代码统计脚本](scripts/plugin-inventory.mjs)、[材料准备脚本](scripts/prepare-plugin-materials.mjs)与 [META 采集脚本](scripts/capture-plugin-meta.mjs)，
 共同复用 [共享脚本和 Schema](../_shared)。从工程根用 package.json 中的命令运行。
 
 1. **确定输入边界。** 获取稳定组件 ID、注册表中的 plugin-slug、轮次目录、仓库／组件路径、固定版本、检查时间、目标研究深度、来源材料和输出位置。
@@ -23,12 +23,23 @@ description: 显式调用时研究一个固定版本的 DSH 插件，分析场�
    行数复用 Node CLI sloc，Markdown行／字与各 JS／TS 扩展名分开；检查生产／测试／示例及生成／第三方排除。
    核查 Skill入口、Agent/Preset、工具／命令、后台／UI候选及未解析点；补查配置、依赖、持久化与副作用。
    不把字面量候选、提示角色或运行实例当作已确认定义数量。详情补充有源码依据的代码评价与可借鉴处、成立条件和复用代价。
+   inventory 后可使用材料准备器固定身份、checkout、作者材料、目录条目、统计摘要和待人工核查的源码候选：
+   ```sh
+   npm run prepare:plugin -- \
+     --session data/runs/<round>/SESSION.json --plugin <plugin_id> \
+     --checkout <readonly-checkout> \
+     --inventory data/runs/<round>/snapshots/<plugin-slug>/INVENTORY.json \
+     --out data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json
+   ```
+   有本地目录条目原件时可重复传入 `--directory-entry <file>`。该脚本只生成机械材料索引，不创建 observation、finding、研究深度或报告；
+   checkout 必须位于固定提交且无改动，身份／版本／组件与 inventory 不一致时停止。
 3. **形成思考。** 核对收益归因、负担去向、承诺范围及复杂性必要性；给出反例、适用条件、决策影响和最小验证。
    对比历史时区分插件变化与判断变化，版本未变也重新分析；旧证据仅在版本、环境和适用范围匹配时复用。
 4. **保存单项交付。** 原始材料写入本地 `data/runs/<round>/snapshots/<plugin-slug>/`，完整洞察写入本地 `data/runs/<round>/insights/<plugin-slug>.md`，
    观察批次写入 `data/runs/<round>/observations/<plugin-slug>.json`，使用新批次 ID；批次只含本组件成功观察及其错误。
    详情须包含唯一一组“用途／亮点／思考／建议”四标签，展开场景、依赖、流程、成本和验证边界。
    显式提交本轮复核的 findings 与时间，不以空数组直接继承旧点评。可参考合成示例，但不能导入为真实数据。
+   不使用整轮生成器从静态候选或通用段落批量产生上述语义；若使用装配工具，输入必须是本项已完成且人工核对过的结构化分析，缺字段时失败而不是从旧结论猜测。
 5. **核对并返回。** 执行观察批次结构校验，人工检查证据引用、身份、版本、可比条件及语义。
    返回人工确认的正向能力清单（带固定版本，未发现／未确认项不填0），以及基于项目自身 README／包描述的功能摘要（最多80字符，含来源URL与版本，不掺评价），以及稳定 ID、版本、实际完成深度、证据／详情／观察批次路径、未验证项及错误；受阻时返回已保存材料和具体下一步。
    不自行 plan／apply、不改会话状态、不生成全轮分类或推荐页、不改 README；这些由列表编排负责。

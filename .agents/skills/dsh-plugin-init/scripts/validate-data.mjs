@@ -2,10 +2,11 @@
 import { existsSync, readdirSync } from 'node:fs';
 import { resolve, relative } from 'node:path';
 import { validateManifest, validateSession } from './research-session.mjs';
+import { validatePublication } from './publication-data.mjs';
 import { validateRunNames } from './maintain-runs.mjs';
 import { ROOT, read, validate, validateObservations } from '../../_shared/scripts/plugin-data.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
-import { CATALOG, REGISTRY, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
+import { CATALOG, PUBLICATION, REGISTRY, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 const walk = (path) =>
     existsSync(path)
         ? readdirSync(path, { withFileTypes: true }).flatMap((e) =>
@@ -37,6 +38,7 @@ try {
             )
                 throw Error(`missing evidence: ${evidence.artifact}`);
     }
+    validatePublication(read(resolve(ROOT, PUBLICATION)));
     const manifestsRoot = resolve(ROOT, 'data/manifests');
     for (const path of walk(manifestsRoot).filter((path) => path.endsWith('.json'))) {
         const manifest = validateManifest(read(path));
