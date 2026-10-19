@@ -6,7 +6,7 @@ import {dirname,resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 
-const DEFAULT_CODEX_LOGINS=['chatgpt-codex-connector[bot]','codex[bot]','codex'];
+const DEFAULT_CODEX_LOGINS=['chatgpt-codex-connector[bot]','chatgpt-codex-connector','codex[bot]','codex'];
 const DISPOSITION_RE=/<!--\s*codex-comment-fix review=(\d+) finding=(\d+) disposition=(fixed|rejected|deferred)\s*-->/g;
 const OPERATION_RE=key=>`<!-- codex-comment-fix operation=${key} -->`;
 const QUOTA_SENTENCE='You have reached your Codex usage limits for code reviews.';
