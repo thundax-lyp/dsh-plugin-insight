@@ -217,3 +217,31 @@ npm test
 面向用户的交付说明给出结果入口、关键变化、验证结果及未完成边界，不要求用户从过程消息中拼接结论。
 
 init 可带最大研究插件数；完整清单仍保留，报告分别注明清单总数、所选数、完成数、受阻数和未选数。达到上限仅表示所选范围完成，不代表完整清单全部研究完成；新增、更新、删除共用额度，具体选择与恢复语义见数据契约。
+
+## 单插件工程画像
+
+详细分析增加代码规模、能力清单、代码评价及可借鉴处。使用研究规范的统计口径，不在分类短评中堆砌明细。
+统计结果保存 `data/snapshots/<run_id>/<component>-inventory.json`，源码证据可通过现有 artifact 字段引用，不改 catalog 字段。
+
+固定提交的完整组件统计：
+
+```sh
+npm run inventory:plugin -- --root /path/to/readonly-checkout --ref <commit> --component <component-path> --out data/snapshots/<run_id>/<component>-inventory.json
+```
+
+仅有已采集的源码快照时：
+
+```sh
+npm run inventory:plugin -- --snapshot data/snapshots/<run_id>/<component>-source.json --component <component-path> --out data/snapshots/<run_id>/<component>-inventory.json
+```
+
+后者必须注明抽读子集，不能当作完整组件统计。根组件省略 component；必要共享目录单独统计，不重复相加。
+底层 CLI 可用 `npm run loc -- --format json --details <path>`，正式交付优先用封装以固定范围和排除口径。
+
+详情分别呈现 Markdown 行数／字数，各 JS／TS 扩展名行数，以及生产／测试／示例范围、统计版本、工具版本和排除项。
+列正式 Skill 与 Agent／Preset 定义的人工确认结果及用途；保留脚本静态候选和未解析点，未知不填0。
+工具、命令、后台／UI、依赖和数据副作用同样区分静态声明与实际挂载；不得把角色数、实例数当Agent定义数。
+代码评价和可借鉴处引用具体源文件与证据，解释采用与复用的意义。现有历史详情不因增加格式要求而重写，后续新分析执行。
+
+CI 行为测试覆盖统计封装、文件筛选、能力候选与 Git 固定版本读取；不声称自动确认所有能力注册或代码质量。
+

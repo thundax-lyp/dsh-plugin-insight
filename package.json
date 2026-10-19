@@ -12,12 +12,16 @@
     "test": "node --test tests/*.test.mjs",
     "check": "npm run validate:data && npm test",
     "research": "node scripts/research-session.mjs",
-    "render:research": "node scripts/render-research.mjs --input data/publications/current.json"
+    "render:research": "node scripts/render-research.mjs --input data/publications/current.json",
+    "inventory:plugin": "node scripts/plugin-inventory.mjs",
+    "loc": "sloc"
   },
   "devDependencies": {
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
-    "jsonc-parser": "3.3.1"
+    "jsonc-parser": "3.3.1",
+    "sloc": "0.3.2",
+    "typescript": "5.9.3"
   },
   "license": "CC0-1.0"
 }
