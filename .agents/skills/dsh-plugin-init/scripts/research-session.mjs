@@ -305,6 +305,8 @@ export function completeItem(session, id, obsPath, reportPath, catalog, root = R
         Object.entries(plugin.fingerprints).some(([k, v]) => current.fingerprints[k] !== v)
     )
         throw new Error('catalog does not match observations');
+    if (digest(plugin.fingerprints) !== digest(item.fingerprints))
+        throw new Error('observations fingerprints differ from fixed session item');
     if (
         Date.parse(plugin.last_checked_at) < Date.parse(session.checked_at) ||
         !plugin.findings.length ||

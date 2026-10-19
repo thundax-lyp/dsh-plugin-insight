@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-import { closeSync, openSync, unlinkSync, writeFileSync } from 'node:fs';
+import { closeSync, openSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import { CATALOG, PUBLICATION } from '../../_shared/scripts/data-paths.mjs';
+import { CATALOG, PUBLICATION, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { ROOT, atomicWrite, digest, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
 import { validateManifest } from './research-session.mjs';
 
@@ -33,10 +33,18 @@ const exactCoverage = (label, value, expected) => {
         );
 };
 
-export function planPublication(current, manifest, input, catalog, manifestPath) {
+export function planPublication(current, manifest, input, catalog, manifestPath, root = ROOT) {
     validatePublication(current);
     validateManifest(manifest);
     validateCatalog(catalog);
+    if (manifestPath !== current.manifest) {
+        const currentManifest = validateManifest(read(resolve(root, current.manifest)));
+        if (
+            manifest.round <= currentManifest.round ||
+            Date.parse(manifest.checked_at) <= Date.parse(currentManifest.checked_at)
+        )
+            throw new Error('publication manifest must be newer than the current manifest');
+    }
     if (!input || typeof input !== 'object' || Array.isArray(input))
         throw new Error('publication input must be an object');
     const allowed = new Set(['recommendations', 'metadata', 'summaries', 'capabilities', 'advice']);
@@ -51,14 +59,28 @@ export function planPublication(current, manifest, input, catalog, manifestPath)
     exactCoverage('summaries', input.summaries, complete);
     exactCoverage('capabilities', input.capabilities, complete);
     exactCoverage('advice', input.advice, complete);
+    const catalogById = new Map(catalog.plugins.map((plugin) => [plugin.id, plugin]));
     for (const id of complete) {
-        const revision = byId.get(id).revision;
-        if (input.summaries[id]?.revision !== revision) throw new Error(`summary revision differs: ${id}`);
+        const item = byId.get(id);
+        const revision = item.revision;
+        const plugin = catalogById.get(id);
+        if (!plugin) throw new Error(`publication target missing from catalog: ${id}`);
+        const report = readFileSync(resolve(root, `${pluginDirectory(plugin, root)}/INSIGHT.md`), 'utf8');
+        const summary = input.summaries[id];
+        if (
+            summary?.revision !== revision ||
+            !summary.source_url.startsWith(`https://github.com/${item.repository}/blob/${revision}/`)
+        )
+            throw new Error(`summary revision or source differs: ${id}`);
+        if (!report.includes(`> ${summary.text}`)) throw new Error(`detail summary differs: ${id}`);
         if (input.advice[id]?.revision !== revision) throw new Error(`advice revision differs: ${id}`);
         if (input.capabilities[id] && input.capabilities[id].revision !== revision)
             throw new Error(`capability revision differs: ${id}`);
+        for (const [name, value] of Object.entries(input.capabilities[id].items))
+            if (!report.includes(`- **${name}**：${value}`))
+                throw new Error(`detail capability differs: ${id}/${name}`);
+        if (!report.includes(input.advice[id].text)) throw new Error(`detail advice differs: ${id}`);
     }
-    const catalogById = new Map(catalog.plugins.map((plugin) => [plugin.id, plugin]));
     const recommendationIds = new Set();
     for (const recommendation of input.recommendations) {
         if (!complete.has(recommendation.plugin_id))
