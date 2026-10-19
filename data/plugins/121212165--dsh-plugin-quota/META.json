@@ -1,0 +1,52 @@
+{
+  "repository": "121212165/dsh-plugin-quota",
+  "repository_id": 1400927706,
+  "captured_at": "2026-10-19T14:54:43.109Z",
+  "window_start": "2026-09-19T14:54:43.109Z",
+  "stars": 1,
+  "pushed_at": "2026-10-19T09:48:14Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3BBC:187CF6:229950:25272D:6AD62F34 and timestamp 2026-10-19 14:54:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3CF6:18CE04:23EE17:267DA2:6AD62F36 and timestamp 2026-10-19 14:54:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A43.109Z..2026-10-19T14%3A54%3A43.109Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3DE6:369322:22CD9D:255D65:6AD62F37 and timestamp 2026-10-19 14:54:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A43.109Z..2026-10-19T14%3A54%3A43.109Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3EE2:1F184:233570:25C22F:6AD62F38 and timestamp 2026-10-19 14:54:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A43.109Z..2026-10-19T14%3A54%3A43.109Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3FC8:366D8D:24BCB4:274AFD:6AD62F39 and timestamp 2026-10-19 14:54:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-plugin-quota",
+    "captured_at": "2026-10-19T14:54:49.559Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 147,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-plugin-quota",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-16T06:01:21.852Z",
+      "captured_at": "2026-10-19T14:54:49.559Z",
+      "source_url": "https://registry.npmjs.org/dsh-plugin-quota",
+      "error": null
+    }
+  }
+}

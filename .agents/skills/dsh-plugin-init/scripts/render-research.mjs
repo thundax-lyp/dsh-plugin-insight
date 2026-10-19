@@ -53,6 +53,13 @@ export function validateManifestPlugin(item, plugin) {
         throw Error(`manifest and catalog differ: ${item.id}`);
     return plugin;
 }
+export function renderDetailReport(report, item) {
+    const versionUrl = `https://github.com/${item.repository}/tree/${item.revision}${item.path ? `/${item.path}` : ''}`;
+    return report
+        .replace(/\n## 固定范围与依据\n[\s\S]*?(?=\n## )/, `\n## 版本\n\n固定提交 [${item.revision}](${versionUrl})\n`)
+        .replace(/\n## 代码评价\n\n([\s\S]*?)\n## 可借鉴处\n\n/, '\n## 工程亮点\n\n$1\n\n')
+        .replace(/\n## 验证与边界\n/, '\n## 核查说明\n');
+}
 export function renderPublication(input, root = ROOT) {
     if (!check(input)) throw Error(ajv.errorsText(check.errors));
     const text = (path) => readFileSync(local(root, path), 'utf8');
@@ -212,7 +219,10 @@ export function renderPublication(input, root = ROOT) {
                 meta = template('META', { stars: starsBadge, downloads, updated: pushedBadge, review: update });
             }
             const issueBlock = `## Issue 活跃度\n\n${issues}\n`;
-            const reportWithoutMeta = report.replace(/\n<!-- BEGIN META -->\n[\s\S]*?\n<!-- END META -->\n*/, '\n');
+            const reportWithoutMeta = renderDetailReport(report, i).replace(
+                /\n<!-- BEGIN META -->\n[\s\S]*?\n<!-- END META -->\n*/,
+                '\n'
+            );
             const detailMeta = template('DETAIL-META', { meta });
             const reportWithMeta = reportWithoutMeta.replace(/^(# [^\n]+\n\n> [^\n]+)\n+/, `$1\n\n${detailMeta}\n\n`);
             if (reportWithMeta === reportWithoutMeta) throw Error(`detail needs a title and summary: ${i.id}`);

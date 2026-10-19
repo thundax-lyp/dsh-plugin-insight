@@ -1,0 +1,52 @@
+{
+  "repository": "0xRabit/dsh-crypto-portfolio",
+  "repository_id": 1342742812,
+  "captured_at": "2026-10-19T14:54:27.998Z",
+  "window_start": "2026-09-19T14:54:27.998Z",
+  "stars": 2,
+  "pushed_at": "2026-10-06T06:22:35Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A0xRabit%2Fdsh-crypto-portfolio%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2D1E:D6064:25BA4B:284922:6AD62F25 and timestamp 2026-10-19 14:54:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A0xRabit%2Fdsh-crypto-portfolio%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2E24:1144EA:2160C0:23EE1B:6AD62F26 and timestamp 2026-10-19 14:54:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0xRabit%2Fdsh-crypto-portfolio%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A27.998Z..2026-10-19T14%3A54%3A27.998Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2F3C:13B59:210162:238DEE:6AD62F27 and timestamp 2026-10-19 14:54:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0xRabit%2Fdsh-crypto-portfolio%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A27.998Z..2026-10-19T14%3A54%3A27.998Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3020:280F5:216A3B:23F8CA:6AD62F28 and timestamp 2026-10-19 14:54:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0xRabit%2Fdsh-crypto-portfolio%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A27.998Z..2026-10-19T14%3A54%3A27.998Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 30EA:363B6F:2420AE:26B02E:6AD62F29 and timestamp 2026-10-19 14:54:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-crypto-portfolio",
+    "captured_at": "2026-10-19T14:54:34.393Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-crypto-portfolio",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-19T14:54:34.393Z",
+      "source_url": "https://registry.npmjs.org/dsh-crypto-portfolio",
+      "error": "HTTP 404"
+    }
+  }
+}

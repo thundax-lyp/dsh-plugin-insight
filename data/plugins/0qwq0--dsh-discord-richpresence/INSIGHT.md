@@ -3,76 +3,75 @@
 > 将 DSH 的粗粒度交互状态推送到本机 Discord Rich Presence，支持自定义文案与可选丰富状态。
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence/commits)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-discord-richpresence) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence/commits)
 <!-- END META -->
-
-- **用途**：把 DSH 的粗粒度工作状态展示到本地 Discord 桌面客户端。
-- **亮点**：默认模糊状态与可选丰富模式分开，支持推送节流、IPC重连与卸载清理。
-- **思考**：社交可见性不是任务完成提醒或效率证明；丰富模式和自定义文案仍可能暴露工作节奏或标量使用信息。
-- **建议**：仅推荐给明确想展示状态的个人用户试用；默认保持模糊模式，先核查实际外发字段。
 
 ## 版本
 
 固定提交 [bf8d34b4a4c52e9128a44ca7abf6a7de52880266](https://github.com/0QwQ0/dsh-discord-richpresence/tree/bf8d34b4a4c52e9128a44ca7abf6a7de52880266)
 
-## 场景、替代办法与合格交付
+## 采用点评
 
-个人用户希望在 Discord 显示正在与代理工作，合格结果是好友所见状态与当前粗粒度阶段一致、断开后能恢复。基线是手动状态；不是企业协作审批、任务结果通知或生产监控。
+- **用途**：个人用户希望在 Discord 显示正在与代理工作，合格结果是好友所见状态与当前粗粒度阶段一致、断开后能恢复。基线是手动状态；不是企业协作审批、任务结果通知或生产监控。
+- **亮点**：将 DSH 的粗粒度交互状态推送到本机 Discord Rich Presence，支持自定义文案与可选丰富状态。
+- **思考**：持续成本是socket／重连定时器及外部可见信息的管理，无额外模型调用。首次只需少量配置，迁移时保留文案和richMode；无证据支持其节省开发时间。 本轮未测合格任务成本、耗时或可靠性。 本轮未测合格任务成本、耗时或可靠性。
+- **建议**：仅推荐给明确想展示状态的个人用户试用；默认保持模糊模式，先核查实际外发字段。
 
-## 实现机制与依据
+## 场景、原有办法与合格交付
 
-lib/index.js 监听 inbox、agent、工具和session等信号，按配置映射状态；lib/discord-rpc.js 用本地IPC握手、SET_ACTIVITY和重连；client设置开关持久化 richMode，丰富模式跟踪最后真实用户输入对应会话。
+目标场景是：个人用户希望在 Discord 显示正在与代理工作，合格结果是好友所见状态与当前粗粒度阶段一致、断开后能恢复。基线是手动状态；不是企业协作审批、任务结果通知或生产监控。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
 
-本轮重点审读：[lib/index.js](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js)、[lib/discord-rpc.js](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/discord-rpc.js)、[lib/client.js](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/client.js)、[test/active-session.mjs](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/test/active-session.mjs)。固定文本材料已保存；完整文件统计不表示每行代码都经过人工审计。
+## 依赖与使用条件
 
-## 安装与效果依赖
+- 固定组件包：`dsh-discord-richpresence@0.3.1`。
+- 声明依赖：`@deepseek-ai/cordis`、`@deepseek-ai/dsh-settings`、`@deepseek-ai/schemastery`。
+- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
+- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
 
-必须有本机 Discord 桌面客户端及其 IPC，可用DSH事件和设置服务；作者声明兼容多个宿主版本，仍需在目标版本验收。标准模式无需模型或额外服务器，但展示数据最终进入 Discord 社交表面。
+## 使用流程、失败恢复与成本
 
-发布核查：npm latest 404；不能据此判定GitHub release包不可用。未安装发布产物。
+准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
 
-## 用户、后台与失败流程
+## 工程统计
 
-安装／重启／刷新 → 确认Discord在线 → 观察模糊状态 → 按需打开丰富模式 → 断开重连测试。升级需要重启宿主与刷新浏览器，卸载后 settings.yaml 段可能残留，清理前先备份。
+| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| source | .md | 4 | 518 | — | — | — | 4632 |
+| source | .js | 3 | 1305 | 940 | 270 | 99 | — |
+| test | .mjs | 7 | 762 | 608 | 81 | 77 | — |
 
-## 首次、持续与迁移成本
+统计覆盖：git tracked files at exact commit; component scope only。排除项：无自动排除项。解析错误：未记录。
 
-持续成本是socket／重连定时器及外部可见信息的管理，无额外模型调用。首次只需少量配置，迁移时保留文案和richMode；无证据支持其节省开发时间。
+## 能力清单
 
-## 工程规模与能力清单
+- **事件监听**：agent/inbox/inserted、agent/created、agent/status、agent/pre-step、tools/pre-execute、session/created、workflow/start
+- **界面**：settings.general.item
 
-| 扩展名 | 范围 | 文件数 | 总行数 | Markdown字数 | 代码行 |
-|---|---|---:|---:|---:|---:|
-| .md | source | 4 | 518 | 4632 | — |
-| .js | source | 3 | 1305 | — | 940 |
-| .mjs | test | 7 | 762 | — | 608 |
-
-- **事件监听**：DSH 活动事件
-- **界面**：1 个设置开关
-- **后台**：本地 Discord IPC
+- events：`agent/inbox/inserted`（[lib/index.js:479](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js#L479)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`agent/created`（[lib/index.js:496](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js#L496)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`agent/status`（[lib/index.js:502](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js#L502)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`agent/pre-step`（[lib/index.js:526](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js#L526)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`tools/pre-execute`（[lib/index.js:553](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js#L553)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`session/created`（[lib/index.js:566](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js#L566)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`workflow/start`（[lib/index.js:580](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js#L580)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- ui：`settings.general.item`（[lib/client.js:298](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/client.js#L298)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
 
 ## 工程亮点
 
-IPC实现与事件映射分层，兼容探测和cleanup较清楚；默认不发送正文的设计值得肯定，但具体配置字符串可以被用户填入敏感信息。隐私结论只覆盖审读的发送构造，不延伸到Discord侧数据保留。
+固定组件内共纳入 14 个 JS/TS/Markdown 文件。宿主或运行依赖共声明 3 项，升级时需要核对兼容范围。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[lib/client.js](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/client.js)。
 
-可借鉴粗粒度状态枚举、最小发送间隔和会话关联；复用到企业渠道时应改成明确opt-in字段与发送预览，不复制含糊的“绝不泄漏”承诺。
 
-上述工程判断依据：[lib/index.js](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js)、[lib/discord-rpc.js](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/discord-rpc.js)、[lib/client.js](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/client.js)、[test/active-session.mjs](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/test/active-session.mjs)。
-
-## 采用判断与最小验证
-
-用两会话、子任务、断线和重启检查状态归属与重连，抓取合成SET_ACTIVITY字段核对无标题／正文／路径；若不需要社交展示则直接不装，不为增加状态装饰付出常驻负担。
+lib/index.js 监听 inbox、agent、工具和session等信号，按配置映射状态；lib/discord-rpc.js 用本地IPC握手、SET_ACTIVITY和重连；client设置开关持久化 richMode，丰富模式跟踪最后真实用户输入对应会话。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
 
 ## 核查说明
 
-- 首次分析；不代表本周新发布。
-- 已阅读固定版本的源码、配置和测试文件。
-- 未实际运行或安装插件，也未在 DSH 中试用或比较模型任务效果。
-- 作者的自测和发布说明未经独立验证。
-- Issue 数量仅供参考，不代表使用人数或实际收益。
+- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
+- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
+- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
+- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
 
 ## Issue 活跃度
 
-Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
+Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 暂未获取／更新 暂未获取
 
 统计日期：2026-10-19。

@@ -1,29 +1,50 @@
 {
   "repository": "0QwQ0/dsh-ui-auth",
   "repository_id": 1343420855,
-  "captured_at": "2026-10-19T09:24:53.177Z",
-  "window_start": "2026-09-19T09:24:53.177Z",
+  "captured_at": "2026-10-19T14:54:19.841Z",
+  "window_start": "2026-09-19T14:54:19.841Z",
   "stars": 8,
   "pushed_at": "2026-10-16T15:32:26Z",
   "issues": {
-    "open": 0,
-    "closed": 3,
-    "created_30d": 3,
-    "closed_30d": 3,
-    "updated_30d": 3
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
   },
-  "errors": [],
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A0QwQ0%2Fdsh-ui-auth%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 25B0:23D21:2697F6:2925D7:6AD62F1D and timestamp 2026-10-19 14:54:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A0QwQ0%2Fdsh-ui-auth%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 269A:18863C:20E42C:2370E4:6AD62F1E and timestamp 2026-10-19 14:54:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0QwQ0%2Fdsh-ui-auth%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A19.841Z..2026-10-19T14%3A54%3A19.841Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2774:18B13F:239DE9:262799:6AD62F1F and timestamp 2026-10-19 14:54:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0QwQ0%2Fdsh-ui-auth%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A19.841Z..2026-10-19T14%3A54%3A19.841Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 288E:34C407:23901E:261D44:6AD62F20 and timestamp 2026-10-19 14:54:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0QwQ0%2Fdsh-ui-auth%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A19.841Z..2026-10-19T14%3A54%3A19.841Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 294A:2A276:214C63:23D8D1:6AD62F21 and timestamp 2026-10-19 14:54:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
   "npm": {
     "package_name": "dsh-ui-auth",
-    "captured_at": "2026-10-19T09:21:49.659Z",
+    "captured_at": "2026-10-19T14:54:25.909Z",
     "window_start": "2026-09-19",
     "window_end": "2026-10-18",
-    "downloads_30d": 1551,
+    "downloads_30d": 1635,
     "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-ui-auth",
     "error": null,
     "publication": {
       "first_published_at": "2026-09-07T14:16:36.163Z",
-      "captured_at": "2026-10-19T10:03:21.365Z",
+      "captured_at": "2026-10-19T14:54:25.909Z",
       "source_url": "https://registry.npmjs.org/dsh-ui-auth",
       "error": null
     }
