@@ -12,16 +12,17 @@ Convivium 的会议设计、运行时角色和专用工程门禁不构成本工�
 完整规则由对应文档维护，Skill 负责应用规则，不另建规则真相源。
 已有且未变化的文档可复用上下文，只加载当前任务涉及的规则和直接依赖。
 
-当前文档作为 Skill 的参考资料按职责维护：
+当前文档按约束对象和执行职责维护：
 
 | 目录 | 职责 |
 |---|---|
-| `.agents/skills/_shared/references/` | 文档、提交、PR 共同约定及共享数据契约 |
+| `docs/00-governance/` | 约束整个工程的文档、提交、PR 与协作规则 |
+| `.agents/skills/_shared/references/` | 两个 Skill 共用的数据契约 |
 | `.agents/skills/dsh-plugin-insight/references/` | 单插件研究方法、分类、证据边界与分析维度 |
 | `.agents/skills/dsh-plugin-init/references/` | 研究产物、README、汇总推荐及交付标准 |
 
-每份规则只在负责该职责的 references 维护，其他 Skill 按需引用，不复制。
-根目录不另建 docs 层；新增参考资料放入负责它的 Skill，两个 Skill 共同使用且没有单方职责归属的资料才放入 _shared。
+约束整个工程协作的规则归 docs；指导研究执行的参考资料归对应 Skill。
+每份文档只维护一个真相源，其他入口按需引用，不复制。两个 Skill 共用的数据契约放入 _shared。
 未确认材料须标记状态，确认后迁入对应真相源；不能从设计推断已经实现，
 也不能用单次命令成功证明业务就绪。
 
@@ -34,9 +35,9 @@ Convivium 的会议设计、运行时角色和专用工程门禁不构成本工�
 | 真相源 | 唯一维护的内容 |
 |---|---|
 | [DOCUMENT-RULES.md](DOCUMENT-RULES.md) | 文档职责、命名、读取、生命周期及同步规则 |
-| [DATA-CONTRACT.md](DATA-CONTRACT.md) | 研究身份、字段语义、版本证据、关联依赖及增量不变量 |
-| [RESEARCH-STANDARD.md](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md) | 分类含义、研究维度、证据边界及判断方法 |
-| [OUTPUT-STANDARD.md](../../dsh-plugin-init/references/OUTPUT-STANDARD.md) | 研究文件位置、命名、报告结构、统计及交付验收 |
+| [DATA-CONTRACT.md](../../.agents/skills/_shared/references/DATA-CONTRACT.md) | 研究身份、字段语义、版本证据、关联依赖及增量不变量 |
+| [RESEARCH-STANDARD.md](../../.agents/skills/dsh-plugin-insight/references/RESEARCH-STANDARD.md) | 分类含义、研究维度、证据边界及判断方法 |
+| [OUTPUT-STANDARD.md](../../.agents/skills/dsh-plugin-init/references/OUTPUT-STANDARD.md) | 研究文件位置、命名、报告结构、统计及交付验收 |
 | [COMMIT-RULES.md](COMMIT-RULES.md) | 提交授权、范围、消息格式、验证及历史安全 |
 | [PR-RULES.md](PR-RULES.md) | 分支、PR、评审、CI 与合并边界 |
 
@@ -47,7 +48,7 @@ Schema 统一放在 `.agents/skills/_shared/schemas/`，由设计文档与两个
 
 ## 工程文档与研究产物
 
-Skill 的 `references/` 保存规则、需求、设计及必要的验证与运行说明。
+`docs/00-governance/` 保存工程治理规则；Skill 的 `references/` 保存研究执行规范、数据契约与必要的操作说明。
 `data/` 保存作为工程交付内容的插件研究档案、观察批次、证据和运行报告。
 研究产物与工程治理、研究设计文档分别维护，不因其具有“调研”性质另行迁移，也不能自行改变规则。
 其文件位置与报告结构统一由 OUTPUT-STANDARD 定义；研究输入示例放在列表编排 Skill 的 `assets/`，不维护合成观察测试数据。
@@ -59,7 +60,7 @@ Skill 的 `references/` 保存规则、需求、设计及必要的验证与运�
 
 ## 命名与语言
 
-- `references/` 下文档使用大写英文单词及连字符，正文使用中文；类型、字段、协议、命令和工具名保留原文。
+- `docs/` 与 Skill 的 `references/` 下文档使用大写英文单词及连字符，正文使用中文；类型、字段、协议、命令和工具名保留原文。
 - 固定入口保留 `README.md`、`AGENTS.md`；Skill 入口保留 `SKILL.md`。
 - 新增专项需求、接口、实现设计可使用 `*-REQUIREMENTS.md`、`*-INTERFACE.md`、`*-DESIGN.md`；
   当前数据契约、研究规范与输出设计保留 `DATA-CONTRACT.md`、`RESEARCH-STANDARD.md`、`OUTPUT-STANDARD.md`，目录归属按职责判断。
@@ -114,4 +115,4 @@ Skill 保存触发条件、重复执行步骤及特有约束，共同规则通�
 两个 Skill 复用的脚本与 Schema 统一放在 `.agents/skills/_shared/`；该目录是共享资源，不注册第三个 Skill。
 工程根目录不保留 `scripts/`、`templates/`、`schemas/` 或 `examples/` 的重复入口。
 本项目不维护 testcase 或合成测试档案；CI 保留真实研究数据结构、检查点摘要与生成结果一致性校验。
-根 `package.json` 继续集中声明依赖与命令，根 `data/` 保存研究结果，Skill 的 `references/` 保存规则与设计。
+根 `package.json` 继续集中声明依赖与命令，根 `data/` 保存研究结果，`docs/` 保存工程治理规则，Skill 的 `references/` 保存研究执行依据。
