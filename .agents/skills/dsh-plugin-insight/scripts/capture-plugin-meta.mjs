@@ -4,10 +4,10 @@ import {fileURLToPath} from 'node:url';
 import {parseArgs} from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import {ROOT,read,atomicWrite} from './plugin-data.mjs';
-import {api} from './capture-github.mjs';
+import {ROOT,read,atomicWrite} from '../../_shared/scripts/plugin-data.mjs';
+import {api} from '../../_shared/scripts/capture-github.mjs';
 const ajv=new Ajv({strict:true,allErrors:true});addFormats(ajv);
-const check=ajv.compile(read(resolve(ROOT,'schemas/github-meta.schema.json')));
+const check=ajv.compile(read(resolve(ROOT,'.agents/skills/_shared/schemas/github-meta.schema.json')));
 export function validateMetadata(value){if(!check(value))throw Error(ajv.errorsText(check.errors));return value;}
 export function captureMetadata(repository,request=api,at=new Date().toISOString()){
  if(!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repository))throw Error('expected owner/repository');

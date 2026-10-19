@@ -12,17 +12,16 @@ Convivium 的会议设计、运行时角色和专用工程门禁不构成本工�
 完整规则由对应文档维护，Skill 负责应用规则，不另建规则真相源。
 已有且未变化的文档可复用上下文，只加载当前任务涉及的规则和直接依赖。
 
-当前工程文档按职责组织：
+当前文档作为 Skill 的参考资料按职责维护：
 
 | 目录 | 职责 |
 |---|---|
-| `docs/00-governance/` | 跨任务的工程治理规则：文档、提交、PR 与协作边界 |
-| `docs/01-design/` | 本项目具体设计：数据契约、研究方法、分类、输出结构及交付要求 |
+| `.agents/skills/_shared/references/` | 文档、提交、PR 共同约定及共享数据契约 |
+| `.agents/skills/dsh-plugin-insight/references/` | 单插件研究方法、分类、证据边界与分析维度 |
+| `.agents/skills/dsh-plugin-init/references/` | 研究产物、README、汇总推荐及交付标准 |
 
-治理规定如何协作和维护工程；设计规定本项目的数据与研究流程如何工作。
-共享要求不因多个研究步骤都会使用就归入治理目录，应按内容职责分类。
-当前三份设计文档分别维护数据契约、研究规范与输出标准，避免另建重叠的设计目录。
-后续确有独立需求、验证或运行材料时再明确其归属，不预设空目录。
+每份规则只在负责该职责的 references 维护，其他 Skill 按需引用，不复制。
+根目录不另建 docs 层；新增参考资料放入负责它的 Skill，两个 Skill 共同使用且没有单方职责归属的资料才放入 _shared。
 未确认材料须标记状态，确认后迁入对应真相源；不能从设计推断已经实现，
 也不能用单次命令成功证明业务就绪。
 
@@ -35,38 +34,38 @@ Convivium 的会议设计、运行时角色和专用工程门禁不构成本工�
 | 真相源 | 唯一维护的内容 |
 |---|---|
 | [DOCUMENT-RULES.md](DOCUMENT-RULES.md) | 文档职责、命名、读取、生命周期及同步规则 |
-| [DATA-CONTRACT.md](../01-design/DATA-CONTRACT.md) | 研究身份、字段语义、版本证据、关联依赖及增量不变量 |
-| [RESEARCH-STANDARD.md](../01-design/RESEARCH-STANDARD.md) | 分类含义、研究维度、证据边界及判断方法 |
-| [OUTPUT-STANDARD.md](../01-design/OUTPUT-STANDARD.md) | 研究文件位置、命名、报告结构、统计及交付验收 |
+| [DATA-CONTRACT.md](DATA-CONTRACT.md) | 研究身份、字段语义、版本证据、关联依赖及增量不变量 |
+| [RESEARCH-STANDARD.md](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md) | 分类含义、研究维度、证据边界及判断方法 |
+| [OUTPUT-STANDARD.md](../../dsh-plugin-init/references/OUTPUT-STANDARD.md) | 研究文件位置、命名、报告结构、统计及交付验收 |
 | [COMMIT-RULES.md](COMMIT-RULES.md) | 提交授权、范围、消息格式、验证及历史安全 |
 | [PR-RULES.md](PR-RULES.md) | 分支、PR、评审、CI 与合并边界 |
 
-机器结构约束以 `schemas/` 内的 JSON Schema 为准，数据契约解释字段和不变量；
-`scripts/` 实现校验和增量行为。修改任何一方时检查其余相关部分，发现不一致须修正。
-Schema 保留在工程根目录，由设计文档以链接引用，不复制第二份。
-数据契约、研究规范与输出标准统一由 `01-design` 维护，治理目录仅引用它们。
+机器结构约束以 `.agents/skills/_shared/schemas/` 内的 JSON Schema 为准，数据契约解释字段和不变量；
+各 Skill 的 `scripts/` 与 `_shared/scripts/` 实现校验和增量行为。修改任何一方时检查其余相关部分，发现不一致须修正。
+Schema 统一放在 `.agents/skills/_shared/schemas/`，由设计文档与两个 Skill 引用，不复制第二份。
+数据契约在共享 references 维护，研究规范归洞察 Skill，输出标准归列表编排 Skill；相互引用保持单一真相源。
 
 ## 工程文档与研究产物
 
-`docs/` 保存本工程的规则、需求、设计、工程验证与运行说明。
+Skill 的 `references/` 保存规则、需求、设计及必要的验证与运行说明。
 `data/` 保存作为工程交付内容的插件研究档案、观察批次、证据和运行报告。
 研究产物与工程治理、研究设计文档分别维护，不因其具有“调研”性质另行迁移，也不能自行改变规则。
-其文件位置与报告结构统一由 OUTPUT-STANDARD 定义；合成示例留在 `examples/`。
+其文件位置与报告结构统一由 OUTPUT-STANDARD 定义；研究输入示例放在列表编排 Skill 的 `assets/`，不维护合成观察测试数据。
 
 治理文档不保存一次采集的结果、阶段进度、临时计划或任务完成历史。
 根 `AGENTS.md` 不维护 Current State、依赖版本清单或测试结果；普通交付不要求改写它。
-根 `README.md` 是脚本生成的研究成果导航，按 OUTPUT-STANDARD 从发布输入生成摘要、出处和子页面链接，版式来自 templates/publication/*.md，不手写工程使用说明；
+根 `README.md` 是脚本生成的研究成果导航，按 OUTPUT-STANDARD 从发布输入生成摘要、出处和子页面链接，版式来自 .agents/skills/dsh-plugin-init/assets/templates/publication/*.md，不手写工程使用说明；
 它与 AGENTS 的任务路由职责不同，不替代需求、规则、档案或报告。
 
 ## 命名与语言
 
-- `docs/` 下工程文档使用大写英文单词及连字符，正文使用中文；类型、字段、协议、命令和工具名保留原文。
+- `references/` 下文档使用大写英文单词及连字符，正文使用中文；类型、字段、协议、命令和工具名保留原文。
 - 固定入口保留 `README.md`、`AGENTS.md`；Skill 入口保留 `SKILL.md`。
 - 新增专项需求、接口、实现设计可使用 `*-REQUIREMENTS.md`、`*-INTERFACE.md`、`*-DESIGN.md`；
   当前数据契约、研究规范与输出设计保留 `DATA-CONTRACT.md`、`RESEARCH-STANDARD.md`、`OUTPUT-STANDARD.md`，目录归属按职责判断。
 - 工程验证使用 `*-EVIDENCE.md` 或 `*-IMPLEMENTATION-COVERAGE.md`，操作说明使用 `HOW-TO-*.md`。
 - 未确认和历史材料在文件名或开头明确标记 DRAFT、RESEARCH、ARCHIVE 等状态，说明能否作为实现依据。
-- `data/` 的运行产物遵循 OUTPUT-STANDARD，Schema、代码及测试遵循各自工具约定，不套用工程文档命名。
+- `data/` 的运行产物遵循 OUTPUT-STANDARD，Schema、代码遵循各自工具约定，不套用工程文档命名。
 - 明确区分事实、确认规则、候选方案、推断与未验证项；同一规则只保留一个当前真相源。
 
 ## 文档内容要求
@@ -90,10 +89,10 @@ Schema 保留在工程根目录，由设计文档以链接引用，不复制第�
 
 变更收口时按影响检查：
 
-- 研究方法、数据语义、输出要求：`01-design` 中对应设计真相源，以及研究 Skill 的相关步骤。
+- 研究方法、数据语义、输出要求：对应 Skill 的 references 真相源，以及研究 Skill 的相关步骤。
 - 外部 Skill／插件依赖：相关 Skill 入口。
 - 提交规则：COMMIT-RULES；PR 规则：PR-RULES 及 PR 模板；读取路由变化时同步根 `AGENTS.md`。
-- 数据字段、枚举、不变量：数据契约、Schema、脚本、示例及相关行为测试。
+- 数据字段、枚举、不变量：数据契约、Schema、脚本、示例及相关数据校验。
 - 产品行为、边界契约、实现方案：相关需求、接口或设计，存在时按职责同步。
 - 验证或运行方式：相关验证材料或操作入口，不将新结果写入治理文档。
 - 读取路由、入口约束、文档迁移：根 `AGENTS.md`、README 及所有实际引用。
@@ -110,3 +109,9 @@ Schema 保留在工程根目录，由设计文档以链接引用，不复制第�
 Skill 保存触发条件、重复执行步骤及特有约束，共同规则通过链接引用。
 个人跨仓库 Skill 不作为本工程交付；Skill 不充当唯一产品需求或数据契约。
 修改入口及共享资源路径时检查研究 Skill 的相对引用，避免单独复制后依赖失效。
+
+专用脚本放在对应 Skill 的 `scripts/`，发布模板与输入示例放在其 `assets/`。
+两个 Skill 复用的脚本与 Schema 统一放在 `.agents/skills/_shared/`；该目录是共享资源，不注册第三个 Skill。
+工程根目录不保留 `scripts/`、`templates/`、`schemas/` 或 `examples/` 的重复入口。
+本项目不维护 testcase 或合成测试档案；CI 保留真实研究数据结构、检查点摘要与生成结果一致性校验。
+根 `package.json` 继续集中声明依赖与命令，根 `data/` 保存研究结果，Skill 的 `references/` 保存规则与设计。

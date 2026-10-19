@@ -5,13 +5,13 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import { ROOT, read, validateObservations, validate as validateCatalog } from './plugin-data.mjs';
-import {validateMetadata} from './capture-plugin-meta.mjs';
+import { ROOT, read, validateObservations, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
+import {validateMetadata} from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import {template} from './publication/template.mjs';
 import {categoryGroups,renderCategoryIndex,renderHomeCategories,renderUpdated,renderWeeklyNew,renderLatest,renderHot,renderRecommended,renderCategories,renderSources} from './publication/blocks.mjs';
 import { validateSession } from './research-session.mjs';
 const ajv = new Ajv({ strict:true, allErrors:true }); addFormats(ajv);
-const check = ajv.compile(read(resolve(ROOT,'schemas/publication.schema.json')));
+const check = ajv.compile(read(resolve(ROOT,'.agents/skills/_shared/schemas/publication.schema.json')));
 const sources=['https://github.com/awesome-dsh-plugin/awesome-dsh-plugin','https://github.com/0xsline/awesome-deepseek-harness'];
 const clean = text => text.replace(/[\r\n]/g,' ').replace(/[\[\]<>|]/g,'');
 function local(root,path) {

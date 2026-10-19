@@ -5,10 +5,10 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import { ROOT, read, digest, atomicWrite, validate as validateCatalog, validateObservations } from './plugin-data.mjs';
+import { ROOT, read, digest, atomicWrite, validate as validateCatalog, validateObservations } from '../../_shared/scripts/plugin-data.mjs';
 const ajv = new Ajv({ allErrors: true, strict: true });
 addFormats(ajv);
-const schema = read(resolve(ROOT, 'schemas/research-session.schema.json'));
+const schema = read(resolve(ROOT, '.agents/skills/_shared/schemas/research-session.schema.json'));
 const check = ajv.compile(schema);
 export function validateSession(session, root = ROOT) {
   if (!check(session)) throw new Error(ajv.errorsText(check.errors));

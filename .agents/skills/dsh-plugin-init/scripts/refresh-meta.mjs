@@ -2,9 +2,9 @@
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parseArgs} from 'node:util';
-import {ROOT,read,atomicWrite} from './plugin-data.mjs';
-import {api} from './capture-github.mjs';
-import {captureMetadata,captureNpmDownloads,validateMetadata} from './capture-plugin-meta.mjs';
+import {ROOT,read,atomicWrite} from '../../_shared/scripts/plugin-data.mjs';
+import {api} from '../../_shared/scripts/capture-github.mjs';
+import {captureMetadata,captureNpmDownloads,validateMetadata} from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import {validateSession,selectedItems} from './research-session.mjs';
 import {main as render} from './render-research.mjs';
 const scripts=/\.(?:[cm]?[jt]s|[jt]sx)$/i;

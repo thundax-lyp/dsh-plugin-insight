@@ -7,5 +7,5 @@ export function fillTemplate(source,values){
 }
 export function template(name,values={}){
  if(!/^[A-Z-]+$/.test(name))throw Error('invalid template name');
- return fillTemplate(readFileSync(new URL(`../../templates/publication/${name}.md`,import.meta.url),'utf8'),values);
+ return fillTemplate(readFileSync(new URL(`../../assets/templates/publication/${name}.md`,import.meta.url),'utf8'),values);
 }

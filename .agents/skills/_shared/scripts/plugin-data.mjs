@@ -9,7 +9,7 @@ import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { parseTree, printParseErrorCode } from 'jsonc-parser';
 
-export const ROOT = fileURLToPath(new URL('../', import.meta.url));
+export const ROOT = fileURLToPath(new URL('../../../../', import.meta.url));
 
 export const read = (path) => {
   const source = readFileSync(path, 'utf8');
@@ -42,8 +42,8 @@ export const digest = (value) => createHash('sha256').update(JSON.stringify(cano
 
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 addFormats(ajv);
-const catalogSchema = read(resolve(ROOT, 'schemas/catalog.schema.json'));
-const observationsSchema = read(resolve(ROOT, 'schemas/observations.schema.json'));
+const catalogSchema = read(resolve(ROOT, '.agents/skills/_shared/schemas/catalog.schema.json'));
+const observationsSchema = read(resolve(ROOT, '.agents/skills/_shared/schemas/observations.schema.json'));
 ajv.addSchema(catalogSchema, 'catalog.schema.json');
 const catalogCheck = ajv.getSchema('catalog.schema.json');
 const observationsCheck = ajv.compile(observationsSchema);

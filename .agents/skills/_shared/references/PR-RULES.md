@@ -4,8 +4,8 @@
 
 定义本工程的分支、PR、Review、CI 与合并边界。提交授权、粒度与格式由
 [提交规则](COMMIT-RULES.md)维护。
-CI 执行内容以[工作流](../../.github/workflows/ci.yml)为准，命令与依赖由根
-[package.json](../../package.json)、锁文件及 `.node-version` 维护。
+CI 执行内容以[工作流](../../../../.github/workflows/ci.yml)为准，命令与依赖由根
+[package.json](../../../../package.json)、锁文件及 `.node-version` 维护。
 远端实际强制检查由 GitHub 分支保护或 Ruleset 决定；本文不保存其配置快照或核验历史。
 
 ## 交付与分支
@@ -30,13 +30,13 @@ CI 执行内容以[工作流](../../.github/workflows/ci.yml)为准，命令与�
 ## 标题与描述
 
 标题使用 `Type(<project>[/<module>]): <中文阶段交付结论>`，project 来自提交规则的登记表。
-描述使用[PR 模板](../../.github/pull_request_template.md)，说明问题、最终行为、范围、验证和未覆盖项。
+描述使用[PR 模板](../../../../.github/pull_request_template.md)，说明问题、最终行为、范围、验证和未覆盖项。
 简单变更可在适用栏目各写一句，不重复罗列文件或描述过程历史。
 
 验证写实际命令、结果和边界，未执行项不写通过，不适用项注明原因。
 不包含凭据、个人绝对路径、机器信息或 Agent 内部过程。
 范围调整后同步标题与描述，反映最终实现及最新验证。
-研究交付需提供 README 结果入口及本次覆盖范围，遵循[输出标准](../01-design/OUTPUT-STANDARD.md)。
+研究交付需提供 README 结果入口及本次覆盖范围，遵循[输出标准](../../dsh-plugin-init/references/OUTPUT-STANDARD.md)。
 
 ## 验证与评审
 
@@ -45,7 +45,7 @@ CI 执行内容以[工作流](../../.github/workflows/ci.yml)为准，命令与�
 - 评审基于 merge base 检查完整 PR 差异，结合正式依据、失败路径和证据判断。
 - 可执行 finding 说明触发条件、可观察影响及修正方向；区分问题成立与建议方案是否合适。
 - 处理明确反馈后验证受影响行为，不报告纯风格偏好或无依据的猜测。
-- 结构校验与行为测试不证明研究结论真实，也不证明真实 DSH 插件可用。
+- 结构校验与生成一致性检查不证明研究结论真实，也不证明真实 DSH 插件可用。
 - 数据、证据、报告、README 和治理同步按文档规则及输出标准核对，不为不适用项创建新材料。
 
 ## GitHub 调用通道与授权

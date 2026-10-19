@@ -1,11 +1,11 @@
 # 共享数据契约（版本 1）
 
-字段约束以[档案 Schema](../../schemas/catalog.schema.json)和
-[观察批次 Schema](../../schemas/observations.schema.json)为准。JSON 使用 UTF-8，未知字段、
+字段约束以[档案 Schema](../schemas/catalog.schema.json)和
+[观察批次 Schema](../schemas/observations.schema.json)为准。JSON 使用 UTF-8，未知字段、
 重复键及非法日期均应报错。`data/catalog.json` 保存当前档案和追加的运行历史。
 同一插件内的证据与来源快照只追加；内容变化必须使用新 ID。
 历史点评与档案版本由版本管理保留。文件位置、交付组合及追溯要求统一遵循
-[输出标准](OUTPUT-STANDARD.md)。
+[输出标准](../../dsh-plugin-init/references/OUTPUT-STANDARD.md)。
 
 ## 身份与分类
 
@@ -16,7 +16,7 @@
 
 `entry_type` 区分插件、技能、工具、客户端、基础设施、资料、占位和未知类型。
 目录收录不证明可安装。技术主类、业务主类各一个，可有多个标签。
-分类枚举见 Schema，含义见[研究规范](RESEARCH-STANDARD.md)；扩展分类时同步更新二者。
+分类枚举见 Schema，含义见[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md)；扩展分类时同步更新二者。
 
 ## 指纹、来源与证据
 
@@ -31,7 +31,7 @@
 按来源 URL 比较最新成功快照：一个目录移除不代表所有目录都已移除。
 只有相关来源集合完成检查后才能标记 `removed_from_source`，混合状态通过证据说明。
 
-原始采集结果的路径与命名遵循[输出标准](OUTPUT-STANDARD.md)，由证据的 `artifact` 引用，不保存凭据。
+原始采集结果的路径与命名遵循[输出标准](../../dsh-plugin-init/references/OUTPUT-STANDARD.md)，由证据的 `artifact` 引用，不保存凭据。
 来源采集复用当前环境可用的 GitHub Skill 或插件。
 可选的 `capture-github.mjs` 使用已认证的 `gh`，采集仓库元数据、固定提交／文件树、部分根目录文件
 及最多 100 个发布记录；它不穷尽插件、不跟踪全部依赖、不执行目标代码。
@@ -88,9 +88,9 @@ Node 版本以根 `.node-version` 为准，`engines.node`、本地验证及 CI �
 每轮重新确认来源、生成列表、分析全部条目。变更记录用于追踪，不决定哪些条目可以免于重新分析。
 底层 `plugin-data.mjs` 的 `init/update` 仅控制空档案／已有档案写入，继续保留其历史和并发保护。
 
-会话结构由[会话 Schema](../../schemas/research-session.schema.json)约束，
-执行入口为 `npm run research --`（`scripts/research-session.mjs`）。输入参考
-[合成输入](../../examples/research-input.json)：`id`、`checked_at`、`sources`、`plugins`。
+会话结构由[会话 Schema](../schemas/research-session.schema.json)约束，
+执行入口为 `npm run research --`（`.agents/skills/dsh-plugin-init/scripts/research-session.mjs`）。输入参考
+[合成输入](../../dsh-plugin-init/assets/research-input.json)：`id`、`checked_at`、`sources`、`plugins`。
 来源记录 `url`、`revision`（未知为 null）、`complete`；complete 表示针对本轮范围完整读取，不等于插件可用。
 候选记录稳定 `id`、`repository`、`path`、固定源码 `revision`（未知为 null）、`fingerprints` 和 `source_urls`。
 GitHub 采集、身份确认、来源完整性和指纹正确性由研究者核实，脚本不自动推断。
@@ -122,14 +122,14 @@ GitHub 采集、身份确认、来源完整性和指纹正确性由研究者核�
 
 研究数据和解析产物统一存放于 `data/`：`sessions` 为插件清单与进度，`snapshots` 为原始材料，
 `observations` 为逐项观察批次，`reports` 为洞察文档及读者子页面，`publications/current.json` 为当前发布输入。
-发布输入结构见[Schema](../../schemas/publication.schema.json)，不修改原 catalog／observations 字段。
+发布输入结构见[Schema](../schemas/publication.schema.json)，不修改原 catalog／observations 字段。
 
-生成器 `scripts/render-research.mjs` 从发布输入引用的会话和已完成观察批次读取范围、分类、详情及证据层级，
+生成器 `.agents/skills/dsh-plugin-init/scripts/render-research.mjs` 从发布输入引用的会话和已完成观察批次读取范围、分类、详情及证据层级，
 从检查点详情提取唯一四标签短评，结合人工推荐摘要生成 README 和分类页；历史字段兼容旧输入但不再渲染为README内容。
 发布输入只负责选取和组织现有成果，不成为业务事实、证据或研究结论的替代真相源。
 `validate:data` 包含生成结果一致性检查；缺页、检查点摘要变化、未完成对象被推荐或无验收证据的安装推荐会报错。
 
-GitHub META 快照由 `schemas/github-meta.schema.json` 约束；发布输入可用 metadata 映射引用。
+GitHub META 快照由 `.agents/skills/_shared/schemas/github-meta.schema.json` 约束；发布输入可用 metadata 映射引用。
 采集器独立读取仓库元数据与 Issue 搜索计数，部分失败保留 null 和错误，不改变研究深度、版本指纹或已完成检查点。
 生成器核对仓库数字 ID 及名称，不能把别的仓库的活跃度贴到当前插件。
 
@@ -148,7 +148,7 @@ META 的可选 code_update 保存研究基线提交、当前提交、script_chan
 它独立于已确认的 findings 依赖失效状态，仅表示待重新分析，不能伪装成已完成新版本研究。
 refresh-meta 按 publication.session 的所选列表操作，遵守 research_limit／selected_ids；未选候选不触发采集，成功后切换当前 META 映射，失败项保留带错误的新快照以显示未知，旧快照不删除。
 
-研究发布的 Markdown 版式以 `templates/publication/*.md` 为真相源；块脚本仅传入数据和选择结果。
+研究发布的 Markdown 版式以 `.agents/skills/dsh-plugin-init/assets/templates/publication/*.md` 为真相源；块脚本仅传入数据和选择结果。
 模板渲染只做严格占位符替换，缺字段失败，不递归解释插入的研究文字；不执行模板表达式或目标代码。
 
 发布输入可引用 catalog 路径，用运行历史中每个稳定插件 ID 的最早 added 时间计算本周新增。

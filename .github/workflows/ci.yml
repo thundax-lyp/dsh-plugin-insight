@@ -36,10 +36,8 @@ jobs:
           cache: npm
       - name: Install research data tooling
         run: npm ci --ignore-scripts
-      - name: Validate research data and observation batches
-        run: npm run validate:data
-      - name: Test incremental research behavior
-        run: npm test
+      - name: Validate data, checkpoints and generated pages
+        run: npm run check
       - name: Check whitespace in changes
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before }}

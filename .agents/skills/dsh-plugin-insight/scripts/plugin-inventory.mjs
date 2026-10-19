@@ -6,7 +6,7 @@ import {resolve,dirname,extname,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parseArgs} from 'node:util';
 import ts from 'typescript';
-import {ROOT,read,atomicWrite,digest} from './plugin-data.mjs';
+import {ROOT,read,atomicWrite,digest} from '../../_shared/scripts/plugin-data.mjs';
 const CODE=new Set(['.js','.mjs','.cjs','.jsx','.ts','.mts','.cts','.tsx']);
 const SKIP=/(^|\/)(node_modules|dist|build|vendor|third_party|coverage|\.git)(\/|$)|\.min\.[cm]?js$|\.d\.[cm]?ts$/;
 const role=path=>/(^|\/)(examples?|fixtures?)(\/|$)/i.test(path)?'example':/(^|\/)(__tests__|tests?|spec)(\/|$)|\.(test|spec)\.[^.]+$/.test(path)?'test':'source';

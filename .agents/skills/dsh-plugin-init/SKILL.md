@@ -5,10 +5,13 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
 
 # 插件列表与研究编排
 
-在工程根目录执行；依赖共享的 `docs/01-design/`、`schemas/`、`scripts/` 和根 package，不能只复制 Skill 目录。
-开始前阅读[数据契约](../../../docs/01-design/DATA-CONTRACT.md)、[研究规范](../../../docs/01-design/RESEARCH-STANDARD.md)、
-[输出标准](../../../docs/01-design/OUTPUT-STANDARD.md)。GitHub 来源与版本读取依赖当前环境可用的 GitHub Skill 或插件；
+在工程根目录执行；依赖本 Skill 和洞察 Skill 的 `references/`、共享约定、`.agents/skills/_shared/schemas/`、Skill 内脚本和根 package，不能只复制 Skill 目录。
+开始前阅读[数据契约](../_shared/references/DATA-CONTRACT.md)、[研究规范](../dsh-plugin-insight/references/RESEARCH-STANDARD.md)、
+[输出标准](references/OUTPUT-STANDARD.md)。GitHub 来源与版本读取依赖当前环境可用的 GitHub Skill 或插件；
 不假设特定 Skill 名称。Git 协作遵循根 `AGENTS.md`；运行时遵循 `.node-version`，依赖缺失时执行 `npm ci --ignore-scripts`。
+
+专用脚本在 [scripts/](scripts)，发布模板在 [assets/templates/publication/](assets/templates/publication)，
+数据读写与 GitHub 采集复用 [共享脚本](../_shared/scripts)。依赖和稳定命令仍由根 package.json 维护。
 
 ## 调用参数
 
@@ -22,8 +25,8 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
 2. **确认来源，整理列表。** 核对用户来源；默认使用研究规范中的两个目录。固定来源版本、截止时间和覆盖边界，
    优先结构化条目，补充 README／CATALOG。使用 GitHub 插件，或可选 `capture-github.mjs`；后者不能穷尽目录内容。
    核对稳定仓库／组件身份，去重并区分条目类型；身份未核实的候选另存问题记录，不编造 ID。
-   按[会话契约](../../../docs/01-design/DATA-CONTRACT.md#研究会话与脚本检查点)准备输入清单，
-   格式参考[合成输入](../../../examples/research-input.json)，不能将合成数据导入真实档案。
+   按[会话契约](../_shared/references/DATA-CONTRACT.md#研究会话与脚本检查点)准备输入清单，
+   格式参考[合成输入](assets/research-input.json)，不能将合成数据导入真实档案。
 3. **脚本生成本轮队列和变更标记。** 首轮省略 `--previous`；后续轮次必须给出可比的上轮会话。
    ```sh
    npm run research -- start --input /tmp/dsh-research-input.json --previous data/sessions/<previous_id>.json --out data/sessions/<session_id>.json
@@ -41,9 +44,9 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
 5. **逐项保存、计划和应用。** 为该项保存证据、完整详情和唯一观察批次。空档案第一次写入用 `init`，
    之后一律用 `update`；这只是底层写入模式，不是两种研究流程。检查计划后应用：
    ```sh
-   node scripts/plugin-data.mjs plan --mode <init-or-update> --observations data/observations/<run_id>.json --out /tmp/dsh-plan.json
-   node scripts/plugin-data.mjs apply --plan /tmp/dsh-plan.json
-   node scripts/plugin-data.mjs validate --observations data/observations/<run_id>.json
+   node .agents/skills/_shared/scripts/plugin-data.mjs plan --mode <init-or-update> --observations data/observations/<run_id>.json --out /tmp/dsh-plan.json
+   node .agents/skills/_shared/scripts/plugin-data.mjs apply --plan /tmp/dsh-plan.json
+   node .agents/skills/_shared/scripts/plugin-data.mjs validate --observations data/observations/<run_id>.json
    npm run research -- checkpoint --session data/sessions/<session_id>.json --plugin <plugin_id> --observations data/observations/<run_id>.json --report data/reports/<detail>.md
    ```
    checkpoint 核对已应用数据、本轮核查时间、固定源码版本、材料及摘要，成功后才完成该项。
@@ -53,7 +56,7 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    `block --session ... --plugin ... --reason ...` 登记原因，处理其他项；重试时用 `retry --session ... --plugin ...`。
    来源移除的条目也保留，尝试核查当前仓库及采用影响；无法读到源码时记受阻，不能伪造成功检查点。
    `next` 返回空但 blocked 非零仍未完成；不从“没有待处理项”推断全部成功。
-   按[三层输出](../../../docs/01-design/OUTPUT-STANDARD.md#先分析再归纳与推荐)，先完成详情，
+   按[三层输出](references/OUTPUT-STANDARD.md#先分析再归纳与推荐)，先完成详情，
    再归纳分类列表的“用途／亮点／关键质疑／建议”，最后生成推荐页；安装推荐与本周试用候选使用不同证据门槛。
    阶段汇总标注未完成项；会话与原始数据由轮次报告追溯。
    按输出标准准备 `data/publications/current.json`，历史文件保留但不进入README，人工填写有依据的推荐摘要，
@@ -62,7 +65,7 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    没有确认的npm包时省略，不猜包名，不用0代替失败。
    已建立列表后的日常 META 刷新可直接运行 npm run refresh:meta；它只标记脚本更新，不替代洞察或改写检查点。
    将快照填入发布输入的 metadata 映射；分类页按输出标准生成名字＋用途目录、META及四标签短评。
-   标题、章节与Markdown版式维护 templates/publication/*.md，不写死到生成代码；脚本仅处理数据、排序和填充。
+   标题、章节与Markdown版式维护 .agents/skills/dsh-plugin-init/assets/templates/publication/*.md，不写死到生成代码；脚本仅处理数据、排序和填充。
    再执行 `npm run render:research` 生成 README、分类列表及追加Issue活跃度的详情展示页，不能手写 README 或添加工程使用内容。
    发布输入引用当前catalog以计算本周首次入档插件；README按本周新增、最新／最热／推荐、每类最热 5 个插件及更多入口的分类列表、研究出处、末尾更新时间合成；不放历史或过程说明。完成前运行 `npm run check`，
    人工检查叙述、采用判断、引用和本轮覆盖；脚本校验不证明实际业务收益。

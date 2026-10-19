@@ -3,16 +3,16 @@
 本标准适用于首轮研究、后续整轮研究、同轮断点恢复与独立单插件洞察。
 列表编排 Skill 负责队列与发布，单插件洞察 Skill 负责证据、详情和观察批次；独立调用洞察不要求生成全轮入口。
 共同输出要求只在本文件维护；Skill 保留流程、触发条件和自身特有约束。
-字段与引用规则以[数据契约](DATA-CONTRACT.md)及 JSON Schema 为准，
-研究判断遵循[研究规范](RESEARCH-STANDARD.md)。
+字段与引用规则以[数据契约](../../_shared/references/DATA-CONTRACT.md)及 JSON Schema 为准，
+研究判断遵循[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md)。
 
 ## README 生成物与读者路由
 
 项目根 `README.md` 是面向读者的研究成果总入口，由 `npm run render:research` 生成，不手工维护。
-生成输入为 `data/publications/current.json`，结构由[发布输入 Schema](../../schemas/publication.schema.json)约束。
+生成输入为 `data/publications/current.json`，结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
 README 由独立块函数合成：本周新增 → 最新 → 最热 → 推荐 → 分类导航与每类热门插件 → 研究出处 → 更新时间。
-Markdown 版式由 `templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORIES／SOURCES 为块模板，
-条目、分类、插件详情入口、META及徽章使用对应小模板。`scripts/publication/blocks.mjs` 只负责筛选、排序与装配，不硬编码标题及段落版式。
+Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORIES／SOURCES 为块模板，
+条目、分类、插件详情入口、META及徽章使用对应小模板。`.agents/skills/dsh-plugin-init/scripts/publication/blocks.mjs` 只负责筛选、排序与装配，不硬编码标题及段落版式。
 总入口读取模板并填充已核验数据，同一列表不维护两份 Markdown。
 不展示研究历史、本轮范围、完成计数、研究深度、工程使用、内部数据入口或“具体来源版本与覆盖限制见本轮报告”等过程说明。
 
@@ -67,12 +67,12 @@ Markdown 版式由 `templates/publication/` 维护：README／CATALOG 为总模�
 
 原始文件不得含凭据。证据 `artifact` 使用工程根目录下的相对路径；可核查的外部来源另外保存 URL
 和版本。实际已执行的测试才生成执行证据，不以示例日志或作者提供的日志冒充本地执行。
-`examples/observations.json` 仅用于说明与测试，不计入真实目录及统计。
+研究输入示例位于 `.agents/skills/dsh-plugin-init/assets/research-input.json`，仅说明输入格式，不计入真实目录及统计。
 
 ## 研究清单与断点
 
 每轮先确认来源、固定版本与覆盖范围，再用 `research-session.mjs start` 生成 JSON 会话清单。
-清单格式、变化标记和状态由[数据契约](DATA-CONTRACT.md#研究会话与脚本检查点)及 Schema 维护，
+清单格式、变化标记和状态由[数据契约](../../_shared/references/DATA-CONTRACT.md#研究会话与脚本检查点)及 Schema 维护，
 不另建手工 Markdown 状态表。身份待核实、明确排除和范围差异写入本轮报告，不能静默漏项。
 原始证据与部分分析及时落盘；checkpoint 只代表目标插件本轮分析和入档完成，不代表实际安装验收。
 
@@ -129,7 +129,7 @@ Markdown 版式由 `templates/publication/` 维护：README／CATALOG 为总模�
 ## 插件采用画像
 
 重点点评及专题比较先交代业务场景和原有办法，再呈现采用条件、流程、成本与结果。
-按[研究规范](RESEARCH-STANDARD.md)的六个维度组织，不能用架构和代码质量清单代替这些内容。
+按[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md)的六个维度组织，不能用架构和代码质量清单代替这些内容。
 目录级条目未完成核查的维度标明未知或作者声明，不要求为全部条目虚构完整测评。
 
 每个重点插件的报告至少能回答：
@@ -203,11 +203,11 @@ Markdown 版式由 `templates/publication/` 维护：README／CATALOG 为总模�
 ## 交付验收
 
 应用计划前检查候选档案和语义变化；基础档案变化时重新生成计划。
-交付前必须执行档案校验及工程约定的行为测试，并校验本次观察批次：
+交付前必须执行档案、观察批次、会话检查点和生成一致性校验：
 
 ```sh
-node scripts/plugin-data.mjs validate --observations data/observations/<run_id>.json
-npm test
+node .agents/skills/_shared/scripts/plugin-data.mjs validate --observations data/observations/<run_id>.json
+npm run check
 ```
 
 同时人工核对 README 结果入口与来源链接是否完整、所链接产物是否存在、证据文件是否存在、
@@ -266,7 +266,7 @@ npm run inventory:plugin -- --snapshot data/snapshots/<run_id>/<component>-sourc
 工具、命令、后台／UI、依赖和数据副作用同样区分静态声明与实际挂载；不得把角色数、实例数当Agent定义数。
 代码评价和可借鉴处引用具体源文件与证据，解释采用与复用的意义。现有历史详情不因增加格式要求而重写，后续新分析执行。
 
-CI 行为测试覆盖统计封装、文件筛选、能力候选与 Git 固定版本读取；不声称自动确认所有能力注册或代码质量。
+CI 校验研究数据、会话检查点和生成结果一致性；不维护 testcase，也不声称自动确认所有能力注册或代码质量。
 
 ### Star 与 npm 下载量
 
@@ -298,7 +298,7 @@ GitHub Actions 每天北京时间08:30及手动触发，复用未合并的 META 
 
 ## Markdown 模板维护
 
-页面标题（含 DSH Plugin Insight）、章节顺序、列表与条目版式修改 `templates/publication/*.md`；
+页面标题（含 DSH Plugin Insight）、章节顺序、列表与条目版式修改 `.agents/skills/dsh-plugin-init/assets/templates/publication/*.md`；
 数据字段、排序、数量上限、链接计算和证据门槛修改脚本。模板使用小写 `{{field_name}}` 占位符，
 缺失变量立即报错，输入文案不递归作为模板执行，不支持任意表达式或执行代码。
 编辑模板后运行 `npm run render:research`，再用 `npm run check` 检查生成一致性。

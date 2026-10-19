@@ -133,7 +133,7 @@ DSH 能力清单以[官方插件接口](https://github.com/deepseek-ai/deepseek-
 
 不能从“新增某机制”直接推出“效果提高”，也不能从多个项目同时更新直接推出因果或生态趋势。
 证据不足时产出有依据的待验证假设或待核查问题，允许明确说明本次未形成新洞察。
-洞察的输出结构由[输出标准](OUTPUT-STANDARD.md)统一维护。
+洞察的输出结构由[输出标准](../../dsh-plugin-init/references/OUTPUT-STANDARD.md)统一维护。
 
 ### 用关键质疑形成采用点评
 
@@ -213,5 +213,5 @@ Stars、forks、下载和供给量不等于活跃用户、可靠性或需求；�
 在现有 findings 字段内记录结论、判断性质、证据和依赖；完整洞察及跨主题论证放在研究报告中。
 不要为本文新增未定义的 Schema 字段，也不要把待验证假设等同于依赖变化后的 `needs_review`。
 
-报告结构、每轮统计及交付校验统一遵循[输出标准](OUTPUT-STANDARD.md)。
+报告结构、每轮统计及交付校验统一遵循[输出标准](../../dsh-plugin-init/references/OUTPUT-STANDARD.md)。
 本工程更新本地研究结果，不自动发布推荐或修改第三方仓库。

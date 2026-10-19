@@ -6,9 +6,12 @@ description: 显式调用时研究一个固定版本的 DSH 插件，分析场�
 # 单插件洞察
 
 仅处理一个稳定组件及其固定版本，不隐式扩展为整轮清单扫描。
-使用[数据契约](../../../docs/01-design/DATA-CONTRACT.md)、[研究规范](../../../docs/01-design/RESEARCH-STANDARD.md)
-及[输出标准](../../../docs/01-design/OUTPUT-STANDARD.md)。依赖整个工程及当前可用的 GitHub Skill 或插件，不假设特定外部 Skill 名称。
+使用[数据契约](../_shared/references/DATA-CONTRACT.md)、[研究规范](references/RESEARCH-STANDARD.md)
+及[输出标准](../dsh-plugin-init/references/OUTPUT-STANDARD.md)。依赖整个工程及当前可用的 GitHub Skill 或插件，不假设特定外部 Skill 名称。
 命令从工程根执行，Node 遵循 `.node-version`；Git 协作按根 AGENTS。
+
+专用工具为 [代码统计脚本](scripts/plugin-inventory.mjs)与 [META 采集脚本](scripts/capture-plugin-meta.mjs)，
+共同复用 [共享脚本和 Schema](../_shared)。从工程根用 package.json 中的命令运行。
 
 1. **确定输入边界。** 获取稳定组件 ID、仓库／组件路径、固定版本、检查时间、目标研究深度、来源材料和输出位置。
    编排调用还提供会话截止时间与旧详情。独立调用缺少身份或版本时先核对 GitHub 来源，确定后再分析；不得编造 ID。
