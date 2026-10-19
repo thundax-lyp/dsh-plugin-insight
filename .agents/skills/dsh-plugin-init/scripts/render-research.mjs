@@ -61,15 +61,23 @@ export function renderDetailReport(report, item) {
         .replace(/\n## 代码评价\n\n([\s\S]*?)\n## 可借鉴处\n\n/, '\n## 工程亮点\n\n$1\n\n')
         .replace(/\n## 验证与边界\n/, '\n## 核查说明\n');
 }
+export function latestManifestItems(manifests) {
+    const latest = new Map();
+    for (const manifest of manifests) for (const item of manifest.items) latest.set(item.id, item);
+    return [...latest.values()];
+}
 export function renderPublication(input, root = ROOT) {
     if (!check(input)) throw Error(ajv.errorsText(check.errors));
     const text = (path) => readFileSync(local(root, path), 'utf8');
-    const manifest = validateManifest(read(local(root, input.manifest)));
-    if (!manifest.sources.every((s) => sources.includes(s.url))) throw Error('unexpected discovery source');
+    const manifestPaths = [...new Set([...(input.manifests ?? []), input.manifest])];
+    const manifests = manifestPaths.map((path) => validateManifest(read(local(root, path))));
+    const manifest = manifests.at(-1);
+    if (manifests.some((saved) => !saved.sources.every((s) => sources.includes(s.url))))
+        throw Error('unexpected discovery source');
     const catalog = read(local(root, input.catalog));
     validateCatalog(catalog);
     const metadataDates = new Set();
-    const items = manifest.items
+    const items = latestManifestItems(manifests)
         .filter((i) => i.status === 'complete')
         .map((i) => {
             const plugin = catalog.plugins.find((p) => p.id === i.id);

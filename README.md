@@ -12,9 +12,9 @@
 
 ## 最热
 
-- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · [![GitHub ★ 174](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=174&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
 - [@0xsline/dsh-spotlight](data/plugins/0xsline--dsh-spotlight/INSIGHT.md) · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/0xsline/dsh-spotlight)
-- [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md) · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory)
+- [cute-fat-fish-pet](data/plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md) · [![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/12we21/cute-fat-fish-pet)
+- [@sakura12/oh-my-deepseekharness](data/plugins/1225sakura--oh-my-deepseekharness/INSIGHT.md) · [![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=yellow&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness)
 
 ## 推荐
 
@@ -22,91 +22,18 @@
 - **[dsh-folderwatch](data/plugins/11111353535--dsh-folderwatch/INSIGHT.md) · 条件试用**：目录驱动流程可用合成文件风暴试验，先验证漏报、重复投递与自写过滤。
 - **[dsh-which](data/plugins/11111353535--dsh-which/INSIGHT.md) · 条件试用**：PATH 排障场景可先在测试环境核对遮蔽与版本探针，再用于真实工作区。
 - **[dsh-voice-input-web](data/plugins/0nt-one--dsh-voice-input/INSIGHT.md) · 条件试用**：语音输入先关闭自动发送，用噪声与专有名词样本比较校对时间和误提交风险。
-- **[dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md) · 条件试用**：高频跨会话开发先试确定性索引与出处；与交接文档比较恢复质量和总负担。
 
 ## 分类导航
 
-- [软件交付（11）](#category-software-delivery)
-- [个人效率（16）](#category-personal-productivity)
-- [基础设施（10）](#category-infrastructure)
+- [个人效率（12）](#category-personal-productivity)
 - [办公与运营（1）](#category-office-operations)
+- [基础设施（7）](#category-infrastructure)
 - [研究与知识（2）](#category-research-knowledge)
-
-<a id="category-software-delivery"></a>
-
-### 软件交付（11）
-
-<a id="plugin-1339316901-root"></a>
-
-#### [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md)
-
-[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4786](https://img.shields.io/static/v1?label=npm+30d&message=4%2C786&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) · [![最后更新 前天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E5%89%8D%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/commits)
-
-- **用途**：合格交付物是恢复正确的任务状态、引用正确文件并继续完成开发；基线是 AGENTS、任务清单、交接文档和 rg。适用频率是同一项目经常跨会话继续，不适合仅偶尔问答时增加常驻索引。
-- **亮点**：为 DSH 提供持久化项目记忆，索引文档与代码符号，关联任务和文件，并按需召回带出处的经验。
-- **思考**：首次包括索引与作用域配置；持续包括 CPU、磁盘、注入上下文 token、误召回清理，以及可选查询扩展／反思的模型费用；迁移需要导出／保留本地记忆及任务映射。本轮没有合格任务实测，不输出金额或收益比例。 本轮未测合格任务成本、耗时或可靠性。 本轮未测合格任务成本、耗时或可靠性。
-- **建议**：适合同项目反复中断的开发者小规模试用，先与交接文档加 rg 对照，暂不作安装推荐。
-
-<a id="plugin-1379204512-root"></a>
-
-#### [@sakura12/oh-my-deepseekharness](data/plugins/1225sakura--oh-my-deepseekharness/INSIGHT.md)
-
-[![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=yellow&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness) · [![npm 30d 2379](https://img.shields.io/static/v1?label=npm+30d&message=2%2C379&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness/commits)
-
-- **用途**：提供多 Agent 编排模式、角色技能、MCP 工具与图运行时。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：大规模角色和工具会增加上下文、协调与失败恢复成本；数量不等于交付质量，且兼容范围很宽。
-- **建议**：只选一个可并行且结果可验收的任务，与单 Agent 基线比较总 token、人工介入和合格率。
-
-<a id="plugin-1335559646-root"></a>
-
-#### [@banana-peeljj12/dsh-trellis](data/plugins/1264459640--dsh-trellis/INSIGHT.md)
-
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis) · [![npm 30d 1766](https://img.shields.io/static/v1?label=npm+30d&message=1%2C766&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) · [![最后更新 11天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=11%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/commits)
-
-- **用途**：以阶段速记、技能和任务状态实现 Trellis 风格开发工作流。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：流程纪律会增加每回合状态维护；只有在降低遗忘和错误提交时才值得，并依赖特定 DSH 0.2.0 RC。
-- **建议**：在中型代码任务上比较有无该流程的恢复、Git 清洁度和人工维护时间。
-
-<a id="plugin-1333370288-root"></a>
-
-#### [DSH Verification Receipt](data/plugins/030611--dsh-verification-receipt/INSIGHT.md)
-
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt) · [![npm 30d 908](https://img.shields.io/static/v1?label=npm+30d&message=908&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/commits)
-
-- **用途**：开发者需要快速发现代理似乎没做验证的回合；合格结果是摘要与原始事件一致、不会把回显文本当验收结论。基线是查看工具日志和真实测试报告。
-- **亮点**：在每轮会话结束后生成隐私最小化的工具活动与验证信号摘要，并保存为本地 JSONL 收据。
-- **思考**：不新增模型调用，增加每轮事件投影、哈希和异步磁盘写入；长期有文件保留与分析成本。首次需确认宿主窄版本支持，升级迁移需重验事件结构。 本轮未测合格任务成本、耗时或可靠性。 本轮未测合格任务成本、耗时或可靠性。
-- **建议**：适合排查“这一轮记录了什么”的开发者试用，不能替代 CI、测试产物或审计放行。
-
-<a id="plugin-1334504487-root"></a>
-
-#### [dsh-plan-lattice](data/plugins/1052326311--dsh-plan-lattice/INSIGHT.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plan-lattice) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/commits)
-
-- **用途**：为长任务提供持久执行合同、工作图与连续性恢复。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：复杂状态机只有在中断恢复率和交付质量优于简单任务文档时才值得；作者 benchmark 不是本轮宿主验收。
-- **建议**：用可中断的多步骤仓库任务，与手工 RUNBOOK 对照恢复正确率、重复工作和维护负担。
-
-[更多 软件交付 →](data/views/categories/SOFTWARE-DELIVERY.md)
+- [软件交付（8）](#category-software-delivery)
 
 <a id="category-personal-productivity"></a>
 
-### 个人效率（16）
-
-<a id="plugin-1333328839-root"></a>
-
-#### [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)
-
-[![GitHub ★ 174](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=174&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11947](https://img.shields.io/static/v1?label=npm+30d&message=11%2C947&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
-
-- **用途**：用户在等待模型时希望状态更可读或更有趣；合格结果是状态能随阶段变化且不遮挡操作。基线是宿主原生状态栏，不以词库数量或主题数量证明生产效率。
-- **亮点**：为 DSH Web 状态栏提供阶段文案、打字机、渐变、弹幕和主题，支持在设置页自定义。
-- **思考**：首次主要是外观选择与兼容确认；持续有浏览器动画／定时器、SSE连接、设置存储和注意力成本，无模型收益实测。迁移需保留词库与配置，升级要复核 DOM／客户端契约。 本轮未测合格任务成本、耗时或可靠性。 本轮未测合格任务成本、耗时或可靠性。
-- **建议**：适合重视界面氛围的个人用户体验；工作环境先关弹幕与动画，比较状态可读性和浏览器负担。
+### 个人效率（12）
 
 <a id="plugin-1333136466-root"></a>
 
@@ -118,17 +45,6 @@
 - **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
 - **思考**：效率收益取决于命令覆盖、冲突快捷键和检索命中；对少量常用操作可能不如原生入口直接。
 - **建议**：用十个高频导航/命令任务测量查找时间和误触，再决定是否替代原入口。
-
-<a id="plugin-1334899834-root"></a>
-
-#### [api-balance](data/plugins/02muller25--dsh-api-balance/INSIGHT.md)
-
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/api-balance) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance/commits)
-
-- **用途**：用户在开发过程中担心余额不足，需要快速确认可用性；合格结果是展示与官方账户相符且失败时不会把旧值冒充实时值。基线是官方控制台或手动查询余额接口。
-- **亮点**：在 DSH Web 输入区实时显示 DeepSeek API 账户余额，支持自动轮询、手动刷新和自定义刷新间隔。
-- **思考**：每浏览器每30秒默认最多约120次查询/小时，每次另起 curl；10秒模式约360次，这是配置推算并非实测。没有模型 token 调用增量，但有网络、子进程和故障排查成本。迁移主要是本地刷新偏好。 本轮未测合格任务成本、耗时或可靠性。 本轮未测合格任务成本、耗时或可靠性。
-- **建议**：适合单账户用户按需查看，先验证凭证处理与轮询负担；需要预算控制时仍要配合计量和限额。
 
 <a id="plugin-1409724830-src"></a>
 
@@ -152,11 +68,50 @@
 - **思考**：自动注入会把陈旧或错误记忆带入后续任务；作用域、修订和删除是否可靠比条目数量更重要。
 - **建议**：用可纠错的项目决策做小样本，验证保存、召回、改正和删除后再扩大范围。
 
+<a id="plugin-1363429979-plugin-notes"></a>
+
+#### [@zzerx/dsh-plugin-notes](data/plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/INSIGHT.md)
+
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 2739](https://img.shields.io/static/v1?label=npm+30d&message=2%2C739&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/commits)
+
+- **用途**：在 DSH 中管理 Markdown 便签、任务泳道与定时执行。
+- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
+- **思考**：便签升级为自动任务后会引入工作区、日程和重复执行风险；WebDAV 也增加外部同步边界。
+- **建议**：先只用本地便签与手动执行，确认幂等和工作区选择后再启用定时或同步。
+
+<a id="plugin-1336994666-root"></a>
+
+#### [@dph/taskboard](data/plugins/1070296335-create--dph-taskboard/INSIGHT.md)
+
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1070296335-create/dph-taskboard) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/@dph/taskboard) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1070296335-create/dph-taskboard/commits)
+
+- **用途**：在侧边栏按会话组织四列任务看板，并支持新建、备注与导入导出。
+- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
+- **思考**：列状态主要是人工组织信号，不证明任务真实完成；导入导出还需核对身份冲突和恢复语义。
+- **建议**：用一个小项目验证拖拽、新建、恢复和导入后的会话对应关系，再评估是否减少管理时间。
+
 [更多 个人效率 →](data/views/categories/PERSONAL-PRODUCTIVITY.md)
+
+<a id="category-office-operations"></a>
+
+### 办公与运营（1）
+
+<a id="plugin-1363429979-plugin-daily-log"></a>
+
+#### [@zzerx/dsh-plugin-daily-log](data/plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)
+
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1990](https://img.shields.io/static/v1?label=npm+30d&message=1%2C990&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/commits)
+
+- **用途**：聚合 Git 与本地 Agent 对话，按模板生成日、周、月工作报告。
+- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
+- **思考**：报告质量依赖本地记录完整性与模板；自动归纳可能遗漏未提交工作或把活动误写成结果。
+- **建议**：先用一周真实记录与人工周报对照，核对遗漏、误归因和编辑时间，再决定是否常用。
+
+[更多 办公与运营 →](data/views/categories/OFFICE-OPERATIONS.md)
 
 <a id="category-infrastructure"></a>
 
-### 基础设施（10）
+### 基础设施（7）
 
 <a id="plugin-1363429979-plugin-usage-billing"></a>
 
@@ -168,17 +123,6 @@
 - **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
 - **思考**：费用准确性依赖日志完整、模型键匹配和历史价格表；估算不可直接当账单或财务凭证。
 - **建议**：抽取已知模型与价格的一组会话，逐条复算 token 和费用；差异无法解释时只作趋势参考。
-
-<a id="plugin-1343420855-root"></a>
-
-#### [dsh-ui-auth](data/plugins/0qwq0--dsh-ui-auth/INSIGHT.md)
-
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth) · [![npm 30d 1635](https://img.shields.io/static/v1?label=npm+30d&message=1%2C635&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ui-auth) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth/commits)
-
-- **用途**：小团队想共用DSH Web而隔离工作区、会话和API凭证。合格交付物是用户A无法读取／操作B的资源，撤销与退出立即影响长连接；基线是各用户独立实例与反向代理认证，两者复杂度与隔离强度应同时比较。
-- **亮点**：为 DSH Web 提供登录、用户管理、会话隔离与按用户模型凭证管理，支持 TOTP 和通行密钥。
-- **思考**：首次包括身份策略、TLS、数据迁移与多用户回归；持续包括口令派生、加解密、mux代理、审计留存和宿主适配；迁移需保护加密数据与恢复路径。无新增模型调用不等于无运维成本。 本轮未测合格任务成本、耗时或可靠性。 本轮未测合格任务成本、耗时或可靠性。
-- **建议**：仅作为隔离测试环境的候选，先做双用户REST／WS／凭证和升级回归，尚无本轮真实宿主安全验收。
 
 <a id="plugin-1358816037-root"></a>
 
@@ -213,24 +157,18 @@
 - **思考**：它改善可见性但不执行升级或兼容判断；显示版本若来自不同运行副本仍可能误导排障。
 - **建议**：在升级前后核对页面、CLI 与实际加载包版本一致，把它作为诊断入口而非更新保证。
 
-[更多 基础设施 →](data/views/categories/INFRASTRUCTURE.md)
+<a id="plugin-1400927706-root"></a>
 
-<a id="category-office-operations"></a>
+#### [dsh-plugin-quota](data/plugins/121212165--dsh-plugin-quota/INSIGHT.md)
 
-### 办公与运营（1）
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota) · [![npm 30d 147](https://img.shields.io/static/v1?label=npm+30d&message=147&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota/commits)
 
-<a id="plugin-1363429979-plugin-daily-log"></a>
-
-#### [@zzerx/dsh-plugin-daily-log](data/plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)
-
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1990](https://img.shields.io/static/v1?label=npm+30d&message=1%2C990&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/commits)
-
-- **用途**：聚合 Git 与本地 Agent 对话，按模板生成日、周、月工作报告。
+- **用途**：实时跟踪会话 token、轮次与估算费用，并向模型注入预算信号。
 - **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：报告质量依赖本地记录完整性与模板；自动归纳可能遗漏未提交工作或把活动误写成结果。
-- **建议**：先用一周真实记录与人工周报对照，核对遗漏、误归因和编辑时间，再决定是否常用。
+- **思考**：估算和预测不等于供应商账单；每轮注入本身占上下文，错误价格会让模型做出错误自限。
+- **建议**：用已知 token 记录核对仪表和账单，比较注入开销；偏差超出容忍度时只保留只读面板。
 
-[更多 办公与运营 →](data/views/categories/OFFICE-OPERATIONS.md)
+[更多 基础设施 →](data/views/categories/INFRASTRUCTURE.md)
 
 <a id="category-research-knowledge"></a>
 
@@ -259,6 +197,67 @@
 - **建议**：选同一仓库的三次阅读任务，比较召回命中、出处可追溯和整理时间，再决定长期迁移。
 
 [更多 研究与知识 →](data/views/categories/RESEARCH-KNOWLEDGE.md)
+
+<a id="category-software-delivery"></a>
+
+### 软件交付（8）
+
+<a id="plugin-1379204512-root"></a>
+
+#### [@sakura12/oh-my-deepseekharness](data/plugins/1225sakura--oh-my-deepseekharness/INSIGHT.md)
+
+[![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=yellow&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness) · [![npm 30d 2379](https://img.shields.io/static/v1?label=npm+30d&message=2%2C379&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness/commits)
+
+- **用途**：提供多 Agent 编排模式、角色技能、MCP 工具与图运行时。
+- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
+- **思考**：大规模角色和工具会增加上下文、协调与失败恢复成本；数量不等于交付质量，且兼容范围很宽。
+- **建议**：只选一个可并行且结果可验收的任务，与单 Agent 基线比较总 token、人工介入和合格率。
+
+<a id="plugin-1335559646-root"></a>
+
+#### [@banana-peeljj12/dsh-trellis](data/plugins/1264459640--dsh-trellis/INSIGHT.md)
+
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis) · [![npm 30d 1766](https://img.shields.io/static/v1?label=npm+30d&message=1%2C766&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) · [![最后更新 11天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=11%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/commits)
+
+- **用途**：以阶段速记、技能和任务状态实现 Trellis 风格开发工作流。
+- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
+- **思考**：流程纪律会增加每回合状态维护；只有在降低遗忘和错误提交时才值得，并依赖特定 DSH 0.2.0 RC。
+- **建议**：在中型代码任务上比较有无该流程的恢复、Git 清洁度和人工维护时间。
+
+<a id="plugin-1334504487-root"></a>
+
+#### [dsh-plan-lattice](data/plugins/1052326311--dsh-plan-lattice/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plan-lattice) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/commits)
+
+- **用途**：为长任务提供持久执行合同、工作图与连续性恢复。
+- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
+- **思考**：复杂状态机只有在中断恢复率和交付质量优于简单任务文档时才值得；作者 benchmark 不是本轮宿主验收。
+- **建议**：用可中断的多步骤仓库任务，与手工 RUNBOOK 对照恢复正确率、重复工作和维护负担。
+
+<a id="plugin-1397817235-root"></a>
+
+#### [dsh-plugin-ide-hub](data/plugins/121212165--dsh-plugin-ide-hub/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-ide-hub) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-ide-hub) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-ide-hub/commits)
+
+- **用途**：统一盘点多种编码 IDE 的会话、用量、恢复命令与共享规则。
+- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
+- **思考**：它读取多种工具的私有磁盘状态，格式漂移、权限和规则写回冲突是主要维护成本。
+- **建议**：先只读盘点两种实际 IDE，核对会话与用量；确认指针文件幂等后再启用共享规则。
+
+<a id="plugin-1399011094-root"></a>
+
+#### [dsh-plugin-task-forge](data/plugins/121212165--dsh-plugin-task-forge/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-task-forge) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-task-forge) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-task-forge/commits)
+
+- **用途**：把粗略需求编译为版本化任务书，并用回读握手交接给其他 AI。
+- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
+- **思考**：握手能确认文本被复述，却不能证明接收方具备正确上下文或会按验收执行；任务书维护也有额外成本。
+- **建议**：用一次跨窗口真实交接，对比普通复制粘贴的遗漏、返工和维护时间。
+
+[更多 软件交付 →](data/views/categories/SOFTWARE-DELIVERY.md)
 
 ## 研究出处
 

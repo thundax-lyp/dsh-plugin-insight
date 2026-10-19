@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
   "manifest": "data/manifests/2026-10-19-06.json",
-  "scope": "40 个固定源码组件研究；完整候选 6966、所选 40、其余 6926 deferred 分开记录",
+  "scope": "40 个所选固定源码组件：完成 30、受阻 0、待处理 10；完整候选 6966，未选 6926",
+  "catalog": "data/catalog/PLUGINS.json",
   "catalog_page": "data/views/categories/INDEX.md",
   "recommendations": [
     {
@@ -23,29 +24,9 @@
       "plugin_id": "github:1335558973:root",
       "kind": "trial",
       "summary": "语音输入先关闭自动发送，用噪声与专有名词样本比较校对时间和误提交风险。"
-    },
-    {
-      "plugin_id": "github:1339316901:root",
-      "kind": "trial",
-      "summary": "高频跨会话开发先试确定性索引与出处；与交接文档比较恢复质量和总负担。"
-    },
-    {
-      "plugin_id": "github:1343420855:root",
-      "kind": "observe",
-      "summary": "认证与多用户隔离影响面大；没有固定宿主的越权、重启和故障验收前保持观察。"
     }
   ],
   "metadata": {
-    "github:1339316901:root": "data/plugins/00080000--dsh-project-memory/META.json",
-    "github:1333328839:root": "data/plugins/01virex--dsh-status-rotator/META.json",
-    "github:1416699252:root": "data/plugins/01men--ybkkasi/META.json",
-    "github:1334899834:root": "data/plugins/02muller25--dsh-api-balance/META.json",
-    "github:1333368566:root": "data/plugins/030611--dsh-telemetry-redactor/META.json",
-    "github:1333370288:root": "data/plugins/030611--dsh-verification-receipt/META.json",
-    "github:1333357514:root": "data/plugins/030611--qiushi-dsh-evidence-audit/META.json",
-    "github:1342915339:root": "data/plugins/0qwq0--dsh-discord-richpresence/META.json",
-    "github:1343420855:root": "data/plugins/0qwq0--dsh-ui-auth/META.json",
-    "github:1339803365:root": "data/plugins/0imzero--dsh-workspace-menu/META.json",
     "github:1335557891:root": "data/plugins/0nt-one--dsh-neo-skin/META.json",
     "github:1335558973:root": "data/plugins/0nt-one--dsh-voice-input/META.json",
     "github:1363429979:plugin-daily-log": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/META.json",
@@ -77,58 +58,7 @@
     "github:1334850903:root": "data/plugins/13071301808--dsh-composer-expand/META.json",
     "github:1334269686:root": "data/plugins/131cda1--dsh-scrape-webpage/META.json"
   },
-  "catalog": "data/catalog/PLUGINS.json",
   "summaries": {
-    "github:1339316901:root": {
-      "text": "为 DSH 提供持久化项目记忆，索引文档与代码符号，关联任务和文件，并按需召回带出处的经验。",
-      "source_url": "https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/README.md",
-      "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def"
-    },
-    "github:1333328839:root": {
-      "text": "为 DSH Web 状态栏提供阶段文案、打字机、渐变、弹幕和主题，支持在设置页自定义。",
-      "source_url": "https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md",
-      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
-    },
-    "github:1416699252:root": {
-      "text": "自托管企业 AI 资源管理平台，统一纳管 MCP、Skill、Agent 和应用，提供身份、权限、计量与审计。",
-      "source_url": "https://github.com/01men/ybkkasi/blob/03f74c847c8af9189ce37a73321a730ceb353f2a/README.md",
-      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a"
-    },
-    "github:1334899834:root": {
-      "text": "在 DSH Web 输入区实时显示 DeepSeek API 账户余额，支持自动轮询、手动刷新和自定义刷新间隔。",
-      "source_url": "https://github.com/02Muller25/dsh-api-balance/blob/c27c8b61acf97714ab08d99f97b7be3a9007e52e/README.md",
-      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e"
-    },
-    "github:1333368566:root": {
-      "text": "在 DSH 遥测副本导出前遮盖支持的敏感键和凭证模式，保留原始会话日志。",
-      "source_url": "https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/README.md",
-      "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908"
-    },
-    "github:1333370288:root": {
-      "text": "在每轮会话结束后生成隐私最小化的工具活动与验证信号摘要，并保存为本地 JSONL 收据。",
-      "source_url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md",
-      "revision": "87f3fb0198090f0f26a37a52840db150609db748"
-    },
-    "github:1333357514:root": {
-      "text": "被动观察 DSH 会话事件与工具结果，将内容摘要写入本地哈希链收据，供后续核对。",
-      "source_url": "https://github.com/030611/qiushi-dsh-evidence-audit/blob/94fae130b2845309e1dcabac14696fddb18f8f3a/README.md",
-      "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a"
-    },
-    "github:1342915339:root": {
-      "text": "将 DSH 的粗粒度交互状态推送到本机 Discord Rich Presence，支持自定义文案与可选丰富状态。",
-      "source_url": "https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/README.md",
-      "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
-    },
-    "github:1343420855:root": {
-      "text": "为 DSH Web 提供登录、用户管理、会话隔离与按用户模型凭证管理，支持 TOTP 和通行密钥。",
-      "source_url": "https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/README.md",
-      "revision": "6c5e87b44be4e973b092910968001916bb97d22e"
-    },
-    "github:1339803365:root": {
-      "text": "为 DSH 工作区与会话补充右键、双击菜单，集中提供置顶、重命名、归档、分叉和打开目录等操作。",
-      "source_url": "https://github.com/0imzero/dsh-workspace-menu/blob/afd55510f82821cde60a8364e42f752e244b5b31/README.md",
-      "revision": "afd55510f82821cde60a8364e42f752e244b5b31"
-    },
     "github:1335557891:root": {
       "text": "新粗野主义双方案界面皮肤，支持浅色与深色主题。",
       "source_url": "https://github.com/0nt-one/dsh-neo-skin/blob/fe5ef0e671fab5ab8c8700013f3966eb9642455f/README.md",
@@ -281,66 +211,6 @@
     }
   },
   "capabilities": {
-    "github:1339316901:root": {
-      "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
-      "items": {
-        "模型工具": "forget、index_doc、index_repo、save_lesson、query_memory、remember、memory_stats、list_tasks、select_task、show_task_panel",
-        "事件监听": "session/event、agent/pre-step、session/disposed、fs/observed"
-      }
-    },
-    "github:1333328839:root": {
-      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
-      "items": {
-        "界面": "settings.section"
-      }
-    },
-    "github:1416699252:root": {
-      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
-      "items": {
-        "模型工具": "billing_wallet_balance、agent_list、agent_get、agent_offline、agent_metrics、agent_metrics_report、agent_bind_user、app_list、app_topology、app_metrics"
-      }
-    },
-    "github:1334899834:root": {
-      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
-      "items": {}
-    },
-    "github:1333368566:root": {
-      "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
-      "items": {
-        "事件监听": "session-telemetry/record"
-      }
-    },
-    "github:1333370288:root": {
-      "revision": "87f3fb0198090f0f26a37a52840db150609db748",
-      "items": {
-        "事件监听": "session/event"
-      }
-    },
-    "github:1333357514:root": {
-      "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
-      "items": {
-        "事件监听": "session/event、tools/result"
-      }
-    },
-    "github:1342915339:root": {
-      "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
-      "items": {
-        "事件监听": "agent/inbox/inserted、agent/created、agent/status、agent/pre-step、tools/pre-execute、session/created、workflow/start",
-        "界面": "settings.general.item"
-      }
-    },
-    "github:1343420855:root": {
-      "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
-      "items": {
-        "事件监听": "locale/change"
-      }
-    },
-    "github:1339803365:root": {
-      "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
-      "items": {
-        "界面": "settings.general.item"
-      }
-    },
     "github:1335557891:root": {
       "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
       "items": {
@@ -541,46 +411,6 @@
     }
   },
   "advice": {
-    "github:1339316901:root": {
-      "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
-      "text": "适合同项目反复中断的开发者小规模试用，先与交接文档加 rg 对照，暂不作安装推荐。"
-    },
-    "github:1333328839:root": {
-      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
-      "text": "适合重视界面氛围的个人用户体验；工作环境先关弹幕与动画，比较状态可读性和浏览器负担。"
-    },
-    "github:1416699252:root": {
-      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
-      "text": "有多团队资产治理痛点时先评估独立测试实例与最小域，个人使用不建议为一个需求部署整个平台。"
-    },
-    "github:1334899834:root": {
-      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
-      "text": "适合单账户用户按需查看，先验证凭证处理与轮询负担；需要预算控制时仍要配合计量和限额。"
-    },
-    "github:1333368566:root": {
-      "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
-      "text": "适合已有遥测导出的部署先做合成凭证试用，同时检查完整监听链和本地日志权限。"
-    },
-    "github:1333370288:root": {
-      "revision": "87f3fb0198090f0f26a37a52840db150609db748",
-      "text": "适合排查“这一轮记录了什么”的开发者试用，不能替代 CI、测试产物或审计放行。"
-    },
-    "github:1333357514:root": {
-      "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
-      "text": "适合单进程、私有目录内的取证流程试验；有合规或多进程诉求时先补外部锚定与写入协调。"
-    },
-    "github:1342915339:root": {
-      "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
-      "text": "仅推荐给明确想展示状态的个人用户试用；默认保持模糊模式，先核查实际外发字段。"
-    },
-    "github:1343420855:root": {
-      "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
-      "text": "仅作为隔离测试环境的候选，先做双用户REST／WS／凭证和升级回归，尚无本轮真实宿主安全验收。"
-    },
-    "github:1339803365:root": {
-      "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
-      "text": "先试非破坏菜单并保持删除关闭；需要删除时必须在临时目录验证路径授权、归档依赖和失败恢复。"
-    },
     "github:1335557891:root": {
       "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
       "text": "先在非关键浏览器 Profile 检查常用页面、深浅色和升级后的样式，再决定长期启用。"

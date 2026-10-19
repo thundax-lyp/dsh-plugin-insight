@@ -167,6 +167,11 @@ export function startSession(input, previous = null, limit = undefined) {
 export function selectedItems(session) {
     return session.items.filter((item) => !session.selected_ids || session.selected_ids.includes(item.id));
 }
+const hasFreshAnalysis = (plugin, checkedAt) =>
+    plugin?.findings.length > 0 &&
+    plugin.findings.every(
+        (finding) => Date.parse(finding.reviewed_at) >= Date.parse(checkedAt) && finding.status !== 'needs_review'
+    );
 export function createManifest(session, sessionPath, root = ROOT) {
     validateSession(session, root);
     const catalog = read(resolve(root, CATALOG));
@@ -302,10 +307,7 @@ export function completeItem(session, id, obsPath, reportPath, catalog, root = R
         throw new Error('catalog does not match observations');
     if (
         Date.parse(plugin.last_checked_at) < Date.parse(session.checked_at) ||
-        !current.findings.length ||
-        current.findings.some(
-            (f) => Date.parse(f.reviewed_at) < Date.parse(session.checked_at) || f.status === 'needs_review'
-        ) ||
+        !hasFreshAnalysis(current, session.checked_at) ||
         plugin.findings.some((f) => !current.findings.some((c) => digest(c) === digest(f)))
     )
         throw new Error('fresh analysis required for every round');
@@ -422,7 +424,7 @@ export function main(args = process.argv.slice(2)) {
         atomicWrite(resolve(out), createManifest(read(sessionPath), sessionPath));
     } else if (command === 'publish') {
         publishItem(read(need('session')), need('plugin'), need('out'));
-    } else if (command === 'checkpoint' || command === 'block' || command === 'retry') {
+    } else if (command === 'checkpoint' || command === 'block' || command === 'retry' || command === 'invalidate') {
         saveSession(need('session'), () => {
             const s = validateSession(read(v.session));
             if (command === 'checkpoint')
@@ -434,14 +436,32 @@ export function main(args = process.argv.slice(2)) {
                     read(v.catalog ?? resolve(ROOT, CATALOG))
                 );
             const item = s.items.find((p) => p.id === need('plugin'));
-            if (!item || !selectedItems(s).includes(item) || item.status === 'complete')
-                throw new Error('item missing or already complete');
+            if (!item || !selectedItems(s).includes(item)) throw new Error('item missing or deferred');
+            if (command === 'invalidate') {
+                if (item.status !== 'complete') throw new Error('invalidate requires a complete item');
+                const catalog = read(v.catalog ?? resolve(ROOT, CATALOG));
+                validateCatalog(catalog);
+                if (
+                    hasFreshAnalysis(
+                        catalog.plugins.find((plugin) => plugin.id === item.id),
+                        s.checked_at
+                    )
+                )
+                    throw new Error('cannot invalidate an item with fresh analysis');
+                item.status = 'pending';
+                delete item.checkpoint;
+                return validateSession(s);
+            }
+            if (item.status === 'complete') throw new Error('item already complete');
             item.status = command === 'block' ? 'blocked' : 'pending';
             if (command === 'block') item.reason = need('reason');
             else delete item.reason;
             return validateSession(s);
         });
-    } else throw new Error('Usage: research-session.mjs start|next|checkpoint|block|retry|validate|manifest|publish');
+    } else
+        throw new Error(
+            'Usage: research-session.mjs start|next|checkpoint|block|retry|invalidate|validate|manifest|publish'
+        );
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
     try {

@@ -45,7 +45,8 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 发布顺序：在本地完成详情并登记检查点 → 发布当前详情并导出运行清单 → 更新发布输入 → 运行块生成器合成 README 与分类页 → 校验差异。
 `npm run render:research -- --check` 只读比较生成结果与 README／分类页；已接入 `validate:data`，由现有 CI 调用。
 发布输入更新使用 `publication-data.mjs` 的 plan／apply：manifest 负责本轮范围计数，人工审阅输入负责推荐及展示语义；
-计划绑定当前发布输入摘要，精确替换本轮完成项并保留未选项，本轮未提供 capability 或 recommendation 表示删除该完成项原有条目。
+计划绑定当前发布输入摘要，按本轮全部所选项替换发布状态：完成项使用本轮人工输入，pending／blocked 项移出当前发布，未选项沿历史 manifest 保留；
+本轮未提供 capability 或 recommendation 表示删除该完成项原有条目。
 不得用按轮次硬编码的脚本覆盖 `PUBLICATION.json`，也不得从静态候选自动确认能力或生成推荐。
 
 ## 文件位置与命名

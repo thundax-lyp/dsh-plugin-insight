@@ -19,8 +19,8 @@ export function validatePublication(publication) {
 }
 
 const keys = (value) => Object.keys(value ?? {});
-const replaceCompleted = (current, replacement, complete) => ({
-    ...Object.fromEntries(Object.entries(current ?? {}).filter(([id]) => !complete.has(id))),
+const replaceSelected = (current, replacement, selected) => ({
+    ...Object.fromEntries(Object.entries(current ?? {}).filter(([id]) => !selected.has(id))),
     ...replacement
 });
 const exactCoverage = (label, value, expected) => {
@@ -44,6 +44,7 @@ export function planPublication(current, manifest, input, catalog, manifestPath)
     if (extra.length) throw new Error(`unknown publication input fields: ${extra.join(', ')}`);
     for (const field of allowed) if (input[field] === undefined) throw new Error(`publication input requires ${field}`);
     const completeItems = manifest.items.filter((item) => item.status === 'complete');
+    const selected = new Set(manifest.items.map((item) => item.id));
     const complete = new Set(completeItems.map((item) => item.id));
     const byId = new Map(completeItems.map((item) => [item.id, item]));
     exactCoverage('metadata', input.metadata, complete);
@@ -73,20 +74,24 @@ export function planPublication(current, manifest, input, catalog, manifestPath)
             throw new Error(`install recommendation lacks host verification: ${recommendation.plugin_id}`);
     }
     const recommendations = [
-        ...current.recommendations.filter((recommendation) => !complete.has(recommendation.plugin_id)),
+        ...current.recommendations.filter((recommendation) => !selected.has(recommendation.plugin_id)),
         ...input.recommendations
     ];
+    const manifests = [...new Set([...(current.manifests ?? []), current.manifest])].filter(
+        (path) => path !== manifestPath
+    );
     const result = {
         schema_version: 1,
+        ...(manifests.length ? { manifests } : {}),
         manifest: manifestPath,
         scope: `${manifest.summary.selected} 个所选固定源码组件：完成 ${manifest.summary.complete}、受阻 ${manifest.summary.blocked}、待处理 ${manifest.summary.pending}；完整候选 ${manifest.summary.listed}，未选 ${manifest.summary.deferred}`,
         catalog: current.catalog,
         catalog_page: current.catalog_page,
         recommendations,
-        metadata: replaceCompleted(current.metadata, input.metadata, complete),
-        summaries: replaceCompleted(current.summaries, input.summaries, complete),
-        capabilities: replaceCompleted(current.capabilities, input.capabilities, complete),
-        advice: replaceCompleted(current.advice, input.advice, complete)
+        metadata: replaceSelected(current.metadata, input.metadata, selected),
+        summaries: replaceSelected(current.summaries, input.summaries, selected),
+        capabilities: replaceSelected(current.capabilities, input.capabilities, selected),
+        advice: replaceSelected(current.advice, input.advice, selected)
     };
     validatePublication(result);
     return {

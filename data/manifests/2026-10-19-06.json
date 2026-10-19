@@ -19,9 +19,9 @@
   "summary": {
     "listed": 6966,
     "selected": 40,
-    "complete": 40,
+    "complete": 30,
     "blocked": 0,
-    "pending": 0,
+    "pending": 10,
     "deferred": 6926,
     "changes": {
       "unchanged": 6966
@@ -46,13 +46,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "9f184ee8a2db8a19d526ae6a8f49db6d23715f918edd64352afc3f1986be48c6",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1339316901-root",
-        "observations_sha256": "e85df160930dfb575b4db1978ebc0bd72f78596a05145831df0ce4c109b9f6f9",
-        "report_sha256": "d4f36ed92eab1937ea3f99f1350051ff50980203a5ff9171597e0df722cbf2a0"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1333328839:root",
@@ -73,13 +67,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "196c5ec84ff3e3fed1307e508380a258b34a7c5934cd7fd7bf07c1bf0023d9a9",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1333328839-root",
-        "observations_sha256": "f311b1958a1ff8952aff662cdac53fa0e17cf0427efb087966f678672b6cd39d",
-        "report_sha256": "24a948714b777d1326fbbdee45c50a7f5275c9d8d86a0fdb01342119cec68196"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1416699252:root",
@@ -99,13 +87,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "3eb1f00437d0ada48c129cbcafff87849975632dfc20be3e997ddd3f3aa41817",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1416699252-root",
-        "observations_sha256": "612fe8d4392d21a8e03dd74192b42a837d75d8a66c1a469dab15b49aa7835b49",
-        "report_sha256": "10446be9b247137d1b382faabbdc8dbb377274db20627d5b1d60b6335773732c"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1334899834:root",
@@ -125,13 +107,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "748353a3d61afaa56dbc8f9fc818a52e9b4b5be155fb378ab6bad01ea7d6df3e",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1334899834-root",
-        "observations_sha256": "c6a8eb00e5431373916be0a1f69146b75489d7c1246503a2dc8020cce85f602e",
-        "report_sha256": "8e25e8825db00a16be2d9654177c988acbd2a84d3cc47815d36bb9df0783a6db"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1333368566:root",
@@ -152,13 +128,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "b67d09ed68ce1238172191f5d2c206d36c6447d81ccebce25ff897b491ae791a",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1333368566-root",
-        "observations_sha256": "2eb9e53e34fb1cc7101b6aca7fe2e743a9982d0e83343727e67f08e65f954fd6",
-        "report_sha256": "29184e3d6fa1591e6ff2385506f172e3026d45f3d78f2adfa850dff3e75da8d2"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1333370288:root",
@@ -179,13 +149,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "615447d7825d1ddcec836f41d7af05322f7dfae73526afe20543ac7a45e40a80",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1333370288-root",
-        "observations_sha256": "4f57caa9cceab89ac9d734d891a958d07b8665ccb97abc480e3ff45119e5ab12",
-        "report_sha256": "bbd05dfc4a500557868f5c61256f2cbf0d94e13fd1293d23406b074b298c91e2"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1333357514:root",
@@ -205,13 +169,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "f7ae8c1e679f94c2637aedb1253021fbb7b66e1226bab16ca01df4e87f3882a0",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1333357514-root",
-        "observations_sha256": "39b663f610b820cc08af2c3dc54862681bd0f1d9242706cd421d9eb16cbd1129",
-        "report_sha256": "ee897e2e06ce169e04efee671be4d3eb56a1493b962f22446189dac7e833bb78"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1342915339:root",
@@ -231,13 +189,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "602966a7e9254a7c80b5cb91bb65275556dfa8c4be46852b78cd39249e0d7ea3",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1342915339-root",
-        "observations_sha256": "d100c106661b3bbd2781bcb7d0ae7bbfe08e66a4faf0ec9152506af917f966bb",
-        "report_sha256": "af631b9827df10c7d8dda87e61d4e0588dae17ef80fde4209bcda3b1ab84679a"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1343420855:root",
@@ -257,13 +209,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "5c1536ef0c7ed8b805816dbcc52de2b362c23802a6b16cf09959cee62350d47d",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1343420855-root",
-        "observations_sha256": "38cce9787daf27d4ad115b7b37819fde9f7ed75240fcb86837753d1cc42ffbb4",
-        "report_sha256": "ca152adb4b990bd8026f520e0bae9177aefe45510ee90784243b5a87f38b3a48"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1339803365:root",
@@ -284,13 +230,7 @@
       "changes": [
         "unchanged"
       ],
-      "status": "complete",
-      "analysis_sha256": "04b74ad81349280c72b0d369c320575b73b08996b1878bc97600fe0556dcc0ed",
-      "checkpoint": {
-        "run_id": "20261019T145322Z-formatfix40-1339803365-root",
-        "observations_sha256": "bf4150fcec84e1c816953cd052a7af1ca687c5d331e0a4eaded22eb526169431",
-        "report_sha256": "80ae380f1e3a6e6e4fce210985761c6bb39c48d63585255e11b187b59488aa53"
-      }
+      "status": "pending"
     },
     {
       "id": "github:1335557891:root",
@@ -1017,7 +957,7 @@
   "tooling": {
     "node_version": "24.19.0",
     "package_lock_sha256": "73224b0f6f0fc5227420293689b9a6b31e3ee260401aa8f06bd93a44fcd22d30",
-    "workflow_sha256": "357af2b856cb3e3f22ff0ece47adc34768d9af1e7b386a3850a57b8214b24dae"
+    "workflow_sha256": "10f1e5b47cba33190cef4d673a85533de7936301f4d9b9941afc4bf28ebe874d"
   },
   "reproducibility": {
     "level": "workflow",
@@ -1042,6 +982,6 @@
   ],
   "local_artifacts": {
     "root": "data/runs/2026-10-19-06",
-    "session_sha256": "167ccfb671b978b5bd793a796b89debf74ddeab8a591aabab3d3390a59470bc8"
+    "session_sha256": "acdd2ca765960317434cc59cc5c3a15364643adb475353d60bcdc52e148907dd"
   }
 }
