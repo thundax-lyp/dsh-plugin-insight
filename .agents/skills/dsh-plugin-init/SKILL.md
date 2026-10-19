@@ -8,7 +8,7 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
 在工程根目录执行；依赖本 Skill 和洞察 Skill 的 `references/`、共享约定、`.agents/skills/_shared/schemas/`、Skill 内脚本和根 package，不能只复制 Skill 目录。
 开始前阅读[数据契约](../_shared/references/DATA-CONTRACT.md)、[研究规范](../dsh-plugin-insight/references/RESEARCH-STANDARD.md)、
 [输出标准](references/OUTPUT-STANDARD.md)。GitHub 来源与版本读取依赖当前环境可用的 GitHub Skill 或插件；
-不假设特定 Skill 名称。Git 协作遵循根 `AGENTS.md`；运行时遵循 `.node-version`，依赖缺失时执行 `npm ci --ignore-scripts`。
+不假设特定 Skill 名称。Git 协作遵循根 `AGENTS.md`；运行时遵循 `.node-version`，并与 package.json 的 engines.node、本地验证及 CI 保持一致；依赖缺失时执行 `npm ci --ignore-scripts`。
 
 专用脚本在 [scripts/](scripts)，发布模板在 [assets/templates/publication/](assets/templates/publication)，
 数据读写与 GitHub 采集复用 [共享脚本](../_shared/scripts)。依赖和稳定命令仍由根 package.json 维护。
@@ -23,7 +23,8 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
 1. **区分新一轮与续跑。** 查看 `data/sessions/` 和工作区。用户要求继续时恢复原会话；明确开始新一轮时使用新 ID，
    以最近可比会话作为 `--previous`，记录其范围差异。不因为已有档案改走另一个 Skill，不清空历史。
 2. **确认来源，整理列表。** 核对用户来源；默认使用研究规范中的两个目录。固定来源版本、截止时间和覆盖边界，
-   优先结构化条目，补充 README／CATALOG。使用 GitHub 插件，或可选 `capture-github.mjs`；后者不能穷尽目录内容。
+   优先结构化条目，补充 README／CATALOG。使用 GitHub 插件，或可选 `capture-github.mjs`；后者仅采集仓库元数据、固定提交／文件树、部分根文件及最多100条发布记录，不能穷尽目录或跟踪全部依赖。
+   目录解析、组件匹配和额外源码须另行核查；保留分页、截断和访问失败边界，不执行目标代码。
    核对稳定仓库／组件身份，去重并区分条目类型；身份未核实的候选另存问题记录，不编造 ID。
    按[会话契约](../_shared/references/DATA-CONTRACT.md#研究会话与脚本检查点)准备输入清单，
    格式参考[合成输入](assets/research-input.json)，不能将合成数据导入真实档案。
@@ -52,7 +53,7 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    checkpoint 核对已应用数据、本轮核查时间、固定源码版本、材料及摘要，成功后才完成该项。
    若 apply 后中断，先核对 `catalog.runs` 和批次，补做校验与 checkpoint，不重复 apply。
    已完成详情作为不可改写的本轮产物；后续修订使用新材料和新一轮，不静默覆盖检查点文件。
-6. **恢复、受阻与收口。** 每完成一项继续调用 `next`，已完成项被跳过。失败保存错误批次和部分材料，使用
+6. **恢复、受阻与收口。** 写入冲突、锁与中断处理见[会话与入档恢复](references/SESSION-OPERATIONS.md)。 每完成一项继续调用 `next`，已完成项被跳过。失败保存错误批次和部分材料，使用
    `block --session ... --plugin ... --reason ...` 登记原因，处理其他项；重试时用 `retry --session ... --plugin ...`。
    来源移除的条目也保留，尝试核查当前仓库及采用影响；无法读到源码时记受阻，不能伪造成功检查点。
    `next` 返回空但 blocked 非零仍未完成；不从“没有待处理项”推断全部成功。
