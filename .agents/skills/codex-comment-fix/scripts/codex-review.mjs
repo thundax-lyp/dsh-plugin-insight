@@ -75,10 +75,28 @@ function paged(repository,endpoint){
 
 const THREAD_QUERY=`query($owner:String!,$name:String!,$number:Int!,$cursor:String){
  repository(owner:$owner,name:$name){pullRequest(number:$number){reviewThreads(first:100,after:$cursor){
-  nodes{id isResolved comments(first:100){nodes{id databaseId body url path line originalLine createdAt author{login} pullRequestReview{databaseId}}}}
+  nodes{id isResolved comments(first:100){nodes{id databaseId body url path line originalLine createdAt author{login} pullRequestReview{databaseId}} pageInfo{hasNextPage endCursor}}}
   pageInfo{hasNextPage endCursor}
  }}}
 }`;
+
+const THREAD_COMMENTS_QUERY=`query($threadId:ID!,$cursor:String){
+ node(id:$threadId){... on PullRequestReviewThread{comments(first:100,after:$cursor){
+  nodes{id databaseId body url path line originalLine createdAt author{login} pullRequestReview{databaseId}}
+  pageInfo{hasNextPage endCursor}
+ }}}
+}`;
+
+function readRemainingThreadComments(thread){
+ const comments=[...thread.comments.nodes];let pageInfo=thread.comments.pageInfo;
+ while(pageInfo.hasNextPage){
+  if(!pageInfo.endCursor)fail(`review thread ${thread.id} comment pagination returned no cursor`);
+  const data=gh(['api','graphql','-f',`query=${THREAD_COMMENTS_QUERY}`,'-F',`threadId=${thread.id}`,'-F',`cursor=${pageInfo.endCursor}`]);
+  const connection=data?.data?.node?.comments;if(!connection)fail(`cannot read comments for review thread ${thread.id}`);
+  comments.push(...connection.nodes);pageInfo=connection.pageInfo;
+ }
+ return comments;
+}
 
 function readThreads(repository,number){
  const [owner,name]=repository.split('/');let cursor;const nodes=[];
@@ -87,7 +105,7 @@ function readThreads(repository,number){
   if(cursor)args.push('-F',`cursor=${cursor}`);
   const data=gh(args);const connection=data?.data?.repository?.pullRequest?.reviewThreads;
   if(!connection)fail(`cannot read review threads for PR #${number}`);
-  nodes.push(...connection.nodes);if(!connection.pageInfo.hasNextPage)break;
+  nodes.push(...connection.nodes.map(thread=>({...thread,comments:{nodes:readRemainingThreadComments(thread)}})));if(!connection.pageInfo.hasNextPage)break;
   cursor=connection.pageInfo.endCursor;if(!cursor)fail('review thread pagination returned no cursor');
  }
  return nodes;
