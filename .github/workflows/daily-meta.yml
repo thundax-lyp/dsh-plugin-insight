@@ -1,0 +1,77 @@
+name: Daily plugin metadata
+
+on:
+  schedule:
+    - cron: '30 0 * * *' # 08:30 Asia/Shanghai
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: daily-plugin-metadata
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Prepare metadata PR branch
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          existing=$(gh pr list --state open --json headRefName --jq '[.[] | select(.headRefName | test("^codex/daily-meta-[0-9]+$"))][0].headRefName // empty')
+          if [ -n "$existing" ]; then
+            git fetch origin "$existing:refs/remotes/origin/$existing"
+            git switch -c "$existing" --track "origin/$existing"
+            git merge origin/main --no-edit
+            echo "META_BRANCH=$existing" >> "$GITHUB_ENV"
+          else
+            branch="codex/daily-meta-$RUN_ID"
+            git switch -c "$branch"
+            echo "META_BRANCH=$branch" >> "$GITHUB_ENV"
+          fi
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Refresh list metadata and generated pages
+        run: npm run refresh:meta
+      - name: Validate results
+        run: |
+          npm run check
+          git diff --check
+      - name: Commit and open or update PR
+        run: |
+          git add data/snapshots data/publications/current.json data/reports README.md
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Chore(repo/meta): 刷新插件活跃度与脚本更新标记'
+          git push origin "$META_BRANCH"
+          pr=$(gh pr list --head "$META_BRANCH" --state open --json url --jq '.[0].url // empty')
+          if [ -z "$pr" ]; then
+            body="$RUNNER_TEMP/meta-pr.md"
+            cat > "$body" <<'BODY'
+          每日按当前插件清单刷新 Star、npm 近30天下载、Issue 活跃度和相对更新时间。
+          对比研究版本标记组件脚本变化，保留原有研究结论与证据，不执行目标插件。
+
+          验证：npm run check、git diff --check。未进行实际插件效果验收；由维护者评审并合并。
+          BODY
+            gh pr create --base main --head "$META_BRANCH" --title 'Chore(repo/meta): 更新插件 META 与待洞察标记' --body-file "$body"
+          fi
+          # Dispatch explicitly; token-created PR events may require approval.
+          gh workflow run ci.yml --ref "$META_BRANCH"

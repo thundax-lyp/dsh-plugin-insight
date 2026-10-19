@@ -291,6 +291,11 @@ GitHub 与 npm 的独立时间保留在数据中，README与分类页顶部显�
 比较失败、分支回退／分叉或文件列表达到300上限时记录未知，不误写无变化。共享目录、依赖、Skill和外部服务变化仍需研究者另查。
 自动任务不改 catalog findings、研究深度或完成检查点，旧研究版本持续保留；重新洞察后以新会话基线清除变化标记。
 
+GitHub Actions 每天北京时间08:30及手动触发，复用未合并的 META PR，普通提交和推送，不强推、不自动合并 main。
+合并冲突则停止，由维护者处理。机器人 PR 后显式 dispatch CI，确保 Repository checks 检查对应分支头。
+默认 GITHUB_TOKEN 需要 contents／pull-requests／actions 写权限，并须允许 Actions 创建 PR；
+工作流合入默认分支后定时执行才生效。实际时间可能受 GitHub 调度延迟影响。
+
 ## Markdown 模板维护
 
 页面标题（含 DSH Plugin Insight）、章节顺序、列表与条目版式修改 `templates/publication/*.md`；
