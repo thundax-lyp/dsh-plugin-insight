@@ -65,6 +65,7 @@ export function validateSession(session, root = ROOT) {
     )
         throw new Error('invalid research selection');
     const ids = new Set();
+    const selected = session.selected_ids ? new Set(session.selected_ids) : null;
     const urls = new Set(session.sources.map((s) => s.url));
     if (urls.size !== session.sources.length) throw new Error('duplicate source');
     for (const item of session.items) {
@@ -72,6 +73,12 @@ export function validateSession(session, root = ROOT) {
         ids.add(item.id);
         if (item.path.startsWith('/') || item.path.split('/').includes('..')) throw new Error('unsafe component path');
         if (item.source_urls.some((url) => !urls.has(url))) throw new Error('unknown source');
+        if (
+            selected &&
+            !selected.has(item.id) &&
+            (item.status !== 'pending' || item.reason !== undefined || item.checkpoint !== undefined)
+        )
+            throw new Error('deferred item must remain pending without completion state');
         if (item.status === 'complete') {
             const obs = read(artifact(root, item.checkpoint.observations));
             validateObservations(obs);
