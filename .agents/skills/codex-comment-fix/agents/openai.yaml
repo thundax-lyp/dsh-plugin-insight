@@ -1,0 +1,7 @@
+interface:
+  display_name: "Codex Comment Fix"
+  short_description: "Triage and close Codex review findings safely."
+  default_prompt: "Use $codex-comment-fix to process Codex review findings on the current pull request."
+
+policy:
+  allow_implicit_invocation: false

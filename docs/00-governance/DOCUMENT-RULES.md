@@ -17,12 +17,13 @@ Convivium 的会议设计、运行时角色和专用工程门禁不构成本工�
 | 目录 | 职责 |
 |---|---|
 | `docs/00-governance/` | 约束整个工程的文档、提交、PR 与协作规则 |
-| `.agents/skills/_shared/references/` | 两个 Skill 共用的数据契约 |
+| `.agents/skills/_shared/references/` | 两个研究 Skill 共用的数据契约 |
 | `.agents/skills/dsh-plugin-insight/references/` | 单插件研究方法、分类、证据边界与分析维度 |
 | `.agents/skills/dsh-plugin-init/references/` | 研究产物、README、汇总推荐及交付标准 |
+| `.agents/skills/codex-comment-fix/references/` | Codex 评论来源、幂等处置与 GitHub API 边界 |
 
 约束整个工程协作的规则归 docs；指导研究执行的参考资料归对应 Skill。
-每份文档只维护一个真相源，其他入口按需引用，不复制。两个 Skill 共用的数据契约放入 _shared。
+每份文档只维护一个真相源，其他入口按需引用，不复制。两个研究 Skill 共用的数据契约放入 _shared。
 未确认材料须标记状态，确认后迁入对应真相源；不能从设计推断已经实现，
 也不能用单次命令成功证明业务就绪。
 
@@ -43,7 +44,7 @@ Convivium 的会议设计、运行时角色和专用工程门禁不构成本工�
 
 机器结构约束以 `.agents/skills/_shared/schemas/` 内的 JSON Schema 为准，数据契约解释字段和不变量；
 各 Skill 的 `scripts/` 与 `_shared/scripts/` 实现校验和增量行为。修改任何一方时检查其余相关部分，发现不一致须修正。
-Schema 统一放在 `.agents/skills/_shared/schemas/`，由设计文档与两个 Skill 引用，不复制第二份。
+Schema 统一放在 `.agents/skills/_shared/schemas/`，由设计文档与两个研究 Skill 引用，不复制第二份。
 数据契约在共享 references 维护，研究规范归洞察 Skill，输出标准归列表编排 Skill；相互引用保持单一真相源。
 
 ## 工程文档与研究产物
@@ -112,7 +113,7 @@ Skill 保存触发条件、重复执行步骤及特有约束，共同规则通�
 修改入口及共享资源路径时检查研究 Skill 的相对引用，避免单独复制后依赖失效。
 
 专用脚本放在对应 Skill 的 `scripts/`，发布模板与输入示例放在其 `assets/`。
-两个 Skill 复用的脚本与 Schema 统一放在 `.agents/skills/_shared/`；该目录是共享资源，不注册第三个 Skill。
+两个研究 Skill 复用的脚本与 Schema 统一放在 `.agents/skills/_shared/`；该目录是共享资源，不注册独立 Skill。
 工程根目录不保留 `scripts/`、`templates/`、`schemas/` 或 `examples/` 的重复入口。
 本项目不维护 testcase 或合成测试档案；CI 保留真实研究数据结构、检查点摘要与生成结果一致性校验。
 根 `package.json` 继续集中声明依赖与命令，根 `data/` 保存当前研究结果与可复现清单，本地 `data/runs/` 保存运行过程，`docs/` 保存工程治理规则，Skill 的 `references/` 保存研究执行依据。

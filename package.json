@@ -17,7 +17,8 @@
     "loc": "sloc",
     "refresh:meta": "node .agents/skills/dsh-plugin-init/scripts/refresh-meta.mjs",
     "migrate:data": "node .agents/skills/dsh-plugin-init/scripts/migrate-data.mjs",
-    "maintain:runs": "node .agents/skills/dsh-plugin-init/scripts/maintain-runs.mjs"
+    "maintain:runs": "node .agents/skills/dsh-plugin-init/scripts/maintain-runs.mjs",
+    "codex-review": "node .agents/skills/codex-comment-fix/scripts/codex-review.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",
