@@ -1,0 +1,2515 @@
+{
+  "captured_at": "2026-10-19T06:56:03.148Z",
+  "repository_id": 1170373459,
+  "repository": "EthanYoQ/Invoice-Downloader",
+  "commit": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+  "metadata": {
+    "id": 1170373459,
+    "full_name": "EthanYoQ/Invoice-Downloader",
+    "description": "电子发票整理与报销准备工具：从邮箱批量收集 PDF/OFD/XML 发票，OCR 识别、分类归档并生成 Excel 汇总；提供 Windows/macOS 桌面版与 DSH 插件。",
+    "default_branch": "main",
+    "archived": false,
+    "disabled": false,
+    "created_at": "2026-03-02T03:40:29Z",
+    "pushed_at": "2026-09-25T10:06:22Z",
+    "license": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "spdx_id": "Apache-2.0",
+      "url": "https://api.github.com/licenses/apache-2.0",
+      "node_id": "MDc6TGljZW5zZTI="
+    },
+    "topics": [
+      "deepseek-harness",
+      "desktop-app",
+      "document-processing",
+      "dsh-plugin",
+      "e-invoice",
+      "email",
+      "expense-management",
+      "fapiao",
+      "imap",
+      "invoice",
+      "invoice-automation",
+      "invoice-management",
+      "macos",
+      "ocr",
+      "ofd",
+      "python",
+      "reimbursement",
+      "windows"
+    ],
+    "html_url": "https://github.com/EthanYoQ/Invoice-Downloader"
+  },
+  "tree": {
+    "sha": "dd7b9656ae8faf326cc111f2c6f68ac054650a11",
+    "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/dd7b9656ae8faf326cc111f2c6f68ac054650a11",
+    "tree": [
+      {
+        "path": ".github",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b99de2569294ae42c15bc620ce91965e05adcde5",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/b99de2569294ae42c15bc620ce91965e05adcde5"
+      },
+      {
+        "path": ".github/release-contracts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0fac41e4128760c198bf4b7db5f08aa3af55bd7e",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/0fac41e4128760c198bf4b7db5f08aa3af55bd7e"
+      },
+      {
+        "path": ".github/release-contracts/unified-desktop-v2026.07.29.1.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e3cf333d91e6d9bd118c356b9ef0912bd6767967",
+        "size": 1039,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/e3cf333d91e6d9bd118c356b9ef0912bd6767967"
+      },
+      {
+        "path": ".github/scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "72bb1444e0b96c1849272f1a501f541b63b8668b",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/72bb1444e0b96c1849272f1a501f541b63b8668b"
+      },
+      {
+        "path": ".github/scripts/qualify-windows-release.ps1",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9597632daa2725b7beca750eddaf89c8063301b1",
+        "size": 8086,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/9597632daa2725b7beca750eddaf89c8063301b1"
+      },
+      {
+        "path": ".github/workflows",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "34f320f2d4bb93200f38e0357e02497b84202f35",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/34f320f2d4bb93200f38e0357e02497b84202f35"
+      },
+      {
+        "path": ".github/workflows/core-tests.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ca5a5cfe86bf229a8adb25efbe4154d1e2382a0",
+        "size": 2167,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/8ca5a5cfe86bf229a8adb25efbe4154d1e2382a0"
+      },
+      {
+        "path": ".github/workflows/dsh-plugin-smoke.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6dc0e6e59cbd383629088a919e0c2091d80b9ede",
+        "size": 3500,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/6dc0e6e59cbd383629088a919e0c2091d80b9ede"
+      },
+      {
+        "path": ".github/workflows/release-desktop.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ce2d1b64832318ef908143a39994805320205d94",
+        "size": 12751,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/ce2d1b64832318ef908143a39994805320205d94"
+      },
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ab4bdd43c5e1829c77bf10392c4c815ae40740b4",
+        "size": 574,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/ab4bdd43c5e1829c77bf10392c4c815ae40740b4"
+      },
+      {
+        "path": ".superpowers",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "9dc283f575b80a4ed1cabeb4cff714649defd3e2",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/9dc283f575b80a4ed1cabeb4cff714649defd3e2"
+      },
+      {
+        "path": ".superpowers/sdd",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d5fd9f569a034e54191beb85df8eaa7e1e7ee298",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/d5fd9f569a034e54191beb85df8eaa7e1e7ee298"
+      },
+      {
+        "path": ".superpowers/sdd/task-8-report.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "190b23935e2cb41376ff16aaab807b5c76ad05b5",
+        "size": 15717,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/190b23935e2cb41376ff16aaab807b5c76ad05b5"
+      },
+      {
+        "path": ".superpowers/sdd/task-9-report.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e9b39e692254c6f8a6b110197b6fa9826e1e540e",
+        "size": 13202,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/e9b39e692254c6f8a6b110197b6fa9826e1e540e"
+      },
+      {
+        "path": "AGENTS.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "78f6b4fcba3079b8deacd713f5322af8367a881e",
+        "size": 1884,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/78f6b4fcba3079b8deacd713f5322af8367a881e"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+        "size": 11357,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+      },
+      {
+        "path": "NOTICE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2e47b9b0c8b14db53639ab8acbcbfacda0bb68c5",
+        "size": 185,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2e47b9b0c8b14db53639ab8acbcbfacda0bb68c5"
+      },
+      {
+        "path": "README.en.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "44f752374db6a19070d455ee122a5f103d248c37",
+        "size": 15646,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/44f752374db6a19070d455ee122a5f103d248c37"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f46ea6de6a02ba03a64b74685704d03316b3cd72",
+        "size": 13705,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f46ea6de6a02ba03a64b74685704d03316b3cd72"
+      },
+      {
+        "path": "app_api.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8304b4dfb267ee336412569337142e10d8635360",
+        "size": 180516,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/8304b4dfb267ee336412569337142e10d8635360"
+      },
+      {
+        "path": "app_archive_adapter.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3419471b345b8f5f83d277aadcd222149f1bd907",
+        "size": 26405,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/3419471b345b8f5f83d277aadcd222149f1bd907"
+      },
+      {
+        "path": "archive_pairing.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "92b54fdd9b7806ec932e55f0cd7e8b34eb07848c",
+        "size": 9042,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/92b54fdd9b7806ec932e55f0cd7e8b34eb07848c"
+      },
+      {
+        "path": "archive_pairing_service.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5dcc548c5cef546d5433a0ab7dec58ef81048bed",
+        "size": 10032,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/5dcc548c5cef546d5433a0ab7dec58ef81048bed"
+      },
+      {
+        "path": "archive_service.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "efc50f3e0e113d3b76c70032db9516c43fa5fef0",
+        "size": 10219,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/efc50f3e0e113d3b76c70032db9516c43fa5fef0"
+      },
+      {
+        "path": "artifact_verifier.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "537af06143f536e6409694e5e7e64a6483eb8a02",
+        "size": 26628,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/537af06143f536e6409694e5e7e64a6483eb8a02"
+      },
+      {
+        "path": "audit_email_truth.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0ff27dbb8efd32a5bbe0b3b829646f6a6a4b2f6e",
+        "size": 2923,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/0ff27dbb8efd32a5bbe0b3b829646f6a6a4b2f6e"
+      },
+      {
+        "path": "batch_validation.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "47872aa851e545e335c59179386d0253e3c9f334",
+        "size": 44182,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/47872aa851e545e335c59179386d0253e3c9f334"
+      },
+      {
+        "path": "bounded_url_recovery.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7ab9e5a2437b7ac0ebab739ce689d46b04165230",
+        "size": 11450,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/7ab9e5a2437b7ac0ebab739ce689d46b04165230"
+      },
+      {
+        "path": "build",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "570a42ad15f76549f7fc458af208628d67c769f9",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/570a42ad15f76549f7fc458af208628d67c769f9"
+      },
+      {
+        "path": "build/macos",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b03ee10fa3a7ddbfbcaaf0e418bb50c997a5ef89",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/b03ee10fa3a7ddbfbcaaf0e418bb50c997a5ef89"
+      },
+      {
+        "path": "build/macos/InvoiceFlowAI.spec",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6c03838a09a9005b945c35bea5dc65fb567fdf50",
+        "size": 1879,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/6c03838a09a9005b945c35bea5dc65fb567fdf50"
+      },
+      {
+        "path": "build/macos/build_release.sh",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "44d016beada65d43a1afa8e72aa412cb63bdd73c",
+        "size": 3413,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/44d016beada65d43a1afa8e72aa412cb63bdd73c"
+      },
+      {
+        "path": "build/windows",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "890bfc1d90641a1631d99fffbc0f4ac4793cb3e7",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/890bfc1d90641a1631d99fffbc0f4ac4793cb3e7"
+      },
+      {
+        "path": "build/windows/InvoiceFlowAI.spec",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2eed43e1919882643f748f55512faa00baf92d4e",
+        "size": 2621,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2eed43e1919882643f748f55512faa00baf92d4e"
+      },
+      {
+        "path": "build/windows/app.manifest",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "513620ba5e62e5d97ef0766d6e80219a5683ad92",
+        "size": 581,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/513620ba5e62e5d97ef0766d6e80219a5683ad92"
+      },
+      {
+        "path": "build/windows/assets",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "eb580802971b162d46fcef3ebdfb409aba7e75b3",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/eb580802971b162d46fcef3ebdfb409aba7e75b3"
+      },
+      {
+        "path": "build/windows/assets/invoiceflowai-icon.svg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "051b7c94d45b3e1989d69784605925c8e44fac35",
+        "size": 2479,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/051b7c94d45b3e1989d69784605925c8e44fac35"
+      },
+      {
+        "path": "build/windows/assets/invoiceflowai.ico",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c21c49a38784dca68a23fcaef741e45e512a5ca7",
+        "size": 26736,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/c21c49a38784dca68a23fcaef741e45e512a5ca7"
+      },
+      {
+        "path": "build/windows/build_release.ps1",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "48ce9e6912a7830c87c0ce08c3d42587a5ff5443",
+        "size": 29865,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/48ce9e6912a7830c87c0ce08c3d42587a5ff5443"
+      },
+      {
+        "path": "build/windows/installer",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "eae6ca1d5c1f2c7b6a45bb037e22bcdd1864a95f",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/eae6ca1d5c1f2c7b6a45bb037e22bcdd1864a95f"
+      },
+      {
+        "path": "build/windows/installer/InvoiceFlowAI.iss",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2349d423be33c42c9c27bece30aacbd61227355e",
+        "size": 1406,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2349d423be33c42c9c27bece30aacbd61227355e"
+      },
+      {
+        "path": "build/windows/prepare_runtime.ps1",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b9a0d6d45fae56077e41c28238526e102e00a5d2",
+        "size": 4959,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/b9a0d6d45fae56077e41c28238526e102e00a5d2"
+      },
+      {
+        "path": "build/windows/resources.manifest.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f6b149329ab3fa787387a1431348a43eb146ac55",
+        "size": 3042,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f6b149329ab3fa787387a1431348a43eb146ac55"
+      },
+      {
+        "path": "build/windows/runtime-sources.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a524fffb6d1d9f9c42912ee6f4fb645b31ca9725",
+        "size": 937,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/a524fffb6d1d9f9c42912ee6f4fb645b31ca9725"
+      },
+      {
+        "path": "build/windows/runtime_hook_playwright.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3665a0008652199627613f1e0f63ab1613a3fb9e",
+        "size": 867,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/3665a0008652199627613f1e0f63ab1613a3fb9e"
+      },
+      {
+        "path": "build/windows/version-info.template.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "078ad19032c7f8d5c83b25e5200fce20ae0110c5",
+        "size": 798,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/078ad19032c7f8d5c83b25e5200fce20ae0110c5"
+      },
+      {
+        "path": "build_identity.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6061879e7fc7bb967c55935d958e43b2d2ac915d",
+        "size": 2110,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/6061879e7fc7bb967c55935d958e43b2d2ac915d"
+      },
+      {
+        "path": "build_truth_dataset.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f9352e4dc36e050de13e5a19331900ab7a2d5c2f",
+        "size": 102591,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f9352e4dc36e050de13e5a19331900ab7a2d5c2f"
+      },
+      {
+        "path": "candidate_pipeline.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fbeeb952a408ec0d7039a1ac8da9911c0e35b431",
+        "size": 23903,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/fbeeb952a408ec0d7039a1ac8da9911c0e35b431"
+      },
+      {
+        "path": "company_rules.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f238cdca56ec6eb20fcb8d1e8c68f40ae8591888",
+        "size": 1614,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f238cdca56ec6eb20fcb8d1e8c68f40ae8591888"
+      },
+      {
+        "path": "deferred_url_recovery.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4b849dc3cf21ae2ec67968d3a9d21b5345cf27c8",
+        "size": 8524,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/4b849dc3cf21ae2ec67968d3a9d21b5345cf27c8"
+      },
+      {
+        "path": "docs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b37c61a31b6b6de50cd0b3bf3b4ddfd04da4e0d6",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/b37c61a31b6b6de50cd0b3bf3b4ddfd04da4e0d6"
+      },
+      {
+        "path": "docs/funnel.svg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "08bb9dce52f96c65f37ff2231777accc8090bc25",
+        "size": 2716,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/08bb9dce52f96c65f37ff2231777accc8090bc25"
+      },
+      {
+        "path": "docs/images",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "9b0af06fdabefcd3e8e6783b54f4fe2e8200d285",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/9b0af06fdabefcd3e8e6783b54f4fe2e8200d285"
+      },
+      {
+        "path": "docs/images/invoiceflowai-hero-en.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74ed65944a09ecaf427fc86bb64906cb733e71d5",
+        "size": 1432232,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/74ed65944a09ecaf427fc86bb64906cb733e71d5"
+      },
+      {
+        "path": "docs/images/invoiceflowai-hero-zh.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6a5a9d13fcb519422f1f1eee4a81b1eb47b5334b",
+        "size": 1435926,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/6a5a9d13fcb519422f1f1eee4a81b1eb47b5334b"
+      },
+      {
+        "path": "docs/images/screens",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "bbfbcbd1c29894d08a398515e1f36cd9686c9abd",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/bbfbcbd1c29894d08a398515e1f36cd9686c9abd"
+      },
+      {
+        "path": "docs/images/screens/invoiceflowai-analysis-zh.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a4a54d29230aa4c966462186066fdff0fb7bb59b",
+        "size": 210036,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/a4a54d29230aa4c966462186066fdff0fb7bb59b"
+      },
+      {
+        "path": "docs/images/screens/invoiceflowai-disclaimer-zh.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "88d2a06315d59520df3903e5d2dd0257e3faccc1",
+        "size": 142890,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/88d2a06315d59520df3903e5d2dd0257e3faccc1"
+      },
+      {
+        "path": "docs/images/screens/invoiceflowai-overview-zh.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "36fbeb6fc89e4a4666d9dd857d362b811285602d",
+        "size": 191212,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/36fbeb6fc89e4a4666d9dd857d362b811285602d"
+      },
+      {
+        "path": "docs/images/screens/invoiceflowai-processing-zh.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eb4317a4978f1403f14d1bf89ea8475bc1ea3840",
+        "size": 188638,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/eb4317a4978f1403f14d1bf89ea8475bc1ea3840"
+      },
+      {
+        "path": "docs/readme-visuals",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "2132f4cd32291ed7698f7c3bc8a1f24ee1f56b32",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/2132f4cd32291ed7698f7c3bc8a1f24ee1f56b32"
+      },
+      {
+        "path": "docs/readme-visuals/hero-data.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cca40ce55ea2cb308ae03f6ebb9ead67c5c58728",
+        "size": 1768,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/cca40ce55ea2cb308ae03f6ebb9ead67c5c58728"
+      },
+      {
+        "path": "docs/readme-visuals/product-proof-split-v1.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d2ceee6063b05ebecdd5ce0194399ddad41209a6",
+        "size": 9143,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/d2ceee6063b05ebecdd5ce0194399ddad41209a6"
+      },
+      {
+        "path": "docs/readme-visuals/visual-manifest.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3fd99d91ac507eee2fef904e463ac5a9b89c41a9",
+        "size": 2940,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/3fd99d91ac507eee2fef904e463ac5a9b89c41a9"
+      },
+      {
+        "path": "docs/track-ab.svg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8cd852ed62d67431176b60b66d73f929b06f6690",
+        "size": 6812,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/8cd852ed62d67431176b60b66d73f929b06f6690"
+      },
+      {
+        "path": "document_acceptance.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "68c929978054f4292457a04dfc87674d20cef9d1",
+        "size": 2384,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/68c929978054f4292457a04dfc87674d20cef9d1"
+      },
+      {
+        "path": "document_types.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f465da335896b2488dd66420112d20db0e6e0895",
+        "size": 11566,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f465da335896b2488dd66420112d20db0e6e0895"
+      },
+      {
+        "path": "email_body_receipts.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "98901c8804136efd50df5c398222f4eedd581f35",
+        "size": 10818,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/98901c8804136efd50df5c398222f4eedd581f35"
+      },
+      {
+        "path": "email_channel.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "abdbf11c62a16600c0eaf3815d290d6b57c52ed8",
+        "size": 1233,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/abdbf11c62a16600c0eaf3815d290d6b57c52ed8"
+      },
+      {
+        "path": "email_fetcher.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c9dcf404079672ea689216840fda52f9001611e3",
+        "size": 120895,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/c9dcf404079672ea689216840fda52f9001611e3"
+      },
+      {
+        "path": "extraction_pipeline.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "120e92f341c4fec75919011591d416b7e012db8f",
+        "size": 20690,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/120e92f341c4fec75919011591d416b7e012db8f"
+      },
+      {
+        "path": "frontend_run_context.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "681dac86aca8f126662cc7127c2e97877da8ac3b",
+        "size": 8099,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/681dac86aca8f126662cc7127c2e97877da8ac3b"
+      },
+      {
+        "path": "glm_runtime.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d332ebad6056f8f3d6a30dd75bab3fdff12f155",
+        "size": 22500,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/9d332ebad6056f8f3d6a30dd75bab3fdff12f155"
+      },
+      {
+        "path": "invoice_domain.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cf3a97b48250e6c72385e1fa856444edb1d227a3",
+        "size": 12568,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/cf3a97b48250e6c72385e1fa856444edb1d227a3"
+      },
+      {
+        "path": "invoice_extractor.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f637421aa225c7d3193bd5cfc7e8c5060c8c753",
+        "size": 89369,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/3f637421aa225c7d3193bd5cfc7e8c5060c8c753"
+      },
+      {
+        "path": "mailbox_scanner.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "61905db4db6d6115f3be3bc3eb727001e8088567",
+        "size": 14020,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/61905db4db6d6115f3be3bc3eb727001e8088567"
+      },
+      {
+        "path": "main.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c842cf725a1698042abbdeeee6c77f66f07cfee3",
+        "size": 14165,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/c842cf725a1698042abbdeeee6c77f66f07cfee3"
+      },
+      {
+        "path": "model_calibration.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6a54c25e06206103241ea6d7c488baf5209d568e",
+        "size": 14615,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/6a54c25e06206103241ea6d7c488baf5209d568e"
+      },
+      {
+        "path": "pairing_engine.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b9a0857c316805fb864f7927d8d0467b4ffbd81b",
+        "size": 8669,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/b9a0857c316805fb864f7927d8d0467b4ffbd81b"
+      },
+      {
+        "path": "pdf_converter.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cffd96ea8a896298ba77a1f7350e95ece8a656de",
+        "size": 105500,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/cffd96ea8a896298ba77a1f7350e95ece8a656de"
+      },
+      {
+        "path": "pinned_http.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d7f60c291c7d170dee95c92d69e3f12ac68c20f9",
+        "size": 14574,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/d7f60c291c7d170dee95c92d69e3f12ac68c20f9"
+      },
+      {
+        "path": "plugins",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "60a486dfe9fa0e16a247bf30d13abed2b8fd1102",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/60a486dfe9fa0e16a247bf30d13abed2b8fd1102"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0307a7d37f38e60960a28f5aa6cc6477605ca373",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/0307a7d37f38e60960a28f5aa6cc6477605ca373"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/.gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "edc6a12eac1bc71d6f2c611f98c0f91f49a9c68f",
+        "size": 83,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/edc6a12eac1bc71d6f2c611f98c0f91f49a9c68f"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/.npmignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "da5a31d81259f83db464305316ff8d3021e7d00e",
+        "size": 67,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/da5a31d81259f83db464305316ff8d3021e7d00e"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+        "size": 11357,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/NOTICE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2e47b9b0c8b14db53639ab8acbcbfacda0bb68c5",
+        "size": 185,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2e47b9b0c8b14db53639ab8acbcbfacda0bb68c5"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c55e2126a21801a35c53b4bb955726a41756270b",
+        "size": 3863,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/c55e2126a21801a35c53b4bb955726a41756270b"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/THIRD_PARTY_NOTICES.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ee06cdaf2b560b7d61bae1a544fc0ea1e138deb5",
+        "size": 577,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/ee06cdaf2b560b7d61bae1a544fc0ea1e138deb5"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/cordis.patch.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fb3def91cb1e4aa121ee3bb30633271275b21f89",
+        "size": 425,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/fb3def91cb1e4aa121ee3bb30633271275b21f89"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "93f4f87464992d0c57a15671ce8262dac8d95986",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/93f4f87464992d0c57a15671ce8262dac8d95986"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter/dsh_runner.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5fc01b81839ff0b11b797895ad658678987d2219",
+        "size": 3052,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/5fc01b81839ff0b11b797895ad658678987d2219"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter/dsh_scan.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6af67c10409e71a230deeae918fe45a322215b67",
+        "size": 10170,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/6af67c10409e71a230deeae918fe45a322215b67"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter/engine-src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "42331d2cf5ca017c79020973be6a78c18e3beec8",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/42331d2cf5ca017c79020973be6a78c18e3beec8"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter/engine-src/deepseek_extractor.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2376c34c1411c51768d5b1b904ac3bb9777ce130",
+        "size": 8489,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2376c34c1411c51768d5b1b904ac3bb9777ce130"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter/engine-src/glm_fallback.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f7b18b6c4fd480391e973897f2a328de8e6fd3da",
+        "size": 3641,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f7b18b6c4fd480391e973897f2a328de8e6fd3da"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter/engine-src/local_ocr.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8f14361367b7a53db1bc62ec2630386e911253f0",
+        "size": 2831,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/8f14361367b7a53db1bc62ec2630386e911253f0"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter/engine-src/recognition_chain.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "49313894d0c69feed5d26a5c833cea60ccf2730a",
+        "size": 2876,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/49313894d0c69feed5d26a5c833cea60ccf2730a"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter/ipc",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "85136fe972e2658720437b1709e3d6477cdefce5",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/85136fe972e2658720437b1709e3d6477cdefce5"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/engine-adapter/ipc/protocol.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2ecbd135f130a470a9f8ba47673dcc5d3d553697",
+        "size": 10475,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2ecbd135f130a470a9f8ba47673dcc5d3d553697"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/package-lock.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0f70928f1fd55d7a48f8f3b86282ae7fb5b4a567",
+        "size": 9343,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/0f70928f1fd55d7a48f8f3b86282ae7fb5b4a567"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "41a6f5ab230debba49dabc45c8e07f77b965ce19",
+        "size": 2582,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/41a6f5ab230debba49dabc45c8e07f77b965ce19"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/runtime",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f90db6d6db9f6b5ad7664158805d25201686a419",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/f90db6d6db9f6b5ad7664158805d25201686a419"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/runtime/health_check.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6114b3509a7dba13a0f6373ac6a153d6294a7097",
+        "size": 1566,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/6114b3509a7dba13a0f6373ac6a153d6294a7097"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/runtime/install.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bd508f7aa540b1876862b60244b2404972587ddf",
+        "size": 2436,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/bd508f7aa540b1876862b60244b2404972587ddf"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/runtime/requirements-headless.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dea207b3576805a551c47c5a37062803920b2ca3",
+        "size": 285,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/dea207b3576805a551c47c5a37062803920b2ca3"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "58ba28d600315f59f252fabec15383a8eabbaa37",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/58ba28d600315f59f252fabec15383a8eabbaa37"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/scripts/clean.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "416f160eefc4a33a433f8dd3746c0707263ed9a5",
+        "size": 574,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/416f160eefc4a33a433f8dd3746c0707263ed9a5"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/scripts/prepare-engine.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8befa4b06e34a5483d8ebbace776d219b4e56da7",
+        "size": 3566,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/8befa4b06e34a5483d8ebbace776d219b4e56da7"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/scripts/verify-package.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8628bf1660d81607d824281b14fe00a8549e9915",
+        "size": 3468,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/8628bf1660d81607d824281b14fe00a8549e9915"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "52236b66ac2927a07efbbe04a51136b60105127a",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/52236b66ac2927a07efbbe04a51136b60105127a"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/activate.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f8f2eb8cf5d2d4a978e70d0b4db8babd233b3d75",
+        "size": 2882,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f8f2eb8cf5d2d4a978e70d0b4db8babd233b3d75"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/client-sidebar.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9ca12452039a97990cc8e67d3836e16092ea8127",
+        "size": 22658,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/9ca12452039a97990cc8e67d3836e16092ea8127"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/credentials.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4913e2ca03d70aba6c5e042b3149b13b2b4fc483",
+        "size": 804,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/4913e2ca03d70aba6c5e042b3149b13b2b4fc483"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/file-security.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b954d88760a8be97761969ec103f20fc2ffab606",
+        "size": 3120,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/b954d88760a8be97761969ec103f20fc2ffab606"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2a5a31696c0eb66abc4828ce7be5461e57d3b0b3",
+        "size": 404,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2a5a31696c0eb66abc4828ce7be5461e57d3b0b3"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/invoice-scanner.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "adc3e2677713cbb1fb21257e104f82ab31db08eb",
+        "size": 7905,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/adc3e2677713cbb1fb21257e104f82ab31db08eb"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/ipc-client.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "afdc0a2bd12aa67345918792ad2546f337f87e54",
+        "size": 6105,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/afdc0a2bd12aa67345918792ad2546f337f87e54"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/rpc-handler.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9c95135bc28f03c163f5ab88384ca0be6afabe06",
+        "size": 15797,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/9c95135bc28f03c163f5ab88384ca0be6afabe06"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/runtime.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "049aac540a9f331f85a1ebc7013a1def6c3b1904",
+        "size": 2605,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/049aac540a9f331f85a1ebc7013a1def6c3b1904"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/settings-store.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8b7cd5c4e66a4f83fc33ba62d4cfc0e6186d890e",
+        "size": 1376,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/8b7cd5c4e66a4f83fc33ba62d4cfc0e6186d890e"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/src/storage.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d1c7b36187c0493166bdd5309c746c6bac068785",
+        "size": 4024,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/d1c7b36187c0493166bdd5309c746c6bac068785"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/tests",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f978fc71244e7935ef1c8bb737b0f95dd567fa7e",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/f978fc71244e7935ef1c8bb737b0f95dd567fa7e"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/tests/client-sidebar.test.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "82e041c28b4b29a3625d12325f9bdee738159102",
+        "size": 3426,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/82e041c28b4b29a3625d12325f9bdee738159102"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/tests/model-bridge.test.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "09219958fd8365dabca58e239d038892073c6a5e",
+        "size": 3132,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/09219958fd8365dabca58e239d038892073c6a5e"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/tests/subprocess-contract.test.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "88cff026e843f28b923f8e23ccef3fbc7aff4f6e",
+        "size": 9506,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/88cff026e843f28b923f8e23ccef3fbc7aff4f6e"
+      },
+      {
+        "path": "plugins/dsh-invoice-downloader/tsconfig.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7f937582fcf6d1ff187a32c603da39ee2d6f8c90",
+        "size": 399,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/7f937582fcf6d1ff187a32c603da39ee2d6f8c90"
+      },
+      {
+        "path": "provider_baiwang.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2c9db84baf33bab4231ad86d7bdb3c3aa4bc0f60",
+        "size": 11758,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2c9db84baf33bab4231ad86d7bdb3c3aa4bc0f60"
+      },
+      {
+        "path": "provider_direct_invoice.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f67ec33dd324f37e1679f6b6d16c089335298fcd",
+        "size": 13221,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f67ec33dd324f37e1679f6b6d16c089335298fcd"
+      },
+      {
+        "path": "report_service.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "87ec05a549d44ba2b7f644d396813b4086b9f03e",
+        "size": 10350,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/87ec05a549d44ba2b7f644d396813b4086b9f03e"
+      },
+      {
+        "path": "requirements.release.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c89063d8e17a6ce2df7845c5df70aef128df475a",
+        "size": 224,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/c89063d8e17a6ce2df7845c5df70aef128df475a"
+      },
+      {
+        "path": "requirements.test.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e90121fff6c6b1d6df68066942e313e797c46f95",
+        "size": 70,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/e90121fff6c6b1d6df68066942e313e797c46f95"
+      },
+      {
+        "path": "requirements.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1361f84061362fe632910890cfea3debe2ed9f4c",
+        "size": 180,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/1361f84061362fe632910890cfea3debe2ed9f4c"
+      },
+      {
+        "path": "run_coordinator.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3cdd91dece87b78c55ebc3f18b64a2d9457f2dfa",
+        "size": 14783,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/3cdd91dece87b78c55ebc3f18b64a2d9457f2dfa"
+      },
+      {
+        "path": "run_evidence.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eaf7938d50aacf8c9d62a3b332a93435890e28c5",
+        "size": 27070,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/eaf7938d50aacf8c9d62a3b332a93435890e28c5"
+      },
+      {
+        "path": "run_lifecycle.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b210e5031d6c07efb2ce2baaf05e4c1c316a0d9f",
+        "size": 9324,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/b210e5031d6c07efb2ce2baaf05e4c1c316a0d9f"
+      },
+      {
+        "path": "run_state_store.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2418e06424d2b02c1b11aea854cc3ea15f3cc716",
+        "size": 8975,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2418e06424d2b02c1b11aea854cc3ea15f3cc716"
+      },
+      {
+        "path": "scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "fbe2c4822a0ab33f98ff7b80b3b9e8ed23bd4ab0",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/fbe2c4822a0ab33f98ff7b80b3b9e8ed23bd4ab0"
+      },
+      {
+        "path": "scripts/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bfd9be3a0bba7581d0bb1727547a894ede706011",
+        "size": 42,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/bfd9be3a0bba7581d0bb1727547a894ede706011"
+      },
+      {
+        "path": "strict_truth_audit.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fd541225fb47e6c325c473e06c39e5c0275cd5dd",
+        "size": 46052,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/fd541225fb47e6c325c473e06c39e5c0275cd5dd"
+      },
+      {
+        "path": "templates",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "50c62275fd7563c5dfb6025cab127cf124647ee2",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/50c62275fd7563c5dfb6025cab127cf124647ee2"
+      },
+      {
+        "path": "templates/index.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d9be8d97c94edcad59d5a240cbd5d36bc907f24d",
+        "size": 45567,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/d9be8d97c94edcad59d5a240cbd5d36bc907f24d"
+      },
+      {
+        "path": "templates/index_app.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "23cd7e0ab57367f1fb7c8ef626b31e0c3af177e0",
+        "size": 78097,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/23cd7e0ab57367f1fb7c8ef626b31e0c3af177e0"
+      },
+      {
+        "path": "templates/static",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "5bf20e3c92b7288932a02daecb8c9a9bb9267f74",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/5bf20e3c92b7288932a02daecb8c9a9bb9267f74"
+      },
+      {
+        "path": "templates/static/babel.min.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f18c68dd2552fe4e2e35294424c73be3a02898b",
+        "size": 2844761,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/3f18c68dd2552fe4e2e35294424c73be3a02898b"
+      },
+      {
+        "path": "templates/static/history.min.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b9db0dec811197d33e1c55f6f0ded4d046d5a8e0",
+        "size": 6164,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/b9db0dec811197d33e1c55f6f0ded4d046d5a8e0"
+      },
+      {
+        "path": "templates/static/material-symbols-outlined.ttf",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ac36f2e870572789c84905ced42038b9d127ba39",
+        "size": 947528,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/ac36f2e870572789c84905ced42038b9d127ba39"
+      },
+      {
+        "path": "templates/static/react-dom.min.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e8a0213d7e1b08f28dff8f09c63b81bc080e944c",
+        "size": 131882,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/e8a0213d7e1b08f28dff8f09c63b81bc080e944c"
+      },
+      {
+        "path": "templates/static/react-router-dom.min.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a76a625ba1e822956bdb117d104183a9d32bdcd3",
+        "size": 6748,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/a76a625ba1e822956bdb117d104183a9d32bdcd3"
+      },
+      {
+        "path": "templates/static/react-router.min.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9ec441110277f195a715e3910db388d39bc626ac",
+        "size": 8744,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/9ec441110277f195a715e3910db388d39bc626ac"
+      },
+      {
+        "path": "templates/static/react.min.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "82db03459e46f2ee1b922ccd42f5f3cb62d5e5ec",
+        "size": 10737,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/82db03459e46f2ee1b922ccd42f5f3cb62d5e5ec"
+      },
+      {
+        "path": "templates/static/tailwind.min.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7dcf03d6be6bfdb0184bf1477ff318c2206f9466",
+        "size": 2934019,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/7dcf03d6be6bfdb0184bf1477ff318c2206f9466"
+      },
+      {
+        "path": "tests",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "9cb44de937b05a5edec2e10bc2f6655b2f633b2e",
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/trees/9cb44de937b05a5edec2e10bc2f6655b2f633b2e"
+      },
+      {
+        "path": "tests/conftest.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a920cb7563922e6a5fdee9caf50f94863c662fd",
+        "size": 361,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/1a920cb7563922e6a5fdee9caf50f94863c662fd"
+      },
+      {
+        "path": "tests/test_artifact_verifier.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1b347d0a4daba8e5a8923319340841cfac4059d0",
+        "size": 20762,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/1b347d0a4daba8e5a8923319340841cfac4059d0"
+      },
+      {
+        "path": "tests/test_audit_email_truth.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2a609a1d26e458aa706606896be8277bd105f4ba",
+        "size": 823,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/2a609a1d26e458aa706606896be8277bd105f4ba"
+      },
+      {
+        "path": "tests/test_batch_validation.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4c047324031d01b1a1a95cab4012d48695013b6a",
+        "size": 33938,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/4c047324031d01b1a1a95cab4012d48695013b6a"
+      },
+      {
+        "path": "tests/test_bounded_url_recovery.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4fdc6c7ed746319e389663c3d4dc5e3ab202b5cd",
+        "size": 14659,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/4fdc6c7ed746319e389663c3d4dc5e3ab202b5cd"
+      },
+      {
+        "path": "tests/test_build_truth_dataset_imap.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "61c631debefe3eea8d3e52c71c6a0e4574554422",
+        "size": 8200,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/61c631debefe3eea8d3e52c71c6a0e4574554422"
+      },
+      {
+        "path": "tests/test_core_review_fixes.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "138321c8c647a649e1cf849f6bc86faaf97c51c6",
+        "size": 32584,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/138321c8c647a649e1cf849f6bc86faaf97c51c6"
+      },
+      {
+        "path": "tests/test_deferred_url_recovery.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6bf77a73f70bd9082b8877580ea6c464395505ff",
+        "size": 8004,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/6bf77a73f70bd9082b8877580ea6c464395505ff"
+      },
+      {
+        "path": "tests/test_email_body_receipts.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "28ce1d3806738ea55a0879237b592ac6f5f7f2ec",
+        "size": 8465,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/28ce1d3806738ea55a0879237b592ac6f5f7f2ec"
+      },
+      {
+        "path": "tests/test_email_fetcher_imap_filter.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0e25120c3b700b20e00162218b9cd56a1919a15d",
+        "size": 23297,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/0e25120c3b700b20e00162218b9cd56a1919a15d"
+      },
+      {
+        "path": "tests/test_glm_runtime.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a4bb8e9fc2ef0664d2270c3ec3e8b446d0c0bb15",
+        "size": 32308,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/a4bb8e9fc2ef0664d2270c3ec3e8b446d0c0bb15"
+      },
+      {
+        "path": "tests/test_invoice_domain.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f0d67a7af87a6dd3e1950dae81964fe34dc6f358",
+        "size": 18958,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f0d67a7af87a6dd3e1950dae81964fe34dc6f358"
+      },
+      {
+        "path": "tests/test_invoice_regression_p2.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0569422faa8425989fc17dad0384f673c2cd2228",
+        "size": 88603,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/0569422faa8425989fc17dad0384f673c2cd2228"
+      },
+      {
+        "path": "tests/test_mailbox_scanner.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bed6368fd4a1320d48e001a356332483b2ad27b9",
+        "size": 9352,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/bed6368fd4a1320d48e001a356332483b2ad27b9"
+      },
+      {
+        "path": "tests/test_main_worker_dispatch.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f4e023ae2f51b67ad943fe4c062325c6e06be660",
+        "size": 1802,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/f4e023ae2f51b67ad943fe4c062325c6e06be660"
+      },
+      {
+        "path": "tests/test_model_calibration.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "81c3628701b29c74fbf3b311532a149c1e25596a",
+        "size": 14608,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/81c3628701b29c74fbf3b311532a149c1e25596a"
+      },
+      {
+        "path": "tests/test_pairing_engine.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "91e32e95f18d6e98fc915f8104b931f384ea9c7b",
+        "size": 11443,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/91e32e95f18d6e98fc915f8104b931f384ea9c7b"
+      },
+      {
+        "path": "tests/test_pinned_http.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c7635e77cb6b5a891b4653507424f473e522a6c8",
+        "size": 19339,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/c7635e77cb6b5a891b4653507424f473e522a6c8"
+      },
+      {
+        "path": "tests/test_processing_pipeline.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eb43e76053c2da467dbf73e165d8323d6320cf2b",
+        "size": 91929,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/eb43e76053c2da467dbf73e165d8323d6320cf2b"
+      },
+      {
+        "path": "tests/test_provider_url_recovery.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "29713a8ec2ec1ec1b15c128980062abea52e9cc5",
+        "size": 70274,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/29713a8ec2ec1ec1b15c128980062abea52e9cc5"
+      },
+      {
+        "path": "tests/test_refactor_contracts.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "93075053adcd1b1c44c446206d852cd650eaa527",
+        "size": 4780,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/93075053adcd1b1c44c446206d852cd650eaa527"
+      },
+      {
+        "path": "tests/test_run_coordinator.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8aa4db327b2e2f997f2ac1db1376fcefa7cf1e58",
+        "size": 53358,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/8aa4db327b2e2f997f2ac1db1376fcefa7cf1e58"
+      },
+      {
+        "path": "tests/test_run_evidence.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "651b0239dd9b6c5dca8e4ff0e02dee4fc92be4c2",
+        "size": 30729,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/651b0239dd9b6c5dca8e4ff0e02dee4fc92be4c2"
+      },
+      {
+        "path": "tests/test_run_lifecycle.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aef45955aceeda0f778e653d16dc40f731749abd",
+        "size": 50919,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/aef45955aceeda0f778e653d16dc40f731749abd"
+      },
+      {
+        "path": "tests/test_runtime_hook_playwright.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0e2a514029f94f3e6a7db7dcd711aebb32a5be98",
+        "size": 1407,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/0e2a514029f94f3e6a7db7dcd711aebb32a5be98"
+      },
+      {
+        "path": "tests/test_strict_truth_audit.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "77fd1c6aa27b48e2f1882207c16ee64806ca65ee",
+        "size": 21994,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/77fd1c6aa27b48e2f1882207c16ee64806ca65ee"
+      },
+      {
+        "path": "tests/test_task8_review_remediation.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "196914178c7fa6f95104168a9ab44bbc69c8b82c",
+        "size": 39815,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/196914178c7fa6f95104168a9ab44bbc69c8b82c"
+      },
+      {
+        "path": "tests/test_url_persistence.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4118ccc5916364ee52ebd9355d081c2aca951132",
+        "size": 23010,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/4118ccc5916364ee52ebd9355d081c2aca951132"
+      },
+      {
+        "path": "tests/test_url_recovery_worker.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a40e14213fe4f1ccea05d39f05007e448e57d6c0",
+        "size": 3123,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/a40e14213fe4f1ccea05d39f05007e448e57d6c0"
+      },
+      {
+        "path": "tests/test_url_security.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e226a03696d60854a2c3700602f2028c6dd55744",
+        "size": 14502,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/e226a03696d60854a2c3700602f2028c6dd55744"
+      },
+      {
+        "path": "tests/test_user_settings.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f38189c3d0e4583c45722a4981bdd6532b39eba",
+        "size": 1934,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/3f38189c3d0e4583c45722a4981bdd6532b39eba"
+      },
+      {
+        "path": "tests/test_user_settings_isolation.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fef6881f455a5f699a8bbcfbafa47fe7d3153494",
+        "size": 547,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/fef6881f455a5f699a8bbcfbafa47fe7d3153494"
+      },
+      {
+        "path": "truth_contracts.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "67ad1cc32b31f95abdb50582322a8336717a028c",
+        "size": 13028,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/67ad1cc32b31f95abdb50582322a8336717a028c"
+      },
+      {
+        "path": "url_recovery_worker.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "611ff9ab51358879cba25db78d6d38862d342b3b",
+        "size": 3024,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/611ff9ab51358879cba25db78d6d38862d342b3b"
+      },
+      {
+        "path": "url_security.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4f7a6b3eb246c04ef6ff82fa98e5850d4255b489",
+        "size": 16647,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/4f7a6b3eb246c04ef6ff82fa98e5850d4255b489"
+      },
+      {
+        "path": "url_trace_sanitizer.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9f771f03092705e8731fae539885ba54ce6b3062",
+        "size": 8567,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/9f771f03092705e8731fae539885ba54ce6b3062"
+      },
+      {
+        "path": "user_settings.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8f9de349f05c0fb0d5099ee8616f5bef6f2aa06c",
+        "size": 8636,
+        "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/git/blobs/8f9de349f05c0fb0d5099ee8616f5bef6f2aa06c"
+      }
+    ],
+    "truncated": false
+  },
+  "releases": [
+    {
+      "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/396499093",
+      "assets_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/396499093/assets",
+      "upload_url": "https://uploads.github.com/repos/EthanYoQ/Invoice-Downloader/releases/396499093/assets{?name,label}",
+      "html_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/tag/v2026.09.25.1",
+      "id": 396499093,
+      "author": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDORcJ7U84XohiV",
+      "tag_name": "v2026.09.25.1",
+      "target_commitish": "2fde0d513eb1f0afe1f452b29baeb139e643c497",
+      "name": "InvoiceFlowAI v2026.09.25.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-09-25T09:47:36Z",
+      "updated_at": "2026-09-25T10:06:22Z",
+      "published_at": "2026-09-25T10:06:22Z",
+      "assets": [
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/588079448",
+          "id": 588079448,
+          "node_id": "RA_kwDORcJ7U84jDWFY",
+          "name": "InvoiceFlowAI-v2026.09.25.1-macos-arm64.dmg",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/x-apple-diskimage",
+          "state": "uploaded",
+          "size": 365574369,
+          "digest": "sha256:fd0c726052cfd073cc0d1332ff7b7510e01a1be897ed160108cbb48309c70113",
+          "download_count": 49,
+          "created_at": "2026-09-25T10:05:39Z",
+          "updated_at": "2026-09-25T10:05:53Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.09.25.1/InvoiceFlowAI-v2026.09.25.1-macos-arm64.dmg"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/588079450",
+          "id": 588079450,
+          "node_id": "RA_kwDORcJ7U84jDWFa",
+          "name": "InvoiceFlowAI-v2026.09.25.1-release-manifest.json",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/json",
+          "state": "uploaded",
+          "size": 1050,
+          "digest": "sha256:d1ba57944131dcf45c83b0c55d7dbf15aadb9dee02d34637f6f36ecb8e3b0bb1",
+          "download_count": 7,
+          "created_at": "2026-09-25T10:05:39Z",
+          "updated_at": "2026-09-25T10:05:40Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.09.25.1/InvoiceFlowAI-v2026.09.25.1-release-manifest.json"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/588079447",
+          "id": 588079447,
+          "node_id": "RA_kwDORcJ7U84jDWFX",
+          "name": "InvoiceFlowAI-v2026.09.25.1-SHA256SUMS.txt",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "text/plain; charset=utf-8",
+          "state": "uploaded",
+          "size": 461,
+          "digest": "sha256:373280fab3e1e1ada88065efaeca0b6e342ea974baeeb40598e3f62a23e51e10",
+          "download_count": 18,
+          "created_at": "2026-09-25T10:05:39Z",
+          "updated_at": "2026-09-25T10:05:40Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.09.25.1/InvoiceFlowAI-v2026.09.25.1-SHA256SUMS.txt"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/588079446",
+          "id": 588079446,
+          "node_id": "RA_kwDORcJ7U84jDWFW",
+          "name": "InvoiceFlowAI-v2026.09.25.1-windows-x64-portable.zip",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/zip",
+          "state": "uploaded",
+          "size": 689982733,
+          "digest": "sha256:8c6c299272c9c95c29c6549380d0403779be74bcafa75dbd04c7860db5e06534",
+          "download_count": 102,
+          "created_at": "2026-09-25T10:05:39Z",
+          "updated_at": "2026-09-25T10:06:05Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.09.25.1/InvoiceFlowAI-v2026.09.25.1-windows-x64-portable.zip"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/588079449",
+          "id": 588079449,
+          "node_id": "RA_kwDORcJ7U84jDWFZ",
+          "name": "InvoiceFlowAI-v2026.09.25.1-windows-x64-setup.exe",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/octet-stream",
+          "state": "uploaded",
+          "size": 502821778,
+          "digest": "sha256:c0a3404330b5de8f204a93811aac4e686e7674a91912a9a3319c55882d500f73",
+          "download_count": 166,
+          "created_at": "2026-09-25T10:05:39Z",
+          "updated_at": "2026-09-25T10:05:57Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.09.25.1/InvoiceFlowAI-v2026.09.25.1-windows-x64-setup.exe"
+        }
+      ],
+      "tarball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/tarball/v2026.09.25.1",
+      "zipball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/zipball/v2026.09.25.1",
+      "body": "## 中文\n\n本版包含 PR #184 的核心桌面修复：保留人工复核原件、恢复跨次去重历史、同步配对后文件路径、修复 Excel 外部文本导出、验证邮箱服务器身份，并改进超时与主动停止处理。中国发票身份和邮件日期筛选语义不变；DSH 不在本次发布范围。\n\n下载：macOS Apple Silicon ARM64 DMG；Windows x64 安装程序与免安装 ZIP。附 SHA-256 校验清单和构建来源清单。\n\n两个平台均通过本次运行的核心回归测试和现有安装包运行时验证。Windows 测试排除一项仅限指定参考机器的硬件断言；macOS 运行可移植核心子集。这不等于真实 QQ/163 邮箱、个人票据金标或完整 GUI 端到端验收。\n\n当前安装包未签名，macOS 未公证；系统可能显示来源验证提示。\n\n## English\n\nCore desktop fixes from PR #184 cover original-file retention, persistent invoice deduplication, final archive paths, literal Excel text, IMAP certificate verification, bounded network waits and cancellation. DSH is excluded.\n\nIncludes an Apple Silicon ARM64 DMG, a Windows x64 installer and portable ZIP, SHA-256 checksums and build provenance. Both platforms passed the release run's core regression and existing package qualification checks. No real mailbox or full GUI end-to-end certification is claimed. Packages are unsigned; macOS is not notarized.\n"
+    },
+    {
+      "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/361901276",
+      "assets_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/361901276/assets",
+      "upload_url": "https://uploads.github.com/repos/EthanYoQ/Invoice-Downloader/releases/361901276/assets{?name,label}",
+      "html_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/tag/v2026.07.29.1",
+      "id": 361901276,
+      "author": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDORcJ7U84Vkizc",
+      "tag_name": "v2026.07.29.1",
+      "target_commitish": "151eb047c9945f20617154c765735dc7ea4ae480",
+      "name": "InvoiceFlowAI v2026.07.29.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-07-29T16:19:32Z",
+      "updated_at": "2026-07-29T16:40:39Z",
+      "published_at": "2026-07-29T16:40:39Z",
+      "assets": [
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/494273890",
+          "id": 494273890,
+          "node_id": "RA_kwDORcJ7U84ddgVi",
+          "name": "InvoiceFlowAI-v2026.07.29.1-macos-arm64.dmg",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/x-apple-diskimage",
+          "state": "uploaded",
+          "size": 365359956,
+          "digest": "sha256:315925883c96b75c1ea8f3653cbe0a56f78fc2b266d3cd6a1a8d227f89feb2d8",
+          "download_count": 134,
+          "created_at": "2026-07-29T16:36:51Z",
+          "updated_at": "2026-07-29T16:37:12Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.07.29.1/InvoiceFlowAI-v2026.07.29.1-macos-arm64.dmg"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/494273891",
+          "id": 494273891,
+          "node_id": "RA_kwDORcJ7U84ddgVj",
+          "name": "InvoiceFlowAI-v2026.07.29.1-release-manifest.json",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/json",
+          "state": "uploaded",
+          "size": 940,
+          "digest": "sha256:e87b0d1f954baf0046d8efebee11b872898ac0efb225f88bb3be6a100e0a2f9a",
+          "download_count": 18,
+          "created_at": "2026-07-29T16:36:51Z",
+          "updated_at": "2026-07-29T16:36:51Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.07.29.1/InvoiceFlowAI-v2026.07.29.1-release-manifest.json"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/494273892",
+          "id": 494273892,
+          "node_id": "RA_kwDORcJ7U84ddgVk",
+          "name": "InvoiceFlowAI-v2026.07.29.1-SHA256SUMS.txt",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "text/plain; charset=utf-8",
+          "state": "uploaded",
+          "size": 461,
+          "digest": "sha256:1f25d39d49ace9f497bb30099936ed3df82c6af7f2cef5adf34068733ba76fc8",
+          "download_count": 35,
+          "created_at": "2026-07-29T16:36:51Z",
+          "updated_at": "2026-07-29T16:36:51Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.07.29.1/InvoiceFlowAI-v2026.07.29.1-SHA256SUMS.txt"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/494273894",
+          "id": 494273894,
+          "node_id": "RA_kwDORcJ7U84ddgVm",
+          "name": "InvoiceFlowAI-v2026.07.29.1-windows-x64-portable.zip",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/zip",
+          "state": "uploaded",
+          "size": 689400712,
+          "digest": "sha256:3d73861b701e8c44bc90006696154eb8a07978fe72efb08e2019cf0983713c6b",
+          "download_count": 273,
+          "created_at": "2026-07-29T16:36:51Z",
+          "updated_at": "2026-07-29T16:37:23Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.07.29.1/InvoiceFlowAI-v2026.07.29.1-windows-x64-portable.zip"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/494273895",
+          "id": 494273895,
+          "node_id": "RA_kwDORcJ7U84ddgVn",
+          "name": "InvoiceFlowAI-v2026.07.29.1-windows-x64-setup.exe",
+          "label": "",
+          "uploader": {
+            "login": "github-actions[bot]",
+            "id": 41898282,
+            "node_id": "MDM6Qm90NDE4OTgyODI=",
+            "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+            "html_url": "https://github.com/apps/github-actions",
+            "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+            "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+            "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+            "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+            "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+            "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/octet-stream",
+          "state": "uploaded",
+          "size": 502580362,
+          "digest": "sha256:3f3f8ae7ec214c2dab8d640e786a9c946ee0f331d4549545ab33e47eed3edafe",
+          "download_count": 239,
+          "created_at": "2026-07-29T16:36:51Z",
+          "updated_at": "2026-07-29T16:37:22Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.07.29.1/InvoiceFlowAI-v2026.07.29.1-windows-x64-setup.exe"
+        }
+      ],
+      "tarball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/tarball/v2026.07.29.1",
+      "zipball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/zipball/v2026.07.29.1",
+      "body": "## 中文\n\n本次发布将 macOS 与 Windows 安装包集中在同一个下载列表中：\n\n- macOS Apple Silicon（ARM64）DMG\n- Windows x64 安装程序与免安装 ZIP\n- SHA-256 校验清单与构建来源清单\n\n两套安装包均由同一次 GitHub Actions 构建并完成运行时验证。当前版本未签名；macOS 未公证，首次打开可能需要在系统安全设置中手动允许，Windows 可能显示 SmartScreen 提示。\n\n## English\n\nThis release keeps both desktop platforms in one download list:\n\n- macOS Apple Silicon (ARM64) DMG\n- Windows x64 installer and portable ZIP\n- SHA-256 checksums and a build-provenance manifest\n\nBoth installers were built by the same GitHub Actions release run and passed runtime qualification. This version is unsigned; macOS is not notarized and may require a manual first-open override, while Windows may display a SmartScreen warning.\n"
+    },
+    {
+      "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/352971682",
+      "assets_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/352971682/assets",
+      "upload_url": "https://uploads.github.com/repos/EthanYoQ/Invoice-Downloader/releases/352971682/assets{?name,label}",
+      "html_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/tag/v2026.07.13.1",
+      "id": 352971682,
+      "author": {
+        "login": "EthanYoQ",
+        "id": 257484394,
+        "node_id": "U_kgDOD1jmag",
+        "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/EthanYoQ",
+        "html_url": "https://github.com/EthanYoQ",
+        "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+        "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+        "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+        "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+        "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+        "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDORcJ7U84VCeui",
+      "tag_name": "v2026.07.13.1",
+      "target_commitish": "main",
+      "name": "InvoiceFlowAI v2026.07.13.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-07-13T06:54:15Z",
+      "updated_at": "2026-07-13T06:58:46Z",
+      "published_at": "2026-07-13T06:58:46Z",
+      "assets": [
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/475184917",
+          "id": 475184917,
+          "node_id": "RA_kwDORcJ7U84cUr8V",
+          "name": "InvoiceFlowAI-v2026.07.13.1-portable.zip",
+          "label": "",
+          "uploader": {
+            "login": "EthanYoQ",
+            "id": 257484394,
+            "node_id": "U_kgDOD1jmag",
+            "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/EthanYoQ",
+            "html_url": "https://github.com/EthanYoQ",
+            "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+            "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+            "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+            "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+            "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/zip",
+          "state": "uploaded",
+          "size": 688554934,
+          "digest": "sha256:1b1bfc996cfd21502ef160fc80e6c3ffbdb81080851fea3a259431245a04f528",
+          "download_count": 31,
+          "created_at": "2026-07-13T06:54:43Z",
+          "updated_at": "2026-07-13T06:58:45Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.07.13.1/InvoiceFlowAI-v2026.07.13.1-portable.zip"
+        }
+      ],
+      "tarball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/tarball/v2026.07.13.1",
+      "zipball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/zipball/v2026.07.13.1",
+      "body": "## InvoiceFlowAI v2026.07.13.1\n\n本次版本聚焦发票召回可靠性、分类与撮合确定性，以及 Windows 后台运行体验。\n\n### 验收结果\n\n- 指定验收范围：QQ 邮箱 INBOX，2025-11-25 至 2026-06-14，本地冻结真值集 215 份目标文档。\n- P0 漏抓：0；P1 分类/归档错误：0；P2 撮合错误：0。\n- 真值匹配：215/215；住宿发票-水单 10/10 组；打车发票-行程单 16/16 组。\n- 冻结版后台 worker 实测可见控制台窗口：0。\n- 自动化测试：818 passed，1 skipped，109 subtests passed。\n\n以上指标仅对应上述邮箱、日期范围和冻结真值集，不代表对任意邮箱数据作无限范围准确率承诺。\n\n### 实现方法\n\n- 将 URL 恢复改为可终止、有限并发的独立 worker 池，避免单个无头浏览器任务阻塞整批任务。\n- 优先执行直接下载与供应商适配恢复，仅在必要时进入 Playwright 浏览器链路。\n- 对邮件证据、附件与恢复结果进行确定性绑定；证据不足时失败关闭，避免错误归档。\n- 统一住宿和打车单据的撮合键、排序与相邻命名规则，使归档结果可复核、可审计。\n- 在 Python worker、Node/Playwright 与 Chromium 三层统一 Windows 隐藏窗口启动参数，消除批处理期间的黑色控制台弹窗。\n\n### 安装\n\n下载 ZIP 后完整解压，保持 `_internal` 与 `InvoiceFlowAI.exe` 位于同一目录，再运行 `InvoiceFlowAI.exe`。安装包已包含所需运行时，不依赖本机 Python 环境。\n\nSHA256: `1B1BFC996CFD21502EF160FC80E6C3FFBDB81080851FEA3A259431245A04F528`\n\n---\n\nThis release improves invoice recall reliability, deterministic classification and pairing, and the Windows background experience. In the specified frozen acceptance scope, all 215 expected documents matched with P0/P1/P2 at zero, all 26 hotel/ride pairing groups passed, and the packaged worker created no visible console windows. The portable ZIP includes its runtime and does not require Python.\n"
+    },
+    {
+      "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/352752529",
+      "assets_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/352752529/assets",
+      "upload_url": "https://uploads.github.com/repos/EthanYoQ/Invoice-Downloader/releases/352752529/assets{?name,label}",
+      "html_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/tag/v2026.07.12.1",
+      "id": 352752529,
+      "author": {
+        "login": "EthanYoQ",
+        "id": 257484394,
+        "node_id": "U_kgDOD1jmag",
+        "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/EthanYoQ",
+        "html_url": "https://github.com/EthanYoQ",
+        "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+        "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+        "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+        "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+        "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+        "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDORcJ7U84VBpOR",
+      "tag_name": "v2026.07.12.1",
+      "target_commitish": "main",
+      "name": "InvoiceFlowAI v2026.07.12.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-07-12T12:42:33Z",
+      "updated_at": "2026-07-12T13:01:24Z",
+      "published_at": "2026-07-12T13:01:24Z",
+      "assets": [
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/474396506",
+          "id": 474396506,
+          "node_id": "RA_kwDORcJ7U84cRrda",
+          "name": "InvoiceFlowAI-v2026.07.12.1-portable.zip",
+          "label": "",
+          "uploader": {
+            "login": "EthanYoQ",
+            "id": 257484394,
+            "node_id": "U_kgDOD1jmag",
+            "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/EthanYoQ",
+            "html_url": "https://github.com/EthanYoQ",
+            "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+            "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+            "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+            "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+            "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/zip",
+          "state": "uploaded",
+          "size": 688525179,
+          "digest": "sha256:95489dfd99513687aa223976c4146d68209edc394e90dc89ef7655f564408574",
+          "download_count": 31,
+          "created_at": "2026-07-12T12:59:09Z",
+          "updated_at": "2026-07-12T13:01:20Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.07.12.1/InvoiceFlowAI-v2026.07.12.1-portable.zip"
+        }
+      ],
+      "tarball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/tarball/v2026.07.12.1",
+      "zipball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/zipball/v2026.07.12.1",
+      "body": "可靠性与性能重构正式版。\n\n- 真实 QQ 邮箱全量跑批：215/215 真值逐条匹配\n- 严格门禁：P0=0、P1=0、P2=0、人工复核=0\n- 同口径耗时：1514.094 秒，相对基线提升 53.59%\n- 加固发票链接恢复、撮合归档、运行证据与真值审计\n- Windows 免安装 ZIP，已内置 Python、WebView2 与 Chromium\n\nSHA256: 95489DFD99513687AA223976C4146D68209EDC394E90DC89EF7655F564408574"
+    },
+    {
+      "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/344585753",
+      "assets_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/344585753/assets",
+      "upload_url": "https://uploads.github.com/repos/EthanYoQ/Invoice-Downloader/releases/344585753/assets{?name,label}",
+      "html_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/tag/v2026.06.25.1",
+      "id": 344585753,
+      "author": {
+        "login": "EthanYoQ",
+        "id": 257484394,
+        "node_id": "U_kgDOD1jmag",
+        "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/EthanYoQ",
+        "html_url": "https://github.com/EthanYoQ",
+        "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+        "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+        "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+        "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+        "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+        "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDORcJ7U84UifYZ",
+      "tag_name": "v2026.06.25.1",
+      "target_commitish": "main",
+      "name": "InvoiceFlowAI v2026.06.25.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-06-25T08:59:00Z",
+      "updated_at": "2026-06-25T09:04:42Z",
+      "published_at": "2026-06-25T09:04:42Z",
+      "assets": [
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/457473763",
+          "id": 457473763,
+          "node_id": "RA_kwDORcJ7U84bRH7j",
+          "name": "InvoiceFlowAI-portable-v2026.06.25.1.zip",
+          "label": "",
+          "uploader": {
+            "login": "EthanYoQ",
+            "id": 257484394,
+            "node_id": "U_kgDOD1jmag",
+            "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/EthanYoQ",
+            "html_url": "https://github.com/EthanYoQ",
+            "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+            "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+            "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+            "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+            "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/zip",
+          "state": "uploaded",
+          "size": 688410996,
+          "digest": "sha256:089a7f94cdb76130bc2be8714f6bf1b5e2019888b5ac360c497265f07c5da3ee",
+          "download_count": 18,
+          "created_at": "2026-06-25T09:03:24Z",
+          "updated_at": "2026-06-25T09:04:41Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.06.25.1/InvoiceFlowAI-portable-v2026.06.25.1.zip"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/457473764",
+          "id": 457473764,
+          "node_id": "RA_kwDORcJ7U84bRH7k",
+          "name": "SHA256SUMS-v2026.06.25.1.txt",
+          "label": "",
+          "uploader": {
+            "login": "EthanYoQ",
+            "id": 257484394,
+            "node_id": "U_kgDOD1jmag",
+            "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/EthanYoQ",
+            "html_url": "https://github.com/EthanYoQ",
+            "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+            "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+            "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+            "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+            "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "text/plain; charset=utf-8",
+          "state": "uploaded",
+          "size": 108,
+          "digest": "sha256:70b7c03d4698023378985266788f997bff94dad46e1186e770c139d3b4cb8121",
+          "download_count": 1,
+          "created_at": "2026-06-25T09:03:24Z",
+          "updated_at": "2026-06-25T09:03:25Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.06.25.1/SHA256SUMS-v2026.06.25.1.txt"
+        }
+      ],
+      "tarball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/tarball/v2026.06.25.1",
+      "zipball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/zipball/v2026.06.25.1",
+      "body": "# InvoiceFlowAI v2026.06.25.1\n\nZip-only refresh for the refactored invoice typing and pairing build.\n\n- Source revision: 3e8e9b4\n- Portable ZIP SHA256: 089A7F94CDB76130BC2BE8714F6BF1B5E2019888B5AC360C497265F07C5DA3EE\n- Validated with pytest: 78 passed, 17 subtests passed\n- Validated with strict truth audit: P0=0, P1=0, P2=0\n\nThis release updates only the portable ZIP package. The previous EXE installer asset is intentionally not refreshed in this round.\r\n"
+    },
+    {
+      "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/339110216",
+      "assets_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/339110216/assets",
+      "upload_url": "https://uploads.github.com/repos/EthanYoQ/Invoice-Downloader/releases/339110216/assets{?name,label}",
+      "html_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/tag/v2026.06.14.1",
+      "id": 339110216,
+      "author": {
+        "login": "EthanYoQ",
+        "id": 257484394,
+        "node_id": "U_kgDOD1jmag",
+        "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/EthanYoQ",
+        "html_url": "https://github.com/EthanYoQ",
+        "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+        "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+        "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+        "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+        "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+        "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDORcJ7U84UNmlI",
+      "tag_name": "v2026.06.14.1",
+      "target_commitish": "main",
+      "name": "InvoiceFlowAI v2026.06.14.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-06-14T05:54:56Z",
+      "updated_at": "2026-06-21T11:54:22Z",
+      "published_at": "2026-06-14T06:00:32Z",
+      "assets": [
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/447075523",
+          "id": 447075523,
+          "node_id": "RA_kwDORcJ7U84apdTD",
+          "name": "InvoiceFlowAI-portable-v2026.06.14.1.zip",
+          "label": "",
+          "uploader": {
+            "login": "EthanYoQ",
+            "id": 257484394,
+            "node_id": "U_kgDOD1jmag",
+            "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/EthanYoQ",
+            "html_url": "https://github.com/EthanYoQ",
+            "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+            "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+            "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+            "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+            "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/zip",
+          "state": "uploaded",
+          "size": 688408006,
+          "digest": "sha256:81d1294e4f23310da9cc6356cb0a2f5084dd4c4d837e704d25314ae5ecd715ce",
+          "download_count": 3,
+          "created_at": "2026-06-14T05:55:34Z",
+          "updated_at": "2026-06-14T06:00:31Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.06.14.1/InvoiceFlowAI-portable-v2026.06.14.1.zip"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/447075524",
+          "id": 447075524,
+          "node_id": "RA_kwDORcJ7U84apdTE",
+          "name": "InvoiceFlowAI-Setup-v2026.06.14.1.exe",
+          "label": "",
+          "uploader": {
+            "login": "EthanYoQ",
+            "id": 257484394,
+            "node_id": "U_kgDOD1jmag",
+            "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/EthanYoQ",
+            "html_url": "https://github.com/EthanYoQ",
+            "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+            "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+            "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+            "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+            "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/x-msdownload",
+          "state": "uploaded",
+          "size": 465881207,
+          "digest": "sha256:411059b8709d6d8cd838934aad96d5291c65db2d6760a9b191b82ab2648b7e3a",
+          "download_count": 6,
+          "created_at": "2026-06-14T05:55:34Z",
+          "updated_at": "2026-06-14T05:59:42Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.06.14.1/InvoiceFlowAI-Setup-v2026.06.14.1.exe"
+        },
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/447075526",
+          "id": 447075526,
+          "node_id": "RA_kwDORcJ7U84apdTG",
+          "name": "SHA256SUMS-v2026.06.14.1.txt",
+          "label": "",
+          "uploader": {
+            "login": "EthanYoQ",
+            "id": 257484394,
+            "node_id": "U_kgDOD1jmag",
+            "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/EthanYoQ",
+            "html_url": "https://github.com/EthanYoQ",
+            "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+            "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+            "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+            "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+            "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "text/plain; charset=utf-8",
+          "state": "uploaded",
+          "size": 213,
+          "digest": "sha256:80ff8c2316f3ac81b7d33568838a169bf76a318aa51e88b5f46ec9e09ed4b3ab",
+          "download_count": 0,
+          "created_at": "2026-06-14T05:55:34Z",
+          "updated_at": "2026-06-14T05:55:34Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.06.14.1/SHA256SUMS-v2026.06.14.1.txt"
+        }
+      ],
+      "tarball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/tarball/v2026.06.14.1",
+      "zipball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/zipball/v2026.06.14.1",
+      "body": "## What this release is\n\nInvoiceFlowAI is a Windows tool for QQ Mail / 163 Mail e-invoice automation: automatically find invoice emails, download PDF/OFD/link invoices, run AI OCR recognition, archive invoices locally, and export an Excel reimbursement summary.\n\nIt is also positioned as a personal invoice assistant / invoice management tool for Chinese fapiao workflows: e-invoice archive, OFD invoice download, Baiwang invoice link recovery, expense reimbursement, and Excel expense report generation.\n\n中文：这是一个 Windows 发票助手 / 发票管家 / 报销助手，支持 QQ 邮箱、163 邮箱、PDF/OFD/XML 电子发票、百望云发票链接、发票 OCR 识别、本地分类归档、发票报销和 Excel 报销汇总。\n\n## Download\n\n- `InvoiceFlowAI-Setup-v2026.06.14.1.exe`: Windows installer.\n- `InvoiceFlowAI-portable-v2026.06.14.1.zip`: portable app archive.\n- `SHA256SUMS-v2026.06.14.1.txt`: asset hashes.\n\n## Summary\n\n- Stabilizes QQ/IMAP invoice retrieval across the 2025-11-25 to 2026-06-14 audit window.\n- Adds strict truth-set audit tooling and regression coverage for P0/P1/P2 gates.\n- Improves email-body invoice recovery, hotel folio/invoice pairing, ride invoice/itinerary pairing, and direct provider recovery.\n- Ships a Windows standalone package with bundled Python 3.12 runtime, Playwright Chromium, and fixed WebView2 runtime.\n\n## Validation\n\n- Python 3.12 test suite: 71 tests passed.\n- Full frontend truth audits: clean4 and clean5 both passed with P0=0, P1=0, P2=0.\n- Packaged app startup reached ui_started with edgechromium renderer.\n- Release package scan found no .env, local runtime evidence, truth dataset, manual run, CodeGraph, or Codex skill directories in the packaged app.\n"
+    },
+    {
+      "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/303803771",
+      "assets_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/303803771/assets",
+      "upload_url": "https://uploads.github.com/repos/EthanYoQ/Invoice-Downloader/releases/303803771/assets{?name,label}",
+      "html_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/tag/v2026.04.01.1",
+      "id": 303803771,
+      "author": {
+        "login": "EthanYoQ",
+        "id": 257484394,
+        "node_id": "U_kgDOD1jmag",
+        "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/EthanYoQ",
+        "html_url": "https://github.com/EthanYoQ",
+        "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+        "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+        "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+        "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+        "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+        "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDORcJ7U84SG617",
+      "tag_name": "v2026.04.01.1",
+      "target_commitish": "main",
+      "name": "InvoiceFlowAI v2026.04.01.1",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-03-31T16:44:08Z",
+      "updated_at": "2026-03-31T16:59:29Z",
+      "published_at": "2026-03-31T16:59:29Z",
+      "assets": [
+        {
+          "url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/releases/assets/385671222",
+          "id": 385671222,
+          "node_id": "RA_kwDORcJ7U84W_OA2",
+          "name": "InvoiceFlowAI-portable-2026.04.01.1.zip",
+          "label": "",
+          "uploader": {
+            "login": "EthanYoQ",
+            "id": 257484394,
+            "node_id": "U_kgDOD1jmag",
+            "avatar_url": "https://avatars.githubusercontent.com/u/257484394?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/EthanYoQ",
+            "html_url": "https://github.com/EthanYoQ",
+            "followers_url": "https://api.github.com/users/EthanYoQ/followers",
+            "following_url": "https://api.github.com/users/EthanYoQ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/EthanYoQ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/EthanYoQ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/EthanYoQ/subscriptions",
+            "organizations_url": "https://api.github.com/users/EthanYoQ/orgs",
+            "repos_url": "https://api.github.com/users/EthanYoQ/repos",
+            "events_url": "https://api.github.com/users/EthanYoQ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/EthanYoQ/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/zip",
+          "state": "uploaded",
+          "size": 704648061,
+          "digest": "sha256:bcd2c155bb97c2dc798515414b480cb5dc3f24df66630d39e9c090029ccbc3d8",
+          "download_count": 10,
+          "created_at": "2026-03-31T16:57:19Z",
+          "updated_at": "2026-03-31T16:59:28Z",
+          "browser_download_url": "https://github.com/EthanYoQ/Invoice-Downloader/releases/download/v2026.04.01.1/InvoiceFlowAI-portable-2026.04.01.1.zip"
+        }
+      ],
+      "tarball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/tarball/v2026.04.01.1",
+      "zipball_url": "https://api.github.com/repos/EthanYoQ/Invoice-Downloader/zipball/v2026.04.01.1",
+      "body": "﻿Portable-only release aligned to current main.\n\nDownloads\n- InvoiceFlowAI-portable-2026.04.01.1.zip\n\nNotes\n- Restores missing README SVG diagrams.\n- Removes non-essential handoff file from the portable package.\n- Release source archives now match current main.\n\nSHA256\n- BCD2C155BB97C2DC798515414B480CB5DC3F24DF66630D39E9C090029CCBC3D8  InvoiceFlowAI-portable-2026.04.01.1.zip\r\n"
+    }
+  ],
+  "files": {
+    "README.md": "# InvoiceFlowAI — 电子发票整理与报销准备工具\n\n<div align=\"center\">\n\n[English](README.en.md) | **中文**\n\n</div>\n\n\n\n\n<div align=\"center\">\n\n![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)\n![License](https://img.shields.io/badge/License-Apache--2.0-blue)\n![AI](https://img.shields.io/badge/AI-GLM--4.5V%20%7C%20GLM--OCR-purple)\n![Platform](https://img.shields.io/badge/Platform-Windows%2011%20%7C%20macOS-lightblue)\n![Status](https://img.shields.io/badge/Status-Stable-brightgreen)\n\n**把邮箱中的 PDF、OFD、XML 电子发票和部分发票下载链接，整理成分类文件与 Excel 报销汇总。**\n\n面向每月需要手工收集多张电子发票的个人、自由职业者和小团队。连接自己的 QQ 或 163 邮箱后，可批量收集发票、OCR 识别、分类归档并生成汇总；低置信度结果保留给用户人工检查。\n\n下载：[最新 Windows（安装版 / 免安装版）与 macOS（Apple Silicon）安装包](https://github.com/EthanYoQ/Invoice-Downloader/releases/latest)\n\n*邮件和发票文件在本地处理。启用 GLM OCR / 视觉识别时，发票图片会发送到你配置的模型服务商用于提取。*\n\n</div>\n\n<p align=\"center\">\n  <img src=\"./docs/images/invoiceflowai-hero-zh.png\" alt=\"InvoiceFlowAI 发票助手的启动配置、处理中心、结果分析与安全提示界面\" />\n</p>\n\n## DeepSeek Harness 插件\n\n`@ethanyoq/dsh-invoice-downloader` 将本地 IMAP 发票下载、OCR、归档和 Excel 汇总带到 DeepSeek Harness 的右侧边栏。适用于希望把重复整理工作交给本地自动化、同时保留人工复核的报销场景。\n\n```powershell\ndsh plugin --profile web add @ethanyoq/dsh-invoice-downloader\ndsh web --profile web\n```\n\n打开右侧的“发票下载”入口，选择保存位置，安装一次本地引擎后填写 QQ 或 163 邮箱的 IMAP 授权码。首次安装需要联网下载 Python 依赖和 Chromium；`rapidocr-onnxruntime` 的 pip wheel 自带默认 PP-OCRv3 模型，无需额外手动下载模型。发票文件在本地 OCR；OCR 文本发送给当前选择的 DeepSeek 模型提取字段。插件支持 Windows x64 和 macOS Apple Silicon，授权码由 DSH 凭据服务保存，不写入插件设置或扫描日志。\n\n---\n\n## ✨ 核心亮点\n\n| &nbsp; | 特性 | 说明 |\n|--------|------|------|\n| 🔒 | **一键运行，开箱即用** | 解压即可运行，无需安装 Python 或任何依赖 |\n| 🤖 | **双引擎 AI 识别** | Track A（OCR精确流）+ Track B（视觉降级流），自动切换，无需手动操作 |\n| 🔍 | **四层智能漏斗** | 白名单域名 → 主题关键字 → 正文检测 → 二维码扫描，精准过滤非发票邮件 |\n| 📄 | **链接发票自动恢复** | Playwright 自动打开百望云、税务平台链接，下载正式 PDF 存档 |\n| 🧾 | **发票与凭证自动撮合** | 住宿发票/水单、打车发票/行程单自动配对并相邻命名归档 |\n| 🪟 | **安静的后台处理** | URL 恢复 worker、Node 与 Chromium 全链路隐藏运行，不再批量弹出控制台窗口 |\n| 🗂️ | **自然语言分类规则** | 支持\"滴滴大于100元放进大额\"这样的自定义规则 |\n| 📊 | **一键 Excel 报表** | 自动生成 `summary_report.xlsx`，发票清单、金额汇总全覆盖 |\n\n---\n\n## 🏗️ 整体工作流程\n\n```mermaid\nflowchart LR\n    A[\"📧 QQ / 163\\n邮箱 IMAP\"] --> B[\"📥 邮件抓取\\nEmailFetcher\"]\n    B --> C{\"🔍 四层\\n智能漏斗\"}\n    C -->|\"通过\"| D[\"📎 附件提取\\nZIP 递归解包\"]\n    C -->|\"丢弃\"| X[\"🗑️ 非发票邮件\"]\n    D --> E{\"附件类型?\"}\n    E -->|\"PDF/OFD/XML\"| F[\"🤖 AI 提取引擎\"]\n    E -->|\"URL 链接\"| G[\"🌐 PDF 恢复\\nPlaywright\"]\n    G --> F\n    F --> H{\"提取\\n成功?\"}\n    H -->|\"✅\"| I[\"📂 智能分类\\n规则重命名\"]\n    H -->|\"❌\"| J[\"📁 Manual_Check\"]\n    I --> K[\"🗂️ 本地归档\"]\n    K --> L[\"📊 Excel 报表\"]\n```\n\n---\n\n## 🤖 双引擎 AI 提取架构\n\n系统采用 **Track A + Track B + Local Fallback** 三层防线，任何一层成功即采用结果，确保极高的识别成功率。\n\n![双引擎AI识别架构](docs/track-ab.svg)\n\n> **为什么这样设计？**\n> - **Track A**（OCR + LLM）：精度最高，先提取文字结构再理解\n> - **Track B**（glm-4.5V 视觉）：直接\"看图\"，适合复杂排版或图片类发票\n> - **Local Fallback**：本地正则规则，断网可用，零 API 消耗\n\n---\n\n## 🔍 四层智能筛选漏斗\n\n系统不会对每封邮件都调用 AI，而是先经过四层漏斗精准判断，大幅降低误识别率和 API 费用。\n\n![四层智能筛选漏斗](docs/funnel.svg)\n\n筛选通过后，附件还会经过 **三级决策**：\n\n| 层级 | 触发条件 | 处理方式 |\n|------|----------|----------|\n| 🗑️ **A 层**（丢弃） | Tracking pixel、Logo、装饰图（≤32px） | 直接跳过 |\n| 📦 **B 层**（暂存） | 附件 >5MB、ZIP 解包失败 | 保留但不处理 |\n| ✅ **C 层**（归档） | 正常 PDF/OFD/XML | 进入 AI 提取流程 |\n\n---\n\n## 🌐 三级 PDF 恢复方案\n\n许多发票邮件只有\"点击下载\"的链接，系统自动识别平台并选择最优方案：\n\n```mermaid\nflowchart TD\n    Link([\"🔗 邮件中的发票链接\"]) --> Detect{\"识别链接平台\"}\n    Detect -->|\"百望云\"| BW[\"🏢 Playwright 自动化\\n登录 → 点击下载 → 捕获文件\\n字段匹配验证\"]\n    Detect -->|\"国税·诺诺·航信\"| DI[\"📥 HTTP 直接下载\\n识别发票族群\\n本地字段校验\"]\n    Detect -->|\"未知网页\"| Generic[\"🌐 网页转 PDF\\n检测登录/验证码\\nA4 格式渲染\"]\n    BW & DI & Generic --> Final([\"📄 本地 PDF\"])\n    Final --> AI([\"🤖 AI 提取流程\"])\n```\n\n---\n\n## ⚙️ 配置指南\n\n> 首次使用只需配置一次，之后每次扫描直接点击运行。\n\n### 第一步 · 开启 163 邮箱 IMAP\n\n<details>\n<summary>📖 点击展开 163 邮箱详细步骤</summary>\n\n**服务器参数**\n\n| 参数 | 值 |\n|------|----|\n| IMAP 服务器 | `imap.163.com` |\n| 端口 | `993`（SSL/TLS） |\n\n**开启步骤**\n\n1. 登录 [mail.163.com](https://mail.163.com)，点击右上角「**设置**」\n2. 在下拉菜单中选择「**POP3/SMTP/IMAP**」\n3. 找到「**IMAP/SMTP 服务**」，点击右侧「**开启**」按钮\n4. 弹出「账号安全验证」窗口：\n   - **扫码方式**（推荐）：手机扫描二维码，自动发送验证短信\n   - **手动方式**：按提示手动发送短信到指定号码\n5. 短信发送后点击「**我已发送**」\n6. 系统生成 **16 位授权码**（字母组合，**仅显示一次，务必立即复制保存**）\n\n> ⚠️ 授权码不是邮箱登录密码，是专用于第三方客户端的独立密码，大小写敏感。\n\n📚 [163 邮箱官方帮助](https://help.mail.163.com/)\n\n</details>\n\n---\n\n### 第二步 · 开启 QQ 邮箱 IMAP\n\n<details>\n<summary>📖 点击展开 QQ 邮箱详细步骤</summary>\n\n**服务器参数**\n\n| 参数 | 值 |\n|------|----|\n| IMAP 服务器 | `imap.qq.com` |\n| 端口 | `993`（SSL/TLS） |\n\n**开启步骤**\n\n1. 登录 [mail.qq.com](https://mail.qq.com)，点击右上角「**设置**」图标\n2. 选择「**账户**」选项卡\n3. 找到「**POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV 服务**」\n4. 点击「**管理服务**」→「**开启服务**」\n5. 点击「**生成授权码**」，进行身份验证：\n   - **扫码方式**（推荐）：手机扫码后自动发送验证短信\n   - **手动方式**：用 QQ 绑定手机发送「**配置邮件客户端**」到 **1069070069**\n6. 点击「**我已发送**」，验证后授权码即时生成（**请立即保存**）\n\n> ⚠️ 修改 QQ 密码后授权码自动失效，需重新生成。\n\n📚 [QQ 邮箱官方帮助](https://service.mail.qq.com/detail/0/339)\n\n</details>\n\n---\n\n### 第三步 · 获取智谱 GLM API Key\n\n<details>\n<summary>📖 点击展开 GLM API 配置步骤</summary>\n\n系统使用 **GLM-4.5V**（多模态视觉）和 **GLM-OCR** 识别发票内容。\n\n**步骤**\n\n1. 访问 [open.bigmodel.cn](https://open.bigmodel.cn/)，注册账号\n2. 进入控制台 → **API Keys** → **创建 API Key**\n3. 复制并保存 Key（格式：`xxxxxxxx.xxxxxxxxxxxxxxxx`）\n\n**费用参考**\n\n| 情况 | 说明 |\n|------|------|\n| 🎁 新用户福利 | 赠送 500 万 GLM-4 tokens（30 天有效） |\n| 💰 推荐充值 | **5 元以内**，按量计费 |\n| 📊 使用估算 | 每张发票约消耗 1,000–3,000 tokens；每月 200 张，5 元可用约 12 个月 |\n\n📚 [智谱 AI 开放平台](https://open.bigmodel.cn/)\n\n</details>\n\n---\n\n## 🚀 快速开始\n\n### Windows（安装版 / 免安装版）\n\n1. 安装版：运行 `InvoiceFlowAI-*-windows-x64-setup.exe`；免安装版：解压 `InvoiceFlowAI-*-windows-x64-portable.zip` 到普通文件夹（避免云盘同步目录），并保持 `_internal` 文件夹与 `InvoiceFlowAI.exe` 同级。\n2. 双击 `InvoiceFlowAI.exe`；首次启动会自动弹出设置界面。\n3. 填入邮箱地址与授权码（QQ 或 163）、GLM API Key，保存后点击「开始扫描」。发票会自动归档到桌面「发票整理」文件夹。\n\n### macOS（Apple Silicon）\n\n1. 打开 `InvoiceFlowAI-*-macos-arm64.dmg`，将 `InvoiceFlowAI` 拖入“应用程序”文件夹。\n2. 首次启动会自动弹出设置界面。此版本未签名、未公证；若 macOS 阻止打开，请在“系统设置 → 隐私与安全性”中确认仍要打开。\n3. 填入邮箱地址与授权码（QQ 或 163）、GLM API Key，保存后点击「开始扫描」。\n\n---\n\n## 📁 输出目录结构\n\n```\n发票整理/\n├── 火车票/\n│   └── 20260315-北京-上海-火车票.pdf\n├── 机票/\n│   └── 20260301_机票_1280.00_中国国际航空.pdf\n├── 住宿发票/\n│   ├── 20260310-住宿-01-发票_888.00元.pdf\n│   └── 20260310-住宿-01-水单_888.00元.pdf\n├── 打车/\n│   ├── 0312-滴滴-01-发票_45.50元.pdf\n│   └── 0312-滴滴-01-行程单_45.50元.pdf\n├── 餐饮/\n├── 待人工复核/        ← 无法可靠确认的材料，需人工处理\n├── 非目标公司发票/\n└── summary_report.xlsx\n```\n\n---\n\n## ❓ 常见问题\n\n<details>\n<summary>Q：软件启动后白屏或无响应？</summary>\n\n- 确认已将**整个压缩包解压**，`_internal` 文件夹须与 `InvoiceFlowAI.exe` 在同一目录\n- 避免将软件放在含有**中文路径或空格**的目录下\n\n</details>\n\n<details>\n<summary>Q：扫描完发票数量很少？</summary>\n\n- 在软件的时间范围设置中，将起始日期**往前调整至 180 天以上**\n- 部分邮箱默认只拉取近30天邮件，需要在邮箱 IMAP 设置里选择「收取全部邮件」\n\n</details>\n\n<details>\n<summary>Q：授权码填写后提示认证失败？</summary>\n\n- **QQ 邮箱**：须从「管理服务 → 生成授权码」流程中获取，**不是 QQ 密码**\n- **163 邮箱**：须从「开启 IMAP 服务」弹窗中生成，**不是邮箱登录密码**，注意大小写\n- QQ 修改密码后需重新生成授权码\n\n</details>\n\n<details>\n<summary>Q：GLM API 报错余额不足？</summary>\n\n登录 [open.bigmodel.cn](https://open.bigmodel.cn/) → 费用中心 → 充值。推荐充值 **5 元**，按量计费。\n\n</details>\n\n<details>\n<summary>Q：部分发票进入 Manual_Check 文件夹？</summary>\n\n正常现象。当 AI 识别置信度不足时，系统自动放入 `Manual_Check` 队列，需人工确认。通常由图片模糊、非标准票据或加密 PDF 导致。\n\n</details>\n\n---\n\n## 🛡️ 隐私与安全\n\n- 所有邮件、发票文件均在**本地处理**，不上传任何服务器\n- 邮箱凭据在 Windows 通过 **DPAPI** 加密存储，在 macOS 通过 **Keychain** 存储\n- GLM API 仅接收**发票图片**（Base64）用于文字识别，不发送邮件原文内容\n\n---\n\n## ⚠️ 免责声明\n\n使用本软件即表示您已理解并接受以下内容。\n\n**合规使用** · 本软件通过 IMAP **只读**访问邮箱，不发送、删除或修改任何邮件。用户须确保对所处理邮箱拥有合法授权。\n\n**用途** · 本软件仅用于发票邮件下载、识别、分类、归档等自动化辅助。\n\n**准确性与合规性** · 作者不保证发票数据或生成结果的准确性、完整性、合法性、税务合规性、财务合规性或会计合规性。用户必须自行核验所有发票、报销、税务、会计和合规结果后再使用。\n\n**数据** · 调用 GLM API 时，发票图片会发送至智谱 AI 服务器进行识别，受 [智谱 AI 隐私政策](https://www.zhipuai.cn/zh/privacy) 约束；邮件原文不会发送。\n\n**责任限制** · 作者不对使用本软件造成的损失、遗漏、错误、报销失败、税务风险、合规问题或数据丢失承担责任。\n\n**第三方服务**\n\n| 服务 | 用途 | 服务方 |\n|------|------|--------|\n| 智谱 GLM API | 发票 OCR 与视觉识别 | 北京智谱华章科技有限公司 |\n| QQ 邮箱 IMAP | 邮件读取 | 腾讯科技（深圳）有限公司 |\n| 163 邮箱 IMAP | 邮件读取 | 网易（杭州）网络有限公司 |\n\n---\n\n## 📜 许可证\n\n本项目基于 [Apache License 2.0](LICENSE) 授权。允许商业使用、修改、分发和闭源集成，但再分发时必须保留 copyright notice、license notice，以及 [NOTICE](NOTICE) 中的作者署名。\n\n---\n\n<div align=\"center\">\n\nMade with ❤️ by **EthanYoQ / Yong Qi**\n\n[报告问题](https://github.com/EthanYoQ/Invoice-Downloader/issues) · [智谱AI开放平台](https://open.bigmodel.cn/) · [163邮箱帮助](https://help.mail.163.com/) · [QQ邮箱帮助](https://service.mail.qq.com/detail/0/339)\n\n</div>\n"
+  },
+  "fingerprints": {
+    "code": "dd7b9656ae8faf326cc111f2c6f68ac054650a11",
+    "release": "639bd112b45319d8dd3058f9891af12582ccb16a2dc90a8822bb5332c8b03d92",
+    "maintenance": "34f1866a5733c24140525903710b3f1dda5af6c7220f547f98ab41de9a369c6f"
+  },
+  "limitations": [
+    "默认分支快照不证明发布包或运行时行为。",
+    "发布接口最多采集 100 条，不声称完整发布历史。",
+    "文件树指纹包括文档和生成文件，判断有效工程量前须检查差异。"
+  ]
+}

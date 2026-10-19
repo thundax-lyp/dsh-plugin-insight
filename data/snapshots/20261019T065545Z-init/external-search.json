@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-19T07:02:45.192Z",
+  "queries": [
+    "\"EthanYoQ/Invoice-Downloader\" review 使用",
+    "\"february2015/dsh-taskswarm\" 使用 review"
+  ],
+  "observed_examples": [
+    "https://github.com/EthanYoQ/Invoice-Downloader",
+    "https://github.com/february2015/dsh-taskswarm",
+    "https://dshmarket.com/p/february2015/dsh-taskswarm/",
+    "https://dshplugin.net/en/plugins/february2015-dsh-taskswarm/"
+  ],
+  "limitation": "Targeted public web discovery, not an exhaustive search. Directory mirrors and static listings are not independent runtime reproduction."
+}

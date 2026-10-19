@@ -1,0 +1,12 @@
+{
+  "repository": "0xsline/awesome-deepseek-harness",
+  "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+  "captured_at": "2026-10-19T06:58:12.617Z",
+  "coverage": "README examined for candidate discovery; only relevant excerpt retained. No ecosystem-wide census.",
+  "excerpts": [
+    {
+      "line": 116,
+      "text": "- [february2015/dsh-taskswarm](https://github.com/february2015/dsh-taskswarm) - DSH port of TaskPlane: dependency-ordered waves run in parallel git-worktree lanes, with task packets, cross-model review, and crash recovery."
+    }
+  ]
+}

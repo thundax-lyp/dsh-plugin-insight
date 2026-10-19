@@ -1,5 +1,508 @@
 {
   "schema_version": 1,
-  "plugins": [],
-  "runs": []
+  "plugins": [
+    {
+      "id": "github:1170373459:dsh-invoice-downloader",
+      "repository_id": 1170373459,
+      "component_id": "dsh-invoice-downloader",
+      "repository": "EthanYoQ/Invoice-Downloader",
+      "path": "plugins/dsh-invoice-downloader",
+      "aliases": [],
+      "name": "InvoiceFlowAI — DSH 发票整理插件",
+      "entry_type": "plugin",
+      "technical_category": "tools-integration",
+      "business_category": "office-operations",
+      "tags": [
+        "发票整理",
+        "IMAP",
+        "OCR",
+        "报销准备",
+        "条件试用"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "17aeffc38c6e674f603864414044daf73122042a57a6d859d3923ceaf4900047",
+        "code": "dd7b9656ae8faf326cc111f2c6f68ac054650a11",
+        "release": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5",
+        "compatibility": "f80c06fcf9a074ca76a8446a0e43202c5e2ccd061198bd8af184463b6e748d9b",
+        "maintenance": "34f1866a5733c24140525903710b3f1dda5af6c7220f547f98ab41de9a369c6f"
+      },
+      "sources": [
+        {
+          "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:directory",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/13dcda27177db72e1004b6116f0d589675176fba/data/plugins/EthanYoQ__Invoice-Downloader--plugins-dsh-invoice-downloader.yml",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T06:56:42.509Z",
+          "membership": "present"
+        },
+        {
+          "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:repository",
+          "url": "https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/package.json",
+          "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+          "retrieved_at": "2026-10-19T06:56:40.092Z"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:author",
+          "kind": "author_claim",
+          "url": "https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/README.md",
+          "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+          "captured_at": "2026-10-19T07:02:45.192Z",
+          "summary": "作者描述 DSH 插件连接 QQ/163 IMAP，在本地 OCR 后调用所选模型，归档并生成 Excel；本机 Python、受支持平台及人工复核仍是条件。",
+          "artifact": "data/snapshots/20261019T065545Z-init/invoice-source.json",
+          "limitations": [
+            "作者描述不等于安装、实际任务或收益验证。",
+            "源码快照与发布包全量一致性未验证。"
+          ]
+        },
+        {
+          "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:implementation",
+          "kind": "source_inspection",
+          "url": "https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/src/invoice-scanner.ts",
+          "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+          "captured_at": "2026-10-19T07:02:45.192Z",
+          "summary": "核查组件14个文件：本地安装器下载 Python/OCR 依赖与 Chromium；模型桥使用宿主当前模型；可选 GLM 分支按凭据启用。",
+          "artifact": "data/snapshots/20261019T065545Z-init/invoice-source.json",
+          "limitations": [
+            "源码级研究，未执行第三方代码或测试。",
+            "抽读范围见报告，不是完整安全或正确性审计。"
+          ]
+        },
+        {
+          "id": "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:distribution",
+          "kind": "source_inspection",
+          "url": "https://registry.npmjs.org/@ethanyoq%2fdsh-invoice-downloader/latest",
+          "revision": "0.1.1",
+          "captured_at": "2026-10-19T07:02:45.192Z",
+          "summary": "公开 npm latest HTTP 200，版本0.1.1与所读组件清单一致；未核对tarball。",
+          "artifact": "data/snapshots/20261019T065545Z-init/invoice-npm.json",
+          "limitations": [
+            "时间敏感的公开元数据检查；不等于安装成功。"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "basis": "interpretation",
+          "text": "适合已有DSH、定期整理支持邮箱发票且愿意人工核验的个人/小团队，交付是报销准备材料而非正式审批闭环。",
+          "evidence_ids": [
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:author",
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:implementation"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "code",
+              "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+            },
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "compatibility",
+              "fingerprint": "f80c06fcf9a074ca76a8446a0e43202c5e2ccd061198bd8af184463b6e748d9b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "dependencies",
+          "topic": "mechanism",
+          "basis": "supported",
+          "text": "插件版需要本机Python与虚拟环境、RapidOCR和Chromium；OCR文本交给当前宿主模型，GLM是有凭据时的可选分支。不能套用桌面版免Python描述。",
+          "evidence_ids": [
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:author",
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:implementation"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "code",
+              "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+            },
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "compatibility",
+              "fingerprint": "f80c06fcf9a074ca76a8446a0e43202c5e2ccd061198bd8af184463b6e748d9b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "value",
+          "topic": "business_value",
+          "basis": "interpretation",
+          "text": "价值是批量收集、整理与汇总并复用DSH环境；净收益需扣除安装、认证、模型调用、失败处理及逐票复核。",
+          "evidence_ids": [
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:author",
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:implementation"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "code",
+              "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+            },
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "compatibility",
+              "fingerprint": "f80c06fcf9a074ca76a8446a0e43202c5e2ccd061198bd8af184463b6e748d9b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "limitations",
+          "basis": "unverified",
+          "text": "未处理真实票据，无合格数、模型账单、复核分钟或安装耗时；不能量化单票成本、合格率或节省比例。",
+          "evidence_ids": [
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:implementation"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "code",
+              "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+            },
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "compatibility",
+              "fingerprint": "f80c06fcf9a074ca76a8446a0e43202c5e2ccd061198bd8af184463b6e748d9b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "basis": "supported",
+          "text": "公开npm latest为0.1.1，源码组件清单同版本；尚未安装或验证tarball与源码完整一致。",
+          "evidence_ids": [
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:distribution"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "release",
+              "fingerprint": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "basis": "interpretation",
+          "text": "条件试用：先用人工标注混合票据对照人工/桌面基线，验证关键字段、原件与Excel对应、总人工时间及现金成本后再决定。",
+          "evidence_ids": [
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:author",
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:implementation",
+            "github:1170373459:dsh-invoice-downloader:20261019T065545Z-init:distribution"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "code",
+              "fingerprint": "dd7b9656ae8faf326cc111f2c6f68ac054650a11"
+            },
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "release",
+              "fingerprint": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5"
+            },
+            {
+              "plugin_id": "github:1170373459:dsh-invoice-downloader",
+              "area": "compatibility",
+              "fingerprint": "f80c06fcf9a074ca76a8446a0e43202c5e2ccd061198bd8af184463b6e748d9b"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T07:02:45.192Z"
+    },
+    {
+      "id": "github:1333800488:root",
+      "repository_id": 1333800488,
+      "component_id": "root",
+      "repository": "february2015/dsh-taskswarm",
+      "path": "",
+      "aliases": [],
+      "name": "TaskSwarm — 并行开发任务编排",
+      "entry_type": "plugin",
+      "technical_category": "agent-workflow",
+      "business_category": "software-delivery",
+      "tags": [
+        "并行开发",
+        "任务编排",
+        "Git-worktree",
+        "值得观察",
+        "npm-latest-unavailable"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "directory": "13e2938fcff83d2c0783d72677501e47b29ee219860adb15c6d57339a89f92c7",
+        "code": "e92804922d2920b97a003dbe2080ebff63f6f4f5",
+        "release": "9dbd6f032f753a20355c8e4c66a6ae95faa5f7c6397ab3b89e77774574f63c84",
+        "compatibility": "b2d078ef4d5671ddd5343cb057a7d7771fda71e9829608e7e37f91e9dd4944ab",
+        "maintenance": "f67d79ec50b39b612cdd5cd634f555d0abb8c8aa0ae9e65843cfa7cc2e765cd4"
+      },
+      "sources": [
+        {
+          "id": "github:1333800488:root:20261019T065545Z-init:directory",
+          "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/13dcda27177db72e1004b6116f0d589675176fba/data/plugins/february2015__dsh-taskswarm.yml",
+          "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+          "retrieved_at": "2026-10-19T06:56:42.509Z",
+          "membership": "present"
+        },
+        {
+          "id": "github:1333800488:root:20261019T065545Z-init:repository",
+          "url": "https://github.com/february2015/dsh-taskswarm/blob/032e2c9d228c20cab65fe0ea061d78a7c753ab8c/package.json",
+          "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+          "retrieved_at": "2026-10-19T06:56:41.426Z"
+        },
+        {
+          "id": "github:1333800488:root:20261019T065545Z-init:secondary",
+          "url": "https://github.com/0xsline/awesome-deepseek-harness/blob/cd4faf97da814f06fab4a5e307e5ba0f62c638af/README.md",
+          "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+          "retrieved_at": "2026-10-19T06:58:12.617Z",
+          "membership": "present"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1333800488:root:20261019T065545Z-init:author",
+          "kind": "author_claim",
+          "url": "https://github.com/february2015/dsh-taskswarm/blob/032e2c9d228c20cab65fe0ea061d78a7c753ab8c/README.md",
+          "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+          "captured_at": "2026-10-19T07:02:45.192Z",
+          "summary": "作者描述任务包、波次、worktree、Reviewer、Merger 与检查点，可形成并行开发编排。",
+          "artifact": "data/snapshots/20261019T065545Z-init/taskswarm-source.json",
+          "limitations": [
+            "作者描述不等于安装、实际任务或收益验证。",
+            "源码快照与发布包全量一致性未验证。"
+          ]
+        },
+        {
+          "id": "github:1333800488:root:20261019T065545Z-init:implementation",
+          "kind": "source_inspection",
+          "url": "https://github.com/february2015/dsh-taskswarm/blob/032e2c9d228c20cab65fe0ea061d78a7c753ab8c/src/orchestrator/engine.ts",
+          "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+          "captured_at": "2026-10-19T07:02:45.192Z",
+          "summary": "核查13个文件：lane结果串行集成、冲突可调用Merger；Reviewer不含REVISE默认PASS，读取不到判定可返回none；恢复仍依赖状态核对。",
+          "artifact": "data/snapshots/20261019T065545Z-init/taskswarm-source.json",
+          "limitations": [
+            "源码级研究，未执行第三方代码或测试。",
+            "抽读范围见报告，不是完整安全或正确性审计。"
+          ]
+        },
+        {
+          "id": "github:1333800488:root:20261019T065545Z-init:distribution",
+          "kind": "source_inspection",
+          "url": "https://registry.npmjs.org/dsh-taskswarm/latest",
+          "revision": "http-404-25c794a9aa31be04cda1202f495537d63725b7fc3546b9ec01c125e5947f2ac4",
+          "captured_at": "2026-10-19T07:02:45.192Z",
+          "summary": "公开 npm latest HTTP 404；npm view也报告包未发布。不能按README过期恢复日期假设可npm安装。",
+          "artifact": "data/snapshots/20261019T065545Z-init/taskswarm-npm.json",
+          "limitations": [
+            "时间敏感的公开元数据检查；不等于安装成功。"
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "basis": "interpretation",
+          "text": "适合可独立拆分、有清楚验收和Git操作能力的开发批次；单个小修复或高度耦合需求可能不值得引入编排。",
+          "evidence_ids": [
+            "github:1333800488:root:20261019T065545Z-init:author",
+            "github:1333800488:root:20261019T065545Z-init:implementation"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "code",
+              "fingerprint": "e92804922d2920b97a003dbe2080ebff63f6f4f5"
+            },
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "compatibility",
+              "fingerprint": "b2d078ef4d5671ddd5343cb057a7d7771fda71e9829608e7e37f91e9dd4944ab"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "workflow",
+          "topic": "mechanism",
+          "basis": "supported",
+          "text": "任务包、worktree、Worker/Reviewer和冲突Merger形成多阶段流程；lane并行不消除串行集成、环境准备和人工验收。",
+          "evidence_ids": [
+            "github:1333800488:root:20261019T065545Z-init:author",
+            "github:1333800488:root:20261019T065545Z-init:implementation"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "code",
+              "fingerprint": "e92804922d2920b97a003dbe2080ebff63f6f4f5"
+            },
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "compatibility",
+              "fingerprint": "b2d078ef4d5671ddd5343cb057a7d7771fda71e9829608e7e37f91e9dd4944ab"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "gate",
+          "topic": "limitations",
+          "basis": "design_limit",
+          "text": "Reviewer无REVISE默认PASS，engine可读到none并在其他条件满足时走合并；这不证明每种任务必需评审，也不足以保证明确通过才合并。",
+          "evidence_ids": [
+            "github:1333800488:root:20261019T065545Z-init:implementation"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "code",
+              "fingerprint": "e92804922d2920b97a003dbe2080ebff63f6f4f5"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "basis": "supported",
+          "text": "公共npm latest当前HTTP404，仓库源码可读；README的临时恢复日期不能证明npm分发已恢复。",
+          "evidence_ids": [
+            "github:1333800488:root:20261019T065545Z-init:distribution",
+            "github:1333800488:root:20261019T065545Z-init:author"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "release",
+              "fingerprint": "9dbd6f032f753a20355c8e4c66a6ae95faa5f7c6397ab3b89e77774574f63c84"
+            },
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "code",
+              "fingerprint": "e92804922d2920b97a003dbe2080ebff63f6f4f5"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "basis": "interpretation",
+          "text": "可并行任务可能缩短等待，但费用须累计Worker、Reviewer、Merger及返工，并计入任务拆分和冲突处理人工成本；无实测加速或降本证据。",
+          "evidence_ids": [
+            "github:1333800488:root:20261019T065545Z-init:author",
+            "github:1333800488:root:20261019T065545Z-init:implementation"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "code",
+              "fingerprint": "e92804922d2920b97a003dbe2080ebff63f6f4f5"
+            },
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "compatibility",
+              "fingerprint": "b2d078ef4d5671ddd5343cb057a7d7771fda71e9829608e7e37f91e9dd4944ab"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "basis": "interpretation",
+          "text": "值得观察：先解决可用安装入口和当前宿主兼容，在隔离仓库对照单Agent验证合格批次成本、人工介入和失败恢复后再采用。",
+          "evidence_ids": [
+            "github:1333800488:root:20261019T065545Z-init:author",
+            "github:1333800488:root:20261019T065545Z-init:implementation",
+            "github:1333800488:root:20261019T065545Z-init:distribution"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "code",
+              "fingerprint": "e92804922d2920b97a003dbe2080ebff63f6f4f5"
+            },
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "release",
+              "fingerprint": "9dbd6f032f753a20355c8e4c66a6ae95faa5f7c6397ab3b89e77774574f63c84"
+            },
+            {
+              "plugin_id": "github:1333800488:root",
+              "area": "compatibility",
+              "fingerprint": "b2d078ef4d5671ddd5343cb057a7d7771fda71e9829608e7e37f91e9dd4944ab"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:02:45.192Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T07:02:45.192Z"
+    }
+  ],
+  "runs": [
+    {
+      "id": "20261019T065545Z-init",
+      "checked_at": "2026-10-19T07:02:45.192Z",
+      "mode": "init",
+      "changes": [
+        {
+          "plugin_id": "github:1170373459:dsh-invoice-downloader",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        },
+        {
+          "plugin_id": "github:1333800488:root",
+          "kind": "added",
+          "areas": [
+            "code",
+            "compatibility",
+            "directory",
+            "maintenance",
+            "release"
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "target": "https://registry.npmjs.org/dsh-taskswarm/latest",
+          "message": "HTTP 404，公开 npm latest 不可用；保留 GitHub 源码档案，不据此删除插件。"
+        }
+      ]
+    }
+  ]
 }

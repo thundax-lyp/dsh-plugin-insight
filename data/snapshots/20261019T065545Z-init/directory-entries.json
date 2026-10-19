@@ -1,0 +1,9 @@
+{
+  "repository": "awesome-dsh-plugin/awesome-dsh-plugin",
+  "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+  "captured_at": "2026-10-19T06:56:42.509Z",
+  "files": {
+    "data/plugins/EthanYoQ__Invoice-Downloader--plugins-dsh-invoice-downloader.yml": "url: https://github.com/EthanYoQ/Invoice-Downloader/tree/main/plugins/dsh-invoice-downloader\nname: EthanYoQ/Invoice-Downloader#dsh-invoice-downloader\ncategory: tools\ndescription:\n  en: Local IMAP invoice download, OCR, archive, and Excel reimbursement summaries for DeepSeek Harness.\n  zh: 面向 DeepSeek Harness 的本地 IMAP 发票下载、OCR 识别、归档与 Excel 报销汇总。\n",
+    "data/plugins/february2015__dsh-taskswarm.yml": "url: https://github.com/february2015/dsh-taskswarm\nname: february2015/dsh-taskswarm\ncategory: workflow\ndescription:\n  en: 'DSH port of TaskPlane: dependency-ordered waves run in parallel git-worktree lanes, with task packets, cross-model review, and crash recovery.'\n  zh: TaskPlane 的 DSH 移植版：按依赖分波、多 lane 并行执行（git worktree 隔离），任务包 + 跨模型评审 + 崩溃可恢复。\n"
+  }
+}

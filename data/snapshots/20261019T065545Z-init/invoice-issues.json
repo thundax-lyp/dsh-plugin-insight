@@ -1,0 +1,187 @@
+{
+  "repository": "EthanYoQ/Invoice-Downloader",
+  "captured_at": "2026-10-19T06:58:14.986Z",
+  "coverage": "First page, at most 20 issues/PRs; not independent reproduction. Retained metadata only; issue bodies intentionally not copied.",
+  "items": [
+    {
+      "number": 12,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/12",
+      "title": "DSH Plugin: Invoice-Downloader as a Deepseek Harness sidebar plugin",
+      "author": "EthanYoQ",
+      "state": "open",
+      "updated_at": "2026-09-30T11:54:07Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 184,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/pull/184",
+      "title": "Fix core review issues and add desktop regression CI",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T10:07:28Z",
+      "is_pull_request": true
+    },
+    {
+      "number": 183,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/183",
+      "title": "[P2][Core] IMAP 缺少有界等待，163 ID 命令遇到 EOF 仍继续读取",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T09:32:34Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 182,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/182",
+      "title": "[P1][Core/Security] IMAP TLS 未显式验证服务器证书和主机名",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T09:32:29Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 181,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/181",
+      "title": "[P2][Core] 业务去重记录写入状态目录却从输出目录读取，跨次运行无法恢复",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T09:32:23Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 179,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/179",
+      "title": "[P2][Core] 配对重命名后 get_results 与 Excel 的文件路径未同步",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T09:32:12Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 178,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/178",
+      "title": "[P2][Core/CI] 核心 Python 与测试变更缺少 PR 自动回归门禁",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T09:32:00Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 176,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/176",
+      "title": "[P2][Core/Security] Excel 导出未将邮件与发票中的外部文本强制作为文本保存",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T09:31:55Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 180,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/180",
+      "title": "[P1][Core] URL 已下载的发票转人工复核时只写链接摘要，收尾清理后丢失 PDF 原件",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T09:31:33Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 173,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/173",
+      "title": "[P2][Core/海外可选分支] 外币发票千位金额解析截断；非中国票据主链路 P1",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T09:25:41Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 177,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/177",
+      "title": "[暂缓][DSH-only] INTERNALDATE 查询改写漏候选；核心日期链路未复现此问题",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T05:42:02Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 174,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/174",
+      "title": "[暂缓][DSH-only] 插件邮箱连接测试忽略 connect() 的 False",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T05:41:03Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 175,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/175",
+      "title": "[暂缓/非中国发票主场景] 海外商家自定义编号的去重命名空间",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-25T05:39:43Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 172,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/pull/172",
+      "title": "ci: cap desktop release intermediate retention at 7 days",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-09-06T23:38:34Z",
+      "is_pull_request": true
+    },
+    {
+      "number": 171,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/171",
+      "title": "可否搞个docker版",
+      "author": "hjdx2009",
+      "state": "closed",
+      "updated_at": "2026-09-02T16:49:28Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 169,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/pull/169",
+      "title": "fix(ui): keep product link and version label current",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-08-23T19:07:22Z",
+      "is_pull_request": true
+    },
+    {
+      "number": 168,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/pull/168",
+      "title": "用用户语言说明发票整理与报销流程",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-08-23T17:21:56Z",
+      "is_pull_request": true
+    },
+    {
+      "number": 167,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/pull/167",
+      "title": "fix: remove internal verification material from public distribution",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-08-23T04:47:54Z",
+      "is_pull_request": true
+    },
+    {
+      "number": 166,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/pull/166",
+      "title": "feat(dsh): add Invoice Downloader plugin",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-08-22T09:45:29Z",
+      "is_pull_request": true
+    },
+    {
+      "number": 165,
+      "url": "https://github.com/EthanYoQ/Invoice-Downloader/issues/165",
+      "title": "F8 Agent Notes, keyless snapshot, docs cleanup, Config fields",
+      "author": "EthanYoQ",
+      "state": "closed",
+      "updated_at": "2026-08-19T04:51:20Z",
+      "is_pull_request": false
+    }
+  ]
+}
