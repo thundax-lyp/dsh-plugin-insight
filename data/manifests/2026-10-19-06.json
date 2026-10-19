@@ -47,6 +47,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "9f184ee8a2db8a19d526ae6a8f49db6d23715f918edd64352afc3f1986be48c6",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1339316901-root",
         "observations_sha256": "e85df160930dfb575b4db1978ebc0bd72f78596a05145831df0ce4c109b9f6f9",
@@ -73,6 +74,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "196c5ec84ff3e3fed1307e508380a258b34a7c5934cd7fd7bf07c1bf0023d9a9",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1333328839-root",
         "observations_sha256": "f311b1958a1ff8952aff662cdac53fa0e17cf0427efb087966f678672b6cd39d",
@@ -98,6 +100,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "3eb1f00437d0ada48c129cbcafff87849975632dfc20be3e997ddd3f3aa41817",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1416699252-root",
         "observations_sha256": "612fe8d4392d21a8e03dd74192b42a837d75d8a66c1a469dab15b49aa7835b49",
@@ -123,6 +126,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "748353a3d61afaa56dbc8f9fc818a52e9b4b5be155fb378ab6bad01ea7d6df3e",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1334899834-root",
         "observations_sha256": "c6a8eb00e5431373916be0a1f69146b75489d7c1246503a2dc8020cce85f602e",
@@ -149,6 +153,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "b67d09ed68ce1238172191f5d2c206d36c6447d81ccebce25ff897b491ae791a",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1333368566-root",
         "observations_sha256": "2eb9e53e34fb1cc7101b6aca7fe2e743a9982d0e83343727e67f08e65f954fd6",
@@ -175,6 +180,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "615447d7825d1ddcec836f41d7af05322f7dfae73526afe20543ac7a45e40a80",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1333370288-root",
         "observations_sha256": "4f57caa9cceab89ac9d734d891a958d07b8665ccb97abc480e3ff45119e5ab12",
@@ -200,6 +206,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "f7ae8c1e679f94c2637aedb1253021fbb7b66e1226bab16ca01df4e87f3882a0",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1333357514-root",
         "observations_sha256": "39b663f610b820cc08af2c3dc54862681bd0f1d9242706cd421d9eb16cbd1129",
@@ -225,6 +232,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "602966a7e9254a7c80b5cb91bb65275556dfa8c4be46852b78cd39249e0d7ea3",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1342915339-root",
         "observations_sha256": "d100c106661b3bbd2781bcb7d0ae7bbfe08e66a4faf0ec9152506af917f966bb",
@@ -250,6 +258,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "5c1536ef0c7ed8b805816dbcc52de2b362c23802a6b16cf09959cee62350d47d",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1343420855-root",
         "observations_sha256": "38cce9787daf27d4ad115b7b37819fde9f7ed75240fcb86837753d1cc42ffbb4",
@@ -276,6 +285,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "04b74ad81349280c72b0d369c320575b73b08996b1878bc97600fe0556dcc0ed",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1339803365-root",
         "observations_sha256": "bf4150fcec84e1c816953cd052a7af1ca687c5d331e0a4eaded22eb526169431",
@@ -299,6 +309,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "114d06940294402689e72f4d78669dd491ba3bca3ed69f45a0dc5e4054c251a3",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1335557891-root",
         "observations_sha256": "e84035720cd60938046130d315b3a0bee074c77576185f33ea2c469cb6f8f52d",
@@ -322,6 +333,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "320f305ded5f42d27d5ca83e1538301f23b5c9678f4c5f6534079f63ba0eeda8",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1335558973-root",
         "observations_sha256": "932932ced3316494c57c98f14c8467bf02a47d18ec10aadea555ead4360a4382",
@@ -345,6 +357,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "2b69eba1b43b8518b2fbf0867f20b671a9b4db091877cb1125700eacad828491",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1363429979-plugin-daily-log",
         "observations_sha256": "f185a05e7a5978eb8001eededdd7c3c85a98c5f6d6e40ad1f12f7cebf137e257",
@@ -368,6 +381,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "c1d27560dfa24ae7e1c48b3c33d25920d7f876094fb76b0eff14e18b0de6887b",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1363429979-plugin-memory",
         "observations_sha256": "e35a75ba52e3619df4e0868c2dc9262cf37a5c4fef54c45622ce0b11d0e76eee",
@@ -391,6 +405,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "1f974276cbccd654c0ace60b2cd0171b7e24f97b8f1e2e49cae16c28fd9c5f7c",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1363429979-plugin-notes",
         "observations_sha256": "a238d5347eb31c12b478e4587e0bfdd2111b91f78b843c3645cadd539493acc4",
@@ -414,6 +429,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "ed09d270982fb5fefa2d4f68eb7faf24d0610e767ec695ce9f86970e5bb391de",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1363429979-plugin-usage-billing",
         "observations_sha256": "add3cf47e26b1ab5f956f3c0b59906b578e29c2321dede073ba2e7a380d61e29",
@@ -437,6 +453,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "579456d35e36c5cbcdb8bf058df5f0a943a1878ad05bb85b05ff1847a89dd160",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1342742812-root",
         "observations_sha256": "144bc70b286d7b099b5d9ffef9b73930be53047e4b1cdfe44db1efd5ff4bcec1",
@@ -461,6 +478,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "755928c0f245f1f5d6759e36ca5cae39a8bb29a466036595d10099a55ef956b2",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1333136466-root",
         "observations_sha256": "c442a5cd0ed78bcd015315b9692c851fd2dbe724be6707b754067dfaed553bcd",
@@ -484,6 +502,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "5c860a10889b14e522629f903cac47324f377dbf883b5979b0fc0b0a315babaf",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1354283280-root",
         "observations_sha256": "496c78180b50eb63b2f9459862e543be9163bb34241409fc05a0ff143a9868e9",
@@ -507,6 +526,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "5f54664f780d803c0f02a478da9fc3e16467ba111a1420c7e616a40593188869",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1359423472-root",
         "observations_sha256": "b2547ad449b2d2da1f537d7e811bb9556902293eb5889d21f12c7aeae20cc88d",
@@ -530,6 +550,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "f7362eb2f32881a217d25264bf4146f3a997c7876487b763875ab9a2e99fe554",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1418691015-root",
         "observations_sha256": "c0c7905fb4dc921694652bf53bff713294bf105d8d50a1e2fe39d5f0a8ae4eef",
@@ -553,6 +574,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "b67ec545ee2582c118b5ffff0887efb595bf14f28bb0202b8aa05a8496724d3c",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1366583376-root",
         "observations_sha256": "606ef5b84252c87e773d016a6876c5ed13a39a3f22571c18a1261f3f1f44c89e",
@@ -576,6 +598,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "56e3ddaf9db4b8a0695610881f9fc0ac56ca97d40977d7ee9fdbd5efe8d2a9d5",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1334504487-root",
         "observations_sha256": "a5671fcfa0cbfb20bb9ff8392278421307246b7b70d509cab6b09b3e720c3d26",
@@ -599,6 +622,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "82e7f866518c7a82019c2d03f292854a14eb6827edf3ab9b2a0c20a4b0af1d5d",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1367305514-root",
         "observations_sha256": "db1fc908ef0e76c30833c21b711ab572b79a0ccc7decfb3b9fc0bb17fe579956",
@@ -622,6 +646,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "7eed8b450b7d125f3bafa829da6ea40930a49df1ba936f012cc45fa03c98c978",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1336994666-root",
         "observations_sha256": "12cfc2148b917b0479e97aaf4dc4213f1f993bb3ab387787fd6c720c63513258",
@@ -645,6 +670,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "2c4ea88210977f53a31633530da3fcb4ca5c5223883103f1165769620e3cec65",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1423215448-root",
         "observations_sha256": "f1441a4af73ef328878bcaf73b409a7faf1b79020770d98852290565551ee87d",
@@ -668,6 +694,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "59eac173be8e4842ce25896f9e85023b76303dde9c3ae19072d80380600797cd",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1423215373-root",
         "observations_sha256": "6fd3ae53ecf4939c11bf155efa437d8568ce8c57835a9053299cc063691cfb71",
@@ -691,6 +718,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "00086f16665c1f866e511262982ea1450809ca3d050564005f3863c4ae8754a3",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1423215529-root",
         "observations_sha256": "bfe1488f4e27d1bab8411be51707e1aef96abc7b10f9650dc1e13e10e9527502",
@@ -714,6 +742,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "d453c32eefd93a70e19beff8daaef263aa2ba655b299877ad87b070d66fc839d",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1335060007-root",
         "observations_sha256": "ba7786199a0cf08fd026b5306f1f03c91a91059fe475a8ef0a440f833bc3a638",
@@ -737,6 +766,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "66b86bfb51961df80574f3d3522a93bf26880ba8123cd366a8ff4d416bdcf409",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1335704653-root",
         "observations_sha256": "55e68a405ba1e36eb6392403039bc764e6763b5eac34b6a963dbe43edd0c541c",
@@ -760,6 +790,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "40e246aa982fb18f1c4275473ce22714004c91031f67529e5e826bacc023f74e",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1358816037-root",
         "observations_sha256": "702e04b553bc89184de5c48f1c5a0efaa9f92413bcb9e4d104c5bfcdb90dd6ac",
@@ -783,6 +814,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "49b2d5743cde6dceee94bad66a796308878689cff9c7eb052ec3f2e7bdae64e4",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1397817235-root",
         "observations_sha256": "2cf6fc7da86d64ca869d8d9ff39899179d5ee5cc29cfef47714e3618af27720e",
@@ -806,6 +838,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "8dcee1b68c5226986be829ec0ec86b3f269e7cff077e367830c9edaa2d8ddfab",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1400927706-root",
         "observations_sha256": "22ba35afe65e7daf02fae573de0d513625dd42c5152c6eedb183ef90813ab9e9",
@@ -829,6 +862,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "2f759e116e3032ba5e0a9840bc085fb37fe6dcb730d888e74fcf57db0c35bc93",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1399011094-root",
         "observations_sha256": "361a472dffab364a2021771cde81b14f3cc86ec1302fec6595d0677435cf8b8e",
@@ -852,6 +886,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "c5a0d89f7c325dd3961aa44f5069a50d94eda7a1f82418d57956f023f111a4c3",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1379204512-root",
         "observations_sha256": "747af09904628ad35a76f5c03f150dea8c88327d669a095eba87eb2a57e5dac4",
@@ -875,6 +910,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "202e5a6d167bea7de782c60d8f3abc4066f90f07fe04d96b09505de500b8f9f8",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1355639507-root",
         "observations_sha256": "3774e37aabe873276268070fe761ae57e652653e8a75c0e26ef698f82b996f67",
@@ -898,6 +934,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "f4fef3b13d8324449e0db080ab9fb39235916b19580d5730d65da6f5b62fa8f2",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1335559646-root",
         "observations_sha256": "bcb8e5cb8511e26fa12bab6d1f7fae6f062b2037b27fb34c5400861c1c230f16",
@@ -921,6 +958,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "9d647ffa66378f4aa4cad151fd49183efbfd4c5a5fb63542ca7a06133c183e9d",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1409724830-src",
         "observations_sha256": "8bd628055599f1dda3e6361d0e52ba612f90037a1410cf0e07c73db5841d708c",
@@ -944,6 +982,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "751b19991919b860c0a19b8b96830a09d3ac637ec758b3384f27075e2e592fc0",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1334850903-root",
         "observations_sha256": "184ae6966fdc36e692a0a6d1850d1c72d2c87f6dd688d1354fca6e15f86f0fc5",
@@ -967,6 +1006,7 @@
         "unchanged"
       ],
       "status": "complete",
+      "analysis_sha256": "1a50833f53ccf14ee3b1a55d352a8f72cc8c6fa86660be1b3123db4d4810fc01",
       "checkpoint": {
         "run_id": "20261019T145322Z-formatfix40-1334269686-root",
         "observations_sha256": "c8d5a68bab42b1753d0f9f9985b0e35bcfc464d231aebd79e243d35a19d679f6",
@@ -976,8 +1016,8 @@
   ],
   "tooling": {
     "node_version": "24.19.0",
-    "package_lock_sha256": "179a02d21c0d0115ff228b62f7eb79b6ca4dca4d84f6d5596302b2527899d920",
-    "workflow_sha256": "2d4601903439de9cac179a79ce7ae345a18b001d3928c32e963cbbd1b9783c91"
+    "package_lock_sha256": "73224b0f6f0fc5227420293689b9a6b31e3ee260401aa8f06bd93a44fcd22d30",
+    "workflow_sha256": "357af2b856cb3e3f22ff0ece47adc34768d9af1e7b386a3850a57b8214b24dae"
   },
   "reproducibility": {
     "level": "workflow",
@@ -989,12 +1029,16 @@
   },
   "commands": [
     "npm ci --ignore-scripts",
+    "npm run research:input -- --source-awesome <checkout> --source-harness <checkout> --id <session-id> --checked-at <iso-time> --out data/runs/<round>/INPUT.json --problems data/runs/<round>/INPUT-PROBLEMS.json",
     "npm run research -- start --input <local-input.json> [--previous <local-previous-session>] [--limit N] --out data/runs/<round>/SESSION.json",
+    "npm run prepare:plugin -- --session data/runs/<round>/SESSION.json --plugin <plugin-id> --checkout <readonly-checkout> --inventory <local-inventory.json> --out data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json",
     "node .agents/skills/_shared/scripts/plugin-data.mjs plan --mode <init-or-update> --observations <local-observations.json> --out <local-plan.json>",
     "node .agents/skills/_shared/scripts/plugin-data.mjs apply --plan <local-plan.json>",
     "npm run research -- checkpoint --session data/runs/<round>/SESSION.json --plugin <plugin-id> --observations <local-observations.json> --report <local-report.md>",
     "npm run research -- publish --session data/runs/<round>/SESSION.json --plugin <plugin-id> --out data/plugins/<plugin-slug>/INSIGHT.md",
-    "npm run research -- manifest --session data/runs/<round>/SESSION.json --out data/manifests/<round>.json"
+    "npm run research -- manifest --session data/runs/<round>/SESSION.json --out data/manifests/<round>.json",
+    "npm run publication -- plan --manifest data/manifests/<round>.json --input data/runs/<round>/PUBLICATION-INPUT.json --out <local-plan.json>",
+    "npm run publication -- apply --plan <local-plan.json>"
   ],
   "local_artifacts": {
     "root": "data/runs/2026-10-19-06",

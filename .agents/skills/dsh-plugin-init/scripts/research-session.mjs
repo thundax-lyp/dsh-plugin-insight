@@ -20,6 +20,7 @@ import {
     ROOT,
     read,
     digest,
+    analysisDigest,
     atomicWrite,
     validate as validateCatalog,
     validateObservations
@@ -168,6 +169,9 @@ export function selectedItems(session) {
 }
 export function createManifest(session, sessionPath, root = ROOT) {
     validateSession(session, root);
+    const catalog = read(resolve(root, CATALOG));
+    validateCatalog(catalog);
+    const catalogById = new Map(catalog.plugins.map((plugin) => [plugin.id, plugin]));
     const relativeSession = relative(root, resolve(sessionPath)).split('\\').join('/');
     const match = relativeSession.match(/^data\/runs\/(\d{4}-\d{2}-\d{2}-\d{2,})\/SESSION\.json$/);
     if (!match) throw new Error('manifest requires a local data/runs/<round>/SESSION.json');
@@ -198,24 +202,29 @@ export function createManifest(session, sessionPath, root = ROOT) {
         '.agents/skills/_shared/references/DATA-CONTRACT.md'
     ];
     const workflow = workflowFiles.map((path) => ({ path, sha256: sha256(readFileSync(resolve(root, path))) }));
-    const items = selected.map((item) => ({
-        ...Object.fromEntries(
-            ['id', 'repository', 'path', 'revision', 'fingerprints', 'source_urls', 'changes', 'status'].map((key) => [
-                key,
-                item[key]
-            ])
-        ),
-        ...(item.reason ? { reason: item.reason } : {}),
-        ...(item.checkpoint
-            ? {
-                  checkpoint: {
-                      run_id: item.checkpoint.run_id,
-                      observations_sha256: item.checkpoint.observations_digest,
-                      report_sha256: item.checkpoint.report_digest
+    const items = selected.map((item) => {
+        const plugin = catalogById.get(item.id);
+        if (item.status === 'complete' && !plugin)
+            throw new Error(`complete manifest item missing from catalog: ${item.id}`);
+        return {
+            ...Object.fromEntries(
+                ['id', 'repository', 'path', 'revision', 'fingerprints', 'source_urls', 'changes', 'status'].map(
+                    (key) => [key, item[key]]
+                )
+            ),
+            ...(item.reason ? { reason: item.reason } : {}),
+            ...(item.status === 'complete' ? { analysis_sha256: analysisDigest(plugin) } : {}),
+            ...(item.checkpoint
+                ? {
+                      checkpoint: {
+                          run_id: item.checkpoint.run_id,
+                          observations_sha256: item.checkpoint.observations_digest,
+                          report_sha256: item.checkpoint.report_digest
+                      }
                   }
-              }
-            : {})
-    }));
+                : {})
+        };
+    });
     return validateManifest({
         schema_version: 1,
         round: match[1],
@@ -293,12 +302,11 @@ export function completeItem(session, id, obsPath, reportPath, catalog, root = R
         throw new Error('catalog does not match observations');
     if (
         Date.parse(plugin.last_checked_at) < Date.parse(session.checked_at) ||
-        !plugin.findings.length ||
-        plugin.findings.some(
-            (f) =>
-                Date.parse(f.reviewed_at) < Date.parse(session.checked_at) ||
-                !current.findings.some((c) => digest(c) === digest(f))
-        )
+        !current.findings.length ||
+        current.findings.some(
+            (f) => Date.parse(f.reviewed_at) < Date.parse(session.checked_at) || f.status === 'needs_review'
+        ) ||
+        plugin.findings.some((f) => !current.findings.some((c) => digest(c) === digest(f)))
     )
         throw new Error('fresh analysis required for every round');
     if (!item.revision || !plugin.evidence.some((e) => e.kind === 'source_inspection' && e.revision === item.revision))

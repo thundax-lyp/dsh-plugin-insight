@@ -86,6 +86,7 @@
             }
           },
           "status": { "enum": ["pending", "blocked", "complete"] },
+          "analysis_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
           "reason": { "type": "string", "minLength": 1 },
           "checkpoint": {
             "type": "object",

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import { ROOT, read, digest, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
+import { ROOT, read, digest, analysisDigest, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { template } from './publication/template.mjs';
 import {
@@ -48,7 +48,8 @@ export function validateManifestPlugin(item, plugin) {
         !plugin ||
         plugin.repository !== item.repository ||
         plugin.path !== item.path ||
-        digest(plugin.fingerprints) !== digest(item.fingerprints)
+        digest(plugin.fingerprints) !== digest(item.fingerprints) ||
+        item.analysis_sha256 !== analysisDigest(plugin)
     )
         throw Error(`manifest and catalog differ: ${item.id}`);
     return plugin;
