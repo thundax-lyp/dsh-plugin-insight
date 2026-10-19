@@ -16,7 +16,8 @@
     "inventory:plugin": "node .agents/skills/dsh-plugin-insight/scripts/plugin-inventory.mjs",
     "loc": "sloc",
     "refresh:meta": "node .agents/skills/dsh-plugin-init/scripts/refresh-meta.mjs",
-    "migrate:data": "node .agents/skills/dsh-plugin-init/scripts/migrate-data.mjs"
+    "migrate:data": "node .agents/skills/dsh-plugin-init/scripts/migrate-data.mjs",
+    "maintain:runs": "node .agents/skills/dsh-plugin-init/scripts/maintain-runs.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",

@@ -9,3 +9,6 @@ node_modules/
 /data/**/*.lock
 /data/**/*.tmp
 /data/**/.DS_Store
+
+# Generated reader views belong in data/views or data/plugins, never in runs.
+/data/runs/*/views/

@@ -5,7 +5,7 @@
 ## 阅读入口
 
 - [本周什么值得试](RECOMMENDATIONS.md)：项目记忆优先试、发票整理条件试、并行开发继续观察；暂无安装推荐。
-- [业务分类与四标签短评](views/CATALOG.md)。
+- [当前分类索引](../../views/categories/INDEX.md)。
 - 详情：[InvoiceFlowAI](insights/ethanyoq--invoice-downloader--dsh-invoice-downloader.md)、[TaskSwarm](insights/february2015--dsh-taskswarm.md)、[dsh-project-memory](insights/00080000--dsh-project-memory.md)。
 
 ## 范围、来源和版本

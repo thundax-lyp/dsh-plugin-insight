@@ -6,13 +6,15 @@ import {createHash} from 'node:crypto';
 import {ROOT,read,digest,atomicWrite} from '../../_shared/scripts/plugin-data.mjs';
 import {validateSession} from './research-session.mjs';
 import {CATALOG,PUBLICATION,REGISTRY,MIGRATION,slug} from '../../_shared/scripts/data-paths.mjs';
+import {verifyCleanup} from './maintain-runs.mjs';
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const walk=dir=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(resolve(dir,e.name)):[resolve(dir,e.name)]);
 const readBytes=p=>readFileSync(resolve(ROOT,p));
 export function verifyMigration(){
  const audit=read(resolve(ROOT,MIGRATION));
+ const retired=verifyCleanup();
  for(const record of audit.files){
-  if(!existsSync(resolve(ROOT,record.to)))throw Error(`missing migrated file: ${record.to}`);
+  if(!retired.has(record.to)&&!existsSync(resolve(ROOT,record.to)))throw Error(`missing migrated file: ${record.to}`);
   if(sha(readBytes(record.original_copy??record.to))!==record.original_sha256)throw Error(`original evidence changed: ${record.from}`);
  }
  console.log(`Migration originals verified: ${audit.files.length}`);

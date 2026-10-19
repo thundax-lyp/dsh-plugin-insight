@@ -47,4 +47,4 @@ Verification Receipt源码package.json为0.1.1，npm latest仍为0.1.0；[公开
 
 10项均有固定版本文本、sloc/AST统计、单项观察批次及摘要检查点。代码／文档按扩展名与角色分列，lib/src交付副本及scripts分类的局限写在详情里，不把LOC当原创量。正式SKILL.md入口本轮10项均未发现；Agent资源、事件监听和运行实例没有计作Agent定义。ybkkasi多域只抽读关键启动／授权／桥接链，不能声明全仓审计完成。
 
-[推荐与最小试用](RECOMMENDATIONS.md) · [分类索引](views/CATALOG.md)。本工程本地校验另记录在[执行结果](snapshots/EXECUTION.json)，不作为目标插件测试证据。原始研究与检查点不可改写，README和展示页由模板合成；未提交、未推送、未自动安排额外研究。
+[推荐与最小试用](RECOMMENDATIONS.md) · [当前分类索引](../../views/categories/INDEX.md)。本工程本地校验另记录在[执行结果](snapshots/EXECUTION.json)，不作为目标插件测试证据。原始研究与检查点不可改写，README和展示页由模板合成；未提交、未推送、未自动安排额外研究。

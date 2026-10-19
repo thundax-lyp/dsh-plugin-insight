@@ -118,6 +118,10 @@ export function main(args = process.argv.slice(2)) {
   const need = key => { if (!v[key]) throw new Error(`--${key} required`); return v[key]; };
   if (command === 'start') {
     const path = need('out');
+    const runPath=relative(ROOT,resolve(path)).split('\\').join('/');
+    if(!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/SESSION\.json$/.test(runPath)||Number(runPath.split('/')[2].slice(11))<1)throw Error('new session requires data/runs/YYYY-MM-DD-NN/SESSION.json');
+    const date=runPath.split('/')[2].slice(0,10);
+    if(new Date(date+'T00:00:00Z').toISOString().slice(0,10)!==date)throw Error('invalid run date');
     saveSession(path, () => { if (existsSync(path)) throw new Error('session exists; resume it or choose new id'); return startSession(read(need('input')), v.previous ? read(v.previous) : null, v.limit === undefined ? undefined : (/^[1-9][0-9]*$/.test(v.limit) ? Number(v.limit) : NaN)); });
   } else if (['next','validate'].includes(command)) {
     const s = validateSession(read(need('session')));
