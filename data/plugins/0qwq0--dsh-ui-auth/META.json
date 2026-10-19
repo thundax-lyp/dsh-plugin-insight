@@ -1,0 +1,31 @@
+{
+  "repository": "0QwQ0/dsh-ui-auth",
+  "repository_id": 1343420855,
+  "captured_at": "2026-10-19T09:24:53.177Z",
+  "window_start": "2026-09-19T09:24:53.177Z",
+  "stars": 8,
+  "pushed_at": "2026-10-16T15:32:26Z",
+  "issues": {
+    "open": 0,
+    "closed": 3,
+    "created_30d": 3,
+    "closed_30d": 3,
+    "updated_30d": 3
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-ui-auth",
+    "captured_at": "2026-10-19T09:21:49.659Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 1551,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-ui-auth",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-09-07T14:16:36.163Z",
+      "captured_at": "2026-10-19T10:03:21.365Z",
+      "source_url": "https://registry.npmjs.org/dsh-ui-auth",
+      "error": null
+    }
+  }
+}

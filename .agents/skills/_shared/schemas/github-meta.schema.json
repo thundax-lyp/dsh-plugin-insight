@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "repository",
+    "repository_id",
+    "captured_at",
+    "window_start",
+    "stars",
+    "pushed_at",
+    "issues",
+    "errors"
+  ],
+  "properties": {
+    "repository": {
+      "type": "string",
+      "pattern": "^[^/]+/[^/]+$"
+    },
+    "repository_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "window_start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stars": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "pushed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "issues": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "open",
+        "closed",
+        "created_30d",
+        "closed_30d",
+        "updated_30d"
+      ],
+      "properties": {
+        "open": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "closed": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "created_30d": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "closed_30d": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "updated_30d": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "target",
+          "message"
+        ],
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "npm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "package_name",
+        "captured_at",
+        "window_start",
+        "window_end",
+        "downloads_30d",
+        "source_url",
+        "error"
+      ],
+      "properties": {
+        "package_name": {
+          "type": "string",
+          "pattern": "^(?:@[a-z0-9][a-z0-9._-]*/)?[a-z0-9][a-z0-9._-]*$"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "window_start": {
+          "type": "string",
+          "format": "date"
+        },
+        "window_end": {
+          "type": "string",
+          "format": "date"
+        },
+        "downloads_30d": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "first_published_at",
+            "captured_at",
+            "source_url",
+            "error"
+          ],
+          "properties": {
+            "first_published_at": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            },
+            "captured_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "error": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "code_update": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checked_at",
+        "baseline_revision",
+        "current_revision",
+        "script_changed",
+        "changed_files",
+        "error"
+      ],
+      "properties": {
+        "checked_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "baseline_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "current_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "script_changed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "changed_files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}
