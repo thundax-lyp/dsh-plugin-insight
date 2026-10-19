@@ -1,58 +1,60 @@
 ---
 name: dsh-plugin-init
-description: 初始化 DSH 插件研究档案，从业务场景、问题、安装与效果依赖、流程复杂度、总成本和任务收益形成分层洞察。适用于 dsh-plugin-insight 首次建档；已有基线时使用 dsh-plugin-update。
+description: 显式调用时编排整轮 DSH 插件研究：确认来源、生成列表、标记新增与移除、调用单插件洞察、管理断点并汇总推荐。适用于首轮、后续整轮及同轮恢复。
 ---
 
-# 初始化 DSH 插件研究数据
+# 插件列表与研究编排
 
-本 Skill 在 `dsh-plugin-insight` 工程中使用，所有数据脚本从工程根目录运行。
-它依赖共享的 `docs/01-design/`、`schemas/` 和 `scripts/`，工程规则见 `docs/00-governance/`；不要只复制 Skill 文件夹。
+在工程根目录执行；依赖共享的 `docs/01-design/`、`schemas/`、`scripts/` 和根 package，不能只复制 Skill 目录。
+开始前阅读[数据契约](../../../docs/01-design/DATA-CONTRACT.md)、[研究规范](../../../docs/01-design/RESEARCH-STANDARD.md)、
+[输出标准](../../../docs/01-design/OUTPUT-STANDARD.md)。GitHub 来源与版本读取依赖当前环境可用的 GitHub Skill 或插件；
+不假设特定 Skill 名称。Git 协作遵循根 `AGENTS.md`；运行时遵循 `.node-version`，依赖缺失时执行 `npm ci --ignore-scripts`。
 
-开始前阅读[数据契约](../../../docs/01-design/DATA-CONTRACT.md)、
-[研究规范](../../../docs/01-design/RESEARCH-STANDARD.md)、
-[输出标准](../../../docs/01-design/OUTPUT-STANDARD.md)。
-GitHub 来源读取、版本比较和 PR 操作依赖当前环境可用的 GitHub Skill 或插件；
-按其实际能力执行，不假设存在特定 Skill 名称。本 Skill 不另定义 Git 工作流，仓库约束见根 `AGENTS.md`。
-
-1. **检查基线与工作范围。** 检查当前档案、工作区及用户指定的来源和研究范围。
-   已有基线时改用更新 Skill，保留无关文件和人工修改。需要新建分支时遵循根 `AGENTS.md`。数据工具使用工程指定的 Node.js 版本，首次执行前运行 `npm ci --ignore-scripts`。
-2. **固定来源和采集截止时间。** 用户未指定来源时，使用研究规范中的两个默认目录。
-   优先通过 GitHub 插件读取仓库、精确提交和该提交下的目录文件，保存原始结果。
-   优先采集结构化条目，补充 README 和 CATALOG。记录分页、截断、访问失败及覆盖范围。
-   本机有已认证的 `gh` 时，也可使用可选采集脚本：
+1. **区分新一轮与续跑。** 查看 `data/sessions/` 和工作区。用户要求继续时恢复原会话；明确开始新一轮时使用新 ID，
+   以最近可比会话作为 `--previous`，记录其范围差异。不因为已有档案改走另一个 Skill，不清空历史。
+2. **确认来源，整理列表。** 核对用户来源；默认使用研究规范中的两个目录。固定来源版本、截止时间和覆盖边界，
+   优先结构化条目，补充 README／CATALOG。使用 GitHub 插件，或可选 `capture-github.mjs`；后者不能穷尽目录内容。
+   核对稳定仓库／组件身份，去重并区分条目类型；身份未核实的候选另存问题记录，不编造 ID。
+   按[会话契约](../../../docs/01-design/DATA-CONTRACT.md#研究会话与脚本检查点)准备输入清单，
+   格式参考[合成输入](../../../examples/research-input.json)，不能将合成数据导入真实档案。
+3. **脚本生成本轮队列和变更标记。** 首轮省略 `--previous`；后续轮次必须给出可比的上轮会话。
    ```sh
-   node scripts/capture-github.mjs awesome-dsh-plugin/awesome-dsh-plugin --out data/snapshots/<run_id>/awesome-dsh-plugin.json
+   npm run research -- start --input /tmp/dsh-research-input.json --previous data/sessions/<previous_id>.json --out data/sessions/<session_id>.json
+   npm run research -- next --session data/sessions/<session_id>.json
    ```
-   脚本仅采集部分根目录文件及文件树，其他目录条目仍需读取；使用 GitHub 插件时无需安装 `gh`。
-3. **识别与分类。** 提取候选条目，核对仓库数字 ID 和稳定组件 ID 后去重。
-   同仓库的不同子包分别建档；改名或移动路径保留原身份。区分插件、工具、技能、资料、
-   占位项目和未知类型，赋予技术主类、业务主类及多标签。
-4. **围绕任务价值分层研究。** 先为成功识别的条目建目录级档案；按用户范围选择重点插件或专题。
-   明确谁在什么场景下完成什么任务、原有办法及合格交付标准，再按研究规范核查安装／效果依赖、
-   用户／后台／失败恢复流程、首次与持续使用成本、实际结果及适用边界。围绕同一任务与基线比较，
-   判断插件减少了什么负担、引入了什么条件，以及哪些用户值得采用。
-   成本以合格任务为单位，纳入失败重试、人工复核和修正，现金与人工时间分别记录；未知项不编造。
-   源码、架构、测试及创新分析用于支撑这些判断，按影响选择核查深度；只有实际执行才记录本地／宿主验证。
-   从事实推进到解释与决策，证据不足时形成可验证假设，不强行输出洞察或扩大为全量运行测评。
-5. **准备观察批次与证据。** 按数据契约生成观察批次，按共享输出标准保存证据和初始化报告。
-   可参考[合成示例](../../../examples/observations.json)理解字段。
-   采集失败记入 `errors`，不要编造或删除条目；结论绑定实际核查的版本指纹。
-   按研究规范对最影响采用的一项主张做关键质疑，核对收益归因、负担去向和承诺范围；
-   按[输出标准的三层输出](../../../docs/01-design/OUTPUT-STANDARD.md#先分析再归纳与推荐)，
-   先完成单插件详情，再提炼分类列表中的“用途／亮点／关键质疑／建议”四标签短评，最后生成推荐页。
-   区分“什么值得装”与“本周最值得试”的证据门槛，说明适用条件与优先验证，并同步 README 入口。
-   按输出标准在报告中呈现插件采用画像、洞察和专题比较，同步 README 的实际产物入口；不新增未定义的 Schema 字段。
-6. **生成并应用初始化计划。**
+   不覆盖已有会话；续跑直接调用 `next`。脚本比较新增、移除、路径／内容／来源变化、未变及无法确认，
+   所有条目在新轮次重新排队。未变不代表免于分析；来源不完整不能推断移除。核对标记的语义边界，
+   尤其版本未能确认、仅来源差异和前轮范围不同的情况。
+4. **显式调用单插件洞察。** 对 next 返回的条目，读取并应用[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)。
+   传入稳定 ID、固定源码版本、本轮截止时间、目标深度、来源证据、历史详情和输出位置；每轮所有条目重新分析，
+   同轮只跳过 complete 项。洞察 Skill 返回证据、详情和独立观察批次，编排 Skill 检查返回范围和证据边界后入档。
+   这属于用户显式启动本编排的流程内调用，不依赖隐式发现，也不自动创建子 Agent。
+   分析失败记受阻并继续其他条目；来源移除只表示目录缺席，核查当前仓库和采用影响，不物理删除历史。
+5. **逐项保存、计划和应用。** 为该项保存证据、完整详情和唯一观察批次。空档案第一次写入用 `init`，
+   之后一律用 `update`；这只是底层写入模式，不是两种研究流程。检查计划后应用：
    ```sh
-   node scripts/plugin-data.mjs plan --mode init --observations data/observations/<run_id>.json --out /tmp/dsh-init-plan.json
+   node scripts/plugin-data.mjs plan --mode <init-or-update> --observations data/observations/<run_id>.json --out /tmp/dsh-plan.json
+   node scripts/plugin-data.mjs apply --plan /tmp/dsh-plan.json
+   node scripts/plugin-data.mjs validate --observations data/observations/<run_id>.json
+   npm run research -- checkpoint --session data/sessions/<session_id>.json --plugin <plugin_id> --observations data/observations/<run_id>.json --report data/reports/<detail>.md
    ```
-   检查计划中的重复身份、分类不确定性、来源覆盖和结论证据。需要修正时修改观察批次并重新生成。
-   计划符合用户授权的初始化范围后应用并校验：
-   ```sh
-   node scripts/plugin-data.mjs apply --plan /tmp/dsh-init-plan.json
-   node scripts/plugin-data.mjs validate
-   npm test
-   ```
+   checkpoint 核对已应用数据、本轮核查时间、固定源码版本、材料及摘要，成功后才完成该项。
+   若 apply 后中断，先核对 `catalog.runs` 和批次，补做校验与 checkpoint，不重复 apply。
+   已完成详情作为不可改写的本轮产物；后续修订使用新材料和新一轮，不静默覆盖检查点文件。
+6. **恢复、受阻与收口。** 每完成一项继续调用 `next`，已完成项被跳过。失败保存错误批次和部分材料，使用
+   `block --session ... --plugin ... --reason ...` 登记原因，处理其他项；重试时用 `retry --session ... --plugin ...`。
+   来源移除的条目也保留，尝试核查当前仓库及采用影响；无法读到源码时记受阻，不能伪造成功检查点。
+   `next` 返回空但 blocked 非零仍未完成；不从“没有待处理项”推断全部成功。
+   按[三层输出](../../../docs/01-design/OUTPUT-STANDARD.md#先分析再归纳与推荐)，先完成详情，
+   再归纳分类列表的“用途／亮点／关键质疑／建议”，最后生成推荐页；安装推荐与本周试用候选使用不同证据门槛。
+   阶段汇总标注未完成项；会话与原始数据由轮次报告追溯。
+   按输出标准维护 README 的真实研究入口和历史链接，完成前运行 `npm run check`，
+   人工检查叙述、采用判断、引用和本轮覆盖；脚本校验不证明实际业务收益。
 
-按共享输出标准完成初始化统计、报告和交付验收。
-初始化研究数据不等于安装第三方插件，也不自动安排定期研究或发布结果。
+本 Skill 不自动安装第三方插件、安排周期任务、提交、推送或发布。
+
+## 显式调用与职责
+
+仅在用户点名本 Skill 或明确要求执行整轮列表研究时使用，不因提及某个插件就启动。
+本 Skill 拥有会话队列、变化标记、plan／apply／checkpoint 与汇总发布；
+单插件洞察 Skill 不自行改变队列或当前档案。只研究一个插件时可以单独显式调用洞察 Skill。

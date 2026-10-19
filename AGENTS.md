@@ -1,6 +1,6 @@
 # 插件研究工程约定
 
-本仓库维护 DSH 插件研究数据、两个 Skill 及其共享工具。
+本仓库维护 DSH 插件研究数据、两个显式调用的研究 Skill 及其共享工具。
 文档职责、命名、真相源及同步要求以
 [文档规则](docs/00-governance/DOCUMENT-RULES.md)为准。根入口只维护任务路由和关键协作提醒。
 已读取且未变化的依据可复用上下文，只加载当前任务涉及的规则及直接依赖。
@@ -10,8 +10,8 @@
 | 任务 | 必读依据 |
 |---|---|
 | 编写、迁移或整理工程文档 | [文档规则](docs/00-governance/DOCUMENT-RULES.md)及所修改文档的直接依据 |
-| 首次研究建档 | [初始化 Skill](.agents/skills/dsh-plugin-init/SKILL.md)及其引用的共享规范 |
-| 已有基线刷新 | [更新 Skill](.agents/skills/dsh-plugin-update/SKILL.md)及其引用的共享规范 |
+| 首轮／后续整轮列表研究及断点恢复 | [列表编排 Skill](.agents/skills/dsh-plugin-init/SKILL.md)及其引用的共享规范 |
+| 单插件研究 | [洞察 Skill](.agents/skills/dsh-plugin-insight/SKILL.md)及其引用的共享规范 |
 | 数据字段、身份、证据、增量逻辑或 Schema 修改 | [数据契约](docs/01-design/DATA-CONTRACT.md)及相关 Schema、脚本 |
 | 分类或研究方法调整 | [研究规范](docs/01-design/RESEARCH-STANDARD.md) |
 | 研究产物、README 输出入口或交付验收 | [输出标准](docs/01-design/OUTPUT-STANDARD.md) |

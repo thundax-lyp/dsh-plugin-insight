@@ -79,3 +79,37 @@ Node 版本以根 `.node-version` 为准，`engines.node`、本地验证及 CI �
 进程崩溃后，先根据锁内 PID、时间及实际进程确认没有活跃写入者，再人工清理锁并重新生成计划。
 原子替换要求临时文件与档案位于同一文件系统；跨机器协作遵循根 `AGENTS.md` 的仓库约束。
 计划是本地数据，不是可执行脚本。初始化要求空档案；已有基线及后续新增条目都使用更新模式。
+
+## 研究会话与脚本检查点
+
+由列表编排 Skill（dsh-plugin-init）管理首轮、后续整轮和同轮续跑，逐项显式调用单插件洞察 Skill（dsh-plugin-insight）。
+两者均设置 allow_implicit_invocation: false；用户可单独唤起洞察，编排启动后也可按明确步骤调用洞察。
+列表编排独占队列、变化处理、入档与汇总；洞察仅交付一个组件的材料，不修改档案和会话。独立 Update Skill 已合并。
+每轮重新确认来源、生成列表、分析全部条目。变更记录用于追踪，不决定哪些条目可以免于重新分析。
+底层 `plugin-data.mjs` 的 `init/update` 仅控制空档案／已有档案写入，继续保留其历史和并发保护。
+
+会话结构由[会话 Schema](../../schemas/research-session.schema.json)约束，
+执行入口为 `npm run research --`（`scripts/research-session.mjs`）。输入参考
+[合成输入](../../examples/research-input.json)：`id`、`checked_at`、`sources`、`plugins`。
+来源记录 `url`、`revision`（未知为 null）、`complete`；complete 表示针对本轮范围完整读取，不等于插件可用。
+候选记录稳定 `id`、`repository`、`path`、固定源码 `revision`（未知为 null）、`fingerprints` 和 `source_urls`。
+GitHub 采集、身份确认、来源完整性和指纹正确性由研究者核实，脚本不自动推断。
+
+`start` 固定输入，并记录上一轮摘要；新会话 ID 和截止时间必须不同且晚于上一轮。
+相同身份标记 moved、content_changed、sources_changed、unchanged 或 unknown，新身份标记 added。
+只在上轮相关来源全部在本轮完整检查、且候选缺席时标记 removed_from_source，否则为 unknown。
+来源范围不可比时先说明边界，不能把范围缩小算作生态删除。目录移除不删除档案，也不证明仓库无法使用。
+每个新会话全部条目从 pending 开始；同轮续跑读取已有文件，不重新执行 start。
+
+`next` 按清单顺序返回第一个 pending 项及 complete／blocked／total 数量。
+`block` 保存受阻原因，`retry` 恢复 pending；原始材料保存在快照和草稿中。
+`checkpoint` 必须在观察批次应用后执行，核对运行 ID、当前档案指纹与检查时间、明确提交且重新核查的 findings、
+对应固定版本的源码证据、项目内证据／报告路径，然后保存批次与报告摘要，状态改为 complete。
+其 fresh 时间检查仅是必要条件，不能代替重新分析和人工语义核查。无固定版本或无源码分析只能保持受阻，
+目录级档案可先保存，但不能冒充已完成洞察。保留未受本轮范围覆盖的历史结论，但不据此作本轮推荐。
+
+应用成功但未登记时，核对 `catalog.runs` 后重试 checkpoint，不重复 apply；未应用批次则基于当前档案重新计划。
+完成材料摘要不匹配时恢复和 CI 校验报错，不能静默覆盖；新结论使用新一轮和新文件。
+会话写入使用独占锁和原子替换，不抢占已有锁；崩溃遗留锁按档案锁相同规则核对进程后人工恢复。
+多个研究者共享同一队列时必须外部协调；next 是只读选择，不提供并发任务认领。
+脚本不自动执行研究、模型调用或目标代码，也不自动生成点评和推荐。

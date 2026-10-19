@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { existsSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { validateSession } from './research-session.mjs';
 import { ROOT, read, validate, validateObservations } from './plugin-data.mjs';
 
 try {
@@ -14,5 +15,11 @@ try {
       }
     }
   }
-  console.log('Catalog, synthetic example and observation batches valid');
+  const sessions = resolve(ROOT, 'data/sessions');
+  if (existsSync(sessions)) {
+    for (const entry of readdirSync(sessions, { withFileTypes: true })) {
+      if (entry.isFile() && entry.name.endsWith('.json')) validateSession(read(resolve(sessions, entry.name)));
+    }
+  }
+  console.log('Catalog, synthetic example, observation batches and research sessions valid');
 } catch (error) { console.error(`Error: ${error.message}`); process.exitCode = 1; }
