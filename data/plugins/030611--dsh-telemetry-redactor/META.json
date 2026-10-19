@@ -1,0 +1,31 @@
+{
+  "repository": "030611/dsh-telemetry-redactor",
+  "repository_id": 1333368566,
+  "captured_at": "2026-10-19T09:24:52.398Z",
+  "window_start": "2026-09-19T09:24:52.398Z",
+  "stars": 2,
+  "pushed_at": "2026-08-14T13:06:41Z",
+  "issues": {
+    "open": 1,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-telemetry-redactor",
+    "captured_at": "2026-10-19T09:21:36.618Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 1203,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-telemetry-redactor",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-14T07:09:07.583Z",
+      "captured_at": "2026-10-19T10:03:21.365Z",
+      "source_url": "https://registry.npmjs.org/dsh-telemetry-redactor",
+      "error": null
+    }
+  }
+}

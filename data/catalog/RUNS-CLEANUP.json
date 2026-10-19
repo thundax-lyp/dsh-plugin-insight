@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "removed": [
+    {
+      "path": "data/runs/2026-10-19-02/views/PUBLICATION-CATALOG.md",
+      "sha256": "db5e641ba6b253cbfa9d4e595690118273af4b31f8f71c820bf6d070be2b97cb",
+      "original_copy": "data/runs/2026-10-19-03/snapshots/migration-originals/data/reports/20261019-readme-smoke-catalog.md",
+      "original_sha256": "2aea9d61b67a1828ff18a03aa14df89791b5629ece53ece8a69199c5062bde75"
+    },
+    {
+      "path": "data/runs/2026-10-19-02/views/00080000--dsh-project-memory.md",
+      "sha256": "125c8dbb72afd44ac87ec13fa8f222eed01177ccdda110ba50f0e94979db0f8e",
+      "original_copy": "data/runs/2026-10-19-03/snapshots/migration-originals/data/reports/20261019T074011Z-smoke-1339316901-root-detail.md",
+      "original_sha256": "05e2e9a442de7c50f01c9a1d771e0f2f19c5f9518c60af4b7b908193260c6748"
+    },
+    {
+      "path": "data/runs/2026-10-19-02/views/CATALOG.md",
+      "sha256": "57d20d09a188c80131e64ea55a34d5421819f33a00f7455ee55f6ecdb1bc838c",
+      "original_copy": "data/runs/2026-10-19-03/snapshots/migration-originals/data/reports/20261019T074011Z-smoke-catalog.md",
+      "original_sha256": "03c91bbbf7f4692040dae0760c5fa7138e030e2be5aaf705b3e64e527f9f4f86"
+    },
+    {
+      "path": "data/runs/2026-10-19-02/views/categories/OFFICE-OPERATIONS.md",
+      "sha256": "58813226b41be386792651c6f5e8288beb5c6556308776d8e29942571bc54472",
+      "original_copy": "data/runs/2026-10-19-03/snapshots/migration-originals/data/reports/20261019T074011Z-smoke-category-office-operations.md",
+      "original_sha256": "16f4ebc22f0436cc32aae1959eb84b25ce95cd0624c7ba826916eb9b97730e25"
+    },
+    {
+      "path": "data/runs/2026-10-19-02/views/categories/SOFTWARE-DELIVERY.md",
+      "sha256": "81753484c46c4e83d33e05d8e3575e326d4c282b4676adf014bfabb4008507ce",
+      "original_copy": "data/runs/2026-10-19-03/snapshots/migration-originals/data/reports/20261019T074011Z-smoke-category-software-delivery.md",
+      "original_sha256": "68cfa9c03e936b38753ef6d7666806958aac22b51131501befdc28740e971749"
+    },
+    {
+      "path": "data/runs/2026-10-19-03/views/CATALOG.md",
+      "sha256": "b273d50e9817d99a996d51be7e6db08efd8df2372e7f9a1977fb1c6b72d43955",
+      "original_copy": "data/runs/2026-10-19-03/snapshots/migration-originals/data/reports/20261019T091725Z-init10-catalog.md",
+      "original_sha256": "e36a80648791db9c421f2568b612abd0f4625d5bb11210c1d18d360296f2b2f1"
+    },
+    {
+      "path": "data/runs/2026-10-19-03/views/categories/INFRASTRUCTURE.md",
+      "sha256": "bd4ef89b5e77551eb66b77a5c4b6c1fd68f2e282a99606c7bde357d4cdb3844d",
+      "original_copy": "data/runs/2026-10-19-03/snapshots/migration-originals/data/reports/20261019T091725Z-init10-category-infrastructure.md",
+      "original_sha256": "fd87fdf8640835719b4e9f8d0b702b5cc2bca07cd0bccc40bfec14ec496a0ea2"
+    },
+    {
+      "path": "data/runs/2026-10-19-03/views/categories/PERSONAL-PRODUCTIVITY.md",
+      "sha256": "a53c3c39e2fd684af73d7ccf266e721acdf14ec7db3e81844024915d0aaa45ab",
+      "original_copy": "data/runs/2026-10-19-03/snapshots/migration-originals/data/reports/20261019T091725Z-init10-category-personal-productivity.md",
+      "original_sha256": "b72735f893b9cb778f84c7c24de8b3becd52b98429a06252f283c0e807fc2508"
+    },
+    {
+      "path": "data/runs/2026-10-19-03/views/categories/SOFTWARE-DELIVERY.md",
+      "sha256": "c876c1baab0ac109e04ef14da0b1d834da67324483a9482129076c48bd605a7e",
+      "original_copy": "data/runs/2026-10-19-03/snapshots/migration-originals/data/reports/20261019T091725Z-init10-category-software-delivery.md",
+      "original_sha256": "b32af52db88591c18d6261df9c29d6906aad12d84c8db5cf084ffffe5e67c233"
+    }
+  ],
+  "navigation": [
+    "data/runs/2026-10-19-02/RECOMMENDATIONS.md",
+    "data/runs/2026-10-19-02/REPORT.md",
+    "data/runs/2026-10-19-03/REPORT.md"
+  ]
+}

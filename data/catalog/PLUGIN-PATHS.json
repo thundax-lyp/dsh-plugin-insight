@@ -1,0 +1,14 @@
+{
+  "github:1170373459:dsh-invoice-downloader": "data/plugins/ethanyoq--invoice-downloader--dsh-invoice-downloader",
+  "github:1333328839:root": "data/plugins/01virex--dsh-status-rotator",
+  "github:1333357514:root": "data/plugins/030611--qiushi-dsh-evidence-audit",
+  "github:1333368566:root": "data/plugins/030611--dsh-telemetry-redactor",
+  "github:1333370288:root": "data/plugins/030611--dsh-verification-receipt",
+  "github:1333800488:root": "data/plugins/february2015--dsh-taskswarm",
+  "github:1334899834:root": "data/plugins/02muller25--dsh-api-balance",
+  "github:1339316901:root": "data/plugins/00080000--dsh-project-memory",
+  "github:1339803365:root": "data/plugins/0imzero--dsh-workspace-menu",
+  "github:1342915339:root": "data/plugins/0qwq0--dsh-discord-richpresence",
+  "github:1343420855:root": "data/plugins/0qwq0--dsh-ui-auth",
+  "github:1416699252:root": "data/plugins/01men--ybkkasi"
+}
