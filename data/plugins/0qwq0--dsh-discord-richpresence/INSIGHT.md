@@ -1,15 +1,15 @@
-<!-- Generated detail view; research source and checkpoint remain unchanged. -->
 # dsh-discord-richpresence
+
+> 将 DSH 的粗粒度交互状态推送到本机 Discord Rich Presence，支持自定义文案与可选丰富状态。
 
 - **用途**：把 DSH 的粗粒度工作状态展示到本地 Discord 桌面客户端。
 - **亮点**：默认模糊状态与可选丰富模式分开，支持推送节流、IPC重连与卸载清理。
 - **思考**：社交可见性不是任务完成提醒或效率证明；丰富模式和自定义文案仍可能暴露工作节奏或标量使用信息。
 - **建议**：仅推荐给明确想展示状态的个人用户试用；默认保持模糊模式，先核查实际外发字段。
 
-## 固定范围与依据
+## 版本
 
-组件 github:1342915339:root，路径 仓库根，固定提交 [bf8d34b4a4c52e9128a44ca7abf6a7de52880266](https://github.com/0QwQ0/dsh-discord-richpresence/tree/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/)。本轮 20261019T091725Z-init10，核查于 2026-10-19T09:30:11.953Z。
-材料：[源码快照](../../runs/2026-10-19-03/snapshots/0qwq0--dsh-discord-richpresence/SOURCE.json)、[仓库与发布记录](../../runs/2026-10-19-03/snapshots/0qwq0--dsh-discord-richpresence/REPOSITORY.json)、[统计产物](../../runs/2026-10-19-03/snapshots/0qwq0--dsh-discord-richpresence/INVENTORY.json)、[META](../../runs/2026-10-19-03/snapshots/0qwq0--dsh-discord-richpresence/META.json)。目录来源固定版本见[本轮报告](../../runs/2026-10-19-03/REPORT.md)。
+固定提交 [bf8d34b4a4c52e9128a44ca7abf6a7de52880266](https://github.com/0QwQ0/dsh-discord-richpresence/tree/bf8d34b4a4c52e9128a44ca7abf6a7de52880266)
 
 ## 场景、替代办法与合格交付
 
@@ -43,14 +43,11 @@ lib/index.js 监听 inbox、agent、工具和session等信号，按配置映射�
 | .js | source | 3 | 1305 | — | 940 |
 | .mjs | test | 7 | 762 | — | 608 |
 
-口径：sloc 0.3.2／TypeScript 5.9.3，固定提交全仓根组件；仅 Markdown 与 JS／TS。Markdown 字数含标记和代码；各扩展名分列，不合成跨语言总量。scripts中的验证脚本按当前路径启发式可能归source，其数量不等于产品代码量。
-生成、复制和第三方归属仍需人工辨认：lib若是交付构建结果，会与src重复，不相加为原创规模；本表保留实际收录文件面积。默认排除项及路径见统计JSON，声明文件、build/dist、依赖与其他扩展名不计。
+- **事件监听**：DSH 活动事件
+- **界面**：1 个设置开关
+- **后台**：本地 Discord IPC
 
-无正式Skill／Agent/Preset／模型工具，主要是事件监听、本地IPC和一个设置开关；npm package名称存在于源码，不代表已发布，注册表404时不把下载失败写0。
-
-自动提取的Agent、工具、事件／UI候选及未解析位置保存在统计JSON；confirmed_count=null不改成运行时确认。
-
-## 代码评价与可借鉴处
+## 工程亮点
 
 IPC实现与事件映射分层，兼容探测和cleanup较清楚；默认不发送正文的设计值得肯定，但具体配置字符串可以被用户填入敏感信息。隐私结论只覆盖审读的发送构造，不延伸到Discord侧数据保留。
 
@@ -62,12 +59,16 @@ IPC实现与事件映射分层，兼容探测和cleanup较清楚；默认不发�
 
 用两会话、子任务、断线和重启检查状态归属与重连，抓取合成SET_ACTIVITY字段核对无标题／正文／路径；若不需要社交展示则直接不装，不为增加状态装饰付出常驻负担。
 
-## 历史对照与验证边界
+## 核查说明
 
-本条首次纳入本工程深评；added表示相对上轮三插件样本新增，不是本周新发布。 作者报告、静态核查和独立执行分开：本轮重新阅读固定源码／配置／测试，未运行目标代码、未安装目标插件、未做真实宿主验收或模型任务对照。仓库自测、发布说明属于作者材料，未作为独立通过证据。Issue数量只作背景，不证明独立采用或实际收益。
+- 首次分析；不代表本周新发布。
+- 已阅读固定版本的源码、配置和测试文件。
+- 未实际运行或安装插件，也未在 DSH 中试用或比较模型任务效果。
+- 作者的自测和发布说明未经独立验证。
+- Issue 数量仅供参考，不代表使用人数或实际收益。
 
 ## Issue 活跃度
 
 Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
 
-统计日期：2026-10-19。Issue 不含 PR。
+统计日期：2026-10-19。

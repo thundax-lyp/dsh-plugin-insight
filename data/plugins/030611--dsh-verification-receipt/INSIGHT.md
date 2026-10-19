@@ -1,15 +1,15 @@
-<!-- Generated detail view; research source and checkpoint remain unchanged. -->
 # DSH Verification Receipt
+
+> 在每轮会话结束后生成隐私最小化的工具活动与验证信号摘要，并保存为本地 JSONL 收据。
 
 - **用途**：为每轮已记录工具活动生成隐私最小化 JSONL 摘要，提示可能发生的验证动作。
 - **亮点**：不保存工具参数／正文，按 turn/end 投影工具结果，并在卸载时关闭接收、等待写队列排空。
 - **思考**：词法命中 test/check 不证明测试执行或代码正确；独立行哈希也不能证明日志未删改。
 - **建议**：适合排查“这一轮记录了什么”的开发者试用，不能替代 CI、测试产物或审计放行。
 
-## 固定范围与依据
+## 版本
 
-组件 github:1333370288:root，路径 仓库根，固定提交 [87f3fb0198090f0f26a37a52840db150609db748](https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748/)。本轮 20261019T091725Z-init10，核查于 2026-10-19T09:30:11.566Z。
-材料：[源码快照](../../runs/2026-10-19-03/snapshots/030611--dsh-verification-receipt/SOURCE.json)、[仓库与发布记录](../../runs/2026-10-19-03/snapshots/030611--dsh-verification-receipt/REPOSITORY.json)、[统计产物](../../runs/2026-10-19-03/snapshots/030611--dsh-verification-receipt/INVENTORY.json)、[META](../../runs/2026-10-19-03/snapshots/030611--dsh-verification-receipt/META.json)。目录来源固定版本见[本轮报告](../../runs/2026-10-19-03/REPORT.md)。
+固定提交 [87f3fb0198090f0f26a37a52840db150609db748](https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748)
 
 ## 场景、替代办法与合格交付
 
@@ -44,14 +44,10 @@ src/index.ts 在 session/event 的 turn/end 回调 snapshotEvents，交给 recei
 | .ts | source | 3 | 424 | — | 327 |
 | .ts | test | 3 | 391 | — | 361 |
 
-口径：sloc 0.3.2／TypeScript 5.9.3，固定提交全仓根组件；仅 Markdown 与 JS／TS。Markdown 字数含标记和代码；各扩展名分列，不合成跨语言总量。scripts中的验证脚本按当前路径启发式可能归source，其数量不等于产品代码量。
-生成、复制和第三方归属仍需人工辨认：lib若是交付构建结果，会与src重复，不相加为原创规模；本表保留实际收录文件面积。默认排除项及路径见统计JSON，声明文件、build/dist、依赖与其他扩展名不计。
+- **事件监听**：turn/end
+- **后台**：1 个 JSONL 写队列
 
-一个 turn/end 观察路径、一个JSONL写队列；无 SKILL.md、Agent/Preset、模型工具和用户命令；哈希为可重算摘要，不是签名。
-
-自动提取的Agent、工具、事件／UI候选及未解析位置保存在统计JSON；confirmed_count=null不改成运行时确认。
-
-## 代码评价与可借鉴处
+## 工程亮点
 
 纯投影与宿主挂载分离、卸载排空顺序可审读；正则不解析shell语义，因此 echo含test 的文本可命中。未绑定可信测试产物、无链锚；源码清楚标明 execution-trace-only 是优点，也限定了它能承担的责任。
 
@@ -63,12 +59,16 @@ src/index.ts 在 session/event 的 turn/end 回调 snapshotEvents，交给 recei
 
 输入真实失败命令、echo tests、后台命令、别名和嵌套工具，逐条对照产物；模拟磁盘拒写和中途卸载。只有发现误报／漏报不会导致放行且记录完整性可解释，才扩大使用。
 
-## 历史对照与验证边界
+## 核查说明
 
-本条首次纳入本工程深评；added表示相对上轮三插件样本新增，不是本周新发布。 作者报告、静态核查和独立执行分开：本轮重新阅读固定源码／配置／测试，未运行目标代码、未安装目标插件、未做真实宿主验收或模型任务对照。仓库自测、发布说明属于作者材料，未作为独立通过证据。Issue数量只作背景，不证明独立采用或实际收益。
+- 首次分析；不代表本周新发布。
+- 已阅读固定版本的源码、配置和测试文件。
+- 未实际运行或安装插件，也未在 DSH 中试用或比较模型任务效果。
+- 作者的自测和发布说明未经独立验证。
+- Issue 数量仅供参考，不代表使用人数或实际收益。
 
 ## Issue 活跃度
 
 Issue：未关闭 2／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
 
-统计日期：2026-10-19。Issue 不含 PR。
+统计日期：2026-10-19。

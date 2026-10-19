@@ -104,6 +104,119 @@
     "catalog": {
       "type": "string",
       "minLength": 1
+    },
+    "summaries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "source_url",
+          "revision"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "pattern": "^[^\\r\\n]+$"
+          },
+          "source_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "revision": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "revision",
+          "items"
+        ],
+        "properties": {
+          "revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "Skill": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]+$"
+              },
+              "Agent/Preset": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]+$"
+              },
+              "模型工具": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]+$"
+              },
+              "用户命令": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]+$"
+              },
+              "Host 路由": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]+$"
+              },
+              "界面": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]+$"
+              },
+              "事件监听": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]+$"
+              },
+              "后台": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]+$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "advice": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "revision",
+          "text"
+        ],
+        "properties": {
+          "revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[^\\r\\n]+$"
+          }
+        }
+      }
     }
   },
   "$schema": "https://json-schema.org/draft/2020-12/schema"

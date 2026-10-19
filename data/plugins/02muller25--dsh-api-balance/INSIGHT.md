@@ -1,15 +1,15 @@
-<!-- Generated detail view; research source and checkpoint remain unchanged. -->
 # api-balance
+
+> 在 DSH Web 输入区实时显示 DeepSeek API 账户余额，支持自动轮询、手动刷新和自定义刷新间隔。
 
 - **用途**：在 DSH Web 输入区显示 DeepSeek API 账户余额与可用状态。
 - **亮点**：浏览器只读同源余额接口，支持刷新间隔与失败保留旧值，减少切换控制台。
 - **思考**：余额不是任务预算或成本预警；凭证被拼入 curl 子进程命令，不能将“不发给浏览器”写成“不出宿主进程”。
 - **建议**：适合单账户用户按需查看，先验证凭证处理与轮询负担；需要预算控制时仍要配合计量和限额。
 
-## 固定范围与依据
+## 版本
 
-组件 github:1334899834:root，路径 仓库根，固定提交 [c27c8b61acf97714ab08d99f97b7be3a9007e52e](https://github.com/02Muller25/dsh-api-balance/tree/c27c8b61acf97714ab08d99f97b7be3a9007e52e/)。本轮 20261019T091725Z-init10，核查于 2026-10-19T09:30:10.915Z。
-材料：[源码快照](../../runs/2026-10-19-03/snapshots/02muller25--dsh-api-balance/SOURCE.json)、[仓库与发布记录](../../runs/2026-10-19-03/snapshots/02muller25--dsh-api-balance/REPOSITORY.json)、[统计产物](../../runs/2026-10-19-03/snapshots/02muller25--dsh-api-balance/INVENTORY.json)、[META](../../runs/2026-10-19-03/snapshots/02muller25--dsh-api-balance/META.json)。目录来源固定版本见[本轮报告](../../runs/2026-10-19-03/REPORT.md)。
+固定提交 [c27c8b61acf97714ab08d99f97b7be3a9007e52e](https://github.com/02Muller25/dsh-api-balance/tree/c27c8b61acf97714ab08d99f97b7be3a9007e52e)
 
 ## 场景、替代办法与合格交付
 
@@ -42,14 +42,10 @@ lib/index.js 注册 GET /api/abal-balance，每次解析 DEEPSEEK_API_KEY，用 
 | .js | source | 2 | 346 | — | 327 |
 | .md | source | 1 | 89 | 928 | — |
 
-口径：sloc 0.3.2／TypeScript 5.9.3，固定提交全仓根组件；仅 Markdown 与 JS／TS。Markdown 字数含标记和代码；各扩展名分列，不合成跨语言总量。scripts中的验证脚本按当前路径启发式可能归source，其数量不等于产品代码量。
-生成、复制和第三方归属仍需人工辨认：lib若是交付构建结果，会与src重复，不相加为原创规模；本表保留实际收录文件面积。默认排除项及路径见统计JSON，声明文件、build/dist、依赖与其他扩展名不计。
+- **Host 路由**：1 个精确 GET 路由
+- **界面**：1 个输入区槽位
 
-核查一个精确 GET 路由与一个输入区界面槽位；无 SKILL.md、Agent/Preset、模型工具或用户命令定义。
-
-自动提取的Agent、工具、事件／UI候选及未解析位置保存在统计JSON；confirmed_count=null不改成运行时确认。
-
-## 代码评价与可借鉴处
+## 工程亮点
 
 功能面小、宿主和客户端分工清晰，失败信息较具体。确认到凭证值插入命令字符串且经 shell.run 执行，实际日志／进程参数可见性依赖宿主和系统；这是待核查风险，不宣称已发生泄漏。README 的“不出宿主进程”与实际启动子进程的代码不一致。
 
@@ -57,16 +53,20 @@ lib/index.js 注册 GET /api/abal-balance，每次解析 DEEPSEEK_API_KEY，用 
 
 上述工程判断依据：[lib/index.js](https://github.com/02Muller25/dsh-api-balance/blob/c27c8b61acf97714ab08d99f97b7be3a9007e52e/lib/index.js)、[lib/client.js](https://github.com/02Muller25/dsh-api-balance/blob/c27c8b61acf97714ab08d99f97b7be3a9007e52e/lib/client.js)、[package.json](https://github.com/02Muller25/dsh-api-balance/blob/c27c8b61acf97714ab08d99f97b7be3a9007e52e/package.json)。
 
-## 采用判断与最小验证
+## 怎么用、要注意什么
 
-用专门测试账户比较余额一致性、超时和无效凭证，再观察并发页面请求数和命令／日志处理。若需要对每任务限额，停止把本插件当预算控制方案；不得使用真实密钥做可公开的日志实验。
+想随时看一眼账户还剩多少钱，可以试试。先用测试账户确认余额是否准确、断网或密钥填错时有没有提示；同时打开几个页面，看看是否频繁重复查询。再检查日志里会不会露出密钥，别拿真实密钥做实验。它只能查看余额，不能给每个任务设置花费上限。
 
-## 历史对照与验证边界
+## 核查说明
 
-本条首次纳入本工程深评；added表示相对上轮三插件样本新增，不是本周新发布。 作者报告、静态核查和独立执行分开：本轮重新阅读固定源码／配置／测试，未运行目标代码、未安装目标插件、未做真实宿主验收或模型任务对照。仓库自测、发布说明属于作者材料，未作为独立通过证据。Issue数量只作背景，不证明独立采用或实际收益。
+- 首次分析；不代表本周新发布。
+- 已阅读固定版本的源码、配置和测试文件。
+- 未实际运行或安装插件，也未在 DSH 中试用或比较模型任务效果。
+- 作者的自测和发布说明未经独立验证。
+- Issue 数量仅供参考，不代表使用人数或实际收益。
 
 ## Issue 活跃度
 
 Issue：未关闭 0／已关闭 1 · 近30天：新建 0／关闭 1／更新 1
 
-统计日期：2026-10-19。Issue 不含 PR。
+统计日期：2026-10-19。

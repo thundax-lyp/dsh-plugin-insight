@@ -1,15 +1,15 @@
-<!-- Generated detail view; research source and checkpoint remain unchanged. -->
 # DSH Telemetry Redactor
+
+> 在 DSH 遥测副本导出前遮盖支持的敏感键和凭证模式，保留原始会话日志。
 
 - **用途**：在遥测副本送往已配置后端前遮盖支持的凭证模式，保留原始会话日志。
 - **亮点**：敏感键与字符串模式联合处理，区分 token 计量字段；拒绝循环、访问器及超深记录。
 - **思考**：过滤规则和监听器顺序都有边界，原始日志仍含原值；它不能作为全面数据防泄漏证明。
 - **建议**：适合已有遥测导出的部署先做合成凭证试用，同时检查完整监听链和本地日志权限。
 
-## 固定范围与依据
+## 版本
 
-组件 github:1333368566:root，路径 仓库根，固定提交 [811b0b1abf424e57045ab5a5eaa203660ca43908](https://github.com/030611/dsh-telemetry-redactor/tree/811b0b1abf424e57045ab5a5eaa203660ca43908/)。本轮 20261019T091725Z-init10，核查于 2026-10-19T09:30:11.108Z。
-材料：[源码快照](../../runs/2026-10-19-03/snapshots/030611--dsh-telemetry-redactor/SOURCE.json)、[仓库与发布记录](../../runs/2026-10-19-03/snapshots/030611--dsh-telemetry-redactor/REPOSITORY.json)、[统计产物](../../runs/2026-10-19-03/snapshots/030611--dsh-telemetry-redactor/INVENTORY.json)、[META](../../runs/2026-10-19-03/snapshots/030611--dsh-telemetry-redactor/META.json)。目录来源固定版本见[本轮报告](../../runs/2026-10-19-03/REPORT.md)。
+固定提交 [811b0b1abf424e57045ab5a5eaa203660ca43908](https://github.com/030611/dsh-telemetry-redactor/tree/811b0b1abf424e57045ab5a5eaa203660ca43908)
 
 ## 场景、替代办法与合格交付
 
@@ -44,14 +44,9 @@ src/index.ts 通过 prepend 的 session-telemetry/record waterfall 对 next() �
 | .ts | source | 4 | 313 | — | 273 |
 | .ts | test | 3 | 408 | — | 363 |
 
-口径：sloc 0.3.2／TypeScript 5.9.3，固定提交全仓根组件；仅 Markdown 与 JS／TS。Markdown 字数含标记和代码；各扩展名分列，不合成跨语言总量。scripts中的验证脚本按当前路径启发式可能归source，其数量不等于产品代码量。
-生成、复制和第三方归属仍需人工辨认：lib若是交付构建结果，会与src重复，不相加为原创规模；本表保留实际收录文件面积。默认排除项及路径见统计JSON，声明文件、build/dist、依赖与其他扩展名不计。
+- **事件监听**：1 个遥测 waterfall
 
-一个遥测 waterfall 监听；无 SKILL.md、Agent/Preset、模型工具或用户命令。64是嵌套容器深度限制，不是可处理记录大小上限。
-
-自动提取的Agent、工具、事件／UI候选及未解析位置保存在统计JSON；confirmed_count=null不改成运行时确认。
-
-## 代码评价与可借鉴处
+## 工程亮点
 
 实现短且安全边界写得较具体，覆盖键名碰撞、对象形态和深度，测试包含组合与对抗用例。65层拒绝有上限，但宽而浅记录仍线性耗时。作者测试结果和官方fixture只是仓库材料，本轮未独立执行。
 
@@ -63,12 +58,16 @@ src/index.ts 通过 prepend 的 session-telemetry/record waterfall 对 next() �
 
 构造已覆盖密钥、未知格式、token counters、64/65层、键名碰撞和外层后置注入，核查后端实际收到的字节及代理主流程。未知格式通过时应缩小保护声明，不能以整体测试通过掩盖。
 
-## 历史对照与验证边界
+## 核查说明
 
-本条首次纳入本工程深评；added表示相对上轮三插件样本新增，不是本周新发布。 作者报告、静态核查和独立执行分开：本轮重新阅读固定源码／配置／测试，未运行目标代码、未安装目标插件、未做真实宿主验收或模型任务对照。仓库自测、发布说明属于作者材料，未作为独立通过证据。Issue数量只作背景，不证明独立采用或实际收益。
+- 首次分析；不代表本周新发布。
+- 已阅读固定版本的源码、配置和测试文件。
+- 未实际运行或安装插件，也未在 DSH 中试用或比较模型任务效果。
+- 作者的自测和发布说明未经独立验证。
+- Issue 数量仅供参考，不代表使用人数或实际收益。
 
 ## Issue 活跃度
 
 Issue：未关闭 1／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
 
-统计日期：2026-10-19。Issue 不含 PR。
+统计日期：2026-10-19。

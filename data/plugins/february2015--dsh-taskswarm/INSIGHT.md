@@ -1,4 +1,3 @@
-<!-- Generated detail view; research source and checkpoint remain unchanged. -->
 # TaskSwarm：先证明交付更划算，再增加并行 Agent
 
 核查对象：`february2015/dsh-taskswarm`，提交 `032e2c9d228c20cab65fe0ea061d78a7c753ab8c`，源码版本 0.2.38。
@@ -53,4 +52,4 @@
 
 Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
 
-统计日期：2026-10-19。Issue 不含 PR。
+统计日期：2026-10-19。

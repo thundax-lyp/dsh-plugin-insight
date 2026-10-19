@@ -37,6 +37,8 @@ export function renderPublication(input,root=ROOT) {
   const obs=read(local(root,i.checkpoint.observations));validateObservations(obs);
   const plugin=obs.plugins.find(p=>p.id===i.id);
   const report=text(i.checkpoint.report);
+  const summary=input.summaries?.[i.id];
+  if(!summary||summary.revision!==i.revision||!summary.source_url.startsWith(`https://github.com/${i.repository}/blob/${i.revision}/`))throw Error(`pinned author summary required: ${i.id}`);
   const labels=['用途','亮点','思考','建议'];
   const short=labels.map(label=>{
    const sourceLabel=label==='思考'?'(?:思考|关键质疑)':label;
@@ -45,7 +47,24 @@ export function renderPublication(input,root=ROOT) {
    return template('SHORT-ITEM',{label,text:matches[0][1]});
   }).join('\n');
   const detailPath=pluginDirectory(plugin,root)+'/INSIGHT.md';
-  const displayReport=rebaseMarkdown(report,i.checkpoint.report,detailPath);
+  const version=template('VERSION',{revision:i.revision,url:`https://github.com/${i.repository}/tree/${i.revision}`});
+  const displayReport=rebaseMarkdown(report,i.checkpoint.report,detailPath).replace(/(^|\n)## (?:固定范围与依据|版本)\n[\s\S]*?(?=\n## |$)/g,(_,prefix)=>prefix+version+'\n');
+  const title=displayReport.match(/^# [^\n]+/)?.[0];
+  if(!title)throw Error('detail needs a title');
+  const capabilities=input.capabilities?.[i.id];
+  if(!capabilities||capabilities.revision!==i.revision)throw Error(`pinned capability inventory required: ${i.id}`);
+  const capabilityList=Object.entries(capabilities.items).map(([name,value])=>template('CAPABILITY-ITEM',{name,value})).join('\n');
+  const compactReport=displayReport.replace(/(^|\n)## 工程规模与能力清单\n([\s\S]*?)(?=\n## |$)/g,(_,prefix,body)=>prefix+'## 工程规模与能力清单\n\n'+body.split('\n').filter(line=>line.startsWith('|')).join('\n')+'\n\n'+capabilityList+'\n');
+  const advice=input.advice?.[i.id];
+  if(advice&&advice.revision!==i.revision)throw Error(`advice revision differs: ${i.id}`);
+  const readerReport=advice?compactReport.replace(/(^|\n)## 采用判断与最小验证\n[\s\S]*?(?=\n## |$)/g,(_,prefix)=>prefix+'## 怎么用、要注意什么\n\n'+advice.text+'\n'):compactReport;
+  const boundaryReport=readerReport.replace(/(^|\n)## 历史对照与验证边界\n([\s\S]*?)(?=\n## |$)/g,(_,prefix,body)=>{
+   const knownTail='作者报告、静态核查和独立执行分开：本轮重新阅读固定源码／配置／测试，未运行目标代码、未安装目标插件、未做真实宿主验收或模型任务对照。仓库自测、发布说明属于作者材料，未作为独立通过证据。Issue数量只作背景，不证明独立采用或实际收益。';
+   const history=body.trim().replace(knownTail,'').trim();
+   if(body.trim().endsWith(knownTail)&&['本条首次纳入本工程深评；added表示相对上轮三插件样本新增，不是本周新发布。','本条与前轮固定版本对照；具体判断变化见代码评价。'].includes(history))return prefix+template('BOUNDARIES',{history:history.startsWith('本条首次')?'首次分析；不代表本周新发布。':'已与前次版本对照，变化见工程亮点。'})+'\n';
+   return prefix+'## 核查说明\n\n'+body.trim().split(/\n+/).map(line=>line.startsWith('- ')?line:'- '+line).join('\n')+'\n';
+  });
+  const analysis=boundaryReport.slice(title.length).trimStart().replace(/^## 代码评价与可借鉴处$/gm,'## 工程亮点').replace(/^口径：sloc[^\n]*(?:\r?\n生成、复制和第三方归属仍需人工辨认：[^\n]*)?\r?\n?/gm,'');
   const description=report.match(/^- \*\*用途(?:：\*\*|\*\*：)(.+)$/m)[1].split(/[。！？]/)[0];
   const anchor=`plugin-${plugin.repository_id}-${plugin.component_id}`;
   const path=input.metadata?.[i.id];let npmFirstPublished=null,meta='META：暂未获取。',homeMeta=null,pushedBadge=null,needsReview=false,stars=null,starsBadge=null,pushedAt=null,pushedLabel=null,issues='暂未获取。';
@@ -71,7 +90,7 @@ export function renderPublication(input,root=ROOT) {
    pushedBadge=template('BADGE',{alt:`最后更新 ${updatedLabel}`,image:updatedImage,url:`https://github.com/${m.repository}/commits`});
    homeMeta=template('HOME-META',{stars:starsBadge,downloads,updated:pushedBadge,review:update});
   }
-  return {i,plugin,short,description,anchor,meta,homeMeta,pushedBadge,needsReview,stars,starsBadge,pushedAt,pushedLabel,npmFirstPublished,detailPath,detail:template('DETAIL',{analysis:displayReport.trimEnd().replace(/^- \*\*(用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)(.*)$/gm,(_,label,text)=>template('SHORT-ITEM',{label:label==='关键质疑'?'思考':label,text})),issues})+'\n'};
+  return {i,plugin,short,description,anchor,meta,homeMeta,pushedBadge,needsReview,stars,starsBadge,pushedAt,pushedLabel,npmFirstPublished,detailPath,detail:template('DETAIL',{title,summary:summary.text,analysis:analysis.trimEnd().replace(/^- \*\*(用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)(.*)$/gm,(_,label,text)=>template('SHORT-ITEM',{label:label==='关键质疑'?'思考':label,text})),issues})+'\n'};
  });
  const byId=new Map(items.map(p=>[p.i.id,p]));
  if(input.recommendations.length!==new Set(input.recommendations.map(r=>r.plugin_id)).size) throw Error('duplicate recommendation');

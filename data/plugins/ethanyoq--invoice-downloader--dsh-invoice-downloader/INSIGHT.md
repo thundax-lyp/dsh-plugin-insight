@@ -1,4 +1,3 @@
-<!-- Generated detail view; research source and checkpoint remain unchanged. -->
 # InvoiceFlowAI：收票自动化是否值得承担一套本地引擎
 
 核查对象：`EthanYoQ/Invoice-Downloader` 的 `plugins/dsh-invoice-downloader`，提交 `8fe3a1147c619268b41f1480e73c4fa38d97db69`；源码和公开 npm latest 均为 0.1.1。
@@ -56,4 +55,4 @@
 
 Issue：未关闭 1／已关闭 167 · 近30天：新建 11／关闭 11／更新 12
 
-统计日期：2026-10-19。Issue 不含 PR。
+统计日期：2026-10-19。

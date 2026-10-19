@@ -1,15 +1,15 @@
-<!-- Generated detail view; research source and checkpoint remain unchanged. -->
 # Qiushi Evidence Audit
+
+> 被动观察 DSH 会话事件与工具结果，将内容摘要写入本地哈希链收据，供后续核对。
 
 - **用途**：把会话事件与工具结果的哈希收据顺序写入本地链，辅助事后核对记录一致性。
 - **亮点**：规范化 JSON、启动验证已有链、观察器异常隔离及同步卸载关闭，让有限保证可检查。
 - **思考**：没有外部锚点，完整重写重算、删整文件或完整尾段都可能逃过检测；不等于可信审计账本。
 - **建议**：适合单进程、私有目录内的取证流程试验；有合规或多进程诉求时先补外部锚定与写入协调。
 
-## 固定范围与依据
+## 版本
 
-组件 github:1333357514:root，路径 仓库根，固定提交 [94fae130b2845309e1dcabac14696fddb18f8f3a](https://github.com/030611/qiushi-dsh-evidence-audit/tree/94fae130b2845309e1dcabac14696fddb18f8f3a/)。本轮 20261019T091725Z-init10，核查于 2026-10-19T09:30:11.759Z。
-材料：[源码快照](../../runs/2026-10-19-03/snapshots/030611--qiushi-dsh-evidence-audit/SOURCE.json)、[仓库与发布记录](../../runs/2026-10-19-03/snapshots/030611--qiushi-dsh-evidence-audit/REPOSITORY.json)、[统计产物](../../runs/2026-10-19-03/snapshots/030611--qiushi-dsh-evidence-audit/INVENTORY.json)、[META](../../runs/2026-10-19-03/snapshots/030611--qiushi-dsh-evidence-audit/META.json)。目录来源固定版本见[本轮报告](../../runs/2026-10-19-03/REPORT.md)。
+固定提交 [94fae130b2845309e1dcabac14696fddb18f8f3a](https://github.com/030611/qiushi-dsh-evidence-audit/tree/94fae130b2845309e1dcabac14696fddb18f8f3a)
 
 ## 场景、替代办法与合格交付
 
@@ -45,14 +45,9 @@ Cordis 4.0.1、schemastery 3.18.1、可写私有目录；默认文件在 DSH_HOM
 | .ts | test | 5 | 467 | — | 428 |
 | .mjs | example | 1 | 27 | — | 24 |
 
-口径：sloc 0.3.2／TypeScript 5.9.3，固定提交全仓根组件；仅 Markdown 与 JS／TS。Markdown 字数含标记和代码；各扩展名分列，不合成跨语言总量。scripts中的验证脚本按当前路径启发式可能归source，其数量不等于产品代码量。
-生成、复制和第三方归属仍需人工辨认：lib若是交付构建结果，会与src重复，不相加为原创规模；本表保留实际收录文件面积。默认排除项及路径见统计JSON，声明文件、build/dist、依赖与其他扩展名不计。
+- **事件监听**：session/event、tools/result
 
-两个观察feed，无模型工具／命令、SKILL.md或Agent/Preset；两个feed不是两个Agent，也不意味着一行对应一个唯一任务。
-
-自动提取的Agent、工具、事件／UI候选及未解析位置保存在统计JSON；confirmed_count=null不改成运行时确认。
-
-## 代码评价与可借鉴处
+## 工程亮点
 
 严格拒绝非JSON值／访问器、固定哈希测试与多进程对抗测试，说明作者主动界定边界；两个事件feed可产生对同一活动的不同收据，不宜直接按行数计业务次数。writeSync并非fsync，多进程冲突只能后验发现而不能避免。
 
@@ -64,12 +59,16 @@ Cordis 4.0.1、schemastery 3.18.1、可写私有目录；默认文件在 DSH_HOM
 
 用合成事件验证单行改写、删头、完整删尾、重算全链、两进程并写和断电模拟；按预期明确记录哪些能检出。若需求包含可信作者／时间而无外部锚点，停止将其作为独立审计依据。
 
-## 历史对照与验证边界
+## 核查说明
 
-本条首次纳入本工程深评；added表示相对上轮三插件样本新增，不是本周新发布。 作者报告、静态核查和独立执行分开：本轮重新阅读固定源码／配置／测试，未运行目标代码、未安装目标插件、未做真实宿主验收或模型任务对照。仓库自测、发布说明属于作者材料，未作为独立通过证据。Issue数量只作背景，不证明独立采用或实际收益。
+- 首次分析；不代表本周新发布。
+- 已阅读固定版本的源码、配置和测试文件。
+- 未实际运行或安装插件，也未在 DSH 中试用或比较模型任务效果。
+- 作者的自测和发布说明未经独立验证。
+- Issue 数量仅供参考，不代表使用人数或实际收益。
 
 ## Issue 活跃度
 
 Issue：未关闭 1／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
 
-统计日期：2026-10-19。Issue 不含 PR。
+统计日期：2026-10-19。

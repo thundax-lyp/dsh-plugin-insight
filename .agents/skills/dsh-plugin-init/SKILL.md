@@ -61,6 +61,8 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    再归纳分类列表的“用途／亮点／思考／建议”，最后生成推荐页；安装推荐与本周试用候选使用不同证据门槛。
    阶段汇总标注未完成项；会话与原始数据由轮次报告追溯。
    按输出标准维护 PLUGIN-PATHS.json 的稳定路径映射并准备 `data/catalog/PUBLICATION.json`，历史文件保留但不进入README，人工填写有依据的推荐摘要，
+   在 capabilities 保存人工确认的正向能力条目与固定版本，未发现／未确认项省略；
+   为每个已完成插件在 summaries 填写基于作者固定版本材料的功能简介（不超过80字符）、来源URL和版本，按输出标准生成标题下引用块，
    调用 `npm run capture:meta -- OWNER/REPO --out data/runs/<round>/snapshots/<plugin-slug>/META.json` 保存每个 GitHub 仓库 META，
    对已核实的插件 package.json 名称，在采集命令增加 --npm <exact-package-name>，记录最近30个完整UTC日期的下载数；
    没有确认的npm包时省略，不猜包名，不用0代替失败。
