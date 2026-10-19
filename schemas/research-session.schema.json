@@ -202,7 +202,27 @@
           }
         ]
       }
+    },
+    "research_limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "selected_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
     }
   },
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "dependentRequired": {
+    "research_limit": [
+      "selected_ids"
+    ],
+    "selected_ids": [
+      "research_limit"
+    ]
+  }
 }

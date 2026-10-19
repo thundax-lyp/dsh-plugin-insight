@@ -12,6 +12,7 @@ const schema = read(resolve(ROOT, 'schemas/research-session.schema.json'));
 const check = ajv.compile(schema);
 export function validateSession(session, root = ROOT) {
   if (!check(session)) throw new Error(ajv.errorsText(check.errors));
+  if (session.research_limit !== undefined && (session.selected_ids.length !== Math.min(session.research_limit, session.items.length) || session.selected_ids.some((id, index) => session.items[index]?.id !== id))) throw new Error("invalid research selection");
   const ids = new Set();
   const urls = new Set(session.sources.map(s => s.url));
   if (urls.size !== session.sources.length) throw new Error('duplicate source');
@@ -38,7 +39,8 @@ function artifact(root, name) {
   if (!existsSync(path)) throw new Error(`missing artifact: ${name}`);
   return path;
 }
-export function startSession(input, previous = null) {
+export function startSession(input, previous = null, limit = undefined) {
+  if (limit !== undefined && (!Number.isSafeInteger(limit) || limit < 1)) throw new Error("limit must be a positive safe integer");
   const session = { schema_version: 1, id: input.id, checked_at: input.checked_at, sources: input.sources, previous_digest: previous ? digest(previous) : null, items: input.plugins.map(p => ({ ...p, changes: ['unknown'], status: 'pending' })) };
   // Validate before comparing; no duplicate identity may be silently collapsed.
   validateSession(session);
@@ -71,12 +73,19 @@ export function startSession(input, previous = null) {
     }
     session.items.push({ ...Object.fromEntries(['id', ...compareFields].map(key => [key, before[key]])), changes: [removed ? 'removed_from_source' : 'unknown'], status: 'pending' });
   }
+  if (limit !== undefined) {
+    session.research_limit = limit;
+    session.selected_ids = session.items.slice(0, limit).map(item => item.id);
+  }
   return validateSession(session);
+}
+export function selectedItems(session) {
+  return session.items.filter(item => !session.selected_ids || session.selected_ids.includes(item.id));
 }
 export function completeItem(session, id, obsPath, reportPath, catalog, root = ROOT) {
   validateSession(session, root); validateCatalog(catalog);
   const item = session.items.find(p => p.id === id);
-  if (!item || item.status === 'complete') throw new Error('item missing or already complete');
+  if (!item || !selectedItems(session).includes(item) || item.status === 'complete') throw new Error('item missing or already complete');
   const obs = read(artifact(root, obsPath)); validateObservations(obs);
   const plugin = obs.plugins.find(p => p.id === id);
   const run = catalog.runs.find(r => r.id === obs.run_id);
@@ -104,20 +113,21 @@ export function saveSession(path, action) {
 }
 export function main(args = process.argv.slice(2)) {
   const [command, ...rest] = args;
-  const { values: v } = parseArgs({ args: rest, options: Object.fromEntries(['input','previous','session','plugin','observations','report','catalog','out','reason'].map(k => [k,{type:'string'}])) });
+  const { values: v } = parseArgs({ args: rest, options: Object.fromEntries(['input','previous','session','plugin','observations','report','catalog','out','reason','limit'].map(k => [k,{type:'string'}])) });
   const need = key => { if (!v[key]) throw new Error(`--${key} required`); return v[key]; };
   if (command === 'start') {
     const path = need('out');
-    saveSession(path, () => { if (existsSync(path)) throw new Error('session exists; resume it or choose new id'); return startSession(read(need('input')), v.previous ? read(v.previous) : null); });
+    saveSession(path, () => { if (existsSync(path)) throw new Error('session exists; resume it or choose new id'); return startSession(read(need('input')), v.previous ? read(v.previous) : null, v.limit === undefined ? undefined : (/^[1-9][0-9]*$/.test(v.limit) ? Number(v.limit) : NaN)); });
   } else if (['next','validate'].includes(command)) {
     const s = validateSession(read(need('session')));
-    console.log(JSON.stringify(command === 'next' ? { next: s.items.find(p => p.status === 'pending') ?? null, complete: s.items.filter(p => p.status === 'complete').length, blocked: s.items.filter(p => p.status === 'blocked').length, total: s.items.length } : { valid: true }));
+    const selected = selectedItems(s);
+    console.log(JSON.stringify(command === 'next' ? { next: selected.find(p => p.status === 'pending') ?? null, complete: selected.filter(p => p.status === 'complete').length, blocked: selected.filter(p => p.status === 'blocked').length, total: selected.length, listed: s.items.length, deferred: s.items.length - selected.length } : { valid: true }));
   } else if (command === 'checkpoint' || command === 'block' || command === 'retry') {
     saveSession(need('session'), () => {
       const s = validateSession(read(v.session));
       if (command === 'checkpoint') return completeItem(s, need('plugin'), need('observations'), need('report'), read(v.catalog ?? resolve(ROOT,'data/catalog.json')));
       const item = s.items.find(p => p.id === need('plugin'));
-      if (!item || item.status === 'complete') throw new Error('item missing or already complete');
+      if (!item || !selectedItems(s).includes(item) || item.status === 'complete') throw new Error('item missing or already complete');
       item.status = command === 'block' ? 'blocked' : 'pending';
       if (command === 'block') item.reason = need('reason'); else delete item.reason;
       return validateSession(s);

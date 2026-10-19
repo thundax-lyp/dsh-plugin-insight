@@ -101,7 +101,11 @@ GitHub 采集、身份确认、来源完整性和指纹正确性由研究者核�
 来源范围不可比时先说明边界，不能把范围缩小算作生态删除。目录移除不删除档案，也不证明仓库无法使用。
 每个新会话全部条目从 pending 开始；同轮续跑读取已有文件，不重新执行 start。
 
-`next` 按清单顺序返回第一个 pending 项及 complete／blocked／total 数量。
+`start --limit N` 可限制本轮最大研究插件数，N 必须是正的安全整数；省略时研究全部。
+先生成完整列表与变更标记，再按清单顺序选取前 N 项（缺席条目追加在后）。新增、更新、目录移除、未变和未知共用上限，每个 ID 计一次。
+会话可选字段 research_limit 与 selected_ids 必须同时存在，固定上限与所选 ID；旧会话省略两字段表示全部。
+受阻项占名额，同轮恢复不补位、不重置限额；未选条目保留 pending，但不能 checkpoint、block 或 retry，不能称作已研究。
+`next` 仅返回所选范围内第一个 pending 项及 complete／blocked／total 数量，另返回完整列表 listed 和未选 deferred 数量。
 `block` 保存受阻原因，`retry` 恢复 pending；原始材料保存在快照和草稿中。
 `checkpoint` 必须在观察批次应用后执行，核对运行 ID、当前档案指纹与检查时间、明确提交且重新核查的 findings、
 对应固定版本的源码证据、项目内证据／报告路径，然后保存批次与报告摘要，状态改为 complete。

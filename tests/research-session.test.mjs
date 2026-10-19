@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { main, startSession, validateSession, completeItem, saveSession } from '../scripts/research-session.mjs';
+import { main, startSession, validateSession, completeItem, saveSession, selectedItems } from '../scripts/research-session.mjs';
 import { ROOT, read, plan } from '../scripts/plugin-data.mjs';
 const url = 'https://example.com/plugins';
 const candidate = { id:'github:1:root', repository:'a/b', path:'', revision:'abc', fingerprints:{code:'abc'}, source_urls:[url] };
@@ -67,4 +67,25 @@ test('CLI creates, resumes, blocks and retries a durable queue without overwriti
   assert.equal(read(out).items[0].status,'pending');
   main(['validate','--session',out]);
  } finally {rmSync(root,{recursive:true,force:true});}
+});
+
+test('research limit shares one budget across additions changes and removals and survives resume', () => {
+ const oldInput=input();
+ oldInput.plugins.push({...candidate,id:'github:2:root',repository:'a/c'});
+ const old=startSession(oldInput);
+ const fresh=input('round2','2026-10-20T00:00:00Z');
+ fresh.plugins[0].revision='changed';
+ fresh.plugins.push({...candidate,id:'github:3:root',repository:'a/d'});
+ const full=startSession(fresh,old);
+ assert.deepEqual(full.items.map(i=>i.changes[0]),['content_changed','added','removed_from_source']);
+ assert.equal(selectedItems(full).length,3);
+ const limited=startSession(fresh,old,2);
+ assert.equal(limited.items.length,3);
+ assert.equal(selectedItems(limited).length,2);
+ limited.items[0].status='blocked'; limited.items[0].reason='offline';
+ assert.deepEqual(selectedItems(validateSession(JSON.parse(JSON.stringify(limited)))).map(i=>i.id),limited.selected_ids);
+ assert.equal(selectedItems(startSession(fresh,old,3))[2].changes[0],'removed_from_source');
+ for(const n of [0,-1,1.5,NaN,Infinity]) assert.throws(()=>startSession(fresh,old,n),/positive/);
+ const invalid=structuredClone(limited); invalid.selected_ids=['github:99:root'];
+ assert.throws(()=>validateSession(invalid),/selection/);
 });
