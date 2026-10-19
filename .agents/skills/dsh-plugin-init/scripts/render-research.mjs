@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import { ROOT, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
+import { ROOT, read, digest, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
 import {validateMetadata} from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import {template} from './publication/template.mjs';
 import {categoryGroups,renderCategoryIndex,renderHomeCategories,renderUpdated,renderWeeklyNew,renderLatest,renderHot,renderRecommended,renderCategories,renderSources} from './publication/blocks.mjs';
@@ -26,6 +26,10 @@ export function relativeTime(date,at){
  if(days<3)return ['今天','昨天','前天'][days];
  return days<30?`${days}天前`:days<365?`${Math.floor(days/30)}个月前`:`${Math.floor(days/365)}年前`;
 }
+export function validateManifestPlugin(item,plugin){
+ if(!plugin||plugin.repository!==item.repository||plugin.path!==item.path||digest(plugin.fingerprints)!==digest(item.fingerprints))throw Error(`manifest and catalog differ: ${item.id}`);
+ return plugin;
+}
 export function renderPublication(input,root=ROOT) {
  if(!check(input)) throw Error(ajv.errorsText(check.errors));
  const text=path=>readFileSync(local(root,path),'utf8');
@@ -35,7 +39,7 @@ export function renderPublication(input,root=ROOT) {
  const metadataDates=new Set();
  const items=manifest.items.filter(i=>i.status==='complete').map(i=>{
   const plugin=catalog.plugins.find(p=>p.id===i.id);
-  if(!plugin||plugin.repository!==i.repository||plugin.path!==i.path)throw Error(`manifest and catalog differ: ${i.id}`);
+  validateManifestPlugin(i,plugin);
   const detailPath=pluginDirectory(plugin,root)+'/INSIGHT.md';
   const report=text(detailPath);
   const summary=input.summaries?.[i.id];
