@@ -1,0 +1,14 @@
+node_modules/
+/.idea/
+
+# Local research process, checkpoints and raw evidence are not versioned.
+/data/runs/
+
+# Rebuildable scratch space.
+/data/tmp/
+/data/cache/
+/data/checkouts/
+/data/**/node_modules/
+/data/**/*.lock
+/data/**/*.tmp
+/data/**/.DS_Store

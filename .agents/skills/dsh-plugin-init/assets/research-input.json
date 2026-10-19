@@ -1,0 +1,26 @@
+{
+  "id": "synthetic-round-1",
+  "checked_at": "2026-10-19T00:00:00Z",
+  "sources": [
+    {
+      "url": "https://example.invalid/catalog",
+      "revision": "synthetic-dir-v1",
+      "complete": true
+    }
+  ],
+  "plugins": [
+    {
+      "id": "github:1:root",
+      "repository": "example/synthetic-plugin",
+      "path": "",
+      "revision": "synthetic-v1",
+      "fingerprints": {
+        "directory": "synthetic-entry-v1",
+        "code": "synthetic-tree-v1"
+      },
+      "source_urls": [
+        "https://example.invalid/catalog"
+      ]
+    }
+  ]
+}
