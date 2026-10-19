@@ -139,8 +139,10 @@ export function parseHarnessSource(root) {
     return state;
 }
 
-const knownComponents = (catalog) =>
-    new Map(catalog.plugins.map((plugin) => [`${plugin.repository_id}:${plugin.path}`, plugin.component_id]));
+const knownComponents = (catalog) => ({
+    byPath: new Map(catalog.plugins.map((plugin) => [`${plugin.repository_id}:${plugin.path}`, plugin.component_id])),
+    byId: new Map(catalog.plugins.map((plugin) => [`${plugin.repository_id}:${plugin.component_id}`, plugin.path]))
+});
 
 const newComponentId = (path) => {
     if (!path) return 'root';
@@ -151,6 +153,19 @@ const newComponentId = (path) => {
             .join('-')
     );
 };
+
+export function allocateComponentId(components, repositoryId, path) {
+    const pathKey = `${repositoryId}:${path}`;
+    const known = components.byPath.get(pathKey);
+    if (known) return { componentId: known, conflictPath: null };
+    const componentId = newComponentId(path);
+    const idKey = `${repositoryId}:${componentId}`;
+    const conflictPath = components.byId.get(idKey);
+    if (conflictPath !== undefined && conflictPath !== path) return { componentId, conflictPath };
+    components.byPath.set(pathKey, componentId);
+    components.byId.set(idKey, path);
+    return { componentId, conflictPath: null };
+}
 
 export async function buildResearchInput({
     id,
@@ -187,7 +202,16 @@ export async function buildResearchInput({
             });
             continue;
         }
-        const componentId = identities.get(`${meta.repository_id}:${candidate.path}`) ?? newComponentId(candidate.path);
+        const { componentId, conflictPath } = allocateComponentId(identities, meta.repository_id, candidate.path);
+        if (conflictPath !== null) {
+            problems.push({
+                sources: candidate.source_urls,
+                repository: meta.repository,
+                path: candidate.path,
+                reason: `component id ${componentId} is already allocated to ${conflictPath || '<root>'}`
+            });
+            continue;
+        }
         if (!componentId) {
             problems.push({
                 sources: candidate.source_urls,

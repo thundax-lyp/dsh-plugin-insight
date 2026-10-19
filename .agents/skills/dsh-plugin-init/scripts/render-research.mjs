@@ -43,13 +43,26 @@ export function relativeTime(date, at) {
     if (days < 3) return ['今天', '昨天', '前天'][days];
     return days < 30 ? `${days}天前` : days < 365 ? `${Math.floor(days / 30)}个月前` : `${Math.floor(days / 365)}年前`;
 }
-export function validateManifestPlugin(item, plugin) {
+const legacyAnalysisMatches = (item, plugin, catalog, checkedAt) => {
+    const run = catalog?.runs.find((candidate) => candidate.id === item.checkpoint?.run_id);
+    return (
+        run &&
+        plugin.last_checked_at === run.checked_at &&
+        plugin.findings.length > 0 &&
+        plugin.findings.every(
+            (finding) => finding.status !== 'needs_review' && Date.parse(finding.reviewed_at) >= Date.parse(checkedAt)
+        )
+    );
+};
+export function validateManifestPlugin(item, plugin, catalog, checkedAt) {
     if (
         !plugin ||
         plugin.repository !== item.repository ||
         plugin.path !== item.path ||
         digest(plugin.fingerprints) !== digest(item.fingerprints) ||
-        item.analysis_sha256 !== analysisDigest(plugin)
+        (item.analysis_sha256
+            ? item.analysis_sha256 !== analysisDigest(plugin)
+            : !legacyAnalysisMatches(item, plugin, catalog, checkedAt))
     )
         throw Error(`manifest and catalog differ: ${item.id}`);
     return plugin;
@@ -63,7 +76,8 @@ export function renderDetailReport(report, item) {
 }
 export function latestManifestItems(manifests) {
     const latest = new Map();
-    for (const manifest of manifests) for (const item of manifest.items) latest.set(item.id, item);
+    for (const manifest of manifests)
+        for (const item of manifest.items) latest.set(item.id, { item, checked_at: manifest.checked_at });
     return [...latest.values()];
 }
 export function renderPublication(input, root = ROOT) {
@@ -78,10 +92,10 @@ export function renderPublication(input, root = ROOT) {
     validateCatalog(catalog);
     const metadataDates = new Set();
     const items = latestManifestItems(manifests)
-        .filter((i) => i.status === 'complete')
-        .map((i) => {
+        .filter(({ item }) => item.status === 'complete')
+        .map(({ item: i, checked_at: manifestCheckedAt }) => {
             const plugin = catalog.plugins.find((p) => p.id === i.id);
-            validateManifestPlugin(i, plugin);
+            validateManifestPlugin(i, plugin, catalog, manifestCheckedAt);
             const detailPath = pluginDirectory(plugin, root) + '/INSIGHT.md';
             const report = text(detailPath);
             const summary = input.summaries?.[i.id];

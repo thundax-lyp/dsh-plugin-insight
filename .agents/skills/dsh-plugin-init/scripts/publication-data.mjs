@@ -49,9 +49,8 @@ export function planPublication(current, manifest, input, catalog, manifestPath)
     const byId = new Map(completeItems.map((item) => [item.id, item]));
     exactCoverage('metadata', input.metadata, complete);
     exactCoverage('summaries', input.summaries, complete);
+    exactCoverage('capabilities', input.capabilities, complete);
     exactCoverage('advice', input.advice, complete);
-    for (const id of keys(input.capabilities))
-        if (!complete.has(id)) throw new Error(`capability target is not complete: ${id}`);
     for (const id of complete) {
         const revision = byId.get(id).revision;
         if (input.summaries[id]?.revision !== revision) throw new Error(`summary revision differs: ${id}`);
