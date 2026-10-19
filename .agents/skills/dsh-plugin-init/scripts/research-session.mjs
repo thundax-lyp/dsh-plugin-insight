@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import { resolve, relative, isAbsolute, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
-import {CATALOG} from '../../_shared/scripts/data-paths.mjs';
+import {CATALOG,REGISTRY,pluginDirectory} from '../../_shared/scripts/data-paths.mjs';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { ROOT, read, digest, atomicWrite, validate as validateCatalog, validateObservations } from '../../_shared/scripts/plugin-data.mjs';
@@ -48,6 +48,7 @@ export function validateSession(session, root = ROOT) {
       if (digest(obs) !== item.checkpoint.observations_digest || obs.run_id !== item.checkpoint.run_id) throw new Error('checkpoint observations changed');
       const plugin = obs.plugins.find(p => p.id === item.id);
       if (!plugin || plugin.repository !== item.repository || plugin.path !== item.path || !plugin.evidence.some(e => e.kind === 'source_inspection' && e.revision === item.revision)) throw new Error('checkpoint identity or revision differs');
+      for (const evidence of plugin.evidence) if (evidence.artifact) artifact(root, evidence.artifact);
       const report = readFileSync(artifact(root, item.checkpoint.report), 'utf8');
       if (!report.trim() || digest(report) !== item.checkpoint.report_digest) throw new Error('checkpoint report changed');
     }
@@ -207,6 +208,22 @@ export function saveSession(path, action) {
   try { writeFileSync(fd, JSON.stringify({ pid: process.pid })); const value = action(); atomicWrite(path, value); return value; }
   finally { closeSync(fd); unlinkSync(lock); }
 }
+export function publishItem(session, id, out, root = ROOT) {
+  const current = validateSession(session, root);
+  const item = current.items.find(item => item.id === id && item.status === 'complete');
+  if (!item) throw new Error('publish requires a complete session item');
+  const registry = read(resolve(root, REGISTRY));
+  if (!registry[item.id]) throw new Error('publish requires a registered plugin directory');
+  const outputPath = relative(root, resolve(out)).split('\\').join('/');
+  const expected = `${pluginDirectory(item, root)}/INSIGHT.md`;
+  if (outputPath !== expected) throw new Error(`publish output must equal ${expected}`);
+  const report = readFileSync(artifact(root, item.checkpoint.report), 'utf8');
+  if (!report.trim()) throw new Error('report is empty');
+  mkdirSync(dirname(resolve(out)), { recursive: true });
+  const temporary = `${resolve(out)}.tmp`;
+  writeFileSync(temporary, report);
+  renameSync(temporary, resolve(out));
+}
 export function main(args = process.argv.slice(2)) {
   const [command, ...rest] = args;
   const { values: v } = parseArgs({ args: rest, options: Object.fromEntries(['input','previous','session','plugin','observations','report','catalog','out','reason','limit'].map(k => [k,{type:'string'}])) });
@@ -229,18 +246,7 @@ export function main(args = process.argv.slice(2)) {
     if (!/^data\/manifests\/\d{4}-\d{2}-\d{2}-\d{2,}\.json$/.test(outputPath)) throw new Error('manifest output requires data/manifests/<round>.json');
     atomicWrite(resolve(out), createManifest(read(sessionPath), sessionPath));
   } else if (command === 'publish') {
-    const session = validateSession(read(need('session')));
-    const item = session.items.find(item => item.id === need('plugin') && item.status === 'complete');
-    if (!item) throw new Error('publish requires a complete session item');
-    const out = need('out');
-    const outputPath = relative(ROOT, resolve(out)).split('\\').join('/');
-    if (!/^data\/plugins\/[a-z0-9][a-z0-9._-]*\/INSIGHT\.md$/.test(outputPath)) throw new Error('publish output requires data/plugins/<plugin-slug>/INSIGHT.md');
-    const report = readFileSync(artifact(ROOT, item.checkpoint.report), 'utf8');
-    if (!report.trim()) throw new Error('report is empty');
-    mkdirSync(dirname(resolve(out)), { recursive: true });
-    const temporary = `${resolve(out)}.tmp`;
-    writeFileSync(temporary, report);
-    renameSync(temporary, resolve(out));
+    publishItem(read(need('session')), need('plugin'), need('out'));
   } else if (command === 'checkpoint' || command === 'block' || command === 'retry') {
     saveSession(need('session'), () => {
       const s = validateSession(read(v.session));
