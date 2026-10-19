@@ -68,7 +68,7 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    保留轮次 META 快照，并复制为 data/plugins/<plugin-slug>/META.json；发布输入的 metadata 映射引用该当前副本；分类页按输出标准生成名字＋用途目录、META及四标签短评。
    标题、章节与Markdown版式维护 .agents/skills/dsh-plugin-init/assets/templates/publication/*.md，不写死到生成代码；脚本仅处理数据、排序和填充。
    再执行 `npm run render:research` 生成 README、分类列表及追加Issue活跃度的详情展示页，不能手写 README 或添加工程使用内容。
-   发布输入引用当前catalog以计算本周首次入档插件；README按本周新增、最新／最热／推荐、每类最热 5 个插件及更多入口的分类列表、研究出处、末尾更新时间合成；不放历史或过程说明。完成前运行 `npm run check`，
+   本周新增以已核实 npm 包的注册表 time.created 首次发布时间计算，不使用本工程入档时间；已有包发新版不算新增；README按本周新增、最新／最热／推荐、每类最热 5 个插件及更多入口的分类列表、研究出处、末尾更新时间合成；不放历史或过程说明。完成前运行 `npm run check`，
    人工检查叙述、采用判断、引用和本轮覆盖；脚本校验不证明实际业务收益。
 
 本 Skill 不自动安装第三方插件、安排周期任务、提交、推送或发布。

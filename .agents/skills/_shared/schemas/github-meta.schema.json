@@ -158,6 +158,39 @@
             "string",
             "null"
           ]
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "first_published_at",
+            "captured_at",
+            "source_url",
+            "error"
+          ],
+          "properties": {
+            "first_published_at": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            },
+            "captured_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "error": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
         }
       }
     },

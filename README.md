@@ -2,18 +2,7 @@
 
 ![DSH Plugin Insight](assets/dsh-plugin-insight-banner.png)
 
-## 本周新增
 
-- [dsh-workspace-menu](data/plugins/0imzero--dsh-workspace-menu/INSIGHT.md)：为工作区和会话行补充置顶、重命名、归档、打开目录等菜单操作。
-- [dsh-ui-auth](data/plugins/0qwq0--dsh-ui-auth/INSIGHT.md)：为多人使用的 DSH Web 增加登录、用户隔离和按用户模型凭证管理。
-- [dsh-discord-richpresence](data/plugins/0qwq0--dsh-discord-richpresence/INSIGHT.md)：把 DSH 的粗粒度工作状态展示到本地 Discord 桌面客户端。
-- [Qiushi Evidence Audit](data/plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md)：把会话事件与工具结果的哈希收据顺序写入本地链，辅助事后核对记录一致性。
-- [DSH Verification Receipt](data/plugins/030611--dsh-verification-receipt/INSIGHT.md)：为每轮已记录工具活动生成隐私最小化 JSONL 摘要，提示可能发生的验证动作。
-- [DSH Telemetry Redactor](data/plugins/030611--dsh-telemetry-redactor/INSIGHT.md)：在遥测副本送往已配置后端前遮盖支持的凭证模式，保留原始会话日志。
-- [api-balance](data/plugins/02muller25--dsh-api-balance/INSIGHT.md)：在 DSH Web 输入区显示 DeepSeek API 账户余额与可用状态。
-- [元冰可 ybkkasi](data/plugins/01men--ybkkasi/INSIGHT.md)：统一管理企业的 MCP、Skill、Agent、应用、权限、用量与审计资产。
-- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)：替换 DSH Web 状态文案，提供阶段感知词库、主题、打字机和弹幕效果。
-- [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md)：在同一开发项目跨会话恢复任务、文件线索和经验，减少重复梳理。
 
 ## 最新
 

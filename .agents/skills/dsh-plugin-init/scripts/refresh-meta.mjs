@@ -42,7 +42,7 @@ export async function refresh(inputPath,{request=api,downloads=captureNpmDownloa
   const path=`${publication.session.slice(0,publication.session.lastIndexOf('/'))}/snapshots/meta-refresh/${stamp}/${directory.split('/').at(-1)}/META.json`;
   atomicWrite(resolve(root,path),metadata);
   const current=directory+'/META.json';atomicWrite(resolve(root,current),metadata);mapping[item.id]=current;
-  result.push({id:item.id,script_changed:metadata.code_update.script_changed,errors:[...metadata.errors.map(e=>e.message),...(metadata.npm?.error?[metadata.npm.error]:[]),...(metadata.code_update.error?[metadata.code_update.error]:[])]});
+  result.push({id:item.id,script_changed:metadata.code_update.script_changed,errors:[...metadata.errors.map(e=>e.message),...(metadata.npm?.error?[metadata.npm.error]:[]),...(metadata.npm?.publication?.error?[metadata.npm.publication.error]:[]),...(metadata.code_update.error?[metadata.code_update.error]:[])]});
  }
  publication.metadata=mapping;atomicWrite(resolve(root,inputPath),publication);
  return result;

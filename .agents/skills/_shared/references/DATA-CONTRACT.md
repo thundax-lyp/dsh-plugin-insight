@@ -69,11 +69,12 @@
 
 - 发布输入只组织已有成果，不成为研究事实或结论的替代真相源；推荐对象必须为已完成项。
   `metadata` 以稳定插件 ID 关联快照，仓库数字 ID 和名称必须匹配；`history` 兼容旧输入。
-  可选 `catalog` 引用已有运行历史，首次 added 时间不因重复研究而重置。
+  可选 `catalog` 引用已有运行历史，首次 added 仅表示本工程入档，不代表 npm 发布。
 - META 的 `captured_at` 是采集时间，`pushed_at` 是仓库推送时间，两者不能混用。
   缺失／失败值为 null 并保留错误，不用 0 代替未知；GitHub 与 npm 各自时间及窗口独立保留。
 - 可选 `npm` 绑定已核实的 `package_name`、下载量、窗口、来源与错误；缺少该对象不等于下载量为零。
   返回包名、窗口与非负整数下载数须匹配，否则记未知；下载量不等于用户数。
+- `npm.publication` 的 first_published_at 来自已核实包的注册表 time.created，表示首次发布；采集时间、来源与错误独立保留。缺失或失败不从入档、Git 或下载量推断。
 - 可选 `code_update` 绑定研究基线、当前提交、变更路径和核查时间；`script_changed` 为 true／false／null 三态。
   它表示待重新洞察的脚本变化，独立于 findings 的依赖失效状态，不改写研究深度或完成检查点。
 - 工程统计的 `revision`／`component`／`coverage` 界定版本、组件及完整或抽读范围；工具版本、内容摘要与排除项须保留。

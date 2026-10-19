@@ -20,6 +20,12 @@
     "window_end": "2026-10-18",
     "downloads_30d": 11532,
     "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-status-rotator",
-    "error": null
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-18T08:46:04.501Z",
+      "captured_at": "2026-10-19T10:03:21.365Z",
+      "source_url": "https://registry.npmjs.org/dsh-status-rotator",
+      "error": null
+    }
   }
 }

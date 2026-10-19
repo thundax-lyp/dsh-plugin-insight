@@ -8,8 +8,9 @@ export function renderWeeklyNew(items,date){
  const day=new Date(date+'T00:00:00Z');
  const start=new Date(day);start.setUTCDate(start.getUTCDate()-(start.getUTCDay()+6)%7);
  const from=start.toISOString().slice(0,10);
- const selected=items.filter(e=>{if(!e.firstAdded)return false;const d=new Date(Date.parse(e.firstAdded)+8*3600000).toISOString().slice(0,10);return d>=from&&d<=date;}).sort((a,b)=>Date.parse(b.firstAdded)-Date.parse(a.firstAdded)||a.i.id.localeCompare(b.i.id));
- return template('WEEKLY-NEW',{items:selected.map(e=>template('NAVIGATION-ITEM',{plugin:nameLink(e),description:clean(e.description)})).join('\n')||'本周暂无新增。'});
+ const selected=items.filter(e=>{if(!e.npmFirstPublished)return false;const d=new Date(Date.parse(e.npmFirstPublished)+8*3600000).toISOString().slice(0,10);return d>=from&&d<=date;}).sort((a,b)=>Date.parse(b.npmFirstPublished)-Date.parse(a.npmFirstPublished)||a.i.id.localeCompare(b.i.id));
+ if(!selected.length)return '';
+ return template('WEEKLY-NEW',{items:selected.map(e=>template('NAVIGATION-ITEM',{plugin:nameLink(e),description:clean(e.description)})).join('\n')});
 }
 export function renderLatest(items,limit=3){
  const selected=items.filter(e=>e.pushedAt).sort((a,b)=>Date.parse(b.pushedAt)-Date.parse(a.pushedAt)||a.i.id.localeCompare(b.i.id)).slice(0,limit);

@@ -1,0 +1,31 @@
+{
+  "repository": "030611/qiushi-dsh-evidence-audit",
+  "repository_id": 1333357514,
+  "captured_at": "2026-10-19T09:24:52.767Z",
+  "window_start": "2026-09-19T09:24:52.767Z",
+  "stars": 3,
+  "pushed_at": "2026-08-14T13:08:45Z",
+  "issues": {
+    "open": 1,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "qiushi-dsh-evidence-audit",
+    "captured_at": "2026-10-19T09:21:44.550Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 1190,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/qiushi-dsh-evidence-audit",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-13T18:43:08.723Z",
+      "captured_at": "2026-10-19T10:03:21.365Z",
+      "source_url": "https://registry.npmjs.org/qiushi-dsh-evidence-audit",
+      "error": null
+    }
+  }
+}
