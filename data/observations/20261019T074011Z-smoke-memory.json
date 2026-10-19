@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "run_id": "20261019T074011Z-smoke-memory",
+  "checked_at": "2026-10-19T07:46:02.745Z",
+  "plugins": [
+    {
+      "id": "github:1339316901:root",
+      "repository_id": 1339316901,
+      "component_id": "root",
+      "repository": "00080000/dsh-project-memory",
+      "path": "",
+      "aliases": [],
+      "name": "dsh-project-memory",
+      "entry_type": "plugin",
+      "technical_category": "memory-knowledge",
+      "business_category": "software-delivery",
+      "tags": [
+        "project-memory",
+        "cross-session",
+        "source-only"
+      ],
+      "availability": "unknown",
+      "research_depth": "source",
+      "fingerprints": {
+        "code": "0b9d05a22f9c09d50a8ac2a8b38094c41a758b04",
+        "release": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006",
+        "maintenance": "24ab37eb46b97f7f2c7773c4b8b038b62759e077bd83d3c1f4eca5dd55d7e833",
+        "compatibility": "ada5be2c9d51bfb9dbd3725f6ea54072259a6d7138653e651e68075cba6b2493",
+        "directory": "9231c1fb481b3f60aa59ef4c95ccabaa1eb4779a60992fd3f7ed81d6e28bf30b"
+      },
+      "sources": [
+        {
+          "id": "github:1339316901:root:20261019T074011Z-smoke-memory:source",
+          "url": "https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/README.md",
+          "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
+          "retrieved_at": "2026-10-19T07:46:02.745Z"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "github:1339316901:root:20261019T074011Z-smoke-memory:author",
+          "kind": "author_claim",
+          "url": "https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/README.md",
+          "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
+          "captured_at": "2026-10-19T07:46:02.745Z",
+          "summary": "本轮重新阅读作者描述，区分插件场景、承诺和限制。",
+          "limitations": [
+            "作者描述不证明任务效果；未安装目标插件。"
+          ],
+          "artifact": "data/snapshots/20261019T074011Z-smoke/memory-repository.json"
+        },
+        {
+          "id": "github:1339316901:root:20261019T074011Z-smoke-memory:source",
+          "kind": "source_inspection",
+          "url": "https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/index.js",
+          "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
+          "captured_at": "2026-10-19T07:46:02.745Z",
+          "summary": "核查18个固定版本材料：配置、任务桥、召回、嵌入表、作用域和删除。",
+          "limitations": [
+            "仅源码机制核查，未执行插件测试或真实宿主。"
+          ],
+          "artifact": "data/snapshots/20261019T074011Z-smoke/memory-source.json"
+        },
+        {
+          "id": "github:1339316901:root:20261019T074011Z-smoke-memory:npm",
+          "kind": "source_inspection",
+          "url": "https://registry.npmjs.org/@yolk_vat-y%2fdsh-project-memory/latest",
+          "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
+          "captured_at": "2026-10-19T07:46:02.745Z",
+          "summary": "公开npm latest HTTP200，版本0.6.2；默认分支与发布包未比对。",
+          "limitations": [
+            "公开元数据不证明安装成功或包内容相同。"
+          ],
+          "artifact": "data/snapshots/20261019T074011Z-smoke/memory-npm.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "scenario",
+          "topic": "positioning",
+          "basis": "interpretation",
+          "text": "面向同项目频繁跨会话恢复开发，用AGENTS/交接文档/rg作低成本基线，验收正确恢复与最终任务质量。",
+          "evidence_ids": [
+            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "code",
+              "fingerprint": "0b9d05a22f9c09d50a8ac2a8b38094c41a758b04"
+            },
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "release",
+              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "status": "current"
+        },
+        {
+          "id": "mechanism",
+          "topic": "mechanism",
+          "basis": "supported",
+          "text": "确定性文档与符号索引、读时触发、任务文件关联与出处召回；查询扩展和反思默认关闭，leanvec仅重排经验/洞察层。",
+          "evidence_ids": [
+            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "code",
+              "fingerprint": "0b9d05a22f9c09d50a8ac2a8b38094c41a758b04"
+            },
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "release",
+              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "status": "current"
+        },
+        {
+          "id": "scope",
+          "topic": "limitations",
+          "basis": "design_limit",
+          "text": "存在task/project/global作用域和经验提升，global可参与召回；需验证项目专属经验的泛化边界，源码机制不证明已泄漏。forget无撤销需明确删除范围。",
+          "evidence_ids": [
+            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "code",
+              "fingerprint": "0b9d05a22f9c09d50a8ac2a8b38094c41a758b04"
+            },
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "release",
+              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "status": "current"
+        },
+        {
+          "id": "distribution",
+          "topic": "engineering",
+          "basis": "supported",
+          "text": "源码和npm latest为0.6.2，但目录tarball指0.4.0；实际安装对象须对齐，未安装或核对tarball。",
+          "evidence_ids": [
+            "github:1339316901:root:20261019T074011Z-smoke-memory:npm"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "code",
+              "fingerprint": "0b9d05a22f9c09d50a8ac2a8b38094c41a758b04"
+            },
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "release",
+              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "status": "current"
+        },
+        {
+          "id": "cost",
+          "topic": "business_value",
+          "basis": "interpretation",
+          "text": "索引无LLM调用不等于零成本；默认本地嵌入表、CPU/磁盘、提示占用、噪声清理和可选辅助模型都应计入总负担。",
+          "evidence_ids": [
+            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "code",
+              "fingerprint": "0b9d05a22f9c09d50a8ac2a8b38094c41a758b04"
+            },
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "release",
+              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "status": "current"
+        },
+        {
+          "id": "adoption",
+          "topic": "adoption",
+          "basis": "interpretation",
+          "text": "本轮优先试用候选，尚非安装推荐；固定模型与任务，对照交接文档测恢复时间、误引用、合格率和全部成本。",
+          "evidence_ids": [
+            "github:1339316901:root:20261019T074011Z-smoke-memory:source"
+          ],
+          "dependencies": [
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "code",
+              "fingerprint": "0b9d05a22f9c09d50a8ac2a8b38094c41a758b04"
+            },
+            {
+              "plugin_id": "github:1339316901:root",
+              "area": "release",
+              "fingerprint": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006"
+            }
+          ],
+          "reviewed_at": "2026-10-19T07:46:02.745Z",
+          "status": "current"
+        }
+      ],
+      "last_checked_at": "2026-10-19T07:46:02.745Z"
+    }
+  ],
+  "errors": []
+}

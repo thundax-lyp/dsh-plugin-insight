@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "id": "20261019T074011Z-smoke",
+  "checked_at": "2026-10-19T07:43:16.388Z",
+  "sources": [
+    {
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "13dcda27177db72e1004b6116f0d589675176fba",
+      "complete": false
+    },
+    {
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "complete": false
+    }
+  ],
+  "previous_digest": "a167f3de9b54eeec35949fddb3483197eb068d1f8481792dd6e6f83e30b80399",
+  "items": [
+    {
+      "id": "github:1170373459:dsh-invoice-downloader",
+      "repository": "EthanYoQ/Invoice-Downloader",
+      "path": "plugins/dsh-invoice-downloader",
+      "revision": "8fe3a1147c619268b41f1480e73c4fa38d97db69",
+      "fingerprints": {
+        "directory": "17aeffc38c6e674f603864414044daf73122042a57a6d859d3923ceaf4900047",
+        "code": "dd7b9656ae8faf326cc111f2c6f68ac054650a11",
+        "release": "1746c1a9c82763ea84c0482f8f7d44463a4789b253514515a32a81e05de85de5",
+        "compatibility": "f80c06fcf9a074ca76a8446a0e43202c5e2ccd061198bd8af184463b6e748d9b",
+        "maintenance": "34f1866a5733c24140525903710b3f1dda5af6c7220f547f98ab41de9a369c6f"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "changes": [
+        "unchanged"
+      ],
+      "status": "complete",
+      "checkpoint": {
+        "observations": "data/observations/20261019T074011Z-smoke-invoice.json",
+        "observations_digest": "a9e6a34cf11577a43e420222a7da9c44bcc801e6bbe5ca372e9850838169ce6d",
+        "report": "data/reports/20261019T074011Z-smoke-invoice.md",
+        "report_digest": "1532ad041d464ee32ebde0213a9c1a99585fbfb73ed1c40647c33955e6ec364c",
+        "run_id": "20261019T074011Z-smoke-invoice"
+      }
+    },
+    {
+      "id": "github:1333800488:root",
+      "repository": "february2015/dsh-taskswarm",
+      "path": "",
+      "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+      "fingerprints": {
+        "directory": "13e2938fcff83d2c0783d72677501e47b29ee219860adb15c6d57339a89f92c7",
+        "code": "e92804922d2920b97a003dbe2080ebff63f6f4f5",
+        "release": "9dbd6f032f753a20355c8e4c66a6ae95faa5f7c6397ab3b89e77774574f63c84",
+        "compatibility": "b2d078ef4d5671ddd5343cb057a7d7771fda71e9829608e7e37f91e9dd4944ab",
+        "maintenance": "f67d79ec50b39b612cdd5cd634f555d0abb8c8aa0ae9e65843cfa7cc2e765cd4"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ],
+      "changes": [
+        "unchanged"
+      ],
+      "status": "complete",
+      "checkpoint": {
+        "observations": "data/observations/20261019T074011Z-smoke-taskswarm.json",
+        "observations_digest": "57aa1d4da89bb2ce22eaa1e4d30637f3498e036418c1e18a45bd7fb2b960cf29",
+        "report": "data/reports/20261019T074011Z-smoke-taskswarm.md",
+        "report_digest": "c0d56b3f6f2c6c6998e1cc3481fd4123337e484fea31f9fb9a4b5cdb23d8c6ce",
+        "run_id": "20261019T074011Z-smoke-taskswarm"
+      }
+    },
+    {
+      "id": "github:1339316901:root",
+      "repository": "00080000/dsh-project-memory",
+      "path": "",
+      "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
+      "fingerprints": {
+        "code": "0b9d05a22f9c09d50a8ac2a8b38094c41a758b04",
+        "release": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006",
+        "maintenance": "24ab37eb46b97f7f2c7773c4b8b038b62759e077bd83d3c1f4eca5dd55d7e833",
+        "compatibility": "ada5be2c9d51bfb9dbd3725f6ea54072259a6d7138653e651e68075cba6b2493",
+        "directory": "9231c1fb481b3f60aa59ef4c95ccabaa1eb4779a60992fd3f7ed81d6e28bf30b"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "changes": [
+        "added"
+      ],
+      "status": "complete",
+      "checkpoint": {
+        "observations": "data/observations/20261019T074011Z-smoke-memory.json",
+        "observations_digest": "83189f59e145814837b7bea188184011e185dc9130236b10c5e2bac2b2704f72",
+        "report": "data/reports/20261019T074011Z-smoke-memory.md",
+        "report_digest": "b4114c9da9825cae3e8eddf9547ae537e910b2a07ed5118244d7d0a66386cf09",
+        "run_id": "20261019T074011Z-smoke-memory"
+      }
+    }
+  ]
+}

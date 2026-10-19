@@ -1,0 +1,33 @@
+{
+  "captured_at": "2026-10-19T07:47:53.742241+00:00",
+  "next": {
+    "command": [
+      "/Users/thundax/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "scripts/research-session.mjs",
+      "next",
+      "--session",
+      "data/sessions/20261019T074011Z-smoke.json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"next\":null,\"complete\":3,\"blocked\":0,\"total\":3}\n"
+  },
+  "duplicate_checkpoint": {
+    "command": [
+      "/Users/thundax/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "scripts/research-session.mjs",
+      "checkpoint",
+      "--session",
+      "data/sessions/20261019T074011Z-smoke.json",
+      "--plugin",
+      "github:1170373459:dsh-invoice-downloader",
+      "--observations",
+      "data/observations/20261019T074011Z-smoke-invoice.json",
+      "--report",
+      "data/reports/20261019T074011Z-smoke-invoice.md"
+    ],
+    "exit_code": 1,
+    "stderr": "item missing or already complete\n",
+    "session_unchanged": true
+  },
+  "boundary": "本轮确实用独立进程逐项入档和续读；没有杀进程、断电或多人并发实验。"
+}

@@ -14,25 +14,22 @@ DSH 插件目录、分类、证据与增量研究。本 README 是研究输出�
 
 ## 研究结果入口
 
-已建立 **2 个插件的源码级样例基线**，检查时间为 2026-10-19（北京时间）；这不是全量目录或实测收益排名。
+最新为 **2026-10-19 的 3 插件源码级冒烟**，完成 3／3；不是全量目录或实测收益排名。
 
-| 场景 | 插件与报告 | 样例判断 |
-|---|---|---|
-| 业务增效：发票整理与报销准备 | [InvoiceFlowAI 的 DSH 插件](data/reports/20261019T065545Z-init.md#invoiceflowai) | 条件试用；整理收益须扣除本地引擎配置、模型及人工复核负担 |
-| 开发：多任务并行与集成 | [TaskSwarm](data/reports/20261019T065545Z-init.md#taskswarm) | 值得观察；并行时间收益不等于降本，npm 分发和当前宿主兼容须先核对 |
+- [本周什么值得试](data/reports/20261019T074011Z-smoke-recommendations.md)：项目记忆优先试、发票整理条件试、TaskSwarm 继续观察；暂无安装推荐。
+- [业务分类与四标签短评](data/reports/20261019T074011Z-smoke-catalog.md)。
+- 单插件详情：[InvoiceFlowAI](data/reports/20261019T074011Z-smoke-invoice.md)、[TaskSwarm](data/reports/20261019T074011Z-smoke-taskswarm.md)、[dsh-project-memory](data/reports/20261019T074011Z-smoke-memory.md)。
+- [轮次报告](data/reports/20261019T074011Z-smoke.md)／[会话进度](data/sessions/20261019T074011Z-smoke.json)／[当前档案](data/catalog.json)。
+- 历史报告：[首次两插件样例](data/reports/20261019T065545Z-init.md)。
 
-- [最新研究报告／分类概览](data/reports/20261019T065545Z-init.md)：场景、依赖、流程、成本、条件判断与下一步验证。
-- [当前插件档案与运行历史](data/catalog.json)／[本次观察批次](data/observations/20261019T065545Z-init.json)。
-- 历史报告：本次为首次基线，后续报告追加并保留本次入口。
-
-证据来自固定版本源码、作者文档及公开分发元数据。**尚未安装插件或执行真实邮箱、模型及并行开发任务，未获得合格率、耗时或实际账单。** 合成示例不计入研究结果。
+尚未安装目标插件或执行真实业务任务，没有合格率、耗时和实际账单；合成示例不计入研究结果。
 
 ## 工程与 Skill
 
 项目 Skill 放在 `.agents/skills/`：
 
 - [dsh-plugin-init](.agents/skills/dsh-plugin-init/SKILL.md)：建立首次数据基线，分层采集与研究。
-- [dsh-plugin-update](.agents/skills/dsh-plugin-update/SKILL.md)：检查变化，增量更新并标记受影响结论。
+- [dsh-plugin-insight](.agents/skills/dsh-plugin-insight/SKILL.md)：单插件固定版本洞察，交付证据、详情和观察批次。
 
 两个 Skill 共享[数据契约](docs/01-design/DATA-CONTRACT.md)、[研究规范](docs/01-design/RESEARCH-STANDARD.md)、
 [输出标准](docs/01-design/OUTPUT-STANDARD.md)、JSON Schema 和 Node.js ES Module 脚本。
