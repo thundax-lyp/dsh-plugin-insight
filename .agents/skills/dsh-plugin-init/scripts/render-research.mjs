@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import { ROOT, read, digest, analysisDigest, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
+import { ROOT, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { template } from './publication/template.mjs';
 import {
@@ -22,6 +22,7 @@ import {
 } from './publication/blocks.mjs';
 import { REGISTRY, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { validateManifest } from './research-session.mjs';
+import { validateManifestPlugin } from './publication-data.mjs';
 const ajv = new Ajv({ strict: true, allErrors: true });
 addFormats(ajv);
 const check = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/publication.schema.json')));
@@ -42,30 +43,6 @@ export function relativeTime(date, at) {
     const days = Math.floor((a + 8 * 3600000) / 86400000) - Math.floor((d + 8 * 3600000) / 86400000);
     if (days < 3) return ['今天', '昨天', '前天'][days];
     return days < 30 ? `${days}天前` : days < 365 ? `${Math.floor(days / 30)}个月前` : `${Math.floor(days / 365)}年前`;
-}
-const legacyAnalysisMatches = (item, plugin, catalog, checkedAt) => {
-    const run = catalog?.runs.find((candidate) => candidate.id === item.checkpoint?.run_id);
-    return (
-        run &&
-        plugin.last_checked_at === run.checked_at &&
-        plugin.findings.length > 0 &&
-        plugin.findings.every(
-            (finding) => finding.status !== 'needs_review' && Date.parse(finding.reviewed_at) >= Date.parse(checkedAt)
-        )
-    );
-};
-export function validateManifestPlugin(item, plugin, catalog, checkedAt) {
-    if (
-        !plugin ||
-        plugin.repository !== item.repository ||
-        plugin.path !== item.path ||
-        digest(plugin.fingerprints) !== digest(item.fingerprints) ||
-        (item.analysis_sha256
-            ? item.analysis_sha256 !== analysisDigest(plugin)
-            : !legacyAnalysisMatches(item, plugin, catalog, checkedAt))
-    )
-        throw Error(`manifest and catalog differ: ${item.id}`);
-    return plugin;
 }
 export function renderDetailReport(report, item) {
     const versionUrl = `https://github.com/${item.repository}/tree/${item.revision}${item.path ? `/${item.path}` : ''}`;

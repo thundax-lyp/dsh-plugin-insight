@@ -1,12 +1,20 @@
 #!/usr/bin/env node
 import { closeSync, openSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
-import { relative, resolve } from 'node:path';
+import { isAbsolute, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { CATALOG, PUBLICATION, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
-import { ROOT, atomicWrite, digest, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
+import {
+    ROOT,
+    analysisDigest,
+    atomicWrite,
+    digest,
+    read,
+    validate as validateCatalog
+} from '../../_shared/scripts/plugin-data.mjs';
+import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { validateManifest } from './research-session.mjs';
 
 const ajv = new Ajv({ strict: true, allErrors: true });
@@ -19,10 +27,48 @@ export function validatePublication(publication) {
 }
 
 const keys = (value) => Object.keys(value ?? {});
+const local = (root, path) => {
+    const full = resolve(root, path);
+    if (isAbsolute(path) || relative(root, full).startsWith('..')) throw new Error('path must be inside project');
+    return full;
+};
+const roundParts = (round) => {
+    const match = /^(\d{4}-\d{2}-\d{2})-(\d+)$/.exec(round);
+    return [match[1], Number(match[2])];
+};
+const newerRound = (candidate, current) => {
+    const [candidateDate, candidateSequence] = roundParts(candidate);
+    const [currentDate, currentSequence] = roundParts(current);
+    return candidateDate > currentDate || (candidateDate === currentDate && candidateSequence > currentSequence);
+};
 const replaceSelected = (current, replacement, selected) => ({
     ...Object.fromEntries(Object.entries(current ?? {}).filter(([id]) => !selected.has(id))),
     ...replacement
 });
+const legacyAnalysisMatches = (item, plugin, catalog, checkedAt) => {
+    const run = catalog?.runs.find((candidate) => candidate.id === item.checkpoint?.run_id);
+    return (
+        run &&
+        plugin.last_checked_at === run.checked_at &&
+        plugin.findings.length > 0 &&
+        plugin.findings.every(
+            (finding) => finding.status !== 'needs_review' && Date.parse(finding.reviewed_at) >= Date.parse(checkedAt)
+        )
+    );
+};
+export function validateManifestPlugin(item, plugin, catalog, checkedAt) {
+    if (
+        !plugin ||
+        plugin.repository !== item.repository ||
+        plugin.path !== item.path ||
+        digest(plugin.fingerprints) !== digest(item.fingerprints) ||
+        (item.analysis_sha256
+            ? item.analysis_sha256 !== analysisDigest(plugin)
+            : !legacyAnalysisMatches(item, plugin, catalog, checkedAt))
+    )
+        throw new Error(`manifest and catalog differ: ${item.id}`);
+    return plugin;
+}
 const exactCoverage = (label, value, expected) => {
     const actual = new Set(keys(value));
     const missing = [...expected].filter((id) => !actual.has(id));
@@ -40,7 +86,7 @@ export function planPublication(current, manifest, input, catalog, manifestPath,
     if (manifestPath !== current.manifest) {
         const currentManifest = validateManifest(read(resolve(root, current.manifest)));
         if (
-            manifest.round <= currentManifest.round ||
+            !newerRound(manifest.round, currentManifest.round) ||
             Date.parse(manifest.checked_at) <= Date.parse(currentManifest.checked_at)
         )
             throw new Error('publication manifest must be newer than the current manifest');
@@ -63,9 +109,13 @@ export function planPublication(current, manifest, input, catalog, manifestPath,
     for (const id of complete) {
         const item = byId.get(id);
         const revision = item.revision;
-        const plugin = catalogById.get(id);
-        if (!plugin) throw new Error(`publication target missing from catalog: ${id}`);
+        const plugin = validateManifestPlugin(item, catalogById.get(id), catalog, manifest.checked_at);
         const report = readFileSync(resolve(root, `${pluginDirectory(plugin, root)}/INSIGHT.md`), 'utf8');
+        const metadata = validateMetadata(read(local(root, input.metadata[id])));
+        if (metadata.repository_id !== null && metadata.repository_id !== plugin.repository_id)
+            throw new Error(`metadata repository identity differs: ${id}`);
+        if (metadata.repository.toLowerCase() !== plugin.repository.toLowerCase())
+            throw new Error(`metadata repository differs: ${id}`);
         const summary = input.summaries[id];
         if (
             summary?.revision !== revision ||
