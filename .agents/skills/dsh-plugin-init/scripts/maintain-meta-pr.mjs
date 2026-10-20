@@ -6,7 +6,8 @@ import { fileURLToPath } from 'node:url';
 import { digest } from '../../_shared/scripts/plugin-data.mjs';
 import { inspectPullRequest } from '../../codex-comment-fix/scripts/codex-review.mjs';
 
-const CODEX = new Set(['chatgpt-codex-connector[bot]', 'chatgpt-codex-connector', 'codex[bot]', 'codex']);
+// REST bot logins include [bot]; do not trust ordinary accounts with similar names.
+const CODEX = new Set(['chatgpt-codex-connector[bot]']);
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
 function api(repository, path, method = 'GET', body) {
     const args = ['api', `repos/${repository}/${path}`, '--method', method];
@@ -167,7 +168,7 @@ export function maintainMetaPullRequests({ repository, apply = false } = {}) {
                     report(pr.number, 'waiting', 'CI approval readback pending');
             }
         }
-        const review = inspectPullRequest({ repository, prNumber: pr.number });
+        const review = inspectPullRequest({ repository, prNumber: pr.number, codexLogins: [...CODEX] });
         const receipt = codexState(review)?.commit_sha === pr.head.sha;
         const key = `<!-- meta-auto-review head=${pr.head.sha} -->`;
         const requested = review.issue_comments.some(
