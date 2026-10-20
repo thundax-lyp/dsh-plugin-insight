@@ -1,0 +1,5 @@
+{
+  "text": "把Tavily搜索与页面提取接入宿主web服务，提供参数设置、额度状态与引擎切换。",
+  "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+  "source_url": "https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/README.md"
+}

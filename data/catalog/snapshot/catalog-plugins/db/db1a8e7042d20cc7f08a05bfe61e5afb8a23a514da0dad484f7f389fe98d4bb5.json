@@ -1,0 +1,207 @@
+{
+  "id": "github:1355639507:root",
+  "repository_id": 1355639507,
+  "component_id": "root",
+  "repository": "123dbl/dsh-side-session",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-side-session",
+  "entry_type": "plugin",
+  "technical_category": "sessions-messages",
+  "business_category": "personal-productivity",
+  "tags": [
+    "旁会话",
+    "并行会话"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "ac1acf504a9ada241602900897427267438e6d9b53708c09b77d5155c46eb202",
+    "code": "39443eb1ea15fb080121a3a6474426980f346a6c",
+    "maintenance": "952ffee39d983eb60f7ddc7217a6af6823a06b34cbbb21ded5828cfea6876acf"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1355639507-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:15:09.735Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1355639507-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/README.md",
+      "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
+      "captured_at": "2026-10-20T03:15:09.735Z",
+      "summary": "从命令菜单创建可继续的旁会话，并跳转到原生子会话聊天视图。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/123dbl--dsh-side-session/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1355639507-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts",
+      "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
+      "captured_at": "2026-10-20T03:15:09.735Z",
+      "summary": "核查 src/index.ts、src/client/index.ts；/side-chat 调用 startContinuable 创建子会话，客户端在成功事件后比较子目录并打开新会话。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/123dbl--dsh-side-session/REVIEWED-SOURCE.json",
+      "limitations": [
+        "未验证并发创建或目录冷启动时准确跳转；所谓独立会话仍是父会话下的 continuable 子代理。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "主任务运行时，用户需要另外讨论独立问题，同时保留主会话上下文。",
+      "evidence_ids": [
+        "20261020-research40-github-1355639507-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1355639507:root",
+          "area": "code",
+          "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:09.735Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "/side-chat 调用 startContinuable 创建子会话，客户端在成功事件后比较子目录并打开新会话。",
+      "evidence_ids": [
+        "20261020-research40-github-1355639507-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1355639507:root",
+          "area": "code",
+          "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:09.735Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "复用原生聊天视图避免维护第二套面板；便利不代表资源或权限完全隔离。",
+      "evidence_ids": [
+        "20261020-research40-github-1355639507-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1355639507:root",
+          "area": "code",
+          "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:09.735Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "开场确认与额外对话消耗模型额度；简单问题直接新建原生会话可能更低成本。",
+      "evidence_ids": [
+        "20261020-research40-github-1355639507-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1355639507:root",
+          "area": "code",
+          "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:09.735Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "Host 只负责创建、Client 负责导航职责清晰；通过目录差分猜测新 ID 有并发与回退边界。",
+      "evidence_ids": [
+        "20261020-research40-github-1355639507-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1355639507:root",
+          "area": "code",
+          "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:09.735Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先测试主会话忙碌、双击和连续创建，确认旁会话可恢复且不会跳错子会话。",
+      "evidence_ids": [
+        "20261020-research40-github-1355639507-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1355639507:root",
+          "area": "code",
+          "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:09.735Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "未验证并发创建或目录冷启动时准确跳转；所谓独立会话仍是父会话下的 continuable 子代理。",
+      "evidence_ids": [
+        "20261020-research40-github-1355639507-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1355639507:root",
+          "area": "code",
+          "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:09.735Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "版本 0.1.0，依赖支持 continuable children 的宿主以及 sessions 客户端服务。",
+      "evidence_ids": [
+        "20261020-research40-github-1355639507-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1355639507:root",
+          "area": "code",
+          "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:09.735Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:15:09.735Z"
+}

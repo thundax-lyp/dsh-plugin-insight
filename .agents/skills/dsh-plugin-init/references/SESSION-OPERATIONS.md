@@ -19,6 +19,10 @@
 - v1 继续兼容读取及暂存。v2 的 next、stage、block、plan、apply、prepare 与 assemble 共用读取器；旧 research 命令拒绝直接修改 v2 SESSION，使用 snapshot 对 WORK 操作。
 - 路径、引用或摘要失效时停止，不静默回退原件或刷新摘要。切换前中断可重试；切换后中断以 WORK 为准恢复兼容入口和迁移报告。拆分不改变固定选择、观察批次、检查时间或正式快照。
 
+## 正式快照存储迁移
+
+`npm run snapshot -- migrate-storage --backup data/runs/<round>/migration-originals/snapshot-storage-v1/SNAPSHOT.json` 将已有单文件迁为索引与独立条目。命令保存原始字节并核对完整语义摘要，持有正式锁且不改研究结论；已拆分状态重复调用只校验，不覆盖原件。迁移不改变 WORK 基线，具体存储不变量见数据契约。业务读取使用共享 snapshot-storage，不直接解析索引取得 catalog／reports。
+
 ## 暂存与最终合并
 
 - 所选项为空时允许仅推进 discovery、来源核查信息与轮次时间，保留既有研究和展示记录；存在所选项但没有成功记录时仍拒绝生成计划。

@@ -1,0 +1,60 @@
+{
+  "repository": "030611/qiushi-dsh-evidence-audit",
+  "repository_id": 1333357514,
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
+  "stars": 3,
+  "pushed_at": "2026-08-14T13:08:45Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A84F:3EA53A:7BA178:193B162:6AD7157A and timestamp 2026-10-20 07:17:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A850:CE852:7C126B:192B8E8:6AD7157A and timestamp 2026-10-20 07:17:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A840:35C8:7820C6:1877DB9:6AD7157A and timestamp 2026-10-20 07:17:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A841:2ED046:8760E9:1BE45A0:6AD7157A and timestamp 2026-10-20 07:17:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A851:2C000D:7FCF0D:19EEDC1:6AD7157B and timestamp 2026-10-20 07:17:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "qiushi-dsh-evidence-audit",
+    "captured_at": "2026-10-20T07:15:30.299Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": 1208,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/qiushi-dsh-evidence-audit",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-13T18:43:08.723Z",
+      "captured_at": "2026-10-20T07:15:30.299Z",
+      "source_url": "https://registry.npmjs.org/qiushi-dsh-evidence-audit",
+      "error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T07:15:30.299Z",
+    "baseline_revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+    "current_revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "github:1333328839:root",
+  "repository": "01Virex/dsh-status-rotator",
+  "path": "",
+  "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+  "fingerprints": {
+    "directory": "813f8d9859f777bd9f78b4b66ee49a2f4b8a45d867b38acddc9fda6872b2f1a2",
+    "code": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+    "release": "4c656e9b908ee5ac60ad2b0766ef9ec3f1dea81586d1c9d47e6432af9f6dfde2",
+    "maintenance": "d32928f6decdcb30fb2a164494924c56065efeeb803d4f180b1fe781ee2d2cca",
+    "compatibility": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "ae61c9165fd511ef4e12b91fa8b75253895fd33963d851c5b2173b797dc2a5e3"
+}

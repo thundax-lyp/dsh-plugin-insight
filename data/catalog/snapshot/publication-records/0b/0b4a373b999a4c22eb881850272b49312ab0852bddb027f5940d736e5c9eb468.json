@@ -1,0 +1,17 @@
+{
+  "id": "github:1334269686:root",
+  "repository": "131CDA1/dsh-scrape-webpage",
+  "path": "",
+  "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+  "fingerprints": {
+    "directory": "3058a443a54b4c33e40a4becef948013e83df36d9f3097052a577dc48acd684c",
+    "code": "7485af10c063579323058583c7f13e69c4c8bd21",
+    "maintenance": "e0ca1a9d12ba7b2605ba6a8c4bad7c68aa6265a15b652c5b468dce68b606ab52"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "f933d0370dddd82c756d2c96fc169c414d20953972888be3af4b05390e7763e7"
+}

@@ -1,0 +1,207 @@
+{
+  "id": "github:1334850903:root",
+  "repository_id": 1334850903,
+  "component_id": "root",
+  "repository": "13071301808/dsh-composer-expand",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-composer-expand",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [
+    "输入框",
+    "长文本"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "97cf9b5b0b0c89f471690fbf08ed5b33c642c7392d4cd4d3d0bfa4a5b4161c64",
+    "code": "e816461115436f1cb084f868398e610396d00679",
+    "maintenance": "f009ffe1139278eae0c1230c0e61d02bd9d5e55e04d9caea112a36f2f9770c67"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1334850903-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:15:14.484Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1334850903-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/13071301808/dsh-composer-expand/blob/e816461115436f1cb084f868398e610396d00679/README.md",
+      "revision": "e816461115436f1cb084f868398e610396d00679",
+      "captured_at": "2026-10-20T03:15:14.484Z",
+      "summary": "为输入框增加展开按钮，切换到较高书写区域并调整展开时回车行为。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/13071301808--dsh-composer-expand/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1334850903-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/13071301808/dsh-composer-expand/blob/e816461115436f1cb084f868398e610396d00679/src/client/index.js",
+      "revision": "e816461115436f1cb084f868398e610396d00679",
+      "captured_at": "2026-10-20T03:15:14.484Z",
+      "summary": "核查 src/client/index.js；客户端插槽按钮切换 CSS class 并保存浏览器偏好，DOM observer 修复重建后的样式，捕获普通 Enter 避免发送。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/13071301808--dsh-composer-expand/REVIEWED-SOURCE.json",
+      "limitations": [
+        "未验证 Lexical、输入法和多输入区下的实际交互；作者兼容声明不等同安装启动卸载证据。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "经常编辑长提示词的用户需要在发送前查看和修改更多草稿内容。",
+      "evidence_ids": [
+        "20261020-research40-github-1334850903-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334850903:root",
+          "area": "code",
+          "fingerprint": "e816461115436f1cb084f868398e610396d00679"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:14.484Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "客户端插槽按钮切换 CSS class 并保存浏览器偏好，DOM observer 修复重建后的样式，捕获普通 Enter 避免发送。",
+      "evidence_ids": [
+        "20261020-research40-github-1334850903-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334850903:root",
+          "area": "code",
+          "fingerprint": "e816461115436f1cb084f868398e610396d00679"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:14.484Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可逆且范围小的界面增量容易评估；收益取决于长文本频率，不应夸大为通用生产力提升。",
+      "evidence_ids": [
+        "20261020-research40-github-1334850903-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334850903:root",
+          "area": "code",
+          "fingerprint": "e816461115436f1cb084f868398e610396d00679"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:14.484Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无需模型或外部服务，主要成本是界面兼容和快捷键习惯适应，未测编辑效率。",
+      "evidence_ids": [
+        "20261020-research40-github-1334850903-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334850903:root",
+          "area": "code",
+          "fingerprint": "e816461115436f1cb084f868398e610396d00679"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:14.484Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "不依赖构建哈希、状态持久化与 observer 清理可借鉴；DOM 属性稳定性仍是宿主义务。",
+      "evidence_ids": [
+        "20261020-research40-github-1334850903-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334850903:root",
+          "area": "code",
+          "fingerprint": "e816461115436f1cb084f868398e610396d00679"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:14.484Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先以长草稿测试中文输入法、斜杠菜单和 Ctrl/Cmd+Enter，确认关闭后恢复原生行为。",
+      "evidence_ids": [
+        "20261020-research40-github-1334850903-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334850903:root",
+          "area": "code",
+          "fingerprint": "e816461115436f1cb084f868398e610396d00679"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:14.484Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "未验证 Lexical、输入法和多输入区下的实际交互；作者兼容声明不等同安装启动卸载证据。",
+      "evidence_ids": [
+        "20261020-research40-github-1334850903-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334850903:root",
+          "area": "code",
+          "fingerprint": "e816461115436f1cb084f868398e610396d00679"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:14.484Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "版本 0.1.5，纯客户端实现，依赖 slots、locale 和宿主稳定 DOM 属性。",
+      "evidence_ids": [
+        "20261020-research40-github-1334850903-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334850903:root",
+          "area": "code",
+          "fingerprint": "e816461115436f1cb084f868398e610396d00679"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:14.484Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:15:14.484Z"
+}

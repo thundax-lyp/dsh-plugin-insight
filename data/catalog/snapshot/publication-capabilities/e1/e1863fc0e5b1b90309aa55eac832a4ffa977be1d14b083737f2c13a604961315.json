@@ -1,0 +1,6 @@
+{
+  "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+  "items": {
+    "后台": "生命周期内启动并停止 Python 看板进程。"
+  }
+}

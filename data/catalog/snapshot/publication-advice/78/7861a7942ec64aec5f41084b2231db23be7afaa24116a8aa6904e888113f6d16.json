@@ -1,0 +1,4 @@
+{
+  "revision": "c79553532eda43f86f3d056ad31e35d11710ad33",
+  "text": "先限定allowRoots并核对Python环境；cargo入口须先验证参数，不能把ok当依赖无问题。"
+}

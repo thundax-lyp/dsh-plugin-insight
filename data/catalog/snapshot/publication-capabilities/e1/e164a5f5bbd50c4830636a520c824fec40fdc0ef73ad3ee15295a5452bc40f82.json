@@ -1,0 +1,6 @@
+{
+  "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+  "items": {
+    "事件监听": "观察 tools/result 与 session/event 并写入证据链。"
+  }
+}

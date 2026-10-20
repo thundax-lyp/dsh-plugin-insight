@@ -1,0 +1,204 @@
+{
+  "id": "github:1384810201:root",
+  "repository_id": 1384810201,
+  "component_id": "root",
+  "repository": "173787247/dsh-remote-ssh",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-remote-ssh",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "77f9bf85fb4d930ed7d91c1ec23156e795d698b946c85c4c112b7d1cb09b2770",
+    "code": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+    "maintenance": "744f4da30cf0f20c3bbaa7fc17f2082883fe606d9f772087c656dfd1237500c8"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1384810201-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:36:26.487Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1384810201-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/README.md",
+      "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+      "captured_at": "2026-10-20T04:36:26.487Z",
+      "summary": "通过SSH对配置主机执行允许命令，提供状态查询、固定探针与受限远程运行工具。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-remote-ssh/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1384810201-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-remote-ssh/blob/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd/index.js",
+      "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+      "captured_at": "2026-10-20T04:36:26.487Z",
+      "summary": "核查 index.js、lib/ssh.js；index.js注册状态、运行及固定探针工具，lib/ssh.js过滤argv、检查命令白名单，以BatchMode调用ssh并限制超时和输出。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-remote-ssh/REVIEWED-SOURCE.json",
+      "limitations": [
+        "本地spawn未开shell不表示SSH远端不经shell解释；有限变更命令名单不能覆盖所有程序写入模式，参数confirm也不是独立人工审批。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "维护Unix、AIX或Mac主机的人希望在DSH排障，合格结果是主机明确、输出可信且操作范围可控。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1384810201-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1384810201:root",
+          "area": "code",
+          "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:26.487Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "index.js注册状态、运行及固定探针工具，lib/ssh.js过滤argv、检查命令白名单，以BatchMode调用ssh并限制超时和输出。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1384810201-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1384810201:root",
+          "area": "code",
+          "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:26.487Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "本地spawn未开shell不表示SSH远端不经shell解释；有限变更命令名单不能覆盖所有程序写入模式，参数confirm也不是独立人工审批。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1384810201-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1384810201:root",
+          "area": "code",
+          "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:26.487Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.1.1，包名实际为dsh-remote-ssh-run，Node>=18；需本机SSH和凭据，跨系统命令可用性由远端决定。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1384810201-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1384810201:root",
+          "area": "code",
+          "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:26.487Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "账号、主机密钥和白名单配置有首次成本，远程延迟与失败重试有持续负担；误写恢复与审计需人工，未测收益。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1384810201-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1384810201:root",
+          "area": "code",
+          "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:26.487Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先使用远端低权限账号和固定只读探针，严格限定命令及参数，确认超时后的远端进程状态；不要把插件白名单当完整沙箱。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1384810201-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1384810201:root",
+          "area": "code",
+          "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:26.487Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "固定探针能降低重复取诊断信息的步骤；通用命令允许列表如果过宽，会把权限负担转回操作者。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1384810201-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1384810201:root",
+          "area": "code",
+          "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:26.487Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "探针按OS拆分、输出截断和BatchMode避免口令进入聊天值得复用；accept-new主机策略和简单元字符过滤需要结合远端限制审阅。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1384810201-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1384810201:root",
+          "area": "code",
+          "fingerprint": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:26.487Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:36:26.487Z"
+}

@@ -1,0 +1,208 @@
+{
+  "id": "github:1363429979:plugin-notes",
+  "repository_id": 1363429979,
+  "component_id": "plugin-notes",
+  "repository": "0x7A7A6572/dsh-forge-studio",
+  "path": "packages/plugin-notes",
+  "aliases": [],
+  "name": "Forge 便签",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "personal-productivity",
+  "tags": [
+    "便签",
+    "任务泳道",
+    "WebDAV"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "c3af87b164fcda3642b0e6fbcfe22150dc043aec1ae559685f115f671a45611b",
+    "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+    "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1363429979-plugin-notes-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:05:44.256Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1363429979-plugin-notes-author",
+      "kind": "author_claim",
+      "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "captured_at": "2026-10-20T03:05:44.256Z",
+      "summary": "提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1363429979-plugin-notes-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/index.ts",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "captured_at": "2026-10-20T03:05:44.256Z",
+      "summary": "核查 packages/plugin-notes/src/index.ts、packages/plugin-notes/src/service.ts、packages/plugin-notes/src/scheduler.ts；便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json",
+      "limitations": [
+        "未验证调度幂等、失败重试、WebDAV 恢复或真实任务完成，定时入口不等于可靠执行保证。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "需要从临时想法转为任务的用户，希望在聊天旁管理笔记及执行状态。",
+      "evidence_ids": [
+        "20261020-research40-github-1363429979-plugin-notes-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363429979:plugin-notes",
+          "area": "code",
+          "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:44.256Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。",
+      "evidence_ids": [
+        "20261020-research40-github-1363429979-plugin-notes-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363429979:plugin-notes",
+          "area": "code",
+          "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:44.256Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把输入、任务和状态放在同一处可减少转录；自动执行却会引入授权和重复副作用风险。",
+      "evidence_ids": [
+        "20261020-research40-github-1363429979-plugin-notes-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363429979:plugin-notes",
+          "area": "code",
+          "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:44.256Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "手工笔记成本较低，自动任务另有模型、调度运维和验收负担；未测量总体收益。",
+      "evidence_ids": [
+        "20261020-research40-github-1363429979-plugin-notes-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363429979:plugin-notes",
+          "area": "code",
+          "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:44.256Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "日程仅随任务状态落位、存储写入后可见的边界清晰；复用调度要独立核查重启恢复。",
+      "evidence_ids": [
+        "20261020-research40-github-1363429979-plugin-notes-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363429979:plugin-notes",
+          "area": "code",
+          "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:44.256Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。",
+      "evidence_ids": [
+        "20261020-research40-github-1363429979-plugin-notes-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363429979:plugin-notes",
+          "area": "code",
+          "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:44.256Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "未验证调度幂等、失败重试、WebDAV 恢复或真实任务完成，定时入口不等于可靠执行保证。",
+      "evidence_ids": [
+        "20261020-research40-github-1363429979-plugin-notes-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363429979:plugin-notes",
+          "area": "code",
+          "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:44.256Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "组件 @zzerx/dsh-plugin-notes 0.4.3，依赖存储、agent、工具及用户确认服务。",
+      "evidence_ids": [
+        "20261020-research40-github-1363429979-plugin-notes-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363429979:plugin-notes",
+          "area": "code",
+          "fingerprint": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:44.256Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:05:44.256Z"
+}

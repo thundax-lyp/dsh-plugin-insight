@@ -1,0 +1,4 @@
+{
+  "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+  "text": "把live socket当启发式提示，失败时查看sshAddDetail；不要在聊天中复制私钥。"
+}

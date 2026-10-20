@@ -1,0 +1,204 @@
+{
+  "id": "github:1366089972:workspace-plugins-dsh-zero-residence",
+  "repository_id": 1366089972,
+  "component_id": "workspace-plugins-dsh-zero-residence",
+  "repository": "1420079678-ctrl/agent-body",
+  "path": "workspace/plugins/dsh-zero-residence",
+  "aliases": [],
+  "name": "dsh-zero-residence",
+  "entry_type": "plugin",
+  "technical_category": "context-search",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "04cefc0adada04e2c432d162271b673809ac791b1f84f65c1942eb97dfba8416",
+    "code": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+    "maintenance": "43f096365ebe99c29ae5999e57cb00a1b8b3292441388102d038dfe5b740737c"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:31:48.825Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/README.md",
+      "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+      "captured_at": "2026-10-20T04:31:48.825Z",
+      "summary": "把长会话内容压缩为可回查指针，提供账本、召回、强制压缩和异步命令入口。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-zero-residence/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-zero-residence/src/index.ts",
+      "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+      "captured_at": "2026-10-20T04:31:48.825Z",
+      "summary": "核查 workspace/plugins/dsh-zero-residence/src/index.ts、workspace/plugins/dsh-zero-residence/lib/index.js；继承BasicCompactionEngine以确定性指针代替摘要，原文从会话持久记录回读；另有zr_fast用pwsh派生进程并返回日志句柄。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-zero-residence/REVIEWED-SOURCE.json",
+      "limitations": [
+        "零驻留指的是所压缩历史，非整个请求无token；回查依赖原始日志，异步句柄只存在本进程Map中，重载恢复不能仅靠退出码文件保证。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "工具输出很长的任务希望缩小反复发送的历史，同时保留回查原文能力；验收需兼顾最终任务质量。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-zero-residence",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:48.825Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "继承BasicCompactionEngine以确定性指针代替摘要，原文从会话持久记录回读；另有zr_fast用pwsh派生进程并返回日志句柄。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-zero-residence",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:48.825Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "零驻留指的是所压缩历史，非整个请求无token；回查依赖原始日志，异步句柄只存在本进程Map中，重载恢复不能仅靠退出码文件保证。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-zero-residence",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:48.825Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.1.0，深度依赖DSH compaction-basic、session与tokenMeter；zr_fast明确调用pwsh，有平台与权限差异。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-zero-residence",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:48.825Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "压缩不调用摘要模型，但指针、回查输出与叙事仍计输入；日志磁盘和后续检索也有成本，未验证端到端费用下降。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-zero-residence",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:48.825Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先在可恢复会话副本试压缩，验证关键证据能原样回查；异步命令只用于允许的测试任务，并确认宿主权限与取消边界。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-zero-residence",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:48.825Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可追溯指针比不可逆摘要更利于复核；如果模型频繁回读或遗失指针，省下的输入可能被额外轮次抵消。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-zero-residence",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:48.825Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "复用原生压缩阈值和触发契约降低重写成本，挂载失败会提示仅工具模式；zr_fast查找先依赖内存记录，恢复承诺需收窄。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-zero-residence-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-zero-residence",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:48.825Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:31:48.825Z"
+}

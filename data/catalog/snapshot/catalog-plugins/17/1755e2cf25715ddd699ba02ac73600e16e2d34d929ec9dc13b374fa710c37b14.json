@@ -1,0 +1,245 @@
+{
+  "id": "github:1351854402:root",
+  "repository_id": 1351854402,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-encoding",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-encoding",
+  "entry_type": "plugin",
+  "technical_category": "runtime-deployment",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "5984163e028913c2add5a90a2c2900befd6a143bd19edb0e688d8cc61313e6a7",
+    "code": "029c5b6d2b99b78444084383686a4da8ed87be50",
+    "maintenance": "da85f5f94147dd50320db0d67778eb5a884ccb42b3cea99457d7d7870c3ee657"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1351854402-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:44.136Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1351854402-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-encoding/blob/029c5b6d2b99b78444084383686a4da8ed87be50/README.md",
+      "revision": "029c5b6d2b99b78444084383686a4da8ed87be50",
+      "captured_at": "2026-10-20T10:01:44.136Z",
+      "summary": "检查WSL与Windows代码页、UTF-8设置及脚本中的CRLF换行。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-encoding/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1351854402-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-encoding/blob/029c5b6d2b99b78444084383686a4da8ed87be50/index.js",
+      "revision": "029c5b6d2b99b78444084383686a4da8ed87be50",
+      "captured_at": "2026-10-20T10:01:44.136Z",
+      "summary": "核查 index.js、lib/encoding.js、lib/wsl-host.js；index.js注册encoding_doctor；lib/encoding.js调用PowerShell和chcp，并检查文件开头8192字节的换行。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-encoding/REVIEWED-SOURCE.json",
+      "limitations": [
+        "仅抽读入口和编码诊断实现；没有运行Windows命令或验证大文件表现。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "在WSL运行Windows目录中的脚本时，先识别编码和换行问题，避免反复猜测bash错误。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854402:root",
+          "area": "code",
+          "fingerprint": "029c5b6d2b99b78444084383686a4da8ed87be50"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:44.136Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "index.js注册encoding_doctor；lib/encoding.js调用PowerShell和chcp，并检查文件开头8192字节的换行。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854402:root",
+          "area": "code",
+          "fingerprint": "029c5b6d2b99b78444084383686a4da8ed87be50"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:44.136Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "仅抽读入口和编码诊断实现；没有运行Windows命令或验证大文件表现。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854402:root",
+          "area": "code",
+          "fingerprint": "029c5b6d2b99b78444084383686a4da8ed87be50"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:44.136Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；需要WSL、Windows互操作、PowerShell与cmd；文件读取受宿主账号权限约束。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854402:root",
+          "area": "code",
+          "fingerprint": "029c5b6d2b99b78444084383686a4da8ed87be50"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:44.136Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "没有新增外部API费用；主要成本是文件读取、跨进程诊断与人工定位，未实测排障时间。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854402:root",
+          "area": "code",
+          "fingerprint": "029c5b6d2b99b78444084383686a4da8ed87be50"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:44.136Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先在小脚本上核对代码页和换行结果，大文件不要把采样字节数当作读取上限。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854402:root",
+          "area": "code",
+          "fingerprint": "029c5b6d2b99b78444084383686a4da8ed87be50"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:44.136Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "相对手动分别执行chcp和检查脚本，把跨系统编码信息与修复建议汇成一个诊断结果；贡献是诊断集成，未证明新的编码识别方法。 sampleLineEndings先读取完整文件再切片，8192字节仅限制分析而不限制读取成本；采样未发现CRLF也不能排除文件后部的问题。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854402:root",
+          "area": "code",
+          "fingerprint": "029c5b6d2b99b78444084383686a4da8ed87be50"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:44.136Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "诊断结果和建议构造分离，便于对照测试；文件读取上限应与采样声明分别核对。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854402:root",
+          "area": "code",
+          "fingerprint": "029c5b6d2b99b78444084383686a4da8ed87be50"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:44.136Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:44.136Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "029c5b6d2b99b78444084383686a4da8ed87be50",
+    "reviewed_at": "2026-10-20T10:01:44.136Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1351854402:root",
+        "area": "code",
+        "fingerprint": "029c5b6d2b99b78444084383686a4da8ed87be50"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：相对chcp与换行检查为小幅诊断聚合；mechanism：跨Windows命令与本地采样为常规组合；transferability：诊断/建议分离可局部迁移；simplification：减少结果拼接但仍需人工修复。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": null
+      },
+      "rationale": "workflow：少量整合排障步骤；delivery：未改变合格脚本交付物；reach：便利WSL排障；economics：没有与手动检查的任务成本对照。",
+      "basis": "interpretation",
+      "score": null,
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854402-root-source"
+      ]
+    }
+  }
+}

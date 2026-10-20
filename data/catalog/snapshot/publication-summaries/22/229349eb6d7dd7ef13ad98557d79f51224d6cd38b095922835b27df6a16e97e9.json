@@ -1,0 +1,5 @@
+{
+  "text": "在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。",
+  "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+  "source_url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md"
+}

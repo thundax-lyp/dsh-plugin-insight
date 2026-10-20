@@ -1,0 +1,19 @@
+{
+  "id": "github:1339316901:root",
+  "repository": "00080000/dsh-project-memory",
+  "path": "",
+  "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+  "fingerprints": {
+    "code": "21fc69e3e98f3864677e091477b7d543a0e54939",
+    "release": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006",
+    "maintenance": "8b8b0006f9bd94955933408455ffe3a9af4e21bcde14e10912b3dc77756d56d9",
+    "compatibility": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2",
+    "directory": "b8f63d3af5029a01cb542ba2ddfa5dca8caf896ce1c2e672ec0cfb9eb2002bf3"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "0f7b8f6ce45f63d03d23fc7dd52458137abff789d0a8bca201926e65f59a0501"
+}

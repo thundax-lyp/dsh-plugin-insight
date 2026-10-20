@@ -1,0 +1,17 @@
+{
+  "id": "github:1384810201:root",
+  "repository": "173787247/dsh-remote-ssh",
+  "path": "",
+  "revision": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+  "fingerprints": {
+    "directory": "77f9bf85fb4d930ed7d91c1ec23156e795d698b946c85c4c112b7d1cb09b2770",
+    "code": "d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd",
+    "maintenance": "744f4da30cf0f20c3bbaa7fc17f2082883fe606d9f772087c656dfd1237500c8"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "c6a408cb4ad11c4d6f4f0bc7de01ea4fd2aa61b4e545e8d841c222f63bab62e0"
+}

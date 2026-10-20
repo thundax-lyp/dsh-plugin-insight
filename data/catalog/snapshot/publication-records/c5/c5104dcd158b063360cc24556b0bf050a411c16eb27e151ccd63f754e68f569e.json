@@ -1,0 +1,17 @@
+{
+  "id": "github:1336538202:root",
+  "repository": "1321928757/dsh-prompt-polish",
+  "path": "",
+  "revision": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+  "fingerprints": {
+    "directory": "8a635e01390501793829e1d48345d38657f4a0a8853e58bc4b9514e895e690e0",
+    "code": "c894ae3de6590542f8353b76e314656a4a3fe3a0",
+    "maintenance": "ef876331b4443cb3a23ff5d59301e495a05fbd2b4b41830f4e2a51d54ec2d401"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "7b19b2d04a19add77cc4649186b255f9811fe1e3c4ded08e1f750b0832b6afde"
+}

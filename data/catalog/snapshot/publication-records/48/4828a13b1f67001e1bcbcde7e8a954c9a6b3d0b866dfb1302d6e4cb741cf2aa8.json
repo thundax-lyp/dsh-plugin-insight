@@ -1,0 +1,17 @@
+{
+  "id": "github:1381832318:root",
+  "repository": "173787247/dsh-wsl-llamacpp",
+  "path": "",
+  "revision": "bc5454d19624f5f7575e841c6d62d47cbbdb2411",
+  "fingerprints": {
+    "directory": "437bd8505216316bb23a546f687ebbd36e4167d1814b412c5a9af9cbfc1361ea",
+    "code": "bc5454d19624f5f7575e841c6d62d47cbbdb2411",
+    "maintenance": "a50bcaaa67aa19976a81d378d0805a8cd8e94b6607dd48e31e9fe7e2c144dc22"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T09:36:48.824Z",
+  "analysis_sha256": "b0f9c63976486d6615368fe1ba2aa7b324b982dd828e0a3800dfca102a011e78"
+}

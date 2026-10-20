@@ -1,0 +1,6 @@
+{
+  "revision": "c79553532eda43f86f3d056ad31e35d11710ad33",
+  "items": {
+    "模型工具": "pkg_status、pkg_npm_ls、pkg_npm_outdated、pkg_pip_list和pkg_cargo_tree入口。"
+  }
+}

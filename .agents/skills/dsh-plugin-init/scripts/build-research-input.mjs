@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -349,7 +350,7 @@ export async function main(args = process.argv.slice(2)) {
         harness,
         catalog:
             existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json')) && !values.catalog
-                ? read(resolve(ROOT, 'data/catalog/SNAPSHOT.json')).catalog
+                ? readSnapshotStorage(resolve(ROOT, 'data/catalog/SNAPSHOT.json')).catalog
                 : read(catalogPath),
         completeAwesome: values['complete-awesome'],
         completeHarness: values['complete-harness']

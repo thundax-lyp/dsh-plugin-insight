@@ -1,0 +1,17 @@
+{
+  "id": "github:1351854301:root",
+  "repository": "173787247/dsh-wsl-docker",
+  "path": "",
+  "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+  "fingerprints": {
+    "directory": "16eb3b960f5bcc5242b75f8c526c74c77c3627a565043da62de634b85d7c2340",
+    "code": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+    "maintenance": "20cb3ebb7e592f480c779bcd048250bc8d8abc248b70fa4723a01922ba5d2596"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "fffd7e5a29382a558838c60e1405707381f7de459876d78f44d55c68b853e9f8"
+}

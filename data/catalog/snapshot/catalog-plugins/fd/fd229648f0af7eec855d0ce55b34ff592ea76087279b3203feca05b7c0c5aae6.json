@@ -1,0 +1,245 @@
+{
+  "id": "github:1391140034:root",
+  "repository_id": 1391140034,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-power",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-power",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "d9a008c2724252de4d85bf079c51072a86823281a50cd3b655acc0fe2e8a1977",
+    "code": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+    "maintenance": "afffefebdcef685e00ca3b7a1870c771bd73cceacd3b6aef17d9cb5411ba2eed"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1391140034-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:58.389Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1391140034-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/README.md",
+      "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+      "captured_at": "2026-10-20T10:01:58.389Z",
+      "summary": "从WSL查询Windows电源计划、电池与睡眠配置。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-power/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1391140034-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/index.js",
+      "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+      "captured_at": "2026-10-20T10:01:58.389Z",
+      "summary": "核查 index.js、lib/power-exec.js、lib/power.js；win_power经PowerShell运行powercfg和Win32_Battery查询，归一化计划、电池、交流睡眠秒数与休眠标记；all可列计划。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-power/REVIEWED-SOURCE.json",
+      "limitations": [
+        "检查查询脚本及归一化，未读取或修改电源设置。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "运行长任务前，用户希望查看宿主电源策略和电池状态以评估中断可能。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140034:root",
+          "area": "code",
+          "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.389Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "win_power经PowerShell运行powercfg和Win32_Battery查询，归一化计划、电池、交流睡眠秒数与休眠标记；all可列计划。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140034:root",
+          "area": "code",
+          "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.389Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "检查查询脚本及归一化，未读取或修改电源设置。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140034:root",
+          "area": "code",
+          "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.389Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；需要WSL互操作、Windows PowerShell、powercfg与CIM；系统策略和设备能力影响可查询项。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140034:root",
+          "area": "code",
+          "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.389Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "跨进程查询和人工核对为主要成本；未测长任务失败减少量或电力收益。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140034:root",
+          "area": "code",
+          "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.389Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "仅作状态参考；中文系统和休眠可用性必须先对照原始结果，不据工具返回直接承诺任务不中断。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140034:root",
+          "area": "code",
+          "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.389Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "将Windows电源只读查询放进Agent上下文，减少切换设置页；不修改计划，也未建立任务防中断机制。 计划与睡眠解析匹配英文输出，本地化Windows可能漏报；Hibernate子串判断不区分可用与不可用列表，不能把该布尔值当可靠能力验收。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140034:root",
+          "area": "code",
+          "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.389Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "执行与归一化分离便于跨平台单测；静默catch保留null较好，但文本解析和英文状态词需要更强语义边界。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140034:root",
+          "area": "code",
+          "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.389Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:58.389Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+    "reviewed_at": "2026-10-20T10:01:58.389Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1391140034:root",
+        "area": "code",
+        "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 0,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：Windows电源查询适配DSH，增量是接线；mechanism=0：依赖powercfg与CIM，未识别新的电源控制或观测机制；transferability=5：查询/归一化分层可迁移到其他只读状态工具；simplification=4：合并电源计划、电池与睡眠摘要，属小幅组合。依据固定版本入口与核心源码，未执行目标代码；不将上游机制或未来假设计入。",
+      "basis": "interpretation",
+      "score": 18,
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": null
+      },
+      "rationale": "workflow=9：把设置页查阅转为Agent查询，改变局部状态交接；delivery=0：仍交付既有电源状态，不改变计划控制或任务验收方式；reach=5：为WSL内用户提供Windows电源入口，但本地化边界保留；economics=null：缺少同条件任务成本、失败重试与持续维护对照，无法判断成本结构增量，不能用零代表缺证据。无运行和独立采用验证，前三项仅解释源码可见流程。",
+      "basis": "interpretation",
+      "score": null,
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140034-root-source"
+      ]
+    }
+  }
+}

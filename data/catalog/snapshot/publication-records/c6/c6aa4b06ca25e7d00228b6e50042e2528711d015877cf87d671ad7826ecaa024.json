@@ -1,0 +1,17 @@
+{
+  "id": "github:1350379268:root",
+  "repository": "173787247/dsh-wsl-notify",
+  "path": "",
+  "revision": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
+  "fingerprints": {
+    "directory": "ce7e1c03a727cb05d4d4c53c5d840f8fd34b389eab4532623d8d5853e3335dcd",
+    "code": "3c83e8964ff6a639b58d4a36bbbb5b784c4453b9",
+    "maintenance": "00d2aac9c4a2b790dc2fc8266bdfa69c4c2118c03ec35bea2210b12c9c69076e"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T09:36:48.824Z",
+  "analysis_sha256": "ccb11158bd55fa2537653a235e2d9f4ebc3f803de75225921e5fb5d6b06f1fc0"
+}

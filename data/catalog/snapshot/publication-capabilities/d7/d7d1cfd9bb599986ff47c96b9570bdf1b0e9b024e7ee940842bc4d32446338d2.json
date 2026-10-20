@@ -1,0 +1,6 @@
+{
+  "revision": "7ec1796675752805913ed7d5645d91541161d8eb",
+  "items": {
+    "模型工具": "db_status、db_ping、db_psql、db_redis。"
+  }
+}

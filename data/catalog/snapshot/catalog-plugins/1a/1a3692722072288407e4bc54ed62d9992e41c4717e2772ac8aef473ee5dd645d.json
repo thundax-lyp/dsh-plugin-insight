@@ -1,0 +1,204 @@
+{
+  "id": "github:1418493685:root",
+  "repository_id": 1418493685,
+  "component_id": "root",
+  "repository": "01NGVI-QINGYI/no-ai-style",
+  "path": "",
+  "aliases": [],
+  "name": "No AI Style",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "content-creation",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "dbd8219bb3eeca19ab2139da9731151fc719a10c0c497c70e7834cc6de5b170b",
+    "code": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+    "maintenance": "99ea5d86578937e4dfaa82eec1b90689d128cc2250682884e443e4714f42dc08"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1418493685-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:01:47.849Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1418493685-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/README.md",
+      "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+      "captured_at": "2026-10-20T03:01:47.849Z",
+      "summary": "以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1418493685-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/index.js",
+      "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+      "captured_at": "2026-10-20T03:01:47.849Z",
+      "summary": "核查 index.js、skills/no-ai-style/SKILL.md；filesystem provider 暴露内嵌 Skill；审阅与改写模式区分权限，真相边界优先于文风。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查 Skill 正文与 provider 接线，未测量事实保真率或评审一致性。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "论文与专业文档作者需要减少机械表达，同时保留事实承诺和引用。",
+      "evidence_ids": [
+        "20261020-research40-github-1418493685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418493685:root",
+          "area": "code",
+          "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:47.849Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "filesystem provider 暴露内嵌 Skill；审阅与改写模式区分权限，真相边界优先于文风。",
+      "evidence_ids": [
+        "20261020-research40-github-1418493685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418493685:root",
+          "area": "code",
+          "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:47.849Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查 Skill 正文与 provider 接线，未测量事实保真率或评审一致性。",
+      "evidence_ids": [
+        "20261020-research40-github-1418493685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418493685:root",
+          "area": "code",
+          "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:47.849Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "清单为 no-ai-style 1.2.1，声明 DSH 版本区间与 skill-filesystem peer 依赖。",
+      "evidence_ids": [
+        "20261020-research40-github-1418493685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418493685:root",
+          "area": "code",
+          "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:47.849Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "不需额外写作服务，但仍消耗所用模型调用和逐句复核时间；没有成本实测。",
+      "evidence_ids": [
+        "20261020-research40-github-1418493685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418493685:root",
+          "area": "code",
+          "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:47.849Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。",
+      "evidence_ids": [
+        "20261020-research40-github-1418493685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418493685:root",
+          "area": "code",
+          "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:47.849Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "权限模式与事实优先级值得采用；提示词约束不是保真保证，仍由作者承担复核。",
+      "evidence_ids": [
+        "20261020-research40-github-1418493685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418493685:root",
+          "area": "code",
+          "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:47.849Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "短入口复用宿主 Skill provider，规则正文与客户端入口分离，迁移需验证加载路径。",
+      "evidence_ids": [
+        "20261020-research40-github-1418493685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418493685:root",
+          "area": "code",
+          "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:47.849Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:01:47.849Z"
+}

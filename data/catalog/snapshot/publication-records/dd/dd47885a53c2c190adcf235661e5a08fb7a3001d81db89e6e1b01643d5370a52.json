@@ -1,0 +1,17 @@
+{
+  "id": "github:1355639507:root",
+  "repository": "123dbl/dsh-side-session",
+  "path": "",
+  "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
+  "fingerprints": {
+    "directory": "ac1acf504a9ada241602900897427267438e6d9b53708c09b77d5155c46eb202",
+    "code": "39443eb1ea15fb080121a3a6474426980f346a6c",
+    "maintenance": "952ffee39d983eb60f7ddc7217a6af6823a06b34cbbb21ded5828cfea6876acf"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "0953658955d894ecd97c507958e4575ef353cafda66be132e6453198292308d7"
+}

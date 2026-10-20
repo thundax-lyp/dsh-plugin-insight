@@ -1,0 +1,17 @@
+{
+  "id": "github:1397817235:root",
+  "repository": "121212165/dsh-plugin-ide-hub",
+  "path": "",
+  "revision": "814621be897a27752550b0be6f7be2bc44ccb897",
+  "fingerprints": {
+    "directory": "f69936d61dd178e95dc981cf6f53f34fd2e7ff308885facc927a4bdf5e4bf6d0",
+    "code": "814621be897a27752550b0be6f7be2bc44ccb897",
+    "maintenance": "e8800fe3b987271bd1862bb4b0ee3ff8e5714d4a87638ba5ee5eab87d7a66495"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "dc75ea8255c185f2d1f986e5edc461059aa44fad5d234db5fc8bfe16ba68af64"
+}

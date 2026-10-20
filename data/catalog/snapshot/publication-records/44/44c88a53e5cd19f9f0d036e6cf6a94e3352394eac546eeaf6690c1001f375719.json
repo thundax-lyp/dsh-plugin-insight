@@ -1,0 +1,19 @@
+{
+  "id": "github:1343420855:root",
+  "repository": "0QwQ0/dsh-ui-auth",
+  "path": "",
+  "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+  "fingerprints": {
+    "directory": "7260dce638b495e79b8bf86856e6055e42c8b3424d62003815aab825e8aedcbd",
+    "code": "6c5e87b44be4e973b092910968001916bb97d22e",
+    "release": "fa64a55690411e8a387e54869dd13b38d4b270cf641db52d58af7ec5f809efbb",
+    "maintenance": "a29570cef2ee4395b9b2eded3ffc91c884cf4371729661c4e69b53ad75982040",
+    "compatibility": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "43a2c5a19b0bbc197c7310cdd0cc76a64468a71fe3358936c1cf01adbe52da79"
+}

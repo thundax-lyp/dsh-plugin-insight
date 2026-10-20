@@ -1,0 +1,5 @@
+{
+  "text": "通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。",
+  "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+  "source_url": "https://github.com/1624318455/dsh-plugin-proxy/blob/b5b5af209e7bd36a6a7008db703a4a9d6d67c1df/README.md"
+}

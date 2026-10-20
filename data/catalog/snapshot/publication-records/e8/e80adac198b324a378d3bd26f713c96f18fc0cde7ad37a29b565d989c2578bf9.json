@@ -1,0 +1,17 @@
+{
+  "id": "github:1374274543:root",
+  "repository": "1624318455/dsh-plugin-proxy",
+  "path": "",
+  "revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+  "fingerprints": {
+    "directory": "f868217aa58f02dd5493c9cb32eff1c55c1d810612ce834c6fa22996b1e357c7",
+    "code": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
+    "maintenance": "42249f015300ba981855cbaf251dca667efa14903fe0a949eb3b691b7033fc88"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "a8312c462aa894b29bc10f9c28c7304dcf1c4a0d33985e69a9f628133f3e1556"
+}

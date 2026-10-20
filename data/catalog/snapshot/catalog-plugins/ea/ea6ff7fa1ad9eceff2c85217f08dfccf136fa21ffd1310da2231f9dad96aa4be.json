@@ -1,0 +1,245 @@
+{
+  "id": "github:1391140376:root",
+  "repository_id": 1391140376,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-service",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-service",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "f7428424e09c1985a93983839bf8fa930da98b4e9050717962534b652056c138",
+    "code": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+    "maintenance": "3a31d61bb2f71ad3888432d3925d3b33846f7f24d5fe8a8c70cdc8de5612f6ae"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1391140376-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:02:00.686Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1391140376-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-service/blob/6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727/README.md",
+      "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+      "captured_at": "2026-10-20T10:02:00.686Z",
+      "summary": "从WSL查询Windows服务列表、状态、运行账户、进程和依赖关系。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-service/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1391140376-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-service/blob/6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727/index.js",
+      "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+      "captured_at": "2026-10-20T10:02:00.686Z",
+      "summary": "核查 index.js、lib/service-exec.js、lib/service.js；win_services生成Get-Service或Win32_Service查询，列表可按名称或状态过滤，detail补充账户、二进制及双向依赖。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-service/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读入口、PowerShell与字段规范化，未查询Windows服务或进行运行验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Agent排查Windows后台服务问题时，先收集状态和依赖证据再由用户决定修复。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140376:root",
+          "area": "code",
+          "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.686Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "win_services生成Get-Service或Win32_Service查询，列表可按名称或状态过滤，detail补充账户、二进制及双向依赖。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140376:root",
+          "area": "code",
+          "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.686Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读入口、PowerShell与字段规范化，未查询Windows服务或进行运行验收。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140376:root",
+          "area": "code",
+          "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.686Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；需要WSL互操作、PowerShell、CIM服务和账户查询权限；数据只是即时快照。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140376:root",
+          "area": "code",
+          "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.686Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "跨进程查询、人工解释与重复采样成本，未证明平均修复时间下降。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140376:root",
+          "area": "code",
+          "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.686Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先对已知服务核对detail；不要由停止状态或空依赖直接决定删除、重启。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140376:root",
+          "area": "code",
+          "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.686Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把服务概况和详细依赖接入对话，减少人工跨系统采集；服务控制与诊断结论仍不由插件提供。 detail中依赖查询异常被吞掉为空数组，空依赖可能是未能读取而非确实没有；状态参数all被直接用于Status比较也需核对实际语义。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140376:root",
+          "area": "code",
+          "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.686Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "查询与规范化分离清楚，依赖方向命名直观；失败与空结果应区别。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391140376:root",
+          "area": "code",
+          "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.686Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:02:00.686Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+    "reviewed_at": "2026-10-20T10:02:00.686Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1391140376:root",
+        "area": "code",
+        "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty为既有Windows查询适配；mechanism为列表和依赖整合；transferability限于类似诊断工具；simplification减少手工采集。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow为诊断证据聚合的小幅改善；delivery不新增修复交付；reach提供WSL入口；economics无已识别结构变化。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+      "basis": "interpretation",
+      "score": 14,
+      "evidence_ids": [
+        "2026-10-20-07-github-1391140376-root-source"
+      ]
+    }
+  }
+}

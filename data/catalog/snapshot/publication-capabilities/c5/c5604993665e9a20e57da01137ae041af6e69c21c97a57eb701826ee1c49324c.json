@@ -1,0 +1,7 @@
+{
+  "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+  "items": {
+    "模型工具": "body_map、body_status、body_heart、body_reflex、body_heal等器官管理工具。",
+    "后台": "心跳、故障账本、反射执行及schema门控。"
+  }
+}

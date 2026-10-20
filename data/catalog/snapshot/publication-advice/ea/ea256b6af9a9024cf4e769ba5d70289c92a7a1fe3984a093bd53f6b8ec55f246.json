@@ -1,0 +1,4 @@
+{
+  "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+  "text": "与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。"
+}

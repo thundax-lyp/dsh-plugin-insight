@@ -1,0 +1,5 @@
+{
+  "text": "从WSL读取或写入Windows文本剪贴板，支持长度限制与Unicode编码转换。",
+  "revision": "1aeac41d93ee494267b83095b4c8217226d7bd33",
+  "source_url": "https://github.com/173787247/dsh-wsl-clipboard/blob/1aeac41d93ee494267b83095b4c8217226d7bd33/README.md"
+}

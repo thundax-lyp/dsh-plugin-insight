@@ -1,0 +1,204 @@
+{
+  "id": "github:1374274469:root",
+  "repository_id": 1374274469,
+  "component_id": "root",
+  "repository": "1624318455/dsh-plugin-adapter",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-plugin-adapter",
+  "entry_type": "plugin",
+  "technical_category": "model-provider",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "5d62d0c9d37bce39b67e8678dc3f7d741e3be03361facaa806d2f4a65839209c",
+    "code": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+    "maintenance": "0072b899cd18256801eb7ccc1c35acbad35372605fa8486d4e6d21dcf1b4d9b1"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1374274469-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:34:32.047Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1374274469-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/README.md",
+      "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+      "captured_at": "2026-10-20T04:34:32.047Z",
+      "summary": "把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-adapter/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1374274469-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1624318455/dsh-plugin-adapter/blob/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c/packages/plugin/package.json",
+      "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+      "captured_at": "2026-10-20T04:34:32.047Z",
+      "summary": "核查 packages/plugin/package.json、packages/plugin/src/index.ts、packages/plugin/src/provider.ts、packages/plugin/src/adapter/catalog.ts；packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-adapter/REVIEWED-SOURCE.json",
+      "limitations": [
+        "匿名免费通道是否可用取决于上游，仿CLI请求不构成稳定服务承诺；未验证模型目录、工具语义或网络路由。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1374274469-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374274469:root",
+          "area": "code",
+          "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:32.047Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1374274469-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374274469:root",
+          "area": "code",
+          "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:32.047Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "匿名免费通道是否可用取决于上游，仿CLI请求不构成稳定服务承诺；未验证模型目录、工具语义或网络路由。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1374274469-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374274469:root",
+          "area": "code",
+          "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:32.047Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "根是private包装包，依赖^0.3.4；仓库内插件子包0.3.9，Node>=20。根安装可解析外部版本，不能把本轮源码SHA当成实际npm产物。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1374274469-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374274469:root",
+          "area": "code",
+          "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:32.047Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无key是作者描述的接入方式，不等于无流量或运维成本；重试、上游限流及可选代理池有额外负担，未测可用性或单位任务成本。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1374274469-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374274469:root",
+          "area": "code",
+          "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:32.047Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1374274469-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374274469:root",
+          "area": "code",
+          "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:32.047Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1374274469-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374274469:root",
+          "area": "code",
+          "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:32.047Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "默认adapter与legacy sidecar分开，缺llm时显式报错；网络池、安装器与代理管理扩大接入面的维护复杂度。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1374274469-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374274469:root",
+          "area": "code",
+          "fingerprint": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:32.047Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:34:32.047Z"
+}

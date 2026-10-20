@@ -1,0 +1,204 @@
+{
+  "id": "github:1401618027:root",
+  "repository_id": 1401618027,
+  "component_id": "root",
+  "repository": "1344738825/ai-look-up",
+  "path": "",
+  "aliases": [],
+  "name": "ai-look-up",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "2c1b778e5592fd8fba675eb4b17b9652bfc4eda6d92b6e4b02bf7b7d1f62cc1e",
+    "code": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49",
+    "maintenance": "e4bdb29c7dceefcf57437e4117676d9d17e71719f7431bb3d520ecda01f92a46"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1401618027-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:30:03.104Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1401618027-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1344738825/ai-look-up/blob/adb341c1d9899378caad2c3c2c37cf6cdd0cec49/README.md",
+      "revision": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49",
+      "captured_at": "2026-10-20T04:30:03.104Z",
+      "summary": "监测重复命令、连续失败与目标漂移，向会话注入复盘提示并可调用审查模型。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1344738825--ai-look-up/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1401618027-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1344738825/ai-look-up/blob/adb341c1d9899378caad2c3c2c37cf6cdd0cec49/index.js",
+      "revision": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49",
+      "captured_at": "2026-10-20T04:30:03.104Z",
+      "summary": "核查 index.js、spec.json、hooks/lookup_watcher.py；index.js 监听会话事件，按spec.json阈值与冷却判定触发；可用宿主模型生成复盘建议，失败退回静态清单，另支持外部watcher通道。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1344738825--ai-look-up/REVIEWED-SOURCE.json",
+      "limitations": [
+        "审查模型复用主会话供应商不构成独立真相；DSH内存状态随重启丢失，未验证降低循环或目标漂移的效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "长任务中Agent反复失败却继续调用工具，用户希望尽早提示停下来检查方向；成功标准应是减少无效尝试。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1401618027-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401618027:root",
+          "area": "code",
+          "fingerprint": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:03.104Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "index.js 监听会话事件，按spec.json阈值与冷却判定触发；可用宿主模型生成复盘建议，失败退回静态清单，另支持外部watcher通道。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1401618027-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401618027:root",
+          "area": "code",
+          "fingerprint": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:03.104Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "审查模型复用主会话供应商不构成独立真相；DSH内存状态随重启丢失，未验证降低循环或目标漂移的效果。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1401618027-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401618027:root",
+          "area": "code",
+          "fingerprint": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:03.104Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "双端ZCode/Python hooks与DSH JS bundle，配置键及模型路由有差异；第三通道需另配key和watcher，不是安装即具备。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1401618027-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401618027:root",
+          "area": "code",
+          "fingerprint": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:03.104Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "审查与周期提醒额外消耗模型及上下文；调阈值、确认误报、维护watcher产生人工和运维成本，没有实测净收益。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1401618027-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401618027:root",
+          "area": "code",
+          "fingerprint": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:03.104Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先在非关键任务关闭第三通道，观察重复调用提醒的误报和冷却，再决定是否为审查增加预算。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1401618027-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401618027:root",
+          "area": "code",
+          "fingerprint": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:03.104Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "将行为信号转为可见提醒比静默循环更可控；提醒不是强制停止，错误诊断也可能把正常重试打断。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1401618027-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401618027:root",
+          "area": "code",
+          "fingerprint": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:03.104Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "共享spec降低双端参数漂移，模型审查失败有静态回退；内存会话状态与落盘第三通道需区分恢复能力。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1401618027-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401618027:root",
+          "area": "code",
+          "fingerprint": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:03.104Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:30:03.104Z"
+}

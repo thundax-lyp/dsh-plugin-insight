@@ -1,0 +1,4 @@
+{
+  "revision": "003a48d9e45841b4f0869d9e3eaad2275bab485b",
+  "text": "明确context和namespace，用只读账号测试；先核对省略context时的实际目标。"
+}

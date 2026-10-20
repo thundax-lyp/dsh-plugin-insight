@@ -1,0 +1,17 @@
+{
+  "id": "github:1354283280:root",
+  "repository": "1010n111/dsh-about",
+  "path": "",
+  "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+  "fingerprints": {
+    "directory": "71ba55d1100f3dddbd4559f715d7d1d10156cc8eee570af43c257aed411d33b7",
+    "code": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+    "maintenance": "7a867daf7130a77783c038a1197298b90bd6a46230f2e9d865f477f1cb019db1"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "c83972f5b088f779d39be23a51805d6f5c41e501651280a3bd0fc2a3d0828892"
+}

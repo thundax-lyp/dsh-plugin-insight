@@ -1,0 +1,17 @@
+{
+  "id": "github:1389458393:root",
+  "repository": "1497105876/dsh-text-inject",
+  "path": "",
+  "revision": "42970dd9743730259ba04af40f5ece1db1e7c7bc",
+  "fingerprints": {
+    "directory": "e52cdc4484c9bee8ced8978ea21a5818f611f9957f6ddd94b0c17bed99c431cf",
+    "code": "42970dd9743730259ba04af40f5ece1db1e7c7bc",
+    "maintenance": "61ae35adc9b0b3ab17a64517934e29a0be9fe41f04efda6d378b3d48ede85c13"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "f37cbfd45b7ea6568a02d3937a6b44346194d4a1bed0f2c8b8394ef6a544f7cf"
+}

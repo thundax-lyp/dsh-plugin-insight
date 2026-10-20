@@ -1,0 +1,5 @@
+{
+  "text": "监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。",
+  "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+  "source_url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md"
+}

@@ -1,0 +1,4 @@
+{
+  "revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
+  "text": "先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。"
+}

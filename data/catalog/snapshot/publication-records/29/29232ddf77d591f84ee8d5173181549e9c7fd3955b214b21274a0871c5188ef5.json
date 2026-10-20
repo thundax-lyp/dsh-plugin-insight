@@ -1,0 +1,17 @@
+{
+  "id": "github:1334654243:root",
+  "repository": "1624318455/dsh-plugin-tavily",
+  "path": "",
+  "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+  "fingerprints": {
+    "directory": "11600ef83aed1ae15c5cc18bae00ae4dfc90f7ee6e65e303e27166e193447945",
+    "code": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+    "maintenance": "5de7840606fab81a9c304c317a92d3800ba33d08e251d4fde8d52407e499bb6d"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "dce1d436465c8237e9876691e2cc56fbfeeb2c4efd1d9e810f38815d240d742c"
+}

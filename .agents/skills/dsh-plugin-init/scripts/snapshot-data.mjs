@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+import {
+    readSnapshotStorage,
+    writeSnapshotStorage,
+    migrateSnapshotStorage
+} from '../../_shared/scripts/snapshot-storage.mjs';
 import { readWork, saveWork, migrateWork, workStorageFiles } from '../../_shared/scripts/work-storage.mjs';
 import { existsSync, readFileSync, mkdirSync, writeFileSync, openSync, closeSync, unlinkSync, rmSync } from 'node:fs';
 import { resolve, relative, isAbsolute, dirname } from 'node:path';
@@ -56,7 +61,7 @@ const local = (root, name) => {
     return full;
 };
 const snapshotFile = (root) => resolve(root, SNAPSHOT);
-const readSnapshot = (root) => validateSnapshot(read(snapshotFile(root)), root);
+export const readSnapshot = (root = ROOT) => validateSnapshot(readSnapshotStorage(snapshotFile(root)), root);
 const recordFor = (item, plugin, checkedAt) => ({
     ...Object.fromEntries(
         ['id', 'repository', 'path', 'revision', 'fingerprints', 'source_urls'].map((key) => [key, item[key]])
@@ -167,7 +172,7 @@ export function bootstrap(root = ROOT) {
     result.limitations.push('首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。');
     result.catalog.runs = [];
     validateSnapshot(result, root);
-    atomicWrite(snapshotFile(root), result);
+    writeSnapshotStorage(snapshotFile(root), result);
     return result;
 }
 export function startWork(input, path, limit = 40, root = ROOT) {
@@ -515,7 +520,7 @@ export function applySnapshot(plan, root = ROOT) {
         assertMergeReady(work);
         const rebuilt = assemble(current, work, root);
         if (digest(rebuilt) !== plan.result_digest) throw Error('plan does not match validated staged work');
-        atomicWrite(file, rebuilt);
+        writeSnapshotStorage(file, rebuilt);
         if (digest(readSnapshot(root)) !== plan.result_digest) throw Error('snapshot readback failed');
         return 'applied';
     } finally {
@@ -598,7 +603,7 @@ export async function main(args = process.argv.slice(2)) {
     const { values: v } = parseArgs({
         args: rest,
         options: Object.fromEntries(
-            ['input', 'work', 'limit', 'plugin', 'observations', 'report', 'display', 'out', 'plan']
+            ['input', 'work', 'limit', 'plugin', 'observations', 'report', 'display', 'out', 'plan', 'backup']
                 .map((k) => [k, { type: 'string' }])
                 .concat([['apply', { type: 'boolean', default: false }]])
         )
@@ -607,7 +612,11 @@ export async function main(args = process.argv.slice(2)) {
         if (!v[k]) throw Error(`--${k} required`);
         return resolve(v[k]);
     };
-    if (command === 'bootstrap') {
+    if (command === 'migrate-storage') {
+        readSnapshot(ROOT);
+        const backup = need('backup');
+        console.log(JSON.stringify(migrateSnapshotStorage(snapshotFile(ROOT), backup)));
+    } else if (command === 'bootstrap') {
         bootstrap();
         renderSnapshot();
     } else if (command === 'start') {
