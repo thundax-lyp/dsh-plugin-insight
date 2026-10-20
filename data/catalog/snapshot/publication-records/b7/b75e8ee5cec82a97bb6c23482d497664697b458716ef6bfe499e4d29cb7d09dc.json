@@ -1,0 +1,17 @@
+{
+  "id": "github:1381833652:root",
+  "repository": "173787247/dsh-wsl-tmux",
+  "path": "",
+  "revision": "f6f23727c2959d69559ec26f474d2e871473c224",
+  "fingerprints": {
+    "directory": "108a75c53b2266a17bf47fbc548eb40290388caae33563edde288605e2419cb7",
+    "code": "f6f23727c2959d69559ec26f474d2e871473c224",
+    "maintenance": "86f2d8ec004a7192fb06d9f2f1e701bce73f41423ef34ca7c20f71adf9384f60"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "79022aed341978d0bbc22fce023f18776a54716e4113107d04063fb16565b372"
+}

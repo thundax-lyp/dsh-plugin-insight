@@ -1,0 +1,52 @@
+{
+  "repository": "173787247/dsh-wsl-winshot",
+  "repository_id": 1391140767,
+  "captured_at": "2026-10-20T10:44:08.602Z",
+  "window_start": "2026-09-20T10:44:08.602Z",
+  "stars": 1,
+  "pushed_at": "2026-09-29T15:33:06Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20is%3Aopen&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20is%3Aopen&per_page=1\": net/http: TLS handshake timeout"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 12E0:5807F:2E1707:31D479:6AD74604 and timestamp 2026-10-20 10:44:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20created%3A2026-09-20T10%3A44%3A08.602Z..2026-10-20T10%3A44%3A08.602Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 13A0:3D0CCE:309473:345305:6AD74604 and timestamp 2026-10-20 10:44:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T10%3A44%3A08.602Z..2026-10-20T10%3A44%3A08.602Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1426:1F55CB:2BCD7C:2F8B95:6AD74605 and timestamp 2026-10-20 10:44:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20updated%3A2026-09-20T10%3A44%3A08.602Z..2026-10-20T10%3A44%3A08.602Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 14DA:E4B24:2DEF27:31AB29:6AD74606 and timestamp 2026-10-20 10:44:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-wsl-winshot",
+    "captured_at": "2026-10-20T10:44:22.601Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-wsl-winshot",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T10:44:22.601Z",
+      "source_url": "https://registry.npmjs.org/dsh-wsl-winshot",
+      "error": "HTTP 404"
+    }
+  }
+}

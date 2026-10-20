@@ -1,0 +1,245 @@
+{
+  "id": "github:1363291561:root",
+  "repository_id": 1363291561,
+  "component_id": "root",
+  "repository": "2021Heei/dsh-tts-flash",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-tts-flash",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "3beb7dabd6629266c156ddccc08316e63f0c8aca1131c0f132b37e0433b880c5",
+    "code": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+    "maintenance": "8395fae9625e34194b7815b4701f88f2ce255805d9f0372f87d3b5345115b7cf"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1363291561-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:48:00.608Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1363291561-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/README.md",
+      "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+      "captured_at": "2026-10-20T10:48:00.608Z",
+      "summary": "为 DSH 流式回复提供语音朗读、字幕浮条及等待短语，支持 Edge 与 OpenAI 兼容语音服务。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/2021heei--dsh-tts-flash/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1363291561-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts",
+      "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+      "captured_at": "2026-10-20T10:48:00.608Z",
+      "summary": "核查 src/index.ts、src/speak-queue.ts、src/segmenter.ts、src/providers/edge-tts.provider.ts；src/index.ts 在 llm/stream 旁路分句和短句合并，src/speak-queue.ts 按会话串行合成并经 SSE 发布；epoch 使取消前的在途音频失效，等待短语可直接使用缓存字节。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/2021heei--dsh-tts-flash/REVIEWED-SOURCE.json",
+      "limitations": [
+        "只核查固定版本的 host 管线、队列、分句和 Edge provider；未运行语音服务、未测浏览器自动播放、未独立复核延迟或语言质量。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合希望边听边看长回复的桌面用户；交付物是与当前会话对应的可中止音频及字幕，而非离线音频档案。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363291561:root",
+          "area": "code",
+          "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:00.608Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "src/index.ts 在 llm/stream 旁路分句和短句合并，src/speak-queue.ts 按会话串行合成并经 SSE 发布；epoch 使取消前的在途音频失效，等待短语可直接使用缓存字节。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363291561:root",
+          "area": "code",
+          "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:00.608Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "只核查固定版本的 host 管线、队列、分句和 Edge provider；未运行语音服务、未测浏览器自动播放、未独立复核延迟或语言质量。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363291561:root",
+          "area": "code",
+          "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:00.608Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "package.json 声明 lib/index.js 与 lib/client.js，build.mjs 打包源码；依赖 msedge-tts，语音基础设施由第三方实现，不把演示视频作为独立验收。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363291561:root",
+          "area": "code",
+          "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:00.608Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "默认 Edge 不需用户密钥，但联网和非公开服务可用性是持续成本；云端 TTS 按供应商计费，失败句和等待短语首次生成也可能消耗额度。首次配置音色/自动播放权限和日常核对漏句耗费人工，未测单位任务价格或耗时。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363291561:root",
+          "area": "code",
+          "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:00.608Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363291561:root",
+          "area": "code",
+          "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:00.608Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把生成和收听重叠可能缩短开始收听的等待；上游合成慢时会转移为内容遗漏，收益取决于回复速度、音色合成速度和用户是否需要全文，尚无同条件节时数据。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363291561:root",
+          "area": "code",
+          "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:00.608Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "值得借鉴的是 src/speak-queue.ts 的 epoch 取消：不必等外部合成真正取消，就能抑制过时结果；移植需补浏览器正在播放音频的停止契约。provider 在 pump 开始时取一次，热切换引擎与旧 provider 延迟 dispose 的交互需用长队列验证，不能把统一接口当作所有引擎行为完全相同。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1363291561:root",
+          "area": "code",
+          "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:00.608Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:48:00.608Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+    "reviewed_at": "2026-10-20T10:48:00.608Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1363291561:root",
+        "area": "code",
+        "fingerprint": "a23020b72a5c403e3dc50527b3ef43c6e55c739a"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty：相对已归属 dsh-voice 是局部多引擎扩展；mechanism：epoch 沿用式取消与缓存直通为小幅组合；transferability：provider/队列职责有实质复用价值但未跨宿主验证；simplification：等待/正文共用管线小幅简化。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow：减少复制但不改变交付责任，小幅；delivery：音频与字幕是现有文本的有限增量；reach：对边听边看人群有实质入口拓展但未验证无障碍合格性；economics：缓存可少重复合成，小幅、无费用实测。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-20-08-github-1363291561-root-source"
+      ]
+    }
+  }
+}

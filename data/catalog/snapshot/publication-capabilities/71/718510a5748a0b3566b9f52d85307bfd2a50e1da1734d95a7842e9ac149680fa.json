@@ -1,0 +1,6 @@
+{
+  "revision": "a2e7fba0ac5ac273634697e1503fdb6676cc557f",
+  "items": {
+    "模型工具": "systemd_status、systemd_user_list、systemd_user_show、journal_tail、systemd_user_journal"
+  }
+}

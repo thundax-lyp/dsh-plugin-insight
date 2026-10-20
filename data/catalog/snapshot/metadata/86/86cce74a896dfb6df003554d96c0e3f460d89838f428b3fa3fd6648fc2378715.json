@@ -1,0 +1,31 @@
+{
+  "repository": "173787247/dsh-wsl-tmux",
+  "repository_id": 1381833652,
+  "captured_at": "2026-10-20T10:43:49.739Z",
+  "window_start": "2026-09-20T10:43:49.739Z",
+  "stars": 1,
+  "pushed_at": "2026-09-30T03:23:01Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-wsl-tmux",
+    "captured_at": "2026-10-20T10:43:56.176Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-wsl-tmux",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T10:43:56.176Z",
+      "source_url": "https://registry.npmjs.org/dsh-wsl-tmux",
+      "error": "HTTP 404"
+    }
+  }
+}

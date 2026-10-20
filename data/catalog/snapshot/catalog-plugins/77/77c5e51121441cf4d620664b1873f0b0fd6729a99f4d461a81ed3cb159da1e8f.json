@@ -1,0 +1,245 @@
+{
+  "id": "github:1401037852:root",
+  "repository_id": 1401037852,
+  "component_id": "root",
+  "repository": "19north/dsh-redstone-music",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-redstone-music",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "content-creation",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "bbd83103cdc70d5de1619fa853e2c2b71aa08a66eed23b81ecc661313821e200",
+    "code": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+    "maintenance": "45a7653848fdf1a9f494354bd3e6c14bda53602b62962a046b0c8a98180418db"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1401037852-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:48:31.037Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1401037852-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md",
+      "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+      "captured_at": "2026-10-20T10:48:31.037Z",
+      "summary": "在 DSH 中渲染音乐采样并生成、部署 Minecraft 红石音乐数据包。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/19north--dsh-redstone-music/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1401037852-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts",
+      "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+      "captured_at": "2026-10-20T10:48:31.037Z",
+      "summary": "核查 src/tool-build.ts、src/tool-render.ts、src/music/rcon.ts；rm_render 从 SoundFont 渲染或对齐现有 WAV，rm_build 从轨表规划命令并写成分片 mcfunction，经串行 RCON 部署；采样清单连接渲染音高与建造计算。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/19north--dsh-redstone-music/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Minecraft 音乐创作者需要把谱面和乐器配置转成可播放世界；验收是音高、起音和轨道时序正确的成品。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401037852:root",
+          "area": "code",
+          "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:31.037Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "rm_render 从 SoundFont 渲染或对齐现有 WAV，rm_build 从轨表规划命令并写成分片 mcfunction，经串行 RCON 部署；采样清单连接渲染音高与建造计算。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401037852:root",
+          "area": "code",
+          "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:31.037Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401037852:root",
+          "area": "code",
+          "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:31.037Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401037852:root",
+          "area": "code",
+          "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:31.037Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金可能涉及游戏、服务器与采样许可；人工集中在音色配置、模组兼容、世界备份和听测。无相同成品下的总工时实测。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401037852:root",
+          "area": "code",
+          "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:31.037Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已有 Minecraft 音乐环境的创作者；先用短片段验证采样、时序和世界备份恢复，再构建长曲。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401037852:root",
+          "area": "code",
+          "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:31.037Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "贡献在缩短音色到世界建造的交接链；若模组或音色约定不匹配，批处理速度无法弥补音乐错误。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401037852:root",
+          "area": "code",
+          "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:31.037Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "src/music/rcon.ts 用串行队列防止在途命令争抢，tool-build.ts 以 mcfunction 分片规避逐格网络往返，tool-render.ts 的输入归一化提供可定位错误。复用批处理设计需自行定义幂等与中断恢复边界。 源码：[src/tool-build.ts](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts)、[src/tool-render.ts](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-render.ts)、[src/music/rcon.ts](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/music/rcon.ts)。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1401037852:root",
+          "area": "code",
+          "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:31.037Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:48:31.037Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+    "reviewed_at": "2026-10-20T10:48:31.037Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1401037852:root",
+        "area": "code",
+        "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 18,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：既有音频和数据包技术的特定组合；mechanism：起音与几何延迟补偿改变关键时序；transferability：批处理可复用；simplification：联通采样与建造但依赖多。",
+      "basis": "interpretation",
+      "score": 51,
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：合并采样与建造交接；delivery：生成可部署音乐世界材料；reach：仍需模组及音乐能力；economics：批量命令减往返但作者速度未复现。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-20-08-github-1401037852-root-source"
+      ]
+    }
+  }
+}

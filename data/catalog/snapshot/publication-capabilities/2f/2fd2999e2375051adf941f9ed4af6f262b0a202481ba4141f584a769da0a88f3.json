@@ -1,0 +1,8 @@
+{
+  "revision": "49228e54a6a536ddbbb0adca85bd016334cbf4cc",
+  "items": {
+    "界面": "侧栏入口与图谱能力面板",
+    "后台": "文档 watch 与 revision 查询",
+    "Host 路由": "/capmap RPC解析、读取及后台初始化"
+  }
+}

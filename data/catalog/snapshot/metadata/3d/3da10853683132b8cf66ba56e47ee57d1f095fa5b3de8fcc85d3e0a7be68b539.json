@@ -1,0 +1,31 @@
+{
+  "repository": "2026heshao/dsh-draft-attachments",
+  "repository_id": 1414492607,
+  "captured_at": "2026-10-20T10:44:53.343Z",
+  "window_start": "2026-09-20T10:44:53.343Z",
+  "stars": 1,
+  "pushed_at": "2026-10-19T10:11:32Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-draft-attachments",
+    "captured_at": "2026-10-20T10:44:59.501Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": 23,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-draft-attachments",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-10-13T02:37:14.708Z",
+      "captured_at": "2026-10-20T10:44:59.501Z",
+      "source_url": "https://registry.npmjs.org/dsh-draft-attachments",
+      "error": null
+    }
+  }
+}

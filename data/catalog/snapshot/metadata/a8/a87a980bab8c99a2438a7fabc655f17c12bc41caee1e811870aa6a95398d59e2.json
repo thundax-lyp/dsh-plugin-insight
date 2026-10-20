@@ -1,0 +1,52 @@
+{
+  "repository": "18569663yz-web/dsh-plugin-crypto-ticker",
+  "repository_id": 1389061748,
+  "captured_at": "2026-10-20T10:44:23.799Z",
+  "window_start": "2026-09-20T10:44:23.799Z",
+  "stars": 1,
+  "pushed_at": "2026-09-26T12:10:26Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A18569663yz-web%2Fdsh-plugin-crypto-ticker%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1784:1F2C1C:2EF624:32B1AB:6AD74609 and timestamp 2026-10-20 10:44:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A18569663yz-web%2Fdsh-plugin-crypto-ticker%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 180E:1FA706:31D99C:3596A8:6AD7460A and timestamp 2026-10-20 10:44:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A18569663yz-web%2Fdsh-plugin-crypto-ticker%20is%3Aissue%20created%3A2026-09-20T10%3A44%3A23.799Z..2026-10-20T10%3A44%3A23.799Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 18AE:57D6F:2F26C0:32E3E4:6AD7460B and timestamp 2026-10-20 10:44:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A18569663yz-web%2Fdsh-plugin-crypto-ticker%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T10%3A44%3A23.799Z..2026-10-20T10%3A44%3A23.799Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 19C6:1F9A04:2E6962:32283F:6AD7460B and timestamp 2026-10-20 10:44:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A18569663yz-web%2Fdsh-plugin-crypto-ticker%20is%3Aissue%20updated%3A2026-09-20T10%3A44%3A23.799Z..2026-10-20T10%3A44%3A23.799Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1AB4:1F3D0C:2EBB08:32769B:6AD7460C and timestamp 2026-10-20 10:44:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-plugin-crypto-ticker",
+    "captured_at": "2026-10-20T10:44:28.993Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-plugin-crypto-ticker",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T10:44:28.993Z",
+      "source_url": "https://registry.npmjs.org/dsh-plugin-crypto-ticker",
+      "error": "HTTP 404"
+    }
+  }
+}

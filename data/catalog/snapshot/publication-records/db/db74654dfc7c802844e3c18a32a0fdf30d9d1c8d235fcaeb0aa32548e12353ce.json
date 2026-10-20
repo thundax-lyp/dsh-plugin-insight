@@ -1,0 +1,17 @@
+{
+  "id": "github:1389061748:root",
+  "repository": "18569663yz-web/dsh-plugin-crypto-ticker",
+  "path": "",
+  "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+  "fingerprints": {
+    "directory": "6250fcacea7c4a64f7e026a7820598d49ca43f6a595798ad5c1262455591a03a",
+    "code": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+    "maintenance": "bfc78f2a3b736f764213f8efa636cc51d3d61cd1551ced2fe2e8a481fbbac614"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "7be5b46c5dae51409301600325b8f0354d11fdf96294a1a59ef97704f7e81100"
+}
