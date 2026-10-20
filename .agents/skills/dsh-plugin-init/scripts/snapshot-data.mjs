@@ -236,6 +236,12 @@ function startWorkUnlocked(input, path, limit, root) {
                 digest([...item.source_urls].sort()) !== digest([...before.source_urls].sort())
             )
                 changes.push('sources_changed');
+            const missingSources = (discoverySources.get(item.id) ?? []).filter(
+                (url) => !item.source_urls.includes(url)
+            );
+            if (missingSources.some((url) => !input.sources.some((source) => source.url === url && source.complete))) {
+                if (!changes.includes('unknown')) changes.push('unknown');
+            } else if (missingSources.length && !changes.includes('sources_changed')) changes.push('sources_changed');
             if (!changes.length) changes.push('unchanged');
         }
         item.changes = changes;
@@ -370,20 +376,41 @@ function assemble(base, work, root = ROOT) {
     next.checked_at = work.session.checked_at;
     next.publication.checked_at = next.checked_at;
     next.publication.scope = `本轮所选 ${selected.size}，完成 ${Object.keys(work.records).length}，受阻 ${selectedItems(work.session).filter((i) => i.status === 'blocked').length}；当前发布 ${records.size}`;
-    const incomingIds = new Set(work.input.plugins.map((p) => p.id));
-    const uncertainMissing = base.discovery.plugins.filter(
-        (p) =>
-            !incomingIds.has(p.id) &&
-            (p.source_urls.length === 0 ||
-                !p.source_urls.every((url) => work.input.sources.some((s) => s.url === url && s.complete)))
-    );
-    next.discovery = {
-        sources: work.input.sources,
-        plugins: [...work.input.plugins, ...uncertainMissing],
-        complete_baseline: work.input.sources.every((s) => s.complete) && uncertainMissing.length === 0
-    };
+    next.discovery = mergeDiscovery(base.discovery, work.input);
     next.transaction = { id: work.session.id, work_digest: digest(work) };
     return validateSnapshot(next, root);
+}
+// Keep memberships that an incomplete source cannot yet disprove.
+export function mergeDiscovery(previous, input) {
+    const complete = new Set(input.sources.filter((source) => source.complete).map((source) => source.url));
+    const byId = new Map(previous.plugins.map((plugin) => [plugin.id, plugin]));
+    const incomingIds = new Set(input.plugins.map((plugin) => plugin.id));
+    const uncertainMissing = previous.plugins.filter(
+        (plugin) =>
+            !incomingIds.has(plugin.id) &&
+            (!plugin.source_urls.length || plugin.source_urls.some((url) => !complete.has(url)))
+    );
+    const plugins = [
+        ...input.plugins.map((plugin) => ({
+            ...plugin,
+            source_urls: [
+                ...new Set([
+                    ...plugin.source_urls,
+                    ...(byId.get(plugin.id)?.source_urls ?? []).filter((url) => !complete.has(url))
+                ])
+            ]
+        })),
+        ...uncertainMissing
+    ];
+    const sources = structuredClone(input.sources);
+    for (const plugin of plugins)
+        for (const url of plugin.source_urls)
+            if (!sources.some((source) => source.url === url)) sources.push({ url, revision: null, complete: false });
+    return {
+        sources,
+        plugins,
+        complete_baseline: sources.every((source) => source.complete) && uncertainMissing.length === 0
+    };
 }
 export function stageRecord(workPath, id, observationPath, reportPath, displayPath, root = ROOT) {
     const lock = workPath + '.lock';
