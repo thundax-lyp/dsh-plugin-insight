@@ -130,8 +130,9 @@ function ensureMainCI(repository, workflow, mergeSha, number, apply) {
         .filter((run) => run.head_branch === 'main' && ['push', 'workflow_dispatch'].includes(run.event))
         .sort((a, b) => b.id - a.id)[0];
     let run = exact ? api(repository, `actions/runs/${exact.id}`) : null;
+    const mainSha = api(repository, 'git/ref/heads/main').object.sha;
+    if (run?.status === 'completed' && run.conclusion !== 'success' && mainSha !== mergeSha) run = null;
     if (!run) {
-        const mainSha = api(repository, 'git/ref/heads/main').object.sha;
         const existing = pages(repository, `actions/workflows/${workflow.id}/runs?head_sha=${mainSha}`, 'workflow_runs')
             .filter((item) => item.head_branch === 'main' && ['push', 'workflow_dispatch'].includes(item.event))
             .sort((a, b) => b.id - a.id)[0];
