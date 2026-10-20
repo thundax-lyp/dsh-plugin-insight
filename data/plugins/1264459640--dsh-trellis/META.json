@@ -1,8 +1,8 @@
 {
   "repository": "1264459640/dsh-trellis",
   "repository_id": 1335559646,
-  "captured_at": "2026-10-20T02:57:50.341Z",
-  "window_start": "2026-09-20T02:57:50.341Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 8,
   "pushed_at": "2026-10-08T06:40:44Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9FB4:12853D:92D40:9D30D:6AD6D8AF and timestamp 2026-10-20 02:57:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C4A:D8648:17E6BB:4E14FD:6AD705AC and timestamp 2026-10-20 06:09:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A066:76213:90481:9A916:6AD6D8B0 and timestamp 2026-10-20 02:57:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C4B:11EE30:18CC62:508E40:6AD705AC and timestamp 2026-10-20 06:09:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20created%3A2026-09-20T02%3A57%3A50.341Z..2026-10-20T02%3A57%3A50.341Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A0D8:1D6B3A:964C7:A0985:6AD6D8B1 and timestamp 2026-10-20 02:57:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C4C:169691:1964E9:534622:6AD705AC and timestamp 2026-10-20 06:09:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A57%3A50.341Z..2026-10-20T02%3A57%3A50.341Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A156:3B5164:97972:A1E45:6AD6D8B2 and timestamp 2026-10-20 02:57:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C4D:147C7E:16EA65:4A75C7:6AD705AC and timestamp 2026-10-20 06:09:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20updated%3A2026-09-20T02%3A57%3A50.341Z..2026-10-20T02%3A57%3A50.341Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A1F6:1E00D3:9B74E:A5C80:6AD6D8B3 and timestamp 2026-10-20 02:57:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1264459640%2Fdsh-trellis%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C51:11EE30:18CEF3:509694:6AD705AC and timestamp 2026-10-20 06:09:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "@banana-peeljj12/dsh-trellis",
-    "captured_at": "2026-10-20T02:57:55.288Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": 1576,
@@ -44,9 +44,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-18T03:29:35.618Z",
-      "captured_at": "2026-10-20T02:57:55.288Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/%40banana-peeljj12%2Fdsh-trellis",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85",
+    "current_revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

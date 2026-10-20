@@ -1,16 +1,29 @@
 {
   "repository": "01men/ybkkasi",
   "repository_id": 1416699252,
-  "captured_at": "2026-10-20T02:56:24.094Z",
-  "window_start": "2026-09-20T02:56:24.094Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 0,
   "pushed_at": "2026-10-20T00:04:27Z",
   "issues": {
-    "open": 0,
+    "open": null,
     "closed": 0,
-    "created_30d": 0,
+    "created_30d": 2,
     "closed_30d": 0,
-    "updated_30d": 0
+    "updated_30d": 2
   },
-  "errors": []
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A01men%2Fybkkasi%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C33:38DA9C:174102:4C7C92:6AD705B7 and timestamp 2026-10-20 06:09:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+    "current_revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
 }

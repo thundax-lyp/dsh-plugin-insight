@@ -1,42 +1,21 @@
 {
   "repository": "0nt-one/dsh-voice-input",
   "repository_id": 1335558973,
-  "captured_at": "2026-10-20T02:56:47.770Z",
-  "window_start": "2026-09-20T02:56:47.770Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 5,
   "pushed_at": "2026-08-16T02:38:42Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A0nt-one%2Fdsh-voice-input%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6460:7339C:9069D:9A97D:6AD6D871 and timestamp 2026-10-20 02:56:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A0nt-one%2Fdsh-voice-input%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 65D4:7AA34:8AFCC:95095:6AD6D872 and timestamp 2026-10-20 02:56:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A0nt-one%2Fdsh-voice-input%20is%3Aissue%20created%3A2026-09-20T02%3A56%3A47.770Z..2026-10-20T02%3A56%3A47.770Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 66C8:1DBF5C:989EF:A2C44:6AD6D873 and timestamp 2026-10-20 02:56:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A0nt-one%2Fdsh-voice-input%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A56%3A47.770Z..2026-10-20T02%3A56%3A47.770Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 676E:1D8BCE:842F0:8E450:6AD6D874 and timestamp 2026-10-20 02:56:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A0nt-one%2Fdsh-voice-input%20is%3Aissue%20updated%3A2026-09-20T02%3A56%3A47.770Z..2026-10-20T02%3A56%3A47.770Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6828:F5B22:9057E:9A779:6AD6D875 and timestamp 2026-10-20 02:56:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-voice-input-web",
-    "captured_at": "2026-10-20T02:56:53.886Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": 71,
@@ -44,9 +23,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-15T05:26:06.925Z",
-      "captured_at": "2026-10-20T02:56:53.886Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/dsh-voice-input-web",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+    "current_revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

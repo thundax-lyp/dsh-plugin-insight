@@ -12,7 +12,7 @@
 
 ## 最热
 
-- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · [![GitHub ★ 183](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=183&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
+- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · [![GitHub ★ 185](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=185&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
 - [dsh-plugin-tts](data/plugins/1624318455--dsh-plugin-tts/INSIGHT.md) · [![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts)
 - [dsh-spotlight](data/plugins/0xsline--dsh-spotlight/INSIGHT.md) · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/0xsline/dsh-spotlight)
 
@@ -39,7 +39,7 @@
 
 #### [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)
 
-[![GitHub ★ 183](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=183&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11750](https://img.shields.io/static/v1?label=npm+30d&message=11%2C750&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) · [![最后更新 昨天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E6%98%A8%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
+[![GitHub ★ 185](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=185&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11750](https://img.shields.io/static/v1?label=npm+30d&message=11%2C750&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) · [![最后更新 昨天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E6%98%A8%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
 
 - **用途**：希望改善等待体验的桌面用户，以更清楚或有趣的状态文案替代默认状态行。
 - **亮点**：Host 保存并提供配置，客户端按阶段和偏好选择文案，支持持久化覆盖与扩展词库。

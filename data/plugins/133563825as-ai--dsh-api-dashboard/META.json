@@ -1,8 +1,8 @@
 {
   "repository": "133563825as-ai/dsh-api-dashboard",
   "repository_id": 1346196699,
-  "captured_at": "2026-10-20T04:26:01.982Z",
-  "window_start": "2026-09-20T04:26:01.982Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 17,
   "pushed_at": "2026-10-10T05:54:00Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C65E:1DD6B8:18637F:1A24C7:6AD6ED5B and timestamp 2026-10-20 04:26:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3B:1D671B:16AEBF:49D591:6AD705CB and timestamp 2026-10-20 06:10:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C700:3B8230:16EF83:18AE3A:6AD6ED5C and timestamp 2026-10-20 04:26:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3D:3182DF:17ACA7:4D2F66:6AD705CB and timestamp 2026-10-20 06:10:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20created%3A2026-09-20T04%3A26%3A01.982Z..2026-10-20T04%3A26%3A01.982Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C7DA:12853D:18C00D:1A8022:6AD6ED5D and timestamp 2026-10-20 04:26:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3F:20C52B:18A83C:4F60FE:6AD705CB and timestamp 2026-10-20 06:10:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A26%3A01.982Z..2026-10-20T04%3A26%3A01.982Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C86C:73868:175F27:191E51:6AD6ED5E and timestamp 2026-10-20 04:26:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C43:302B6A:1671B9:494A9E:6AD705CB and timestamp 2026-10-20 06:10:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20updated%3A2026-09-20T04%3A26%3A01.982Z..2026-10-20T04%3A26%3A01.982Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C912:163F0:1841ED:1A0228:6AD6ED5E and timestamp 2026-10-20 04:26:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C45:1D671B:16B252:49E186:6AD705CC and timestamp 2026-10-20 06:10:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-api-dashboard",
-    "captured_at": "2026-10-20T04:26:07.076Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": 4246,
@@ -44,9 +44,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-28T04:07:58.382Z",
-      "captured_at": "2026-10-20T04:26:07.076Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/dsh-api-dashboard",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+    "current_revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

@@ -30,11 +30,19 @@ jobs:
               env:
                   RUN_ID: ${{ github.run_id }}
               run: |
+                  set -o pipefail
                   git config user.name 'github-actions[bot]'
                   git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-                  existing=$(gh pr list --state open --json headRefName --jq '[.[] | select(.headRefName | test("^codex/daily-meta-[0-9]+$"))][0].headRefName // empty')
+                  existing=$(gh api --paginate --slurp "repos/$GH_REPO/pulls?state=open&per_page=100" | jq -r '[.[][] | select(.user.login == "github-actions[bot]" and .base.ref == "main" and .head.repo.full_name == .base.repo.full_name and (.head.ref | test("^codex/daily-meta-[0-9]+$")))] | sort_by(.number) | .[0].head.ref // empty')
                   if [ -n "$existing" ]; then
                     git fetch origin "$existing:refs/remotes/origin/$existing"
+                    # Never execute package/scripts/workflows contributed on a reused branch.
+                    while IFS= read -r file; do
+                      case "$file" in
+                        README.md|data/catalog/SNAPSHOT.json|data/plugins/*/META.json|data/plugins/*/INSIGHT.md|data/views/categories/*.md) ;;
+                        *) echo "Unexpected file on META branch: $file" >&2; exit 1 ;;
+                      esac
+                    done < <(git diff --name-only origin/main..."origin/$existing")
                     git switch -c "$existing" --track "origin/$existing"
                     git merge origin/main --no-edit
                     echo "META_BRANCH=$existing" >> "$GITHUB_ENV"
@@ -69,7 +77,7 @@ jobs:
                   每日按当前插件清单刷新 Star、npm 近30天下载、Issue 活跃度和相对更新时间。
                   对比研究版本标记组件脚本变化，保留原有研究结论与证据，不执行目标插件。
 
-                  验证：npm run check、git diff --check。未进行实际插件效果验收；由维护者评审并合并。
+                  验证：npm run check、git diff --check。未进行实际插件效果验收；当前提交检查通过、Codex 评审完成且讨论解决后，由 META PR maintenance 自动普通合并。
                   BODY
                     gh pr create --base main --head "$META_BRANCH" --title 'Chore(repo/meta): 更新插件 META 与待洞察标记' --body-file "$body"
                   fi
