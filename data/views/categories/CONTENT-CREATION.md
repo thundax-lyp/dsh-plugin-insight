@@ -2,7 +2,9 @@
 
 [返回首页](../../../README.md)
 
-## 快速比较
+写作、语音、图片与视频内容生产。
+
+**快速比较**
 
 索引与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
 
@@ -12,11 +14,9 @@
 | [dsh-plugin-tts](#plugin-1334773156-root) | 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 | 先选一个后端，用短文本和长文检查播放与取消，再引入本地音色服务；需要离线或隐私边界时逐条确认所选后端数据流。 |
 | [No AI Style](#plugin-1418493685-root) | 以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。 | 先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。 |
 
-### 内容生产（3）
-
 <a id="plugin-1399694663-root"></a>
 
-#### [dsh-media-studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
+## [dsh-media-studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio) · **脚本有更新，待重新洞察**
 
@@ -27,7 +27,7 @@
 
 <a id="plugin-1334773156-root"></a>
 
-#### [dsh-plugin-tts](../../plugins/1624318455--dsh-plugin-tts/INSIGHT.md)
+## [dsh-plugin-tts](../../plugins/1624318455--dsh-plugin-tts/INSIGHT.md)
 
 [![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts) · [![npm 30d 2693](https://img.shields.io/static/v1?label=npm+30d&message=2%2C693&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts)
 
@@ -38,7 +38,7 @@
 
 <a id="plugin-1418493685-root"></a>
 
-#### [No AI Style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
+## [No AI Style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
 
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
 

@@ -13,6 +13,7 @@ import {
     renderCategoryIndex,
     renderHomeCategories,
     renderHomeNavigation,
+    categoryScope,
     renderUpdated,
     renderIssueActivity,
     renderWeeklyNew,
@@ -276,6 +277,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             template('CATEGORY-PAGE', {
                 name: g.name,
                 home: link(g.path, 'README.md'),
+                scope: categoryScope(g.key),
                 categories: renderCategories(g.entries, (e) => link(g.path, e.detailPath)),
                 updated: renderUpdated(updated)
             }) + '\n'

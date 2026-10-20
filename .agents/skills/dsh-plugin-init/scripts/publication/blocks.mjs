@@ -216,7 +216,9 @@ export function renderCategories(items, href) {
             template('CATEGORY-COMPARISON-ITEM', {
                 plugin: nameLink(e),
                 purpose: tableCell(e.summary),
-                conditions: tableCell(e.usageConditions)
+                conditions: tableCell(
+                    e.usageConditions.match(/^[\s\S]*?[。！？](?=\s|$|[^。！？])/u)?.[0] ?? e.usageConditions
+                )
             })
         )
         .join('\n');
@@ -234,7 +236,7 @@ export function renderCategories(items, href) {
                 })
             )
             .join('\n\n');
-        sections.push(template('CATEGORY', { name: category, count: entries.length, plugins }));
+        sections.push(plugins);
     }
     return template('CATEGORY-COMPARISON', { navigation, groups: sections.join('\n\n') });
 }

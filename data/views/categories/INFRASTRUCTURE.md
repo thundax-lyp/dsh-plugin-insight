@@ -2,7 +2,9 @@
 
 [返回首页](../../../README.md)
 
-## 快速比较
+模型接入、认证、运行环境与系统支撑。
+
+**快速比较**
 
 索引与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
 
@@ -30,11 +32,9 @@
 | [元冰可 AI 资源治理平台](#plugin-1416699252-root) | 将组织、权限、MCP、模型与用量管理整合为可独立运行或接入 DSH 的治理平台。 | 仅在确有多用户资源治理需求时试部署，先验证最小权限、备份恢复和一条完整业务链。 |
 | [模型信息补全](#plugin-1358816037-root) | 从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。 | 先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。 |
 
-### 基础设施（21）
-
 <a id="plugin-1333368566-root"></a>
 
-#### [DSH Telemetry Redactor](../../plugins/030611--dsh-telemetry-redactor/INSIGHT.md)
+## [DSH Telemetry Redactor](../../plugins/030611--dsh-telemetry-redactor/INSIGHT.md)
 
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-telemetry-redactor) · [![npm 30d 1216](https://img.shields.io/static/v1?label=npm+30d&message=1%2C216&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-telemetry-redactor)
 
@@ -45,7 +45,7 @@
 
 <a id="plugin-1366089972-workspace-plugins-dsh-anatomy-panel"></a>
 
-#### [dsh-anatomy-panel](../../plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/INSIGHT.md)
+## [dsh-anatomy-panel](../../plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/INSIGHT.md)
 
 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body)
 
@@ -56,7 +56,7 @@
 
 <a id="plugin-1346196699-root"></a>
 
-#### [dsh-api-dashboard](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md)
+## [dsh-api-dashboard](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md)
 
 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/133563825as-ai/dsh-api-dashboard) · [![npm 30d 4246](https://img.shields.io/static/v1?label=npm+30d&message=4%2C246&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-api-dashboard)
 
@@ -67,7 +67,7 @@
 
 <a id="plugin-1366089972-workspace-plugins-dsh-organism"></a>
 
-#### [dsh-organism](../../plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/INSIGHT.md)
+## [dsh-organism](../../plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/INSIGHT.md)
 
 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body)
 
@@ -78,7 +78,7 @@
 
 <a id="plugin-1374274469-root"></a>
 
-#### [dsh-plugin-adapter](../../plugins/1624318455--dsh-plugin-adapter/INSIGHT.md)
+## [dsh-plugin-adapter](../../plugins/1624318455--dsh-plugin-adapter/INSIGHT.md)
 
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
 
@@ -89,7 +89,7 @@
 
 <a id="plugin-1374274543-root"></a>
 
-#### [dsh-plugin-proxy](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md)
+## [dsh-plugin-proxy](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md)
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-proxy) · [![npm 30d 94](https://img.shields.io/static/v1?label=npm+30d&message=94&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy)
 
@@ -100,7 +100,7 @@
 
 <a id="plugin-1367305514-root"></a>
 
-#### [dsh-reasoning-tiers](../../plugins/1069137617--dsh-reasoning-tiers/INSIGHT.md)
+## [dsh-reasoning-tiers](../../plugins/1069137617--dsh-reasoning-tiers/INSIGHT.md)
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1069137617/dsh-reasoning-tiers) · [![npm 30d 1061](https://img.shields.io/static/v1?label=npm+30d&message=1%2C061&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-reasoning-tiers)
 
@@ -111,7 +111,7 @@
 
 <a id="plugin-1384810201-root"></a>
 
-#### [dsh-remote-ssh](../../plugins/173787247--dsh-remote-ssh/INSIGHT.md)
+## [dsh-remote-ssh](../../plugins/173787247--dsh-remote-ssh/INSIGHT.md)
 
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-remote-ssh)
 
@@ -122,7 +122,7 @@
 
 <a id="plugin-1343420855-root"></a>
 
-#### [dsh-ui-auth](../../plugins/0qwq0--dsh-ui-auth/INSIGHT.md)
+## [dsh-ui-auth](../../plugins/0qwq0--dsh-ui-auth/INSIGHT.md)
 
 [![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-ui-auth) · [![npm 30d 1608](https://img.shields.io/static/v1?label=npm+30d&message=1%2C608&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ui-auth)
 
@@ -133,7 +133,7 @@
 
 <a id="plugin-1335060007-root"></a>
 
-#### [dsh-web-restart](../../plugins/1123762794--dsh-web-restart/INSIGHT.md)
+## [dsh-web-restart](../../plugins/1123762794--dsh-web-restart/INSIGHT.md)
 
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1123762794/dsh-web-restart) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-web-restart)
 
@@ -144,7 +144,7 @@
 
 <a id="plugin-1366583376-root"></a>
 
-#### [dsh-web-url-view](../../plugins/1032740078--dsh-web-url-view/INSIGHT.md)
+## [dsh-web-url-view](../../plugins/1032740078--dsh-web-url-view/INSIGHT.md)
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1032740078/dsh-web-url-view)
 
@@ -155,7 +155,7 @@
 
 <a id="plugin-1351854066-root"></a>
 
-#### [dsh-wsl-clock](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md)
+## [dsh-wsl-clock](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-clock)
 
@@ -166,7 +166,7 @@
 
 <a id="plugin-1391141174-root"></a>
 
-#### [dsh-wsl-defender](../../plugins/173787247--dsh-wsl-defender/INSIGHT.md)
+## [dsh-wsl-defender](../../plugins/173787247--dsh-wsl-defender/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-defender)
 
@@ -177,7 +177,7 @@
 
 <a id="plugin-1350379001-root"></a>
 
-#### [dsh-wsl-distro](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md)
+## [dsh-wsl-distro](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro)
 
@@ -188,7 +188,7 @@
 
 <a id="plugin-1351854118-root"></a>
 
-#### [dsh-wsl-dns](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md)
+## [dsh-wsl-dns](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-dns)
 
@@ -199,7 +199,7 @@
 
 <a id="plugin-1351854301-root"></a>
 
-#### [dsh-wsl-docker](../../plugins/173787247--dsh-wsl-docker/INSIGHT.md)
+## [dsh-wsl-docker](../../plugins/173787247--dsh-wsl-docker/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-docker)
 
@@ -210,7 +210,7 @@
 
 <a id="plugin-1363429979-plugin-usage-billing"></a>
 
-#### [Forge 用量计费](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md)
+## [Forge 用量计费](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md)
 
 [![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1814](https://img.shields.io/static/v1?label=npm+30d&message=1%2C814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
 
@@ -221,7 +221,7 @@
 
 <a id="plugin-1333357514-root"></a>
 
-#### [Qiushi DSH Evidence Audit](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md)
+## [Qiushi DSH Evidence Audit](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md)
 
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/030611/qiushi-dsh-evidence-audit) · [![npm 30d 1208](https://img.shields.io/static/v1?label=npm+30d&message=1%2C208&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/qiushi-dsh-evidence-audit)
 
@@ -232,7 +232,7 @@
 
 <a id="plugin-1400927706-root"></a>
 
-#### [Quota 用量仪表](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md)
+## [Quota 用量仪表](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota) · [![npm 30d 138](https://img.shields.io/static/v1?label=npm+30d&message=138&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota)
 
@@ -243,7 +243,7 @@
 
 <a id="plugin-1416699252-root"></a>
 
-#### [元冰可 AI 资源治理平台](../../plugins/01men--ybkkasi/INSIGHT.md)
+## [元冰可 AI 资源治理平台](../../plugins/01men--ybkkasi/INSIGHT.md)
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/01men/ybkkasi)
 
@@ -254,7 +254,7 @@
 
 <a id="plugin-1358816037-root"></a>
 
-#### [模型信息补全](../../plugins/11zld22--dsh-model-info-fill/INSIGHT.md)
+## [模型信息补全](../../plugins/11zld22--dsh-model-info-fill/INSIGHT.md)
 
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill)
 

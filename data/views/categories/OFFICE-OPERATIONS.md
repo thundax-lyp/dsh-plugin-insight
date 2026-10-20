@@ -2,7 +2,9 @@
 
 [返回首页](../../../README.md)
 
-## 快速比较
+工作记录、日程、团队用量与日常运营。
+
+**快速比较**
 
 索引与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
 
@@ -16,11 +18,9 @@
 | [dsh-wsl-cal](#plugin-1381860995-root) | 通过本地khal读取日历列表、今日日程和未来指定天数的安排。 | 适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。 |
 | [Forge 工作报告](#plugin-1363429979-plugin-daily-log) | 汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。 | 先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。 |
 
-### 办公与运营（7）
-
 <a id="plugin-1406611614-root"></a>
 
-#### [AI 残渣清运](../../plugins/1344738825--ai-residue-cleaner/INSIGHT.md)
+## [AI 残渣清运](../../plugins/1344738825--ai-residue-cleaner/INSIGHT.md)
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner)
 
@@ -31,7 +31,7 @@
 
 <a id="plugin-1342742812-root"></a>
 
-#### [dsh-crypto-portfolio](../../plugins/0xrabit--dsh-crypto-portfolio/INSIGHT.md)
+## [dsh-crypto-portfolio](../../plugins/0xrabit--dsh-crypto-portfolio/INSIGHT.md)
 
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio)
 
@@ -42,7 +42,7 @@
 
 <a id="plugin-1384810806-root"></a>
 
-#### [dsh-device-bridge](../../plugins/173787247--dsh-device-bridge/INSIGHT.md)
+## [dsh-device-bridge](../../plugins/173787247--dsh-device-bridge/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-device-bridge)
 
@@ -53,7 +53,7 @@
 
 <a id="plugin-1384810483-root"></a>
 
-#### [dsh-mac-companion](../../plugins/173787247--dsh-mac-companion/INSIGHT.md)
+## [dsh-mac-companion](../../plugins/173787247--dsh-mac-companion/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-mac-companion)
 
@@ -64,7 +64,7 @@
 
 <a id="plugin-1364961230-root"></a>
 
-#### [dsh-team-cost](../../plugins/1569126506-sudo--dsh-team-cost/INSIGHT.md)
+## [dsh-team-cost](../../plugins/1569126506-sudo--dsh-team-cost/INSIGHT.md)
 
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/1569126506-sudo/dsh-team-cost)
 
@@ -75,7 +75,7 @@
 
 <a id="plugin-1381860995-root"></a>
 
-#### [dsh-wsl-cal](../../plugins/173787247--dsh-wsl-cal/INSIGHT.md)
+## [dsh-wsl-cal](../../plugins/173787247--dsh-wsl-cal/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-cal)
 
@@ -86,7 +86,7 @@
 
 <a id="plugin-1363429979-plugin-daily-log"></a>
 
-#### [Forge 工作报告](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)
+## [Forge 工作报告](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)
 
 [![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1980](https://img.shields.io/static/v1?label=npm+30d&message=1%2C980&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
 
