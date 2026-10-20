@@ -1,8 +1,8 @@
 {
   "repository": "173787247/dsh-mac-companion",
   "repository_id": 1384810483,
-  "captured_at": "2026-10-20T06:08:58.680Z",
-  "window_start": "2026-09-20T06:08:58.680Z",
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
   "stars": 1,
   "pushed_at": "2026-09-30T03:21:33Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C45:1D671B:175C64:4C10A1:6AD705E9 and timestamp 2026-10-20 06:10:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A843:1D9EE7:7CB160:194D6C1:6AD715BD and timestamp 2026-10-20 07:18:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C4F:293E82:18919F:5023F2:6AD705E9 and timestamp 2026-10-20 06:10:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A842:3F9829:8E9261:1D3B7CA:6AD715BD and timestamp 2026-10-20 07:18:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C50:1DBDA9:1B78A4:5B480D:6AD705E9 and timestamp 2026-10-20 06:10:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A844:3CF716:7951ED:189B1EA:6AD715BD and timestamp 2026-10-20 07:18:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C46:172A84:18AE59:504BCF:6AD705E9 and timestamp 2026-10-20 06:10:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A84F:3EA53A:7D65AE:1996A25:6AD715BE and timestamp 2026-10-20 07:18:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C31:CE852:1A06FB:54E75E:6AD705EA and timestamp 2026-10-20 06:10:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-mac-companion%20is%3Aissue%20updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A852:1D620F:873FE8:1BB0025:6AD715BE and timestamp 2026-10-20 07:18:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-mac-companion",
-    "captured_at": "2026-10-20T06:08:58.680Z",
+    "captured_at": "2026-10-20T07:15:30.299Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": null,
@@ -44,13 +44,13 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T06:08:58.680Z",
+      "captured_at": "2026-10-20T07:15:30.299Z",
       "source_url": "https://registry.npmjs.org/dsh-mac-companion",
       "error": "HTTP 404"
     }
   },
   "code_update": {
-    "checked_at": "2026-10-20T06:08:58.680Z",
+    "checked_at": "2026-10-20T07:15:30.299Z",
     "baseline_revision": "80c0f61cedd985b19178bd45b2618f64a4eb96fc",
     "current_revision": "80c0f61cedd985b19178bd45b2618f64a4eb96fc",
     "script_changed": false,

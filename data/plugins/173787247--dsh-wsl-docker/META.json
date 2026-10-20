@@ -1,8 +1,8 @@
 {
   "repository": "173787247/dsh-wsl-docker",
   "repository_id": 1351854301,
-  "captured_at": "2026-10-20T06:08:58.680Z",
-  "window_start": "2026-09-20T06:08:58.680Z",
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
   "stars": 1,
   "pushed_at": "2026-09-30T03:21:51Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3F:20C52B:1A119F:53EAB2:6AD70605 and timestamp 2026-10-20 06:11:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A844:292A6B:3EBE68:CDF5B5:6AD715E4 and timestamp 2026-10-20 07:19:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C42:15BF51:1779CD:4C2D62:6AD70605 and timestamp 2026-10-20 06:11:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A845:EBF41:41D009:D77911:6AD715E5 and timestamp 2026-10-20 07:19:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C37:169691:1BB49C:5AE862:6AD70605 and timestamp 2026-10-20 06:11:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A846:184D63:3EF81C:CECB6A:6AD715E5 and timestamp 2026-10-20 07:19:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3C:1C9C36:1B468A:59D266:6AD70605 and timestamp 2026-10-20 06:11:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A847:380738:3E8A7E:CCC274:6AD715E5 and timestamp 2026-10-20 07:19:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C43:302B6A:17CE65:4DCBC7:6AD70605 and timestamp 2026-10-20 06:11:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-docker%20is%3Aissue%20updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A852:310423:40BEDA:D491F7:6AD715E5 and timestamp 2026-10-20 07:19:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-wsl-docker",
-    "captured_at": "2026-10-20T06:08:58.680Z",
+    "captured_at": "2026-10-20T07:15:30.299Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": null,
@@ -44,13 +44,13 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T06:08:58.680Z",
+      "captured_at": "2026-10-20T07:15:30.299Z",
       "source_url": "https://registry.npmjs.org/dsh-wsl-docker",
       "error": "HTTP 404"
     }
   },
   "code_update": {
-    "checked_at": "2026-10-20T06:08:58.680Z",
+    "checked_at": "2026-10-20T07:15:30.299Z",
     "baseline_revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
     "current_revision": "89b19c3428df8dffa4c6771050e774bf1f1eb22b",
     "script_changed": false,

@@ -224,7 +224,7 @@ export function maintainMetaPullRequests({ repository, apply = false } = {}) {
                     report(pr.number, 'waiting', 'CI approval readback pending');
             }
         }
-        const review = inspectPullRequest({ repository, prNumber: pr.number, codexLogins: [...CODEX] });
+        const review = inspectPullRequest({ repository, prNumber: String(pr.number), codexLogins: [...CODEX] });
         const receipt = codexState(review)?.commit_sha === pr.head.sha;
         const key = `<!-- meta-auto-review head=${pr.head.sha} -->`;
         const requested = review.issue_comments.some(

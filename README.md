@@ -6,13 +6,13 @@
 
 ## 最新
 
+- [dsh-media-studio](data/plugins/1497105876--dsh-media-studio/INSIGHT.md) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio/commits)
 - [Prompt Desk](data/plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/commits)
 - [元冰可 AI 资源治理平台](data/plugins/01men--ybkkasi/INSIGHT.md) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01men/ybkkasi/commits)
-- [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/commits)
 
 ## 最热
 
-- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · [![GitHub ★ 185](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=185&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
+- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · [![GitHub ★ 186](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=186&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
 - [dsh-plugin-tts](data/plugins/1624318455--dsh-plugin-tts/INSIGHT.md) · [![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts)
 - [dsh-spotlight](data/plugins/0xsline--dsh-spotlight/INSIGHT.md) · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/0xsline/dsh-spotlight)
 
@@ -39,7 +39,7 @@
 
 #### [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)
 
-[![GitHub ★ 185](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=185&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11750](https://img.shields.io/static/v1?label=npm+30d&message=11%2C750&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) · [![最后更新 昨天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E6%98%A8%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
+[![GitHub ★ 186](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=186&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11750](https://img.shields.io/static/v1?label=npm+30d&message=11%2C750&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) · [![最后更新 昨天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E6%98%A8%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
 
 - **用途**：希望改善等待体验的桌面用户，以更清楚或有趣的状态文案替代默认状态行。
 - **亮点**：Host 保存并提供配置，客户端按阶段和偏好选择文案，支持持久化覆盖与扩展词库。
@@ -312,7 +312,7 @@
 
 #### [dsh-media-studio](data/plugins/1497105876--dsh-media-studio/INSIGHT.md)
 
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio) · [![最后更新 7天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=7%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio/commits)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio/commits) · **脚本有更新，待重新洞察**
 
 - **用途**：内容创作者希望从同一对话发起生成、取回成品并预览，交付是可用媒体文件和可追踪任务结果。
 - **亮点**：src/tools.ts解析模型与凭据，providers对接生成后端；jobs.ts启动官方后台任务，结果保存后投递会话，注册失败时退为脱离任务控制的执行。
