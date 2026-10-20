@@ -345,6 +345,8 @@ export function saveSession(path, action) {
     }
 }
 export function publishItem(session, id, out, root = ROOT) {
+    if (existsSync(resolve(root, 'data/catalog/SNAPSHOT.json')))
+        throw Error('formal details are derived from snapshot; stage records and merge instead');
     const current = validateSession(session, root);
     const item = current.items.find((item) => item.id === id && item.status === 'complete');
     if (!item) throw new Error('publish requires a complete session item');

@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "base_digest",
+    "session",
+    "input",
+    "records",
+    "input_digest"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "base_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "session": {
+      "type": "object"
+    },
+    "input": {
+      "type": "object"
+    },
+    "records": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "observations",
+          "report",
+          "metadata",
+          "summaries",
+          "capabilities",
+          "advice",
+          "recommendations",
+          "artifacts",
+          "files"
+        ],
+        "properties": {
+          "observations": {
+            "type": "object"
+          },
+          "report": {
+            "type": "string",
+            "minLength": 1
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "summaries": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "source_url",
+              "revision"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80,
+                "pattern": "^[^\\r\\n]+$"
+              },
+              "source_url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "revision": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "capabilities": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "revision",
+              "items"
+            ],
+            "properties": {
+              "revision": {
+                "type": "string",
+                "minLength": 1
+              },
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "Skill": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\r\\n]+$"
+                  },
+                  "Agent/Preset": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\r\\n]+$"
+                  },
+                  "模型工具": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\r\\n]+$"
+                  },
+                  "用户命令": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\r\\n]+$"
+                  },
+                  "Host 路由": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\r\\n]+$"
+                  },
+                  "界面": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\r\\n]+$"
+                  },
+                  "事件监听": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\r\\n]+$"
+                  },
+                  "后台": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^\\r\\n]+$"
+                  }
+                }
+              }
+            }
+          },
+          "advice": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "revision",
+              "text"
+            ],
+            "properties": {
+              "revision": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[^\\r\\n]+$"
+              }
+            }
+          },
+          "recommendations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "plugin_id",
+                "kind",
+                "summary"
+              ],
+              "properties": {
+                "plugin_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "enum": [
+                    "install",
+                    "trial",
+                    "observe"
+                  ]
+                },
+                "summary": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "artifacts": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "input_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

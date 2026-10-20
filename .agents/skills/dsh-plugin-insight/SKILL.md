@@ -40,6 +40,8 @@ description: 显式调用时研究一个固定版本的 DSH 插件，分析场�
    详情须包含唯一一组“用途／亮点／思考／建议”四标签，展开场景、依赖、流程、成本和验证边界。
    显式提交本轮复核的 findings 与时间，不以空数组直接继承旧点评。可参考合成示例，但不能导入为真实数据。
    不使用整轮生成器从静态候选或通用段落批量产生上述语义；若使用装配工具，输入必须是本项已完成且人工核对过的结构化分析，缺字段时失败而不是从旧结论猜测。
+   `npm run assemble:insight -- --work <WORK.json> --plugin <id> --analysis <ANALYSIS.json>` 只装配本项人工分析；必填字段由脚本校验，源码路径必须实际存在。
+   ANALYSIS 包含 name、summary、scenario、mechanism、scope、distribution、cost、adoption、value、engineering、dependencies、workflow、baseline、verification、source_paths、capabilities、technical_category、business_category；可选 trial_summary 必须由人工明确给出。脚本不生成采用判断、不自动暂存完成状态，已有交付拒绝覆盖。
 5. **核对并返回。** 执行观察批次结构校验，人工检查证据引用、身份、版本、可比条件及语义。
    返回人工确认的正向能力清单（带固定版本，未发现／未确认项不填0），以及基于项目自身 README／包描述的功能摘要（最多80字符，含来源URL与版本，不掺评价），以及稳定 ID、版本、实际完成深度、证据／详情／观察批次路径、未验证项及错误；受阻时返回已保存材料和具体下一步。
    返回的是本轮暂存记录，不代表已经覆盖正式快照。编排先校验所有可合并记录，最后合并到唯一当前快照；未通过的项不替换有效记录。

@@ -16,7 +16,10 @@
 - 当前结论保留来源 URL、固定版本、证据类型、限制及必要材料。合并时将仍需引用的材料落入正式快照位置，不让有效结论依赖可清理的 runs 路径。
 - 合并回读成功且当前快照可独立校验、生成页面后，本轮不再被引用的材料可清理；未合并增量保留用于恢复。历史变迁由 Git 追踪，不要求每轮永久归档；本规则不自动授权删除既有文件。
 
-**实现状态：** 本节定义新流程。现有 Schema 和脚本仍包含追加 runs、previous_digest、检查点及 manifest 链等旧模型约束，尚未完成适配；不得擅自添加未定义字段或把文档更新当作工具迁移完成。后续实现须同步 Schema、脚本、示例与生成器后再验证新模型，旧字段语义以下单独标注。
+正式真相存储在 `data/catalog/SNAPSHOT.json`，由 [snapshot Schema](../schemas/snapshot.schema.json) 约束，内含 catalog、publication、registry、discovery、reports、metadata、artifacts、迁移限制及最近一次合并标识。必要原件以内容和 SHA-256 嵌入；旧缺失原件单列 unavailable_artifacts，不要求找回，也不能被新记录用作缺失证据的豁免。
+本轮 WORK 由 [工作文件 Schema](../schemas/snapshot-work.schema.json) 约束，包含固定 input、session、base_digest 和已完成记录；新增 session.base_digest 绑定正式快照，previous_digest 仅兼容旧工具。
+合并计划从固定基线和经过校验的 WORK 重建结果；持有独占锁后复核基线、WORK 与结果摘要，原子替换单个 SNAPSHOT 文件，再回读。中断最多留下旧／新两个完整状态之一；遗留锁须人工核实。重复 apply 同一结果返回 already_applied，不追加历史运行日志。
+PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前后核对快照摘要；生成中断可重跑，兼容输出不反向覆盖快照。当前研究有效性来自 records 与 catalog 的分析摘要匹配，不来自旧 manifest。
 
 ## 身份与分类
 
@@ -34,7 +37,8 @@
 - `sources` 绑定 URL、`revision` 与 `retrieved_at`；`membership` 表示该来源的 present／removed／unknown。
   来源按 URL 比较最新成功快照，一个来源缺席不代表所有来源均已移除。
 - 同一来源／证据 ID 不得复用为不同内容，内容变化使用新 ID。证据 ID 全局唯一，来源 ID 在插件内唯一。
-  当前快照保留支撑有效结论的对象；无当前引用的历史材料不要求永久累积，清理须检查引用完整性。旧合并器目前仍按只追加实现。
+  当前快照保留支撑有效结论的对象；无当前引用的历史材料不要求永久累积，清理须检查引用完整性。本轮候选复用合并器的身份、来源与依赖校验，正式快照不累计 runs 日志。
+  完整复核成功的组件以本轮来源和证据替代过期集合；仍被其他当前结论引用的证据保留。嵌入原件与缺失原件清单同步按当前引用收敛，不随每轮永久增长。
 - 证据 `kind` 区分作者声明、源码核查、本地测试、真实宿主验收与独立反馈，均绑定版本并记录边界。
   `artifact` 引用材料；执行证据还必须有 `environment` 与执行结果文件，材料不得保存凭据。
 - `research_depth` 的 catalog／source／tested／host_verified 表示已有证据层级；提高层级须有对应证据。
@@ -86,7 +90,7 @@
 - 会话完成表示本轮记录已准备好，最终合并状态另行回读确认；不表示目标插件验收通过。只读队列选择不提供并发认领语义。
 
 本轮会话、观察批次和准备材料存放在 Git 忽略的 `data/runs/`，用于合并前恢复。新流程的当前快照必须包含持续使用所需的分析和证据，不靠历史会话证明其有效性。
-历史 manifest 可选用于审计；缺失不阻塞新轮次。现有生成器与校验器仍读取 manifest 及本地检查点，属于待适配的兼容路径，不能据此宣称新模型已经可运行。
+历史 manifest 只用于首次迁移或可选审计；当前生成器、校验和新轮次均只依赖正式快照。记录完成时仍验证本轮检查点，合并后不需要 runs。
 
 ## 发布输入、META 与统计字段
 

@@ -24,10 +24,14 @@
 未合并增量、待处理失败材料、活动锁和用途不明的文件保留；当前引用仍指向 runs 时先完成落位，不能先删文件。
 旧历史文件是否迁移或删除另按实际任务执行，本次规范变更本身不执行清理。
 
-## 现有工具兼容边界
+## 命令与兼容输出
 
-现有 `research-session.mjs` 的 `--previous`、checkpoint、publish／manifest，`publication-data.mjs` 的历史 manifest 合并及生成器仍属于旧实现；它们尚未提供上述完整快照事务。
-`maintain:runs` 也只处理旧清理规则支持的重复视图，不能据新规范扩大删除范围。
+- `npm run snapshot -- start --input <INPUT.json> --work data/runs/<round>/WORK.json [--limit N]`：绑定当前快照摘要并固定选择，不读取上轮会话。
+- `next --work ...` 返回本轮待处理项；`stage --work ... --plugin <id> --observations ... --report ... --display ...` 校验完整单项记录，只更新 WORK／本轮 SESSION。
+- `plan --work ... --out ...` 产生合并候选；`apply --plan ...` 持锁复核并原子更新正式快照，重复执行同一结果不重复追加。
+- apply 已成功而生成中断时，直接执行 `snapshot render`；不重新研究或重复应用观察。
+- `snapshot validate` 和 `npm run check` 校验正式快照及派生成果；不要求旧 runs 或 manifest 存在。
+- `snapshot clean --work ...` 预览；加 `--apply` 只清理已确认合并、全部完成的已知材料。未知文件保留，受阻项需要恢复时拒绝清理。
+- `snapshot bootstrap` 仅用于现有旧数据的首次迁移，记录缺失原件，不制造新研究。已有正式快照时拒绝再次初始化。
 
-后续工具适配需要同步 Schema、脚本及生成路径，并验证无旧 runs 启动、暂存隔离、基线冲突、重复应用、中断恢复和清理后独立生成。
-适配完成前明确报告工具能力缺口，不要求用户找回旧轮次来满足已废弃的前置条件，不直接修改 JSON 绕过现有校验。
+旧 research／publication 命令保留兼容读取能力，但不得对正式派生档案单独 apply。META 刷新同样先更新内存候选，校验正式快照摘要、持锁原子写入后再生成页面。

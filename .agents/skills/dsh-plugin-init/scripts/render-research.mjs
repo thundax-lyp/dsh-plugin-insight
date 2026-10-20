@@ -57,24 +57,27 @@ export function latestManifestItems(manifests) {
         for (const item of manifest.items) latest.set(item.id, { item, checked_at: manifest.checked_at });
     return [...latest.values()];
 }
-export function renderPublication(input, root = ROOT) {
+export function renderPublication(input, root = ROOT, context = null) {
     if (!check(input)) throw Error(ajv.errorsText(check.errors));
     const text = (path) => readFileSync(local(root, path), 'utf8');
-    const manifestPaths = [...new Set([...(input.manifests ?? []), input.manifest])];
-    const manifests = manifestPaths.map((path) => validateManifest(read(local(root, path))));
+    const manifests = input.records
+        ? [{ checked_at: input.checked_at, sources: [], items: input.records }]
+        : [...new Set([...(input.manifests ?? []), input.manifest])].map((path) =>
+              validateManifest(read(local(root, path)))
+          );
     const manifest = manifests.at(-1);
     if (manifests.some((saved) => !saved.sources.every((s) => sources.includes(s.url))))
         throw Error('unexpected discovery source');
-    const catalog = read(local(root, input.catalog));
+    const catalog = context?.catalog ?? read(local(root, input.catalog));
     validateCatalog(catalog);
     const metadataDates = new Set();
     const items = latestManifestItems(manifests)
         .filter(({ item }) => item.status === 'complete')
         .map(({ item: i, checked_at: manifestCheckedAt }) => {
             const plugin = catalog.plugins.find((p) => p.id === i.id);
-            validateManifestPlugin(i, plugin, catalog, manifestCheckedAt);
-            const detailPath = pluginDirectory(plugin, root) + '/INSIGHT.md';
-            const report = text(detailPath);
+            validateManifestPlugin(i, plugin, catalog, i.checked_at ?? manifestCheckedAt);
+            const detailPath = (context?.registry?.[plugin.id] ?? pluginDirectory(plugin, root)) + '/INSIGHT.md';
+            const report = context?.reports[i.id] ?? text(detailPath);
             const summary = input.summaries?.[i.id];
             if (
                 !summary ||
@@ -142,7 +145,7 @@ export function renderPublication(input, root = ROOT) {
             });
             let meta = template('META', { stars: starsBadge, downloads: '', updated: pushedBadge, review: '' });
             if (path) {
-                const m = validateMetadata(read(local(root, path)));
+                const m = validateMetadata(context?.metadata[i.id] ?? read(local(root, path)));
                 if (m.repository_id !== null && m.repository_id !== plugin.repository_id)
                     throw Error('metadata repository identity differs');
                 if (m.repository.toLowerCase() !== plugin.repository.toLowerCase())
@@ -297,8 +300,12 @@ export function renderPublication(input, root = ROOT) {
             categories: renderHomeCategories(homeGroups, (e) => e.detailPath),
             sources: renderSources(sources)
         }) + '\n';
-    const registry = existsSync(local(root, REGISTRY)) ? read(local(root, REGISTRY)) : {};
-    for (const plugin of catalog.plugins) registry[plugin.id] = pluginDirectory(plugin, root);
+    const registry = context?.registry
+        ? structuredClone(context.registry)
+        : existsSync(local(root, REGISTRY))
+          ? read(local(root, REGISTRY))
+          : {};
+    for (const plugin of catalog.plugins) registry[plugin.id] ??= pluginDirectory(plugin, root);
     return {
         readme,
         catalog: catalogPage,
@@ -307,12 +314,17 @@ export function renderPublication(input, root = ROOT) {
         registry
     };
 }
-export function main(args = process.argv.slice(2)) {
+export async function main(args = process.argv.slice(2)) {
     const { values: v } = parseArgs({
         args,
         options: { input: { type: 'string' }, check: { type: 'boolean', default: false } }
     });
     if (!v.input) throw Error('--input is required');
+    if (existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json'))) {
+        const { renderSnapshot } = await import('./snapshot-data.mjs');
+        renderSnapshot(ROOT, v.check);
+        return;
+    }
     const input = read(resolve(v.input));
     const result = renderPublication(input);
     // Validate all output before writing either artifact.
@@ -335,10 +347,8 @@ export function main(args = process.argv.slice(2)) {
     console.log(v.check ? 'Research navigation matches inputs' : 'Research navigation generated');
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-    try {
-        main();
-    } catch (e) {
-        console.error(e.message);
+    main().catch((error) => {
+        console.error(error.message);
         process.exitCode = 1;
-    }
+    });
 }

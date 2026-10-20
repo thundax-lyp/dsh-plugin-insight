@@ -16,9 +16,10 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 新一轮与当前快照比较，不要求上一轮 SESSION、manifest 链或 runs 归档；历史版本需要时从 Git 查阅。
 具体合并、证据落位及清理条件以[数据契约](../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)为准。
 
-**工具适配边界：** 当前 `research-session.mjs`、`publication-data.mjs`、生成器和清理器仍有旧会话／manifest／runs 依赖，本次规范更新不代表这些脚本已完成适配。
-执行前检查工具是否支持“当前快照基线 → 独立暂存 → 验证 → 合并”。不支持时先明确工具缺口；不得改用旧会话作为必需输入、伪造历史、直接覆盖正式数据或假称已按新流程完成。
-旧命令仅用于明确的兼容维护，不作为新流程的默认执行步骤；恢复说明见[会话与合并恢复](references/SESSION-OPERATIONS.md)。
+正式真相位于 `data/catalog/SNAPSHOT.json`，结构见共享 `snapshot.schema.json`；本轮工作文件为 `data/runs/<round>/WORK.json`，结构见 `snapshot-work.schema.json`。
+使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／clean。`PLUGINS.json`、`PUBLICATION.json`、路径注册表、META 与页面是可重建的兼容输出，不再单独人工写入。
+首次迁移才使用 `snapshot bootstrap`；它保留现有分析，明确列出缺失历史原件，不把迁移当成本轮研究。已有快照时不得重做 bootstrap。
+旧 research／publication 的正式写入不再用于新流程；命令及恢复语义见[会话与合并恢复](references/SESSION-OPERATIONS.md)。
 
 ## 调用参数
 
@@ -46,13 +47,23 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
    按仓库数字 ID 与已分配组件路径去重，保留重定向、组件碰撞和身份失败的具体记录，不编造 ID。
 3. **形成固定队列。** 用当前快照比较新增、位置／内容／来源变化、未变和未知；只有相关来源完整核查才可推断目录移除。
    固定本轮候选、来源、指纹、选择、上限和基线摘要，写入本轮会话；后续不反向改写它们以通过检查。
+   ```sh
+   npm run snapshot -- start --input data/runs/<round>/INPUT.json --work data/runs/<round>/WORK.json --limit <N>
+   npm run snapshot -- next --work data/runs/<round>/WORK.json
+   npm run prepare:selected -- --work data/runs/<round>/WORK.json
+   ```
+   省略上限时省略 `--limit`。prepare:selected 只读取固定提交、统计和采集材料/META，不运行目标代码，不生成观察或研究结论。
    新一轮重新分析全部所选项；仅同轮恢复跳过已完成且材料校验一致的项。
 4. **逐项调用单插件洞察。** 读取并应用[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)，传入稳定 ID、固定版本、截止时间、当前快照中的分析和证据、目标深度及本轮输出位置。
    该流程内调用不自动创建子 Agent。每项独立保存 inventory、证据、详细分析、观察批次及人工确认的摘要／能力／建议。
    核查场景、替代办法、安装与效果依赖、用户与异常流程、总成本和采用条件；不得用静态候选批量生成通用结论。
 5. **校验并暂存完成记录。** 核对每项身份、版本、来源指纹、完整 findings 复核、证据引用、报告及材料摘要。
    计划与应用先针对本轮暂存的候选快照，不逐项写入正式档案；检查点代表本轮记录完整，不代表已合并或已通过宿主验收。
-   失败写入 errors 和受阻原因，继续其余所选项；保留已完成增量用于同轮恢复，不补位、不重复应用。
+   每项 DISPLAY.json 含 metadata 对象、单项 summaries／capabilities／advice 对象与 recommendations 数组；各项必须由人工研究形成，结构与发布 Schema 一致。
+   ```sh
+   npm run snapshot -- stage --work data/runs/<round>/WORK.json --plugin <id> --observations <observations.json> --report <insight.md> --display <DISPLAY.json>
+   ```
+   失败保存部分材料与 reason JSON，再用 `snapshot block --work ... --plugin ... --input <reason.json>` 登记；继续其余所选项，不补位、不重复应用。
 6. **形成合并候选。** 从已完成的详细分析归纳四标签短评和有条件推荐，再组织发布输入。安装推荐仍要求固定版本的真实宿主验收证据。
    使用 META 采集器保存本轮采集结果，npm 包名必须由源码核实；未知值不填0。
    将支撑当前结论的分析原文和必要证据落入正式快照引用的位置；发布输入只引用合并候选中的当前材料，不引用待清理的 runs 文件。
@@ -60,10 +71,15 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 7. **最后合并与生成。** 汇总审阅本轮候选；检查正式基线摘要和依赖是否变化，冲突时重做合并计划，不覆盖并发修改。
    通过结构、身份、证据、依赖和语义校验后，再以一致的发布事务合并当前档案、分析／证据引用及展示输入；提交点前读者仍看到旧快照。
    从合并后的当前快照生成 README、分类页和详情展示页。旧 SESSION、runs 和历史 manifest 不参与当前发布有效性判断。
-   完成 `npm run check` 及人工叙述、引用、采用条件和覆盖范围检查；如工具仍依赖旧链路，明确报告兼容检查范围，不能冒充新模型验收。
+   ```sh
+   npm run snapshot -- plan --work data/runs/<round>/WORK.json --out /tmp/dsh-snapshot-plan.json
+   npm run snapshot -- apply --plan /tmp/dsh-snapshot-plan.json
+   npm run check
+   ```
+   检查 plan 的基线、合并范围与保留项后才 apply；再人工核对叙述、引用、采用条件和覆盖范围。
 8. **确认与清理。** 回读合并结果，确认本轮成功记录已落位、引用可解析、页面可由当前快照独立生成；写入合并结果后才清理本轮临时材料。
-   未合并、失败或需要恢复的增量保留。已合并材料不要求永久归档；清理前预览，不能删除当前快照仍引用的证据或活动锁。
-   来源准备失败或仍有 blocked 时如实报告。最多30项完成只代表所选范围完成，不代表全生态研究完成。
+   使用 `snapshot clean --work ...` 预览，明确执行时加 `--apply`。仅清理已确认合并且全部完成的已知材料；受阻、未完成和未知文件保留，不删除活动锁。
+   来源准备失败或仍有 blocked 时如实报告。所选上限内完成只代表所选范围完成，不代表全生态研究完成。
 
 ## 职责与授权
 

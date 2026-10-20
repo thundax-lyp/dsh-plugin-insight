@@ -151,7 +151,7 @@ export function parseHarnessSource(root) {
             else if (
                 (readmeEntries || file === 'CATALOG.md') &&
                 /github(?:\.com\/|:)/i.test(line) &&
-                !/^\s*#/.test(line)
+                !/^\s*[#>]/.test(line)
             )
                 state.problems.push({
                     source: HARNESS_URL,
@@ -181,7 +181,10 @@ const newComponentId = (path) => {
             .split('/')
             .filter((part) => part !== '.dsh-plugin')
             .join('-')
-    );
+    )
+        .replace(/[._]+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-+|-+$/g, '');
 };
 
 export function allocateComponentId(components, repositoryId, path) {
@@ -344,7 +347,10 @@ export async function main(args = process.argv.slice(2)) {
         checkedAt: required('checked-at'),
         awesome,
         harness,
-        catalog: read(catalogPath),
+        catalog:
+            existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json')) && !values.catalog
+                ? read(resolve(ROOT, 'data/catalog/SNAPSHOT.json')).catalog
+                : read(catalogPath),
         completeAwesome: values['complete-awesome'],
         completeHarness: values['complete-harness']
     });

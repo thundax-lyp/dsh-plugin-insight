@@ -11,7 +11,7 @@
 研究事实的唯一正式真相是当前档案及其引用的当前分析、来源和必要证据；本轮记录先在 runs 暂存，校验后最终合并。完整语义见[数据契约](../../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)。
 展示输入只组织当前成果，生成页面不承担人工研究真相。下一轮、当前校验和页面生成不应依赖旧 SESSION、历史 manifest 链或已经合并的 runs。
 
-当前 Schema、发布与生成脚本仍有旧 manifest／runs 依赖，以下现状文件路径不代表新流程已实现。本次规范更新不迁移数据、不删除旧材料；后续工具适配须实现当前分析原文与必要证据的正式落位，并验证无旧 runs 时仍能工作。
+正式快照为 `data/catalog/SNAPSHOT.json`；WORK 暂存与单文件原子合并已由 snapshot-data.mjs 实现。分析原文、展示数据和必要证据内容保存在正式快照内；文件式档案、META 和页面是可重新生成的兼容输出。迁移缺失原件有显式限制，不当作新验证。
 
 ## README 生成物与读者路由
 
@@ -53,7 +53,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 未选、受阻和未完成项保留有效的当前成果；只有经过核实的失效状态才调整当前结论和推荐。当前页面的完整条目集从当前快照取得，不靠历史 manifest 补齐。
 当前快照应能独立重新生成 README、分类和详情展示页；人工分析原文是当前快照引用的正式材料，不留在可清理 runs 中充当唯一依据。
 
-现有 `publication-data.mjs` 的 plan／apply 绑定发布输入、manifest、档案及详情/META 摘要，仍按旧规则移除本轮 pending／blocked 并保留历史 manifest。该行为需要适配，不是新模型的执行入口。
+正式更新使用 `snapshot stage／plan／apply`；旧 publication-data.mjs 仅保留兼容实现，并拒绝单独覆盖正式派生发布输入。发布 records 绑定当前 catalog 分析摘要，未选、失败和受阻项保留当前有效记录；受依赖变化影响的失效结论退出推荐与当前展示。
 不得用临时脚本直接覆盖正式数据来替代事务合并，也不得手写 README 或从静态候选自动生成推荐判断。
 
 ## 文件位置与命名
@@ -61,10 +61,12 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 产物 | 位置 | 要求 |
 |---|---|---|
 | 研究入口 | 根 `README.md` | 由模板生成，插件标题链接稳定详情入口 |
-| 当前档案 | `data/catalog/PLUGINS.json` | 当前研究状态的核心真相；旧 runs 字段仍待兼容适配 |
-| 当前发布输入 | `data/catalog/PUBLICATION.json` | 引用当前会话、报告、推荐与 META |
+| 唯一正式快照 | `data/catalog/SNAPSHOT.json` | 当前档案、来源、分析原文、证据内容及展示输入；原子合并点 |
+| 本轮工作记录 | `data/runs/<round>/WORK.json` | 固定基线、队列与逐项暂存结果；合并后可按引用清理 |
+| 档案兼容输出 | `data/catalog/PLUGINS.json` | 从正式快照生成，不单独人工维护 |
+| 发布兼容输出 | `data/catalog/PUBLICATION.json` | 从快照生成，records 保存当前有效完成记录，不引用历史会话 |
 | 插件路径注册表 | `data/catalog/PLUGIN-PATHS.json` | 稳定 ID 到可读插件目录的唯一映射 |
-| 当前详情展示 | `data/plugins/<plugin-slug>/INSIGHT.md` | 从当前正式分析生成，包含最新 Issue 信息；正式原文落位仍待工具适配 |
+| 当前详情展示 | `data/plugins/<plugin-slug>/INSIGHT.md` | 从快照 reports 原文生成，包含最新 Issue 信息 |
 | 当前 META | `data/plugins/<plugin-slug>/META.json` | 当前采集结果；本轮采集先暂存，核实后更新 |
 | 旧运行清单 | `data/manifests/<round>.json` | 新文件由 .gitignore 忽略；已跟踪且仍被当前工具或详情引用的文件暂留，解除依赖后删除 |
 | 本地来源输入与问题 | `data/runs/<round>/INPUT.json`、`INPUT-PROBLEMS.json` | Git 忽略；固定目录解析、身份核实结果与未解决边界 |
@@ -94,7 +96,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 - runs 是本轮工作区，不是历史真相库。只在尚未合并、失败待查或需要同轮恢复时保留相关材料。
 - 最终合并前，将当前快照仍需引用的分析、证据和 META 落入正式位置并校验，不能留下指向待清理 runs 的有效引用。
 - 合并结果回读、当前引用完整且可独立生成页面后，本轮无引用副本可以清理；永久归档不是交付条件。活动锁、未合并记录和未知文件不能当作已合并副本清理。
-- Git 跟踪正式当前状态的变迁；不生成逐插件历史导航。现有 manifest 仅供旧发布工具及仍引用它们的详情使用，不成为新研究前置条件。
+- Git 跟踪正式当前状态的变迁；不生成逐插件历史导航。历史 manifest 仅供首次迁移和可选追溯，不成为当前生成或新研究前置条件。
 - `.gitignore` 忽略新增的 `data/manifests/` 过程文件；已跟踪文件不会因此退出 Git。清理旧文件须核对引用并通过后续提交删除，不使用强制添加继续累积历史 manifest。每日 META 更新只暂存当前数据和页面，不暂存该目录。
 - 现有 `maintain:runs` 只清理它支持的旧重复视图，不能充当新模型的合并后清理器。新清理流程须先预览引用与合并状态，再执行并回读；本次不执行清理。
 
@@ -230,7 +232,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 - 基线漂移拒绝合并，重复应用不重复追加，写入中断可恢复且不暴露混合版本。
 - 合并后当前证据引用有效；移除已合并过程副本后仍可校验、生成。
 
-`npm run check` 仍执行当前实现的校验；在脚本适配前，它只能证明旧格式兼容和生成一致性，不能证明上述新模型已实现。不再把每轮导出 manifest 作为目标流程的交付条件。
+`npm run check` 校验正式快照与所有派生输出，历史 runs／manifest 不再是校验条件。本轮 WORK 检查点由 stage／plan 验证；中断、冲突和幂等路径通过隔离临时验证检查，不维护合成 testcase。
 
 同时人工核对 README 结果入口与来源链接是否完整、所链接产物是否存在、证据文件是否存在、
 来源版本是否可追溯、报告与数据是否一致、失败是否被正确保留，
@@ -240,7 +242,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 洞察还需核对事实与解释是否分开、比较条件是否可比、是否检查反例、决策影响是否有适用条件，
 以及下一步验证能否支持或推翻判断。还须检查安装依赖是否被误当效果保证、后台和异常成本是否遗漏、
 成本单位是否对应合格任务，以及现金与人工时间是否被无依据混算。数据校验通过不代替这些语义检查。
-当前自动校验仍覆盖旧格式的结构、身份、Git 清单、当前输出及本地会话检查点；新事务、引用落位及清理验收须在工具适配后补齐。它不自动验证报告叙述、证据内容真实性或实际宿主效果。
+自动校验覆盖当前快照结构、身份、分析绑定、嵌入证据摘要及生成一致性；本轮暂存与提交另验证基线、检查点与幂等。它不自动验证报告叙述、证据内容真实性或实际宿主效果。
 
 将 README 入口更新与本次档案、运行清单、当前详情及发布输入作为 Git 内可检查的交付组合；本地观察批次、证据和报告用于恢复与深度审计。
 提交／推送／PR 操作沿用用户授权和根 `AGENTS.md` 的仓库约束；本地校验与远端 CI 结果分别报告。
@@ -331,7 +333,7 @@ GitHub Actions 每天北京时间08:30及手动触发，复用未合并的 META 
 生成器以检查点绑定的研究原稿为输入，使用 DETAIL／ISSUES 模板生成 `data/plugins/<plugin-slug>/INSIGHT.md`，
 将原稿“固定范围与依据”转换为“版本”，该节仅展示固定提交与链接，不显示组件 ID、路径、轮次、核查时间及材料清单；完整依据保留在当前快照引用的正式分析和证据中。
 追加最新 Issue 活跃度。README和分类页链接此展示页；原稿不改写，不改变证据、结论或检查点摘要。
-目标流程的原稿在本轮 insights 暂存，合并时落入当前快照的正式分析位置；展示页从正式分析生成，仍位于稳定插件目录。现有生成器仍通过历史清单查找原稿，须适配后才能清理其引用的 runs；展示页不是第二份人工研究真相源。
+目标流程的原稿在本轮 insights 暂存，合并时落入当前快照的正式分析位置；展示页从正式分析生成，仍位于稳定插件目录。生成器从快照内 reports 读取正式原文，清理已合并 runs 不影响生成；展示页不是第二份人工研究真相源。
 展示页与README一起生成并通过 --check 校验，META刷新也更新展示页。Issue数据注明日期，失败显示暂未获取；页面不重复“Issue 不含 PR”的口径说明，也不输出生成器注释。
 
 项目头图使用严肃、偏技术的 PNG，位于 `assets/dsh-plugin-insight-banner.png`，标题统一为 DSH Plugin Insight。

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { existsSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { PUBLICATION, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { ROOT, read, atomicWrite } from '../../_shared/scripts/plugin-data.mjs';
@@ -53,14 +54,23 @@ export async function refresh(
     inputPath,
     { request = api, downloads = captureNpmDownloads, at = new Date().toISOString(), root = ROOT } = {}
 ) {
-    const publication = read(resolve(root, inputPath));
-    const manifest = validateManifest(read(resolve(root, publication.manifest)));
+    const snapshotPath = resolve(root, 'data/catalog/SNAPSHOT.json');
+    const snapshot = existsSync(snapshotPath) ? read(snapshotPath) : null;
+    const baseDigest = snapshot ? (await import('../../_shared/scripts/plugin-data.mjs')).digest(snapshot) : null;
+    const publication = snapshot?.publication ?? read(resolve(root, inputPath));
+    const manifest = snapshot
+        ? { items: publication.records, round: at.slice(0, 10) + '-01' }
+        : validateManifest(read(resolve(root, publication.manifest)));
     const stamp = at.replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z');
     const result = [];
     const mapping = { ...publication.metadata };
     // Read the fixed list; no discovery, deep analysis, catalog writes or checkpoint edits.
     for (const item of manifest.items.filter((item) => item.status === 'complete')) {
-        const previous = mapping[item.id] ? validateMetadata(read(resolve(root, mapping[item.id]))) : null;
+        const previous = snapshot
+            ? snapshot.metadata[item.id]
+            : mapping[item.id]
+              ? validateMetadata(read(resolve(root, mapping[item.id])))
+              : null;
         const metadata = captureMetadata(item.repository, request, at);
         if (metadata.repository_id !== null && metadata.repository_id !== Number(item.id.split(':')[1]))
             throw Error(`repository identity changed: ${item.id}`);
@@ -73,7 +83,8 @@ export async function refresh(
         const path = `data/runs/${manifest.round}/snapshots/meta-refresh/${stamp}/${directory.split('/').at(-1)}/META.json`;
         atomicWrite(resolve(root, path), metadata);
         const current = directory + '/META.json';
-        atomicWrite(resolve(root, current), metadata);
+        if (snapshot) snapshot.metadata[item.id] = metadata;
+        else atomicWrite(resolve(root, current), metadata);
         mapping[item.id] = current;
         result.push({
             id: item.id,
@@ -87,14 +98,28 @@ export async function refresh(
         });
     }
     publication.metadata = mapping;
-    atomicWrite(resolve(root, inputPath), publication);
+    if (snapshot) {
+        const { digest } = await import('../../_shared/scripts/plugin-data.mjs');
+        const { validateSnapshot, renderSnapshot } = await import('./snapshot-data.mjs');
+        validateSnapshot(snapshot, root);
+        const { openSync, closeSync, unlinkSync } = await import('node:fs');
+        const fd = openSync(snapshotPath + '.lock', 'wx', 0o600);
+        try {
+            if (digest(read(snapshotPath)) !== baseDigest) throw Error('snapshot changed during metadata refresh');
+            atomicWrite(snapshotPath, snapshot);
+        } finally {
+            closeSync(fd);
+            unlinkSync(snapshotPath + '.lock');
+        }
+        renderSnapshot(root);
+    } else atomicWrite(resolve(root, inputPath), publication);
     return result;
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
     try {
         const { values: v } = parseArgs({ options: { input: { type: 'string', default: PUBLICATION } } });
         const result = await refresh(v.input);
-        render(['--input', v.input]);
+        await render(['--input', v.input]);
         console.log(JSON.stringify(result));
     } catch (e) {
         console.error(e.message);
