@@ -112,17 +112,27 @@ export function parseHarnessSource(root) {
     for (const file of ['README.md', 'CATALOG.md']) {
         const lines = readFileSync(resolve(root, file), 'utf8').split(/\r?\n/);
         let readmeEntries = file !== 'README.md';
+        const sentinels = new Set();
+        let entries = 0;
         lines.forEach((line, index) => {
-            if (file === 'README.md' && /^##\s+Core & Bundles\s*$/.test(line)) readmeEntries = true;
-            if (file === 'README.md' && /^##\s+Related\s*$/.test(line)) readmeEntries = false;
+            if (file === 'README.md' && /^##\s+Core & Bundles\s*$/.test(line)) {
+                sentinels.add('start');
+                readmeEntries = true;
+            }
+            if (file === 'README.md' && /^##\s+Related\s*$/.test(line)) {
+                sentinels.add('end');
+                readmeEntries = false;
+            }
             const row =
                 file === 'CATALOG.md'
                     ? line.match(/^\|\s*\[([^\]]+)\]\((https:\/\/github\.com\/[^)]+)\)\s*\|/)
                     : readmeEntries
                       ? line.match(/^-\s+\[([^\]]+)\]\((https:\/\/github\.com\/[^)]+)\)\s+[—-]\s+/)
                       : null;
+            let matched = Boolean(row);
             if (row) markdownCandidate(state, row[2], row[1], file, index + 1, line);
             for (const match of line.matchAll(/github:([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)#HEAD&path:\/([^`\s]+)/g)) {
+                matched = true;
                 const label = line.match(/^\|\s*`([^`]+)`/)?.[1] ?? match[3].split('/').filter(Boolean).at(-1);
                 markdownCandidate(
                     state,
@@ -134,7 +144,24 @@ export function parseHarnessSource(root) {
                     match[3]
                 );
             }
+            if (matched) entries++;
+            else if (
+                (readmeEntries || file === 'CATALOG.md') &&
+                /github(?:\.com\/|:)/i.test(line) &&
+                !/^\s*#/.test(line)
+            )
+                state.problems.push({
+                    source: HARNESS_URL,
+                    path: `${file}:${index + 1}`,
+                    reason: 'unrecognized discovery entry row'
+                });
         });
+        if (!entries || (file === 'README.md' && sentinels.size !== 2))
+            state.problems.push({
+                source: HARNESS_URL,
+                path: file,
+                reason: 'missing discovery entries or section sentinels'
+            });
     }
     return state;
 }
