@@ -1,0 +1,134 @@
+# dsh-wsl-env
+
+> 向DSH系统提示词注入WSL发行版、路径规则、Shell及本地模型连接提示。
+
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+
+分析版本：[a674c70](https://github.com/173787247/dsh-wsl-env/tree/a674c704757b733503f224ce2e3cf6ac5d1b6c8a)
+
+<!-- BEGIN META -->
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-env)
+<!-- END META -->
+
+**使用建议**：先检查新会话实际系统提示，核对用户路径；不要把提示中的网络建议当作已检测的网络配置。
+
+**核查状态**：已检查源码，未进行真实宿主验证。
+
+**本文目录**
+
+- [当前插件分析](#detail-section-1)
+  - [使用判断](#detail-section-2)
+  - [能力、流程与成本](#detail-section-3)
+  - [工程贡献](#detail-section-4)
+  - [主要限制](#detail-section-5)
+  - [核查说明与分析版本](#detail-section-6)
+- [未来设计假设（未验证）](#detail-section-7)
+- [辅助信息](#detail-section-8)
+
+<a id="detail-section-1"></a>
+
+## 当前插件分析
+
+<a id="detail-section-2"></a>
+
+### 使用判断
+
+已有贡献：把启动时环境事实写入宿主提示词，相比每次人工提醒减少环境说明重复；这是环境适配，没有证据证明提示词能强制约束工具行为。
+
+结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。
+
+[重点创新推演与最小验证](#innovation)
+
+- **用途**：Agent运行在WSL而浏览器位于Windows时，避免混用Windows路径、Shell和工具安装位置。
+
+- **建议**：待验证假设：把动态探测事实与静态建议分开并标明观察时间，可能降低模型把经验规则当成当前环境的错误。
+
+采用建议：先检查新会话实际系统提示，核对用户路径；不要把提示中的网络建议当作已检测的网络配置。
+
+在项目说明或会话中手工写明Linux路径与Shell；插件将其集中管理但增加常驻文本。
+
+<a id="detail-section-3"></a>
+
+### 能力、流程与成本
+
+- **后台**：启用时注入WSL环境系统提示段。
+
+**流程与依赖**
+
+依赖systemPrompt服务、WSL环境变量及Linux配置文件；Windows用户识别受实际挂载路径影响。
+
+启用后在新会话检查系统提示段，再用当前工作目录做路径问答；环境变化后重新核对。
+
+**效果与成本**
+
+主要消耗常驻提示token及维护经验规则的人工，无独立调用费用测量。
+
+把启动时环境事实写入宿主提示词，相比每次人工提醒减少环境说明重复；这是环境适配，没有证据证明提示词能强制约束工具行为。 提示段混合探测事实与固定经验规则，存在设置变化后提示过期的可能；新会话是否使用该段仍需宿主核查。
+
+- **思考**：提示段混合探测事实与固定经验规则，存在设置变化后提示过期的可能；新会话是否使用该段仍需宿主核查。
+
+<a id="detail-section-4"></a>
+
+### 工程贡献
+
+- **亮点**：把启动时环境事实写入宿主提示词，相比每次人工提醒减少环境说明重复；这是环境适配，没有证据证明提示词能强制约束工具行为。
+
+把启动时环境事实写入宿主提示词，相比每次人工提醒减少环境说明重复；这是环境适配，没有证据证明提示词能强制约束工具行为。
+
+探测函数可注入环境和文件读取器，便于隔离验证；固定规则与实时事实值得分层维护。
+
+<a id="detail-section-5"></a>
+
+### 主要限制
+
+提示段混合探测事实与固定经验规则，存在设置变化后提示过期的可能；新会话是否使用该段仍需宿主核查。
+
+<a id="detail-section-6"></a>
+
+### 核查说明与分析版本
+
+- 已检查：作者 README、包清单、源码路径 index.js、lib/wsl.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：已检查提示构造及WSL探测；未验证模型遵循率和真实宿主注入。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。
+- 下一步：对照人工提示、固定提示和带时间事实，覆盖不同发行版、用户映射和网络模式，比较错误命令与额外上下文成本；无改善则保留简单提示。
+
+**分析版本**
+
+- **仓库**：[173787247/dsh-wsl-env](https://github.com/173787247/dsh-wsl-env)
+- **版本号**：0.3.0（[固定提交 a674c70](https://github.com/173787247/dsh-wsl-env/tree/a674c704757b733503f224ce2e3cf6ac5d1b6c8a)）
+- **版本日期**：2026-10-10（固定提交日期，北京时间；不是包发布日期）
+
+<a id="detail-section-7"></a>
+
+## 未来设计假设（未验证）
+
+<a id="innovation"></a>
+
+待验证假设：把动态探测事实与静态建议分开并标明观察时间，可能降低模型把经验规则当成当前环境的错误。
+
+对照人工提示、固定提示和带时间事实，覆盖不同发行版、用户映射和网络模式，比较错误命令与额外上下文成本；无改善则保留简单提示。
+
+<a id="detail-section-8"></a>
+
+## 辅助信息
+
+<details>
+<summary>工程统计与口径</summary>
+
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .js | source | 2 | 121 | 103 | 4 | — |
+| .md | source | 2 | 196 | — | — | 1114 |
+| .js | test | 1 | 77 | 65 | 0 | — |
+
+</details>
+
+**活跃度**
+
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-env/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-env/issues?q=is%3Aissue+created%3A2026-09-20T09%3A41%3A11.885Z..2026-10-20T09%3A41%3A11.885Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-env/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T09%3A41%3A11.885Z..2026-10-20T09%3A41%3A11.885Z)
+
+
+
+统计日期：2026-10-20。
+
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

@@ -30,6 +30,13 @@
 | [dsh-wsl-browser](#plugin-1350379388-root) | 从WSL调用Windows默认浏览器打开HTTP或HTTPS地址，并给出localhost排障提示。 | 适合已用WSL开发的人，先打开测试URL并核对默认浏览器，远端服务先确认监听和访问权限。 |
 | [dsh-wsl-clipboard](#plugin-1350378372-root) | 从WSL读取或写入Windows文本剪贴板，支持长度限制与Unicode编码转换。 | 先用测试字符串验证中文、换行和长度上限，写入前保存重要剪贴板内容；仅在明确需要时读取。 |
 | [dsh-wsl-download](#plugin-1351854499-root) | 列出Windows下载目录中的文件并复制到WSL，另提供本地模型文件管理提示。 | 先列文件和检查目标是否已有同名内容，复制后核对大小与哈希；大模型先确认磁盘余量和是否可直接复用共享路径。 |
+| [dsh-wsl-im](#plugin-1370460115-root) | 把多种即时通信平台接入DSH Agent，支持按聊天会话转发消息与媒体。 | 先限制允许用户并在测试群核查共享上下文，确认停止插件后连接和会话被回收。 |
+| [dsh-wsl-launch](#plugin-1350378498-root) | 从WSL启动允许列表中的Windows应用，并传递启动参数。 | 使用明确的应用路径和小范围允许列表，先验证含空格的文件参数。 |
+| [dsh-wsl-notify](#plugin-1350379268-root) | 从WSL向Windows显示消息框或托盘气泡通知。 | 优先短消息与低频提醒，确认锁屏和消息框超时表现，不发送秘密内容。 |
+| [dsh-wsl-open](#plugin-1347958944-root) | 把聊天中的Linux文件路径转为可从Windows打开的文件入口。 | 先用一个非敏感文件测试中文和空格路径，确认目标文件而非只看应用启动。 |
+| [dsh-wsl-path](#plugin-1350378631-root) | 转换Windows与WSL路径，附带挂载盘、换行和工作区位置提示。 | 单发行版先测试往返；多发行版必须核对distro，不直接使用转换出的同名Linux路径。 |
+| [dsh-wsl-picker](#plugin-1351853863-root) | 在DSH中浏览WSL目录与挂载盘，支持名称过滤和工作区快捷入口。 | 适合小中目录导航；先确认返回路径，敏感目录仍受进程权限而非插件白名单控制。 |
+| [dsh-wsl-shot](#plugin-1351854253-root) | 把Windows剪贴板中的图片保存为WSL文件供多模态聊天使用。 | 先用非敏感截图确认保存和模型读取链路；及时检查Windows临时文件残留。 |
 | [Forge 便签](#plugin-1363429979-plugin-notes) | 提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。 | 先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。 |
 | [Prompt Desk](#plugin-1418691015-root) | 在对话标题栏编辑全局与会话提示词，并把模型自报错误收为待确认经验草稿。 | 已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。 |
 | [蓝毛小女仆桌宠](#plugin-1409724830-src) | 以透明动画桌宠提供陪伴聊天，可选本地模型、在线模型与屏幕观察。 | 先关闭屏幕观察和在线回退，确认数据路径、模型路由与卸载，再按个人偏好试用。 |
@@ -253,6 +260,83 @@
 - **亮点**：lib/download.js从WINDOWS_USER或PATH推断Downloads，列最近文件；copy限制源为basename并创建目标目录后copyFileSync，hint仅输出固定建议。
 - **思考**：避免重复联网下载有价值，但名为download不代表下载器；固定模型提示可能随工具版本变化而过期。
 - **建议**：先列文件和检查目标是否已有同名内容，复制后核对大小与哈希；大模型先确认磁盘余量和是否可直接复用共享路径。
+
+<a id="plugin-1370460115-root"></a>
+
+## [dsh-wsl-im](../../plugins/173787247--dsh-wsl-im/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-im)
+
+- **用途**：用户希望从已有IM入口驱动本地Agent，并把回复送回原聊天。
+- **亮点**：源码注明模式改编自MIT的dsh-im-hub；增量是WSL套件接线、平台工作区与媒体处理组合，不将多平台桥接范式计为原创。
+- **思考**：isAllowed在平台allowedUserIds为空时允许所有用户；requireAllowlist只阻止缺少允许列表的已启用真实适配器启动，mock例外。同一platform/chatId共享Agent上下文，授权用户之间不按userId隔离。
+- **建议**：待验证假设：把发送者权限与会话共享策略显式组合，可以降低群聊中的越界继承；与默认按用户隔离相比需衡量协作损失。
+
+<a id="plugin-1350378498-root"></a>
+
+## [dsh-wsl-launch](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-launch)
+
+- **用途**：Agent需要把文件或任务转交给Windows编辑器、浏览器等桌面应用。
+- **亮点**：把跨系统启动收敛到允许目标，减少手工切换终端；这是桌面桥接而非应用操作或任务验收机制。
+- **思考**：允许列表支持后缀与通配前缀，匹配程序名不等于固定可信可执行文件；Start-Process成功也不证明窗口打开了正确文件。
+- **建议**：本次未形成新的创新假设；先固定可执行文件身份并验证参数往返，比扩大可启动程序范围更有价值。
+
+<a id="plugin-1350379268-root"></a>
+
+## [dsh-wsl-notify](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-notify)
+
+- **用途**：长任务结束后，需要让离开聊天界面的用户看到简短提醒。
+- **亮点**：为Agent输出增加桌面提醒通道，减少手动盯聊天；通知到达和用户理解并没有由返回成功证明。
+- **思考**：MessageBox会等待交互，气泡依赖桌面策略且未提供用户已读回执；重试可能造成重复或阻塞提醒。
+- **建议**：本次未形成新创新假设；先明确展示、关闭和用户确认三种状态，比较提醒是否降低漏看而不增加打扰。
+
+<a id="plugin-1347958944-root"></a>
+
+## [dsh-wsl-open](../../plugins/173787247--dsh-wsl-open/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-open)
+
+- **用途**：WSL工具生成文件后，用户希望直接用Windows默认应用查看。
+- **亮点**：把跨系统文件交接融入聊天阅读路径；增量是路径呈现和桌面打开集成，不提供文件内容编辑或正确性验证。
+- **思考**：客户端正则识别会跳过含空格等路径，服务端会拒绝不存在或范围外文件，因此识别失败主要影响可用性；openOnWindows把Explorer任意数字退出码当成功，是对Explorer复用窗口的宽松兼容，返回ok仍不能证明目标文件确实打开。
+- **建议**：待验证假设：将识别文本与已确认存在的产物分开显示，可减少自然语言中的伪路径被误点；需比较额外文件探测成本。
+
+<a id="plugin-1350378631-root"></a>
+
+## [dsh-wsl-path](../../plugins/173787247--dsh-wsl-path/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path)
+
+- **用途**：用户在Windows界面与WSL工具之间交接路径时，避免把盘符直接交给Linux命令。
+- **亮点**：将路径语法转换与工作区提示组合，降低重复说明；映射规则不是新的文件系统访问机制。
+- **思考**：UNC解析可返回另一个发行版名称，但生成的Linux绝对路径本身不携带发行版身份；转换不代表当前发行版能读到同一文件。
+- **建议**：待验证假设：把发行版身份作为路径对象的一部分保留到消费端，可降低跨发行版错读；若用户仅单发行版则价值有限。
+
+<a id="plugin-1351853863-root"></a>
+
+## [dsh-wsl-picker](../../plugins/173787247--dsh-wsl-picker/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-picker)
+
+- **用途**：用户需要向Agent提供WSL或Windows挂载目录，减少反复复制目录列表。
+- **亮点**：把目录浏览和套件工作区入口组合成可消费结果；相对ls主要增量是结构化导航，不是图形文件选择器或访问隔离。
+- **思考**：maxEntries只限制输出，readdirSync仍读取整个目录且stat跟随符号链接；无根目录白名单，不能把快捷入口理解为受限工作区。
+- **建议**：本次未形成新创新假设；优先验证大目录延迟和路径边界，再决定是否需要分页或根范围约束。
+
+<a id="plugin-1351854253-root"></a>
+
+## [dsh-wsl-shot](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-shot)
+
+- **用途**：用户截屏后，需要把现有剪贴板图片交给运行在WSL的Agent。
+- **亮点**：把剪贴板到WSL文件的跨系统搬运封装为一步；它读取已有剪贴板图片而非主动屏幕截图，也未直接附加模型图片块。
+- **思考**：临时文件位于Users/Public且复制失败时保留；固定名称输出可能覆盖，Date.now临时名在并发下存在碰撞可能，isConcurrencySafe声明需用并发用例核对。
+- **建议**：待验证假设：唯一临时目录、受限权限和finally清理可减少失败时图片残留；需要保留可恢复性，避免复制失败时删除唯一原件。
 
 <a id="plugin-1363429979-plugin-notes"></a>
 

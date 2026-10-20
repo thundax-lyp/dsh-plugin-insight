@@ -1,0 +1,31 @@
+{
+  "repository": "173787247/dsh-wsl-picker",
+  "repository_id": 1351853863,
+  "captured_at": "2026-10-20T09:42:15.595Z",
+  "window_start": "2026-09-20T09:42:15.595Z",
+  "stars": 1,
+  "pushed_at": "2026-09-29T15:29:45Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-wsl-picker",
+    "captured_at": "2026-10-20T09:42:21.532Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-wsl-picker",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T09:42:21.532Z",
+      "source_url": "https://registry.npmjs.org/dsh-wsl-picker",
+      "error": "HTTP 404"
+    }
+  }
+}

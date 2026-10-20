@@ -8,12 +8,12 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 23 |
-| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 7 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 5 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 21 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 21 |
-| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 3 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 30 |
+| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 9 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 9 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 38 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 29 |
+| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 4 |
 
 ## [推荐](data/views/columns/RECOMMENDED.md)
 
@@ -48,7 +48,7 @@
 
 <a id="category-personal-productivity"></a>
 
-### [个人效率（23）](data/views/categories/PERSONAL-PRODUCTIVITY.md)
+### [个人效率（30）](data/views/categories/PERSONAL-PRODUCTIVITY.md)
 
 <a id="plugin-1333328839-root"></a>
 
@@ -74,7 +74,7 @@
 
 <a id="category-office-operations"></a>
 
-### [办公与运营（7）](data/views/categories/OFFICE-OPERATIONS.md)
+### [办公与运营（9）](data/views/categories/OFFICE-OPERATIONS.md)
 
 <a id="plugin-1363429979-plugin-daily-log"></a>
 
@@ -100,7 +100,7 @@
 
 <a id="category-research-knowledge"></a>
 
-### [研究与知识（5）](data/views/categories/RESEARCH-KNOWLEDGE.md)
+### [研究与知识（9）](data/views/categories/RESEARCH-KNOWLEDGE.md)
 
 <a id="plugin-1366089972-workspace-plugins-dsh-cortex"></a>
 
@@ -126,7 +126,7 @@
 
 <a id="category-infrastructure"></a>
 
-### [基础设施（21）](data/views/categories/INFRASTRUCTURE.md)
+### [基础设施（38）](data/views/categories/INFRASTRUCTURE.md)
 
 <a id="plugin-1366089972-workspace-plugins-dsh-anatomy-panel"></a>
 
@@ -152,7 +152,7 @@
 
 <a id="category-software-delivery"></a>
 
-### [软件交付（21）](data/views/categories/SOFTWARE-DELIVERY.md)
+### [软件交付（29）](data/views/categories/SOFTWARE-DELIVERY.md)
 
 <a id="plugin-1339316901-root"></a>
 
@@ -178,7 +178,7 @@
 
 <a id="category-content-creation"></a>
 
-### [内容生产（3）](data/views/categories/CONTENT-CREATION.md)
+### [内容生产（4）](data/views/categories/CONTENT-CREATION.md)
 
 <a id="plugin-1334773156-root"></a>
 
@@ -188,9 +188,13 @@
 
 - **[No AI Style](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)**：以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
 
+<a id="plugin-1381725238-root"></a>
+
+- **[dsh-wsl-media](data/plugins/173787247--dsh-wsl-media/INSIGHT.md)**：在DSH中调用本地媒体与文档CLI，进行探测、转写、OCR及格式处理。 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-media)
+
 <a id="plugin-1399694663-root"></a>
 
-- **[dsh-media-studio](data/plugins/1497105876--dsh-media-studio/INSIGHT.md)**：在聊天中生成或发送图片、视频，支持多后端、后台生成和结果媒体卡片。 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio) · **脚本有更新，待重新洞察**
+- **[dsh-media-studio](data/plugins/1497105876--dsh-media-studio/INSIGHT.md)**：在DSH聊天中生成图片与视频，发送本地媒体，并提供后台任务与内联展示。 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio)
 
 [更多 内容生产 →](data/views/categories/CONTENT-CREATION.md)
 
