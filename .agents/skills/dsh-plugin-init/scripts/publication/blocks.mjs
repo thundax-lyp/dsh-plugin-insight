@@ -2,6 +2,13 @@ import { currentInnovationScore } from '../../../_shared/scripts/innovation-scor
 import { template } from './template.mjs';
 // Reader-facing blocks shared by README and the standalone classification page.
 const clean = (text) => text.replace(/[\r\n]/g, ' ').replace(/[\[\]<>|]/g, '');
+const tableCell = (text) =>
+    text
+        .replace(/[\r\n]/g, ' ')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\|/g, '&#124;');
 const categoryNames = {
     'office-operations': '办公与运营',
     'software-delivery': '软件交付',
@@ -186,7 +193,13 @@ export function renderCategories(items, href) {
     }
     const ordered = [...items].sort(alphabetical);
     const navigation = ordered
-        .map((e) => template('NAVIGATION-ITEM', { plugin: nameLink(e), description: clean(e.description) }))
+        .map((e) =>
+            template('CATEGORY-COMPARISON-ITEM', {
+                plugin: nameLink(e),
+                purpose: tableCell(e.summary),
+                conditions: tableCell(e.usageConditions)
+            })
+        )
         .join('\n');
     const sections = [];
     for (const [category, entries] of groups) {
@@ -204,7 +217,7 @@ export function renderCategories(items, href) {
             .join('\n\n');
         sections.push(template('CATEGORY', { name: category, count: entries.length, plugins }));
     }
-    return template('CATEGORIES', { navigation, groups: sections.join('\n\n') });
+    return template('CATEGORY-COMPARISON', { navigation, groups: sections.join('\n\n') });
 }
 export const renderSources = (sources) =>
     template('SOURCES', {

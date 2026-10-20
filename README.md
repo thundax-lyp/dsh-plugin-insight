@@ -24,6 +24,8 @@
 
 ## 分类导航
 
+各分类按 GitHub Star 降序展示最多 5 项；完整分类页按插件名字母顺序排列。
+
 - [个人效率（23）](#category-personal-productivity)
 - [办公与运营（7）](#category-office-operations)
 - [研究与知识（5）](#category-research-knowledge)

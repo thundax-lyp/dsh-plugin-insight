@@ -109,6 +109,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             const advice = input.advice?.[i.id];
             if (advice && advice.revision !== i.revision) throw Error(`advice revision differs: ${i.id}`);
             if (advice && !report.includes(advice.text)) throw Error(`detail advice differs: ${i.id}`);
+            const usageConditions = advice?.text ?? report.match(/^- \*\*建议(?:：\*\*|\*\*：)(.+)$/m)[1].trim();
             const description = report.match(/^- \*\*用途(?:：\*\*|\*\*：)(.+)$/m)[1].split(/[。！？]/)[0];
             const anchor = `plugin-${plugin.repository_id}-${plugin.component_id}`;
             const path = input.metadata?.[i.id];
@@ -235,6 +236,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 short,
                 homeShort,
                 summary: summary.text,
+                usageConditions,
                 description,
                 anchor,
                 meta,
