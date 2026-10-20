@@ -1,8 +1,8 @@
 {
   "repository": "13071301808/dsh-composer-expand",
   "repository_id": 1334850903,
-  "captured_at": "2026-10-20T06:08:58.680Z",
-  "window_start": "2026-09-20T06:08:58.680Z",
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
   "stars": 6,
   "pushed_at": "2026-10-16T03:11:52Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C30:143698:1888BA:4FC483:6AD705AF and timestamp 2026-10-20 06:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A84D:39CFE4:780C83:1861FCE:6AD71563 and timestamp 2026-10-20 07:16:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C42:15BF51:15885C:45D96C:6AD705AF and timestamp 2026-10-20 06:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A841:2ED046:86C4ED:1BC43D0:6AD71564 and timestamp 2026-10-20 07:16:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C43:302B6A:15C438:47125E:6AD705AF and timestamp 2026-10-20 06:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A84B:3297AC:7A6C49:18BAC02:6AD71564 and timestamp 2026-10-20 07:16:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C36:1B10F5:15FA05:4784E4:6AD705AF and timestamp 2026-10-20 06:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A843:1D9EE7:7A7222:18D8BA0:6AD71564 and timestamp 2026-10-20 07:16:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C44:39CFE4:16A341:498D06:6AD705AF and timestamp 2026-10-20 06:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A13071301808%2Fdsh-composer-expand%20is%3Aissue%20updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A84C:1BAA89:77347F:1831C35:6AD71564 and timestamp 2026-10-20 07:16:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-composer-expand",
-    "captured_at": "2026-10-20T06:08:58.680Z",
+    "captured_at": "2026-10-20T07:15:30.299Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": 1011,
@@ -44,13 +44,13 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-15T07:18:24.703Z",
-      "captured_at": "2026-10-20T06:08:58.680Z",
+      "captured_at": "2026-10-20T07:15:30.299Z",
       "source_url": "https://registry.npmjs.org/dsh-composer-expand",
       "error": null
     }
   },
   "code_update": {
-    "checked_at": "2026-10-20T06:08:58.680Z",
+    "checked_at": "2026-10-20T07:15:30.299Z",
     "baseline_revision": "e816461115436f1cb084f868398e610396d00679",
     "current_revision": "e816461115436f1cb084f868398e610396d00679",
     "script_changed": false,

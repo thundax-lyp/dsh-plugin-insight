@@ -14,7 +14,7 @@
 
 #### [dsh-media-studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
 
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio) · [![最后更新 7天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=7%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio/commits)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio/commits) · **脚本有更新，待重新洞察**
 
 - **用途**：内容创作者希望从同一对话发起生成、取回成品并预览，交付是可用媒体文件和可追踪任务结果。
 - **亮点**：src/tools.ts解析模型与凭据，providers对接生成后端；jobs.ts启动官方后台任务，结果保存后投递会话，注册失败时退为脱离任务控制的执行。

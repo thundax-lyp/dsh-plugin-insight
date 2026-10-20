@@ -1,8 +1,8 @@
 {
   "repository": "1014029855/dsh-codevault",
   "repository_id": 1359423472,
-  "captured_at": "2026-10-20T06:08:58.680Z",
-  "window_start": "2026-09-20T06:08:58.680Z",
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
   "stars": 3,
   "pushed_at": "2026-09-16T05:38:49Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C39:269C1D:6B915:15FB9F:6AD70591 and timestamp 2026-10-20 06:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A850:CE852:7A1F44:18C6143:6AD7152F and timestamp 2026-10-20 07:15:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3B:3B23B0:71F49:173BBE:6AD70591 and timestamp 2026-10-20 06:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A851:2C000D:7DAFF5:1980CE7:6AD71530 and timestamp 2026-10-20 07:16:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3C:E4BA0:631ED:145D2D:6AD70591 and timestamp 2026-10-20 06:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A841:2ED046:85575F:1B78EB5:6AD71530 and timestamp 2026-10-20 07:16:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3D:30DB11:6DF45:168377:6AD70591 and timestamp 2026-10-20 06:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A842:3F9829:8A70C8:1C6351A:6AD71530 and timestamp 2026-10-20 07:16:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C45:1E115:581ED:120B35:6AD70591 and timestamp 2026-10-20 06:09:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A852:1D620F:83602A:1AE5697:6AD71530 and timestamp 2026-10-20 07:16:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-codevault",
-    "captured_at": "2026-10-20T06:08:58.680Z",
+    "captured_at": "2026-10-20T07:15:30.299Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": null,
@@ -44,13 +44,13 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T06:08:58.680Z",
+      "captured_at": "2026-10-20T07:15:30.299Z",
       "source_url": "https://registry.npmjs.org/dsh-codevault",
       "error": "HTTP 404"
     }
   },
   "code_update": {
-    "checked_at": "2026-10-20T06:08:58.680Z",
+    "checked_at": "2026-10-20T07:15:30.299Z",
     "baseline_revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
     "current_revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
     "script_changed": false,
