@@ -212,7 +212,10 @@ export function startWork(input, path, limit = 40, root = ROOT) {
         else {
             if (item.repository !== before.repository || item.path !== before.path) changes.push('moved');
             if (!item.revision || !before.revision) changes.push('unknown');
-            else if (item.revision !== before.revision || digest(item.fingerprints) !== digest(before.fingerprints))
+            else if (
+                item.revision !== before.revision ||
+                Object.entries(item.fingerprints).some(([area, value]) => before.fingerprints[area] !== value)
+            )
                 changes.push('content_changed');
             if (
                 before.source_urls.length &&

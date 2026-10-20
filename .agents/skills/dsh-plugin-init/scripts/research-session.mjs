@@ -137,7 +137,10 @@ export function startSession(input, previous = null, limit = undefined) {
         else {
             if (before.repository !== item.repository || before.path !== item.path) item.changes.push('moved');
             if (!item.revision || !before.revision) item.changes.push('unknown');
-            else if (before.revision !== item.revision || digest(before.fingerprints) !== digest(item.fingerprints))
+            else if (
+                before.revision !== item.revision ||
+                Object.entries(item.fingerprints).some(([area, value]) => before.fingerprints[area] !== value)
+            )
                 item.changes.push('content_changed');
             if (digest([...before.source_urls].sort()) !== digest([...item.source_urls].sort()))
                 item.changes.push('sources_changed');
