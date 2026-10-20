@@ -192,6 +192,7 @@ export function startWork(input, path, limit = 40, root = ROOT) {
         ])
     );
     for (const item of base.discovery.plugins) known.set(item.id, item);
+    const discoverySources = new Map(base.discovery.plugins.map((item) => [item.id, item.source_urls]));
     // Compare completed research against its own version, even if discovery was
     // refreshed in an intervening round without researching this object.
     for (const plugin of base.catalog.plugins)
@@ -226,8 +227,9 @@ export function startWork(input, path, limit = 40, root = ROOT) {
         }
         item.changes = changes;
     }
-    for (const before of known.values())
-        if (!incoming.has(before.id) && before.source_urls.length)
+    for (const before of known.values()) {
+        const sourceUrls = discoverySources.get(before.id) ?? before.source_urls;
+        if (!incoming.has(before.id) && sourceUrls.length)
             session.items.push({
                 ...Object.fromEntries(
                     ['id', 'repository', 'path', 'revision', 'fingerprints', 'source_urls'].map((key) => [
@@ -235,14 +237,15 @@ export function startWork(input, path, limit = 40, root = ROOT) {
                         before[key]
                     ])
                 ),
+                source_urls: sourceUrls,
                 changes: [
-                    before.source_urls.length > 0 &&
-                    before.source_urls.every((u) => input.sources.some((s) => s.url === u && s.complete))
+                    sourceUrls.every((u) => input.sources.some((s) => s.url === u && s.complete))
                         ? 'removed_from_source'
                         : 'unknown'
                 ],
                 status: 'pending'
             });
+    }
     for (const item of session.items)
         for (const url of item.source_urls)
             if (!session.sources.some((source) => source.url === url))
