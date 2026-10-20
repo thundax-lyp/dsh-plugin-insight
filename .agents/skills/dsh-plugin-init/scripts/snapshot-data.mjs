@@ -475,7 +475,8 @@ export function assertMergeReady(work) {
 export function planSnapshot(workPath, root = ROOT) {
     const base = readSnapshot(root),
         work = validateWork(readWork(workPath), root);
-    if (!Object.keys(work.records).length) throw Error('no successful records to merge');
+    if (selectedItems(work.session).length && !Object.keys(work.records).length)
+        throw Error('no successful records to merge');
     assertMergeReady(work);
     const result = assemble(base, work, root);
     return {
