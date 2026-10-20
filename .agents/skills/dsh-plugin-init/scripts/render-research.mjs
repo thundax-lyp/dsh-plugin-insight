@@ -12,6 +12,7 @@ import {
     categoryGroups,
     renderCategoryIndex,
     renderHomeCategories,
+    renderHomeNavigation,
     renderUpdated,
     renderIssueActivity,
     renderWeeklyNew,
@@ -128,7 +129,6 @@ export function renderPublication(input, root = ROOT, context = null) {
                 return template('SHORT-ITEM', { label, text: matches[0][1] });
             });
             const short = shortItems.join('\n');
-            const homeShort = [shortItems[0], template('SHORT-ITEM', { label: '亮点', text: summary.text })].join('\n');
             const title = report.match(/^# [^\n]+/)?.[0];
             if (!title) throw Error('detail needs a title');
             const capabilities = input.capabilities?.[i.id];
@@ -141,7 +141,6 @@ export function renderPublication(input, root = ROOT, context = null) {
             if (advice && advice.revision !== i.revision) throw Error(`advice revision differs: ${i.id}`);
             if (advice && !report.includes(advice.text)) throw Error(`detail advice differs: ${i.id}`);
             const usageConditions = advice?.text ?? report.match(/^- \*\*建议(?:：\*\*|\*\*：)(.+)$/m)[1].trim();
-            const description = report.match(/^- \*\*用途(?:：\*\*|\*\*：)(.+)$/m)[1].split(/[。！？]/)[0];
             const anchor = `plugin-${plugin.repository_id}-${plugin.component_id}`;
             const path = input.metadata?.[i.id];
             let npmFirstPublished = null,
@@ -235,10 +234,8 @@ export function renderPublication(input, root = ROOT, context = null) {
                 i,
                 plugin,
                 short,
-                homeShort,
                 summary: summary.text,
                 usageConditions,
-                description,
                 anchor,
                 meta,
                 needsReview,
@@ -294,6 +291,7 @@ export function renderPublication(input, root = ROOT, context = null) {
     const readme =
         template('README', {
             updated: renderUpdated(updated),
+            navigation: renderHomeNavigation(homeGroups),
             weekly_new: renderWeeklyNew(homeItems, updated),
             latest: renderLatest(homeItems),
             hot: renderHot(homeItems),

@@ -19,6 +19,17 @@ const categoryNames = {
     infrastructure: '基础设施',
     other: '其他'
 };
+const categoryScopes = {
+    'personal-productivity': '输入、会话、快捷操作与个人工作体验',
+    'office-operations': '工作记录、日程、团队用量与日常运营',
+    'research-knowledge': '信息检索、网页读取、笔记与长期知识',
+    infrastructure: '模型接入、认证、运行环境与系统支撑',
+    'software-delivery': '代码开发、任务编排、调试与交付流程',
+    'content-creation': '写作、语音、图片与视频内容生产',
+    'customer-service': '客户沟通、服务响应与支持流程',
+    other: '其他尚未归入上述场景的插件'
+};
+export const categoryScope = (key) => categoryScopes[key] ?? categoryScopes.other;
 const nameLink = (e) => template('LINK', { label: clean(e.plugin.name), url: e.href ?? `#${e.anchor}` });
 export function renderIssueActivity(metadata, repository) {
     const end = metadata?.captured_at;
@@ -74,7 +85,7 @@ export function renderWeeklyNew(items, date) {
     if (!selected.length) return '';
     return template('WEEKLY-NEW', {
         items: selected
-            .map((e) => template('NAVIGATION-ITEM', { plugin: nameLink(e), description: clean(e.description) }))
+            .map((e) => template('LATEST-ITEM', { plugin: nameLink(e), summary: clean(e.summary) }))
             .join('\n')
     });
 }
@@ -158,29 +169,39 @@ export function renderCategoryIndex(groups) {
     });
 }
 export function renderHomeCategories(groups, href, limit = 5) {
-    const navigation = groups
-        .map((g) =>
-            template('CATEGORY-INDEX-ITEM', { name: g.name, count: g.entries.length, url: `#category-${g.key}` })
-        )
-        .join('\n');
     const sections = groups.map((g) => {
         const selected = [...g.entries]
             .sort((a, b) => (b.stars ?? -Infinity) - (a.stars ?? -Infinity) || alphabetical(a, b))
             .slice(0, limit);
         const plugins = selected
             .map((e) =>
-                template('PLUGIN', {
+                template('HOME-PLUGIN', {
                     anchor: e.anchor,
                     name: clean(e.plugin.name),
-                    meta: e.meta,
-                    short: e.homeShort,
+                    summary: clean(e.summary),
+                    meta: e.starsBadge,
+                    review: e.needsReview ? ' · **脚本有更新，待重新洞察**' : '',
                     detail: href(e)
                 })
             )
             .join('\n\n');
         return template('HOME-CATEGORY', { key: g.key, name: g.name, count: g.entries.length, plugins, more: g.href });
     });
-    return template('CATEGORIES', { navigation, groups: sections.join('\n\n') });
+    return template('CATEGORIES', { groups: sections.join('\n\n') });
+}
+export function renderHomeNavigation(groups) {
+    return template('HOME-NAVIGATION', {
+        items: groups
+            .map((g) =>
+                template('HOME-NAVIGATION-ITEM', {
+                    name: g.name,
+                    url: g.href,
+                    scope: categoryScope(g.key),
+                    count: g.entries.length
+                })
+            )
+            .join('\n')
+    });
 }
 export function renderCategories(items, href) {
     const groups = new Map();

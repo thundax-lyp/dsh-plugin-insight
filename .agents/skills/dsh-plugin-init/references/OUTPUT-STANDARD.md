@@ -17,9 +17,9 @@
 
 项目根 `README.md` 是面向读者的研究成果总入口，由 `npm run render:research` 生成，不手工维护。
 生成输入为 `data/catalog/PUBLICATION.json`，结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
-README 由独立块函数合成：本周新增 → 最新 → 最热 → 推荐 → 分类导航与每类热门插件 → 研究出处 → LICENSE → 更新时间。
+README 由独立块函数合成：标题、头图与定位说明 → 分类导航 → 推荐 → 本周新增 → 最新 → 最热 → 各分类精选 → 研究出处 → LICENSE → 更新时间。
 LICENSE 区块链接根 `LICENSE`，标明 CC0-1.0，位于末尾更新时间之前。
-Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORIES／SOURCES 为块模板，
+Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／HOME-NAVIGATION／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORIES／SOURCES 为块模板，
 条目、分类、插件详情入口、META及徽章使用对应小模板。`.agents/skills/dsh-plugin-init/scripts/publication/blocks.mjs` 只负责筛选、排序与装配，不硬编码标题及段落版式。
 总入口读取模板并填充已核验数据，同一列表不维护两份 Markdown。
 不展示研究历史、本轮范围、完成计数、研究深度、工程使用、内部数据入口或“具体来源版本与覆盖限制见本轮报告”等过程说明。
@@ -32,9 +32,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 - **推荐：** 人工选择值得安装或条件试用的候选；在候选集合内，使用当前档案有效的技术创新、业务创新百分制均分降序排列，同分按稳定ID升序。无评分、任一轴未知、版本不匹配或待复核项排在已评分项之后，并按稳定ID排序；不能把缺失评分当0。observe项不进入推荐，不因高分自动入选。
   分数、分项、综合排序值、评分理由及“待评分”等评分状态均不展示在README、分类页或INSIGHT中，读者只看到推荐顺序；具体数据只存JSON。评分标准见洞察Skill研究规范。保留推荐理由、质疑及条件。
   没有验收证据仍不得标“值得装”，脚本变化提示待复核。推荐与最新／最热分开，不能用热度自动推出采用价值。
-- **分类导航与列表：** 在 README 内先提供分类导航，随后每类按 Star 降序展示最多 5 个已完成插件的
-  META 和“用途／亮点”两项短评，不展示“思考／建议”；分类标题链接对应完整分类页，每类末尾保留“更多”入口。插件标题直接链接详细分析，不再单列“详细分析”行；完整分类页保留四标签短评，按插件名字母顺序排列，页首先提供“插件／主要用途／关键使用条件”比较表。表内插件名跳转本页短评，主要用途复用同版本功能摘要，关键使用条件复用同版本使用建议（优先发布输入 advice，否则沿用原稿“建议”），不机械截断或推断条件；单元格转义竖线与 HTML 特殊字符。首页与分类页分别标明排序依据。
-  首页“用途”沿用研究短评，“亮点”直接复用同一固定版本的 `summaries.text`，用日常语言说明提供的能力与特点，不复制源码路径、事件名或接线细节；技术短评仍保留在分类页与详情中，不把功能说明改写为效果保证。
+- **分类导航与列表：** 首页导航用“分类／用途／数量”紧凑表，分类名直接进入完整分类页，分类范围说明由生成器统一维护并复用于分类页。各分类精选按 Star 降序展示最多5项，每项采用加粗名称、同版本功能摘要和 Star 指标的紧凑列表，保留脚本更新待复核提示，不创建插件标题或重复四标签短评；分类标题和“更多”链接完整分类页。完整分类页保留四标签短评，按插件名字母顺序排列，页首先提供“插件／主要用途／关键使用条件”比较表。表内插件名跳转本页短评，主要用途复用同版本功能摘要，关键使用条件复用同版本使用建议（优先发布输入 advice，否则沿用原稿“建议”），不机械截断或推断条件；单元格转义竖线与 HTML 特殊字符。首页与分类页分别标明排序依据。
 - **研究出处：** 两个 GitHub 发现目录放在 README 最后；固定提交、证据边界和必要依据保存在当前快照；本轮错误与断点在合并前保存在 runs。
 
 固定出处：
