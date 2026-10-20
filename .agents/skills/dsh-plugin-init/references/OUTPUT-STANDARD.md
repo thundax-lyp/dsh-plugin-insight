@@ -62,7 +62,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 |---|---|---|
 | 研究入口 | 根 `README.md` | 由模板生成，插件标题链接稳定详情入口 |
 | 唯一正式快照 | `data/catalog/SNAPSHOT.json` | 当前档案、来源、分析原文、证据内容及展示输入；原子合并点 |
-| 本轮工作记录 | `data/runs/<round>/WORK.json` | 固定基线、队列与逐项暂存结果；合并后可按引用清理 |
+| 本轮工作记录 | `data/runs/<round>/WORK.json` | v2保存固定基线与过程文件摘要索引；合并后可按引用清理 |
 | 档案兼容输出 | `data/catalog/PLUGINS.json` | 从正式快照生成，不单独人工维护 |
 | 发布兼容输出 | `data/catalog/PUBLICATION.json` | 从快照生成，records 保存当前有效完成记录，不引用历史会话 |
 | 插件路径注册表 | `data/catalog/PLUGIN-PATHS.json` | 稳定 ID 到可读插件目录的唯一映射 |
@@ -70,8 +70,10 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 当前 META | `data/plugins/<plugin-slug>/META.json` | 当前采集结果；本轮采集先暂存，核实后更新 |
 | 旧运行清单 | `data/manifests/<round>.json` | 新文件由 .gitignore 忽略；已跟踪且仍被当前工具或详情引用的文件暂留，解除依赖后删除 |
 | 本地来源输入与问题 | `data/runs/<round>/INPUT.json`、`INPUT-PROBLEMS.json` | Git 忽略；固定目录解析、身份核实结果与未解决边界 |
-| 本地会话与进度 | `data/runs/<round>/SESSION.json` | Git 忽略；本轮候选、基线摘要、所选范围及合并前检查点 |
+| 本地会话与进度 | `data/runs/<round>/SESSION.json` | Git 忽略；v2为指向同轮WORK的兼容入口；实际会话头、状态和检查点独立存储 |
 | 本地单插件观察 | `data/runs/<round>/observations/<plugin-slug>.json` | Git 忽略；批次只含本项，历史多项批次可用 MULTI-PLUGIN.json |
+| 拆分过程依赖 | `data/runs/<round>/process/{queues,sessions,records}/<sha256>.json` | WORK 引用的不可变队列、会话状态和单项记录；INPUT 保留完整固定清单 |
+| 过程迁移审计 | `data/runs/<round>/WORK-MIGRATION.json`、`migration-originals/work-storage-v1/` | 迁移摘要与旧 WORK／SESSION 原始字节，不由 clean 自动删除 |
 | 本地研究原稿 | `data/runs/<round>/insights/<plugin-slug>.md` | Git 忽略；本轮暂存原稿，合并时将当前原文落入正式位置 |
 | 本地材料索引 | `data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json` | Git 忽略；机械绑定 checkout、作者材料、inventory 与待核查候选，不承载结论 |
 | 本地发布输入 | `data/runs/<round>/PUBLICATION-INPUT.json` | Git 忽略；人工审阅的推荐、摘要、能力、META 映射与建议，供发布 plan／apply 使用 |
@@ -103,9 +105,10 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 ## 研究清单与断点
 
 新轮次从当前快照读取基线，固定来源版本与本轮选择，不需要上轮会话。基线不足以支持的变化判断标 unknown，身份失败和范围差异明确记录。
+新过程将完整清单、队列变化、会话状态和逐项记录分开，具体职责与原子更新遵循数据契约；旧原件经显式迁移后保留。
 本轮 SESSION 与检查点用于恢复尚未合并的工作；记录完整不代表已写入正式快照。丢失旧轮次材料不影响下一轮，丢失本轮未合并材料则重新采集受影响项，不伪造完成态。
-新轮次重新分析所有所选项，版本未变也复核场景、依赖、流程、成本与采用条件；旧结论不直接充作本轮完成记录。
-报告区分清单总数、所选数、记录完成数、合并数、受阻及未选数，不能从 next 为空推断全部合并成功。
+新轮次先核对全部已有研究成果；确认未变的保留原成果、不占额度，再按数据契约优先选择更新项并用新项补足。只有所选项完整分析，旧结论不直接充作本轮完成记录。
+报告区分清单总数、已有成果核对数、确认未变数、待更新数、所选更新／新研究数、记录完成数、合并数、受阻及未选数；核对未变不计为新完成，不能从 next 为空推断全部合并成功。
 
 ## 先分析，再归纳与推荐
 
@@ -338,7 +341,7 @@ GitHub Actions 每天北京时间08:30及手动触发，复用未合并的 META 
 
 项目头图使用严肃、偏技术的 PNG，位于 `assets/dsh-plugin-insight-banner.png`，标题统一为 DSH Plugin Insight。
 
-init 可带最大研究插件数；完整清单仍保留，报告分别注明清单总数、所选数、完成数、受阻数和未选数。达到上限仅表示所选范围完成，不代表完整清单全部研究完成；新增、更新、删除共用额度，具体选择与恢复语义见数据契约。
+init 可带最大研究插件数；完整清单仍保留，报告分别注明清单总数、所选数、完成数、受阻数和未选数。达到上限仅表示所选范围完成，不代表完整清单全部研究完成；新增、更新、删除共用额度，未变已有项不占额度，更新优先、新项补足；具体选择与恢复语义见数据契约。
 
 读者页的用途／亮点／思考／建议标签采用 `**标签**：正文` 加粗，由 SHORT-ITEM 模板统一生成，避免中文冒号与 Markdown 星号边界导致原样显示。检查点绑定的研究原稿保留原文，展示层转换标签。
 

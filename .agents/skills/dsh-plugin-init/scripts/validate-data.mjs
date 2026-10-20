@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readWork, readResearchSession } from '../../_shared/scripts/work-storage.mjs';
 import { existsSync, readdirSync } from 'node:fs';
 import { resolve, relative } from 'node:path';
 import { validateManifest, validateSession } from './research-session.mjs';
@@ -15,9 +16,13 @@ const walk = (path) =>
         : [];
 try {
     if (existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json'))) {
-        const { validateSnapshot, renderSnapshot } = await import('./snapshot-data.mjs');
+        const { validateSnapshot, renderSnapshot, validateWork } = await import('./snapshot-data.mjs');
         validateSnapshot(read(resolve(ROOT, 'data/catalog/SNAPSHOT.json')));
         renderSnapshot(ROOT, true);
+        for (const path of walk(resolve(ROOT, 'data/runs')).filter(
+            (path) => path.endsWith('/WORK.json') && !path.includes('/migration-originals/')
+        ))
+            validateWork(readWork(path));
         console.log('Current snapshot and derived outputs valid; historical runs/manifests are optional');
     } else {
         const runsRoot = resolve(ROOT, 'data/runs');
@@ -52,7 +57,8 @@ try {
                 throw Error(`manifest path differs from round: ${path}`);
         }
         for (const path of walk(runsRoot)) {
-            if (path.endsWith('/SESSION.json') && !path.includes('/migration-originals/')) validateSession(read(path));
+            if (path.endsWith('/SESSION.json') && !path.includes('/migration-originals/'))
+                validateSession(readResearchSession(path));
             if (path.includes('/observations/') && !path.includes('/migration-originals/') && path.endsWith('.json'))
                 validateObservations(read(path));
         }

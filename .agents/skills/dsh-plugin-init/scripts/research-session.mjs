@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readResearchSession } from '../../_shared/scripts/work-storage.mjs';
 import {
     existsSync,
     readFileSync,
@@ -59,7 +60,10 @@ export function validateManifest(manifest) {
 }
 export function validateSession(session, root = ROOT) {
     if (!check(session)) throw new Error(ajv.errorsText(check.errors));
-    if (
+    if (session.selection) {
+        const expected = incrementalSelection(session);
+        if (digest(session.selected_ids) !== digest(expected)) throw new Error('invalid incremental selection');
+    } else if (
         session.research_limit !== undefined &&
         (session.selected_ids.length !== Math.min(session.research_limit, session.items.length) ||
             session.selected_ids.some((id, index) => session.items[index]?.id !== id))
@@ -114,7 +118,7 @@ export function startSession(input, previous = null, limit = undefined) {
         schema_version: 1,
         id: input.id,
         checked_at: input.checked_at,
-        sources: input.sources,
+        sources: structuredClone(input.sources),
         previous_digest: previous ? digest(previous) : null,
         items: input.plugins.map((p) => ({ ...p, changes: ['unknown'], status: 'pending' }))
     };
@@ -134,7 +138,10 @@ export function startSession(input, previous = null, limit = undefined) {
         else {
             if (before.repository !== item.repository || before.path !== item.path) item.changes.push('moved');
             if (!item.revision || !before.revision) item.changes.push('unknown');
-            else if (before.revision !== item.revision || digest(before.fingerprints) !== digest(item.fingerprints))
+            else if (
+                before.revision !== item.revision ||
+                Object.entries(item.fingerprints).some(([area, value]) => before.fingerprints[area] !== value)
+            )
                 item.changes.push('content_changed');
             if (digest([...before.source_urls].sort()) !== digest([...item.source_urls].sort()))
                 item.changes.push('sources_changed');
@@ -164,7 +171,23 @@ export function startSession(input, previous = null, limit = undefined) {
     }
     return validateSession(session);
 }
+// Discovery membership is not completed research. Recheck researched objects first,
+// then spend the remaining budget on objects without a current research record.
+export function incrementalSelection(session) {
+    const researched = new Set(session.selection.researched_ids);
+    const required = new Set(session.selection.review_required_ids);
+    const updates = session.items.filter(
+        (item) =>
+            researched.has(item.id) && (required.has(item.id) || item.changes.some((change) => change !== 'unchanged'))
+    );
+    const additions = session.items.filter((item) => !researched.has(item.id));
+    return [...updates, ...additions].slice(0, session.research_limit).map((item) => item.id);
+}
 export function selectedItems(session) {
+    if (session.selection) {
+        const byId = new Map(session.items.map((item) => [item.id, item]));
+        return session.selected_ids.map((id) => byId.get(id));
+    }
     return session.items.filter((item) => !session.selected_ids || session.selected_ids.includes(item.id));
 }
 const hasFreshAnalysis = (plugin, checkedAt) =>
@@ -336,6 +359,12 @@ export function saveSession(path, action) {
     const fd = openSync(lock, 'wx', 0o600);
     try {
         writeFileSync(fd, JSON.stringify({ pid: process.pid }));
+        if (existsSync(path) && read(path).schema_version === 2)
+            throw Error('linked session must be mutated through snapshot WORK');
+        const sibling = resolve(dirname(path), 'WORK.json');
+        if (existsSync(sibling) && read(sibling).schema_version === 2)
+            throw Error('split work must be mutated through snapshot WORK');
+        if (existsSync(resolve(dirname(path), 'WORK.json.lock'))) throw Error('active work lock');
         const value = action();
         atomicWrite(path, value);
         return value;
@@ -399,12 +428,12 @@ export function main(args = process.argv.slice(2)) {
             if (existsSync(path)) throw new Error('session exists; resume it or choose new id');
             return startSession(
                 read(need('input')),
-                v.previous ? read(v.previous) : null,
-                v.limit === undefined ? undefined : /^[1-9][0-9]*$/.test(v.limit) ? Number(v.limit) : NaN
+                v.previous ? readResearchSession(v.previous) : null,
+                v.limit === undefined ? 40 : /^[1-9][0-9]*$/.test(v.limit) ? Number(v.limit) : NaN
             );
         });
     } else if (['next', 'validate'].includes(command)) {
-        const s = validateSession(read(need('session')));
+        const s = validateSession(readResearchSession(need('session')));
         const selected = selectedItems(s);
         console.log(
             JSON.stringify(
@@ -426,12 +455,12 @@ export function main(args = process.argv.slice(2)) {
         const outputPath = relative(ROOT, resolve(out)).split('\\').join('/');
         if (!/^data\/manifests\/\d{4}-\d{2}-\d{2}-\d{2,}\.json$/.test(outputPath))
             throw new Error('manifest output requires data/manifests/<round>.json');
-        atomicWrite(resolve(out), createManifest(read(sessionPath), sessionPath));
+        atomicWrite(resolve(out), createManifest(readResearchSession(sessionPath), sessionPath));
     } else if (command === 'publish') {
-        publishItem(read(need('session')), need('plugin'), need('out'));
+        publishItem(readResearchSession(need('session')), need('plugin'), need('out'));
     } else if (command === 'checkpoint' || command === 'block' || command === 'retry' || command === 'invalidate') {
         saveSession(need('session'), () => {
-            const s = validateSession(read(v.session));
+            const s = validateSession(readResearchSession(v.session));
             if (command === 'checkpoint')
                 return completeItem(
                     s,

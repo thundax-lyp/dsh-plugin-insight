@@ -4,12 +4,25 @@
 
 ## 新轮次与同轮恢复
 
-- 新轮次读取唯一当前快照及其摘要，不要求上一轮 SESSION 或归档。旧过程文件缺失不算正式快照损坏。
+- 新轮次读取唯一当前快照及其摘要，不要求上一轮 SESSION 或归档。旧过程文件缺失不算正式快照损坏。已合并轮次不作为新调用的恢复目标；新调用先核对已有成果，更新优先、新项补足，选择与额度见数据契约。
 - 同轮恢复读取本轮会话、固定选择、基线摘要及暂存材料，验证检查点后跳过完整项，不重置上限或替换受阻项。
 - 本轮材料丢失或摘要不符时，仅重做受影响的未合并记录；不能复制旧会话、刷新时间或从正式档案反写指纹以伪造完成。
 - 当前快照缺少来源成员清单或比较维度时标 unknown，重新采集，不从历史 manifest 拼造完整基线。
 
+## 拆分过程与迁移
+
+新建 WORK 为 v2 索引：固定清单只存 INPUT，变化按下标存 QUEUE，状态与单项结果按内容摘要独立存放。SESSION 是指向 WORK 的兼容入口；读取器完成校验后还原既有内存结构，业务脚本不各自拼装。完整不变量见数据契约。
+
+- `npm run snapshot -- migrate-work --work data/runs/<round>/WORK.json`：预览源格式、语义摘要和原文件大小，不写文件。
+- 同命令加 `--apply`：持有 WORK 与 SESSION 锁，保留旧 WORK／SESSION 原始字节，准备依赖并校验，再原子切换 WORK；回读摘要一致才报告迁移完成。
+- 原件保留在该轮 `migration-originals/work-storage-v1/`，迁移报告为 `WORK-MIGRATION.json`；备份、未知文件和中断残留不由 clean 自动删除。
+- v1 继续兼容读取及暂存。v2 的 next、stage、block、plan、apply、prepare 与 assemble 共用读取器；旧 research 命令拒绝直接修改 v2 SESSION，使用 snapshot 对 WORK 操作。
+- 路径、引用或摘要失效时停止，不静默回退原件或刷新摘要。切换前中断可重试；切换后中断以 WORK 为准恢复兼容入口和迁移报告。拆分不改变固定选择、观察批次、检查时间或正式快照。
+
 ## 暂存与最终合并
+
+- 所选项为空时允许仅推进 discovery、来源核查信息与轮次时间，保留既有研究和展示记录；存在所选项但没有成功记录时仍拒绝生成计划。
+- plan 与 apply 均拒绝仍有 pending 所选项的 WORK；先完成或明确登记 blocked，再合并成功项。逐项 stage 仍可在同轮其他项 pending 时暂存，不实现部分合并后的重基线。
 
 - 研究过程中的 plan／apply 只作用于本轮候选；正式快照在最终合并前保持不变。
 - 合并计划同时绑定正式基线和候选摘要，核对身份、版本、证据、结论依赖和展示输入。正式基线变化时重新计划并审阅冲突。
@@ -26,7 +39,7 @@
 
 ## 命令与兼容输出
 
-- `npm run snapshot -- start --input <INPUT.json> --work data/runs/<round>/WORK.json [--limit N]`：绑定当前快照摘要并固定选择，不读取上轮会话。
+- `npm run snapshot -- start --input <INPUT.json> --work data/runs/<round>/WORK.json [--limit N]`：省略 `--limit` 默认40，绑定当前快照摘要并固定选择，不读取上轮会话。
 - `next --work ...` 返回本轮待处理项；`stage --work ... --plugin <id> --observations ... --report ... --display ...` 校验完整单项记录，只更新 WORK／本轮 SESSION。
 - `plan --work ... --out ...` 产生合并候选；`apply --plan ...` 持锁复核并原子更新正式快照，重复执行同一结果不重复追加。
 - apply 已成功而生成中断时，直接执行 `snapshot render`；不重新研究或重复应用观察。

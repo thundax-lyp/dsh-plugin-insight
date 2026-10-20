@@ -1,13 +1,37 @@
 #!/usr/bin/env node
+import { readWork } from '../../_shared/scripts/work-storage.mjs';
 // Assemble only an explicitly authored, complete single-plugin analysis; never infer findings from inventory.
-import { readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { resolve, relative, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { ROOT, read, digest, atomicWrite } from '../../_shared/scripts/plugin-data.mjs';
 import { pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
+// Read regular blobs at the pinned revision; checkout symlinks are never followed.
+export function readPinnedSource(checkout, revision, name) {
+    if (
+        typeof name !== 'string' ||
+        name.startsWith('/') ||
+        name.split(/[\\/]/).some((part) => !part || part === '..' || part === '.')
+    )
+        throw Error('unsafe inspected path');
+    const entry = execFileSync('git', ['-C', checkout, 'ls-tree', '-z', revision, '--', name], { encoding: 'utf8' });
+    if (!entry) return null;
+    const match = /^(100644|100755) blob ([a-f0-9]+)\t([^\0]+)\0$/.exec(entry);
+    if (!match || match[3] !== name) throw Error(`inspected path must be a pinned regular file: ${name}`);
+    return execFileSync('git', ['-C', checkout, 'cat-file', 'blob', match[2]], {
+        encoding: 'utf8',
+        maxBuffer: 32 * 1024 * 1024
+    });
+}
+export function sourceMembership(work, item, source) {
+    if (work.input.plugins.some((plugin) => plugin.id === item.id && plugin.source_urls.includes(source)))
+        return 'present';
+    return work.session.sources.find((value) => value.url === source)?.complete ? 'removed' : 'unknown';
+}
 export function assembleInsight(workPath, pluginId, analysisPath) {
-    const work = read(resolve(workPath)),
+    const work = readWork(resolve(workPath)),
         analysis = read(resolve(analysisPath));
     const required = [
         'name',
@@ -67,8 +91,12 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         checkout = resolve(ROOT, `data/checkouts/${pluginId.split(':')[1]}-${item.revision}`);
     const inventory = read(resolve(materials, 'INVENTORY.json')),
         metadata = read(resolve(materials, 'META.json'));
-    const manifestPath = resolve(checkout, item.path, 'package.json');
-    if (existsSync(manifestPath) && read(manifestPath).private) delete metadata.npm;
+    const manifest = readPinnedSource(
+        checkout,
+        item.revision,
+        item.path ? `${item.path}/package.json` : 'package.json'
+    );
+    if (manifest !== null && JSON.parse(manifest).private) delete metadata.npm;
     if (inventory.revision !== item.revision || inventory.component !== item.path)
         throw Error('inventory revision or scope differs');
     const pack = [];
@@ -81,13 +109,12 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         ])
     ];
     for (const name of requested) {
-        const path = resolve(checkout, name);
-        if (!path.startsWith(checkout + '/')) throw Error('unsafe inspected path');
-        if (!existsSync(path)) {
+        const content = readPinnedSource(checkout, item.revision, name);
+        if (content === null) {
             if (analysis.source_paths.includes(name)) throw Error(`inspected path missing: ${name}`);
             continue;
         }
-        pack.push({ path: name, content: readFileSync(path, 'utf8') });
+        pack.push({ path: name, content });
     }
     const sourcePath = relative(ROOT, resolve(materials, 'REVIEWED-SOURCE.json')).split('\\').join('/');
     atomicWrite(resolve(ROOT, sourcePath), {
@@ -176,7 +203,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
             url: source,
             revision: work.session.sources.find((s) => s.url === source)?.revision ?? null,
             retrieved_at: now,
-            membership: 'present'
+            membership: sourceMembership(work, item, source)
         })),
         evidence,
         findings,

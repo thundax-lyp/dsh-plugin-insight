@@ -1,0 +1,37 @@
+{
+  "repository": "1344738825/ai-look-up",
+  "repository_id": 1401618027,
+  "captured_at": "2026-10-20T04:26:03.440Z",
+  "window_start": "2026-09-20T04:26:03.440Z",
+  "stars": 4,
+  "pushed_at": "2026-10-06T01:45:49Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C76E:7A870:175FBD:191F5A:6AD6ED5C and timestamp 2026-10-20 04:26:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C832:166969:1735A2:18F56E:6AD6ED5D and timestamp 2026-10-20 04:26:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20created%3A2026-09-20T04%3A26%3A03.440Z..2026-10-20T04%3A26%3A03.440Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C8CC:3BB216:1A38D2:1BF934:6AD6ED5E and timestamp 2026-10-20 04:26:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A26%3A03.440Z..2026-10-20T04%3A26%3A03.440Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C96E:1E00D3:18AD69:1A6D44:6AD6ED5F and timestamp 2026-10-20 04:26:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20updated%3A2026-09-20T04%3A26%3A03.440Z..2026-10-20T04%3A26%3A03.440Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CA60:7CCD8:178A8D:19497E:6AD6ED60 and timestamp 2026-10-20 04:26:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ]
+}

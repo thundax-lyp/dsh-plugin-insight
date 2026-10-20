@@ -16,22 +16,25 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 新一轮与当前快照比较，不要求上一轮 SESSION、manifest 链或 runs 归档；历史版本需要时从 Git 查阅。
 具体合并、证据落位及清理条件以[数据契约](../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)为准。
 
-正式真相位于 `data/catalog/SNAPSHOT.json`，结构见共享 `snapshot.schema.json`；本轮工作文件为 `data/runs/<round>/WORK.json`，结构见 `snapshot-work.schema.json`。
-使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／clean。`PLUGINS.json`、`PUBLICATION.json`、路径注册表、META 与页面是可重建的兼容输出，不再单独人工写入。
+正式真相位于 `data/catalog/SNAPSHOT.json`，结构见共享 `snapshot.schema.json`；本轮工作入口为 `data/runs/<round>/WORK.json`，新建时使用 v2 小索引，INPUT、队列、会话状态与单项结果分开保存，完整逻辑结构见 `snapshot-work.schema.json`，拆分存储见 `work-storage.schema.json`。用过程读取器加载，不直接对 WORK／SESSION 执行 JSON 读取后假设内嵌完整数据。
+使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／migrate-work／clean。`PLUGINS.json`、`PUBLICATION.json`、路径注册表、META 与页面是可重建的兼容输出，不再单独人工写入。
 首次迁移才使用 `snapshot bootstrap`；它保留现有分析，明确列出缺失历史原件，不把迁移当成本轮研究。已有快照时不得重做 bootstrap。
 旧 research／publication 的正式写入不再用于新流程；命令及恢复语义见[会话与合并恢复](references/SESSION-OPERATIONS.md)。
 
 ## 调用参数
 
-`$dsh-plugin-init [最大研究插件数]`，例如 `$dsh-plugin-init 30`。省略时研究全部；提供时必须为正整数。
-新增、更新、目录移除、未变及未知条目共用上限，每个稳定 ID 只计一次。
-完整列表仍保留，按来源解析后清单顺序选择前 N 项，目录缺席项追加在后；受阻项占名额，不补位。
+`$dsh-plugin-init [本轮新增与更新总额度]`，例如 `$dsh-plugin-init 30`。省略时默认40；提供时必须为正整数。
+每次未指定恢复轮次的调用启动新一轮；已有同日已合并轮次不代表本次请求已完成。
+先核对当前快照中已有研究成果的条目（例如前轮已完成的40项，后续随档案增长），有变化或需要复核的项优先占用额度；确认未变的项保留原成果，不占额度。
+若本轮额度为40，已有项中有 n 项需要更新，则再从尚无当前研究成果的条目中依目录顺序选择40−n项；n≥40时只选择前40个更新项，其余留待后轮。
+“新项”指尚未完成研究，不限于本轮首次在目录发现。完整列表仍保留；新增不足时不凑数。
+受阻或未知的待复核项占名额，不用其他条目掩盖失败；同轮恢复固定选择、不补位。具体选择不变量见数据契约。
 同轮恢复使用已固定的选择和上限，不重置计数；未选项不冒充已研究。
 
 ## 执行流程
 
 1. **读取基线并确定本轮。** 检查工作区和当前快照，记录其摘要；当前快照不存在才视为首次初始化。
-   新轮次分配未占用的 `data/runs/YYYY-MM-DD-NN/`；继续任务时恢复本轮会话和已完成的暂存记录。
+   新轮次分配未占用的 `data/runs/YYYY-MM-DD-NN/`；继续任务时通过过程读取器恢复本轮会话和已完成的暂存记录，逐一验证引用摘要。旧过程需要拆分时先预览 `snapshot migrate-work --work ...`，再加 `--apply` 显式迁移，保留原件并核对语义摘要；不重建已清理轮次。
    旧 runs 缺失不阻止新研究。当前快照缺少某项比较依据时，将该维度标为 unknown，不从历史清单拼造事实。
 2. **固定来源与生成列表。** 默认核查两个研究目录，固定 checkout 提交、检查时间和覆盖范围。
    使用稳定输入构建器，保存本轮 INPUT 与问题记录；来源 checkout 必须干净，构建前后 HEAD 不变。
@@ -45,15 +48,15 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
    ```
    只有完整读取并核对来源后才增加相应 `--complete-awesome`／`--complete-harness`；解析、身份或默认分支问题使来源不完整。
    按仓库数字 ID 与已分配组件路径去重，保留重定向、组件碰撞和身份失败的具体记录，不编造 ID。
-3. **形成固定队列。** 用当前快照比较新增、位置／内容／来源变化、未变和未知；只有相关来源完整核查才可推断目录移除。
+3. **形成固定队列。** 先核对所有已有研究成果，再用新项补足额度。已有项以其最后完成研究的版本为比较基线，不能被后续仅发现未研究的版本覆盖；比较位置／内容／来源变化、未变及未知，依赖失效也需复核。只有相关来源完整核查才可推断目录移除。
    固定本轮候选、来源、指纹、选择、上限和基线摘要，写入本轮会话；后续不反向改写它们以通过检查。
    ```sh
    npm run snapshot -- start --input data/runs/<round>/INPUT.json --work data/runs/<round>/WORK.json --limit <N>
    npm run snapshot -- next --work data/runs/<round>/WORK.json
    npm run prepare:selected -- --work data/runs/<round>/WORK.json
    ```
-   省略上限时省略 `--limit`。prepare:selected 只读取固定提交、统计和采集材料/META，不运行目标代码，不生成观察或研究结论。
-   新一轮重新分析全部所选项；仅同轮恢复跳过已完成且材料校验一致的项。
+   Skill 未提供参数时使用40；`snapshot start` 省略 `--limit` 时同样默认40。prepare:selected 只读取固定提交、统计和采集材料/META，不运行目标代码，不生成观察或研究结论。
+   选中的更新项和新项均完整分析；未变的已有项只核对后保留，不调用洞察、不伪造本轮完成记录。同轮恢复跳过已完成且材料校验一致的项。
 4. **逐项调用单插件洞察。** 读取并应用[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)，传入稳定 ID、固定版本、截止时间、当前快照中的分析和证据、目标深度及本轮输出位置。
    该流程内调用不自动创建子 Agent。每项独立保存 inventory、证据、详细分析、观察批次及人工确认的摘要／能力／建议。
    核查场景、替代办法、安装与效果依赖、用户与异常流程、总成本和采用条件；不得用静态候选批量生成通用结论。

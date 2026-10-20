@@ -218,6 +218,36 @@
     "base_digest": {
       "type": "string",
       "pattern": "^[a-f0-9]{64}$"
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "researched_ids",
+        "review_required_ids"
+      ],
+      "properties": {
+        "mode": {
+          "const": "incremental"
+        },
+        "researched_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^github:[0-9]+:[a-zA-Z0-9_-]+$"
+          }
+        },
+        "review_required_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^github:[0-9]+:[a-zA-Z0-9_-]+$"
+          }
+        }
+      }
     }
   },
   "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -225,8 +255,37 @@
     "research_limit": [
       "selected_ids"
     ],
-    "selected_ids": [
-      "research_limit"
+    "selection": [
+      "selected_ids",
+      "base_digest"
     ]
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "selected_ids"
+        ],
+        "not": {
+          "required": [
+            "selection"
+          ],
+          "properties": {
+            "selection": {}
+          }
+        },
+        "properties": {
+          "selected_ids": {}
+        }
+      },
+      "then": {
+        "required": [
+          "research_limit"
+        ],
+        "properties": {
+          "research_limit": {}
+        }
+      }
+    }
+  ]
 }

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readResearchSession } from '../../_shared/scripts/work-storage.mjs';
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import { basename, isAbsolute, relative, resolve } from 'node:path';
@@ -170,7 +171,7 @@ export function main(args = process.argv.slice(2)) {
     const sessionLocal = projectPath(sessionPath);
     const round = sessionLocal.match(/^data\/runs\/(\d{4}-\d{2}-\d{2}-\d{2,})\/SESSION\.json$/)?.[1];
     if (!round) throw new Error('session must be data/runs/<round>/SESSION.json');
-    const session = read(sessionPath);
+    const session = readResearchSession(sessionPath);
     const pluginId = required('plugin');
     validateMaterialsOutput(session, pluginId, out, round);
     const result = prepareMaterials({

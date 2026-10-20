@@ -1,0 +1,52 @@
+{
+  "repository": "173787247/dsh-device-bridge",
+  "repository_id": 1384810806,
+  "captured_at": "2026-10-20T04:26:35.624Z",
+  "window_start": "2026-09-20T04:26:35.624Z",
+  "stars": 1,
+  "pushed_at": "2026-09-30T03:21:30Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E0AE:1E4106:176E28:192F1D:6AD6ED7D and timestamp 2026-10-20 04:26:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E16E:73868:1778D4:1939AC:6AD6ED7D and timestamp 2026-10-20 04:26:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20created%3A2026-09-20T04%3A26%3A35.624Z..2026-10-20T04%3A26%3A35.624Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E1FA:6FB37:18964C:1A592B:6AD6ED7E and timestamp 2026-10-20 04:26:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A26%3A35.624Z..2026-10-20T04%3A26%3A35.624Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E2B8:1E1095:18D3F8:1A95C2:6AD6ED7F and timestamp 2026-10-20 04:26:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-device-bridge%20is%3Aissue%20updated%3A2026-09-20T04%3A26%3A35.624Z..2026-10-20T04%3A26%3A35.624Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E350:166969:174CC8:190E50:6AD6ED80 and timestamp 2026-10-20 04:26:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-device-bridge",
+    "captured_at": "2026-10-20T04:26:40.880Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-device-bridge",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T04:26:40.880Z",
+      "source_url": "https://registry.npmjs.org/dsh-device-bridge",
+      "error": "HTTP 404"
+    }
+  }
+}

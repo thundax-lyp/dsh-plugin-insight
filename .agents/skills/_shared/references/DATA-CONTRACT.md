@@ -17,7 +17,10 @@
 - 合并回读成功且当前快照可独立校验、生成页面后，本轮不再被引用的材料可清理；未合并增量保留用于恢复。历史变迁由 Git 追踪，不要求每轮永久归档；本规则不自动授权删除既有文件。
 
 正式真相存储在 `data/catalog/SNAPSHOT.json`，由 [snapshot Schema](../schemas/snapshot.schema.json) 约束，内含 catalog、publication、registry、discovery、reports、metadata、artifacts、迁移限制及最近一次合并标识。必要原件以内容和 SHA-256 嵌入；旧缺失原件单列 unavailable_artifacts，不要求找回，也不能被新记录用作缺失证据的豁免。
-本轮 WORK 由 [工作文件 Schema](../schemas/snapshot-work.schema.json) 约束，包含固定 input、session、base_digest 和已完成记录；新增 session.base_digest 绑定正式快照，previous_digest 仅兼容旧工具。
+本轮完整逻辑状态由 [工作文件 Schema](../schemas/snapshot-work.schema.json) 约束，拆分入口、队列、状态和兼容链接由 [存储 Schema](../schemas/work-storage.schema.json) 约束。新建过程使用 v2 拆分存储：WORK 只保存 base_digest、INPUT／QUEUE／会话状态／单项记录的路径和 SHA-256；INPUT 保存唯一完整候选清单，QUEUE 保存按输入下标分组的变化及缺席项，状态文件只保存会话头与非默认状态／检查点，已完成记录逐项独立保存。SESSION.json 是指向同目录 WORK 的兼容入口，不另存完整清单。
+读取器校验引用路径、内容摘要、Schema、队列覆盖、选择和检查点后，重建原 v1 内存结构；内存结构的语义摘要保持不变，不因拆文件改变已有合并计划、事务标识或结论。session.base_digest 仍绑定正式快照，previous_digest 仅兼容旧工具。
+过程依赖对象按内容摘要命名且不可变，更新先准备依赖、再原子替换唯一 WORK 索引；中断前后读取旧／新完整状态。SESSION 入口通过 WORK 读取当前会话，不独立切换状态；未引用的中断残留不当作完成记录。引用只能落在本轮目录，拒绝路径逃逸、符号链接逃逸与摘要不符，不自动修正损坏内容。
+旧 v1 可继续读取；显式 `snapshot migrate-work --work ...` 只预览，加 `--apply` 才迁移。先保留 WORK／SESSION 原始字节到本轮 migration-originals，再生成、回读并核对完整语义摘要后切换 WORK；重复执行不得覆写备份或重置选择／状态。迁移不依赖当前正式基线仍匹配，也不执行研究或修改 SNAPSHOT。正常暂存旧 v1 保持旧格式，避免隐式迁移。
 合并计划从固定基线和经过校验的 WORK 重建结果；持有独占锁后复核基线、WORK 与结果摘要，原子替换单个 SNAPSHOT 文件，再回读。中断最多留下旧／新两个完整状态之一；遗留锁须人工核实。重复 apply 同一结果返回 already_applied，不追加历史运行日志。
 PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前后核对快照摘要；生成中断可重跑，兼容输出不反向覆盖快照。当前研究有效性来自 records 与 catalog 的分析摘要匹配，不来自旧 manifest。
 
@@ -36,7 +39,7 @@ PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前
   默认分支与发布包的指纹不可互相冒充。
 - `sources` 绑定 URL、`revision` 与 `retrieved_at`；`membership` 表示该来源的 present／removed／unknown。
   来源按 URL 比较最新成功快照，一个来源缺席不代表所有来源均已移除。
-  发现基线中本轮缺席的候选，只有其已知相关来源均完整核查时才剔除；否则保留旧身份与指纹供下一轮按 unknown 比较，包括尚未进入 catalog 的候选。不改写本轮固定输入或选择。
+  发现基线中本轮缺席的候选，只有其已知相关来源均完整核查时才剔除；否则保留旧身份与指纹供下一轮按 unknown 比较，包括尚未进入 catalog 的候选。候选本轮仍出现时，也要保留其来自未完整核查来源的既有成员关系，并标为待复核；只有该来源完整核查且候选缺席才能移除该来源关系。最新 discovery 来源成员集合与最后完成研究的版本比较基线分别保存，不改写本轮固定输入或选择。
 - 同一来源／证据 ID 不得复用为不同内容，内容变化使用新 ID。证据 ID 全局唯一，来源 ID 在插件内唯一。
   当前快照保留支撑有效结论的对象；无当前引用的历史材料不要求永久累积，清理须检查引用完整性。本轮候选复用合并器的身份、来源与依赖校验，正式快照不累计 runs 日志。
   完整复核成功的组件以本轮来源和证据替代过期集合；仍被其他当前结论引用的证据保留。嵌入原件与缺失原件清单同步按当前引用收敛，不随每轮永久增长。
@@ -78,8 +81,11 @@ PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前
 - `changes` 中 added 表示当前基线没有该身份；moved、content_changed、sources_changed 分别表示位置、内容指纹和来源变化。
   无变化为 unchanged，不能确认则为 unknown。仅当基线中相关来源已知且本轮均完整核查且候选缺席，才可标记 removed_from_source。
   缩小范围不算生态删除；变化标记可重叠，不能相加为对象总数，也不能据此免除本轮重新分析。
-- `research_limit` 与 `selected_ids` 同时存在或同时省略；省略表示全部，有限上限为正的安全整数。
-  所选 ID 固定为完整列表顺序的前 N 项，缺席条目追加在后。新增、更新、移除、未变、未知共用额度，每个稳定 ID 计一次。
+- 新轮次使用 `selection.mode = incremental`，将基线中已有完成研究记录（含保留完整研究原稿、因失效退出当前展示的项）的 ID 固定在 `selection.researched_ids`，其中结论已失效或尚未恢复当前展示记录的待复核 ID 固定在 `selection.review_required_ids`；两者必须与正式基线一致。目录中已发现但从未完成研究的条目仍是新研究项。
+  先比较全部已有成果与本轮输入；有变化、缺席无法确认、指纹未知或依赖失效的已有项进入更新队列，确认未变的已有项保留原成果且不占额度。比较基线取该项最后完成研究的记录，不能取后来只发现而未完成研究的版本。
+  按完整输入顺序排列更新队列（缺席项追加其后），再排列尚无完成研究记录的新项，去重后按此顺序固定 `selected_ids`。
+  `research_limit` 表示更新与新项的总额度，必须为正安全整数；新调用省略参数时默认40，并在新会话中显式保存40。历史会话未保存额度时保持原有选择语义，不在恢复时套用新默认值。额度40、待更新 n≤40时补充最多40−n个新项；n>40时先做40个更新项，剩余更新留待后轮。新项不足时允许少于额度。
+  `selected_ids` 在增量模式总是存在（允许空数组）；`selectedItems` 按固定选择顺序返回。未带 `selection` 的既有会话继续按旧的前 N 项语义校验和恢复，不反写历史选择。
   受阻项占名额，续跑不补位、不重置；未选项保留 pending，但不接受完成、受阻或重试状态变更。
 - 新会话条目从 pending 开始；blocked 带受阻原因，complete 必须带检查点。
   所选范围的 complete／blocked／total 与完整列表 listed、未选 deferred 分开统计，不能把未选条目称作已研究。

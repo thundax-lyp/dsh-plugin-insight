@@ -159,7 +159,10 @@ export function renderPublication(input, root = ROOT, context = null) {
                     updated: n(m.issues.updated_30d),
                     date: new Date(Date.parse(m.captured_at) + 8 * 3600000).toISOString().slice(0, 10)
                 });
-                const badge = m.npm
+                // A declared package name with two 404 responses is not a confirmed npm publication.
+                // Retain the failed capture in metadata without advertising an unverified package.
+                const npmAvailable = m.npm && !(m.npm.error === 'HTTP 404' && m.npm.publication?.error === 'HTTP 404');
+                const badge = npmAvailable
                     ? 'https://img.shields.io/static/v1?' +
                       new URLSearchParams({
                           label: 'npm 30d',
@@ -170,7 +173,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                           style: 'flat'
                       }).toString()
                     : null;
-                const downloads = m.npm
+                const downloads = npmAvailable
                     ? ' · ' +
                       template('BADGE', {
                           alt: `npm 30d ${n(m.npm.downloads_30d)}`,

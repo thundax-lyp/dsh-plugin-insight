@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readWork, saveWork, migrateWork, workStorageFiles } from '../../_shared/scripts/work-storage.mjs';
 import { existsSync, readFileSync, mkdirSync, writeFileSync, openSync, closeSync, unlinkSync, rmSync } from 'node:fs';
 import { resolve, relative, isAbsolute, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -18,7 +19,13 @@ import {
 } from '../../_shared/scripts/plugin-data.mjs';
 import { CATALOG, PUBLICATION, REGISTRY, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { validatePublication } from './publication-data.mjs';
-import { startSession, validateSession, completeItem, selectedItems } from './research-session.mjs';
+import {
+    startSession,
+    validateSession,
+    completeItem,
+    selectedItems,
+    incrementalSelection
+} from './research-session.mjs';
 import { renderPublication } from './render-research.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 export const SNAPSHOT = 'data/catalog/SNAPSHOT.json';
@@ -27,7 +34,7 @@ const ajv = new Ajv({ strict: true, allErrors: true });
 addFormats(ajv);
 const check = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/snapshot.schema.json')));
 const workCheck = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/snapshot-work.schema.json')));
-const validateWork = (work, root = ROOT) => {
+export const validateWork = (work, root = ROOT) => {
     if (!workCheck(work)) throw Error(ajv.errorsText(workCheck.errors));
     validateSession(work.session, root);
     if (
@@ -163,7 +170,19 @@ export function bootstrap(root = ROOT) {
     atomicWrite(snapshotFile(root), result);
     return result;
 }
-export function startWork(input, path, limit, root = ROOT) {
+export function startWork(input, path, limit = 40, root = ROOT) {
+    mkdirSync(dirname(path), { recursive: true });
+    const lock = path + '.lock',
+        fd = openSync(lock, 'wx', 0o600);
+    try {
+        if (existsSync(resolve(dirname(path), 'SESSION.json.lock'))) throw Error('active session lock');
+        return startWorkUnlocked(input, path, limit, root);
+    } finally {
+        closeSync(fd);
+        unlinkSync(lock);
+    }
+}
+function startWorkUnlocked(input, path, limit, root) {
     if (existsSync(path)) throw Error('work already exists; resume it');
     const rel = relative(root, resolve(path)).split('\\').join('/');
     if (!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/WORK\.json$/.test(rel))
@@ -186,6 +205,19 @@ export function startWork(input, path, limit, root = ROOT) {
         ])
     );
     for (const item of base.discovery.plugins) known.set(item.id, item);
+    const discoverySources = new Map(base.discovery.plugins.map((item) => [item.id, item.source_urls]));
+    // Compare completed research against its own version, even if discovery was
+    // refreshed in an intervening round without researching this object.
+    for (const plugin of base.catalog.plugins)
+        if (base.reports[plugin.id])
+            known.set(plugin.id, {
+                ...known.get(plugin.id),
+                repository: plugin.repository,
+                path: plugin.path,
+                revision: plugin.fingerprints.code ?? null,
+                fingerprints: plugin.fingerprints
+            });
+    for (const record of base.publication.records) known.set(record.id, record);
     const incoming = new Set(input.plugins.map((p) => p.id));
     for (const item of session.items) {
         const before = known.get(item.id);
@@ -194,30 +226,51 @@ export function startWork(input, path, limit, root = ROOT) {
         else {
             if (item.repository !== before.repository || item.path !== before.path) changes.push('moved');
             if (!item.revision || !before.revision) changes.push('unknown');
-            else if (item.revision !== before.revision || digest(item.fingerprints) !== digest(before.fingerprints))
+            else if (
+                item.revision !== before.revision ||
+                Object.entries(item.fingerprints).some(([area, value]) => before.fingerprints[area] !== value)
+            )
                 changes.push('content_changed');
             if (
                 before.source_urls.length &&
                 digest([...item.source_urls].sort()) !== digest([...before.source_urls].sort())
             )
                 changes.push('sources_changed');
+            const missingSources = (discoverySources.get(item.id) ?? []).filter(
+                (url) => !item.source_urls.includes(url)
+            );
+            if (missingSources.some((url) => !input.sources.some((source) => source.url === url && source.complete))) {
+                if (!changes.includes('unknown')) changes.push('unknown');
+            } else if (missingSources.length && !changes.includes('sources_changed')) changes.push('sources_changed');
             if (!changes.length) changes.push('unchanged');
         }
         item.changes = changes;
     }
-    for (const before of base.discovery.plugins)
-        if (!incoming.has(before.id))
+    for (const before of known.values()) {
+        const sourceUrls = discoverySources.get(before.id) ?? before.source_urls;
+        if (!incoming.has(before.id) && sourceUrls.length)
             session.items.push({
-                ...before,
+                ...Object.fromEntries(
+                    ['id', 'repository', 'path', 'revision', 'fingerprints', 'source_urls'].map((key) => [
+                        key,
+                        before[key]
+                    ])
+                ),
+                source_urls: sourceUrls,
                 changes: [
-                    before.source_urls.length > 0 &&
-                    before.source_urls.every((u) => input.sources.some((s) => s.url === u && s.complete))
+                    sourceUrls.every((u) => input.sources.some((s) => s.url === u && s.complete))
                         ? 'removed_from_source'
                         : 'unknown'
                 ],
                 status: 'pending'
             });
-    if (limit !== undefined) session.selected_ids = session.items.slice(0, limit).map((p) => p.id);
+    }
+    for (const item of session.items)
+        for (const url of item.source_urls)
+            if (!session.sources.some((source) => source.url === url))
+                session.sources.push({ url, revision: null, complete: false });
+    session.selection = snapshotSelection(base);
+    session.selected_ids = incrementalSelection(session);
     session.base_digest = digest(base);
     const work = {
         schema_version: 1,
@@ -228,14 +281,36 @@ export function startWork(input, path, limit, root = ROOT) {
         records: {}
     };
     validateSession(session, root);
-    atomicWrite(path, work);
-    atomicWrite(resolve(dirname(path), 'SESSION.json'), session);
+    saveWork(path, work, true);
     return work;
+}
+function snapshotSelection(base) {
+    const published = new Set(base.publication.records.map((record) => record.id));
+    const researched = [
+        ...new Set([
+            ...published,
+            ...base.catalog.plugins.filter((plugin) => base.reports[plugin.id]).map((plugin) => plugin.id)
+        ])
+    ];
+    const researchedSet = new Set(researched);
+    return {
+        mode: 'incremental',
+        researched_ids: researched,
+        review_required_ids: base.catalog.plugins
+            .filter(
+                (plugin) =>
+                    researchedSet.has(plugin.id) &&
+                    (!published.has(plugin.id) || plugin.findings.some((finding) => finding.status === 'needs_review'))
+            )
+            .map((plugin) => plugin.id)
+    };
 }
 function assemble(base, work, root = ROOT) {
     if (work.base_digest !== digest(base) || work.session.base_digest !== work.base_digest)
         throw Error('snapshot baseline changed; replan work explicitly');
     validateWork(work, root);
+    if (work.session.selection && digest(work.session.selection) !== digest(snapshotSelection(base)))
+        throw Error('incremental selection baseline differs from snapshot');
     const next = structuredClone(base);
     const selected = new Set(selectedItems(work.session).map((p) => p.id));
     const records = new Map(next.publication.records.map((r) => [r.id, r]));
@@ -301,26 +376,48 @@ function assemble(base, work, root = ROOT) {
     next.checked_at = work.session.checked_at;
     next.publication.checked_at = next.checked_at;
     next.publication.scope = `本轮所选 ${selected.size}，完成 ${Object.keys(work.records).length}，受阻 ${selectedItems(work.session).filter((i) => i.status === 'blocked').length}；当前发布 ${records.size}`;
-    const incomingIds = new Set(work.input.plugins.map((p) => p.id));
-    const uncertainMissing = base.discovery.plugins.filter(
-        (p) =>
-            !incomingIds.has(p.id) &&
-            (p.source_urls.length === 0 ||
-                !p.source_urls.every((url) => work.input.sources.some((s) => s.url === url && s.complete)))
-    );
-    next.discovery = {
-        sources: work.input.sources,
-        plugins: [...work.input.plugins, ...uncertainMissing],
-        complete_baseline: work.input.sources.every((s) => s.complete) && uncertainMissing.length === 0
-    };
+    next.discovery = mergeDiscovery(base.discovery, work.input);
     next.transaction = { id: work.session.id, work_digest: digest(work) };
     return validateSnapshot(next, root);
+}
+// Keep memberships that an incomplete source cannot yet disprove.
+export function mergeDiscovery(previous, input) {
+    const complete = new Set(input.sources.filter((source) => source.complete).map((source) => source.url));
+    const byId = new Map(previous.plugins.map((plugin) => [plugin.id, plugin]));
+    const incomingIds = new Set(input.plugins.map((plugin) => plugin.id));
+    const uncertainMissing = previous.plugins.filter(
+        (plugin) =>
+            !incomingIds.has(plugin.id) &&
+            (!plugin.source_urls.length || plugin.source_urls.some((url) => !complete.has(url)))
+    );
+    const plugins = [
+        ...input.plugins.map((plugin) => ({
+            ...plugin,
+            source_urls: [
+                ...new Set([
+                    ...plugin.source_urls,
+                    ...(byId.get(plugin.id)?.source_urls ?? []).filter((url) => !complete.has(url))
+                ])
+            ]
+        })),
+        ...uncertainMissing
+    ];
+    const sources = structuredClone(input.sources);
+    for (const plugin of plugins)
+        for (const url of plugin.source_urls)
+            if (!sources.some((source) => source.url === url)) sources.push({ url, revision: null, complete: false });
+    return {
+        sources,
+        plugins,
+        complete_baseline: sources.every((source) => source.complete) && uncertainMissing.length === 0
+    };
 }
 export function stageRecord(workPath, id, observationPath, reportPath, displayPath, root = ROOT) {
     const lock = workPath + '.lock';
     const fd = openSync(lock, 'wx', 0o600);
     try {
         writeFileSync(fd, JSON.stringify({ pid: process.pid }));
+        if (existsSync(resolve(dirname(workPath), 'SESSION.json.lock'))) throw Error('active session lock');
         return stageRecordUnlocked(workPath, id, observationPath, reportPath, displayPath, root);
     } finally {
         closeSync(fd);
@@ -329,7 +426,7 @@ export function stageRecord(workPath, id, observationPath, reportPath, displayPa
 }
 function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayPath, root = ROOT) {
     const base = readSnapshot(root),
-        work = validateWork(read(workPath), root);
+        work = validateWork(readWork(workPath), root);
     if (work.base_digest !== digest(base)) throw Error('snapshot baseline changed');
     if (work.records[id]) throw Error('record already staged; do not overwrite checkpoint');
     const observations = read(observationPath),
@@ -368,14 +465,19 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
         files: [observationPath, reportPath, displayPath].map((p) => relative(root, resolve(p)))
     };
     assemble(base, work, root);
-    atomicWrite(workPath, work);
-    atomicWrite(resolve(dirname(workPath), 'SESSION.json'), work.session);
+    saveWork(workPath, work);
     return work;
+}
+export function assertMergeReady(work) {
+    if (selectedItems(work.session).some((item) => item.status === 'pending'))
+        throw Error('selected pending items must be completed or blocked before merging');
 }
 export function planSnapshot(workPath, root = ROOT) {
     const base = readSnapshot(root),
-        work = validateWork(read(workPath), root);
-    if (!Object.keys(work.records).length) throw Error('no successful records to merge');
+        work = validateWork(readWork(workPath), root);
+    if (selectedItems(work.session).length && !Object.keys(work.records).length)
+        throw Error('no successful records to merge');
+    assertMergeReady(work);
     const result = assemble(base, work, root);
     return {
         plan_version: 1,
@@ -396,8 +498,9 @@ export function applySnapshot(plan, root = ROOT) {
         const current = readSnapshot(root);
         if (digest(current) === plan.result_digest) return 'already_applied';
         if (digest(current) !== plan.base_digest) throw Error('snapshot baseline changed');
-        const work = validateWork(read(local(root, plan.work_path)), root);
+        const work = validateWork(readWork(local(root, plan.work_path)), root);
         if (digest(work) !== plan.work_digest) throw Error('work changed since planning');
+        assertMergeReady(work);
         const rebuilt = assemble(current, work, root);
         if (digest(rebuilt) !== plan.result_digest) throw Error('plan does not match validated staged work');
         atomicWrite(file, rebuilt);
@@ -442,7 +545,7 @@ export function cleanWork(path, root = ROOT, apply = false) {
     const rel = relative(root, resolve(path)).split('\\').join('/');
     if (!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/WORK\.json$/.test(rel)) throw Error('invalid cleanup work path');
     if (existsSync(path + '.lock')) throw Error('active work lock; cleanup refused');
-    const work = read(path),
+    const work = readWork(path),
         snapshot = readSnapshot(root);
     if (snapshot.transaction?.id !== work.session.id || snapshot.transaction.work_digest !== digest(work))
         throw Error('work not confirmed merged');
@@ -450,12 +553,25 @@ export function cleanWork(path, root = ROOT, apply = false) {
         throw Error('incomplete work must be retained');
     renderSnapshot(root, true);
     const folder = dirname(resolve(path));
-    const names = new Set([path, resolve(folder, 'SESSION.json'), resolve(folder, 'INPUT.json')]);
+    const names = new Set([
+        path,
+        resolve(folder, 'SESSION.json'),
+        resolve(folder, 'INPUT.json'),
+        ...workStorageFiles(path)
+    ]);
     for (const record of Object.values(work.records)) {
         for (const file of record.files ?? []) names.add(local(root, file));
         for (const file of Object.keys(record.artifacts)) names.add(local(root, file));
     }
-    const files = [...names].map((p) => resolve(p)).filter((p) => p.startsWith(folder + '/') && existsSync(p));
+    const files = [...names]
+        .map((p) => resolve(p))
+        .filter(
+            (p) =>
+                p.startsWith(folder + '/') &&
+                !p.startsWith(resolve(folder, 'migration-originals') + '/') &&
+                p !== resolve(folder, 'WORK-MIGRATION.json') &&
+                existsSync(p)
+        );
     console.log(
         JSON.stringify({
             remove: files.map((p) => relative(root, p)),
@@ -487,7 +603,7 @@ export async function main(args = process.argv.slice(2)) {
         const w = startWork(read(need('input')), need('work'), n);
         console.log(JSON.stringify({ selected: selectedItems(w.session).length, listed: w.session.items.length }));
     } else if (command === 'next') {
-        const w = read(need('work'));
+        const w = validateWork(readWork(need('work')));
         validateSession(w.session);
         console.log(JSON.stringify(selectedItems(w.session).find((p) => p.status === 'pending') ?? null));
     } else if (command === 'stage') {
@@ -501,14 +617,14 @@ export async function main(args = process.argv.slice(2)) {
             fd = openSync(lock, 'wx', 0o600);
         try {
             writeFileSync(fd, JSON.stringify({ pid: process.pid }));
-            const w = validateWork(read(path));
+            if (existsSync(resolve(dirname(path), 'SESSION.json.lock'))) throw Error('active session lock');
+            const w = validateWork(readWork(path));
             const p = selectedItems(w.session).find((i) => i.id === v.plugin);
             if (!p || p.status !== 'pending') throw Error('only pending selected item can be blocked');
             p.status = 'blocked';
             p.reason = read(need('input')).reason;
             validateSession(w.session);
-            atomicWrite(need('work'), w);
-            atomicWrite(resolve(dirname(need('work')), 'SESSION.json'), w.session);
+            saveWork(need('work'), w);
         } finally {
             closeSync(fd);
             unlinkSync(lock);
@@ -520,10 +636,15 @@ export async function main(args = process.argv.slice(2)) {
         renderSnapshot();
     } else if (command === 'render') renderSnapshot();
     else if (command === 'validate') {
-        readSnapshot(ROOT);
-        renderSnapshot(ROOT, true);
+        if (v.work) validateWork(readWork(need('work')));
+        else {
+            readSnapshot(ROOT);
+            renderSnapshot(ROOT, true);
+        }
+    } else if (command === 'migrate-work') {
+        console.log(JSON.stringify(migrateWork(need('work'), validateWork, v.apply)));
     } else if (command === 'clean') cleanWork(need('work'), ROOT, v.apply);
-    else throw Error('Usage: snapshot bootstrap|start|next|stage|block|plan|apply|render|validate|clean');
+    else throw Error('Usage: snapshot bootstrap|start|next|stage|block|plan|apply|render|validate|migrate-work|clean');
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))
     try {
