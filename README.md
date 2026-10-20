@@ -17,7 +17,7 @@
 
 ## [推荐](data/views/columns/RECOMMENDED.md)
 
-根据适用场景、使用价值与验证证据人工选择；待复核项暂停推荐。
+> 根据适用场景、使用价值与验证证据人工选择；待复核项暂停推荐。
 
 - **[dsh-folderwatch](data/plugins/11111353535--dsh-folderwatch/INSIGHT.md)**：监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。 适合外部文件交接频繁的任务，先用 queue 模式和小目录验证漏报、回声与扫描成本；未做宿主验收。
 - **[dsh-which](data/plugins/11111353535--dsh-which/INSIGHT.md)**：解释命令的 PATH 解析结果、被遮蔽副本及环境异常，可选探测版本。 适合经常排查多版本命令冲突的开发者，先关闭探测并对照实际 shell；未覆盖全部别名与函数语义。
@@ -25,7 +25,7 @@
 
 ## [最新](data/views/columns/LATEST.md)
 
-最近30天已核实的新发布；重要更新待完成版本差异核查后纳入，不按仓库推送排名。
+> 最近30天已核实的新发布；重要更新待完成版本差异核查后纳入，不按仓库推送排名。
 
 - [agent-clinic](data/plugins/1687210989--agent-clinic/INSIGHT.md) · 读取本地Agent会话与配置，生成带证据定位的诊断报告，并匹配可复核的改进处方。 · 新发布：2026-10-15
 - [dsh-plugin-tts](data/plugins/1624318455--dsh-plugin-tts/INSIGHT.md) · 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 · 新发布：2026-09-25
@@ -34,7 +34,7 @@
 
 ## [最热](data/views/columns/HOT.md)
 
-当前按累计 Star 展示关注度；尚无完整30天增量基线。每仓库仅占一席，指标不代表质量或实际用户数。
+> 当前按累计 Star 展示关注度；尚无完整30天增量基线。每仓库仅占一席，指标不代表质量或实际用户数。
 
 - [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · 为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。 · [![GitHub ★ 186](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=186&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
 - [dsh-plugin-tts](data/plugins/1624318455--dsh-plugin-tts/INSIGHT.md) · 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 · [![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts)
@@ -44,7 +44,7 @@
 
 ## 分类精选
 
-各分类按 GitHub Star 降序展示最多 5 项；完整分类页按插件名字母顺序排列。
+> 各分类按 GitHub Star 降序展示最多 5 项；完整分类页按插件名字母顺序排列。
 
 <a id="category-personal-productivity"></a>
 

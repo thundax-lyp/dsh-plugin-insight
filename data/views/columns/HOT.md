@@ -2,7 +2,7 @@
 
 # 最热
 
-当前按累计 Star 展示关注度；尚无完整30天增量基线。每仓库仅占一席，指标不代表质量或实际用户数。
+> 当前按累计 Star 展示关注度；尚无完整30天增量基线。每仓库仅占一席，指标不代表质量或实际用户数。
 
 - [dsh-status-rotator](../../plugins/01virex--dsh-status-rotator/INSIGHT.md) · 为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。 · [![GitHub ★ 186](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=186&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
 - [dsh-plugin-tts](../../plugins/1624318455--dsh-plugin-tts/INSIGHT.md) · 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 · [![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts)
