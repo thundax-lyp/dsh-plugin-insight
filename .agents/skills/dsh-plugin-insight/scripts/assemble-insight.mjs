@@ -38,6 +38,10 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         'summary',
         'scenario',
         'mechanism',
+        'conclusion_status',
+        'contribution',
+        'critical_question',
+        'innovation_hypothesis',
         'scope',
         'distribution',
         'cost',
@@ -97,6 +101,11 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         item.path ? `${item.path}/package.json` : 'package.json'
     );
     if (manifest !== null && JSON.parse(manifest).private) delete metadata.npm;
+    const version = manifest === null ? '未声明' : (JSON.parse(manifest).version ?? '未声明');
+    const committedAt = execFileSync('git', ['-C', checkout, 'show', '-s', '--format=%cI', item.revision], {
+        encoding: 'utf8'
+    }).trim();
+    const versionDate = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Shanghai' }).format(new Date(committedAt));
     if (inventory.revision !== item.revision || inventory.component !== item.path)
         throw Error('inventory revision or scope differs');
     const pack = [];
@@ -220,10 +229,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
     const capabilities = Object.entries(analysis.capabilities)
         .map(([name, text]) => `- **${name}**：${text}`)
         .join('\n');
-    const comparison = old
-        ? `前次代码指纹为 ${old.fingerprints.code ?? '未知'}；本轮固定为 ${item.revision}。${analysis.baseline}`
-        : `当前快照此前没有该稳定身份的研究档案。${analysis.baseline}`;
-    const report = `# ${analysis.name}\n\n> ${analysis.summary}\n\n## 固定范围与依据\n\n固定提交 [${item.revision}](${url(analysis.source_paths[0])})；组件路径：${item.path || '仓库根'}。核查时间 ${now}；本轮基准 ${work.session.checked_at}。\n源码抽读路径：${analysis.source_paths.join('、')}。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：${analysis.scenario}\n- **亮点**：${analysis.mechanism}\n- **思考**：${analysis.value}\n- **建议**：${analysis.adoption}\n\n## 场景与替代办法\n\n${analysis.scenario}\n\n${analysis.baseline}\n\n## 依赖与流程\n\n${analysis.dependencies}\n\n${analysis.workflow}\n\n## 成本与效果\n\n${analysis.cost}\n\n${analysis.value}\n\n## 工程统计\n\n统计范围：${inventory.coverage}；组件：${inventory.component || '根'}；内容摘要：${inventory.content_digest}。sloc ${inventory.tools.loc.version}，TypeScript ${inventory.tools.parser.version}。\n\n${statistics}\n\n排除 ${inventory.excluded.length} 项，解析错误 ${inventory.parse_errors.length} 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n${capabilities}\n\n## 工程亮点\n\n${analysis.engineering}\n\n## 分发与兼容\n\n${analysis.distribution}\n\n## 历史对照\n\n${comparison}\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：${analysis.scope}\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：${analysis.verification}\n`;
+    const report = `# ${analysis.name}\n\n> ${analysis.summary}\n\n## 研究范围\n\n- **仓库**：[${item.repository}](https://github.com/${item.repository})\n- **版本号**：${version}（[固定提交 ${item.revision}](https://github.com/${item.repository}/tree/${item.revision})）\n- **版本日期**：${versionDate}（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n${analysis.conclusion_status}\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：${analysis.scenario}\n- **亮点**：${analysis.contribution}\n- **思考**：${analysis.critical_question}\n- **建议**：${analysis.innovation_hypothesis}\n\n采用建议：${analysis.adoption}\n\n## 核心贡献\n\n${analysis.contribution}\n\n## 关键质疑\n\n${analysis.critical_question}\n\n<a id="innovation"></a>\n\n## 重点创新推演与最小验证\n\n${analysis.innovation_hypothesis}\n\n${analysis.verification}\n\n## 场景与替代办法\n\n${analysis.scenario}\n\n${analysis.baseline}\n\n## 依赖与流程\n\n${analysis.dependencies}\n\n${analysis.workflow}\n\n## 成本与效果\n\n${analysis.cost}\n\n${analysis.value}\n\n## 工程统计\n\n统计范围：${inventory.coverage}；组件：${inventory.component || '根'}；内容摘要：${inventory.content_digest}。sloc ${inventory.tools.loc.version}，TypeScript ${inventory.tools.parser.version}。\n\n${statistics}\n\n排除 ${inventory.excluded.length} 项，解析错误 ${inventory.parse_errors.length} 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n${capabilities}\n\n## 工程亮点\n\n${analysis.engineering}\n\n## 分发与兼容\n\n${analysis.distribution}\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 ${analysis.source_paths.join('、')} 及固定范围 inventory；组件：${item.path || '仓库根'}。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：${analysis.scope}\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：${analysis.verification}\n`;
     const reportPath = resolve(folder, 'insights', slug + '.md'),
         observationPath = resolve(folder, 'observations', slug + '.json'),
         displayPath = resolve(materials, 'DISPLAY.json');
