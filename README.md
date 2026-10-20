@@ -28,7 +28,7 @@
 - [办公与运营（7）](#category-office-operations)
 - [研究与知识（5）](#category-research-knowledge)
 - [基础设施（21）](#category-infrastructure)
-- [软件交付（20）](#category-software-delivery)
+- [软件交付（21）](#category-software-delivery)
 - [内容生产（3）](#category-content-creation)
 
 <a id="category-personal-productivity"></a>
@@ -277,7 +277,7 @@
 
 <a id="category-software-delivery"></a>
 
-### 软件交付（20）
+### 软件交付（21）
 
 <a id="plugin-1339316901-root"></a>
 
