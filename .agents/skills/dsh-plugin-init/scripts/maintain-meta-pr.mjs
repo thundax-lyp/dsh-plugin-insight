@@ -10,7 +10,7 @@ import { inspectPullRequest } from '../../codex-comment-fix/scripts/codex-review
 const CODEX = new Set(['chatgpt-codex-connector[bot]']);
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
 function api(repository, path, method = 'GET', body) {
-    const args = ['api', `repos/${repository}/${path}`, '--method', method];
+    const args = ['api', `repos/${repository}/${path}`, '--method', method, '-H', 'X-GitHub-Api-Version: 2026-03-10'];
     if (body !== undefined) args.push('--input', '-');
     return JSON.parse(
         execFileSync('gh', args, {
