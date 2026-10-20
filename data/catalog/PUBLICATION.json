@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "本轮所选 40，完成 40，受阻 0；当前发布 79",
+  "scope": "本轮所选 1，完成 1，受阻 0；当前发布 80",
   "catalog": "data/catalog/PLUGINS.json",
   "catalog_page": "data/views/categories/INDEX.md",
   "recommendations": [
@@ -99,7 +99,8 @@
     "github:1351854118:root": "data/plugins/173787247--dsh-wsl-dns/META.json",
     "github:1351854301:root": "data/plugins/173787247--dsh-wsl-docker/META.json",
     "github:1351854499:root": "data/plugins/173787247--dsh-wsl-download/META.json",
-    "github:1351854212:root": "data/plugins/173787247--dsh-wsl-editor/META.json"
+    "github:1351854212:root": "data/plugins/173787247--dsh-wsl-editor/META.json",
+    "github:1333800488:root": "data/plugins/february2015--dsh-taskswarm/META.json"
   },
   "summaries": {
     "github:1335557891:root": {
@@ -496,6 +497,11 @@
       "text": "把WSL文件路径转换为Windows路径，在Cursor、VS Code或记事本中打开并可定位行列。",
       "revision": "0bc7619da7b473a622ae9e498d19fd0360162261",
       "source_url": "https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/README.md"
+    },
+    "github:1333800488:root": {
+      "text": "按依赖分波，在 Git worktree 中执行任务包，并提供评审、集成、状态观察与恢复。",
+      "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+      "source_url": "https://github.com/february2015/dsh-taskswarm/blob/032e2c9d228c20cab65fe0ea061d78a7c753ab8c/README.md"
     }
   },
   "capabilities": {
@@ -1023,6 +1029,14 @@
       "items": {
         "模型工具": "win_editor、win_editor_status。"
       }
+    },
+    "github:1333800488:root": {
+      "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+      "items": {
+        "模型工具": "源码定义 task_runner、review_step、notify_supervisor 与 escalate_to_supervisor 等任务执行和协作工具。",
+        "用户命令": "源码注册 tswarm-plan、tswarm-check、tswarm-status、tswarm-pause、tswarm-resume 与 tswarm-integrate 等命令。",
+        "后台": "按依赖分波执行，串行集成，持久化批次状态并提供恢复路径。"
+      }
     }
   },
   "advice": {
@@ -1341,6 +1355,10 @@
     "github:1351854212:root": {
       "revision": "0bc7619da7b473a622ae9e498d19fd0360162261",
       "text": "适合Windows+WSL开发，先测试当前发行版路径、中文空格和行号；自动回退后人工确认文件与定位。"
+    },
+    "github:1333800488:root": {
+      "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+      "text": "优先检验“与版本绑定的验收凭据能否同时约束集成、依赖放行和恢复”。先与简单 required checks／人工验收对照；若复杂协议没有额外收益，就采用简单方案。"
     }
   },
   "records": [
@@ -1393,7 +1411,7 @@
       ],
       "status": "complete",
       "checked_at": "2026-10-20T02:51:30Z",
-      "analysis_sha256": "4653b34a22da36590ebdc0f8ad1c66b6f32a070762747782fbfcd0befff4c66f"
+      "analysis_sha256": "ab034b956bedc041919ad00baed564bc7a633ef20b066d2c56d9be24d0b57f0b"
     },
     {
       "id": "github:1363429979:plugin-memory",
@@ -2712,7 +2730,27 @@
       "status": "complete",
       "checked_at": "2026-10-20T04:25:27.514Z",
       "analysis_sha256": "8c3eb4940d1833a3518575dafe81d9a393efc6eb48cb636aa502b2c5aa58be96"
+    },
+    {
+      "id": "github:1333800488:root",
+      "repository": "february2015/dsh-taskswarm",
+      "path": "",
+      "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+      "fingerprints": {
+        "directory": "0dd727397fa423835bc82dd9bdb399b3c39b683305cba13db4ed9defa1164121",
+        "code": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+        "release": "86f55d73051c800d59129a44c9472fa615350f01087a717f87794d52c8523971",
+        "compatibility": "b2d078ef4d5671ddd5343cb057a7d7771fda71e9829608e7e37f91e9dd4944ab",
+        "maintenance": "f67d79ec50b39b612cdd5cd634f555d0abb8c8aa0ae9e65843cfa7cc2e765cd4"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T06:50:57.153Z",
+      "analysis_sha256": "539b6f02b76a07057a856252bfbb2c950c0114aea812152274f61ee90ea261a4"
     }
   ],
-  "checked_at": "2026-10-20T04:25:27.514Z"
+  "checked_at": "2026-10-20T06:50:57.153Z"
 }

@@ -54,8 +54,19 @@ PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前
   依赖绑定稳定插件 ID、核查方面及当时指纹，跨插件比较必须记录相关对象的依赖。
 - 生态供给结论也依赖来源总体指纹，可将目录作为 `resource` 条目并依赖其 `directory` 指纹；
   目录变化不冒充单个插件代码变化。
+- 贡献、关键质疑和新创新假设的论证复用现有 `findings` 主题与判断性质，完整推导写入报告；两轴创新评分使用下述 `innovation_scores`，不将新假设转成插件已有贡献。
+  `basis` 按实际支持程度选择；未验证的新假设不得标为 `supported`，在文本中说明推导依据和未验证部分。`evidence_ids` 引用推导依据不表示假设已被验证；探索性设想不得冒充已有贡献。
 - `needs_review` 表示依赖变化后待复核，不表示结论已被证伪；原文和证据保留。
   只有显式更新依赖、证据与复核时间的结论才能恢复有效，普通采集不自动解除失效状态。
+
+## 创新评分数据
+
+- 当前插件的 `innovation_scores` 保存唯一评分真相，结构见 catalog Schema；评分方法仅由洞察 Skill 的[研究规范](../../dsh-plugin-insight/references/RESEARCH-STANDARD.md#创新评分标准innovation-v1)维护，发布输入不复制评分。
+- 保存 `rubric`、固定源码 `revision`、`reviewed_at`、`status` 和 `dependencies`；technical／business 各含 criteria、score、rationale、basis、evidence_ids。分项缺失用null，任何分项为null时该轴score必须为null；其余情况下score必须等于分项和。
+- 数值必须符合对应权重的档位，理由非空，引用本插件已有证据；数值轴须有可核查证据及supported／interpretation判断性质，unverified不能携带数值轴总分。评分复核时间不得晚于插件检查时间。current评分须有对应revision的源码核查证据及自身code指纹依赖，引用的依赖必须可定位。
+- 评分进入分析摘要绑定；修改评分须同步当前记录的analysis摘要。新研究stage要求显式提交本轮两轴评分（允许null及缺口说明），版本必须匹配，复核时间不得早于会话截止时间。
+- 依赖失效将评分置为needs_review，不自动清零、继承为新版本有效评分或重新打分；新观察省略评分时保留已有评分并按依赖判断失效。人工重新复核后才能恢复current。
+- 兼容无评分的历史档案，不因加入此字段自动为历史插件补分或刷新复核时间。未评分、分项未知、版本不匹配或待复核的评分均不参与数值排序。原始评分和评分理由仅保存在JSON，不展示到读者Markdown。
 
 ## 观察批次与候选合并
 

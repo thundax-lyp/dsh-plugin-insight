@@ -300,7 +300,9 @@ function snapshotSelection(base) {
             .filter(
                 (plugin) =>
                     researchedSet.has(plugin.id) &&
-                    (!published.has(plugin.id) || plugin.findings.some((finding) => finding.status === 'needs_review'))
+                    (!published.has(plugin.id) ||
+                        plugin.findings.some((finding) => finding.status === 'needs_review') ||
+                        plugin.innovation_scores?.status === 'needs_review')
             )
             .map((plugin) => plugin.id)
     };
@@ -349,7 +351,10 @@ function assemble(base, work, root = ROOT) {
     // Dependency invalidation can affect an unselected published record; do not publish obsolete conclusions.
     for (const [id, record] of records) {
         const plugin = next.catalog.plugins.find((p) => p.id === id);
-        if (plugin.findings.some((f) => f.status === 'needs_review')) {
+        if (
+            plugin.findings.some((f) => f.status === 'needs_review') ||
+            plugin.innovation_scores?.status === 'needs_review'
+        ) {
             records.delete(id);
             next.publication.recommendations = next.publication.recommendations.filter((r) => r.plugin_id !== id);
         } else if (!work.records[id] && analysisDigest(plugin) !== record.analysis_sha256)
@@ -438,6 +443,13 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
     const plugin = observations.plugins.find((p) => p.id === id);
     if (!plugin || observations.plugins.length !== 1 || observations.errors.length)
         throw Error('stage needs one successful plugin');
+    if (
+        !plugin.innovation_scores ||
+        plugin.innovation_scores.status !== 'current' ||
+        plugin.innovation_scores.revision !== work.session.items.find((item) => item.id === id)?.revision ||
+        Date.parse(plugin.innovation_scores.reviewed_at) < Date.parse(work.session.checked_at)
+    )
+        throw Error('new research stage requires reviewed innovation scores for both axes');
     // Reconstruct only the candidate catalog; formal catalog is untouched.
     let catalog = structuredClone(base.catalog);
     for (const entry of Object.values(work.records))

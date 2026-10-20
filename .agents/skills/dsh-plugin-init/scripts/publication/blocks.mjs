@@ -1,3 +1,4 @@
+import { currentInnovationScore } from '../../../_shared/scripts/innovation-score.mjs';
 import { template } from './template.mjs';
 // Reader-facing blocks shared by README and the standalone classification page.
 const clean = (text) => text.replace(/[\r\n]/g, ' ').replace(/[\[\]<>|]/g, '');
@@ -12,6 +13,44 @@ const categoryNames = {
     other: '其他'
 };
 const nameLink = (e) => template('LINK', { label: clean(e.plugin.name), url: e.href ?? `#${e.anchor}` });
+export function renderIssueActivity(metadata, repository) {
+    const end = metadata?.captured_at;
+    const start = metadata?.window_start;
+    const range = start && end ? `${start}..${end}` : null;
+    const fields = [
+        ['open', 'Issue 未关闭', 'open', 'is:issue is:open'],
+        ['closed', 'Issue 已关闭', 'closed', 'is:issue is:closed'],
+        ['created', '近30天新建', 'created_30d', `is:issue${range ? ` created:${range}` : ''}`],
+        ['closed_recent', '近30天关闭', 'closed_30d', `is:issue is:closed${range ? ` closed:${range}` : ''}`],
+        ['updated', '近30天更新', 'updated_30d', `is:issue${range ? ` updated:${range}` : ''}`]
+    ];
+    const badges = Object.fromEntries(
+        fields.map(([key, label, field, query]) => {
+            const value = metadata?.issues?.[field];
+            const message = value === null || value === undefined ? '暂未获取' : value.toLocaleString('en-US');
+            return [
+                key,
+                template('BADGE', {
+                    alt: `${label} ${message}`,
+                    image:
+                        'https://img.shields.io/static/v1?' +
+                        new URLSearchParams({
+                            label,
+                            message,
+                            color: message === '暂未获取' ? 'lightgrey' : 'grey',
+                            logo: 'github',
+                            style: 'flat'
+                        }).toString(),
+                    url: `https://github.com/${repository}/issues?` + new URLSearchParams({ q: query }).toString()
+                })
+            ];
+        })
+    );
+    return template('ISSUES', {
+        ...badges,
+        date: end ? new Date(Date.parse(end) + 8 * 3600000).toISOString().slice(0, 10) : '暂未获取'
+    });
+}
 export const renderUpdated = (date) => template('UPDATED', { date });
 export function renderWeeklyNew(items, date) {
     const day = new Date(date + 'T00:00:00Z');
@@ -58,7 +97,19 @@ export function renderHot(items, limit = 3) {
     });
 }
 export function renderRecommended(recommendations, byId) {
-    const selected = recommendations.filter((r) => r.kind !== 'observe');
+    const score = (r) => {
+        const e = byId.get(r.plugin_id);
+        return currentInnovationScore(e.plugin, e.i.revision, e.needsReview);
+    };
+    const selected = recommendations
+        .filter((r) => r.kind !== 'observe')
+        .sort((a, b) => {
+            const sa = score(a),
+                sb = score(b);
+            if (sa && sb) return sb.total - sa.total || a.plugin_id.localeCompare(b.plugin_id);
+            if (sa || sb) return sa ? -1 : 1;
+            return a.plugin_id.localeCompare(b.plugin_id);
+        });
     return template('RECOMMENDED', {
         items:
             selected
@@ -109,7 +160,7 @@ export function renderHomeCategories(groups, href, limit = 5) {
                     anchor: e.anchor,
                     name: clean(e.plugin.name),
                     meta: e.meta,
-                    short: e.short,
+                    short: e.homeShort,
                     detail: href(e)
                 })
             )

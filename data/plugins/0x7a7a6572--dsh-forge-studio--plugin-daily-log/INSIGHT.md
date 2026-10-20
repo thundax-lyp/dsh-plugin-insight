@@ -12,14 +12,14 @@
 
 ## 用途与采用点评
 
-- **用途**：需要周期性工作汇报的人希望从实际活动整理报告，并能回查来源。
+- **用途**：面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。
 - **亮点**：入口按 agent 作用域启用报告工具，/report 转发用户需求，扫描索引和模板为后续生成提供材料。
 - **思考**：按需启用工具可减少常驻上下文；提交与对话是活动证据，不自动证明业务成果。
 - **建议**：先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。
 
 ## 场景与替代办法
 
-需要周期性工作汇报的人希望从实际活动整理报告，并能回查来源。
+面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。
 
 git log 加手写总结更简单；本轮版本功能扩展后仍需核查多源解析与归因边界。
 
@@ -73,8 +73,10 @@ git log 加手写总结更简单；本轮版本功能扩展后仍需核查多源
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：用已知活动清单测试漏项、重复、作者归属和导出恢复，比较合格报告的总人工分钟。
 
-## Issue 活跃度
+## 活跃度
 
-Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 0](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aclosed)
+
+[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天更新 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=0&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z)
 
 统计日期：2026-10-20。

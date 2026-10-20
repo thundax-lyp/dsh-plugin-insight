@@ -24,8 +24,9 @@
 - [oh-my-dsh](#plugin-1379204512-root)：复杂开发任务需要规划、委派与验证分工，用户希望复用一套宿主适配的编排约定。
 - [Plan Lattice](#plugin-1334504487-root)：跨压缩和重启的长任务需要恢复已批准计划、待办及委派结果，减少依据丢失。
 - [Task Forge](#plugin-1399011094-root)：跨模型或 IDE 交接任务时，用户需要暴露接收方理解缺口并跟踪其持有版本。
+- [TaskSwarm — 贡献与交付证据研究](#plugin-1333800488-root)：面向能拆分依赖、能定义验收的仓库开发任务，把多个执行者的工作组织为任务包、并行 lane 和串行集成流程。
 
-### 软件交付（20）
+### 软件交付（21）
 
 <a id="plugin-1417442557-root"></a>
 
@@ -246,6 +247,17 @@
 - **亮点**：命令编译任务、导出交接包并记录台账；握手解析回读、缺口、STATUS 和版本，旧版本不得视为当前放行。
 - **思考**：将隐含假设和版本漂移显性化有价值；作者的无损说法不能由模板和状态字样单独证明。
 - **建议**：先用一个有明确验收点的小任务试交接，人工比对遗漏和改版后的接收方状态。
+
+<a id="plugin-1333800488-root"></a>
+
+#### [TaskSwarm — 贡献与交付证据研究](../../plugins/february2015--dsh-taskswarm/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/commits)
+
+- **用途**：面向能拆分依赖、能定义验收的仓库开发任务，把多个执行者的工作组织为任务包、并行 lane 和串行集成流程。
+- **亮点**：源码支持 DSH 原生 Agent 的创建、工具接线、任务进度持久化、隔离工作区与恢复编排。贡献主要是宿主适配和流程整合，waves、worktree、Reviewer 等方法明确来自 TaskPlane；尚无独立效果对照。
+- **思考**：最关键的缺口是“完成”的证据约束：worker 自报完成、Reviewer 文本和 Git 合并能推进流程，但并未共同构成绑定最终代码版本的验收证明。因此协调能力成立，可靠交付增益仍待验证。
+- **建议**：优先检验“与版本绑定的验收凭据能否同时约束集成、依赖放行和恢复”。先与简单 required checks／人工验收对照；若复杂协议没有额外收益，就采用简单方案。
 
 ## 更新时间
 
