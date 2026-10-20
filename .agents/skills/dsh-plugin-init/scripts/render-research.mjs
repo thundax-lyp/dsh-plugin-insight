@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve, relative, dirname, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -298,34 +298,12 @@ export function renderPublication(input, root = ROOT) {
             sources: renderSources(sources)
         }) + '\n';
     const registry = existsSync(local(root, REGISTRY)) ? read(local(root, REGISTRY)) : {};
-    const allPlugins = catalog.plugins;
-    const outputs = [];
-    for (const p of allPlugins) {
-        const directory = pluginDirectory(p, root);
-        registry[p.id] = directory;
-        const history = [];
-        const manifests = local(root, 'data/manifests');
-        if (existsSync(manifests))
-            for (const name of readdirSync(manifests)
-                .filter((name) => name.endsWith('.json'))
-                .sort()) {
-                const manifestPath = `data/manifests/${name}`;
-                const saved = validateManifest(read(local(root, manifestPath)));
-                if (saved.items.some((i) => i.id === p.id && i.status === 'complete'))
-                    history.push(`- [${saved.round}](${link(directory + '/HISTORY/INDEX.md', manifestPath)})`);
-            }
-        outputs.push({
-            path: directory + '/HISTORY/INDEX.md',
-            content:
-                template('HISTORY', { name: clean(p.name), entries: history.join('\n') || '暂无独立会话记录。' }) + '\n'
-        });
-    }
+    for (const plugin of catalog.plugins) registry[plugin.id] = pluginDirectory(plugin, root);
     return {
         readme,
         catalog: catalogPage,
         categoryPages,
         details: items.map((e) => ({ path: e.detailPath, content: e.detail })),
-        outputs,
         registry
     };
 }
@@ -343,7 +321,6 @@ export function main(args = process.argv.slice(2)) {
         [input.catalog_page, result.catalog],
         ...result.details.map((d) => [d.path, d.content]),
         ...result.categoryPages.map((d) => [d.path, d.content]),
-        ...result.outputs.map((d) => [d.path, d.content]),
         [REGISTRY, JSON.stringify(result.registry, null, 2) + '\n']
     ]) {
         const target = local(ROOT, path);

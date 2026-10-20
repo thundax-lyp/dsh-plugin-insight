@@ -66,7 +66,6 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 插件路径注册表 | `data/catalog/PLUGIN-PATHS.json` | 稳定 ID 到可读插件目录的唯一映射 |
 | 当前详情展示 | `data/plugins/<plugin-slug>/INSIGHT.md` | 从当前正式分析生成，包含最新 Issue 信息；正式原文落位仍待工具适配 |
 | 当前 META | `data/plugins/<plugin-slug>/META.json` | 当前采集结果；本轮采集先暂存，核实后更新 |
-| 旧插件历史入口 | `data/plugins/<plugin-slug>/HISTORY/INDEX.md` | 兼容旧成果，不参与当前有效性判断 |
 | 旧运行清单 | `data/manifests/<round>.json` | 兼容旧生成器；新模型不要求每轮追加或依赖链 |
 | 本地来源输入与问题 | `data/runs/<round>/INPUT.json`、`INPUT-PROBLEMS.json` | Git 忽略；固定目录解析、身份核实结果与未解决边界 |
 | 本地会话与进度 | `data/runs/<round>/SESSION.json` | Git 忽略；本轮候选、基线摘要、所选范围及合并前检查点 |
@@ -95,7 +94,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 - runs 是本轮工作区，不是历史真相库。只在尚未合并、失败待查或需要同轮恢复时保留相关材料。
 - 最终合并前，将当前快照仍需引用的分析、证据和 META 落入正式位置并校验，不能留下指向待清理 runs 的有效引用。
 - 合并结果回读、当前引用完整且可独立生成页面后，本轮无引用副本可以清理；永久归档不是交付条件。活动锁、未合并记录和未知文件不能当作已合并副本清理。
-- Git 跟踪正式当前状态的变迁；历史 manifest 和 HISTORY 入口只兼容旧成果，不成为新研究前置条件。
+- Git 跟踪正式当前状态的变迁；不生成逐插件历史导航。现有 manifest 仅供旧发布工具及仍引用它们的详情使用，不成为新研究前置条件。
 - 现有 `maintain:runs` 只清理它支持的旧重复视图，不能充当新模型的合并后清理器。新清理流程须先预览引用与合并状态，再执行并回读；本次不执行清理。
 
 ## 研究清单与断点
