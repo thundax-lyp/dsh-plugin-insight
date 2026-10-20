@@ -37,14 +37,6 @@ function local(root, path) {
     if (isAbsolute(path) || relative(root, full).startsWith('..')) throw Error('path must be inside project');
     return full;
 }
-export function relativeTime(date, at) {
-    const a = Date.parse(at),
-        d = Date.parse(date);
-    if (!Number.isFinite(a) || !Number.isFinite(d) || d > a) return '暂未获取';
-    const days = Math.floor((a + 8 * 3600000) / 86400000) - Math.floor((d + 8 * 3600000) / 86400000);
-    if (days < 3) return ['今天', '昨天', '前天'][days];
-    return days < 30 ? `${days}天前` : days < 365 ? `${Math.floor(days / 30)}个月前` : `${Math.floor(days / 365)}年前`;
-}
 export function renderDetailReport(report, item) {
     const versionUrl = `https://github.com/${item.repository}/tree/${item.revision}${item.path ? `/${item.path}` : ''}`;
     const shortParagraphs = new Set(
@@ -156,7 +148,6 @@ export function renderPublication(input, root = ROOT, context = null) {
                 needsReview = false,
                 stars = null,
                 pushedAt = null,
-                pushedLabel = null,
                 issues = renderIssueActivity(null, plugin.repository);
             let starsBadge = template('BADGE', {
                 alt: 'GitHub ★ 暂未获取',
@@ -171,20 +162,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                     }).toString(),
                 url: `https://github.com/${plugin.repository}`
             });
-            let pushedBadge = template('BADGE', {
-                alt: '最后更新 暂未获取',
-                image:
-                    'https://img.shields.io/static/v1?' +
-                    new URLSearchParams({
-                        label: '最后更新',
-                        message: '暂未获取',
-                        color: 'lightgrey',
-                        logo: 'github',
-                        style: 'flat'
-                    }).toString(),
-                url: `https://github.com/${plugin.repository}/commits`
-            });
-            let meta = template('META', { stars: starsBadge, downloads: '', updated: pushedBadge, review: '' });
+            let meta = template('META', { stars: starsBadge, downloads: '', review: '' });
             if (path) {
                 const m = validateMetadata(context?.metadata[i.id] ?? read(local(root, path)));
                 if (m.repository_id !== null && m.repository_id !== plugin.repository_id)
@@ -235,28 +213,12 @@ export function renderPublication(input, root = ROOT, context = null) {
                       : '';
                 stars = m.stars;
                 pushedAt = m.pushed_at;
-                pushedLabel = m.pushed_at ? relativeTime(m.pushed_at, m.captured_at) : null;
                 starsBadge = template('BADGE', {
                     alt: `GitHub ★ ${n(m.stars)}`,
                     image: starImage,
                     url: `https://github.com/${m.repository}`
                 });
-                const updatedLabel = pushedLabel ?? '暂未获取';
-                const updatedImage =
-                    'https://img.shields.io/static/v1?' +
-                    new URLSearchParams({
-                        label: '最后更新',
-                        message: updatedLabel,
-                        color: pushedLabel ? 'blue' : 'lightgrey',
-                        logo: 'github',
-                        style: 'flat'
-                    }).toString();
-                pushedBadge = template('BADGE', {
-                    alt: `最后更新 ${updatedLabel}`,
-                    image: updatedImage,
-                    url: `https://github.com/${m.repository}/commits`
-                });
-                meta = template('META', { stars: starsBadge, downloads, updated: pushedBadge, review: update });
+                meta = template('META', { stars: starsBadge, downloads, review: update });
             }
             const issueBlock = `## 活跃度\n\n${issues}\n`;
             const reportWithoutMeta = renderDetailReport(report, i).replace(
@@ -279,12 +241,10 @@ export function renderPublication(input, root = ROOT, context = null) {
                 description,
                 anchor,
                 meta,
-                pushedBadge,
                 needsReview,
                 stars,
                 starsBadge,
                 pushedAt,
-                pushedLabel,
                 npmFirstPublished,
                 detailPath,
                 longRead: report.length >= 8000,
