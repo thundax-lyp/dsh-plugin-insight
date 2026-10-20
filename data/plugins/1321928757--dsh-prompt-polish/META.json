@@ -1,0 +1,52 @@
+{
+  "repository": "1321928757/dsh-prompt-polish",
+  "repository_id": 1336538202,
+  "captured_at": "2026-10-20T04:25:55.526Z",
+  "window_start": "2026-09-20T04:25:55.526Z",
+  "stars": 3,
+  "pushed_at": "2026-10-16T02:06:47Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C07A:663E2:166AF9:18288D:6AD6ED55 and timestamp 2026-10-20 04:25:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C13E:70474:183FF4:19FEDC:6AD6ED55 and timestamp 2026-10-20 04:25:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20created%3A2026-09-20T04%3A25%3A55.526Z..2026-10-20T04%3A25%3A55.526Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C1DE:1729F5:16AADF:186A15:6AD6ED56 and timestamp 2026-10-20 04:25:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A25%3A55.526Z..2026-10-20T04%3A25%3A55.526Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C29C:39EEC5:17D3FC:19929A:6AD6ED57 and timestamp 2026-10-20 04:25:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1321928757%2Fdsh-prompt-polish%20is%3Aissue%20updated%3A2026-09-20T04%3A25%3A55.526Z..2026-10-20T04%3A25%3A55.526Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C35A:70474:1841B9:1A00BB:6AD6ED58 and timestamp 2026-10-20 04:26:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-prompt-polish",
+    "captured_at": "2026-10-20T04:26:00.462Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": 368,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-prompt-polish",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-26T04:47:29.654Z",
+      "captured_at": "2026-10-20T04:26:00.462Z",
+      "source_url": "https://registry.npmjs.org/dsh-prompt-polish",
+      "error": null
+    }
+  }
+}

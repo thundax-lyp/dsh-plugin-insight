@@ -1,68 +1,78 @@
 # dsh-scrape-webpage
 
-> 抓取网页正文、结构、链接与统计，并可下载图片交给识图服务。
+> 抓取网页正文、结构、链接与关键词，可选下载内容图片并交给扩展分析器。
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/131CDA1/dsh-scrape-webpage) · [![npm 30d 1176](https://img.shields.io/static/v1?label=npm+30d&message=1%2C176&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-scrape-webpage) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/131CDA1/dsh-scrape-webpage/commits)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/131CDA1/dsh-scrape-webpage) · [![npm 30d 1151](https://img.shields.io/static/v1?label=npm+30d&message=1%2C151&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-scrape-webpage) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/131CDA1/dsh-scrape-webpage/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [7485af10c063579323058583c7f13e69c4c8bd21](https://github.com/131CDA1/dsh-scrape-webpage/tree/7485af10c063579323058583c7f13e69c4c8bd21)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：抓取网页正文、结构、链接与统计，并可下载图片交给识图服务。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：任意 URL 抓取涉及 SSRF、超时、版权与不可信内容；关键词和正文提取也可能丢失动态页面信息。
-- **建议**：先用本地/公开测试页覆盖重定向、内网地址、超时与动态内容；安全边界不清时限制域名。
+- **用途**：研究者读取具体网页时希望得到可引用正文与结构，原有办法是浏览器复制或宿主抓取工具。
+- **亮点**：lib/index.js 优先宿主 web.fetch，缺失或异常后经 shell 调用 curl；解析与统计分层，图片逐张下载并调用注册分析器。
+- **思考**：分析器注册接口避免把视觉服务绑死，但自动提取并不证明正文完整或网页内容可信。
+- **建议**：已有用户可保留正文抓取用途，先在公开测试页核对重定向、动态内容与超时；非 Windows 环境先验证 shell 回退，限制敏感网络目标。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：抓取网页正文、结构、链接与统计，并可下载图片交给识图服务。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+研究者读取具体网页时希望得到可引用正文与结构，原有办法是浏览器复制或宿主抓取工具。
 
-## 依赖与使用条件
+代码仍为7485af1，变化来自目录或维护背景，本轮重写采用画像并收窄跨平台结论；与浏览器阅读相比主要减少结构整理步骤。
 
-- 固定组件包：`dsh-scrape-webpage@1.0.0`。
-- 声明依赖：未在组件 package.json 声明直接或 peer 依赖；宿主接线仍需按源码核对。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+抓取依赖网络与宿主服务，图片依赖工作区、shell 和可选视觉分析器；TLS 权限升级需 approval 和 Agent 上下文，失败后不能直接视作网页不存在。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+输入URL获取正文与统计，必要时下载图片，人工检查原页与截断标记；TLS受限时按宿主审批重试，图片失败不冒充识图完成。
+
+## 成本与效果
+
+基础抓取有网络、超时和人工核对成本；图片分析另外消耗模型与存储。未测合格抓取率或单位成本。
+
+分析器注册接口避免把视觉服务绑死，但自动提取并不证明正文完整或网页内容可信。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .md | 2 | 139 | — | — | — | 1522 |
-| source | .js | 5 | 716 | 622 | 65 | 33 | — |
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：85b5c05d679412c6f8c60fe91617c416dbf9fcd6d1dd587c00d20d11880bff5b。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：无自动排除项。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 2 | 139 | — | — | 1522 |
+| .js | source | 5 | 716 | 622 | 65 | — |
+
+排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **模型工具**：scrape_webpage
-
-- tools：`scrape_webpage`（[lib/index.js:176](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js#L176)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **模型工具**：scrape_webpage。
+- **后台**：scrape.imageAnalyzer 注册及顺序分析。
 
 ## 工程亮点
 
-固定组件内共纳入 7 个 JS/TS/Markdown 文件。组件声明依赖较少，但仍不能据此推断运行简单或无外部依赖。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[lib/index.js](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js)。
+html、analyze 与执行层分开便于复用；图片失败返回逐项说明。web 与 shell 两条路径的策略一致性仍需实际验证。
 
+## 分发与兼容
 
-把图片分析器做成可注册服务，使抓取与视觉能力可以解耦。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+1.0.0 Host-only；tools、systemPrompt、timer 为硬依赖，shell 回退使用 Windows 风格 PowerShell 路径与命令，跨平台不能假定。
+
+## 历史对照
+
+前次代码指纹为 7485af10c063579323058583c7f13e69c4c8bd21；本轮固定为 7485af10c063579323058583c7f13e69c4c8bd21。代码仍为7485af1，变化来自目录或维护背景，本轮重写采用画像并收窄跨平台结论；与浏览器阅读相比主要减少结构整理步骤。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：非浏览器渲染，动态页面和登录状态未验证；任意URL、重定向和图片下载需要部署方检查网络边界。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：对静态页、脚本页、重定向、内网和大正文分别比较原始页面，记录正文保留率、错误及人工修正时间。
 
 ## Issue 活跃度
 
 Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

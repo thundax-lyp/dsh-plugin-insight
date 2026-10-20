@@ -1,0 +1,52 @@
+{
+  "repository": "173787247/dsh-wsl-dns",
+  "repository_id": 1351854118,
+  "captured_at": "2026-10-20T04:27:03.432Z",
+  "window_start": "2026-09-20T04:27:03.432Z",
+  "stars": 1,
+  "pushed_at": "2026-09-29T15:04:19Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-dns%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F79C:1DAD9A:17FFFE:19C1D6:6AD6ED98 and timestamp 2026-10-20 04:27:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-dns%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F82E:103B0B:17ED70:19AFEF:6AD6ED99 and timestamp 2026-10-20 04:27:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-dns%20is%3Aissue%20created%3A2026-09-20T04%3A27%3A03.432Z..2026-10-20T04%3A27%3A03.432Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F8C4:3B6EB4:19267A:1AE9AB:6AD6ED9A and timestamp 2026-10-20 04:27:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-dns%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A27%3A03.432Z..2026-10-20T04%3A27%3A03.432Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F93C:103B0B:17EE99:19B121:6AD6ED9B and timestamp 2026-10-20 04:27:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-dns%20is%3Aissue%20updated%3A2026-09-20T04%3A27%3A03.432Z..2026-10-20T04%3A27%3A03.432Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F9EA:103B0B:17EF13:19B1B3:6AD6ED9C and timestamp 2026-10-20 04:27:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-wsl-dns",
+    "captured_at": "2026-10-20T04:27:08.432Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-wsl-dns",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T04:27:08.432Z",
+      "source_url": "https://registry.npmjs.org/dsh-wsl-dns",
+      "error": "HTTP 404"
+    }
+  }
+}

@@ -7,20 +7,28 @@
 - [api-balance](#plugin-1334899834-root)：使用 DeepSeek API 的用户希望在工作界面看到账户余额，减少切换控制台。
 - [DPH 任务看板](#plugin-1336994666-root)：同时推进多个会话的用户希望按待办、进行中、评审和完成整理任务。
 - [dsh-about](#plugin-1354283280-root)：需要确认实际运行版本及更新内容的用户不必另外打开终端和发布页。
+- [dsh-chatgpt-style](#plugin-1421963463-root)：习惯居中聊天版式的用户希望改善长文本阅读和切换模型思考档位，验收是内容不丢失、输入操作正常。
 - [dsh-composer-expand](#plugin-1334850903-root)：经常编辑长提示词的用户需要在发送前查看和修改更多草稿内容。
 - [dsh-discord-richpresence](#plugin-1342915339-root)：希望向 Discord 联系人展示工作状态的桌面用户，而非需要团队任务追踪的部署。
+- [dsh-mimotts](#plugin-1397477851-root)：希望听回复的用户需要可重放音频和便捷控制，验收包括文字读音、播放完成与敏感文本发送范围。
 - [dsh-neo-skin](#plugin-1335557891-root)：长时间使用 DSH Web 且偏好高对比外观的用户，需要可撤销的视觉定制。
 - [dsh-perlica-ding](#plugin-1335704653-root)：后台运行智能体时，用户希望听到需要关注的状态而不盯住窗口。
-- [dsh-prompt-ErrorNotes-desk](#plugin-1418691015-root)：反复纠正相同模型行为的用户，希望把确认过的教训转成后续提醒。
+- [dsh-prompt-polish](#plugin-1336538202-root)：用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。
 - [dsh-side-session](#plugin-1355639507-root)：主任务运行时，用户需要另外讨论独立问题，同时保留主会话上下文。
 - [dsh-spotlight](#plugin-1333136466-root)：大量使用快捷键的 DSH Web 用户需要减少在会话与设置之间寻找入口的操作。
 - [dsh-status-rotator](#plugin-1333328839-root)：希望改善等待体验的桌面用户，以更清楚或有趣的状态文案替代默认状态行。
+- [dsh-text-inject](#plugin-1389458393-root)：用户需要维护独立于宿主配置的常驻规则，并能查看或恢复旧文本，成功标准是实际注入与文件一致。
+- [dsh-tokenrhythm-bill](#plugin-1351903192-root)：多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。
 - [dsh-voice-input-web](#plugin-1335558973-root)：偏好口述输入的用户，希望先得到可编辑草稿再发送消息。
 - [dsh-workspace-menu](#plugin-1339803365-root)：经常整理多个工作区和会话的用户，希望减少查找管理入口的步骤。
+- [dsh-wsl-browser](#plugin-1350379388-root)：Agent在WSL得到报告或服务地址后，用户希望在Windows浏览器直接查看，验收是实际页面可达。
+- [dsh-wsl-clipboard](#plugin-1350378372-root)：WSL开发者需要在模型输出和Windows应用间传递文本，合格结果是文本完整且没有覆盖错误内容。
+- [dsh-wsl-download](#plugin-1351854499-root)：用户已在Windows下载大模型或资料，希望复用现有文件而非在WSL重复下载，合格结果是正确文件完整复制。
 - [Forge 便签](#plugin-1363429979-plugin-notes)：需要从临时想法转为任务的用户，希望在聊天旁管理笔记及执行状态。
+- [Prompt Desk](#plugin-1418691015-root)：经常纠正同类行为的用户需要维护少量可复用教训，合格结果是正确经验被下轮读取且可撤回。
 - [蓝毛小女仆桌宠](#plugin-1409724830-src)：个人桌面用户希望用角色动画和轻量聊天增加陪伴感，而非完成标准化办公任务。
 
-### 个人效率（15）
+### 个人效率（23）
 
 <a id="plugin-1334899834-root"></a>
 
@@ -55,6 +63,17 @@
 - **思考**：能把当前版本与发布说明放在一起，但不会执行更新，也不证明新版本适合当前插件组合。
 - **建议**：与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。
 
+<a id="plugin-1421963463-root"></a>
+
+#### [dsh-chatgpt-style](../../plugins/137--dsh-chatgpt-style/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/137/dsh-chatgpt-style) · [![最后更新 4天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=4%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/137/dsh-chatgpt-style/commits)
+
+- **用途**：习惯居中聊天版式的用户希望改善长文本阅读和切换模型思考档位，验收是内容不丢失、输入操作正常。
+- **亮点**：client.js注入CSS并用MutationObserver装饰完成后的文本，检测data-streaming避免修改流中节点；档位通过宿主modelDirectories读取和提交。
+- **思考**：复用宿主模型目录比维护另一套配置可靠，但视觉强调不构成事实已验证，绿色结论仍需读者核实。
+- **建议**：先检查长文、流式输出、代码块、公式和输入法，再验证禁用能还原；供应商未声明推理档位时使用原生模型菜单。
+
 <a id="plugin-1334850903-root"></a>
 
 #### [dsh-composer-expand](../../plugins/13071301808--dsh-composer-expand/INSIGHT.md)
@@ -76,6 +95,17 @@
 - **亮点**：Host 聚合活动信号，通过本地 Discord RPC 更新文案；丰富模式按最短展示间隔轮换数据。
 - **思考**：减少手动改状态，但不能证明专注度或工作产出；企业环境应先确认活动公开政策。
 - **建议**：先只开模糊状态，检查实际 Discord 展示内容和断线重连，再考虑丰富模式。
+
+<a id="plugin-1397477851-root"></a>
+
+#### [dsh-mimotts](../../plugins/1497105876--dsh-mimotts/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-mimotts) · [![最后更新 19天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=19%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1497105876/dsh-mimotts/commits)
+
+- **用途**：希望听回复的用户需要可重放音频和便捷控制，验收包括文字读音、播放完成与敏感文本发送范围。
+- **亮点**：Host合成路由先过connection.requestRejection，读取有限文本并调用TTS端点；客户端提交消息文本并接收WAV，语音记录独立保存。
+- **思考**：消息动作行和历史让朗读更连贯；声音自然不代表文本正确，模型回复内容仍可能有误。
+- **建议**：先用无敏感信息的短文本验证读音、取消和历史，再配置音色；听到语音不应代替核对原始技术结论。
 
 <a id="plugin-1335557891-root"></a>
 
@@ -99,16 +129,16 @@
 - **思考**：主会话限定与普通问答静音可减少噪声；有效性取决于事件分类是否符合使用者期待。
 - **建议**：先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。
 
-<a id="plugin-1418691015-root"></a>
+<a id="plugin-1336538202-root"></a>
 
-#### [dsh-prompt-ErrorNotes-desk](../../plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md)
+#### [dsh-prompt-polish](../../plugins/1321928757--dsh-prompt-polish/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk) · [![最后更新 昨天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E6%98%A8%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/commits)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-prompt-polish) · [![npm 30d 368](https://img.shields.io/static/v1?label=npm+30d&message=368&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-polish) · [![最后更新 4天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=4%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1321928757/dsh-prompt-polish/commits)
 
-- **用途**：反复纠正相同模型行为的用户，希望把确认过的教训转成后续提醒。
-- **亮点**：Host 原子写入本地状态和全局提示，通过同源路由供面板编辑，近期经验按限制注入系统提示。
-- **思考**：把候选与确认分开有助于保留人工判断；自动沉淀不等于持续改善。
-- **建议**：只确认能复现的经验，先限少量条目，并检查删除后是否停止影响回答。
+- **用途**：用户反复组织复杂请求，希望提交前改善表达并保留原意；验收标准是约束无遗漏，而非文字更长。
+- **亮点**：lib/index.js 收集启用的目标、任务和历史，在字符预算内构建请求，调用宿主llm.stream；客户端展示结果，采纳由用户决定。
+- **思考**：确认式采纳比自动替换更可控；同一模型改写并不保证比直接发送原请求更好。
+- **建议**：先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。
 
 <a id="plugin-1355639507-root"></a>
 
@@ -143,6 +173,28 @@
 - **思考**：配置持久化使个性化可重复；状态文案不是实际进度，不能拿它判断任务是否完成。
 - **建议**：先只开静态文案，确认设置能保存且与原生状态共存，再逐步启用弹幕和动画。
 
+<a id="plugin-1389458393-root"></a>
+
+#### [dsh-text-inject](../../plugins/1497105876--dsh-text-inject/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-text-inject) · [![最后更新 19天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=19%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1497105876/dsh-text-inject/commits)
+
+- **用途**：用户需要维护独立于宿主配置的常驻规则，并能查看或恢复旧文本，成功标准是实际注入与文件一致。
+- **亮点**：lib/index.js解析块后先释放旧注册，再用systemPrompt.section/context注册；监听目录处理原子保存，路由保存与恢复历史。
+- **思考**：独立文件与历史便于回退；注入入口更方便也可能让过期规则长期影响不同任务。
+- **建议**：先用少量无冲突规则验证每轮实际上下文，并确认删除与恢复生效；需要关键词门控时先核实当前版本，不能仅照README。
+
+<a id="plugin-1351903192-root"></a>
+
+#### [dsh-tokenrhythm-bill](../../plugins/162568316--dsh-tokenrhythm-bill/INSIGHT.md)
+
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) · [![npm 30d 1681](https://img.shields.io/static/v1?label=npm+30d&message=1%2C681&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) · [![最后更新 前天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E5%89%8D%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill/commits)
+
+- **用途**：多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。
+- **亮点**：Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。
+- **思考**：同屏对齐到期额度和用量减少切换；平台金额聚合只有在身份、币种和冻结/限时口径一致时才有意义。
+- **建议**：先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。
+
 <a id="plugin-1335558973-root"></a>
 
 #### [dsh-voice-input-web](../../plugins/0nt-one--dsh-voice-input/INSIGHT.md)
@@ -165,6 +217,39 @@
 - **思考**：就地管理减少界面跳转，但把磁盘删除与日常菜单放在一起增加误操作后果。
 - **建议**：先只开启置顶、复制路径和归档，对测试目录验证删除确认后再决定是否启用删除功能。
 
+<a id="plugin-1350379388-root"></a>
+
+#### [dsh-wsl-browser](../../plugins/173787247--dsh-wsl-browser/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-browser) · [![最后更新 21天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=21%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-browser/commits)
+
+- **用途**：Agent在WSL得到报告或服务地址后，用户希望在Windows浏览器直接查看，验收是实际页面可达。
+- **亮点**：lib/browser.js只接受http/https URL并转义PowerShell单引号，入口通过wsl-host调用Start-Process；localhost仅给替代地址提示。
+- **思考**：消除复制地址的微小重复操作，收益来自入口便利；HTTP协议允许不等于目标可信。
+- **建议**：适合已用WSL开发的人，先打开测试URL并核对默认浏览器，远端服务先确认监听和访问权限。
+
+<a id="plugin-1350378372-root"></a>
+
+#### [dsh-wsl-clipboard](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-clipboard) · [![最后更新 21天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=21%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-clipboard/commits)
+
+- **用途**：WSL开发者需要在模型输出和Windows应用间传递文本，合格结果是文本完整且没有覆盖错误内容。
+- **亮点**：lib/clipboard.js用PowerShell Forms Clipboard读写，写入文本先UTF-8编码为base64，输出携带字符数及截断标记。
+- **思考**：base64传输减少字符串转义问题；把复制操作接入Agent并不会自动判断当前剪贴板是否该被读取或替换。
+- **建议**：先用测试字符串验证中文、换行和长度上限，写入前保存重要剪贴板内容；仅在明确需要时读取。
+
+<a id="plugin-1351854499-root"></a>
+
+#### [dsh-wsl-download](../../plugins/173787247--dsh-wsl-download/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-download) · [![最后更新 20天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=20%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-download/commits)
+
+- **用途**：用户已在Windows下载大模型或资料，希望复用现有文件而非在WSL重复下载，合格结果是正确文件完整复制。
+- **亮点**：lib/download.js从WINDOWS_USER或PATH推断Downloads，列最近文件；copy限制源为basename并创建目标目录后copyFileSync，hint仅输出固定建议。
+- **思考**：避免重复联网下载有价值，但名为download不代表下载器；固定模型提示可能随工具版本变化而过期。
+- **建议**：先列文件和检查目标是否已有同名内容，复制后核对大小与哈希；大模型先确认磁盘余量和是否可直接复用共享路径。
+
 <a id="plugin-1363429979-plugin-notes"></a>
 
 #### [Forge 便签](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/INSIGHT.md)
@@ -175,6 +260,17 @@
 - **亮点**：便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。
 - **思考**：把输入、任务和状态放在同一处可减少转录；自动执行却会引入授权和重复副作用风险。
 - **建议**：先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。
+
+<a id="plugin-1418691015-root"></a>
+
+#### [Prompt Desk](../../plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/commits)
+
+- **用途**：经常纠正同类行为的用户需要维护少量可复用教训，合格结果是正确经验被下轮读取且可撤回。
+- **亮点**：index.js 逐个尝试认错标记，跳过不合法的首次出现，要求同一行按错误经过、教训顺序解析；结果先入待确认队列，采纳后才注入。
+- **思考**：跳过无效早期标记能修正漏采路径，但采集更多草稿未必改善后续任务；经验质量仍依赖人工取舍。
+- **建议**：已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。
 
 <a id="plugin-1409724830-src"></a>
 

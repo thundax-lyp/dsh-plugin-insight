@@ -1,0 +1,31 @@
+{
+  "repository": "1569126506-sudo/dsh-team-cost",
+  "repository_id": 1364961230,
+  "captured_at": "2026-10-20T04:26:18.000Z",
+  "window_start": "2026-09-20T04:26:18.000Z",
+  "stars": 2,
+  "pushed_at": "2026-09-10T22:18:19Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-team-cost",
+    "captured_at": "2026-10-20T04:26:24.079Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-team-cost",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T04:26:24.079Z",
+      "source_url": "https://registry.npmjs.org/dsh-team-cost",
+      "error": "HTTP 404"
+    }
+  }
+}
