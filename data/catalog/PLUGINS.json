@@ -9154,7 +9154,7 @@
           "id": "scenario",
           "topic": "positioning",
           "basis": "interpretation",
-          "text": "需要周期性工作汇报的人希望从实际活动整理报告，并能回查来源。",
+          "text": "面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。",
           "evidence_ids": [
             "20261020-research40-github-1363429979-plugin-daily-log-source"
           ],
