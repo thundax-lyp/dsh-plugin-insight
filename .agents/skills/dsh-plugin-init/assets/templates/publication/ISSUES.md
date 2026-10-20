@@ -1,5 +1,5 @@
-{{open}} · {{closed}}
+{{metrics}}
 
-{{created}} · {{closed_recent}} · {{updated}}
+{{notice}}
 
 统计日期：{{date}}。

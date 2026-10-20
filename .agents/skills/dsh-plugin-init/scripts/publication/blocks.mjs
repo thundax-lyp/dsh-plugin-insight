@@ -1,7 +1,13 @@
-import { currentInnovationScore } from '../../../_shared/scripts/innovation-score.mjs';
 import { template } from './template.mjs';
 // Reader-facing blocks shared by README and the standalone classification page.
 const clean = (text) => text.replace(/[\r\n]/g, ' ').replace(/[\[\]<>|]/g, '');
+const tableCell = (text) =>
+    text
+        .replace(/[\r\n]/g, ' ')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\|/g, '&#124;');
 const categoryNames = {
     'office-operations': '办公与运营',
     'software-delivery': '软件交付',
@@ -12,43 +18,52 @@ const categoryNames = {
     infrastructure: '基础设施',
     other: '其他'
 };
+const categoryScopes = {
+    'personal-productivity': '输入、会话、快捷操作与个人工作体验',
+    'office-operations': '工作记录、日程、团队用量与日常运营',
+    'research-knowledge': '信息检索、网页读取、笔记与长期知识',
+    infrastructure: '模型接入、认证、运行环境与系统支撑',
+    'software-delivery': '代码开发、任务编排、调试与交付流程',
+    'content-creation': '写作、语音、图片与视频内容生产',
+    'customer-service': '客户沟通、服务响应与支持流程',
+    other: '其他尚未归入上述场景的插件'
+};
+export const categoryScope = (key) => categoryScopes[key] ?? categoryScopes.other;
 const nameLink = (e) => template('LINK', { label: clean(e.plugin.name), url: e.href ?? `#${e.anchor}` });
 export function renderIssueActivity(metadata, repository) {
     const end = metadata?.captured_at;
     const start = metadata?.window_start;
     const range = start && end ? `${start}..${end}` : null;
     const fields = [
-        ['open', 'Issue 未关闭', 'open', 'is:issue is:open'],
-        ['closed', 'Issue 已关闭', 'closed', 'is:issue is:closed'],
-        ['created', '近30天新建', 'created_30d', `is:issue${range ? ` created:${range}` : ''}`],
-        ['closed_recent', '近30天关闭', 'closed_30d', `is:issue is:closed${range ? ` closed:${range}` : ''}`],
-        ['updated', '近30天更新', 'updated_30d', `is:issue${range ? ` updated:${range}` : ''}`]
+        ['Issue 未关闭', 'open', 'is:issue is:open'],
+        ['近30天新建', 'created_30d', `is:issue${range ? ` created:${range}` : ''}`],
+        ['近30天关闭', 'closed_30d', `is:issue is:closed${range ? ` closed:${range}` : ''}`]
     ];
-    const badges = Object.fromEntries(
-        fields.map(([key, label, field, query]) => {
-            const value = metadata?.issues?.[field];
-            const message = value === null || value === undefined ? '暂未获取' : value.toLocaleString('en-US');
-            return [
-                key,
-                template('BADGE', {
-                    alt: `${label} ${message}`,
-                    image:
-                        'https://img.shields.io/static/v1?' +
-                        new URLSearchParams({
-                            label,
-                            message,
-                            color: message === '暂未获取' ? 'lightgrey' : 'grey',
-                            logo: 'github',
-                            style: 'flat'
-                        }).toString(),
-                    url: `https://github.com/${repository}/issues?` + new URLSearchParams({ q: query }).toString()
-                })
-            ];
-        })
+    const date = end ? new Date(Date.parse(end) + 8 * 3600000).toISOString().slice(0, 10) : '暂未获取';
+    const available = fields.filter(
+        ([, field]) => metadata?.issues?.[field] !== null && metadata?.issues?.[field] !== undefined
     );
+    if (!available.length)
+        return template('ISSUES-UNAVAILABLE', { date, url: `https://github.com/${repository}/issues` });
+    const missing = fields.filter(
+        ([, field]) => metadata?.issues?.[field] === null || metadata?.issues?.[field] === undefined
+    );
+    const metrics = available.map(([label, field, query]) => {
+        const message = metadata.issues[field].toLocaleString('en-US');
+        return template('BADGE', {
+            alt: `${label} ${message}`,
+            image:
+                'https://img.shields.io/static/v1?' +
+                new URLSearchParams({ label, message, color: 'grey', logo: 'github', style: 'flat' }).toString(),
+            url: `https://github.com/${repository}/issues?` + new URLSearchParams({ q: query }).toString()
+        });
+    });
     return template('ISSUES', {
-        ...badges,
-        date: end ? new Date(Date.parse(end) + 8 * 3600000).toISOString().slice(0, 10) : '暂未获取'
+        metrics: metrics.join(' · '),
+        notice: missing.length
+            ? template('ISSUES-MISSING', { fields: missing.map(([label]) => label).join('、') })
+            : '',
+        date
     });
 }
 export const renderUpdated = (date) => template('UPDATED', { date });
@@ -69,47 +84,66 @@ export function renderWeeklyNew(items, date) {
     if (!selected.length) return '';
     return template('WEEKLY-NEW', {
         items: selected
-            .map((e) => template('NAVIGATION-ITEM', { plugin: nameLink(e), description: clean(e.description) }))
+            .map((e) => template('LATEST-ITEM', { plugin: nameLink(e), summary: clean(e.summary) }))
             .join('\n')
     });
 }
-export function renderLatest(items, limit = 3) {
+export function renderLatest(items, date, limit = 5) {
+    const end = Date.parse(date + 'T23:59:59+08:00');
     const selected = items
-        .filter((e) => e.pushedAt)
-        .sort((a, b) => Date.parse(b.pushedAt) - Date.parse(a.pushedAt) || a.i.id.localeCompare(b.i.id))
+        .filter(
+            (e) =>
+                e.npmFirstPublished &&
+                Date.parse(e.npmFirstPublished) <= end &&
+                Date.parse(e.npmFirstPublished) > end - 30 * 86400000
+        )
+        .sort(
+            (a, b) => Date.parse(b.npmFirstPublished) - Date.parse(a.npmFirstPublished) || a.i.id.localeCompare(b.i.id)
+        )
         .slice(0, limit);
     return template('LATEST', {
         items:
             selected
-                .map((e) => template('LATEST-ITEM', { plugin: nameLink(e), time: e.pushedBadge ?? e.pushedLabel }))
-                .join('\n') || '暂无更新信息。'
+                .map((e) =>
+                    template('LATEST-ITEM', {
+                        plugin: nameLink(e),
+                        summary: `${clean(e.summary)} · 新发布：${new Date(Date.parse(e.npmFirstPublished) + 8 * 3600000).toISOString().slice(0, 10)}`
+                    })
+                )
+                .join('\n') || '最近30天暂无已核实的新发布记录。'
     });
 }
-export function renderHot(items, limit = 3) {
+export function renderHot(items, limit = 5) {
+    const repositories = new Set();
     const selected = items
         .filter((e) => e.stars !== null && e.stars !== undefined)
         .sort((a, b) => b.stars - a.stars || a.i.id.localeCompare(b.i.id))
+        .filter((e) => {
+            const id = e.plugin.repository_id;
+            if (repositories.has(id)) return false;
+            repositories.add(id);
+            return true;
+        })
         .slice(0, limit);
     return template('HOT', {
         items:
-            selected.map((e) => template('HOT-ITEM', { plugin: nameLink(e), stars: e.starsBadge })).join('\n') ||
-            '暂无热度信息。'
+            selected
+                .map((e) =>
+                    template('HOT-ITEM', {
+                        plugin: nameLink(e),
+                        summary: clean(e.summary),
+                        stars: e.starsBadge
+                    })
+                )
+                .join('\n') || '暂无可比较的关注数据。'
     });
 }
-export function renderRecommended(recommendations, byId) {
-    const score = (r) => {
-        const e = byId.get(r.plugin_id);
-        return currentInnovationScore(e.plugin, e.i.revision, e.needsReview);
-    };
+export function renderRecommended(recommendations, byId, limit = 5) {
     const selected = recommendations
-        .filter((r) => r.kind !== 'observe')
-        .sort((a, b) => {
-            const sa = score(a),
-                sb = score(b);
-            if (sa && sb) return sb.total - sa.total || a.plugin_id.localeCompare(b.plugin_id);
-            if (sa || sb) return sa ? -1 : 1;
-            return a.plugin_id.localeCompare(b.plugin_id);
-        });
+        .filter((r) => r.kind !== 'observe' && !byId.get(r.plugin_id).needsReview)
+        // Within each level preserve the editor's order; innovation scores do not rank adoption value.
+        .sort((a, b) => Number(b.kind === 'install') - Number(a.kind === 'install'))
+        .slice(0, limit);
     return template('RECOMMENDED', {
         items:
             selected
@@ -117,12 +151,12 @@ export function renderRecommended(recommendations, byId) {
                     const e = byId.get(r.plugin_id);
                     return template('RECOMMENDED-ITEM', {
                         plugin: nameLink(e),
-                        kind: r.kind === 'install' ? '值得装' : '条件试用',
-                        summary: clean(r.summary),
-                        review: e.needsReview ? '（脚本已更新，待复核）' : ''
+                        kind: r.kind === 'install' ? ' · 值得安装' : '',
+                        summary: `${clean(e.summary)} ${clean(r.summary).replaceAll('条件试用', '试用')}`,
+                        review: ''
                     });
                 })
-                .join('\n') || '暂无推荐。'
+                .join('\n') || '暂无符合条件的推荐。'
     });
 }
 export function categoryGroups(items) {
@@ -145,29 +179,39 @@ export function renderCategoryIndex(groups) {
     });
 }
 export function renderHomeCategories(groups, href, limit = 5) {
-    const navigation = groups
-        .map((g) =>
-            template('CATEGORY-INDEX-ITEM', { name: g.name, count: g.entries.length, url: `#category-${g.key}` })
-        )
-        .join('\n');
     const sections = groups.map((g) => {
         const selected = [...g.entries]
             .sort((a, b) => (b.stars ?? -Infinity) - (a.stars ?? -Infinity) || alphabetical(a, b))
             .slice(0, limit);
         const plugins = selected
             .map((e) =>
-                template('PLUGIN', {
+                template('HOME-PLUGIN', {
                     anchor: e.anchor,
                     name: clean(e.plugin.name),
-                    meta: e.meta,
-                    short: e.homeShort,
+                    summary: clean(e.summary),
+                    meta: e.starsBadge,
+                    review: e.needsReview ? ' · **脚本有更新，待重新洞察**' : '',
                     detail: href(e)
                 })
             )
             .join('\n\n');
         return template('HOME-CATEGORY', { key: g.key, name: g.name, count: g.entries.length, plugins, more: g.href });
     });
-    return template('CATEGORIES', { navigation, groups: sections.join('\n\n') });
+    return template('CATEGORIES', { groups: sections.join('\n\n') });
+}
+export function renderHomeNavigation(groups) {
+    return template('HOME-NAVIGATION', {
+        items: groups
+            .map((g) =>
+                template('HOME-NAVIGATION-ITEM', {
+                    name: g.name,
+                    url: g.href,
+                    scope: categoryScope(g.key),
+                    count: g.entries.length
+                })
+            )
+            .join('\n')
+    });
 }
 export function renderCategories(items, href) {
     const groups = new Map();
@@ -178,7 +222,15 @@ export function renderCategories(items, href) {
     }
     const ordered = [...items].sort(alphabetical);
     const navigation = ordered
-        .map((e) => template('NAVIGATION-ITEM', { plugin: nameLink(e), description: clean(e.description) }))
+        .map((e) =>
+            template('CATEGORY-COMPARISON-ITEM', {
+                plugin: nameLink(e),
+                purpose: tableCell(e.summary),
+                conditions: tableCell(
+                    e.usageConditions.match(/^[\s\S]*?[。！？](?=\s|$|[^。！？])/u)?.[0] ?? e.usageConditions
+                )
+            })
+        )
         .join('\n');
     const sections = [];
     for (const [category, entries] of groups) {
@@ -194,9 +246,9 @@ export function renderCategories(items, href) {
                 })
             )
             .join('\n\n');
-        sections.push(template('CATEGORY', { name: category, count: entries.length, plugins }));
+        sections.push(plugins);
     }
-    return template('CATEGORIES', { navigation, groups: sections.join('\n\n') });
+    return template('CATEGORY-COMPARISON', { navigation, groups: sections.join('\n\n') });
 }
 export const renderSources = (sources) =>
     template('SOURCES', {

@@ -2,42 +2,64 @@
 
 > 将组织、权限、MCP、模型与用量管理整合为可独立运行或接入 DSH 的治理平台。
 
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+
+分析版本：[03f74c8](https://github.com/01men/ybkkasi/tree/03f74c847c8af9189ce37a73321a730ceb353f2a)
+
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/01men/ybkkasi) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01men/ybkkasi/commits)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/01men/ybkkasi)
 <!-- END META -->
 
-## 版本
+**使用建议**：仅在确有多用户资源治理需求时试部署，先验证最小权限、备份恢复和一条完整业务链。
 
-固定提交 [03f74c847c8af9189ce37a73321a730ceb353f2a](https://github.com/01men/ybkkasi/tree/03f74c847c8af9189ce37a73321a730ceb353f2a)
+**核查状态**：已检查源码，未进行真实宿主验证。
 
-## 用途与采用点评
+## 使用建议
 
 - **用途**：已有多个 AI 资源和使用部门的团队需要资产归属、权限及审计，而非单一聊天增强。
-- **亮点**：Cordis 插件树装配业务域，REST gate 汇集权限声明；同时提供独立宿主与实验性 DSH 接入。
-- **思考**：权限归属和资源生命周期有明确组织价值，但小团队用配置文件可能更经济。
-- **建议**：仅在确有多用户资源治理需求时试部署，先验证最小权限、备份恢复和一条完整业务链。
-
-## 场景与替代办法
-
-已有多个 AI 资源和使用部门的团队需要资产归属、权限及审计，而非单一聊天增强。
 
 人工维护资源清单与 API 网关是替代组合；项目属于平台而非轻量插件，采用判断维持谨慎。
 
-## 依赖与流程
+## 能力与限制
+
+- **Host 路由**：REST gate 提供权限受保护的业务路由装配。
+
+**流程与依赖**
 
 独立宿主依赖 Node 和持久化服务；DSH 接入另受 Cordis 同实例、版本及权限能力限制。
 
 建立组织和资源，授予细粒度权限后执行；异常需要管理员检查审计、恢复存储并撤销令牌。
 
-## 成本与效果
+**兼容条件**
+
+根包 private、版本 1.3.0；DSH 兼容声明较窄，不能把独立运行能力推成任意宿主可安装。
+
+**效果与成本**
 
 涉及账号、密钥、存储备份和平台升级，部署运维远高于普通 UI 插件；未估算人天。
 
-权限归属和资源生命周期有明确组织价值，但小团队用配置文件可能更经济。
+- **思考**：权限归属和资源生命周期有明确组织价值，但小团队用配置文件可能更经济。
 
-## 工程统计
+## 工程分析
 
-统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2ebe01dea6be6d421f2b293180025f5c170e313ab89f5c09f6d659bf92efd7ae。sloc 0.3.2，TypeScript 5.9.3。
+- **亮点**：Cordis 插件树装配业务域，REST gate 汇集权限声明；同时提供独立宿主与实验性 DSH 接入。
+
+声明式受保护路由和共享 gate 可减少散落鉴权；借用时仍需核查跨插件数据边界。
+
+## 核查说明
+
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：根组件规模大，只抽读启动和路由鉴权，不把作者自测数量当作本轮运行结果。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：以两个部门和一个 MCP 服务测试越权、令牌吊销、重启一致性及故障恢复时间。
+
+**分析版本**
+
+固定提交 [03f74c8](https://github.com/01men/ybkkasi/tree/03f74c847c8af9189ce37a73321a730ceb353f2a)
+
+<details>
+<summary>工程统计与口径</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -48,36 +70,10 @@
 | .mjs | test | 21 | 4505 | 3624 | 653 | — |
 | .tsx | source | 2 | 267 | 194 | 53 | — |
 
-排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
+</details>
 
-## 能力清单
+**活跃度**
 
-- **Host 路由**：REST gate 提供权限受保护的业务路由装配。
+Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/01men/ybkkasi/issues) 查看。
 
-## 工程亮点
-
-声明式受保护路由和共享 gate 可减少散落鉴权；借用时仍需核查跨插件数据边界。
-
-## 分发与兼容
-
-根包 private、版本 1.3.0；DSH 兼容声明较窄，不能把独立运行能力推成任意宿主可安装。
-
-## 历史对照
-
-前次代码指纹为 03f74c847c8af9189ce37a73321a730ceb353f2a；本轮固定为 03f74c847c8af9189ce37a73321a730ceb353f2a。人工维护资源清单与 API 网关是替代组合；项目属于平台而非轻量插件，采用判断维持谨慎。
-
-## 核查说明
-
-- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
-- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根组件规模大，只抽读启动和路由鉴权，不把作者自测数量当作本轮运行结果。
-- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
-- 下一步：以两个部门和一个 MCP 服务测试越权、令牌吊销、重启一致性及故障恢复时间。
-
-## 活跃度
-
-[![Issue 未关闭 暂未获取](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/01men/ybkkasi/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 暂未获取](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/01men/ybkkasi/issues?q=is%3Aissue+is%3Aclosed)
-
-[![近30天新建 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/01men/ybkkasi/issues?q=is%3Aissue+created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天关闭 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/01men/ybkkasi/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天更新 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/01men/ybkkasi/issues?q=is%3Aissue+updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z)
-
-统计日期：2026-10-20。
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

@@ -2,65 +2,49 @@
 
 > 在设置中显示当前 DSH 版本，并代理读取官方 GitHub 发布说明。
 
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+
+分析版本：[febf7b0](https://github.com/1010n111/dsh-about/tree/febf7b0da6a2255ddfd84028c624ad9e4953dd83)
+
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1010n111/dsh-about) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1010n111/dsh-about/commits)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1010n111/dsh-about)
 <!-- END META -->
 
-## 版本
+**使用建议**：与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。
 
-固定提交 [febf7b0da6a2255ddfd84028c624ad9e4953dd83](https://github.com/1010n111/dsh-about/tree/febf7b0da6a2255ddfd84028c624ad9e4953dd83)
+**核查状态**：已检查源码，未进行真实宿主验证。
 
-## 用途与采用点评
+## 使用建议
 
 - **用途**：需要确认实际运行版本及更新内容的用户不必另外打开终端和发布页。
-- **亮点**：宿主从 clientModules 路径反推包版本，注册只读 version/releases 路由，对 GitHub 响应缓存五分钟。
-- **思考**：能把当前版本与发布说明放在一起，但不会执行更新，也不证明新版本适合当前插件组合。
-- **建议**：与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。
-
-## 场景与替代办法
-
-需要确认实际运行版本及更新内容的用户不必另外打开终端和发布页。
 
 终端版本命令加官方发布页更直接；该插件提供界面聚合，不增加权威信息。
 
-## 依赖与流程
+## 能力与限制
+
+- **Host 路由**：只读版本和发布记录端点。
+
+**流程与依赖**
 
 本地版本读取依赖安装布局；发布说明依赖 GitHub API 和网络。
 
 打开关于页读取版本与发布记录；网络错误和版本无法定位应分别排查。
 
-## 成本与效果
-
-无模型成本，联网发布信息受 GitHub 可用性影响；收益主要是少量查询便利。
-
-能把当前版本与发布说明放在一起，但不会执行更新，也不证明新版本适合当前插件组合。
-
-## 工程统计
-
-统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1f9b5178ec4ff598850f0e0f06fc9430c10f5e8cc96d872953332b0d798e20dd。sloc 0.3.2，TypeScript 5.9.3。
-
-| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
-|---|---|---:|---:|---:|---:|---:|
-| .js | source | 4 | 1199 | 1004 | 131 | — |
-| .md | source | 1 | 96 | — | — | 928 |
-
-排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
-
-## 能力清单
-
-- **Host 路由**：只读版本和发布记录端点。
-
-## 工程亮点
-
-失败返回明确状态、短时缓存可借鉴；解析双语正文依赖上游发布文本格式。
-
-## 分发与兼容
+**兼容条件**
 
 包版本 0.0.4，依赖宿主 Web、文件和客户端模块服务。
 
-## 历史对照
+**效果与成本**
 
-前次代码指纹为 febf7b0da6a2255ddfd84028c624ad9e4953dd83；本轮固定为 febf7b0da6a2255ddfd84028c624ad9e4953dd83。终端版本命令加官方发布页更直接；该插件提供界面聚合，不增加权威信息。
+无模型成本，联网发布信息受 GitHub 可用性影响；收益主要是少量查询便利。
+
+- **思考**：能把当前版本与发布说明放在一起，但不会执行更新，也不证明新版本适合当前插件组合。
+
+## 工程分析
+
+- **亮点**：宿主从 clientModules 路径反推包版本，注册只读 version/releases 路由，对 GitHub 响应缓存五分钟。
+
+失败返回明确状态、短时缓存可借鉴；解析双语正文依赖上游发布文本格式。
 
 ## 核查说明
 
@@ -70,10 +54,22 @@
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：测试 pnpm、npx 和桌面布局，并模拟离线、限流和单语发布正文。
 
-## 活跃度
+**分析版本**
 
-[![Issue 未关闭 暂未获取](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/1010n111/dsh-about/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 暂未获取](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/1010n111/dsh-about/issues?q=is%3Aissue+is%3Aclosed)
+固定提交 [febf7b0](https://github.com/1010n111/dsh-about/tree/febf7b0da6a2255ddfd84028c624ad9e4953dd83)
 
-[![近30天新建 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/1010n111/dsh-about/issues?q=is%3Aissue+created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天关闭 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/1010n111/dsh-about/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天更新 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/1010n111/dsh-about/issues?q=is%3Aissue+updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z)
+<details>
+<summary>工程统计与口径</summary>
 
-统计日期：2026-10-20。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .js | source | 4 | 1199 | 1004 | 131 | — |
+| .md | source | 1 | 96 | — | — | 928 |
+
+</details>
+
+**活跃度**
+
+Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/1010n111/dsh-about/issues) 查看。
+
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

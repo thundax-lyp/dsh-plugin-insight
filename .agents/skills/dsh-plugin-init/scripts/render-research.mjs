@@ -8,13 +8,15 @@ import addFormats from 'ajv-formats';
 import { ROOT, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { template } from './publication/template.mjs';
+import { renderDetailLayout } from './publication/detail-layout.mjs';
 import {
     categoryGroups,
     renderCategoryIndex,
     renderHomeCategories,
+    renderHomeNavigation,
+    categoryScope,
     renderUpdated,
     renderIssueActivity,
-    renderWeeklyNew,
     renderLatest,
     renderHot,
     renderRecommended,
@@ -37,26 +39,64 @@ function local(root, path) {
     if (isAbsolute(path) || relative(root, full).startsWith('..')) throw Error('path must be inside project');
     return full;
 }
-export function relativeTime(date, at) {
-    const a = Date.parse(at),
-        d = Date.parse(date);
-    if (!Number.isFinite(a) || !Number.isFinite(d) || d > a) return '暂未获取';
-    const days = Math.floor((a + 8 * 3600000) / 86400000) - Math.floor((d + 8 * 3600000) / 86400000);
-    if (days < 3) return ['今天', '昨天', '前天'][days];
-    return days < 30 ? `${days}天前` : days < 365 ? `${Math.floor(days / 30)}个月前` : `${Math.floor(days / 365)}年前`;
-}
 export function renderDetailReport(report, item) {
     const versionUrl = `https://github.com/${item.repository}/tree/${item.revision}${item.path ? `/${item.path}` : ''}`;
+    const shortParagraphs = new Set(
+        [...report.matchAll(/^- \*\*(?:用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)(.+)$/gm)].map((match) =>
+            match[1].trim()
+        )
+    );
     return report
+        .replace(/\n## 历史对照\n[\s\S]*?(?=\n## |$)/g, '\n')
+        .replace(/\n## (场景与替代办法|成本与效果)\n([\s\S]*?)(?=\n## |$)/g, (section, heading, body) => {
+            const paragraphs = body.trim().split(/\n\s*\n/);
+            const retained = paragraphs.filter((paragraph) => !shortParagraphs.has(paragraph.trim()));
+            if (retained.length === paragraphs.length) return section;
+            return retained.length ? `\n## ${heading}\n\n${retained.join('\n\n')}\n` : '\n';
+        })
         .replace(/\n## 固定范围与依据\n[\s\S]*?(?=\n## )/, `\n## 版本\n\n固定提交 [${item.revision}](${versionUrl})\n`)
         .replace(/\n## 代码评价\n\n([\s\S]*?)\n## 可借鉴处\n\n/, '\n## 工程亮点\n\n$1\n\n')
-        .replace(/\n## 验证与边界\n/, '\n## 核查说明\n');
+        .replace(/\n## 验证与边界\n/, '\n## 核查说明\n')
+        .replaceAll('条件试用', '试用');
 }
 export function latestManifestItems(manifests) {
     const latest = new Map();
     for (const manifest of manifests)
         for (const item of manifest.items) latest.set(item.id, { item, checked_at: manifest.checked_at });
     return [...latest.values()];
+}
+function renderReadingNavigation(detail, navigation, longRead) {
+    let content = detail;
+    if (longRead) {
+        const entries = [];
+        let fence = null;
+        content = content
+            .split('\n')
+            .map((line) => {
+                const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+                if (marker) {
+                    if (!fence) fence = marker[1];
+                    else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
+                        fence = null;
+                    return line;
+                }
+                const heading = !fence && line.match(/^(#{2,3}) (.+)$/);
+                if (!heading) return line;
+                const anchor = `detail-section-${entries.length + 1}`;
+                entries.push(
+                    template('DETAIL-CONTENTS-ITEM', {
+                        title: clean(heading[2]),
+                        anchor,
+                        indent: heading[1].length === 3 ? '  ' : ''
+                    })
+                );
+                return `<a id="${anchor}"></a>\n\n${line}`;
+            })
+            .join('\n');
+        const contents = template('DETAIL-CONTENTS', { items: entries.join('\n') });
+        content = content.replace(/(\*\*核查状态\*\*：[^\n]+\n)/, `$1\n${contents}\n`);
+    }
+    return content.replace(/^(# [^\n]+\n\n> [^\n]+\n)/, `$1\n${navigation}\n`) + `\n${navigation}\n`;
 }
 export function renderPublication(input, root = ROOT, context = null) {
     if (!check(input)) throw Error(ajv.errorsText(check.errors));
@@ -97,7 +137,6 @@ export function renderPublication(input, root = ROOT, context = null) {
                 return template('SHORT-ITEM', { label, text: matches[0][1] });
             });
             const short = shortItems.join('\n');
-            const homeShort = shortItems.slice(0, 2).join('\n');
             const title = report.match(/^# [^\n]+/)?.[0];
             if (!title) throw Error('detail needs a title');
             const capabilities = input.capabilities?.[i.id];
@@ -109,14 +148,13 @@ export function renderPublication(input, root = ROOT, context = null) {
             const advice = input.advice?.[i.id];
             if (advice && advice.revision !== i.revision) throw Error(`advice revision differs: ${i.id}`);
             if (advice && !report.includes(advice.text)) throw Error(`detail advice differs: ${i.id}`);
-            const description = report.match(/^- \*\*用途(?:：\*\*|\*\*：)(.+)$/m)[1].split(/[。！？]/)[0];
+            const usageConditions = advice?.text ?? report.match(/^- \*\*建议(?:：\*\*|\*\*：)(.+)$/m)[1].trim();
             const anchor = `plugin-${plugin.repository_id}-${plugin.component_id}`;
             const path = input.metadata?.[i.id];
             let npmFirstPublished = null,
                 needsReview = false,
                 stars = null,
                 pushedAt = null,
-                pushedLabel = null,
                 issues = renderIssueActivity(null, plugin.repository);
             let starsBadge = template('BADGE', {
                 alt: 'GitHub ★ 暂未获取',
@@ -131,20 +169,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                     }).toString(),
                 url: `https://github.com/${plugin.repository}`
             });
-            let pushedBadge = template('BADGE', {
-                alt: '最后更新 暂未获取',
-                image:
-                    'https://img.shields.io/static/v1?' +
-                    new URLSearchParams({
-                        label: '最后更新',
-                        message: '暂未获取',
-                        color: 'lightgrey',
-                        logo: 'github',
-                        style: 'flat'
-                    }).toString(),
-                url: `https://github.com/${plugin.repository}/commits`
-            });
-            let meta = template('META', { stars: starsBadge, downloads: '', updated: pushedBadge, review: '' });
+            let meta = template('META', { stars: starsBadge, downloads: '', review: '' });
             if (path) {
                 const m = validateMetadata(context?.metadata[i.id] ?? read(local(root, path)));
                 if (m.repository_id !== null && m.repository_id !== plugin.repository_id)
@@ -195,56 +220,37 @@ export function renderPublication(input, root = ROOT, context = null) {
                       : '';
                 stars = m.stars;
                 pushedAt = m.pushed_at;
-                pushedLabel = m.pushed_at ? relativeTime(m.pushed_at, m.captured_at) : null;
                 starsBadge = template('BADGE', {
                     alt: `GitHub ★ ${n(m.stars)}`,
                     image: starImage,
                     url: `https://github.com/${m.repository}`
                 });
-                const updatedLabel = pushedLabel ?? '暂未获取';
-                const updatedImage =
-                    'https://img.shields.io/static/v1?' +
-                    new URLSearchParams({
-                        label: '最后更新',
-                        message: updatedLabel,
-                        color: pushedLabel ? 'blue' : 'lightgrey',
-                        logo: 'github',
-                        style: 'flat'
-                    }).toString();
-                pushedBadge = template('BADGE', {
-                    alt: `最后更新 ${updatedLabel}`,
-                    image: updatedImage,
-                    url: `https://github.com/${m.repository}/commits`
-                });
-                meta = template('META', { stars: starsBadge, downloads, updated: pushedBadge, review: update });
+                meta = template('META', { stars: starsBadge, downloads, review: update });
             }
-            const issueBlock = `## 活跃度\n\n${issues}\n`;
-            const reportWithoutMeta = renderDetailReport(report, i).replace(
-                /\n<!-- BEGIN META -->\n[\s\S]*?\n<!-- END META -->\n*/,
-                '\n'
-            );
-            const detailMeta = template('DETAIL-META', { meta });
-            const reportWithMeta = reportWithoutMeta.replace(/^(# [^\n]+\n\n> [^\n]+)\n+/, `$1\n\n${detailMeta}\n\n`);
-            if (reportWithMeta === reportWithoutMeta) throw Error(`detail needs a title and summary: ${i.id}`);
-            const detail = /\n## (?:Issue )?活跃度\n/.test(reportWithMeta)
-                ? reportWithMeta.replace(/## (?:Issue )?活跃度\n[\s\S]*$/, issueBlock)
-                : reportWithMeta.trimEnd() + '\n\n' + issueBlock;
+            const longRead = report.length >= 8000 || /^## .*?(?:创新推演|未来设计假设)/m.test(report);
+            const detail = renderDetailLayout(renderDetailReport(report, i), i, {
+                meta,
+                issues,
+                advice: usageConditions,
+                capabilities,
+                evidence: plugin.evidence,
+                longRead
+            });
             return {
                 i,
                 plugin,
                 short,
-                homeShort,
-                description,
+                summary: summary.text,
+                usageConditions,
                 anchor,
                 meta,
-                pushedBadge,
                 needsReview,
                 stars,
                 starsBadge,
                 pushedAt,
-                pushedLabel,
                 npmFirstPublished,
                 detailPath,
+                longRead,
                 detail
             };
         });
@@ -276,6 +282,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             template('CATEGORY-PAGE', {
                 name: g.name,
                 home: link(g.path, 'README.md'),
+                scope: categoryScope(g.key),
                 categories: renderCategories(g.entries, (e) => link(g.path, e.detailPath)),
                 updated: renderUpdated(updated)
             }) + '\n'
@@ -288,11 +295,31 @@ export function renderPublication(input, root = ROOT, context = null) {
     const homeGroups = groups.map((g) => ({ ...g, href: link('README.md', g.path) }));
     const homeItems = items.map((e) => ({ ...e, href: e.detailPath }));
     const homeById = new Map(homeItems.map((e) => [e.i.id, e]));
+    const columnPages = ['LATEST', 'HOT', 'RECOMMENDED'].map((key) => {
+        const path = `data/views/columns/${key}.md`;
+        const entries = items.map((e) => ({ ...e, href: link(path, e.detailPath) }));
+        const entriesById = new Map(entries.map((e) => [e.i.id, e]));
+        const content =
+            key === 'LATEST'
+                ? renderLatest(entries, updated, Infinity)
+                : key === 'HOT'
+                  ? renderHot(entries, Infinity)
+                  : renderRecommended(input.recommendations, entriesById, Infinity);
+        return {
+            path,
+            content:
+                template('COLUMN-PAGE', {
+                    home: link(path, 'README.md'),
+                    content: content.replace(/^## \[([^\]]+)\]\([^\n]+\)/, '# $1'),
+                    updated: renderUpdated(updated)
+                }) + '\n'
+        };
+    });
     const readme =
         template('README', {
             updated: renderUpdated(updated),
-            weekly_new: renderWeeklyNew(homeItems, updated),
-            latest: renderLatest(homeItems),
+            navigation: renderHomeNavigation(homeGroups),
+            latest: renderLatest(homeItems, updated),
             hot: renderHot(homeItems),
             recommended: renderRecommended(input.recommendations, homeById),
             categories: renderHomeCategories(homeGroups, (e) => e.detailPath),
@@ -307,8 +334,19 @@ export function renderPublication(input, root = ROOT, context = null) {
     return {
         readme,
         catalog: catalogPage,
-        categoryPages,
-        details: items.map((e) => ({ path: e.detailPath, content: e.detail })),
+        categoryPages: [...categoryPages, ...columnPages],
+        details: items.map((e) => {
+            const group = groups.find((g) => g.key === e.plugin.business_category);
+            if (!group) throw Error(`detail category missing: ${e.i.id}`);
+            const navigation = template('DETAIL-NAVIGATION', {
+                category: link(e.detailPath, group.path),
+                home: link(e.detailPath, 'README.md')
+            });
+            return {
+                path: e.detailPath,
+                content: renderReadingNavigation(e.detail, navigation, e.longRead).replaceAll('条件试用', '试用')
+            };
+        }),
         registry
     };
 }

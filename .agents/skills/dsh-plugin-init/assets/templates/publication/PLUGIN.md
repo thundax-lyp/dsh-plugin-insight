@@ -1,6 +1,6 @@
 <a id="{{anchor}}"></a>
 
-#### [{{name}}]({{detail}})
+## [{{name}}]({{detail}})
 
 {{meta}}
 

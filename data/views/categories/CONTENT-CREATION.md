@@ -2,19 +2,23 @@
 
 [返回首页](../../../README.md)
 
-## 分类导航
+写作、语音、图片与视频内容生产。
 
-- [dsh-media-studio](#plugin-1399694663-root)：内容创作者希望从同一对话发起生成、取回成品并预览，交付是可用媒体文件和可追踪任务结果。
-- [dsh-plugin-tts](#plugin-1334773156-root)：需要长文朗读或本地音色的用户希望在会话内播放，不想逐段复制到外部软件。
-- [No AI Style](#plugin-1418493685-root)：论文与专业文档作者需要减少机械表达，同时保留事实承诺和引用。
+**快速比较**
 
-### 内容生产（3）
+> 索引与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
+
+| 插件 | 主要用途 | 关键使用条件 |
+| --- | --- | --- |
+| [dsh-media-studio](#plugin-1399694663-root) | 在聊天中生成或发送图片、视频，支持多后端、后台生成和结果媒体卡片。 | 先用一个已授权后端生成小图，核对输出路径和取消，再试视频；对敏感参考图先确认发送对象与保留条件。 |
+| [dsh-plugin-tts](#plugin-1334773156-root) | 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 | 先选一个后端，用短文本和长文检查播放与取消，再引入本地音色服务；需要离线或隐私边界时逐条确认所选后端数据流。 |
+| [No AI Style](#plugin-1418493685-root) | 以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。 | 先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。 |
 
 <a id="plugin-1399694663-root"></a>
 
-#### [dsh-media-studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
+## [dsh-media-studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
 
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio/commits) · **脚本有更新，待重新洞察**
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio) · **脚本有更新，待重新洞察**
 
 - **用途**：内容创作者希望从同一对话发起生成、取回成品并预览，交付是可用媒体文件和可追踪任务结果。
 - **亮点**：src/tools.ts解析模型与凭据，providers对接生成后端；jobs.ts启动官方后台任务，结果保存后投递会话，注册失败时退为脱离任务控制的执行。
@@ -23,9 +27,9 @@
 
 <a id="plugin-1334773156-root"></a>
 
-#### [dsh-plugin-tts](../../plugins/1624318455--dsh-plugin-tts/INSIGHT.md)
+## [dsh-plugin-tts](../../plugins/1624318455--dsh-plugin-tts/INSIGHT.md)
 
-[![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts) · [![npm 30d 2693](https://img.shields.io/static/v1?label=npm+30d&message=2%2C693&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts) · [![最后更新 7天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=7%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts/commits)
+[![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts) · [![npm 30d 2693](https://img.shields.io/static/v1?label=npm+30d&message=2%2C693&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts)
 
 - **用途**：需要长文朗读或本地音色的用户希望在会话内播放，不想逐段复制到外部软件。
 - **亮点**：lib/index.mjs注册语音及音色包路由，Edge由Node子进程完成WebSocket合成，RVC等经本地HTTP服务处理，客户端分块播放。
@@ -34,9 +38,9 @@
 
 <a id="plugin-1418493685-root"></a>
 
-#### [No AI Style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
+## [No AI Style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style) · [![最后更新 昨天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E6%98%A8%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style/commits)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
 
 - **用途**：论文与专业文档作者需要减少机械表达，同时保留事实承诺和引用。
 - **亮点**：filesystem provider 暴露内嵌 Skill；审阅与改写模式区分权限，真相边界优先于文风。

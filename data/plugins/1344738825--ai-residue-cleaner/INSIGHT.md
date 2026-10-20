@@ -2,66 +2,50 @@
 
 > 按规则把会话副产物移入可还原回收站，并提供项目结项归类、归档与清理清单。
 
+[返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
+
+分析版本：[d1efd79](https://github.com/1344738825/ai-residue-cleaner/tree/d1efd794049a2a26b8e75573b51df249bd72b62b)
+
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner) · [![最后更新 前天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E5%89%8D%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner/commits)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner)
 <!-- END META -->
 
-## 版本
+**使用建议**：先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。
 
-固定提交 [d1efd794049a2a26b8e75573b51df249bd72b62b](https://github.com/1344738825/ai-residue-cleaner/tree/d1efd794049a2a26b8e75573b51df249bd72b62b)
+**核查状态**：已检查源码，未进行真实宿主验证。
 
-## 用途与采用点评
+## 使用建议
 
 - **用途**：AI生成的探测、草稿和缓存污染工作区，用户需要减少整理负担并能恢复误收文件。
-- **亮点**：Host在turn/end后台派生Python清运；cleanup.py按规则移动文件并写manifest，项目open时跳过自动清理，结项时分类与归档。
-- **思考**：可逆移动及清单降低首次误收损失；规则覆盖面广且会过期真删，不应替代项目引用和保留策略。
-- **建议**：先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。
-
-## 场景与替代办法
-
-AI生成的探测、草稿和缓存污染工作区，用户需要减少整理负担并能恢复误收文件。
 
 此前未入档；显式产出目录配合手工清理更透明，本项增量是自动回收、归档和还原入口。
 
-## 依赖与流程
+## 能力与限制
+
+- **后台**：turn/end 调用Python清运及首条消息输出守则注入。
+- **用户命令**：dry-run、结项、回收清单与还原子命令。
+
+**流程与依赖**
 
 需要Python3、项目可写目录及可靠cwd；依赖项目状态和忽略规则质量，磁盘空间不足可能影响移动与记录。
 
 立项指定产出目录，工作期保留，结项先预览再归类清运；误收按manifest还原，保留期结束前人工确认重要原件。
 
-## 成本与效果
-
-首次定义忽略规则和产出目录需人工，持续扫描和回收占I/O及空间；误分类恢复与过期损失不能算零成本。
-
-可逆移动及清单降低首次误收损失；规则覆盖面广且会过期真删，不应替代项目引用和保留策略。
-
-## 工程统计
-
-统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e3f4ec6d817fb3296070b6386d7afe6418a520d25915276d7a8d2571878d43a7。sloc 0.3.2，TypeScript 5.9.3。
-
-| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
-|---|---|---:|---:|---:|---:|---:|
-| .md | source | 5 | 196 | — | — | 2872 |
-| .js | source | 1 | 229 | 163 | 52 | — |
-
-排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
-
-## 能力清单
-
-- **后台**：turn/end 调用Python清运及首条消息输出守则注入。
-- **用户命令**：dry-run、结项、回收清单与还原子命令。
-
-## 工程亮点
-
-sessionCwd拒绝宿主/依赖目录，扫描跳过符号链接和嵌套仓库；restore检查既存路径，仍需验证中断后manifest与移动是否一致。
-
-## 分发与兼容
+**兼容条件**
 
 0.1.1 private包，提供GitHub bundle与ZCode hooks；Python3为实际清运硬依赖，JS提示注入可单独工作。JS入口未见斜杠命令注册，README所称跨端命令一致性尚待宿主核实。
 
-## 历史对照
+**效果与成本**
 
-当前快照此前没有该稳定身份的研究档案。此前未入档；显式产出目录配合手工清理更透明，本项增量是自动回收、归档和还原入口。
+首次定义忽略规则和产出目录需人工，持续扫描和回收占I/O及空间；误分类恢复与过期损失不能算零成本。
+
+- **思考**：可逆移动及清单降低首次误收损失；规则覆盖面广且会过期真删，不应替代项目引用和保留策略。
+
+## 工程分析
+
+- **亮点**：Host在turn/end后台派生Python清运；cleanup.py按规则移动文件并写manifest，项目open时跳过自动清理，结项时分类与归档。
+
+sessionCwd拒绝宿主/依赖目录，扫描跳过符号链接和嵌套仓库；restore检查既存路径，仍需验证中断后manifest与移动是否一致。
 
 ## 核查说明
 
@@ -71,10 +55,26 @@ sessionCwd拒绝宿主/依赖目录，扫描跳过符号链接和嵌套仓库；
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：在复制目录放入被引用图、符号链接、同名恢复目标与重要log，测试dry-run、结项、中断和恢复，再衡量人工检查时间。
 
-## 活跃度
+**分析版本**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 0](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner/issues?q=is%3Aissue+is%3Aclosed)
+固定提交 [d1efd79](https://github.com/1344738825/ai-residue-cleaner/tree/d1efd794049a2a26b8e75573b51df249bd72b62b)
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner/issues?q=is%3Aissue+created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天更新 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=0&color=grey&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner/issues?q=is%3Aissue+updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z)
+<details>
+<summary>工程统计与口径</summary>
+
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 5 | 196 | — | — | 2872 |
+| .js | source | 1 | 229 | 163 | 52 | — |
+
+</details>
+
+**活跃度**
+
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner/issues?q=is%3Aissue+created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1344738825/ai-residue-cleaner/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z)
+
+
 
 统计日期：2026-10-20。
+
+[返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

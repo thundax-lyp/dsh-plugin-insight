@@ -2,67 +2,49 @@
 
 > 在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。
 
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+
+分析版本：[87f3fb0](https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748)
+
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt) · [![npm 30d 881](https://img.shields.io/static/v1?label=npm+30d&message=881&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/commits)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt) · [![npm 30d 881](https://img.shields.io/static/v1?label=npm+30d&message=881&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt)
 <!-- END META -->
 
-## 版本
+**使用建议**：先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。
 
-固定提交 [87f3fb0198090f0f26a37a52840db150609db748](https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748)
+**核查状态**：已检查源码，未进行真实宿主验证。
 
-## 用途与采用点评
+## 使用建议
 
 - **用途**：代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。
-- **亮点**：监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。
-- **思考**：缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。
-- **建议**：先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。
-
-## 场景与替代办法
-
-代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。
 
 人工查会话工具轨迹也能核对；自动摘要节省定位步骤但新增启发式误读风险。
 
-## 依赖与流程
+## 能力与限制
+
+- **事件监听**：回合结束事件驱动本地执行摘要回执。
+
+**流程与依赖**
 
 需要对应 session 事件和可写的 DSH_HOME，效果依赖执行轨迹是否完整记录。
 
 回合结束后后台写回执，审阅者再与真实执行结果对照；写入失败从日志排查而非补造结果。
 
-## 成本与效果
-
-本地日志增加存储和审查负担，不发模型请求；仍未测长期日志增长和审阅收益。
-
-缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。
-
-## 工程统计
-
-统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c2d134c7ae0c9606bdac10cb2d42fd3a1bbeac472663f6cc09da05dd301ad9a4。sloc 0.3.2，TypeScript 5.9.3。
-
-| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
-|---|---|---:|---:|---:|---:|---:|
-| .md | source | 5 | 482 | — | — | 4515 |
-| .mjs | source | 2 | 131 | 124 | 0 | — |
-| .ts | source | 3 | 424 | 327 | 56 | — |
-| .ts | test | 3 | 391 | 361 | 0 | — |
-
-排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
-
-## 能力清单
-
-- **事件监听**：回合结束事件驱动本地执行摘要回执。
-
-## 工程亮点
-
-追加队列、隐私化标识与确定性摘要可复用；接入时要保留事件丢失和写盘失败告警。
-
-## 分发与兼容
+**兼容条件**
 
 包版本 0.1.1，session peer 明确列出 alpha 版本，部署前须核对实际宿主。
 
-## 历史对照
+**效果与成本**
 
-前次代码指纹为 87f3fb0198090f0f26a37a52840db150609db748；本轮固定为 87f3fb0198090f0f26a37a52840db150609db748。人工查会话工具轨迹也能核对；自动摘要节省定位步骤但新增启发式误读风险。
+本地日志增加存储和审查负担，不发模型请求；仍未测长期日志增长和审阅收益。
+
+- **思考**：缩小到可检查的执行信号比声称自动验收更可靠；回执本身不能代替失败放行规则。
+
+## 工程分析
+
+- **亮点**：监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。
+
+追加队列、隐私化标识与确定性摘要可复用；接入时要保留事件丢失和写盘失败告警。
 
 ## 核查说明
 
@@ -72,10 +54,24 @@
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：构造名称像测试但未执行测试的工具调用，观察误标，并检查中断和写盘失败后的记录边界。
 
-## 活跃度
+**分析版本**
 
-[![Issue 未关闭 暂未获取](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 暂未获取](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+is%3Aclosed)
+固定提交 [87f3fb0](https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748)
 
-[![近30天新建 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天关闭 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天更新 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z)
+<details>
+<summary>工程统计与口径</summary>
 
-统计日期：2026-10-20。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 5 | 482 | — | — | 4515 |
+| .mjs | source | 2 | 131 | 124 | 0 | — |
+| .ts | source | 3 | 424 | 327 | 56 | — |
+| .ts | test | 3 | 391 | 361 | 0 | — |
+
+</details>
+
+**活跃度**
+
+Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/030611/dsh-verification-receipt/issues) 查看。
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

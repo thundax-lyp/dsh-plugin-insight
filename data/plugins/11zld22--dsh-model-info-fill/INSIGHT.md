@@ -2,67 +2,50 @@
 
 > 从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。
 
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+
+分析版本：[d377291](https://github.com/11zld22/dsh-model-info-fill/tree/d377291f5ef8ad2bccbd54e26e641b9d89016bba)
+
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill) · [![最后更新 6天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=6%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill/commits)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill)
 <!-- END META -->
 
-## 版本
+**使用建议**：先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。
 
-固定提交 [d377291f5ef8ad2bccbd54e26e641b9d89016bba](https://github.com/11zld22/dsh-model-info-fill/tree/d377291f5ef8ad2bccbd54e26e641b9d89016bba)
+**核查状态**：已检查源码，未进行真实宿主验证。
 
-## 用途与采用点评
+## 使用建议
 
 - **用途**：维护多个自定义模型的用户需要减少重复填写上下文、输出上限与推理声明。
-- **亮点**：Host 拉取并缓存能力目录，构造缺失字段操作，通过 settings.mutate 带版本写入；模型保存可单独调整。
-- **思考**：不凭会思考就编造离散档位是合理边界；默认值仍是用户假设而非外部事实。
-- **建议**：先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。
-
-## 场景与替代办法
-
-维护多个自定义模型的用户需要减少重复填写上下文、输出上限与推理声明。
 
 手填官方参数更慢但可追源；目录同步适合模型较多且接受逐项核对的用户。
 
-## 依赖与流程
+## 能力与限制
+
+- **后台**：模型目录同步与缺失字段补齐。
+- **Host 路由**：补全、确认及模型保存端点。
+
+**流程与依赖**
 
 依赖 models.dev 可用性、名称映射、宿主模型设置契约；没有 API Key 或 Base URL 时不会自动创造提供商。
 
 更新百科、查看待确认项、补齐缺失并核对真实调用；异常恢复备份并调整匹配或默认值。
 
-## 成本与效果
-
-批量维护节省与错误默认值带来的排查成本都需计入，没有测量净收益。
-
-不凭会思考就编造离散档位是合理边界；默认值仍是用户假设而非外部事实。
-
-## 工程统计
-
-统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：56e4a09cf358bdec736968593e5cbde037dba029633eb7a8bffa5aace259f1fd。sloc 0.3.2，TypeScript 5.9.3。
-
-| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
-|---|---|---:|---:|---:|---:|---:|
-| .md | source | 1 | 127 | — | — | 2350 |
-| .js | source | 3 | 2058 | 1835 | 88 | — |
-| .mjs | test | 2 | 1038 | 974 | 0 | — |
-
-排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
-
-## 能力清单
-
-- **后台**：模型目录同步与缺失字段补齐。
-- **Host 路由**：补全、确认及模型保存端点。
-
-## 工程亮点
-
-目录缓存、填充计划与版本写入分离可借鉴；与其他补全插件并用可能争写相同字段。
-
-## 分发与兼容
+**兼容条件**
 
 版本 0.2.4，入口 src/index.js，依赖 settings 和 Web 路由，外部 models.dev 是数据依赖。
 
-## 历史对照
+**效果与成本**
 
-前次代码指纹为 d377291f5ef8ad2bccbd54e26e641b9d89016bba；本轮固定为 d377291f5ef8ad2bccbd54e26e641b9d89016bba。手填官方参数更慢但可追源；目录同步适合模型较多且接受逐项核对的用户。
+批量维护节省与错误默认值带来的排查成本都需计入，没有测量净收益。
+
+- **思考**：不凭会思考就编造离散档位是合理边界；默认值仍是用户假设而非外部事实。
+
+## 工程分析
+
+- **亮点**：Host 拉取并缓存能力目录，构造缺失字段操作，通过 settings.mutate 带版本写入；模型保存可单独调整。
+
+目录缓存、填充计划与版本写入分离可借鉴；与其他补全插件并用可能争写相同字段。
 
 ## 核查说明
 
@@ -72,10 +55,23 @@
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：测试同名异端点、缺档位、已有配置、并发编辑、目录离线和旧版误填撤销。
 
-## 活跃度
+**分析版本**
 
-[![Issue 未关闭 暂未获取](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 暂未获取](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill/issues?q=is%3Aissue+is%3Aclosed)
+固定提交 [d377291](https://github.com/11zld22/dsh-model-info-fill/tree/d377291f5ef8ad2bccbd54e26e641b9d89016bba)
 
-[![近30天新建 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill/issues?q=is%3Aissue+created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天关闭 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天更新 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/11zld22/dsh-model-info-fill/issues?q=is%3Aissue+updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z)
+<details>
+<summary>工程统计与口径</summary>
 
-统计日期：2026-10-20。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 1 | 127 | — | — | 2350 |
+| .js | source | 3 | 2058 | 1835 | 88 | — |
+| .mjs | test | 2 | 1038 | 974 | 0 | — |
+
+</details>
+
+**活跃度**
+
+Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/11zld22/dsh-model-info-fill/issues) 查看。
+
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
