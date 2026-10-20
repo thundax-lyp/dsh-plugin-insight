@@ -8,8 +8,6 @@
 
 {{recommended}}
 
-{{weekly_new}}
-
 {{latest}}
 
 {{hot}}

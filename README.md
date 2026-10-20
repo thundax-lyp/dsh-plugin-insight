@@ -15,27 +15,34 @@
 | [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 21 |
 | [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 3 |
 
-## 推荐
+## [推荐](data/views/columns/RECOMMENDED.md)
 
-- **[dsh-composer-expand](data/plugins/13071301808--dsh-composer-expand/INSIGHT.md) · 条件试用**：长提示词编辑者可条件试用，先验证输入法、候选菜单和发送快捷键，确认禁用可恢复；未做真实宿主验收。
-- **[dsh-folderwatch](data/plugins/11111353535--dsh-folderwatch/INSIGHT.md) · 条件试用**：适合外部文件交接频繁的任务，先用 queue 模式和小目录验证漏报、回声与扫描成本；未做宿主验收。
-- **[dsh-which](data/plugins/11111353535--dsh-which/INSIGHT.md) · 条件试用**：适合经常排查多版本命令冲突的开发者，先关闭探测并对照实际 shell；未覆盖全部别名与函数语义。
+按值得安装、条件试用分组，同组保留人工选择顺序；待复核项暂停推荐。
 
+- **[dsh-folderwatch](data/plugins/11111353535--dsh-folderwatch/INSIGHT.md) · 条件试用**：监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。 适合外部文件交接频繁的任务，先用 queue 模式和小目录验证漏报、回声与扫描成本；未做宿主验收。
+- **[dsh-which](data/plugins/11111353535--dsh-which/INSIGHT.md) · 条件试用**：解释命令的 PATH 解析结果、被遮蔽副本及环境异常，可选探测版本。 适合经常排查多版本命令冲突的开发者，先关闭探测并对照实际 shell；未覆盖全部别名与函数语义。
+- **[dsh-composer-expand](data/plugins/13071301808--dsh-composer-expand/INSIGHT.md) · 条件试用**：为输入框增加展开按钮，切换到较高书写区域并调整展开时回车行为。 长提示词编辑者可条件试用，先验证输入法、候选菜单和发送快捷键，确认禁用可恢复；未做真实宿主验收。
 
+## [最新](data/views/columns/LATEST.md)
 
-## 最新
+最近30天已核实的新发布；重要更新待完成版本差异核查后纳入，不按仓库推送排名。
 
-- [dsh-media-studio](data/plugins/1497105876--dsh-media-studio/INSIGHT.md) · 在聊天中生成或发送图片、视频，支持多后端、后台生成和结果媒体卡片。
-- [Prompt Desk](data/plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md) · 在对话标题栏编辑全局与会话提示词，并把模型自报错误收为待确认经验草稿。
-- [元冰可 AI 资源治理平台](data/plugins/01men--ybkkasi/INSIGHT.md) · 将组织、权限、MCP、模型与用量管理整合为可独立运行或接入 DSH 的治理平台。
+- [agent-clinic](data/plugins/1687210989--agent-clinic/INSIGHT.md) · 读取本地Agent会话与配置，生成带证据定位的诊断报告，并匹配可复核的改进处方。 · 新发布：2026-10-15
+- [dsh-plugin-tts](data/plugins/1624318455--dsh-plugin-tts/INSIGHT.md) · 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 · 新发布：2026-09-25
+- [Forge 用量计费](data/plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md) · 从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。 · 新发布：2026-09-22
+- [oh-my-dsh](data/plugins/1225sakura--oh-my-deepseekharness/INSIGHT.md) · 为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。 · 新发布：2026-09-21
 
-## 最热
+## [最热](data/views/columns/HOT.md)
+
+当前按累计 Star 展示关注度；尚无完整30天增量基线。每仓库仅占一席，指标不代表质量或实际用户数。
 
 - [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · 为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。 · [![GitHub ★ 186](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=186&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator)
 - [dsh-plugin-tts](data/plugins/1624318455--dsh-plugin-tts/INSIGHT.md) · 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 · [![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts)
 - [dsh-spotlight](data/plugins/0xsline--dsh-spotlight/INSIGHT.md) · 以键盘命令面板统一查找原生命令、近期会话和插件入口。 · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/0xsline/dsh-spotlight)
+- [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md) · 为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。 · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory)
+- [dsh-api-dashboard](data/plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md) · 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 · [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/133563825as-ai/dsh-api-dashboard)
 
-## 各分类精选
+## 分类精选
 
 各分类按 GitHub Star 降序展示最多 5 项；完整分类页按插件名字母顺序排列。
 

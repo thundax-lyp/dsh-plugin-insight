@@ -1,4 +1,3 @@
-import { currentInnovationScore } from '../../../_shared/scripts/innovation-score.mjs';
 import { template } from './template.mjs';
 // Reader-facing blocks shared by README and the standalone classification page.
 const clean = (text) => text.replace(/[\r\n]/g, ' ').replace(/[\[\]<>|]/g, '');
@@ -89,10 +88,18 @@ export function renderWeeklyNew(items, date) {
             .join('\n')
     });
 }
-export function renderLatest(items, limit = 3) {
+export function renderLatest(items, date, limit = 5) {
+    const end = Date.parse(date + 'T23:59:59+08:00');
     const selected = items
-        .filter((e) => e.pushedAt)
-        .sort((a, b) => Date.parse(b.pushedAt) - Date.parse(a.pushedAt) || a.i.id.localeCompare(b.i.id))
+        .filter(
+            (e) =>
+                e.npmFirstPublished &&
+                Date.parse(e.npmFirstPublished) <= end &&
+                Date.parse(e.npmFirstPublished) > end - 30 * 86400000
+        )
+        .sort(
+            (a, b) => Date.parse(b.npmFirstPublished) - Date.parse(a.npmFirstPublished) || a.i.id.localeCompare(b.i.id)
+        )
         .slice(0, limit);
     return template('LATEST', {
         items:
@@ -100,40 +107,43 @@ export function renderLatest(items, limit = 3) {
                 .map((e) =>
                     template('LATEST-ITEM', {
                         plugin: nameLink(e),
-                        summary: clean(e.summary)
+                        summary: `${clean(e.summary)} · 新发布：${new Date(Date.parse(e.npmFirstPublished) + 8 * 3600000).toISOString().slice(0, 10)}`
                     })
                 )
-                .join('\n') || '暂无更新信息。'
+                .join('\n') || '最近30天暂无已核实的新发布记录。'
     });
 }
-export function renderHot(items, limit = 3) {
+export function renderHot(items, limit = 5) {
+    const repositories = new Set();
     const selected = items
         .filter((e) => e.stars !== null && e.stars !== undefined)
         .sort((a, b) => b.stars - a.stars || a.i.id.localeCompare(b.i.id))
+        .filter((e) => {
+            const id = e.plugin.repository_id;
+            if (repositories.has(id)) return false;
+            repositories.add(id);
+            return true;
+        })
         .slice(0, limit);
     return template('HOT', {
         items:
             selected
                 .map((e) =>
-                    template('HOT-ITEM', { plugin: nameLink(e), summary: clean(e.summary), stars: e.starsBadge })
+                    template('HOT-ITEM', {
+                        plugin: nameLink(e),
+                        summary: clean(e.summary),
+                        stars: e.starsBadge
+                    })
                 )
-                .join('\n') || '暂无热度信息。'
+                .join('\n') || '暂无可比较的关注数据。'
     });
 }
-export function renderRecommended(recommendations, byId) {
-    const score = (r) => {
-        const e = byId.get(r.plugin_id);
-        return currentInnovationScore(e.plugin, e.i.revision, e.needsReview);
-    };
+export function renderRecommended(recommendations, byId, limit = 5) {
     const selected = recommendations
-        .filter((r) => r.kind !== 'observe')
-        .sort((a, b) => {
-            const sa = score(a),
-                sb = score(b);
-            if (sa && sb) return sb.total - sa.total || a.plugin_id.localeCompare(b.plugin_id);
-            if (sa || sb) return sa ? -1 : 1;
-            return a.plugin_id.localeCompare(b.plugin_id);
-        });
+        .filter((r) => r.kind !== 'observe' && !byId.get(r.plugin_id).needsReview)
+        // Within each level preserve the editor's order; innovation scores do not rank adoption value.
+        .sort((a, b) => Number(b.kind === 'install') - Number(a.kind === 'install'))
+        .slice(0, limit);
     return template('RECOMMENDED', {
         items:
             selected
@@ -141,12 +151,12 @@ export function renderRecommended(recommendations, byId) {
                     const e = byId.get(r.plugin_id);
                     return template('RECOMMENDED-ITEM', {
                         plugin: nameLink(e),
-                        kind: r.kind === 'install' ? '值得装' : '条件试用',
-                        summary: clean(r.summary),
-                        review: e.needsReview ? '（脚本已更新，待复核）' : ''
+                        kind: r.kind === 'install' ? '值得安装' : '条件试用',
+                        summary: `${clean(e.summary)} ${clean(r.summary)}`,
+                        review: ''
                     });
                 })
-                .join('\n') || '暂无推荐。'
+                .join('\n') || '暂无符合条件的推荐。'
     });
 }
 export function categoryGroups(items) {

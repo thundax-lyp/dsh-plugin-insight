@@ -17,7 +17,6 @@ import {
     categoryScope,
     renderUpdated,
     renderIssueActivity,
-    renderWeeklyNew,
     renderLatest,
     renderHot,
     renderRecommended,
@@ -295,12 +294,31 @@ export function renderPublication(input, root = ROOT, context = null) {
     const homeGroups = groups.map((g) => ({ ...g, href: link('README.md', g.path) }));
     const homeItems = items.map((e) => ({ ...e, href: e.detailPath }));
     const homeById = new Map(homeItems.map((e) => [e.i.id, e]));
+    const columnPages = ['LATEST', 'HOT', 'RECOMMENDED'].map((key) => {
+        const path = `data/views/columns/${key}.md`;
+        const entries = items.map((e) => ({ ...e, href: link(path, e.detailPath) }));
+        const entriesById = new Map(entries.map((e) => [e.i.id, e]));
+        const content =
+            key === 'LATEST'
+                ? renderLatest(entries, updated, Infinity)
+                : key === 'HOT'
+                  ? renderHot(entries, Infinity)
+                  : renderRecommended(input.recommendations, entriesById, Infinity);
+        return {
+            path,
+            content:
+                template('COLUMN-PAGE', {
+                    home: link(path, 'README.md'),
+                    content: content.replace(/^## \[([^\]]+)\]\([^\n]+\)/, '# $1'),
+                    updated: renderUpdated(updated)
+                }) + '\n'
+        };
+    });
     const readme =
         template('README', {
             updated: renderUpdated(updated),
             navigation: renderHomeNavigation(homeGroups),
-            weekly_new: renderWeeklyNew(homeItems, updated),
-            latest: renderLatest(homeItems),
+            latest: renderLatest(homeItems, updated),
             hot: renderHot(homeItems),
             recommended: renderRecommended(input.recommendations, homeById),
             categories: renderHomeCategories(homeGroups, (e) => e.detailPath),
@@ -315,7 +333,7 @@ export function renderPublication(input, root = ROOT, context = null) {
     return {
         readme,
         catalog: catalogPage,
-        categoryPages,
+        categoryPages: [...categoryPages, ...columnPages],
         details: items.map((e) => {
             const group = groups.find((g) => g.key === e.plugin.business_category);
             if (!group) throw Error(`detail category missing: ${e.i.id}`);
