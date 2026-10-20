@@ -10,7 +10,8 @@ import { inspectPullRequest } from '../../codex-comment-fix/scripts/codex-review
 const CODEX = new Set(['chatgpt-codex-connector[bot]']);
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
 function api(repository, path, method = 'GET', body) {
-    const args = ['api', `repos/${repository}/${path}`, '--method', method, '-H', 'X-GitHub-Api-Version: 2026-03-10'];
+    const args = ['api', `repos/${repository}/${path}`, '--method', method];
+    if (method === 'POST' && path.endsWith('/dispatches')) args.push('-H', 'X-GitHub-Api-Version: 2026-03-10');
     if (body !== undefined) args.push('--input', '-');
     return JSON.parse(
         execFileSync('gh', args, {
@@ -126,6 +127,7 @@ export function validateMainCIRun(run, workflowId) {
         throw Error('main CI run identity mismatch');
 }
 function ensureMainCI(repository, workflow, mergeSha, number, apply) {
+    if (!/^[a-f0-9]{40,64}$/.test(mergeSha ?? '')) throw Error('META merge commit SHA missing');
     const exact = pages(repository, `actions/workflows/${workflow.id}/runs?head_sha=${mergeSha}`, 'workflow_runs')
         .filter((run) => run.head_branch === 'main' && ['push', 'workflow_dispatch'].includes(run.event))
         .sort((a, b) => b.id - a.id)[0];
