@@ -30,9 +30,10 @@ jobs:
               env:
                   RUN_ID: ${{ github.run_id }}
               run: |
+                  set -o pipefail
                   git config user.name 'github-actions[bot]'
                   git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-                  existing=$(gh api --paginate --slurp "repos/$GH_REPO/pulls?state=open&per_page=100" --jq '[.[][] | select(.user.login == "github-actions[bot]" and .base.ref == "main" and .head.repo.full_name == .base.repo.full_name and (.head.ref | test("^codex/daily-meta-[0-9]+$")))] | sort_by(.number) | .[0].head.ref // empty')
+                  existing=$(gh api --paginate --slurp "repos/$GH_REPO/pulls?state=open&per_page=100" | jq -r '[.[][] | select(.user.login == "github-actions[bot]" and .base.ref == "main" and .head.repo.full_name == .base.repo.full_name and (.head.ref | test("^codex/daily-meta-[0-9]+$")))] | sort_by(.number) | .[0].head.ref // empty')
                   if [ -n "$existing" ]; then
                     git fetch origin "$existing:refs/remotes/origin/$existing"
                     # Never execute package/scripts/workflows contributed on a reused branch.
