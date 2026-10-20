@@ -1,0 +1,5 @@
+{
+  "text": "监听 DSH 会话语义事件并输出进度 JSON，供外部看板展示。",
+  "revision": "736909845ac33cf5ac671e1a4b6beecc814d983f",
+  "source_url": "https://github.com/2008924/dsh-progress-viz/blob/736909845ac33cf5ac671e1a4b6beecc814d983f/plugin/README.md"
+}

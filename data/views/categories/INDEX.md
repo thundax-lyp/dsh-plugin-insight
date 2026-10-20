@@ -6,9 +6,9 @@
 
 ## 分类索引
 
-- [个人效率（30）](PERSONAL-PRODUCTIVITY.md)
-- [办公与运营（9）](OFFICE-OPERATIONS.md)
-- [研究与知识（9）](RESEARCH-KNOWLEDGE.md)
-- [基础设施（38）](INFRASTRUCTURE.md)
-- [软件交付（29）](SOFTWARE-DELIVERY.md)
-- [内容生产（4）](CONTENT-CREATION.md)
+- [个人效率（36）](PERSONAL-PRODUCTIVITY.md)
+- [办公与运营（17）](OFFICE-OPERATIONS.md)
+- [研究与知识（13）](RESEARCH-KNOWLEDGE.md)
+- [基础设施（50）](INFRASTRUCTURE.md)
+- [软件交付（38）](SOFTWARE-DELIVERY.md)
+- [内容生产（5）](CONTENT-CREATION.md)

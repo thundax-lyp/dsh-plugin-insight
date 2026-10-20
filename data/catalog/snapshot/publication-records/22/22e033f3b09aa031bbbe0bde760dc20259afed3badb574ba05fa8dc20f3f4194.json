@@ -1,0 +1,17 @@
+{
+  "id": "github:1334481905:plugin",
+  "repository": "2008924/dsh-progress-viz",
+  "path": "plugin",
+  "revision": "736909845ac33cf5ac671e1a4b6beecc814d983f",
+  "fingerprints": {
+    "directory": "02bbb300f882dacb3a611d7c4042e521f2b1066bb012b3089355a51e03f4f5a6",
+    "code": "736909845ac33cf5ac671e1a4b6beecc814d983f",
+    "maintenance": "3e6977fa5351babd1b9f5ff6ab2bd4f5e83d780c68b3d7469aa3169f65177d1a"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "a952a8cf5b755c483978c38908eeda7addb540ef3a9d4b50490c27b3723b2bda"
+}

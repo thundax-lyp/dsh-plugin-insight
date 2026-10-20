@@ -1,0 +1,4 @@
+{
+  "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+  "text": "适合快速检查当前会话的常规write/edit；跨会话、shell改动和大文件仍用Git或专门差异工具复核。"
+}

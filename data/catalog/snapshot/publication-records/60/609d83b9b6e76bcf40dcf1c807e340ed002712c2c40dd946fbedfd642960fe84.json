@@ -1,0 +1,18 @@
+{
+  "id": "github:1333258432:root",
+  "repository": "1na-ko/dsh-hdc-bridge",
+  "path": "",
+  "revision": "395381a446075c161fa915210e4680c266956de1",
+  "fingerprints": {
+    "directory": "62928f303fd8e06983245220c42dccdf57ffadcbd08ab07b53c61d53c14b39ec",
+    "code": "395381a446075c161fa915210e4680c266956de1",
+    "maintenance": "1f4b1193afa7df4d3ce39332374bea451b1300097e47b18c5b0821354d8dace3"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "078d8e812dc213a9af28219e8fa28d7364f4c6cf1179212f4e1ee1f9c1d5f4e6"
+}

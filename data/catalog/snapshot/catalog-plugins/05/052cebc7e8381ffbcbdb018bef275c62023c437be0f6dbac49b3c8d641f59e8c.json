@@ -1,0 +1,245 @@
+{
+  "id": "github:1335098475:root",
+  "repository_id": 1335098475,
+  "component_id": "root",
+  "repository": "1e0zj/dsh-plugin-mall",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-plugin-mall",
+  "entry_type": "plugin",
+  "technical_category": "runtime-deployment",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "4a4b150d2a528c9dd220cbc60cf6828b14f883bd789b08cfb629f0212d17ce76",
+    "code": "d38485accdf8b29945c82311ce396ebef57058f1",
+    "maintenance": "c2b8ed7dfbe21a7c17941c2bda53499cbdc84e2e0f178f658a496a395c447aaf"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1335098475-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:52:57.678Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1335098475-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/README.md",
+      "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+      "captured_at": "2026-10-20T10:52:57.678Z",
+      "summary": "在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/1e0zj--dsh-plugin-mall/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1335098475-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/guard.js",
+      "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+      "captured_at": "2026-10-20T10:52:57.678Z",
+      "summary": "核查 src/guard.js、src/installer.js、src/restart-protocol.js；topic搜索发现候选，核查dsh manifest与npm仓库归属；隔离禁脚本预装并组合补丁树对比；快照profile关键文件、挂pending标记，重启guard检查稳定窗口与恢复。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/1e0zj--dsh-plugin-mall/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "DSH维护者需要发现第三方插件并避免安装破坏现有profile；合格交付是可解释的安装变更及失败后的可恢复状态。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335098475:root",
+          "area": "code",
+          "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:52:57.678Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "topic搜索发现候选，核查dsh manifest与npm仓库归属；隔离禁脚本预装并组合补丁树对比；快照profile关键文件、挂pending标记，重启guard检查稳定窗口与恢复。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335098475:root",
+          "area": "code",
+          "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:52:57.678Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335098475:root",
+          "area": "code",
+          "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:52:57.678Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335098475:root",
+          "area": "code",
+          "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:52:57.678Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金主要为网络与包存储；人工包括审批预检差异、重启维护窗口及失败恢复。大规模补丁规则和宿主加载器同步带来持续维护成本，无真实失败率收益测量。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335098475:root",
+          "area": "code",
+          "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:52:57.678Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335098475:root",
+          "area": "code",
+          "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:52:57.678Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "明确暴露安装将变更的加载树能帮助判断；它降低部分安装风险，不能保证第三方功能正确或安全。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335098475:root",
+          "area": "code",
+          "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:52:57.678Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "src/guard.js 区分候选身份与原依赖快照，解析补丁组合；src/installer.js 的 writeChecked 在写后解析失败时恢复原字节。值得借鉴“先可解释计划再写入”，但加载器语义更新与跨平台重启是复用成本。 源码：[src/guard.js](https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/guard.js)、[src/installer.js](https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/installer.js)、[src/restart-protocol.js](https://github.com/1e0zj/dsh-plugin-mall/blob/d38485accdf8b29945c82311ce396ebef57058f1/src/restart-protocol.js)。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335098475:root",
+          "area": "code",
+          "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:52:57.678Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:52:57.678Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "d38485accdf8b29945c82311ce396ebef57058f1",
+    "reviewed_at": "2026-10-20T10:52:57.678Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335098475:root",
+        "area": "code",
+        "fingerprint": "d38485accdf8b29945c82311ce396ebef57058f1"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 18,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：市场成熟但补丁合成预检有宿主特定增量；mechanism：计划和恢复覆盖安装风险；transferability：快照事务方法可移植；simplification：统一入口但guard复杂。",
+      "basis": "interpretation",
+      "score": 51,
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow：发现安装恢复成一条流程；delivery：可解释预检及回滚而非只下载；reach：降低维护者理解加载树门槛；economics：失败恢复收益未实测。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-20-08-github-1335098475-root-source"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1340340493:root",
+  "repository": "240xu/dsh-websearch",
+  "path": "",
+  "revision": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
+  "fingerprints": {
+    "directory": "44d08fd4fc58fd0976be33969f69936a0d2524344f6562ed88844cf40e6aa313",
+    "code": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
+    "maintenance": "45c60386e2108f086d5a38a2f274a3fe7b3dd66829fa2fe85773612eb3fe0db5"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "fc0a69767dec2f1892780e7f8cc738b0dc0090caf63ebf014eefd2c75070811f"
+}

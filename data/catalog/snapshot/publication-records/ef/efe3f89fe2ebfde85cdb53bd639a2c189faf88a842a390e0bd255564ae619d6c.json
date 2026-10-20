@@ -1,0 +1,17 @@
+{
+  "id": "github:1391141792:root",
+  "repository": "173787247/dsh-wsl-uia",
+  "path": "",
+  "revision": "43e5b42c013a3170c318217889eb1c9504d9f6c4",
+  "fingerprints": {
+    "directory": "cee2eba5610c94691a47e60ba4d762cf5001b225c15d41cee055e2ff040d9205",
+    "code": "43e5b42c013a3170c318217889eb1c9504d9f6c4",
+    "maintenance": "d0a042d0ae898eb9fbc9f58db48b5500564f773bd657afc9afad175c2ead4208"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "1d9903ca8df484886f30f1cd0c5bc01c7e0b6371155530c923fb3a1a1a1af878"
+}

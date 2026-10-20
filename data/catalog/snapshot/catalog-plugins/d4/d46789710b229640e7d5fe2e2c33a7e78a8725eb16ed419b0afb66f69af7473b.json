@@ -1,0 +1,245 @@
+{
+  "id": "github:1418842530:root",
+  "repository_id": 1418842530,
+  "component_id": "root",
+  "repository": "2048lr/dsh-feishu",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-feishu（2048lr）",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "office-operations",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "b83f16a08904be1a677d60bcc5a00c3f23b338bbe8a741451277b1113178a8e9",
+    "code": "17ed9c0dada4b40580dcf1e1b07918716a94f69d",
+    "maintenance": "43560b6a8249a612aea31661998796b5c32a59fec9dffee7b645dbf2abd73d1a"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1418842530-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:51:07.927Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1418842530-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/2048lr/dsh-feishu/blob/17ed9c0dada4b40580dcf1e1b07918716a94f69d/README.md",
+      "revision": "17ed9c0dada4b40580dcf1e1b07918716a94f69d",
+      "captured_at": "2026-10-20T10:51:07.927Z",
+      "summary": "为 DSH 提供飞书与 Lark 文档、表格、多维表格、消息和授权工具及操作面板。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/2048lr--dsh-feishu/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1418842530-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/2048lr/dsh-feishu/blob/17ed9c0dada4b40580dcf1e1b07918716a94f69d/lib/index.js",
+      "revision": "17ed9c0dada4b40580dcf1e1b07918716a94f69d",
+      "captured_at": "2026-10-20T10:51:07.927Z",
+      "summary": "核查 lib/index.js、lib/tools/index.js、lib/identity.js、lib/http.js、lib/tools/raw.js；lib/tools/index.js 组装十个领域工具构建器；lib/identity.js区分app/user/auto身份并持久化OAuth授权，lib/http.js统一超时、取消与有界重试，raw工具复用认证调用未封装API。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/2048lr--dsh-feishu/REVIEWED-SOURCE.json",
+      "limitations": [
+        "读工具组装、身份选择、HTTP重试和raw路径校验；未登录飞书、未发消息/创建内容、未核实第三方接口当前兼容及独立采用。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "面向需要把分析写成飞书文档/表格、并由实际操作者取得所有权的团队；成功标准包括内容正确、落在目标身份空间且可供用户访问。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418842530:root",
+          "area": "code",
+          "fingerprint": "17ed9c0dada4b40580dcf1e1b07918716a94f69d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:07.927Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/tools/index.js 组装十个领域工具构建器；lib/identity.js区分app/user/auto身份并持久化OAuth授权，lib/http.js统一超时、取消与有界重试，raw工具复用认证调用未封装API。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418842530:root",
+          "area": "code",
+          "fingerprint": "17ed9c0dada4b40580dcf1e1b07918716a94f69d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:07.927Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "读工具组装、身份选择、HTTP重试和raw路径校验；未登录飞书、未发消息/创建内容、未核实第三方接口当前兼容及独立采用。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418842530:root",
+          "area": "code",
+          "fingerprint": "17ed9c0dada4b40580dcf1e1b07918716a94f69d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:07.927Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "工具定义按配置可更名前缀，host集中注册且由活动ring记录调用；源码提供安装脚本不代表本次已执行。README能力数量与标题口径应以固定代码为准。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418842530:root",
+          "area": "code",
+          "fingerprint": "17ed9c0dada4b40580dcf1e1b07918716a94f69d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:07.927Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需创建自建应用、申请并发布scopes、配置回调和用户授权；持续有模型调用、API配额、refresh失败和权限变化排障。现金价格未核算，重复创建清理和身份复核属于人工成本。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418842530:root",
+          "area": "code",
+          "fingerprint": "17ed9c0dada4b40580dcf1e1b07918716a94f69d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:07.927Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先在测试租户明确选user身份，创建一份可丢弃文档并确认实际落点和权限，再验证token过期及超时重试；正式写入前要检查重复创建，避免把auto降级警告忽略。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418842530:root",
+          "area": "code",
+          "fingerprint": "17ed9c0dada4b40580dcf1e1b07918716a94f69d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:07.927Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可将分析直接变为用户可访问的飞书资产，减少复制与授权交接；业务价值取决于scope审批、身份正确和写入幂等，尚无节时或任务合格率对照。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418842530:root",
+          "area": "code",
+          "fingerprint": "17ed9c0dada4b40580dcf1e1b07918716a94f69d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:07.927Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "身份层将缓存、刷新、存储和resolveIdentity集中，单飞刷新可减少并发换token；工具工厂便于复用统一认证。http.js的8MB护栏先response.text再检查，实际并非流式硬内存上限，且按字符长度判断；适合作为维护注意点，未观察到真实内存故障。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1418842530:root",
+          "area": "code",
+          "fingerprint": "17ed9c0dada4b40580dcf1e1b07918716a94f69d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:07.927Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:51:07.927Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "17ed9c0dada4b40580dcf1e1b07918716a94f69d",
+    "reviewed_at": "2026-10-20T10:51:07.927Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1418842530:root",
+        "area": "code",
+        "fingerprint": "17ed9c0dada4b40580dcf1e1b07918716a94f69d"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：飞书REST封装为常规集成，小幅；mechanism：身份/落点显式化及统一工具层实质改善取舍；transferability：身份解析与领域工厂可实质复用；simplification：集中认证/调用实质简化，但未知写重试未解决。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow：分析到协作资产的交接有实质变化；delivery：文档/图表/聚合是实质交付支持，质量未实测；reach：个人OAuth让用户取回个人空间工作，实质；economics：少复制/授权交接有小幅机制依据，费用未算。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-20-08-github-1418842530-root-source"
+      ]
+    }
+  }
+}

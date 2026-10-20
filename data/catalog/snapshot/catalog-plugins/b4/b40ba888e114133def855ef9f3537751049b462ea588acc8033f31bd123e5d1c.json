@@ -1,0 +1,245 @@
+{
+  "id": "github:1415116420:root",
+  "repository_id": 1415116420,
+  "component_id": "root",
+  "repository": "2026heshao/dsh-obsidian-board",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-obsidian-board",
+  "entry_type": "plugin",
+  "technical_category": "memory-knowledge",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "daca67a2d01f7b6302eaff6f4942884baa27772bfaeff3060c63421d7403cf6a",
+    "code": "072612e0245565cee12cbfd07a421f2029d35c4e",
+    "maintenance": "3dce70df9e35e48d94dd35a5457133415299bdb52f28a41a22e6471d9204750e"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1415116420-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:51:06.823Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1415116420-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/README.md",
+      "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+      "captured_at": "2026-10-20T10:51:06.823Z",
+      "summary": "将本地 Obsidian 笔记库接入 DSH 三栏问答面板，提供本地关键词检索和可点击引用。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1415116420-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js",
+      "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+      "captured_at": "2026-10-20T10:51:06.823Z",
+      "summary": "核查 lib/vault.js、lib/index.js；lib/vault.js 对Markdown切块，以BM25、CJK bigram、标题及标签加权检索，并对收集语料降权；lib/index.js 将检索片段交给宿主llm，chatStart/Poll/Stop通过attempt代次处理模型回退。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读索引、扫描/增量更新和host问答/回退路径，未检验全部客户端交互、未运行万条库性能或真实模型；作者兼容声明未独立复现。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合已有Markdown笔记库、希望边问边查出处的知识工作者；合格答案应引用实际支持结论的笔记，而不是仅能打开一个文件。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415116420:root",
+          "area": "code",
+          "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:06.823Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/vault.js 对Markdown切块，以BM25、CJK bigram、标题及标签加权检索，并对收集语料降权；lib/index.js 将检索片段交给宿主llm，chatStart/Poll/Stop通过attempt代次处理模型回退。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415116420:root",
+          "area": "code",
+          "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:06.823Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读索引、扫描/增量更新和host问答/回退路径，未检验全部客户端交互、未运行万条库性能或真实模型；作者兼容声明未独立复现。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415116420:root",
+          "area": "code",
+          "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:06.823Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "双半插件使用Typert与main页面、侧栏入口，不是Obsidian扩展；面板历史host内存配localStorage兜底，不应将它当DSH正式会话持久历史。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415116420:root",
+          "area": "code",
+          "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:06.823Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无需embedding服务减少一类配置与向量成本，但索引扫描占本地资源，问答与可选规划/模型回退消耗现有模型额度；迁移vault路径和复核引用需人工。未将作者秒级扫描声明转为实测单位成本。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415116420:root",
+          "area": "code",
+          "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:06.823Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415116420:root",
+          "area": "code",
+          "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:06.823Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "三栏减少切换与复制的机制可见；检索排名、片段截断和模型归纳仍影响合格答案率，是否优于直接搜索要以同题引用支持率和人工纠错时间判断。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415116420:root",
+          "area": "code",
+          "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:06.823Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "vault.js 将并发构建笔记与提交索引分开，并压实旧chunk，值得用于增量索引。index.js 使用attempt重置正文/思考/usage和客户端偏移，防止回退拼接旧回答；移植需要客户端同代次协议。扫描失败跳过与关键词检索边界应可观察，不能把没搜到当库中不存在。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415116420:root",
+          "area": "code",
+          "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:51:06.823Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:51:06.823Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
+    "reviewed_at": "2026-10-20T10:51:06.823Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1415116420:root",
+        "area": "code",
+        "fingerprint": "072612e0245565cee12cbfd07a421f2029d35c4e"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：成熟RAG适配笔记库，小幅；mechanism：语料权重及attempt隔离改变实际取舍，实质；transferability：增量索引/代次协议可复用但需适配，实质；simplification：免embedding和三栏核对有实质简化，性能未证。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：查找、提问、回看出处有实质整合；delivery：引用问答相对手工复制实质改变交付物，真实性未测；reach：已有vault用户接入更方便，小幅；economics：免embedding减少配置，小幅，模型总成本未知。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-20-08-github-1415116420-root-source"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "revision": "395381a446075c161fa915210e4680c266956de1",
+  "items": {
+    "模型工具": "hdc_list_targets、hdc_screenshot、hdc_install、hdc_ui（源码注册）",
+    "界面": "鸿蒙设备面板",
+    "后台": "随包官方来源知识读取与设备命令桥接"
+  }
+}

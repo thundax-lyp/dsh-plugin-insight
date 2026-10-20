@@ -12,12 +12,20 @@
 | --- | --- | --- |
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把会话副产物移入可还原回收站，并提供项目结项归类、归档与清理清单。 | 先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。 |
 | [dsh-crypto-portfolio](#plugin-1342742812-root) | 以 DSH 插件启动 Python 资产看板，汇集链上钱包和交易所账户数据。 | 先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。 |
+| [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 为 DSH 提供桌面控件读取、操作与审计面板。 | 适合控件可访问性良好的Windows应用；先对照审批模式检查实际放行条件，在无敏感数据的应用里验证动作和后置状态。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | 把实现Companion协议的手机或设备接入DSH，提供设备列表、健康查询和动作调用。 | 先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。 |
+| [dsh-feishu（2048lr）](#plugin-1418842530-root) | 为 DSH 提供飞书与 Lark 文档、表格、多维表格、消息和授权工具及操作面板。 | 先在测试租户明确选user身份，创建一份可丢弃文档并确认实际落点和权限，再验证token过期及超时重试；正式写入前要检查重复创建，避免把auto降级警告忽略。 |
 | [dsh-mac-companion](#plugin-1384810483-root) | 从DSH经HTTP调用Mac端Companion，支持通知、快捷指令和剪贴板读写。 | 先只测试通知，再检查剪贴板和快捷指令权限；写入前保留剪贴板副本，并使用专门的低风险Shortcut。 |
+| [dsh-plugin-nlbi](#plugin-1343622602-root) | 在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。 | 适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。 | 先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 通过本地khal读取日历列表、今日日程和未来指定天数的安排。 | 适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 通过notmuch或himalaya读取邮件列表、未读统计与搜索结果。 | 先核对返回backend和note；使用himalaya时把结果理解为最近收件箱列表。 |
 | [dsh-wsl-rclone](#plugin-1381859181-root) | 通过rclone列出远程存储配置、文件名及配额信息。 | 适合已配rclone的只读盘点，先限定allowedRemotes和目录规模；需要传输、删除或完整清单验收时另选流程。 |
+| [dsh-wsl-uia](#plugin-1391141792-root) | 从 WSL 枚举 Windows 窗口并读取有深度限制的 UI Automation 元素树。 | 适合有可访问性控件的 Windows 应用观察；先以少量元素验证名称和覆盖，找不到不能直接判控件不存在，动作前重新定位。 |
+| [dsh-wsl-winctl](#plugin-1391143632-root) | 从 WSL 枚举 Windows 顶层窗口并调整窗口状态、位置和大小。 | 适合整理明确单窗口的桌面；先枚举并核对目标，多窗口和关闭操作保留人工确认，返回ok后重新读取实际状态。 |
+| [dsh-wsl-wininput](#plugin-1391142149-root) | 从 WSL 按名称调用 Windows 控件，或向指定窗口发送文本、按键与点击。 | 适合有人看护的Windows自动化；优先具备唯一名称的invoke，打字/点击会干扰焦点和鼠标，执行前暂停其他桌面操作并检查结果。 |
+| [dsh-wsl-winshot](#plugin-1391140767-root) | 把指定 Windows 窗口或控件区域截图保存为 WSL 文件。 | 适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。 |
+| [feishu-dsh-plugin（2286893544）](#plugin-1364766828-root) | 通过企业自建飞书应用为 DSH 提供消息、云文档、多维表格、表格与权限操作工具。 | 已有自建机器人且权限清楚的团队可在测试群和可丢弃文档先试；确认创建后目标人可打开再扩展。 |
 | [Forge 工作报告](#plugin-1363429979-plugin-daily-log) | 汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。 | 先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。 |
 
 <a id="plugin-1406611614-root"></a>
@@ -42,6 +50,17 @@
 - **思考**：多来源汇总有明确便利，但看板属于数据呈现，不能提供资产真实性或收益保证。
 - **建议**：先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。
 
+<a id="plugin-1381221232-root"></a>
+
+## [dsh-desktop-uia](../../plugins/1jiegejiayouxuewangan1--dsh-desktop-uia/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia) · [![npm 30d 516](https://img.shields.io/static/v1?label=npm+30d&message=516&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-desktop-uia)
+
+- **用途**：Windows用户希望模型操作普通桌面应用；验收是找对窗口控件、按策略执行并核对操作后状态。
+- **亮点**：相对坐标截图操作，UIA树提供控件语义与Invoke/Value/Selection能力；插件的增量是把Windows原生UIA与DSH策略、日志、面板统一。控件可访问性来自Windows/应用，并非插件发明。
+- **思考**：“每次写操作审批”须按模式解释。approval.js 的 ask 跟随宿主never政策，这是文档已声明的设计；此外在无approval服务、缺agent、request抛错或无明确回答时，ask也会放行，always则拒绝。属于具体配置边界，不据此断言全插件缺陷；UIA不存在的控件也不能靠语义保证。
+- **建议**：适合控件可访问性良好的Windows应用；先对照审批模式检查实际放行条件，在无敏感数据的应用里验证动作和后置状态。
+
 <a id="plugin-1384810806-root"></a>
 
 ## [dsh-device-bridge](../../plugins/173787247--dsh-device-bridge/INSIGHT.md)
@@ -53,6 +72,17 @@
 - **思考**：统一轻量协议能降低多设备接入重复工作；动作名白名单并不证明动作本身无副作用。
 - **建议**：先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。
 
+<a id="plugin-1418842530-root"></a>
+
+## [dsh-feishu（2048lr）](../../plugins/2048lr--dsh-feishu/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2048lr/dsh-feishu) · [![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feishu)
+
+- **用途**：面向需要把分析写成飞书文档/表格、并由实际操作者取得所有权的团队；成功标准包括内容正确、落在目标身份空间且可供用户访问。
+- **亮点**：相对手工导出并上传、通用原始API或应用身份机器人，增量在把个人OAuth身份与创建落点明确连接，auto降级应用身份时返回warnings；领域工具还能组织多维表格图表和聚合。REST/OAuth本身不是原创，贡献是避免“创建成功但人看不到”的流程断裂。
+- **思考**：可重试传输是否确保写操作只发生一次？httpRequest对超时/临时状态重试，没有按HTTP方法区分；网络超时后服务端可能已成功创建文档或发送消息，重试可能产生重复副作用。现有结构化身份警告解决落点，不解决未知结果。需端到端验证，不能因存在retry就认定可靠办结。
+- **建议**：先在测试租户明确选user身份，创建一份可丢弃文档并确认实际落点和权限，再验证token过期及超时重试；正式写入前要检查重复创建，避免把auto降级警告忽略。
+
 <a id="plugin-1384810483-root"></a>
 
 ## [dsh-mac-companion](../../plugins/173787247--dsh-mac-companion/INSIGHT.md)
@@ -63,6 +93,17 @@
 - **亮点**：index.js注册Mac专用工具，将通知、shortcut和剪贴板动作交给共享Companion客户端；Mac侧Python服务调用系统能力。
 - **思考**：为跨系统桌面任务提供薄协议有便利；读取剪贴板会把潜在敏感文本带入工具输出及模型上下文。
 - **建议**：先只测试通知，再检查剪贴板和快捷指令权限；写入前保留剪贴板副本，并使用专门的低风险Shortcut。
+
+<a id="plugin-1343622602-root"></a>
+
+## [dsh-plugin-nlbi](../../plugins/1byteone--dsh-plugin-nlbi/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/1byteone/dsh-plugin-nlbi) · [![npm 30d 917](https://img.shields.io/static/v1?label=npm+30d&message=917&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-nlbi)
+
+- **用途**：业务分析人员想把问题转为 MySQL 查询和可重跑报表；合格交付是业务口径正确、权限允许且可复核的SQL结果。
+- **亮点**：作者明确继承 dsh-mysql v0.1.4，数据库连接和原有 mysql 工具不算本插件原创；新增贡献是 Text2SQL、AST护栏、BI与报表复用串联，相对裸SQL对话提高可检查性。
+- **思考**：最影响贡献成立的是语法安全与指标正确的区别：text2sql.js 校验后直接 pool.query，AST能限制语句和表，却不能验证“活跃用户”时间窗、重复JOIN和统计口径。空allowlist意味着不限制，不能把默认配置理解为最小授权。
+- **建议**：适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。
 
 <a id="plugin-1364961230-root"></a>
 
@@ -107,6 +148,61 @@
 - **亮点**：以有限命令集合复用rclone多后端能力，缩小误触复制删除的工具面；存储协议与账户能力属于上游。
 - **思考**：maxEntries是在命令完成后裁剪，不限制远程扫描工作量；about不一定受后端支持，读取文件名也会出网且可能暴露业务结构，不能把只读等同无成本或全域隔离。
 - **建议**：待验证假设：将服务端遍历预算和结果条数分别限制，可降低大目录超时与费用；依赖各后端列举能力，尚未实现。
+
+<a id="plugin-1391141792-root"></a>
+
+## [dsh-wsl-uia](../../plugins/173787247--dsh-wsl-uia/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-uia)
+
+- **用途**：需要理解 Windows 应用控件而非只看像素的 WSL Agent，交付窗口、控件名称、类型、可用 pattern 和路径，供人工或输入工具决策。
+- **亮点**：相对截图 OCR，源码可见增量是提供语义控件属性和命名路径，同时把观察与输入分成插件；UIAutomation 遍历来自 Windows 平台，epoch 只是观察标签，不是稳定控件身份。
+- **思考**：关键质疑是有界观察是否真的限制工作量。treeScript 用输出条数限制循环，过滤不命中的节点仍可继续遍历，maxElements 不是访问节点上限；truncated 根据输出数推断。稀疏匹配树仍可能耗时，UIA 覆盖还取决于应用可访问性。
+- **建议**：适合有可访问性控件的 Windows 应用观察；先以少量元素验证名称和覆盖，找不到不能直接判控件不存在，动作前重新定位。
+
+<a id="plugin-1391143632-root"></a>
+
+## [dsh-wsl-winctl](../../plugins/173787247--dsh-wsl-winctl/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-winctl)
+
+- **用途**：WSL 内 Agent 需要先整理 Windows 应用窗口再观察/输入；交付是指定窗口的状态与布局，不是应用任务完成。
+- **亮点**：相对人工拖动和临时 PowerShell，贡献是统一窗口选择、完整移动参数和状态回读；窗口管理能力来自 user32/UIA，不是新的桌面控制算法。
+- **思考**：关键质疑是动作是否确实作用于唯一目标并得到验证。Dsh-Find 返回首个匹配，未拒绝多窗口歧义；原生调用返回值被忽略，activate仅ShowWindow而不调用SetForegroundWindow，报告ok不等于获得焦点。
+- **建议**：适合整理明确单窗口的桌面；先枚举并核对目标，多窗口和关闭操作保留人工确认，返回ok后重新读取实际状态。
+
+<a id="plugin-1391142149-root"></a>
+
+## [dsh-wsl-wininput](../../plugins/173787247--dsh-wsl-wininput/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-wininput)
+
+- **用途**：需要操作Windows表单/按钮的WSL Agent，以目标应用实际状态变化为交付；不接受单纯API成功作为任务完成。
+- **亮点**：相对重用上次树的元素index，按名称重查并拒绝0/多匹配能消除位置漂移的一类误操作。该具体增量有源码支持；不是稳定对象句柄协议，也不意味着输入隔离。
+- **思考**：作者简介声称不抢焦点，实际type/key明确SetForegroundWindow+SendWait，click移动系统光标，且不校验前台切换是否成功；这直接限制“后台定向输入”。invoke遍历受限时也只能证明已访问范围唯一。
+- **建议**：适合有人看护的Windows自动化；优先具备唯一名称的invoke，打字/点击会干扰焦点和鼠标，执行前暂停其他桌面操作并检查结果。
+
+<a id="plugin-1391140767-root"></a>
+
+## [dsh-wsl-winshot](../../plugins/173787247--dsh-wsl-winshot/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-winshot)
+
+- **用途**：WSL Agent需要查看图像形式的Windows应用状态，以可读取PNG作为交付，再交由模型/人工分析。
+- **亮点**：相对手动截图再传文件，贡献是窗口选择、裁剪与跨系统文件交接；图像来自桌面屏幕区域采样，并非独立窗口渲染，截图算法属System.Drawing。
+- **思考**：最重要的限制是被遮挡窗口是否仍能正确截图。CopyFromScreen只读取屏幕像素，不保证目标窗口内容；还原最小化窗口也改变桌面。按名裁剪取第一个匹配而非拒绝歧义，因此PNG存在不等于正确目标。
+- **建议**：适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。
+
+<a id="plugin-1364766828-root"></a>
+
+## [feishu-dsh-plugin（2286893544）](../../plugins/2286893544--feishu-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/2286893544/feishu-dsh-plugin)
+
+- **用途**：面向用自建机器人管理文档和群消息的团队，合格交付需内容写入、目标人员可见，图表标签与原数据一致。
+- **亮点**：相对通用HTTP工具加人工分享，本项把常用飞书任务及创建后授权联结，并以零外部依赖PNG生成补上图表插入。核心是应用机器人工作流的便利，而不是新的认证协议或原生图表引擎；“纯Node”避免Python部署但不自动证明端到端低成本。
+- **思考**：创建成功是否意味着操作者拥有可用结果？autoGrantOwner失败返回auto-grant failed文本，仍保留创建成果，且grantOpenId可为空。它避免授权失败丢失文档，却把可访问性复核交给模型/用户；应用身份共享权限也不等同于个人原生所有权。群权限和文档归属是采用前必须实际核对的边界。
+- **建议**：已有自建机器人且权限清楚的团队可在测试群和可丢弃文档先试；确认创建后目标人可打开再扩展。中文图表先用外部可核对图片，不直接依赖当前ASCII字库输出。
 
 <a id="plugin-1363429979-plugin-daily-log"></a>
 

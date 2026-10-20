@@ -1,0 +1,4 @@
+{
+  "revision": "486d6ffce7530bf46320c859ad9d4df502243d0f",
+  "text": "适合查配置的辅助入口；先确认实际Windows用户路径，网络问题仍要测端口，修改和 wsl --shutdown 由用户评估后执行。"
+}

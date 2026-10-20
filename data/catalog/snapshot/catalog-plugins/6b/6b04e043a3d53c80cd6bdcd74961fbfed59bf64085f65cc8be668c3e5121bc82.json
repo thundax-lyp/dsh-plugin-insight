@@ -1,0 +1,245 @@
+{
+  "id": "github:1335139860:root",
+  "repository_id": 1335139860,
+  "component_id": "root",
+  "repository": "2006spy/dsh-token-billing",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-token-billing",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "ecf4ad191a240c6a29a5356f20a2361f86f0db3e01594639ad30ec743f87b764",
+    "code": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+    "maintenance": "de6296c503628eb6d18bb71776b08e41939029fd4921e62f8f10778374335f3d"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1335139860-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:53:00.492Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1335139860-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/README.md",
+      "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+      "captured_at": "2026-10-20T10:53:00.492Z",
+      "summary": "为 DSH 提供按供应商、模型、时段与用量计算的实时费用与账本统计。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/2006spy--dsh-token-billing/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1335139860-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/ledger.js",
+      "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+      "captured_at": "2026-10-20T10:53:00.492Z",
+      "summary": "核查 lib/ledger.js、lib/projection.js、lib/prices.js；projection根据usage与流式估算显示费用，收到精确usage修正；按provider+model和价格政策时间线计价，ledger用session/turn/step去重持久化并按币种聚合。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/2006spy--dsh-token-billing/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "多供应商用户要追踪不同路由与缓存桶费用，避免只看模型别名误估；合格交付是可对账的费用估算及可导出账本。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335139860:root",
+          "area": "code",
+          "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:00.492Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "projection根据usage与流式估算显示费用，收到精确usage修正；按provider+model和价格政策时间线计价，ledger用session/turn/step去重持久化并按币种聚合。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335139860:root",
+          "area": "code",
+          "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:00.492Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335139860:root",
+          "area": "code",
+          "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:00.492Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335139860:root",
+          "area": "code",
+          "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:00.492Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "插件不直接减少模型调用；人工成本是核价、路由映射、订阅摊分和对账，账本占存储。不能由预算预警存在推出节省金额。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335139860:root",
+          "area": "code",
+          "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:00.492Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合需要多路由费用参考的用户；先对照供应商账单核实缓存、峰谷和币种口径，再据看板调整预算。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335139860:root",
+          "area": "code",
+          "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:00.492Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "按路由计价与持久账本提高追查能力；准确性依赖usage和价格，不是“实时显示”即可证明。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335139860:root",
+          "area": "code",
+          "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:00.492Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "lib/ledger.js 明确去重键并用临时文件替换，projection.js集中价格政策与估算规则，便于复核时间边界；不同币种分桶避免直接相加。复用需明确修订与并发写入，不把单进程幂等推广为全局事务。 源码：[lib/ledger.js](https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/ledger.js)、[lib/projection.js](https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/projection.js)、[lib/prices.js](https://github.com/2006spy/dsh-token-billing/blob/098b9e8164bd66a6f2bdbc204ece186c6ca52060/lib/prices.js)。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335139860:root",
+          "area": "code",
+          "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:00.492Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:53:00.492Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "098b9e8164bd66a6f2bdbc204ece186c6ca52060",
+    "reviewed_at": "2026-10-20T10:53:00.492Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335139860:root",
+        "area": "code",
+        "fingerprint": "098b9e8164bd66a6f2bdbc204ece186c6ca52060"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：成熟计费适配DSH路由；mechanism：时段和持久化修正有具体增量；transferability：价格政策可复用；simplification：集中规则但核价仍外部。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：减少多路由手工汇总；delivery：可导出账本；reach：面板降低算价门槛；economics：观察成本未证实节费。",
+      "basis": "interpretation",
+      "score": 33,
+      "evidence_ids": [
+        "2026-10-20-08-github-1335139860-root-source"
+      ]
+    }
+  }
+}

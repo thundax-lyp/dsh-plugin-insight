@@ -13,12 +13,18 @@
 | [DSH Telemetry Redactor](#plugin-1333368566-root) | 在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。 | 先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 读取Agent-Body运行时文件，在宿主HTTP路由展示器官体征、心跳、愈合账本与脉冲。 | 先限制在本地受控宿主使用，检查缺失数据能否报503，并核对脉冲文本的展示边界后再接入多人环境。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 | 先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。 |
+| [dsh-armory](#plugin-1413052822-root) | 在 DSH 中管理 MCP、技能、专家、市场和工具使用账本，支持全局与项目作用域。 | 已有多个 MCP 和跨项目隔离需求时可先在独立项目试用导入预览、重名冲突和重连；保存后核对实际工具可见性，再扩大使用范围。 |
 | [dsh-organism](#plugin-1366089972-workspace-plugins-dsh-organism) | 把插件组织为可观测器官，提供心跳、反射、自愈账本和工具schema按需门控。 | 适合愿意维护统一器官协议的实验环境；先只开启观测，再逐条批准恢复路径，验证重复故障不会重复副作用。 |
 | [dsh-plugin-adapter](#plugin-1374274469-root) | 把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。 | 适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。 |
+| [dsh-plugin-mall](#plugin-1335098475-root) | 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。 | 适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。 |
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。 | 先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。 |
+| [dsh-progress-viz-plugin](#plugin-1334481905-plugin) | 监听 DSH 会话语义事件并输出进度 JSON，供外部看板展示。 | 适合看长任务活动；先验证同会话空闲后继续工作的显示，关键任务以实际产物和会话结果验收。 |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。 | 先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。 |
 | [dsh-remote-ssh](#plugin-1384810201-root) | 通过SSH对配置主机执行允许命令，提供状态查询、固定探针与受限远程运行工具。 | 先使用远端低权限账号和固定只读探针，严格限定命令及参数，确认超时后的远端进程状态；不要把插件白名单当完整沙箱。 |
+| [dsh-router-loomy](#plugin-1376777535-root) | 将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。 | 已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。 |
+| [dsh-token-billing](#plugin-1335139860-root) | 为 DSH 提供按供应商、模型、时段与用量计算的实时费用与账本统计。 | 适合需要多路由费用参考的用户；先对照供应商账单核实缓存、峰谷和币种口径，再据看板调整预算。 |
 | [dsh-ui-auth](#plugin-1343420855-root) | 为 DSH Web 提供登录、用户管理和认证网关，并支持 TOTP、Passkey 与会话隔离。 | 先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。 |
+| [dsh-usage-dashboard-plus](#plugin-1334023305-root) | 在 DSH 侧栏和设置页展示账户余额、调用用量与分模型费用统计。 | 适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。 |
 | [dsh-web-restart](#plugin-1335060007-root) | 在 Web 侧边栏提供重启按钮，通过独立 PowerShell 进程触发宿主重启脚本。 | 当前更适合参考实现，先在可丢弃 profile 验证脚本路径、失败反馈和会话恢复。 |
 | [dsh-web-url-view](#plugin-1366583376-root) | 显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。 | 先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。 |
 | [dsh-wsl-clock](#plugin-1351854066-root) | 比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。 | 先把它当粗粒度线索，临界偏差用系统命令复核；保存工作后再考虑关闭WSL或同步时间。 |
@@ -43,6 +49,12 @@
 | [dsh-wsl-registry](#plugin-1391142974-root) | 从WSL只读查询Windows注册表值和子键，并限制可访问键前缀。 | 从已知非敏感键试读，避免把白名单与截断承诺视为已验证安全边界。 |
 | [dsh-wsl-secret](#plugin-1381733290-root) | 按允许前缀读取pass或age秘密，并可注入当前DSH进程环境。 | 仅给最小前缀并使用非敏感测试值，默认不reveal；不要把进程内注入当秘密永不进入其他工具。 |
 | [dsh-wsl-service](#plugin-1391140376-root) | 从WSL查询Windows服务列表、状态、运行账户、进程和依赖关系。 | 先对已知服务核对detail；不要由停止状态或空依赖直接决定删除、重启。 |
+| [dsh-wsl-struct](#plugin-1381832935-root) | 在 DSH 中调用 jq、yq 和只读 SQLite 查询本地结构化数据。 | 适合有固定配置查询的开发者先在副本中试用；显式缩小 allowRoots，核实 yq 版本及表达式权限，不把它当不可信查询隔离器。 |
+| [dsh-wsl-systemd](#plugin-1381843201-root) | 在 DSH 中只读查看 systemd 用户服务的状态与近期日志。 | 适合已用 systemd --user 管理服务的人做只读排障；先确认用户总线和日志权限，修复服务仍需人工操作。 |
+| [dsh-wsl-terraform](#plugin-1381843937-root) | 在 DSH 中查看 Terraform/OpenTofu 校验、计划摘要与状态资源列表。 | 适合已有 Terraform 审批流程的人先审阅沙盒计划；显式配置 allowRoots 和凭据，任何摘要都要回看完整计划后决定部署。 |
+| [dsh-wsl-tray](#plugin-1351853903-root) | 为 WSL 内的 DSH Web 安装或报告 Windows 托盘与快捷方式启动入口。 | 适合已使用 dsh-wsl-kit 的 Windows 用户；显式设置 kitPath，先从快捷方式实际启动一次，再依赖托盘恢复，不把生成脚本成功当启动成功。 |
+| [dsh-wsl-vllm](#plugin-1381832640-root) | 为 DSH 提供本机或 Docker vLLM 服务状态与对话补全工具。 | 适合已有 vLLM 服务的人做少量文本任务试用；先查 reachable 和 model，长提示自行拆分，不把 status.ok 当服务健康或完整回答保证。 |
+| [dsh-wsl-wslconfig](#plugin-1351854461-root) | 只读解析 Windows .wslconfig，给出网络模式、内存与 DSH 中继提示。 | 适合查配置的辅助入口；先确认实际Windows用户路径，网络问题仍要测端口，修改和 wsl --shutdown 由用户评估后执行。 |
 | [Forge 用量计费](#plugin-1363429979-plugin-usage-billing) | 从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。 | 先选择一个模型和一天真实账单，逐项核对 token、缓存计价、币种和未计价行。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听工具结果和会话事件，生成不保存观察明文的哈希链 JSONL 证据回执。 | 用非敏感任务先验证链的追加、手工篡改检测和重启检查，再决定审计留存周期。 |
 | [Quota 用量仪表](#plugin-1400927706-root) | 累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。 | 先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。 |
@@ -82,6 +94,17 @@
 - **思考**：集中显示和明确未知值有实用价值；估算若被当成收费真相，会把价格漂移和缓存差异隐藏起来。
 - **建议**：先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。
 
+<a id="plugin-1413052822-root"></a>
+
+## [dsh-armory](../../plugins/2026heshao--dsh-armory/INSIGHT.md)
+
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) · [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory)
+
+- **用途**：面向同时维护多个项目 MCP 与技能的 DSH 用户，期望可追溯地导入配置、查看连接和控制项目工具暴露。
+- **亮点**：作者声明从 Imzl-zl/dsh-mcp-manager-ui 的 MCP 看板 fork 并扩展，不能将原看板功能全部算新贡献。相对手改配置和每会话建连接，workspace-runtime.js 将 pending/entry/disposing 三态与 effect 引用所有权结合，解决同名注册和异步 teardown 重建窗口；同时把市场浏览、导入预览和操作诊断放进一个管理流程。
+- **思考**：看板写入成功是否等于存活会话已使用新配置？lib/index.js 把配置写盘与 reconcile 放在不同阶段，避免慢 teardown 阻塞写锁，但对齐失败只报告诊断；因此落盘和运行态可能短暂不一致。反例是正常重载时状态会收敛，这个边界不证明所有更新失败，却要求用户不能只凭保存提示验收。
+- **建议**：已有多个 MCP 和跨项目隔离需求时可先在独立项目试用导入预览、重名冲突和重连；保存后核对实际工具可见性，再扩大使用范围。不要仅凭零调用账本批量停用偶发必需工具。
+
 <a id="plugin-1366089972-workspace-plugins-dsh-organism"></a>
 
 ## [dsh-organism](../../plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/INSIGHT.md)
@@ -104,6 +127,17 @@
 - **思考**：原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。
 - **建议**：适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。
 
+<a id="plugin-1335098475-root"></a>
+
+## [dsh-plugin-mall](../../plugins/1e0zj--dsh-plugin-mall/INSIGHT.md)
+
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1e0zj/dsh-plugin-mall) · [![npm 30d 1603](https://img.shields.io/static/v1?label=npm+30d&message=1%2C603&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@1e0zj/dsh-plugin-mall)
+
+- **用途**：DSH维护者需要发现第三方插件并避免安装破坏现有profile；合格交付是可解释的安装变更及失败后的可恢复状态。
+- **亮点**：相对目录链接加手工安装，实际贡献是把发现开放性与安装冲突预检、profile快照和启动恢复连接起来；guard.js关注补丁组合结果而非单条静态扫描，能解释插件会修改谁的加载行。不是执行安全认证。
+- **思考**：核心是“重启成功”如何判定：作者README已明确加载到商城位置不证明整棵树组合完成，guard launch的稳定窗口才补上部分后续失败；进程稳定也不保证业务插件可用。静态预检对动态副作用的边界不能被“验证插件”徽章掩盖。
+- **建议**：适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。
+
 <a id="plugin-1374274543-root"></a>
 
 ## [dsh-plugin-proxy](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md)
@@ -114,6 +148,17 @@
 - **亮点**：lib/index.js用undici setGlobalDispatcher替换全局调度器，设置变化重新应用，旧连接宽限关闭，卸载恢复基线和本插件改过的环境变量。
 - **思考**：集中运行期设置简化多处代理配置；进程全局影响也可能改变其他插件的出站路径。
 - **建议**：先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。
+
+<a id="plugin-1334481905-plugin"></a>
+
+## [dsh-progress-viz-plugin](../../plugins/2008924--dsh-progress-viz--plugin/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2008924/dsh-progress-viz)
+
+- **用途**：运行长任务的用户希望离开聊天后仍能看到阶段、动作和时间线；交付是会话活动观测，不是业务完成证明。
+- **亮点**：相对看板直接解压会话日志，组件增量是由宿主实时输出归一化进度，减少重复解析和噪音；外部Python看板属于仓库其他部分，本组件只提供事件适配与文件协议。
+- **思考**：finished语义最影响用户判断：源码handleEvent开头对finished直接return，armIdleTimer会在turn/end后空闲超时设置finished；因此同一会话过了默认15秒再有新一轮时，ensureState仍复用旧对象，后续语义事件会被忽略，直到销毁/重建。它是观测生命周期边界，不可当成任务永久办结。
+- **建议**：适合看长任务活动；先验证同会话空闲后继续工作的显示，关键任务以实际产物和会话结果验收。
 
 <a id="plugin-1367305514-root"></a>
 
@@ -137,6 +182,28 @@
 - **思考**：固定探针能降低重复取诊断信息的步骤；通用命令允许列表如果过宽，会把权限负担转回操作者。
 - **建议**：先使用远端低权限账号和固定只读探针，严格限定命令及参数，确认超时后的远端进程状态；不要把插件白名单当完整沙箱。
 
+<a id="plugin-1376777535-root"></a>
+
+## [dsh-router-loomy](../../plugins/2404723600--dsh-router-loomy/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2404723600/dsh-router-loomy) · [![npm 30d 1729](https://img.shields.io/static/v1?label=npm+30d&message=1%2C729&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-router-loomy)
+
+- **用途**：面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。
+- **亮点**：作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。
+- **思考**：缺finish_reason是否总能判断坏流并安全重试？sse.ts用completion_tokens>=maxTokens区分撞上限，否则判截断，只有推理无正文也判失败；这匹配作者观测，但合法上游格式变化或usage漏报可能误判。强制核心重试还会增加费用，已产生工具副作用的流需格外核对，不能把重试等同无损补齐。
+- **建议**：已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。
+
+<a id="plugin-1335139860-root"></a>
+
+## [dsh-token-billing](../../plugins/2006spy--dsh-token-billing/INSIGHT.md)
+
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/2006spy/dsh-token-billing)
+
+- **用途**：多供应商用户要追踪不同路由与缓存桶费用，避免只看模型别名误估；合格交付是可对账的费用估算及可导出账本。
+- **亮点**：相对token总量乘单价，增量是把路由、时段、缓存桶和订阅/免费/本地模式分开，且把短暂估算与落地账本区分；不是服务商结算系统，内置价格不能自动视为当前适用合同。
+- **思考**：最关键是账本身份及单价可追溯：ledger.js 的 mergeSteps 对 seen.has(key) 直接 continue，既有相同 session|turn|step 记录不会经此合并路径被修订；是否实际遇到最终 usage 回补被忽略尚未运行验证。默认汇率与 fallback 价也只是估算前提。临时文件替换不单独证明多进程写入不会丢失。
+- **建议**：适合需要多路由费用参考的用户；先对照供应商账单核实缓存、峰谷和币种口径，再据看板调整预算。
+
 <a id="plugin-1343420855-root"></a>
 
 ## [dsh-ui-auth](../../plugins/0qwq0--dsh-ui-auth/INSIGHT.md)
@@ -147,6 +214,17 @@
 - **亮点**：包装 HTTP 与 upgrade 入口，现代网关按会话处理认证；宿主能力缺失时 fail-closed。
 - **思考**：统一入口与关闭式失败路径是有效机制；全接口安全仍依赖覆盖、宿主升级和反代配置。
 - **建议**：先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。
+
+<a id="plugin-1334023305-root"></a>
+
+## [dsh-usage-dashboard-plus](../../plugins/1helloman1--dsh-usage-dashboard-plus/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-usage-dashboard-plus) · [![npm 30d 1066](https://img.shields.io/static/v1?label=npm+30d&message=1%2C066&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-usage-dashboard-plus)
+
+- **用途**：多模型 DSH 用户希望知道账户余额及当天花费；合格交付是带价格口径的估算与可追查调用记录。
+- **亮点**：相对只看服务商余额，插件将会话用量、视觉旁路调用和模型分组放到一个入口，补足主模型账单看不到辅助调用的观察盲区；余额与日志费用来自不同路径，属于观测整合而非精确账务系统。
+- **思考**：同一条调用能否恰好计一次以及价格是否匹配路由最影响费用可信度。源码有默认与日期价格表，也给未识别模型 fallback 价格；未知模型被赋通用价不能当实际账单，外部日志格式/重复输入及本地日界线仍需对账。
+- **建议**：适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。
 
 <a id="plugin-1335060007-root"></a>
 
@@ -411,6 +489,72 @@
 - **亮点**：把服务概况和详细依赖接入对话，减少人工跨系统采集；服务控制与诊断结论仍不由插件提供。
 - **思考**：detail中依赖查询异常被吞掉为空数组，空依赖可能是未能读取而非确实没有；状态参数all被直接用于Status比较也需核对实际语义。
 - **建议**：待验证假设：每个依赖字段附带读取成功状态，可减少把未知依赖当无依赖的误诊；增加字段能否改善判断仍需试验。
+
+<a id="plugin-1381832935-root"></a>
+
+## [dsh-wsl-struct](../../plugins/173787247--dsh-wsl-struct/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-struct)
+
+- **用途**：需要从本地 JSON/YAML 配置和 SQLite 缓存提取字段的开发者，以查询结果而非完整文件作为交付物。
+- **亮点**：作者称为沙箱化查询；相对直接让模型拼 bash，已实现的增量是统一文件入口、SQL 只读开关和截断标记，而 jq/yq/SQLite 的查询算法来自外部 CLI。能减少常见命令拼接，但不构成操作系统沙箱。
+- **思考**：最关键的条件是文件 allowRoots 是否等于表达式的全部读边界。源码仅检查主文件，yq 表达式原样交给外部程序；不同 yq 实现可能带额外文件/环境读取功能，不能据此宣称完整沙箱。SQL 黑名单也会误拒字符串中的 UPDATE 等词。
+- **建议**：适合有固定配置查询的开发者先在副本中试用；显式缩小 allowRoots，核实 yq 版本及表达式权限，不把它当不可信查询隔离器。
+
+<a id="plugin-1381843201-root"></a>
+
+## [dsh-wsl-systemd](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-systemd)
+
+- **用途**：WSL 内维护 Ollama 等用户服务的人，想从服务状态和日志定位故障，交付是可人工解释的诊断材料。
+- **亮点**：相对原生 systemctl/journalctl 手工执行，贡献是把用户会话范围和有限日志抽成模型工具，未新增服务管理机制；注册层没有 start/stop/enable，有利于把诊断和修复责任分开。
+- **思考**：userAvailable 把退出码0/1/3映为可用，这只是探测近似；能访问用户总线并不证明目标服务存在或健康。缺日志权限、无用户会话和应用故障应分别判定，否则诊断会把环境问题归到服务。
+- **建议**：适合已用 systemd --user 管理服务的人做只读排障；先确认用户总线和日志权限，修复服务仍需人工操作。
+
+<a id="plugin-1381843937-root"></a>
+
+## [dsh-wsl-terraform](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-terraform)
+
+- **用途**：基础设施维护者需要审阅拟变更资源，以计划计数、验证输出和资源地址交付复核，不在工具内执行部署。
+- **亮点**：相对任意 shell 运维，增量在于暴露计划审阅的窄接口、禁止注册 apply/destroy；Terraform 的规划与 provider 行为仍属上游。用户可先看变更再走独立审批，不能把无 apply 等于无副作用。
+- **思考**：核心质疑是“只读计划”是否可靠。plan 默认 refresh=true，可能联网、读取凭据和 provider/数据源；allowRoots 空时不限制目录。tfPlanSummary 只把退出码1当失败，其他异常退出可能被包装 ok:true，故摘要不能作为放行凭证。
+- **建议**：适合已有 Terraform 审批流程的人先审阅沙盒计划；显式配置 allowRoots 和凭据，任何摘要都要回看完整计划后决定部署。
+
+<a id="plugin-1351853903-root"></a>
+
+## [dsh-wsl-tray](../../plugins/173787247--dsh-wsl-tray/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tray)
+
+- **用途**：Windows 使用者希望在 DSH Web 不可达时从桌面启动、重启或查看健康，以能打开当前令牌 URL 为交付。
+- **亮点**：相对记忆 WSL 命令，贡献是把恢复入口放在宿主 UI 外、保留 token URL 并处理 UNC/引号/BOM 互操作；实际重启和中继仍由 dsh-wsl-kit 实现，不应归为本插件的服务恢复算法。
+- **思考**：关键是故障时外部恢复链是否可用。kit 仅以 restart 脚本存在确认，启动后固定等12秒、只检查 URL 含 token=；不保证令牌新鲜或服务健康。FALLBACK_KIT_PATHS 调用未导入的 readdirSync，被 catch 吞掉，Windows fallback 自动发现不会执行成功。
+- **建议**：适合已使用 dsh-wsl-kit 的 Windows 用户；显式设置 kitPath，先从快捷方式实际启动一次，再依赖托盘恢复，不把生成脚本成功当启动成功。
+
+<a id="plugin-1381832640-root"></a>
+
+## [dsh-wsl-vllm](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-vllm)
+
+- **用途**：已运行 vLLM 的开发者让当前 Agent 调用另一个本地模型生成文本，以模型回复和 usage 为交付。
+- **亮点**：相对直接 curl OpenAI 兼容端点，增量是 DSH 状态/调用工具和错误归一；不是宿主模型供应商注册，也未实现 vLLM 部署、调度或推理优化。
+- **思考**：核心问题是工具级第二次模型调用是否增加合格交付。status 的 ok:true 可同时 reachable:false；prompt 超32,000字符静默切片，可能丢关键尾部，不返回截断标记。无任务级评估不能说替代云模型成本更低。
+- **建议**：适合已有 vLLM 服务的人做少量文本任务试用；先查 reachable 和 model，长提示自行拆分，不把 status.ok 当服务健康或完整回答保证。
+
+<a id="plugin-1351854461-root"></a>
+
+## [dsh-wsl-wslconfig](../../plugins/173787247--dsh-wsl-wslconfig/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-wslconfig)
+
+- **用途**：Windows/WSL用户排查localhost和本地模型连接，交付为配置摘录及需人工验证的网络建议。
+- **亮点**：相对手工打开配置文档，增量是聚合配置与DSH :3081中继提醒；没有主动网络测试或Windows设置更改，网络机制来自WSL平台。
+- **思考**：关键是配置文本能否代表运行网络模式。文件可能尚未应用、找错用户或超过2000字符；读取异常被吞，仍ok:true。静态mirrored/NAT建议不能替代实际端点探测，NAT也不能一概判不可达。
+- **建议**：适合查配置的辅助入口；先确认实际Windows用户路径，网络问题仍要测端口，修改和 wsl --shutdown 由用户评估后执行。
 
 <a id="plugin-1363429979-plugin-usage-billing"></a>
 

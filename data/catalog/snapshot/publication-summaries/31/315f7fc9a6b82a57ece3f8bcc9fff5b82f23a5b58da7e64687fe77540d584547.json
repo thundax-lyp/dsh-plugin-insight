@@ -1,0 +1,5 @@
+{
+  "text": "为 DSH 流式回复提供语音朗读、字幕浮条及等待短语，支持 Edge 与 OpenAI 兼容语音服务。",
+  "revision": "a23020b72a5c403e3dc50527b3ef43c6e55c739a",
+  "source_url": "https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/README.md"
+}

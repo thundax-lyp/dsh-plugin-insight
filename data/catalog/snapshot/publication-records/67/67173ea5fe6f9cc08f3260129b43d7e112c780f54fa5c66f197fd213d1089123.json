@@ -1,0 +1,17 @@
+{
+  "id": "github:1381726438:root",
+  "repository": "173787247/dsh-wsl-vecmem",
+  "path": "",
+  "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+  "fingerprints": {
+    "directory": "899ec507ac1fc305895213252971fd428d18745f986319bbfaedc45d18a40c32",
+    "code": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+    "maintenance": "834ec50a0d47973e224753c8ef423b34d7ebd2f6435e77979679e67d602a6e2d"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "e87e5325712158d3a6957b2ab44b2d9abfc165fa7895f5121a9df64aba280e15"
+}

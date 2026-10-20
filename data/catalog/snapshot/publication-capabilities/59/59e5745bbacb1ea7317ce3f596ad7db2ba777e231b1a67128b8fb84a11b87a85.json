@@ -1,0 +1,7 @@
+{
+  "revision": "e948e99bf82747965084673a9d10d41b88bab974",
+  "items": {
+    "模型工具": "send_to_domain、claim_domain、set_domain_state、withdraw_domain_message（源码定义）",
+    "后台": "顶层域寻址与四级暂停队列"
+  }
+}
