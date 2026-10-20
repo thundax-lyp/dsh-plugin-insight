@@ -6,6 +6,11 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { ROOT, read, digest, atomicWrite } from '../../_shared/scripts/plugin-data.mjs';
 import { pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
+export function sourceMembership(work, item, source) {
+    if (work.input.plugins.some((plugin) => plugin.id === item.id && plugin.source_urls.includes(source)))
+        return 'present';
+    return work.session.sources.find((value) => value.url === source)?.complete ? 'removed' : 'unknown';
+}
 export function assembleInsight(workPath, pluginId, analysisPath) {
     const work = read(resolve(workPath)),
         analysis = read(resolve(analysisPath));
@@ -176,7 +181,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
             url: source,
             revision: work.session.sources.find((s) => s.url === source)?.revision ?? null,
             retrieved_at: now,
-            membership: 'present'
+            membership: sourceMembership(work, item, source)
         })),
         evidence,
         findings,
