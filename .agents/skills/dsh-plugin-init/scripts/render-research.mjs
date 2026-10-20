@@ -97,7 +97,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 return template('SHORT-ITEM', { label, text: matches[0][1] });
             });
             const short = shortItems.join('\n');
-            const homeShort = shortItems.slice(0, 2).join('\n');
+            const homeShort = [shortItems[0], template('SHORT-ITEM', { label: '亮点', text: summary.text })].join('\n');
             const title = report.match(/^# [^\n]+/)?.[0];
             if (!title) throw Error('detail needs a title');
             const capabilities = input.capabilities?.[i.id];
@@ -234,6 +234,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 plugin,
                 short,
                 homeShort,
+                summary: summary.text,
                 description,
                 anchor,
                 meta,

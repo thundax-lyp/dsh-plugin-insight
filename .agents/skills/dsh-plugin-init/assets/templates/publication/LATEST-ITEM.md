@@ -1,1 +1,1 @@
-- {{plugin}} · {{time}}
+- {{plugin}} · {{summary}}

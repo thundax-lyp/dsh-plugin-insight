@@ -1,1 +1,1 @@
-- {{plugin}} · {{stars}}
+- {{plugin}} · {{summary}} · {{stars}}

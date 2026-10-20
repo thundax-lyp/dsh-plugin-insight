@@ -81,7 +81,12 @@ export function renderLatest(items, limit = 3) {
     return template('LATEST', {
         items:
             selected
-                .map((e) => template('LATEST-ITEM', { plugin: nameLink(e), time: e.pushedBadge ?? e.pushedLabel }))
+                .map((e) =>
+                    template('LATEST-ITEM', {
+                        plugin: nameLink(e),
+                        summary: clean(e.summary)
+                    })
+                )
                 .join('\n') || '暂无更新信息。'
     });
 }
@@ -92,8 +97,11 @@ export function renderHot(items, limit = 3) {
         .slice(0, limit);
     return template('HOT', {
         items:
-            selected.map((e) => template('HOT-ITEM', { plugin: nameLink(e), stars: e.starsBadge })).join('\n') ||
-            '暂无热度信息。'
+            selected
+                .map((e) =>
+                    template('HOT-ITEM', { plugin: nameLink(e), summary: clean(e.summary), stars: e.starsBadge })
+                )
+                .join('\n') || '暂无热度信息。'
     });
 }
 export function renderRecommended(recommendations, byId) {
