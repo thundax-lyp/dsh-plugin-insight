@@ -1,35 +1,39 @@
 ---
 name: dsh-plugin-init
-description: 显式调用时编排整轮 DSH 插件研究：确认来源、生成列表、标记新增与移除、调用单插件洞察、管理断点并汇总推荐。适用于首轮、后续整轮及同轮恢复。
+description: 显式调用时编排整轮 DSH 插件研究：以唯一当前快照为基线，生成本轮增量、管理断点，验证后合并并生成读者成果。适用于新一轮研究及同轮恢复。
 ---
 
 # 插件列表与研究编排
 
-在工程根目录执行；依赖本 Skill 和洞察 Skill 的 `references/`、共享约定、`.agents/skills/_shared/schemas/`、Skill 内脚本和根 package，不能只复制 Skill 目录。
-开始前阅读[数据契约](../_shared/references/DATA-CONTRACT.md)、[研究规范](../dsh-plugin-insight/references/RESEARCH-STANDARD.md)、
-[输出标准](references/OUTPUT-STANDARD.md)。GitHub 来源与版本读取依赖当前环境可用的 GitHub Skill 或插件；
-不假设特定 Skill 名称。Git 协作遵循根 `AGENTS.md`；运行时遵循 `.node-version`，并与 package.json 的 engines.node、本地验证及 CI 保持一致；依赖缺失时执行 `npm ci --ignore-scripts`。
+在工程根目录执行。开始前阅读[数据契约](../_shared/references/DATA-CONTRACT.md)、[研究规范](../dsh-plugin-insight/references/RESEARCH-STANDARD.md)、[输出标准](references/OUTPUT-STANDARD.md)。
+Git 协作遵循根 `AGENTS.md`；Node 遵循 `.node-version`，依赖缺失时执行 `npm ci --ignore-scripts`。
+GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认证工具，不执行目标插件代码。
 
-专用脚本在 [scripts/](scripts)：来源清单使用 `build-research-input.mjs`，会话使用 `research-session.mjs`，
-发布输入使用 `publication-data.mjs` 的 plan／apply；发布模板在 [assets/templates/publication/](assets/templates/publication)。
-数据读写与批量 GitHub 身份核实复用 [共享脚本](../_shared/scripts)。依赖和稳定命令仍由根 package.json 维护。
+## 当前快照与本轮增量
+
+正式研究真相只有一份：当前档案及其引用的当前分析、证据和来源状态。发布输入只组织展示，README、分类页和详情展示页由当前快照生成。
+`data/runs/<round>/` 只承载尚在处理的增量、检查点与失败材料，不是必须永久保存的第二套档案。
+新一轮与当前快照比较，不要求上一轮 SESSION、manifest 链或 runs 归档；历史版本需要时从 Git 查阅。
+具体合并、证据落位及清理条件以[数据契约](../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)为准。
+
+**工具适配边界：** 当前 `research-session.mjs`、`publication-data.mjs`、生成器和清理器仍有旧会话／manifest／runs 依赖，本次规范更新不代表这些脚本已完成适配。
+执行前检查工具是否支持“当前快照基线 → 独立暂存 → 验证 → 合并”。不支持时先明确工具缺口；不得改用旧会话作为必需输入、伪造历史、直接覆盖正式数据或假称已按新流程完成。
+旧命令仅用于明确的兼容维护，不作为新流程的默认执行步骤；恢复说明见[会话与合并恢复](references/SESSION-OPERATIONS.md)。
 
 ## 调用参数
 
-`$dsh-plugin-init [最大研究插件数]`，例如 `$dsh-plugin-init 3`。省略时研究全部；提供时必须为正整数。
-新增、更新、删除（目录移除）、未变及未知条目共用同一个上限，每个稳定插件 ID 只计一次。
-新会话将此参数传给 `start --limit N`；不传则省略该选项。完整列表仍保留，按清单顺序选取（目录缺席项追加在后），不按变更类型分配额外额度。
-同轮恢复使用已固定的上限和选择，不重置计数；受阻项也占名额，不另找插件补位。
+`$dsh-plugin-init [最大研究插件数]`，例如 `$dsh-plugin-init 30`。省略时研究全部；提供时必须为正整数。
+新增、更新、目录移除、未变及未知条目共用上限，每个稳定 ID 只计一次。
+完整列表仍保留，按来源解析后清单顺序选择前 N 项，目录缺席项追加在后；受阻项占名额，不补位。
+同轮恢复使用已固定的选择和上限，不重置计数；未选项不冒充已研究。
 
-1. **区分新一轮与续跑。** 查看本地 `data/runs/` 和工作区；该目录被 Git 忽略，只用于过程、证据与断点。新轮次分配 YYYY-MM-DD-NN 可读目录，内部 ID 与时间字段仍按数据契约保留。用户要求继续时恢复原会话；明确开始新一轮时使用新 ID，
-   新会话输出必须为 `data/runs/YYYY-MM-DD-NN/SESSION.json`，文件名不重复附时间；
-   以最近可比会话作为 `--previous`，记录其范围差异。不因为已有档案改走另一个 Skill，不清空历史。
-2. **确认来源，整理列表。** 核对用户来源；默认使用研究规范中的两个目录。固定来源版本、截止时间和覆盖边界，
-   优先结构化条目，补充 README／CATALOG。使用 GitHub 插件，或可选 `capture-github.mjs`；后者仅采集仓库元数据、固定提交／文件树、部分根文件及最多100条发布记录，不能穷尽目录或跟踪全部依赖。
-   目录解析、组件匹配和额外源码须另行核查；保留分页、截断和访问失败边界，不执行目标代码。
-   核对稳定仓库／组件身份，去重并区分条目类型；身份未核实的候选另存问题记录，不编造 ID。
-   按[会话契约](../_shared/references/DATA-CONTRACT.md#研究会话与脚本检查点)准备输入清单，
-   格式参考[合成输入](assets/research-input.json)，不能将合成数据导入真实档案。真实目录使用稳定输入构建器，不为每轮临时创建脚本：
+## 执行流程
+
+1. **读取基线并确定本轮。** 检查工作区和当前快照，记录其摘要；当前快照不存在才视为首次初始化。
+   新轮次分配未占用的 `data/runs/YYYY-MM-DD-NN/`；继续任务时恢复本轮会话和已完成的暂存记录。
+   旧 runs 缺失不阻止新研究。当前快照缺少某项比较依据时，将该维度标为 unknown，不从历史清单拼造事实。
+2. **固定来源与生成列表。** 默认核查两个研究目录，固定 checkout 提交、检查时间和覆盖范围。
+   使用稳定输入构建器，保存本轮 INPUT 与问题记录；来源 checkout 必须干净，构建前后 HEAD 不变。
    ```sh
    npm run research:input -- \
      --source-awesome data/tmp/sources/awesome-dsh-plugin \
@@ -38,71 +42,30 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
      --out data/runs/<round>/INPUT.json \
      --problems data/runs/<round>/INPUT-PROBLEMS.json
    ```
-   两个来源 checkout 必须无 tracked 或 untracked 改动，构建器在解析前后校验 HEAD 和工作区状态，拒绝把未提交内容记录为固定 revision。
-   只有完整读取并核对相应来源时才增加 `--complete-awesome` 或 `--complete-harness`；解析、身份或默认分支问题会让脚本保守降级该来源为不完整。
-   工具必须使用既有档案的仓库数字 ID／组件路径复用稳定组件 ID，合并重定向别名并保留具体条目摘要；未解决身份不得静默丢弃。
-3. **脚本生成本轮队列和变更标记。** 首轮省略 `--previous`；后续轮次必须给出可比的上轮会话。
-   ```sh
-   npm run research -- start --input data/runs/<round>/INPUT.json --previous data/runs/<previous_round>/SESSION.json --out data/runs/<round>/SESSION.json
-   npm run research -- next --session data/runs/<round>/SESSION.json
-   ```
-   不覆盖已有会话；续跑直接调用 `next`。脚本比较新增、移除、路径／内容／来源变化、未变及无法确认，
-   所有条目在新轮次重新排队，实际处理范围受可选上限限制。未变不代表免于分析；来源不完整不能推断移除。核对标记的语义边界，
-   尤其版本未能确认、仅来源差异和前轮范围不同的情况。
-   不复制旧会话并换用新 `checked_at` 来制造新轮次；格式修复走有审计记录的迁移。同一会话的候选、指纹和来源在 start 后固定，
-   不得从当前档案反向回写以绕过 checkpoint 不一致。
-4. **显式调用单插件洞察。** 对 next 返回的条目，读取并应用[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)。
-   传入稳定 ID、固定源码版本、本轮截止时间、目标深度、来源证据、历史详情和输出位置；每轮所选条目重新分析，
-   同轮只跳过 complete 项。洞察 Skill 返回证据、详情和独立观察批次，编排 Skill 检查返回范围和证据边界后入档。
-   这属于用户显式启动本编排的流程内调用，不依赖隐式发现，也不自动创建子 Agent。
-   检查单项交付是否附固定范围的 inventory 统计、能力清单、代码评价和可借鉴处；抽读子集必须标明，未知数量不填0。
-   分析失败记受阻并继续其他条目；来源移除只表示目录缺席，核查当前仓库和采用影响，不物理删除历史。
-5. **逐项保存、计划和应用。** 为该项保存证据、完整详情和唯一观察批次。空档案第一次写入用 `init`，
-   之后一律用 `update`；这只是底层写入模式，不是两种研究流程。检查计划后应用：
-   ```sh
-   node .agents/skills/_shared/scripts/plugin-data.mjs plan --mode <init-or-update> --observations data/runs/<round>/observations/<plugin-slug>.json --out /tmp/dsh-plan.json
-   node .agents/skills/_shared/scripts/plugin-data.mjs apply --plan /tmp/dsh-plan.json
-   node .agents/skills/_shared/scripts/plugin-data.mjs validate --observations data/runs/<round>/observations/<plugin-slug>.json
-   npm run research -- checkpoint --session data/runs/<round>/SESSION.json --plugin <plugin_id> --observations data/runs/<round>/observations/<plugin-slug>.json --report data/runs/<round>/insights/<plugin-slug>.md
-   npm run research -- publish --session data/runs/<round>/SESSION.json --plugin <plugin_id> --out data/plugins/<plugin-slug>/INSIGHT.md
-   npm run research -- manifest --session data/runs/<round>/SESSION.json --out data/manifests/<round>.json
-   ```
-   checkpoint 核对已应用数据、本轮核查时间、固定源码版本、材料及摘要，成功后才完成该项；publish 只把完成原稿提升为当前读者详情，manifest 在每次阶段交付或收口时更新 Git 内的复现清单。
-   若 apply 后中断，先核对 `catalog.runs` 和批次，补做校验与 checkpoint，不重复 apply。
-   已完成详情作为不可改写的本轮产物；后续修订使用新材料和新一轮，不静默覆盖检查点文件。
-6. **恢复、受阻与收口。** 写入冲突、锁与中断处理见[会话与入档恢复](references/SESSION-OPERATIONS.md)。 每完成一项继续调用 `next`，已完成项被跳过。失败保存错误批次和部分材料，使用
-   `block --session ... --plugin ... --reason ...` 登记原因，处理其他项；重试时用 `retry --session ... --plugin ...`。
-   来源移除的条目也保留，尝试核查当前仓库及采用影响；无法读到源码时记受阻，不能伪造成功检查点。
-   `next` 返回空但 blocked 非零仍未完成；不从“没有待处理项”推断全部成功。
-   按[三层输出](references/OUTPUT-STANDARD.md#先分析再归纳与推荐)，先完成详情，
-   再归纳分类列表的“用途／亮点／思考／建议”，最后生成推荐页；安装推荐与本周试用候选使用不同证据门槛。
-   阶段汇总标注未完成项；会话与原始数据由轮次报告追溯。
-   按输出标准维护 PLUGIN-PATHS.json 的稳定路径映射并准备 `data/catalog/PUBLICATION.json`，历史文件保留但不进入README，人工填写有依据的推荐摘要，
-   在 capabilities 保存人工确认的正向能力条目与固定版本，未发现／未确认项省略；
-   为每个已完成插件在 summaries 填写基于作者固定版本材料的功能简介（不超过80字符）、来源URL和版本，按输出标准生成标题下引用块，
-   调用 `npm run capture:meta -- OWNER/REPO --out data/runs/<round>/snapshots/<plugin-slug>/META.json` 保存每个 GitHub 仓库 META，
-   对已核实的插件 package.json 名称，在采集命令增加 --npm <exact-package-name>，记录最近30个完整UTC日期的下载数；
-   没有确认的npm包时省略，不猜包名，不用0代替失败。
-   已建立列表后的日常 META 刷新可直接运行 npm run refresh:meta；它只标记脚本更新，不替代洞察或改写检查点。
-   保留轮次 META 快照，并复制为 data/plugins/<plugin-slug>/META.json；发布输入的 metadata 映射引用该当前副本；分类页按输出标准生成名字＋用途目录、META及四标签短评。
-   标题、章节与Markdown版式维护 .agents/skills/dsh-plugin-init/assets/templates/publication/*.md，不写死到生成代码；脚本仅处理数据、排序和填充。
-   将已审阅的 recommendations、metadata、summaries、capabilities 和 advice 写入 `data/runs/<round>/PUBLICATION-INPUT.json`，
-   再用 plan／apply 更新当前发布输入；工具从 manifest 计算本轮范围，精确替换本轮完成项并保留未选项，拒绝未完成对象、版本不一致及没有 host_verified 证据的安装推荐：
-   ```sh
-   npm run publication -- plan --manifest data/manifests/<round>.json --input data/runs/<round>/PUBLICATION-INPUT.json --out /tmp/dsh-publication-plan.json
-   npm run publication -- apply --plan /tmp/dsh-publication-plan.json
-   ```
-   不创建按轮次硬编码的发布脚本，不在生成代码中保存推荐判断；apply 前检查计划摘要，当前发布输入或对应 manifest 变化后重新生成计划。
-   再执行 `npm run render:research` 生成 README、分类列表及追加Issue活跃度的详情展示页，不能手写 README 或添加工程使用内容。
-   本周新增以已核实 npm 包的注册表 time.created 首次发布时间计算，不使用本工程入档时间；已有包发新版不算新增；README按本周新增、最新／最热／推荐、每类最热 5 个插件及更多入口的分类列表、研究出处、末尾更新时间合成；不放历史或过程说明。完成前运行 `npm run check`，
-   人工检查叙述、采用判断、引用和本轮覆盖；脚本校验不证明实际业务收益。
+   只有完整读取并核对来源后才增加相应 `--complete-awesome`／`--complete-harness`；解析、身份或默认分支问题使来源不完整。
+   按仓库数字 ID 与已分配组件路径去重，保留重定向、组件碰撞和身份失败的具体记录，不编造 ID。
+3. **形成固定队列。** 用当前快照比较新增、位置／内容／来源变化、未变和未知；只有相关来源完整核查才可推断目录移除。
+   固定本轮候选、来源、指纹、选择、上限和基线摘要，写入本轮会话；后续不反向改写它们以通过检查。
+   新一轮重新分析全部所选项；仅同轮恢复跳过已完成且材料校验一致的项。
+4. **逐项调用单插件洞察。** 读取并应用[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)，传入稳定 ID、固定版本、截止时间、当前快照中的分析和证据、目标深度及本轮输出位置。
+   该流程内调用不自动创建子 Agent。每项独立保存 inventory、证据、详细分析、观察批次及人工确认的摘要／能力／建议。
+   核查场景、替代办法、安装与效果依赖、用户与异常流程、总成本和采用条件；不得用静态候选批量生成通用结论。
+5. **校验并暂存完成记录。** 核对每项身份、版本、来源指纹、完整 findings 复核、证据引用、报告及材料摘要。
+   计划与应用先针对本轮暂存的候选快照，不逐项写入正式档案；检查点代表本轮记录完整，不代表已合并或已通过宿主验收。
+   失败写入 errors 和受阻原因，继续其余所选项；保留已完成增量用于同轮恢复，不补位、不重复应用。
+6. **形成合并候选。** 从已完成的详细分析归纳四标签短评和有条件推荐，再组织发布输入。安装推荐仍要求固定版本的真实宿主验收证据。
+   使用 META 采集器保存本轮采集结果，npm 包名必须由源码核实；未知值不填0。
+   将支撑当前结论的分析原文和必要证据落入正式快照引用的位置；发布输入只引用合并候选中的当前材料，不引用待清理的 runs 文件。
+   未选、失败或未完成项保留正式快照的有效记录，不因本轮 pending／blocked 将旧成果移出发布；新证据足以使旧结论失效时，单独校验并标记待复核，调整推荐，不伪装成完成。
+7. **最后合并与生成。** 汇总审阅本轮候选；检查正式基线摘要和依赖是否变化，冲突时重做合并计划，不覆盖并发修改。
+   通过结构、身份、证据、依赖和语义校验后，再以一致的发布事务合并当前档案、分析／证据引用及展示输入；提交点前读者仍看到旧快照。
+   从合并后的当前快照生成 README、分类页和详情展示页。旧 SESSION、runs 和历史 manifest 不参与当前发布有效性判断。
+   完成 `npm run check` 及人工叙述、引用、采用条件和覆盖范围检查；如工具仍依赖旧链路，明确报告兼容检查范围，不能冒充新模型验收。
+8. **确认与清理。** 回读合并结果，确认本轮成功记录已落位、引用可解析、页面可由当前快照独立生成；写入合并结果后才清理本轮临时材料。
+   未合并、失败或需要恢复的增量保留。已合并材料不要求永久归档；清理前预览，不能删除当前快照仍引用的证据或活动锁。
+   来源准备失败或仍有 blocked 时如实报告。最多30项完成只代表所选范围完成，不代表全生态研究完成。
 
-本地 runs 只保存研究证据、报告和断点，不复制生成页面；Git 只保存 `data/manifests/`、当前档案和读者成果。清理按[保留规则](references/OUTPUT-STANDARD.md#本地-runs-与-git-清单)使用 `npm run maintain:runs` 先预览，不删除未知材料。
+## 职责与授权
 
-本 Skill 不自动安装第三方插件、安排周期任务、提交、推送或发布。
-
-## 显式调用与职责
-
-仅在用户点名本 Skill 或明确要求执行整轮列表研究时使用，不因提及某个插件就启动。
-本 Skill 拥有会话队列、变化标记、plan／apply／checkpoint 与汇总发布；
-单插件洞察 Skill 不自行改变队列或当前档案。只研究一个插件时可以单独显式调用洞察 Skill。
+仅在用户点名本 Skill 或明确要求整轮研究时使用。编排拥有队列、增量暂存、合并和本地成果生成；单插件洞察只返回单项记录。
+本 Skill 不自动安装第三方插件、安排周期任务、提交、推送或对外发布。更新规范不授权删除既有历史材料或迁移正式数据。
