@@ -3,7 +3,6 @@
   "additionalProperties": false,
   "required": [
     "schema_version",
-    "manifest",
     "scope",
     "catalog",
     "catalog_page",
@@ -20,7 +19,10 @@
     "manifests": {
       "type": "array",
       "uniqueItems": true,
-      "items": { "type": "string", "minLength": 1 }
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "scope": {
       "type": "string",
@@ -182,7 +184,87 @@
           }
         }
       }
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "repository",
+          "path",
+          "revision",
+          "fingerprints",
+          "source_urls",
+          "status",
+          "analysis_sha256",
+          "checked_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "repository": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "string"
+          },
+          "fingerprints": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "source_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "status": {
+            "const": "complete"
+          },
+          "analysis_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
     }
   },
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "anyOf": [
+    {
+      "required": [
+        "manifest"
+      ],
+      "properties": {
+        "manifest": {}
+      }
+    },
+    {
+      "required": [
+        "records",
+        "checked_at"
+      ],
+      "properties": {
+        "records": {},
+        "checked_at": {}
+      }
+    }
+  ]
 }

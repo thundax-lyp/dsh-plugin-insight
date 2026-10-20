@@ -1,68 +1,77 @@
 # dsh-voice-input-web
 
-> 在输入框加入浏览器语音转写、语言切换与可选自动发送。
+> 在输入框旁增加麦克风入口，使用浏览器语音识别把文字写入草稿。
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-voice-input) · [![npm 30d 73](https://img.shields.io/static/v1?label=npm+30d&message=73&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-voice-input-web) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0nt-one/dsh-voice-input/commits)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-voice-input) · [![npm 30d 71](https://img.shields.io/static/v1?label=npm+30d&message=71&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-voice-input-web) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0nt-one/dsh-voice-input/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [c2fceee6a865a8466f3909d3896172f0f2fad2fa](https://github.com/0nt-one/dsh-voice-input/tree/c2fceee6a865a8466f3909d3896172f0f2fad2fa)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：在输入框加入浏览器语音转写、语言切换与可选自动发送。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：转写依赖 Chrome/Edge 的 Web Speech API；浏览器支持、网络实现和误触自动发送会改变实际可用性。
-- **建议**：先关闭自动发送，用含专有名词和噪声的短样本比较手工输入；误识别不可接受时停用。
+- **用途**：偏好口述输入的用户，希望先得到可编辑草稿再发送消息。
+- **亮点**：客户端检测 SpeechRecognition/webkitSpeechRecognition，将最终结果追加到输入区，自动发送由本地开关控制。
+- **思考**：转写进入草稿保留人工检查点；自动发送会放大识别错误，不能因免密钥就认定隐私已解决。
+- **建议**：先关闭自动发送，用专有名词和噪声样本比较打字与听写的总校对时间。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：在输入框加入浏览器语音转写、语言切换与可选自动发送。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+偏好口述输入的用户，希望先得到可编辑草稿再发送消息。
 
-## 依赖与使用条件
+系统听写和直接键盘是低耦合替代；本轮维持先试用、先校对的建议。
 
-- 固定组件包：`dsh-voice-input-web@0.1.3`。
-- 声明依赖：未在组件 package.json 声明直接或 peer 依赖；宿主接线仍需按源码核对。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+依赖支持 Web Speech 的浏览器、麦克风权限和输入插槽，服务不可用时仍需键盘输入。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+授权麦克风并选择语言，口述后修订草稿再发送；异常停止识别并检查浏览器权限。
+
+## 成本与效果
+
+不需插件专用密钥，但有听写纠错、权限配置和浏览器服务可用性成本，未测单位输入成本。
+
+转写进入草稿保留人工检查点；自动发送会放大识别错误，不能因免密钥就认定隐私已解决。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .js | 2 | 314 | 250 | 37 | 27 | — |
-| source | .md | 1 | 71 | — | — | — | 564 |
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7b0a77672b668df7566955d1f41f94097d92e444dd408a20c44d100e7c941a6d。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：无自动排除项。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .js | source | 2 | 314 | 250 | 37 | — |
+| .md | source | 1 | 71 | — | — | 564 |
+
+排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **界面**：conversation.input.right
-
-- ui：`conversation.input.right`（[client.js:279](https://github.com/0nt-one/dsh-voice-input/blob/c2fceee6a865a8466f3909d3896172f0f2fad2fa/client.js#L279)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **界面**：输入框麦克风、语言切换与转写预览。
 
 ## 工程亮点
 
-固定组件内共纳入 3 个 JS/TS/Markdown 文件。组件声明依赖较少，但仍不能据此推断运行简单或无外部依赖。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[lib/index.js](https://github.com/0nt-one/dsh-voice-input/blob/c2fceee6a865a8466f3909d3896172f0f2fad2fa/lib/index.js)。
+浏览器能力探测与转写生命周期集中在客户端，轻量可借鉴；效果依赖系统语音实现。
 
+## 分发与兼容
 
-把转写先写入草稿而非直接提交，为人工校对保留控制点。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+包名 dsh-voice-input-web、版本 0.1.3；不能与同名的其他本地转写项目混同。
+
+## 历史对照
+
+前次代码指纹为 c2fceee6a865a8466f3909d3896172f0f2fad2fa；本轮固定为 c2fceee6a865a8466f3909d3896172f0f2fad2fa。系统听写和直接键盘是低耦合替代；本轮维持先试用、先校对的建议。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：浏览器语音服务不等于保证离线，本轮未核实音频去向、识别准确率或权限行为。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：在不同浏览器测试拒绝权限、断网、长停顿和术语，记录误词与误发送次数。
 
 ## Issue 活跃度
 
 Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

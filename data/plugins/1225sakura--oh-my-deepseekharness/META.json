@@ -1,8 +1,8 @@
 {
   "repository": "1225Sakura/oh-my-deepseekharness",
   "repository_id": 1379204512,
-  "captured_at": "2026-10-19T14:54:44.806Z",
-  "window_start": "2026-09-19T14:54:44.806Z",
+  "captured_at": "2026-10-20T02:57:45.276Z",
+  "window_start": "2026-09-20T02:57:45.276Z",
   "stars": 11,
   "pushed_at": "2026-10-16T02:48:01Z",
   "issues": {
@@ -15,36 +15,36 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3D48:1144EA:216DCB:23FC0C:6AD62F36 and timestamp 2026-10-19 14:54:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9B96:3B8E6C:86917:90CBA:6AD6D8AA and timestamp 2026-10-20 02:57:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3E4C:18154C:23F024:268037:6AD62F37 and timestamp 2026-10-19 14:54:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9C1C:1DD6B8:9063F:9ABD3:6AD6D8AB and timestamp 2026-10-20 02:57:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A44.806Z..2026-10-19T14%3A54%3A44.806Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3F1C:366984:22C2EA:255150:6AD62F38 and timestamp 2026-10-19 14:54:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20created%3A2026-09-20T02%3A57%3A45.276Z..2026-10-20T02%3A57%3A45.276Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9C96:103B0B:8B1BF:956A1:6AD6D8AC and timestamp 2026-10-20 02:57:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A44.806Z..2026-10-19T14%3A54%3A44.806Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4034:3EB606:228929:2516D4:6AD62F39 and timestamp 2026-10-19 14:54:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A57%3A45.276Z..2026-10-20T02%3A57%3A45.276Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9D46:3BA24E:9A598:A4A19:6AD6D8AD and timestamp 2026-10-20 02:57:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A44.806Z..2026-10-19T14%3A54%3A44.806Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4158:18C28F:20AA27:233798:6AD62F3A and timestamp 2026-10-19 14:54:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20updated%3A2026-09-20T02%3A57%3A45.276Z..2026-10-20T02%3A57%3A45.276Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9DEC:76533:8A7E2:94D0F:6AD6D8AE and timestamp 2026-10-20 02:57:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "@sakura12/oh-my-deepseekharness",
-    "captured_at": "2026-10-19T14:54:50.904Z",
-    "window_start": "2026-09-19",
-    "window_end": "2026-10-18",
+    "captured_at": "2026-10-20T02:57:50.229Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
     "downloads_30d": 2379,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/%40sakura12%2Foh-my-deepseekharness",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/%40sakura12%2Foh-my-deepseekharness",
     "error": null,
     "publication": {
       "first_published_at": "2026-09-21T08:34:33.011Z",
-      "captured_at": "2026-10-19T14:54:50.904Z",
+      "captured_at": "2026-10-20T02:57:50.229Z",
       "source_url": "https://registry.npmjs.org/%40sakura12%2Foh-my-deepseekharness",
       "error": null
     }

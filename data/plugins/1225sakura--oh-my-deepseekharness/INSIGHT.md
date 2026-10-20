@@ -1,105 +1,82 @@
-# @sakura12/oh-my-deepseekharness
+# oh-my-dsh
 
-> 提供多 Agent 编排模式、角色技能、MCP 工具与图运行时。
+> 为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。
 
 <!-- BEGIN META -->
-[![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=yellow&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness) · [![npm 30d 2379](https://img.shields.io/static/v1?label=npm+30d&message=2%2C379&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness/commits)
+[![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=yellow&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness) · [![npm 30d 2379](https://img.shields.io/static/v1?label=npm+30d&message=2%2C379&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness) · [![最后更新 4天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=4%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [f38d8a6cffca4d2beb97e3cdd53208794163b92f](https://github.com/1225Sakura/oh-my-deepseekharness/tree/f38d8a6cffca4d2beb97e3cdd53208794163b92f)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：提供多 Agent 编排模式、角色技能、MCP 工具与图运行时。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：大规模角色和工具会增加上下文、协调与失败恢复成本；数量不等于交付质量，且兼容范围很宽。
-- **建议**：只选一个可并行且结果可验收的任务，与单 Agent 基线比较总 token、人工介入和合格率。
+- **用途**：复杂开发任务需要规划、委派与验证分工，用户希望复用一套宿主适配的编排约定。
+- **亮点**：入口注入协议并注册资产、命令和 MCP，team 模块维护阶段、队员身份与邮箱；实际派发与合并仍由领队模型驱动。
+- **思考**：统一委派与恢复数据面可降低自建成本；多代理可能放大误解、冲突和预算超支。
+- **建议**：先验装探测与取消，再对单仓库小任务比较原生单 agent 和一条显式 team 流程。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：提供多 Agent 编排模式、角色技能、MCP 工具与图运行时。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+复杂开发任务需要规划、委派与验证分工，用户希望复用一套宿主适配的编排约定。
 
-## 依赖与使用条件
+原生单 agent 与有限手工委派是对照；只有复杂可拆分任务才值得增加协调层。
 
-- 固定组件包：`@sakura12/oh-my-deepseekharness@0.4.9`。
-- 声明依赖：`@modelcontextprotocol/sdk`、`zod`、`@deepseek-ai/dsh-commands`、`@deepseek-ai/dsh-llm`、`@deepseek-ai/dsh-mcp-client`、`@deepseek-ai/dsh-skill`、`@deepseek-ai/dsh-storage`、`@deepseek-ai/dsh-storage-domain`、`@deepseek-ai/dsh-system-prompt`、`@deepseek-ai/dsh-tools`、`@deepseek-ai/schemastery`。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+依赖 DSH 核心服务、subagents、storage 与模型；MCP、代码智能和工作树路径各有失败边界。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+确认模式并规划、派发、收集结果、验证和整合；停滞时先看探测与阶段状态，必要时取消接管。
+
+## 成本与效果
+
+多角色和多轮评审增加模型、上下文与状态维护成本，不能以并行数量推断更快更省。
+
+统一委派与恢复数据面可降低自建成本；多代理可能放大误解、冲突和预算超支。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .md | 170 | 21855 | — | — | — | 256566 |
-| source | .mjs | 17 | 2619 | 2171 | 300 | 185 | — |
-| source | .js | 29 | 5996 | 4382 | 1280 | 397 | — |
-| test | .js | 45 | 10002 | 8560 | 899 | 794 | — |
-| example | .mjs | 1 | 83 | 74 | 5 | 5 | — |
-| test | .mjs | 1 | 63 | 41 | 15 | 7 | — |
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9938d986c1c18f783810771a7ef3df1251b41a3b9fbd0808e8f6487f7609fa33。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：无自动排除项。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 170 | 21855 | — | — | 256566 |
+| .mjs | source | 17 | 2619 | 2171 | 300 | — |
+| .js | source | 29 | 5996 | 4382 | 1280 | — |
+| .js | test | 45 | 10002 | 8560 | 899 | — |
+| .mjs | example | 1 | 83 | 74 | 5 | — |
+| .mjs | test | 1 | 63 | 41 | 15 | — |
+
+排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **模型工具**：omd_delegate、omd_memory_set、omd_memory_get、omd_memory_delete
-- **用户命令**：omd-doctor、omd-cancel
-- **事件监听**：agent/pre-step
-- **界面**：sidebar.right.pane.tab
-- **Skill**：agent-doc-discipline、ai-slop-cleaner、analyze、ask-navigator、ask、autopilot、autoresearch、best-practice-research、cancel、debug
-
-- tools：`omd_delegate`（[lib/delegate.js:134](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/delegate.js#L134)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- tools：`omd_memory_set`（[lib/memory.js:117](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/memory.js#L117)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- tools：`omd_memory_get`（[lib/memory.js:127](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/memory.js#L127)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- tools：`omd_memory_delete`（[lib/memory.js:137](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/memory.js#L137)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`omd-doctor`（[lib/commands.js:19](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/commands.js#L19)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`omd-cancel`（[lib/commands.js:27](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/commands.js#L27)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- events：`agent/pre-step`（[lib/hook.js:160](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/hook.js#L160)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- ui：`sidebar.right.pane.tab`（[lib/client.js:334](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/client.js#L334)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`agent-doc-discipline`（[assets/skills/agent-doc-discipline/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/agent-doc-discipline/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`ai-slop-cleaner`（[assets/skills/ai-slop-cleaner/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/ai-slop-cleaner/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`analyze`（[assets/skills/analyze/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/analyze/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`ask-navigator`（[assets/skills/ask-navigator/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/ask-navigator/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`ask`（[assets/skills/ask/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/ask/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`autopilot`（[assets/skills/autopilot/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/autopilot/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`autoresearch`（[assets/skills/autoresearch/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/autoresearch/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`best-practice-research`（[assets/skills/best-practice-research/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/best-practice-research/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`cancel`（[assets/skills/cancel/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/cancel/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`debug`（[assets/skills/debug/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/debug/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`deep-interview`（[assets/skills/deep-interview/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/deep-interview/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`deepinit`（[assets/skills/deepinit/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/deepinit/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`design`（[assets/skills/design/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/design/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`drydock`（[assets/skills/drydock/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/drydock/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`execute`（[assets/skills/execute/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/execute/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`external-context`（[assets/skills/external-context/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/external-context/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`graph`（[assets/skills/graph/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/graph/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`harbor`（[assets/skills/harbor/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/harbor/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`hud`（[assets/skills/hud/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/hud/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`launch`（[assets/skills/launch/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/launch/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`loft`（[assets/skills/loft/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/loft/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- skills：`minimal-code-discipline`（[assets/skills/minimal-code-discipline/SKILL.md:1](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/assets/skills/minimal-code-discipline/SKILL.md#L1)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **Skill**：编排和角色资产注册。
+- **后台**：能力探测、团队心跳与内置 MCP server 接入。
 
 ## 工程亮点
 
-固定组件内共纳入 263 个 JS/TS/Markdown 文件。宿主或运行依赖共声明 11 项，升级时需要核对兼容范围。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[lib/client.js](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/client.js)。
+能力探测、降级公告、终态限制和心跳只报告不自动杀有可借鉴性；集成面大意味着持续适配负担。
 
+## 分发与兼容
 
-图 DAG、团队 HUD 与状态服务为复杂编排提供了显式控制面。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+版本 0.4.9，要求较新的 DSH 服务组合，可选 AST/LSP 能力缺失时降级；不是零依赖协议包。
+
+## 历史对照
+
+前次代码指纹为 f38d8a6cffca4d2beb97e3cdd53208794163b92f；本轮固定为 f38d8a6cffca4d2beb97e3cdd53208794163b92f。原生单 agent 与有限手工委派是对照；只有复杂可拆分任务才值得增加协调层。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：作者报告的测试数未在本轮复跑；状态机与心跳不证明团队产出质量或自动协调收敛。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：固定任务和预算，测试派发失败、心跳过期、取消、冲突合并和重复恢复，核对合格交付率及总费用。
 
 ## Issue 活跃度
 
 Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

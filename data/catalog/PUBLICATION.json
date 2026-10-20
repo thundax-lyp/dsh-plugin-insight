@@ -1,29 +1,23 @@
 {
   "schema_version": 1,
-  "manifest": "data/manifests/2026-10-19-06.json",
-  "scope": "40 个所选固定源码组件：完成 30、受阻 0、待处理 10；完整候选 6966，未选 6926",
+  "scope": "本轮所选 40，完成 40，受阻 0；当前发布 41",
   "catalog": "data/catalog/PLUGINS.json",
   "catalog_page": "data/views/categories/INDEX.md",
   "recommendations": [
     {
-      "plugin_id": "github:1334504487:root",
-      "kind": "trial",
-      "summary": "长任务可用中断恢复对照手工 RUNBOOK，重点看恢复正确率、重复工作与维护负担。"
-    },
-    {
       "plugin_id": "github:1423215448:root",
       "kind": "trial",
-      "summary": "目录驱动流程可用合成文件风暴试验，先验证漏报、重复投递与自写过滤。"
+      "summary": "适合外部文件交接频繁的任务，先用 queue 模式和小目录验证漏报、回声与扫描成本；未做宿主验收。"
     },
     {
       "plugin_id": "github:1423215529:root",
       "kind": "trial",
-      "summary": "PATH 排障场景可先在测试环境核对遮蔽与版本探针，再用于真实工作区。"
+      "summary": "适合经常排查多版本命令冲突的开发者，先关闭探测并对照实际 shell；未覆盖全部别名与函数语义。"
     },
     {
-      "plugin_id": "github:1335558973:root",
+      "plugin_id": "github:1334850903:root",
       "kind": "trial",
-      "summary": "语音输入先关闭自动发送，用噪声与专有名词样本比较校对时间和误提交风险。"
+      "summary": "长提示词编辑者可条件试用，先验证输入法、候选菜单和发送快捷键，确认禁用可恢复；未做真实宿主验收。"
     }
   ],
   "metadata": {
@@ -56,351 +50,420 @@
     "github:1335559646:root": "data/plugins/1264459640--dsh-trellis/META.json",
     "github:1409724830:src": "data/plugins/12we21--cute-fat-fish-pet--src/META.json",
     "github:1334850903:root": "data/plugins/13071301808--dsh-composer-expand/META.json",
-    "github:1334269686:root": "data/plugins/131cda1--dsh-scrape-webpage/META.json"
+    "github:1334269686:root": "data/plugins/131cda1--dsh-scrape-webpage/META.json",
+    "github:1339316901:root": "data/plugins/00080000--dsh-project-memory/META.json",
+    "github:1418493685:root": "data/plugins/01ngvi-qingyi--no-ai-style/META.json",
+    "github:1333328839:root": "data/plugins/01virex--dsh-status-rotator/META.json",
+    "github:1416699252:root": "data/plugins/01men--ybkkasi/META.json",
+    "github:1334899834:root": "data/plugins/02muller25--dsh-api-balance/META.json",
+    "github:1333368566:root": "data/plugins/030611--dsh-telemetry-redactor/META.json",
+    "github:1333370288:root": "data/plugins/030611--dsh-verification-receipt/META.json",
+    "github:1333357514:root": "data/plugins/030611--qiushi-dsh-evidence-audit/META.json",
+    "github:1342915339:root": "data/plugins/0qwq0--dsh-discord-richpresence/META.json",
+    "github:1343420855:root": "data/plugins/0qwq0--dsh-ui-auth/META.json",
+    "github:1339803365:root": "data/plugins/0imzero--dsh-workspace-menu/META.json"
   },
   "summaries": {
     "github:1335557891:root": {
-      "text": "新粗野主义双方案界面皮肤，支持浅色与深色主题。",
-      "source_url": "https://github.com/0nt-one/dsh-neo-skin/blob/fe5ef0e671fab5ab8c8700013f3966eb9642455f/README.md",
-      "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
+      "text": "通过主题覆盖层为 DSH Web 提供新粗野主义配色和可切换外观方案。",
+      "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
+      "source_url": "https://github.com/0nt-one/dsh-neo-skin/blob/fe5ef0e671fab5ab8c8700013f3966eb9642455f/README.md"
     },
     "github:1335558973:root": {
-      "text": "在输入框加入浏览器语音转写、语言切换与可选自动发送。",
-      "source_url": "https://github.com/0nt-one/dsh-voice-input/blob/c2fceee6a865a8466f3909d3896172f0f2fad2fa/README.md",
-      "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+      "text": "在输入框旁增加麦克风入口，使用浏览器语音识别把文字写入草稿。",
+      "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+      "source_url": "https://github.com/0nt-one/dsh-voice-input/blob/c2fceee6a865a8466f3909d3896172f0f2fad2fa/README.md"
     },
     "github:1363429979:plugin-daily-log": {
-      "text": "聚合 Git 与本地 Agent 对话，按模板生成日、周、月工作报告。",
-      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/README.md",
-      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+      "text": "汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/README.md"
     },
     "github:1363429979:plugin-memory": {
-      "text": "保存全局与项目偏好并跨会话注入，提供可视化管理。",
-      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/README.md",
-      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+      "text": "为 DSH 保存偏好、项目决策与关系化记忆，支持检索和跨会话使用。",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/README.md"
     },
     "github:1363429979:plugin-notes": {
-      "text": "在 DSH 中管理 Markdown 便签、任务泳道与定时执行。",
-      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md",
-      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+      "text": "提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md"
     },
     "github:1363429979:plugin-usage-billing": {
-      "text": "从会话日志聚合 token 用量，并按事件时价格显示预算与费用。",
-      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/README.md",
-      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
+      "text": "从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/README.md"
     },
     "github:1342742812:root": {
-      "text": "聚合多链、交易所与代币化股票的自托管资产看板。",
-      "source_url": "https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/README.md",
-      "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+      "text": "以 DSH 插件启动 Python 资产看板，汇集链上钱包和交易所账户数据。",
+      "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+      "source_url": "https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/README.md"
     },
     "github:1333136466:root": {
-      "text": "为 DSH Web 提供键盘优先的命令面板。",
-      "source_url": "https://github.com/0xsline/dsh-spotlight/blob/b3565e8629d9a393d764681e96f4c41100cc12fa/README.md",
-      "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+      "text": "以键盘命令面板统一查找原生命令、近期会话和插件入口。",
+      "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+      "source_url": "https://github.com/0xsline/dsh-spotlight/blob/b3565e8629d9a393d764681e96f4c41100cc12fa/README.md"
     },
     "github:1354283280:root": {
-      "text": "在设置页展示当前 DSH 与插件版本及项目入口。",
-      "source_url": "https://github.com/1010n111/dsh-about/blob/febf7b0da6a2255ddfd84028c624ad9e4953dd83/README.md",
-      "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+      "text": "在设置中显示当前 DSH 版本，并代理读取官方 GitHub 发布说明。",
+      "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+      "source_url": "https://github.com/1010n111/dsh-about/blob/febf7b0da6a2255ddfd84028c624ad9e4953dd83/README.md"
     },
     "github:1359423472:root": {
-      "text": "把源码阅读笔记按仓库、文件和符号归档，并可连接 Obsidian。",
-      "source_url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/README.md",
-      "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+      "text": "把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。",
+      "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+      "source_url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/README.md"
     },
     "github:1418691015:root": {
-      "text": "管理全局/会话提示词，并把经确认的错误经验回注后续对话。",
-      "source_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f/README.md",
-      "revision": "c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f"
+      "text": "在会话页管理全局提示、会话补充与待确认的错误经验。",
+      "revision": "c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f",
+      "source_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f/README.md"
     },
     "github:1366583376:root": {
-      "text": "在设置页显示临时与固定 Web 访问地址，支持局域网访问。",
-      "source_url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md",
-      "revision": "193343093186016080a81c5512c6936809daff25"
+      "text": "显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。",
+      "revision": "193343093186016080a81c5512c6936809daff25",
+      "source_url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md"
     },
     "github:1334504487:root": {
-      "text": "为长任务提供持久执行合同、工作图与连续性恢复。",
-      "source_url": "https://github.com/1052326311/dsh-plan-lattice/blob/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3/README.md",
-      "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+      "text": "从原生会话事实恢复长任务连续性，并提供显式启用的递归工作图控制。",
+      "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+      "source_url": "https://github.com/1052326311/dsh-plan-lattice/blob/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3/README.md"
     },
     "github:1367305514:root": {
-      "text": "为第三方模型补齐推理档位与模型能力元数据。",
-      "source_url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/README.md",
-      "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+      "text": "按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。",
+      "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+      "source_url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/README.md"
     },
     "github:1336994666:root": {
-      "text": "在侧边栏按会话组织四列任务看板，并支持新建、备注与导入导出。",
-      "source_url": "https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md",
-      "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+      "text": "把真实会话归入任务状态列，并保存备注和可供智能体读取的看板快照。",
+      "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+      "source_url": "https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md"
     },
     "github:1423215448:root": {
-      "text": "监视目录并在安静窗口后投递去重变更，过滤本会话写入。",
-      "source_url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md",
-      "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+      "text": "监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。",
+      "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+      "source_url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md"
     },
     "github:1423215373:root": {
-      "text": "识别 Agent 遗留进程与端口，预览后回收限定范围的进程树。",
-      "source_url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/README.md",
-      "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+      "text": "盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。",
+      "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+      "source_url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/README.md"
     },
     "github:1423215529:root": {
-      "text": "解释命令实际解析路径、遮蔽关系、重复项与版本差异。",
-      "source_url": "https://github.com/11111353535/dsh-which/blob/7894da833582b46526b251348cd8993b70a5ce85/README.md",
-      "revision": "7894da833582b46526b251348cd8993b70a5ce85"
+      "text": "解释命令的 PATH 解析结果、被遮蔽副本及环境异常，可选探测版本。",
+      "revision": "7894da833582b46526b251348cd8993b70a5ce85",
+      "source_url": "https://github.com/11111353535/dsh-which/blob/7894da833582b46526b251348cd8993b70a5ce85/README.md"
     },
     "github:1335060007:root": {
-      "text": "在 Web 侧栏提供单击重启 DSH Web 进程的入口。",
-      "source_url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.md",
-      "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+      "text": "在 Web 侧边栏提供重启按钮，通过独立 PowerShell 进程触发宿主重启脚本。",
+      "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+      "source_url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.md"
     },
     "github:1335704653:root": {
-      "text": "按计划完成、任务结束、等待输入与错误播放分级提示音。",
-      "source_url": "https://github.com/117BS/dsh-perlica-ding/blob/f9db75c3cff13919659e81311a2b3d62f9af8aab/README.md",
-      "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+      "text": "根据计划、执行、等待回应和错误状态播放分级提示音，普通问答保持安静。",
+      "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+      "source_url": "https://github.com/117BS/dsh-perlica-ding/blob/f9db75c3cff13919659e81311a2b3d62f9af8aab/README.md"
     },
     "github:1358816037:root": {
-      "text": "按 models.dev 补齐自定义模型的上下文、输出、推理和图片能力。",
-      "source_url": "https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/README.md",
-      "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
+      "text": "从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。",
+      "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+      "source_url": "https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/README.md"
     },
     "github:1397817235:root": {
-      "text": "统一盘点多种编码 IDE 的会话、用量、恢复命令与共享规则。",
-      "source_url": "https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/README.md",
-      "revision": "814621be897a27752550b0be6f7be2bc44ccb897"
+      "text": "汇总多种编码工具的本地会话、用量与规则，并提供项目规则统一分发入口。",
+      "revision": "814621be897a27752550b0be6f7be2bc44ccb897",
+      "source_url": "https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/README.md"
     },
     "github:1400927706:root": {
-      "text": "实时跟踪会话 token、轮次与估算费用，并向模型注入预算信号。",
-      "source_url": "https://github.com/121212165/dsh-plugin-quota/blob/a705c9d0cb5f025ce6eebd3e8c17a37d161a8628/README.md",
-      "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+      "text": "累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。",
+      "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+      "source_url": "https://github.com/121212165/dsh-plugin-quota/blob/a705c9d0cb5f025ce6eebd3e8c17a37d161a8628/README.md"
     },
     "github:1399011094:root": {
-      "text": "把粗略需求编译为版本化任务书，并用回读握手交接给其他 AI。",
-      "source_url": "https://github.com/121212165/dsh-plugin-task-forge/blob/af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac/README.md",
-      "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+      "text": "把需求整理成版本化任务书，通过交接包和回读握手管理跨窗口协作。",
+      "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+      "source_url": "https://github.com/121212165/dsh-plugin-task-forge/blob/af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac/README.md"
     },
     "github:1379204512:root": {
-      "text": "提供多 Agent 编排模式、角色技能、MCP 工具与图运行时。",
-      "source_url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/README.md",
-      "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+      "text": "为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。",
+      "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+      "source_url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/README.md"
     },
     "github:1355639507:root": {
-      "text": "从输入区启动可继续的独立旁会话，让主会话保持运行。",
-      "source_url": "https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/README.md",
-      "revision": "39443eb1ea15fb080121a3a6474426980f346a6c"
+      "text": "从命令菜单创建可继续的旁会话，并跳转到原生子会话聊天视图。",
+      "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
+      "source_url": "https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/README.md"
     },
     "github:1335559646:root": {
-      "text": "以阶段速记、技能和任务状态实现 Trellis 风格开发工作流。",
-      "source_url": "https://github.com/1264459640/dsh-trellis/blob/7d2e5b69d2e744de511ac01632cf0865dfa79a85/README.md",
-      "revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85"
+      "text": "以任务步骤和阶段约束开发流程，提供验收门禁与可选规划期写工具过滤。",
+      "revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85",
+      "source_url": "https://github.com/1264459640/dsh-trellis/blob/7d2e5b69d2e744de511ac01632cf0865dfa79a85/README.md"
     },
     "github:1409724830:src": {
-      "text": "在 DSH Web 中提供带动画、陪聊与可选看屏的桌面宠物。",
-      "source_url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.md",
-      "revision": "e53f63e67227671aca092e3334c8611e29b880b6"
+      "text": "以透明动画桌宠提供陪伴聊天，可选本地模型、在线模型与屏幕观察。",
+      "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+      "source_url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.md"
     },
     "github:1334850903:root": {
-      "text": "给输入框增加展开按钮，切换到 70vh 的长文本编辑视图。",
-      "source_url": "https://github.com/13071301808/dsh-composer-expand/blob/e816461115436f1cb084f868398e610396d00679/README.md",
-      "revision": "e816461115436f1cb084f868398e610396d00679"
+      "text": "为输入框增加展开按钮，切换到较高书写区域并调整展开时回车行为。",
+      "revision": "e816461115436f1cb084f868398e610396d00679",
+      "source_url": "https://github.com/13071301808/dsh-composer-expand/blob/e816461115436f1cb084f868398e610396d00679/README.md"
     },
     "github:1334269686:root": {
       "text": "抓取网页正文、结构、链接与统计，并可下载图片交给识图服务。",
       "source_url": "https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/README.md",
       "revision": "7485af10c063579323058583c7f13e69c4c8bd21"
+    },
+    "github:1339316901:root": {
+      "text": "为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。",
+      "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+      "source_url": "https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/README.md"
+    },
+    "github:1418493685:root": {
+      "text": "以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。",
+      "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+      "source_url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/README.md"
+    },
+    "github:1333328839:root": {
+      "text": "为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。",
+      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+      "source_url": "https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md"
+    },
+    "github:1416699252:root": {
+      "text": "将组织、权限、MCP、模型与用量管理整合为可独立运行或接入 DSH 的治理平台。",
+      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+      "source_url": "https://github.com/01men/ybkkasi/blob/03f74c847c8af9189ce37a73321a730ceb353f2a/README.md"
+    },
+    "github:1334899834:root": {
+      "text": "在 DSH Web 输入区显示 DeepSeek 账户余额，支持手动和定时刷新。",
+      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+      "source_url": "https://github.com/02Muller25/dsh-api-balance/blob/c27c8b61acf97714ab08d99f97b7be3a9007e52e/README.md"
+    },
+    "github:1333368566:root": {
+      "text": "在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。",
+      "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+      "source_url": "https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/README.md"
+    },
+    "github:1333370288:root": {
+      "text": "在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。",
+      "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+      "source_url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md"
+    },
+    "github:1333357514:root": {
+      "text": "监听工具结果和会话事件，生成不保存观察明文的哈希链 JSONL 证据回执。",
+      "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+      "source_url": "https://github.com/030611/qiushi-dsh-evidence-audit/blob/94fae130b2845309e1dcabac14696fddb18f8f3a/README.md"
+    },
+    "github:1342915339:root": {
+      "text": "把 DSH 的粗粒度活动或可选丰富状态同步到本地 Discord Rich Presence。",
+      "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+      "source_url": "https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/README.md"
+    },
+    "github:1343420855:root": {
+      "text": "为 DSH Web 提供登录、用户管理和认证网关，并支持 TOTP、Passkey 与会话隔离。",
+      "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+      "source_url": "https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/README.md"
+    },
+    "github:1339803365:root": {
+      "text": "在 DSH 工作区与会话行增加右键操作、置顶、归档及文件管理器入口。",
+      "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+      "source_url": "https://github.com/0imzero/dsh-workspace-menu/blob/afd55510f82821cde60a8364e42f752e244b5b31/README.md"
     }
   },
   "capabilities": {
     "github:1335557891:root": {
       "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
       "items": {
-        "界面": "settings.general.item"
+        "界面": "主题覆盖和外观开关设置。"
       }
     },
     "github:1335558973:root": {
       "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
       "items": {
-        "界面": "conversation.input.right"
+        "界面": "输入框麦克风、语言切换与转写预览。"
       }
     },
     "github:1363429979:plugin-daily-log": {
       "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
       "items": {
-        "事件监听": "tools/pre-execute、loader/volatile-update",
-        "界面": "settings.section"
+        "模型工具": "daily_log 派发器按 agent 启用报告工具组。",
+        "用户命令": "/report 接收报告需求并转交模型。"
       }
     },
     "github:1363429979:plugin-memory": {
       "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
       "items": {
-        "事件监听": "session/event",
-        "界面": "settings.section"
+        "模型工具": "记忆查询和维护工具由组件接线提供。"
       }
     },
     "github:1363429979:plugin-notes": {
       "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
       "items": {
-        "界面": "main、sidebar.panellist、conversation.input.left、conversation.chat.assistant-actions、shell.overlay、settings.section、sidebar.right.pane.tab"
+        "界面": "便签板和任务泳道。",
+        "后台": "任务便签日程调度。"
       }
     },
     "github:1363429979:plugin-usage-billing": {
       "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
       "items": {
-        "事件监听": "loader/volatile-update",
-        "界面": "sidebar.footer.action、conversation.composer.dock、settings.section"
+        "界面": "预算、趋势和明细用量视图。",
+        "后台": "用量账本聚合与价格快照刷新。"
       }
     },
     "github:1342742812:root": {
       "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
       "items": {
-        "事件监听": "dispose"
+        "后台": "生命周期内启动并停止 Python 看板进程。"
       }
     },
     "github:1333136466:root": {
       "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
       "items": {
-        "Skill": "dsh-plugin-compose、dsh-plugin-development、dsh-plugin-implement、dsh-plugin-plan、dsh-plugin-release、dsh-plugin-scaffold、dsh-plugin-test"
+        "界面": "键盘面板与会话导航。",
+        "用户命令": "/spotlight 打开面板。"
       }
     },
     "github:1354283280:root": {
       "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
-      "items": {}
+      "items": {
+        "Host 路由": "只读版本和发布记录端点。"
+      }
     },
     "github:1359423472:root": {
       "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
       "items": {
-        "模型工具": "read_capture、read_note、read_expand、read_query、read_recent、vault_search、vault_read、vault_suggest、read_link、read_history"
+        "模型工具": "源码卡片和 vault 查询维护。",
+        "Skill": "code-reading 阅读框架。",
+        "用户命令": "/codevault 档案入口。"
       }
     },
     "github:1418691015:root": {
       "revision": "c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f",
       "items": {
-        "事件监听": "agent/assistant-stream",
-        "界面": "conversation.session.header.utilities"
+        "界面": "提示与错误经验面板。",
+        "Host 路由": "经验候选和配置读写端点。"
       }
     },
     "github:1366583376:root": {
       "revision": "193343093186016080a81c5512c6936809daff25",
-      "items": {}
+      "items": {
+        "Host 路由": "固定端口 HTTP/WebSocket 转发。",
+        "界面": "查看当前访问地址。"
+      }
     },
     "github:1334504487:root": {
       "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
       "items": {
-        "模型工具": "lattice_route、lattice_intake、lattice_commit_intake、lattice_open、lattice_status、lattice_review_input、lattice_commit_input_review、lattice_refresh_context、lattice_adopt_context、lattice_reframe",
-        "事件监听": "subagent/start、subagent/end、agent/pre-step、agent/request-error、tools/execute、tools/result、tools/change、session/event、agent/created、agent/session-start"
+        "后台": "原生会话连续性恢复。",
+        "模型工具": "显式完整模式的 Lattice 控制工具。"
       }
     },
     "github:1367305514:root": {
       "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
       "items": {
-        "事件监听": "settings/document-updated"
+        "后台": "模型档位配置补齐与诊断。",
+        "界面": "模型能力设置页。"
       }
     },
     "github:1336994666:root": {
       "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
       "items": {
-        "事件监听": "dispose"
+        "界面": "会话任务看板。",
+        "Host 路由": "看板快照与归档恢复。"
       }
     },
     "github:1423215448:root": {
       "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
       "items": {
-        "模型工具": "folderwatch_add、folderwatch_list、folderwatch_check、folderwatch_fire、folderwatch_remove",
-        "用户命令": "watch",
-        "事件监听": "tools/result"
+        "模型工具": "创建、检查和移除目录监测。",
+        "后台": "快照扫描与批量消息交付。"
       }
     },
     "github:1423215373:root": {
       "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
       "items": {
-        "模型工具": "reaper_scan、reaper_reap、reaper_free_port",
-        "用户命令": "reap"
+        "模型工具": "端口扫描与可确认的进程清理。",
+        "用户命令": "/reap 查看进程归属。"
       }
     },
     "github:1423215529:root": {
       "revision": "7894da833582b46526b251348cd8993b70a5ce85",
       "items": {
-        "模型工具": "which_resolve、which_path、which_env、which_sweep、which_probe",
-        "用户命令": "which"
+        "模型工具": "命令解析、PATH 分析与可选版本探测。"
       }
     },
     "github:1335060007:root": {
       "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
       "items": {
-        "界面": "sidebar.footer.action"
+        "Host 路由": "重启触发和健康检查。"
       }
     },
     "github:1335704653:root": {
       "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
       "items": {
-        "事件监听": "agent/inbox/claimed、tools/result、tools/execute、approval/request、agent/error、agent/turn-stopping"
+        "后台": "主会话分级声音通知。"
       }
     },
     "github:1358816037:root": {
       "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
       "items": {
-        "界面": "settings.models.footer、settings.models.provider-card"
+        "后台": "模型目录同步与缺失字段补齐。",
+        "Host 路由": "补全、确认及模型保存端点。"
       }
     },
     "github:1397817235:root": {
       "revision": "814621be897a27752550b0be6f7be2bc44ccb897",
       "items": {
-        "用户命令": "ide-hub、hub-init、hub-migrate、hub-export、hub-usage、hub-sessions、hub-week、today"
+        "用户命令": "/ide-hub 盘点与 /hub-init 规则分发等入口。"
       }
     },
     "github:1400927706:root": {
       "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
       "items": {
-        "模型工具": "quota_meter",
-        "用户命令": "qm、qm-top、qm-reset",
-        "事件监听": "session/event"
+        "模型工具": "quota_meter 提供会话仪表。",
+        "用户命令": "/qm 查看用量与预测。"
       }
     },
     "github:1399011094:root": {
       "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
       "items": {
-        "模型工具": "forge_write",
-        "用户命令": "forge、relay、ack、answer、forge-list、forge-done、forge-show、forge-note"
+        "用户命令": "任务编译、relay、ack 与缺口回答。",
+        "模型工具": "任务书写入工具。"
       }
     },
     "github:1379204512:root": {
       "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
       "items": {
-        "模型工具": "omd_delegate、omd_memory_set、omd_memory_get、omd_memory_delete",
-        "用户命令": "omd-doctor、omd-cancel",
-        "事件监听": "agent/pre-step",
-        "界面": "sidebar.right.pane.tab",
-        "Skill": "agent-doc-discipline、ai-slop-cleaner、analyze、ask-navigator、ask、autopilot、autoresearch、best-practice-research、cancel、debug"
+        "Skill": "编排和角色资产注册。",
+        "后台": "能力探测、团队心跳与内置 MCP server 接入。"
       }
     },
     "github:1355639507:root": {
       "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
       "items": {
-        "用户命令": "side-chat",
-        "事件监听": "command/executed"
+        "用户命令": "/side-chat 新建可继续子会话。",
+        "界面": "自动打开原生子会话视图。"
       }
     },
     "github:1335559646:root": {
       "revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85",
       "items": {
-        "模型工具": "trellis_artifact_update、trellis_state、trellis_task_create、trellis_task_skip、trellis_task_update、trellis_task_archive、trellis_ui_update",
-        "事件监听": "system-prompt/assemble、agent/pre-step",
-        "界面": "plugins.row.config、conversation.session.header.utilities、conversation.input.dock",
-        "Skill": "trellis-before-dev、trellis-brainstorm、trellis-break-loop、trellis-channel、trellis-check、trellis-continue、trellis-feat、trellis-finish-work、trellis-issue、trellis-meta"
+        "模型工具": "任务创建、更新、归档与诊断。",
+        "Skill": "向项目补充工作流 Skill。",
+        "后台": "阶段提示和可选写工具过滤。"
       }
     },
     "github:1409724830:src": {
       "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
       "items": {
-        "用户命令": "balance、pet、chat",
-        "事件监听": "session/event、agent/error",
-        "界面": "shell.overlay、settings.section"
+        "界面": "动画桌宠和聊天交互。",
+        "后台": "模型路由与可选桌面辅助进程。"
       }
     },
     "github:1334850903:root": {
       "revision": "e816461115436f1cb084f868398e610396d00679",
       "items": {
-        "界面": "conversation.input.right"
+        "界面": "输入框展开、回车处理与本地偏好。"
       }
     },
     "github:1334269686:root": {
@@ -408,128 +471,968 @@
       "items": {
         "模型工具": "scrape_webpage"
       }
+    },
+    "github:1339316901:root": {
+      "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+      "items": {
+        "模型工具": "入口注册任务管理、文档索引和项目记忆检索工具。",
+        "用户命令": "/tasks 汇集任务与经验的交互入口。"
+      }
+    },
+    "github:1418493685:root": {
+      "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+      "items": {
+        "Skill": "内嵌 no-ai-style 写作审阅与润色 Skill。",
+        "界面": "包清单声明 Web 客户端写作入口。"
+      }
+    },
+    "github:1333328839:root": {
+      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+      "items": {
+        "界面": "状态文案、词库与外观设置扩展。"
+      }
+    },
+    "github:1416699252:root": {
+      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+      "items": {
+        "Host 路由": "REST gate 提供权限受保护的业务路由装配。"
+      }
+    },
+    "github:1334899834:root": {
+      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+      "items": {
+        "Host 路由": "余额查询路由在 Host 侧解析凭据。",
+        "界面": "输入区余额读数与刷新设置。"
+      }
+    },
+    "github:1333368566:root": {
+      "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+      "items": {
+        "事件监听": "session-telemetry/record 瀑布规则对出站副本做脱敏。"
+      }
+    },
+    "github:1333370288:root": {
+      "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+      "items": {
+        "事件监听": "回合结束事件驱动本地执行摘要回执。"
+      }
+    },
+    "github:1333357514:root": {
+      "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+      "items": {
+        "事件监听": "观察 tools/result 与 session/event 并写入证据链。"
+      }
+    },
+    "github:1342915339:root": {
+      "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+      "items": {
+        "后台": "本地 Discord RPC 连接、活动更新与重连。"
+      }
+    },
+    "github:1343420855:root": {
+      "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+      "items": {
+        "Host 路由": "认证网关及 HTTP/WebSocket 访问裁决。",
+        "界面": "登录与用户管理设置页面。"
+      }
+    },
+    "github:1339803365:root": {
+      "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+      "items": {
+        "界面": "工作区与会话右键菜单及通用设置。",
+        "Host 路由": "打开系统文件管理器与受保护目录操作。"
+      }
     }
   },
   "advice": {
     "github:1335557891:root": {
       "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
-      "text": "先在非关键浏览器 Profile 检查常用页面、深浅色和升级后的样式，再决定长期启用。"
+      "text": "先在测试配置中切换深浅主题、关闭插件并刷新，确认能完整恢复原生样式。"
     },
     "github:1335558973:root": {
       "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
-      "text": "先关闭自动发送，用含专有名词和噪声的短样本比较手工输入；误识别不可接受时停用。"
+      "text": "先关闭自动发送，用专有名词和噪声样本比较打字与听写的总校对时间。"
     },
     "github:1363429979:plugin-daily-log": {
       "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-      "text": "先用一周真实记录与人工周报对照，核对遗漏、误归因和编辑时间，再决定是否常用。"
+      "text": "先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。"
     },
     "github:1363429979:plugin-memory": {
       "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-      "text": "用可纠错的项目决策做小样本，验证保存、召回、改正和删除后再扩大范围。"
+      "text": "先记录少量明确偏好，测试修改和删除后是否停止影响回答，再扩展自动积累。"
     },
     "github:1363429979:plugin-notes": {
       "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-      "text": "先只用本地便签与手动执行，确认幂等和工作区选择后再启用定时或同步。"
+      "text": "先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。"
     },
     "github:1363429979:plugin-usage-billing": {
       "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-      "text": "抽取已知模型与价格的一组会话，逐条复算 token 和费用；差异无法解释时只作趋势参考。"
+      "text": "先选择一个模型和一天真实账单，逐项核对 token、缓存计价、币种和未计价行。"
     },
     "github:1342742812:root": {
       "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
-      "text": "只用只读 API 和小额地址，逐来源对账并记录失败降级；不得据看板直接执行交易。"
+      "text": "先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。"
     },
     "github:1333136466:root": {
       "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
-      "text": "用十个高频导航/命令任务测量查找时间和误触，再决定是否替代原入口。"
+      "text": "先用常用的十条命令与十个会话检查搜索命中和导航，再决定是否替代原生入口。"
     },
     "github:1354283280:root": {
       "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
-      "text": "在升级前后核对页面、CLI 与实际加载包版本一致，把它作为诊断入口而非更新保证。"
+      "text": "与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。"
     },
     "github:1359423472:root": {
       "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
-      "text": "选同一仓库的三次阅读任务，比较召回命中、出处可追溯和整理时间，再决定长期迁移。"
+      "text": "先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。"
     },
     "github:1418691015:root": {
       "revision": "c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f",
-      "text": "只记录可复现错误，设置复查与删除步骤，并观察是否减少同类错误而非只增加提示词长度。"
+      "text": "只确认能复现的经验，先限少量条目，并检查删除后是否停止影响回答。"
     },
     "github:1366583376:root": {
       "revision": "193343093186016080a81c5512c6936809daff25",
-      "text": "先在受控局域网核对绑定地址、认证和重启后稳定性，不应把可访问等同于安全远程接入。"
+      "text": "先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。"
     },
     "github:1334504487:root": {
       "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
-      "text": "用可中断的多步骤仓库任务，与手工 RUNBOOK 对照恢复正确率、重复工作和维护负担。"
+      "text": "先对照原生行为测试压缩和重启恢复，再单独评估显式完整控制，避免将两模式效果混为一谈。"
     },
     "github:1367305514:root": {
       "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
-      "text": "用实际供应商模型逐一核对上下文、输出与图片能力，并保留未知项而非自动猜测。"
+      "text": "先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。"
     },
     "github:1336994666:root": {
       "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
-      "text": "用一个小项目验证拖拽、新建、恢复和导入后的会话对应关系，再评估是否减少管理时间。"
+      "text": "用可丢弃 profile 测试归档与恢复，先验证备份导入再放入重要任务。"
     },
     "github:1423215448:root": {
       "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
-      "text": "用包含重命名、删除、批量写入和本会话写入的目录测试漏报、重复与 CPU 占用。"
+      "text": "先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。"
     },
     "github:1423215373:root": {
       "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
-      "text": "在容器或测试账号中构造工作区、系统和无归属进程，确认预览闭包后再允许终止。"
+      "text": "先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。"
     },
     "github:1423215529:root": {
       "revision": "7894da833582b46526b251348cd8993b70a5ce85",
-      "text": "先在含重复、失效和包装脚本的测试 PATH 中核对结果，再用于真实环境排障。"
+      "text": "先只查询并对照当前 shell 的解析结果，必要时对可信二进制启用版本探测。"
     },
     "github:1335060007:root": {
       "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
-      "text": "只在可恢复环境试用，先验证活动任务、未保存输入和重启后的连接状态。"
+      "text": "当前更适合参考实现，先在可丢弃 profile 验证脚本路径、失败反馈和会话恢复。"
     },
     "github:1335704653:root": {
       "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
-      "text": "在耳机和后台窗口中核对四类事件、音量与静音规则，普通聊天误响时停用。"
+      "text": "先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。"
     },
     "github:1358816037:root": {
       "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
-      "text": "用一组已知模型检查匹配、未匹配和人工覆盖优先级，错误匹配出现时保持手工配置。"
+      "text": "先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。"
     },
     "github:1397817235:root": {
       "revision": "814621be897a27752550b0be6f7be2bc44ccb897",
-      "text": "先只读盘点两种实际 IDE，核对会话与用量；确认指针文件幂等后再启用共享规则。"
+      "text": "先只盘点两个实际使用的 IDE，再对一个测试项目 dry-run 规则分发并检查差异。"
     },
     "github:1400927706:root": {
       "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
-      "text": "用已知 token 记录核对仪表和账单，比较注入开销；偏差超出容忍度时只保留只读面板。"
+      "text": "先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。"
     },
     "github:1399011094:root": {
       "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
-      "text": "用一次跨窗口真实交接，对比普通复制粘贴的遗漏、返工和维护时间。"
+      "text": "先用一个有明确验收点的小任务试交接，人工比对遗漏和改版后的接收方状态。"
     },
     "github:1379204512:root": {
       "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
-      "text": "只选一个可并行且结果可验收的任务，与单 Agent 基线比较总 token、人工介入和合格率。"
+      "text": "先验装探测与取消，再对单仓库小任务比较原生单 agent 和一条显式 team 流程。"
     },
     "github:1355639507:root": {
       "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
-      "text": "用一个主任务加一个短研究支线，检查创建、返回、续聊和结论回收是否减少等待。"
+      "text": "先测试主会话忙碌、双击和连续创建，确认旁会话可恢复且不会跳错子会话。"
     },
     "github:1335559646:root": {
       "revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85",
-      "text": "在中型代码任务上比较有无该流程的恢复、Git 清洁度和人工维护时间。"
+      "text": "先在测试项目检查任务创建、规划保护、批准和归档，再决定哪些项目启用。"
     },
     "github:1409724830:src": {
       "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
-      "text": "先关闭看屏和在线聊天，测量空闲资源、关闭/卸载与重启恢复，再逐项开启能力。"
+      "text": "先关闭屏幕观察和在线回退，确认数据路径、模型路由与卸载，再按个人偏好试用。"
     },
     "github:1334850903:root": {
       "revision": "e816461115436f1cb084f868398e610396d00679",
-      "text": "在桌面与窄窗口检查长 prompt、附件、快捷键和收起后的草稿保持。"
+      "text": "先以长草稿测试中文输入法、斜杠菜单和 Ctrl/Cmd+Enter，确认关闭后恢复原生行为。"
     },
     "github:1334269686:root": {
       "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
       "text": "先用本地/公开测试页覆盖重定向、内网地址、超时与动态内容；安全边界不清时限制域名。"
+    },
+    "github:1339316901:root": {
+      "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+      "text": "先在一个可丢弃项目中测试旧结论纠错和跨项目隔离，再决定是否长期启用。"
+    },
+    "github:1418493685:root": {
+      "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+      "text": "先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。"
+    },
+    "github:1333328839:root": {
+      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+      "text": "先只开静态文案，确认设置能保存且与原生状态共存，再逐步启用弹幕和动画。"
+    },
+    "github:1416699252:root": {
+      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+      "text": "仅在确有多用户资源治理需求时试部署，先验证最小权限、备份恢复和一条完整业务链。"
+    },
+    "github:1334899834:root": {
+      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+      "text": "先用手动刷新核对官方控制台；检查凭据暴露和日志后，再按需要开启较低频率轮询。"
+    },
+    "github:1333368566:root": {
+      "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+      "text": "先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。"
+    },
+    "github:1333370288:root": {
+      "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+      "text": "先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。"
+    },
+    "github:1333357514:root": {
+      "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+      "text": "用非敏感任务先验证链的追加、手工篡改检测和重启检查，再决定审计留存周期。"
+    },
+    "github:1342915339:root": {
+      "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+      "text": "先只开模糊状态，检查实际 Discord 展示内容和断线重连，再考虑丰富模式。"
+    },
+    "github:1343420855:root": {
+      "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+      "text": "先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。"
+    },
+    "github:1339803365:root": {
+      "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+      "text": "先只开启置顶、复制路径和归档，对测试目录验证删除确认后再决定是否启用删除功能。"
     }
-  }
+  },
+  "records": [
+    {
+      "id": "github:1335557891:root",
+      "repository": "0nt-one/dsh-neo-skin",
+      "path": "",
+      "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
+      "fingerprints": {
+        "directory": "c9194eef232706fb74654c8431e53f761565fcd987d53dcde01877f582165ae5",
+        "code": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
+        "maintenance": "0d9bdab0b1206da32a15144fa645ee73a9e9d897b2eb4d98ea9f7d7bf1a4975a"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "5f1bdd62d8c1f3c7961192eb779515922398f229f340028d1e39492f3bf47d74"
+    },
+    {
+      "id": "github:1335558973:root",
+      "repository": "0nt-one/dsh-voice-input",
+      "path": "",
+      "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+      "fingerprints": {
+        "directory": "cbea8645524ee04ca147a39571b31468bd2ce25d6cd731259318108a6350eec9",
+        "code": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+        "maintenance": "96ede2bc6436cf886f5dfa6efb959fc70233578e25277956e73bfa8aa5698804"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "34682654378bdeab8eff2a72dea4ca38f11acf019f68bd820ebd5019a78bf41e"
+    },
+    {
+      "id": "github:1363429979:plugin-daily-log",
+      "repository": "0x7A7A6572/dsh-forge-studio",
+      "path": "packages/plugin-daily-log",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "fingerprints": {
+        "directory": "baa668030b6855a92a8a2fdd03e2d8d62771c5607e81c401b2d7dc778ee10af6",
+        "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+        "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "4653b34a22da36590ebdc0f8ad1c66b6f32a070762747782fbfcd0befff4c66f"
+    },
+    {
+      "id": "github:1363429979:plugin-memory",
+      "repository": "0x7A7A6572/dsh-forge-studio",
+      "path": "packages/plugin-memory",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "fingerprints": {
+        "directory": "bff4e2ff0caadc9b8aff3334fd6344005b637a9cfd038a727195a168736c5dd4",
+        "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+        "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "94d40189d6dcb7d9aa465518dcc040f418b77de0b646ce78c6a0e2199d6a36b3"
+    },
+    {
+      "id": "github:1363429979:plugin-notes",
+      "repository": "0x7A7A6572/dsh-forge-studio",
+      "path": "packages/plugin-notes",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "fingerprints": {
+        "directory": "c3af87b164fcda3642b0e6fbcfe22150dc043aec1ae559685f115f671a45611b",
+        "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+        "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "8ce9eeddfab0139c9e5fe98e8368baec529efdb274d7d38b75181f2bd6cb2db0"
+    },
+    {
+      "id": "github:1363429979:plugin-usage-billing",
+      "repository": "0x7A7A6572/dsh-forge-studio",
+      "path": "packages/plugin-usage-billing",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "fingerprints": {
+        "directory": "0382ee14da358d813b8b3919d5bb9e5f2b3a5fdbdff1b99e3f5b69f0d3960327",
+        "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+        "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "774f5acad165bddb3f59ba01452606d6f7750c7662fab74d0f4a3ea6d18f0752"
+    },
+    {
+      "id": "github:1342742812:root",
+      "repository": "0xRabit/dsh-crypto-portfolio",
+      "path": "",
+      "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+      "fingerprints": {
+        "directory": "3bc75acf175bf1b7e3628c03426b9a1491724922a570f15438bf78930ceb3235",
+        "code": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+        "maintenance": "2973590e8ea11e3f21efb838541905f976e73dd47f84efd2301c34cb4642bd89"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "9a47cf26426355dd81e10b4d03e497a88e63cd5183bba40ba945eb5e84e42cdb"
+    },
+    {
+      "id": "github:1333136466:root",
+      "repository": "0xsline/dsh-spotlight",
+      "path": "",
+      "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+      "fingerprints": {
+        "directory": "439343cfe7f96069bb65fe106eec5629ed7c44ee51ec373efc001d59000319b7",
+        "code": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+        "maintenance": "7953d9ed42f7af082be42f439f1ff668e3589333d46d5a5376f1719d393492c5"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "ab8199f827a18734e603f79925adaa55d72c5b9ac34365b9d62ea1d077e4aa3c"
+    },
+    {
+      "id": "github:1354283280:root",
+      "repository": "1010n111/dsh-about",
+      "path": "",
+      "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+      "fingerprints": {
+        "directory": "71ba55d1100f3dddbd4559f715d7d1d10156cc8eee570af43c257aed411d33b7",
+        "code": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+        "maintenance": "7a867daf7130a77783c038a1197298b90bd6a46230f2e9d865f477f1cb019db1"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "c83972f5b088f779d39be23a51805d6f5c41e501651280a3bd0fc2a3d0828892"
+    },
+    {
+      "id": "github:1359423472:root",
+      "repository": "1014029855/dsh-codevault",
+      "path": "",
+      "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+      "fingerprints": {
+        "directory": "8d03c40f9da0dfe16d6c3dc8061ad75d09584d277c302c6614b183aaea3cda5a",
+        "code": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+        "maintenance": "04c778e36182b2e3d47d0490b4c469837092ed590f5aed4c56cc6b7a9f472b0a"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "5e03398046d08fdb95b6d50c29920cf931f61e85da803d7670bccdb5b496e883"
+    },
+    {
+      "id": "github:1418691015:root",
+      "repository": "1015677515/dsh-prompt-ErrorNotes-desk",
+      "path": "",
+      "revision": "c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f",
+      "fingerprints": {
+        "directory": "8aa2354cf0818d08dac347c0cae59740434388b1d7eb250811169eb9953afdfe",
+        "code": "c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f",
+        "maintenance": "e548248d69e96c87a016a44bb3e84de672fa3059cc436f8251b12ff5eafbc72d"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "f3d9cebce53c237965c2346f3f5d46aaa7d386279397e32bba5385c8a3cec993"
+    },
+    {
+      "id": "github:1366583376:root",
+      "repository": "1032740078/dsh-web-url-view",
+      "path": "",
+      "revision": "193343093186016080a81c5512c6936809daff25",
+      "fingerprints": {
+        "directory": "76d6b17c0f72239c5497f99de647d636db6262255b65a70109650eb554131cf0",
+        "code": "193343093186016080a81c5512c6936809daff25",
+        "maintenance": "25823bb92ea9eec9d63256c82351e66f5364afc2dceea2874e2d7a71dfdc2dc3"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "29b967679a89315b01a464ef06a7b2707e15f9af942f1f9f5411710a18d3f35e"
+    },
+    {
+      "id": "github:1334504487:root",
+      "repository": "1052326311/dsh-plan-lattice",
+      "path": "",
+      "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+      "fingerprints": {
+        "directory": "22361395f77bc831523107a180c153081f5fdc0bfca9c0ffc5d5c92bfdc05e8f",
+        "code": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+        "maintenance": "4e8411228b94b1319fce61b2d923d9d799ba9b637240578aaa410f2b72048866"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "39c4d5ed156d37af177c45e80a3838d750a107464d81ec83fd0efdab27c27b83"
+    },
+    {
+      "id": "github:1367305514:root",
+      "repository": "1069137617/dsh-reasoning-tiers",
+      "path": "",
+      "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+      "fingerprints": {
+        "directory": "5bc7230f875765ea3eb08f6b4e85cc237d9401bc9670e9e7e5b955bc62c370a0",
+        "code": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+        "maintenance": "578ceb2b77e3cc5c9671ad1be42bbaaf0f67d43bee453d9a668a9f446b1cc54e"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "167ed654de8c02e68245a65678f7c75218d1536feac2140894b4c58f96607d19"
+    },
+    {
+      "id": "github:1336994666:root",
+      "repository": "1070296335-create/dph-taskboard",
+      "path": "",
+      "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+      "fingerprints": {
+        "directory": "a5c9face93f92e36fcf6937b10268c4e9a6a97c13b9fbaa48dea89829348e27d",
+        "code": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+        "maintenance": "6a58431095addb8dd43d3ea639b738cab36b17ed70b923cc23ab755de78e6668"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "f3d772f7693df72140f29bf972e97113d8f9b484feeb80a9bcee6e28b350cf29"
+    },
+    {
+      "id": "github:1423215448:root",
+      "repository": "11111353535/dsh-folderwatch",
+      "path": "",
+      "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+      "fingerprints": {
+        "directory": "5895c44d65283eeeec82f5505277a217a26ed391d9265a1abe6502e267aebbfe",
+        "code": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+        "maintenance": "c4e415eb7273b37c72d43bc8ddedd54bfca399474dd206ce2a15864bfce10a91"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "409f56dd36b69c9c9c759378d8988943a9335eaa002148d72bcc6e42f938c911"
+    },
+    {
+      "id": "github:1423215373:root",
+      "repository": "11111353535/dsh-reaper",
+      "path": "",
+      "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+      "fingerprints": {
+        "directory": "ca766f8acaafdc158b3b986039dc5580e78188d8f622141b6ff9832eca35f268",
+        "code": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+        "maintenance": "d343690021d555311d6b233312b01322250284f834d1c0fb52d5903139231749"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "60a739f9415020990e102c3c179db7c312200148b1fb383d93781440b1d0ab0d"
+    },
+    {
+      "id": "github:1423215529:root",
+      "repository": "11111353535/dsh-which",
+      "path": "",
+      "revision": "7894da833582b46526b251348cd8993b70a5ce85",
+      "fingerprints": {
+        "directory": "a29e45d95c451bbf016295148a78be78be9dcee387e4fe1e6403eeea2ad114ce",
+        "code": "7894da833582b46526b251348cd8993b70a5ce85",
+        "maintenance": "6d173e5198b04e94b82076911a25c232b885619114035778e3b32fc75a2077bc"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "f7cd1890459b75422a70545b443663dfa2d7a9c6ae6a8647a80a2e7cb3c99255"
+    },
+    {
+      "id": "github:1335060007:root",
+      "repository": "1123762794/dsh-web-restart",
+      "path": "",
+      "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+      "fingerprints": {
+        "directory": "91e28cb64a2b8af6f97a3e072d542cf00eae3244a33cfe8c0ab3d331b31aab8d",
+        "code": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+        "maintenance": "08b79bf3eedf91be2fe180ab3540735ef45c329a1cb8208b10f403a2a329ff06"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "ca65181787a37a36edad017b226f145849357f1d3eca828c27b01ba91061e78e"
+    },
+    {
+      "id": "github:1335704653:root",
+      "repository": "117BS/dsh-perlica-ding",
+      "path": "",
+      "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+      "fingerprints": {
+        "directory": "c14dca6f94dd575e6a16ff4821756c76be36d90a4e5f111c0568d2d78ca5b50d",
+        "code": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+        "maintenance": "35185edd72fec89a66b749f18f8c99dbb1cc9d09882e2d8592da285c4ac9dd41"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "a86ecee940c766753634beb9bfb597d9886599cae69b7f925d79b00f0ae51f19"
+    },
+    {
+      "id": "github:1358816037:root",
+      "repository": "11zld22/dsh-model-info-fill",
+      "path": "",
+      "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+      "fingerprints": {
+        "directory": "ace5c9b2ea72f7a354a636b32cf89736ebe106c62150d512a65eb54f11384360",
+        "code": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+        "maintenance": "4d51a786db412058c54922d6af08bc829478c49c70340605ff570a2ee9ef191e"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "d05cbfdb8ecb43c3af0ca4ecad1aef1e1a0451626ddecc3c4f22443790902402"
+    },
+    {
+      "id": "github:1397817235:root",
+      "repository": "121212165/dsh-plugin-ide-hub",
+      "path": "",
+      "revision": "814621be897a27752550b0be6f7be2bc44ccb897",
+      "fingerprints": {
+        "directory": "f69936d61dd178e95dc981cf6f53f34fd2e7ff308885facc927a4bdf5e4bf6d0",
+        "code": "814621be897a27752550b0be6f7be2bc44ccb897",
+        "maintenance": "e8800fe3b987271bd1862bb4b0ee3ff8e5714d4a87638ba5ee5eab87d7a66495"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "dc75ea8255c185f2d1f986e5edc461059aa44fad5d234db5fc8bfe16ba68af64"
+    },
+    {
+      "id": "github:1400927706:root",
+      "repository": "121212165/dsh-plugin-quota",
+      "path": "",
+      "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+      "fingerprints": {
+        "directory": "22a4bbd15747c8fbdf39e38c36f2a8692ada38018acfd897e495b40c0f716f1b",
+        "code": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+        "maintenance": "b2f435d6e2c930bb5d1602e1b320e3e0de07cf706e2df2db08f8b7dcf692d585"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "aec0319423865ef069bb1cb5a21d6c8f748e9e1ef0e2cf3eaf2c9da3693c4adf"
+    },
+    {
+      "id": "github:1399011094:root",
+      "repository": "121212165/dsh-plugin-task-forge",
+      "path": "",
+      "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+      "fingerprints": {
+        "directory": "2b69373ec08f1ff471839d98acc254f1ccff3a3d7d7e93a60570e93e31cd4679",
+        "code": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+        "maintenance": "f6c5933eea1a716b920874948178ab1e4b52c581f6f57ffca95d62131b5b420d"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "650d7a74ac0e789fdcd7d48084da221c95f8e94fa0b3214b50407b72f9fca072"
+    },
+    {
+      "id": "github:1379204512:root",
+      "repository": "1225Sakura/oh-my-deepseekharness",
+      "path": "",
+      "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+      "fingerprints": {
+        "directory": "0966d4532078cb7d7abccf688281fe0693520aa9a6b617cd29b54d717d51dbeb",
+        "code": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+        "maintenance": "ede90675fe3306dfaeb13c9443f6a17d788c8feba30ee702e9172972cda310ac"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "c63ad9e86e724d38f395022b9f25b027e634812dbc03a930ee9b77a0e139a5dc"
+    },
+    {
+      "id": "github:1355639507:root",
+      "repository": "123dbl/dsh-side-session",
+      "path": "",
+      "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
+      "fingerprints": {
+        "directory": "ac1acf504a9ada241602900897427267438e6d9b53708c09b77d5155c46eb202",
+        "code": "39443eb1ea15fb080121a3a6474426980f346a6c",
+        "maintenance": "952ffee39d983eb60f7ddc7217a6af6823a06b34cbbb21ded5828cfea6876acf"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "0953658955d894ecd97c507958e4575ef353cafda66be132e6453198292308d7"
+    },
+    {
+      "id": "github:1335559646:root",
+      "repository": "1264459640/dsh-trellis",
+      "path": "",
+      "revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85",
+      "fingerprints": {
+        "directory": "bc117338bca28f25b93326f99a4a50fb24a79733d1d01d1bf42bedbb3e3f8175",
+        "code": "7d2e5b69d2e744de511ac01632cf0865dfa79a85",
+        "maintenance": "106f4baac73f1faa0538e4e3af37f889b558aa93b0899d9408f976ec332f46bc"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "bf0509b7c98a474cfc0a1fc5bfa0d40598de654010d89dafdbf4840ae5f5d8e3"
+    },
+    {
+      "id": "github:1409724830:src",
+      "repository": "12we21/cute-fat-fish-pet",
+      "path": "src",
+      "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+      "fingerprints": {
+        "directory": "3fd6461052211f4b0fdd053bce371492b99b63044fc41b6c35c54a682a35c5b5",
+        "code": "e53f63e67227671aca092e3334c8611e29b880b6",
+        "maintenance": "0481cbbc951e64d846e6fd3a6ddf9702b4a284bf16ff206c0a0de604cd6718af"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "65f51071b96f49ae0433f9eabb07e034924692cb0bbd80569464cd8bbedb2402"
+    },
+    {
+      "id": "github:1334850903:root",
+      "repository": "13071301808/dsh-composer-expand",
+      "path": "",
+      "revision": "e816461115436f1cb084f868398e610396d00679",
+      "fingerprints": {
+        "directory": "97cf9b5b0b0c89f471690fbf08ed5b33c642c7392d4cd4d3d0bfa4a5b4161c64",
+        "code": "e816461115436f1cb084f868398e610396d00679",
+        "maintenance": "f009ffe1139278eae0c1230c0e61d02bd9d5e55e04d9caea112a36f2f9770c67"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "a71d18d42d16ce5f7aab0b3f5345b8b4ec0056dd70185150fab0cf8e6e4a4150"
+    },
+    {
+      "id": "github:1334269686:root",
+      "repository": "131CDA1/dsh-scrape-webpage",
+      "path": "",
+      "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+      "fingerprints": {
+        "directory": "a0c1094a0e57e2bac36ba144aff47bbd27c70233905a8485eb4a8c1ca29b2bf4",
+        "code": "7485af10c063579323058583c7f13e69c4c8bd21",
+        "maintenance": "9051039631cc0697fb6eaf0fc99c2563bd94f79375506d060446a02212ad98d9"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-19T14:53:22.407Z",
+      "analysis_sha256": "1a50833f53ccf14ee3b1a55d352a8f72cc8c6fa86660be1b3123db4d4810fc01"
+    },
+    {
+      "id": "github:1339316901:root",
+      "repository": "00080000/dsh-project-memory",
+      "path": "",
+      "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+      "fingerprints": {
+        "code": "21fc69e3e98f3864677e091477b7d543a0e54939",
+        "release": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006",
+        "maintenance": "8b8b0006f9bd94955933408455ffe3a9af4e21bcde14e10912b3dc77756d56d9",
+        "compatibility": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2",
+        "directory": "b8f63d3af5029a01cb542ba2ddfa5dca8caf896ce1c2e672ec0cfb9eb2002bf3"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "0f7b8f6ce45f63d03d23fc7dd52458137abff789d0a8bca201926e65f59a0501"
+    },
+    {
+      "id": "github:1418493685:root",
+      "repository": "01NGVI-QINGYI/no-ai-style",
+      "path": "",
+      "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+      "fingerprints": {
+        "directory": "dbd8219bb3eeca19ab2139da9731151fc719a10c0c497c70e7834cc6de5b170b",
+        "code": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+        "maintenance": "99ea5d86578937e4dfaa82eec1b90689d128cc2250682884e443e4714f42dc08"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "333ef371f6ba792b572a751f044864fe1b2439375bb75a738f45da3df40bc436"
+    },
+    {
+      "id": "github:1333328839:root",
+      "repository": "01Virex/dsh-status-rotator",
+      "path": "",
+      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+      "fingerprints": {
+        "directory": "813f8d9859f777bd9f78b4b66ee49a2f4b8a45d867b38acddc9fda6872b2f1a2",
+        "code": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+        "release": "4c656e9b908ee5ac60ad2b0766ef9ec3f1dea81586d1c9d47e6432af9f6dfde2",
+        "maintenance": "d32928f6decdcb30fb2a164494924c56065efeeb803d4f180b1fe781ee2d2cca",
+        "compatibility": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "ae61c9165fd511ef4e12b91fa8b75253895fd33963d851c5b2173b797dc2a5e3"
+    },
+    {
+      "id": "github:1416699252:root",
+      "repository": "01men/ybkkasi",
+      "path": "",
+      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+      "fingerprints": {
+        "directory": "7211bbc316a9b1a44ab2573fc56debe9e43cf120c1f01f0a4448b9ef6473a5b0",
+        "code": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+        "release": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "maintenance": "2721e54df243840ad9b7f14481019289e4758216faae5b94c21762e2d2df21db",
+        "compatibility": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "f5d543a681b1bedd6e9012a5dd9cb06e3b7487acf80cd4ecb223c2c0e872e642"
+    },
+    {
+      "id": "github:1334899834:root",
+      "repository": "02Muller25/dsh-api-balance",
+      "path": "",
+      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+      "fingerprints": {
+        "directory": "d43fe2b92ffb35a931fb7d91e4e1fabecbbe412e5f17a183d9b90d8e4f429a53",
+        "code": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+        "release": "802143a5a3e64c43aa1a4c431907cb2d2d46b15d91eca2a7e17f3a23054db658",
+        "maintenance": "a340c46603493d3b61e8a56966b22b7f56ce6c5a4d8b00d101f0ea6e687b06c2",
+        "compatibility": "9866e4fef2b3cd32ec8772c74ab74ef2b317d4b141704890b19d35a51715c414"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "aef93ba97d41ae949530320edc9817500fbe7fd8f80723f492c54ca3e156cfd0"
+    },
+    {
+      "id": "github:1333368566:root",
+      "repository": "030611/dsh-telemetry-redactor",
+      "path": "",
+      "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+      "fingerprints": {
+        "directory": "b329d4ab0601baaa2a28b29e5b7e43e037d6e334ea31872a05e6a19fd3d92a3d",
+        "code": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+        "release": "fae03e4c9f4ea1c1eaba164c4dccfd1248b3b97b312675faec3f99cedf38abd7",
+        "maintenance": "7015fa5f0c893e440a45edf89d0bef9b040afb1f89703f3aae0d0094071b9c11",
+        "compatibility": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "8a1a83984f5915776179649ab6745488e5b319d5e3fb9403173ca05af1c98974"
+    },
+    {
+      "id": "github:1333370288:root",
+      "repository": "030611/dsh-verification-receipt",
+      "path": "",
+      "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+      "fingerprints": {
+        "directory": "2719f26a259ba5270a25e71182cf79bd62f0b53a7e879451a9877be960ad9221",
+        "code": "87f3fb0198090f0f26a37a52840db150609db748",
+        "release": "ce4b903c9dd9bac74f8003700253286c97b55dd39d4ad278333d2e28e8c1c16a",
+        "maintenance": "92df825f823e5a0c27febd4eb42684c53f1aa3740ae34127f9405f07812dc346",
+        "compatibility": "a68fb3d222a3ee7a255f70203e64a3fde804b1b5ee4f77d7c86317bbe7af4120"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "fa7c249b0342cab00b83ff2362f1a2627eab32dd389007001b71aed29d8ec58c"
+    },
+    {
+      "id": "github:1333357514:root",
+      "repository": "030611/qiushi-dsh-evidence-audit",
+      "path": "",
+      "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+      "fingerprints": {
+        "directory": "2ee2ff038fa2b3a48f1110cda134ca80f4ba1872f66aa7d9f66681fbcce19ad3",
+        "code": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+        "release": "fcf1bb0b482a3442ae15cf7b702564e831e064822082cd654b616b2bc910d7b8",
+        "maintenance": "ac0d6abae7c2b6d63ea8a2d29822fad38e5eac13aa996da1f220a2a47c603c33",
+        "compatibility": "dedd617b67c27b4e8313e98026b10961ae947a3c87323d5709373a4f089b439c"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "15291f80d50a24357094f37bbc1ad313a310bcf5fce697cf909f11c62e9f08de"
+    },
+    {
+      "id": "github:1342915339:root",
+      "repository": "0QwQ0/dsh-discord-richpresence",
+      "path": "",
+      "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+      "fingerprints": {
+        "directory": "46ebdf429f99206ea011db86936d1bc1fb96564cdbf65cdb89c3cd3be98d076f",
+        "code": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+        "release": "dc02cb8f40eb94f07022d2df074324cf5296994ea546e51db75700b4a982e05f",
+        "maintenance": "77dd4fc5a8f641ea0f7828b459eb1e2da90bcacf1a888a27e3b4d824000f2c19",
+        "compatibility": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "0c53e4c1e896d3df79a63357dcb7d972265ca9291e2253044061ab06afb4067e"
+    },
+    {
+      "id": "github:1343420855:root",
+      "repository": "0QwQ0/dsh-ui-auth",
+      "path": "",
+      "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+      "fingerprints": {
+        "directory": "7260dce638b495e79b8bf86856e6055e42c8b3424d62003815aab825e8aedcbd",
+        "code": "6c5e87b44be4e973b092910968001916bb97d22e",
+        "release": "fa64a55690411e8a387e54869dd13b38d4b270cf641db52d58af7ec5f809efbb",
+        "maintenance": "a29570cef2ee4395b9b2eded3ffc91c884cf4371729661c4e69b53ad75982040",
+        "compatibility": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "43a2c5a19b0bbc197c7310cdd0cc76a64468a71fe3358936c1cf01adbe52da79"
+    },
+    {
+      "id": "github:1339803365:root",
+      "repository": "0imzero/dsh-workspace-menu",
+      "path": "",
+      "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+      "fingerprints": {
+        "directory": "611b3762b49c4406e46ff936af4ad0b716dbd079b1376741d5c7d1b346a75d7b",
+        "code": "afd55510f82821cde60a8364e42f752e244b5b31",
+        "release": "59ad9ed9e49d3ce49234920984e1ff0ebabb421f424fcb65fcc4014ee97820ba",
+        "maintenance": "ab85ac1178518079ff6ec30099afb76fed1cc2ea38daa7fb9b12dab105927616",
+        "compatibility": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+      },
+      "source_urls": [
+        "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "https://github.com/0xsline/awesome-deepseek-harness"
+      ],
+      "status": "complete",
+      "checked_at": "2026-10-20T02:51:30Z",
+      "analysis_sha256": "54e04958a6db25d7192c1f10d47dc6a0cdf1b81e3b83e32efb1a88a3b4e9d711"
+    }
+  ],
+  "checked_at": "2026-10-20T02:51:30Z"
 }

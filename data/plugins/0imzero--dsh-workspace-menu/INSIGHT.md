@@ -1,70 +1,80 @@
 # dsh-workspace-menu
 
-> 为 DSH 工作区与会话补充右键、双击菜单，集中提供置顶、重命名、归档、分叉和打开目录等操作。
+> 在 DSH 工作区与会话行增加右键操作、置顶、归档及文件管理器入口。
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/0imzero/dsh-workspace-menu) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/@dsh-external/dsh-workspace-menu) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0imzero/dsh-workspace-menu/commits)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/0imzero/dsh-workspace-menu) · [![最后更新 1个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=1%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0imzero/dsh-workspace-menu/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [afd55510f82821cde60a8364e42f752e244b5b31](https://github.com/0imzero/dsh-workspace-menu/tree/afd55510f82821cde60a8364e42f752e244b5b31)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：经常管理很多会话和项目的用户，希望减少定位和切页。合格交付物是动作作用于正确对象、可区分保留文件与永久删除；基线是宿主原生菜单和系统文件管理器。
-- **亮点**：为 DSH 工作区与会话补充右键、双击菜单，集中提供置顶、重命名、归档、分叉和打开目录等操作。
-- **思考**：常用动作可能减少点击，但需要界面升级适配、localStorage跨浏览器不一致处理和依赖插件维护。删除误操作成本远高于省下点击；迁移需备份置顶／未读偏好和项目数据。无本轮耗时实测。 本轮未测合格任务成本、耗时或可靠性。 本轮未测合格任务成本、耗时或可靠性。
-- **建议**：先试非破坏菜单并保持删除关闭；需要删除时必须在临时目录验证路径授权、归档依赖和失败恢复。
+- **用途**：经常整理多个工作区和会话的用户，希望减少查找管理入口的步骤。
+- **亮点**：客户端用 DOM/React fiber 定位行，Host 执行文件管理器调用；危险删除与归档管理器协作。
+- **思考**：就地管理减少界面跳转，但把磁盘删除与日常菜单放在一起增加误操作后果。
+- **建议**：先只开启置顶、复制路径和归档，对测试目录验证删除确认后再决定是否启用删除功能。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：经常管理很多会话和项目的用户，希望减少定位和切页。合格交付物是动作作用于正确对象、可区分保留文件与永久删除；基线是宿主原生菜单和系统文件管理器。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+经常整理多个工作区和会话的用户，希望减少查找管理入口的步骤。
 
-## 依赖与使用条件
+宿主原有管理页面更稳定但操作分散；本轮仍未证明 DOM 兼容或危险操作全面安全。
 
-- 固定组件包：`@dsh-external/dsh-workspace-menu@1.2.0`。
-- 声明依赖：`@deepseek-ai/dsh-client-runtime`、`@deepseek-ai/dsh-client-ui-settings`、`@deepseek-ai/dsh-client-ui-slots`、`cordis`、`react`。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+需要 Web 客户端插槽、Host 路由及系统文件管理器；记录永久删除另依赖归档管理插件。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+打开菜单执行轻操作；删除前二次确认，失败时区分列表移除、归档与实际磁盘删除。
+
+## 成本与效果
+
+基本操作无需模型，但宿主更新后可能需要排查菜单和选择器；未测管理任务节省时间。
+
+就地管理减少界面跳转，但把磁盘删除与日常菜单放在一起增加误操作后果。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .md | 5 | 340 | — | — | — | 2797 |
-| source | .js | 2 | 1251 | 1215 | 37 | 1 | — |
-| source | .mjs | 1 | 34 | 24 | 4 | 6 | — |
-| source | .ts | 3 | 1472 | 1355 | 43 | 76 | — |
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1f72cf625aff635e43550c407377b03836888018be7c397f5b59d98ac4049254。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：`lib/types/client/index.d.ts`（generated/dependency/vendor/declaration heuristic; review exclusions）；`lib/types/index.d.ts`（generated/dependency/vendor/declaration heuristic; review exclusions）；`src/cordis.d.ts`（generated/dependency/vendor/declaration heuristic; review exclusions）。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 5 | 340 | — | — | 2797 |
+| .js | source | 2 | 1251 | 1215 | 37 | — |
+| .mjs | source | 1 | 34 | 24 | 4 | — |
+| .ts | source | 3 | 1472 | 1355 | 43 | — |
+
+排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **界面**：settings.general.item
-
-- ui：`settings.general.item`（[lib/client.js:975](https://github.com/0imzero/dsh-workspace-menu/blob/afd55510f82821cde60a8364e42f752e244b5b31/lib/client.js#L975)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **界面**：工作区与会话右键菜单及通用设置。
+- **Host 路由**：打开系统文件管理器与受保护目录操作。
 
 ## 工程亮点
 
-固定组件内共纳入 11 个 JS/TS/Markdown 文件。宿主或运行依赖共声明 5 项，升级时需要核对兼容范围。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[lib/client.js](https://github.com/0imzero/dsh-workspace-menu/blob/afd55510f82821cde60a8364e42f752e244b5b31/lib/client.js)。
+Host 路由租约和目录保护检查可借鉴；React fiber 适配不是稳定公共接口的替代保证。
 
+## 分发与兼容
 
-src/client/index.ts 用DOM事件与React fiber恢复行对象，置顶和未读保存在localStorage；src/index.ts提供打开系统文件管理器和删除目录的两个POST接口。永久会话删除调用dsh-archive-manager，工作区目录由本插件rm递归删除。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+private 包版本 1.2.0，以发布压缩包或源码构建方式安装；依赖 archive-manager 的删除能力另核对。
+
+## 历史对照
+
+前次代码指纹为 afd55510f82821cde60a8364e42f752e244b5b31；本轮固定为 afd55510f82821cde60a8364e42f752e244b5b31。宿主原有管理页面更稳定但操作分散；本轮仍未证明 DOM 兼容或危险操作全面安全。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：DOM 定位受宿主内部结构影响；删除涉及磁盘副作用，未做路径边界或跨平台验收。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：在临时工作区测试同名目录、根目录保护、双确认、插件重载和三平台打开目录。
 
 ## Issue 活跃度
 
 Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

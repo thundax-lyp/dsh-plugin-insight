@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "checked_at",
+    "catalog",
+    "publication",
+    "registry",
+    "discovery",
+    "reports",
+    "metadata",
+    "artifacts",
+    "unavailable_artifacts",
+    "limitations",
+    "transaction"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "catalog": {
+      "type": "object"
+    },
+    "publication": {
+      "type": "object"
+    },
+    "registry": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sources",
+        "plugins",
+        "complete_baseline"
+      ],
+      "properties": {
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "plugins": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "complete_baseline": {
+          "type": "boolean"
+        }
+      }
+    },
+    "reports": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "content",
+          "sha256"
+        ],
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "unavailable_artifacts": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transaction": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "work_digest"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "work_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  }
+}

@@ -1,76 +1,78 @@
-# dsh-plugin-ide-hub
+# IDE Hub
 
-> 统一盘点多种编码 IDE 的会话、用量、恢复命令与共享规则。
+> 汇总多种编码工具的本地会话、用量与规则，并提供项目规则统一分发入口。
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-ide-hub) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-ide-hub) · [![最后更新 今天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E4%BB%8A%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-ide-hub/commits)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-ide-hub) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-ide-hub) · [![最后更新 昨天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E6%98%A8%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-ide-hub/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [814621be897a27752550b0be6f7be2bc44ccb897](https://github.com/121212165/dsh-plugin-ide-hub/tree/814621be897a27752550b0be6f7be2bc44ccb897)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：统一盘点多种编码 IDE 的会话、用量、恢复命令与共享规则。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：它读取多种工具的私有磁盘状态，格式漂移、权限和规则写回冲突是主要维护成本。
-- **建议**：先只读盘点两种实际 IDE，核对会话与用量；确认指针文件幂等后再启用共享规则。
+- **用途**：跨 IDE 工作的开发者需要盘点会话、配置和预算，而非逐个工具翻找。
+- **亮点**：注册盘点、迁移、导出和 hub-init 命令，从本地状态读取信息，规则本体与各 IDE 指针分开维护。
+- **思考**：统一索引和单份规则可减少查找及漂移；跨 IDE 的规则优先级仍需分别验收。
+- **建议**：先只盘点两个实际使用的 IDE，再对一个测试项目 dry-run 规则分发并检查差异。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：统一盘点多种编码 IDE 的会话、用量、恢复命令与共享规则。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+跨 IDE 工作的开发者需要盘点会话、配置和预算，而非逐个工具翻找。
 
-## 依赖与使用条件
+人工目录清单与版本化规则更简单；只有持续跨 IDE 使用才容易摊薄适配成本。
 
-- 固定组件包：`dsh-plugin-ide-hub@0.7.0`。
-- 声明依赖：`@deepseek-ai/cordis`。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+依赖各工具本地会话与规则位置，迁移建议还依赖用户登记的额度和价格条件。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+盘点环境、核对会话与用量，按计划初始化项目规则或导出；格式失配时回查原始文件。
+
+## 成本与效果
+
+无需额外查询 API 不代表零成本，目录权限、格式维护和跨工具规则冲突仍需处理。
+
+统一索引和单份规则可减少查找及漂移；跨 IDE 的规则优先级仍需分别验收。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .md | 1 | 136 | — | — | — | 2890 |
-| source | .ts | 13 | 2285 | 1953 | 174 | 168 | — |
-| test | .ts | 10 | 1400 | 1216 | 53 | 141 | — |
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：85aef500fa773ce81d10fa2e27ee186efe5414d028c6fd8921fd09c7929529a3。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：无自动排除项。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 1 | 136 | — | — | 2890 |
+| .ts | source | 13 | 2285 | 1953 | 174 | — |
+| .ts | test | 10 | 1400 | 1216 | 53 | — |
+
+排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **用户命令**：ide-hub、hub-init、hub-migrate、hub-export、hub-usage、hub-sessions、hub-week、today
-
-- commands：`ide-hub`（[src/plugin.ts:340](https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/src/plugin.ts#L340)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`hub-init`（[src/plugin.ts:351](https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/src/plugin.ts#L351)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`hub-migrate`（[src/plugin.ts:385](https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/src/plugin.ts#L385)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`hub-export`（[src/plugin.ts:394](https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/src/plugin.ts#L394)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`hub-usage`（[src/plugin.ts:413](https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/src/plugin.ts#L413)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`hub-sessions`（[src/plugin.ts:432](https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/src/plugin.ts#L432)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`hub-week`（[src/plugin.ts:454](https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/src/plugin.ts#L454)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`today`（[src/plugin.ts:482](https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/src/plugin.ts#L482)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **用户命令**：/ide-hub 盘点与 /hub-init 规则分发等入口。
 
 ## 工程亮点
 
-固定组件内共纳入 24 个 JS/TS/Markdown 文件。宿主或运行依赖共声明 1 项，升级时需要核对兼容范围。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[src/index.ts](https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/src/index.ts)。
+规划与文件写入结果可展示有利于审阅；移除及重新初始化路径要关注用户自定义内容。
 
+## 分发与兼容
 
-零 API 读取与标记分隔的指针文件降低了对各家云接口的依赖。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+版本 0.7.0，依赖 commands 与 @dsh-family/kit，部分集成另依赖兄弟插件的数据契约。
+
+## 历史对照
+
+前次代码指纹为 814621be897a27752550b0be6f7be2bc44ccb897；本轮固定为 814621be897a27752550b0be6f7be2bc44ccb897。人工目录清单与版本化规则更简单；只有持续跨 IDE 使用才容易摊薄适配成本。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：未核实全部八种 IDE 的解析覆盖、会话恢复和统计完整性；本地文件格式变化会使结果过期。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：测试自定义规则、重复初始化、撤销、不同 IDE 版本与缺失用量，比较原始记录和导出。
 
 ## Issue 活跃度
 
-Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
+Issue：未关闭 2／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

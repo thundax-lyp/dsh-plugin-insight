@@ -257,6 +257,8 @@ export const atomicWrite = (path, value) => {
 
 export const apply = (catalogPath, prepared) => {
     if (prepared?.plan_version !== 1) throw new Error('unsupported plan version');
+    if (resolve(catalogPath) === resolve(ROOT, CATALOG) && existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json')))
+        throw new Error('formal catalog is derived from SNAPSHOT.json; use snapshot staging and merge');
     const lockPath = `${catalogPath}.lock`;
     // Exclusive creation serializes writers without a native addon. Never steal a lock.
     let lock;

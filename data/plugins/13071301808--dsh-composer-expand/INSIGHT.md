@@ -1,69 +1,78 @@
 # dsh-composer-expand
 
-> 给输入框增加展开按钮，切换到 70vh 的长文本编辑视图。
+> 为输入框增加展开按钮，切换到较高书写区域并调整展开时回车行为。
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand) · [![npm 30d 1047](https://img.shields.io/static/v1?label=npm+30d&message=1%2C047&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-composer-expand) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand/commits)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand) · [![npm 30d 1011](https://img.shields.io/static/v1?label=npm+30d&message=1%2C011&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-composer-expand) · [![最后更新 4天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=4%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [e816461115436f1cb084f868398e610396d00679](https://github.com/13071301808/dsh-composer-expand/tree/e816461115436f1cb084f868398e610396d00679)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：给输入框增加展开按钮，切换到 70vh 的长文本编辑视图。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：这是局部 UI 改进；需确认移动端、窄屏和宿主布局升级后不遮挡发送与附件控件。
-- **建议**：在桌面与窄窗口检查长 prompt、附件、快捷键和收起后的草稿保持。
+- **用途**：经常编辑长提示词的用户需要在发送前查看和修改更多草稿内容。
+- **亮点**：客户端插槽按钮切换 CSS class 并保存浏览器偏好，DOM observer 修复重建后的样式，捕获普通 Enter 避免发送。
+- **思考**：可逆且范围小的界面增量容易评估；收益取决于长文本频率，不应夸大为通用生产力提升。
+- **建议**：先以长草稿测试中文输入法、斜杠菜单和 Ctrl/Cmd+Enter，确认关闭后恢复原生行为。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：给输入框增加展开按钮，切换到 70vh 的长文本编辑视图。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+经常编辑长提示词的用户需要在发送前查看和修改更多草稿内容。
 
-## 依赖与使用条件
+外部编辑器更适合复杂文本；此插件减少小范围长草稿的来回复制。
 
-- 固定组件包：`dsh-composer-expand@0.1.5`。
-- 声明依赖：`@deepseek-ai/cordis`、`react`。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+依赖 Web DOM、React 与输入框插槽，状态按浏览器而非每会话保存。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+点击展开、编辑并按适合的发送快捷键提交，再收起；异常时关闭插件恢复并核查 DOM。
+
+## 成本与效果
+
+无需模型或外部服务，主要成本是界面兼容和快捷键习惯适应，未测编辑效率。
+
+可逆且范围小的界面增量容易评估；收益取决于长文本频率，不应夸大为通用生产力提升。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .js | 4 | 521 | 318 | 186 | 21 | — |
-| source | .md | 1 | 94 | — | — | — | 1330 |
-| source | .mjs | 1 | 74 | 53 | 16 | 5 | — |
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a8d700ddc185a768eb5b40aec6379e30be2a3782cb88632e879430d765e1229d。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：无自动排除项。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .js | source | 4 | 521 | 318 | 186 | — |
+| .md | source | 1 | 94 | — | — | 1330 |
+| .mjs | source | 1 | 74 | 53 | 16 | — |
+
+排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **界面**：conversation.input.right
-
-- ui：`conversation.input.right`（[lib/client.js:234](https://github.com/13071301808/dsh-composer-expand/blob/e816461115436f1cb084f868398e610396d00679/lib/client.js#L234)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **界面**：输入框展开、回车处理与本地偏好。
 
 ## 工程亮点
 
-固定组件内共纳入 6 个 JS/TS/Markdown 文件。宿主或运行依赖共声明 2 项，升级时需要核对兼容范围。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[lib/client.js](https://github.com/13071301808/dsh-composer-expand/blob/e816461115436f1cb084f868398e610396d00679/lib/client.js)。
+不依赖构建哈希、状态持久化与 observer 清理可借鉴；DOM 属性稳定性仍是宿主义务。
 
+## 分发与兼容
 
-用最小 slot 注入解决长草稿可读性，功能面和回退路径都较小。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+版本 0.1.5，纯客户端实现，依赖 slots、locale 和宿主稳定 DOM 属性。
+
+## 历史对照
+
+前次代码指纹为 e816461115436f1cb084f868398e610396d00679；本轮固定为 e816461115436f1cb084f868398e610396d00679。外部编辑器更适合复杂文本；此插件减少小范围长草稿的来回复制。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：未验证 Lexical、输入法和多输入区下的实际交互；作者兼容声明不等同安装启动卸载证据。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：测试中文组合输入、菜单候选、切会话、DOM 重建、禁用恢复和隐私浏览存储失败。
 
 ## Issue 活跃度
 
 Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

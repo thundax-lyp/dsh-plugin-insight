@@ -29,6 +29,7 @@ README 是生成的研究成果入口；工程执行从本文件路由，生成�
 - 保留无关文件与用户已有修改，合成示例不得导入为真实研究。
 - 提交授权与范围遵循 COMMIT-RULES；修改完成默认留在工作区，不自动提交。
 - main 交付和合并遵循 PR-RULES，不绕过保护；提交、推送、PR、合并授权分别判断。
+- Codex Review 的评论、汇总与回复使用中文，具体语言边界见 [PR 规则](docs/00-governance/PR-RULES.md#验证与评审)。
 - Skill 专用脚本与资源随 Skill 存放，共享资源位置遵循 DOCUMENT-RULES；本项目不维护 testcase。
 - 共享脚本使用 `.mjs`，依赖与命令由根 `package.json` 维护，Node 版本遵循 `.node-version`。
 - 提交前运行 `npm run check`，覆盖档案、观察批次及检查点和生成一致性。

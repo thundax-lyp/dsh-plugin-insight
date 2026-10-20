@@ -110,7 +110,19 @@ export async function resolveRepositoriesAsync(repositories, request = githubGra
     const worker = async () => {
         while (cursor < batches.length) {
             const batch = batches[cursor++];
-            readBatch(batch, await request(buildRepositoryQuery(batch)), results);
+            let payload;
+            for (let attempt = 0; attempt < 3; attempt++) {
+                try {
+                    payload = await request(buildRepositoryQuery(batch));
+                    break;
+                } catch (error) {
+                    if (attempt === 2) {
+                        console.error(`Repository batch failed after retries: ${error.message}`);
+                        payload = { data: {} };
+                    }
+                }
+            }
+            readBatch(batch, payload, results);
         }
     };
     await Promise.all(Array.from({ length: Math.min(concurrency, batches.length) }, worker));

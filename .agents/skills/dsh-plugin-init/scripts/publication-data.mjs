@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { closeSync, openSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
+import { existsSync, closeSync, openSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { isAbsolute, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -196,6 +196,8 @@ export function planPublication(current, manifest, input, catalog, manifestPath,
 }
 
 export function applyPublication(path, plan, root = ROOT) {
+    if (resolve(path) === resolve(ROOT, PUBLICATION) && existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json')))
+        throw new Error('formal publication is derived; use snapshot merge');
     if (plan?.plan_version !== 1) throw new Error('unsupported publication plan version');
     const manifestPath = plan?.summary?.manifest;
     if (!/^data\/manifests\/\d{4}-\d{2}-\d{2}-\d{2,}\.json$/.test(manifestPath ?? ''))

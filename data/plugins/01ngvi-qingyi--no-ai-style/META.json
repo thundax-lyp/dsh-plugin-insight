@@ -1,0 +1,31 @@
+{
+  "repository": "01NGVI-QINGYI/no-ai-style",
+  "repository_id": 1418493685,
+  "captured_at": "2026-10-20T02:56:18.533Z",
+  "window_start": "2026-09-20T02:56:18.533Z",
+  "stars": 2,
+  "pushed_at": "2026-10-19T08:23:27Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "no-ai-style",
+    "captured_at": "2026-10-20T02:56:24.831Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/no-ai-style",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T02:56:24.831Z",
+      "source_url": "https://registry.npmjs.org/no-ai-style",
+      "error": "HTTP 404"
+    }
+  }
+}
