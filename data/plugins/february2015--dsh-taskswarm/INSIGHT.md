@@ -202,8 +202,10 @@ WorkerHost 将宿主接线与调度分开，便于固定边界后做确定性编
 
 本次 GitHub 元数据为3 Stars，公开 issues 查询返回空数组，pushed_at 为 2026-08-16T17:08:07Z；不据此推断无人使用、质量低或已停止维护。没有构造近7/30/90天更新统计。搜索得到的目录页主要重复作者说明，未发现本次可核实的独立端到端效果报告；这只限定本次搜索结果，不代表不存在。
 
-## Issue 活跃度
+## 活跃度
 
-Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 0](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aclosed)
+
+[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+created%3A2026-09-20T06%3A34%3A20.397Z..2026-10-20T06%3A34%3A20.397Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T06%3A34%3A20.397Z..2026-10-20T06%3A34%3A20.397Z) · [![近30天更新 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+updated%3A2026-09-20T06%3A34%3A20.397Z..2026-10-20T06%3A34%3A20.397Z)
 
 统计日期：2026-10-20。

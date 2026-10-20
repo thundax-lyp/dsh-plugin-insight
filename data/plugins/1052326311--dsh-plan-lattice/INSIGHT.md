@@ -79,8 +79,10 @@ package 0.4.0-rc.8，作者说明稳定版仍为 0.3.0，候选源码与公开�
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：用相同任务和预算对照原生，覆盖压缩、冷恢复、委派与中断，预注册质量和成本门槛。
 
-## Issue 活跃度
+## 活跃度
 
-Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 0](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aclosed)
+
+[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+created%3A2026-09-20T02%3A57%3A21.283Z..2026-10-20T02%3A57%3A21.283Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T02%3A57%3A21.283Z..2026-10-20T02%3A57%3A21.283Z) · [![近30天更新 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+updated%3A2026-09-20T02%3A57%3A21.283Z..2026-10-20T02%3A57%3A21.283Z)
 
 统计日期：2026-10-20。

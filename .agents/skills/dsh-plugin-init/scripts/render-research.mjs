@@ -13,6 +13,7 @@ import {
     renderCategoryIndex,
     renderHomeCategories,
     renderUpdated,
+    renderIssueActivity,
     renderWeeklyNew,
     renderLatest,
     renderHot,
@@ -116,7 +117,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 stars = null,
                 pushedAt = null,
                 pushedLabel = null,
-                issues = '暂未获取。';
+                issues = renderIssueActivity(null, plugin.repository);
             let starsBadge = template('BADGE', {
                 alt: 'GitHub ★ 暂未获取',
                 image:
@@ -151,14 +152,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 if (m.repository.toLowerCase() !== plugin.repository.toLowerCase())
                     throw Error('metadata repository differs');
                 const n = (v) => (v === null ? '暂未获取' : v);
-                issues = template('ISSUES', {
-                    open: n(m.issues.open),
-                    closed: n(m.issues.closed),
-                    created: n(m.issues.created_30d),
-                    closed_recent: n(m.issues.closed_30d),
-                    updated: n(m.issues.updated_30d),
-                    date: new Date(Date.parse(m.captured_at) + 8 * 3600000).toISOString().slice(0, 10)
-                });
+                issues = renderIssueActivity(m, m.repository);
                 // A declared package name with two 404 responses is not a confirmed npm publication.
                 // Retain the failed capture in metadata without advertising an unverified package.
                 const npmAvailable = m.npm && !(m.npm.error === 'HTTP 404' && m.npm.publication?.error === 'HTTP 404');
@@ -224,7 +218,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 });
                 meta = template('META', { stars: starsBadge, downloads, updated: pushedBadge, review: update });
             }
-            const issueBlock = `## Issue 活跃度\n\n${issues}\n`;
+            const issueBlock = `## 活跃度\n\n${issues}\n`;
             const reportWithoutMeta = renderDetailReport(report, i).replace(
                 /\n<!-- BEGIN META -->\n[\s\S]*?\n<!-- END META -->\n*/,
                 '\n'
@@ -232,8 +226,8 @@ export function renderPublication(input, root = ROOT, context = null) {
             const detailMeta = template('DETAIL-META', { meta });
             const reportWithMeta = reportWithoutMeta.replace(/^(# [^\n]+\n\n> [^\n]+)\n+/, `$1\n\n${detailMeta}\n\n`);
             if (reportWithMeta === reportWithoutMeta) throw Error(`detail needs a title and summary: ${i.id}`);
-            const detail = /\n## Issue 活跃度\n/.test(reportWithMeta)
-                ? reportWithMeta.replace(/## Issue 活跃度\n[\s\S]*$/, issueBlock)
+            const detail = /\n## (?:Issue )?活跃度\n/.test(reportWithMeta)
+                ? reportWithMeta.replace(/## (?:Issue )?活跃度\n[\s\S]*$/, issueBlock)
                 : reportWithMeta.trimEnd() + '\n\n' + issueBlock;
             return {
                 i,

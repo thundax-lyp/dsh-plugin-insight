@@ -72,8 +72,10 @@
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：比较静态与动画设置下的输入延迟、配置重载、窄屏布局及重启恢复。
 
-## Issue 活跃度
+## 活跃度
 
-Issue：未关闭 1／已关闭 42 · 近30天：新建 27／关闭 27／更新 28
+[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 42](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=42&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+is%3Aclosed)
+
+[![近30天新建 27](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=27&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+created%3A2026-09-20T02%3A56%3A19.011Z..2026-10-20T02%3A56%3A19.011Z) · [![近30天关闭 27](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=27&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T02%3A56%3A19.011Z..2026-10-20T02%3A56%3A19.011Z) · [![近30天更新 28](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=28&color=grey&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/issues?q=is%3Aissue+updated%3A2026-09-20T02%3A56%3A19.011Z..2026-10-20T02%3A56%3A19.011Z)
 
 统计日期：2026-10-20。

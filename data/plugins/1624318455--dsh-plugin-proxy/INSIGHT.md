@@ -73,8 +73,10 @@
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：覆盖fetch、独立HTTP库、MCP与子进程，切换过程中观察出口和取消；验证配置错误、禁用及多代理插件共存。
 
-## Issue 活跃度
+## 活跃度
 
-Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 暂未获取／更新 暂未获取
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-proxy/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 0](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-proxy/issues?q=is%3Aissue+is%3Aclosed)
+
+[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-proxy/issues?q=is%3Aissue+created%3A2026-09-20T04%3A26%3A26.169Z..2026-10-20T04%3A26%3A26.169Z) · [![近30天关闭 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-proxy/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T04%3A26%3A26.169Z..2026-10-20T04%3A26%3A26.169Z) · [![近30天更新 暂未获取](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-proxy/issues?q=is%3Aissue+updated%3A2026-09-20T04%3A26%3A26.169Z..2026-10-20T04%3A26%3A26.169Z)
 
 统计日期：2026-10-20。

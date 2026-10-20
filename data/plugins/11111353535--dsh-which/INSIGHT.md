@@ -72,8 +72,10 @@ command -v、type 和 where 是必需对照；本插件增加跨平台结构化�
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：用两个版本、不可执行文件、Windows shim 和 shell alias 比较实际执行与报告。
 
-## Issue 活跃度
+## 活跃度
 
-Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 0](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+is%3Aclosed)
+
+[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+created%3A2026-09-20T02%3A57%3A25.575Z..2026-10-20T02%3A57%3A25.575Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T02%3A57%3A25.575Z..2026-10-20T02%3A57%3A25.575Z) · [![近30天更新 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+updated%3A2026-09-20T02%3A57%3A25.575Z..2026-10-20T02%3A57%3A25.575Z)
 
 统计日期：2026-10-20。

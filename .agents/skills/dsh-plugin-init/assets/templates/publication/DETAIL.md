@@ -4,6 +4,6 @@
 
 {{analysis}}
 
-## Issue 活跃度
+## 活跃度
 
 {{issues}}
