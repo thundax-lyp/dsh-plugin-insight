@@ -54,9 +54,12 @@ const addCandidate = (state, candidate) => {
 export function parseAwesomeSource(root) {
     const state = { candidates: new Map(), problems: [] };
     const directory = resolve(root, 'data/plugins');
-    for (const file of readdirSync(directory)
+    const files = readdirSync(directory)
         .filter((name) => name.endsWith('.yml'))
-        .sort()) {
+        .sort();
+    if (!files.length)
+        state.problems.push({ source: AWESOME_URL, path: 'data/plugins', reason: 'missing expected YAML entries' });
+    for (const file of files) {
         const path = resolve(directory, file);
         const text = readFileSync(path, 'utf8');
         let document;

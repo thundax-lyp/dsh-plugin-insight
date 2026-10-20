@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
-import { isAbsolute, relative, resolve } from 'node:path';
+import { basename, isAbsolute, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { ROOT, atomicWrite, digest, read } from '../../_shared/scripts/plugin-data.mjs';
+import { pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { validateSession } from '../../dsh-plugin-init/scripts/research-session.mjs';
 
 const git = (root, args) =>
@@ -132,6 +133,20 @@ export function prepareMaterials({
     };
 }
 
+export function validateMaterialsOutput(session, pluginId, out, round, root = ROOT) {
+    validateSession(session);
+    const item = session.items.find((candidate) => candidate.id === pluginId);
+    if (!item) throw new Error(`plugin is not in session: ${pluginId}`);
+    const directory = pluginDirectory({ ...item, component_id: pluginId.split(':')[2] }, root);
+    const expected = resolve(root, `data/runs/${round}/snapshots/${basename(directory)}/MATERIALS.json`);
+    if (resolve(out) !== expected) throw new Error('materials output path differs from selected plugin');
+    if (existsSync(out)) {
+        const existing = read(out);
+        if (existing.plugin?.id !== pluginId || existing.session?.id !== session.id)
+            throw new Error('existing materials belong to another plugin or session');
+    }
+}
+
 export function main(args = process.argv.slice(2)) {
     const { values } = parseArgs({
         args,
@@ -155,12 +170,13 @@ export function main(args = process.argv.slice(2)) {
     const sessionLocal = projectPath(sessionPath);
     const round = sessionLocal.match(/^data\/runs\/(\d{4}-\d{2}-\d{2}-\d{2,})\/SESSION\.json$/)?.[1];
     if (!round) throw new Error('session must be data/runs/<round>/SESSION.json');
-    if (!projectPath(out).startsWith(`data/runs/${round}/snapshots/`) || !projectPath(out).endsWith('/MATERIALS.json'))
-        throw new Error('output must be data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json');
+    const session = read(sessionPath);
+    const pluginId = required('plugin');
+    validateMaterialsOutput(session, pluginId, out, round);
     const result = prepareMaterials({
-        session: read(sessionPath),
+        session,
         sessionPath,
-        pluginId: required('plugin'),
+        pluginId,
         checkout,
         inventory: read(inventoryPath),
         inventoryPath,
