@@ -70,6 +70,33 @@ export function latestManifestItems(manifests) {
         for (const item of manifest.items) latest.set(item.id, { item, checked_at: manifest.checked_at });
     return [...latest.values()];
 }
+function renderReadingNavigation(detail, navigation, longRead) {
+    let content = detail;
+    if (longRead) {
+        const entries = [];
+        let fence = null;
+        content = content
+            .split('\n')
+            .map((line) => {
+                const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+                if (marker) {
+                    if (!fence) fence = marker[1];
+                    else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
+                        fence = null;
+                    return line;
+                }
+                const heading = !fence && line.match(/^## (.+)$/);
+                if (!heading) return line;
+                const anchor = `detail-section-${entries.length + 1}`;
+                entries.push(template('DETAIL-CONTENTS-ITEM', { title: clean(heading[1]), anchor }));
+                return `<a id="${anchor}"></a>\n\n${line}`;
+            })
+            .join('\n');
+        const contents = template('DETAIL-CONTENTS', { items: entries.join('\n') });
+        content = content.replace(/(<!-- END META -->\n)/, `$1\n${contents}\n`);
+    }
+    return content.replace(/^(# [^\n]+\n)/, `$1\n${navigation}\n`) + `\n${navigation}\n`;
+}
 export function renderPublication(input, root = ROOT, context = null) {
     if (!check(input)) throw Error(ajv.errorsText(check.errors));
     const text = (path) => readFileSync(local(root, path), 'utf8');
@@ -260,6 +287,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 pushedLabel,
                 npmFirstPublished,
                 detailPath,
+                longRead: report.length >= 8000,
                 detail
             };
         });
@@ -323,7 +351,18 @@ export function renderPublication(input, root = ROOT, context = null) {
         readme,
         catalog: catalogPage,
         categoryPages,
-        details: items.map((e) => ({ path: e.detailPath, content: e.detail })),
+        details: items.map((e) => {
+            const group = groups.find((g) => g.key === e.plugin.business_category);
+            if (!group) throw Error(`detail category missing: ${e.i.id}`);
+            const navigation = template('DETAIL-NAVIGATION', {
+                category: link(e.detailPath, group.path),
+                home: link(e.detailPath, 'README.md')
+            });
+            return {
+                path: e.detailPath,
+                content: renderReadingNavigation(e.detail, navigation, e.longRead)
+            };
+        }),
         registry
     };
 }

@@ -1,12 +1,29 @@
 # TaskSwarm：把多 Agent 变成任务生产线之后，谁来证明交付成立？
 
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+
 > 按依赖分波，在 Git worktree 中执行任务包，并提供评审、集成、状态观察与恢复。
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/commits)
 <!-- END META -->
 
+**本文目录**
+
+- [洞察短评](#detail-section-1)
+- [研究范围](#detail-section-2)
+- [结论状态](#detail-section-3)
+- [一、它试图解决什么问题](#detail-section-4)
+- [二、核心贡献：方法迁移怎样变成宿主内能力](#detail-section-5)
+- [三、关键质疑：调度完成是否意味着交付成立](#detail-section-6)
+- [四、重点创新推演：从编排任务走向可验证交付](#detail-section-7)
+- [五、依赖、流程与成本：贡献的兑现条件](#detail-section-8)
+- [六、工程材料能证明到哪里](#detail-section-9)
+- [活跃度](#detail-section-10)
+
 核心贡献在于将 TaskPlane 的任务包与隔离编排移植到 DSH；值得继续研究的是，让验收证据成为调度、集成与恢复的共同依据。
+
+<a id="detail-section-1"></a>
 
 ## 洞察短评
 
@@ -15,16 +32,22 @@
 - **思考**：最关键的缺口是“完成”的证据约束：worker 自报完成、Reviewer 文本和 Git 合并能推进流程，但并未共同构成绑定最终代码版本的验收证明。因此协调能力成立，可靠交付增益仍待验证。
 - **建议**：优先检验“与版本绑定的验收凭据能否同时约束集成、依赖放行和恢复”。先与简单 required checks／人工验收对照；若复杂协议没有额外收益，就采用简单方案。
 
+<a id="detail-section-2"></a>
+
 ## 研究范围
 
 - **仓库**：[february2015/dsh-taskswarm](https://github.com/february2015/dsh-taskswarm)
 - **版本号**：`0.2.38`（[固定提交 032e2c9](https://github.com/february2015/dsh-taskswarm/tree/032e2c9d228c20cab65fe0ea061d78a7c753ab8c)）
 - **版本日期**：2026-08-17（固定提交日期，北京时间；不是 npm 发布日期）
 
+<a id="detail-section-3"></a>
+
 ## 结论状态
 
 - **已有贡献**：DSH 内的编排适配与流程整合有源码支持；独创算法和业务增效尚未证实。
 - **重点创新推演**：[**H1 验收凭据、H2 产物条件依赖**](#innovation)是有依据但未验证的设计假设；**H3 可转交验收任务包**是证据更弱的业务探索。三者均不属于 TaskSwarm 已实现贡献。
+
+<a id="detail-section-4"></a>
 
 ## 一、它试图解决什么问题
 
@@ -41,6 +64,8 @@
 | DSH 原生委派 | 判断宿主内流程整合的价值 | README 的原生能力对比是作者口径；本次未固定并独立核查 DSH 版本，不能断言原生能力完全没有评审或恢复 |
 
 [TaskPlane 固定版本 README](https://github.com/HenryLach/taskplane/blob/dfa342bebb71d8be4fe327b38bd2a291504aca65/README.md)已呈现任务包、waves/lanes、Reviewer、Merger 等同类机制；这里的当前参照不用于单独证明这些机制在 TaskSwarm 发布前的完整实现历史，归属判断还依赖 TaskSwarm 自身的声明和模块注释。
+
+<a id="detail-section-5"></a>
 
 ## 二、核心贡献：方法迁移怎样变成宿主内能力
 
@@ -61,6 +86,8 @@
 [supervisor](https://github.com/february2015/dsh-taskswarm/blob/032e2c9d228c20cab65fe0ea061d78a7c753ab8c/src/orchestrator/supervisor.ts#L550)挂载提示段和控制工具；engine 发出 lane、wave、batch 事件，用户可以暂停、恢复、停止单 lane 或切换模型。人工暂停来源被记录，自动 supervisor 不能随意恢复 operator 暂停的批次。
 
 这支持一个**业务流程贡献候选**：开发者可以集中处理任务契约与例外，而非频繁搬运上下文和盯每个会话。但前置拆任务、维护验收与兜底的负担可能增加。因此“责任分工发生变化”有实现依据，“总管理负担减少”仍是待验证判断，更没有付费意愿证据。
+
+<a id="detail-section-6"></a>
 
 ## 三、关键质疑：调度完成是否意味着交付成立
 
@@ -94,6 +121,8 @@ engine 在 wave 内使用 Promise.all 启动任务，并串行合并；File Scop
 因此贡献仍然成立于“恢复编排与代码现场”；把范围扩大到“恰好一次执行”或“恢复后语义一致”需要额外协议。现有 [Temporal Event History](https://docs.temporal.io/encyclopedia/event-history) 和 [Activities 幂等指引](https://github.com/temporalio/documentation/blob/main/docs/encyclopedia/activities/activity-definition.mdx)说明持久执行、重放及幂等已有成熟方法，下文推演不能宣称首次发明。
 
 <a id="innovation"></a>
+
+<a id="detail-section-7"></a>
 
 ## 四、重点创新推演：从编排任务走向可验证交付
 
@@ -143,6 +172,8 @@ TaskSwarm 已把任务、进度和代码现场外置；若再有可核验的产�
 
 **最小验证：** 先访谈并观察三个实际交接团队，再用同类真实任务对照“现有 PR＋CI＋说明”与“验收任务包”。记录接手准备时间、遗漏、重复检查、返工和实际复用意愿。若现有流程已足够，或必须投入大量人工补包才可用，应撤回业务机会判断。
 
+<a id="detail-section-8"></a>
+
 ## 五、依赖、流程与成本：贡献的兑现条件
 
 | 条件 | 必要性与负担 | 失效或降级 |
@@ -158,6 +189,8 @@ TaskSwarm 已把任务、进度和代码现场外置；若再有可核验的产�
 现金成本包括全部 worker、reviewer、merger、supervisor 调用、失败重试及环境资源；人工时间包括任务拆分、配置、复核、冲突处理、恢复与迁移。两者分别记录。本次没有模型账单、耗时或合格任务数据，不输出收益百分比、ROI 或单位金额。
 
 后续比较应固定验收标准，以总现金支出÷合格交付数计现金单位成本，同时报告总尝试数、合格率、端到端耗时和人工时间；零合格交付时无有限单位成本。模型、总预算或人工投入不一致时单列，不能把增加资源的收益算作编排机制胜出。
+
+<a id="detail-section-9"></a>
 
 ## 六、工程材料能证明到哪里
 
@@ -196,6 +229,8 @@ WorkerHost 将宿主接线与调度分开，便于固定边界后做确定性编
 
 [engine 测试](https://github.com/february2015/dsh-taskswarm/blob/032e2c9d228c20cab65fe0ea061d78a7c753ab8c/tests/engine.spec.mjs)覆盖模拟任务并行、依赖、冲突、暂停、停止、恢复和会话归属；这些材料体现可测试边界，但不是本次测试通过，也不能证明真实模型会正确评审或完成需求。没有发现足以支持总体质量、成本收益或真实用户采用的独立结果。
 
+<a id="detail-section-10"></a>
+
 ## 活跃度
 
 [![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aopen) · [![Issue 已关闭 0](https://img.shields.io/static/v1?label=Issue+%E5%B7%B2%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aclosed)
@@ -203,3 +238,5 @@ WorkerHost 将宿主接线与调度分开，便于固定边界后做确定性编
 [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+created%3A2026-09-20T06%3A34%3A20.397Z..2026-10-20T06%3A34%3A20.397Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T06%3A34%3A20.397Z..2026-10-20T06%3A34%3A20.397Z) · [![近30天更新 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%9B%B4%E6%96%B0&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+updated%3A2026-09-20T06%3A34%3A20.397Z..2026-10-20T06%3A34%3A20.397Z)
 
 统计日期：2026-10-20。
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
