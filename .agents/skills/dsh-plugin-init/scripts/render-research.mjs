@@ -47,7 +47,19 @@ export function relativeTime(date, at) {
 }
 export function renderDetailReport(report, item) {
     const versionUrl = `https://github.com/${item.repository}/tree/${item.revision}${item.path ? `/${item.path}` : ''}`;
+    const shortParagraphs = new Set(
+        [...report.matchAll(/^- \*\*(?:用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)(.+)$/gm)].map((match) =>
+            match[1].trim()
+        )
+    );
     return report
+        .replace(/\n## 历史对照\n[\s\S]*?(?=\n## |$)/g, '\n')
+        .replace(/\n## (场景与替代办法|成本与效果)\n([\s\S]*?)(?=\n## |$)/g, (section, heading, body) => {
+            const paragraphs = body.trim().split(/\n\s*\n/);
+            const retained = paragraphs.filter((paragraph) => !shortParagraphs.has(paragraph.trim()));
+            if (retained.length === paragraphs.length) return section;
+            return retained.length ? `\n## ${heading}\n\n${retained.join('\n\n')}\n` : '\n';
+        })
         .replace(/\n## 固定范围与依据\n[\s\S]*?(?=\n## )/, `\n## 版本\n\n固定提交 [${item.revision}](${versionUrl})\n`)
         .replace(/\n## 代码评价\n\n([\s\S]*?)\n## 可借鉴处\n\n/, '\n## 工程亮点\n\n$1\n\n')
         .replace(/\n## 验证与边界\n/, '\n## 核查说明\n');
