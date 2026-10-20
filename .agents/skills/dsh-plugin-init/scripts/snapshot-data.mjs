@@ -210,6 +210,7 @@ export function startWork(input, path, limit, root = ROOT) {
             session.items.push({
                 ...before,
                 changes: [
+                    before.source_urls.length > 0 &&
                     before.source_urls.every((u) => input.sources.some((s) => s.url === u && s.complete))
                         ? 'removed_from_source'
                         : 'unknown'
@@ -300,10 +301,17 @@ function assemble(base, work, root = ROOT) {
     next.checked_at = work.session.checked_at;
     next.publication.checked_at = next.checked_at;
     next.publication.scope = `本轮所选 ${selected.size}，完成 ${Object.keys(work.records).length}，受阻 ${selectedItems(work.session).filter((i) => i.status === 'blocked').length}；当前发布 ${records.size}`;
+    const incomingIds = new Set(work.input.plugins.map((p) => p.id));
+    const uncertainMissing = base.discovery.plugins.filter(
+        (p) =>
+            !incomingIds.has(p.id) &&
+            (p.source_urls.length === 0 ||
+                !p.source_urls.every((url) => work.input.sources.some((s) => s.url === url && s.complete)))
+    );
     next.discovery = {
         sources: work.input.sources,
-        plugins: work.input.plugins,
-        complete_baseline: work.input.sources.every((s) => s.complete)
+        plugins: [...work.input.plugins, ...uncertainMissing],
+        complete_baseline: work.input.sources.every((s) => s.complete) && uncertainMissing.length === 0
     };
     next.transaction = { id: work.session.id, work_digest: digest(work) };
     return validateSnapshot(next, root);
