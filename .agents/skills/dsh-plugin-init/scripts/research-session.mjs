@@ -59,7 +59,10 @@ export function validateManifest(manifest) {
 }
 export function validateSession(session, root = ROOT) {
     if (!check(session)) throw new Error(ajv.errorsText(check.errors));
-    if (
+    if (session.selection) {
+        const expected = incrementalSelection(session);
+        if (digest(session.selected_ids) !== digest(expected)) throw new Error('invalid incremental selection');
+    } else if (
         session.research_limit !== undefined &&
         (session.selected_ids.length !== Math.min(session.research_limit, session.items.length) ||
             session.selected_ids.some((id, index) => session.items[index]?.id !== id))
@@ -114,7 +117,7 @@ export function startSession(input, previous = null, limit = undefined) {
         schema_version: 1,
         id: input.id,
         checked_at: input.checked_at,
-        sources: input.sources,
+        sources: structuredClone(input.sources),
         previous_digest: previous ? digest(previous) : null,
         items: input.plugins.map((p) => ({ ...p, changes: ['unknown'], status: 'pending' }))
     };
@@ -164,7 +167,23 @@ export function startSession(input, previous = null, limit = undefined) {
     }
     return validateSession(session);
 }
+// Discovery membership is not completed research. Recheck researched objects first,
+// then spend the remaining budget on objects without a current research record.
+export function incrementalSelection(session) {
+    const researched = new Set(session.selection.researched_ids);
+    const required = new Set(session.selection.review_required_ids);
+    const updates = session.items.filter(
+        (item) =>
+            researched.has(item.id) && (required.has(item.id) || item.changes.some((change) => change !== 'unchanged'))
+    );
+    const additions = session.items.filter((item) => !researched.has(item.id));
+    return [...updates, ...additions].slice(0, session.research_limit).map((item) => item.id);
+}
 export function selectedItems(session) {
+    if (session.selection) {
+        const byId = new Map(session.items.map((item) => [item.id, item]));
+        return session.selected_ids.map((id) => byId.get(id));
+    }
     return session.items.filter((item) => !session.selected_ids || session.selected_ids.includes(item.id));
 }
 const hasFreshAnalysis = (plugin, checkedAt) =>
@@ -400,7 +419,7 @@ export function main(args = process.argv.slice(2)) {
             return startSession(
                 read(need('input')),
                 v.previous ? read(v.previous) : null,
-                v.limit === undefined ? undefined : /^[1-9][0-9]*$/.test(v.limit) ? Number(v.limit) : NaN
+                v.limit === undefined ? 40 : /^[1-9][0-9]*$/.test(v.limit) ? Number(v.limit) : NaN
             );
         });
     } else if (['next', 'validate'].includes(command)) {

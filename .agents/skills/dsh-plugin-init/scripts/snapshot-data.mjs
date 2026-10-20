@@ -18,7 +18,13 @@ import {
 } from '../../_shared/scripts/plugin-data.mjs';
 import { CATALOG, PUBLICATION, REGISTRY, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { validatePublication } from './publication-data.mjs';
-import { startSession, validateSession, completeItem, selectedItems } from './research-session.mjs';
+import {
+    startSession,
+    validateSession,
+    completeItem,
+    selectedItems,
+    incrementalSelection
+} from './research-session.mjs';
 import { renderPublication } from './render-research.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 export const SNAPSHOT = 'data/catalog/SNAPSHOT.json';
@@ -163,7 +169,7 @@ export function bootstrap(root = ROOT) {
     atomicWrite(snapshotFile(root), result);
     return result;
 }
-export function startWork(input, path, limit, root = ROOT) {
+export function startWork(input, path, limit = 40, root = ROOT) {
     if (existsSync(path)) throw Error('work already exists; resume it');
     const rel = relative(root, resolve(path)).split('\\').join('/');
     if (!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/WORK\.json$/.test(rel))
@@ -186,6 +192,18 @@ export function startWork(input, path, limit, root = ROOT) {
         ])
     );
     for (const item of base.discovery.plugins) known.set(item.id, item);
+    // Compare completed research against its own version, even if discovery was
+    // refreshed in an intervening round without researching this object.
+    for (const plugin of base.catalog.plugins)
+        if (base.reports[plugin.id])
+            known.set(plugin.id, {
+                ...known.get(plugin.id),
+                repository: plugin.repository,
+                path: plugin.path,
+                revision: plugin.fingerprints.code ?? null,
+                fingerprints: plugin.fingerprints
+            });
+    for (const record of base.publication.records) known.set(record.id, record);
     const incoming = new Set(input.plugins.map((p) => p.id));
     for (const item of session.items) {
         const before = known.get(item.id);
@@ -205,10 +223,15 @@ export function startWork(input, path, limit, root = ROOT) {
         }
         item.changes = changes;
     }
-    for (const before of base.discovery.plugins)
-        if (!incoming.has(before.id))
+    for (const before of known.values())
+        if (!incoming.has(before.id) && before.source_urls.length)
             session.items.push({
-                ...before,
+                ...Object.fromEntries(
+                    ['id', 'repository', 'path', 'revision', 'fingerprints', 'source_urls'].map((key) => [
+                        key,
+                        before[key]
+                    ])
+                ),
                 changes: [
                     before.source_urls.length > 0 &&
                     before.source_urls.every((u) => input.sources.some((s) => s.url === u && s.complete))
@@ -217,7 +240,12 @@ export function startWork(input, path, limit, root = ROOT) {
                 ],
                 status: 'pending'
             });
-    if (limit !== undefined) session.selected_ids = session.items.slice(0, limit).map((p) => p.id);
+    for (const item of session.items)
+        for (const url of item.source_urls)
+            if (!session.sources.some((source) => source.url === url))
+                session.sources.push({ url, revision: null, complete: false });
+    session.selection = snapshotSelection(base);
+    session.selected_ids = incrementalSelection(session);
     session.base_digest = digest(base);
     const work = {
         schema_version: 1,
@@ -232,10 +260,33 @@ export function startWork(input, path, limit, root = ROOT) {
     atomicWrite(resolve(dirname(path), 'SESSION.json'), session);
     return work;
 }
+function snapshotSelection(base) {
+    const published = new Set(base.publication.records.map((record) => record.id));
+    const researched = [
+        ...new Set([
+            ...published,
+            ...base.catalog.plugins.filter((plugin) => base.reports[plugin.id]).map((plugin) => plugin.id)
+        ])
+    ];
+    const researchedSet = new Set(researched);
+    return {
+        mode: 'incremental',
+        researched_ids: researched,
+        review_required_ids: base.catalog.plugins
+            .filter(
+                (plugin) =>
+                    researchedSet.has(plugin.id) &&
+                    (!published.has(plugin.id) || plugin.findings.some((finding) => finding.status === 'needs_review'))
+            )
+            .map((plugin) => plugin.id)
+    };
+}
 function assemble(base, work, root = ROOT) {
     if (work.base_digest !== digest(base) || work.session.base_digest !== work.base_digest)
         throw Error('snapshot baseline changed; replan work explicitly');
     validateWork(work, root);
+    if (work.session.selection && digest(work.session.selection) !== digest(snapshotSelection(base)))
+        throw Error('incremental selection baseline differs from snapshot');
     const next = structuredClone(base);
     const selected = new Set(selectedItems(work.session).map((p) => p.id));
     const records = new Map(next.publication.records.map((r) => [r.id, r]));
