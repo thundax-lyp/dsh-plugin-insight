@@ -1,0 +1,216 @@
+{
+  "id": "github:1339803365:root",
+  "repository_id": 1339803365,
+  "component_id": "root",
+  "repository": "0imzero/dsh-workspace-menu",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-workspace-menu",
+  "entry_type": "plugin",
+  "technical_category": "sessions-messages",
+  "business_category": "personal-productivity",
+  "tags": [
+    "source-inspected",
+    "runtime-unverified"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "611b3762b49c4406e46ff936af4ad0b716dbd079b1376741d5c7d1b346a75d7b",
+    "code": "afd55510f82821cde60a8364e42f752e244b5b31",
+    "release": "59ad9ed9e49d3ce49234920984e1ff0ebabb421f424fcb65fcc4014ee97820ba",
+    "maintenance": "ab85ac1178518079ff6ec30099afb76fed1cc2ea38daa7fb9b12dab105927616",
+    "compatibility": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1339803365-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:03:55.578Z",
+      "membership": "present"
+    },
+    {
+      "id": "20261020-research40-github-1339803365-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-20T03:03:55.578Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1339803365-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/0imzero/dsh-workspace-menu/blob/afd55510f82821cde60a8364e42f752e244b5b31/README.md",
+      "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+      "captured_at": "2026-10-20T03:03:55.578Z",
+      "summary": "在 DSH 工作区与会话行增加右键操作、置顶、归档及文件管理器入口。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0imzero--dsh-workspace-menu/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1339803365-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/0imzero/dsh-workspace-menu/blob/afd55510f82821cde60a8364e42f752e244b5b31/lib/index.js",
+      "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+      "captured_at": "2026-10-20T03:03:55.578Z",
+      "summary": "核查 lib/index.js、src/client/index.ts；客户端用 DOM/React fiber 定位行，Host 执行文件管理器调用；危险删除与归档管理器协作。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0imzero--dsh-workspace-menu/REVIEWED-SOURCE.json",
+      "limitations": [
+        "DOM 定位受宿主内部结构影响；删除涉及磁盘副作用，未做路径边界或跨平台验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "经常整理多个工作区和会话的用户，希望减少查找管理入口的步骤。",
+      "evidence_ids": [
+        "20261020-research40-github-1339803365-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339803365:root",
+          "area": "code",
+          "fingerprint": "afd55510f82821cde60a8364e42f752e244b5b31"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:03:55.578Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "客户端用 DOM/React fiber 定位行，Host 执行文件管理器调用；危险删除与归档管理器协作。",
+      "evidence_ids": [
+        "20261020-research40-github-1339803365-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339803365:root",
+          "area": "code",
+          "fingerprint": "afd55510f82821cde60a8364e42f752e244b5b31"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:03:55.578Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "DOM 定位受宿主内部结构影响；删除涉及磁盘副作用，未做路径边界或跨平台验收。",
+      "evidence_ids": [
+        "20261020-research40-github-1339803365-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339803365:root",
+          "area": "code",
+          "fingerprint": "afd55510f82821cde60a8364e42f752e244b5b31"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:03:55.578Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "private 包版本 1.2.0，以发布压缩包或源码构建方式安装；依赖 archive-manager 的删除能力另核对。",
+      "evidence_ids": [
+        "20261020-research40-github-1339803365-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339803365:root",
+          "area": "code",
+          "fingerprint": "afd55510f82821cde60a8364e42f752e244b5b31"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:03:55.578Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "基本操作无需模型，但宿主更新后可能需要排查菜单和选择器；未测管理任务节省时间。",
+      "evidence_ids": [
+        "20261020-research40-github-1339803365-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339803365:root",
+          "area": "code",
+          "fingerprint": "afd55510f82821cde60a8364e42f752e244b5b31"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:03:55.578Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先只开启置顶、复制路径和归档，对测试目录验证删除确认后再决定是否启用删除功能。",
+      "evidence_ids": [
+        "20261020-research40-github-1339803365-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339803365:root",
+          "area": "code",
+          "fingerprint": "afd55510f82821cde60a8364e42f752e244b5b31"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:03:55.578Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "就地管理减少界面跳转，但把磁盘删除与日常菜单放在一起增加误操作后果。",
+      "evidence_ids": [
+        "20261020-research40-github-1339803365-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339803365:root",
+          "area": "code",
+          "fingerprint": "afd55510f82821cde60a8364e42f752e244b5b31"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:03:55.578Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "Host 路由租约和目录保护检查可借鉴；React fiber 适配不是稳定公共接口的替代保证。",
+      "evidence_ids": [
+        "20261020-research40-github-1339803365-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339803365:root",
+          "area": "code",
+          "fingerprint": "afd55510f82821cde60a8364e42f752e244b5b31"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:03:55.578Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:03:55.578Z"
+}

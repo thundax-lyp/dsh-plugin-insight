@@ -4,6 +4,7 @@ import { appendFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { digest } from '../../_shared/scripts/plugin-data.mjs';
+import { hydrateSnapshot } from '../../_shared/scripts/snapshot-storage.mjs';
 import { inspectPullRequest } from '../../codex-comment-fix/scripts/codex-review.mjs';
 
 // REST bot logins include [bot]; do not trust ordinary accounts with similar names.
@@ -64,8 +65,13 @@ export function validateMetaScope(before, after, files) {
         !files.length ||
         files.some(
             (file) =>
-                file.status !== 'modified' ||
-                (!allowed.has(file.filename) && !/^data\/views\/categories\/[A-Z][A-Z-]*\.md$/.test(file.filename))
+                !(
+                    (file.status === 'modified' &&
+                        (allowed.has(file.filename) ||
+                            /^data\/views\/(?:categories|columns)\/[A-Z][A-Z-]*\.md$/.test(file.filename))) ||
+                    (file.status === 'added' &&
+                        /^data\/catalog\/snapshot\/metadata\/[a-f0-9]{2}\/[a-f0-9]{64}\.json$/.test(file.filename))
+                )
         )
     )
         throw Error('META PR contains files outside metadata and generated pages');
@@ -193,8 +199,12 @@ export function maintainMetaPullRequests({ repository, apply = false } = {}) {
         }
         git('fetch', '--no-tags', 'origin', pr.base.sha, pr.head.sha);
         const mergeBase = git('merge-base', pr.base.sha, pr.head.sha).trim();
-        const before = JSON.parse(git('show', `${mergeBase}:data/catalog/SNAPSHOT.json`));
-        const after = JSON.parse(git('show', `${pr.head.sha}:data/catalog/SNAPSHOT.json`));
+        const fromGit = (ref) =>
+            hydrateSnapshot(JSON.parse(git('show', `${ref}:data/catalog/SNAPSHOT.json`)), (name) =>
+                JSON.parse(git('show', `${ref}:data/catalog/${name}`))
+            );
+        const before = fromGit(mergeBase);
+        const after = fromGit(pr.head.sha);
         validateMetaScope(before, after, pages(repository, `pulls/${pr.number}/files`));
         if (mergeBase !== pr.base.sha) {
             report(pr.number, apply ? 'requesting branch update' : 'would update branch');

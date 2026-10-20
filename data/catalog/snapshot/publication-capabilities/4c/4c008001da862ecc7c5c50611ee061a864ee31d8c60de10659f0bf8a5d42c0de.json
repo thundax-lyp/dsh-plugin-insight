@@ -1,0 +1,7 @@
+{
+  "revision": "db7f273bd7caf2bb87c2428dcb8bd883eb338d1c",
+  "items": {
+    "后台": "原生Zen LlmAdapter、模型目录预热及legacy入口。",
+    "界面": "可选IP池设置界面。"
+  }
+}

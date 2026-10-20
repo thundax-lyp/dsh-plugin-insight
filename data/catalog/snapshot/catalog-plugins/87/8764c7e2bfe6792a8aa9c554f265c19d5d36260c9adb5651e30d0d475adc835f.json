@@ -1,0 +1,204 @@
+{
+  "id": "github:1350379388:root",
+  "repository_id": 1350379388,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-browser",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-browser",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "dcb608e4de9f0f35ccf3c7dcecc2ad0d2fe86d1ccf83dbc0ef13eefa02caf95c",
+    "code": "24d8fd47f7566945fe697cb985df4f43e02dd3a7",
+    "maintenance": "ca79d2b5be6a21294a28a13f53475d929dcc2a47c15463def8871b6a7bae1dd6"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1350379388-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:36:31.042Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1350379388-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-browser/blob/24d8fd47f7566945fe697cb985df4f43e02dd3a7/README.md",
+      "revision": "24d8fd47f7566945fe697cb985df4f43e02dd3a7",
+      "captured_at": "2026-10-20T04:36:31.042Z",
+      "summary": "从WSL调用Windows默认浏览器打开HTTP或HTTPS地址，并给出localhost排障提示。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-browser/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1350379388-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-browser/blob/24d8fd47f7566945fe697cb985df4f43e02dd3a7/index.js",
+      "revision": "24d8fd47f7566945fe697cb985df4f43e02dd3a7",
+      "captured_at": "2026-10-20T04:36:31.042Z",
+      "summary": "核查 index.js、lib/browser.js、lib/wsl-host.js；lib/browser.js只接受http/https URL并转义PowerShell单引号，入口通过wsl-host调用Start-Process；localhost仅给替代地址提示。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-browser/REVIEWED-SOURCE.json",
+      "limitations": [
+        "打开请求成功不证明浏览器已显示目标，也不抓取或读取网页；localhost在Windows与WSL中的可达性依部署而定。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Agent在WSL得到报告或服务地址后，用户希望在Windows浏览器直接查看，验收是实际页面可达。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1350379388-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350379388:root",
+          "area": "code",
+          "fingerprint": "24d8fd47f7566945fe697cb985df4f43e02dd3a7"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:31.042Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/browser.js只接受http/https URL并转义PowerShell单引号，入口通过wsl-host调用Start-Process；localhost仅给替代地址提示。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1350379388-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350379388:root",
+          "area": "code",
+          "fingerprint": "24d8fd47f7566945fe697cb985df4f43e02dd3a7"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:31.042Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "打开请求成功不证明浏览器已显示目标，也不抓取或读取网页；localhost在Windows与WSL中的可达性依部署而定。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1350379388-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350379388:root",
+          "area": "code",
+          "fingerprint": "24d8fd47f7566945fe697cb985df4f43e02dd3a7"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:31.042Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.1.0，Node>=18，要求WSL互操作及可用Windows PowerShell；不适用于纯Linux或macOS宿主。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1350379388-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350379388:root",
+          "area": "code",
+          "fingerprint": "24d8fd47f7566945fe697cb985df4f43e02dd3a7"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:31.042Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无新增推理或抓取服务费用，主要是跨系统启动延迟、配置互操作与人工确认页面；没有实测省时数据。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1350379388-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350379388:root",
+          "area": "code",
+          "fingerprint": "24d8fd47f7566945fe697cb985df4f43e02dd3a7"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:31.042Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已用WSL开发的人，先打开测试URL并核对默认浏览器，远端服务先确认监听和访问权限。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1350379388-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350379388:root",
+          "area": "code",
+          "fingerprint": "24d8fd47f7566945fe697cb985df4f43e02dd3a7"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:31.042Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "消除复制地址的微小重复操作，收益来自入口便利；HTTP协议允许不等于目标可信。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1350379388-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350379388:root",
+          "area": "code",
+          "fingerprint": "24d8fd47f7566945fe697cb985df4f43e02dd3a7"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:31.042Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "URL协议检查与PowerShell字面量转义可复用，localhost不擅自重写避免误指向；调用结果仍需区分启动与页面加载。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1350379388-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350379388:root",
+          "area": "code",
+          "fingerprint": "24d8fd47f7566945fe697cb985df4f43e02dd3a7"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:31.042Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:36:31.042Z"
+}

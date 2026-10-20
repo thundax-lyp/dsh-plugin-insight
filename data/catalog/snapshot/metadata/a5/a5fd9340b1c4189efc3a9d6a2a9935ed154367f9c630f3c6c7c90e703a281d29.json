@@ -1,0 +1,39 @@
+{
+  "repository": "121212165/dsh-plugin-quota",
+  "repository_id": 1400927706,
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
+  "stars": 1,
+  "pushed_at": "2026-10-19T09:48:14Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-plugin-quota",
+    "captured_at": "2026-10-20T07:15:30.299Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": 138,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-plugin-quota",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-16T06:01:21.852Z",
+      "captured_at": "2026-10-20T07:15:30.299Z",
+      "source_url": "https://registry.npmjs.org/dsh-plugin-quota",
+      "error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T07:15:30.299Z",
+    "baseline_revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+    "current_revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

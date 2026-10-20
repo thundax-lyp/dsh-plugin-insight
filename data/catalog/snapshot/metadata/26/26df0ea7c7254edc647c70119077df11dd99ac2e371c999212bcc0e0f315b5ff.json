@@ -1,0 +1,39 @@
+{
+  "repository": "1420079678-ctrl/agent-body",
+  "repository_id": 1366089972,
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
+  "stars": 17,
+  "pushed_at": "2026-09-30T00:33:17Z",
+  "issues": {
+    "open": 0,
+    "closed": 1,
+    "created_30d": 1,
+    "closed_30d": 1,
+    "updated_30d": 1
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "@dsh-external/dsh-organism",
+    "captured_at": "2026-10-20T07:15:30.299Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/%40dsh-external%2Fdsh-organism",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T07:15:30.299Z",
+      "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-organism",
+      "error": "HTTP 404"
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T07:15:30.299Z",
+    "baseline_revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+    "current_revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

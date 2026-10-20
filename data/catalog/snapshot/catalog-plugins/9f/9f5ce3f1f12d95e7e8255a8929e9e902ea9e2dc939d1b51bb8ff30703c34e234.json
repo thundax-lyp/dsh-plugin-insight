@@ -1,0 +1,204 @@
+{
+  "id": "github:1346196699:root",
+  "repository_id": 1346196699,
+  "component_id": "root",
+  "repository": "133563825as-ai/dsh-api-dashboard",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-api-dashboard",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "6cd20535c1bb7f181d1ad33ee41187c52beec825d47101dff81cdfe1122af46d",
+    "code": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+    "maintenance": "0b55ded12af442285c224598012da1dd7daa7c69a493adb3a615bb429e1ffefa"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1346196699-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:30:02.102Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1346196699-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/133563825as-ai/dsh-api-dashboard/blob/b57f9535c55aa39026931813e09834fa9f4f4d82/README.md",
+      "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+      "captured_at": "2026-10-20T04:30:02.102Z",
+      "summary": "在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/133563825as-ai--dsh-api-dashboard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1346196699-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/133563825as-ai/dsh-api-dashboard/blob/b57f9535c55aa39026931813e09834fa9f4f4d82/src/index.js",
+      "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+      "captured_at": "2026-10-20T04:30:02.102Z",
+      "summary": "核查 src/index.js、client/client.js；src/index.js 从凭据及平台接口取余额，以内置或自定义单价计算会话消耗，混合币种分别显示；客户端定时刷新看板。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/133563825as-ai--dsh-api-dashboard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "余额接口与参考价不等于最终账单，部分单价注释本身标明未核实；本轮未复跑作者Android验收或更新流程。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "同时使用多个供应商的用户需要观察额度和花费趋势，合格输出应能区分实际余额、估算与无法查询。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1346196699-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346196699:root",
+          "area": "code",
+          "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:02.102Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "src/index.js 从凭据及平台接口取余额，以内置或自定义单价计算会话消耗，混合币种分别显示；客户端定时刷新看板。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1346196699-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346196699:root",
+          "area": "code",
+          "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:02.102Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "余额接口与参考价不等于最终账单，部分单价注释本身标明未核实；本轮未复跑作者Android验收或更新流程。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1346196699-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346196699:root",
+          "area": "code",
+          "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:02.102Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "1.7.0，声明DSH 0.1及0.2部分范围，作者报告Android DSHA验收；桌面和旧宿主不能据此当作已验证。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1346196699-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346196699:root",
+          "area": "code",
+          "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:02.102Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "频繁刷新增加接口请求与电量/网络负担；首次配置及维护价格表、核对对账占人工时间。未量化可节省费用。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1346196699-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346196699:root",
+          "area": "code",
+          "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:02.102Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1346196699-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346196699:root",
+          "area": "code",
+          "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:02.102Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "集中显示和明确未知值有实用价值；估算若被当成收费真相，会把价格漂移和缓存差异隐藏起来。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1346196699-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346196699:root",
+          "area": "code",
+          "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:02.102Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "更新流程校验manifest、版本与兼容，备份替换并尝试回滚；一体化主模块同时承担计价与更新，后续维护面较大。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1346196699-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346196699:root",
+          "area": "code",
+          "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:02.102Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:30:02.102Z"
+}

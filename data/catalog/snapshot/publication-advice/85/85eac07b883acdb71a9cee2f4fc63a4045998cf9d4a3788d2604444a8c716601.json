@@ -1,0 +1,4 @@
+{
+  "revision": "c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f",
+  "text": "先核对报告中的进程和代理地址，修复后在实际DSH会话验证；不要只重开Shell就认为宿主已更新。"
+}

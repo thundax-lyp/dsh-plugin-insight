@@ -1,0 +1,207 @@
+{
+  "id": "github:1423215448:root",
+  "repository_id": 1423215448,
+  "component_id": "root",
+  "repository": "11111353535/dsh-folderwatch",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-folderwatch",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "software-delivery",
+  "tags": [
+    "文件监视",
+    "变更批处理"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "5895c44d65283eeeec82f5505277a217a26ed391d9265a1abe6502e267aebbfe",
+    "code": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+    "maintenance": "c4e415eb7273b37c72d43bc8ddedd54bfca399474dd206ce2a15864bfce10a91"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1423215448-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:13:07.446Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1423215448-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md",
+      "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+      "captured_at": "2026-10-20T03:13:07.446Z",
+      "summary": "监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-folderwatch/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1423215448-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js",
+      "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+      "captured_at": "2026-10-20T03:13:07.446Z",
+      "summary": "核查 lib/index.js、lib/watch.js；周期扫描与快照差分作为主路径，fs.watch 只提示加速；批量去抖、冷却和短时自身写入账本抑制回声。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-folderwatch/REVIEWED-SOURCE.json",
+      "limitations": [
+        "未验证跨平台事件完整性、截断目录漏报或长期运行；短时路径抑制也可能隐藏同时发生的外部写入。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "等待构建报告、下载或共享目录交接的智能体需要发现外部变化，减少反复手工查询。",
+      "evidence_ids": [
+        "20261020-research40-github-1423215448-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423215448:root",
+          "area": "code",
+          "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:07.446Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "周期扫描与快照差分作为主路径，fs.watch 只提示加速；批量去抖、冷却和短时自身写入账本抑制回声。",
+      "evidence_ids": [
+        "20261020-research40-github-1423215448-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423215448:root",
+          "area": "code",
+          "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:07.446Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "准确变化摘要比轮询提示更利于交接；通知到达并不保证后续任务成功。",
+      "evidence_ids": [
+        "20261020-research40-github-1423215448-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423215448:root",
+          "area": "code",
+          "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:07.446Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "周期遍历消耗文件系统资源，wake 模式额外启动模型回合；收益需对照扫描规模与通知频率。",
+      "evidence_ids": [
+        "20261020-research40-github-1423215448-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423215448:root",
+          "area": "code",
+          "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:07.446Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "通知节流、扫描上限和监测提示分离可借鉴；目录超限与无法读取必须作为覆盖缺口看待。",
+      "evidence_ids": [
+        "20261020-research40-github-1423215448-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423215448:root",
+          "area": "code",
+          "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:07.446Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。",
+      "evidence_ids": [
+        "20261020-research40-github-1423215448-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423215448:root",
+          "area": "code",
+          "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:07.446Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "未验证跨平台事件完整性、截断目录漏报或长期运行；短时路径抑制也可能隐藏同时发生的外部写入。",
+      "evidence_ids": [
+        "20261020-research40-github-1423215448-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423215448:root",
+          "area": "code",
+          "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:07.446Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "版本 0.1.0，纯 Host 工具，通知需要原会话可解析和 agent 的 inject/followup。",
+      "evidence_ids": [
+        "20261020-research40-github-1423215448-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1423215448:root",
+          "area": "code",
+          "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:07.446Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:13:07.446Z"
+}

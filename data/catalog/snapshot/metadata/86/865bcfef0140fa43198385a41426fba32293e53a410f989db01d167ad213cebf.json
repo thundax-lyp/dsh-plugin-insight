@@ -1,0 +1,60 @@
+{
+  "repository": "11111353535/dsh-which",
+  "repository_id": 1423215529,
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
+  "stars": 0,
+  "pushed_at": "2026-10-17T11:00:49Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-which%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A84E:25FD5C:7D1B83:194973C:6AD71543 and timestamp 2026-10-20 07:16:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-which%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A852:1D620F:83E800:1B0114E:6AD71544 and timestamp 2026-10-20 07:16:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-which%20is%3Aissue%20created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A841:2ED046:85E99F:1B96F1B:6AD71544 and timestamp 2026-10-20 07:16:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-which%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A843:1D9EE7:799A7F:18AD459:6AD71544 and timestamp 2026-10-20 07:16:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-which%20is%3Aissue%20updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A84F:3EA53A:7A3773:18F1B58:6AD71544 and timestamp 2026-10-20 07:16:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-which",
+    "captured_at": "2026-10-20T07:15:30.299Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-which",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T07:15:30.299Z",
+      "source_url": "https://registry.npmjs.org/dsh-which",
+      "error": "HTTP 404"
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T07:15:30.299Z",
+    "baseline_revision": "7894da833582b46526b251348cd8993b70a5ce85",
+    "current_revision": "7894da833582b46526b251348cd8993b70a5ce85",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "id": "github:1354283280:root",
+  "repository_id": 1354283280,
+  "component_id": "root",
+  "repository": "1010n111/dsh-about",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-about",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [
+    "版本信息",
+    "设置页"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "71ba55d1100f3dddbd4559f715d7d1d10156cc8eee570af43c257aed411d33b7",
+    "code": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+    "maintenance": "7a867daf7130a77783c038a1197298b90bd6a46230f2e9d865f477f1cb019db1"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1354283280-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:10:26.958Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1354283280-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1010n111/dsh-about/blob/febf7b0da6a2255ddfd84028c624ad9e4953dd83/README.md",
+      "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+      "captured_at": "2026-10-20T03:10:26.958Z",
+      "summary": "在设置中显示当前 DSH 版本，并代理读取官方 GitHub 发布说明。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/1010n111--dsh-about/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1354283280-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1010n111/dsh-about/blob/febf7b0da6a2255ddfd84028c624ad9e4953dd83/lib/index.js",
+      "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+      "captured_at": "2026-10-20T03:10:26.958Z",
+      "summary": "核查 lib/index.js；宿主从 clientModules 路径反推包版本，注册只读 version/releases 路由，对 GitHub 响应缓存五分钟。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/1010n111--dsh-about/REVIEWED-SOURCE.json",
+      "limitations": [
+        "路径反推可能受安装布局影响；没有验证每种打包方式，发布说明也不是兼容验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "需要确认实际运行版本及更新内容的用户不必另外打开终端和发布页。",
+      "evidence_ids": [
+        "20261020-research40-github-1354283280-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1354283280:root",
+          "area": "code",
+          "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:26.958Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "宿主从 clientModules 路径反推包版本，注册只读 version/releases 路由，对 GitHub 响应缓存五分钟。",
+      "evidence_ids": [
+        "20261020-research40-github-1354283280-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1354283280:root",
+          "area": "code",
+          "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:26.958Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "能把当前版本与发布说明放在一起，但不会执行更新，也不证明新版本适合当前插件组合。",
+      "evidence_ids": [
+        "20261020-research40-github-1354283280-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1354283280:root",
+          "area": "code",
+          "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:26.958Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无模型成本，联网发布信息受 GitHub 可用性影响；收益主要是少量查询便利。",
+      "evidence_ids": [
+        "20261020-research40-github-1354283280-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1354283280:root",
+          "area": "code",
+          "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:26.958Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "失败返回明确状态、短时缓存可借鉴；解析双语正文依赖上游发布文本格式。",
+      "evidence_ids": [
+        "20261020-research40-github-1354283280-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1354283280:root",
+          "area": "code",
+          "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:26.958Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。",
+      "evidence_ids": [
+        "20261020-research40-github-1354283280-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1354283280:root",
+          "area": "code",
+          "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:26.958Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "路径反推可能受安装布局影响；没有验证每种打包方式，发布说明也不是兼容验收。",
+      "evidence_ids": [
+        "20261020-research40-github-1354283280-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1354283280:root",
+          "area": "code",
+          "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:26.958Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包版本 0.0.4，依赖宿主 Web、文件和客户端模块服务。",
+      "evidence_ids": [
+        "20261020-research40-github-1354283280-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1354283280:root",
+          "area": "code",
+          "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:26.958Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:10:26.958Z"
+}

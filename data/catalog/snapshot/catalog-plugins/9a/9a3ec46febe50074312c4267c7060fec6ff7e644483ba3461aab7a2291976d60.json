@@ -1,0 +1,245 @@
+{
+  "id": "github:1358313559:root",
+  "repository_id": 1358313559,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-obscura",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-obscura",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "afb179f68979030bfbba776fd2baafc31688c2d4a39255003b2d88620890b560",
+    "code": "f1dfad47dd78722babc61633805caade6557dc68",
+    "maintenance": "ab0725dd2e2aa58d1a2078b4c5d2f8e1695f0f9426efce8ae6edfff1e9912a33"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1358313559-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:53.795Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1358313559-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/README.md",
+      "revision": "f1dfad47dd78722babc61633805caade6557dc68",
+      "captured_at": "2026-10-20T10:01:53.795Z",
+      "summary": "封装Obscura浏览器CLI，提供状态、网页抓取与MCP接入提示。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-obscura/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1358313559-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-obscura/blob/f1dfad47dd78722babc61633805caade6557dc68/index.js",
+      "revision": "f1dfad47dd78722babc61633805caade6557dc68",
+      "captured_at": "2026-10-20T10:01:53.795Z",
+      "summary": "核查 index.js、lib/obscura.js；入口定位Linux或Windows二进制，构造fetch参数，可配置dump、eval、截图及私网开关，执行后截断输出。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-obscura/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读入口和Obscura参数执行，未启动浏览器或核实外部二进制实现。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "网页需要浏览器处理而普通HTTP抓取不足时，在DSH中调用已有Obscura。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358313559:root",
+          "area": "code",
+          "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:53.795Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "入口定位Linux或Windows二进制，构造fetch参数，可配置dump、eval、截图及私网开关，执行后截断输出。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358313559:root",
+          "area": "code",
+          "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:53.795Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读入口和Obscura参数执行，未启动浏览器或核实外部二进制实现。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358313559:root",
+          "area": "code",
+          "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:53.795Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；需要Obscura二进制及浏览器运行环境，跨系统路径和网络策略影响执行。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358313559:root",
+          "area": "code",
+          "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:53.795Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "浏览器启动、渲染与截图存储成本，失败重试及页面核对人工另计，无效能实测。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358313559:root",
+          "area": "code",
+          "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:53.795Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "从无eval、无私网访问的小页面开始，核对正文和截断，不把MCP提示当已接通服务。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358313559:root",
+          "area": "code",
+          "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:53.795Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把浏览器CLI与WSL路径接通，降低二进制查找和输出处理负担；浏览器能力来自Obscura。 允许eval、截图和私网开关时副作用与数据范围扩大；CLI存在不证明浏览器依赖安装齐全，抓到文本也不等于正文完整。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358313559:root",
+          "area": "code",
+          "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:53.795Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "二进制定位、参数构造与执行分层有复用价值，特殊选项需要独立解释权限。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1358313559:root",
+          "area": "code",
+          "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:53.795Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:53.795Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "f1dfad47dd78722babc61633805caade6557dc68",
+    "reviewed_at": "2026-10-20T10:01:53.795Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1358313559:root",
+        "area": "code",
+        "fingerprint": "f1dfad47dd78722babc61633805caade6557dc68"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：Obscura CLI能力归上游，插件为WSL接线；mechanism：定位/参数/执行分层是常规包装；transferability：二进制定位层可复用；simplification：统一浏览器抓取入口，安装依赖仍在外部。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": null
+      },
+      "rationale": "workflow：减少调用CLI搬运；delivery：抓取/截图能力来自既有工具，未改验收单元；reach：DSH可调用外部浏览器CLI；economics：缺启动、重试与正文核对的成本比较。",
+      "basis": "interpretation",
+      "score": null,
+      "evidence_ids": [
+        "2026-10-20-07-github-1358313559-root-source"
+      ]
+    }
+  }
+}

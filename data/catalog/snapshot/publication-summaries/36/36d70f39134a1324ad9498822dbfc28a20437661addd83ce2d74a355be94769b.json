@@ -1,0 +1,5 @@
+{
+  "text": "检查当前工作目录是否位于Windows挂载盘，并给出WSL目录与Git使用建议。",
+  "revision": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+  "source_url": "https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/README.md"
+}

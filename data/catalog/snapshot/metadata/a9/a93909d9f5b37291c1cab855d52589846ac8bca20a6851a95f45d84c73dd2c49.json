@@ -1,0 +1,24 @@
+{
+  "repository": "1344738825/ai-residue-cleaner",
+  "repository_id": 1406611614,
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
+  "stars": 0,
+  "pushed_at": "2026-10-17T17:10:56Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "code_update": {
+    "checked_at": "2026-10-20T07:15:30.299Z",
+    "baseline_revision": "d1efd794049a2a26b8e75573b51df249bd72b62b",
+    "current_revision": "d1efd794049a2a26b8e75573b51df249bd72b62b",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

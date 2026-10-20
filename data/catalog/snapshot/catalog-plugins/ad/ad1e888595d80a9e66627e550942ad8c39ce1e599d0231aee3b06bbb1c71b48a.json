@@ -1,0 +1,245 @@
+{
+  "id": "github:1381833309:root",
+  "repository_id": 1381833309,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-git",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-git",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "48ebc30eaaabd07b281ccdc8b462f94b109759c21ea2e8f8c7a1c6c80327bcb5",
+    "code": "79fa248103904f63b552e92c9655be0d3c6e4981",
+    "maintenance": "ba67f7132dcbcf4aae51d0d2ee2de9dd5edba81b0dd79c14c97c2ac336e07bb1"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1381833309-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:46.476Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1381833309-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/README.md",
+      "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+      "captured_at": "2026-10-20T10:01:46.476Z",
+      "summary": "提供有输出上限的Git状态、提交日志和差异统计查询。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-git/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1381833309-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/index.js",
+      "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+      "captured_at": "2026-10-20T10:01:46.476Z",
+      "summary": "核查 index.js、lib/git.js；注册git_tool_status、git_status_summary、git_log_oneline和git_diff_stat；realpath校验allowRoots，以参数数组执行git。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-git/REVIEWED-SOURCE.json",
+      "limitations": [
+        "检查入口和Git执行实现，未运行目标Git工具或宿主挂载。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Agent检查仓库现状时，先取得简短摘要，避免完整patch占满上下文。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381833309:root",
+          "area": "code",
+          "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.476Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "注册git_tool_status、git_status_summary、git_log_oneline和git_diff_stat；realpath校验allowRoots，以参数数组执行git。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381833309:root",
+          "area": "code",
+          "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.476Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "检查入口和Git执行实现，未运行目标Git工具或宿主挂载。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381833309:root",
+          "area": "code",
+          "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.476Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；需要git可执行文件与目标仓库读取权限；allowRoots为空时不限制仓库根。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381833309:root",
+          "area": "code",
+          "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.476Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "没有新增服务费，主要为本地Git扫描、输出token及摘要不足后的补查。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381833309:root",
+          "area": "code",
+          "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.476Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先配置允许的仓库目录，拿包含未跟踪文件的工作区核对计数，不用摘要代替差异审阅。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381833309:root",
+          "area": "code",
+          "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.476Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "相比自由Shell指令把常见只读检查收敛为有上限的工具；减少输出组织工作，不是新的Git分析算法。 状态摘要主体排除未跟踪文件，而changedFiles计数又包含未跟踪项；读者可能看到计数与明细不对应，且统计不代表代码语义正确。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381833309:root",
+          "area": "code",
+          "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.476Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "realpath根校验和无Shell参数执行可复用；输出长度与失败状态仍需与调用者一致。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381833309:root",
+          "area": "code",
+          "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.476Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:46.476Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+    "reviewed_at": "2026-10-20T10:01:46.476Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1381833309:root",
+        "area": "code",
+        "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：常见只读Git命令封装；mechanism：根目录校验和参数数组为常规手段；transferability：固定查询工具模式可局部迁移；simplification：统一摘要但计数/明细不一致。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": null
+      },
+      "rationale": "workflow：减少参数与摘要组织；delivery：仍是Git状态信息；reach：提供Agent结构化入口；economics：缺token节省与补查负担比较。",
+      "basis": "interpretation",
+      "score": null,
+      "evidence_ids": [
+        "2026-10-20-07-github-1381833309-root-source"
+      ]
+    }
+  }
+}

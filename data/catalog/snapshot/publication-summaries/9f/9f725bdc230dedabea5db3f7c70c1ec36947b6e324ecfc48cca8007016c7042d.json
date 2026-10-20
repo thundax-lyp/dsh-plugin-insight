@@ -1,0 +1,5 @@
+{
+  "text": "比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。",
+  "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+  "source_url": "https://github.com/173787247/dsh-wsl-clock/blob/111cc4c013ef17a495c8790fbfa6373d7abbdebc/README.md"
+}

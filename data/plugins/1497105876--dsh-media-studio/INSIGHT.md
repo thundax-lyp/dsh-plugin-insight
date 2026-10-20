@@ -1,80 +1,139 @@
 # dsh-media-studio
 
-> 在聊天中生成或发送图片、视频，支持多后端、后台生成和结果媒体卡片。
+> 在DSH聊天中生成图片与视频，发送本地媒体，并提供后台任务与内联展示。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[4b78ebc](https://github.com/1497105876/dsh-media-studio/tree/4b78ebc9da8b2b7a88b5aa93c714817a2db64cc8)
+分析版本：[4fb706a](https://github.com/1497105876/dsh-media-studio/tree/4fb706a3fb2b68cdbb81e951885d2178905d6ca2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio) · **脚本有更新，待重新洞察**
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio)
 <!-- END META -->
 
-**使用建议**：先用一个已授权后端生成小图，核对输出路径和取消，再试视频；对敏感参考图先确认发送对象与保留条件。
+**使用建议**：先在低预算测试环境核对一个模型、后台完成和重开会话后附件；不把预设列表等同逐家验收，不对未知结果自动重复生成。
 
 **核查状态**：已检查源码，未进行真实宿主验证。
 
-## 使用建议
+**本文目录**
 
-- **用途**：内容创作者希望从同一对话发起生成、取回成品并预览，交付是可用媒体文件和可追踪任务结果。
+- [当前插件分析](#detail-section-1)
+  - [使用判断](#detail-section-2)
+  - [能力、流程与成本](#detail-section-3)
+  - [工程贡献](#detail-section-4)
+  - [主要限制](#detail-section-5)
+  - [核查说明与分析版本](#detail-section-6)
+- [未来设计假设（未验证）](#detail-section-7)
+- [辅助信息](#detail-section-8)
 
-此前未入档；供应商网页和独立生成工具是对照，本项把生成与会话交付接起来，未测作品质量增益。
+<a id="detail-section-1"></a>
 
-## 能力与限制
+## 当前插件分析
 
-- **模型工具**：generate_image、generate_video、send_media。
-- **用户命令**：image与video。
-- **后台**：生成任务及完成通知。
+<a id="detail-section-2"></a>
+
+### 使用判断
+
+已有贡献：相对只返回URL的HTTP工具，把生成、附件持久化、任务通知及富媒体展示接成流程；模型生成能力来自服务商，客户端与后台闭环是插件主要工程与交付增量。
+
+结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。
+
+[重点创新推演与最小验证](#innovation)
+
+- **用途**：内容创作者在同一聊天中提出需求、等待生成、查看与保存媒体，避免在生成网站和文件系统间重复搬运。
+
+- **建议**：待验证假设：持久保存供应商任务ID、产物提交状态和可重投通知，可在宿主重启或Agent失效后恢复交付而不重复付费；若供应商缺乏幂等查询则仍不能保证恰好一次生成。
+
+采用建议：先在低预算测试环境核对一个模型、后台完成和重开会话后附件；不把预设列表等同逐家验收，不对未知结果自动重复生成。
+
+直接供应商网站、CLI或只返回链接的生成工具；插件减少文件交接，但无法替代审美与内容合规复核。
+
+<a id="detail-section-3"></a>
+
+### 能力、流程与成本
+
+- **模型工具**：generate_image、generate_video、send_media三个工具。
+- **后台**：ctx.jobs长任务及所属会话完成通知，缺服务时detached回退。
+- **界面**：工具和命令媒体展示、画廊与设置卡片。
+- **用户命令**：/image、/video。
 
 **流程与依赖**
 
-需要生成服务账号、网络与凭据解析，视频预览依赖本地文件和客户端支持；结果能否长期访问取决于输出目录保留。
+作者声明需DSH0.2.1-rc.2及以上0.2.x、Node>=22.19；依赖tools、attachments、credentials、jobs及客户端扩展接口、有效服务商凭据与网络。预设端点存在不证明每种模型/参数兼容。
 
-选模型与参数，提交生成，查看任务，收到卡片后核对并保存；失败先检查后台实际状态及文件，再决定是否重试。
-
-**兼容条件**
-
-0.5.5，要求DSH 0.2.0-rc.2和Node>=22.19，Host依赖tools/jobs/commands/attachments/credentials及Client富渲染。
+配置模型与凭据，先同步生成小图片核对附件，再测后台通知和视频；检查产物、保存目录与实际费用，失败先查询供应商状态再决定重试。
 
 **效果与成本**
 
-图片或视频后端按实际服务计费，失败重试、参考图上传与存储另计；首次key与参数配置、挑选成品占人工，未实测单位合格作品成本。
+服务商生成费用、上传参考图与下载带宽、媒体磁盘、轮询等待和人工审片分别核算；免费额度仅为作者说明，未核实当前价格或合格交付成本。
 
-- **思考**：同一会话内的任务与媒体展示减少手动下载转存；免费额度或异步机制本身不能证明更便宜或更稳定。
+相对只返回URL的HTTP工具，把生成、附件持久化、任务通知及富媒体展示接成流程；模型生成能力来自服务商，客户端与后台闭环是插件主要工程与交付增量。 后台任务完成不等于用户已看到：Agent不存在时没有投递，投递异常被吞掉；无jobs时退为不可见句柄的detached工作。取消本地轮询也不证明供应商停止计费；参考图本地相对路径以process.cwd解析而输出目录可基于会话cwd，两者需核对。
 
-## 工程分析
+- **思考**：后台任务完成不等于用户已看到：Agent不存在时没有投递，投递异常被吞掉；无jobs时退为不可见句柄的detached工作。取消本地轮询也不证明供应商停止计费；参考图本地相对路径以process.cwd解析而输出目录可基于会话cwd，两者需核对。
 
-- **亮点**：src/tools.ts解析模型与凭据，providers对接生成后端；jobs.ts启动官方后台任务，结果保存后投递会话，注册失败时退为脱离任务控制的执行。
+<a id="detail-section-4"></a>
 
-生成适配、媒体落盘与任务投递拆分可复用；jobs.start失败后静默转为脱离任务控制的路径需重点核对，避免用户误以为没有发起计费。
+### 工程贡献
 
-## 核查说明
+- **亮点**：相对只返回URL的HTTP工具，把生成、附件持久化、任务通知及富媒体展示接成流程；模型生成能力来自服务商，客户端与后台闭环是插件主要工程与交付增量。
 
-- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+相对只返回URL的HTTP工具，把生成、附件持久化、任务通知及富媒体展示接成流程；模型生成能力来自服务商，客户端与后台闭环是插件主要工程与交付增量。
+
+类型化JSON值、presentationMeta与命令payload共享减少两半接口漂移，原生附件可持久展示；detached回退、会话投递和外部计费状态还缺恢复闭环。
+
+<a id="detail-section-5"></a>
+
+### 主要限制
+
+后台任务完成不等于用户已看到：Agent不存在时没有投递，投递异常被吞掉；无jobs时退为不可见句柄的detached工作。取消本地轮询也不证明供应商停止计费；参考图本地相对路径以process.cwd解析而输出目录可基于会话cwd，两者需核对。
+
+<a id="detail-section-6"></a>
+
+### 核查说明与分析版本
+
+- 已检查：作者 README、包清单、源码路径 src/index.ts、src/tools.ts、src/jobs.ts、src/media.ts、src/providers.ts、src/commands.ts、src/client/index.ts、src/client/tool-row.tsx、src/client/command-row.tsx 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：服务商预设不证明当前端点可用或质量一致；后台任务句柄不等于生成成功，降级执行的取消和完成可见性需实测。
-- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
-- 下一步：测试取消、远端超时、jobs拒绝、投递失败和重启，比较只发起一次任务时是否重复计费或丢失成品。
+- 边界：检查README、host工具、任务、媒体存储、供应商分支及客户端入口；未安装、调用付费服务、运行目标代码或核实独立用户反馈。
+- 下一步：在受控服务桩中覆盖提交成功但响应丢失、宿主重启、附件保存后写盘失败、Agent消失和重复通知，对照人工下载流程测合格交付率、重复费用与恢复时间；无法恢复且重复调用增多则否定收益。
 
 **分析版本**
 
-固定提交 [4b78ebc](https://github.com/1497105876/dsh-media-studio/tree/4b78ebc9da8b2b7a88b5aa93c714817a2db64cc8)
+- **仓库**：[1497105876/dsh-media-studio](https://github.com/1497105876/dsh-media-studio)
+- **版本号**：0.6.0（[固定提交 4fb706a](https://github.com/1497105876/dsh-media-studio/tree/4fb706a3fb2b68cdbb81e951885d2178905d6ca2)）
+- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）
+
+<a id="detail-section-7"></a>
+
+## 未来设计假设（未验证）
+
+<a id="innovation"></a>
+
+待验证假设：持久保存供应商任务ID、产物提交状态和可重投通知，可在宿主重启或Agent失效后恢复交付而不重复付费；若供应商缺乏幂等查询则仍不能保证恰好一次生成。
+
+在受控服务桩中覆盖提交成功但响应丢失、宿主重启、附件保存后写盘失败、Agent消失和重复通知，对照人工下载流程测合格交付率、重复费用与恢复时间；无法恢复且重复调用增多则否定收益。
+
+<a id="detail-section-8"></a>
+
+## 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 10 | 2672 | 2568 | 224 | — |
-| .md | source | 1 | 151 | — | — | 1655 |
+| .js | source | 10 | 2674 | 2570 | 224 | — |
+| .md | source | 1 | 151 | — | — | 1661 |
 | .mjs | source | 1 | 50 | 33 | 13 | — |
-| .tsx | source | 5 | 1301 | 1095 | 138 | — |
-| .ts | source | 11 | 1728 | 1388 | 241 | — |
+| .tsx | source | 5 | 1303 | 1095 | 140 | — |
+| .ts | source | 11 | 1733 | 1390 | 244 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/1497105876/dsh-media-studio/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio/issues?q=is%3Aissue+created%3A2026-09-20T09%3A41%3A12.426Z..2026-10-20T09%3A41%3A12.426Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1497105876/dsh-media-studio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T09%3A41%3A12.426Z..2026-10-20T09%3A41%3A12.426Z)
+
+
+
+统计日期：2026-10-20。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

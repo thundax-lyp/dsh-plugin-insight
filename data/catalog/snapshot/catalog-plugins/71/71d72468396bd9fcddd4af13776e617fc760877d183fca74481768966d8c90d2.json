@@ -1,0 +1,209 @@
+{
+  "id": "github:1416699252:root",
+  "repository_id": 1416699252,
+  "component_id": "root",
+  "repository": "01men/ybkkasi",
+  "path": "",
+  "aliases": [],
+  "name": "元冰可 AI 资源治理平台",
+  "entry_type": "infrastructure",
+  "technical_category": "security-governance",
+  "business_category": "infrastructure",
+  "tags": [
+    "source-inspected",
+    "runtime-unverified"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "7211bbc316a9b1a44ab2573fc56debe9e43cf120c1f01f0a4448b9ef6473a5b0",
+    "code": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+    "release": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "maintenance": "2721e54df243840ad9b7f14481019289e4758216faae5b94c21762e2d2df21db",
+    "compatibility": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1416699252-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:01:49.433Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1416699252-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/01men/ybkkasi/blob/03f74c847c8af9189ce37a73321a730ceb353f2a/README.md",
+      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+      "captured_at": "2026-10-20T03:01:49.433Z",
+      "summary": "将组织、权限、MCP、模型与用量管理整合为可独立运行或接入 DSH 的治理平台。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/01men--ybkkasi/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1416699252-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/01men/ybkkasi/blob/03f74c847c8af9189ce37a73321a730ceb353f2a/src/main.ts",
+      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+      "captured_at": "2026-10-20T03:01:49.433Z",
+      "summary": "核查 src/main.ts、packages/platform-core/src/rest-gate.ts；Cordis 插件树装配业务域，REST gate 汇集权限声明；同时提供独立宿主与实验性 DSH 接入。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/01men--ybkkasi/REVIEWED-SOURCE.json",
+      "limitations": [
+        "根组件规模大，只抽读启动和路由鉴权，不把作者自测数量当作本轮运行结果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有多个 AI 资源和使用部门的团队需要资产归属、权限及审计，而非单一聊天增强。",
+      "evidence_ids": [
+        "20261020-research40-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "03f74c847c8af9189ce37a73321a730ceb353f2a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:49.433Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Cordis 插件树装配业务域，REST gate 汇集权限声明；同时提供独立宿主与实验性 DSH 接入。",
+      "evidence_ids": [
+        "20261020-research40-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "03f74c847c8af9189ce37a73321a730ceb353f2a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:49.433Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "根组件规模大，只抽读启动和路由鉴权，不把作者自测数量当作本轮运行结果。",
+      "evidence_ids": [
+        "20261020-research40-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "03f74c847c8af9189ce37a73321a730ceb353f2a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:49.433Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "根包 private、版本 1.3.0；DSH 兼容声明较窄，不能把独立运行能力推成任意宿主可安装。",
+      "evidence_ids": [
+        "20261020-research40-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "03f74c847c8af9189ce37a73321a730ceb353f2a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:49.433Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "涉及账号、密钥、存储备份和平台升级，部署运维远高于普通 UI 插件；未估算人天。",
+      "evidence_ids": [
+        "20261020-research40-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "03f74c847c8af9189ce37a73321a730ceb353f2a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:49.433Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "仅在确有多用户资源治理需求时试部署，先验证最小权限、备份恢复和一条完整业务链。",
+      "evidence_ids": [
+        "20261020-research40-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "03f74c847c8af9189ce37a73321a730ceb353f2a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:49.433Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "权限归属和资源生命周期有明确组织价值，但小团队用配置文件可能更经济。",
+      "evidence_ids": [
+        "20261020-research40-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "03f74c847c8af9189ce37a73321a730ceb353f2a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:49.433Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "声明式受保护路由和共享 gate 可减少散落鉴权；借用时仍需核查跨插件数据边界。",
+      "evidence_ids": [
+        "20261020-research40-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "03f74c847c8af9189ce37a73321a730ceb353f2a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:49.433Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:01:49.433Z"
+}

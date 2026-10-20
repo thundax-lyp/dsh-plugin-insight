@@ -1,0 +1,8 @@
+{
+  "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+  "items": {
+    "模型工具": "源码定义 task_runner、review_step、notify_supervisor 与 escalate_to_supervisor 等任务执行和协作工具。",
+    "用户命令": "源码注册 tswarm-plan、tswarm-check、tswarm-status、tswarm-pause、tswarm-resume 与 tswarm-integrate 等命令。",
+    "后台": "按依赖分波执行，串行集成，持久化批次状态并提供恢复路径。"
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "id": "github:1351854356:root",
+  "repository_id": 1351854356,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-ssh-agent",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-ssh-agent",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "33336ef6f4a5ea9197e6f4322078e44cb9bfb57e57b450b12ec8a3ac9508ceaa",
+    "code": "99716388c9fa204b53bb6e931a239810d4524a0b",
+    "maintenance": "dabe9eef54fb2349b8386b3852df4b9a1dbc60ec0b2bb99392f0eda4922b2483"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1351854356-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:02:01.550Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1351854356-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/README.md",
+      "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+      "captured_at": "2026-10-20T10:02:01.550Z",
+      "summary": "诊断WSL的SSH代理环境、已加载密钥数量与Windows代理桥接条件。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-ssh-agent/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1351854356-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/index.js",
+      "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+      "captured_at": "2026-10-20T10:02:01.550Z",
+      "summary": "核查 index.js、lib/ssh-agent.js；ssh_agent_hint检查SSH_AUTH_SOCK路径存在、执行ssh-add -l、查看常见私钥文件名和npiperelay位置，再给建议。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-ssh-agent/REVIEWED-SOURCE.json",
+      "limitations": [
+        "检查入口和诊断实现；未读用户密钥、调用ssh-add或连接Git服务。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Git SSH认证失败时，区分环境未继承、代理失效、未加载密钥与Windows桥接未配。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854356:root",
+          "area": "code",
+          "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:01.550Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "ssh_agent_hint检查SSH_AUTH_SOCK路径存在、执行ssh-add -l、查看常见私钥文件名和npiperelay位置，再给建议。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854356:root",
+          "area": "code",
+          "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:01.550Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "检查入口和诊断实现；未读用户密钥、调用ssh-add或连接Git服务。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854356:root",
+          "area": "code",
+          "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:01.550Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；依赖WSL、OpenSSH工具和宿主进程环境；Windows转发另需npiperelay/socat与Windows OpenSSH agent。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854356:root",
+          "area": "code",
+          "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:01.550Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "进程探测、配置桥接和用户核对人工为主，无恢复率实测。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854356:root",
+          "area": "code",
+          "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:01.550Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "把live socket当启发式提示，失败时查看sshAddDetail；不要在聊天中复制私钥。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854356:root",
+          "area": "code",
+          "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:01.550Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把常见SSH代理排障线索聚合为不回传私钥内容的提示；不自动建立代理桥接，也不证明目标Git服务认证通过。 sockAlive只由exists判断，路径存在不证明是可服务的socket；ssh-add失败被归为keyCount=0，与真实空代理不同，可能误导加载密钥建议。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854356:root",
+          "area": "code",
+          "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:01.550Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "建议构造与探测可注入依赖，便于边界验证；未知、失败与零数量应保留区别。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854356:root",
+          "area": "code",
+          "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:01.550Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:02:01.550Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "99716388c9fa204b53bb6e931a239810d4524a0b",
+    "reviewed_at": "2026-10-20T10:02:01.550Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1351854356:root",
+        "area": "code",
+        "fingerprint": "99716388c9fa204b53bb6e931a239810d4524a0b"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty为常见排障命令包装；mechanism为多信号建议；transferability可用于其他凭据诊断；simplification减少重复采集。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow聚合排障的小幅改善；delivery不新增认证交付；reach方便WSL Agent；economics无独立增量证据。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+      "basis": "interpretation",
+      "score": 14,
+      "evidence_ids": [
+        "2026-10-20-07-github-1351854356-root-source"
+      ]
+    }
+  }
+}

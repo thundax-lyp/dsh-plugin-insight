@@ -1,0 +1,52 @@
+{
+  "repository": "173787247/dsh-wsl-secret",
+  "repository_id": 1381733290,
+  "captured_at": "2026-10-20T09:42:33.469Z",
+  "window_start": "2026-09-20T09:42:33.469Z",
+  "stars": 1,
+  "pushed_at": "2026-09-30T03:22:43Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-secret%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DDF8:E4B24:24C216:27B075:6AD7378B and timestamp 2026-10-20 09:42:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-secret%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DED2:1F08E8:24F728:27E502:6AD7378B and timestamp 2026-10-20 09:42:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-secret%20is%3Aissue%20created%3A2026-09-20T09%3A42%3A33.469Z..2026-10-20T09%3A42%3A33.469Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DFE4:1EE884:24EF16:27DF5E:6AD7378C and timestamp 2026-10-20 09:42:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-secret%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T09%3A42%3A33.469Z..2026-10-20T09%3A42%3A33.469Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E0BA:3D5D09:23FDEC:26EEAC:6AD7378D and timestamp 2026-10-20 09:42:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-secret%20is%3Aissue%20updated%3A2026-09-20T09%3A42%3A33.469Z..2026-10-20T09%3A42%3A33.469Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E16A:8B2B6:24AE05:279E6B:6AD7378E and timestamp 2026-10-20 09:42:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-wsl-secret",
+    "captured_at": "2026-10-20T09:42:38.633Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-wsl-secret",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T09:42:38.633Z",
+      "source_url": "https://registry.npmjs.org/dsh-wsl-secret",
+      "error": "HTTP 404"
+    }
+  }
+}

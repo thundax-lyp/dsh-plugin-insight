@@ -1,0 +1,17 @@
+{
+  "id": "github:1366089972:workspace-plugins-dsh-organism",
+  "repository": "1420079678-ctrl/agent-body",
+  "path": "workspace/plugins/dsh-organism",
+  "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+  "fingerprints": {
+    "directory": "c304bda87c6ea232deaeffaf99c2bc8f12d9d27ffcfa597c35dcef8e8fde9232",
+    "code": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+    "maintenance": "43f096365ebe99c29ae5999e57cb00a1b8b3292441388102d038dfe5b740737c"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "5263cdb9f8da676cb4c35d16c7fc192dd639109a7ea49b7c50ad1fea2653232e"
+}

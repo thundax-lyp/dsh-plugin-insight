@@ -1,0 +1,5 @@
+{
+  "text": "监测重复命令、连续失败与目标漂移，向会话注入复盘提示并可调用审查模型。",
+  "revision": "adb341c1d9899378caad2c3c2c37cf6cdd0cec49",
+  "source_url": "https://github.com/1344738825/ai-look-up/blob/adb341c1d9899378caad2c3c2c37cf6cdd0cec49/README.md"
+}

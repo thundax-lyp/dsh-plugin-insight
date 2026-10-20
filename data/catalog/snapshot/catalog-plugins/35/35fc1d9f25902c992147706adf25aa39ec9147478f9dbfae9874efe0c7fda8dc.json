@@ -1,0 +1,245 @@
+{
+  "id": "github:1351853863:root",
+  "repository_id": 1351853863,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-picker",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-picker",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "b04bdd289714cc04cff75eae474fdc2d5e403dc31d4eac88c01aedda33286b00",
+    "code": "0cd8861e4240635693cf152c9c7635433e5980c9",
+    "maintenance": "5374ad80b3d54af6e483255f5d34ac9272aac49eb8e0e186a1a3dabb2a4c35a0"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1351853863-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:56.576Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1351853863-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/README.md",
+      "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
+      "captured_at": "2026-10-20T10:01:56.576Z",
+      "summary": "在DSH中浏览WSL目录与挂载盘，支持名称过滤和工作区快捷入口。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-picker/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1351853863-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-picker/blob/0cd8861e4240635693cf152c9c7635433e5980c9/index.js",
+      "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
+      "captured_at": "2026-10-20T10:01:56.576Z",
+      "summary": "核查 index.js、lib/picker.js；wsl_picker按start/path解析绝对目录，同步读取、名称排序、过滤并截断；im入口定位~/.dsh/im-workspace。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-picker/REVIEWED-SOURCE.json",
+      "limitations": [
+        "检查入口与目录解析实现，未浏览用户目录或验证界面交互。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "用户需要向Agent提供WSL或Windows挂载目录，减少反复复制目录列表。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351853863:root",
+          "area": "code",
+          "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:56.576Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "wsl_picker按start/path解析绝对目录，同步读取、名称排序、过滤并截断；im入口定位~/.dsh/im-workspace。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351853863:root",
+          "area": "code",
+          "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:56.576Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "检查入口与目录解析实现，未浏览用户目录或验证界面交互。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351853863:root",
+          "area": "code",
+          "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:56.576Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；依赖WSL检测与Node文件系统权限；im工作区为可选，不存在时返回空列表和提示。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351853863:root",
+          "area": "code",
+          "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:56.576Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "输出上限降低上下文体积，但同步枚举及逐项stat仍有I/O与事件循环成本，未测性能。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351853863:root",
+          "area": "code",
+          "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:56.576Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合小中目录导航；先确认返回路径，敏感目录仍受进程权限而非插件白名单控制。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351853863:root",
+          "area": "code",
+          "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:56.576Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把目录浏览和套件工作区入口组合成可消费结果；相对ls主要增量是结构化导航，不是图形文件选择器或访问隔离。 maxEntries只限制输出，readdirSync仍读取整个目录且stat跟随符号链接；无根目录白名单，不能把快捷入口理解为受限工作区。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351853863:root",
+          "area": "code",
+          "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:56.576Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "解析、格式与执行在单模块内清楚分离；同步I/O与全量枚举限制规模，truncated是输出提示不是分页能力。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351853863:root",
+          "area": "code",
+          "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:56.576Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:56.576Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "0cd8861e4240635693cf152c9c7635433e5980c9",
+    "reviewed_at": "2026-10-20T10:01:56.576Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1351853863:root",
+        "area": "code",
+        "fingerprint": "0cd8861e4240635693cf152c9c7635433e5980c9"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 0,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：目录浏览接入DSH并加入im入口，属于局部适配；mechanism=0：仍为同步目录枚举与stat，未识别突破目录规模约束的机制；transferability=5：路径解析与输出格式可复用于其他文件导航；simplification=4：快捷入口与过滤减少重复输入，属于小幅组合。依据固定版本入口与核心源码，未执行目标代码；不将上游机制或未来假设计入。",
+      "basis": "interpretation",
+      "score": 18,
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": null
+      },
+      "rationale": "workflow=9：结构化导航减少人工复制路径，改变局部交接；delivery=0：交付仍为目录列表，不设置工作区或产出新验收单元；reach=5：给聊天用户提供WSL目录入口，降低路径知识门槛但未验证采用；economics=null：缺少同条件任务成本、失败重试与持续维护对照，无法判断成本结构增量，不能用零代表缺证据。无运行和独立采用验证，前三项仅解释源码可见流程。",
+      "basis": "interpretation",
+      "score": null,
+      "evidence_ids": [
+        "2026-10-20-07-github-1351853863-root-source"
+      ]
+    }
+  }
+}

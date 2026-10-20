@@ -1,0 +1,52 @@
+{
+  "repository": "173787247/dsh-wsl-ollama",
+  "repository_id": 1381724774,
+  "captured_at": "2026-10-20T09:42:07.270Z",
+  "window_start": "2026-09-20T09:42:07.270Z",
+  "stars": 1,
+  "pushed_at": "2026-09-30T03:25:29Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ollama%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C486:89CE6:249CAD:278A8C:6AD73770 and timestamp 2026-10-20 09:42:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ollama%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C500:1FA706:280F4F:2AFC6A:6AD73771 and timestamp 2026-10-20 09:42:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ollama%20is%3Aissue%20created%3A2026-09-20T09%3A42%3A07.270Z..2026-10-20T09%3A42%3A07.270Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C5CE:87886:28A98E:2B9A56:6AD73772 and timestamp 2026-10-20 09:42:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ollama%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T09%3A42%3A07.270Z..2026-10-20T09%3A42%3A07.270Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C6A2:89CE6:249E64:278C5F:6AD73773 and timestamp 2026-10-20 09:42:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ollama%20is%3Aissue%20updated%3A2026-09-20T09%3A42%3A07.270Z..2026-10-20T09%3A42%3A07.270Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C762:1F6FC9:25DC84:28CD5F:6AD73774 and timestamp 2026-10-20 09:42:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-wsl-ollama",
+    "captured_at": "2026-10-20T09:42:12.700Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-wsl-ollama",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T09:42:12.700Z",
+      "source_url": "https://registry.npmjs.org/dsh-wsl-ollama",
+      "error": "HTTP 404"
+    }
+  }
+}

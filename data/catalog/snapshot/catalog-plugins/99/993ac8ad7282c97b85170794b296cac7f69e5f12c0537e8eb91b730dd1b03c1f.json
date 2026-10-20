@@ -1,0 +1,204 @@
+{
+  "id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+  "repository_id": 1366089972,
+  "component_id": "workspace-plugins-dsh-anatomy-panel",
+  "repository": "1420079678-ctrl/agent-body",
+  "path": "workspace/plugins/dsh-anatomy-panel",
+  "aliases": [],
+  "name": "dsh-anatomy-panel",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "a3a50898cb799df5090a0d9f2a50b0b5dea3f73df94f01fcfb6cd57b289820cf",
+    "code": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+    "maintenance": "43f096365ebe99c29ae5999e57cb00a1b8b3292441388102d038dfe5b740737c"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:31:45.447Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/README.md",
+      "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+      "captured_at": "2026-10-20T04:31:45.447Z",
+      "summary": "读取Agent-Body运行时文件，在宿主HTTP路由展示器官体征、心跳、愈合账本与脉冲。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-anatomy-panel/lib/index.js",
+      "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+      "captured_at": "2026-10-20T04:31:45.447Z",
+      "summary": "核查 workspace/plugins/dsh-anatomy-panel/lib/index.js；组件lib/index.js注册/anatomy与数据路由，每次请求重读organism文件，脉冲只读尾部256KB，页面约每三秒轮询。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/REVIEWED-SOURCE.json",
+      "limitations": [
+        "体征是该框架自定义指标，不是任务正确率；脉冲文案进入innerHTML，未验证不可信日志文本的HTML处理。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "维护Agent-Body部署的人需要查看后台状态，合格交付是实际文件异常能被看到，而非仅有漂亮仪表盘。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:45.447Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "组件lib/index.js注册/anatomy与数据路由，每次请求重读organism文件，脉冲只读尾部256KB，页面约每三秒轮询。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:45.447Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "体征是该框架自定义指标，不是任务正确率；脉冲文案进入innerHTML，未验证不可信日志文本的HTML处理。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:45.447Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.1.0 private Host-only组件，无客户端构建；依赖已有organism运行文件与宿主webServer，不能单装后期待完整数据。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:45.447Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无新增推理调用；轮询、文件读取和脉冲积累产生I/O，安装、权限配置和解释指标占人工时间，未做负载测量。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:45.447Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先限制在本地受控宿主使用，检查缺失数据能否报503，并核对脉冲文本的展示边界后再接入多人环境。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:45.447Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "直接从运行文件投影避免另建采集服务；仪表盘显示已愈合不能证明业务故障真正恢复。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:45.447Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "尾部限量读取与缺失目录显式503可复用；路由依赖宿主访问控制，动态文案拼接HTML需要额外核验。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-anatomy-panel-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-anatomy-panel",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:45.447Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:31:45.447Z"
+}

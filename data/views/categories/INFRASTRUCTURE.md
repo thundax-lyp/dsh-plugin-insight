@@ -26,6 +26,23 @@
 | [dsh-wsl-distro](#plugin-1350379001-root) | 识别当前WSL发行版、Windows默认发行版与系统信息，并提示跨发行版路径差异。 | 适合多发行版开发者，先核对current/default与UNC路径，再在目标发行版确认文件存在。 |
 | [dsh-wsl-dns](#plugin-1351854118-root) | 比较WSL与Windows的IPv4解析结果，读取nameserver并提供DNS、VPN与网络排查提示。 | 只作为差异线索，先用稳定测试域名核对，再结合HTTPS与代理探针；企业分流DNS环境不要仅因不一致改配置。 |
 | [dsh-wsl-docker](#plugin-1351854301-root) | 检查WSL的Docker CLI、daemon与context，汇总疑似推理容器及本地API端口线索。 | 先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。 |
+| [dsh-wsl-encoding](#plugin-1351854402-root) | 检查WSL与Windows代码页、UTF-8设置及脚本中的CRLF换行。 | 先在小脚本上核对代码页和换行结果，大文件不要把采样字节数当作读取上限。 |
+| [dsh-wsl-env](#plugin-1338530482-root) | 向DSH系统提示词注入WSL发行版、路径规则、Shell及本地模型连接提示。 | 先检查新会话实际系统提示，核对用户路径；不要把提示中的网络建议当作已检测的网络配置。 |
+| [dsh-wsl-eventlog](#plugin-1391143266-root) | 从WSL读取Windows事件日志，支持日志名、级别、来源和时间条件。 | 先用一个已知事件核对查询结果；遇到空结果时放宽数量并用系统原生工具复查。 |
+| [dsh-wsl-expose](#plugin-1351853956-root) | 诊断WSL端口访问方式，提供端口转发建议并可添加或删除Windows portproxy。 | 先只看建议；确需局域网转发时限制监听地址，另查防火墙，完成后检查删除规则是否生效。 |
+| [dsh-wsl-gpu](#plugin-1350378777-root) | 汇总WSL中的GPU、显存压力及常见本地推理端口诊断信息。 | 把报告当排障起点，使用实际模型小任务核对显存余量，端口开放不当作GPU争用证据。 |
+| [dsh-wsl-hostsvc](#plugin-1351854010-root) | 从WSL探测Windows端本地模型服务，并生成连接与上下文配置建议。 | 优先核对apiReady而非仅TCP，再确认模型ID和真实上下文上限。 |
+| [dsh-wsl-jev](#plugin-1381389698-root) | 通过TypeSafe或OpenRouter的System One接口进行判断、检查和候选排序。 | 先用可独立核验的小问题试验，检查发送内容和截断；重要决策保留人工或确定性验收。 |
+| [dsh-wsl-llamacpp](#plugin-1381832318-root) | 查询llama.cpp等OpenAI兼容本地服务，并发起非流式聊天请求。 | 先确认模型和服务地址，测试prompt与messages两条输入路径，不把字符上限当完整上下文保证。 |
+| [dsh-wsl-mnt](#plugin-1351854159-root) | 检查当前工作目录是否位于Windows挂载盘，并给出WSL目录与Git使用建议。 | 先核对实际慢操作，再决定是否迁移；保留原目录并验证文件一致。 |
+| [dsh-wsl-net](#plugin-1338965593-root) | 检查WSL代理、DSH进程环境与常见服务连通性，并给出修复建议。 | 先核对报告中的进程和代理地址，修复后在实际DSH会话验证；不要只重开Shell就认为宿主已更新。 |
+| [dsh-wsl-ollama](#plugin-1381724774-root) | 访问本地Ollama，提供模型列表、聊天和嵌入工具。 | 显式配置服务地址和模型，分别核对聊天与嵌入结果，不把本地标签当无数据外发保证。 |
+| [dsh-wsl-perf](#plugin-1391142601-root) | 从WSL读取Windows宿主CPU、内存、磁盘及高内存进程指标。 | 适合偶发诊断；先确认CPU累计值与内存排序含义，再作处置。 |
+| [dsh-wsl-port](#plugin-1350378913-root) | 检查WSL本地TCP监听及IP，并提供Windows访问DSH的排障步骤。 | 适合故障分层第一步；3081裸地址与带认证入口须区分，完整登录访问后才算恢复。 |
+| [dsh-wsl-power](#plugin-1391140034-root) | 从WSL查询Windows电源计划、电池与睡眠配置。 | 仅作状态参考；中文系统和休眠可用性必须先对照原始结果，不据工具返回直接承诺任务不中断。 |
+| [dsh-wsl-registry](#plugin-1391142974-root) | 从WSL只读查询Windows注册表值和子键，并限制可访问键前缀。 | 从已知非敏感键试读，避免把白名单与截断承诺视为已验证安全边界。 |
+| [dsh-wsl-secret](#plugin-1381733290-root) | 按允许前缀读取pass或age秘密，并可注入当前DSH进程环境。 | 仅给最小前缀并使用非敏感测试值，默认不reveal；不要把进程内注入当秘密永不进入其他工具。 |
+| [dsh-wsl-service](#plugin-1391140376-root) | 从WSL查询Windows服务列表、状态、运行账户、进程和依赖关系。 | 先对已知服务核对detail；不要由停止状态或空依赖直接决定删除、重启。 |
 | [Forge 用量计费](#plugin-1363429979-plugin-usage-billing) | 从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。 | 先选择一个模型和一天真实账单，逐项核对 token、缓存计价、币种和未计价行。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听工具结果和会话事件，生成不保存观察明文的哈希链 JSONL 证据回执。 | 用非敏感任务先验证链的追加、手工篡改检测和重启检查，再决定审计留存周期。 |
 | [Quota 用量仪表](#plugin-1400927706-root) | 累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。 | 先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。 |
@@ -207,6 +224,193 @@
 - **亮点**：lib/docker.js执行Docker只读命令，按名称/镜像/8000端口识别候选，查询runtime并探测HTTP，生成后续建议。
 - **思考**：能把CLI存在、daemon可达和候选推理容器分开；启发式绿色状态仍需应用层验收。
 - **建议**：先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。
+
+<a id="plugin-1351854402-root"></a>
+
+## [dsh-wsl-encoding](../../plugins/173787247--dsh-wsl-encoding/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-encoding)
+
+- **用途**：在WSL运行Windows目录中的脚本时，先识别编码和换行问题，避免反复猜测bash错误。
+- **亮点**：相对手动分别执行chcp和检查脚本，把跨系统编码信息与修复建议汇成一个诊断结果；贡献是诊断集成，未证明新的编码识别方法。
+- **思考**：sampleLineEndings先读取完整文件再切片，8192字节仅限制分析而不限制读取成本；采样未发现CRLF也不能排除文件后部的问题。
+- **建议**：本次未形成新的创新假设；优先验证有界读取与报告范围是否一致，再考虑跨文件诊断。
+
+<a id="plugin-1338530482-root"></a>
+
+## [dsh-wsl-env](../../plugins/173787247--dsh-wsl-env/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-env)
+
+- **用途**：Agent运行在WSL而浏览器位于Windows时，避免混用Windows路径、Shell和工具安装位置。
+- **亮点**：把启动时环境事实写入宿主提示词，相比每次人工提醒减少环境说明重复；这是环境适配，没有证据证明提示词能强制约束工具行为。
+- **思考**：提示段混合探测事实与固定经验规则，存在设置变化后提示过期的可能；新会话是否使用该段仍需宿主核查。
+- **建议**：待验证假设：把动态探测事实与静态建议分开并标明观察时间，可能降低模型把经验规则当成当前环境的错误。
+
+<a id="plugin-1391143266-root"></a>
+
+## [dsh-wsl-eventlog](../../plugins/173787247--dsh-wsl-eventlog/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-eventlog)
+
+- **用途**：排查Windows端故障时，在Agent对话内取得可定位的事件记录，而不是来回打开事件查看器。
+- **亮点**：把Windows事件查看器中的只读查询变成结构化工具，降低跨界面取证成本；事件采集方法来自系统接口。
+- **思考**：Get-WinEvent先应用MaxEvents，再过滤provider和since条件；返回空集不表示该来源在完整时间范围内没有事件。
+- **建议**：待验证假设：将来源与时间条件尽量下推到事件查询，可在相同输出上限下提高相关故障召回；需比较执行时间。
+
+<a id="plugin-1351853956-root"></a>
+
+## [dsh-wsl-expose](../../plugins/173787247--dsh-wsl-expose/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-expose)
+
+- **用途**：需要从Windows或局域网访问WSL服务时，明确监听地址和转发路径，避免盲目修改网络设置。
+- **亮点**：把诊断、命令预览和受限执行整合为单一流程；相对手工netsh降低参数拼接负担，尚不能证明对所有WSL网络模式有效。
+- **思考**：apply仅添加portproxy，展示的防火墙命令没有一并执行；返回ok不能证明局域网访问已经打通，默认监听地址为0.0.0.0也扩大了暴露范围。
+- **建议**：本次未提出新创新假设；先补充转发后可达性与回滚验证，比增加更多网络配置开关更有价值。
+
+<a id="plugin-1350378777-root"></a>
+
+## [dsh-wsl-gpu](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-gpu)
+
+- **用途**：部署本地模型时，先区分驱动不可见、显存紧张和推理服务连接问题。
+- **亮点**：把设备状态与服务端口放在同一诊断报告中；相比手动排查减少信息拼接，但未建立实际显存归因模型。
+- **思考**：端口开放不能证明对应进程占用GPU，显存比例也不等同目标任务可运行；服务争用建议主要是启发式。
+- **建议**：待验证假设：把进程显存和端口所属进程关联，可比单纯开放端口更准确地解释争用；若权限与维护成本过高则保留基础诊断。
+
+<a id="plugin-1351854010-root"></a>
+
+## [dsh-wsl-hostsvc](../../plugins/173787247--dsh-wsl-hostsvc/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-hostsvc)
+
+- **用途**：本地模型运行在Windows而DSH运行于WSL时，找到实际可用的服务地址。
+- **亮点**：把传输连通、API就绪和配置生成串联，相比只看TCP端口更接近模型接入需求；没有证明真实生成成功。
+- **思考**：models接口就绪不证明聊天、工具调用或目标上下文大小可用，自动生成配置仍需核对模型实际能力。
+- **建议**：待验证假设：将探测拆为TCP、模型列表、最小生成三层，可能减少配置看似正确但首个任务失败的情况；最后一层需单独执行授权。
+
+<a id="plugin-1381389698-root"></a>
+
+## [dsh-wsl-jev](../../plugins/173787247--dsh-wsl-jev/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-jev)
+
+- **用途**：已有Agent希望把有限判断交给专用决策服务，同时记录返回模型和耗时。
+- **亮点**：将Jev决策接口转换为宿主工具，支持选择、检查与排序的共同入口；判断能力归于外部模型，插件贡献是协议适配。
+- **思考**：截断state可能删去决定性证据，规则脱敏也不能识别全部敏感信息；服务返回answers并不证明判断准确或已校准。
+- **建议**：待验证假设：在发送前附带截断与证据覆盖标记，可能使调用方对信息不足的判断选择弃答；需与简单长度限制对照。
+
+<a id="plugin-1381832318-root"></a>
+
+## [dsh-wsl-llamacpp](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-llamacpp)
+
+- **用途**：DSH用户希望把部分明确任务交给本地模型，而不更换主会话模型。
+- **亮点**：把标准OpenAI兼容服务封装为独立工具，便于主Agent按需调用本地模型；推理能力来自后端，不构成新的模型算法。
+- **思考**：maxPromptChars仅在prompt回退分支截断，显式messages不经过同一限制；status可达也不代表模型支持目标任务和上下文。
+- **建议**：待验证假设：按最终序列化messages统一预算，并明确拒绝而非静默截断关键证据，可能减少难以解释的本地模型失败。
+
+<a id="plugin-1351854159-root"></a>
+
+## [dsh-wsl-mnt](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-mnt)
+
+- **用途**：在WSL开发时识别工作区是否落在/mnt盘，避免把挂载盘性能与换行问题误归给模型。
+- **亮点**：把目录位置和常见开发问题联系到可操作提示；属于路径启发式诊断，未测量文件系统实际吞吐。
+- **思考**：路径在/mnt与否不等同实际性能，工具的建议不能证明迁移一定更快，也不负责迁移后的数据一致性。
+- **建议**：本次未形成新创新假设；优先用目标工作负载比较迁移前后耗时，避免把路径标签当性能结论。
+
+<a id="plugin-1338965593-root"></a>
+
+## [dsh-wsl-net](../../plugins/173787247--dsh-wsl-net/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-net)
+
+- **用途**：Agent或npm无法联网时，区分代理未继承、端口不可达和目标HTTPS失败。
+- **亮点**：把当前进程、DSH进程和子进程的代理差异显式化，相对只看Shell环境更接近故障来源；不是自动网络修复保证。
+- **思考**：检测到的DSH PID可能不是当前会话所属进程，子进程补环境也不会修复已运行宿主；探测成功不保证所有目标和模型调用成功。
+- **建议**：待验证假设：以宿主实例身份而非进程名匹配诊断对象，可减少多实例下的错误环境归因。
+
+<a id="plugin-1381724774-root"></a>
+
+## [dsh-wsl-ollama](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-ollama)
+
+- **用途**：Agent按需把任务或文本嵌入交给已有本地模型服务，保留主会话工作流。
+- **亮点**：将本地推理服务包装为DSH工具；地址探测便利于WSL接线，模型能力和隐私边界仍取决于实际服务。
+- **思考**：自动地址推断可能受WSL网络模式与resolv.conf影响，不能把自动选中地址当正确服务；模型列表不证明聊天和嵌入均可用。
+- **建议**：本次未形成新创新假设；先将服务地址、模型ID和具体能力分别验证，避免通过一个状态探测推断全部就绪。
+
+<a id="plugin-1391142601-root"></a>
+
+## [dsh-wsl-perf](../../plugins/173787247--dsh-wsl-perf/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-perf)
+
+- **用途**：WSL开发者排查整机资源紧张，需要区分Windows宿主与Linux侧指标。
+- **亮点**：相对在Windows任务管理器人工查看，增量是将宿主资源快照接入Agent；指标与采集机制继承Windows接口，不是新监控算法。
+- **思考**：高内存进程列表不等于高CPU列表，cpuSec是累计CPU时间；单次CPU快照不足以定位持续瓶颈，缺字段又会被num归零。
+- **建议**：待验证假设：连续两次采样并保留缺失值，可把累计CPU时间转为区间占用并减少缺失当零的误判；尚未实现。
+
+<a id="plugin-1350378913-root"></a>
+
+## [dsh-wsl-port](../../plugins/173787247--dsh-wsl-port/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-port)
+
+- **用途**：Windows无法打开WSL服务时，需要先分辨本地无监听与跨系统访问链路问题。
+- **亮点**：把本地监听检查和DSH特定操作手册合成诊断入口；不执行Windows端连接测试，也不自动修复网络。
+- **思考**：监听成立只证明Linux局部状态；建议绑定套件脚本与特定端口，Windows中继是否可达和认证是否通过没有观测。
+- **建议**：待验证假设：把Linux监听、Windows中继和带认证UI检查分成独立证据，可减少把监听当办结；需要安全传递状态而非把token写入报告。
+
+<a id="plugin-1391140034-root"></a>
+
+## [dsh-wsl-power](../../plugins/173787247--dsh-wsl-power/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-power)
+
+- **用途**：运行长任务前，用户希望查看宿主电源策略和电池状态以评估中断可能。
+- **亮点**：将Windows电源只读查询放进Agent上下文，减少切换设置页；不修改计划，也未建立任务防中断机制。
+- **思考**：计划与睡眠解析匹配英文输出，本地化Windows可能漏报；Hibernate子串判断不区分可用与不可用列表，不能把该布尔值当可靠能力验收。
+- **建议**：本次未形成新创新假设；先验证语言无关查询与休眠可用性语义，避免据错误状态推演调度。
+
+<a id="plugin-1391142974-root"></a>
+
+## [dsh-wsl-registry](../../plugins/173787247--dsh-wsl-registry/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-registry)
+
+- **用途**：WSL中的Agent排查Windows安装和配置，输出可追溯键值而非让用户反复复制注册表信息。
+- **亮点**：把Get-Item/Get-ItemProperty接成受限只读工具；增量是跨系统接线和输出约束，注册表查询能力来自Windows。
+- **思考**：白名单用startsWith而非路径段边界匹配，不能仅凭前缀断言严密隔离；指定name的查询没有像批量值分支一样在脚本内截断400字符，作者笼统截断说明需限定。
+- **建议**：待验证假设：按注册表规范化路径段校验并统一所有输出分支预算，可保留配置诊断便利而减少越界和过大结果；规则复杂度可能抵消便利。
+
+<a id="plugin-1381733290-root"></a>
+
+## [dsh-wsl-secret](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-secret)
+
+- **用途**：Agent调用外部服务时，希望避免用户把完整密钥直接粘贴进聊天。
+- **亮点**：复用已有秘密存储并把解密值交给后续工具，减少直接回传完整秘密；这不是密钥隔离服务。
+- **思考**：process.env是进程共享状态，后续插件或子进程可能继承；前后缀预览仍泄漏部分秘密。age路径仅词法检查未realpath，符号链接边界需验证，不能把allowPrefixes视为完整隔离。
+- **建议**：待验证假设：为单次获准子进程注入环境并在结束后撤销，可缩小暴露范围；依赖工具若只读宿主全局环境则需新增接口。
+
+<a id="plugin-1391140376-root"></a>
+
+## [dsh-wsl-service](../../plugins/173787247--dsh-wsl-service/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-service)
+
+- **用途**：Agent排查Windows后台服务问题时，先收集状态和依赖证据再由用户决定修复。
+- **亮点**：把服务概况和详细依赖接入对话，减少人工跨系统采集；服务控制与诊断结论仍不由插件提供。
+- **思考**：detail中依赖查询异常被吞掉为空数组，空依赖可能是未能读取而非确实没有；状态参数all被直接用于Status比较也需核对实际语义。
+- **建议**：待验证假设：每个依赖字段附带读取成功状态，可减少把未知依赖当无依赖的误诊；增加字段能否改善判断仍需试验。
 
 <a id="plugin-1363429979-plugin-usage-billing"></a>
 

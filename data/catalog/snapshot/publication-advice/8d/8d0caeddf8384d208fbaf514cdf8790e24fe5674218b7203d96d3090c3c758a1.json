@@ -1,0 +1,4 @@
+{
+  "revision": "ef261f7a5d03f4beae08bd250f980941903e6304",
+  "text": "优先核对apiReady而非仅TCP，再确认模型ID和真实上下文上限。"
+}

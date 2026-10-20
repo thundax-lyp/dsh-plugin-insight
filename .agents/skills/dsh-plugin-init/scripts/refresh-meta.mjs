@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readSnapshotStorage, writeSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
@@ -55,7 +56,7 @@ export async function refresh(
     { request = api, downloads = captureNpmDownloads, at = new Date().toISOString(), root = ROOT } = {}
 ) {
     const snapshotPath = resolve(root, 'data/catalog/SNAPSHOT.json');
-    const snapshot = existsSync(snapshotPath) ? read(snapshotPath) : null;
+    const snapshot = existsSync(snapshotPath) ? readSnapshotStorage(snapshotPath) : null;
     const baseDigest = snapshot ? (await import('../../_shared/scripts/plugin-data.mjs')).digest(snapshot) : null;
     const publication = snapshot?.publication ?? read(resolve(root, inputPath));
     const manifest = snapshot
@@ -105,8 +106,9 @@ export async function refresh(
         const { openSync, closeSync, unlinkSync } = await import('node:fs');
         const fd = openSync(snapshotPath + '.lock', 'wx', 0o600);
         try {
-            if (digest(read(snapshotPath)) !== baseDigest) throw Error('snapshot changed during metadata refresh');
-            atomicWrite(snapshotPath, snapshot);
+            if (digest(readSnapshotStorage(snapshotPath)) !== baseDigest)
+                throw Error('snapshot changed during metadata refresh');
+            writeSnapshotStorage(snapshotPath, snapshot);
         } finally {
             closeSync(fd);
             unlinkSync(snapshotPath + '.lock');

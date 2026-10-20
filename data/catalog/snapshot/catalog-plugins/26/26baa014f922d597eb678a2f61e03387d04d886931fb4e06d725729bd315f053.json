@@ -1,0 +1,204 @@
+{
+  "id": "github:1351903192:root",
+  "repository_id": 1351903192,
+  "component_id": "root",
+  "repository": "162568316/dsh-tokenrhythm-bill",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-tokenrhythm-bill",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "03c5fad745edcb339d0ff14d698b30d34f6f8bd8cd38438b91886b8b479db171",
+    "code": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+    "maintenance": "611bd07dbe94f80967fb9c29226990cf46aab1e816f719c04e18dde2c6ac56af"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1351903192-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:34:38.110Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1351903192-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/162568316/dsh-tokenrhythm-bill/blob/df72615bc5c8f6ccfe287b8a3cfef627923b2f1f/README.md",
+      "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+      "captured_at": "2026-10-20T04:34:38.110Z",
+      "summary": "集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/162568316--dsh-tokenrhythm-bill/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1351903192-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/162568316/dsh-tokenrhythm-bill/blob/df72615bc5c8f6ccfe287b8a3cfef627923b2f1f/lib/index.js",
+      "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+      "captured_at": "2026-10-20T04:34:38.110Z",
+      "summary": "核查 lib/index.js、lib/client.js、lib/step.js、lib/tierflow.js；Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/162568316--dsh-tokenrhythm-bill/REVIEWED-SOURCE.json",
+      "limitations": [
+        "余额、套餐和模型列表依赖未统一的平台接口；Cookie过期或身份变化可能取错账户，未验证多账号切换与数据准确性。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351903192-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351903192:root",
+          "area": "code",
+          "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:38.110Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351903192-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351903192:root",
+          "area": "code",
+          "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:38.110Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "余额、套餐和模型列表依赖未统一的平台接口；Cookie过期或身份变化可能取错账户，未验证多账号切换与数据准确性。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351903192-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351903192:root",
+          "area": "code",
+          "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:38.110Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.7.2，Node>=20，多文件平台适配与Web Client；可选平台需显式启用，不能认为默认全接入。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351903192-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351903192:root",
+          "area": "code",
+          "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:38.110Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "模型探测是实际调用，即使输出1token也不代表免费；Cookie续期、账号维护和平台接口漂移占人工，未测总对账成本。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351903192-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351903192:root",
+          "area": "code",
+          "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:38.110Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351903192-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351903192:root",
+          "area": "code",
+          "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:38.110Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "同屏对齐到期额度和用量减少切换；平台金额聚合只有在身份、币种和冻结/限时口径一致时才有意义。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351903192-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351903192:root",
+          "area": "code",
+          "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:38.110Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "Host侧限制秘密返回并为状态文件设置权限，账号缓存有身份守卫；读取凭据文件与多平台登录流程增加长期兼容负担。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351903192-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351903192:root",
+          "area": "code",
+          "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:34:38.110Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:34:38.110Z"
+}

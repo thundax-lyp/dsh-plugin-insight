@@ -1,0 +1,245 @@
+{
+  "id": "github:1381859919:root",
+  "repository_id": 1381859919,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-glab",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-glab",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "86cb28ef0954109eedb78f93e78a712352fe957d7563455d33dc04a9e1b9d395",
+    "code": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+    "maintenance": "a2ea059e1d53c9789ff51ba6aacce9bac0d7f477fed9fe65e88d6b3a08324b96"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1381859919-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:47.391Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1381859919-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/README.md",
+      "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+      "captured_at": "2026-10-20T10:01:47.391Z",
+      "summary": "封装glab，查询GitLab合并请求、Issue与流水线状态。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-glab/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1381859919-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-glab/blob/305794fc429ad5fa43be6e6e6f3fb9abd80c135f/index.js",
+      "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+      "captured_at": "2026-10-20T10:01:47.391Z",
+      "summary": "核查 index.js、lib/glab.js；入口注册四项工具，lib/glab.js固定子命令并限制条数、超时和输出字符，依赖glab已有认证。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-glab/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读注册和glab命令路径；未连接GitLab或执行目标测试。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "使用GitLab的开发者希望在DSH内查看协作对象及流水线，而不手工复制CLI长输出。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859919:root",
+          "area": "code",
+          "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:47.391Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "入口注册四项工具，lib/glab.js固定子命令并限制条数、超时和输出字符，依赖glab已有认证。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859919:root",
+          "area": "code",
+          "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:47.391Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读注册和glab命令路径；未连接GitLab或执行目标测试。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859919:root",
+          "area": "code",
+          "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:47.391Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；需要Linux glab、可用认证与仓库访问权限；自建GitLab地址及版本兼容未验证。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859919:root",
+          "area": "code",
+          "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:47.391Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现有GitLab与CLI维护成本为主，限量摘要减少返回量但可能增加补查，无实测收益。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859919:root",
+          "area": "code",
+          "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:47.391Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先明确目标仓库和GitLab主机，对照一个已知MR核验字段，不把限量列表当全量。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859919:root",
+          "area": "code",
+          "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:47.391Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把GitLab CLI的只读子集结构化接入Agent；主要增量是输出整形与调用约束，未发现新的协作流程机制。 列表按单页和条数上限返回，截断或一页结果不能支持仓库全量统计；ci status与当前待审提交的对应关系需额外核对。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859919:root",
+          "area": "code",
+          "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:47.391Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "固定子命令、参数数组与超时封装可借鉴，分页与JSON失败回退需保留可见性。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859919:root",
+          "area": "code",
+          "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:47.391Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:47.391Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f",
+    "reviewed_at": "2026-10-20T10:01:47.391Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1381859919:root",
+        "area": "code",
+        "fingerprint": "305794fc429ad5fa43be6e6e6f3fb9abd80c135f"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：glab常见查询封装；mechanism：参数固定和输出截断为常规约束；transferability：执行器可迁移但CLI字段耦合；simplification：摘要减少返回量，分页缺口仍存。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": null
+      },
+      "rationale": "workflow：少量集中MR/Issue/CI查询；delivery：仍为原协作对象信息；reach：向DSH暴露CLI已有查询；economics：缺补查次数与维护成本测量。",
+      "basis": "interpretation",
+      "score": null,
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859919-root-source"
+      ]
+    }
+  }
+}

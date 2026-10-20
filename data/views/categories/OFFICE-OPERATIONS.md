@@ -16,6 +16,8 @@
 | [dsh-mac-companion](#plugin-1384810483-root) | 从DSH经HTTP调用Mac端Companion，支持通知、快捷指令和剪贴板读写。 | 先只测试通知，再检查剪贴板和快捷指令权限；写入前保留剪贴板副本，并使用专门的低风险Shortcut。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。 | 先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 通过本地khal读取日历列表、今日日程和未来指定天数的安排。 | 适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。 |
+| [dsh-wsl-mail](#plugin-1381860693-root) | 通过notmuch或himalaya读取邮件列表、未读统计与搜索结果。 | 先核对返回backend和note；使用himalaya时把结果理解为最近收件箱列表。 |
+| [dsh-wsl-rclone](#plugin-1381859181-root) | 通过rclone列出远程存储配置、文件名及配额信息。 | 适合已配rclone的只读盘点，先限定allowedRemotes和目录规模；需要传输、删除或完整清单验收时另选流程。 |
 | [Forge 工作报告](#plugin-1363429979-plugin-daily-log) | 汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。 | 先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。 |
 
 <a id="plugin-1406611614-root"></a>
@@ -83,6 +85,28 @@
 - **亮点**：lib/cal.js查找khal，分别调用printcalendars和list，限制未来天数、超时与输出长度；Host注册状态、日历与日程工具。
 - **思考**：把已有日历读取接入会话有便利，安装它不能自动把企业日历同步进来。
 - **建议**：适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。
+
+<a id="plugin-1381860693-root"></a>
+
+## [dsh-wsl-mail](../../plugins/173787247--dsh-wsl-mail/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-mail)
+
+- **用途**：Agent需要查看本地邮件索引或收件箱摘要，减少手工搬运主题与发件人。
+- **亮点**：把两个邮件CLI整合到DSH的只读接口，降低检索入口切换；不提供发送或完整邮件工作流。
+- **思考**：himalaya回退没有未读过滤，count来自最近收件箱样本；不能把mail_unread工具名当作未读总数语义。
+- **建议**：本次未形成新的创新假设；优先显式区分未读总量与最近邮件样本，避免错误摘要影响优先级。
+
+<a id="plugin-1381859181-root"></a>
+
+## [dsh-wsl-rclone](../../plugins/173787247--dsh-wsl-rclone/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-rclone)
+
+- **用途**：已配置云存储的用户让Agent确认文件位置或空间，避免给出任意同步命令。
+- **亮点**：以有限命令集合复用rclone多后端能力，缩小误触复制删除的工具面；存储协议与账户能力属于上游。
+- **思考**：maxEntries是在命令完成后裁剪，不限制远程扫描工作量；about不一定受后端支持，读取文件名也会出网且可能暴露业务结构，不能把只读等同无成本或全域隔离。
+- **建议**：待验证假设：将服务端遍历预算和结果条数分别限制，可降低大目录超时与费用；依赖各后端列举能力，尚未实现。
 
 <a id="plugin-1363429979-plugin-daily-log"></a>
 

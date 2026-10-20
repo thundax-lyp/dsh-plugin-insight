@@ -1,0 +1,39 @@
+{
+  "repository": "0x7A7A6572/dsh-forge-studio",
+  "repository_id": 1363429979,
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
+  "stars": 8,
+  "pushed_at": "2026-10-16T03:38:35Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "@zzerx/dsh-plugin-daily-log",
+    "captured_at": "2026-10-20T07:15:30.299Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": 1980,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/%40zzerx%2Fdsh-plugin-daily-log",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-09-15T02:00:59.838Z",
+      "captured_at": "2026-10-20T07:15:30.299Z",
+      "source_url": "https://registry.npmjs.org/%40zzerx%2Fdsh-plugin-daily-log",
+      "error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T07:15:30.299Z",
+    "baseline_revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+    "current_revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

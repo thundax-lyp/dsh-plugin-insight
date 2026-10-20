@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { assembleInnovationScores } from '../../_shared/scripts/innovation-score.mjs';
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
 // Assemble only an explicitly authored, complete single-plugin analysis; never infer findings from inventory.
@@ -89,7 +90,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         (work.session.selected_ids && !work.session.selected_ids.includes(pluginId))
     )
         throw Error('analysis must target one selected pending item');
-    const snapshot = read(resolve(ROOT, 'data/catalog/SNAPSHOT.json'));
+    const snapshot = readSnapshotStorage(resolve(ROOT, 'data/catalog/SNAPSHOT.json'));
     const old = snapshot.catalog.plugins.find((p) => p.id === pluginId);
     const slug = basename(pluginDirectory({ ...item, component_id: item.id.split(':')[2] }, ROOT));
     const folder = resolve(workPath, '..'),

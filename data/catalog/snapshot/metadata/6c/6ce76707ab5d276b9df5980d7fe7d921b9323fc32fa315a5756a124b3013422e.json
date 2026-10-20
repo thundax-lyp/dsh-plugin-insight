@@ -1,0 +1,39 @@
+{
+  "repository": "12we21/cute-fat-fish-pet",
+  "repository_id": 1409724830,
+  "captured_at": "2026-10-20T07:15:30.299Z",
+  "window_start": "2026-09-20T07:15:30.299Z",
+  "stars": 12,
+  "pushed_at": "2026-10-18T06:46:43Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "cute-fat-fish-pet",
+    "captured_at": "2026-10-20T07:15:30.299Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/cute-fat-fish-pet",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-20T07:15:30.299Z",
+      "source_url": "https://registry.npmjs.org/cute-fat-fish-pet",
+      "error": "HTTP 404"
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T07:15:30.299Z",
+    "baseline_revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+    "current_revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

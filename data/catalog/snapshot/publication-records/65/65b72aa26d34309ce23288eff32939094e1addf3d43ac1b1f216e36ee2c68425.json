@@ -1,0 +1,17 @@
+{
+  "id": "github:1381860995:root",
+  "repository": "173787247/dsh-wsl-cal",
+  "path": "",
+  "revision": "675bc5cc7efaf79a171e205e4f570ac2b945bb13",
+  "fingerprints": {
+    "directory": "0cc60611589e714d5b8b69a868c02bd1b26a505c80afb03ae3e65df75b7f7192",
+    "code": "675bc5cc7efaf79a171e205e4f570ac2b945bb13",
+    "maintenance": "1e7f8f45bf90b5e0c3cddc7cc40b2aaab01132f0665c41279a855f2f7df7510e"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "95a71dd09dce8f4d26af035200c672f196e7533324aecf8e57c82040149c7032"
+}

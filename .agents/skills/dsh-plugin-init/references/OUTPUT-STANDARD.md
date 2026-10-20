@@ -11,7 +11,7 @@
 研究事实的唯一正式真相是当前档案及其引用的当前分析、来源和必要证据；本轮记录先在 runs 暂存，校验后最终合并。完整语义见[数据契约](../../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)。
 展示输入只组织当前成果，生成页面不承担人工研究真相。下一轮、当前校验和页面生成不应依赖旧 SESSION、历史 manifest 链或已经合并的 runs。
 
-正式快照为 `data/catalog/SNAPSHOT.json`；WORK 暂存与单文件原子合并已由 snapshot-data.mjs 实现。分析原文、展示数据和必要证据内容保存在正式快照内；文件式档案、META 和页面是可重新生成的兼容输出。迁移缺失原件有显式限制，不当作新验证。
+正式快照为 `data/catalog/SNAPSHOT.json` 索引及 `data/catalog/snapshot/` 不可变条目；WORK 暂存与索引原子切换由 snapshot-data.mjs 和共享存储层实现。分析原文、展示数据和必要证据内容由索引引用的条目保存；文件式档案、META 和页面是可重新生成的兼容输出。迁移缺失原件有显式限制，不当作新验证。
 
 ## README 生成物与读者路由
 
@@ -64,7 +64,8 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 产物 | 位置 | 要求 |
 |---|---|---|
 | 研究入口 | 根 `README.md` | 由模板生成，插件标题链接稳定详情入口 |
-| 唯一正式快照 | `data/catalog/SNAPSHOT.json` | 当前档案、来源、分析原文、证据内容及展示输入；原子合并点 |
+| 唯一正式快照索引 | `data/catalog/SNAPSHOT.json` | 当前条目引用及语义摘要；原子合并点 |
+| 正式快照条目 | `data/catalog/snapshot/<section>/<前缀>/<sha256>.json` | 按内容复用的档案、发现分组、报告、META、发布输入及证据对象 |
 | 本轮工作记录 | `data/runs/<round>/WORK.json` | v2保存固定基线与过程文件摘要索引；合并后可按引用清理 |
 | 档案兼容输出 | `data/catalog/PLUGINS.json` | 从正式快照生成，不单独人工维护 |
 | 发布兼容输出 | `data/catalog/PUBLICATION.json` | 从快照生成，records 保存当前有效完成记录，不引用历史会话 |

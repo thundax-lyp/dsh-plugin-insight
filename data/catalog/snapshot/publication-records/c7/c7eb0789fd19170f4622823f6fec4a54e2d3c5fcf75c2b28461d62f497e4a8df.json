@@ -1,0 +1,17 @@
+{
+  "id": "github:1399011094:root",
+  "repository": "121212165/dsh-plugin-task-forge",
+  "path": "",
+  "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+  "fingerprints": {
+    "directory": "2b69373ec08f1ff471839d98acc254f1ccff3a3d7d7e93a60570e93e31cd4679",
+    "code": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+    "maintenance": "f6c5933eea1a716b920874948178ab1e4b52c581f6f57ffca95d62131b5b420d"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "650d7a74ac0e789fdcd7d48084da221c95f8e94fa0b3214b50407b72f9fca072"
+}

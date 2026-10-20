@@ -1,0 +1,207 @@
+{
+  "id": "github:1335557891:root",
+  "repository_id": 1335557891,
+  "component_id": "root",
+  "repository": "0nt-one/dsh-neo-skin",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-neo-skin",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [
+    "界面皮肤",
+    "主题"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "c9194eef232706fb74654c8431e53f761565fcd987d53dcde01877f582165ae5",
+    "code": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
+    "maintenance": "0d9bdab0b1206da32a15144fa645ee73a9e9d897b2eb4d98ea9f7d7bf1a4975a"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1335557891-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:05:38.795Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1335557891-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/0nt-one/dsh-neo-skin/blob/fe5ef0e671fab5ab8c8700013f3966eb9642455f/README.md",
+      "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
+      "captured_at": "2026-10-20T03:05:38.795Z",
+      "summary": "通过主题覆盖层为 DSH Web 提供新粗野主义配色和可切换外观方案。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0nt-one--dsh-neo-skin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1335557891-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/0nt-one/dsh-neo-skin/blob/fe5ef0e671fab5ab8c8700013f3966eb9642455f/client.js",
+      "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
+      "captured_at": "2026-10-20T03:05:38.795Z",
+      "summary": "核查 client.js、lib/index.js；客户端调用 theme.overrideTokens，设置插槽控制开关与方案，偏好保存在 localStorage。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0nt-one--dsh-neo-skin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "未做可访问性、窄屏和不同宿主版本的视觉验收；截图不证明当前渲染一致。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "长时间使用 DSH Web 且偏好高对比外观的用户，需要可撤销的视觉定制。",
+      "evidence_ids": [
+        "20261020-research40-github-1335557891-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335557891:root",
+          "area": "code",
+          "fingerprint": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:38.795Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "客户端调用 theme.overrideTokens，设置插槽控制开关与方案，偏好保存在 localStorage。",
+      "evidence_ids": [
+        "20261020-research40-github-1335557891-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335557891:root",
+          "area": "code",
+          "fingerprint": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:38.795Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "叠加覆盖比替换原生主题更容易回退；个性化审美价值不能写成工作效率提升。",
+      "evidence_ids": [
+        "20261020-research40-github-1335557891-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335557891:root",
+          "area": "code",
+          "fingerprint": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:38.795Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无需模型服务，但维护自定义外观和排查主题冲突需要时间，未测视觉疲劳改善。",
+      "evidence_ids": [
+        "20261020-research40-github-1335557891-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335557891:root",
+          "area": "code",
+          "fingerprint": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:38.795Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "主题 token 与开关持久化分离可借鉴；复用依赖宿主主题和设置插槽契约。",
+      "evidence_ids": [
+        "20261020-research40-github-1335557891-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335557891:root",
+          "area": "code",
+          "fingerprint": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:38.795Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先在测试配置中切换深浅主题、关闭插件并刷新，确认能完整恢复原生样式。",
+      "evidence_ids": [
+        "20261020-research40-github-1335557891-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335557891:root",
+          "area": "code",
+          "fingerprint": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:38.795Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "未做可访问性、窄屏和不同宿主版本的视觉验收；截图不证明当前渲染一致。",
+      "evidence_ids": [
+        "20261020-research40-github-1335557891-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335557891:root",
+          "area": "code",
+          "fingerprint": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:38.795Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包版本 0.6.1，Web bundle 依赖主题服务；源码和发布产物未逐字节比较。",
+      "evidence_ids": [
+        "20261020-research40-github-1335557891-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335557891:root",
+          "area": "code",
+          "fingerprint": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:38.795Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:05:38.795Z"
+}

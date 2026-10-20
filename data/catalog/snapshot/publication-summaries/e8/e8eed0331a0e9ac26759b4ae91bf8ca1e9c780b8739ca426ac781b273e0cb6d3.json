@@ -1,0 +1,5 @@
+{
+  "text": "在 Web 侧边栏提供重启按钮，通过独立 PowerShell 进程触发宿主重启脚本。",
+  "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+  "source_url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.md"
+}

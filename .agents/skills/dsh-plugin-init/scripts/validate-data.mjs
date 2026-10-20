@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { readWork, readResearchSession } from '../../_shared/scripts/work-storage.mjs';
 import { existsSync, readdirSync } from 'node:fs';
 import { resolve, relative } from 'node:path';
@@ -17,7 +18,7 @@ const walk = (path) =>
 try {
     if (existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json'))) {
         const { validateSnapshot, renderSnapshot, validateWork } = await import('./snapshot-data.mjs');
-        validateSnapshot(read(resolve(ROOT, 'data/catalog/SNAPSHOT.json')));
+        validateSnapshot(readSnapshotStorage(resolve(ROOT, 'data/catalog/SNAPSHOT.json')));
         renderSnapshot(ROOT, true);
         for (const path of walk(resolve(ROOT, 'data/runs')).filter(
             (path) => path.endsWith('/WORK.json') && !path.includes('/migration-originals/')

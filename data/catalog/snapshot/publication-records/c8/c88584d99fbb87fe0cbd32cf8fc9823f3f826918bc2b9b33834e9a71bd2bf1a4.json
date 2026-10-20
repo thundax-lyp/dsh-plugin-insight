@@ -1,0 +1,17 @@
+{
+  "id": "github:1334850903:root",
+  "repository": "13071301808/dsh-composer-expand",
+  "path": "",
+  "revision": "e816461115436f1cb084f868398e610396d00679",
+  "fingerprints": {
+    "directory": "97cf9b5b0b0c89f471690fbf08ed5b33c642c7392d4cd4d3d0bfa4a5b4161c64",
+    "code": "e816461115436f1cb084f868398e610396d00679",
+    "maintenance": "f009ffe1139278eae0c1230c0e61d02bd9d5e55e04d9caea112a36f2f9770c67"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "a71d18d42d16ce5f7aab0b3f5345b8b4ec0056dd70185150fab0cf8e6e4a4150"
+}

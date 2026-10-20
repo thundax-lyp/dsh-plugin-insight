@@ -1,0 +1,204 @@
+{
+  "id": "github:1364961230:root",
+  "repository_id": 1364961230,
+  "component_id": "root",
+  "repository": "1569126506-sudo/dsh-team-cost",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-team-cost",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "office-operations",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "7535fe7f1b6735c96005fd439aec738c07b7b2cab74707dad71da422e6e01a41",
+    "code": "72f371c7cf45578791739c06b1d949e2868536dd",
+    "maintenance": "a976e1143a69db1e1958530eaf4ecb1ac54ded653da3e32d4555f1b98d68438d"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1364961230-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:31:53.465Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1364961230-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/README.md",
+      "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+      "captured_at": "2026-10-20T04:31:53.465Z",
+      "summary": "按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1569126506-sudo--dsh-team-cost/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1364961230-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1569126506-sudo/dsh-team-cost/blob/72f371c7cf45578791739c06b1d949e2868536dd/src/index.ts",
+      "revision": "72f371c7cf45578791739c06b1d949e2868536dd",
+      "captured_at": "2026-10-20T04:31:53.465Z",
+      "summary": "核查 src/index.ts、src/attribution.ts、src/pricing.ts、src/quota.ts、src/store.ts；src/index.ts监听assistant/message用量，按cwd最长前缀归因，写JSONL及汇总；agent/request可按团队或成员预算拒绝新请求。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1569126506-sudo--dsh-team-cost/REVIEWED-SOURCE.json",
+      "limitations": [
+        "路径前缀不是登录身份认证，startsWith未检查目录边界；未知模型默认零价会低估金额，成员拦截依赖请求payload可解析。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "共用宿主的团队需要把用量归到成员并管预算，验收应对齐账单与身份，不能只看报表有数字。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1364961230-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1364961230:root",
+          "area": "code",
+          "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:53.465Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "src/index.ts监听assistant/message用量，按cwd最长前缀归因，写JSONL及汇总；agent/request可按团队或成员预算拒绝新请求。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1364961230-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1364961230:root",
+          "area": "code",
+          "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:53.465Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "路径前缀不是登录身份认证，startsWith未检查目录边界；未知模型默认零价会低估金额，成员拦截依赖请求payload可解析。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1364961230-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1364961230:root",
+          "area": "code",
+          "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:53.465Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.2.1，Node>=22，发布入口dist/index.js，依赖zod及宿主session/request事件、Web RPC；作者说npm渠道尚待开放。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1364961230-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1364961230:root",
+          "area": "code",
+          "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:53.465Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "账本写入、轮询与Webhook有运维负担，价格维护和归属纠错占人工；没有实测漏计比例或账单精度。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1364961230-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1364961230:root",
+          "area": "code",
+          "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:53.465Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1364961230-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1364961230:root",
+          "area": "code",
+          "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:53.465Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把团队汇总接到请求门禁有管理价值；若归属或单价缺失，报表精确显示也会掩盖错误。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1364961230-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1364961230:root",
+          "area": "code",
+          "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:53.465Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "归因、价格、quota与store分层便于替换；路径规范化无大小写平台区分，未知价回退与字符串前缀都需独立约束。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1364961230-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1364961230:root",
+          "area": "code",
+          "fingerprint": "72f371c7cf45578791739c06b1d949e2868536dd"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:53.465Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:31:53.465Z"
+}

@@ -1,0 +1,204 @@
+{
+  "id": "github:1366089972:workspace-plugins-dsh-cortex",
+  "repository_id": 1366089972,
+  "component_id": "workspace-plugins-dsh-cortex",
+  "repository": "1420079678-ctrl/agent-body",
+  "path": "workspace/plugins/dsh-cortex",
+  "aliases": [],
+  "name": "dsh-cortex",
+  "entry_type": "plugin",
+  "technical_category": "memory-knowledge",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "9b3d7dba7e5117c95a5354df8856d606de964071e2612679835e783a693baeac",
+    "code": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+    "maintenance": "43f096365ebe99c29ae5999e57cb00a1b8b3292441388102d038dfe5b740737c"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:31:46.607Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/README.md",
+      "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+      "captured_at": "2026-10-20T04:31:46.607Z",
+      "summary": "按会话活动安排静默巩固，将工具经历归为持久记忆卡，并召回相关卡片与压低重复告警。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts",
+      "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+      "captured_at": "2026-10-20T04:31:46.607Z",
+      "summary": "核查 workspace/plugins/dsh-cortex/src/index.ts、workspace/plugins/dsh-cortex/lib/index.js；组件src/index.ts以agent/pre-step判断活动，静默后按工具记录确定性生成卡片，关键词加权召回，权重衰减归档；重复告警收敛静默。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex/REVIEWED-SOURCE.json",
+      "limitations": [
+        "卡片来自调用成功/失败统计，不证明任务结论正确；反复告警被静默也不表示故障解决。未测长期召回质量。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "长期运行Agent-Body的用户希望跨会话保留失败教训和重复做法，并减少常驻告警噪声。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:46.607Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "组件src/index.ts以agent/pre-step判断活动，静默后按工具记录确定性生成卡片，关键词加权召回，权重衰减归档；重复告警收敛静默。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:46.607Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "卡片来自调用成功/失败统计，不证明任务结论正确；反复告警被静默也不表示故障解决。未测长期召回质量。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:46.607Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.1.1，Node>=18及Cordis/DSH工具服务；有TS源与发布lib，统计须按组件限定，不重复相加生成产物。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:46.607Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "巩固本身为确定性处理，但每轮召回增加上下文；卡片整理、阈值与误报复查占人工时间，没有实测token净节省。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:46.607Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先少量召回并定期抽查卡片来源，重要故障保持外部告警；先验证重启后记忆仍可恢复再长期使用。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:46.607Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "不让心跳和维护调用冒充会话活动能避免永不巩固；自动抽取的打法可能只记录偶然成功，需要真实任务对照。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:46.607Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "噪声内核可单独复用，记忆写入节流减少频繁IO；写盘异常被吞掉且非原子整文件重写，持久化失败可见性需补证。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+          "area": "code",
+          "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:31:46.607Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:31:46.607Z"
+}
