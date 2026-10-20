@@ -30,16 +30,17 @@ function pages(repository, path, field) {
         if (items.length < 100) return result;
     }
 }
-export function isMetaPullRequest(pr, repository) {
+function isMetaIdentity(pr, repository) {
     return (
-        pr.state === 'open' &&
-        !pr.draft &&
         pr.user?.login === 'github-actions[bot]' &&
         pr.base?.ref === 'main' &&
         pr.base.repo.full_name === repository &&
         pr.head?.repo?.full_name === repository &&
         /^codex\/daily-meta-[0-9]+$/.test(pr.head.ref)
     );
+}
+export function isMetaPullRequest(pr, repository) {
+    return pr.state === 'open' && !pr.draft && isMetaIdentity(pr, repository);
 }
 export function validateMetaScope(before, after, files) {
     const stable = (value) => {
@@ -115,12 +116,64 @@ function report(number, state, detail = '') {
     console.log(text);
     if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `- ${text}\n`);
 }
+export function validateMainCIRun(run, workflowId) {
+    if (
+        run.workflow_id !== workflowId ||
+        run.head_branch !== 'main' ||
+        !['push', 'workflow_dispatch'].includes(run.event) ||
+        !/^[a-f0-9]{40,64}$/.test(run.head_sha ?? '')
+    )
+        throw Error('main CI run identity mismatch');
+}
+function ensureMainCI(repository, workflow, mergeSha, number, apply) {
+    const exact = pages(repository, `actions/workflows/${workflow.id}/runs?head_sha=${mergeSha}`, 'workflow_runs')
+        .filter((run) => run.head_branch === 'main' && ['push', 'workflow_dispatch'].includes(run.event))
+        .sort((a, b) => b.id - a.id)[0];
+    let run = exact ? api(repository, `actions/runs/${exact.id}`) : null;
+    if (!run) {
+        const mainSha = api(repository, 'git/ref/heads/main').object.sha;
+        const existing = pages(repository, `actions/workflows/${workflow.id}/runs?head_sha=${mainSha}`, 'workflow_runs')
+            .filter((item) => item.head_branch === 'main' && ['push', 'workflow_dispatch'].includes(item.event))
+            .sort((a, b) => b.id - a.id)[0];
+        if (existing) run = api(repository, `actions/runs/${existing.id}`);
+    }
+
+    if (!run) {
+        if (!apply) {
+            report(number, 'would dispatch main CI', mergeSha);
+            return;
+        }
+        const dispatched = api(repository, `actions/workflows/${workflow.id}/dispatches`, 'POST', { ref: 'main' });
+        if (!Number.isSafeInteger(dispatched?.workflow_run_id))
+            throw Error('main CI dispatch returned no workflow run ID');
+        run = api(repository, `actions/runs/${dispatched.workflow_run_id}`);
+    }
+    validateMainCIRun(run, workflow.id);
+    git('fetch', '--no-tags', 'origin', mergeSha, run.head_sha);
+    if (git('merge-base', mergeSha, run.head_sha).trim() !== mergeSha)
+        throw Error('main CI does not include merged META commit');
+    if (run.status === 'completed' && run.conclusion !== 'success') throw Error(`main CI failed: ${run.html_url}`);
+    report(number, 'main CI verified', `${run.status}/${run.conclusion ?? 'pending'} ${run.html_url}`);
+}
 export function maintainMetaPullRequests({ repository, apply = false } = {}) {
     if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repository ?? '')) throw Error('valid GH_REPO required');
     const dailyWorkflow = api(repository, 'actions/workflows/daily-meta.yml');
     const ciWorkflow = api(repository, 'actions/workflows/repository-checks.yml');
     const candidates = pages(repository, 'pulls?state=open').filter((pr) => isMetaPullRequest(pr, repository));
     if (!candidates.length) console.log('No eligible META PRs');
+    // A failed dispatch after a successful merge must be recoverable on the next maintenance run.
+    const recentMerged = pages(repository, 'pulls?state=closed&sort=updated&direction=desc').filter(
+        (pr) =>
+            isMetaIdentity(pr, repository) &&
+            pr.merged_at &&
+            Date.parse(pr.merged_at) >= Date.now() - 24 * 60 * 60 * 1000
+    );
+    for (const pr of recentMerged) {
+        const origin = api(repository, `actions/runs/${pr.head.ref.match(/[0-9]+$/)[0]}`);
+        if (origin.workflow_id === dailyWorkflow.id && origin.head_branch === 'main' && origin.conclusion === 'success')
+            ensureMainCI(repository, ciWorkflow, pr.merge_commit_sha, pr.number, apply);
+    }
+
     candidateLoop: for (const candidate of candidates) {
         let pr = api(repository, `pulls/${candidate.number}`);
         if (!isMetaPullRequest(pr, repository)) continue;
@@ -225,7 +278,7 @@ export function maintainMetaPullRequests({ repository, apply = false } = {}) {
             });
             if (!result.merged || !api(repository, `pulls/${pr.number}`).merged) throw Error('merge readback failed');
             // GITHUB_TOKEN merges do not produce an ordinary push-triggered workflow run.
-            api(repository, `actions/workflows/${ciWorkflow.id}/dispatches`, 'POST', { ref: 'main' });
+            ensureMainCI(repository, ciWorkflow, result.sha, pr.number, apply);
             report(pr.number, 'merged', result.sha);
         }
     }
