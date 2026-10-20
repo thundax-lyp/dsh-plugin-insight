@@ -1,64 +1,51 @@
 # dsh-cortex
 
+> 按会话活动安排静默巩固，将工具经历归为持久记忆卡，并召回相关卡片与压低重复告警。
+
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-> 按会话活动安排静默巩固，将工具经历归为持久记忆卡，并召回相关卡片与压低重复告警。
+分析版本：[9403444](https://github.com/1420079678-ctrl/agent-body/tree/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex)
 
 <!-- BEGIN META -->
 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body)
 <!-- END META -->
 
-## 版本
+**使用建议**：先少量召回并定期抽查卡片来源，重要故障保持外部告警；先验证重启后记忆仍可恢复再长期使用。
 
-固定提交 [9403444d87d5e962f9a4f0c4c10fdb48f37f7d66](https://github.com/1420079678-ctrl/agent-body/tree/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex)
+**核查状态**：已检查源码，未进行真实宿主验证。
 
-## 用途与采用点评
+## 使用建议
 
 - **用途**：长期运行Agent-Body的用户希望跨会话保留失败教训和重复做法，并减少常驻告警噪声。
-- **亮点**：组件src/index.ts以agent/pre-step判断活动，静默后按工具记录确定性生成卡片，关键词加权召回，权重衰减归档；重复告警收敛静默。
-- **思考**：不让心跳和维护调用冒充会话活动能避免永不巩固；自动抽取的打法可能只记录偶然成功，需要真实任务对照。
-- **建议**：先少量召回并定期抽查卡片来源，重要故障保持外部告警；先验证重启后记忆仍可恢复再长期使用。
-
-## 场景与替代办法
 
 此前未入档；手工维护项目规则更透明，本项适合有重复工具流程且愿意管理卡片的人。
 
-## 依赖与流程
+## 能力与限制
+
+- **模型工具**：cortex_sleep、cortex_memory、cortex_homeo。
+- **事件监听**：会话活动、工具结果与organism心跳。
+
+**流程与依赖**
 
 依赖宿主工具和pre-step事件及可写DSH_HOME，告警降噪依赖organism事件；同一目录的记忆可能跨项目影响模型。
 
 观察会话推进，静默时巩固，下一次任务召回相关卡片，用户检查并归档误记；异常时先核对磁盘原件及错误日志。
 
-## 成本与效果
-
-巩固本身为确定性处理，但每轮召回增加上下文；卡片整理、阈值与误报复查占人工时间，没有实测token净节省。
-
-## 工程统计
-
-统计范围：git tracked files at exact commit; component scope only；组件：workspace/plugins/dsh-cortex；内容摘要：6b4b76cbcfba99f0c3c5bcf1e0a7b0d85066ac7152ba373532ed5cc378b2910d。sloc 0.3.2，TypeScript 5.9.3。
-
-| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
-|---|---|---:|---:|---:|---:|---:|
-| .js | source | 1 | 1014 | 936 | 86 | — |
-| .md | source | 1 | 128 | — | — | 1659 |
-| .mjs | source | 1 | 220 | 162 | 29 | — |
-| .ts | source | 1 | 1115 | 890 | 140 | — |
-
-排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
-
-## 能力清单
-
-- **模型工具**：cortex_sleep、cortex_memory、cortex_homeo。
-- **事件监听**：会话活动、工具结果与organism心跳。
-
-## 工程亮点
-
-噪声内核可单独复用，记忆写入节流减少频繁IO；写盘异常被吞掉且非原子整文件重写，持久化失败可见性需补证。
-
-## 分发与兼容
+**兼容条件**
 
 0.1.1，Node>=18及Cordis/DSH工具服务；有TS源与发布lib，统计须按组件限定，不重复相加生成产物。
 
+**效果与成本**
+
+巩固本身为确定性处理，但每轮召回增加上下文；卡片整理、阈值与误报复查占人工时间，没有实测token净节省。
+
+- **思考**：不让心跳和维护调用冒充会话活动能避免永不巩固；自动抽取的打法可能只记录偶然成功，需要真实任务对照。
+
+## 工程分析
+
+- **亮点**：组件src/index.ts以agent/pre-step判断活动，静默后按工具记录确定性生成卡片，关键词加权召回，权重衰减归档；重复告警收敛静默。
+
+噪声内核可单独复用，记忆写入节流减少频繁IO；写盘异常被吞掉且非原子整文件重写，持久化失败可见性需补证。
 
 ## 核查说明
 
@@ -68,7 +55,23 @@
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：用已知成功链、失败序列与无关项目验证卡片生成、召回和归档；注入写盘失败并重启，确认数据与界面没有假成功。
 
-## 活跃度
+**分析版本**
+
+固定提交 [9403444](https://github.com/1420079678-ctrl/agent-body/tree/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex)
+
+<details>
+<summary>工程统计与口径</summary>
+
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .js | source | 1 | 1014 | 936 | 86 | — |
+| .md | source | 1 | 128 | — | — | 1659 |
+| .mjs | source | 1 | 220 | 162 | 29 | — |
+| .ts | source | 1 | 1115 | 890 | 140 | — |
+
+</details>
+
+**活跃度**
 
 [![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body/issues?q=is%3Aissue+created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z) · [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z)
 

@@ -1,62 +1,50 @@
 # dsh-wsl-distro
 
+> 识别当前WSL发行版、Windows默认发行版与系统信息，并提示跨发行版路径差异。
+
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-> 识别当前WSL发行版、Windows默认发行版与系统信息，并提示跨发行版路径差异。
+分析版本：[5a6f710](https://github.com/173787247/dsh-wsl-distro/tree/5a6f71031271a53d6e16abd267c59fbc69685a92)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro)
 <!-- END META -->
 
-## 版本
+**使用建议**：适合多发行版开发者，先核对current/default与UNC路径，再在目标发行版确认文件存在。
 
-固定提交 [5a6f71031271a53d6e16abd267c59fbc69685a92](https://github.com/173787247/dsh-wsl-distro/tree/5a6f71031271a53d6e16abd267c59fbc69685a92)
+**核查状态**：已检查源码，未进行真实宿主验证。
 
-## 用途与采用点评
+## 使用建议
 
 - **用途**：安装多个发行版的用户容易把Windows默认WSL与当前会话混淆，希望先确认目录属于哪一个系统。
-- **亮点**：lib/distro.js读取WSL_DISTRO_NAME和os-release，执行wsl.exe -l -v并解析表格，比较当前与默认发行版。
-- **思考**：提醒默认发行版不等于当前会话能避免路径误用；发行版名字本身不能证明用户、挂载和权限一致。
-- **建议**：适合多发行版开发者，先核对current/default与UNC路径，再在目标发行版确认文件存在。
-
-## 场景与替代办法
 
 此前未入档；手工echo环境变量及wsl -l -v已足够，本项把分散结果整理成路径提示。
 
-## 依赖与流程
+## 能力与限制
+
+- **模型工具**：distro_info。
+
+**流程与依赖**
 
 依赖正确WSL环境变量、Windows互操作与输出编码，路径能否访问还取决于发行版运行和用户权限。
 
 运行distro_info，确认当前和默认发行版，再转换所需路径；解析无结果时回读原始wsl列表，不据此切换或删除环境。
 
-## 成本与效果
-
-无模型外额外服务，主要是进程探测和人工确认；不直接修改系统，错误路径判断的后续恢复成本仍需考虑。
-
-## 工程统计
-
-统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d38b8e9a7dbefa21ed3349e764095236d204ae19d8424d5ad19afdb07079d9ff。sloc 0.3.2，TypeScript 5.9.3。
-
-| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
-|---|---|---:|---:|---:|---:|---:|
-| .md | source | 5 | 95 | — | — | 549 |
-| .js | source | 3 | 238 | 211 | 5 | — |
-| .js | test | 1 | 56 | 53 | 0 | — |
-
-排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
-
-## 能力清单
-
-- **模型工具**：distro_info。
-
-## 工程亮点
-
-os-release读取与表格解析分离，解析失败保留raw输出方便核对；状态字段的英文Running检测有本地化边界。
-
-## 分发与兼容
+**兼容条件**
 
 0.2.0，Node>=18，需WSL环境和可用wsl.exe互操作；语言与Windows版本兼容未执行验证。
 
+**效果与成本**
+
+无模型外额外服务，主要是进程探测和人工确认；不直接修改系统，错误路径判断的后续恢复成本仍需考虑。
+
+- **思考**：提醒默认发行版不等于当前会话能避免路径误用；发行版名字本身不能证明用户、挂载和权限一致。
+
+## 工程分析
+
+- **亮点**：lib/distro.js读取WSL_DISTRO_NAME和os-release，执行wsl.exe -l -v并解析表格，比较当前与默认发行版。
+
+os-release读取与表格解析分离，解析失败保留raw输出方便核对；状态字段的英文Running检测有本地化边界。
 
 ## 核查说明
 
@@ -66,7 +54,22 @@ os-release读取与表格解析分离，解析失败保留raw输出方便核对�
 - 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
 - 下一步：测试多发行版、非默认会话、停止状态和不同语言输出，检查UNC建议指向当前发行版而非默认。
 
-## 活跃度
+**分析版本**
+
+固定提交 [5a6f710](https://github.com/173787247/dsh-wsl-distro/tree/5a6f71031271a53d6e16abd267c59fbc69685a92)
+
+<details>
+<summary>工程统计与口径</summary>
+
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 5 | 95 | — | — | 549 |
+| .js | source | 3 | 238 | 211 | 5 | — |
+| .js | test | 1 | 56 | 53 | 0 | — |
+
+</details>
+
+**活跃度**
 
 Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/173787247/dsh-wsl-distro/issues) 查看。
 

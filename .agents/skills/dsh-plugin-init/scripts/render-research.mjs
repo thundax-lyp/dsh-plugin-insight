@@ -8,6 +8,7 @@ import addFormats from 'ajv-formats';
 import { ROOT, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { template } from './publication/template.mjs';
+import { renderDetailLayout } from './publication/detail-layout.mjs';
 import {
     categoryGroups,
     renderCategoryIndex,
@@ -79,17 +80,23 @@ function renderReadingNavigation(detail, navigation, longRead) {
                         fence = null;
                     return line;
                 }
-                const heading = !fence && line.match(/^## (.+)$/);
+                const heading = !fence && line.match(/^(#{2,3}) (.+)$/);
                 if (!heading) return line;
                 const anchor = `detail-section-${entries.length + 1}`;
-                entries.push(template('DETAIL-CONTENTS-ITEM', { title: clean(heading[1]), anchor }));
+                entries.push(
+                    template('DETAIL-CONTENTS-ITEM', {
+                        title: clean(heading[2]),
+                        anchor,
+                        indent: heading[1].length === 3 ? '  ' : ''
+                    })
+                );
                 return `<a id="${anchor}"></a>\n\n${line}`;
             })
             .join('\n');
         const contents = template('DETAIL-CONTENTS', { items: entries.join('\n') });
-        content = content.replace(/(<!-- END META -->\n)/, `$1\n${contents}\n`);
+        content = content.replace(/(\*\*核查状态\*\*：[^\n]+\n)/, `$1\n${contents}\n`);
     }
-    return content.replace(/^(# [^\n]+\n)/, `$1\n${navigation}\n`) + `\n${navigation}\n`;
+    return content.replace(/^(# [^\n]+\n\n> [^\n]+\n)/, `$1\n${navigation}\n`) + `\n${navigation}\n`;
 }
 export function renderPublication(input, root = ROOT, context = null) {
     if (!check(input)) throw Error(ajv.errorsText(check.errors));
@@ -220,17 +227,15 @@ export function renderPublication(input, root = ROOT, context = null) {
                 });
                 meta = template('META', { stars: starsBadge, downloads, review: update });
             }
-            const issueBlock = `## 活跃度\n\n${issues}\n`;
-            const reportWithoutMeta = renderDetailReport(report, i).replace(
-                /\n<!-- BEGIN META -->\n[\s\S]*?\n<!-- END META -->\n*/,
-                '\n'
-            );
-            const detailMeta = template('DETAIL-META', { meta });
-            const reportWithMeta = reportWithoutMeta.replace(/^(# [^\n]+\n\n> [^\n]+)\n+/, `$1\n\n${detailMeta}\n\n`);
-            if (reportWithMeta === reportWithoutMeta) throw Error(`detail needs a title and summary: ${i.id}`);
-            const detail = /\n## (?:Issue )?活跃度\n/.test(reportWithMeta)
-                ? reportWithMeta.replace(/## (?:Issue )?活跃度\n[\s\S]*$/, issueBlock)
-                : reportWithMeta.trimEnd() + '\n\n' + issueBlock;
+            const longRead = report.length >= 8000 || /^## .*?(?:创新推演|未来设计假设)/m.test(report);
+            const detail = renderDetailLayout(renderDetailReport(report, i), i, {
+                meta,
+                issues,
+                advice: usageConditions,
+                capabilities,
+                evidence: plugin.evidence,
+                longRead
+            });
             return {
                 i,
                 plugin,
@@ -245,7 +250,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 pushedAt,
                 npmFirstPublished,
                 detailPath,
-                longRead: report.length >= 8000,
+                longRead,
                 detail
             };
         });

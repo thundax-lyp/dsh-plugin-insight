@@ -1,1 +1,1 @@
-- [{{title}}](#{{anchor}})
+{{indent}}- [{{title}}](#{{anchor}})
