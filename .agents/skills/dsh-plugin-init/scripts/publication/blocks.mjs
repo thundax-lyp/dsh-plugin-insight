@@ -151,8 +151,8 @@ export function renderRecommended(recommendations, byId, limit = 5) {
                     const e = byId.get(r.plugin_id);
                     return template('RECOMMENDED-ITEM', {
                         plugin: nameLink(e),
-                        kind: r.kind === 'install' ? '值得安装' : '条件试用',
-                        summary: `${clean(e.summary)} ${clean(r.summary)}`,
+                        kind: r.kind === 'install' ? ' · 值得安装' : '',
+                        summary: `${clean(e.summary)} ${clean(r.summary).replaceAll('条件试用', '试用')}`,
                         review: ''
                     });
                 })

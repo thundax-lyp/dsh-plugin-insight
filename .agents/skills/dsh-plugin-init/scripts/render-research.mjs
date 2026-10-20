@@ -56,7 +56,8 @@ export function renderDetailReport(report, item) {
         })
         .replace(/\n## 固定范围与依据\n[\s\S]*?(?=\n## )/, `\n## 版本\n\n固定提交 [${item.revision}](${versionUrl})\n`)
         .replace(/\n## 代码评价\n\n([\s\S]*?)\n## 可借鉴处\n\n/, '\n## 工程亮点\n\n$1\n\n')
-        .replace(/\n## 验证与边界\n/, '\n## 核查说明\n');
+        .replace(/\n## 验证与边界\n/, '\n## 核查说明\n')
+        .replaceAll('条件试用', '试用');
 }
 export function latestManifestItems(manifests) {
     const latest = new Map();
@@ -343,7 +344,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             });
             return {
                 path: e.detailPath,
-                content: renderReadingNavigation(e.detail, navigation, e.longRead)
+                content: renderReadingNavigation(e.detail, navigation, e.longRead).replaceAll('条件试用', '试用')
             };
         }),
         registry
