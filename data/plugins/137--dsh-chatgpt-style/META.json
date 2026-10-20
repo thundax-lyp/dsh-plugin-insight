@@ -1,8 +1,8 @@
 {
   "repository": "137/dsh-chatgpt-style",
   "repository_id": 1421963463,
-  "captured_at": "2026-10-20T04:26:03.331Z",
-  "window_start": "2026-09-20T04:26:03.331Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 0,
   "pushed_at": "2026-10-16T09:49:30Z",
   "issues": {
@@ -15,23 +15,31 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C764:1C5F50:17DDDC:199D23:6AD6ED5C and timestamp 2026-10-20 04:26:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C44:39CFE4:1767F1:4C0D99:6AD705CF and timestamp 2026-10-20 06:10:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C828:1D45E2:16F8E3:18B77A:6AD6ED5D and timestamp 2026-10-20 04:26:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C48:12851:17CF6E:4D5C23:6AD705CF and timestamp 2026-10-20 06:10:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20created%3A2026-09-20T04%3A26%3A03.331Z..2026-10-20T04%3A26%3A03.331Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C8EA:663E2:167091:182ED8:6AD6ED5E and timestamp 2026-10-20 04:26:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C42:15BF51:164AD2:485300:6AD705D0 and timestamp 2026-10-20 06:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A26%3A03.331Z..2026-10-20T04%3A26%3A03.331Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C982:3BE93D:189DA4:1A5DA4:6AD6ED5F and timestamp 2026-10-20 04:26:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C35:3F9D72:1ABD05:57976A:6AD705D0 and timestamp 2026-10-20 06:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20updated%3A2026-09-20T04%3A26%3A03.331Z..2026-10-20T04%3A26%3A03.331Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CA48:3BC741:171192:18D1C6:6AD6ED60 and timestamp 2026-10-20 04:26:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A137%2Fdsh-chatgpt-style%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C4B:11EE30:19B05C:53796C:6AD705D0 and timestamp 2026-10-20 06:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
-  ]
+  ],
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "fe4f23bed4bec14ad01577050eaacdc0893f57d9",
+    "current_revision": "fe4f23bed4bec14ad01577050eaacdc0893f57d9",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
 }

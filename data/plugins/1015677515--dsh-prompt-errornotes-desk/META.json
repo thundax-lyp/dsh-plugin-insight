@@ -1,8 +1,8 @@
 {
   "repository": "1015677515/dsh-prompt-ErrorNotes-desk",
   "repository_id": 1418691015,
-  "captured_at": "2026-10-20T04:25:55.433Z",
-  "window_start": "2026-09-20T04:25:55.433Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 3,
   "pushed_at": "2026-10-20T03:39:08Z",
   "issues": {
@@ -15,23 +15,31 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C082:7CCD8:178204:194028:6AD6ED55 and timestamp 2026-10-20 04:25:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C40:B9159:5CB10:12F4F0:6AD70592 and timestamp 2026-10-20 06:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C144:F5B22:18C562:1A83DB:6AD6ED55 and timestamp 2026-10-20 04:25:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3A:E4BA0:63855:1472C1:6AD70593 and timestamp 2026-10-20 06:09:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20created%3A2026-09-20T04%3A25%3A55.433Z..2026-10-20T04%3A25%3A55.433Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C1E2:3BA24E:19B6F2:1B75A1:6AD6ED56 and timestamp 2026-10-20 04:25:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C41:18ABD3:72B77:179046:6AD70593 and timestamp 2026-10-20 06:09:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A25%3A55.433Z..2026-10-20T04%3A25%3A55.433Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C2A2:1E0859:177505:193361:6AD6ED57 and timestamp 2026-10-20 04:25:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C42:E2E2E:585A5:1217E8:6AD70593 and timestamp 2026-10-20 06:09:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20updated%3A2026-09-20T04%3A25%3A55.433Z..2026-10-20T04%3A25%3A55.433Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C35C:403C2:185AF3:1A174B:6AD6ED58 and timestamp 2026-10-20 04:26:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C44:3C9CDE:6B5B6:16252C:6AD70593 and timestamp 2026-10-20 06:09:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
-  ]
+  ],
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "fab9373ac396e430316b09693b654051583e9713",
+    "current_revision": "fab9373ac396e430316b09693b654051583e9713",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
 }

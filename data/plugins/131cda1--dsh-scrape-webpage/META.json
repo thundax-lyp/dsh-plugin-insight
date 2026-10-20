@@ -1,8 +1,8 @@
 {
   "repository": "131CDA1/dsh-scrape-webpage",
   "repository_id": 1334269686,
-  "captured_at": "2026-10-20T04:25:55.431Z",
-  "window_start": "2026-09-20T04:25:55.431Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 9,
   "pushed_at": "2026-08-20T06:26:10Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C06A:3BC741:1709DB:18C94D:6AD6ED54 and timestamp 2026-10-20 04:25:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C47:355364:17DB1A:4DA6A7:6AD705B1 and timestamp 2026-10-20 06:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C13A:7BF23:17E105:199E54:6AD6ED55 and timestamp 2026-10-20 04:25:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3F:20C52B:17FBDF:4D33E0:6AD705B1 and timestamp 2026-10-20 06:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20created%3A2026-09-20T04%3A25%3A55.431Z..2026-10-20T04%3A25%3A55.431Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C1EC:70474:184098:19FF88:6AD6ED56 and timestamp 2026-10-20 04:25:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C38:20C52B:17FC97:4D35E1:6AD705B1 and timestamp 2026-10-20 06:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A25%3A55.431Z..2026-10-20T04%3A25%3A55.431Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C2A4:6FB37:1878EB:1A3977:6AD6ED57 and timestamp 2026-10-20 04:25:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C41:3EA53A:17B7FB:4D4D95:6AD705B1 and timestamp 2026-10-20 06:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20updated%3A2026-09-20T04%3A25%3A55.431Z..2026-10-20T04%3A25%3A55.431Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C362:1E1095:18B9C8:1A794B:6AD6ED58 and timestamp 2026-10-20 04:26:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C48:12851:170E5E:4AEA87:6AD705B1 and timestamp 2026-10-20 06:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-scrape-webpage",
-    "captured_at": "2026-10-20T04:26:00.483Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": 1151,
@@ -44,9 +44,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-20T06:18:05.317Z",
-      "captured_at": "2026-10-20T04:26:00.483Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/dsh-scrape-webpage",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+    "current_revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

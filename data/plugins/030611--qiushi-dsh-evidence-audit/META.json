@@ -1,42 +1,21 @@
 {
   "repository": "030611/qiushi-dsh-evidence-audit",
   "repository_id": 1333357514,
-  "captured_at": "2026-10-20T02:56:34.200Z",
-  "window_start": "2026-09-20T02:56:34.200Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 3,
   "pushed_at": "2026-08-14T13:08:45Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 58A8:7AB59:944B7:9E60A:6AD6D864 and timestamp 2026-10-20 02:56:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5992:1DD4A2:8F802:9988E:6AD6D865 and timestamp 2026-10-20 02:56:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20created%3A2026-09-20T02%3A56%3A34.200Z..2026-10-20T02%3A56%3A34.200Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5A6C:39E969:96708:A0C8D:6AD6D866 and timestamp 2026-10-20 02:56:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A56%3A34.200Z..2026-10-20T02%3A56%3A34.200Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5B20:F5B22:8FB43:99C7D:6AD6D867 and timestamp 2026-10-20 02:56:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fqiushi-dsh-evidence-audit%20is%3Aissue%20updated%3A2026-09-20T02%3A56%3A34.200Z..2026-10-20T02%3A56%3A34.200Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5C3A:163F0:8F8B3:99A29:6AD6D868 and timestamp 2026-10-20 02:56:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "qiushi-dsh-evidence-audit",
-    "captured_at": "2026-10-20T02:56:40.765Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": 1208,
@@ -44,9 +23,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-13T18:43:08.723Z",
-      "captured_at": "2026-10-20T02:56:40.765Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/qiushi-dsh-evidence-audit",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+    "current_revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }
