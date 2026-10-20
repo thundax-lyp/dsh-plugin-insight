@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readWork } from '../../_shared/scripts/work-storage.mjs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { existsSync, mkdirSync, readFileSync } from 'node:fs';
@@ -22,7 +23,7 @@ const pool = async (items, fn) => {
     );
 };
 export async function prepareSelected(workPath) {
-    const work = read(resolve(workPath)),
+    const work = readWork(resolve(workPath)),
         folder = resolve(workPath, '..');
     const items = selectedItems(work.session).filter((i) => i.status === 'pending');
     const checkouts = new Map(),

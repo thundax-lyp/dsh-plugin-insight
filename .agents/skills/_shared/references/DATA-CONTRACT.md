@@ -17,7 +17,10 @@
 - 合并回读成功且当前快照可独立校验、生成页面后，本轮不再被引用的材料可清理；未合并增量保留用于恢复。历史变迁由 Git 追踪，不要求每轮永久归档；本规则不自动授权删除既有文件。
 
 正式真相存储在 `data/catalog/SNAPSHOT.json`，由 [snapshot Schema](../schemas/snapshot.schema.json) 约束，内含 catalog、publication、registry、discovery、reports、metadata、artifacts、迁移限制及最近一次合并标识。必要原件以内容和 SHA-256 嵌入；旧缺失原件单列 unavailable_artifacts，不要求找回，也不能被新记录用作缺失证据的豁免。
-本轮 WORK 由 [工作文件 Schema](../schemas/snapshot-work.schema.json) 约束，包含固定 input、session、base_digest 和已完成记录；新增 session.base_digest 绑定正式快照，previous_digest 仅兼容旧工具。
+本轮完整逻辑状态由 [工作文件 Schema](../schemas/snapshot-work.schema.json) 约束，拆分入口、队列、状态和兼容链接由 [存储 Schema](../schemas/work-storage.schema.json) 约束。新建过程使用 v2 拆分存储：WORK 只保存 base_digest、INPUT／QUEUE／会话状态／单项记录的路径和 SHA-256；INPUT 保存唯一完整候选清单，QUEUE 保存按输入下标分组的变化及缺席项，状态文件只保存会话头与非默认状态／检查点，已完成记录逐项独立保存。SESSION.json 是指向同目录 WORK 的兼容入口，不另存完整清单。
+读取器校验引用路径、内容摘要、Schema、队列覆盖、选择和检查点后，重建原 v1 内存结构；内存结构的语义摘要保持不变，不因拆文件改变已有合并计划、事务标识或结论。session.base_digest 仍绑定正式快照，previous_digest 仅兼容旧工具。
+过程依赖对象按内容摘要命名且不可变，更新先准备依赖、再原子替换唯一 WORK 索引；中断前后读取旧／新完整状态。SESSION 入口通过 WORK 读取当前会话，不独立切换状态；未引用的中断残留不当作完成记录。引用只能落在本轮目录，拒绝路径逃逸、符号链接逃逸与摘要不符，不自动修正损坏内容。
+旧 v1 可继续读取；显式 `snapshot migrate-work --work ...` 只预览，加 `--apply` 才迁移。先保留 WORK／SESSION 原始字节到本轮 migration-originals，再生成、回读并核对完整语义摘要后切换 WORK；重复执行不得覆写备份或重置选择／状态。迁移不依赖当前正式基线仍匹配，也不执行研究或修改 SNAPSHOT。正常暂存旧 v1 保持旧格式，避免隐式迁移。
 合并计划从固定基线和经过校验的 WORK 重建结果；持有独占锁后复核基线、WORK 与结果摘要，原子替换单个 SNAPSHOT 文件，再回读。中断最多留下旧／新两个完整状态之一；遗留锁须人工核实。重复 apply 同一结果返回 already_applied，不追加历史运行日志。
 PLUGINS、PUBLICATION、PLUGIN-PATHS、META 及页面从快照重建，生成前后核对快照摘要；生成中断可重跑，兼容输出不反向覆盖快照。当前研究有效性来自 records 与 catalog 的分析摘要匹配，不来自旧 manifest。
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readResearchSession } from '../../_shared/scripts/work-storage.mjs';
 import {
     existsSync,
     readFileSync,
@@ -358,6 +359,12 @@ export function saveSession(path, action) {
     const fd = openSync(lock, 'wx', 0o600);
     try {
         writeFileSync(fd, JSON.stringify({ pid: process.pid }));
+        if (existsSync(path) && read(path).schema_version === 2)
+            throw Error('linked session must be mutated through snapshot WORK');
+        const sibling = resolve(dirname(path), 'WORK.json');
+        if (existsSync(sibling) && read(sibling).schema_version === 2)
+            throw Error('split work must be mutated through snapshot WORK');
+        if (existsSync(resolve(dirname(path), 'WORK.json.lock'))) throw Error('active work lock');
         const value = action();
         atomicWrite(path, value);
         return value;
@@ -421,12 +428,12 @@ export function main(args = process.argv.slice(2)) {
             if (existsSync(path)) throw new Error('session exists; resume it or choose new id');
             return startSession(
                 read(need('input')),
-                v.previous ? read(v.previous) : null,
+                v.previous ? readResearchSession(v.previous) : null,
                 v.limit === undefined ? 40 : /^[1-9][0-9]*$/.test(v.limit) ? Number(v.limit) : NaN
             );
         });
     } else if (['next', 'validate'].includes(command)) {
-        const s = validateSession(read(need('session')));
+        const s = validateSession(readResearchSession(need('session')));
         const selected = selectedItems(s);
         console.log(
             JSON.stringify(
@@ -448,12 +455,12 @@ export function main(args = process.argv.slice(2)) {
         const outputPath = relative(ROOT, resolve(out)).split('\\').join('/');
         if (!/^data\/manifests\/\d{4}-\d{2}-\d{2}-\d{2,}\.json$/.test(outputPath))
             throw new Error('manifest output requires data/manifests/<round>.json');
-        atomicWrite(resolve(out), createManifest(read(sessionPath), sessionPath));
+        atomicWrite(resolve(out), createManifest(readResearchSession(sessionPath), sessionPath));
     } else if (command === 'publish') {
-        publishItem(read(need('session')), need('plugin'), need('out'));
+        publishItem(readResearchSession(need('session')), need('plugin'), need('out'));
     } else if (command === 'checkpoint' || command === 'block' || command === 'retry' || command === 'invalidate') {
         saveSession(need('session'), () => {
-            const s = validateSession(read(v.session));
+            const s = validateSession(readResearchSession(v.session));
             if (command === 'checkpoint')
                 return completeItem(
                     s,

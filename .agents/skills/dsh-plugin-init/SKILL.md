@@ -16,8 +16,8 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 新一轮与当前快照比较，不要求上一轮 SESSION、manifest 链或 runs 归档；历史版本需要时从 Git 查阅。
 具体合并、证据落位及清理条件以[数据契约](../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)为准。
 
-正式真相位于 `data/catalog/SNAPSHOT.json`，结构见共享 `snapshot.schema.json`；本轮工作文件为 `data/runs/<round>/WORK.json`，结构见 `snapshot-work.schema.json`。
-使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／clean。`PLUGINS.json`、`PUBLICATION.json`、路径注册表、META 与页面是可重建的兼容输出，不再单独人工写入。
+正式真相位于 `data/catalog/SNAPSHOT.json`，结构见共享 `snapshot.schema.json`；本轮工作入口为 `data/runs/<round>/WORK.json`，新建时使用 v2 小索引，INPUT、队列、会话状态与单项结果分开保存，完整逻辑结构见 `snapshot-work.schema.json`，拆分存储见 `work-storage.schema.json`。用过程读取器加载，不直接对 WORK／SESSION 执行 JSON 读取后假设内嵌完整数据。
+使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／migrate-work／clean。`PLUGINS.json`、`PUBLICATION.json`、路径注册表、META 与页面是可重建的兼容输出，不再单独人工写入。
 首次迁移才使用 `snapshot bootstrap`；它保留现有分析，明确列出缺失历史原件，不把迁移当成本轮研究。已有快照时不得重做 bootstrap。
 旧 research／publication 的正式写入不再用于新流程；命令及恢复语义见[会话与合并恢复](references/SESSION-OPERATIONS.md)。
 
@@ -34,7 +34,7 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 ## 执行流程
 
 1. **读取基线并确定本轮。** 检查工作区和当前快照，记录其摘要；当前快照不存在才视为首次初始化。
-   新轮次分配未占用的 `data/runs/YYYY-MM-DD-NN/`；继续任务时恢复本轮会话和已完成的暂存记录。
+   新轮次分配未占用的 `data/runs/YYYY-MM-DD-NN/`；继续任务时通过过程读取器恢复本轮会话和已完成的暂存记录，逐一验证引用摘要。旧过程需要拆分时先预览 `snapshot migrate-work --work ...`，再加 `--apply` 显式迁移，保留原件并核对语义摘要；不重建已清理轮次。
    旧 runs 缺失不阻止新研究。当前快照缺少某项比较依据时，将该维度标为 unknown，不从历史清单拼造事实。
 2. **固定来源与生成列表。** 默认核查两个研究目录，固定 checkout 提交、检查时间和覆盖范围。
    使用稳定输入构建器，保存本轮 INPUT 与问题记录；来源 checkout 必须干净，构建前后 HEAD 不变。

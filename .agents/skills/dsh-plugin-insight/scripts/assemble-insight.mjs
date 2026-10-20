@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readWork } from '../../_shared/scripts/work-storage.mjs';
 // Assemble only an explicitly authored, complete single-plugin analysis; never infer findings from inventory.
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
@@ -30,7 +31,7 @@ export function sourceMembership(work, item, source) {
     return work.session.sources.find((value) => value.url === source)?.complete ? 'removed' : 'unknown';
 }
 export function assembleInsight(workPath, pluginId, analysisPath) {
-    const work = read(resolve(workPath)),
+    const work = readWork(resolve(workPath)),
         analysis = read(resolve(analysisPath));
     const required = [
         'name',

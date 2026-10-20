@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readWork, saveWork, migrateWork, workStorageFiles } from '../../_shared/scripts/work-storage.mjs';
 import { existsSync, readFileSync, mkdirSync, writeFileSync, openSync, closeSync, unlinkSync, rmSync } from 'node:fs';
 import { resolve, relative, isAbsolute, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -33,7 +34,7 @@ const ajv = new Ajv({ strict: true, allErrors: true });
 addFormats(ajv);
 const check = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/snapshot.schema.json')));
 const workCheck = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/snapshot-work.schema.json')));
-const validateWork = (work, root = ROOT) => {
+export const validateWork = (work, root = ROOT) => {
     if (!workCheck(work)) throw Error(ajv.errorsText(workCheck.errors));
     validateSession(work.session, root);
     if (
@@ -170,6 +171,18 @@ export function bootstrap(root = ROOT) {
     return result;
 }
 export function startWork(input, path, limit = 40, root = ROOT) {
+    mkdirSync(dirname(path), { recursive: true });
+    const lock = path + '.lock',
+        fd = openSync(lock, 'wx', 0o600);
+    try {
+        if (existsSync(resolve(dirname(path), 'SESSION.json.lock'))) throw Error('active session lock');
+        return startWorkUnlocked(input, path, limit, root);
+    } finally {
+        closeSync(fd);
+        unlinkSync(lock);
+    }
+}
+function startWorkUnlocked(input, path, limit, root) {
     if (existsSync(path)) throw Error('work already exists; resume it');
     const rel = relative(root, resolve(path)).split('\\').join('/');
     if (!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/WORK\.json$/.test(rel))
@@ -262,8 +275,7 @@ export function startWork(input, path, limit = 40, root = ROOT) {
         records: {}
     };
     validateSession(session, root);
-    atomicWrite(path, work);
-    atomicWrite(resolve(dirname(path), 'SESSION.json'), session);
+    saveWork(path, work, true);
     return work;
 }
 function snapshotSelection(base) {
@@ -378,6 +390,7 @@ export function stageRecord(workPath, id, observationPath, reportPath, displayPa
     const fd = openSync(lock, 'wx', 0o600);
     try {
         writeFileSync(fd, JSON.stringify({ pid: process.pid }));
+        if (existsSync(resolve(dirname(workPath), 'SESSION.json.lock'))) throw Error('active session lock');
         return stageRecordUnlocked(workPath, id, observationPath, reportPath, displayPath, root);
     } finally {
         closeSync(fd);
@@ -386,7 +399,7 @@ export function stageRecord(workPath, id, observationPath, reportPath, displayPa
 }
 function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayPath, root = ROOT) {
     const base = readSnapshot(root),
-        work = validateWork(read(workPath), root);
+        work = validateWork(readWork(workPath), root);
     if (work.base_digest !== digest(base)) throw Error('snapshot baseline changed');
     if (work.records[id]) throw Error('record already staged; do not overwrite checkpoint');
     const observations = read(observationPath),
@@ -425,8 +438,7 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
         files: [observationPath, reportPath, displayPath].map((p) => relative(root, resolve(p)))
     };
     assemble(base, work, root);
-    atomicWrite(workPath, work);
-    atomicWrite(resolve(dirname(workPath), 'SESSION.json'), work.session);
+    saveWork(workPath, work);
     return work;
 }
 export function assertMergeReady(work) {
@@ -435,7 +447,7 @@ export function assertMergeReady(work) {
 }
 export function planSnapshot(workPath, root = ROOT) {
     const base = readSnapshot(root),
-        work = validateWork(read(workPath), root);
+        work = validateWork(readWork(workPath), root);
     if (!Object.keys(work.records).length) throw Error('no successful records to merge');
     assertMergeReady(work);
     const result = assemble(base, work, root);
@@ -458,7 +470,7 @@ export function applySnapshot(plan, root = ROOT) {
         const current = readSnapshot(root);
         if (digest(current) === plan.result_digest) return 'already_applied';
         if (digest(current) !== plan.base_digest) throw Error('snapshot baseline changed');
-        const work = validateWork(read(local(root, plan.work_path)), root);
+        const work = validateWork(readWork(local(root, plan.work_path)), root);
         if (digest(work) !== plan.work_digest) throw Error('work changed since planning');
         assertMergeReady(work);
         const rebuilt = assemble(current, work, root);
@@ -505,7 +517,7 @@ export function cleanWork(path, root = ROOT, apply = false) {
     const rel = relative(root, resolve(path)).split('\\').join('/');
     if (!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/WORK\.json$/.test(rel)) throw Error('invalid cleanup work path');
     if (existsSync(path + '.lock')) throw Error('active work lock; cleanup refused');
-    const work = read(path),
+    const work = readWork(path),
         snapshot = readSnapshot(root);
     if (snapshot.transaction?.id !== work.session.id || snapshot.transaction.work_digest !== digest(work))
         throw Error('work not confirmed merged');
@@ -513,12 +525,25 @@ export function cleanWork(path, root = ROOT, apply = false) {
         throw Error('incomplete work must be retained');
     renderSnapshot(root, true);
     const folder = dirname(resolve(path));
-    const names = new Set([path, resolve(folder, 'SESSION.json'), resolve(folder, 'INPUT.json')]);
+    const names = new Set([
+        path,
+        resolve(folder, 'SESSION.json'),
+        resolve(folder, 'INPUT.json'),
+        ...workStorageFiles(path)
+    ]);
     for (const record of Object.values(work.records)) {
         for (const file of record.files ?? []) names.add(local(root, file));
         for (const file of Object.keys(record.artifacts)) names.add(local(root, file));
     }
-    const files = [...names].map((p) => resolve(p)).filter((p) => p.startsWith(folder + '/') && existsSync(p));
+    const files = [...names]
+        .map((p) => resolve(p))
+        .filter(
+            (p) =>
+                p.startsWith(folder + '/') &&
+                !p.startsWith(resolve(folder, 'migration-originals') + '/') &&
+                p !== resolve(folder, 'WORK-MIGRATION.json') &&
+                existsSync(p)
+        );
     console.log(
         JSON.stringify({
             remove: files.map((p) => relative(root, p)),
@@ -550,7 +575,7 @@ export async function main(args = process.argv.slice(2)) {
         const w = startWork(read(need('input')), need('work'), n);
         console.log(JSON.stringify({ selected: selectedItems(w.session).length, listed: w.session.items.length }));
     } else if (command === 'next') {
-        const w = read(need('work'));
+        const w = validateWork(readWork(need('work')));
         validateSession(w.session);
         console.log(JSON.stringify(selectedItems(w.session).find((p) => p.status === 'pending') ?? null));
     } else if (command === 'stage') {
@@ -564,14 +589,14 @@ export async function main(args = process.argv.slice(2)) {
             fd = openSync(lock, 'wx', 0o600);
         try {
             writeFileSync(fd, JSON.stringify({ pid: process.pid }));
-            const w = validateWork(read(path));
+            if (existsSync(resolve(dirname(path), 'SESSION.json.lock'))) throw Error('active session lock');
+            const w = validateWork(readWork(path));
             const p = selectedItems(w.session).find((i) => i.id === v.plugin);
             if (!p || p.status !== 'pending') throw Error('only pending selected item can be blocked');
             p.status = 'blocked';
             p.reason = read(need('input')).reason;
             validateSession(w.session);
-            atomicWrite(need('work'), w);
-            atomicWrite(resolve(dirname(need('work')), 'SESSION.json'), w.session);
+            saveWork(need('work'), w);
         } finally {
             closeSync(fd);
             unlinkSync(lock);
@@ -583,10 +608,15 @@ export async function main(args = process.argv.slice(2)) {
         renderSnapshot();
     } else if (command === 'render') renderSnapshot();
     else if (command === 'validate') {
-        readSnapshot(ROOT);
-        renderSnapshot(ROOT, true);
+        if (v.work) validateWork(readWork(need('work')));
+        else {
+            readSnapshot(ROOT);
+            renderSnapshot(ROOT, true);
+        }
+    } else if (command === 'migrate-work') {
+        console.log(JSON.stringify(migrateWork(need('work'), validateWork, v.apply)));
     } else if (command === 'clean') cleanWork(need('work'), ROOT, v.apply);
-    else throw Error('Usage: snapshot bootstrap|start|next|stage|block|plan|apply|render|validate|clean');
+    else throw Error('Usage: snapshot bootstrap|start|next|stage|block|plan|apply|render|validate|migrate-work|clean');
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))
     try {
