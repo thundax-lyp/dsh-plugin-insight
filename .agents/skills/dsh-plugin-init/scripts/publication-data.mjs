@@ -79,7 +79,7 @@ const exactCoverage = (label, value, expected) => {
         );
 };
 
-export function planPublication(current, manifest, input, catalog, manifestPath, root = ROOT) {
+export function planPublication(current, manifest, input, catalog, manifestPath, root = ROOT, catalogPath = CATALOG) {
     validatePublication(current);
     validateManifest(manifest);
     validateCatalog(catalog);
@@ -105,13 +105,17 @@ export function planPublication(current, manifest, input, catalog, manifestPath,
     exactCoverage('summaries', input.summaries, complete);
     exactCoverage('capabilities', input.capabilities, complete);
     exactCoverage('advice', input.advice, complete);
+    const dependencies = { [catalogPath]: digest(catalog) };
     const catalogById = new Map(catalog.plugins.map((plugin) => [plugin.id, plugin]));
     for (const id of complete) {
         const item = byId.get(id);
         const revision = item.revision;
         const plugin = validateManifestPlugin(item, catalogById.get(id), catalog, manifest.checked_at);
-        const report = readFileSync(resolve(root, `${pluginDirectory(plugin, root)}/INSIGHT.md`), 'utf8');
+        const reportPath = `${pluginDirectory(plugin, root)}/INSIGHT.md`;
+        const report = readFileSync(local(root, reportPath), 'utf8');
+        dependencies[reportPath] = digest(report);
         const metadata = validateMetadata(read(local(root, input.metadata[id])));
+        dependencies[input.metadata[id]] = digest(metadata);
         if (metadata.repository_id !== null && metadata.repository_id !== plugin.repository_id)
             throw new Error(`metadata repository identity differs: ${id}`);
         if (metadata.repository.toLowerCase() !== plugin.repository.toLowerCase())
@@ -176,6 +180,7 @@ export function planPublication(current, manifest, input, catalog, manifestPath,
     validatePublication(result);
     return {
         plan_version: 1,
+        dependencies,
         base_digest: digest(current),
         manifest_digest: digest(manifest),
         input_digest: digest(input),
@@ -212,6 +217,14 @@ export function applyPublication(path, plan, root = ROOT) {
         if (digest(manifest) !== plan.manifest_digest)
             throw new Error('manifest changed since planning; regenerate the plan');
         validateManifest(manifest);
+        if (!plan.dependencies || !Object.keys(plan.dependencies).length)
+            throw new Error('publication plan dependencies missing; regenerate the plan');
+        for (const [dependency, expected] of Object.entries(plan.dependencies)) {
+            const full = local(root, dependency);
+            const value = dependency.endsWith('.json') ? read(full) : readFileSync(full, 'utf8');
+            if (digest(value) !== expected)
+                throw new Error(`publication dependency changed since planning: ${dependency}`);
+        }
         if (digest(plan.result) !== plan.result_digest) throw new Error('publication plan result digest mismatch');
         validatePublication(plan.result);
         atomicWrite(path, plan.result);
@@ -262,7 +275,11 @@ export function main(args = process.argv.slice(2)) {
         manifest,
         read(resolve(required('input'))),
         read(resolve(values.catalog ?? resolve(ROOT, CATALOG))),
-        manifestPath
+        manifestPath,
+        ROOT,
+        relative(ROOT, resolve(values.catalog ?? resolve(ROOT, CATALOG)))
+            .split('\\')
+            .join('/')
     );
     atomicWrite(resolve(required('out')), plan);
     console.log(JSON.stringify(plan.summary));
