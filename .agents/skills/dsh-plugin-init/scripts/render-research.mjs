@@ -151,7 +151,8 @@ export function renderPublication(input, root = ROOT, context = null) {
             const usageConditions = advice?.text ?? report.match(/^- \*\*建议(?:：\*\*|\*\*：)(.+)$/m)[1].trim();
             const anchor = `plugin-${plugin.repository_id}-${plugin.component_id}`;
             const path = input.metadata?.[i.id];
-            let npmFirstPublished = null,
+            let npmDownloads = null,
+                npmFirstPublished = null,
                 needsReview = false,
                 stars = null,
                 pushedAt = null,
@@ -169,6 +170,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                     }).toString(),
                 url: `https://github.com/${plugin.repository}`
             });
+            let listMetrics = starsBadge;
             let meta = template('META', { stars: starsBadge, downloads: '', review: '' });
             if (path) {
                 const m = validateMetadata(context?.metadata[i.id] ?? read(local(root, path)));
@@ -181,6 +183,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 // A declared package name with two 404 responses is not a confirmed npm publication.
                 // Retain the failed capture in metadata without advertising an unverified package.
                 const npmAvailable = m.npm && !(m.npm.error === 'HTTP 404' && m.npm.publication?.error === 'HTTP 404');
+                npmDownloads = npmAvailable ? m.npm : null;
                 const badge = npmAvailable
                     ? 'https://img.shields.io/static/v1?' +
                       new URLSearchParams({
@@ -225,6 +228,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                     image: starImage,
                     url: `https://github.com/${m.repository}`
                 });
+                listMetrics = starsBadge + downloads;
                 meta = template('META', { stars: starsBadge, downloads, review: update });
             }
             const longRead = report.length >= 8000 || /^## .*?(?:创新推演|未来设计假设)/m.test(report);
@@ -247,8 +251,10 @@ export function renderPublication(input, root = ROOT, context = null) {
                 needsReview,
                 stars,
                 starsBadge,
+                listMetrics,
                 pushedAt,
                 npmFirstPublished,
+                npmDownloads,
                 detailPath,
                 longRead,
                 detail

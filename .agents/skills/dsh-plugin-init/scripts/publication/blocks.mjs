@@ -84,7 +84,9 @@ export function renderWeeklyNew(items, date) {
     if (!selected.length) return '';
     return template('WEEKLY-NEW', {
         items: selected
-            .map((e) => template('LATEST-ITEM', { plugin: nameLink(e), summary: clean(e.summary) }))
+            .map((e) =>
+                template('LATEST-ITEM', { plugin: nameLink(e), summary: clean(e.summary), metrics: e.listMetrics })
+            )
             .join('\n')
     });
 }
@@ -107,6 +109,7 @@ export function renderLatest(items, date, limit = 5) {
                 .map((e) =>
                     template('LATEST-ITEM', {
                         plugin: nameLink(e),
+                        metrics: e.listMetrics,
                         summary: `${clean(e.summary)} · 新发布：${new Date(Date.parse(e.npmFirstPublished) + 8 * 3600000).toISOString().slice(0, 10)}`
                     })
                 )
@@ -114,30 +117,43 @@ export function renderLatest(items, date, limit = 5) {
     });
 }
 export function renderHot(items, limit = 5) {
-    const repositories = new Set();
+    const packages = new Set();
     const selected = items
-        .filter((e) => e.stars !== null && e.stars !== undefined)
-        .sort((a, b) => b.stars - a.stars || a.i.id.localeCompare(b.i.id))
         .filter((e) => {
-            const id = e.plugin.repository_id;
-            if (repositories.has(id)) return false;
-            repositories.add(id);
+            const npm = e.npmDownloads;
+            return (
+                npm &&
+                npm.error === null &&
+                Number.isSafeInteger(npm.downloads_30d) &&
+                npm.downloads_30d >= 0 &&
+                Date.parse(npm.window_end) - Date.parse(npm.window_start) === 29 * 86400000
+            );
+        })
+        .sort((a, b) => b.npmDownloads.downloads_30d - a.npmDownloads.downloads_30d || a.i.id.localeCompare(b.i.id))
+        .filter((e) => {
+            const name = e.npmDownloads.package_name;
+            if (packages.has(name)) return false;
+            packages.add(name);
             return true;
         })
         .slice(0, limit);
     return template('HOT', {
         items:
             selected
-                .map((e) =>
-                    template('HOT-ITEM', {
+                .map((e) => {
+                    const npm = e.npmDownloads;
+                    return template('HOT-ITEM', {
                         plugin: nameLink(e),
                         summary: clean(e.summary),
-                        stars: e.starsBadge
-                    })
-                )
-                .join('\n') || '暂无可比较的关注数据。'
+                        metrics: e.listMetrics,
+                        window: `${npm.window_start}～${npm.window_end} UTC`,
+                        package: npm.package_name
+                    });
+                })
+                .join('\n') || '暂无已核实的近30天 npm 下载数据。'
     });
 }
+
 export function renderRecommended(recommendations, byId, limit = 5) {
     const selected = recommendations
         .filter((r) => r.kind !== 'observe' && !byId.get(r.plugin_id).needsReview)
@@ -153,6 +169,7 @@ export function renderRecommended(recommendations, byId, limit = 5) {
                         plugin: nameLink(e),
                         kind: r.kind === 'install' ? ' · 值得安装' : '',
                         summary: `${clean(e.summary)} ${clean(r.summary).replaceAll('条件试用', '试用')}`,
+                        metrics: e.listMetrics,
                         review: ''
                     });
                 })
@@ -189,7 +206,7 @@ export function renderHomeCategories(groups, href, limit = 5) {
                     anchor: e.anchor,
                     name: clean(e.plugin.name),
                     summary: clean(e.summary),
-                    meta: e.starsBadge,
+                    meta: e.listMetrics,
                     review: e.needsReview ? ' · **脚本有更新，待重新洞察**' : '',
                     detail: href(e)
                 })
