@@ -87,16 +87,16 @@ export function renderPublication(input, root = ROOT, context = null) {
                 throw Error(`pinned author summary required: ${i.id}`);
             if (!report.includes(`> ${summary.text}`)) throw Error(`detail summary differs: ${i.id}`);
             const labels = ['用途', '亮点', '思考', '建议'];
-            const short = labels
-                .map((label) => {
-                    const sourceLabel = label === '思考' ? '(?:思考|关键质疑)' : label;
-                    const matches = [
-                        ...report.matchAll(new RegExp(`^- \\*\\*${sourceLabel}(?:：\\*\\*|\\*\\*：)(.+)$`, 'gm'))
-                    ];
-                    if (matches.length !== 1) throw Error(`detail needs one ${label}: ${i.id}`);
-                    return template('SHORT-ITEM', { label, text: matches[0][1] });
-                })
-                .join('\n');
+            const shortItems = labels.map((label) => {
+                const sourceLabel = label === '思考' ? '(?:思考|关键质疑)' : label;
+                const matches = [
+                    ...report.matchAll(new RegExp(`^- \\*\\*${sourceLabel}(?:：\\*\\*|\\*\\*：)(.+)$`, 'gm'))
+                ];
+                if (matches.length !== 1) throw Error(`detail needs one ${label}: ${i.id}`);
+                return template('SHORT-ITEM', { label, text: matches[0][1] });
+            });
+            const short = shortItems.join('\n');
+            const homeShort = shortItems.slice(0, 2).join('\n');
             const title = report.match(/^# [^\n]+/)?.[0];
             if (!title) throw Error('detail needs a title');
             const capabilities = input.capabilities?.[i.id];
@@ -239,6 +239,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 i,
                 plugin,
                 short,
+                homeShort,
                 description,
                 anchor,
                 meta,

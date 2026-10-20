@@ -109,7 +109,7 @@ export function renderHomeCategories(groups, href, limit = 5) {
                     anchor: e.anchor,
                     name: clean(e.plugin.name),
                     meta: e.meta,
-                    short: e.short,
+                    short: e.homeShort,
                     detail: href(e)
                 })
             )

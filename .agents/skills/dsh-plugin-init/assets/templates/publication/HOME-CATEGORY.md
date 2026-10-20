@@ -1,6 +1,6 @@
 <a id="category-{{key}}"></a>
 
-### {{name}}（{{count}}）
+### [{{name}}（{{count}}）]({{more}})
 
 {{plugins}}
 
