@@ -1,72 +1,79 @@
-# @zzerx/dsh-plugin-memory
+# Forge 记忆
 
-> 保存全局与项目偏好并跨会话注入，提供可视化管理。
+> 为 DSH 保存偏好、项目决策与关系化记忆，支持检索和跨会话使用。
 
 <!-- BEGIN META -->
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 2569](https://img.shields.io/static/v1?label=npm+30d&message=2%2C569&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/commits)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 2404](https://img.shields.io/static/v1?label=npm+30d&message=2%2C404&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) · [![最后更新 4天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=4%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [acb136c0dbbf8e984bdffea9de48b6ed73d0103e](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：保存全局与项目偏好并跨会话注入，提供可视化管理。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：自动注入会把陈旧或错误记忆带入后续任务；作用域、修订和删除是否可靠比条目数量更重要。
-- **建议**：用可纠错的项目决策做小样本，验证保存、召回、改正和删除后再扩大范围。
+- **用途**：反复在项目间切换的使用者需要可管理的长期偏好和决策，而非无差别保存聊天。
+- **亮点**：storage-domain 支撑实体、关系和审计记录，服务统一管理写入、查询与导入校验。
+- **思考**：结构化存储比散落提示词更可管理；错误或跨范围记忆可能持续影响后续决策。
+- **建议**：先记录少量明确偏好，测试修改和删除后是否停止影响回答，再扩展自动积累。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：保存全局与项目偏好并跨会话注入，提供可视化管理。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+反复在项目间切换的使用者需要可管理的长期偏好和决策，而非无差别保存聊天。
 
-## 依赖与使用条件
+项目说明和人工摘要仍是更透明的低复杂度替代；本轮只确认机制，不宣布优于其他记忆插件。
 
-- 固定组件包：`@zzerx/dsh-plugin-memory@0.4.3`。
-- 声明依赖：`@deepseek-ai/cordis`、`@deepseek-ai/cordis-plugin-loader`、`@deepseek-ai/dsh-brand`、`@deepseek-ai/dsh-settings`、`@deepseek-ai/dsh-storage-domain`、`@deepseek-ai/dsh-system-prompt`、`@deepseek-ai/dsh-tools`、`@deepseek-ai/dsh-typert-protocol`、`@deepseek-ai/schemastery`。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+需要相应宿主存储和注入服务；有效性依赖记忆质量、作用域和所用模型。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+保存偏好和决策后检索使用，发现冲突时修改或删除；迁移前导出并核对关系与审计范围。
+
+## 成本与效果
+
+记忆抽取、注入和纠错有模型及人工开销；没有测量净节省 token 或重复任务收益。
+
+结构化存储比散落提示词更可管理；错误或跨范围记忆可能持续影响后续决策。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .md | 1 | 67 | — | — | — | 1250 |
-| source | .mjs | 1 | 31 | 16 | 10 | 5 | — |
-| source | .ts | 25 | 6528 | 5384 | 651 | 502 | — |
-| source | .tsx | 10 | 1596 | 1436 | 107 | 55 | — |
+统计范围：git tracked files at exact commit; component scope only；组件：packages/plugin-memory；内容摘要：f207e6802abddb05860d5f4996fe3ae286fe60cb82a4c10c884374146423127f。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：`packages/plugin-memory/src/client/css.d.ts`（generated/dependency/vendor/declaration heuristic; review exclusions）。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 1 | 67 | — | — | 1250 |
+| .mjs | source | 1 | 31 | 16 | 10 | — |
+| .ts | source | 25 | 6528 | 5384 | 651 | — |
+| .tsx | source | 10 | 1596 | 1436 | 107 | — |
+
+排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **事件监听**：session/event
-- **界面**：settings.section
-
-- events：`session/event`（[packages/plugin-memory/src/agent/capture.ts:455](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L455)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- ui：`settings.section`（[packages/plugin-memory/src/client/index.ts:32](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/client/index.ts#L32)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **模型工具**：记忆查询和维护工具由组件接线提供。
 
 ## 工程亮点
 
-固定组件内共纳入 37 个 JS/TS/Markdown 文件。宿主或运行依赖共声明 9 项，升级时需要核对兼容范围。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[packages/plugin-memory/scripts/build.mjs](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/scripts/build.mjs)。
+持久化成功后再更新可见状态及集中 bundle 校验可借鉴，迁移需带上领域数据和关系。
 
+## 分发与兼容
 
-全局/项目双作用域与管理界面让记忆具备可见的治理入口。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+组件 @zzerx/dsh-plugin-memory 0.4.3，依赖 storageDomain、systemPrompt 与工具服务。
+
+## 历史对照
+
+前次代码指纹为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e；本轮固定为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e。项目说明和人工摘要仍是更透明的低复杂度替代；本轮只确认机制，不宣布优于其他记忆插件。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：抽读存储服务与接线，未评测记忆命中率、冲突解决或跨项目泄漏。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：用两项目相反偏好和一次纠错任务，核对召回、隔离、删除效果与额外调用。
 
 ## Issue 活跃度
 
 Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

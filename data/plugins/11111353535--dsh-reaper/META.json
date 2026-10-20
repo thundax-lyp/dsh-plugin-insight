@@ -1,50 +1,29 @@
 {
   "repository": "11111353535/dsh-reaper",
   "repository_id": 1423215373,
-  "captured_at": "2026-10-19T14:54:36.723Z",
-  "window_start": "2026-09-19T14:54:36.723Z",
+  "captured_at": "2026-10-20T02:57:22.116Z",
+  "window_start": "2026-09-20T02:57:22.116Z",
   "stars": 0,
   "pushed_at": "2026-10-17T11:00:28Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3514:361EEF:24F329:2780FE:6AD62F2E and timestamp 2026-10-19 14:54:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3602:2987C:24723C:26FF59:6AD62F2F and timestamp 2026-10-19 14:54:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A36.723Z..2026-10-19T14%3A54%3A36.723Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3712:18437A:210CAC:239B06:6AD62F30 and timestamp 2026-10-19 14:54:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A36.723Z..2026-10-19T14%3A54%3A36.723Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3814:2A6B6:23532F:25E061:6AD62F31 and timestamp 2026-10-19 14:54:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A36.723Z..2026-10-19T14%3A54%3A36.723Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3900:369322:22C93D:2558BB:6AD62F32 and timestamp 2026-10-19 14:54:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-reaper",
-    "captured_at": "2026-10-19T14:54:42.572Z",
-    "window_start": "2026-09-19",
-    "window_end": "2026-10-18",
+    "captured_at": "2026-10-20T02:57:28.845Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-reaper",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-reaper",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-19T14:54:42.572Z",
+      "captured_at": "2026-10-20T02:57:28.845Z",
       "source_url": "https://registry.npmjs.org/dsh-reaper",
       "error": "HTTP 404"
     }

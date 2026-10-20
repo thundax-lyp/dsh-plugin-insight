@@ -1,74 +1,80 @@
 # dsh-reaper
 
-> 识别 Agent 遗留进程与端口，预览后回收限定范围的进程树。
+> 盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/11111353535/dsh-reaper) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-reaper) · [![最后更新 前天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E5%89%8D%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/11111353535/dsh-reaper/commits)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/11111353535/dsh-reaper) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-reaper) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/11111353535/dsh-reaper/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [b0412244e623d54fbf0bded66cba5203de8c85c4](https://github.com/11111353535/dsh-reaper/tree/b0412244e623d54fbf0bded66cba5203de8c85c4)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：识别 Agent 遗留进程与端口，预览后回收限定范围的进程树。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：进程归属误判可能终止用户服务；只有受限类别可自动选择仍需真实系统矩阵验证。
-- **建议**：在容器或测试账号中构造工作区、系统和无归属进程，确认预览闭包后再允许终止。
+- **用途**：智能体遗留开发服务占用端口时，开发者需要区分可清理进程与宿主及系统服务。
+- **亮点**：按宿主祖先链、工作区和保护规则评级，默认返回计划，confirm:true 才执行，发信号前再次检查保护。
+- **思考**：归属和不可覆盖的保护规则比裸 kill 端口更有约束，但启发式归属仍不是授权证明。
+- **建议**：先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：识别 Agent 遗留进程与端口，预览后回收限定范围的进程树。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+智能体遗留开发服务占用端口时，开发者需要区分可清理进程与宿主及系统服务。
 
-## 依赖与使用条件
+系统端口与进程工具透明但需手工关联；高风险环境宜保留人工判断。
 
-- 固定组件包：`dsh-reaper@0.1.0`。
-- 声明依赖：未在组件 package.json 声明直接或 peer 依赖；宿主接线仍需按源码核对。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+需要本机系统命令、进程权限及正确工作区；容器和远程映射会改变观察范围。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+扫描、核对计划、显式确认后清理，再核查释放结果；误归属时保护并重新确认。
+
+## 成本与效果
+
+减少人工找进程的潜在收益需与误判、终止恢复和跨平台维护成本一起评估。
+
+归属和不可覆盖的保护规则比裸 kill 端口更有约束，但启发式归属仍不是授权证明。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .js | 6 | 1944 | 1203 | 605 | 140 | — |
-| source | .md | 2 | 336 | — | — | — | 2870 |
-| source | .mjs | 1 | 77 | 42 | 26 | 9 | — |
-| test | .mjs | 3 | 690 | 540 | 74 | 78 | — |
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7bd33fe6818e62474866b7fbe1eab28b166b0a311ae8b9993d73af7c668a74a3。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：无自动排除项。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .js | source | 6 | 1944 | 1203 | 605 | — |
+| .md | source | 2 | 336 | — | — | 2870 |
+| .mjs | source | 1 | 77 | 42 | 26 | — |
+| .mjs | test | 3 | 690 | 540 | 74 | — |
+
+排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **模型工具**：reaper_scan、reaper_reap、reaper_free_port
-- **用户命令**：reap
-
-- tools：`reaper_scan`（[lib/index.js:357](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L357)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- tools：`reaper_reap`（[lib/index.js:374](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L374)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- tools：`reaper_free_port`（[lib/index.js:394](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L394)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- commands：`reap`（[lib/index.js:423](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L423)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **模型工具**：端口扫描与可确认的进程清理。
+- **用户命令**：/reap 查看进程归属。
 
 ## 工程亮点
 
-固定组件内共纳入 12 个 JS/TS/Markdown 文件。组件声明依赖较少，但仍不能据此推断运行简单或无外部依赖。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[lib/index.js](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js)。
+深度优先终止子进程、结束后确认端口释放可借鉴；预览与真实执行之间仍有时间差。
 
+## 分发与兼容
 
-先定性归属、再展示后代闭包、最后显式确认的分层值得复用。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+版本 0.1.0，需要系统进程与端口枚举能力，权限和工具可用性影响结果。
+
+## 历史对照
+
+前次代码指纹为 b0412244e623d54fbf0bded66cba5203de8c85c4；本轮固定为 b0412244e623d54fbf0bded66cba5203de8c85c4。系统端口与进程工具透明但需手工关联；高风险环境宜保留人工判断。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：未验证 PID 复用、系统枚举与跨平台归属准确率；confirm 参数不等同于总会弹出人工审批。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：在测试进程树中覆盖宿主保护、同名服务、PID 变化、拒绝权限和 TERM 后仍存活。
 
 ## Issue 活跃度
 
-Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
+Issue：未关闭 0／已关闭 0 · 近30天：新建 0／关闭 0／更新 0
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

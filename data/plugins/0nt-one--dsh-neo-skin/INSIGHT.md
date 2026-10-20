@@ -1,69 +1,78 @@
 # dsh-neo-skin
 
-> 新粗野主义双方案界面皮肤，支持浅色与深色主题。
+> 通过主题覆盖层为 DSH Web 提供新粗野主义配色和可切换外观方案。
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin) · [![npm 30d 117](https://img.shields.io/static/v1?label=npm+30d&message=117&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-neo-skin) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin/commits)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin) · [![npm 30d 113](https://img.shields.io/static/v1?label=npm+30d&message=113&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-neo-skin) · [![最后更新 2个月前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=2%E4%B8%AA%E6%9C%88%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [fe5ef0e671fab5ab8c8700013f3966eb9642455f](https://github.com/0nt-one/dsh-neo-skin/tree/fe5ef0e671fab5ab8c8700013f3966eb9642455f)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：新粗野主义双方案界面皮肤，支持浅色与深色主题。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：价值主要是视觉偏好；需确认宿主 CSS token 变化不会造成局部不可读。
-- **建议**：先在非关键浏览器 Profile 检查常用页面、深浅色和升级后的样式，再决定长期启用。
+- **用途**：长时间使用 DSH Web 且偏好高对比外观的用户，需要可撤销的视觉定制。
+- **亮点**：客户端调用 theme.overrideTokens，设置插槽控制开关与方案，偏好保存在 localStorage。
+- **思考**：叠加覆盖比替换原生主题更容易回退；个性化审美价值不能写成工作效率提升。
+- **建议**：先在测试配置中切换深浅主题、关闭插件并刷新，确认能完整恢复原生样式。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：新粗野主义双方案界面皮肤，支持浅色与深色主题。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+长时间使用 DSH Web 且偏好高对比外观的用户，需要可撤销的视觉定制。
 
-## 依赖与使用条件
+宿主自带主题维护最低；本轮确认仍是覆盖方案，不是完整独立主题引擎。
 
-- 固定组件包：`dsh-neo-skin@0.6.1`。
-- 声明依赖：未在组件 package.json 声明直接或 peer 依赖；宿主接线仍需按源码核对。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+依赖 DSH Web theme、locale 与 slots；偏好是浏览器本地状态，跨设备不会自动一致。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+选择方案并保存本地偏好；升级后检查原生主题切换，异常时关闭覆盖层。
+
+## 成本与效果
+
+无需模型服务，但维护自定义外观和排查主题冲突需要时间，未测视觉疲劳改善。
+
+叠加覆盖比替换原生主题更容易回退；个性化审美价值不能写成工作效率提升。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .js | 3 | 633 | 455 | 130 | 53 | — |
-| source | .md | 1 | 142 | — | — | — | 1122 |
-| source | .mjs | 1 | 47 | 29 | 10 | 8 | — |
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e0ea99acd7d6b0e808be36170f4dfadc5adc17fb66451332395526cc3d0e11e9。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：无自动排除项。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .js | source | 3 | 633 | 455 | 130 | — |
+| .md | source | 1 | 142 | — | — | 1122 |
+| .mjs | source | 1 | 47 | 29 | 10 | — |
+
+排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **界面**：settings.general.item
-
-- ui：`settings.general.item`（[client.js:289](https://github.com/0nt-one/dsh-neo-skin/blob/fe5ef0e671fab5ab8c8700013f3966eb9642455f/client.js#L289)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **界面**：主题覆盖和外观开关设置。
 
 ## 工程亮点
 
-固定组件内共纳入 5 个 JS/TS/Markdown 文件。组件声明依赖较少，但仍不能据此推断运行简单或无外部依赖。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[lib/index.js](https://github.com/0nt-one/dsh-neo-skin/blob/fe5ef0e671fab5ab8c8700013f3966eb9642455f/lib/index.js)。
+主题 token 与开关持久化分离可借鉴；复用依赖宿主主题和设置插槽契约。
 
+## 分发与兼容
 
-以 token 覆盖而非改宿主源码，便于隔离和回退。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+包版本 0.6.1，Web bundle 依赖主题服务；源码和发布产物未逐字节比较。
+
+## 历史对照
+
+前次代码指纹为 fe5ef0e671fab5ab8c8700013f3966eb9642455f；本轮固定为 fe5ef0e671fab5ab8c8700013f3966eb9642455f。宿主自带主题维护最低；本轮确认仍是覆盖方案，不是完整独立主题引擎。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：未做可访问性、窄屏和不同宿主版本的视觉验收；截图不证明当前渲染一致。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：逐一检查深浅色、缩放、禁用后恢复和两个主题插件同时加载的冲突。
 
 ## Issue 活跃度
 
 Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

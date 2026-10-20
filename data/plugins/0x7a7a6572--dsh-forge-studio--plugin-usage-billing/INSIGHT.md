@@ -1,74 +1,80 @@
-# @zzerx/dsh-plugin-usage-billing
+# Forge 用量计费
 
-> 从会话日志聚合 token 用量，并按事件时价格显示预算与费用。
+> 从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。
 
 <!-- BEGIN META -->
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1814](https://img.shields.io/static/v1?label=npm+30d&message=1%2C814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) · [![最后更新 3天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=3%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/commits)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1814](https://img.shields.io/static/v1?label=npm+30d&message=1%2C814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) · [![最后更新 4天前](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=4%E5%A4%A9%E5%89%8D&color=blue&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/commits)
 <!-- END META -->
 
 ## 版本
 
 固定提交 [acb136c0dbbf8e984bdffea9de48b6ed73d0103e](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing)
 
-## 采用点评
+## 用途与采用点评
 
-- **用途**：从会话日志聚合 token 用量，并按事件时价格显示预算与费用。
-- **亮点**：固定提交中的 README、package 与注册点支持作者描述的核心路径；实际效果尚未在宿主验证。
-- **思考**：费用准确性依赖日志完整、模型键匹配和历史价格表；估算不可直接当账单或财务凭证。
-- **建议**：抽取已知模型与价格的一组会话，逐条复算 token 和费用；差异无法解释时只作趋势参考。
+- **用途**：需要了解模型使用支出的开发者希望把日志用量与预算放在同一视图。
+- **亮点**：服务聚合账本分片并锁定价格快照，联网价表与汇率有缓存和降级；未知项目不静默记零。
+- **思考**：锁定历史价格能避免改价反写旧账；价格来源或使用日志不准时，账本仍可能精确记录错误值。
+- **建议**：先选择一个模型和一天真实账单，逐项核对 token、缓存计价、币种和未计价行。
 
-## 场景、原有办法与合格交付
+## 场景与替代办法
 
-目标场景是：从会话日志聚合 token 用量，并按事件时价格显示预算与费用。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
+需要了解模型使用支出的开发者希望把日志用量与预算放在同一视图。
 
-## 依赖与使用条件
+供应商账单是对照来源，不能拿插件自算金额自证；本轮不提供任何费率正确性背书。
 
-- 固定组件包：`@zzerx/dsh-plugin-usage-billing@1.3.0`。
-- 声明依赖：`esbuild`、`tyme4ts`、`@deepseek-ai/cordis`、`@deepseek-ai/cordis-plugin-loader`、`@deepseek-ai/dsh-host-webserver`、`@deepseek-ai/dsh-llm`、`@deepseek-ai/dsh-storage-domain`、`@deepseek-ai/dsh-session`、`@deepseek-ai/dsh-session-query`、`@deepseek-ai/dsh-settings`、`@deepseek-ai/dsh-typert-protocol`、`@deepseek-ai/dsh-web`、`@deepseek-ai/schemastery`。
-- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
-- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
+## 依赖与流程
 
-## 使用流程、失败恢复与成本
+依赖 storageDomain、会话查询及模型用量数据；联网投影和汇率服务影响估算质量。
 
-准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
+读取用量并按有效价格入账，查看预算和异常行；价格缺失时补齐后有条件重算。
+
+## 成本与效果
+
+主要成本是价表维护、历史估算和账单对账；收益需按可发现的计费差异评估，未实测。
+
+锁定历史价格能避免改价反写旧账；价格来源或使用日志不准时，账本仍可能精确记录错误值。
 
 ## 工程统计
 
-| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| source | .md | 1 | 47 | — | — | — | 994 |
-| source | .mjs | 1 | 31 | 16 | 10 | 5 | — |
-| source | .ts | 72 | 7441 | 5221 | 1539 | 697 | — |
-| source | .tsx | 39 | 3186 | 2612 | 459 | 148 | — |
+统计范围：git tracked files at exact commit; component scope only；组件：packages/plugin-usage-billing；内容摘要：58d86f355f39e5d065fbfd73fb6cf48e32fec7157afe67bb166c66bd10c4c1a3。sloc 0.3.2，TypeScript 5.9.3。
 
-统计覆盖：git tracked files at exact commit; component scope only。排除项：`packages/plugin-usage-billing/src/client/css.d.ts`（generated/dependency/vendor/declaration heuristic; review exclusions）。解析错误：未记录。
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 1 | 47 | — | — | 994 |
+| .mjs | source | 1 | 31 | 16 | 10 | — |
+| .ts | source | 72 | 7441 | 5221 | 1539 | — |
+| .tsx | source | 39 | 3186 | 2612 | 459 | — |
+
+排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
 
 ## 能力清单
 
-- **事件监听**：loader/volatile-update
-- **界面**：sidebar.footer.action、conversation.composer.dock、settings.section
-
-- events：`loader/volatile-update`（[packages/plugin-usage-billing/src/settings.ts:141](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/settings.ts#L141)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- ui：`sidebar.footer.action`（[packages/plugin-usage-billing/src/client/index.ts:86](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/client/index.ts#L86)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- ui：`conversation.composer.dock`（[packages/plugin-usage-billing/src/client/index.ts:95](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/client/index.ts#L95)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
-- ui：`settings.section`（[packages/plugin-usage-billing/src/client/index.ts:103](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/client/index.ts#L103)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- **界面**：预算、趋势和明细用量视图。
+- **后台**：用量账本聚合与价格快照刷新。
 
 ## 工程亮点
 
-固定组件内共纳入 113 个 JS/TS/Markdown 文件。宿主或运行依赖共声明 13 项，升级时需要核对兼容范围。 静态解析未记录错误。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[packages/plugin-usage-billing/scripts/build.mjs](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/scripts/build.mjs)。
+价格快照与用量账本分离、未知金额保留空值值得借鉴；默认价格假设必须独立核实。
 
+## 分发与兼容
 
-按事件时间锁价，避免后来改价重写历史估算。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
+组件 @zzerx/dsh-plugin-usage-billing 1.3.0；多宿主服务及外部价表构成兼容和数据依赖。
+
+## 历史对照
+
+前次代码指纹为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e；本轮固定为 acb136c0dbbf8e984bdffea9de48b6ed73d0103e。供应商账单是对照来源，不能拿插件自算金额自证；本轮不提供任何费率正确性背书。
 
 ## 核查说明
 
-- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
-- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
-- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
-- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
+- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：未核对供应商真实账单、费率覆盖或并发重建正确性，展示金额不等于结算凭证。
+- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。
+- 下一步：用同一批调用与官方账单比较缓存、时区、费率切换和重启重建，记录未计价比例。
 
 ## Issue 活跃度
 
 Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
-统计日期：2026-10-19。
+统计日期：2026-10-20。

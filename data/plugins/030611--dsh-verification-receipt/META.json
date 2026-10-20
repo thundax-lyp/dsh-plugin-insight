@@ -1,34 +1,42 @@
 {
   "repository": "030611/dsh-verification-receipt",
   "repository_id": 1333370288,
-  "captured_at": "2026-10-19T14:54:11.298Z",
-  "window_start": "2026-09-19T14:54:11.298Z",
+  "captured_at": "2026-10-20T02:56:30.050Z",
+  "window_start": "2026-09-20T02:56:30.050Z",
   "stars": 4,
   "pushed_at": "2026-09-03T16:29:04Z",
   "issues": {
     "open": 2,
     "closed": 0,
-    "created_30d": 0,
-    "closed_30d": 0,
+    "created_30d": null,
+    "closed_30d": null,
     "updated_30d": null
   },
   "errors": [
     {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20created%3A2026-09-20T02%3A56%3A30.050Z..2026-10-20T02%3A56%3A30.050Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 565C:1DD6B8:8CB05:96CBB:6AD6D861 and timestamp 2026-10-20 02:56:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A56%3A30.050Z..2026-10-20T02%3A56%3A30.050Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5718:1D45E2:8397D:8D982:6AD6D862 and timestamp 2026-10-20 02:56:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A11.298Z..2026-10-19T14%3A54%3A11.298Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 222E:18B13F:2398DE:262256:6AD62F19 and timestamp 2026-10-19 14:54:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20updated%3A2026-09-20T02%3A56%3A30.050Z..2026-10-20T02%3A56%3A30.050Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 57FA:F1EF4:97882:A1A19:6AD6D863 and timestamp 2026-10-20 02:56:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-verification-receipt",
-    "captured_at": "2026-10-19T14:54:18.194Z",
-    "window_start": "2026-09-19",
-    "window_end": "2026-10-18",
-    "downloads_30d": 908,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-verification-receipt",
+    "captured_at": "2026-10-20T02:56:35.909Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": 881,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-verification-receipt",
     "error": null,
     "publication": {
       "first_published_at": "2026-08-14T05:17:58.624Z",
-      "captured_at": "2026-10-19T14:54:18.194Z",
+      "captured_at": "2026-10-20T02:56:35.909Z",
       "source_url": "https://registry.npmjs.org/dsh-verification-receipt",
       "error": null
     }

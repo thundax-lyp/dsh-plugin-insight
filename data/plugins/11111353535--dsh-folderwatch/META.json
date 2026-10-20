@@ -1,50 +1,42 @@
 {
   "repository": "11111353535/dsh-folderwatch",
   "repository_id": 1423215448,
-  "captured_at": "2026-10-19T14:54:36.626Z",
-  "window_start": "2026-09-19T14:54:36.626Z",
+  "captured_at": "2026-10-20T02:57:16.775Z",
+  "window_start": "2026-09-20T02:57:16.775Z",
   "stars": 0,
   "pushed_at": "2026-10-17T11:00:39Z",
   "issues": {
     "open": null,
     "closed": null,
     "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "closed_30d": 0,
+    "updated_30d": 0
   },
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3502:9FA79:22EED4:257D63:6AD62F2E and timestamp 2026-10-19 14:54:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7FD8:1DAD9A:87700:9199F:6AD6D88E and timestamp 2026-10-20 02:57:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 35C4:18A3DA:243D19:26CD19:6AD62F2F and timestamp 2026-10-19 14:54:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8086:67008:8A6BE:949CF:6AD6D88F and timestamp 2026-10-20 02:57:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A36.626Z..2026-10-19T14%3A54%3A36.626Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3698:18B13F:23AAB5:26353C:6AD62F30 and timestamp 2026-10-19 14:54:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A36.626Z..2026-10-19T14%3A54%3A36.626Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 376A:18E7AA:2A1F6B:2CADBA:6AD62F30 and timestamp 2026-10-19 14:54:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A36.626Z..2026-10-19T14%3A54%3A36.626Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3858:195C6C:27C12B:2A4F6F:6AD62F31 and timestamp 2026-10-19 14:54:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20created%3A2026-09-20T02%3A57%3A16.775Z..2026-10-20T02%3A57%3A16.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8126:403C2:86EE3:910FA:6AD6D890 and timestamp 2026-10-20 02:57:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-folderwatch",
-    "captured_at": "2026-10-19T14:54:41.978Z",
-    "window_start": "2026-09-19",
-    "window_end": "2026-10-18",
+    "captured_at": "2026-10-20T02:57:22.259Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-folderwatch",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-folderwatch",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-19T14:54:41.978Z",
+      "captured_at": "2026-10-20T02:57:22.259Z",
       "source_url": "https://registry.npmjs.org/dsh-folderwatch",
       "error": "HTTP 404"
     }

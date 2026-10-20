@@ -1,50 +1,42 @@
 {
   "repository": "11zld22/dsh-model-info-fill",
   "repository_id": 1358816037,
-  "captured_at": "2026-10-19T14:54:36.811Z",
-  "window_start": "2026-09-19T14:54:36.811Z",
+  "captured_at": "2026-10-20T02:57:33.548Z",
+  "window_start": "2026-09-20T02:57:33.548Z",
   "stars": 5,
   "pushed_at": "2026-10-14T10:01:08Z",
   "issues": {
-    "open": null,
-    "closed": null,
+    "open": 0,
+    "closed": 1,
     "created_30d": null,
     "closed_30d": null,
     "updated_30d": null
   },
   "errors": [
     {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3530:36A42C:2203F9:24909A:6AD62F2E and timestamp 2026-10-19 14:54:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3616:13F49:241354:26A348:6AD62F2F and timestamp 2026-10-19 14:54:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A36.811Z..2026-10-19T14%3A54%3A36.811Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 36F8:366D8D:24B3CB:2741A0:6AD62F30 and timestamp 2026-10-19 14:54:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20created%3A2026-09-20T02%3A57%3A33.548Z..2026-10-20T02%3A57%3A33.548Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9288:1D17F9:8F29C:9978A:6AD6D8A1 and timestamp 2026-10-20 02:57:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A36.811Z..2026-10-19T14%3A54%3A36.811Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 37FA:36A42C:220655:249314:6AD62F31 and timestamp 2026-10-19 14:54:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A57%3A33.548Z..2026-10-20T02%3A57%3A33.548Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 932C:1DCCFB:86A28:90E80:6AD6D8A1 and timestamp 2026-10-20 02:57:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A36.811Z..2026-10-19T14%3A54%3A36.811Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 38F8:188AD6:21FE03:248D5D:6AD62F32 and timestamp 2026-10-19 14:54:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A11zld22%2Fdsh-model-info-fill%20is%3Aissue%20updated%3A2026-09-20T02%3A57%3A33.548Z..2026-10-20T02%3A57%3A33.548Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 93DE:1DE443:89C03:93F66:6AD6D8A2 and timestamp 2026-10-20 02:57:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-model-info-fill",
-    "captured_at": "2026-10-19T14:54:42.748Z",
-    "window_start": "2026-09-19",
-    "window_end": "2026-10-18",
+    "captured_at": "2026-10-20T02:57:38.977Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-model-info-fill",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-model-info-fill",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-19T14:54:42.748Z",
+      "captured_at": "2026-10-20T02:57:38.977Z",
       "source_url": "https://registry.npmjs.org/dsh-model-info-fill",
       "error": "HTTP 404"
     }

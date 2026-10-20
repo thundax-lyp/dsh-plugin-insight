@@ -1,37 +1,16 @@
 {
   "repository": "1015677515/dsh-prompt-ErrorNotes-desk",
   "repository_id": 1418691015,
-  "captured_at": "2026-10-19T14:54:28.247Z",
-  "window_start": "2026-09-19T14:54:28.247Z",
+  "captured_at": "2026-10-20T03:11:03.249Z",
+  "window_start": "2026-09-20T03:11:03.249Z",
   "stars": 3,
   "pushed_at": "2026-10-19T13:08:15Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2D5C:2C82FB:225F6E:24EC74:6AD62F26 and timestamp 2026-10-19 14:54:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2E70:184E11:22A415:253003:6AD62F27 and timestamp 2026-10-19 14:54:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A28.247Z..2026-10-19T14%3A54%3A28.247Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2F7A:188AD6:21F614:2484CE:6AD62F28 and timestamp 2026-10-19 14:54:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A28.247Z..2026-10-19T14%3A54%3A28.247Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3060:345145:264D17:28DFCF:6AD62F29 and timestamp 2026-10-19 14:54:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1015677515%2Fdsh-prompt-ErrorNotes-desk%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A28.247Z..2026-10-19T14%3A54%3A28.247Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3132:17EAAC:228C4E:25194A:6AD62F2A and timestamp 2026-10-19 14:54:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ]
+  "errors": []
 }

@@ -1,8 +1,8 @@
 {
   "repository": "030611/dsh-telemetry-redactor",
   "repository_id": 1333368566,
-  "captured_at": "2026-10-19T14:54:11.242Z",
-  "window_start": "2026-09-19T14:54:11.242Z",
+  "captured_at": "2026-10-20T02:56:28.487Z",
+  "window_start": "2026-09-20T02:56:28.487Z",
   "stars": 2,
   "pushed_at": "2026-08-14T13:06:41Z",
   "issues": {
@@ -15,20 +15,20 @@
   "errors": [
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-telemetry-redactor%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A11.242Z..2026-10-19T14%3A54%3A11.242Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 21E6:2987C:245FC0:26EBD1:6AD62F19 and timestamp 2026-10-19 14:54:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-telemetry-redactor%20is%3Aissue%20updated%3A2026-09-20T02%3A56%3A28.487Z..2026-10-20T02%3A56%3A28.487Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 56FA:1DD2AE:848E0:8E9C4:6AD6D862 and timestamp 2026-10-20 02:56:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-telemetry-redactor",
-    "captured_at": "2026-10-19T14:54:17.930Z",
-    "window_start": "2026-09-19",
-    "window_end": "2026-10-18",
-    "downloads_30d": 1248,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-telemetry-redactor",
+    "captured_at": "2026-10-20T02:56:34.880Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
+    "downloads_30d": 1216,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-telemetry-redactor",
     "error": null,
     "publication": {
       "first_published_at": "2026-08-14T07:09:07.583Z",
-      "captured_at": "2026-10-19T14:54:17.930Z",
+      "captured_at": "2026-10-20T02:56:34.880Z",
       "source_url": "https://registry.npmjs.org/dsh-telemetry-redactor",
       "error": null
     }

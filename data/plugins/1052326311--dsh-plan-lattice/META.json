@@ -1,50 +1,29 @@
 {
   "repository": "1052326311/dsh-plan-lattice",
   "repository_id": 1334504487,
-  "captured_at": "2026-10-19T14:54:28.332Z",
-  "window_start": "2026-09-19T14:54:28.332Z",
+  "captured_at": "2026-10-20T02:57:21.283Z",
+  "window_start": "2026-09-20T02:57:21.283Z",
   "stars": 3,
   "pushed_at": "2026-08-31T01:44:32Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2D6E:36A42C:21FD19:24893E:6AD62F26 and timestamp 2026-10-19 14:54:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2E84:11F9CE:2559E4:27E8A8:6AD62F27 and timestamp 2026-10-19 14:54:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A28.332Z..2026-10-19T14%3A54%3A28.332Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2F8A:36A42C:21FEA8:248AF2:6AD62F28 and timestamp 2026-10-19 14:54:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A28.332Z..2026-10-19T14%3A54%3A28.332Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 306E:18DBB3:22B6AF:25434F:6AD62F29 and timestamp 2026-10-19 14:54:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A28.332Z..2026-10-19T14%3A54%3A28.332Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3138:3ECE47:231B29:25A77D:6AD62F2A and timestamp 2026-10-19 14:54:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-plan-lattice",
-    "captured_at": "2026-10-19T14:54:34.511Z",
-    "window_start": "2026-09-19",
-    "window_end": "2026-10-18",
+    "captured_at": "2026-10-20T02:57:28.166Z",
+    "window_start": "2026-09-20",
+    "window_end": "2026-10-19",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-plan-lattice",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-plan-lattice",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-19T14:54:34.511Z",
+      "captured_at": "2026-10-20T02:57:28.166Z",
       "source_url": "https://registry.npmjs.org/dsh-plan-lattice",
       "error": "HTTP 404"
     }
