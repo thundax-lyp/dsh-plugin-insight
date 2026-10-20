@@ -35,13 +35,14 @@ description: 显式调用时研究一个固定版本的 DSH 插件，识别技�
    checkout 必须位于固定提交且无改动，身份／版本／组件与 inventory 不一致时停止。
 3. **质疑与创新推演。** 检验最影响贡献成立的关键假设，核对归因、反例与其他解释；通过已有方案比较、机制推广／组合／替换或业务流程重组，尝试提出有推导依据的新创新假设及最小验证。状态和论证按研究规范、输出标准处理，不强凑创新，不以采用风险清单代替贡献分析。
    编排只将所选的新项和待更新项传入本 Skill，确认未变的已有项不调用；独立调用或因依赖等变化入选时，即使代码版本未变也完整分析。内部核对当前快照的结论是否仍适用；当前证据仅在版本、环境和适用范围匹配时复用。INSIGHT 按输出标准只展示当前状态，不开展版本差异研究或回顾旧稿。
+   按本 Skill 的[百分制创新评分标准](references/RESEARCH-STANDARD.md#创新评分标准innovation-v1)分别评技术与业务创新；逐项说明参照、增量及限制，不将新假设计入插件贡献。评分写入观察批次的innovation_scores，数值与理由仅存JSON，不写入INSIGHT；未知项按数据契约处理，不自动评分。
 4. **保存单项交付。** 原始材料写入本地 `data/runs/<round>/snapshots/<plugin-slug>/`，本轮完整洞察写入本地 `data/runs/<round>/insights/<plugin-slug>.md`，
    观察批次写入 `data/runs/<round>/observations/<plugin-slug>.json`，使用新批次 ID；批次只含本组件成功观察及其错误。
    详情须包含唯一一组“用途／亮点／思考／建议”四标签，正文以贡献、关键质疑、新创新假设与最小验证为主线，相关场景、依赖、流程、成本用于支撑论证，保留验证边界。
    显式提交本轮复核的 findings 与时间，不以空数组直接继承旧点评。可参考合成示例，但不能导入为真实数据。
    不使用整轮生成器从静态候选或通用段落批量产生上述语义；若使用装配工具，输入必须是本项已完成且人工核对过的结构化分析，缺字段时失败而不是从旧结论猜测。
    `npm run assemble:insight -- --work <WORK.json> --plugin <id> --analysis <ANALYSIS.json>` 只装配本项人工分析；必填字段由脚本校验，源码路径必须实际存在。
-   ANALYSIS 包含 name、summary、scenario、mechanism、conclusion_status、contribution、critical_question、innovation_hypothesis、scope、distribution、cost、adoption、value、engineering、dependencies、workflow、baseline、verification、source_paths、capabilities、technical_category、business_category；可选 trial_summary 必须由人工明确给出。conclusion_status 单独说明贡献与假设的结论状态；研究范围展示、版本日期口径和创新推演的重点呈现遵循输出标准。contribution、critical_question、innovation_hypothesis 分别承载输出标准要求的贡献论证、关键质疑和假设推演（无贡献判断／无新假设时写明原因）；三者只装配到报告，不自动生成 findings 或证据，需逐条人工记录有依据的结论。脚本不生成研究或采用判断、不自动暂存完成状态，已有交付拒绝覆盖。
+   ANALYSIS 包含 name、summary、scenario、mechanism、conclusion_status、contribution、critical_question、innovation_hypothesis、innovation_scores、scope、distribution、cost、adoption、value、engineering、dependencies、workflow、baseline、verification、source_paths、capabilities、technical_category、business_category；可选 trial_summary 必须由人工明确给出。conclusion_status 单独说明贡献与假设的结论状态；研究范围展示、版本日期口径和创新推演的重点呈现遵循输出标准。contribution、critical_question、innovation_hypothesis 分别承载输出标准要求的贡献论证、关键质疑和假设推演（无贡献判断／无新假设时写明原因）；三者只装配到报告，不自动生成 findings 或证据，需逐条人工记录有依据的结论。innovation_scores为technical／business对象，各含criteria、rationale、basis；分项键和上限遵循评分标准，人工给定分项，脚本只计算轴总分并绑定版本、时间及源码证据，评分不装配进Markdown。脚本不生成研究或采用判断、不自动暂存完成状态，已有交付拒绝覆盖。
 5. **核对并返回。** 执行观察批次结构校验，人工检查证据引用、身份、版本、可比条件及贡献—质疑—假设的推导语义，验收要求以输出标准为准。
    返回人工确认的正向能力清单（带固定版本，未发现／未确认项不填0），以及基于项目自身 README／包描述的功能摘要（最多80字符，含来源URL与版本，不掺评价），以及稳定 ID、版本、实际完成深度、证据／详情／观察批次路径、未验证项及错误；受阻时返回已保存材料和具体下一步。
    返回的是本轮暂存记录，不代表已经覆盖正式快照。编排先校验所有可合并记录，最后合并到唯一当前快照；未通过的项不替换有效记录。

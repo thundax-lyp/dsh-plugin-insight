@@ -18,9 +18,9 @@
 
 ## 推荐
 
+- **[dsh-composer-expand](data/plugins/13071301808--dsh-composer-expand/INSIGHT.md) · 条件试用**：长提示词编辑者可条件试用，先验证输入法、候选菜单和发送快捷键，确认禁用可恢复；未做真实宿主验收。
 - **[dsh-folderwatch](data/plugins/11111353535--dsh-folderwatch/INSIGHT.md) · 条件试用**：适合外部文件交接频繁的任务，先用 queue 模式和小目录验证漏报、回声与扫描成本；未做宿主验收。
 - **[dsh-which](data/plugins/11111353535--dsh-which/INSIGHT.md) · 条件试用**：适合经常排查多版本命令冲突的开发者，先关闭探测并对照实际 shell；未覆盖全部别名与函数语义。
-- **[dsh-composer-expand](data/plugins/13071301808--dsh-composer-expand/INSIGHT.md) · 条件试用**：长提示词编辑者可条件试用，先验证输入法、候选菜单和发送快捷键，确认禁用可恢复；未做真实宿主验收。
 
 ## 分类导航
 

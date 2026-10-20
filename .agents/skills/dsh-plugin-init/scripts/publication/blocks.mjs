@@ -1,3 +1,4 @@
+import { currentInnovationScore } from '../../../_shared/scripts/innovation-score.mjs';
 import { template } from './template.mjs';
 // Reader-facing blocks shared by README and the standalone classification page.
 const clean = (text) => text.replace(/[\r\n]/g, ' ').replace(/[\[\]<>|]/g, '');
@@ -58,7 +59,19 @@ export function renderHot(items, limit = 3) {
     });
 }
 export function renderRecommended(recommendations, byId) {
-    const selected = recommendations.filter((r) => r.kind !== 'observe');
+    const score = (r) => {
+        const e = byId.get(r.plugin_id);
+        return currentInnovationScore(e.plugin, e.i.revision, e.needsReview);
+    };
+    const selected = recommendations
+        .filter((r) => r.kind !== 'observe')
+        .sort((a, b) => {
+            const sa = score(a),
+                sb = score(b);
+            if (sa && sb) return sb.total - sa.total || a.plugin_id.localeCompare(b.plugin_id);
+            if (sa || sb) return sa ? -1 : 1;
+            return a.plugin_id.localeCompare(b.plugin_id);
+        });
     return template('RECOMMENDED', {
         items:
             selected

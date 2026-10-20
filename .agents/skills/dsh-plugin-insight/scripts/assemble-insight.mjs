@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { assembleInnovationScores } from '../../_shared/scripts/innovation-score.mjs';
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
 // Assemble only an explicitly authored, complete single-plugin analysis; never infer findings from inventory.
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
@@ -6,7 +7,7 @@ import { execFileSync } from 'node:child_process';
 import { resolve, relative, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
-import { ROOT, read, digest, atomicWrite } from '../../_shared/scripts/plugin-data.mjs';
+import { ROOT, read, digest, atomicWrite, validateObservations } from '../../_shared/scripts/plugin-data.mjs';
 import { pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 // Read regular blobs at the pinned revision; checkout symlinks are never followed.
 export function readPinnedSource(checkout, revision, name) {
@@ -42,6 +43,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         'contribution',
         'critical_question',
         'innovation_hypothesis',
+        'innovation_scores',
         'scope',
         'distribution',
         'cost',
@@ -62,7 +64,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         required.some((k) => analysis[k] === undefined)
     )
         throw Error('authored single-plugin analysis fields are incomplete or unknown');
-    for (const key of required.filter((k) => !['source_paths', 'capabilities'].includes(k)))
+    for (const key of required.filter((k) => !['source_paths', 'capabilities', 'innovation_scores'].includes(k)))
         if (typeof analysis[key] !== 'string' || !analysis[key].trim()) throw Error(`analysis text required: ${key}`);
     if (
         !Array.isArray(analysis.source_paths) ||
@@ -216,8 +218,17 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         })),
         evidence,
         findings,
-        last_checked_at: now
+        last_checked_at: now,
+        innovation_scores: assembleInnovationScores(
+            analysis.innovation_scores,
+            pluginId,
+            item.revision,
+            item.fingerprints.code,
+            now,
+            evidenceId
+        )
     };
+    validateObservations({ schema_version: 1, run_id: run, checked_at: now, plugins: [plugin], errors: [] });
     const statistics = [
         '| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |',
         '|---|---|---:|---:|---:|---:|---:|',
