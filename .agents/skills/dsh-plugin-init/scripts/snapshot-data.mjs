@@ -426,10 +426,15 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
     atomicWrite(resolve(dirname(workPath), 'SESSION.json'), work.session);
     return work;
 }
+export function assertMergeReady(work) {
+    if (selectedItems(work.session).some((item) => item.status === 'pending'))
+        throw Error('selected pending items must be completed or blocked before merging');
+}
 export function planSnapshot(workPath, root = ROOT) {
     const base = readSnapshot(root),
         work = validateWork(read(workPath), root);
     if (!Object.keys(work.records).length) throw Error('no successful records to merge');
+    assertMergeReady(work);
     const result = assemble(base, work, root);
     return {
         plan_version: 1,
@@ -452,6 +457,7 @@ export function applySnapshot(plan, root = ROOT) {
         if (digest(current) !== plan.base_digest) throw Error('snapshot baseline changed');
         const work = validateWork(read(local(root, plan.work_path)), root);
         if (digest(work) !== plan.work_digest) throw Error('work changed since planning');
+        assertMergeReady(work);
         const rebuilt = assemble(current, work, root);
         if (digest(rebuilt) !== plan.result_digest) throw Error('plan does not match validated staged work');
         atomicWrite(file, rebuilt);
