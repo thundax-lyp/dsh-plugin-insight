@@ -1,8 +1,8 @@
 {
   "repository": "0xsline/dsh-spotlight",
   "repository_id": 1333136466,
-  "captured_at": "2026-10-20T02:56:59.866Z",
-  "window_start": "2026-09-20T02:56:59.866Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 23,
   "pushed_at": "2026-08-24T09:03:11Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7024:166969:83F90:8E185:6AD6D87D and timestamp 2026-10-20 02:57:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C40:B9159:5B1DC:12A249:6AD7058D and timestamp 2026-10-20 06:09:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 70FC:F1EF4:98C8D:A2F5C:6AD6D87E and timestamp 2026-10-20 02:57:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C41:18ABD3:70E6E:173171:6AD7058D and timestamp 2026-10-20 06:09:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20created%3A2026-09-20T02%3A56%3A59.866Z..2026-10-20T02%3A56%3A59.866Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 71E4:1DE085:834BA:8D64F:6AD6D87F and timestamp 2026-10-20 02:57:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C42:E2E2E:56AF4:11C121:6AD7058D and timestamp 2026-10-20 06:09:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A56%3A59.866Z..2026-10-20T02%3A56%3A59.866Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 72B8:7AB59:95913:9FC02:6AD6D880 and timestamp 2026-10-20 02:57:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C43:269C1D:6A70A:15C1AC:6AD7058D and timestamp 2026-10-20 06:09:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20updated%3A2026-09-20T02%3A56%3A59.866Z..2026-10-20T02%3A56%3A59.866Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 736C:1D6B3A:940E1:9E339:6AD6D880 and timestamp 2026-10-20 02:57:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C44:3C9CDE:69C4D:15D1A2:6AD7058D and timestamp 2026-10-20 06:09:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "@0xsline/dsh-spotlight",
-    "captured_at": "2026-10-20T02:57:05.069Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": 667,
@@ -44,9 +44,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-14T09:37:00.387Z",
-      "captured_at": "2026-10-20T02:57:05.069Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/%400xsline%2Fdsh-spotlight",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+    "current_revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

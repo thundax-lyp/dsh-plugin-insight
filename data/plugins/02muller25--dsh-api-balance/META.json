@@ -1,21 +1,24 @@
 {
   "repository": "02Muller25/dsh-api-balance",
   "repository_id": 1334899834,
-  "captured_at": "2026-10-20T02:56:27.948Z",
-  "window_start": "2026-09-20T02:56:27.948Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 12,
   "pushed_at": "2026-08-15T08:21:59Z",
   "issues": {
     "open": 0,
-    "closed": 1,
+    "closed": 0,
     "created_30d": 0,
-    "closed_30d": 1,
-    "updated_30d": null
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A02Muller25%2Fdsh-api-balance%20is%3Aissue%20updated%3A2026-09-20T02%3A56%3A27.948Z..2026-10-20T02%3A56%3A27.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 56B4:1E9C13:8C3A8:96498:6AD6D862 and timestamp 2026-10-20 02:56:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ]
+  "errors": [],
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+    "current_revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
 }

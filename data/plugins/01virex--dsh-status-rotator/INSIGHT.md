@@ -3,7 +3,7 @@
 > 为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。
 
 <!-- BEGIN META -->
-[![GitHub ★ 183](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=183&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11750](https://img.shields.io/static/v1?label=npm+30d&message=11%2C750&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) · [![最后更新 昨天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E6%98%A8%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
+[![GitHub ★ 185](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=185&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11750](https://img.shields.io/static/v1?label=npm+30d&message=11%2C750&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) · [![最后更新 昨天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E6%98%A8%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator/commits)
 <!-- END META -->
 
 ## 版本
@@ -74,6 +74,6 @@
 
 ## Issue 活跃度
 
-Issue：未关闭 1／已关闭 42 · 近30天：新建 27／关闭 27／更新 28
+Issue：未关闭 暂未获取／已关闭 暂未获取 · 近30天：新建 暂未获取／关闭 暂未获取／更新 暂未获取
 
 统计日期：2026-10-20。

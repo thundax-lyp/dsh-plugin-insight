@@ -1,42 +1,21 @@
 {
   "repository": "173787247/dsh-wsl-compose",
   "repository_id": 1381842592,
-  "captured_at": "2026-10-20T04:26:52.583Z",
-  "window_start": "2026-09-20T04:26:52.583Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 1,
   "pushed_at": "2026-09-30T03:21:43Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDF6:1D8BCE:17C563:198715:6AD6ED8E and timestamp 2026-10-20 04:26:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EEC6:3B8230:17103F:18D19E:6AD6ED8E and timestamp 2026-10-20 04:26:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20created%3A2026-09-20T04%3A26%3A52.583Z..2026-10-20T04%3A26%3A52.583Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EF6C:3B8E6C:177BB1:193DC9:6AD6ED8F and timestamp 2026-10-20 04:26:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A26%3A52.583Z..2026-10-20T04%3A26%3A52.583Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F038:7AED1:180D36:19CFAE:6AD6ED90 and timestamp 2026-10-20 04:26:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20updated%3A2026-09-20T04%3A26%3A52.583Z..2026-10-20T04%3A26%3A52.583Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F0FC:1D45E2:171FE8:18E136:6AD6ED91 and timestamp 2026-10-20 04:26:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-wsl-compose",
-    "captured_at": "2026-10-20T04:26:57.401Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": null,
@@ -44,9 +23,17 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T04:26:57.401Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/dsh-wsl-compose",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "bea57df86854983d90c8ac9219d15db1235c1652",
+    "current_revision": "bea57df86854983d90c8ac9219d15db1235c1652",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

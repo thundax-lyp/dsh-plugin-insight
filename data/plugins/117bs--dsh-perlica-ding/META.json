@@ -1,26 +1,42 @@
 {
   "repository": "117BS/dsh-perlica-ding",
   "repository_id": 1335704653,
-  "captured_at": "2026-10-20T02:57:31.592Z",
-  "window_start": "2026-09-20T02:57:31.592Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 7,
   "pushed_at": "2026-10-07T13:38:52Z",
   "issues": {
-    "open": 1,
-    "closed": 0,
-    "created_30d": 0,
-    "closed_30d": 0,
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
     "updated_30d": null
   },
   "errors": [
     {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C32:25FD5C:169606:492E09:6AD705A1 and timestamp 2026-10-20 06:09:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C45:1D671B:15BE70:46C209:6AD705A1 and timestamp 2026-10-20 06:09:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C34:31331D:16D3A6:4A672C:6AD705A1 and timestamp 2026-10-20 06:09:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C47:355364:1782F6:4C85C3:6AD705A1 and timestamp 2026-10-20 06:09:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20updated%3A2026-09-20T02%3A57%3A31.592Z..2026-10-20T02%3A57%3A31.592Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 92A8:1DE085:84CC1:8EFF8:6AD6D8A1 and timestamp 2026-10-20 02:57:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A117BS%2Fdsh-perlica-ding%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C48:12851:16B3E5:49C32A:6AD705A1 and timestamp 2026-10-20 06:09:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-perlica-ding",
-    "captured_at": "2026-10-20T02:57:37.391Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": 333,
@@ -28,9 +44,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-16T09:38:45.734Z",
-      "captured_at": "2026-10-20T02:57:37.391Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/dsh-perlica-ding",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+    "current_revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

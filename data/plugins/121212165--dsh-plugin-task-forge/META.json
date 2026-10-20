@@ -1,8 +1,8 @@
 {
   "repository": "121212165/dsh-plugin-task-forge",
   "repository_id": 1399011094,
-  "captured_at": "2026-10-20T02:57:40.219Z",
-  "window_start": "2026-09-20T02:57:40.219Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 1,
   "pushed_at": "2026-10-19T09:50:28Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9698:7BF23:88F26:9325B:6AD6D8A5 and timestamp 2026-10-20 02:57:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C34:31331D:16F606:4AD639:6AD705A7 and timestamp 2026-10-20 06:09:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 975C:39E969:993C6:A3CB1:6AD6D8A6 and timestamp 2026-10-20 02:57:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C45:1D671B:15E0E0:4732DB:6AD705A7 and timestamp 2026-10-20 06:09:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20created%3A2026-09-20T02%3A57%3A40.219Z..2026-10-20T02%3A57%3A40.219Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 985C:7CCD8:88A33:92DD4:6AD6D8A7 and timestamp 2026-10-20 02:57:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C4F:293E82:170036:4AF995:6AD705A7 and timestamp 2026-10-20 06:09:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A57%3A40.219Z..2026-10-20T02%3A57%3A40.219Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9930:1DF085:96F40:A156E:6AD6D8A8 and timestamp 2026-10-20 02:57:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C50:1DBDA9:19CBA9:55ADA2:6AD705A7 and timestamp 2026-10-20 06:09:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20updated%3A2026-09-20T02%3A57%3A40.219Z..2026-10-20T02%3A57%3A40.219Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 99E6:7AED1:8CB7E:97031:6AD6D8A9 and timestamp 2026-10-20 02:57:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C39:207BF8:1994D1:52E81A:6AD705A7 and timestamp 2026-10-20 06:09:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-plugin-task-forge",
-    "captured_at": "2026-10-20T02:57:45.410Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": null,
@@ -44,9 +44,17 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T02:57:45.410Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/dsh-plugin-task-forge",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+    "current_revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

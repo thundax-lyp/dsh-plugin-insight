@@ -1,42 +1,21 @@
 {
   "repository": "173787247/dsh-wsl-cred",
   "repository_id": 1350379113,
-  "captured_at": "2026-10-20T04:26:55.745Z",
-  "window_start": "2026-09-20T04:26:55.745Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 1,
   "pushed_at": "2026-09-29T15:04:02Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-cred%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F0FA:1E25B2:1CC231:1E861E:6AD6ED91 and timestamp 2026-10-20 04:26:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-cred%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F196:67008:17478C:190AC2:6AD6ED91 and timestamp 2026-10-20 04:26:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-cred%20is%3Aissue%20created%3A2026-09-20T04%3A26%3A55.745Z..2026-10-20T04%3A26%3A55.745Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F24E:1E4106:177D07:193EE5:6AD6ED92 and timestamp 2026-10-20 04:26:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-cred%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A26%3A55.745Z..2026-10-20T04%3A26%3A55.745Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F2EC:7AB59:18DC39:1AA05C:6AD6ED93 and timestamp 2026-10-20 04:26:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-cred%20is%3Aissue%20updated%3A2026-09-20T04%3A26%3A55.745Z..2026-10-20T04%3A26%3A55.745Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F3A4:3B8E6C:177F3A:19419B:6AD6ED94 and timestamp 2026-10-20 04:27:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-wsl-cred",
-    "captured_at": "2026-10-20T04:27:00.667Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": null,
@@ -44,9 +23,17 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T04:27:00.667Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/dsh-wsl-cred",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "1c45da3969a109959783373175150c87a3a33fa0",
+    "current_revision": "1c45da3969a109959783373175150c87a3a33fa0",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

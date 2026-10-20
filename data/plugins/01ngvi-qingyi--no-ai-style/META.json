@@ -1,21 +1,42 @@
 {
   "repository": "01NGVI-QINGYI/no-ai-style",
   "repository_id": 1418493685,
-  "captured_at": "2026-10-20T02:56:18.533Z",
-  "window_start": "2026-09-20T02:56:18.533Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 2,
   "pushed_at": "2026-10-19T08:23:27Z",
   "issues": {
-    "open": 0,
-    "closed": 0,
-    "created_30d": 0,
-    "closed_30d": 0,
-    "updated_30d": 0
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
   },
-  "errors": [],
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C39:207BF8:19E22E:53E32C:6AD705B4 and timestamp 2026-10-20 06:09:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C31:CE852:18B1D0:507CC7:6AD705B4 and timestamp 2026-10-20 06:09:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3A:1DBDA9:1A1BBF:56B8D8:6AD705B4 and timestamp 2026-10-20 06:09:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3D:3182DF:1725A5:4B77EB:6AD705B4 and timestamp 2026-10-20 06:09:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3E:1696F6:1A4239:5543B6:6AD705B5 and timestamp 2026-10-20 06:09:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
   "npm": {
     "package_name": "no-ai-style",
-    "captured_at": "2026-10-20T02:56:24.831Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": null,
@@ -23,9 +44,17 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T02:56:24.831Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/no-ai-style",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+    "current_revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

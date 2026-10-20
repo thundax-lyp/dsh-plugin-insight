@@ -1,8 +1,8 @@
 {
   "repository": "173787247/dsh-wsl-download",
   "repository_id": 1351854499,
-  "captured_at": "2026-10-20T04:27:07.237Z",
-  "window_start": "2026-09-20T04:27:07.237Z",
+  "captured_at": "2026-10-20T06:08:58.680Z",
+  "window_start": "2026-09-20T06:08:58.680Z",
   "stars": 1,
   "pushed_at": "2026-09-30T03:21:55Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FA40:663E2:1697E6:1859A8:6AD6ED9C and timestamp 2026-10-20 04:27:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C40:34CE10:176435:4BD1DA:6AD70607 and timestamp 2026-10-20 06:11:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FAEA:71CD2:173247:18F5F5:6AD6ED9D and timestamp 2026-10-20 04:27:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C36:1B10F5:17ED4D:4DE5B8:6AD70607 and timestamp 2026-10-20 06:11:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20created%3A2026-09-20T04%3A27%3A07.237Z..2026-10-20T04%3A27%3A07.237Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FB7E:73868:179318:1955D8:6AD6ED9E and timestamp 2026-10-20 04:27:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20created%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C3A:1DBDA9:1C3C14:5DDD51:6AD70607 and timestamp 2026-10-20 06:11:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T04%3A27%3A07.237Z..2026-10-20T04%3A27%3A07.237Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FC36:1D17F9:187C24:1A400B:6AD6ED9F and timestamp 2026-10-20 04:27:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C32:25FD5C:18F1FF:50CCDF:6AD70607 and timestamp 2026-10-20 06:11:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20updated%3A2026-09-20T04%3A27%3A07.237Z..2026-10-20T04%3A27%3A07.237Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FCFC:3B6EB4:192B1C:1AEE7A:6AD6EDA0 and timestamp 2026-10-20 04:27:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-download%20is%3Aissue%20updated%3A2026-09-20T06%3A08%3A58.680Z..2026-10-20T06%3A08%3A58.680Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 7C34:31331D:193438:5225C5:6AD70607 and timestamp 2026-10-20 06:11:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-wsl-download",
-    "captured_at": "2026-10-20T04:27:12.318Z",
+    "captured_at": "2026-10-20T06:08:58.680Z",
     "window_start": "2026-09-20",
     "window_end": "2026-10-19",
     "downloads_30d": null,
@@ -44,9 +44,17 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T04:27:12.318Z",
+      "captured_at": "2026-10-20T06:08:58.680Z",
       "source_url": "https://registry.npmjs.org/dsh-wsl-download",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-20T06:08:58.680Z",
+    "baseline_revision": "8b1db94ca8658004ebc304e9678bbdd54a491133",
+    "current_revision": "8b1db94ca8658004ebc304e9678bbdd54a491133",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }
