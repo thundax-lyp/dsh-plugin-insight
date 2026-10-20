@@ -1,0 +1,52 @@
+{
+  "repository": "0x7A7A6572/dsh-forge-studio",
+  "repository_id": 1363429979,
+  "captured_at": "2026-10-19T14:54:20.338Z",
+  "window_start": "2026-09-19T14:54:20.338Z",
+  "stars": 8,
+  "pushed_at": "2026-10-16T03:38:35Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A0x7A7A6572%2Fdsh-forge-studio%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2610:23D21:269833:292617:6AD62F1E and timestamp 2026-10-19 14:54:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A0x7A7A6572%2Fdsh-forge-studio%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 26D6:A29F3:230B3F:2598E9:6AD62F1F and timestamp 2026-10-19 14:54:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0x7A7A6572%2Fdsh-forge-studio%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A20.338Z..2026-10-19T14%3A54%3A20.338Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 27C4:187B55:223FB0:24CCD5:6AD62F1F and timestamp 2026-10-19 14:54:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0x7A7A6572%2Fdsh-forge-studio%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A20.338Z..2026-10-19T14%3A54%3A20.338Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 289E:345145:26469D:28D8BF:6AD62F20 and timestamp 2026-10-19 14:54:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0x7A7A6572%2Fdsh-forge-studio%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A20.338Z..2026-10-19T14%3A54%3A20.338Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2952:A29F3:230DB6:259B87:6AD62F21 and timestamp 2026-10-19 14:54:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "@zzerx/dsh-plugin-usage-billing",
+    "captured_at": "2026-10-19T14:54:26.082Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": 1814,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/%40zzerx%2Fdsh-plugin-usage-billing",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-09-22T05:39:49.314Z",
+      "captured_at": "2026-10-19T14:54:26.082Z",
+      "source_url": "https://registry.npmjs.org/%40zzerx%2Fdsh-plugin-usage-billing",
+      "error": null
+    }
+  }
+}

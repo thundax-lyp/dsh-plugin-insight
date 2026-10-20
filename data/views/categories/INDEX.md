@@ -6,6 +6,8 @@
 
 ## 分类索引
 
-- [软件交付（3）](SOFTWARE-DELIVERY.md)
-- [个人效率（4）](PERSONAL-PRODUCTIVITY.md)
-- [基础设施（3）](INFRASTRUCTURE.md)
+- [个人效率（12）](PERSONAL-PRODUCTIVITY.md)
+- [办公与运营（1）](OFFICE-OPERATIONS.md)
+- [基础设施（7）](INFRASTRUCTURE.md)
+- [研究与知识（2）](RESEARCH-KNOWLEDGE.md)
+- [软件交付（8）](SOFTWARE-DELIVERY.md)

@@ -1,16 +1,52 @@
 {
   "repository": "0imzero/dsh-workspace-menu",
   "repository_id": 1339803365,
-  "captured_at": "2026-10-19T09:24:53.812Z",
-  "window_start": "2026-09-19T09:24:53.812Z",
+  "captured_at": "2026-10-19T14:54:19.883Z",
+  "window_start": "2026-09-19T14:54:19.883Z",
   "stars": 3,
   "pushed_at": "2026-08-24T17:02:43Z",
   "issues": {
-    "open": 1,
-    "closed": 0,
-    "created_30d": 0,
-    "closed_30d": 0,
-    "updated_30d": 0
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
   },
-  "errors": []
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 258E:2116B:23F232:267ED3:6AD62F1D and timestamp 2026-10-19 14:54:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2648:36B38F:256D3F:27FAB3:6AD62F1E and timestamp 2026-10-19 14:54:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20created%3A2026-09-19T14%3A54%3A19.883Z..2026-10-19T14%3A54%3A19.883Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 272E:2A276:214AA5:23D6E9:6AD62F1F and timestamp 2026-10-19 14:54:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-19T14%3A54%3A19.883Z..2026-10-19T14%3A54%3A19.883Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 284C:1888D3:205991:22E420:6AD62F20 and timestamp 2026-10-19 14:54:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A0imzero%2Fdsh-workspace-menu%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A19.883Z..2026-10-19T14%3A54%3A19.883Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 291A:361EEF:24E815:27753D:6AD62F21 and timestamp 2026-10-19 14:54:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "@dsh-external/dsh-workspace-menu",
+    "captured_at": "2026-10-19T14:54:25.933Z",
+    "window_start": "2026-09-19",
+    "window_end": "2026-10-18",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/%40dsh-external%2Fdsh-workspace-menu",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-19T14:54:25.933Z",
+      "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-workspace-menu",
+      "error": "HTTP 404"
+    }
+  }
 }

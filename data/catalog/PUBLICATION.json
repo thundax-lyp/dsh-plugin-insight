@@ -1,164 +1,535 @@
 {
   "schema_version": 1,
-  "manifest": "data/manifests/2026-10-19-03.json",
-  "scope": "十插件固定源码研究；完整候选与本轮所选范围分开记录",
+  "manifest": "data/manifests/2026-10-19-06.json",
+  "scope": "40 个所选固定源码组件：完成 30、受阻 0、待处理 10；完整候选 6966，未选 6926",
+  "catalog": "data/catalog/PLUGINS.json",
   "catalog_page": "data/views/categories/INDEX.md",
   "recommendations": [
     {
-      "plugin_id": "github:1333368566:root",
+      "plugin_id": "github:1334504487:root",
       "kind": "trial",
-      "summary": "已有遥测出口时，用合成凭证先验证副本脱敏；未知格式与监听链仍是关键边界。"
+      "summary": "长任务可用中断恢复对照手工 RUNBOOK，重点看恢复正确率、重复工作与维护负担。"
     },
     {
-      "plugin_id": "github:1339316901:root",
+      "plugin_id": "github:1423215448:root",
       "kind": "trial",
-      "summary": "高频跨会话开发先试确定性索引与出处；与交接文档比较恢复质量和总负担。"
+      "summary": "目录驱动流程可用合成文件风暴试验，先验证漏报、重复投递与自写过滤。"
     },
     {
-      "plugin_id": "github:1333370288:root",
-      "kind": "observe",
-      "summary": "验证信号摘要不等于测试通过；先核对源码0.1.1与npm latest0.1.0的产物差异。"
+      "plugin_id": "github:1423215529:root",
+      "kind": "trial",
+      "summary": "PATH 排障场景可先在测试环境核对遮蔽与版本探针，再用于真实工作区。"
+    },
+    {
+      "plugin_id": "github:1335558973:root",
+      "kind": "trial",
+      "summary": "语音输入先关闭自动发送，用噪声与专有名词样本比较校对时间和误提交风险。"
     }
   ],
   "metadata": {
-    "github:1339316901:root": "data/plugins/00080000--dsh-project-memory/META.json",
-    "github:1333328839:root": "data/plugins/01virex--dsh-status-rotator/META.json",
-    "github:1416699252:root": "data/plugins/01men--ybkkasi/META.json",
-    "github:1334899834:root": "data/plugins/02muller25--dsh-api-balance/META.json",
-    "github:1333368566:root": "data/plugins/030611--dsh-telemetry-redactor/META.json",
-    "github:1333370288:root": "data/plugins/030611--dsh-verification-receipt/META.json",
-    "github:1333357514:root": "data/plugins/030611--qiushi-dsh-evidence-audit/META.json",
-    "github:1342915339:root": "data/plugins/0qwq0--dsh-discord-richpresence/META.json",
-    "github:1343420855:root": "data/plugins/0qwq0--dsh-ui-auth/META.json",
-    "github:1339803365:root": "data/plugins/0imzero--dsh-workspace-menu/META.json"
+    "github:1335557891:root": "data/plugins/0nt-one--dsh-neo-skin/META.json",
+    "github:1335558973:root": "data/plugins/0nt-one--dsh-voice-input/META.json",
+    "github:1363429979:plugin-daily-log": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/META.json",
+    "github:1363429979:plugin-memory": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/META.json",
+    "github:1363429979:plugin-notes": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/META.json",
+    "github:1363429979:plugin-usage-billing": "data/plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/META.json",
+    "github:1342742812:root": "data/plugins/0xrabit--dsh-crypto-portfolio/META.json",
+    "github:1333136466:root": "data/plugins/0xsline--dsh-spotlight/META.json",
+    "github:1354283280:root": "data/plugins/1010n111--dsh-about/META.json",
+    "github:1359423472:root": "data/plugins/1014029855--dsh-codevault/META.json",
+    "github:1418691015:root": "data/plugins/1015677515--dsh-prompt-errornotes-desk/META.json",
+    "github:1366583376:root": "data/plugins/1032740078--dsh-web-url-view/META.json",
+    "github:1334504487:root": "data/plugins/1052326311--dsh-plan-lattice/META.json",
+    "github:1367305514:root": "data/plugins/1069137617--dsh-reasoning-tiers/META.json",
+    "github:1336994666:root": "data/plugins/1070296335-create--dph-taskboard/META.json",
+    "github:1423215448:root": "data/plugins/11111353535--dsh-folderwatch/META.json",
+    "github:1423215373:root": "data/plugins/11111353535--dsh-reaper/META.json",
+    "github:1423215529:root": "data/plugins/11111353535--dsh-which/META.json",
+    "github:1335060007:root": "data/plugins/1123762794--dsh-web-restart/META.json",
+    "github:1335704653:root": "data/plugins/117bs--dsh-perlica-ding/META.json",
+    "github:1358816037:root": "data/plugins/11zld22--dsh-model-info-fill/META.json",
+    "github:1397817235:root": "data/plugins/121212165--dsh-plugin-ide-hub/META.json",
+    "github:1400927706:root": "data/plugins/121212165--dsh-plugin-quota/META.json",
+    "github:1399011094:root": "data/plugins/121212165--dsh-plugin-task-forge/META.json",
+    "github:1379204512:root": "data/plugins/1225sakura--oh-my-deepseekharness/META.json",
+    "github:1355639507:root": "data/plugins/123dbl--dsh-side-session/META.json",
+    "github:1335559646:root": "data/plugins/1264459640--dsh-trellis/META.json",
+    "github:1409724830:src": "data/plugins/12we21--cute-fat-fish-pet--src/META.json",
+    "github:1334850903:root": "data/plugins/13071301808--dsh-composer-expand/META.json",
+    "github:1334269686:root": "data/plugins/131cda1--dsh-scrape-webpage/META.json"
   },
-  "catalog": "data/catalog/PLUGINS.json",
   "summaries": {
-    "github:1339316901:root": {
-      "text": "为 DSH 提供持久化项目记忆，索引文档与代码符号，关联任务和文件，并按需召回带出处的经验。",
-      "source_url": "https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/README.md",
-      "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def"
+    "github:1335557891:root": {
+      "text": "新粗野主义双方案界面皮肤，支持浅色与深色主题。",
+      "source_url": "https://github.com/0nt-one/dsh-neo-skin/blob/fe5ef0e671fab5ab8c8700013f3966eb9642455f/README.md",
+      "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f"
     },
-    "github:1333328839:root": {
-      "text": "为 DSH Web 状态栏提供阶段文案、打字机、渐变、弹幕和主题，支持在设置页自定义。",
-      "source_url": "https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md",
-      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+    "github:1335558973:root": {
+      "text": "在输入框加入浏览器语音转写、语言切换与可选自动发送。",
+      "source_url": "https://github.com/0nt-one/dsh-voice-input/blob/c2fceee6a865a8466f3909d3896172f0f2fad2fa/README.md",
+      "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
     },
-    "github:1416699252:root": {
-      "text": "自托管企业 AI 资源管理平台，统一纳管 MCP、Skill、Agent 和应用，提供身份、权限、计量与审计。",
-      "source_url": "https://github.com/01men/ybkkasi/blob/03f74c847c8af9189ce37a73321a730ceb353f2a/README.md",
-      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a"
+    "github:1363429979:plugin-daily-log": {
+      "text": "聚合 Git 与本地 Agent 对话，按模板生成日、周、月工作报告。",
+      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/README.md",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
     },
-    "github:1334899834:root": {
-      "text": "在 DSH Web 输入区实时显示 DeepSeek API 账户余额，支持自动轮询、手动刷新和自定义刷新间隔。",
-      "source_url": "https://github.com/02Muller25/dsh-api-balance/blob/c27c8b61acf97714ab08d99f97b7be3a9007e52e/README.md",
-      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e"
+    "github:1363429979:plugin-memory": {
+      "text": "保存全局与项目偏好并跨会话注入，提供可视化管理。",
+      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/README.md",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
     },
-    "github:1333368566:root": {
-      "text": "在 DSH 遥测副本导出前遮盖支持的敏感键和凭证模式，保留原始会话日志。",
-      "source_url": "https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/README.md",
-      "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+    "github:1363429979:plugin-notes": {
+      "text": "在 DSH 中管理 Markdown 便签、任务泳道与定时执行。",
+      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
     },
-    "github:1333370288:root": {
-      "text": "在每轮会话结束后生成隐私最小化的工具活动与验证信号摘要，并保存为本地 JSONL 收据。",
-      "source_url": "https://github.com/030611/dsh-verification-receipt/blob/87f3fb0198090f0f26a37a52840db150609db748/README.md",
-      "revision": "87f3fb0198090f0f26a37a52840db150609db748"
+    "github:1363429979:plugin-usage-billing": {
+      "text": "从会话日志聚合 token 用量，并按事件时价格显示预算与费用。",
+      "source_url": "https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/README.md",
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e"
     },
-    "github:1333357514:root": {
-      "text": "被动观察 DSH 会话事件与工具结果，将内容摘要写入本地哈希链收据，供后续核对。",
-      "source_url": "https://github.com/030611/qiushi-dsh-evidence-audit/blob/94fae130b2845309e1dcabac14696fddb18f8f3a/README.md",
-      "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a"
+    "github:1342742812:root": {
+      "text": "聚合多链、交易所与代币化股票的自托管资产看板。",
+      "source_url": "https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/README.md",
+      "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
     },
-    "github:1342915339:root": {
-      "text": "将 DSH 的粗粒度交互状态推送到本机 Discord Rich Presence，支持自定义文案与可选丰富状态。",
-      "source_url": "https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/README.md",
-      "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+    "github:1333136466:root": {
+      "text": "为 DSH Web 提供键盘优先的命令面板。",
+      "source_url": "https://github.com/0xsline/dsh-spotlight/blob/b3565e8629d9a393d764681e96f4c41100cc12fa/README.md",
+      "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa"
     },
-    "github:1343420855:root": {
-      "text": "为 DSH Web 提供登录、用户管理、会话隔离与按用户模型凭证管理，支持 TOTP 和通行密钥。",
-      "source_url": "https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/README.md",
-      "revision": "6c5e87b44be4e973b092910968001916bb97d22e"
+    "github:1354283280:root": {
+      "text": "在设置页展示当前 DSH 与插件版本及项目入口。",
+      "source_url": "https://github.com/1010n111/dsh-about/blob/febf7b0da6a2255ddfd84028c624ad9e4953dd83/README.md",
+      "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
     },
-    "github:1339803365:root": {
-      "text": "为 DSH 工作区与会话补充右键、双击菜单，集中提供置顶、重命名、归档、分叉和打开目录等操作。",
-      "source_url": "https://github.com/0imzero/dsh-workspace-menu/blob/afd55510f82821cde60a8364e42f752e244b5b31/README.md",
-      "revision": "afd55510f82821cde60a8364e42f752e244b5b31"
+    "github:1359423472:root": {
+      "text": "把源码阅读笔记按仓库、文件和符号归档，并可连接 Obsidian。",
+      "source_url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/README.md",
+      "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+    },
+    "github:1418691015:root": {
+      "text": "管理全局/会话提示词，并把经确认的错误经验回注后续对话。",
+      "source_url": "https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/blob/c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f/README.md",
+      "revision": "c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f"
+    },
+    "github:1366583376:root": {
+      "text": "在设置页显示临时与固定 Web 访问地址，支持局域网访问。",
+      "source_url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md",
+      "revision": "193343093186016080a81c5512c6936809daff25"
+    },
+    "github:1334504487:root": {
+      "text": "为长任务提供持久执行合同、工作图与连续性恢复。",
+      "source_url": "https://github.com/1052326311/dsh-plan-lattice/blob/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3/README.md",
+      "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+    },
+    "github:1367305514:root": {
+      "text": "为第三方模型补齐推理档位与模型能力元数据。",
+      "source_url": "https://github.com/1069137617/dsh-reasoning-tiers/blob/fe642c8ec878b6ba46a7c1831fc6cea557083e5b/README.md",
+      "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b"
+    },
+    "github:1336994666:root": {
+      "text": "在侧边栏按会话组织四列任务看板，并支持新建、备注与导入导出。",
+      "source_url": "https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md",
+      "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+    },
+    "github:1423215448:root": {
+      "text": "监视目录并在安静窗口后投递去重变更，过滤本会话写入。",
+      "source_url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md",
+      "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+    },
+    "github:1423215373:root": {
+      "text": "识别 Agent 遗留进程与端口，预览后回收限定范围的进程树。",
+      "source_url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/README.md",
+      "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+    },
+    "github:1423215529:root": {
+      "text": "解释命令实际解析路径、遮蔽关系、重复项与版本差异。",
+      "source_url": "https://github.com/11111353535/dsh-which/blob/7894da833582b46526b251348cd8993b70a5ce85/README.md",
+      "revision": "7894da833582b46526b251348cd8993b70a5ce85"
+    },
+    "github:1335060007:root": {
+      "text": "在 Web 侧栏提供单击重启 DSH Web 进程的入口。",
+      "source_url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.md",
+      "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+    },
+    "github:1335704653:root": {
+      "text": "按计划完成、任务结束、等待输入与错误播放分级提示音。",
+      "source_url": "https://github.com/117BS/dsh-perlica-ding/blob/f9db75c3cff13919659e81311a2b3d62f9af8aab/README.md",
+      "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+    },
+    "github:1358816037:root": {
+      "text": "按 models.dev 补齐自定义模型的上下文、输出、推理和图片能力。",
+      "source_url": "https://github.com/11zld22/dsh-model-info-fill/blob/d377291f5ef8ad2bccbd54e26e641b9d89016bba/README.md",
+      "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba"
+    },
+    "github:1397817235:root": {
+      "text": "统一盘点多种编码 IDE 的会话、用量、恢复命令与共享规则。",
+      "source_url": "https://github.com/121212165/dsh-plugin-ide-hub/blob/814621be897a27752550b0be6f7be2bc44ccb897/README.md",
+      "revision": "814621be897a27752550b0be6f7be2bc44ccb897"
+    },
+    "github:1400927706:root": {
+      "text": "实时跟踪会话 token、轮次与估算费用，并向模型注入预算信号。",
+      "source_url": "https://github.com/121212165/dsh-plugin-quota/blob/a705c9d0cb5f025ce6eebd3e8c17a37d161a8628/README.md",
+      "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+    },
+    "github:1399011094:root": {
+      "text": "把粗略需求编译为版本化任务书，并用回读握手交接给其他 AI。",
+      "source_url": "https://github.com/121212165/dsh-plugin-task-forge/blob/af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac/README.md",
+      "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+    },
+    "github:1379204512:root": {
+      "text": "提供多 Agent 编排模式、角色技能、MCP 工具与图运行时。",
+      "source_url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/README.md",
+      "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+    },
+    "github:1355639507:root": {
+      "text": "从输入区启动可继续的独立旁会话，让主会话保持运行。",
+      "source_url": "https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/README.md",
+      "revision": "39443eb1ea15fb080121a3a6474426980f346a6c"
+    },
+    "github:1335559646:root": {
+      "text": "以阶段速记、技能和任务状态实现 Trellis 风格开发工作流。",
+      "source_url": "https://github.com/1264459640/dsh-trellis/blob/7d2e5b69d2e744de511ac01632cf0865dfa79a85/README.md",
+      "revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85"
+    },
+    "github:1409724830:src": {
+      "text": "在 DSH Web 中提供带动画、陪聊与可选看屏的桌面宠物。",
+      "source_url": "https://github.com/12we21/cute-fat-fish-pet/blob/e53f63e67227671aca092e3334c8611e29b880b6/src/README.md",
+      "revision": "e53f63e67227671aca092e3334c8611e29b880b6"
+    },
+    "github:1334850903:root": {
+      "text": "给输入框增加展开按钮，切换到 70vh 的长文本编辑视图。",
+      "source_url": "https://github.com/13071301808/dsh-composer-expand/blob/e816461115436f1cb084f868398e610396d00679/README.md",
+      "revision": "e816461115436f1cb084f868398e610396d00679"
+    },
+    "github:1334269686:root": {
+      "text": "抓取网页正文、结构、链接与统计，并可下载图片交给识图服务。",
+      "source_url": "https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/README.md",
+      "revision": "7485af10c063579323058583c7f13e69c4c8bd21"
     }
   },
   "capabilities": {
-    "github:1339316901:root": {
-      "revision": "fe7ac6cab91784a34996aede007d3586f0ff2def",
+    "github:1335557891:root": {
+      "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
       "items": {
-        "模型工具": "12 个",
-        "用户命令": "/tasks",
-        "事件监听": "agent/pre-step、会话事件"
+        "界面": "settings.general.item"
       }
     },
-    "github:1333328839:root": {
-      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+    "github:1335558973:root": {
+      "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
       "items": {
-        "界面": "前后端设置、状态栏挂载",
-        "后台": "定时器与配置同步"
+        "界面": "conversation.input.right"
       }
     },
-    "github:1416699252:root": {
-      "revision": "03f74c847c8af9189ce37a73321a730ceb353f2a",
+    "github:1363429979:plugin-daily-log": {
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "items": {
+        "事件监听": "tools/pre-execute、loader/volatile-update",
+        "界面": "settings.section"
+      }
+    },
+    "github:1363429979:plugin-memory": {
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "items": {
+        "事件监听": "session/event",
+        "界面": "settings.section"
+      }
+    },
+    "github:1363429979:plugin-notes": {
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "items": {
+        "界面": "main、sidebar.panellist、conversation.input.left、conversation.chat.assistant-actions、shell.overlay、settings.section、sidebar.right.pane.tab"
+      }
+    },
+    "github:1363429979:plugin-usage-billing": {
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "items": {
+        "事件监听": "loader/volatile-update",
+        "界面": "sidebar.footer.action、conversation.composer.dock、settings.section"
+      }
+    },
+    "github:1342742812:root": {
+      "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+      "items": {
+        "事件监听": "dispose"
+      }
+    },
+    "github:1333136466:root": {
+      "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+      "items": {
+        "Skill": "dsh-plugin-compose、dsh-plugin-development、dsh-plugin-implement、dsh-plugin-plan、dsh-plugin-release、dsh-plugin-scaffold、dsh-plugin-test"
+      }
+    },
+    "github:1354283280:root": {
+      "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
       "items": {}
     },
-    "github:1334899834:root": {
-      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
+    "github:1359423472:root": {
+      "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
       "items": {
-        "Host 路由": "1 个精确 GET 路由",
-        "界面": "1 个输入区槽位"
+        "模型工具": "read_capture、read_note、read_expand、read_query、read_recent、vault_search、vault_read、vault_suggest、read_link、read_history"
       }
     },
-    "github:1333368566:root": {
-      "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+    "github:1418691015:root": {
+      "revision": "c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f",
       "items": {
-        "事件监听": "1 个遥测 waterfall"
+        "事件监听": "agent/assistant-stream",
+        "界面": "conversation.session.header.utilities"
       }
     },
-    "github:1333370288:root": {
-      "revision": "87f3fb0198090f0f26a37a52840db150609db748",
+    "github:1366583376:root": {
+      "revision": "193343093186016080a81c5512c6936809daff25",
+      "items": {}
+    },
+    "github:1334504487:root": {
+      "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
       "items": {
-        "事件监听": "turn/end",
-        "后台": "1 个 JSONL 写队列"
+        "模型工具": "lattice_route、lattice_intake、lattice_commit_intake、lattice_open、lattice_status、lattice_review_input、lattice_commit_input_review、lattice_refresh_context、lattice_adopt_context、lattice_reframe",
+        "事件监听": "subagent/start、subagent/end、agent/pre-step、agent/request-error、tools/execute、tools/result、tools/change、session/event、agent/created、agent/session-start"
       }
     },
-    "github:1333357514:root": {
-      "revision": "94fae130b2845309e1dcabac14696fddb18f8f3a",
+    "github:1367305514:root": {
+      "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
       "items": {
-        "事件监听": "session/event、tools/result"
+        "事件监听": "settings/document-updated"
       }
     },
-    "github:1342915339:root": {
-      "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+    "github:1336994666:root": {
+      "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
       "items": {
-        "事件监听": "DSH 活动事件",
-        "界面": "1 个设置开关",
-        "后台": "本地 Discord IPC"
+        "事件监听": "dispose"
       }
     },
-    "github:1343420855:root": {
-      "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+    "github:1423215448:root": {
+      "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
       "items": {
-        "Host 路由": "认证路由与传输策略",
-        "界面": "用户设置",
-        "后台": "WebSocket 代理"
+        "模型工具": "folderwatch_add、folderwatch_list、folderwatch_check、folderwatch_fire、folderwatch_remove",
+        "用户命令": "watch",
+        "事件监听": "tools/result"
       }
     },
-    "github:1339803365:root": {
-      "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+    "github:1423215373:root": {
+      "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
       "items": {
-        "Host 路由": "2 个 POST 路由",
-        "界面": "1 个设置槽位及菜单动作"
+        "模型工具": "reaper_scan、reaper_reap、reaper_free_port",
+        "用户命令": "reap"
+      }
+    },
+    "github:1423215529:root": {
+      "revision": "7894da833582b46526b251348cd8993b70a5ce85",
+      "items": {
+        "模型工具": "which_resolve、which_path、which_env、which_sweep、which_probe",
+        "用户命令": "which"
+      }
+    },
+    "github:1335060007:root": {
+      "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+      "items": {
+        "界面": "sidebar.footer.action"
+      }
+    },
+    "github:1335704653:root": {
+      "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+      "items": {
+        "事件监听": "agent/inbox/claimed、tools/result、tools/execute、approval/request、agent/error、agent/turn-stopping"
+      }
+    },
+    "github:1358816037:root": {
+      "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+      "items": {
+        "界面": "settings.models.footer、settings.models.provider-card"
+      }
+    },
+    "github:1397817235:root": {
+      "revision": "814621be897a27752550b0be6f7be2bc44ccb897",
+      "items": {
+        "用户命令": "ide-hub、hub-init、hub-migrate、hub-export、hub-usage、hub-sessions、hub-week、today"
+      }
+    },
+    "github:1400927706:root": {
+      "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+      "items": {
+        "模型工具": "quota_meter",
+        "用户命令": "qm、qm-top、qm-reset",
+        "事件监听": "session/event"
+      }
+    },
+    "github:1399011094:root": {
+      "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+      "items": {
+        "模型工具": "forge_write",
+        "用户命令": "forge、relay、ack、answer、forge-list、forge-done、forge-show、forge-note"
+      }
+    },
+    "github:1379204512:root": {
+      "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+      "items": {
+        "模型工具": "omd_delegate、omd_memory_set、omd_memory_get、omd_memory_delete",
+        "用户命令": "omd-doctor、omd-cancel",
+        "事件监听": "agent/pre-step",
+        "界面": "sidebar.right.pane.tab",
+        "Skill": "agent-doc-discipline、ai-slop-cleaner、analyze、ask-navigator、ask、autopilot、autoresearch、best-practice-research、cancel、debug"
+      }
+    },
+    "github:1355639507:root": {
+      "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
+      "items": {
+        "用户命令": "side-chat",
+        "事件监听": "command/executed"
+      }
+    },
+    "github:1335559646:root": {
+      "revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85",
+      "items": {
+        "模型工具": "trellis_artifact_update、trellis_state、trellis_task_create、trellis_task_skip、trellis_task_update、trellis_task_archive、trellis_ui_update",
+        "事件监听": "system-prompt/assemble、agent/pre-step",
+        "界面": "plugins.row.config、conversation.session.header.utilities、conversation.input.dock",
+        "Skill": "trellis-before-dev、trellis-brainstorm、trellis-break-loop、trellis-channel、trellis-check、trellis-continue、trellis-feat、trellis-finish-work、trellis-issue、trellis-meta"
+      }
+    },
+    "github:1409724830:src": {
+      "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+      "items": {
+        "用户命令": "balance、pet、chat",
+        "事件监听": "session/event、agent/error",
+        "界面": "shell.overlay、settings.section"
+      }
+    },
+    "github:1334850903:root": {
+      "revision": "e816461115436f1cb084f868398e610396d00679",
+      "items": {
+        "界面": "conversation.input.right"
+      }
+    },
+    "github:1334269686:root": {
+      "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+      "items": {
+        "模型工具": "scrape_webpage"
       }
     }
   },
   "advice": {
-    "github:1334899834:root": {
-      "revision": "c27c8b61acf97714ab08d99f97b7be3a9007e52e",
-      "text": "想随时看一眼账户还剩多少钱，可以试试。先用测试账户确认余额是否准确、断网或密钥填错时有没有提示；同时打开几个页面，看看是否频繁重复查询。再检查日志里会不会露出密钥，别拿真实密钥做实验。它只能查看余额，不能给每个任务设置花费上限。"
+    "github:1335557891:root": {
+      "revision": "fe5ef0e671fab5ab8c8700013f3966eb9642455f",
+      "text": "先在非关键浏览器 Profile 检查常用页面、深浅色和升级后的样式，再决定长期启用。"
+    },
+    "github:1335558973:root": {
+      "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+      "text": "先关闭自动发送，用含专有名词和噪声的短样本比较手工输入；误识别不可接受时停用。"
+    },
+    "github:1363429979:plugin-daily-log": {
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "text": "先用一周真实记录与人工周报对照，核对遗漏、误归因和编辑时间，再决定是否常用。"
+    },
+    "github:1363429979:plugin-memory": {
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "text": "用可纠错的项目决策做小样本，验证保存、召回、改正和删除后再扩大范围。"
+    },
+    "github:1363429979:plugin-notes": {
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "text": "先只用本地便签与手动执行，确认幂等和工作区选择后再启用定时或同步。"
+    },
+    "github:1363429979:plugin-usage-billing": {
+      "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+      "text": "抽取已知模型与价格的一组会话，逐条复算 token 和费用；差异无法解释时只作趋势参考。"
+    },
+    "github:1342742812:root": {
+      "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+      "text": "只用只读 API 和小额地址，逐来源对账并记录失败降级；不得据看板直接执行交易。"
+    },
+    "github:1333136466:root": {
+      "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+      "text": "用十个高频导航/命令任务测量查找时间和误触，再决定是否替代原入口。"
+    },
+    "github:1354283280:root": {
+      "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+      "text": "在升级前后核对页面、CLI 与实际加载包版本一致，把它作为诊断入口而非更新保证。"
+    },
+    "github:1359423472:root": {
+      "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+      "text": "选同一仓库的三次阅读任务，比较召回命中、出处可追溯和整理时间，再决定长期迁移。"
+    },
+    "github:1418691015:root": {
+      "revision": "c76ffa0cb3f4f8de4b914ab64f3580f7aefab78f",
+      "text": "只记录可复现错误，设置复查与删除步骤，并观察是否减少同类错误而非只增加提示词长度。"
+    },
+    "github:1366583376:root": {
+      "revision": "193343093186016080a81c5512c6936809daff25",
+      "text": "先在受控局域网核对绑定地址、认证和重启后稳定性，不应把可访问等同于安全远程接入。"
+    },
+    "github:1334504487:root": {
+      "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+      "text": "用可中断的多步骤仓库任务，与手工 RUNBOOK 对照恢复正确率、重复工作和维护负担。"
+    },
+    "github:1367305514:root": {
+      "revision": "fe642c8ec878b6ba46a7c1831fc6cea557083e5b",
+      "text": "用实际供应商模型逐一核对上下文、输出与图片能力，并保留未知项而非自动猜测。"
+    },
+    "github:1336994666:root": {
+      "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+      "text": "用一个小项目验证拖拽、新建、恢复和导入后的会话对应关系，再评估是否减少管理时间。"
+    },
+    "github:1423215448:root": {
+      "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+      "text": "用包含重命名、删除、批量写入和本会话写入的目录测试漏报、重复与 CPU 占用。"
+    },
+    "github:1423215373:root": {
+      "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+      "text": "在容器或测试账号中构造工作区、系统和无归属进程，确认预览闭包后再允许终止。"
+    },
+    "github:1423215529:root": {
+      "revision": "7894da833582b46526b251348cd8993b70a5ce85",
+      "text": "先在含重复、失效和包装脚本的测试 PATH 中核对结果，再用于真实环境排障。"
+    },
+    "github:1335060007:root": {
+      "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+      "text": "只在可恢复环境试用，先验证活动任务、未保存输入和重启后的连接状态。"
+    },
+    "github:1335704653:root": {
+      "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+      "text": "在耳机和后台窗口中核对四类事件、音量与静音规则，普通聊天误响时停用。"
+    },
+    "github:1358816037:root": {
+      "revision": "d377291f5ef8ad2bccbd54e26e641b9d89016bba",
+      "text": "用一组已知模型检查匹配、未匹配和人工覆盖优先级，错误匹配出现时保持手工配置。"
+    },
+    "github:1397817235:root": {
+      "revision": "814621be897a27752550b0be6f7be2bc44ccb897",
+      "text": "先只读盘点两种实际 IDE，核对会话与用量；确认指针文件幂等后再启用共享规则。"
+    },
+    "github:1400927706:root": {
+      "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+      "text": "用已知 token 记录核对仪表和账单，比较注入开销；偏差超出容忍度时只保留只读面板。"
+    },
+    "github:1399011094:root": {
+      "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+      "text": "用一次跨窗口真实交接，对比普通复制粘贴的遗漏、返工和维护时间。"
+    },
+    "github:1379204512:root": {
+      "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+      "text": "只选一个可并行且结果可验收的任务，与单 Agent 基线比较总 token、人工介入和合格率。"
+    },
+    "github:1355639507:root": {
+      "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
+      "text": "用一个主任务加一个短研究支线，检查创建、返回、续聊和结论回收是否减少等待。"
+    },
+    "github:1335559646:root": {
+      "revision": "7d2e5b69d2e744de511ac01632cf0865dfa79a85",
+      "text": "在中型代码任务上比较有无该流程的恢复、Git 清洁度和人工维护时间。"
+    },
+    "github:1409724830:src": {
+      "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+      "text": "先关闭看屏和在线聊天，测量空闲资源、关闭/卸载与重启恢复，再逐项开启能力。"
+    },
+    "github:1334850903:root": {
+      "revision": "e816461115436f1cb084f868398e610396d00679",
+      "text": "在桌面与窄窗口检查长 prompt、附件、快捷键和收起后的草稿保持。"
+    },
+    "github:1334269686:root": {
+      "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+      "text": "先用本地/公开测试页覆盖重定向、内网地址、超时与动态内容；安全边界不清时限制域名。"
     }
   }
 }

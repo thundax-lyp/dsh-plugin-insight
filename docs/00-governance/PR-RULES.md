@@ -4,7 +4,7 @@
 
 定义本工程的分支、PR、Review、CI 与合并边界。提交授权、粒度与格式由
 [提交规则](COMMIT-RULES.md)维护。
-CI 执行内容以[工作流](../../.github/workflows/ci.yml)为准，命令与依赖由根
+CI 执行内容以[工作流](../../.github/workflows/repository-checks.yml)为准，命令与依赖由根
 [package.json](../../package.json)、锁文件及 `.node-version` 维护。
 远端实际强制检查由 GitHub 分支保护或 Ruleset 决定；本文不保存其配置快照或核验历史。
 

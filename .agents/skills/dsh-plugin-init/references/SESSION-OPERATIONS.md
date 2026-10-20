@@ -18,6 +18,10 @@
 - apply 成功但 checkpoint 未保存：核对 catalog.runs、批次内容与当前档案，校验后补 checkpoint，不重复 apply。
 - 尚未 apply：以最新档案重新计划并检查，再应用和保存检查点。
 - 完成材料摘要不符：停止复用，核对原件；修订以新材料、新一轮处理，不覆盖已绑定文件。
+- 历史 complete 不再满足完整 findings 复核门槛：使用 `research invalidate --session ... --plugin ...` 降回 pending，
+  重新研究后再 checkpoint；不得为通过校验刷新时间或伪造复核结论。
+- session 与 catalog 指纹不符：追查输入、观察批次及 apply 顺序；不从 catalog 回写 session。若只是历史格式错误，使用迁移入口并保留原件与摘要。
+- 需要修正同轮生成材料：保留原会话 ID 和截止时间，在尚未完成的条目上重新生成；不复制会话、刷新时间并创建“修复轮次”。
 - blocked：保留错误、原始材料和部分分析，解决原因后 retry；没有可处理项但仍有 blocked，不算完成。
 - 多人共享队列：先外部协调所有权，next 只读，不会认领任务。
 

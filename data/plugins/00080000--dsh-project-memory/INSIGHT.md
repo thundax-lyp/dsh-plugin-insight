@@ -3,79 +3,86 @@
 > 为 DSH 提供持久化项目记忆，索引文档与代码符号，关联任务和文件，并按需召回带出处的经验。
 
 <!-- BEGIN META -->
-[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4537](https://img.shields.io/static/v1?label=npm+30d&message=4%2C537&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) · [![最后更新 前天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E5%89%8D%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/commits)
+[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4786](https://img.shields.io/static/v1?label=npm+30d&message=4%2C786&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) · [![最后更新 前天](https://img.shields.io/static/v1?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0&message=%E5%89%8D%E5%A4%A9&color=blue&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/commits)
 <!-- END META -->
-
-- **用途**：在同一开发项目跨会话恢复任务、文件线索和经验，减少重复梳理。
-- **亮点**：12 个工具把任务、文档／代码索引和有出处召回接起来，默认自动注入与可选增强分开。
-- **思考**：检索方便不等于任务恢复正确；项目经验进入全局作用域后是否误召回，仍需对照测试。
-- **建议**：适合同项目反复中断的开发者小规模试用，先与交接文档加 rg 对照，暂不作安装推荐。
 
 ## 版本
 
 固定提交 [fe7ac6cab91784a34996aede007d3586f0ff2def](https://github.com/00080000/dsh-project-memory/tree/fe7ac6cab91784a34996aede007d3586f0ff2def)
 
-## 场景、替代办法与合格交付
+## 采用点评
 
-合格交付物是恢复正确的任务状态、引用正确文件并继续完成开发；基线是 AGENTS、任务清单、交接文档和 rg。适用频率是同一项目经常跨会话继续，不适合仅偶尔问答时增加常驻索引。
+- **用途**：合格交付物是恢复正确的任务状态、引用正确文件并继续完成开发；基线是 AGENTS、任务清单、交接文档和 rg。适用频率是同一项目经常跨会话继续，不适合仅偶尔问答时增加常驻索引。
+- **亮点**：为 DSH 提供持久化项目记忆，索引文档与代码符号，关联任务和文件，并按需召回带出处的经验。
+- **思考**：首次包括索引与作用域配置；持续包括 CPU、磁盘、注入上下文 token、误召回清理，以及可选查询扩展／反思的模型费用；迁移需要导出／保留本地记忆及任务映射。本轮没有合格任务实测，不输出金额或收益比例。 本轮未测合格任务成本、耗时或可靠性。 本轮未测合格任务成本、耗时或可靠性。
+- **建议**：适合同项目反复中断的开发者小规模试用，先与交接文档加 rg 对照，暂不作安装推荐。
 
-## 实现机制与依据
+## 场景、原有办法与合格交付
 
-src/index.js 显式注册 12 个工具及 /tasks 命令；TaskBridge 对接宿主任务，读取时索引文档与符号，installAutoInject 在 agent/pre-step 注入召回。全量首用索引是单独开关，不把自动注入理解为无条件全库扫描。
+目标场景是：合格交付物是恢复正确的任务状态、引用正确文件并继续完成开发；基线是 AGENTS、任务清单、交接文档和 rg。适用频率是同一项目经常跨会话继续，不适合仅偶尔问答时增加常驻索引。 原有办法通常是使用宿主原生入口、独立脚本或人工流程；本轮没有对这些基线做运行对比。合格交付至少应同时满足功能结果正确、可恢复、没有越权副作用，并让总人工负担不高于基线。
 
-本轮重点审读：[src/index.js](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/index.js)、[src/recall.js](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/recall.js)、[src/tools/forget.js](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/forget.js)。固定文本材料已保存；完整文件统计不表示每行代码都经过人工审计。
+## 依赖与使用条件
 
-## 安装与效果依赖
+- 固定组件包：`@yolk_vat-y/dsh-project-memory@0.6.2`。
+- 声明依赖：`pdfjs-dist`、`@deepseek-ai/cordis`、`@deepseek-ai/dsh-llm`、`@deepseek-ai/dsh-tools`、`@deepseek-ai/schemastery`、`typescript`。
+- 效果依赖：输入数据、宿主版本、外部服务/浏览器能力与人工复核需按具体任务确认。
+- 失效时应回退到宿主原生入口或人工流程；本轮未验证安装、卸载或迁移。
 
-必要条件是 Cordis、宿主 tools／llm 等服务、可写项目存储；pdfjs-dist 处理 PDF。TypeScript 语义增强和额外模型路线按配置使用，模型能力、资料质量及召回噪声属于效果依赖。版本范围取 package.json 的 dsh.engines 和 peers，而非默认假设任意宿主可用。
+## 使用流程、失败恢复与成本
 
-发布核查：已读取 npm latest 0.6.2；源码 package.json 为 0.6.2。版本号一致仍不证明 tarball 内容一致。未安装、未比对发布包字节。
+准备阶段需安装固定版本并检查配置/权限；执行阶段由源码中的入口接收任务；结果仍需人工验收。异常时优先停用插件、保存原始输入与日志并回退基线，不假设自动恢复。首次成本包括安装与配置，持续成本包括上下文/模型或外部服务、复核和失败重试，迁移成本包括数据导出与清理；本轮没有运行测量，不能给出 ROI、单位任务成本或效果排名。
 
-## 用户、后台与失败流程
+## 工程统计
 
-准备项目资料和作用域 → 日常读文件与维护任务 → 召回附出处线索 → 人工核对并续办；误记须明确 forget 范围，跨项目污染要通过作用域与数据清理恢复。自动化主要减少重复定位，把正确性复核留给使用者。
+| 范围 | 扩展名 | 文件 | 总行 | 代码 | 注释 | 空行 | Markdown 词 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| source | .md | 4 | 2224 | — | — | — | 47141 |
+| source | .js | 52 | 14144 | 10338 | 3291 | 732 | — |
+| source | .mjs | 6 | 1447 | 1189 | 156 | 111 | — |
+| source | .ts | 9 | 1324 | 924 | 318 | 86 | — |
+| source | .tsx | 5 | 1556 | 1337 | 140 | 87 | — |
+| test | .mjs | 40 | 9467 | 7577 | 1172 | 788 | — |
 
-## 首次、持续与迁移成本
+统计覆盖：git tracked files at exact commit; component scope only。排除项：`client/client.d.ts`（generated/dependency/vendor/declaration heuristic; review exclusions）；`src/client/css-modules.d.ts`（generated/dependency/vendor/declaration heuristic; review exclusions）。解析错误：4。
 
-首次包括索引与作用域配置；持续包括 CPU、磁盘、注入上下文 token、误召回清理，以及可选查询扩展／反思的模型费用；迁移需要导出／保留本地记忆及任务映射。本轮没有合格任务实测，不输出金额或收益比例。
+## 能力清单
 
-## 工程规模与能力清单
+- **模型工具**：forget、index_doc、index_repo、save_lesson、query_memory、remember、memory_stats、list_tasks、select_task、show_task_panel
+- **事件监听**：session/event、agent/pre-step、session/disposed、fs/observed
 
-| 扩展名 | 范围 | 文件数 | 总行数 | Markdown字数 | 代码行 |
-|---|---|---:|---:|---:|---:|
-| .md | source | 4 | 2224 | 47141 | — |
-| .js | source | 52 | 14144 | — | 10338 |
-| .mjs | source | 6 | 1447 | — | 1189 |
-| .ts | source | 9 | 1324 | — | 924 |
-| .tsx | source | 5 | 1556 | — | 1337 |
-| .mjs | test | 40 | 9467 | — | 7577 |
-
-- **模型工具**：12 个
-- **用户命令**：/tasks
-- **事件监听**：agent/pre-step、会话事件
+- tools：`forget`（[src/tools/forget.js:12](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/forget.js#L12)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`index_doc`（[src/tools/index-doc.js:9](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/index-doc.js#L9)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`index_repo`（[src/tools/index-repo.js:131](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/index-repo.js#L131)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`save_lesson`（[src/tools/lesson-tools.js:19](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/lesson-tools.js#L19)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`query_memory`（[src/tools/query-memory.js:35](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/query-memory.js#L35)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`remember`（[src/tools/remember.js:10](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/remember.js#L10)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`memory_stats`（[src/tools/stats.js:9](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/stats.js#L9)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`list_tasks`（[src/tools/task-tools.js:19](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/task-tools.js#L19)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`select_task`（[src/tools/task-tools.js:44](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/task-tools.js#L44)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`show_task_panel`（[src/tools/task-tools.js:149](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/task-tools.js#L149)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`archive_task`（[src/tools/task-tools.js:169](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/task-tools.js#L169)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- tools：`watch_repo`（[src/tools/watch-repo.js:7](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/watch-repo.js#L7)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`session/event`（[src/auto-inject.js:638](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/auto-inject.js#L638)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`agent/pre-step`（[src/auto-inject.js:670](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/auto-inject.js#L670)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`session/disposed`（[src/index.js:188](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/index.js#L188)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
+- events：`fs/observed`（[src/lazy.js:87](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/lazy.js#L87)）；确认固定源码存在对应注册/入口，未验证运行时可用性。
 
 ## 工程亮点
 
-任务桥、索引、召回、存储分模块，较单纯提示词有可追溯路径；自动注入、全局经验和后台观察也扩大了需要验证的行为面。测试目录覆盖较多场景，但本轮仅审读，不把测试文件存在当作通过。源码仍为 0.6.2，与前轮提交相同；会话 content_changed 来自兼容性指纹取值口径变化，不是本轮发现代码更新。
+固定组件内共纳入 116 个 JS/TS/Markdown 文件。宿主或运行依赖共声明 6 项，升级时需要核对兼容范围。 静态解析存在错误，候选清单不完整。 代码与文档支持对核心接线做源码级判断，但错误恢复、持久化一致性和外部副作用仍需针对实际任务验证。关键核查入口：[src/index.js](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/index.js)。
 
-值得借鉴的是召回带出处、任务与文件关联和空闲时整理索引；移植时先实现确定性索引与明确作用域，再决定是否增加模型增强，验收引用准确度而非只测检索命中。
 
-上述工程判断依据：[src/index.js](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/index.js)、[src/recall.js](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/recall.js)、[src/tools/forget.js](https://github.com/00080000/dsh-project-memory/blob/fe7ac6cab91784a34996aede007d3586f0ff2def/src/tools/forget.js)。
-
-## 采用判断与最小验证
-
-固定同一模型、10 个中断后恢复任务，对照交接文档加 rg；测正确恢复率、错误出处、端到端耗时、人工修正与总 token。若任务合格率下降或清理成本抵消节省，则停止扩大使用。另做两个项目的反向经验隔离实验。
+src/index.js 显式注册 12 个工具及 /tasks 命令；TaskBridge 对接宿主任务，读取时索引文档与符号，installAutoInject 在 agent/pre-step 注入召回。全量首用索引是单独开关，不把自动注入理解为无条件全库扫描。 复用时仍应单独确认宿主 API、数据生命周期、失败恢复和最小验收任务，不能只复制注册代码。
 
 ## 核查说明
 
-- 已与前次版本对照，变化见工程亮点。
-- 已阅读固定版本的源码、配置和测试文件。
-- 未实际运行或安装插件，也未在 DSH 中试用或比较模型任务效果。
-- 作者的自测和发布说明未经独立验证。
-- Issue 数量仅供参考，不代表使用人数或实际收益。
+- 历史对照：同一固定提交的既有结论已重新阅读并绑定本轮证据；未直接沿用旧检查时间。
+- 已检查材料：目录条目、固定提交 README/package、关键源码和完整组件 inventory。
+- 未完成验证：未执行插件测试，未安装到 DSH，未做真实宿主、模型、外部服务或业务结果验收。
+- 证据限制：作者声明与源码机制只支持条件判断，不证明性能、安全性、可靠性或采用收益。
 
 ## Issue 活跃度
 
-Issue：未关闭 0／已关闭 4 · 近30天：新建 2／关闭 2／更新 2
+Issue：未关闭 0／已关闭 4 · 近30天：新建 2／关闭 2／更新 暂未获取
 
 统计日期：2026-10-19。

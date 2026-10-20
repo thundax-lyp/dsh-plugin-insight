@@ -44,6 +44,11 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 
 发布顺序：在本地完成详情并登记检查点 → 发布当前详情并导出运行清单 → 更新发布输入 → 运行块生成器合成 README 与分类页 → 校验差异。
 `npm run render:research -- --check` 只读比较生成结果与 README／分类页；已接入 `validate:data`，由现有 CI 调用。
+发布输入更新使用 `publication-data.mjs` 的 plan／apply：manifest 负责本轮范围计数，人工审阅输入负责推荐及展示语义；
+计划绑定当前发布输入、manifest、档案及本轮校验的详情与 META 材料摘要；apply 在原子写入前逐项复核，材料变化时拒绝旧计划并要求重新 plan。
+按本轮全部所选项替换发布状态：完成项使用本轮人工输入，pending／blocked 项移出当前发布，未选项沿历史 manifest 保留；
+本轮未提供 capability 或 recommendation 表示删除该完成项原有条目。
+不得用按轮次硬编码的脚本覆盖 `PUBLICATION.json`，也不得从静态候选自动确认能力或生成推荐。
 
 ## 文件位置与命名
 
@@ -57,9 +62,12 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 当前 META | `data/plugins/<plugin-slug>/META.json` | 当前采集结果副本，原始快照在轮次目录保留 |
 | 插件历史入口 | `data/plugins/<plugin-slug>/HISTORY/INDEX.md` | 链接 Git 内运行清单，不链接本地过程文件 |
 | 可复现运行清单 | `data/manifests/<round>.json` | Git 跟踪来源版本、选择范围、状态、摘要、工具链与命令 |
+| 本地来源输入与问题 | `data/runs/<round>/INPUT.json`、`INPUT-PROBLEMS.json` | Git 忽略；固定目录解析、身份核实结果与未解决边界 |
 | 本地会话与进度 | `data/runs/<round>/SESSION.json` | Git 忽略；保留完整候选、所选范围及逐项检查点 |
 | 本地单插件观察 | `data/runs/<round>/observations/<plugin-slug>.json` | Git 忽略；批次只含本项，历史多项批次可用 MULTI-PLUGIN.json |
 | 本地研究原稿 | `data/runs/<round>/insights/<plugin-slug>.md` | Git 忽略；检查点绑定，不静默覆盖 |
+| 本地材料索引 | `data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json` | Git 忽略；机械绑定 checkout、作者材料、inventory 与待核查候选，不承载结论 |
+| 本地发布输入 | `data/runs/<round>/PUBLICATION-INPUT.json` | Git 忽略；人工审阅的推荐、摘要、能力、META 映射与建议，供发布 plan／apply 使用 |
 | 本地报告与推荐 | `data/runs/<round>/REPORT.md`、`RECOMMENDATIONS.md` | Git 忽略；描述范围、依据、判断及未完成项 |
 | 本地原始材料 | `data/runs/<round>/snapshots/` | Git 忽略；保存来源、源码、版本、统计、META及失败材料 |
 | 分类索引与完整页 | `data/views/categories/INDEX.md`、`<CATEGORY>.md` | 当前分类页按名称排序，与 README 一起生成 |
@@ -89,7 +97,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 
 ## 研究清单与断点
 
-每轮先确认来源、固定版本与覆盖范围，再用 `research-session.mjs start` 生成 JSON 会话清单。
+每轮先确认来源、固定版本与覆盖范围，用 `build-research-input.mjs` 生成输入及问题记录，再用 `research-session.mjs start` 生成 JSON 会话清单。
 清单格式、变化标记和状态由[数据契约](../../_shared/references/DATA-CONTRACT.md#研究会话与脚本检查点)及 Schema 维护，
 不另建手工 Markdown 状态表。身份待核实、明确排除和范围差异写入本轮报告，不能静默漏项。
 原始证据与部分分析及时写入本地 runs；checkpoint 只代表目标插件本轮分析和入档完成，不代表实际安装验收。阶段交付另导出 Git 清单。

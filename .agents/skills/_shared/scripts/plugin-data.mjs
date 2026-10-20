@@ -59,6 +59,13 @@ export const digest = (value) =>
         .update(JSON.stringify(canonical(value)))
         .digest('hex');
 
+export const analysisDigest = (plugin) =>
+    digest({
+        last_checked_at: plugin.last_checked_at,
+        research_depth: plugin.research_depth,
+        findings: plugin.findings
+    });
+
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 addFormats(ajv);
 const catalogSchema = read(resolve(ROOT, '.agents/skills/_shared/schemas/catalog.schema.json'));

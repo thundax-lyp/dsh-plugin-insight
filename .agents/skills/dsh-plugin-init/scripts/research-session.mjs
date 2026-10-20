@@ -20,6 +20,7 @@ import {
     ROOT,
     read,
     digest,
+    analysisDigest,
     atomicWrite,
     validate as validateCatalog,
     validateObservations
@@ -166,8 +167,16 @@ export function startSession(input, previous = null, limit = undefined) {
 export function selectedItems(session) {
     return session.items.filter((item) => !session.selected_ids || session.selected_ids.includes(item.id));
 }
+const hasFreshAnalysis = (plugin, checkedAt) =>
+    plugin?.findings.length > 0 &&
+    plugin.findings.every(
+        (finding) => Date.parse(finding.reviewed_at) >= Date.parse(checkedAt) && finding.status !== 'needs_review'
+    );
 export function createManifest(session, sessionPath, root = ROOT) {
     validateSession(session, root);
+    const catalog = read(resolve(root, CATALOG));
+    validateCatalog(catalog);
+    const catalogById = new Map(catalog.plugins.map((plugin) => [plugin.id, plugin]));
     const relativeSession = relative(root, resolve(sessionPath)).split('\\').join('/');
     const match = relativeSession.match(/^data\/runs\/(\d{4}-\d{2}-\d{2}-\d{2,})\/SESSION\.json$/);
     if (!match) throw new Error('manifest requires a local data/runs/<round>/SESSION.json');
@@ -182,7 +191,10 @@ export function createManifest(session, sessionPath, root = ROOT) {
         '.agents/skills/_shared/schemas/research-session.schema.json',
         '.agents/skills/_shared/schemas/run-manifest.schema.json',
         '.agents/skills/_shared/scripts/capture-github.mjs',
+        '.agents/skills/_shared/scripts/github-batch.mjs',
         '.agents/skills/_shared/scripts/plugin-data.mjs',
+        '.agents/skills/dsh-plugin-init/scripts/build-research-input.mjs',
+        '.agents/skills/dsh-plugin-init/scripts/publication-data.mjs',
         '.agents/skills/dsh-plugin-init/scripts/research-session.mjs',
         '.agents/skills/dsh-plugin-init/scripts/render-research.mjs',
         '.agents/skills/dsh-plugin-init/SKILL.md',
@@ -190,28 +202,34 @@ export function createManifest(session, sessionPath, root = ROOT) {
         '.agents/skills/dsh-plugin-insight/SKILL.md',
         '.agents/skills/dsh-plugin-insight/references/RESEARCH-STANDARD.md',
         '.agents/skills/dsh-plugin-insight/scripts/capture-plugin-meta.mjs',
+        '.agents/skills/dsh-plugin-insight/scripts/prepare-plugin-materials.mjs',
         '.agents/skills/dsh-plugin-insight/scripts/plugin-inventory.mjs',
         '.agents/skills/_shared/references/DATA-CONTRACT.md'
     ];
     const workflow = workflowFiles.map((path) => ({ path, sha256: sha256(readFileSync(resolve(root, path))) }));
-    const items = selected.map((item) => ({
-        ...Object.fromEntries(
-            ['id', 'repository', 'path', 'revision', 'fingerprints', 'source_urls', 'changes', 'status'].map((key) => [
-                key,
-                item[key]
-            ])
-        ),
-        ...(item.reason ? { reason: item.reason } : {}),
-        ...(item.checkpoint
-            ? {
-                  checkpoint: {
-                      run_id: item.checkpoint.run_id,
-                      observations_sha256: item.checkpoint.observations_digest,
-                      report_sha256: item.checkpoint.report_digest
+    const items = selected.map((item) => {
+        const plugin = catalogById.get(item.id);
+        if (item.status === 'complete' && !plugin)
+            throw new Error(`complete manifest item missing from catalog: ${item.id}`);
+        return {
+            ...Object.fromEntries(
+                ['id', 'repository', 'path', 'revision', 'fingerprints', 'source_urls', 'changes', 'status'].map(
+                    (key) => [key, item[key]]
+                )
+            ),
+            ...(item.reason ? { reason: item.reason } : {}),
+            ...(item.status === 'complete' ? { analysis_sha256: analysisDigest(plugin) } : {}),
+            ...(item.checkpoint
+                ? {
+                      checkpoint: {
+                          run_id: item.checkpoint.run_id,
+                          observations_sha256: item.checkpoint.observations_digest,
+                          report_sha256: item.checkpoint.report_digest
+                      }
                   }
-              }
-            : {})
-    }));
+                : {})
+        };
+    });
     return validateManifest({
         schema_version: 1,
         round: match[1],
@@ -244,12 +262,16 @@ export function createManifest(session, sessionPath, root = ROOT) {
         },
         commands: [
             'npm ci --ignore-scripts',
+            'npm run research:input -- --source-awesome <checkout> --source-harness <checkout> --id <session-id> --checked-at <iso-time> --out data/runs/<round>/INPUT.json --problems data/runs/<round>/INPUT-PROBLEMS.json',
             'npm run research -- start --input <local-input.json> [--previous <local-previous-session>] [--limit N] --out data/runs/<round>/SESSION.json',
+            'npm run prepare:plugin -- --session data/runs/<round>/SESSION.json --plugin <plugin-id> --checkout <readonly-checkout> --inventory <local-inventory.json> --out data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json',
             'node .agents/skills/_shared/scripts/plugin-data.mjs plan --mode <init-or-update> --observations <local-observations.json> --out <local-plan.json>',
             'node .agents/skills/_shared/scripts/plugin-data.mjs apply --plan <local-plan.json>',
             'npm run research -- checkpoint --session data/runs/<round>/SESSION.json --plugin <plugin-id> --observations <local-observations.json> --report <local-report.md>',
             'npm run research -- publish --session data/runs/<round>/SESSION.json --plugin <plugin-id> --out data/plugins/<plugin-slug>/INSIGHT.md',
-            'npm run research -- manifest --session data/runs/<round>/SESSION.json --out data/manifests/<round>.json'
+            'npm run research -- manifest --session data/runs/<round>/SESSION.json --out data/manifests/<round>.json',
+            'npm run publication -- plan --manifest data/manifests/<round>.json --input data/runs/<round>/PUBLICATION-INPUT.json --out <local-plan.json>',
+            'npm run publication -- apply --plan <local-plan.json>'
         ],
         local_artifacts: { root: `data/runs/${match[1]}`, session_sha256: digest(session) }
     });
@@ -283,14 +305,13 @@ export function completeItem(session, id, obsPath, reportPath, catalog, root = R
         Object.entries(plugin.fingerprints).some(([k, v]) => current.fingerprints[k] !== v)
     )
         throw new Error('catalog does not match observations');
+    if (digest(plugin.fingerprints) !== digest(item.fingerprints))
+        throw new Error('observations fingerprints differ from fixed session item');
     if (
         Date.parse(plugin.last_checked_at) < Date.parse(session.checked_at) ||
         !plugin.findings.length ||
-        plugin.findings.some(
-            (f) =>
-                Date.parse(f.reviewed_at) < Date.parse(session.checked_at) ||
-                !current.findings.some((c) => digest(c) === digest(f))
-        )
+        !hasFreshAnalysis(current, session.checked_at) ||
+        plugin.findings.some((f) => !current.findings.some((c) => digest(c) === digest(f)))
     )
         throw new Error('fresh analysis required for every round');
     if (!item.revision || !plugin.evidence.some((e) => e.kind === 'source_inspection' && e.revision === item.revision))
@@ -406,7 +427,7 @@ export function main(args = process.argv.slice(2)) {
         atomicWrite(resolve(out), createManifest(read(sessionPath), sessionPath));
     } else if (command === 'publish') {
         publishItem(read(need('session')), need('plugin'), need('out'));
-    } else if (command === 'checkpoint' || command === 'block' || command === 'retry') {
+    } else if (command === 'checkpoint' || command === 'block' || command === 'retry' || command === 'invalidate') {
         saveSession(need('session'), () => {
             const s = validateSession(read(v.session));
             if (command === 'checkpoint')
@@ -418,14 +439,32 @@ export function main(args = process.argv.slice(2)) {
                     read(v.catalog ?? resolve(ROOT, CATALOG))
                 );
             const item = s.items.find((p) => p.id === need('plugin'));
-            if (!item || !selectedItems(s).includes(item) || item.status === 'complete')
-                throw new Error('item missing or already complete');
+            if (!item || !selectedItems(s).includes(item)) throw new Error('item missing or deferred');
+            if (command === 'invalidate') {
+                if (item.status !== 'complete') throw new Error('invalidate requires a complete item');
+                const catalog = read(v.catalog ?? resolve(ROOT, CATALOG));
+                validateCatalog(catalog);
+                if (
+                    hasFreshAnalysis(
+                        catalog.plugins.find((plugin) => plugin.id === item.id),
+                        s.checked_at
+                    )
+                )
+                    throw new Error('cannot invalidate an item with fresh analysis');
+                item.status = 'pending';
+                delete item.checkpoint;
+                return validateSession(s);
+            }
+            if (item.status === 'complete') throw new Error('item already complete');
             item.status = command === 'block' ? 'blocked' : 'pending';
             if (command === 'block') item.reason = need('reason');
             else delete item.reason;
             return validateSession(s);
         });
-    } else throw new Error('Usage: research-session.mjs start|next|checkpoint|block|retry|validate|manifest|publish');
+    } else
+        throw new Error(
+            'Usage: research-session.mjs start|next|checkpoint|block|retry|invalidate|validate|manifest|publish'
+        );
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
     try {

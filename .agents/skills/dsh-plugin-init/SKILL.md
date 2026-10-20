@@ -10,8 +10,9 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
 [输出标准](references/OUTPUT-STANDARD.md)。GitHub 来源与版本读取依赖当前环境可用的 GitHub Skill 或插件；
 不假设特定 Skill 名称。Git 协作遵循根 `AGENTS.md`；运行时遵循 `.node-version`，并与 package.json 的 engines.node、本地验证及 CI 保持一致；依赖缺失时执行 `npm ci --ignore-scripts`。
 
-专用脚本在 [scripts/](scripts)，发布模板在 [assets/templates/publication/](assets/templates/publication)，
-数据读写与 GitHub 采集复用 [共享脚本](../_shared/scripts)。依赖和稳定命令仍由根 package.json 维护。
+专用脚本在 [scripts/](scripts)：来源清单使用 `build-research-input.mjs`，会话使用 `research-session.mjs`，
+发布输入使用 `publication-data.mjs` 的 plan／apply；发布模板在 [assets/templates/publication/](assets/templates/publication)。
+数据读写与批量 GitHub 身份核实复用 [共享脚本](../_shared/scripts)。依赖和稳定命令仍由根 package.json 维护。
 
 ## 调用参数
 
@@ -28,15 +29,28 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    目录解析、组件匹配和额外源码须另行核查；保留分页、截断和访问失败边界，不执行目标代码。
    核对稳定仓库／组件身份，去重并区分条目类型；身份未核实的候选另存问题记录，不编造 ID。
    按[会话契约](../_shared/references/DATA-CONTRACT.md#研究会话与脚本检查点)准备输入清单，
-   格式参考[合成输入](assets/research-input.json)，不能将合成数据导入真实档案。
+   格式参考[合成输入](assets/research-input.json)，不能将合成数据导入真实档案。真实目录使用稳定输入构建器，不为每轮临时创建脚本：
+   ```sh
+   npm run research:input -- \
+     --source-awesome data/tmp/sources/awesome-dsh-plugin \
+     --source-harness data/tmp/sources/awesome-deepseek-harness \
+     --id <session_id> --checked-at <ISO时间> \
+     --out data/runs/<round>/INPUT.json \
+     --problems data/runs/<round>/INPUT-PROBLEMS.json
+   ```
+   两个来源 checkout 必须无 tracked 或 untracked 改动，构建器在解析前后校验 HEAD 和工作区状态，拒绝把未提交内容记录为固定 revision。
+   只有完整读取并核对相应来源时才增加 `--complete-awesome` 或 `--complete-harness`；解析、身份或默认分支问题会让脚本保守降级该来源为不完整。
+   工具必须使用既有档案的仓库数字 ID／组件路径复用稳定组件 ID，合并重定向别名并保留具体条目摘要；未解决身份不得静默丢弃。
 3. **脚本生成本轮队列和变更标记。** 首轮省略 `--previous`；后续轮次必须给出可比的上轮会话。
    ```sh
-   npm run research -- start --input /tmp/dsh-research-input.json --previous data/runs/<previous_round>/SESSION.json --out data/runs/<round>/SESSION.json
+   npm run research -- start --input data/runs/<round>/INPUT.json --previous data/runs/<previous_round>/SESSION.json --out data/runs/<round>/SESSION.json
    npm run research -- next --session data/runs/<round>/SESSION.json
    ```
    不覆盖已有会话；续跑直接调用 `next`。脚本比较新增、移除、路径／内容／来源变化、未变及无法确认，
    所有条目在新轮次重新排队，实际处理范围受可选上限限制。未变不代表免于分析；来源不完整不能推断移除。核对标记的语义边界，
    尤其版本未能确认、仅来源差异和前轮范围不同的情况。
+   不复制旧会话并换用新 `checked_at` 来制造新轮次；格式修复走有审计记录的迁移。同一会话的候选、指纹和来源在 start 后固定，
+   不得从当前档案反向回写以绕过 checkpoint 不一致。
 4. **显式调用单插件洞察。** 对 next 返回的条目，读取并应用[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)。
    传入稳定 ID、固定源码版本、本轮截止时间、目标深度、来源证据、历史详情和输出位置；每轮所选条目重新分析，
    同轮只跳过 complete 项。洞察 Skill 返回证据、详情和独立观察批次，编排 Skill 检查返回范围和证据边界后入档。
@@ -72,6 +86,13 @@ description: 显式调用时编排整轮 DSH 插件研究：确认来源、生�
    已建立列表后的日常 META 刷新可直接运行 npm run refresh:meta；它只标记脚本更新，不替代洞察或改写检查点。
    保留轮次 META 快照，并复制为 data/plugins/<plugin-slug>/META.json；发布输入的 metadata 映射引用该当前副本；分类页按输出标准生成名字＋用途目录、META及四标签短评。
    标题、章节与Markdown版式维护 .agents/skills/dsh-plugin-init/assets/templates/publication/*.md，不写死到生成代码；脚本仅处理数据、排序和填充。
+   将已审阅的 recommendations、metadata、summaries、capabilities 和 advice 写入 `data/runs/<round>/PUBLICATION-INPUT.json`，
+   再用 plan／apply 更新当前发布输入；工具从 manifest 计算本轮范围，精确替换本轮完成项并保留未选项，拒绝未完成对象、版本不一致及没有 host_verified 证据的安装推荐：
+   ```sh
+   npm run publication -- plan --manifest data/manifests/<round>.json --input data/runs/<round>/PUBLICATION-INPUT.json --out /tmp/dsh-publication-plan.json
+   npm run publication -- apply --plan /tmp/dsh-publication-plan.json
+   ```
+   不创建按轮次硬编码的发布脚本，不在生成代码中保存推荐判断；apply 前检查计划摘要，当前发布输入或对应 manifest 变化后重新生成计划。
    再执行 `npm run render:research` 生成 README、分类列表及追加Issue活跃度的详情展示页，不能手写 README 或添加工程使用内容。
    本周新增以已核实 npm 包的注册表 time.created 首次发布时间计算，不使用本工程入档时间；已有包发新版不算新增；README按本周新增、最新／最热／推荐、每类最热 5 个插件及更多入口的分类列表、研究出处、末尾更新时间合成；不放历史或过程说明。完成前运行 `npm run check`，
    人工检查叙述、采用判断、引用和本轮覆盖；脚本校验不证明实际业务收益。

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
-import { ROOT, read, digest, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
+import { ROOT, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { template } from './publication/template.mjs';
 import {
@@ -22,6 +22,7 @@ import {
 } from './publication/blocks.mjs';
 import { REGISTRY, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { validateManifest } from './research-session.mjs';
+import { validateManifestPlugin } from './publication-data.mjs';
 const ajv = new Ajv({ strict: true, allErrors: true });
 addFormats(ajv);
 const check = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/publication.schema.json')));
@@ -43,29 +44,35 @@ export function relativeTime(date, at) {
     if (days < 3) return ['今天', '昨天', '前天'][days];
     return days < 30 ? `${days}天前` : days < 365 ? `${Math.floor(days / 30)}个月前` : `${Math.floor(days / 365)}年前`;
 }
-export function validateManifestPlugin(item, plugin) {
-    if (
-        !plugin ||
-        plugin.repository !== item.repository ||
-        plugin.path !== item.path ||
-        digest(plugin.fingerprints) !== digest(item.fingerprints)
-    )
-        throw Error(`manifest and catalog differ: ${item.id}`);
-    return plugin;
+export function renderDetailReport(report, item) {
+    const versionUrl = `https://github.com/${item.repository}/tree/${item.revision}${item.path ? `/${item.path}` : ''}`;
+    return report
+        .replace(/\n## 固定范围与依据\n[\s\S]*?(?=\n## )/, `\n## 版本\n\n固定提交 [${item.revision}](${versionUrl})\n`)
+        .replace(/\n## 代码评价\n\n([\s\S]*?)\n## 可借鉴处\n\n/, '\n## 工程亮点\n\n$1\n\n')
+        .replace(/\n## 验证与边界\n/, '\n## 核查说明\n');
+}
+export function latestManifestItems(manifests) {
+    const latest = new Map();
+    for (const manifest of manifests)
+        for (const item of manifest.items) latest.set(item.id, { item, checked_at: manifest.checked_at });
+    return [...latest.values()];
 }
 export function renderPublication(input, root = ROOT) {
     if (!check(input)) throw Error(ajv.errorsText(check.errors));
     const text = (path) => readFileSync(local(root, path), 'utf8');
-    const manifest = validateManifest(read(local(root, input.manifest)));
-    if (!manifest.sources.every((s) => sources.includes(s.url))) throw Error('unexpected discovery source');
+    const manifestPaths = [...new Set([...(input.manifests ?? []), input.manifest])];
+    const manifests = manifestPaths.map((path) => validateManifest(read(local(root, path))));
+    const manifest = manifests.at(-1);
+    if (manifests.some((saved) => !saved.sources.every((s) => sources.includes(s.url))))
+        throw Error('unexpected discovery source');
     const catalog = read(local(root, input.catalog));
     validateCatalog(catalog);
     const metadataDates = new Set();
-    const items = manifest.items
-        .filter((i) => i.status === 'complete')
-        .map((i) => {
+    const items = latestManifestItems(manifests)
+        .filter(({ item }) => item.status === 'complete')
+        .map(({ item: i, checked_at: manifestCheckedAt }) => {
             const plugin = catalog.plugins.find((p) => p.id === i.id);
-            validateManifestPlugin(i, plugin);
+            validateManifestPlugin(i, plugin, catalog, manifestCheckedAt);
             const detailPath = pluginDirectory(plugin, root) + '/INSIGHT.md';
             const report = text(detailPath);
             const summary = input.summaries?.[i.id];
@@ -212,7 +219,10 @@ export function renderPublication(input, root = ROOT) {
                 meta = template('META', { stars: starsBadge, downloads, updated: pushedBadge, review: update });
             }
             const issueBlock = `## Issue 活跃度\n\n${issues}\n`;
-            const reportWithoutMeta = report.replace(/\n<!-- BEGIN META -->\n[\s\S]*?\n<!-- END META -->\n*/, '\n');
+            const reportWithoutMeta = renderDetailReport(report, i).replace(
+                /\n<!-- BEGIN META -->\n[\s\S]*?\n<!-- END META -->\n*/,
+                '\n'
+            );
             const detailMeta = template('DETAIL-META', { meta });
             const reportWithMeta = reportWithoutMeta.replace(/^(# [^\n]+\n\n> [^\n]+)\n+/, `$1\n\n${detailMeta}\n\n`);
             if (reportWithMeta === reportWithoutMeta) throw Error(`detail needs a title and summary: ${i.id}`);

@@ -1,29 +1,34 @@
 {
   "repository": "01Virex/dsh-status-rotator",
   "repository_id": 1333328839,
-  "captured_at": "2026-10-19T09:24:51.200Z",
-  "window_start": "2026-09-19T09:24:51.200Z",
-  "stars": 162,
+  "captured_at": "2026-10-19T14:54:11.077Z",
+  "window_start": "2026-09-19T14:54:11.077Z",
+  "stars": 174,
   "pushed_at": "2026-10-19T08:52:36Z",
   "issues": {
     "open": 1,
     "closed": 42,
-    "created_30d": 28,
+    "created_30d": 27,
     "closed_30d": 27,
-    "updated_30d": 28
+    "updated_30d": null
   },
-  "errors": [],
+  "errors": [
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A01Virex%2Fdsh-status-rotator%20is%3Aissue%20updated%3A2026-09-19T14%3A54%3A11.077Z..2026-10-19T14%3A54%3A11.077Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 222C:3678AF:24E5E7:2773F4:6AD62F19 and timestamp 2026-10-19 14:54:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
   "npm": {
     "package_name": "dsh-status-rotator",
-    "captured_at": "2026-10-19T09:21:26.522Z",
+    "captured_at": "2026-10-19T14:54:18.025Z",
     "window_start": "2026-09-19",
     "window_end": "2026-10-18",
-    "downloads_30d": 11532,
+    "downloads_30d": 11947,
     "source_url": "https://api.npmjs.org/downloads/point/2026-09-19:2026-10-18/dsh-status-rotator",
     "error": null,
     "publication": {
       "first_published_at": "2026-08-18T08:46:04.501Z",
-      "captured_at": "2026-10-19T10:03:21.365Z",
+      "captured_at": "2026-10-19T14:54:18.025Z",
       "source_url": "https://registry.npmjs.org/dsh-status-rotator",
       "error": null
     }
