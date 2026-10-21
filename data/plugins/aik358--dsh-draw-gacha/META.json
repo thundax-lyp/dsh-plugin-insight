@@ -1,0 +1,43 @@
+{
+  "repository": "Aik358/dsh-draw-gacha",
+  "repository_id": 1335791040,
+  "captured_at": "2026-10-21T07:59:06.578Z",
+  "window_start": "2026-09-21T07:59:06.578Z",
+  "stars": 2,
+  "pushed_at": "2026-10-01T15:45:23Z",
+  "issues": {
+    "open": 0,
+    "closed": 1,
+    "created_30d": 0,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-draw-gacha%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A06.578Z..2026-10-21T07%3A59%3A06.578Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C3EE:26A83F:684157:702B8A:6AD870D8 and timestamp 2026-10-21 07:59:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-draw-gacha%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A06.578Z..2026-10-21T07%3A59%3A06.578Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C5F0:271056:6AE9AE:72D17E:6AD870D9 and timestamp 2026-10-21 07:59:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "@a9i5k4/dsh-draw-gacha",
+    "captured_at": "2026-10-21T07:59:22.013Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 857,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40a9i5k4%2Fdsh-draw-gacha",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-16T09:42:08.035Z",
+      "captured_at": "2026-10-21T07:59:22.013Z",
+      "source_url": "https://registry.npmjs.org/%40a9i5k4%2Fdsh-draw-gacha",
+      "error": null,
+      "latest_version": "0.1.6",
+      "latest_published_at": "2026-08-17T19:36:30.606Z",
+      "latest_error": null
+    }
+  }
+}

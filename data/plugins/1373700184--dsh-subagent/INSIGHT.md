@@ -1,10 +1,10 @@
 # dsh-subagent
 
-> 把 Qoder、OpenCode、Pi 等外部 CLI 接到 DSH 子代理并显示运行状态。
+> 把 Qoder、OpenCode、Pi、CodeBuddy 等 CLI 接到 DSH 子代理。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[6889bdd](https://github.com/1373700184/dsh-subagent/tree/6889bdd592d47f7c0f25ee56545e884abdc8927d)
+分析版本：[679dd4f](https://github.com/1373700184/dsh-subagent/tree/679dd4fb7838fcb473c8b368e20aa24a43af99aa)
 
 <!-- BEGIN META -->
 [![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent)
@@ -39,7 +39,7 @@
 
 已有对应CLI且可隔离工作目录者可评估；不可重复写入任务应先解决回退幂等、全程超时和进程树取消，不能因preset叫“自由”而放宽验收。
 
-核查状态：三协议适配、命令和preset由源码确认；完成语义、硬截止、费用与产物质量未实测。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+核查状态：四协议适配、命令和preset由源码确认；完成语义、硬截止、费用与产物质量未实测。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
 
 直接在终端运行CLI再粘贴结果；本项统一委派监督但没有继承上下文或共享事务。
 
@@ -48,21 +48,21 @@
 ### 能力、流程与成本
 
 - **Agent/Preset**：patch定义free-subagents指挥preset，组合现有宿主工具。
-- **模型工具**：四个外部CLI委派工具由上游tool-subagent绑定，另有free_subagent_status运行查询。
-- **用户命令**：按provider名称commands.register，向父会话发送委派followup。
+- **模型工具**：五个外部CLI委派工具由上游tool-subagent绑定，另有free_subagent_status运行查询。
+- **用户命令**：按provider名称commands.register向父会话发送委派followup，/free_subagent_status直接查询内存账本。
 - **Host 路由**：设置页CLI探测RPC。
 - **界面**：配置页及工具调用进度呈现。
 - **后台**：外部CLI子进程执行、事件账本和模型链回退。
 
 **流程与依赖**
 
-Provider/Run复用DSH子代理helper，DRIVERS把qoder-json/opencode-json/pi-json归一到sink；stdin传任务，一次性进程收集JSON行。模型链按首事件等待决定切换，有界内存账本支撑状态查询；patch还注册四个委派工具和free-subagents preset。
+Provider/Run复用DSH子代理helper，DRIVERS把qoder-json/codebuddy-json/opencode-json/pi-json归一到sink；stdin传任务，一次性进程收集JSON行。模型链按首事件等待决定切换，有界内存账本支撑状态查询；patch还注册五个委派工具和free-subagents preset。
 
 DSH subagents/commands/tools/web client服务、对应已安装登录CLI和工作目录权限；缺二进制在启动/探测阶段暴露。
 
 用户命令或父工具委派→显式prompt→启动CLI→按首事件/失败切模型→最终文本回父侧→人工核对变更；状态查询显示截断账本。
 
-bundle默认四委派工具并带自由子代理preset；README安装段仍说两个工具，报告以固定patch为准。三驱动一次性，不继承父上下文、不提供续话或结构化输出保证。
+bundle默认五委派工具并带自由子代理preset；README安装段仍说两个工具，报告以固定patch为准。四驱动一次性，不继承父上下文、不提供续话或结构化输出保证。
 
 **效果与成本**
 
@@ -80,9 +80,9 @@ bundle默认四委派工具并带自由子代理preset；README安装段仍说�
 
 相比在多个终端搬运任务，插件统一委派句柄、驱动事件与父侧状态，并把外部模型链嵌入DSH。DRIVERS/sink分离减少生命周期重复；外部CLI能力与宿主子代理helper归上游，后端数量和“免费”preset名称都不证明质量或低成本。
 
-驱动事件与运行账本解耦，stderr保留尾部并有配置探测；slash命令只是发followup让父Agent调用工具，不保证已开始执行。首次事件、最终事件和退出码的区别值得保留而非用单状态掩盖。
+驱动事件与运行账本解耦，CodeBuddy以独立驱动映射permission参数并区分credits/USD报告，stderr保留尾部并有配置探测；slash命令只是发followup让父Agent调用工具，不保证已开始执行。首次事件、最终事件和退出码的区别值得保留而非用单状态掩盖。
 
-固定源码依据：[lib/index.js](https://github.com/1373700184/dsh-subagent/blob/6889bdd592d47f7c0f25ee56545e884abdc8927d/lib/index.js)、[lib/client.js](https://github.com/1373700184/dsh-subagent/blob/6889bdd592d47f7c0f25ee56545e884abdc8927d/lib/client.js)、[cordis.patch.yml](https://github.com/1373700184/dsh-subagent/blob/6889bdd592d47f7c0f25ee56545e884abdc8927d/cordis.patch.yml)、[package.json](https://github.com/1373700184/dsh-subagent/blob/6889bdd592d47f7c0f25ee56545e884abdc8927d/package.json)。
+固定源码依据：[lib/index.js](https://github.com/1373700184/dsh-subagent/blob/679dd4fb7838fcb473c8b368e20aa24a43af99aa/lib/index.js)、[lib/client.js](https://github.com/1373700184/dsh-subagent/blob/679dd4fb7838fcb473c8b368e20aa24a43af99aa/lib/client.js)、[cordis.patch.yml](https://github.com/1373700184/dsh-subagent/blob/679dd4fb7838fcb473c8b368e20aa24a43af99aa/cordis.patch.yml)、[package.json](https://github.com/1373700184/dsh-subagent/blob/679dd4fb7838fcb473c8b368e20aa24a43af99aa/package.json)。
 
 <a id="detail-section-5"></a>
 
@@ -94,10 +94,10 @@ bundle默认四委派工具并带自由子代理preset；README安装段仍说�
 
 ### 核查说明与分析版本
 
-- 版本号：0.7.4；版本日期：2026-10-21（固定提交日期，北京时间，非包发布日期）。
-- 固定提交：[6889bdd5](https://github.com/1373700184/dsh-subagent/tree/6889bdd592d47f7c0f25ee56545e884abdc8927d)；本轮基准：2026-10-21T05:26:52Z。
+- 版本号：0.8.4；版本日期：2026-10-21（固定提交日期，北京时间，非包发布日期）。
+- 固定提交：[679dd4fb](https://github.com/1373700184/dsh-subagent/tree/679dd4fb7838fcb473c8b368e20aa24a43af99aa)；本轮基准：2026-10-21T07:52:12Z。
 - 已检查：上述源码路径、README、包清单及组件inventory。
-- 范围：根组件Provider、Run、三驱动、回退、账本、探测、客户端注册与preset patch；逐ID复核正式旧11项finding/证据及评分，不核账号额度或外部CLI实现。
+- 范围：根组件Provider、Run、四驱动、回退、账本、探测、客户端注册与preset patch；不核账号额度或外部CLI实现，未执行任何目标命令。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
 <a id="detail-section-7"></a>
@@ -117,15 +117,15 @@ bundle默认四委派工具并带自由子代理preset；README安装段仍说�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 3 | 1757 | 1585 | 120 | — |
-| .md | source | 1 | 96 | — | — | 1391 |
+| .js | source | 3 | 1866 | 1689 | 124 | — |
+| .md | source | 1 | 96 | — | — | 1404 |
 | .mjs | source | 1 | 30 | 28 | 0 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+created%3A2026-09-21T05%3A33%3A11.857Z..2026-10-21T05%3A33%3A11.857Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T05%3A33%3A11.857Z..2026-10-21T05%3A33%3A11.857Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+created%3A2026-09-21T07%3A58%3A46.629Z..2026-10-21T07%3A58%3A46.629Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T07%3A58%3A46.629Z..2026-10-21T07%3A58%3A46.629Z)
 
 
 

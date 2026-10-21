@@ -4,7 +4,7 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[2759e45](https://github.com/58fly/dsh-language-guard/tree/2759e457534a1611b29d2744b154926af133a74d)
+分析版本：[9351078](https://github.com/58fly/dsh-language-guard/tree/9351078c5d264033c49d221742840aee673c0cdf)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-language-guard)
@@ -79,7 +79,7 @@ DSH Host/client bundle与固定package依赖；settings/commands懒注入，Sche
 
 cycle先next再按拥有的决策插入，spread保留startsRequestSeries等字段，首step/非空/幂等/顶层门控避免无输入循环；notice显式来源可区分真实用户。state的单例覆盖与命令会话宣称不一致是可追踪实现边界。
 
-固定源码依据：[lib/index.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/index.js)、[lib/language.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/language.js)、[lib/cycle.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/cycle.js)、[lib/commands.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/commands.js)、[lib/state.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/state.js)、[lib/text.js](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/lib/text.js)、[package.json](https://github.com/58fly/dsh-language-guard/blob/2759e457534a1611b29d2744b154926af133a74d/package.json)。
+固定源码依据：[lib/index.js](https://github.com/58fly/dsh-language-guard/blob/9351078c5d264033c49d221742840aee673c0cdf/lib/index.js)、[lib/language.js](https://github.com/58fly/dsh-language-guard/blob/9351078c5d264033c49d221742840aee673c0cdf/lib/language.js)、[lib/cycle.js](https://github.com/58fly/dsh-language-guard/blob/9351078c5d264033c49d221742840aee673c0cdf/lib/cycle.js)、[lib/commands.js](https://github.com/58fly/dsh-language-guard/blob/9351078c5d264033c49d221742840aee673c0cdf/lib/commands.js)、[lib/state.js](https://github.com/58fly/dsh-language-guard/blob/9351078c5d264033c49d221742840aee673c0cdf/lib/state.js)、[lib/text.js](https://github.com/58fly/dsh-language-guard/blob/9351078c5d264033c49d221742840aee673c0cdf/lib/text.js)、[package.json](https://github.com/58fly/dsh-language-guard/blob/9351078c5d264033c49d221742840aee673c0cdf/package.json)。
 
 <a id="detail-section-5"></a>
 
@@ -91,10 +91,10 @@ cycle先next再按拥有的决策插入，spread保留startsRequestSeries等字�
 
 ### 核查说明与分析版本
 
-- 版本号：0.3.3；版本日期：2026-10-21（固定提交日期，北京时间，非包发布日期）。
-- 固定提交：[2759e457](https://github.com/58fly/dsh-language-guard/tree/2759e457534a1611b29d2744b154926af133a74d)；本轮基准：2026-10-21T05:26:52Z。
+- 版本号：0.3.4；版本日期：2026-10-21（固定提交日期，北京时间，非包发布日期）。
+- 固定提交：[9351078c](https://github.com/58fly/dsh-language-guard/tree/9351078c5d264033c49d221742840aee673c0cdf)；本轮基准：2026-10-21T07:52:12Z。
 - 已检查：上述源码路径、README、包清单及组件inventory。
-- 范围：根组件提示装配、文本、语言解析、状态、命令和周期注入；复核正式快照旧11项findings/证据及评分，当前notice来源与模块覆盖范围重新判断。
+- 范围：根组件提示装配、文本、语言解析、状态、命令和周期注入；未核不可见推理语言或作者测量的漂移率收益。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
 <a id="detail-section-7"></a>
@@ -114,15 +114,15 @@ cycle先next再按拥有的决策插入，spread保留startsRequestSeries等字�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 33 | 11038 | — | — | 157215 |
+| .md | source | 33 | 11136 | — | — | 159119 |
 | .js | source | 7 | 2440 | 1693 | 560 | — |
-| .mjs | source | 6 | 1386 | 1039 | 201 | — |
+| .mjs | source | 7 | 1785 | 1324 | 264 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+created%3A2026-09-21T05%3A33%3A12.488Z..2026-10-21T05%3A33%3A12.488Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T05%3A33%3A12.488Z..2026-10-21T05%3A33%3A12.488Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+created%3A2026-09-21T07%3A58%3A47.740Z..2026-10-21T07%3A58%3A47.740Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T07%3A58%3A47.740Z..2026-10-21T07%3A58%3A47.740Z)
 
 
 

@@ -1,0 +1,55 @@
+{
+  "repository": "Akiyuki1130/dsh-ark-coding-provider",
+  "repository_id": 1421741516,
+  "captured_at": "2026-10-21T07:59:39.298Z",
+  "window_start": "2026-09-21T07:59:39.298Z",
+  "stars": 2,
+  "pushed_at": "2026-10-16T06:24:26Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAkiyuki1130%2Fdsh-ark-coding-provider%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EA1A:10E8BA:6F8746:7773A0:6AD870F0 and timestamp 2026-10-21 07:59:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAkiyuki1130%2Fdsh-ark-coding-provider%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ED2E:10E070:695217:714001:6AD870F3 and timestamp 2026-10-21 07:59:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAkiyuki1130%2Fdsh-ark-coding-provider%20is%3Aissue%20created%3A2026-09-21T07%3A59%3A39.298Z..2026-10-21T07%3A59%3A39.298Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EEBE:26E54B:6958D9:713D7A:6AD870F4 and timestamp 2026-10-21 07:59:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAkiyuki1130%2Fdsh-ark-coding-provider%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A39.298Z..2026-10-21T07%3A59%3A39.298Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F05A:4B9BC:6BD9C4:73C4CD:6AD870F5 and timestamp 2026-10-21 07:59:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAkiyuki1130%2Fdsh-ark-coding-provider%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A39.298Z..2026-10-21T07%3A59%3A39.298Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F15C:103F14:677D58:6F69A9:6AD870F6 and timestamp 2026-10-21 07:59:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-ark-coding-provider",
+    "captured_at": "2026-10-21T07:59:50.258Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-ark-coding-provider",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T07:59:50.258Z",
+      "source_url": "https://registry.npmjs.org/dsh-ark-coding-provider",
+      "error": "HTTP 404",
+      "latest_version": null,
+      "latest_published_at": null,
+      "latest_error": "HTTP 404"
+    }
+  }
+}
