@@ -1,42 +1,21 @@
 {
   "repository": "6pofx/dsh-tool-explorer",
   "repository_id": 1351594249,
-  "captured_at": "2026-10-21T03:10:15.157Z",
-  "window_start": "2026-09-21T03:10:15.157Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 1,
   "pushed_at": "2026-10-19T15:28:29Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A6pofx%2Fdsh-tool-explorer%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BF24:3FE178:7C7104:B1ECBF:6AD82D19 and timestamp 2026-10-21 03:10:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A6pofx%2Fdsh-tool-explorer%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C2FC:39E13C:785437:ACBF02:6AD82D1C and timestamp 2026-10-21 03:10:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A6pofx%2Fdsh-tool-explorer%20is%3Aissue%20created%3A2026-09-21T03%3A10%3A15.157Z..2026-10-21T03%3A10%3A15.157Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C442:1B0790:79E402:AF27AF:6AD82D1D and timestamp 2026-10-21 03:10:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A6pofx%2Fdsh-tool-explorer%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A10%3A15.157Z..2026-10-21T03%3A10%3A15.157Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C7AA:3BA9DC:78DCE8:ACC5B7:6AD82D20 and timestamp 2026-10-21 03:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A6pofx%2Fdsh-tool-explorer%20is%3Aissue%20updated%3A2026-09-21T03%3A10%3A15.157Z..2026-10-21T03%3A10%3A15.157Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CA58:24642:7D60E0:B2F80C:6AD82D22 and timestamp 2026-10-21 03:10:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-tool-explorer",
-    "captured_at": "2026-10-21T03:10:26.876Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": 673,
@@ -44,9 +23,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-31T02:24:29.246Z",
-      "captured_at": "2026-10-21T03:10:26.876Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-tool-explorer",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "63ea4c8192f715c3157af69e71fef67915db8af1",
+    "current_revision": "63ea4c8192f715c3157af69e71fef67915db8af1",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

@@ -7,7 +7,7 @@
 分析版本：[e94fffb](https://github.com/1HelloMan1/dsh-vision-fallback/tree/e94fffbfd1297881e80a1a02304e116541d01368)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-vision-fallback) · [![npm 30d 932](https://img.shields.io/static/v1?label=npm+30d&message=932&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-fallback)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-vision-fallback) · [![npm 30d 919](https://img.shields.io/static/v1?label=npm+30d&message=919&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-fallback)
 <!-- END META -->
 
 **使用建议**：适合确需保留纯文本主模型的图片任务；先核对视觉服务的数据范围和难图准确率，重要文字回看原图。
@@ -122,6 +122,6 @@ lib/index.js 的缓存键绑定附件与会话消息，失败清缓存；重入 
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/1HelloMan1/dsh-vision-fallback/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1HelloMan1/dsh-vision-fallback/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

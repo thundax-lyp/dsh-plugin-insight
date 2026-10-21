@@ -1,21 +1,42 @@
 {
   "repository": "2026heshao/dsh-armory",
   "repository_id": 1413052822,
-  "captured_at": "2026-10-21T02:00:25.205Z",
-  "window_start": "2026-09-21T02:00:25.205Z",
-  "stars": 14,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 17,
   "pushed_at": "2026-10-20T15:03:11Z",
   "issues": {
-    "open": 0,
-    "closed": 0,
-    "created_30d": 0,
-    "closed_30d": 0,
-    "updated_30d": 0
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
   },
-  "errors": [],
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:128E3:14C1A6:225124:6AD849CA and timestamp 2026-10-21 05:12:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:62BAE:A89B3:6AD849CA and timestamp 2026-10-21 05:12:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13D8A6:216ABF:6AD849CB and timestamp 2026-10-21 05:12:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:149756:223A1E:6AD849CB and timestamp 2026-10-21 05:12:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:1465F7:21E121:6AD849CB and timestamp 2026-10-21 05:12:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
   "npm": {
     "package_name": "dsh-armory",
-    "captured_at": "2026-10-21T02:00:35.445Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": 261,
@@ -23,9 +44,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-10-13T02:37:33.593Z",
-      "captured_at": "2026-10-21T02:00:35.445Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-armory",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "f16a67086f5aabde5e3f213227a421f4701355b4",
+    "current_revision": "f16a67086f5aabde5e3f213227a421f4701355b4",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

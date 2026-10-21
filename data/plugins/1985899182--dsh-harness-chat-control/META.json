@@ -1,8 +1,8 @@
 {
   "repository": "1985899182/dsh-harness-chat-control",
   "repository_id": 1357066651,
-  "captured_at": "2026-10-20T10:44:25.032Z",
-  "window_start": "2026-09-20T10:44:25.032Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 6,
   "pushed_at": "2026-10-20T06:33:59Z",
   "issues": {
@@ -15,38 +15,46 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 185A:1F6EC9:2E36BA:31F762:6AD7460A and timestamp 2026-10-20 10:44:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:148F82:220E1D:6AD849D3 and timestamp 2026-10-21 05:12:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1914:3D3CFE:2D98B7:315638:6AD7460B and timestamp 2026-10-20 10:44:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:1CA4C8:14B0E8:22473A:6AD849D3 and timestamp 2026-10-21 05:12:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20created%3A2026-09-20T10%3A44%3A25.032Z..2026-10-20T10%3A44%3A25.032Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 19F4:3D0CCE:309904:34580E:6AD7460C and timestamp 2026-10-20 10:44:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:A4F3B:1415F5:21B385:6AD849D3 and timestamp 2026-10-21 05:12:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T10%3A44%3A25.032Z..2026-10-20T10%3A44%3A25.032Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1ADA:3D3ABD:305717:34187E:6AD7460C and timestamp 2026-10-20 10:44:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14BE55:2250E6:6AD849D3 and timestamp 2026-10-21 05:12:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20updated%3A2026-09-20T10%3A44%3A25.032Z..2026-10-20T10%3A44%3A25.032Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1BD4:3D5D09:2D05EF:30C471:6AD7460D and timestamp 2026-10-20 10:44:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1985899182%2Fdsh-harness-chat-control%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2EEE9E:13CB51:21579B:6AD849D3 and timestamp 2026-10-21 05:12:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-harness-chat-control",
-    "captured_at": "2026-10-20T10:44:29.727Z",
-    "window_start": "2026-09-20",
-    "window_end": "2026-10-19",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-harness-chat-control",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-harness-chat-control",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T10:44:29.727Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-harness-chat-control",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "061e9a8563ffec3b2353d785e268b88984bd4890",
+    "current_revision": "061e9a8563ffec3b2353d785e268b88984bd4890",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

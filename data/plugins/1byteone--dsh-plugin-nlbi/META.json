@@ -1,8 +1,8 @@
 {
   "repository": "1byteone/dsh-plugin-nlbi",
   "repository_id": 1343622602,
-  "captured_at": "2026-10-20T10:44:33.754Z",
-  "window_start": "2026-09-20T10:44:33.754Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 2,
   "pushed_at": "2026-08-25T12:23:45Z",
   "issues": {
@@ -15,38 +15,46 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2168:1F3D0C:2EBF24:327AFC:6AD74613 and timestamp 2026-10-20 10:44:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:90BBC:14AC2C:223E06:6AD849DA and timestamp 2026-10-21 05:12:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2220:1F620C:2E6665:3221E1:6AD74614 and timestamp 2026-10-20 10:44:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:15685B:22FACA:6AD849DA and timestamp 2026-10-21 05:12:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20created%3A2026-09-20T10%3A44%3A33.754Z..2026-10-20T10%3A44%3A33.754Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 22C6:1E74E8:2CBE6E:307D3D:6AD74614 and timestamp 2026-10-20 10:44:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:287071:13A828:213757:6AD849DB and timestamp 2026-10-21 05:12:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T10%3A44%3A33.754Z..2026-10-20T10%3A44%3A33.754Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 23A6:1EC405:2D7DC7:313B70:6AD74615 and timestamp 2026-10-20 10:44:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:64792:144FFD:21F0A5:6AD849DB and timestamp 2026-10-21 05:12:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20updated%3A2026-09-20T10%3A44%3A33.754Z..2026-10-20T10%3A44%3A33.754Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 24C6:140357:30D71C:349639:6AD74616 and timestamp 2026-10-20 10:44:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1byteone%2Fdsh-plugin-nlbi%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:148995:22113D:6AD849DB and timestamp 2026-10-21 05:12:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-plugin-nlbi",
-    "captured_at": "2026-10-20T10:44:38.577Z",
-    "window_start": "2026-09-20",
-    "window_end": "2026-10-19",
-    "downloads_30d": 917,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-plugin-nlbi",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 906,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-nlbi",
     "error": null,
     "publication": {
       "first_published_at": "2026-08-23T12:02:06.678Z",
-      "captured_at": "2026-10-20T10:44:38.577Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-plugin-nlbi",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "232f9243029add39dd18a368de45d8326aca178f",
+    "current_revision": "232f9243029add39dd18a368de45d8326aca178f",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

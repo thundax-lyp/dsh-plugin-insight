@@ -7,7 +7,7 @@
 分析版本：[ccabca3](https://github.com/2404723600/dsh-router-loomy/tree/ccabca348ca2194287f0770ce348283fdb8bf3d8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2404723600/dsh-router-loomy) · [![npm 30d 1729](https://img.shields.io/static/v1?label=npm+30d&message=1%2C729&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-router-loomy)
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/2404723600/dsh-router-loomy) · [![npm 30d 1685](https://img.shields.io/static/v1?label=npm+30d&message=1%2C685&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-router-loomy)
 <!-- END META -->
 
 **使用建议**：已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。
@@ -133,6 +133,6 @@ api/sse.ts在原始流透传旁嗅探错误并扣住不完整[DONE]，将字节�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/2404723600/dsh-router-loomy/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/2404723600/dsh-router-loomy/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

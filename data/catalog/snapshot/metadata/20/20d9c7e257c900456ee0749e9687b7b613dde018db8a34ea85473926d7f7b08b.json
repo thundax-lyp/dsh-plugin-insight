@@ -1,0 +1,39 @@
+{
+  "repository": "0QwQ0/dsh-discord-richpresence",
+  "repository_id": 1342915339,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 2,
+  "pushed_at": "2026-09-19T14:05:45Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-discord-richpresence",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-discord-richpresence",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T05:08:56.162Z",
+      "source_url": "https://registry.npmjs.org/dsh-discord-richpresence",
+      "error": "HTTP 404"
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+    "current_revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "repository": "0imzero/dsh-workspace-menu",
+  "repository_id": 1339803365,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 4,
+  "pushed_at": "2026-08-24T17:02:43Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+    "current_revision": "afd55510f82821cde60a8364e42f752e244b5b31",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

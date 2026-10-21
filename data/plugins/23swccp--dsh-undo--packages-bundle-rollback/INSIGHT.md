@@ -7,7 +7,7 @@
 分析版本：[bc8edbe](https://github.com/23swccp/dsh-undo/tree/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/23swccp/dsh-undo) · [![npm 30d 979](https://img.shields.io/static/v1?label=npm+30d&message=979&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-undo-plugin)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/23swccp/dsh-undo) · [![npm 30d 965](https://img.shields.io/static/v1?label=npm+30d&message=965&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-undo-plugin)
 <!-- END META -->
 
 **使用建议**：只在备份过且无子模块的独立Git工作区先试，核对安装后的七个依赖版本；用可丢弃修改测试文件和分叉上下文是否一起回到目标点，再考虑日常使用。外部服务写入仍需单独处理。
@@ -133,6 +133,6 @@ shadow-git.ts用独立GIT_DIR/GIT_INDEX_FILE隔离快照，差异恢复只删除
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/23swccp/dsh-undo/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/23swccp/dsh-undo/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

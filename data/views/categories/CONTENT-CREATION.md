@@ -92,7 +92,7 @@
 
 ## [dsh-plugin-tts](../../plugins/1624318455--dsh-plugin-tts/INSIGHT.md)
 
-[![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts) · [![npm 30d 2693](https://img.shields.io/static/v1?label=npm+30d&message=2%2C693&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts)
+[![GitHub ★ 28](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=28&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts) · [![npm 30d 2693](https://img.shields.io/static/v1?label=npm+30d&message=2%2C693&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts)
 
 - **用途**：需要长文朗读或本地音色的用户希望在会话内播放，不想逐段复制到外部软件。
 - **亮点**：lib/index.mjs注册语音及音色包路由，Edge由Node子进程完成WebSocket合成，RVC等经本地HTTP服务处理，客户端分块播放。
@@ -136,7 +136,7 @@
 
 ## [短视频 Skill 流水线](../../plugins/439436269-ctrl--dsh-video-pipeline/INSIGHT.md)
 
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-video-pipeline) · [![npm 30d 465](https://img.shields.io/static/v1?label=npm+30d&message=465&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-video-pipeline)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-video-pipeline) · [![npm 30d 465](https://img.shields.io/static/v1?label=npm+30d&message=465&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-video-pipeline)
 
 - **用途**：已有短视频制作与平台账号的创作者，按工序组织一集从选题到发布的素材和结果；交付成片、核验记录及平台链接，不能把Skill注册成功当生产链跑通。
 - **亮点**：相对散落复制Skill，贡献是统一目录、资源基址和环境占位符，使一条制作流程可随包分发。核心生成、剪辑和平台上传依赖现有API/ffmpeg/脚本，第三方小红书代码有独立归属；不是新的媒体生成算法。

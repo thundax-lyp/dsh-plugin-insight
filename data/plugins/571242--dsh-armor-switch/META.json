@@ -1,8 +1,8 @@
 {
   "repository": "571242/dsh-armor-switch",
   "repository_id": 1409096911,
-  "captured_at": "2026-10-21T03:09:34.307Z",
-  "window_start": "2026-09-21T03:09:34.307Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 2,
   "pushed_at": "2026-10-10T19:36:05Z",
   "issues": {
@@ -15,23 +15,31 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1CEE:10F8F5:3BE743:4011B8:6AD82CF0 and timestamp 2026-10-21 03:09:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:157E0E:2320B5:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1EC8:2707DA:3D7A18:41A3F6:6AD82CF1 and timestamp 2026-10-21 03:09:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:148678:22143A:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20created%3A2026-09-21T03%3A09%3A34.307Z..2026-10-21T03%3A09%3A34.307Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1FFC:16071B:3B4DCD:3F7747:6AD82CF2 and timestamp 2026-10-21 03:09:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:144F8A:21E6E7:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A09%3A34.307Z..2026-10-21T03%3A09%3A34.307Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2274:1112D2:3885D4:3CAEC3:6AD82CF4 and timestamp 2026-10-21 03:09:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:1CA4C8:14C8F4:2270E3:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20updated%3A2026-09-21T03%3A09%3A34.307Z..2026-10-21T03%3A09%3A34.307Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 23CE:E6488:48F0D8:4D1D11:6AD82CF5 and timestamp 2026-10-21 03:09:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14D8AC:227C9D:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
-  ]
+  ],
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+    "current_revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
 }

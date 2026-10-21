@@ -1,8 +1,8 @@
 {
   "repository": "988hj7tczd-oss/dsh-lsp-packs",
   "repository_id": 1344713526,
-  "captured_at": "2026-10-21T04:10:57.460Z",
-  "window_start": "2026-09-21T04:10:57.460Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 3,
   "pushed_at": "2026-09-01T00:51:42Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9A9E:4E544:47EE9B:4CE37D:6AD83B53 and timestamp 2026-10-21 04:10:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:11EA2C:141835:21DAF4:6AD84AFA and timestamp 2026-10-21 05:17:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9BD2:2707DA:486707:4D5CE7:6AD83B54 and timestamp 2026-10-21 04:11:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:20AC7E:14B4ED:227176:6AD84AFA and timestamp 2026-10-21 05:17:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20created%3A2026-09-21T04%3A10%3A57.460Z..2026-10-21T04%3A10%3A57.460Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9D28:32D9F:441BA0:491085:6AD83B54 and timestamp 2026-10-21 04:11:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:14189E:21D594:6AD84AFB and timestamp 2026-10-21 05:17:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T04%3A10%3A57.460Z..2026-10-21T04%3A10%3A57.460Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9E76:273235:4304AC:47F7E2:6AD83B55 and timestamp 2026-10-21 04:11:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14B476:226B0F:6AD84AFB and timestamp 2026-10-21 05:17:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20updated%3A2026-09-21T04%3A10%3A57.460Z..2026-10-21T04%3A10%3A57.460Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9FBA:271D3E:45E796:4ADB54:6AD83B56 and timestamp 2026-10-21 04:11:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-lsp-packs%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:0BD3:A4B57:110D35:6AD84AFB and timestamp 2026-10-21 05:17:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "@dsh-lsp-packs/dsh-lsp-swift",
-    "captured_at": "2026-10-21T04:11:02.706Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": null,
@@ -44,9 +44,17 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-21T04:11:02.706Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/%40dsh-lsp-packs%2Fdsh-lsp-swift",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "current_revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

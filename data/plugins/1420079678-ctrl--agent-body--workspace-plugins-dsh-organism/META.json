@@ -1,35 +1,56 @@
 {
   "repository": "1420079678-ctrl/agent-body",
   "repository_id": 1366089972,
-  "captured_at": "2026-10-20T07:15:30.299Z",
-  "window_start": "2026-09-20T07:15:30.299Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 17,
   "pushed_at": "2026-09-30T00:33:17Z",
   "issues": {
-    "open": 0,
-    "closed": 1,
-    "created_30d": 1,
-    "closed_30d": 1,
-    "updated_30d": 1
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
   },
-  "errors": [],
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:147256:21F72F:6AD8493F and timestamp 2026-10-21 05:10:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:14651C:21E863:6AD84940 and timestamp 2026-10-21 05:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:15007E:228022:6AD84940 and timestamp 2026-10-21 05:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:14EAF3:226C00:6AD84940 and timestamp 2026-10-21 05:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:15449D:22C938:6AD84940 and timestamp 2026-10-21 05:10:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
   "npm": {
     "package_name": "@dsh-external/dsh-organism",
-    "captured_at": "2026-10-20T07:15:30.299Z",
-    "window_start": "2026-09-20",
-    "window_end": "2026-10-19",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/%40dsh-external%2Fdsh-organism",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40dsh-external%2Fdsh-organism",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T07:15:30.299Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-organism",
       "error": "HTTP 404"
     }
   },
   "code_update": {
-    "checked_at": "2026-10-20T07:15:30.299Z",
+    "checked_at": "2026-10-21T05:08:56.162Z",
     "baseline_revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
     "current_revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
     "script_changed": false,

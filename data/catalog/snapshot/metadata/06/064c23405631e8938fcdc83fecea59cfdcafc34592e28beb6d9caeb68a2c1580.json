@@ -1,0 +1,39 @@
+{
+  "repository": "9087/dsh-diff-approval",
+  "repository_id": 1335980444,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 14,
+  "pushed_at": "2026-10-19T16:28:35Z",
+  "issues": {
+    "open": 1,
+    "closed": 0,
+    "created_30d": 1,
+    "closed_30d": 0,
+    "updated_30d": 1
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-diff-approval",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 5714,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-diff-approval",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-16T16:05:19.437Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
+      "source_url": "https://registry.npmjs.org/dsh-diff-approval",
+      "error": null
+    }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+    "current_revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

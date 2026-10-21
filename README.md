@@ -23,7 +23,7 @@
 
 - **[dsh-folderwatch](data/plugins/11111353535--dsh-folderwatch/INSIGHT.md)**：监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。 适合外部文件交接频繁的任务，先用 queue 模式和小目录验证漏报、回声与扫描成本；未做宿主验收。 · [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/11111353535/dsh-folderwatch)
 - **[dsh-which](data/plugins/11111353535--dsh-which/INSIGHT.md)**：解释命令的 PATH 解析结果、被遮蔽副本及环境异常，可选探测版本。 适合经常排查多版本命令冲突的开发者，先关闭探测并对照实际 shell；未覆盖全部别名与函数语义。 · [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/11111353535/dsh-which)
-- **[dsh-composer-expand](data/plugins/13071301808--dsh-composer-expand/INSIGHT.md)**：为输入框增加展开按钮，切换到较高书写区域并调整展开时回车行为。 长提示词编辑者可试用，先验证输入法、候选菜单和发送快捷键，确认禁用可恢复；未做真实宿主验收。 · [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand) · [![npm 30d 1011](https://img.shields.io/static/v1?label=npm+30d&message=1%2C011&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-composer-expand)
+- **[dsh-composer-expand](data/plugins/13071301808--dsh-composer-expand/INSIGHT.md)**：为输入框增加展开按钮，切换到较高书写区域并调整展开时回车行为。 长提示词编辑者可试用，先验证输入法、候选菜单和发送快捷键，确认禁用可恢复；未做真实宿主验收。 · [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand) · [![npm 30d 979](https://img.shields.io/static/v1?label=npm+30d&message=979&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-composer-expand)
 - **[dsh-session-diff](data/plugins/2002xiaoyu--dsh-session-diff/INSIGHT.md)**：在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。 适合用常规 write/edit 工具改代码、想快速查看本会话差异的用户试用；已检查源码，尚未做宿主验证。先用两会话修改同文件和 shell 改动检查覆盖边界，完整审查仍以 Git 变更为准。 · [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff)
 
 ## [最新](data/views/columns/LATEST.md)
@@ -40,11 +40,11 @@
 
 > 按已采集的近30天 npm 下载量降序，同量按稳定ID；每个 npm 包仅占一席，共用包不代表各组件独立下载量。未发布或下载数据缺失、失败的条目不排名。各项标明统计窗口，下载量不等于用户数；GitHub Star 仅表示技术关注度，不参与排序。
 
-- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · 为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。 · [![GitHub ★ 186](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=186&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11750](https://img.shields.io/static/v1?label=npm+30d&message=11%2C750&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)（dsh-status-rotator；2026-09-20～2026-10-19 UTC）
-- [dsh-pet-live2d](data/plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md) · 在DSH中显示可拖动Live2D宠物，并随会话状态切换动作、气泡与表情。 · [![GitHub ★ 45](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=45&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) · [![npm 30d 7358](https://img.shields.io/static/v1?label=npm+30d&message=7%2C358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d)（dsh-pet-live2d；2026-09-21～2026-10-20 UTC）
+- [dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md) · 为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。 · [![GitHub ★ 190](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=190&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11337](https://img.shields.io/static/v1?label=npm+30d&message=11%2C337&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)（dsh-status-rotator；2026-09-21～2026-10-20 UTC）
+- [dsh-pet-live2d](data/plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md) · 在DSH中显示可拖动Live2D宠物，并随会话状态切换动作、气泡与表情。 · [![GitHub ★ 46](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) · [![npm 30d 7358](https://img.shields.io/static/v1?label=npm+30d&message=7%2C358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d)（dsh-pet-live2d；2026-09-21～2026-10-20 UTC）
 - [dsh-diff-approval](data/plugins/9087--dsh-diff-approval/INSIGHT.md) · 汇总Agent成功文件改动供逐文件或逐块保留、回退，并支持导入本地版本控制差异。 · [![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/9087/dsh-diff-approval) · [![npm 30d 5714](https://img.shields.io/static/v1?label=npm+30d&message=5%2C714&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-diff-approval)（dsh-diff-approval；2026-09-21～2026-10-20 UTC）
-- [dsh-websearch](data/plugins/240xu--dsh-websearch/INSIGHT.md) · 为 DSH 提供聚合网页搜索 provider，合并多个后端结果并支持过滤、缓存和故障降级。 · [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/240xu/dsh-websearch) · [![npm 30d 4850](https://img.shields.io/static/v1?label=npm+30d&message=4%2C850&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch)（@240xu/dsh-websearch；2026-09-20～2026-10-19 UTC）
-- [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md) · 为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。 · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4717](https://img.shields.io/static/v1?label=npm+30d&message=4%2C717&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)（@yolk_vat-y/dsh-project-memory；2026-09-20～2026-10-19 UTC）
+- [dsh-websearch](data/plugins/240xu--dsh-websearch/INSIGHT.md) · 为 DSH 提供聚合网页搜索 provider，合并多个后端结果并支持过滤、缓存和故障降级。 · [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/240xu/dsh-websearch) · [![npm 30d 4802](https://img.shields.io/static/v1?label=npm+30d&message=4%2C802&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch)（@240xu/dsh-websearch；2026-09-21～2026-10-20 UTC）
+- [dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md) · 为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。 · [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4533](https://img.shields.io/static/v1?label=npm+30d&message=4%2C533&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)（@yolk_vat-y/dsh-project-memory；2026-09-21～2026-10-20 UTC）
 
 ## 分类精选
 
@@ -56,7 +56,7 @@
 
 <a id="plugin-1333328839-root"></a>
 
-- **[dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)**：为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。 [![GitHub ★ 186](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=186&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11750](https://img.shields.io/static/v1?label=npm+30d&message=11%2C750&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)
+- **[dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)**：为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。 [![GitHub ★ 190](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=190&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) · [![npm 30d 11337](https://img.shields.io/static/v1?label=npm+30d&message=11%2C337&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)
 
 <a id="plugin-1335236592-root"></a>
 
@@ -64,11 +64,11 @@
 
 <a id="plugin-1378097401-dsh-live2d-pet"></a>
 
-- **[dsh-pet-live2d](data/plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md)**：在DSH中显示可拖动Live2D宠物，并随会话状态切换动作、气泡与表情。 [![GitHub ★ 45](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=45&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) · [![npm 30d 7358](https://img.shields.io/static/v1?label=npm+30d&message=7%2C358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d)
+- **[dsh-pet-live2d](data/plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md)**：在DSH中显示可拖动Live2D宠物，并随会话状态切换动作、气泡与表情。 [![GitHub ★ 46](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) · [![npm 30d 7358](https://img.shields.io/static/v1?label=npm+30d&message=7%2C358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d)
 
 <a id="plugin-1333136466-root"></a>
 
-- **[dsh-spotlight](data/plugins/0xsline--dsh-spotlight/INSIGHT.md)**：以键盘命令面板统一查找原生命令、近期会话和插件入口。 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/0xsline/dsh-spotlight) · [![npm 30d 667](https://img.shields.io/static/v1?label=npm+30d&message=667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@0xsline/dsh-spotlight)
+- **[dsh-spotlight](data/plugins/0xsline--dsh-spotlight/INSIGHT.md)**：以键盘命令面板统一查找原生命令、近期会话和插件入口。 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/0xsline/dsh-spotlight) · [![npm 30d 634](https://img.shields.io/static/v1?label=npm+30d&message=634&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@0xsline/dsh-spotlight)
 
 <a id="plugin-1335766616-root"></a>
 
@@ -86,7 +86,7 @@
 
 <a id="plugin-1363429979-plugin-daily-log"></a>
 
-- **[Forge 工作报告](data/plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)**：汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。 [![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1980](https://img.shields.io/static/v1?label=npm+30d&message=1%2C980&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
+- **[Forge 工作报告](data/plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)**：汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) · [![npm 30d 1976](https://img.shields.io/static/v1?label=npm+30d&message=1%2C976&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
 
 <a id="plugin-1335807482-root"></a>
 
@@ -142,15 +142,15 @@
 
 <a id="plugin-1346196699-root"></a>
 
-- **[dsh-api-dashboard](data/plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md)**：在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/133563825as-ai/dsh-api-dashboard) · [![npm 30d 4246](https://img.shields.io/static/v1?label=npm+30d&message=4%2C246&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-api-dashboard)
+- **[dsh-api-dashboard](data/plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md)**：在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/133563825as-ai/dsh-api-dashboard) · [![npm 30d 4179](https://img.shields.io/static/v1?label=npm+30d&message=4%2C179&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-api-dashboard)
+
+<a id="plugin-1413052822-root"></a>
+
+- **[dsh-armory](data/plugins/2026heshao--dsh-armory/INSIGHT.md)**：在 DSH 中管理 MCP、技能、专家、插件市场及工具账本，支持项目作用域与授权引导。 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) · [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory)
 
 <a id="plugin-1387227102-root"></a>
 
 - **[DSH-Official-WorkBuddy-Credit-Proxy](data/plugins/2861292267--dsh-official-workbuddy-credit-proxy/INSIGHT.md)**：将本机 WorkBuddy、CodeBuddy 账号接入 DSH 模型池，并提供多协议代理与积分面板。 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/2861292267/DSH-Official-WorkBuddy-Credit-Proxy) · [![npm 30d 577](https://img.shields.io/static/v1?label=npm+30d&message=577&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-rotakit)
-
-<a id="plugin-1366089972-workspace-plugins-dsh-organism"></a>
-
-- **[dsh-organism](data/plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-organism/INSIGHT.md)**：把插件组织为可观测器官，提供心跳、反射、自愈账本和工具schema按需门控。 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/1420079678-ctrl/agent-body)
 
 [更多 基础设施 →](data/views/categories/INFRASTRUCTURE.md)
 
@@ -160,7 +160,7 @@
 
 <a id="plugin-1334304098-packages-helmd"></a>
 
-- **[helmd](data/plugins/adwmc--helm-d--packages-helmd/INSIGHT.md)**：提供安全分析预设、领域工具和按需参考，并将Case证据与结论保存在磁盘。 [![GitHub ★ 285](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=285&color=yellow&logo=github&style=flat)](https://github.com/ADWMC/helm-d) · [![npm 30d 391](https://img.shields.io/static/v1?label=npm+30d&message=391&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@adwmc/helm-d)
+- **[helmd](data/plugins/adwmc--helm-d--packages-helmd/INSIGHT.md)**：提供安全分析预设、领域工具和按需参考，并将Case证据与结论保存在磁盘。 [![GitHub ★ 289](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=289&color=yellow&logo=github&style=flat)](https://github.com/ADWMC/helm-d) · [![npm 30d 391](https://img.shields.io/static/v1?label=npm+30d&message=391&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@adwmc/helm-d)
 
 <a id="plugin-1334205011-root"></a>
 
@@ -172,7 +172,7 @@
 
 <a id="plugin-1339316901-root"></a>
 
-- **[dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md)**：为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4717](https://img.shields.io/static/v1?label=npm+30d&message=4%2C717&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
+- **[dsh-project-memory](data/plugins/00080000--dsh-project-memory/INSIGHT.md)**：为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4533](https://img.shields.io/static/v1?label=npm+30d&message=4%2C533&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
 
 <a id="plugin-1333258432-root"></a>
 
@@ -186,7 +186,7 @@
 
 <a id="plugin-1334773156-root"></a>
 
-- **[dsh-plugin-tts](data/plugins/1624318455--dsh-plugin-tts/INSIGHT.md)**：为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 [![GitHub ★ 26](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts) · [![npm 30d 2693](https://img.shields.io/static/v1?label=npm+30d&message=2%2C693&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts)
+- **[dsh-plugin-tts](data/plugins/1624318455--dsh-plugin-tts/INSIGHT.md)**：为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 [![GitHub ★ 28](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=28&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tts) · [![npm 30d 2693](https://img.shields.io/static/v1?label=npm+30d&message=2%2C693&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts)
 
 <a id="plugin-1334395883-root"></a>
 

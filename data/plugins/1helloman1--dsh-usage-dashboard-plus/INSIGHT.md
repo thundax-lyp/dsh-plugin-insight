@@ -7,7 +7,7 @@
 分析版本：[ee53a4d](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/tree/ee53a4d07d212f02fe64ec64eb8a9a84163bd439)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-usage-dashboard-plus) · [![npm 30d 1066](https://img.shields.io/static/v1?label=npm+30d&message=1%2C066&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-usage-dashboard-plus)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-usage-dashboard-plus) · [![npm 30d 1049](https://img.shields.io/static/v1?label=npm+30d&message=1%2C049&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-usage-dashboard-plus)
 <!-- END META -->
 
 **使用建议**：适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。
@@ -122,6 +122,6 @@ lib/index.js 把 zstd 解码、模型计费、外部日志和投影集中在宿�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

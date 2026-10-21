@@ -1,8 +1,8 @@
 {
   "repository": "1569126506-sudo/dsh-team-cost",
   "repository_id": 1364961230,
-  "captured_at": "2026-10-20T07:15:30.299Z",
-  "window_start": "2026-09-20T07:15:30.299Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 2,
   "pushed_at": "2026-09-10T22:18:19Z",
   "issues": {
@@ -15,42 +15,42 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A841:2ED046:88A07C:1C266BA:6AD715A9 and timestamp 2026-10-20 07:18:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:3FE872:13A5C7:211C7C:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A851:2C000D:8117FB:1A318D9:6AD715A9 and timestamp 2026-10-20 07:18:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:155DE7:22CC19:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20created%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A852:1D620F:86AD0B:1B918A3:6AD715AA and timestamp 2026-10-20 07:18:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:1E49B1:145349:21C222:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A842:3F9829:8DFCCD:1D1D1E4:6AD715AA and timestamp 2026-10-20 07:18:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:14AB68:22222F:6AD84947 and timestamp 2026-10-21 05:10:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20updated%3A2026-09-20T07%3A15%3A30.299Z..2026-10-20T07%3A15%3A30.299Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID A843:1D9EE7:7C3566:19343FE:6AD715AA and timestamp 2026-10-20 07:18:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A1569126506-sudo%2Fdsh-team-cost%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:149884:221B10:6AD84947 and timestamp 2026-10-21 05:10:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-team-cost",
-    "captured_at": "2026-10-20T07:15:30.299Z",
-    "window_start": "2026-09-20",
-    "window_end": "2026-10-19",
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
     "downloads_30d": null,
-    "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-team-cost",
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-team-cost",
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-20T07:15:30.299Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-team-cost",
       "error": "HTTP 404"
     }
   },
   "code_update": {
-    "checked_at": "2026-10-20T07:15:30.299Z",
+    "checked_at": "2026-10-21T05:08:56.162Z",
     "baseline_revision": "72f371c7cf45578791739c06b1d949e2868536dd",
     "current_revision": "72f371c7cf45578791739c06b1d949e2868536dd",
     "script_changed": false,

@@ -193,7 +193,7 @@
 
 ## [DSH Verification Receipt](../../plugins/030611--dsh-verification-receipt/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt) · [![npm 30d 881](https://img.shields.io/static/v1?label=npm+30d&message=881&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt) · [![npm 30d 862](https://img.shields.io/static/v1?label=npm+30d&message=862&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt)
 
 - **用途**：代码协作者希望追问某轮究竟记录过哪些执行信号，而不是只看模型完成声明。
 - **亮点**：监听 turn/end 相关 session 事件，按执行轨迹和词法信号生成摘要并串行追加 JSONL。
@@ -523,7 +523,7 @@
 
 ## [dsh-mysql](../../plugins/1321928757--dsh-mysql/INSIGHT.md)
 
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql) · [![npm 30d 36](https://img.shields.io/static/v1?label=npm+30d&message=36&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mysql)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql) · [![npm 30d 35](https://img.shields.io/static/v1?label=npm+30d&message=35&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mysql)
 
 - **用途**：开发者在数据库排障与分析时需要先看结构再查数据，交付应是可复核SQL和正确结果，而非仅返回成功。
 - **亮点**：Host 注册四个全局工具；会话选择连接后逐调用确定目标，shared.js 分类SQL并检查表范围，写入与DDL分别开关。
@@ -567,7 +567,7 @@
 
 ## [dsh-project-memory](../../plugins/00080000--dsh-project-memory/INSIGHT.md)
 
-[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4717](https://img.shields.io/static/v1?label=npm+30d&message=4%2C717&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
+[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) · [![npm 30d 4533](https://img.shields.io/static/v1?label=npm+30d&message=4%2C533&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
 
 - **用途**：长周期开发者在换会话时找回任务及文件依据，交付物是可定位的上下文。
 - **亮点**：session 事件同步任务，工具负责索引和检索；when 触发与 guard 收窄限制经验注入。
@@ -710,7 +710,7 @@
 
 ## [dsh-tech-lead（旧组件）](../../plugins/240xu--verdict-engine--packages-dsh-tech-lead/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/240xu/verdict-engine) · [![npm 30d 68](https://img.shields.io/static/v1?label=npm+30d&message=68&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-tech-lead)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/240xu/verdict-engine) · [![npm 30d 67](https://img.shields.io/static/v1?label=npm+30d&message=67&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-tech-lead)
 
 - **用途**：面向需要让Agent工程规范可机械复核的团队；合格结果是指出调用者输入中违反规则的字段，而非证明真实代码或环境已经满足发布标准。
 - **亮点**：相对纯文本规范靠模型自觉，本项把任务分级、证据字段和门禁条件做成确定性的只读计算，减少遗漏格式与角色分工检查；原创增量在规则可执行化和一致输出，而非证明输入事实为真。组件内复制core、固定旧工具依赖，必须按所选路径评价。
@@ -743,7 +743,7 @@
 
 ## [dsh-undo-plugin](../../plugins/23swccp--dsh-undo--packages-bundle-rollback/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/23swccp/dsh-undo) · [![npm 30d 979](https://img.shields.io/static/v1?label=npm+30d&message=979&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-undo-plugin)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/23swccp/dsh-undo) · [![npm 30d 965](https://img.shields.io/static/v1?label=npm+30d&message=965&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-undo-plugin)
 
 - **用途**：面向Agent修改代码后需要撤回某轮文件与对话上下文的开发者；合格回滚须目标文件树正确、分叉会话不再看到已撤回工具历史，且失败可恢复。
 - **亮点**：相对git reset只还原文件、会话继续携带旧工具记忆，以及单纯新建聊天，贡献是私有Git快照与按消息边界分叉对齐。私有GIT_DIR/INDEX保护用户仓库索引，journal记录副作用阶段；bundle同时调整归档namespace所有权，因此是跨插件工作流组合而非单个撤销按钮。
@@ -1007,7 +1007,7 @@
 
 ## [helmd](../../plugins/adwmc--helm-d--packages-helmd/INSIGHT.md)
 
-[![GitHub ★ 285](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=285&color=yellow&logo=github&style=flat)](https://github.com/ADWMC/helm-d) · [![npm 30d 391](https://img.shields.io/static/v1?label=npm+30d&message=391&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@adwmc/helm-d)
+[![GitHub ★ 289](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=289&color=yellow&logo=github&style=flat)](https://github.com/ADWMC/helm-d) · [![npm 30d 391](https://img.shields.io/static/v1?label=npm+30d&message=391&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@adwmc/helm-d)
 
 - **用途**：授权安全分析需要跨会话复核工具输出与结论，合格结果是证据真实、相关且可复现；引用编号存在只是最低结构条件。
 - **亮点**：相比无持久材料的聊天分析，增量是Case目录、证据编号、结论关联和恢复接口形成可追踪工作流。领域方法与外部CLI归既有工具，不能从参考篇数推断新检测能力。
@@ -1018,7 +1018,7 @@
 
 ## [IDE Hub](../../plugins/121212165--dsh-plugin-ide-hub/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-ide-hub)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-ide-hub)
 
 - **用途**：跨 IDE 工作的开发者需要盘点会话、配置和预算，而非逐个工具翻找。
 - **亮点**：注册盘点、迁移、导出和 hub-init 命令，从本地状态读取信息，规则本体与各 IDE 指针分开维护。
