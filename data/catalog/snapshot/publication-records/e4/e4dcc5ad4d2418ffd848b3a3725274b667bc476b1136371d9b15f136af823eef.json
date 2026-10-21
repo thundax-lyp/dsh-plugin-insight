@@ -1,0 +1,17 @@
+{
+  "id": "github:1399279897:root",
+  "repository": "9931666/dsh-plugin-crossfire",
+  "path": "",
+  "revision": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca",
+  "fingerprints": {
+    "directory": "03ba6af0acd849f306e188c1910d8e5e6df95379979836345ee56e508e97c1bd",
+    "code": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca",
+    "maintenance": "3126c6c1c4bdc29574ae3982a6e299a9d59e52471ee7d5c425a338973fa250f1"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "1d2b342e963d24207c0b5ff8a7d3bd9f1b825c5d7c37f4f71c9be6af13cc9a04"
+}

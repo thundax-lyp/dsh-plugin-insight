@@ -1,0 +1,4 @@
+{
+  "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+  "text": "先按本机OmniSharp分发形式设置命令，再在真实csproj检查定义和引用；单文件示例不能代表解决方案。"
+}

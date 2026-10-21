@@ -1,0 +1,17 @@
+{
+  "id": "github:1343702731:root",
+  "repository": "988hj7tczd-oss/harness-github",
+  "path": "",
+  "revision": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e",
+  "fingerprints": {
+    "directory": "050185438c71b7b998f12ebb3523563107ea469b385d5e1dda01d785bb7836c0",
+    "code": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e",
+    "maintenance": "8b75190327efc272157a8899b3fb006f4f2441fb2b0ccf01827688c38f7c8730"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "fadf0a196ebe92b6c11d6eaa7fad4bd352bec91d572c86bc186ebbe18f21c9cd"
+}

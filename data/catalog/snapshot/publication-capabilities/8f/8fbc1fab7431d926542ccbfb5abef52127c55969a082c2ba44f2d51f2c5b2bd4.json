@@ -1,0 +1,7 @@
+{
+  "revision": "d42aa3bb5925f1f8be7c92337682d006484ec413",
+  "items": {
+    "Host 路由": "共享权限声明gate与console身份鉴权。",
+    "后台": "独立Context、存储恢复和依赖装配健康检查。"
+  }
+}

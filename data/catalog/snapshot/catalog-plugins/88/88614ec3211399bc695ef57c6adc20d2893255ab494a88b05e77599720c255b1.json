@@ -1,0 +1,299 @@
+{
+  "id": "github:1342524723:root",
+  "repository_id": 1342524723,
+  "component_id": "root",
+  "repository": "9931666/dsh-plugin-roundtable",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-plugin-roundtable 圆桌会议",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "d0ec235b774654f6957afd368d669f77bdf11829ba916be88ac700cc886aa6cf",
+    "code": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+    "maintenance": "bc5726de267fd2128e62d2ec0da54a3db4c351cc674f43bdb7b54d9059f89fc0"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1342524723-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:19:17.638Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1342524723-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/README.md",
+      "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+      "captured_at": "2026-10-21T04:19:17.638Z",
+      "summary": "在 DSH 以拓扑视图组织多角色专家协作、讨论、汇聚与用户决策。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/9931666--dsh-plugin-roundtable/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1342524723-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/index.ts",
+      "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+      "captured_at": "2026-10-21T04:19:17.638Z",
+      "summary": "核查 src/index.ts、src/tools.ts、src/members.ts、src/node-events.ts、src/budget.ts、src/state.ts、src/aggregator.ts、src/edge-helper.ts、package.json；tools/members拉持久子代理，node-events归集发言与用量，budget限制轮次/估计token并闭麦，state原子保存会议/JSONL，aggregator确定性压缩摘要；UI显示节点/连线并排队用户行为。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/9931666--dsh-plugin-roundtable/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读index/tools/members/node-events、budget/state/aggregator与edge-helper；未运行会议、真实路由或多文件故障恢复。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "复杂问题需要多角色观点和分歧记录，主持人组织专家并把需拍板事项交用户，交付会议记录与结论材料。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "tools/members拉持久子代理，node-events归集发言与用量，budget限制轮次/估计token并闭麦，state原子保存会议/JSONL，aggregator确定性压缩摘要；UI显示节点/连线并排队用户行为。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读index/tools/members/node-events、budget/state/aggregator与edge-helper；未运行会议、真实路由或多文件故障恢复。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "TS双端构建，DSH版本与可选服务接线敏感；阵容只定义谁来会，不应视为执行DAG。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次定议题/角色/模型，持续多模型token、主持转述、阅读/裁决与复审；真实费用不能从图灯或估算预算直接读出。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "有明确讨论目标的人先用少数专家；定预算并读原文分歧，核对真实状态和消息路径，再扩大阵容，别让会议代替最终验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把讨论责任和分歧显式记录；不保证多模型独立、结论正确或比单模型更经济。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "原子写与用户行为追加共锁、可选host writer惰性加载、预算恢复操作例外可借鉴；摘要截断与多文件恢复需保留证据边界。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对一个聊天内模拟角色，增量是持久专家会话、显式通信/预算与用户操作队列，并把状态图与真实子代理状态区分。模型/子代理归DSH，插件主要贡献在协作调度和可追踪材料，不是由专家数推导决策更好。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "汇聚和预算是否保留关键分歧并控制全部成本？aggregator按发言顺序每条160字、整体4000字符前截，后来的重要反证可能不进入摘要；预算含估计token与真实计量不同，不能当精确账单硬上限。图中骨架通道也不表示真实传输，持久写入原子不等于所有多文件事实同事务。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：摘要按主张/证据/分歧覆盖选取并保留被截反证索引，预算区分实际/估计/在途开销，可减少后发异议被淹没和账单误解。由当前截断与估计计量推导，未实现。把关键反证放末尾、专家长输出与预算边界三组对照，测主持人采纳反证率及真实费用偏差；新增摘要模型成本要单列。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342524723:root",
+          "area": "code",
+          "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:17.638Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:19:17.638Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+    "reviewed_at": "2026-10-21T04:19:17.638Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1342524723:root",
+        "area": "code",
+        "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：多Agent会议既有范式；mechanism 实质：持久节点/通信/预算状态结合；transferability 实质：协作事实与UI分离可借鉴；simplification 实质：会议界面统一，但系统复杂。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：多角色交接与人拍板；delivery 实质：会议记录/决策材料；reach 小幅：拓扑便于浏览仍需主持；economics 小幅：预算有帮助但额外模型/人审成本未测。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1342524723-root-source"
+      ]
+    }
+  }
+}

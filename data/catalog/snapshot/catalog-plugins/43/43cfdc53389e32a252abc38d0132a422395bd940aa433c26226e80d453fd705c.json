@@ -1,0 +1,304 @@
+{
+  "id": "github:1416699252:root",
+  "repository_id": 1416699252,
+  "component_id": "root",
+  "repository": "01men/ybkkasi",
+  "path": "",
+  "aliases": [],
+  "name": "元冰可 AI 资源治理平台",
+  "entry_type": "infrastructure",
+  "technical_category": "security-governance",
+  "business_category": "infrastructure",
+  "tags": [
+    "source-inspected",
+    "runtime-unverified"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "7211bbc316a9b1a44ab2573fc56debe9e43cf120c1f01f0a4448b9ef6473a5b0",
+    "code": "d42aa3bb5925f1f8be7c92337682d006484ec413",
+    "release": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "maintenance": "3c5ee4883d33d901fb78667b72be8169ed093a08fcf88d4fc035547908e59c72",
+    "compatibility": "6ed9dc0721e0b80be8d990cd773a8d9445dc3f60bba24361558c1ab75d6e1833"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1416699252-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:12:31.491Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1416699252-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/01men/ybkkasi/blob/d42aa3bb5925f1f8be7c92337682d006484ec413/README.md",
+      "revision": "d42aa3bb5925f1f8be7c92337682d006484ec413",
+      "captured_at": "2026-10-21T04:12:31.491Z",
+      "summary": "以 Cordis 插件树组织企业 AI 资源、身份权限、模型与数字员工治理。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/01men--ybkkasi/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1416699252-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/01men/ybkkasi/blob/d42aa3bb5925f1f8be7c92337682d006484ec413/src/main.ts",
+      "revision": "d42aa3bb5925f1f8be7c92337682d006484ec413",
+      "captured_at": "2026-10-21T04:12:31.491Z",
+      "summary": "核查 src/main.ts、src/boot-all.ts、packages/platform-core/src/rest-gate.ts、packages/plugin-console/src/index.ts、package.json；src/main.ts建独立Context，bootAll按依赖恢复存储/装配并检查必需服务；console中间件验证Bearer或演示主体，rest-gate消费principal注册权限声明并记录拒绝与变更审计。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/01men--ybkkasi/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读启动、bootAll、REST gate与console principal/例外路径；未审全部业务域、数据库事务与数字员工动作。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有多部门AI资源的管理员需要统一资源责任、授权与审计，交付受控访问和治理记录；单用户可先用配置文件加API网关。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "src/main.ts建独立Context，bootAll按依赖恢复存储/装配并检查必需服务；console中间件验证Bearer或演示主体，rest-gate消费principal注册权限声明并记录拒绝与变更审计。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读启动、bootAll、REST gate与console principal/例外路径；未审全部业务域、数据库事务与数字员工动作。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "根包private，独立平台入口与DSH集成形态须分别核实；不将根仓库视为任意新版DSH可安装bundle。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次配置组织/账号/域/资源迁移，持续维护权限、审计备份和升级；服务模型费用另计，现金与人工没有同条件实测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有多用户治理需求的团队先在隔离环境跑一条业务链；核对拒绝、例外入口与备份恢复，再扩部门和资源，避免把启动健康当业务验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少授权散落和资源责任不清；是否优于现成网关取决于组织规模、迁移与维护成本，无独立采用收益证据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "createRestGate以最小结构注入减少业务反向依赖，缺audit时changeLog快速失败，bootAll assertSingleRoot/probeTree拒绝装配不完整值得借鉴；身份与审计事务语义仍要配套。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对业务路由重复鉴权样板，增量是将principal、权限点、路由声明和审计主体统一到rest-gate接口，并在bootAll恢复存储后做装配健康检查。Cordis依赖树与通用RBAC归既有方法，插件贡献是企业AI资源治理接线与责任归属，不是由模块规模推导创新。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "共享gate是否证明所有入口受同一治理？console是principal构造点，bootAll也明确portal公开只读先于console，部分public path内部自校验；只审gate不能推断全入口覆盖。IMPLIED_POINTS在前端有镜像，声明与真实写副作用可能漂移；审计record调用也不等于事务已持久化，需故障恢复和越权反例。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：从routeMatrix生成主体×权限×副作用清单，再与实际存储写入/公开入口逐一比对，可更早发现漏接治理。由注册声明集中但覆盖尚未完整验证推导，未实现自动覆盖证明。选两个部门及一条MCP业务链，测试许可、拒绝、public例外、令牌吊销与审计写失败；若越权写入或无审计变更存在则否定治理闭环，维护映射人时应单列。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1416699252:root",
+          "area": "code",
+          "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:12:31.491Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:12:31.491Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "d42aa3bb5925f1f8be7c92337682d006484ec413",
+    "reviewed_at": "2026-10-21T04:12:31.491Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1416699252:root",
+        "area": "code",
+        "fingerprint": "d42aa3bb5925f1f8be7c92337682d006484ec413"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：Cordis/RBAC既有机制的治理集成；mechanism 实质：统一声明/主体/审计降低一致性维护负担但非全覆盖证明；transferability 实质：结构类型gate可迁移同契约服务；simplification 实质：收敛多路由样板，依赖身份与总线。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：组织授权与审计责任链；delivery 实质：权限矩阵与变更记录但完整性未验；reach 小幅：面向管理员，部署门槛较高；economics 小幅：可少重复维护，无运维/迁移人时对照。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1416699252-root-source"
+      ]
+    }
+  }
+}

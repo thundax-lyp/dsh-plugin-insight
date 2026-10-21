@@ -1,0 +1,299 @@
+{
+  "id": "github:1399279897:root",
+  "repository_id": 1399279897,
+  "component_id": "root",
+  "repository": "9931666/dsh-plugin-crossfire",
+  "path": "",
+  "aliases": [],
+  "name": "Crossfire 针锋",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "03ba6af0acd849f306e188c1910d8e5e6df95379979836345ee56e508e97c1bd",
+    "code": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca",
+    "maintenance": "3126c6c1c4bdc29574ae3982a6e299a9d59e52471ee7d5c425a338973fa250f1"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1399279897-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:19:16.401Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1399279897-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/9931666/dsh-plugin-crossfire/blob/a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca/README.md",
+      "revision": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca",
+      "captured_at": "2026-10-21T04:19:16.401Z",
+      "summary": "在 DSH 对定稿成果组织只读红队评审，并由用户逐条认定或驳回缺陷。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/9931666--dsh-plugin-crossfire/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1399279897-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/9931666/dsh-plugin-crossfire/blob/a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca/src/index.ts",
+      "revision": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca",
+      "captured_at": "2026-10-21T04:19:16.401Z",
+      "summary": "核查 src/index.ts、src/tools.ts、src/engine.ts、src/redteam.ts、src/rpc.ts、src/review.ts、src/state.ts、src/client/ReviewCard.tsx、package.json；tools/engine组织draft-attacking-judging-settled，members为专家配置只读allow+deny，report入transcript后拆缺陷；RPC卡片调用setDefectStatus，状态与导出独立持久化。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/9931666--dsh-plugin-crossfire/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读index/tools/engine/redteam/rpc/review/state与卡片；未执行子代理、目标测试或真实裁决。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "方案或代码已有定稿，需要不同维度挑错，交付候选缺陷、用户裁决及复审记录；不负责自动修复。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "tools/engine组织draft-attacking-judging-settled，members为专家配置只读allow+deny，report入transcript后拆缺陷；RPC卡片调用setDefectStatus，状态与导出独立持久化。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读index/tools/engine/redteam/rpc/review/state与卡片；未执行子代理、目标测试或真实裁决。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "TS源码需构建lib，面向DSH0.2与Node>=22；固定包scope与宿主API须核对。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次准备明确定稿和维度，持续专家模型、拆分与逐条人审；现金和单位有效缺陷人工时间未测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "有具体定稿要验的人先选少量维度；核对每条证据，保留驳回理由与成果版本，再决定复审，不把认定数当客观质量。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把挑错与拍板责任明确化，适合审查交接；不证明专家结论正确或覆盖完整。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "allow与deny双层限制、owner/workspace从会话推导、裁决与报告工具分离可借鉴；语义拆分和版本证据仍需人审。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对开放多Agent讨论，贡献是把红队挑错与用户裁决分离，专家只能读与报告、不能自结案，复审只核旧账。子代理与模型能力来自DSH，插件增量是评审职责/状态和可裁决缺陷材料，而非“多人一定更准”。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "只读红队与用户认定是否保证评审有效？工具白名单依赖宿主真实限制，模型仍可引用错误证据；collect拆句/去噪会改变缺陷表达。没有Agent裁决工具不等于RPC能密码学证明人点击，受信浏览器会话与owner检查是另一保证；用户采纳也不是缺陷真值。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：每缺陷绑定固定成果摘要、引用原文和可证伪断言，成果变化自动要求复审，可减少“旧版本挑错”和拆句丢条件。由当前缺陷/轮次/人裁决分层推导，未实现完整版本证据闭环。对照修复改版本、错误引用、复审未修复三类盲审，测有效缺陷率/裁决一致性与复核工时；裁决者独立于红队模型。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1399279897:root",
+          "area": "code",
+          "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:16.401Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:19:16.401Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca",
+    "reviewed_at": "2026-10-21T04:19:16.401Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1399279897:root",
+        "area": "code",
+        "fingerprint": "a6d4be3d6a6e58c54f6d7e91248ec24d7a9ccfca"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：红队评审既有方法；mechanism 实质：只读专家与裁决分权、独立状态机；transferability 实质：缺陷-裁决-复审可迁移；simplification 实质：卡片集中而不自动修复。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：人负责逐条裁决；delivery 实质：缺陷与历史复审材料；reach 小幅：GUI降低评审追踪门槛；economics 小幅：可少遗漏但多模型/人审成本未测。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1399279897-root-source"
+      ]
+    }
+  }
+}

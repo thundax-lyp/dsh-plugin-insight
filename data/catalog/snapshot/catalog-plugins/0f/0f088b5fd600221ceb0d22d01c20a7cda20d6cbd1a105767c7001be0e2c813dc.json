@@ -1,0 +1,299 @@
+{
+  "id": "github:1344715132:root",
+  "repository_id": 1344715132,
+  "component_id": "root",
+  "repository": "988hj7tczd-oss/dsh-workflow-templates",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-workflow-templates",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "6af3409464a07b6de2068ca72b1dcb8d3788a347b311028bb3b5ad74c95fef87",
+    "code": "26755f75a043418eeb3f59fa0a57a60542740abc",
+    "maintenance": "d9f83c4f448a8ca7196245d87a8b68ba7786183762c3ef015331d0b5e5525e3e"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1344715132-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:16:39.867Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1344715132-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/README.md",
+      "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+      "captured_at": "2026-10-21T04:16:39.867Z",
+      "summary": "为 DSH 提供 Workflow 模板检索、静态校验和官方工具调用起点。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-workflow-templates/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1344715132-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/src/index.ts",
+      "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+      "captured_at": "2026-10-21T04:16:39.867Z",
+      "summary": "核查 src/index.ts、src/lib/catalog.ts、src/lib/validate.ts、src/lib/render.ts、src/tools/wf-template-run.ts、templates/code-review/pr-deep-review.js、package.json；catalog加载模板索引和搜索，validate轻量检查META/模块语句/return结构，wf_template_run组装payload并探测当前Agent的workflow工具可见性，只返回素材。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-workflow-templates/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读index/catalog/validate/render/run及一个PR模板；未跑模板或官方引擎。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "明确需要多Agent编排的人选择高频模板并填参数，交付meta/script/args起点；不是自动执行工作流。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "catalog加载模板索引和搜索，validate轻量检查META/模块语句/return结构，wf_template_run组装payload并探测当前Agent的workflow工具可见性，只返回素材。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读index/catalog/validate/render/run及一个PR模板；未跑模板或官方引擎。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "TS构建与相邻dsh-src link前置；生产裸包名入口，源码相对入口不能等同成品安装。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次匹配工具/引擎版本，持续审模板输入和阶段产物；执行后模型/子代理费用另计，节省工时未测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "只有明确要workflow时再选模板；先看完整脚本和参数，检查官方工具可见与阶段输出，再在隔离任务试。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少编排样板，不能替代任务分解、审批、运行错误处理或业务验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "catalog/render/validator分离、按调用Agent探测工具、扩展字段缺失只警告可借鉴；需要真实契约兼容证据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对每次从零写编排脚本，增量是可检索的自写模板、参数提示与格式检查，并坚持由官方工具执行；引擎/子代理能力归DSH，参考结构不算插件原创引擎。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "模板校验通过是否保证官方合法和安全？轻量语法/return检查不执行真实schema或运行时序列化，未知顶层调用仅警告；run名称不代表执行。模板也会依赖工具和任务输入，不能把12个样例概括为通用流程保证。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：模板绑定宿主契约版本并用官方parser做兼容检查，再附每阶段输出断言，可减少静态通过但运行失败。由自写轻量校验与不加载官方schema推导，未实现。对计算return、未序列化对象、工具改名和失败阶段对照误接受/误拒绝及维护成本；新版本未知则标未验证。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344715132:root",
+          "area": "code",
+          "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:39.867Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:16:39.867Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+    "reviewed_at": "2026-10-21T04:16:39.867Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1344715132:root",
+        "area": "code",
+        "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：既有编排模板形态；mechanism 小幅：catalog/轻量校验；transferability 实质：参数模板可复用但宿主契约限制；simplification 实质：检索到起点集中。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：复用多阶段任务组织；delivery 小幅：脚本素材非完成结果；reach 小幅：降低编排起步门槛；economics 小幅：少重复写脚本，无运行成本测量。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344715132-root-source"
+      ]
+    }
+  }
+}

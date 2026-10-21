@@ -1,0 +1,299 @@
+{
+  "id": "github:1393980674:root",
+  "repository_id": 1393980674,
+  "component_id": "root",
+  "repository": "AFunDog/dsh-sidebar-git-graph",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-sidebar-git-graph",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "f9867833f39509aca5bde2c0539da5337ee0d67efcde1c95f204238e076a8794",
+    "code": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+    "maintenance": "42322489590ed02385f3c402f4cbd45283f0ab5200d516de810c50c78c73c22d"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1393980674-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:16:53.010Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1393980674-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/README.md",
+      "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+      "captured_at": "2026-10-21T04:16:53.010Z",
+      "summary": "在DSH右侧栏显示当前会话仓库的分支提交图、工作树和暂存区差异。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/afundog--dsh-sidebar-git-graph/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1393980674-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/git-read.js",
+      "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+      "captured_at": "2026-10-21T04:16:53.010Z",
+      "summary": "核查 lib/git-read.js、lib/repos.js；git-read.js构建只读Git argv并用NUL/RS解析；repos.js有深度/目录/数量/时间上限扫描嵌套仓库，不跟符号链接；客户端绘制泳道并展开diff。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/afundog--dsh-sidebar-git-graph/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读lib/git-read.js、lib/repos.js、lib/index.js；未覆盖全部参考/界面分支与真实并发宿主行为，未运行目标代码、外部工具或安装验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "开发者在会话中确认分支与改动归属，合格展示需明确仓库、分页和刷新时点，不能把图形完整误认作所有历史。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "git-read.js构建只读Git argv并用NUL/RS解析；repos.js有深度/目录/数量/时间上限扫描嵌套仓库，不跟符号链接；客户端绘制泳道并展开diff。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读lib/git-read.js、lib/repos.js、lib/index.js；未覆盖全部参考/界面分支与真实并发宿主行为，未运行目标代码、外部工具或安装验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT纯JS包，Git CLI必须可用，兼容better-sidebar或原生席位；无fetch/push等写操作声明已由argv抽读支持。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "初始安装与仓库识别，日常大型仓库log/diff/扫描成本与人工刷新；无性能/审阅节时实测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合会话内只读查看Git。先确认选中仓库、扫描范围和刷新，再作提交判断；图谱不是CI或代码正确性验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少上下文切换，不能替代版本控制备份或审查。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "分隔符解析与有界无符号链接扫描可借鉴；将读取与展示拆分便于验证，复用需补统一时点和异常/截断可见性。 源码依据：[lib/git-read.js](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/git-read.js)、[lib/repos.js](https://github.com/AFunDog/dsh-sidebar-git-graph/blob/4dfefb3cc465be189fa1806f0bc9a33d30006a95/lib/repos.js)。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对切换CLI或IDE，增量是将仓库身份、工作树/暂存区与历史图放到会话旁；Git事实仍来自Git，本插件不管理版本操作。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "“当前会话仓库”与图完整性是否清楚？扫描会截断并排除目录，多个只读命令并发返回也可能跨越新的提交/暂存操作。无写入避免修改仓库，却不保证一组数据来自同一时点；读图仍需看truncated与仓库选项。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由多命令快照推导，可每次加载前后读取HEAD/索引标识，不一致时标明刷新并避免拼接旧新图。未验证；高频提交/切仓库时检查视图是否混用，若不能区分则否定。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1393980674:root",
+          "area": "code",
+          "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:53.010Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:16:53.010Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "4dfefb3cc465be189fa1806f0bc9a33d30006a95",
+    "reviewed_at": "2026-10-21T04:16:53.010Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1393980674:root",
+        "area": "code",
+        "fingerprint": "4dfefb3cc465be189fa1806f0bc9a33d30006a95"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty成熟Git图适配小档；mechanism有界扫描与解析小档；transferability纯层半档；simplification就近组合半档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow查看便利小档；delivery历史视图小档；reach开发者小档；economics切换时间未测小档。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-04-github-1393980674-root-source"
+      ]
+    }
+  }
+}

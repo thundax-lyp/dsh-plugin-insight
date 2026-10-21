@@ -1,0 +1,299 @@
+{
+  "id": "github:1344714819:root",
+  "repository_id": 1344714819,
+  "component_id": "root",
+  "repository": "988hj7tczd-oss/dsh-invoice-tools",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-invoice-tools",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "office-operations",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "7cb1d0059b4f70837a7062be8c8c6847fc3dcb00789ca799e5075d6aaaa0c4a0",
+    "code": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a",
+    "maintenance": "18fb2f9912667a2da57534683870a1dda3549882a02d83b6eb2153a54fa2fcf0"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1344714819-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:14:39.177Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1344714819-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/dsh-invoice-tools/blob/b1c8ee8f6ce6573e1de06587d428d331a0cfd02a/README.md",
+      "revision": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a",
+      "captured_at": "2026-10-21T04:14:39.177Z",
+      "summary": "在本地解析电子发票字段，核对金额并汇总生成报销单资料。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-invoice-tools/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1344714819-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/dsh-invoice-tools/blob/b1c8ee8f6ce6573e1de06587d428d331a0cfd02a/src/index.ts",
+      "revision": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a",
+      "captured_at": "2026-10-21T04:14:39.177Z",
+      "summary": "核查 src/index.ts、src/pdf-extract.ts、src/invoice-model.ts、src/summary.ts、src/tools/invoice-parse.ts、src/tools/invoice-summary.ts、package.json；pdf-extract取PDF嵌入XML或文本，invoice-model候选标签/正则抽字段并核金额；parse按session缓存，summary去重汇总并经fs版本守卫写Markdown或xlsx的base64文本。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-invoice-tools/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读PDF/字段模型、parse缓存、summary渲染/写入；未用真实发票或外部查验，无财务准确率。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "个人整理含结构化XML或文本层的电子发票，交付字段核对表和报销汇总草稿；不替代真伪查验或财务审批。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "pdf-extract取PDF嵌入XML或文本，invoice-model候选标签/正则抽字段并核金额；parse按session缓存，summary去重汇总并经fs版本守卫写Markdown或xlsx的base64文本。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读PDF/字段模型、parse缓存、summary渲染/写入；未用真实发票或外部查验，无财务准确率。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "TS构建与相邻dsh-src link依赖；输出xlsx为base64文本，纯扫描票不支持OCR，须明确产物格式。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次匹配宿主并确认票据类型，持续人工核票、解码xlsx和处理缺字段；无外部查验请求费，人工/错误成本未测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先用脱敏且有XML/文本层的发票做汇总草稿；逐张核票号、买卖方与金额，确认缓存会话和.xlsx.b64解码后再交财务。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少重复录入与简单重复检查；不能证明合法报销、税务合规或发票真伪。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "XML优先与正则兜底分层、写前读取并replaceIfVersion降低覆盖冲突可借鉴；缓存身份及字段来源需要更严格保证。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对手抄票面进表格，增量是XML优先、字段缺失/金额核对与重复票汇总接入DSH，并保留来源置信标记。PDF/XML与OOXML为既有格式，本插件不是税务查验服务；“搜索0结果”不证明生态首创。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "解析高置信和xlsx输出是否等于合格报销件？XML存在不证明票真，正则可能取错编号，勾稽只检金额关系；无OCR的扫描件会跳过。xlsx实际保存为.xlsx.b64还需解码，缺session时global缓存可跨调用共享，不能把本地处理概括为严格会话隐私隔离。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：每字段保存原文位置/方法及人工确认，汇总只纳入确认字段且缓存缺session时拒绝，可减少错字段和跨会话混入。由置信度只按解析方法与global回退推导，未实现。对照错序文本、同号不同主体、扫描件和缺session，测错汇总/漏票与复核时间；不能用勾稽通过代替原票核对。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714819:root",
+          "area": "code",
+          "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:14:39.177Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:14:39.177Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a",
+    "reviewed_at": "2026-10-21T04:14:39.177Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1344714819:root",
+        "area": "code",
+        "fingerprint": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：标准发票解析在DSH适配；mechanism 小幅：XML/正则与金额核对常规；transferability 小幅：票面模板/语言有限；simplification 实质：解析到汇总统一。",
+      "basis": "interpretation",
+      "score": 30,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：减少抄录汇总交接；delivery 实质：字段核对表和报销草稿；reach 实质：自然语言工具方便个人整理；economics 小幅：可能少录入，复核工时未测。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714819-root-source"
+      ]
+    }
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "id": "github:1335332435:root",
+  "repository_id": 1335332435,
+  "component_id": "root",
+  "repository": "AI-Galaxy-GPU/dsh-sound",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-sound",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "e1ae4bf9a55eb1d6778a91ae81cb1fdf5acb0c45bcc765f04a460d87fd28d660",
+    "code": "aa7be415ee34570bd1c834da9d8a500e85401583",
+    "maintenance": "d29947e1d8c7e36d6126eb437ff4cf8e3c36a731d99254a49b19cc7f675e7863"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1335332435-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:19:23.910Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1335332435-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/README.md",
+      "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
+      "captured_at": "2026-10-21T04:19:23.910Z",
+      "summary": "在DSH网页中按任务完成、审批、提问、阻塞和失败事件播放可定制提示音。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/ai-galaxy-gpu--dsh-sound/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1335332435-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/index.js",
+      "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
+      "captured_at": "2026-10-21T04:19:23.910Z",
+      "summary": "核查 lib/index.js、lib/client.js；client.js监听mux/host事件并回退快照差分，按rpcId/sourceKey去重，BroadcastChannel以40ms随机nonce协商单标签播放；音频本地IndexedDB、配置localStorage。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/ai-galaxy-gpu--dsh-sound/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "用户离开当前聊天视线时需要知道何时介入，合格通知应少漏报/重复且区分子Agent，声音响不代表业务成功。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "client.js监听mux/host事件并回退快照差分，按rpcId/sourceKey去重，BroadcastChannel以40ms随机nonce协商单标签播放；音频本地IndexedDB、配置localStorage。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT网页音频插件，host设置预留但当前浏览器本地配置，跨设备不自动同步。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无模型或网络音频费；首次选音和浏览器音频授权，持续通知噪声与本地音频存储成本，未测节省等待时间。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合多任务用户先以主Agent事件试用。验证背景标签、重载和静音行为，审批与问题仍回界面查看，别靠铃声判断任务已验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可减少盯屏，但漏通知/告警疲劳需真实工作负载评估。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "事件分类、回放抑制与音频存储分离可借鉴；固定40ms协商及浏览器后台限制应作为尽力而为边界。 源码依据：[lib/index.js](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/index.js)、[lib/client.js](https://github.com/AI-Galaxy-GPU/dsh-sound/blob/aa7be415ee34570bd1c834da9d8a500e85401583/lib/client.js)。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对仅完成铃，增量是人类介入事件分类、子Agent分流与跨标签抑制噪声；不改变后台任务执行或审批结果。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "跨标签“只响一次”是否无条件？协商依赖BroadcastChannel及时到达和已发现peer，未发现时立即播放；多个新标签同时收到事件仍需真实调度验证。浏览器音频策略/静音也可能导致未响，不能把脚本调用当用户听见。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由事件ID与协商推导，可增加用户可见通知收据和声音自检，明确重播恢复/未播放原因；跨标签用租约而非短时随机窗口。未验证；后台节流/同时开标签/权限拒绝时测漏重报，若不改善则否定。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335332435:root",
+          "area": "code",
+          "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:23.910Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:19:23.910Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
+    "reviewed_at": "2026-10-21T04:19:23.910Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335332435:root",
+        "area": "code",
+        "fingerprint": "aa7be415ee34570bd1c834da9d8a500e85401583"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty通知适配小档；mechanism分类去重小档；transferability事件通知模式半档；simplification音频聚合半档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow介入提醒小档；delivery声音反馈小档；reach离屏用户小档；economics未改成本结构0。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-04-github-1335332435-root-source"
+      ]
+    }
+  }
+}

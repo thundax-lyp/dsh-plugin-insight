@@ -1,0 +1,17 @@
+{
+  "id": "github:1367597810:root",
+  "repository": "99galaxy/dsh-plugin-market",
+  "path": "",
+  "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+  "fingerprints": {
+    "directory": "74ed71f8fc3c00f706e6b1e7be80fbf9035aaf7dffb0a770d02006f43c51791f",
+    "code": "b97664510aafd55a74f17e304e271956f1c07659",
+    "maintenance": "76ecee8e8c1d5745cbb80bb03fddefd0b02344849fa0af55f8d36f46c5d57c39"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "afbb40c02d9f6917e580ca9ccb2381679d310b8368c1dd866d8269eb8b2c7456"
+}

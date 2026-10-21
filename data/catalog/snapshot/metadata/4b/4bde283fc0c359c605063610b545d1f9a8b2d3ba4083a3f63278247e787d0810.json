@@ -1,0 +1,52 @@
+{
+  "repository": "988hj7tczd-oss/dsh-mcp-tunnel",
+  "repository_id": 1344713826,
+  "captured_at": "2026-10-21T04:11:02.579Z",
+  "window_start": "2026-09-21T04:11:02.579Z",
+  "stars": 0,
+  "pushed_at": "2026-08-24T14:53:28Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-mcp-tunnel%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A246:E6488:55B23B:5AAAB2:6AD83B58 and timestamp 2026-10-21 04:11:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-mcp-tunnel%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A3BA:16071B:466001:4B54CF:6AD83B59 and timestamp 2026-10-21 04:11:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-mcp-tunnel%20is%3Aissue%20created%3A2026-09-21T04%3A11%3A02.579Z..2026-10-21T04%3A11%3A02.579Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A4C6:26E54B:442557:4917B9:6AD83B59 and timestamp 2026-10-21 04:11:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-mcp-tunnel%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T04%3A11%3A02.579Z..2026-10-21T04%3A11%3A02.579Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A5DA:44870:462531:4B199C:6AD83B5A and timestamp 2026-10-21 04:11:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-mcp-tunnel%20is%3Aissue%20updated%3A2026-09-21T04%3A11%3A02.579Z..2026-10-21T04%3A11%3A02.579Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A6F2:10A7AB:433EA2:4833A5:6AD83B5B and timestamp 2026-10-21 04:11:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-mcp-tunnel",
+    "captured_at": "2026-10-21T04:11:07.811Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 778,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-mcp-tunnel",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-24T10:53:49.497Z",
+      "captured_at": "2026-10-21T04:11:07.811Z",
+      "source_url": "https://registry.npmjs.org/dsh-mcp-tunnel",
+      "error": null
+    }
+  }
+}

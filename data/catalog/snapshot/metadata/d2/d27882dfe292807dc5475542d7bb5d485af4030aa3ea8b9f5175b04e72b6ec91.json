@@ -1,0 +1,52 @@
+{
+  "repository": "988hj7tczd-oss/dsh-math-olympiad",
+  "repository_id": 1344714964,
+  "captured_at": "2026-10-21T04:10:58.251Z",
+  "window_start": "2026-09-21T04:10:58.251Z",
+  "stars": 3,
+  "pushed_at": "2026-08-24T14:53:50Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-math-olympiad%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9BCE:264749:441134:49074A:6AD83B53 and timestamp 2026-10-21 04:11:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-math-olympiad%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9CFA:52C57:429E0D:4792B9:6AD83B54 and timestamp 2026-10-21 04:11:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-math-olympiad%20is%3Aissue%20created%3A2026-09-21T04%3A10%3A58.251Z..2026-10-21T04%3A10%3A58.251Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9E06:10E8BA:49CA1A:4EC095:6AD83B55 and timestamp 2026-10-21 04:11:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-math-olympiad%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T04%3A10%3A58.251Z..2026-10-21T04%3A10%3A58.251Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9F80:26E54B:4422D4:491508:6AD83B56 and timestamp 2026-10-21 04:11:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-math-olympiad%20is%3Aissue%20updated%3A2026-09-21T04%3A10%3A58.251Z..2026-10-21T04%3A10%3A58.251Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A0D2:26E19B:4389F5:487E11:6AD83B57 and timestamp 2026-10-21 04:11:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-math-olympiad",
+    "captured_at": "2026-10-21T04:11:03.380Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 108,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-math-olympiad",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-24T10:53:13.451Z",
+      "captured_at": "2026-10-21T04:11:03.380Z",
+      "source_url": "https://registry.npmjs.org/dsh-math-olympiad",
+      "error": null
+    }
+  }
+}
