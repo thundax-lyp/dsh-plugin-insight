@@ -1,7 +1,0 @@
-{
-  "revision": "072612e0245565cee12cbfd07a421f2029d35c4e",
-  "items": {
-    "Host 路由": "Typert提供本地笔记检索、读原文与chatStart/Poll/Stop",
-    "后台": "BM25/CJK bigram索引和增量更新"
-  }
-}

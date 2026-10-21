@@ -1,5 +1,0 @@
-{
-  "text": "按依赖分波，在 Git worktree 中执行任务包，并提供评审、集成、状态观察与恢复。",
-  "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
-  "source_url": "https://github.com/february2015/dsh-taskswarm/blob/032e2c9d228c20cab65fe0ea061d78a7c753ab8c/README.md"
-}

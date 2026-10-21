@@ -1,7 +1,0 @@
-{
-  "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
-  "items": {
-    "界面": "窄屏/悬浮窗布局与导航按钮。",
-    "事件监听": "点击、focusin、viewport resize及会话导航。"
-  }
-}

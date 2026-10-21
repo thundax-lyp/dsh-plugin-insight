@@ -1,5 +1,0 @@
-{
-  "text": "对已有逐条评分执行三态阈值判定，保存并复验绑定输入与策略的回执。",
-  "revision": "5299b64087bbfa5beef6ae2e336045468f1af01d",
-  "source_url": "https://github.com/4444wjt/dsh-plugin-veriscope/blob/5299b64087bbfa5beef6ae2e336045468f1af01d/README.md"
-}

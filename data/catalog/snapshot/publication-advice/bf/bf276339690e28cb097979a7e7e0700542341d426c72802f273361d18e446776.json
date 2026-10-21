@@ -1,4 +1,0 @@
-{
-  "revision": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9",
-  "text": "适合已配rclone的只读盘点，先限定allowedRemotes和目录规模；需要传输、删除或完整清单验收时另选流程。"
-}

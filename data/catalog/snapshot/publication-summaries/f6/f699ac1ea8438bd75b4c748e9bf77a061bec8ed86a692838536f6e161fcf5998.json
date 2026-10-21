@@ -1,5 +1,0 @@
-{
-  "text": "检查DSH的Shell工具调用，将识别到的删除改写为回收站操作，无法安全处理时拒绝。",
-  "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
-  "source_url": "https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/README.md"
-}

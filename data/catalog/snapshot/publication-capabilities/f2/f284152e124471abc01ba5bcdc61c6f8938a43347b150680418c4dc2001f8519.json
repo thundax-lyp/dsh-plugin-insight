@@ -1,7 +1,0 @@
-{
-  "revision": "7aa05c4557e010c8d6decb16e96b05de36e1196a",
-  "items": {
-    "模型工具": "ledger_triage、ledger_compact、ledger_recall 等台账工具（源码定义）",
-    "后台": "活跃台账注入、压缩胶囊与归档流程"
-  }
-}

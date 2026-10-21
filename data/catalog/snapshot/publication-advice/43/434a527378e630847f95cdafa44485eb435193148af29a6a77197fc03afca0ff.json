@@ -1,4 +1,0 @@
-{
-  "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
-  "text": "可在独立Profile试验工具deny/ask与审计。先验证规则生效、日志写盘失败和运行中quota_set，配额当前只能当提示与估算，不能据此承诺费用封顶。"
-}

@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 import { ROOT, read, digest, atomicWrite } from '../../_shared/scripts/plugin-data.mjs';
 import { validateSession } from './research-session.mjs';
 import { CATALOG, PUBLICATION, REGISTRY, MIGRATION, slug } from '../../_shared/scripts/data-paths.mjs';
+import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { verifyCleanup } from './maintain-runs.mjs';
 const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const walk = (dir) =>
@@ -16,8 +17,25 @@ const readBytes = (p) => readFileSync(resolve(ROOT, p));
 export function verifyMigration() {
     const audit = read(resolve(ROOT, MIGRATION));
     const retired = verifyCleanup();
+    const storageRetired = new Set(audit.component_storage?.retired ?? []);
+    if (storageRetired.size) {
+        if (
+            audit.component_storage.schema_version !== 3 ||
+            [...storageRetired].some(
+                (path) =>
+                    ![
+                        'data/catalog/SNAPSHOT.json',
+                        'data/catalog/PLUGINS.json',
+                        'data/catalog/PUBLICATION.json',
+                        'data/catalog/PLUGIN-PATHS.json'
+                    ].includes(path)
+            )
+        )
+            throw Error('invalid component storage retirement audit');
+        readSnapshotStorage(resolve(ROOT, 'data/catalog/index.jsonl'));
+    }
     for (const record of audit.files) {
-        if (!retired.has(record.to) && !existsSync(resolve(ROOT, record.to)))
+        if (!retired.has(record.to) && !storageRetired.has(record.to) && !existsSync(resolve(ROOT, record.to)))
             throw Error(`missing migrated file: ${record.to}`);
         if (sha(readBytes(record.original_copy ?? record.to)) !== record.original_sha256)
             throw Error(`original evidence changed: ${record.from}`);

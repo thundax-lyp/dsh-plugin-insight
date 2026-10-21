@@ -1,8 +1,0 @@
-{
-  "revision": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc",
-  "items": {
-    "事件监听": "消费contextPressure、turn/end和compaction事件。",
-    "界面": "占用徽标与阈值提醒。",
-    "后台": "按配置写机器事实交接草稿。"
-  }
-}

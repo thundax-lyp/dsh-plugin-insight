@@ -1,8 +1,0 @@
-{
-  "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
-  "items": {
-    "Host 路由": "POST /file-drop/locate执行本地路径定位与摘要比对。",
-    "界面": "全局拖放覆盖层、路径芯片、发送/移除按钮和错误提示。",
-    "事件监听": "浏览器drag/drop、Enter与pointerdown，在提交前把路径写入input服务。"
-  }
-}

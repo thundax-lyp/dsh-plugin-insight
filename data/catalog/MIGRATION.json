@@ -985,5 +985,18 @@
       "original_sha256": "75fd5815b640407bbc1b488fffd03940b3588aa97a13e58fe6a051406066cee8",
       "migrated_sha256": "75fd5815b640407bbc1b488fffd03940b3588aa97a13e58fe6a051406066cee8"
     }
-  ]
+  ],
+  "component_storage": {
+    "schema_version": 3,
+    "semantic_digest": "588412e0cf5253b68b7a8553462bd5338ab678b6530676fe7e044e951df94bc8",
+    "backup": "data/runs/2026-10-21-08/migration-originals/catalog-v2",
+    "retired": [
+      "data/catalog/SNAPSHOT.json",
+      "data/catalog/PLUGINS.json",
+      "data/catalog/PUBLICATION.json",
+      "data/catalog/PLUGIN-PATHS.json"
+    ],
+    "removed_snapshot_objects": 4305,
+    "removed_generated_meta": 404
+  }
 }

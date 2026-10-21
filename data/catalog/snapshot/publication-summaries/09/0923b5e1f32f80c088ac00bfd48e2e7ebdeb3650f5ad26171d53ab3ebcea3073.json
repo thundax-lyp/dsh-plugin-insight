@@ -1,5 +1,0 @@
-{
-  "text": "在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。",
-  "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
-  "source_url": "https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/README.md"
-}

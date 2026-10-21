@@ -1,6 +1,0 @@
-{
-  "revision": "d969899808e51dcccd261588f667b18633020fca",
-  "items": {
-    "模型工具": "MCP提供verify_spec、verify_url、generate_and_verify和health，CLI规范执行另见正文"
-  }
-}

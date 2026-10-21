@@ -1,4 +1,0 @@
-{
-  "revision": "dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd",
-  "text": "适合已有可靠目标坐标的Windows用户在无破坏性窗口先检查。必须查看isForeground与cursorMatches，并回读应用结果；混合DPI、多屏和失焦场景验证前不要依赖ok作成功判据。"
-}

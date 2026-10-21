@@ -1,4 +1,0 @@
-{
-  "revision": "7ad45d3db6672fb07ab909135c3c479ee5dee72a",
-  "text": "适合已使用 dsh-wsl-kit 的 Windows 用户；显式设置 kitPath，先从快捷方式实际启动一次，再依赖托盘恢复，不把生成脚本成功当启动成功。"
-}

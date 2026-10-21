@@ -1,4 +1,0 @@
-{
-  "revision": "5a6f71031271a53d6e16abd267c59fbc69685a92",
-  "text": "适合多发行版开发者，先核对current/default与UNC路径，再在目标发行版确认文件存在。"
-}

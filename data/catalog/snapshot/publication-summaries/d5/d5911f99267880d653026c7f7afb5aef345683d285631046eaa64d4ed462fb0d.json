@@ -1,5 +1,0 @@
-{
-  "text": "给 DSH 模型提供 rename_session 工具，设置当前或已加载会话的显式标题。",
-  "revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
-  "source_url": "https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/README.md"
-}

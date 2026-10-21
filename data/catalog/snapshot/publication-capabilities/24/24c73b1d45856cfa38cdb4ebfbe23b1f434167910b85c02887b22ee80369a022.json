@@ -1,7 +1,0 @@
-{
-  "revision": "bc592147401c7697749390eb6a2a6cddd42af747",
-  "items": {
-    "模型工具": "feed_sync、feed_search、feed_stats",
-    "后台": "本地JSON索引及实验性stdio MCP"
-  }
-}

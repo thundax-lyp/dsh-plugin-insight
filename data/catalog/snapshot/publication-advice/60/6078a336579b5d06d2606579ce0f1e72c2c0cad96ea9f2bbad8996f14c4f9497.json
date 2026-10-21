@@ -1,4 +1,0 @@
-{
-  "revision": "bea57df86854983d90c8ac9219d15db1235c1652",
-  "text": "先仅开放ps/logs并配置明确根目录，在测试项目验证路径；需要up/down时先人工审阅Compose文件并保留运行状态。"
-}

@@ -1,5 +1,0 @@
-{
-  "text": "比较WSL与Windows的IPv4解析结果，读取nameserver并提供DNS、VPN与网络排查提示。",
-  "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
-  "source_url": "https://github.com/173787247/dsh-wsl-dns/blob/04d6ff1aff856dd22b78c53013a9286efa0ddc35/README.md"
-}

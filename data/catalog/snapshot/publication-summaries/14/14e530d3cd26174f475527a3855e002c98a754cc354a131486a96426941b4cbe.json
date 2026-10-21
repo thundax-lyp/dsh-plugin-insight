@@ -1,5 +1,0 @@
-{
-  "text": "将 DSH 输入框未发送的附件保存到 IndexedDB，并在会话输入区重挂载时恢复。",
-  "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
-  "source_url": "https://github.com/2026heshao/dsh-draft-attachments/blob/f285e67bab926ee3083ee7b3858aa28a6092ec8a/README.md"
-}

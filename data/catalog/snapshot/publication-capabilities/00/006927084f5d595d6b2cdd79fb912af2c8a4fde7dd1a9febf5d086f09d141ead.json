@@ -1,9 +1,0 @@
-{
-  "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
-  "items": {
-    "模型工具": "kimi_harness_turn为本地嵌入式执行传输入口。",
-    "Host 路由": "connection /harness-switch提供设置/模型/执行视图RPC。",
-    "事件监听": "原生prompt装配与Agent作用域接入传输adapter。",
-    "后台": "embedded Kimi执行核心管理会话/工具/Skills/MCP/压缩，上游归属明确。"
-  }
-}

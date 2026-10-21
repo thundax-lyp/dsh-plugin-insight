@@ -1,4 +1,0 @@
-{
-  "revision": "bc5454d19624f5f7575e841c6d62d47cbbdb2411",
-  "text": "先确认模型和服务地址，测试prompt与messages两条输入路径，不把字符上限当完整上下文保证。"
-}

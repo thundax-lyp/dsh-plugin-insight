@@ -1,8 +1,0 @@
-{
-  "revision": "37d95b1820bb77e97a3efc8fe3cbbeb2e5c7a0d1",
-  "items": {
-    "Skill": "数学建模流程与模型库。",
-    "Agent/Preset": "UltraMath主控和阶段角色预设。",
-    "后台": "启动同步预设、模板与技能并公告。"
-  }
-}

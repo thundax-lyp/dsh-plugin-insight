@@ -1,7 +1,0 @@
-{
-  "revision": "f6e5e0845c42e2b09a7a8d671a66b331fe094634",
-  "items": {
-    "界面": "Dock文本编辑与默认文件viewer",
-    "Host 路由": "/desk-editor/fs.read和fs.write"
-  }
-}

@@ -1,5 +1,0 @@
-{
-  "text": "从WSL读取Windows宿主CPU、内存、磁盘及高内存进程指标。",
-  "revision": "c6aac1e77224a9a81a1103ba199bd6b5785e654c",
-  "source_url": "https://github.com/173787247/dsh-wsl-perf/blob/c6aac1e77224a9a81a1103ba199bd6b5785e654c/README.md"
-}

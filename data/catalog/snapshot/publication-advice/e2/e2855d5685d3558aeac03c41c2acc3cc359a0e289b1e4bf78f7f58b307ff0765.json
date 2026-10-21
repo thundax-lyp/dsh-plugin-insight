@@ -1,4 +1,0 @@
-{
-  "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-  "text": "已有Go模块可试。先核gopls PATH和go.mod，再测接口实现与跨包引用，测试skip应单独查看。"
-}

@@ -1,5 +1,0 @@
-{
-  "text": "在Windows设置中启用一次性触发，在根会话轮次结束后安排关机并提供取消倒计时。",
-  "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
-  "source_url": "https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/README.md"
-}

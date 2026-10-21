@@ -1,7 +1,0 @@
-{
-  "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
-  "items": {
-    "用户命令": "任务编译、relay、ack 与缺口回答。",
-    "模型工具": "任务书写入工具。"
-  }
-}

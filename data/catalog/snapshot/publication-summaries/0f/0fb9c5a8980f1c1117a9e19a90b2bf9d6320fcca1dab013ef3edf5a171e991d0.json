@@ -1,5 +1,0 @@
-{
-  "text": "为 DSH 提供聚合网页搜索 provider，合并多个后端结果并支持过滤、缓存和故障降级。",
-  "revision": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
-  "source_url": "https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/README.md"
-}

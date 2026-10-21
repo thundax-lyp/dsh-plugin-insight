@@ -1,5 +1,0 @@
-{
-  "text": "根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。",
-  "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
-  "source_url": "https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/README.md"
-}

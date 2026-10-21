@@ -1,8 +1,0 @@
-{
-  "revision": "3e251eb78002625bcc238a42d9926d87c3a38bfe",
-  "items": {
-    "Skill": "总纲及需求/计划/TDD/子代理/验证六个Skill。",
-    "Agent/Preset": "engineering-workflow工程预设与宿主工具组合。",
-    "后台": "预设字节同步和工作流公告。"
-  }
-}

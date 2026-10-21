@@ -1,5 +1,0 @@
-{
-  "text": "在DSH界面添加WSL工作区，让会话的命令和文件工具使用Linux路径与发行版环境。",
-  "revision": "00106d9575d8d087daec0596dd51f283f78dcdbb",
-  "source_url": "https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/00106d9575d8d087daec0596dd51f283f78dcdbb/README.md"
-}

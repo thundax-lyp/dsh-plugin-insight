@@ -1,4 +1,0 @@
-{
-  "revision": "e42e1dc23a89ea7cc87474dcd5d8c610b37c651b",
-  "text": "适合已有 vLLM 服务的人做少量文本任务试用；先查 reachable 和 model，长提示自行拆分，不把 status.ok 当服务健康或完整回答保证。"
-}

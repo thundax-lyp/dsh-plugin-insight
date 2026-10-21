@@ -1,7 +1,0 @@
-{
-  "revision": "de3911b18e4ecc9ec1bad7709c66c45b62c57f46",
-  "items": {
-    "界面": "麦克风与热键语音输入",
-    "后台": "宿主原生ASR及浏览器回退，partial/final结果"
-  }
-}

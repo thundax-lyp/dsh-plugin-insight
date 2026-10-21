@@ -1,4 +1,0 @@
-{
-  "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-  "text": "先核当前Ruby与Gemfile，再选择全局或bundle启动并测跨文件；单文件模式结果不要外推完整项目。"
-}

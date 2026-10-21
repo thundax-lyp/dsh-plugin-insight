@@ -1,7 +1,0 @@
-{
-  "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
-  "items": {
-    "模型工具": "daily_log 派发器按 agent 启用报告工具组。",
-    "用户命令": "/report 接收报告需求并转交模型。"
-  }
-}

@@ -1,5 +1,0 @@
-{
-  "text": "管理多套MySQL连接，为会话提供选库入口及查询、表结构、数据写入和DDL工具。",
-  "revision": "7848bba53cccfe9e365a8fd46baa6d6883a29b78",
-  "source_url": "https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/README.md"
-}
