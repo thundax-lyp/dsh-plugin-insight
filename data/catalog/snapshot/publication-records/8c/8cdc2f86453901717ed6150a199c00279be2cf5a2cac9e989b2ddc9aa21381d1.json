@@ -1,0 +1,17 @@
+{
+  "id": "github:1341946801:root",
+  "repository": "AbelKeithsun/dsh-question-nav",
+  "path": "",
+  "revision": "29e7e487235bdbcba13768f1a009ecd2089d6faa",
+  "fingerprints": {
+    "directory": "73dbfd6fe7169168729f04594bd36f5ee1962e67b789379ea44504f7c930f274",
+    "code": "29e7e487235bdbcba13768f1a009ecd2089d6faa",
+    "maintenance": "3e3316e4e386133c259787d8d0da7c02ea9c811dd69746b5137f3af2e50e5eb9"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "8738526b766cf786898979f777f490420636682da1852197695ffb5b631916cf"
+}

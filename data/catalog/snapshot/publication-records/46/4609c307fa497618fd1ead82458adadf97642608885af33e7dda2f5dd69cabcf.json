@@ -1,0 +1,17 @@
+{
+  "id": "github:1335798113:packages-messaging-core",
+  "repository": "534119219/dsh-messaging",
+  "path": "packages/messaging-core",
+  "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
+  "fingerprints": {
+    "directory": "9bec3b5be9453e4fa48fbd42e4e36993802f7bc15a2f1a1e0d02eba93a02f06e",
+    "code": "f1c3399ef40e3f419161d153e997d6f30576a627",
+    "maintenance": "1226f769ca0536ef42ee03d1d60be2e9175463101b58f595e0bed5c088046948"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "49caf8602d9b8e5340ae803442eba89674fb0a6e5c569a0be8d86ee186d97402"
+}

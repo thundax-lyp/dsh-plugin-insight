@@ -1,0 +1,337 @@
+{
+  "id": "github:1396768359:root",
+  "repository_id": 1396768359,
+  "component_id": "root",
+  "repository": "2JumpSinA/dsh-context-guard",
+  "path": "",
+  "aliases": [],
+  "name": "上下文交接提醒",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "100642ac37ab20da3ea80fdfebbf77d8fc5a57ed716d59b2a73456b503ef6e8d",
+    "code": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc",
+    "maintenance": "06a6d403cefbf8a8e7682468f06373eea2decf9012bf470348b64768bbc18d6d"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1396768359-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:11:03.818Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1396768359-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/README.md",
+      "revision": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc",
+      "captured_at": "2026-10-21T02:11:03.818Z",
+      "summary": "消费上下文占用投影，显示提醒并在工作目录生成机器事实交接草稿。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/2jumpsina--dsh-context-guard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1396768359-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/2JumpSinA/dsh-context-guard/blob/a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc/lib/index.js",
+      "revision": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc",
+      "captured_at": "2026-10-21T02:11:03.818Z",
+      "summary": "核查 lib/index.js、lib/engine.mjs、lib/policy.mjs、lib/handover.mjs、package.json；宿主从 contextPressure 投影驱动纯事件状态机，迟滞、冷却和压缩标记集中处理；wire投影供UI只读展示。handover模块在阈值跨越时写机器事实块，包含成本、路径和部分消息预览。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/2jumpsina--dsh-context-guard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查宿主/纯状态机/策略和交接写入模块，未复现作者账本与真实UI；注释中的历史实测不是本轮执行。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "长期进行代码或研究会话的用户，在上下文过长前交接任务；交付物是占用提醒与仍需补全的HANDOVER草稿，而不是自动完整迁移的会话。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "宿主从 contextPressure 投影驱动纯事件状态机，迟滞、冷却和压缩标记集中处理；wire投影供UI只读展示。handover模块在阈值跨越时写机器事实块，包含成本、路径和部分消息预览。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查宿主/纯状态机/策略和交接写入模块，未复现作者账本与真实UI；注释中的历史实测不是本轮执行。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "源码包名@2jumpsina/dsh-context-guard，不能安装同名非scope第三方包；当前仅源码核查，无本轮真实宿主测量。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无需新增模型调用但有文件写入、信息核对、交接补全和新会话恢复成本。首次确认默认路径、忽略规则与隐私范围；作者人民币统计未独立复现。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合愿意主动交接的长会话用户先用临时目录验证；先决定是否允许默认写入，再评估提醒阈值，不能将草稿当作已办结交接。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "真正价值可能是把交接提前且明确责任，而非承诺某比例省费；短任务或压缩已足够时新增提醒可能增加打断。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "engine纯fold和host/client职责分离值得借鉴，hysteresis限制避免无法解除武装；handover模块的原子写与符号链接拒绝需目标文件系统验收。注释存在旧语义，代码与文档要联合看。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对盯着token数字，新增“判断状态→提醒→交接草稿”的动作链；纯fold与只读UI让提示策略有单一所有者。token计量来自官方meter，非插件自行测量；零额外模型请求可由接线支持，但“零总成本”不能由此推出。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核心质疑是提前换会话是否真的降低合格任务总成本。作者单机账本是反事实估算，重新解释任务和修复交接遗漏也耗token与人时。README顶部称轮末提醒，后文明示在投影变化时判定，不能承诺绝不在轮中。默认写HANDOVER还可能把敏感片段带入仓库。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：按“交接后恢复任务所需最小事实”检测草稿完整度，再结合实际接续成本调阈值，可能比统一45/60%更有效。由机器事实草稿留有待填槽位、单机阈值非最优推导；该完整度检查若调用模型会破坏零请求条件。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1396768359:root",
+          "area": "code",
+          "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:03.818Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:11:03.818Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc",
+    "reviewed_at": "2026-10-21T02:11:03.818Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1396768359:root",
+        "area": "code",
+        "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：计量来自上游，新意是提醒与机器事实交接组合。 mechanism：纯fold和单一判定所有权减少双端策略漂移，效果未跑。 transferability：状态机可用于其他压力提醒，投影和交接需适配。 simplification：不追加模型请求即可生成事实草稿，语义补全仍人工。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：把交接从事后回忆提前为阈值动作，实际用户行为未证。 delivery：形成机器事实草稿和压缩回执，非完整语义交接。 reach：降低用户自行读账本门槛，仍需理解阈值。 economics：零额外调用是局部成本性质，总节省未验证。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-01-github-1396768359-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "愿主动交接的长会话用户可先在临时目录试用；明确HANDOVER写入、保留和分享范围，补齐草稿后比较真实接续成本。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "长会话提前接续目标清楚，短任务可能只增打断。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "状态机提醒联动事实草稿，比只盯token多一步可执行交接。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "contextPressure与纯fold接线支持零新增模型请求，作者节费未复现。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "无额外模型调用，默认写文件和草稿补全仍耗人力。"
+      }
+    },
+    "score": 70,
+    "revision": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-01-github-1396768359-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1396768359:root",
+        "area": "code",
+        "fingerprint": "a889e8c0c8c8b0ff86df2c016bf4da2da2b123fc"
+      }
+    ]
+  }
+}

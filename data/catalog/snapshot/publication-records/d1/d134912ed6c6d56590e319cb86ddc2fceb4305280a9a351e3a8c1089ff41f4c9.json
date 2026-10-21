@@ -1,0 +1,17 @@
+{
+  "id": "github:1346533795:root",
+  "repository": "Aik358/dsh-cua-pre",
+  "path": "",
+  "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+  "fingerprints": {
+    "directory": "d0c7b6bbd52199346c8f9dabffea64eab81266744336f8ebfd43bfa7a1713f23",
+    "code": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+    "maintenance": "f4c2f71e8314030babe6582480ddf2f8b1ad7455973d7a618490dbb8f62bacc1"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "11887094471674870bcf8fc87db6e814b57bd81728ff3339c40c5500d14987c0"
+}

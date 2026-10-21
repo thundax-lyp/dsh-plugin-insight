@@ -1,0 +1,17 @@
+{
+  "id": "github:1336994666:root",
+  "repository": "1070296335-create/dph-taskboard",
+  "path": "",
+  "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+  "fingerprints": {
+    "directory": "a5c9face93f92e36fcf6937b10268c4e9a6a97c13b9fbaa48dea89829348e27d",
+    "code": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+    "maintenance": "6a58431095addb8dd43d3ea639b738cab36b17ed70b923cc23ab755de78e6668"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "69c4ecd2217320cadc325d8148d641233b1be8b2eecd89f8a19922fa05070910"
+}

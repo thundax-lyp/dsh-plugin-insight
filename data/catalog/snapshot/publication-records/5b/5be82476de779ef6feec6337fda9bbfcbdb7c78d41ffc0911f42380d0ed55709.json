@@ -1,0 +1,17 @@
+{
+  "id": "github:1381221232:root",
+  "repository": "1jiegejiayouxuewangan1/dsh-desktop-uia",
+  "path": "",
+  "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+  "fingerprints": {
+    "directory": "4dc5ef6281c30dc1c0976a0cd4440d843fe8199347eb0de576c3d1a46d6096ff",
+    "code": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+    "maintenance": "8de2e6fc28fc13be7879f3e5f55831369ee6facc29c21ecf2177aec69f63042f"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "302574ad0207e45b82e9e4a837c32cd5a20bb12e9d23b35b1686a169be441ce7"
+}

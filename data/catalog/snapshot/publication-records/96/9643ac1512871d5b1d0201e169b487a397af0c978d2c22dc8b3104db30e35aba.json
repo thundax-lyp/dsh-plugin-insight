@@ -1,0 +1,17 @@
+{
+  "id": "github:1363429979:plugin-usage-billing",
+  "repository": "0x7A7A6572/dsh-forge-studio",
+  "path": "packages/plugin-usage-billing",
+  "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+  "fingerprints": {
+    "directory": "0382ee14da358d813b8b3919d5bb9e5f2b3a5fdbdff1b99e3f5b69f0d3960327",
+    "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+    "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "e156749c5adf66c0508084ec2f22d3f16ddfb5533bd28c16181ec4feca97a587"
+}

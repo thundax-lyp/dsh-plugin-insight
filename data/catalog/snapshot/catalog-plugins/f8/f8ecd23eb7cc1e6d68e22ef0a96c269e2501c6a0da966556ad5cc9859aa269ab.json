@@ -1,0 +1,337 @@
+{
+  "id": "github:1424475406:root",
+  "repository_id": 1424475406,
+  "component_id": "root",
+  "repository": "58fly/dsh-language-guard",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-language-guard",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "1569aec32eaf6da93b37e5c4574d0c92f1d8c10c233bee2326f8dfc13e38b1de",
+    "code": "9351078c5d264033c49d221742840aee673c0cdf",
+    "maintenance": "ccd931f28d1607e9f4829545c35774d31341c30dea902d1f87fa233273dc71b0"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1424475406-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:02:19.660Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1424475406-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/58fly/dsh-language-guard/blob/9351078c5d264033c49d221742840aee673c0cdf/README.md",
+      "revision": "9351078c5d264033c49d221742840aee673c0cdf",
+      "captured_at": "2026-10-21T08:02:19.660Z",
+      "summary": "以可配置提示片段、语言命令和周期提醒约束 DSH 输出语言。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/58fly--dsh-language-guard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1424475406-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/58fly/dsh-language-guard/blob/9351078c5d264033c49d221742840aee673c0cdf/lib/index.js",
+      "revision": "9351078c5d264033c49d221742840aee673c0cdf",
+      "captured_at": "2026-10-21T08:02:19.660Z",
+      "summary": "核查 lib/index.js、lib/language.js、lib/cycle.js、lib/commands.js、lib/state.js、lib/text.js、package.json；head/mid/tail稳定section动态取语言与B/C/D强度；auto从settings locale.preference解析，manual保留配置，空串模式哨兵保护旧配置。D档在顶层会话的命中轮首step、真实输入存在时插入带language-guard来源的notice，并保留下游决策字段。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/58fly--dsh-language-guard/REVIEWED-SOURCE.json",
+      "limitations": [
+        "根组件提示装配、文本、语言解析、状态、命令和周期注入；未核不可见推理语言或作者测量的漂移率收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "长对话含英文工具说明与代码时，用户希望固定回答语言；合格交付是保留原始代码/引用而让说明遵循目标语言。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "head/mid/tail稳定section动态取语言与B/C/D强度；auto从settings locale.preference解析，manual保留配置，空串模式哨兵保护旧配置。D档在顶层会话的命中轮首step、真实输入存在时插入带language-guard来源的notice，并保留下游决策字段。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "根组件提示装配、文本、语言解析、状态、命令和周期注入；未核不可见推理语言或作者测量的漂移率收益。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "DSH Host/client bundle与固定package依赖；settings/commands懒注入，Schemastery不可解析时表单投影降级告警，不将npm统计当采用证据。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金为额外提示token和可能的重复上下文；人工配置强度、繁简及任务例外。强度更高不等于准确率更高，缺漂移率/错误翻译/时间的对照。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "有固定输出语言需求者可评估；多会话不同语言或任务需按项目规范切换语言时，先明确模块级临时覆盖与强制文案是否符合要求。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少手写语言提醒，配置迁移细节可复用；不保证内部推理语言、翻译质量或全程遵守。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "cycle先next再按拥有的决策插入，spread保留startsRequestSeries等字段，首step/非空/幂等/顶层门控避免无输入循环；notice显式来源可区分真实用户。state的单例覆盖与命令会话宣称不一致是可追踪实现边界。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "把重复的“用某语言回答”组织成可热配置的宿主提示策略；稳定section、纯语言解析和未设置哨兵让迁移不覆盖老用户语言。增量是配置/装配机制，不是模型语言能力，也不能因文案声称最高优先级就获得更高指令权限。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "约束是否作用在正确会话与正确层级？state.js的languageOverride为模块单值，/language处理器不接session ID，所谓“本会话”临时切换可能影响同进程其他会话。mapPreference把所有zh映成zh-CN；head还要求覆盖AGENTS/用户语言并不解释冲突。D档虽标notice而非冒充真实用户，仍额外进入模型上下文；无法证明不可见推理遵守。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "将临时覆盖改为session作用域、提示只约束用户可见输出且显式保留任务语言例外，可能在减少跨会话串扰的同时保持语言稳定。用两个会话分别设ja/zh-TW并交错提问，加入多语引文与用户要求翻译的反例，统计串扰和错误改写；若只隔离设置但输出漂移不变，应分别报告配置收益和模型效果。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424475406:root",
+          "area": "code",
+          "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:02:19.660Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:02:19.660Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "9351078c5d264033c49d221742840aee673c0cdf",
+    "reviewed_at": "2026-10-21T08:02:19.660Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1424475406:root",
+        "area": "code",
+        "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "新颖性9：语言提示封装是已有策略；机制15：稳定section、设置缓存、notice门控和迁移规则具体；迁移性10：纯解析与三态迁移可借鉴；简化8：减少重复提示，代价是多段上下文。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "工作流9：偏好输入便利，未改变任务角色/验收；交付8：语言输出仍由模型决定；覆盖10：多语偏好适用但繁简自动映射受限；经济4：token增加，省提醒时间未测。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-07-github-1424475406-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "固定语言提醒有价值，但“本会话”临时覆盖为模块单值且会宣称覆盖用户规范；先修会话隔离与冲突优先级再多会话采用。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "长对话固定说明语言同时保留代码引用需求明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "稳定提示段省重复提醒，不能保证内部推理语言。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "languageOverride和zh映zh-CN已查，跨会话范围与繁简限制明确。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "提示token成本较低，但语言冲突、强制文案和全局覆盖需人工纠正。"
+      }
+    },
+    "score": 59,
+    "revision": "9351078c5d264033c49d221742840aee673c0cdf",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-07-github-1424475406-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1424475406:root",
+        "area": "code",
+        "fingerprint": "9351078c5d264033c49d221742840aee673c0cdf"
+      }
+    ]
+  }
+}

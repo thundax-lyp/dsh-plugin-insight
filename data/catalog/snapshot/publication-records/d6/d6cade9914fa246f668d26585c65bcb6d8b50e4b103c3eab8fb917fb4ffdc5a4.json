@@ -1,0 +1,17 @@
+{
+  "id": "github:1414238544:root",
+  "repository": "AIR-pixel/air-pixel-liquid-glass",
+  "path": "",
+  "revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+  "fingerprints": {
+    "directory": "573c82f07c6a7e47f2656dd76bc0206f54c0b64eda7da54e6a4c1158c28dc1b4",
+    "code": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+    "maintenance": "bc8bc8f7d5b87ac646a15ceb1ac0ce21ccf72325834e5faa71782a29a0fce4ea"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "c1f96724238b1734abd9bf11584b1dd8944c9300c20369de5bcf7d388d54ad39"
+}

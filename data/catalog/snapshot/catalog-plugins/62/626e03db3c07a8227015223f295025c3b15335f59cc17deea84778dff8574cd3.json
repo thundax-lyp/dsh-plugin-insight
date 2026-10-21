@@ -1,0 +1,337 @@
+{
+  "id": "github:1336582509:root",
+  "repository_id": 1336582509,
+  "component_id": "root",
+  "repository": "863683348/dsh-trend-radar",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-trend-radar",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "f9cfbe6b02e951046470ee684964f9262da0c4e6319acec45da7a0bb18a6b34e",
+    "code": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+    "maintenance": "a7948127ce200e44f29e8a5db3dd3654eb9a0d5e77d2ae36ea5707bd38bc9bb5"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1336582509-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:44:25.251Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1336582509-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/README.md",
+      "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+      "captured_at": "2026-10-21T03:44:25.251Z",
+      "summary": "采集插件目录与GitHub主题快照，分析新增、Star变化和分类分布，并输出趋势面板。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-trend-radar/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1336582509-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/github.js",
+      "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+      "captured_at": "2026-10-21T03:44:25.251Z",
+      "summary": "核查 lib/github.js、lib/trends.js、lib/storage.js、lib/index.js；github.js只请求updated排序前100个topic仓库并读取awesome递归tree；storage.js追加JSONL，trends.js比较快照并汇总，index.js在工具调用且过期时采集。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-trend-radar/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "生态研究者想追踪插件供给变化，合格结果须有稳定样本范围和时间基线，不能把被搜索返回的条目数当完整生态规模。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "github.js只请求updated排序前100个topic仓库并读取awesome递归tree；storage.js追加JSONL，trends.js比较快照并汇总，index.js在工具调用且过期时采集。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "快照/订阅写本地dataDir，网络使用GitHub公开API，可选token；面板作者标experimental且待运行验证。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需积累足够历史，日常API配额、JSONL存储和范围核对消耗时间；没有任务级研究收益实测，token凭据若配置需按部署管理。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合对限定样本做探索性观察。先核对采集范围、缺页和时间间隔，再解释差分；不要用前100滚动榜推断生态总量、移除或真实需求。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "让已采样条目的变化容易复看，但需要研究者补覆盖与因果解释，不能用仪表盘形式提升证据等级。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "采集/解析/存储/分析分离便于补范围元数据；JSONL简单可审计。当前按仓库名称比较及缺少覆盖声明增加改名和滚动样本误判成本，复用应优先补身份与完整性。 源码依据：[lib/github.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/github.js)、[lib/trends.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/trends.js)、[lib/storage.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/storage.js)、[lib/index.js](https://github.com/863683348/dsh-trend-radar/blob/238ccd97948617fe8dd92f9ee5c5c05360592026/lib/index.js)。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对单次静态目录，增量是本地时间序列与可追溯差分，把新增和关注变化变成重复分析流程；不是完整生态监测，也不是用户需求测量。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "“新增/移除/热度”是否可由这套快照推断？搜索限前100且按updated滚动，排名退出可能被当移除，新进入可能早已存在；awesome tree也未证明完整无截断。README开头说每小时但FAQ与源码为按工具触发，无后台timer，不能承诺连续观测。Star增速不等于采用增长。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由滚动样本与时间差分推导，可保存total_count、incomplete/truncated状态和稳定repo ID，只对完整已覆盖样本判移除，新增区分首次发现与首次发布。未验证假设是显著减少伪趋势。用固定集合交换搜索顺序的样本检验，若新增/移除仍随排序变化则否定。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336582509:root",
+          "area": "code",
+          "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:25.251Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:44:25.251Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+    "reviewed_at": "2026-10-21T03:44:25.251Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1336582509:root",
+        "area": "code",
+        "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty快照趋势常规适配小档；mechanism简单差分小档；transferability分层分析半档；simplification本地重复分析半档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow持续研究记录半档；delivery趋势报告小档；reach生态研究者小档；economics本地复用未实测小档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336582509-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "限定样本时间序列有价值，但updated前100滚动集合会伪造新增移除且按调用采集；先稳定分页和基线再采用趋势结论。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "生态供给变化研究需要稳定样本与时点交付。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "本地JSONL差分比单次目录可追踪，但当前窗口不稳定。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "GitHub前100与无后台timer源码明确，不能支撑连续全生态观测。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "需历史积累和API配额，补覆盖与错误趋势解释增加人力。"
+      }
+    },
+    "score": 59,
+    "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-03-github-1336582509-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1336582509:root",
+        "area": "code",
+        "fingerprint": "238ccd97948617fe8dd92f9ee5c5c05360592026"
+      }
+    ]
+  }
+}

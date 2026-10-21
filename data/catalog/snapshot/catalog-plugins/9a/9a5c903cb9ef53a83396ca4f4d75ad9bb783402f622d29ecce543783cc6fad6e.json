@@ -1,0 +1,283 @@
+{
+  "id": "github:1381733290:root",
+  "repository_id": 1381733290,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-secret",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-secret",
+  "entry_type": "plugin",
+  "technical_category": "security-governance",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "059e238229eedbfde9baafd086023260abb596fe16cfd04fade15a671571af97",
+    "code": "be996ef420b165aebb759cda3957e65a966efe22",
+    "maintenance": "5a8c2a70b58214fd45933702e7b35a1cf619f0824876edfabdf145fc7b1c45a6"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1381733290-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:02:00.219Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1381733290-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/README.md",
+      "revision": "be996ef420b165aebb759cda3957e65a966efe22",
+      "captured_at": "2026-10-20T10:02:00.219Z",
+      "summary": "按允许前缀读取pass或age秘密，并可注入当前DSH进程环境。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-secret/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1381733290-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/index.js",
+      "revision": "be996ef420b165aebb759cda3957e65a966efe22",
+      "captured_at": "2026-10-20T10:02:00.219Z",
+      "summary": "核查 index.js、lib/secret.js；校验pass条目或age文件路径，调用外部解密工具；默认返回首尾预览，to_env把值写进process.env。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-secret/REVIEWED-SOURCE.json",
+      "limitations": [
+        "检查秘密名称、age路径、解密和环境注入实现；未读取任何用户秘密或执行解密。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Agent调用外部服务时，希望避免用户把完整密钥直接粘贴进聊天。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381733290:root",
+          "area": "code",
+          "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.219Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "校验pass条目或age文件路径，调用外部解密工具；默认返回首尾预览，to_env把值写进process.env。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381733290:root",
+          "area": "code",
+          "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.219Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "检查秘密名称、age路径、解密和环境注入实现；未读取任何用户秘密或执行解密。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381733290:root",
+          "area": "code",
+          "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.219Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；依赖pass/GPG或age、已解锁身份、明确allowPrefixes及文件权限；空白名单拒绝读取。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381733290:root",
+          "area": "code",
+          "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.219Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "密钥存储配置、解锁、权限核对及清理人工为主；未测泄漏率或端到端效率。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381733290:root",
+          "area": "code",
+          "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.219Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "仅给最小前缀并使用非敏感测试值，默认不reveal；不要把进程内注入当秘密永不进入其他工具。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381733290:root",
+          "area": "code",
+          "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.219Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "复用已有秘密存储并把解密值交给后续工具，减少直接回传完整秘密；这不是密钥隔离服务。 process.env是进程共享状态，后续插件或子进程可能继承；前后缀预览仍泄漏部分秘密。age路径仅词法检查未realpath，符号链接边界需验证，不能把allowPrefixes视为完整隔离。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381733290:root",
+          "area": "code",
+          "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.219Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "解密、校验、呈现分离可读性较好；生命周期、真实路径和消费者范围应显式建模。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381733290:root",
+          "area": "code",
+          "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:02:00.219Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:02:00.219Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "be996ef420b165aebb759cda3957e65a966efe22",
+    "reviewed_at": "2026-10-20T10:02:00.219Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1381733290:root",
+        "area": "code",
+        "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty为pass/age桥接；mechanism为预览和环境传递的小幅组合而非新隔离机制；transferability有限；simplification减少粘贴步骤。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow将复制秘密改为存储引用与环境交接，属实质流程增量；delivery仍为已有API调用；reach便于Agent消费；economics未识别独立增量。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+      "basis": "interpretation",
+      "score": 23,
+      "evidence_ids": [
+        "2026-10-20-07-github-1381733290-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "秘密存储复用有价值，但环境共享、预览泄露及age词法路径缺口影响核心保密，先补生命周期和realpath。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "避免完整密钥进入聊天的需求明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "pass/age接工具省手工导出，宿主凭据服务边界更细。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "to_env和路径校验可查，已明确非隔离与链接风险。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "解锁权限、全局并发覆盖及消费者范围需专门维护。"
+      }
+    },
+    "score": 54,
+    "revision": "be996ef420b165aebb759cda3957e65a966efe22",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-20-07-github-1381733290-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1381733290:root",
+        "area": "code",
+        "fingerprint": "be996ef420b165aebb759cda3957e65a966efe22"
+      }
+    ]
+  }
+}

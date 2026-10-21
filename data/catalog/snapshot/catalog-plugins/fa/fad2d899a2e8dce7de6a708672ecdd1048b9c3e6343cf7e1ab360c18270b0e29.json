@@ -1,0 +1,283 @@
+{
+  "id": "github:1333993743:root",
+  "repository_id": 1333993743,
+  "component_id": "root",
+  "repository": "1HelloMan1/dsh-vision-fallback",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-vision-fallback",
+  "entry_type": "plugin",
+  "technical_category": "model-provider",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "a7ccdc332988c8004230bdf13c0c8215f63e09065caaed68a9e6663a81b398b1",
+    "code": "e94fffbfd1297881e80a1a02304e116541d01368",
+    "maintenance": "a8167022270a379ac002267ddcdbdff7d238d38bc07401da0ac1f4dbc8907248"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1333993743-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:48:32.175Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1333993743-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1HelloMan1/dsh-vision-fallback/blob/e94fffbfd1297881e80a1a02304e116541d01368/README.md",
+      "revision": "e94fffbfd1297881e80a1a02304e116541d01368",
+      "captured_at": "2026-10-20T10:48:32.175Z",
+      "summary": "将 DSH 图片交给独立视觉模型，并把观察结果返回当前主模型。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/1helloman1--dsh-vision-fallback/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1333993743-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1HelloMan1/dsh-vision-fallback/blob/e94fffbfd1297881e80a1a02304e116541d01368/lib/index.js",
+      "revision": "e94fffbfd1297881e80a1a02304e116541d01368",
+      "captured_at": "2026-10-20T10:48:32.175Z",
+      "summary": "核查 lib/index.js、lib/client.js；auto 模式检查主模型图像能力；发送前按附件、会话、消息、提示和模型生成缓存键，调用视觉 API；模型专用 surface replacement 保留 UI 原图，压缩时复用观察。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/1helloman1--dsh-vision-fallback/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "偏好纯文本主模型的用户仍需处理截图或图片；交付物是主模型基于视觉观察形成的回答。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333993743:root",
+          "area": "code",
+          "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:32.175Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "auto 模式检查主模型图像能力；发送前按附件、会话、消息、提示和模型生成缓存键，调用视觉 API；模型专用 surface replacement 保留 UI 原图，压缩时复用观察。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333993743:root",
+          "area": "code",
+          "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:32.175Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333993743:root",
+          "area": "code",
+          "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:32.175Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333993743:root",
+          "area": "code",
+          "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:32.175Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "每张图增加视觉 API 费用、预处理延迟及主模型读取观察的token；缓存减少重复请求但错误观察也可能被复用；人工成本是识别失败和重要图中文字复核。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333993743:root",
+          "area": "code",
+          "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:32.175Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合确需保留纯文本主模型的图片任务；先核对视觉服务的数据范围和难图准确率，重要文字回看原图。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333993743:root",
+          "area": "code",
+          "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:32.175Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少切模型步骤的集成价值有源码依据；两模型组合未必比单视觉模型更便宜或准确。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333993743:root",
+          "area": "code",
+          "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:32.175Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "lib/index.js 的缓存键绑定附件与会话消息，失败清缓存；重入 WeakSet 避免压缩 stream 递归，且构造新对象适配宿主冻结请求。可借鉴分层预处理，但 surface 与压缩生命周期耦合需版本回归。 源码：[lib/index.js](https://github.com/1HelloMan1/dsh-vision-fallback/blob/e94fffbfd1297881e80a1a02304e116541d01368/lib/index.js)、[lib/client.js](https://github.com/1HelloMan1/dsh-vision-fallback/blob/e94fffbfd1297881e80a1a02304e116541d01368/lib/client.js)。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333993743:root",
+          "area": "code",
+          "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:32.175Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:48:32.175Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "e94fffbfd1297881e80a1a02304e116541d01368",
+    "reviewed_at": "2026-10-20T10:48:32.175Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1333993743:root",
+        "area": "code",
+        "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：两阶段模型方案常见；mechanism：模型surface与压缩复用改变宿主接线；transferability：预处理模式可迁移；simplification：保留主流程有集成收益。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：免手工切换与复制；delivery：仍为图片问答；reach：让文本主模型用户接图片；economics：增调用且无节费实测。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-20-08-github-1333993743-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "必须保留纯文本主模型的用户可试用图像旁路；先检查外发上下文范围与难图误读，关键文字回看原图。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "纯文本主模型处理截图场景明确，但原生视觉用户无需这层。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "自动预处理及压缩复用减少手动切模型与复制观察。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "缓存键、surface替换和失败清理有源码，识别精度与延迟未测。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "需要视觉账号及额外调用，双模型费用与错误复核不可免。"
+      }
+    },
+    "score": 65,
+    "revision": "e94fffbfd1297881e80a1a02304e116541d01368",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-20-08-github-1333993743-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1333993743:root",
+        "area": "code",
+        "fingerprint": "e94fffbfd1297881e80a1a02304e116541d01368"
+      }
+    ]
+  }
+}

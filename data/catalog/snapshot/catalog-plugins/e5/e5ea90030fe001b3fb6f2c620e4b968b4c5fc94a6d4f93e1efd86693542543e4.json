@@ -1,0 +1,246 @@
+{
+  "id": "github:1379204512:root",
+  "repository_id": 1379204512,
+  "component_id": "root",
+  "repository": "1225Sakura/oh-my-deepseekharness",
+  "path": "",
+  "aliases": [],
+  "name": "oh-my-dsh",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "software-delivery",
+  "tags": [
+    "多 Agent",
+    "MCP",
+    "编排"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "0966d4532078cb7d7abccf688281fe0693520aa9a6b617cd29b54d717d51dbeb",
+    "code": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+    "maintenance": "ede90675fe3306dfaeb13c9443f6a17d788c8feba30ee702e9172972cda310ac"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1379204512-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:15:08.112Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1379204512-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/README.md",
+      "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+      "captured_at": "2026-10-20T03:15:08.112Z",
+      "summary": "为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/1225sakura--oh-my-deepseekharness/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1379204512-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/index.js",
+      "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+      "captured_at": "2026-10-20T03:15:08.112Z",
+      "summary": "核查 lib/index.js、lib/team.js；入口注入协议并注册资产、命令和 MCP，team 模块维护阶段、队员身份与邮箱；实际派发与合并仍由领队模型驱动。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/1225sakura--oh-my-deepseekharness/REVIEWED-SOURCE.json",
+      "limitations": [
+        "作者报告的测试数未在本轮复跑；状态机与心跳不证明团队产出质量或自动协调收敛。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "复杂开发任务需要规划、委派与验证分工，用户希望复用一套宿主适配的编排约定。",
+      "evidence_ids": [
+        "20261020-research40-github-1379204512-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1379204512:root",
+          "area": "code",
+          "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:08.112Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "入口注入协议并注册资产、命令和 MCP，team 模块维护阶段、队员身份与邮箱；实际派发与合并仍由领队模型驱动。",
+      "evidence_ids": [
+        "20261020-research40-github-1379204512-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1379204512:root",
+          "area": "code",
+          "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:08.112Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "统一委派与恢复数据面可降低自建成本；多代理可能放大误解、冲突和预算超支。",
+      "evidence_ids": [
+        "20261020-research40-github-1379204512-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1379204512:root",
+          "area": "code",
+          "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:08.112Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "多角色和多轮评审增加模型、上下文与状态维护成本，不能以并行数量推断更快更省。",
+      "evidence_ids": [
+        "20261020-research40-github-1379204512-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1379204512:root",
+          "area": "code",
+          "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:08.112Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "能力探测、降级公告、终态限制和心跳只报告不自动杀有可借鉴性；集成面大意味着持续适配负担。",
+      "evidence_ids": [
+        "20261020-research40-github-1379204512-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1379204512:root",
+          "area": "code",
+          "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:08.112Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先验装探测与取消，再对单仓库小任务比较原生单 agent 和一条显式 team 流程。",
+      "evidence_ids": [
+        "20261020-research40-github-1379204512-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1379204512:root",
+          "area": "code",
+          "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:08.112Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "作者报告的测试数未在本轮复跑；状态机与心跳不证明团队产出质量或自动协调收敛。",
+      "evidence_ids": [
+        "20261020-research40-github-1379204512-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1379204512:root",
+          "area": "code",
+          "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:08.112Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "版本 0.4.9，要求较新的 DSH 服务组合，可选 AST/LSP 能力缺失时降级；不是零依赖协议包。",
+      "evidence_ids": [
+        "20261020-research40-github-1379204512-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1379204512:root",
+          "area": "code",
+          "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:15:08.112Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:15:08.112Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "已有复杂可拆分开发任务者可限单仓库试一条team流程，先验能力探测、取消并比较总费用。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "复杂开发规划委派验证可复用组织流程。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "统一邮箱、阶段与恢复数据面减少自建，但原生单Agent仍是对照。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "协议和状态机源码可查，作者测试未复跑且不证明产出质量。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "多角色协调上下文与大集成面增加成本和适配负担。"
+      }
+    },
+    "score": 60,
+    "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-research40-github-1379204512-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1379204512:root",
+        "area": "code",
+        "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+      }
+    ]
+  }
+}

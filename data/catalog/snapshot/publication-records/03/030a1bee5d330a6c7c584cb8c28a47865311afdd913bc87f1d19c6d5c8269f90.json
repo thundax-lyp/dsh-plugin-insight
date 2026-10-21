@@ -1,0 +1,17 @@
+{
+  "id": "github:1412897663:root",
+  "repository": "AAAlenwow/dsh-spring-admin-kit",
+  "path": "",
+  "revision": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+  "fingerprints": {
+    "directory": "ae6ade50608ecd3579fdcae40b881cbeaea780c00757d0fbcb95756ede279203",
+    "code": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+    "maintenance": "4d4f09e111a7ae54f55e63aa4eab30438c071023ee797c55f782d5f46967e6f7"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "0643d7578639ea4df0fc85b8298e0faad7aaf15883189251910e9c1a77229dc0"
+}

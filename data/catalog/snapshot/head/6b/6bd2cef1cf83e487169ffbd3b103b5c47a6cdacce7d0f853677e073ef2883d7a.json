@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-21T07:52:12Z",
+  "catalog": {
+    "schema_version": 1,
+    "plugins": [],
+    "runs": []
+  },
+  "publication": {
+    "schema_version": 1,
+    "scope": "本轮所选 50，完成 50，受阻 0；已知同版本受阻跳过 5；当前发布 404",
+    "catalog": "data/catalog/PLUGINS.json",
+    "catalog_page": "data/views/categories/INDEX.md",
+    "metadata": {},
+    "summaries": {},
+    "capabilities": {},
+    "advice": {},
+    "records": [],
+    "checked_at": "2026-10-21T07:52:12Z"
+  },
+  "registry": {},
+  "discovery": {
+    "sources": [
+      {
+        "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+        "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+        "complete": false
+      },
+      {
+        "url": "https://github.com/0xsline/awesome-deepseek-harness",
+        "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+        "complete": false
+      }
+    ],
+    "plugins": [],
+    "complete_baseline": false
+  },
+  "reports": {},
+  "metadata": {},
+  "artifacts": {},
+  "unavailable_artifacts": [
+    "data/runs/2026-10-19-01/snapshots/ethanyoq--invoice-downloader--dsh-invoice-downloader/SOURCE.json",
+    "data/runs/2026-10-19-01/snapshots/ethanyoq--invoice-downloader--dsh-invoice-downloader/NPM.json",
+    "data/runs/2026-10-19-02/snapshots/ethanyoq--invoice-downloader--dsh-invoice-downloader/NPM.json"
+  ],
+  "limitations": [
+    "迁移保留已有分析及证据描述；unavailable_artifacts 中的历史原件当前缺失，未重建、未重新验证，也不作为本轮新证据。",
+    "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
+  ],
+  "transaction": {
+    "id": "2026-10-21-07",
+    "work_digest": "72598e07d55515b1cde3ad35e2f2b3ffd91393679eaa3917c0e15dc6af3ab498"
+  },
+  "research_blocks": {}
+}

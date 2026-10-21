@@ -1,0 +1,337 @@
+{
+  "id": "github:1337350700:root",
+  "repository_id": 1337350700,
+  "component_id": "root",
+  "repository": "863683348/dsh-memory-setup",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-memory-setup",
+  "entry_type": "plugin",
+  "technical_category": "memory-knowledge",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "7e1b1aeac5596f5376f2aadc4cb56a7e611857341145438b0ba54e3b44608398",
+    "code": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+    "maintenance": "8c47435f1e3bfb07eab201310eac88e82fac751f0554f4b1fa84ac9be86a1760"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1337350700-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:48:29.923Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1337350700-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/863683348/dsh-memory-setup/blob/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43/README.md",
+      "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+      "captured_at": "2026-10-21T03:48:29.923Z",
+      "summary": "保存工作区偏好、约定与纠错教训，支持知识检索、快照和上下文注入。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-memory-setup/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1337350700-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/863683348/dsh-memory-setup/blob/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43/lib/index.js",
+      "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+      "captured_at": "2026-10-21T03:48:29.923Z",
+      "summary": "核查 lib/index.js、lib/memory.js、lib/kb-tools.js；lib/index.js通过ctx.fs读取工作区JSON，保存时做revision比较、备份及sha256；memory.js去重教训、分层和渲染；kb-tools.js可向配置的embeddingEndpoint发送内容以做语义检索。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-memory-setup/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合反复在同一工作区工作、愿意审阅长期记忆的用户；记忆正确性要靠来源与复核。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js通过ctx.fs读取工作区JSON，保存时做revision比较、备份及sha256；memory.js去重教训、分层和渲染；kb-tools.js可向配置的embeddingEndpoint发送内容以做语义检索。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次整理现有约定与导入资料；持续成本为注入token、错误教训复核及快照维护。启用embedding时有端点费用和内容外传，人工纠错成本不能被自动去重掩盖。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合在单个非敏感项目先试。先确认记忆来源、备份恢复和并发写入，再决定是否启用外部embedding；重复出现的教训也要核实后再升为约定。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可减少每次重复提供偏好，未证真实长期任务成功率或重复错误下降。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "纯记忆变换与宿主IO分离、revision校验和hash提高可审阅性；revision检查与写入并非原子事务，不能宣称彻底避免并发覆盖。KB写入与主记忆也有不同的保护强度，应分别验证。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者定位可审计个人记忆层；实际增量是把偏好、项目约定、纠错复盘与知识库整合成可导出JSON，并让宿主上下文自动读取。相对手写AGENTS，新增结构化更新、快照与相似教训合并；不会自动证明被记住的教训正确或改善长期任务。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "README的nothing leaves your machine只适用于未启用外部embedding：kb-tools会把查询或条目发到配置端点。上下文memCtx、focusQuery与30秒节流是插件级状态，多个工作区同时使用时须验证是否会串用或延迟刷新。自动按hits提升为约定会强化重复但错误的教训，evidence可为null，不能把频次当真值。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：将上下文缓存按工作区隔离，并在教训晋升前要求独立证据状态，可减少跨项目污染及错误固化。用两个工作区不同约定、快速交替和重复错误教训轨迹比较注入命中与误晋升；若证据门槛阻碍有效记忆，保留人工确认通道。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337350700:root",
+          "area": "code",
+          "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.923Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:48:29.923Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+    "reviewed_at": "2026-10-21T03:48:29.923Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1337350700:root",
+        "area": "code",
+        "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty=9：结构记忆与检索均有已有参照。 mechanism=15：版本、快照、晋升及注入有实际机制。 transferability=10：纯变换易复用，宿主缓存边界待验。 simplification=8：减少重复提供资料，但记忆复核不能省。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=18：录入、纠错、检索、恢复链条较完整。 delivery=15：JSON和快照可交付，事实正确性未证。 reach=10：工作区用户适用，外部embedding有条件。 economics=4：可能省重复token，无长期净收益数据。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-03-github-1337350700-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "可审计记忆有价值，但memCtx/focusQuery为插件级且频次可升无证据教训；先验证工作区隔离和纠错来源，再启自动注入。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "同工作区反复提供偏好约定需求具体。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "结构更新备份加可导出JSON比手写约定更方便。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "revision比较和哈希可查，embedding会外发、null证据也可按hits升级。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "注入token、错误强化纠正和跨区隔离验证成本高。"
+      }
+    },
+    "score": 60,
+    "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-03-github-1337350700-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1337350700:root",
+        "area": "code",
+        "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+      }
+    ]
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "id": "github:1324229194:dsh-autocompact",
+  "repository_id": 1324229194,
+  "component_id": "dsh-autocompact",
+  "repository": "5aaee9/pi-agent-extensions",
+  "path": "dsh-autocompact",
+  "aliases": [],
+  "name": "dsh-autocompact",
+  "entry_type": "plugin",
+  "technical_category": "context-search",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "2201fb68e5f1ab19b28e25522216eb933fb704fc0e84c9bf98b790ebe564b86a",
+    "code": "c80abc7c4904fee9206f8649214a211ef84961ff",
+    "maintenance": "f108a6c4668b0f78e98eca5fb6fd0314746a08db196363cbdd48758d97a856d5"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1324229194-dsh-autocompact-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:25.549Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1324229194-dsh-autocompact-author",
+      "kind": "author_claim",
+      "url": "https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/README.md",
+      "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
+      "captured_at": "2026-10-21T03:16:25.549Z",
+      "summary": "为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1324229194-dsh-autocompact-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/5aaee9/pi-agent-extensions/blob/c80abc7c4904fee9206f8649214a211ef84961ff/dsh-autocompact/index.ts",
+      "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
+      "captured_at": "2026-10-21T03:16:25.549Z",
+      "summary": "核查 dsh-autocompact/index.ts、dsh-autocompact/compaction.ts；组件index.ts按会话与provider/model维护覆盖值并访问当前Agent的compaction服务；compaction.ts要求token测量与surface节点一致，保留系统头和预算尾部并检查工具调用配对。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合模型上下文预算不同、希望比宿主默认更早压缩的长会话开发者。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "组件index.ts按会话与provider/model维护覆盖值并访问当前Agent的compaction服务；compaction.ts要求token测量与surface节点一致，保留系统头和预算尾部并检查工具调用配对。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次核对宿主压缩接口与模型阈值；持续压缩增加摘要模型token和延迟，人工需检查关键事实是否丢失，迁移受DSH服务接口影响。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "长会话且了解模型窗口时可试。先确认阈值、保留尾部和重启行为，用含工具结果的任务检查压缩后能否继续。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "提前触发有避免溢出的机制价值，但没有整体任务成功率或token节省对照。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "显式surface一致性校验和toolPairingBalancedBefore比字符截断更稳；serviceForAgent处理预设隔离。可复用纯范围选择逻辑，必须保留宿主版本与配对不变量。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者明确这是pi-autocompact的DSH移植；可确认增量是适配DSH的surface位置和Agent平面后端，提供会话阈值而不伪改模型contextWindow。相对全局缩小模型窗口，保留真实元数据并减少跨会话副作用；压缩算法仍归宿主。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "测量阈值只是压力信号，不保证压缩能保留任务语义；不可拆的大消息或配对范围使选区返回undefined，仍可能溢出。会话命令覆盖在内存里，重启不应被理解为持久配置；默认配置与临时覆盖须区分。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：在保留token预算之外加入用户目标/未完成工具依赖的保护标签，可改善压缩后任务恢复。对含长工具结果的同一会话比较答案一致性、压缩次数与保留体积；不假设保留更多一定更好。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1324229194:dsh-autocompact",
+          "area": "code",
+          "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:25.549Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:25.549Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
+    "reviewed_at": "2026-10-21T03:16:25.549Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1324229194:dsh-autocompact",
+        "area": "code",
+        "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 23,
+        "transferability": 15,
+        "simplification": 8
+      },
+      "rationale": "novelty=9：明确移植pi-autocompact，原创量有限。 mechanism=23：surface对齐、工具配对与Agent后端处理较深入。 transferability=15：纯选区逻辑可复用，DSH接口耦合。 simplification=8：会话阈值避免伪改窗口，配置更直接。",
+      "basis": "interpretation",
+      "score": 55,
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=18：把压缩触发细化到会话与模型。 delivery=15：平衡选区可交后端，但语义保持未验证。 reach=10：长会话模型用户适用，需特定后端接口。 economics=4：无token净节省对照，摘要增加费用。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "了解模型窗口的长会话用户可先试提前压缩；核对阈值、工具配对与重启覆盖，用依赖早期信息的任务验接续。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "各模型压缩阈值不同导致长会话溢出是明确问题。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "按会话模型覆盖而不伪改contextWindow比全局缩窗更精细。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "测量与surface一致和配对检查源码可见，巨大消息仍可能无选区。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "摘要调用和事实复核增加费用延迟，依赖宿主压缩接口。"
+      }
+    },
+    "score": 65,
+    "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-02-github-1324229194-dsh-autocompact-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1324229194:dsh-autocompact",
+        "area": "code",
+        "fingerprint": "c80abc7c4904fee9206f8649214a211ef84961ff"
+      }
+    ]
+  }
+}

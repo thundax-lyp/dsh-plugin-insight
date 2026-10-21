@@ -1,0 +1,17 @@
+{
+  "id": "github:1343622602:root",
+  "repository": "1byteone/dsh-plugin-nlbi",
+  "path": "",
+  "revision": "232f9243029add39dd18a368de45d8326aca178f",
+  "fingerprints": {
+    "directory": "2749fc39564b3b9ded3ebc277cf5a77bdd6489ca87bf28b06eeb9ff0aa547c38",
+    "code": "232f9243029add39dd18a368de45d8326aca178f",
+    "maintenance": "235f4f5860cf738321cf768f13b9760b9bc429a4f2cae2c058589e89a9233baf"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "f655d64e43d5100980b5cf7065023a9a3f33403926bbc4f27c6a232d422c3d9f"
+}

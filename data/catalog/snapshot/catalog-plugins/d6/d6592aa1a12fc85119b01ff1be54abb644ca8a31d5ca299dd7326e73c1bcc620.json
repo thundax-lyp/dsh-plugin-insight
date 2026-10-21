@@ -1,0 +1,337 @@
+{
+  "id": "github:1339034478:root",
+  "repository_id": 1339034478,
+  "component_id": "root",
+  "repository": "AlexYin-Tongji/dsh-ui-enhancer",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-ui-enhancer",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "fbd26ad7417ef392c0a7dca16b12fb6fa92925711d07475e83b8aec1415285bc",
+    "code": "87f17fe74076570023e01e5d0fc55c21affd2c23",
+    "maintenance": "57ef5242d91b0c8cf7f368086cc7983386cab9e170b46eebf905ba8ffa28da70"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1339034478-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:13:59.953Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1339034478-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AlexYin-Tongji/dsh-ui-enhancer/blob/87f17fe74076570023e01e5d0fc55c21affd2c23/README.md",
+      "revision": "87f17fe74076570023e01e5d0fc55c21affd2c23",
+      "captured_at": "2026-10-21T08:13:59.953Z",
+      "summary": "组合工作区文件引用、壁纸和可自定义形象的桌面宠物。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/alexyin-tongji--dsh-ui-enhancer/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1339034478-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AlexYin-Tongji/dsh-ui-enhancer/blob/87f17fe74076570023e01e5d0fc55c21affd2c23/src/index.ts",
+      "revision": "87f17fe74076570023e01e5d0fc55c21affd2c23",
+      "captured_at": "2026-10-21T08:13:59.953Z",
+      "summary": "核查 src/index.ts、src/host/workspace-files.ts、src/host/pet-activity.ts、src/client/index.ts、src/client/file-trigger.ts、src/client/pet-economy.ts、src/client/pet-image.ts；主机WorkspaceFiles按注册工作区realpath解析并有界搜索/读取，PetActivityTracker投影宿主事件；客户端inputTriggers注册@文件引用，只序列化路径，宠物图像浏览器边缘连通去背景和IndexedDB库，奖励用本地事件去重。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/alexyin-tongji--dsh-ui-enhancer/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "保留官方聊天交互，同时需要文件引用和个性化活动提示的桌面用户。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "主机WorkspaceFiles按注册工作区realpath解析并有界搜索/读取，PetActivityTracker投影宿主事件；客户端inputTriggers注册@文件引用，只序列化路径，宠物图像浏览器边缘连通去背景和IndexedDB库，奖励用本地事件去重。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无宠物内置模型聊天费用；图像解码/去背景与壁纸占资源，本地形象/偏好不跨设备同步；用户仍人工判断文件和任务结果。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先核自己宿主的@引用、工作区范围和宠物隐私片段；不需要娱乐层时单独评估依赖面板。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "文件入口和活动投影有实现，无任务质量、去背景通用准确率或效率增益数据。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "文件读取分配字节预算、路径escape、只引用路径不自动塞全文、奖励event ID去重可复用；宠物“完成”只是事件状态。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "把文件引用接入官方结构化输入流程，避免纯文本@丢身份；宠物状态取宿主事实而非模型编造，图像在本地处理。个性化效果不等于新的Agent工作流。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "宠物任务完成来自turn/step事件和有限去重历史，不证明业务交付合格，星星/亲密度不能作生产率指标。去背景依赖边缘颜色连通假设，复杂主体与背景相似时可能破坏形象；@引用只送路径，不代表模型已读文件。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：活动投影显式区分运行结束与用户验收，并允许去背景预览撤销，可减少误读与破坏性处理。用失败/取消/成功但成果不合格、复杂背景图片核状态和像素保留，未改善则保留装饰用途。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339034478:root",
+          "area": "code",
+          "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:59.953Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:13:59.953Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "87f17fe74076570023e01e5d0fc55c21affd2c23",
+    "reviewed_at": "2026-10-21T08:13:59.953Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1339034478:root",
+        "area": "code",
+        "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：结构化引用和宠物为既有模式。 mechanism=8：有界读取/本地处理局部增量。 transferability=10：路径引用方法可迁移。 simplification=4：组合外观不视新简化机制。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow=9：入口便利非分工改变。 delivery=0：活动和形象非业务成果。 reach=5：偏好桌面个性化人群。 economics=0：没有成本结构改变。",
+      "basis": "interpretation",
+      "score": 14,
+      "evidence_ids": [
+        "2026-10-21-07-github-1339034478-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "需@文件引用者可先核工作区realpath和宿主输入接口；娱乐层另验隐私与去背景，不把宠物星星当交付指标。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "保留原聊天同时便捷引用工作区文件的需求明确。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "有界工作区搜索和路径引用提供可解释入口增量。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核realpath及活动投影，文件已读和任务合格无运行证据。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "无宠物聊天API费，图像解码和本地库维护仍占资源。"
+      }
+    },
+    "score": 65,
+    "revision": "87f17fe74076570023e01e5d0fc55c21affd2c23",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-07-github-1339034478-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1339034478:root",
+        "area": "code",
+        "fingerprint": "87f17fe74076570023e01e5d0fc55c21affd2c23"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1344713526:dsh-lsp-swift",
+  "repository": "988hj7tczd-oss/dsh-lsp-packs",
+  "path": "dsh-lsp-swift",
+  "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+  "fingerprints": {
+    "directory": "62073aa2873fdffa05d0977dc05daf1501bc25cde480ab1468569c31a277e9c7",
+    "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "d39ca77541924cf905f691d12a7977e86ba729af5a9f07b6414ec534e7310cad"
+}

@@ -1,0 +1,283 @@
+{
+  "id": "github:1362694736:root",
+  "repository_id": 1362694736,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-fetch",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-fetch",
+  "entry_type": "plugin",
+  "technical_category": "context-search",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "8c3cfd12dae814b823e3cbbcca70520ab82ee78a91e9a9b7363e0218230fea59",
+    "code": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a",
+    "maintenance": "c19eb9b21f9ea5004c56b7976a9293b204f0cc387a705cdd80f56ffcc48f1ed9"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1362694736-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:46.002Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1362694736-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-fetch/blob/ef32d59a6e95929aa18e86c5495d0f3f9d78185a/README.md",
+      "revision": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a",
+      "captured_at": "2026-10-20T10:01:46.002Z",
+      "summary": "为DSH网页抓取注册代理感知的HTTP提供者，限制重定向、响应大小与返回文本。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-fetch/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1362694736-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-fetch/blob/ef32d59a6e95929aa18e86c5495d0f3f9d78185a/index.js",
+      "revision": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a",
+      "captured_at": "2026-10-20T10:01:46.002Z",
+      "summary": "核查 index.js、lib/fetch.js；注册wsl-proxy提供者，通过undici ProxyAgent请求，校验URL、逐跳重定向并按字节和字符截断。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-fetch/REVIEWED-SOURCE.json",
+      "limitations": [
+        "检查入口和完整fetch提供者；没有发起目标网页请求或验证代理端DNS行为。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "WSL内直接访问公开网页失败而Windows代理可用时，让现有web_fetch使用代理通路。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1362694736:root",
+          "area": "code",
+          "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.002Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "注册wsl-proxy提供者，通过undici ProxyAgent请求，校验URL、逐跳重定向并按字节和字符截断。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1362694736:root",
+          "area": "code",
+          "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.002Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "检查入口和完整fetch提供者；没有发起目标网页请求或验证代理端DNS行为。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1362694736:root",
+          "area": "code",
+          "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.002Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；依赖宿主web服务、HTTP代理环境变量和undici；代理可达及目标网站策略决定成功。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1362694736:root",
+          "area": "code",
+          "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.002Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "代理维护、重试延迟与上下文返回量是主要成本，未测同页面成功率或总耗时。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1362694736:root",
+          "area": "code",
+          "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.002Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先用公开小页面确认代理生效，保留抓取截断标志；不要把URL过滤当作完整网络访问隔离。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1362694736:root",
+          "area": "code",
+          "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.002Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "在宿主原抓取接口下替换传输路径，而不是让用户另学一套工具；有内容上限和取消信号，贡献是代理与宿主的受限集成。 私网检查主要基于URL字面主机名，源码未在该路径固定域名解析结果；因此拦截私有IP字面量不能证明域名最终不会访问私网。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1362694736:root",
+          "area": "code",
+          "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.002Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "响应流上限与取消组合有复用价值，网络失败和策略拒绝分开编码便于诊断。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1362694736:root",
+          "area": "code",
+          "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:46.002Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:46.002Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a",
+    "reviewed_at": "2026-10-20T10:01:46.002Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1362694736:root",
+        "area": "code",
+        "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：代理传输与宿主接口适配为小幅增量；mechanism：逐跳约束、响应流上限与取消组合改变有界抓取取舍，实质档；transferability：受限HTTP provider模式可迁移；simplification：保留原抓取接口并组合边界，实质档，非完整DNS隔离。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": null
+      },
+      "rationale": "workflow：用户保持web_fetch入口，仅改善通路；delivery：仍为网页文本；reach：扩展代理环境的可访问路径，实际成功率未测；economics：缺同页重试与延迟成本对照。",
+      "basis": "interpretation",
+      "score": null,
+      "evidence_ids": [
+        "2026-10-20-07-github-1362694736-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "WSL代理用户可抓公开小页试传输替换，先验实际provider和重定向目标，不把字面IP过滤当网络隔离。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "直连失败而Windows代理可用的环境问题明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "保留web_fetch接口的受限代理接入省另学工具。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "逐跳校验和响应上限可查，域名解析私网与代理DNS未验。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "代理配置重试和抓取截断需维护，非完整出口治理。"
+      }
+    },
+    "score": 59,
+    "revision": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-20-07-github-1362694736-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1362694736:root",
+        "area": "code",
+        "fingerprint": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a"
+      }
+    ]
+  }
+}

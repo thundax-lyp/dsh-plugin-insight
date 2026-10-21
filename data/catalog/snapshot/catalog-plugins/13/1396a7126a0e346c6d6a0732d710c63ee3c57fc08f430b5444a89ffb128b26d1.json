@@ -1,0 +1,337 @@
+{
+  "id": "github:1337038478:root",
+  "repository_id": 1337038478,
+  "component_id": "root",
+  "repository": "534119219/chicheng-quickinput",
+  "path": "",
+  "aliases": [],
+  "name": "chicheng-quickinput（vault）",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "e62fd8f73aa988aeb271dba250bb24c7fe128f1debcb671cff7b27593df204b5",
+    "code": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea",
+    "maintenance": "5d3213697e3e4443822c68597ea0c350d5977009b670da2ae91866fb0d6021ed"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1337038478-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:59.457Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1337038478-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/534119219/chicheng-quickinput/blob/ac7c50b364bec5899a96628c5cbefb19b8dc6bea/README.md",
+      "revision": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea",
+      "captured_at": "2026-10-21T03:16:59.457Z",
+      "summary": "在 DSH 输入区管理常用信息与私密记录，支持自动识别建议和 WebDAV 备份。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-quickinput/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1337038478-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/534119219/chicheng-quickinput/blob/ac7c50b364bec5899a96628c5cbefb19b8dc6bea/lib/index.js",
+      "revision": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea",
+      "captured_at": "2026-10-21T03:16:59.457Z",
+      "summary": "核查 lib/index.js、lib/client.js、test/crypto.test.mjs、README.md、package.json；host监听session/event提取模式并排队建议、持久化store与suggestions、代理WebDAV；client用PBKDF2和AES-GCM包裹随机库密钥、解锁私密记录，并调用inputActions.setDraft/submit。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-quickinput/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读候选识别/持久化、WebDAV代理与浏览器加密/输入动作；未运行密码库、测试、迁移或真实备份，不作完整密码学审计。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "频繁在DSH输入地址、服务器或凭据的人保存常用片段并填入草稿；含私密内容时需要同时核对加密库、建议缓存与会话记录。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "host监听session/event提取模式并排队建议、持久化store与suggestions、代理WebDAV；client用PBKDF2和AES-GCM包裹随机库密钥、解锁私密记录，并调用inputActions.setDraft/submit。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读候选识别/持久化、WebDAV代理与浏览器加密/输入动作；未运行密码库、测试、迁移或真实备份，不作完整密码学审计。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "仓库名quickinput、包/界面称vault；web bundle，数据在DSH_HOME/vault，非私密记录明文；WebDAV配置解锁后通过host代理出站。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次分类私密性、设主密码和安全词、核对建议缓存；持续需管理备份、锁定与会话外发，迁移须先保留原件。无付费服务必需证据，人工安全核查与误发送代价未量化。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先只存非敏感常用片段；在建议明文写盘问题修正并验证前，关闭自动识别且不要把它当安全凭据库。私密片段进入草稿或发送前应检查会话与模型接收范围。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可减少重复查找输入，但当前无法支持“自动识别不落明文”的安全价值承诺；敏感场景采用价值受该路径直接限制。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "host识别与client WebCrypto分离、随机K多重包裹及原子JSON写入有借鉴处；需要把数据流全链路纳入威胁模型，不能只审加密store而遗漏pending与会话副本。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对通用剪贴板或手工复制，增量是直接接DSH会话识别和输入动作，把待收录建议、常用字段与私密库整合；密码派生与AES-GCM来自WebCrypto。随机K分别由主密码/安全词包裹使重置不必重加密每条记录，是成熟信封加密在此流程的应用。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "私密明文是否只存在解锁后的浏览器内存？queueSuggestions把item.value保存在pending，flushSuggestions将pending写入suggestions.json，覆盖密钥/JWT等识别候选；hash用于去重并未去掉value。这与README明确承诺冲突，库记录加密不能补偿前置建议明文副本。点击私密记录填入/直接发送后还会进入会话和模型请求，库锁定也不能撤回这些副本。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：自动识别只在内存保留短时候选，用户明确收录后立即经浏览器加密，再持久化密文与hash，可消除建议文件的敏感旁路。依据是现有识别与加密路径分离，当前未实现。以已知测试密钥触发建议、重启、收录、拒绝和锁定，扫描所有插件文件及备份确认无明文；同时测重启后丢建议的可接受性，不能把丢失提示作为无损设计。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337038478:root",
+          "area": "code",
+          "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:59.457Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:59.457Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea",
+    "reviewed_at": "2026-10-21T03:16:59.457Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1337038478:root",
+        "area": "code",
+        "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：成熟密码库/片段工具在DSH适配；mechanism 小幅：信封加密可见但建议旁路破坏强保密主张；transferability 小幅：依赖输入与事件结构；simplification 实质：自动识别、库和输入动作结合。",
+      "basis": "interpretation",
+      "score": 30,
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow 小幅：减少复制操作未改变交付责任；delivery 小幅：输入片段与备份；reach 实质：GUI管理常用信息；economics 小幅：潜在少查找，风险与复核工时未测。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-02-github-1337038478-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "常用输入片段有便利，但自动建议把密钥候选明文写盘；先修正并验证建议链，当前只考虑非敏感片段且关闭自动识别。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "地址凭据重复输入任务具体，敏感性直接决定可用性。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "DSH识别与草稿填入减少复制，但安全库主张受前置明文副本削弱。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "AES-GCM库与queueSuggestions存value源码均可查，明确存在承诺冲突。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "需清理建议、备份及会话外发副本，误泄露恢复代价很大。"
+      }
+    },
+    "score": 54,
+    "revision": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-02-github-1337038478-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1337038478:root",
+        "area": "code",
+        "fingerprint": "ac7c50b364bec5899a96628c5cbefb19b8dc6bea"
+      }
+    ]
+  }
+}

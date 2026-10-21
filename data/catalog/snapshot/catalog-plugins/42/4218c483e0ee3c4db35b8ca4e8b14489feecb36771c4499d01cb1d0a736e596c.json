@@ -1,0 +1,337 @@
+{
+  "id": "github:1335791040:root",
+  "repository_id": 1335791040,
+  "component_id": "root",
+  "repository": "Aik358/dsh-draw-gacha",
+  "path": "",
+  "aliases": [],
+  "name": "draw-gacha",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "4c8e365a43548861fb082fe5f795f4a550eda3325dc76662e91dd9e6fde42168",
+    "code": "9fd81e6db10944b6fa339aeb731e2850e1627b9a",
+    "maintenance": "458aab4e94ae58986e3b4f156f689eee01ce54f48737b066f7094aab91bd10bb"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1335791040-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:03:50.244Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1335791040-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Aik358/dsh-draw-gacha/blob/9fd81e6db10944b6fa339aeb731e2850e1627b9a/README.md",
+      "revision": "9fd81e6db10944b6fa339aeb731e2850e1627b9a",
+      "captured_at": "2026-10-21T08:03:50.244Z",
+      "summary": "在发送区加入抽卡拉杆，按模型流中的文本信号播放娱乐演出。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/aik358--dsh-draw-gacha/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1335791040-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Aik358/dsh-draw-gacha/blob/9fd81e6db10944b6fa339aeb731e2850e1627b9a/lib/index.js",
+      "revision": "9fd81e6db10944b6fa339aeb731e2850e1627b9a",
+      "captured_at": "2026-10-21T08:03:50.244Z",
+      "summary": "核查 lib/index.js、lib/client.js、package.json、cordis.patch.yml；Host以session/generation维护内存观测，llm/stream透传时累计reasoning/text字符及中英文短语计数；start/state/cancel三POST路径供client轮询。client拉杆先arm再调用原生submit，按信号量/时间结算，skip/关闭只控制演出不取消模型。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/aik358--dsh-draw-gacha/REVIEWED-SOURCE.json",
+      "limitations": [
+        "根lib Host流处理/路由、client发送与结算/slot接线和README；未运行浏览器，不把作者演示当本地验证。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "等待生成时希望获得趣味视觉反馈的DSH Web用户；交付是动画与娱乐卡面，不能作为答案质量评估。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Host以session/generation维护内存观测，llm/stream透传时累计reasoning/text字符及中英文短语计数；start/state/cancel三POST路径供client轮询。client拉杆先arm再调用原生submit，按信号量/时间结算，skip/关闭只控制演出不取消模型。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "根lib Host流处理/路由、client发送与结算/slot接线和README；未运行浏览器，不把作者演示当本地验证。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "Web双面bundle，依赖宿主inputActions/useInput与llm/stream；内存状态随卸载清理，不持久化完整reasoning。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金无单独API调用，但原消息照常调用模型；人工需知道skip非取消。140msHTTP轮询、WebAudio和动画有CPU/网络/可访问性成本，未测。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "只适合把等待过程当娱乐的用户；需要效率/可读性或质量监控时，不能用卡面代替真实任务状态与结果核查。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "提供趣味反馈而非增效证明；没有正确率、等待满意度或渲染开销对照。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "generation防止旧轮询结果混入新演出，流消费先await next再迭代并原样yield；统计与浏览器结果分离。辅助流purpose排除、tool-calls不中断是有用状态细节。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "把模型等待过程转成轻量娱乐反馈，跨chunk尾部拼接减少分词断裂漏计，工具调用finish保持观测避免中途当完结。增量是宿主流与互动演出的衔接；稀有度是自定义词频规则，不能认作推理深度或模型能力测量。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "演出是否会让用户把风格词当能力？verify/然而/步骤等词的出现不证明真实测试、自纠错或正确性，长度阈值又奖励冗长输出。作者明确娱乐免责声明是必要限制；即便不把原reasoning发到浏览器，聚合统计也只是风格代理量。client每140ms轮询及全屏动画开销未测，可能改变阅读体验。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "将卡面明确显示为“等待反馈”，并与实际任务产物/测试状态分离，可能保留娱乐感同时降低质量误读。盲测同正确率但不同风格长度的回答，比较用户质量判断偏差和等待满意度；若仍依稀有度高估正确性，则应移除能力暗示而非提高词频复杂度。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335791040:root",
+          "area": "code",
+          "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:50.244Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:03:50.244Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "9fd81e6db10944b6fa339aeb731e2850e1627b9a",
+    "reviewed_at": "2026-10-21T08:03:50.244Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335791040:root",
+        "area": "code",
+        "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "新颖性9：抽卡等待演出是常见游戏化模式的宿主适配；机制8：跨chunk观测/工具中态有具体接线；迁移性5：娱乐流反馈可借鉴但规则强绑定；简化4：免外部媒体/模型服务，仍增加轮询与动画。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "工作流0：不改变任务责任与交接；交付0：业务输出未变；覆盖5：娱乐偏好用户获得另一交互入口；经济0：未见成本结构改变，不把更愿意等待当经济收益。",
+      "basis": "interpretation",
+      "score": 5,
+      "evidence_ids": [
+        "2026-10-21-07-github-1335791040-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "喜欢等待娱乐者可试抽卡演出；先核关闭和skip行为，卡面不衡量答案质量且跳过不取消模型。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "等待时娱乐反馈属于明确偏好，非工作验收需求。"
+      },
+      "advantage": {
+        "score": 6,
+        "rationale": "会话信号驱动动画比静态装饰多互动。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核字符词频结算与轮询，未验证满意度或性能。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "140ms轮询、音频全屏动画与注意力有负担，原模型费用照常。"
+      }
+    },
+    "score": 44,
+    "revision": "9fd81e6db10944b6fa339aeb731e2850e1627b9a",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-07-github-1335791040-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335791040:root",
+        "area": "code",
+        "fingerprint": "9fd81e6db10944b6fa339aeb731e2850e1627b9a"
+      }
+    ]
+  }
+}

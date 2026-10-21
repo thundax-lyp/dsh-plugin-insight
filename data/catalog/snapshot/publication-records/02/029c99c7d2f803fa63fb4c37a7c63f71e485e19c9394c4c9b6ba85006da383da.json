@@ -1,0 +1,17 @@
+{
+  "id": "github:1340492214:root",
+  "repository": "AKS1st/dock-files",
+  "path": "",
+  "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+  "fingerprints": {
+    "directory": "983fcdf396ccc238853c54eba420139aa7d6b1312fc1023e569f2561b7161e56",
+    "code": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+    "maintenance": "99d184e2cbeea68029862dea12ec2ff34a236aeeca6a440cad47a68a50155f77"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "18f5e605acc50319c928f5b9bf4fcea110c53f24e61bb08d075c3140044ae016"
+}

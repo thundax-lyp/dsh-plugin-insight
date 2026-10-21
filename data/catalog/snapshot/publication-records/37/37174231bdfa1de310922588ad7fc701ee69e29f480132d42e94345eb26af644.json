@@ -1,0 +1,18 @@
+{
+  "id": "github:1334493734:root",
+  "repository": "Alan2Z/dsh-speak",
+  "path": "",
+  "revision": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee",
+  "fingerprints": {
+    "directory": "754cfa5ca9b31c887c138d93f684eea2d2bbe3c9f50c988892fd67ca28e1f232",
+    "code": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee",
+    "maintenance": "b3805f8fc672aa8aa64f82693a50c5164d199afa1d550a44fe9d8548e8f8db56"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "b3f5d72575fb7768db54a6260301adf1267f8c46bfbc8def749b3271e9274376"
+}

@@ -1,0 +1,283 @@
+{
+  "id": "github:1387227102:root",
+  "repository_id": 1387227102,
+  "component_id": "root",
+  "repository": "2861292267/DSH-Official-WorkBuddy-Credit-Proxy",
+  "path": "",
+  "aliases": [],
+  "name": "DSH-Official-WorkBuddy-Credit-Proxy",
+  "entry_type": "plugin",
+  "technical_category": "model-provider",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "c139a131e40f9787a7f3201f76b73cf6238f4a313eb7449f37b19a05b52e8f86",
+    "code": "17a02c085af35ab08ceb3075b003a981afa76d5c",
+    "maintenance": "640674f3394b99598fd05ea08d2b1ae4ae5ad12d84631e54fab8b1f4343793ee"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1387227102-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:09:35.416Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1387227102-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/2861292267/DSH-Official-WorkBuddy-Credit-Proxy/blob/17a02c085af35ab08ceb3075b003a981afa76d5c/README.md",
+      "revision": "17a02c085af35ab08ceb3075b003a981afa76d5c",
+      "captured_at": "2026-10-21T02:09:35.416Z",
+      "summary": "将本机 WorkBuddy、CodeBuddy 账号接入 DSH 模型池，并提供多协议代理与积分面板。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/2861292267--dsh-official-workbuddy-credit-proxy/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1387227102-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/2861292267/DSH-Official-WorkBuddy-Credit-Proxy/blob/17a02c085af35ab08ceb3075b003a981afa76d5c/lib/protocol-compat.js",
+      "revision": "17a02c085af35ab08ceb3075b003a981afa76d5c",
+      "captured_at": "2026-10-21T02:09:35.416Z",
+      "summary": "核查 lib/protocol-compat.js、lib/index.js；lib/index.js维护空闲权重、top5候选、每账号在途2个、会话粘性及分级冷却；protocol-compat将Responses和Messages转换为chat并回译流，调度状态不重复。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/2861292267--dsh-official-workbuddy-credit-proxy/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有本人账号、希望在兼容客户端复用接入和故障转移的用户，交付为经过同一调度器的模型响应。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1387227102:root",
+          "area": "code",
+          "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:09:35.416Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js维护空闲权重、top5候选、每账号在途2个、会话粘性及分级冷却；protocol-compat将Responses和Messages转换为chat并回译流，调度状态不重复。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1387227102:root",
+          "area": "code",
+          "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:09:35.416Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1387227102:root",
+          "area": "code",
+          "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:09:35.416Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1387227102:root",
+          "area": "code",
+          "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:09:35.416Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次要已有账号登录和宿主配置；持续上游积分、模型调用、协议维护与失败重试成本，自动化奖励不等于可持续免费成本。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1387227102:root",
+          "area": "code",
+          "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:09:35.416Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "仅在本人账号和明确上游使用条件下隔离试用，先验证真实客户端工具闭环与协议降级；不要只凭响应200扩大使用。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1387227102:root",
+          "area": "code",
+          "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:09:35.416Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "共享池减少人工切号与重复调度实现有机制依据；缓存收益和可用率未本轮实测，账号数和积分不能推出经济收益。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1387227102:root",
+          "area": "code",
+          "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:09:35.416Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "会话key从system与首个user内容推导，可在截断或相同开头会话中产生绑定边界；粘性有TTL与容量上限，在途租约控制并发。协议层独立有助于定位错误。 [固定源码](https://github.com/2861292267/DSH-Official-WorkBuddy-Credit-Proxy/blob/17a02c085af35ab08ceb3075b003a981afa76d5c/lib/protocol-compat.js#L1)。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1387227102:root",
+          "area": "code",
+          "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:09:35.416Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:09:35.416Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "17a02c085af35ab08ceb3075b003a981afa76d5c",
+    "reviewed_at": "2026-10-21T02:09:35.416Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1387227102:root",
+        "area": "code",
+        "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 18,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：相对声明上游多协议共池实质；mechanism：翻译和调度隔离实质；transferability：协议层实质可复用但有损；simplification：避免三套调度实质。",
+      "basis": "interpretation",
+      "score": 51,
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：跨客户端复用账号实质；delivery：多协议响应实质但子集；reach：更多客户端小幅；economics：减少人工切号小幅，积分收益未测。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-01-github-1387227102-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "既有本人WorkBuddy账号可继续评估共享代理；先验证上游条件与真实工具闭环，图像占位和工具重排不能视为无损兼容。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "已有账号跨兼容客户端复用与故障转移任务明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "统一池和租约减少手切号，协议翻译损失限制增益。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "调度源码可见，input_image占位和补工具结果说明兼容为子集。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "凭据上游积分、协议变化及失败换号维护成本高。"
+      }
+    },
+    "score": 54,
+    "revision": "17a02c085af35ab08ceb3075b003a981afa76d5c",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-01-github-1387227102-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1387227102:root",
+        "area": "code",
+        "fingerprint": "17a02c085af35ab08ceb3075b003a981afa76d5c"
+      }
+    ]
+  }
+}

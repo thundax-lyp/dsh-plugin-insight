@@ -1,0 +1,246 @@
+{
+  "id": "github:1342742812:root",
+  "repository_id": 1342742812,
+  "component_id": "root",
+  "repository": "0xRabit/dsh-crypto-portfolio",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-crypto-portfolio",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "office-operations",
+  "tags": [
+    "加密资产",
+    "看板",
+    "外部 API"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "3bc75acf175bf1b7e3628c03426b9a1491724922a570f15438bf78930ceb3235",
+    "code": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+    "maintenance": "2973590e8ea11e3f21efb838541905f976e73dd47f84efd2301c34cb4642bd89"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1342742812-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:10:24.431Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1342742812-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/README.md",
+      "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+      "captured_at": "2026-10-20T03:10:24.431Z",
+      "summary": "以 DSH 插件启动 Python 资产看板，汇集链上钱包和交易所账户数据。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0xrabit--dsh-crypto-portfolio/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1342742812-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/index.js",
+      "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+      "captured_at": "2026-10-20T03:10:24.431Z",
+      "summary": "核查 index.js；Node 入口初始化配置模板并启动 run.py 子进程，默认绑定回环地址，卸载时发送 SIGTERM。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0xrabit--dsh-crypto-portfolio/REVIEWED-SOURCE.json",
+      "limitations": [
+        "只核查启动和数据目录边界，未验证交易所适配、金额准确性、API 权限或投资收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "同时管理多个钱包与交易所账户的人需要统一查看持仓，而非在多个页面手工汇总。",
+      "evidence_ids": [
+        "20261020-research40-github-1342742812-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342742812:root",
+          "area": "code",
+          "fingerprint": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:24.431Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Node 入口初始化配置模板并启动 run.py 子进程，默认绑定回环地址，卸载时发送 SIGTERM。",
+      "evidence_ids": [
+        "20261020-research40-github-1342742812-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342742812:root",
+          "area": "code",
+          "fingerprint": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:24.431Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "多来源汇总有明确便利，但看板属于数据呈现，不能提供资产真实性或收益保证。",
+      "evidence_ids": [
+        "20261020-research40-github-1342742812-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342742812:root",
+          "area": "code",
+          "fingerprint": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:24.431Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "外部 API、Python 依赖和密钥维护增加运维负担，未测刷新耗时或人工对账节省。",
+      "evidence_ids": [
+        "20261020-research40-github-1342742812-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342742812:root",
+          "area": "code",
+          "fingerprint": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:24.431Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "把用户配置移出 node_modules 可避免升级覆盖；子进程退出、端口占用和备份恢复需补充验收。",
+      "evidence_ids": [
+        "20261020-research40-github-1342742812-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342742812:root",
+          "area": "code",
+          "fingerprint": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:24.431Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。",
+      "evidence_ids": [
+        "20261020-research40-github-1342742812-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342742812:root",
+          "area": "code",
+          "fingerprint": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:24.431Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "只核查启动和数据目录边界，未验证交易所适配、金额准确性、API 权限或投资收益。",
+      "evidence_ids": [
+        "20261020-research40-github-1342742812-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342742812:root",
+          "area": "code",
+          "fingerprint": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:24.431Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包版本 0.2.0，除了 Node 还需 Python 环境及其依赖；源码安装不能替代完整部署验收。",
+      "evidence_ids": [
+        "20261020-research40-github-1342742812-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342742812:root",
+          "area": "code",
+          "fingerprint": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:10:24.431Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:10:24.431Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "多钱包用户可先用公开钱包或无交易权限账户试汇总，逐来源核对同刻持仓。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "跨钱包和交易所汇总持仓是明确任务。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "统一看板便利具体，权威数值仍需各来源对账。"
+      },
+      "evidence": {
+        "score": 6,
+        "rationale": "仅核查Node启动和数据目录，核心Python适配与金额未验。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "Node加Python、外部API和密钥显著增加运维负担。"
+      }
+    },
+    "score": 47,
+    "revision": "c615eeb9e76d9a91bffb0171ef349532e794eb3c",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-research40-github-1342742812-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1342742812:root",
+        "area": "code",
+        "fingerprint": "c615eeb9e76d9a91bffb0171ef349532e794eb3c"
+      }
+    ]
+  }
+}

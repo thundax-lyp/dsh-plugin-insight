@@ -1,0 +1,17 @@
+{
+  "id": "github:1359145352:root",
+  "repository": "Aafff623/dsh-callout",
+  "path": "",
+  "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+  "fingerprints": {
+    "directory": "4adc62bb1188125406dbacfed45c57d49745732175255903b4733dc3f594bced",
+    "code": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+    "maintenance": "27fbacc31f40611e1d7efba6ad48ee8cd8d1093187076c9705a56ead805086fe"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "f761b39364da21954fa8d2309f938f402d2560b49ffc6b5098feffb5607bbd6b"
+}

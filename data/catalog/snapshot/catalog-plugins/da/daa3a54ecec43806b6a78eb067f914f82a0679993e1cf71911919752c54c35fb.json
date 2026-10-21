@@ -1,0 +1,337 @@
+{
+  "id": "github:1335798113:packages-messaging-core",
+  "repository_id": 1335798113,
+  "component_id": "packages-messaging-core",
+  "repository": "534119219/dsh-messaging",
+  "path": "packages/messaging-core",
+  "aliases": [],
+  "name": "messaging-core",
+  "entry_type": "plugin",
+  "technical_category": "channels-remote",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "9bec3b5be9453e4fa48fbd42e4e36993802f7bc15a2f1a1e0d02eba93a02f06e",
+    "code": "f1c3399ef40e3f419161d153e997d6f30576a627",
+    "maintenance": "1226f769ca0536ef42ee03d1d60be2e9175463101b58f595e0bed5c088046948"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1335798113-packages-messaging-core-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:18:36.578Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1335798113-packages-messaging-core-author",
+      "kind": "author_claim",
+      "url": "https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/README.md",
+      "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
+      "captured_at": "2026-10-21T03:18:36.578Z",
+      "summary": "将多种消息渠道接入 DSH，统一授权、聊天会话映射、命令与回复路由。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/534119219--dsh-messaging--packages-messaging-core/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1335798113-packages-messaging-core-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/index.js",
+      "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
+      "captured_at": "2026-10-21T03:18:36.578Z",
+      "summary": "核查 packages/messaging-core/lib/index.js、packages/messaging-core/lib/session-map.js、packages/messaging-core/lib/agents.js、packages/messaging-core/lib/outbound.js、packages/messaging-core/lib/tools.js、packages/messaging-core/lib/platforms/telegram.js、packages/messaging-core/package.json、NOTICE；packages/messaging-core/lib/index.js注册适配器并在handleInbound核对allowAll/allowedUsers，再处理命令和Agent followup/steer；session-map持久化chat/session历史，outbound订阅事件按能力流式编辑或分段发送。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/534119219--dsh-messaging--packages-messaging-core/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读核心授权、会话映射、Agent接线、出站路由、工具及Telegram代表适配器；未实连任何平台，其他平台只核对注册/配置范围。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "希望从已有即时通讯客户端访问自用DSH的人，将平台聊天映射到会话并接收模型回复；接入人须设置用户白名单与本机工作区权限。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "packages/messaging-core/lib/index.js注册适配器并在handleInbound核对allowAll/allowedUsers，再处理命令和Agent followup/steer；session-map持久化chat/session历史，outbound订阅事件按能力流式编辑或分段发送。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读核心授权、会话映射、Agent接线、出站路由、工具及Telegram代表适配器；未实连任何平台，其他平台只核对注册/配置范围。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "packages/messaging-core子包，依赖多个平台SDK与DSH rc接口；root README给出file:子包安装，不能视为根仓库bundle直接可装。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次逐平台申请机器人/凭据、白名单与网络；持续承担SDK更新、重连、日志、模型调用和重复消息复核。现金按模型/平台，人工移植维护未测，单插件不等于低维护。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有机器人接入经验的人可先用一个平台的私人聊天测试；固定版本、收紧白名单，核对重连和长消息，再开放群聊，群成员的共享上下文要提前明确。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少换客户端和逐平台配置Agent的工作，但聊天可达不等于任务获授权或交付可靠；收益受平台协议与故障恢复约束。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "平台配置目录共用、核心授权在命令前执行、按capability路由回复且长文最终分段而非简单截断值得借鉴；映射直写和内存出站状态是提升恢复可靠性前的重点。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对逐平台各部署Agent机器人，贡献是把授权、会话生命周期、工作区和流式回复做成DSH共享核心，并将平台差异放入适配器。README明确归属hermes-agent消息体系移植，协议与交互语义不应算作原创；增量是DSH agents/sessions/settings接线及单插件配置。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "统一核心是否意味着所有渠道都有相同可靠性与隔离？白名单主要核对平台userId，平台适配器负责身份真实性；群聊仍按chatKey映射会话，授权用户间上下文可能共享。session-map直接writeFileSync且写失败只warn，外发buffer/消息ID在内存，进程故障可能丢映射或重复/漏回复；27个导入不能替代每平台的签名、重连与送达验证。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：以平台事件ID建立持久收件箱/发件箱，并将映射更新与待回复状态做可恢复提交，可让跨渠道重连后按同一任务身份去重。依据是当前共享sessionMap与内存出站状态之间的缺口，当前未实现。用重复Webhook、外发成功后断线和会话映射写失败三类对照，量化重复执行/回复与恢复时间；无平台幂等键时保留未知结果，不能无条件重放。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335798113:packages-messaging-core",
+          "area": "code",
+          "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:18:36.578Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:18:36.578Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
+    "reviewed_at": "2026-10-21T03:18:36.578Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335798113:packages-messaging-core",
+        "area": "code",
+        "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：hermes移植与DSH适配；mechanism 实质：共享会话/授权/出站能力层；transferability 实质：适配器模式可迁移但平台保证不统一；simplification 实质：单核心统一设置与命令。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：通讯端直接接入DSH任务；delivery 实质：持续会话与渠道流式回复；reach 实质：已有通讯用户可进入，未核实真实采用；economics 小幅：少重复部署，依赖维护成本未知。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "已有机器人经验者可先以单平台私人聊天试用；收紧白名单，验证重连长消息及群共享上下文，不能凭渠道数量认定可靠。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "从常用聊天访问DSH任务明确。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "共享授权会话与流式核心比每平台部署少重复接线。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "handleInbound白名单和会话映射已查，写失败只warn与内存buffer限制可见。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "多平台SDK凭据维护及模型费用不低，先单平台控制复杂度。"
+      }
+    },
+    "score": 65,
+    "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335798113:packages-messaging-core",
+        "area": "code",
+        "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
+      }
+    ]
+  }
+}

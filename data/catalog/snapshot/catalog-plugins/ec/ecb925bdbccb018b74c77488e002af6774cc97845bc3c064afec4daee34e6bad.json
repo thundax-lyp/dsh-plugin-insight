@@ -1,0 +1,337 @@
+{
+  "id": "github:1336585522:root",
+  "repository_id": 1336585522,
+  "component_id": "root",
+  "repository": "863683348/dsh-feed",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-feed",
+  "entry_type": "plugin",
+  "technical_category": "context-search",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "ae9848b0e388fa3860b9e25cc7c9faea24944dc0119e739069a35adf027392a6",
+    "code": "bc592147401c7697749390eb6a2a6cddd42af747",
+    "maintenance": "9f17a4131a3fc9283d2614a77721c0cacdef7efafa3e994c2cbf6b4467a332ae"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1336585522-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:48:28.068Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1336585522-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/863683348/dsh-feed/blob/bc592147401c7697749390eb6a2a6cddd42af747/README.md",
+      "revision": "bc592147401c7697749390eb6a2a6cddd42af747",
+      "captured_at": "2026-10-21T03:48:28.068Z",
+      "summary": "聚合GitHub topic与npm插件条目为本地JSON索引，提供搜索、统计、CLI和实验性MCP。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-feed/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1336585522-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/863683348/dsh-feed/blob/bc592147401c7697749390eb6a2a6cddd42af747/lib/index.js",
+      "revision": "bc592147401c7697749390eb6a2a6cddd42af747",
+      "captured_at": "2026-10-21T03:48:28.068Z",
+      "summary": "核查 lib/index.js、lib/sync.js、lib/query.js、bin/dsh-feed.js；lib/index.js注册feed_sync/search/stats；sync.js并行抓GitHub与npm并按名称键合并；query.js做英文词和中文二元组加权匹配；bin/dsh-feed.js复用这些函数提供CLI与逐行JSON-RPC。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-feed/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合要在DSH之外复用插件发现数据的工具开发者；交付物是可检查的本地JSON索引。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js注册feed_sync/search/stats；sync.js并行抓GitHub与npm并按名称键合并；query.js做英文词和中文二元组加权匹配；bin/dsh-feed.js复用这些函数提供CLI与逐行JSON-RPC。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次配置宿主peer依赖、索引目录及可选GitHub token；同步消耗API额度和网络，人工需核身份与失败覆盖，现金无固定服务费证据。开放JSON减少接入代码但不消除源维护。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合把它作为候选索引接口试用。先检查本次覆盖页数和npm是否成功，再核实仓库与包的对应；搜索排序不能直接决定安装。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "共享数据形状有降低重复抓取的价值，无独立下游采用或准确率对照。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "查询与同步、存储、CLI分离，便于离线检查；MCP实现是逐行JSON解析和工具分派，不等同已通过完整MCP客户端兼容性验收。恢复覆盖与身份语义比扩展更多入口更值得先修。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者定位开放聚合底座；实际增量是在宿主工具、CLI与极简MCP之间共享同一JSON索引和纯查询逻辑，降低下游重复抓取成本。相对人工浏览两个目录，能复用归一化数据；这是数据接入与接口整合，不是全生态语义理解或插件可用性验证。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "默认GitHub只读两页、npm只取100项，npm失败被catch为[]；合并键使用GitHub owner/repo与npm包名，通常不是同一身份，无法保证跨源去重。结果count和sources只表示此次得到条目，不能当完整生态覆盖或可安装数量。npm缺Star还被置0，混淆未知与真实0。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：为每源加入覆盖范围、失败状态及仓库数字ID—包名映射，可让下游区分完整索引与局部结果。用同仓库不同包名、超过两页和npm失效输入，比较重复率与缺失报告；若身份来源不足，应保留未关联而不猜。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336585522:root",
+          "area": "code",
+          "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:28.068Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:48:28.068Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "bc592147401c7697749390eb6a2a6cddd42af747",
+    "reviewed_at": "2026-10-21T03:48:28.068Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1336585522:root",
+        "area": "code",
+        "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 15,
+        "simplification": 8
+      },
+      "rationale": "novelty=9：跨源索引是既有模式，增量在DSH接口。 mechanism=15：同步、查询、三类入口有具体接线。 transferability=15：开放JSON与纯查询易复用。 simplification=8：减少重复抓取，身份和覆盖仍人工核。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=18：发现到本地索引形成明确流程。 delivery=15：JSON可交付但完整性未保证。 reach=10：多入口扩大覆盖，源查询受限。 economics=4：无下游净工时或成本验证。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336585522-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "需要候选索引接口的开发者可试开放JSON；先查分页、npm失败和跨源身份，搜索排名不能决定安装。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "下游复用发现数据与本地JSON交付清楚。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "宿主CLI与JSON-RPC共享索引省重复抓取。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "两页GitHub、100条npm和异名合并键源码明确，不能宣称完整去重。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "维护token及源身份、失败覆盖需人工，开放接口不免数据成本。"
+      }
+    },
+    "score": 59,
+    "revision": "bc592147401c7697749390eb6a2a6cddd42af747",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-03-github-1336585522-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1336585522:root",
+        "area": "code",
+        "fingerprint": "bc592147401c7697749390eb6a2a6cddd42af747"
+      }
+    ]
+  }
+}

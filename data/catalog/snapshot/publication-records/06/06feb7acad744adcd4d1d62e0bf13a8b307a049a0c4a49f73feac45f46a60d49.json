@@ -1,0 +1,18 @@
+{
+  "id": "github:1347136944:root",
+  "repository": "AKUSH99/dsh-balance-chip",
+  "path": "",
+  "revision": "a2080e0f5024f95d35439988107183f024ba034d",
+  "fingerprints": {
+    "directory": "f3170bac4818c1bd1b4ccb476b531c980e990ca80dafbf6d96925332f42c881c",
+    "code": "a2080e0f5024f95d35439988107183f024ba034d",
+    "maintenance": "03647b5e11c3db26174d19c0f72b0c9193a5f1aa72a55bf8a7e5c630fb46ca60"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "a0327a15c12fa44f0b41fa2516ea92a961660d594ba2eb52655e1b9cfe9aea62"
+}

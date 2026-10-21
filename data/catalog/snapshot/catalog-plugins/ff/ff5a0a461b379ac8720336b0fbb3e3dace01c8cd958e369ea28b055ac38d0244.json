@@ -1,0 +1,337 @@
+{
+  "id": "github:1335382133:root",
+  "repository_id": 1335382133,
+  "component_id": "root",
+  "repository": "534119219/chicheng-push",
+  "path": "",
+  "aliases": [],
+  "name": "chicheng-push",
+  "entry_type": "plugin",
+  "technical_category": "channels-remote",
+  "business_category": "office-operations",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "0b199cca1e4255da4c5fede8784039c5a8632e0983826ad24b60874a4d7e5339",
+    "code": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da",
+    "maintenance": "d04f27c2525e0c9abc68c9415e7512af7129141c0083628b71fa43780669cec6"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1335382133-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:12:52.433Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1335382133-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/534119219/chicheng-push/blob/2aa2b8273183bc91f4cf6d12b1f7121bbee751da/README.md",
+      "revision": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da",
+      "captured_at": "2026-10-21T03:12:52.433Z",
+      "summary": "在 DSH 配置多种推送渠道，并通过进程内服务或 HTTP 接口发送通知。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-push/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1335382133-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/534119219/chicheng-push/blob/2aa2b8273183bc91f4cf6d12b1f7121bbee751da/lib/index.js",
+      "revision": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da",
+      "captured_at": "2026-10-21T03:12:52.433Z",
+      "summary": "核查 lib/index.js、lib/client.js、package.json、SECURITY.md；lib/index.js以渠道类型目录驱动字段与sender分发，Node fetch提供12秒超时、按渠道解析响应；sendNotification串行发送，返回total/sent/results，pushNotifier与受fence保护HTTP共享实现。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-push/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读httpJson、渠道发送、目标解析、结果汇总、存储/API与客户端；只确认分发结构，未逐平台实发或保证所有协议仍兼容。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "其他DSH插件或脚本在任务结束时向个人设备/群组发送标题与内容，交付每渠道发送结果，用户仍需确认消息被接收与处理。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js以渠道类型目录驱动字段与sender分发，Node fetch提供12秒超时、按渠道解析响应；sendNotification串行发送，返回total/sent/results，pushNotifier与受fence保护HTTP共享实现。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读httpJson、渠道发送、目标解析、结果汇总、存储/API与客户端；只确认分发结构，未逐平台实发或保证所有协议仍兼容。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "web bundle，HTTP渠道依赖Node内置fetch，email动态加载nodemailer；可配置自建接口，渠道仍各有授权和限额。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次申请渠道token、目标和权限；持续应对接口变更、配额、超时及重试。渠道费用按平台计，人工核对敏感配置与漏发另计；无端到端成本测量。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "有多个任务插件要发通知时可先接一个非敏感测试渠道；检查每渠道结果、令牌文件权限和远程接口范围，再发正式任务摘要，避免把秘密内容直接推到群里。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少重复配置通知接口与错误分支，发送成功不能替代任务完成或人已处理；消息内容与可靠性需调用方定义。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "类型schema供UI与host共用、sendChannel捕获每渠道异常、服务和HTTP复用发送函数值得借鉴；串行分发、无持久幂等账本与config全量公开形状是复用边界。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对每个定时任务内各写Webhook脚本，贡献是集中管理DSH通知配置，用进程内服务和HTTP复用同一发送入口与每渠道错误结果。渠道实现明确参考qinglong notify，不能把成熟渠道协议算作原创；插件增量是DSH配置、服务与调用者接线。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "返回ok是否等于用户可靠收到？sender多以HTTP和渠道业务码判断接受，并无统一送达回执或持久重试；串行多渠道可能累积12秒超时。publicChannel返回完整config，令牌还明文存channels.json，fence信任边界必须与远程访问配置一起检查，不能因“只在本机”就省略敏感字段范围。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：为调用方提供幂等通知ID与持久发送账本，按“已提交/平台接受/确认收到”分层，允许失败渠道重试，可减少任务重试引发的重复提醒。由每渠道results但无持久投递状态推导，当前未实现。用成功后连接断开、部分渠道失败和调用方重放对照，测重复率、漏发与等待时间；不支持回执的平台必须保持unknown，不能伪造已读。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335382133:root",
+          "area": "code",
+          "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:12:52.433Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:12:52.433Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da",
+    "reviewed_at": "2026-10-21T03:12:52.433Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335382133:root",
+        "area": "code",
+        "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty 小幅：qinglong渠道在DSH适配；mechanism 小幅：统一sender与HTTP解析，未改变投递保证；transferability 实质：服务/HTTP共用结果模型可复用；simplification 小幅：配置集中但各平台条件仍独立。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：任务插件共享通知职责；delivery 小幅：渠道接受结果而非业务确认；reach 实质：多既有通讯设备/群组触达；economics 小幅：少重复写集成但无维护工时对照。",
+      "basis": "interpretation",
+      "score": 40,
+      "evidence_ids": [
+        "2026-10-21-02-github-1335382133-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "多任务共用通知有明确价值，但接口返回完整config且token明文落盘；先核清fence、脱敏与文件权限，再接正式摘要。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "插件和脚本多渠道通知是重复集成任务。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "统一pushNotifier与HTTP每渠道结果比各写Webhook少重复逻辑。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "12秒超时和业务码可查，但无送达回执且publicChannel暴露完整配置。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "渠道凭据与远程范围维护重，多渠道串行超时和漏发需人工。"
+      }
+    },
+    "score": 60,
+    "revision": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-02-github-1335382133-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335382133:root",
+        "area": "code",
+        "fingerprint": "2aa2b8273183bc91f4cf6d12b1f7121bbee751da"
+      }
+    ]
+  }
+}

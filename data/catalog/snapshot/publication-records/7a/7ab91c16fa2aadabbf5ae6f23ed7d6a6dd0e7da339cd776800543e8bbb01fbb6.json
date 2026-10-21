@@ -1,0 +1,17 @@
+{
+  "id": "github:1409889533:root",
+  "repository": "4444Hao/dsh-codefall",
+  "path": "",
+  "revision": "68159fcced1d65c7ea356821859ea80d365c523a",
+  "fingerprints": {
+    "directory": "4940a550d40648e15123bd1e9bb44cfcc82d20ef3f5952ce72aec1f2a86980a7",
+    "code": "68159fcced1d65c7ea356821859ea80d365c523a",
+    "maintenance": "8004905c158ea7d84a4b7f69855008777464ae89c418984ae6eff09a54912ec2"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "fb954ca768015a1da73372c4e1240ce4568a505c774edcd7626e2e4801dcef89"
+}

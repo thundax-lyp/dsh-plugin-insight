@@ -1,0 +1,17 @@
+{
+  "id": "github:1334267268:root",
+  "repository": "2768651338/dsh-plugin-manager",
+  "path": "",
+  "revision": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+  "fingerprints": {
+    "directory": "7ae15d511cb990b6fc5eeafa01380c3cb8b9f5fcfabb412d86968e7d3f54426e",
+    "code": "df0a23258ed3761bcce12ad20958ba2c2a647a4c",
+    "maintenance": "cf74eb3b16b977345267380d77ebcbbfb3e48a3b3887608729dc2c6c5cbcbcf3"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "1481c89ab25bfeb1ec60d74cfcf3784616854456e2a04fa33c3225ce1a768633"
+}

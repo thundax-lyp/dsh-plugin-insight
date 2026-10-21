@@ -1,0 +1,17 @@
+{
+  "id": "github:1336582509:root",
+  "repository": "863683348/dsh-trend-radar",
+  "path": "",
+  "revision": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+  "fingerprints": {
+    "directory": "f9cfbe6b02e951046470ee684964f9262da0c4e6319acec45da7a0bb18a6b34e",
+    "code": "238ccd97948617fe8dd92f9ee5c5c05360592026",
+    "maintenance": "a7948127ce200e44f29e8a5db3dd3654eb9a0d5e77d2ae36ea5707bd38bc9bb5"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "5c9269e57d998422b45912cf96a31495f17e761053b7f2d7fd5b39737c30e4e9"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1336663611:root",
+  "repository": "863683348/dsh-plugin-education",
+  "path": "",
+  "revision": "2d880f86c9160652e27c1f4702265822e0e726e9",
+  "fingerprints": {
+    "directory": "c53a5ccc7097575906558250c8ce759662bb8fe7782974148db154e3e14776a7",
+    "code": "2d880f86c9160652e27c1f4702265822e0e726e9",
+    "maintenance": "038ebaf1c8e02cbd8bf91c7d5ab3c75a518cb11ccf5af9ee6a27bfee87581888"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "fa8d87a7bcd0d6f22922bb751ee9685f5114ce292f9948446f2562fad8b03ec4"
+}

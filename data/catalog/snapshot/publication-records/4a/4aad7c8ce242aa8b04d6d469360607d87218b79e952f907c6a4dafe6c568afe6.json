@@ -1,0 +1,17 @@
+{
+  "id": "github:1424475406:root",
+  "repository": "58fly/dsh-language-guard",
+  "path": "",
+  "revision": "9351078c5d264033c49d221742840aee673c0cdf",
+  "fingerprints": {
+    "directory": "1569aec32eaf6da93b37e5c4574d0c92f1d8c10c233bee2326f8dfc13e38b1de",
+    "code": "9351078c5d264033c49d221742840aee673c0cdf",
+    "maintenance": "ccd931f28d1607e9f4829545c35774d31341c30dea902d1f87fa233273dc71b0"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "449cc91d08aa60d12bf14bf4b80b43167fe001e7086e98380b73e4ff130bd194"
+}

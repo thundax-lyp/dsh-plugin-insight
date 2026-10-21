@@ -1,0 +1,17 @@
+{
+  "id": "github:1377159975:root",
+  "repository": "AIcivilization/dsh-vps",
+  "path": "",
+  "revision": "d4223e07717dce3832d0233a6a12edfceb3fde27",
+  "fingerprints": {
+    "directory": "1cd2f63a74fdbb76d4cad9e473130f7ec83ec0a423ab51106deebedd3dec1e91",
+    "code": "d4223e07717dce3832d0233a6a12edfceb3fde27",
+    "maintenance": "27868f1b7b498eb8f58c31f896302edd4502125423d8a1aaa3dd52c76902ce91"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "9ba70f4bff5831231f87af56032925033ec3ce57717d1a3762ef98bc34bbe8bf"
+}

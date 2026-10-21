@@ -1,0 +1,283 @@
+{
+  "id": "github:1346023186:root",
+  "repository_id": 1346023186,
+  "component_id": "root",
+  "repository": "452926826/dsh-at-skill",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-at-skill",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "674c71f790a2ad95e72a951fcaa5899ec410e4dd546db1aa6895beed3769a909",
+    "code": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+    "maintenance": "12c727f5aebdc7b0b60a9701a6c798195e2b96b75ec854362f8eba9479df1c4f"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1346023186-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:06:41.930Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1346023186-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/README.md",
+      "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+      "captured_at": "2026-10-21T02:06:41.930Z",
+      "summary": "为 DSH 增加 @name 技能候选和发送前确定性技能加载。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1346023186-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts",
+      "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+      "captured_at": "2026-10-21T02:06:41.930Z",
+      "summary": "核查 src/index.ts、src/client/index.ts；客户端向inputTriggers注册@候选，按会话缓存skills列表；宿主agent/pre-step扫描用户文本中空白边界的@名称，查可调用Skill并注入带skill-invocation来源的用户消息。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "用户在输入框选择可调用Skill并确保模型开始前加载其指令，减少记忆斜杠命令或依赖模型自行判断。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346023186:root",
+          "area": "code",
+          "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.930Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "客户端向inputTriggers注册@候选，按会话缓存skills列表；宿主agent/pre-step扫描用户文本中空白边界的@名称，查可调用Skill并注入带skill-invocation来源的用户消息。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346023186:root",
+          "area": "code",
+          "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.930Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346023186:root",
+          "area": "code",
+          "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.930Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346023186:root",
+          "area": "code",
+          "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.930Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "本地候选缓存和消息注入开销；人工为命名冲突、候选陈旧和重复指令核对，构建配置还引用本地Harness路径，升级维护需处理。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346023186:root",
+          "area": "code",
+          "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.930Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346023186:root",
+          "area": "code",
+          "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.930Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "让显式Skill选择更可预测；同名歧义是文本协议边界，不能靠菜单分组消除。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346023186:root",
+          "area": "code",
+          "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.930Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "客户端注册源生命周期与连接重置缓存清理明确；宿主先尊重拒绝再追加Skill消息，查找带signal/cwd/scope。复用需保留原始用户消息与类型身份，不能将正则匹配当授权。 源码依据：[src/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L28)、[src/client/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L8)。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346023186:root",
+          "area": "code",
+          "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:41.930Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:06:41.930Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+    "reviewed_at": "2026-10-21T02:06:41.930Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1346023186:root",
+        "area": "code",
+        "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 8
+      },
+      "rationale": "novelty：已有@补全与Skill加载的组合适配；mechanism：pre-step确定加载为局部机制改动；transferability：类型化引用模式可推广但当前实现依赖宿主；simplification：统一入口减少记命令。",
+      "basis": "interpretation",
+      "score": 30,
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow：简化Skill选择步骤；delivery：指令加载可确认，不等于任务完成；reach：降低命令记忆门槛；economics：未发现成本结构改变。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-01-github-1346023186-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "Skill命名清楚者可试用@候选；先检查同名和缓存陈旧，并核对发出文本，加载指令不代表执行合格。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "显式选Skill且模型前加载指令需求具体。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "输入菜单省记斜杠和自行猜测，同名文本协议仍有歧义。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "pre-step边界扫描与来源消息注入源码可查，重名流程未验。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "无专用服务但需处理构建本地路径、命名及宿主升级。"
+      }
+    },
+    "score": 64,
+    "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-01-github-1346023186-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1346023186:root",
+        "area": "code",
+        "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+      }
+    ]
+  }
+}

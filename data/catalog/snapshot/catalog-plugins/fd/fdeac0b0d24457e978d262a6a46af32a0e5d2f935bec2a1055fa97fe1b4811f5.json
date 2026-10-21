@@ -1,0 +1,337 @@
+{
+  "id": "github:1424433303:root",
+  "repository_id": 1424433303,
+  "component_id": "root",
+  "repository": "7gzgn/dsh-restart-dock",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-restart-dock",
+  "entry_type": "plugin",
+  "technical_category": "runtime-deployment",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "4e1de0d3bc79ea288a39fa425927dd24eb77f51047211a7853599a408d9cb6ed",
+    "code": "bb74ab5d5eafdd97cec75a0be759346fdcacece7",
+    "maintenance": "16854253c41c3fe6675a4f3ed45b14922ae6206b3b3b026e544251df71923aa3"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1424433303-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:45:28.365Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1424433303-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/7gzgn/dsh-restart-dock/blob/bb74ab5d5eafdd97cec75a0be759346fdcacece7/README.md",
+      "revision": "bb74ab5d5eafdd97cec75a0be759346fdcacece7",
+      "captured_at": "2026-10-21T03:45:28.365Z",
+      "summary": "在 DSH 显示可拖动贴边的刷新和重启按钮，提供延迟选择与重启状态。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-restart-dock/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1424433303-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/7gzgn/dsh-restart-dock/blob/bb74ab5d5eafdd97cec75a0be759346fdcacece7/lib/index.js",
+      "revision": "bb74ab5d5eafdd97cec75a0be759346fdcacece7",
+      "captured_at": "2026-10-21T03:45:28.365Z",
+      "summary": "核查 lib/index.js、lib/relaunch.ps1、client.js、package.json；client以overlay注册小框，刷新调用location.reload，重启经同源自定义头POST；host写pending并spawn PowerShell，relaunch.ps1探测明确进程树、交接独立副本、强停重拉并写报告。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-restart-dock/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读host/client及PowerShell目标探测/重拉；未调用任何重启接口、脚本或进程操作。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Windows DSH用户改完宿主插件后主动重载进程，或仅刷新客户端；交付窗口/宿主恢复状态，不承诺继续旧任务。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "client以overlay注册小框，刷新调用location.reload，重启经同源自定义头POST；host写pending并spawn PowerShell，relaunch.ps1探测明确进程树、交接独立副本、强停重拉并写报告。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读host/client及PowerShell目标探测/重拉；未调用任何重启接口、脚本或进程操作。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "DSH>=0.2.1-rc.2声明，Windows PowerShell；其他平台重启返回501，刷新可用，源码说明的作者实测未复现。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次确认平台、原命令与helper存活；每次重启打断活动任务且需人工复核恢复，现金无新增服务证据，停机/返工时间未测。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "Windows上需要手动重载插件的人先检查没有任务写入；先验证状态与取消、保留工作，再测试重启，macOS/Linux只期待刷新。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少寻找重启入口的摩擦，但不能替代优雅退出、会话保存或自动续话。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "目标由显式CallerPid/TargetPid而非全局按名杀、inFlight锁有过期、报告保留失败阶段值得借鉴；PowerShell交接与宿主状态需要真实平台验证。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对找托盘/快捷方式重启，把客户端刷新与宿主重启明确拆成两个界面动作，并加入延迟、状态轮询与进程树报告。独立helper和Windows重拉为既有系统机制，增量是DSH入口及确定目标的恢复接线。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "延迟倒计时能否保证当前任务安全落盘？代码只等待设定延迟并强停进程，没有宿主排空或会话提交确认；请求来源护栏也只是本地Web信任控制，不证明任何正在执行任务可中断。只实现Windows重启，helper在job/Explorer失败时可能降级；进程回来了仍不证明插件初始化和业务任务已恢复。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：重启前让宿主报告活动任务和持久化屏障，并给用户明确“强制/等待”的选择，可减少延迟够了但会话仍写入的中断。依据是当前时间等待与状态轮询，未实现屏障。用持续日志写入、后台子进程和空闲三类对照，测丢失事件、恢复时间与取消有效性；屏障不可达时需明确强制语义。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424433303:root",
+          "area": "code",
+          "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:45:28.365Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:45:28.365Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "bb74ab5d5eafdd97cec75a0be759346fdcacece7",
+    "reviewed_at": "2026-10-21T03:45:28.365Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1424433303:root",
+        "area": "code",
+        "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty 小幅：重启按钮专用适配；mechanism 小幅：helper与进程树恢复成熟；transferability 小幅：Windows和私有桥限制；simplification 小幅：刷新/重启统一入口。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow 小幅：手动重启少操作；delivery 小幅：重拉报告非任务验收；reach 小幅：GUI用户易用；economics 小幅：省找启动器时间未测。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-03-github-1424433303-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "Windows维护者仅在没有活动写入且已保留工作时试手动重启；先验取消和进程报告，延迟不提供排空与落盘保证。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "改插件后手动重载与刷新是明确维护操作。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "刷新和宿主重启拆开及进程树报告省找入口，不自动续任务。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "独立helper与强停重拉源码可见，没有会话提交确认。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "无新增服务费，停机打断和Windows helper兼容需承担。"
+      }
+    },
+    "score": 59,
+    "revision": "bb74ab5d5eafdd97cec75a0be759346fdcacece7",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-03-github-1424433303-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1424433303:root",
+        "area": "code",
+        "fingerprint": "bb74ab5d5eafdd97cec75a0be759346fdcacece7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "id": "github:1336649545:root",
+  "repository_id": 1336649545,
+  "component_id": "root",
+  "repository": "863683348/dsh-insight",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-insight",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "747ff1d8588e0d30c7ec692699b4159c6a961c28205deb6c6b43a2e8477162cf",
+    "code": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b",
+    "maintenance": "33e06037dff102e9d7056872dd6c83651f42d56c992f86b2eb936a96ca7b2211"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1336649545-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:48:29.010Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1336649545-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/863683348/dsh-insight/blob/6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b/README.md",
+      "revision": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b",
+      "captured_at": "2026-10-21T03:48:29.010Z",
+      "summary": "整合插件需求匹配、环境配方、健康评分、静态扫描与安装结论工具。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-insight/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1336649545-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/863683348/dsh-insight/blob/6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b/lib/index.js",
+      "revision": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b",
+      "captured_at": "2026-10-21T03:48:29.010Z",
+      "summary": "核查 lib/index.js、lib/scoring.js、lib/verdict.js；lib/index.js注册plugin_guide/recipe/plugin_rank/plugin_audit/plugin_verdict；本地精选与catalog提供输入，scoring.js返回total，verdict.js按score.points判断。静态扫描只读指定目录根清单及lib/scripts/src一层有界源码。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-insight/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合先整理候选插件再人工审阅的用户；不应把工具生成的install文字当宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js注册plugin_guide/recipe/plugin_rank/plugin_audit/plugin_verdict；本地精选与catalog提供输入，scoring.js返回total，verdict.js按score.points判断。静态扫描只读指定目录根清单及lib/scripts/src一层有界源码。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需保持精选数据和评分目录更新；本地计算无新增远端请求，仍有宿主模型token与人工核源码成本。字段错接会造成重复排查，不能因离线就称低采用成本。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "当前只适合作为离线目录与扫描线索。先修复并验证total/points接口及扫描计数，再考虑使用统一结论；安装前仍需核固定版本与实际宿主。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "统一入口可能节约查询步骤，但核心决策接线缺陷限制当前价值，未有独立采用效果。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "匹配、配方、扫描、评分、裁决分层便于审阅；三个模块的字段契约不一致展示了纯模块测试无法替代端到端接线验证。可借鉴组合入口，不能复用install结论作为事实。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者试图以单一入口回答值得装吗；实际增量是将需求匹配、配方、健康信号和静态扫描汇到一个决策接口，减少多工具手工拼接。其核心是集成而非已验证的质量预测，当前评分到结论的字段接线存在明显缺口。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "scoreRecord返回total而verdictFor读取points，index原样传入，因此非高危且没有低匹配分支的记录也不能命中>=70的install或>=40的caution，输出score为undefined、理由health undefined。另plugin_audit用findings.length作scanned计数，不能据此知道读了几文件；零发现与未扫描也被混为not-scanned。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：用统一带Schema的证据对象表达扫描覆盖、健康分及需求适配，再把结论限定为可追溯规则，可避免组合工具因字段漂移失真。以高分/低分、已扫零发现、未扫及高危四组端到端用例检查分支；只有接线通过后再研究阈值是否预测真实可用性。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336649545:root",
+          "area": "code",
+          "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:29.010Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:48:29.010Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b",
+    "reviewed_at": "2026-10-21T03:48:29.010Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1336649545:root",
+        "area": "code",
+        "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：多个既有目录与评分模块的集成。 mechanism=8：分层存在但字段接线缺陷削弱机制。 transferability=10：纯裁决可复用前需修契约。 simplification=4：入口减少切换，错误输出增加排查。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 0,
+        "reach": 10,
+        "economics": 0
+      },
+      "rationale": "workflow=18：候选到结论流程意图清晰。 delivery=0：核心install/caution分支不能按total触发。 reach=10：离线候选可覆盖部分用户。 economics=0：无有效决策收益证据，错接可能负价值。",
+      "basis": "interpretation",
+      "score": 28,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336649545-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "统一导购审计入口有潜力，但total/points错接导致核心verdict缺分且扫描数错义；先修接口与计数后再采用结论。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "用户找候选并判断采用的需求明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "集合配方和扫描可少查询，但决策核心接线阻碍当前额外价值。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "scoreRecord total与verdict points源码直接冲突，零发现又混未扫描。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "精选维护及字段错接排查需人工，离线不表示低总成本。"
+      }
+    },
+    "score": 54,
+    "revision": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-03-github-1336649545-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1336649545:root",
+        "area": "code",
+        "fingerprint": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b"
+      }
+    ]
+  }
+}

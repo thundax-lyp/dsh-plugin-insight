@@ -1,0 +1,17 @@
+{
+  "id": "github:1421306160:root",
+  "repository": "643048695/dsh-subagent-role-router",
+  "path": "",
+  "revision": "e6064904e116910c4c1aa403d40505304653ee23",
+  "fingerprints": {
+    "directory": "467b7e2b135d623d40ba59d18c281e955630747b41751211220dc7d48015ea6f",
+    "code": "e6064904e116910c4c1aa403d40505304653ee23",
+    "maintenance": "ba327209d46d64eb3643e51a665cc3453f29f40d4da2e01e83058affb4976edf"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "608c8bba5b6d276ab5e0523253cd9ce1a206ca58d45f49c2b7be6ff66691c30d"
+}

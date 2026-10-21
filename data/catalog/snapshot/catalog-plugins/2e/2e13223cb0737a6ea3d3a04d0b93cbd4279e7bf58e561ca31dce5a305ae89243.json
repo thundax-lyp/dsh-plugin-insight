@@ -1,0 +1,283 @@
+{
+  "id": "github:1381859181:root",
+  "repository_id": 1381859181,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-rclone",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-rclone",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "office-operations",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "8add26e4b2a58adf1b1815c0808ab946d39c03d78e74e19c8ae74fc1315c8fc2",
+    "code": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9",
+    "maintenance": "e2e9fee76798b89b5b131055cda397a407bf0eb1653b7b5f0e4d4b4e16aefb37"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1381859181-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:58.863Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1381859181-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-rclone/blob/272a2adaba5711ec6b5e7b45463bff5e0e04b6c9/README.md",
+      "revision": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9",
+      "captured_at": "2026-10-20T10:01:58.863Z",
+      "summary": "通过rclone列出远程存储配置、文件名及配额信息。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-rclone/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1381859181-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-rclone/blob/272a2adaba5711ec6b5e7b45463bff5e0e04b6c9/index.js",
+      "revision": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9",
+      "captured_at": "2026-10-20T10:01:58.863Z",
+      "summary": "核查 index.js、lib/rclone.js；仅注册status、listremotes、lsf、about；allowedRemotes可过滤远程名，lsf递归深度固定3并截断输出，about先JSON后文本回退。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-rclone/REVIEWED-SOURCE.json",
+      "limitations": [
+        "检查注册、remote校验与执行器，未读取rclone配置或访问远程存储。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已配置云存储的用户让Agent确认文件位置或空间，避免给出任意同步命令。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859181:root",
+          "area": "code",
+          "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.863Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "仅注册status、listremotes、lsf、about；allowedRemotes可过滤远程名，lsf递归深度固定3并截断输出，about先JSON后文本回退。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859181:root",
+          "area": "code",
+          "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.863Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "检查注册、remote校验与执行器，未读取rclone配置或访问远程存储。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859181:root",
+          "area": "code",
+          "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.863Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；需要rclone及已有凭据配置、后端网络和列举权限；allowedRemotes默认空为全配置可用，插件不配置账号。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859181:root",
+          "area": "code",
+          "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.863Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "云端列表API、网络延迟与凭据维护构成成本，可能产生请求费用；未测成本和任务收益。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859181:root",
+          "area": "code",
+          "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.863Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已配rclone的只读盘点，先限定allowedRemotes和目录规模；需要传输、删除或完整清单验收时另选流程。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859181:root",
+          "area": "code",
+          "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.863Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "以有限命令集合复用rclone多后端能力，缩小误触复制删除的工具面；存储协议与账户能力属于上游。 maxEntries是在命令完成后裁剪，不限制远程扫描工作量；about不一定受后端支持，读取文件名也会出网且可能暴露业务结构，不能把只读等同无成本或全域隔离。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859181:root",
+          "area": "code",
+          "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.863Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "spawn参数分离与固定子命令可借鉴；输出截断和超时不等于远程工作预算，stdout限额之外stderr累积及子进程清理仍需复核。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859181:root",
+          "area": "code",
+          "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:58.863Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:58.863Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9",
+    "reviewed_at": "2026-10-20T10:01:58.863Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1381859181:root",
+        "area": "code",
+        "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：成熟rclone只读子命令适配DSH，属局部接线；mechanism=8：固定子命令和remote白名单缩小可调用面，形成小幅机制组合；不代表强隔离；transferability=5：参数分离与白名单模式可用于其他CLI封装；simplification=4：统一列表与配额输出，属于小幅简化。依据固定版本入口与核心源码，未执行目标代码；不将上游机制或未来假设计入。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": null
+      },
+      "rationale": "workflow=9：把云盘盘点的CLI交接移入Agent，改变局部查询流程；delivery=8：多后端文件和配额结果可统一消费，形成小幅交付形态变化；reach=5：让已有rclone配置的用户经Agent查询，不能外推到无配置人群；economics=null：缺少同条件任务成本、失败重试与持续维护对照，无法判断成本结构增量，不能用零代表缺证据。无运行和独立采用验证，前三项仅解释源码可见流程。",
+      "basis": "interpretation",
+      "score": null,
+      "evidence_ids": [
+        "2026-10-20-07-github-1381859181-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "已有rclone者可限最小remote和小目录试盘点，先核请求成本及截断，不把列表当全量或传输验收。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "Agent只读确认云端文件与空间的需求明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "受限子命令缩小复制删除误触面。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "remote校验和输出可查，事后裁剪不限制云端扫描。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "网络API可能计费，凭据和目录规模需维护。"
+      }
+    },
+    "score": 59,
+    "revision": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-20-07-github-1381859181-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1381859181:root",
+        "area": "code",
+        "fingerprint": "272a2adaba5711ec6b5e7b45463bff5e0e04b6c9"
+      }
+    ]
+  }
+}

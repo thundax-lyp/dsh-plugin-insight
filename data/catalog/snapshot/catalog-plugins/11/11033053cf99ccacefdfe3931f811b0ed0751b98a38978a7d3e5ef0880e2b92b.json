@@ -1,0 +1,337 @@
+{
+  "id": "github:1336663456:root",
+  "repository_id": 1336663456,
+  "component_id": "root",
+  "repository": "863683348/dsh-plugin-academic-writing",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-plugin-academic-writing",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "8e8a6e9b73c5840cca000122ecd8e2b3fca0eda6030619a9ceccfe9e8e8be3ed",
+    "code": "cbeb4db61d11cc327092f5e7f56d333693e52bde",
+    "maintenance": "63be9c8516bd78f1a213d4cc9a02433425c454cbb9c0a4ef2119467b6034c687"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1336663456-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:48:42.553Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1336663456-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/863683348/dsh-plugin-academic-writing/blob/cbeb4db61d11cc327092f5e7f56d333693e52bde/README.md",
+      "revision": "cbeb4db61d11cc327092f5e7f56d333693e52bde",
+      "captured_at": "2026-10-21T03:48:42.553Z",
+      "summary": "提供论文结构、标题、摘要、引文格式和措辞检查等确定性写作辅助。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-academic-writing/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1336663456-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/863683348/dsh-plugin-academic-writing/blob/cbeb4db61d11cc327092f5e7f56d333693e52bde/lib/index.js",
+      "revision": "cbeb4db61d11cc327092f5e7f56d333693e52bde",
+      "captured_at": "2026-10-21T03:48:42.553Z",
+      "summary": "核查 lib/index.js、lib/academic.js；lib/index.js注册academic_writing并分派action到academic.js；后者以模板生成大纲/标题/摘要，以字段拼接引文、正则检查语言并输出LaTeX片段及结构报告。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-academic-writing/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合研究者快速准备稿件骨架和检查明显格式问题；研究事实与论证仍需作者确认。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js注册academic_writing并分派action到academic.js；后者以模板生成大纲/标题/摘要，以字段拼接引文、正则检查语言并输出LaTeX片段及结构报告。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次将文献与稿件转换为工具字段；无本模块网络成本，宿主模型token另计。持续人工核引用、姓名、期刊规范与LaTeX编译，生成骨架不是合格论文。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合用来起草骨架和初筛格式。引文逐条核源，措辞提示结合目标期刊判断，LaTeX片段在实际文档编译后再交付。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可减少重复排版与清单遗漏，无论文质量、编辑工时或发表成功的独立证据。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "academic.js纯函数与薄宿主壳方便审阅，结构输出可用于后续文档流程；正则计数和有限转义说明需要针对输入边界验证，不能只因确定性就称正确。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者明确模型负责行文、插件负责结构；可确认增量是将常见论文模板和格式操作封成可重复工具，减少模型临时编造格式。相对纯提示生成，更可预测；这不是自动研究、引用真实性验证或投稿规范完整实现。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "formatCitation按提供字段拼接，不能验证文献存在，也未覆盖不同姓名文化与所有样式细节。academicCheck的PASSIVE/FIRST_PERSON/HEDGING非全局正则，因此match计数最多1，与出现次数不同；把谨慎措辞或第一人称标出也不表示文风错误。LaTeX转义仅覆盖部分字符，不能承诺片段任意输入可编译。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：把格式规则与目标期刊配置及真实引用元数据对齐，可降低一刀切文风误报。用已人工校对的多语引文和不同期刊段落比较格式错误、误报及编辑时间；若规则不能跨语适用，应明确支持子集。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336663456:root",
+          "area": "code",
+          "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:48:42.553Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:48:42.553Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "cbeb4db61d11cc327092f5e7f56d333693e52bde",
+    "reviewed_at": "2026-10-21T03:48:42.553Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1336663456:root",
+        "area": "code",
+        "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty=0：模板和引文拼接是常规实现。 mechanism=8：确定格式有实际代码但规则覆盖浅。 transferability=10：纯函数可复用并需补语言边界。 simplification=8：常用骨架减少重复输入。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=9：局部写作步骤清晰，非完整研究流程。 delivery=8：片段可交付但正确性仍需核。 reach=10：适合基础结构需求，多语样式有限。 economics=4：无编辑净工时验证。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336663456-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "研究者可试论文骨架和格式初筛；逐条核引文，正则次数及文风提示仅参考，LaTeX实际编译后交付。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "稿件大纲标题引文排版重复需求具体。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "确定模板比临时生成格式更可预测，未负责研究事实。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "模板字段拼接与正则源码支持，非全局计数及部分转义限制明确。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "无模块联网，模型费用和引文姓名期刊规则复核仍需人工。"
+      }
+    },
+    "score": 64,
+    "revision": "cbeb4db61d11cc327092f5e7f56d333693e52bde",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-03-github-1336663456-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1336663456:root",
+        "area": "code",
+        "fingerprint": "cbeb4db61d11cc327092f5e7f56d333693e52bde"
+      }
+    ]
+  }
+}

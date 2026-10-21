@@ -1,0 +1,17 @@
+{
+  "id": "github:1359423472:root",
+  "repository": "1014029855/dsh-codevault",
+  "path": "",
+  "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+  "fingerprints": {
+    "directory": "8d03c40f9da0dfe16d6c3dc8061ad75d09584d277c302c6614b183aaea3cda5a",
+    "code": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+    "maintenance": "04c778e36182b2e3d47d0490b4c469837092ed590f5aed4c56cc6b7a9f472b0a"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "d1f395e206ad4780e1d5120c67827605485d7a0bd7aa62fd90accbda9f1adcd9"
+}

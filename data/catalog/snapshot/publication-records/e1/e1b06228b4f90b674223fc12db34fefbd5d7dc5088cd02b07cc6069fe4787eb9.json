@@ -1,0 +1,17 @@
+{
+  "id": "github:1341694685:root",
+  "repository": "AliceLJY/dsh-thumb",
+  "path": "",
+  "revision": "cde135922e5fdd8729b163c634dd811294555d36",
+  "fingerprints": {
+    "directory": "781d0c581dc5de0fda468e08f4df167729b05f8253ca14bfc8af12fa6742a90e",
+    "code": "cde135922e5fdd8729b163c634dd811294555d36",
+    "maintenance": "3768b9507875bdc0f788f1448b6e20ec3d29b0f82167413b25d730d43b181844"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "9d7de88db0f08db0df59b2d0ec72611265278f7fb8ace25edd7ccd3f519ab060"
+}

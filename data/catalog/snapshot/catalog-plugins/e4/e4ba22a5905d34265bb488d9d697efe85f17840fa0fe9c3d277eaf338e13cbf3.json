@@ -1,0 +1,337 @@
+{
+  "id": "github:1344713526:dsh-lsp-kotlin",
+  "repository_id": 1344713526,
+  "component_id": "dsh-lsp-kotlin",
+  "repository": "988hj7tczd-oss/dsh-lsp-packs",
+  "path": "dsh-lsp-kotlin",
+  "aliases": [],
+  "name": "dsh-lsp-kotlin",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "1507588787a1dd87a249578e95037461da50d8dc3ae251c1771c72beab03dd7e",
+    "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:15:58.990Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-kotlin/README.md",
+      "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+      "captured_at": "2026-10-21T04:15:58.990Z",
+      "summary": "为DSH配置Kotlin语言服务及.kt、.kts导航路由。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-kotlin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-kotlin/src/index.ts",
+      "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+      "captured_at": "2026-10-21T04:15:58.990Z",
+      "summary": "核查 dsh-lsp-kotlin/src/index.ts、dsh-lsp-kotlin/README.md、dsh-lsp-kotlin/cordis.yml、dsh-lsp-kotlin/tests/smoke.e2e.ts；kotlin入口默认kotlin-language-server空args，provider kotlin把.kt/.kts映射kotlin；配置转交官方stdio底座而不实现语言解析。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-kotlin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合已有JDK和Kotlin/Gradle工程的开发者。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "kotlin入口默认kotlin-language-server空args，provider kotlin把.kt/.kts映射kotlin；配置转交官方stdio底座而不实现语言解析。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次准备JDK、外部server与Gradle项目，持续JVM/索引占资源；人工解决构建导入，现金无插件费用证据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先在小Gradle项目试，分别核.kt和.kts，等待首次索引；不要只看包加载。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可减少Kotlin配置重复，无脚本或真实工程命中率数据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "组件只提供配置合并与fallback，协议归上游；fallback默认映射丢自定义扩展，JVM诊断需要更精细。统计不包含其他语言包。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "将Kotlin与脚本扩展及服务启动默认值包装成可安装配置，减少DSH手工接线；编译索引来自外部language server。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "README说明JDK17+且服务偏好Gradle、首次工作区遍历较慢；.kts有路由不等于任意Gradle脚本语义支持。自动跳过缺server的smoke不证明实际工程可用；catch错误类别过宽，不能把JVM或初始化错误都解释为没安装。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：将.kt与.kts分别验收，并记录Gradle依赖索引状态，可发现脚本被误当普通源码的导航缺口。对纯Kotlin、Gradle脚本及缺JDK项目比较查询结果和误归因。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:15:58.990Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:15:58.990Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "reviewed_at": "2026-10-21T04:15:58.990Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+        "area": "code",
+        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=0：Kotlin语言能力属外部server。 mechanism=8：配置合并与回退为实际增量。 transferability=10：模式可移植，JVM/Gradle适配重。 simplification=4：索引等待限制简化。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow=9：提供Kotlin接入步骤。 delivery=8：脚本支持未验证。 reach=5：JDK/Gradle人群条件窄。 economics=4：无净工时数据。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "仅在DSH声明<0.2.0、Node>=22.18及官方底座匹配时，已有Kotlin/Gradle环境者可用小工程试接线；分别核.kt与.kts并等索引，不将加载成功当脚本语义正确。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "Kotlin源码与Gradle脚本导航有具体开发场景。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "打包扩展路由和启动默认值，省重复配置而非新增语义。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "入口与README支持机制，真实Gradle和脚本命中率未验。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "需JDK、外部server与构建导入，首次遍历和维护成本较高。 宿主声明限<0.2.0，需先核匹配。"
+      }
+    },
+    "score": 54,
+    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-04-github-1344713526-dsh-lsp-kotlin-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1344713526:dsh-lsp-kotlin",
+        "area": "code",
+        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1345209661:packages-dsh-tech-lead",
+  "repository": "240xu/verdict-engine",
+  "path": "packages/dsh-tech-lead",
+  "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+  "fingerprints": {
+    "directory": "96cc1a5138aadcc7a9fd1d41606050585e8c44ad8cc3e4c606c269f778476089",
+    "code": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+    "maintenance": "de05162b4a408e6ecbb9af824df2df62f3ad71dc79f8626d698feb4e1239d402"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "ab8889ce406b1f4fa476921af9f67984c46f8f32ae5b8bf2d047b80aa257730f"
+}

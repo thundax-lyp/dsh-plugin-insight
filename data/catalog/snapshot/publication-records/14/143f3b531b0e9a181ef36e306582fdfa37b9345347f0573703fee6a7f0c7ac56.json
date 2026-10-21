@@ -1,0 +1,17 @@
+{
+  "id": "github:1415863200:root",
+  "repository": "Airisey/dsh-model-failover",
+  "path": "",
+  "revision": "3221de6a1c9a02333f78e48449fcc272e1b430c0",
+  "fingerprints": {
+    "directory": "76e858bf7c9bd34b07fe0c3b6be7bccef9c2fafd3b77ddeb0c066d7bd328f0c8",
+    "code": "3221de6a1c9a02333f78e48449fcc272e1b430c0",
+    "maintenance": "e46a4202d06352c576b959004cc0d36c7dcf7a0ae8a24d7ff7a4e9867b3d6056"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "216b62dedaee5b071a2e7472f420292ab86e67f68f335d367be55685c33ff711"
+}

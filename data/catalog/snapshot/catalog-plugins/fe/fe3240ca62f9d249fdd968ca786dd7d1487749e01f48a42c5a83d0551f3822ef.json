@@ -1,0 +1,283 @@
+{
+  "id": "github:1350378631:root",
+  "repository_id": 1350378631,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-path",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-path",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "d5a437ec41d1cfe21c716c69f24e0c5b34243e491a2cc09fef8c3150cf0ebbfc",
+    "code": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+    "maintenance": "128eb7d83cf37f7e4828689ccd3c52d3833b46dbd21570576d8b7804dc09d41f"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1350378631-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:55.658Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1350378631-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-path/blob/e82233f94e1d77c35657e06bfd032a03e353e3ba/README.md",
+      "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+      "captured_at": "2026-10-20T10:01:55.658Z",
+      "summary": "转换Windows与WSL路径，附带挂载盘、换行和工作区位置提示。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-path/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1350378631-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-path/blob/e82233f94e1d77c35657e06bfd032a03e353e3ba/index.js",
+      "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+      "captured_at": "2026-10-20T10:01:55.658Z",
+      "summary": "核查 index.js、lib/path.js；path_convert以盘符和UNC规则双向映射，pathTags分类路径并返回建议。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-path/REVIEWED-SOURCE.json",
+      "limitations": [
+        "检查入口和转换函数，未访问两侧文件系统验证映射。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "用户在Windows界面与WSL工具之间交接路径时，避免把盘符直接交给Linux命令。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350378631:root",
+          "area": "code",
+          "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:55.658Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "path_convert以盘符和UNC规则双向映射，pathTags分类路径并返回建议。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350378631:root",
+          "area": "code",
+          "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:55.658Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "检查入口和转换函数，未访问两侧文件系统验证映射。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350378631:root",
+          "area": "code",
+          "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:55.658Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；依赖实际WSL发行版与挂载布局，字符串转换本身不检查文件存在。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350378631:root",
+          "area": "code",
+          "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:55.658Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "主要为路径核对人工，无外部调用费用和端到端节省测量。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350378631:root",
+          "area": "code",
+          "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:55.658Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "单发行版先测试往返；多发行版必须核对distro，不直接使用转换出的同名Linux路径。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350378631:root",
+          "area": "code",
+          "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:55.658Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "将路径语法转换与工作区提示组合，降低重复说明；映射规则不是新的文件系统访问机制。 UNC解析可返回另一个发行版名称，但生成的Linux绝对路径本身不携带发行版身份；转换不代表当前发行版能读到同一文件。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350378631:root",
+          "area": "code",
+          "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:55.658Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "转换、标签与建议分离易于覆盖边界，结构化发行版身份比纯字符串更重要。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1350378631:root",
+          "area": "code",
+          "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:55.658Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:55.658Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+    "reviewed_at": "2026-10-20T10:01:55.658Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1350378631:root",
+        "area": "code",
+        "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：盘符/UNC规则加提示为小幅适配；mechanism：字符串映射为常规机制，未带发行版身份至消费端；transferability：转换/建议分层可局部迁移；simplification：减少路径手改但未验证文件存在。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": null
+      },
+      "rationale": "workflow：便利跨系统路径交接；delivery：未改变文件或任务交付；reach：改善不熟悉路径规则用户的入口；economics：缺跨发行版错误减少与核查负担比较。",
+      "basis": "interpretation",
+      "score": null,
+      "evidence_ids": [
+        "2026-10-20-07-github-1350378631-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "跨系统用户可先单发行版试路径往返，多发行版必须核对distro和文件存在再使用。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "盘符与Linux路径交接的错误风险具体。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "双向映射带解释，wslpath已有相似功能。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "映射可查，Linux结果不携带发行版身份且未验存在。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "纯转换无服务费，主要为人工目标核对。"
+      }
+    },
+    "score": 64,
+    "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-20-07-github-1350378631-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1350378631:root",
+        "area": "code",
+        "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+      }
+    ]
+  }
+}

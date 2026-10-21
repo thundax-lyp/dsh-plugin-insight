@@ -1,0 +1,337 @@
+{
+  "id": "github:1415767842:root",
+  "repository_id": 1415767842,
+  "component_id": "root",
+  "repository": "27painter/dsh-moli",
+  "path": "",
+  "aliases": [],
+  "name": "Moli 浏览器工具",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "5bdc4ce6c9aba72a67c14dfbbbd479069807650643da0f41dbca33f188089b36",
+    "code": "b3a1fc970a513fa3ecd81830c8e0029334032e92",
+    "maintenance": "b287b341e3fa231a9fb8ddd21f3f0103a5ec8abe087552b4128bbbdbfcc504ef"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1415767842-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:11:02.634Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1415767842-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/27painter/dsh-moli/blob/b3a1fc970a513fa3ecd81830c8e0029334032e92/README.md",
+      "revision": "b3a1fc970a513fa3ecd81830c8e0029334032e92",
+      "captured_at": "2026-10-21T02:11:02.634Z",
+      "summary": "通过本地 Moli 引擎渲染页面，读取选区并生成截图或 PDF。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/27painter--dsh-moli/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1415767842-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/27painter/dsh-moli/blob/b3a1fc970a513fa3ecd81830c8e0029334032e92/index.js",
+      "revision": "b3a1fc970a513fa3ecd81830c8e0029334032e92",
+      "captured_at": "2026-10-21T02:11:02.634Z",
+      "summary": "核查 index.js、lib/moli.js、lib/install.js、package.json；注册 moli_fetch 与 moli_probe，查找本地 Moli 二进制，以子进程驱动渲染；selectorScript 将CSS选择器作为数据编码，返回匹配数与正文；二进制输出经临时文件保持字节。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/27painter--dsh-moli/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查注册、默认配置、选择器/文件捕获与安装器；未下载引擎、运行浏览器或复现作者网络样本。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "需要读取JS渲染网页、登录页面或保存页面图片的研究者；交付可读正文、选区文本或本地截图/PDF，静态页优先与普通HTTP抓取对照。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "注册 moli_fetch 与 moli_probe，查找本地 Moli 二进制，以子进程驱动渲染；selectorScript 将CSS选择器作为数据编码，返回匹配数与正文；二进制输出经临时文件保持字节。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查注册、默认配置、选择器/文件捕获与安装器；未下载引擎、运行浏览器或复现作者网络样本。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "插件1.1.19不含Moli引擎；配置与二进制各自升级，只有本轮固定插件源码被核查。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次有引擎下载、证书/代理和磁盘配置成本；每次渲染比HTTP更耗CPU/内存，截图和PDF需要保存与清理。未测跨站总时长或现金成本。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "确需JS渲染时可在隔离环境先验证引擎；确认TLS策略和安装来源后再接真实账号，普通文章优先比较轻量HTTP路径。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "将浏览器能力接到模型可提高动态网页可达性；是否节省整体阅读成本取决于选择器准确性和启动开销。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "选择器JSON编码及文件方式保持图片字节可复用；移植要兼容Moli退出码和不同平台路径。同步runFetch设计可能影响宿主响应，需实测并发，不把安装异步等同抓取全异步。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "浏览器能力来自 lexmount/moli；插件的贡献是DSH工具契约、选择器读取、Windows文件捕获及引擎探测/安装的集成。选择器计数可区分“没有匹配”与正文为空，比直接把空输出当成功更清楚。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "能调用浏览器不证明网页可信或默认安全。index.js 默认 insecureTls=true；引擎独立下载，安装器默认没有预期校验和，记录其SHA只证明执行了哪些字节。作者选择器字符缩减示例不是同质量跨站收益验证。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：为抓取结果附“引擎版本、TLS校验状态、匹配数、最终URL”形成小型获取回执，能让下游先判断证据来源再作摘要。由当前有探测/匹配计数却缺统一可信性输出推导；新增负担是维护引擎接口映射。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415767842:root",
+          "area": "code",
+          "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:02.634Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:11:02.634Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "b3a1fc970a513fa3ecd81830c8e0029334032e92",
+    "reviewed_at": "2026-10-21T02:11:02.634Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1415767842:root",
+        "area": "code",
+        "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：浏览器封装和选择器读取是常规适配，内核非原创。 mechanism：匹配计数与二进制文件捕获改善输出解释性，仍依赖引擎。 transferability：选择器封装可跨任务复用，需适配引擎命令。 simplification：两工具归并探测与抓取，独立引擎仍需安装。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：减少手工调用CLI，登录和输出核对仍人工。 delivery：增加截图/PDF和渲染正文交付，效果未运行。 reach：使模型可访问动态页，但引擎部署仍有门槛。 economics：选择器可能减少输出，启动/复核成本未测。",
+      "basis": "interpretation",
+      "score": 33,
+      "evidence_ids": [
+        "2026-10-21-01-github-1415767842-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "确需动态页面渲染者有采用价值；先修正默认TLS校验策略并核实引擎下载完整性，再连接真实账号。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "JS页面、登录内容和截图PDF有明确研究交付。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "Moli渲染与选择器计数补普通HTTP不可达内容。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "工具及选择器编码已查，但默认insecureTls与无预期校验和阻碍可信获取。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "引擎下载证书代理、渲染资源和文件清理成本显著。"
+      }
+    },
+    "score": 60,
+    "revision": "b3a1fc970a513fa3ecd81830c8e0029334032e92",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-01-github-1415767842-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1415767842:root",
+        "area": "code",
+        "fingerprint": "b3a1fc970a513fa3ecd81830c8e0029334032e92"
+      }
+    ]
+  }
+}

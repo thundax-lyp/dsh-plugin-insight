@@ -1,0 +1,344 @@
+{
+  "id": "github:1334493734:root",
+  "repository_id": 1334493734,
+  "component_id": "root",
+  "repository": "Alan2Z/dsh-speak",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-speak",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "754cfa5ca9b31c887c138d93f684eea2d2bbe3c9f50c988892fd67ca28e1f232",
+    "code": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee",
+    "maintenance": "b3805f8fc672aa8aa64f82693a50c5164d199afa1d550a44fe9d8548e8f8db56"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1334493734-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:03:03.369Z",
+      "membership": "present"
+    },
+    {
+      "id": "2026-10-21-07-github-1334493734-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-21T08:03:03.369Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1334493734-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Alan2Z/dsh-speak/blob/5c23e7d934fd5a72ae481bdda729ff3d44ab42ee/README.md",
+      "revision": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee",
+      "captured_at": "2026-10-21T08:03:03.369Z",
+      "summary": "将助手回复与可选事件交给本机语音引擎播报，提供队列状态与重播。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/alan2z--dsh-speak/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1334493734-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Alan2Z/dsh-speak/blob/5c23e7d934fd5a72ae481bdda729ff3d44ab42ee/adapters/dsh/speech-hook.js",
+      "revision": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee",
+      "captured_at": "2026-10-21T08:03:03.369Z",
+      "summary": "核查 adapters/dsh/speech-hook.js、client/client.js、engine/speak.sh；session/event抽文本，默认节流最终回复或逐消息入FIFO，单个原生进程运行；临时文件传给macOS shell或Windows PowerShell，WebSocket发布当前item，POST控制播放/停止。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/alan2z--dsh-speak/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "离开屏幕时听回复和审批提醒，重要细节仍回到原文核查。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "session/event抽文本，默认节流最终回复或逐消息入FIFO，单个原生进程运行；临时文件传给macOS shell或Windows PowerShell，WebSocket发布当前item，POST控制播放/停止。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无云TTS费用但文本写临时文件、日志记录前80字符且可被周围听见；队列积压/长文占时间，人工仍回看代码与被摘要内容。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合本机听取提醒；先核播报范围、隐私、停止与长文策略，不依赖声音代替审批原文。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "本地播报和队列有源码支持，无可达性或任务完成效率实测。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "队列统一自动/手动item、token防旧进程退出篡改新状态、macOS进程组停止可借鉴；语音进程存在不证明实际扬声器成功输出。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "将播报生命周期与会话消息身份关联，单进程队列比每消息直接spawn更一致；语音合成归系统引擎，PR队列机制明确归上游贡献。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "队列全局且enqueue无容量/过期限制，多会话高频消息可能延迟播报过时提醒；控制/WS路由未在本包独立核来源，依赖宿主栅栏。日志含正文片段，不能把本地处理等同无留痕。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：按会话/事件优先级和时效丢弃过期普通播报，并保留审批原文链接，可降低队列延迟而不漏重要提醒。用多会话长文/取消审批比较提醒时延、漏报和可追溯性；高优先级被饿死则否定。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334493734:root",
+          "area": "code",
+          "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:03.369Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:03:03.369Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee",
+    "reviewed_at": "2026-10-21T08:03:03.369Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1334493734:root",
+        "area": "code",
+        "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：系统TTS与已有队列组合。 mechanism=15：统一队列身份与停止有实质接线。 transferability=10：可用于多事件但平台绑定。 simplification=4：单队列减少重叠，积压未解。",
+      "basis": "interpretation",
+      "score": 38,
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=9：听取提醒局部改变交互。 delivery=8：增加音频呈现，非新业务成果。 reach=10：适合离屏/听觉需求者，效果未验。 economics=4：本机替代云TTS有成本机制但无总成本对照。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-07-github-1334493734-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "本机听回复者可先用短文少会话试播报；核停止、隐私和队列积压，临时文件日志含正文，审批仍读原文。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "离屏听结果和提醒人群明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "本地系统TTS与FIFO省盯屏，不代替长文核查。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核串行原生进程和全局队列，无过期容量上限。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "无云TTS费，但环境旁听、正文留痕和过时提醒需控制。"
+      }
+    },
+    "score": 59,
+    "revision": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-07-github-1334493734-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1334493734:root",
+        "area": "code",
+        "fingerprint": "5c23e7d934fd5a72ae481bdda729ff3d44ab42ee"
+      }
+    ]
+  }
+}

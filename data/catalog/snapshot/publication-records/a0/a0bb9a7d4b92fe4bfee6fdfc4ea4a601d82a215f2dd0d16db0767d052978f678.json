@@ -1,0 +1,17 @@
+{
+  "id": "github:1414936636:root",
+  "repository": "439436269-ctrl/dsh-video-pipeline",
+  "path": "",
+  "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+  "fingerprints": {
+    "directory": "c7169ab2fb395d70185b5524cd673cdae82e016c09918bb0cbb2786727b3e3a0",
+    "code": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+    "maintenance": "02d415947b1a8afcecd0794bd506803c6c3a132c87a3dd57db1616aaea43205c"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "d18bdca4bf23220c74fd25b92ce4a4fd46886ff65cd3087b15cf15c7528f0de9"
+}

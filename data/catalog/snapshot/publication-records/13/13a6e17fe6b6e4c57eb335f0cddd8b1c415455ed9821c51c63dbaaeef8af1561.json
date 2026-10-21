@@ -1,0 +1,17 @@
+{
+  "id": "github:1336585522:root",
+  "repository": "863683348/dsh-feed",
+  "path": "",
+  "revision": "bc592147401c7697749390eb6a2a6cddd42af747",
+  "fingerprints": {
+    "directory": "ae9848b0e388fa3860b9e25cc7c9faea24944dc0119e739069a35adf027392a6",
+    "code": "bc592147401c7697749390eb6a2a6cddd42af747",
+    "maintenance": "9f17a4131a3fc9283d2614a77721c0cacdef7efafa3e994c2cbf6b4467a332ae"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "50f430f7d3d68f2b34efad41a697847e40843d6dbd95b0693f9928ff9bdfc808"
+}

@@ -1,0 +1,242 @@
+{
+  "id": "github:1381859591:root",
+  "repository_id": 1381859591,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-db",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-db",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "3a3bd5fbddcdd81027ffe74b3cbf1ece54611996d2c796f5e74ffbcf71be19b7",
+    "code": "7ec1796675752805913ed7d5645d91541161d8eb",
+    "maintenance": "dd05fa47e6b9697c0a17d37c31887524a416648da48ae2e4dce4e67f197cf563"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1381859591-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:38:08.519Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1381859591-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-db/blob/7ec1796675752805913ed7d5645d91541161d8eb/README.md",
+      "revision": "7ec1796675752805913ed7d5645d91541161d8eb",
+      "captured_at": "2026-10-20T04:38:08.519Z",
+      "summary": "通过psql和redis-cli执行受限查询与连通探针，支持配置连接别名和Redis主机范围。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-db/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1381859591-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-db/blob/7ec1796675752805913ed7d5645d91541161d8eb/index.js",
+      "revision": "7ec1796675752805913ed7d5645d91541161d8eb",
+      "captured_at": "2026-10-20T04:38:08.519Z",
+      "summary": "核查 index.js、lib/db.js；lib/db.js按前缀和关键字筛SQL、按命令白名单筛Redis，调用CLI并限制时间和输出；入口解析连接别名与host范围。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-db/REVIEWED-SOURCE.json",
+      "limitations": [
+        "字符串过滤不是SQL完整权限模型，SELECT函数也可能有副作用；Redis KEYS即使限输出仍可能阻塞大库，不能当生产安全保证。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "开发者想在会话里查看PostgreSQL或Redis状态，合格结果是目标正确、查询低风险且输出可复核。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381859591-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859591:root",
+          "area": "code",
+          "fingerprint": "7ec1796675752805913ed7d5645d91541161d8eb"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:38:08.519Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/db.js按前缀和关键字筛SQL、按命令白名单筛Redis，调用CLI并限制时间和输出；入口解析连接别名与host范围。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381859591-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859591:root",
+          "area": "code",
+          "fingerprint": "7ec1796675752805913ed7d5645d91541161d8eb"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:38:08.519Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "字符串过滤不是SQL完整权限模型，SELECT函数也可能有副作用；Redis KEYS即使限输出仍可能阻塞大库，不能当生产安全保证。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381859591-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859591:root",
+          "area": "code",
+          "fingerprint": "7ec1796675752805913ed7d5645d91541161d8eb"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:38:08.519Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.1.1，Node>=18，实际需psql/redis-cli和配置凭据；与MySQL插件不同，此项是命令行薄封装，没有连接设置UI。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381859591-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859591:root",
+          "area": "code",
+          "fingerprint": "7ec1796675752805913ed7d5645d91541161d8eb"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:38:08.519Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次配置只读账号、CLI和别名需人工；查询负载、网络及模型上下文有持续成本，误查大库和超时排查另计。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381859591-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859591:root",
+          "area": "code",
+          "fingerprint": "7ec1796675752805913ed7d5645d91541161d8eb"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:38:08.519Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先使用数据库端只读角色和测试库，限制主机与别名，避免在大Redis执行KEYS；敏感查询结果谨慎进入模型上下文。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381859591-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859591:root",
+          "area": "code",
+          "fingerprint": "7ec1796675752805913ed7d5645d91541161d8eb"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:38:08.519Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把连通与小查询标准化有排障价值；应用层读命令白名单无法证明查询成本低或没有副作用。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381859591-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859591:root",
+          "area": "code",
+          "fingerprint": "7ec1796675752805913ed7d5645d91541161d8eb"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:38:08.519Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "连接解析和执行层分离、返回截断信息；SQL关键字正则可能误拒字符串，也可能漏语义副作用，需数据库权限兜底。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381859591-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381859591:root",
+          "area": "code",
+          "fingerprint": "7ec1796675752805913ed7d5645d91541161d8eb"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:38:08.519Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:38:08.519Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "PostgreSQL/Redis用户可用测试库及数据库只读角色试小查询，禁大库KEYS，先核目标与输出。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "会话内小范围数据库排障的需求明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "CLI别名和有界输出省拼接，非事务和数据库管理工具。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "筛选与执行可查，SELECT副作用和KEYS负载不能由过滤保证。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "CLI凭据、查询负载和敏感结果入模型需独立管理。"
+      }
+    },
+    "score": 59,
+    "revision": "7ec1796675752805913ed7d5645d91541161d8eb",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-incremental40-r2-github-1381859591-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1381859591:root",
+        "area": "code",
+        "fingerprint": "7ec1796675752805913ed7d5645d91541161d8eb"
+      }
+    ]
+  }
+}

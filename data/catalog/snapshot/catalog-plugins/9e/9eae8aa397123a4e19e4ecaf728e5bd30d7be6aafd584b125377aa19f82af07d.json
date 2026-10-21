@@ -1,0 +1,337 @@
+{
+  "id": "github:1343702731:root",
+  "repository_id": 1343702731,
+  "component_id": "root",
+  "repository": "988hj7tczd-oss/harness-github",
+  "path": "",
+  "aliases": [],
+  "name": "harness-github",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "050185438c71b7b998f12ebb3523563107ea469b385d5e1dda01d785bb7836c0",
+    "code": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e",
+    "maintenance": "8b75190327efc272157a8899b3fb006f4f2441fb2b0ccf01827688c38f7c8730"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1343702731-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:16:41.954Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1343702731-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/harness-github/blob/6bb9803f787b4ee4fa66f28fa8c889369ce28d2e/README.md",
+      "revision": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e",
+      "captured_at": "2026-10-21T04:16:41.954Z",
+      "summary": "为 DSH 提供 GitHub PR、Issue、CI、发布读取与经审批的写操作工具。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--harness-github/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1343702731-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/harness-github/blob/6bb9803f787b4ee4fa66f28fa8c889369ce28d2e/index.js",
+      "revision": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e",
+      "captured_at": "2026-10-21T04:16:41.954Z",
+      "summary": "核查 index.js、lib/github.js、lib/tools-read.js、lib/tools-write.js、lib/workflow.js、package.json；index注册读写工具，GitHubClient优先gh登录态再REST；tools-write统一requestApproval仅allowed-once放行，pr_prepare组合本地git检查/提交推送和PR流程，workflow提示引导。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--harness-github/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读index、github transport、读写工具和workflow；未运行gh/git/API，无独立可靠性证据。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "开发者在DSH处理PR/Issue/失败CI并准备可审代码变更，交付远端操作和可追溯结果；仍需独立review与CI验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "index注册读写工具，GitHubClient优先gh登录态再REST；tools-write统一requestApproval仅allowed-once放行，pr_prepare组合本地git检查/提交推送和PR流程，workflow提示引导。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读index、github transport、读写工具和workflow；未运行gh/git/API，无独立可靠性证据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "纯host跨profile声明，需gh或token做私有/写；审批服务缺失失败关闭。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次登录/权限核对，持续API限额、CI等待、审批与结果复核；平台模型费用另计，工时未测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有GitHub流程的人先读公开仓库，再在临时repo试写；逐次核对审批对象和远端结果，提交/推送/合并应分别按团队规则处理。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少工具切换，远端请求成功不等于代码可接受或CI验收通过。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "requestApproval集中并只收allowed-once、固定argv进程调用与读写分层可借鉴；多阶段恢复与未知结果须明确。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对Agent临时拼gh命令，增量是工具化常用PR/Issue/CI、统一连接器回退及写操作审批。GitHub/gh提供基础能力，插件不是新代码review算法；工作流指引与工具结果不等于质量保证。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "统一审批是否足以避免错对象或重复写？批准 reason必须与最终repo/head/内容匹配，审批后远端head或本地工作区仍可能变化；gh失败自动REST回退需区分明确失败和已写但响应未知。PR准备含提交/推送多副作用，不是单事务，失败后不能当未发生重跑。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：写计划绑定目标repo/head与内容摘要，批准后复核并持久记录原操作ID，未知结果先查询，可减少TOCTOU和重试重复评论/提交。由连接器回退和多阶段pr_prepare推导，未实现完整事务。模拟已写响应丢失、批准后head变化、推送成功建PR失败，测重复与误对象；无查询证据时保留未知。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343702731:root",
+          "area": "code",
+          "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:16:41.954Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:16:41.954Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e",
+    "reviewed_at": "2026-10-21T04:16:41.954Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1343702731:root",
+        "area": "code",
+        "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty 小幅：GitHub既有操作DSH工具化；mechanism 小幅：CLI/REST与审批封装常规；transferability 实质：连接器与读写分层；simplification 实质：常用研发交接集中。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：问题/CI/review到PR准备；delivery 实质：远端记录与代码审查对象；reach 小幅：对话入口降低命令负担；economics 小幅：减少脚本重复，回退/复核成本未测。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1343702731-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "已有GitHub流程者可先读公开仓库；写入前应验证审批对象绑定和未知响应恢复，pr_prepare的提交推送不可盲重跑。",
+    "criteria": {
+      "scenario": {
+        "score": 30,
+        "rationale": "PR、Issue和失败CI处理是高频明确软件交付任务。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "统一读写工具与审批减少多工具切换，非单事务。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核allowed-once与gh/REST回退，未验重复写和远端head变化。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "认证、限额及多副作用恢复负担高，响应未知和审批绑定待验证。"
+      }
+    },
+    "score": 67,
+    "revision": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-04-github-1343702731-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1343702731:root",
+        "area": "code",
+        "fingerprint": "6bb9803f787b4ee4fa66f28fa8c889369ce28d2e"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1423215448:root",
+  "repository": "11111353535/dsh-folderwatch",
+  "path": "",
+  "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+  "fingerprints": {
+    "directory": "5895c44d65283eeeec82f5505277a217a26ed391d9265a1abe6502e267aebbfe",
+    "code": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+    "maintenance": "c4e415eb7273b37c72d43bc8ddedd54bfca399474dd206ce2a15864bfce10a91"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "5edb7bf47c0858a01b9d68ed9a615be954d3263b41a103251abc8baa5826d98f"
+}

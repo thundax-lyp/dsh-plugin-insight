@@ -1,0 +1,242 @@
+{
+  "id": "github:1337916824:root",
+  "repository_id": 1337916824,
+  "component_id": "root",
+  "repository": "1321928757/dsh-mysql",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-mysql",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "8b45e04b0159f5c1fc2c140278d276e173d4a788d0cf68072a33d9ffa94999c0",
+    "code": "7848bba53cccfe9e365a8fd46baa6d6883a29b78",
+    "maintenance": "9f0bc993a5814bdbf62fd2f88dec78467c014b1e7eb7c1cf39ed17a0f63b3af8"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1337916824-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:30:00.019Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1337916824-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/README.md",
+      "revision": "7848bba53cccfe9e365a8fd46baa6d6883a29b78",
+      "captured_at": "2026-10-20T04:30:00.019Z",
+      "summary": "管理多套MySQL连接，为会话提供选库入口及查询、表结构、数据写入和DDL工具。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1321928757--dsh-mysql/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1337916824-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js",
+      "revision": "7848bba53cccfe9e365a8fd46baa6d6883a29b78",
+      "captured_at": "2026-10-20T04:30:00.019Z",
+      "summary": "核查 lib/index.js、lib/shared.js、lib/session-selection.js；Host 注册四个全局工具；会话选择连接后逐调用确定目标，shared.js 分类SQL并检查表范围，写入与DDL分别开关。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/1321928757--dsh-mysql/REVIEWED-SOURCE.json",
+      "limitations": [
+        "正则提取表名不是完整SQL解析器，不宜当数据库权限边界；未验证复杂语法、账号隔离或实际写入恢复。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "开发者在数据库排障与分析时需要先看结构再查数据，交付应是可复核SQL和正确结果，而非仅返回成功。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1337916824-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337916824:root",
+          "area": "code",
+          "fingerprint": "7848bba53cccfe9e365a8fd46baa6d6883a29b78"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:00.019Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Host 注册四个全局工具；会话选择连接后逐调用确定目标，shared.js 分类SQL并检查表范围，写入与DDL分别开关。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1337916824-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337916824:root",
+          "area": "code",
+          "fingerprint": "7848bba53cccfe9e365a8fd46baa6d6883a29b78"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:00.019Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "正则提取表名不是完整SQL解析器，不宜当数据库权限边界；未验证复杂语法、账号隔离或实际写入恢复。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1337916824-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337916824:root",
+          "area": "code",
+          "fingerprint": "7848bba53cccfe9e365a8fd46baa6d6883a29b78"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:00.019Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.3.1，声明DSH >=0.2.0-rc.2 <0.3.0、Node>=20，依赖mysql2与zod；服务与Web入口需共同适配。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1337916824-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337916824:root",
+          "area": "code",
+          "fingerprint": "7848bba53cccfe9e365a8fd46baa6d6883a29b78"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:00.019Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次创建低权限账号和连接白名单有运维成本；日常查询消耗数据库及模型额度，误写恢复另计。未测单位合格任务费用。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1337916824-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337916824:root",
+          "area": "code",
+          "fingerprint": "7848bba53cccfe9e365a8fd46baa6d6883a29b78"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:00.019Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先连接脱敏测试库和数据库端只读账号，核对选库与结果；确需写入时分别启用行写和DDL，并准备备份与人工复核。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1337916824-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337916824:root",
+          "area": "code",
+          "fingerprint": "7848bba53cccfe9e365a8fd46baa6d6883a29b78"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:00.019Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "显式选库和拆分读写权限能减少误路由；应用层检查不能替代数据库授权，模型也会看到查询结果。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1337916824-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337916824:root",
+          "area": "code",
+          "fingerprint": "7848bba53cccfe9e365a8fd46baa6d6883a29b78"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:00.019Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "safeConnection 隐藏密码，session-selection 独立管理运行期选择；SQL分类与DDL目标提取可读，但白名单正则需复杂查询反例验证。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1337916824-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1337916824:root",
+          "area": "code",
+          "fingerprint": "7848bba53cccfe9e365a8fd46baa6d6883a29b78"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:30:00.019Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:30:00.019Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "数据库分析者可限脱敏测试库及数据库只读账号试用，先核对选库、SQL与结果，写入另验。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "聊天内先结构后查询的开发排障流程明确。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "显式会话选库和读写拆分减少结构搬运。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "工具SQL分类可查，正则白名单不足以承担权限边界。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "数据库账号和备份运维不可省，结果也会送模型。"
+      }
+    },
+    "score": 65,
+    "revision": "7848bba53cccfe9e365a8fd46baa6d6883a29b78",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-incremental40-r2-github-1337916824-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1337916824:root",
+        "area": "code",
+        "fingerprint": "7848bba53cccfe9e365a8fd46baa6d6883a29b78"
+      }
+    ]
+  }
+}

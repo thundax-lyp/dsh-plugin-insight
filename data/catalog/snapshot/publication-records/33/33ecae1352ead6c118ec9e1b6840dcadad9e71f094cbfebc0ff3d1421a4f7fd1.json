@@ -1,0 +1,17 @@
+{
+  "id": "github:1388463793:root",
+  "repository": "AWL-MC2/DSH-Plugin_awl",
+  "path": "",
+  "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+  "fingerprints": {
+    "directory": "fad29182f7c59465c875572eb7eebce2959b0bb9cbd09e1f73ad7982e29eec22",
+    "code": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+    "maintenance": "314b826274297682ffa0ffafc5adc3fc4129330529dea77346dc2ef8081127e3"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "0aff1a9d8a65de11e406c4dd9ad959bbcc4f4748e8795cfabad13f2d434453e2"
+}

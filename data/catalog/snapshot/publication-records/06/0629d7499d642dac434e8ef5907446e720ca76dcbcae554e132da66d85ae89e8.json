@@ -1,0 +1,17 @@
+{
+  "id": "github:1352089397:root",
+  "repository": "Aliuyanfeng/dsh-soul",
+  "path": "",
+  "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+  "fingerprints": {
+    "directory": "58b391b14bcd6295e77b8ec131ac9c4e06b6089d840265e0a879e24b9daf73ac",
+    "code": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+    "maintenance": "90335f548b1a0f8e91154fd1504a37edeb60d6823032e221b1925048efc29dd0"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "0c98bd341f14e428283ccafbd2fa3cf1aba7b2ab2221993a901c3a9502989eff"
+}

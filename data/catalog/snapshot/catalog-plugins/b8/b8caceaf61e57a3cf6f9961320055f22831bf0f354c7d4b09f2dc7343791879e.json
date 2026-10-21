@@ -1,0 +1,283 @@
+{
+  "id": "github:1389061748:root",
+  "repository_id": 1389061748,
+  "component_id": "root",
+  "repository": "18569663yz-web/dsh-plugin-crypto-ticker",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-plugin-crypto-ticker",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "6250fcacea7c4a64f7e026a7820598d49ca43f6a595798ad5c1262455591a03a",
+    "code": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+    "maintenance": "bfc78f2a3b736f764213f8efa636cc51d3d61cd1551ced2fe2e8a481fbbac614"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1389061748-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:48:29.866Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1389061748-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/README.md",
+      "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+      "captured_at": "2026-10-20T10:48:29.866Z",
+      "summary": "在 DSH 侧栏显示加密货币价格、涨跌与走势图，支持多来源降级。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/18569663yz-web--dsh-plugin-crypto-ticker/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1389061748-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js",
+      "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+      "captured_at": "2026-10-20T10:48:29.866Z",
+      "summary": "核查 index.js、https.mjs；宿主 API 汇聚 OKX、Binance、CoinGecko，缓存报价和趋势，浏览器轮询；lastGood 保留失败时旧报价，逐币 stale 指示缺失。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/18569663yz-web--dsh-plugin-crypto-ticker/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "希望在 DSH 工作时顺手看常用代币行情的个人用户；合格输出是标明来源、新旧状态的参考报价。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389061748:root",
+          "area": "code",
+          "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:29.866Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "宿主 API 汇聚 OKX、Binance、CoinGecko，缓存报价和趋势，浏览器轮询；lastGood 保留失败时旧报价，逐币 stale 指示缺失。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389061748:root",
+          "area": "code",
+          "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:29.866Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389061748:root",
+          "area": "code",
+          "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:29.866Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389061748:root",
+          "area": "code",
+          "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:29.866Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金未见强制行情订阅；人工成本包括网络/代理排障及核对旧报价。轮询与趋势请求消耗网络，公开源免费不代表无限额度。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389061748:root",
+          "area": "code",
+          "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:29.866Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合参考性看盘；先检查当前来源和逐币 stale 状态，遇到来源切换时到交易平台复核价格。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389061748:root",
+          "area": "code",
+          "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:29.866Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少切换窗口的便利可以从集成解释，但没有衡量注意力收益；报价来源差异和过期数据限制使用。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389061748:root",
+          "area": "code",
+          "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:29.866Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "index.js 用 lastGood 与逐币 stale 避免全空界面，值得复用降级可见性；https.mjs 自带 TLS/CONNECT/HTTP 解码增加维护面，需检验代理响应与截断；缓存不等同于请求合并。 源码：[index.js](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js)、[https.mjs](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/https.mjs)。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1389061748:root",
+          "area": "code",
+          "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:48:29.866Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:48:29.866Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+    "reviewed_at": "2026-10-20T10:48:29.866Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1389061748:root",
+        "area": "code",
+        "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：常规行情嵌入；mechanism：多源和旧值可见性小幅改善；transferability：缓存降级可复用；simplification：免独立服务但自带传输层。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：少切一个行情窗口；delivery：报价而无新交付类型；reach：免密钥降低少量门槛；economics：缓存可能减请求但无实测。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-08-github-1389061748-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "参考看盘用户可试侧栏行情，先核逐币stale和来源，来源切换到交易平台复核。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "工作时顺手看代币价格的人群明确但价值有限。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "lastGood和逐币新旧状态补独立行情页切换。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "多源缓存与自制HTTPS可查，跨所报价和代理截断未验。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "轮询网络限流与TLS/CONNECT自实现增加维护负担。"
+      }
+    },
+    "score": 51,
+    "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-20-08-github-1389061748-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1389061748:root",
+        "area": "code",
+        "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+      }
+    ]
+  }
+}

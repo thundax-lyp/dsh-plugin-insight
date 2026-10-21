@@ -1,0 +1,337 @@
+{
+  "id": "github:1344714334:root",
+  "repository_id": 1344714334,
+  "component_id": "root",
+  "repository": "988hj7tczd-oss/dsh-modernize-code",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-modernize-code",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "a2bf434b4c01e42d6b8d6df47cad61fc4d0edae28add40d64aa50ee56b23a373",
+    "code": "4d110103666fde9515b9a8077b7e0458d00023a8",
+    "maintenance": "a5cd9cc729f4ca834009553115e180822f57c406adf47cdbc29be938ebe611ff"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1344714334-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:18:47.004Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1344714334-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/dsh-modernize-code/blob/4d110103666fde9515b9a8077b7e0458d00023a8/README.md",
+      "revision": "4d110103666fde9515b9a8077b7e0458d00023a8",
+      "captured_at": "2026-10-21T04:18:47.004Z",
+      "summary": "提供遗留代码预检、静态热区评估和分阶段迁移规划技能及Python工具。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-modernize-code/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1344714334-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/dsh-modernize-code/blob/4d110103666fde9515b9a8077b7e0458d00023a8/src/skill-mount.ts",
+      "revision": "4d110103666fde9515b9a8077b7e0458d00023a8",
+      "captured_at": "2026-10-21T04:18:47.004Z",
+      "summary": "核查 src/skill-mount.ts、src/modernize-tools.ts、cordis.patch.yml、skills/dsh-modernize-code/SKILL.md、skills/dsh-modernize-code/scripts/preflight.py、skills/dsh-modernize-code/scripts/detect-patterns.py；skill-mount.ts挂独立filesystem技能root；modernize-tools.ts注册modernize-preflight/assess，以宿主subprocess调用Python脚本。脚本检查环境与静态模式并写报告，map/transform依Skill指导模型与用户。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-modernize-code/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合准备技术迁移、需要先识别环境与风险的开发团队，非普通单文件编辑。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "skill-mount.ts挂独立filesystem技能root；modernize-tools.ts注册modernize-preflight/assess，以宿主subprocess调用Python脚本。脚本检查环境与静态模式并写报告，map/transform依Skill指导模型与用户。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次准备Python与宿主技能/子进程服务，回答业务约束并审阅报告；持续成本是模型评估、人工确认与回归。迁移执行由后续流程完成，现金随模型/CI，收益无实测。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合先生成迁移评估材料。确认报告写入位置，并把预检就绪理解为静态准备状态；路线图、代码改动和每阶段验证都需独立核查。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "有助于提前暴露前置条件，未有真实遗留项目迁移成效或人力对照。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "评估脚本与宿主薄封装分离，非shell argv、有界输出与超时是实质实现；map/transform主要是Skill规则，不能标已自动执行。Python静态扫描的语言覆盖与误报需另验。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "贡献是将预检、热区、路线图和逐块回滚纪律串联，脚本把部分检查变成可重复材料；相对直接让模型大改代码，明确保留未答问题和验证点。不是自动AST迁移器，模式匹配不代表死代码证明或业务优先级。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "工具称只读是指不改项目代码，实际上默认写PREFLIGHT.md与legacy-hotspots.md。preflight的测试能力主要查测试文件/runner存在，不等于构建或测试真的通过。runScript创建超时controller却不接工具exec.signal，用户取消传播需核；环境就绪和静态命中不能替代迁移回归。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：把每个迁移热区绑定可观察行为与回归证据，再按人工确认的业务影响排序，可降低正则热点驱动无价值重构。用有测试/无测试及高命中低业务影响项目比较返工率、回滚次数和工时；不以命中减少等同业务改善。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714334:root",
+          "area": "code",
+          "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:47.004Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:18:47.004Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "4d110103666fde9515b9a8077b7e0458d00023a8",
+    "reviewed_at": "2026-10-21T04:18:47.004Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1344714334:root",
+        "area": "code",
+        "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：分阶段迁移与静态扫描是既有方法。 mechanism=15：Python工具和Skill挂载有机制。 transferability=10：脚本易复用但语言规则需维护。 simplification=4：减少准备遗漏，确认与回归较重。",
+      "basis": "interpretation",
+      "score": 38,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=18：评估路线图改造链条清晰。 delivery=15：报告可交付，自动迁移未实现。 reach=10：迁移团队适用，需Python及构建链。 economics=4：无真实迁移工时验证。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714334-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "遗留代码迁移团队可先试生成评估材料；确认报告写入位置，静态预检后另跑构建、回归和阶段验收。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "迁移前识别环境与热点是明确团队需求。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "预检工具与迁移Skill组合减少前期清单整理。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核Python静态检查及报告写入，未有实际迁移收益。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "需Python和模型/人工回归，取消传播及文件写入位置需先核。"
+      }
+    },
+    "score": 59,
+    "revision": "4d110103666fde9515b9a8077b7e0458d00023a8",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-04-github-1344714334-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1344714334:root",
+        "area": "code",
+        "fingerprint": "4d110103666fde9515b9a8077b7e0458d00023a8"
+      }
+    ]
+  }
+}

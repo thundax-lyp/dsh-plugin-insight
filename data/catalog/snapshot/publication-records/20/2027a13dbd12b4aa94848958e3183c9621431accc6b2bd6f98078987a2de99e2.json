@@ -1,0 +1,17 @@
+{
+  "id": "github:1339034478:root",
+  "repository": "AlexYin-Tongji/dsh-ui-enhancer",
+  "path": "",
+  "revision": "87f17fe74076570023e01e5d0fc55c21affd2c23",
+  "fingerprints": {
+    "directory": "fbd26ad7417ef392c0a7dca16b12fb6fa92925711d07475e83b8aec1415285bc",
+    "code": "87f17fe74076570023e01e5d0fc55c21affd2c23",
+    "maintenance": "57ef5242d91b0c8cf7f368086cc7983386cab9e170b46eebf905ba8ffa28da70"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "6620b66669e954627eb38aaa269261b71f4f0e4e2717750c47cb96ca21834d0a"
+}

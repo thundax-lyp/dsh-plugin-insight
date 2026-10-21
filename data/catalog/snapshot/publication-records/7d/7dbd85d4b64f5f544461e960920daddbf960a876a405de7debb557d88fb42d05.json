@@ -1,0 +1,17 @@
+{
+  "id": "github:1331586818:root",
+  "repository": "AmethystLuna/logicprobe",
+  "path": "",
+  "revision": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+  "fingerprints": {
+    "directory": "9def868ae808638e38542382abb0438f12effaf95ac7f7f0b8acd44791faf46d",
+    "code": "a264c4018b02d24e2b2103c772ca431e21c16e65",
+    "maintenance": "abfe51d82e8491c81849f77af10c600afea67b2977221dba38cfec27aed52da6"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "2dcddbd14cb56cc1b9be5526610683916124b1f698c45408d3cb83e2860af907"
+}

@@ -1,0 +1,283 @@
+{
+  "id": "github:1424219088:root",
+  "repository_id": 1424219088,
+  "component_id": "root",
+  "repository": "3Tiga3/dsh-plugin-namecards",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-plugin-namecards",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "149f0cd55fc54a67a0a1eadbb85239ea6095f3a79fd916e9121aa4a14fbfcb5a",
+    "code": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e",
+    "maintenance": "98ff2cf6e9a3b435da157c68dc6b2b3b24d90547a0a2b9d1e21edf81fec229a2"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1424219088-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:06:38.561Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1424219088-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/3Tiga3/dsh-plugin-namecards/blob/c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e/README.md",
+      "revision": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e",
+      "captured_at": "2026-10-21T02:06:38.561Z",
+      "summary": "为 DSH 插件列表添加本地名片、中文备注、图标、文件夹和收藏。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3tiga3--dsh-plugin-namecards/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1424219088-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/3Tiga3/dsh-plugin-namecards/blob/c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e/lib/index.js",
+      "revision": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e",
+      "captured_at": "2026-10-21T02:06:38.561Z",
+      "summary": "核查 lib/index.js、lib/client.js；宿主包装pluginManager.listBundles返回展示字段，名片布局保存在cards.json；本地HTTP处理导入导出和图标，启停转调官方manager方法。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3tiga3--dsh-plugin-namecards/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "安装插件较多的用户按自己的用途命名分组、查找并启停插件，交付是可迁移的个人管理布局。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424219088:root",
+          "area": "code",
+          "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:38.561Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "宿主包装pluginManager.listBundles返回展示字段，名片布局保存在cards.json；本地HTTP处理导入导出和图标，启停转调官方manager方法。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424219088:root",
+          "area": "code",
+          "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:38.561Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424219088:root",
+          "area": "code",
+          "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:38.561Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424219088:root",
+          "area": "code",
+          "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:38.561Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "本地图标和JSON存储；人工为备注维护、导入冲突及宿主内部接口适配，未测大列表查找工时。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424219088:root",
+          "area": "code",
+          "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:38.561Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "插件较多且愿意维护个人目录的用户可评估；启停前核对真实包名，导出备份后再迁移布局。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424219088:root",
+          "area": "code",
+          "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:38.561Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "个人分类可能改善可发现性，不能从自动图标推断功能与可靠性。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424219088:root",
+          "area": "code",
+          "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:38.561Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "归一化限制文本、图标与键数量，临时文件rename写入，迁移保留旧目录；包装manager时记录并在dispose恢复原函数。复用需维护生命周期及稳定身份。 源码依据：[lib/index.js](https://github.com/3Tiga3/dsh-plugin-namecards/blob/c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e/lib/index.js#L563)、[lib/client.js](https://github.com/3Tiga3/dsh-plugin-namecards/blob/c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e/lib/client.js#L1067)。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1424219088:root",
+          "area": "code",
+          "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:06:38.561Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:06:38.561Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e",
+    "reviewed_at": "2026-10-21T02:06:38.561Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1424219088:root",
+        "area": "code",
+        "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：成熟名片/文件夹交互的宿主适配；mechanism：包装展示返回值属局部增量；transferability：本地overlay可复用；simplification：无需修改各包但依赖内部manager。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow：管理查找步骤变少；delivery：个人管理布局可迁移；reach：中文备注降低识别门槛；economics：未识别成本结构变化。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-01-github-1424219088-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "插件较多且愿维护目录者可试用名片分组；启停前核对真实包名，迁移前导出布局备份。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "个人命名分组查找多插件场景具体。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "自定义展示和迁移布局比原列表便利，管理能力主要复用官方。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "listBundles包装、cards持久化和HTTP导入已查，大列表工时未测。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "本地JSON图标负担低，备注维护和内部接口升级需人工。"
+      }
+    },
+    "score": 64,
+    "revision": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-01-github-1424219088-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1424219088:root",
+        "area": "code",
+        "fingerprint": "c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e"
+      }
+    ]
+  }
+}

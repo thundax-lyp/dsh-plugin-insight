@@ -1,0 +1,344 @@
+{
+  "id": "github:1334395883:root",
+  "repository_id": 1334395883,
+  "component_id": "root",
+  "repository": "609476965/dsh-LorebookMD",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-LorebookMD",
+  "entry_type": "plugin",
+  "technical_category": "memory-knowledge",
+  "business_category": "content-creation",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "5d4b742eb4cd96ee2dbf062bb365f26ed2ddfc1ede8b41a394f48d6f7ee2c71a",
+    "code": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+    "maintenance": "877e4e26b19cc137b0551742618bd7d0848c67fd4a7ce3943b9f475ea998b9ba"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1334395883-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:26.562Z",
+      "membership": "present"
+    },
+    {
+      "id": "2026-10-21-02-github-1334395883-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-21T03:16:26.562Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1334395883-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/README.md",
+      "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+      "captured_at": "2026-10-21T03:16:26.562Z",
+      "summary": "管理提示词预设并导入酒馆角色卡、世界书及正则资料，按需注入对话上下文。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/609476965--dsh-lorebookmd/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1334395883-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/609476965/dsh-LorebookMD/blob/4bc4110efbfb4888286b81aaf53191705dade9dd/src/index.ts",
+      "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+      "captured_at": "2026-10-21T03:16:26.562Z",
+      "summary": "核查 src/index.ts、src/tavern.ts、src/preset-repo.ts；src/index.ts以动态systemPrompt.section注入激活预设，提供prompt_preset工具和API，监听JSON变化；tavern.ts解析PNG chara与JSON并按关键词匹配世界条目；PresetRepo隔离存储端口。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/609476965--dsh-lorebookmd/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合已有角色卡与世界设定、需要在DSH管理写作或角色扮演上下文的作者。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "src/index.ts以动态systemPrompt.section注入激活预设，提供prompt_preset工具和API，监听JSON变化；tavern.ts解析PNG chara与JSON并按关键词匹配世界条目；PresetRepo隔离存储端口。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需整理角色卡、预设名与存储目录；持续成本是提示token、关键词误触发和格式迁移人工复核，模型现金按上下文和生成计费。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有酒馆资料的写作者可先导入副本。检查占位符、世界书命中与激活预设，别直接把原平台效果视为DSH已复现。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "集中管理与热切换降低资料重复录入，但缺乏长篇一致性或作者工时的独立对照。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "PresetRepo使用注入式IO便于验证状态；tavern纯解析器与宿主分开，watch有防抖和生命周期清理。可借鉴格式转换层，兼容语义和来源权限仍需人工确认。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者主张集中预设管理；可确认增量是将SillyTavern资料格式转换、热切换预设与关键词世界书带到DSH。相对复制整份设定到系统提示，可减少重复整理；角色卡格式和世界书思想来自酒馆生态，未证明与原运行时语义等价。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "角色卡占位符被清理后能避免宿主unknown variable，却可能丢失原模板语义；关键词触发也不等价完整SillyTavern规则。外部资料被注入systemPrompt会影响模型行为，应把导入内容当用户选择的配置核对，不能因PNG格式就认为可信。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：导入时输出逐字段转换损失清单并允许预览本轮命中世界条目，可减少作者排查角色偏差。用相同角色卡在两种运行时比较触发和占位符覆盖；若仍难解释输出偏差，不宣称兼容。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334395883:root",
+          "area": "code",
+          "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:26.562Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:26.562Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+    "reviewed_at": "2026-10-21T03:16:26.562Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1334395883:root",
+        "area": "code",
+        "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 15,
+        "simplification": 8
+      },
+      "rationale": "novelty=9：酒馆格式和世界书来自既有生态。 mechanism=15：导入、预设热切换与关键词触发有整合。 transferability=15：纯解析与IO端口便于复用。 simplification=8：减少复制设定但转换损失需核对。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=18：资料导入到激活提示形成写作流程。 delivery=15：预设可保存复用，跨平台语义不保证。 reach=10：已有酒馆资料用户适用，格式兼容有限。 economics=4：无作者工时对照，长设定增加token。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-02-github-1334395883-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "已有酒馆角色资料的作者可导入副本试用；核对占位符丢语义和世界书命中，外部卡注入前审内容。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "写作角色卡及世界设定管理目标具体。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "格式转换与热切换省重复录入，胜过整份复制提示。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "PNG chara解析和关键词匹配源码可查，不等价原平台全部语义。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "整理预设和提示token有持续成本，误触发及迁移需人工。"
+      }
+    },
+    "score": 65,
+    "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-02-github-1334395883-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1334395883:root",
+        "area": "code",
+        "fingerprint": "4bc4110efbfb4888286b81aaf53191705dade9dd"
+      }
+    ]
+  }
+}

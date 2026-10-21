@@ -1,0 +1,337 @@
+{
+  "id": "github:1343882273:root",
+  "repository_id": 1343882273,
+  "component_id": "root",
+  "repository": "9livewolf/dsh-think-bounce-pet",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-think-bounce-pet",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "d3d7f054d0764b5f5dee006cc4903b6177d1040d59ed25aa8d06765292b48427",
+    "code": "3bfe9cb32afea176937379351af39dfd46f955f4",
+    "maintenance": "5d89dd536289d67fe87cae194cd4469da1082af0e7250cf0241026ee183cfa28"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1343882273-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:19:20.840Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1343882273-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/README.md",
+      "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
+      "captured_at": "2026-10-21T04:19:20.840Z",
+      "summary": "在 DSH Web 显示常驻和随 reasoning 文本变化的弹球宠物，可调整物理效果。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/9livewolf--dsh-think-bounce-pet/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1343882273-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/index.js",
+      "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
+      "captured_at": "2026-10-21T04:19:20.840Z",
+      "summary": "核查 lib/index.js、lib/client.js、package.json；host空apply，仅client注册shell.overlay/settings；requestAnimationFrame更新碰撞/重力，localStorage存参数，订阅当前会话legacy.partial的reasoning文本开关思考球并基线化历史。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/9livewolf--dsh-think-bounce-pet/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读client动画/设置/生命周期/会话订阅与空host；未看外部视频、跑UI或评估用户体验。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "用户希望界面有陪伴和思考状态视觉提示，交付本地动画，不代表真实推理进度或任务结果。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "host空apply，仅client注册shell.overlay/settings；requestAnimationFrame更新碰撞/重力，localStorage存参数，订阅当前会话legacy.partial的reasoning文本开关思考球并基线化历史。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读client动画/设置/生命周期/会话订阅与空host；未看外部视频、跑UI或评估用户体验。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "纯client功能、host空壳，依赖DSH overlay/settings与legacy会话投影；浏览器本地参数非跨设备同步。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次设置，持续动画CPU/GPU与注意力，实际帧/内存未测；无模型调用费用路径。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "喜欢界面装饰的人可先调低速度/大小；遇到遮挡或干扰关闭，不把思考球当可靠运行状态。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "提供趣味反馈，不证明工作效率或模型思考可观测性。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "会话open后基线化避免历史重放、切会话解绑、统一rAF清理和本地设置迁移可借鉴；状态信号需避免依赖内部投影。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对固定装饰图，增量是可拍打拖扔的物理球和基于会话reasoning可见文本的状态响应，区分常驻与思考球。物理动画/React槽位为成熟方法，不是任务能力提升。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "宠物出现能否说明Agent真在思考？仅检测legacy.partial.blocks含非空reasoning，隐藏推理/不同provider或宿主投影变化会无球，残留块也可能误提示；常驻动画与可交互球会占用注意力和指针区域，不能由pointer-events none概括为完全不干扰。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：将宠物状态改为宿主明确运行/等待/结束事件，并给低动态或可访问模式，可减少伪进度和视觉干扰。由reasoning文本启发式与物理动画推导，未实现。对照无reasoning模型、历史回放、会话切换和减少动态设置，测状态误导、误触与帧耗时；不宣传提效。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1343882273:root",
+          "area": "code",
+          "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:19:20.840Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:19:20.840Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
+    "reviewed_at": "2026-10-21T04:19:20.840Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1343882273:root",
+        "area": "code",
+        "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty 小幅：弹球宠物界面适配；mechanism 小幅：reasoning信号与rAF物理常规；transferability 小幅：宿主legacy结构耦合；simplification 小幅：两球同引擎参数。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow 未识别：不改变任务组织；delivery 小幅：交互装饰体验；reach 小幅：设置可调但可访问未验；economics 未识别：无成本结构变化。",
+      "basis": "interpretation",
+      "score": 13,
+      "evidence_ids": [
+        "2026-10-21-04-github-1343882273-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "喜爱界面陪伴者可低速小尺寸试动画；核遮挡与关闭恢复，不把思考球当Agent真实进度。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "装饰与陪伴偏好明确但收益限个人审美。"
+      },
+      "advantage": {
+        "score": 6,
+        "rationale": "可拖扔物理球和reasoning响应增加趣味，非可靠状态监控。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "动画清理与订阅基线已核，无帧耗或体验实验。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "无模型调用，动画资源及注意力成本可通过关闭控制。"
+      }
+    },
+    "score": 49,
+    "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-04-github-1343882273-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1343882273:root",
+        "area": "code",
+        "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
+      }
+    ]
+  }
+}

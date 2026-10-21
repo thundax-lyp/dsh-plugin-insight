@@ -1,0 +1,337 @@
+{
+  "id": "github:1344714964:root",
+  "repository_id": 1344714964,
+  "component_id": "root",
+  "repository": "988hj7tczd-oss/dsh-math-olympiad",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-math-olympiad",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "6df14560a76cd5edd71ca5259d6e371fbc9541e765431beb6fd8d2f4df902688",
+    "code": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0",
+    "maintenance": "7b10175ee5e78186795c9d439b2fabeb59d26365ce15137b7acf6c92f4de5804"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1344714964-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:18:44.789Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1344714964-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/dsh-math-olympiad/blob/b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0/README.md",
+      "revision": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0",
+      "captured_at": "2026-10-21T04:18:44.789Z",
+      "summary": "提供竞赛数学求解、独立验证及信心/弃权输出的技能流程，可选编译PDF。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-math-olympiad/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1344714964-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/dsh-math-olympiad/blob/b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0/src/locator.ts",
+      "revision": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0",
+      "captured_at": "2026-10-21T04:18:44.789Z",
+      "summary": "核查 src/locator.ts、cordis.patch.yml、skills/dsh-math-olympiad/SKILL.md；src/locator.ts仅提供技能路径服务；cordis.patch.yml以独立filesystem provider挂载SKILL。Skill要求模型先整理可公开检查的证明，再交新上下文subagent验证；shell脚本只探测TeX和编译PDF。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-math-olympiad/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合希望把竞赛题求解与证明质疑分开的学习者；输出是证明、验证结论和有边界的信心。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "src/locator.ts仅提供技能路径服务；cordis.patch.yml以独立filesystem provider挂载SKILL。Skill要求模型先整理可公开检查的证明，再交新上下文subagent验证；shell脚本只探测TeX和编译PDF。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次配置技能filesystem、可用subagent与可选TeX；模型验证和重解增加token/延迟，人工仍核关键证明。PDF只改善呈现，不提升正确性；源码分发构建还受宿主依赖版本约束。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合学习和初步证明检查。先确认验证者实际只收到证明与攻击清单，重要结论请独立复核；high不是形式化证明或正确率承诺。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "流程有促使暴露缺口的可能性，无题集评测、独立引用或正确率提升证据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "路径定位适配src/lib两种布局，独立provider关闭默认roots避免重复发现；数学验证是提示工作流，TeX脚本只负责展示。复用应保留状态与证据边界，不能用构建通过替代数学验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者强调对抗验证与诚实弃权；本项贡献是将Pólya启发、具体失败模式、最多两轮修正和弃权写成可执行提示流程，另有可靠路径挂载。不是形式化证明器，也没有代码强制保证验证器隔离或验证结果正确；数学方法归公开参照，非本项目新定理。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "high由模型验证器零缺口决定，并没有校准数据，故不能把标签称统计校准的正确概率。隔离与只传证明是Skill纪律，locator没有调度器 enforcing；smoke的stub传参结构不证明真实宿主不共享历史。用开放问题特化作红旗有启发价值，不能替代逐步证明检查。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：将求解者/验证者输入和具体缺口保存为可审阅记录，并用已知真伪题评估high标签，可减少错而自信。对正确证明、隐含条件错误和无解题比较错误接受率、弃权率及额外模型费用；若高信心未改善，取消校准表述。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344714964:root",
+          "area": "code",
+          "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:18:44.789Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:18:44.789Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0",
+    "reviewed_at": "2026-10-21T04:18:44.789Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1344714964:root",
+        "area": "code",
+        "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：对抗验证和Pólya来自已有方法。 mechanism=8：路径挂载有代码，验证主要提示纪律。 transferability=10：Skill可迁移但隔离依赖宿主。 simplification=4：双模型与重解可能增加工作。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 0
+      },
+      "rationale": "workflow=18：求解验证弃权流程明确。 delivery=8：输出可审阅但未证正确性校准。 reach=10：竞赛学习者适用，需子代理能力。 economics=0：无准确率与成本收益对照。",
+      "basis": "interpretation",
+      "score": 36,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344714964-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "竞赛题学习者可试证明与独立质疑流程；确认验证者只收到证明，重要结论另行核验，不把high当正确概率。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "求解后检查证明的学习任务及输出明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "新上下文验证和攻击清单比一次自评更可检查，但隔离靠Skill纪律。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核Skill挂载和TeX脚本，无题集正确率或真实隔离实验。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "多次验证与重解增加模型延迟和token，人工证明复核不可省。"
+      }
+    },
+    "score": 59,
+    "revision": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-04-github-1344714964-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1344714964:root",
+        "area": "code",
+        "fingerprint": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0"
+      }
+    ]
+  }
+}

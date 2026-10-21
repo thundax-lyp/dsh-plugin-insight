@@ -1,0 +1,17 @@
+{
+  "id": "github:1403959948:root",
+  "repository": "ALIve114514awa/dsh-prompt-optimizer",
+  "path": "",
+  "revision": "0f6d8d42bc3418c78153ad56968117f9c38c3d42",
+  "fingerprints": {
+    "directory": "211263ece0e3bc88a8e8ec0f3f529e4cc0c7f6ae418aaa3c98758681200cd994",
+    "code": "0f6d8d42bc3418c78153ad56968117f9c38c3d42",
+    "maintenance": "0dd08efc40014f424bc394ae396f9c40d61495b35d5439c464a9cac2fb6fdcf9"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "db66579f0f941c13d833f6ada3dca9484a20a52836bdf7b43d2893a9dbaefe5e"
+}

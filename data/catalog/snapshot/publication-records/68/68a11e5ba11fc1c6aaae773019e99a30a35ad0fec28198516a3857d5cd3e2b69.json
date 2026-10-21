@@ -1,0 +1,17 @@
+{
+  "id": "github:1351854499:root",
+  "repository": "173787247/dsh-wsl-download",
+  "path": "",
+  "revision": "8b1db94ca8658004ebc304e9678bbdd54a491133",
+  "fingerprints": {
+    "directory": "35158b9c5a16586b713b0eccfc7e010b23814edd7b11863562b8685769e0ba03",
+    "code": "8b1db94ca8658004ebc304e9678bbdd54a491133",
+    "maintenance": "ac8bd30f16a0fcbc943653c3c09f7b1363941977a792e585d6f49b9b186d22c8"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "10400ce4e9fc8cd8c382296e69472f4e15be1c255e3f64877b075eca3193f647"
+}

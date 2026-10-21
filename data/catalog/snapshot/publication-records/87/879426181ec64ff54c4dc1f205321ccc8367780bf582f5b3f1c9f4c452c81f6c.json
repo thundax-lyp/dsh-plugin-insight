@@ -1,0 +1,18 @@
+{
+  "id": "github:1333136466:root",
+  "repository": "0xsline/dsh-spotlight",
+  "path": "",
+  "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+  "fingerprints": {
+    "directory": "439343cfe7f96069bb65fe106eec5629ed7c44ee51ec373efc001d59000319b7",
+    "code": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+    "maintenance": "7953d9ed42f7af082be42f439f1ff668e3589333d46d5a5376f1719d393492c5"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "17257f5937fd1fed1fe3cf2b70fe23f859d663395ee389295c1b114295706073"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1351375738:root",
+  "repository": "Aik358/dsh-literature",
+  "path": "",
+  "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+  "fingerprints": {
+    "directory": "184609b1829de872ecf5957c78e465006e75ec50963cbb25d79ded6d3741c652",
+    "code": "fc6650ef12747de08512d99c2f9c8388572b7724",
+    "maintenance": "28a52fa6612a6e938b2647daef637ebfd7b4b279560bc168804676e77a5c7fc7"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "04e319fc087b92d39bf55ba79776c3844577a47e9b0110a682c24e623c5b773c"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1422359117:root",
+  "repository": "7gzgn/dsh-slipway",
+  "path": "",
+  "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+  "fingerprints": {
+    "directory": "54fb1b3310f21370ae7ecc67e0209ac19d4eb78ff18d0b654d42797f7396ce59",
+    "code": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+    "maintenance": "a5aeadd8650309e4b5a3ea62327e1dbe7ff340fc9da983aa70e3291627a6bbda"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "656f8fcfc3ecb9417069f31abb20c65bfbb9b26d2fa9df1a3bc33737969ccd50"
+}

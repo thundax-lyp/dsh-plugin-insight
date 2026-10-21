@@ -1,0 +1,283 @@
+{
+  "id": "github:1335070045:packages-vision-route",
+  "repository_id": 1335070045,
+  "component_id": "packages-vision-route",
+  "repository": "314857493/dsh-vision",
+  "path": "packages/vision-route",
+  "aliases": [],
+  "name": "dsh-vision",
+  "entry_type": "plugin",
+  "technical_category": "model-provider",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "ed6721e0681ee278d5d8e78e3d8324e334e487363739365ab53f0cede0012c03",
+    "code": "10b0cbe8c6f06a175eaa985df28d276575539b6e",
+    "maintenance": "f72a821de7a340a41ed7b38edd85d85d96e47ffbeaf0514168e06087ed8bc5a0"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1335070045-packages-vision-route-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:05:42.956Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1335070045-packages-vision-route-author",
+      "kind": "author_claim",
+      "url": "https://github.com/314857493/dsh-vision/blob/10b0cbe8c6f06a175eaa985df28d276575539b6e/packages/vision-route/README.md",
+      "revision": "10b0cbe8c6f06a175eaa985df28d276575539b6e",
+      "captured_at": "2026-10-21T02:05:42.956Z",
+      "summary": "给纯文本模型路由添加图片附件转译旁路，使用智谱视觉模型生成文字证据。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/314857493--dsh-vision--packages-vision-route/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1335070045-packages-vision-route-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/314857493/dsh-vision/blob/10b0cbe8c6f06a175eaa985df28d276575539b6e/packages/vision-route/index.js",
+      "revision": "10b0cbe8c6f06a175eaa985df28d276575539b6e",
+      "captured_at": "2026-10-21T02:05:42.956Z",
+      "summary": "核查 packages/vision-route/index.js、packages/vision-route/package.json；VisionProxyAdapter声明image输入模态，读取attachments并调用GLM降级链，把图片块递归替换成文字再委派原provider；缓存键含附件ID和当前问题。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/314857493--dsh-vision--packages-vision-route/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "希望继续使用已有纯文本provider、偶尔询问GUI图片的DSH用户，交付为可供下游推理的视觉描述。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335070045:packages-vision-route",
+          "area": "code",
+          "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:42.956Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "VisionProxyAdapter声明image输入模态，读取attachments并调用GLM降级链，把图片块递归替换成文字再委派原provider；缓存键含附件ID和当前问题。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335070045:packages-vision-route",
+          "area": "code",
+          "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:42.956Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335070045:packages-vision-route",
+          "area": "code",
+          "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:42.956Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335070045:packages-vision-route",
+          "area": "code",
+          "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:42.956Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次配置GLM凭据和provider；图片上传第三方，网络重试和三模型降级叠加时延；免费额度政策未本轮核实，人工复核另计。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335070045:packages-vision-route",
+          "area": "code",
+          "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:42.956Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "需要保留纯文本主模型时可隔离试用；要求原始像素高保真或禁止上传智谱的场景先选其他办法，勿把文字描述当图像原件。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335070045:packages-vision-route",
+          "area": "code",
+          "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:42.956Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把视觉调用从主模型计费与能力中分离有机制依据，但准确率、实际价格与端到端时延未实测。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335070045:packages-vision-route",
+          "area": "code",
+          "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:42.956Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "成功结果才入缓存，瞬时缺key或限流不会黏住；AbortSignal及单模型60秒超时可观察，三次串行回退仍会放大等待。 [固定源码](https://github.com/314857493/dsh-vision/blob/10b0cbe8c6f06a175eaa985df28d276575539b6e/packages/vision-route/index.js#L1)。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335070045:packages-vision-route",
+          "area": "code",
+          "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:42.956Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:05:42.956Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "10b0cbe8c6f06a175eaa985df28d276575539b6e",
+    "reviewed_at": "2026-10-21T02:05:42.956Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335070045:packages-vision-route",
+        "area": "code",
+        "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 18,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：主模型解耦与追问适配实质；mechanism：转译和缓存组合实质，非视觉算法；transferability：任意匹配provider可复用实质；simplification：减少切换实质。",
+      "basis": "interpretation",
+      "score": 51,
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：旁路保留会话路由实质；delivery：文字证据成为中间交付实质；reach：纯文本模型可接图小幅；economics：按图调用小幅，免费政策未核实。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-01-github-1335070045-packages-vision-route-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "要保留纯文本provider且允许图片出网者可试用包装路由；先核对表格键值与追问范围，高保真任务回看原图。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "纯文本用户偶发图片问答具体，有原生视觉替代。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "自动GLM转译省手动复制，但文字替代丢失结构。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "递归替换和问题缓存有源码，展平value及有限历史限制已知。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "需GLM凭据、额外网络与回退调用，免费额度未核实。"
+      }
+    },
+    "score": 59,
+    "revision": "10b0cbe8c6f06a175eaa985df28d276575539b6e",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-01-github-1335070045-packages-vision-route-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335070045:packages-vision-route",
+        "area": "code",
+        "fingerprint": "10b0cbe8c6f06a175eaa985df28d276575539b6e"
+      }
+    ]
+  }
+}

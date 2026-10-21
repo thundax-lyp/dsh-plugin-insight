@@ -1,0 +1,17 @@
+{
+  "id": "github:1418769012:root",
+  "repository": "5V1A-afk/dsh-sticker-pack",
+  "path": "",
+  "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+  "fingerprints": {
+    "directory": "0c8872d70dd3bf48c0120e4914e3209384283846010149f9dd5ed97abab57372",
+    "code": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+    "maintenance": "6eb93148b44347458141ee18496b1e964d42f3b3a5ec37b874acf51536e37b98"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "29edcc3715e951b50f13ec8340cc8f3515f6bb53be406e5479a3ea6c13976a00"
+}

@@ -1,0 +1,337 @@
+{
+  "id": "github:1378742722:root",
+  "repository_id": 1378742722,
+  "component_id": "root",
+  "repository": "Aliww2468/dsh-client-ui-aqua-patched",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-client-ui-aqua-patched",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "01944eafed09934ca5eb8311181726472abd8febcafb7097ad1c31094b9bda10",
+    "code": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+    "maintenance": "8a41ff5a14c4fbb5d3006b3e0fea57f7005c4a3b01b485cb57ae7b821343ed3f"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1378742722-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:08:49.567Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1378742722-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/README.md",
+      "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+      "captured_at": "2026-10-21T08:08:49.567Z",
+      "summary": "为特定DSH版本修补Aqua玻璃主题的加载与设置入口兼容。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/aliww2468--dsh-client-ui-aqua-patched/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1378742722-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/index.ts",
+      "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+      "captured_at": "2026-10-21T08:08:49.567Z",
+      "summary": "核查 src/index.ts、src/client/index.ts、src/client/theme-layer.ts、REPAIR.md；浏览器store导入改到dsh-client-store、keyed settings slot补aqua key，主机以鸭类型schema注册空aqua namespace以触发卡片；实际外观仍在localStorage和AquaLayer effects。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/aliww2468--dsh-client-ui-aqua-patched/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "使用DSH0.1.2-rc.1并希望沿用Aqua外观的用户。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "浏览器store导入改到dsh-client-store、keyed settings slot补aqua key，主机以鸭类型schema注册空aqua namespace以触发卡片；实际外观仍在localStorage和AquaLayer effects。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无模型费用，动态背景与模糊有GPU/电池代价；fork追宿主API、手补构建产物与源码同步有维护成本。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "只在匹配版本先核设置开关与卸载恢复；别用同名npm上游包替代该fork。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "作者给定环境运行记录是作者证据，本轮未复测；没有生产效率收益。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "将命名空间、key和模块来源三个独立契约逐一修正可借鉴；鸭类型空schema是版本适配技巧，不保证新版settings接口。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "fork增量是恢复已有视觉能力可加载/可关闭，并明确源/产物修补归属；不将上游完整主题体量或视觉机制算本fork创新。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "REPAIR明确lib手工补、src仅镜像且未在独立工具链typecheck，固定src阅读不自动证明与所有发布bundle行为一致。对0.1.2-rc.1的作者验收不能外推0.2.x，旧settings.register接口尤其需另核。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：给模块表、keyed slot和settings namespace写声明式版本适配探针，并生成src/lib一致性材料，可减少手补漂移。以目标/新宿主和重建bundle核开关可达、释放和差异；无法重建时保留产物修补限定。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1378742722:root",
+          "area": "code",
+          "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:49.567Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:08:49.567Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+    "reviewed_at": "2026-10-21T08:08:49.567Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1378742722:root",
+        "area": "code",
+        "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 0
+      },
+      "rationale": "novelty=0：fork为兼容修补无新视觉方法。 mechanism=8：三个契约修补局部增量。 transferability=5：特定版本技巧迁移有限。 simplification=0：未改变主题机制复杂度。",
+      "basis": "interpretation",
+      "score": 13,
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow=0：恢复入口非业务重组。 delivery=0：仍是原主题效果。 reach=5：让特定宿主用户恢复使用。 economics=0：无成本结构改变。",
+      "basis": "interpretation",
+      "score": 5,
+      "evidence_ids": [
+        "2026-10-21-07-github-1378742722-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "恰用DSH0.1.2-rc.1且需Aqua外观者可试此fork；核实际lib开关及卸载恢复，不外推0.2.x兼容。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "固定旧版本沿用外观的人群明确但较窄。"
+      },
+      "advantage": {
+        "score": 6,
+        "rationale": "修补store/settings接线让旧主题延续，独立增量局部。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核REPAIR手补lib与src镜像，作者运行记录非本轮验收。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "GPU与fork追接口、手补产物同步成本高于普通主题。"
+      }
+    },
+    "score": 44,
+    "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-07-github-1378742722-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1378742722:root",
+        "area": "code",
+        "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
+      }
+    ]
+  }
+}

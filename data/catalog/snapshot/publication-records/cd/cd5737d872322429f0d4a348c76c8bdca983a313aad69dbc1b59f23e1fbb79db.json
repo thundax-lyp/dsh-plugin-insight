@@ -1,0 +1,17 @@
+{
+  "id": "github:1362694736:root",
+  "repository": "173787247/dsh-wsl-fetch",
+  "path": "",
+  "revision": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a",
+  "fingerprints": {
+    "directory": "8c3cfd12dae814b823e3cbbcca70520ab82ee78a91e9a9b7363e0218230fea59",
+    "code": "ef32d59a6e95929aa18e86c5495d0f3f9d78185a",
+    "maintenance": "c19eb9b21f9ea5004c56b7976a9293b204f0cc387a705cdd80f56ffcc48f1ed9"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T09:36:48.824Z",
+  "analysis_sha256": "80d2270de769ced648c99ba1b0bc31a8bf7b00c3ad6f8fce1c7d746b95d8d327"
+}

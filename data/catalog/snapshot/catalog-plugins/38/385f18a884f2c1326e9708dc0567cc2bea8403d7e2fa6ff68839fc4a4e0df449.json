@@ -1,0 +1,337 @@
+{
+  "id": "github:1403959948:root",
+  "repository_id": 1403959948,
+  "component_id": "root",
+  "repository": "ALIve114514awa/dsh-prompt-optimizer",
+  "path": "",
+  "aliases": [],
+  "name": "prompt-optimizer",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "211263ece0e3bc88a8e8ec0f3f529e4cc0c7f6ae418aaa3c98758681200cd994",
+    "code": "0f6d8d42bc3418c78153ad56968117f9c38c3d42",
+    "maintenance": "0dd08efc40014f424bc394ae396f9c40d61495b35d5439c464a9cac2fb6fdcf9"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1403959948-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:41:12.672Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1403959948-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/ALIve114514awa/dsh-prompt-optimizer/blob/0f6d8d42bc3418c78153ad56968117f9c38c3d42/README.md",
+      "revision": "0f6d8d42bc3418c78153ad56968117f9c38c3d42",
+      "captured_at": "2026-10-21T05:41:12.672Z",
+      "summary": "用当前 Harness 模型或 Codex 澄清、改写提示词，预览后填回草稿。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/alive114514awa--dsh-prompt-optimizer/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1403959948-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/ALIve114514awa/dsh-prompt-optimizer/blob/0f6d8d42bc3418c78153ad56968117f9c38c3d42/src/server/index.ts",
+      "revision": "0f6d8d42bc3418c78153ad56968117f9c38c3d42",
+      "captured_at": "2026-10-21T05:41:12.672Z",
+      "summary": "核查 src/server/index.ts、src/server/requests.ts、src/server/codex.ts、src/client/state.ts、src/client/PromptOptimizer.tsx、src/tui/index.ts、package.json；Host提供status/optimize/cancel RPC，读取可选最近已完成一轮，调用当前模型或现有Codex子代理provider。RequestRegistry绑定请求与会话、限4并发并传播取消/超时；Web记录session、draftRev与附件状态，在应用前双重核验；TUI以scene及/prompt-optimize提供预览与二次确认追加。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/alive114514awa--dsh-prompt-optimizer/REVIEWED-SOURCE.json",
+      "limitations": [
+        "根组件Host请求、Codex适配、浏览器状态/草稿应用、TUI注册与README；不执行构建、模型调用或目标测试。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "用户需求尚模糊，需要在发给执行Agent前澄清目标、扩写或精简；交付物是用户可编辑的提示草稿，不自动执行任务。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Host提供status/optimize/cancel RPC，读取可选最近已完成一轮，调用当前模型或现有Codex子代理provider。RequestRegistry绑定请求与会话、限4并发并传播取消/超时；Web记录session、draftRev与附件状态，在应用前双重核验；TUI以scene及/prompt-optimize提供预览与二次确认追加。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "根组件Host请求、Codex适配、浏览器状态/草稿应用、TUI注册与README；不执行构建、模型调用或目标测试。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "Web/桌面与TUI为不同发行包、同profile只选一个；兼容固定DSH/TUI版本需与实际runtime核对，不能由仓库check脚本推定已验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金：澄清和生成额外模型/订阅调用；人工：编辑、判断保真与回填确认，切换后重生成与取消失败也需处理。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "需要先整理需求且愿意审阅改写者可列为候选；直接明确的小任务收益有限，TUI应用回执不能当作已落地保证。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把改写结果留给人确认并避免Web旧结果覆盖新草稿；尚无证据证明提高下游质量或降低总token。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "RequestRegistry对取消先于开始保留有界墓碑，finally清理超时和监听；Web以captureInsertion再次检查版本；Codex显式使用现有provider而不偷偷CLI回退。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相较直接让执行Agent边澄清边修改，把需求改写放在独立可编辑阶段，并在Web草稿回填时用版本校验避免覆盖新输入。增量在于人确认的交接协议与并发保护，而不是新的提示优化算法；模型能力复用宿主和外部provider。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "优化后的文本是否更忠实而非擅自补需求？结构化解析与预览不能保证目标不漂移，也缺同条件下游任务实验。Web有draftRev保护，但TUI公开追加无回执，README承认已有原稿保留未完成实测；“已写出”不能认定草稿已落地。Codex取消仍依赖provider的实际清理语义。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "在预览中逐条标注“用户已给事实/澄清答案/模型新增假设”，可能比单纯润色降低需求偷换。对相同模糊需求盲测原稿和标注稿，统计未授权新增约束与下游返工；若只是更长却没有降低新增假设错误，则否定收益。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1403959948:root",
+          "area": "code",
+          "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:41:12.672Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:41:12.672Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "0f6d8d42bc3418c78153ad56968117f9c38c3d42",
+    "reviewed_at": "2026-10-21T05:41:12.672Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1403959948:root",
+        "area": "code",
+        "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "新颖性9：改写/澄清模式常见；机制15：请求取消与草稿版本交接具体；迁移性10：版本化回填可复用；简化8：合并预览和回填，仍需用户审稿。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "工作流9：前置编辑环节仍由原用户确认，未改变业务责任；交付15：Web草稿版本/附件保护形成可审阅交接；覆盖10：Web与TUI入口但兼容窄；经济4：额外模型轮次，收益未量化。",
+      "basis": "interpretation",
+      "score": 38,
+      "evidence_ids": [
+        "2026-10-21-06-github-1403959948-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "需求模糊且愿意审阅改写者可先试Web预览；核目标保真与附件，TUI追加无落地回执需手动确认，简单任务收益有限。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "执行前澄清扩写精简需求有明确人群。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "请求绑定和Web draftRev检查减少旧改写覆盖新草稿。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核并发取消与双核验，未测下游质量，TUI保稿未实测。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "多一次模型与人工保真审阅，需比较总任务成本。"
+      }
+    },
+    "score": 65,
+    "revision": "0f6d8d42bc3418c78153ad56968117f9c38c3d42",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-06-github-1403959948-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1403959948:root",
+        "area": "code",
+        "fingerprint": "0f6d8d42bc3418c78153ad56968117f9c38c3d42"
+      }
+    ]
+  }
+}

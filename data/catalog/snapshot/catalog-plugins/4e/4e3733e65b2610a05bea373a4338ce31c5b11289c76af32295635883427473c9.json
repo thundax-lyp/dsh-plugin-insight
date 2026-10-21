@@ -1,0 +1,283 @@
+{
+  "id": "github:1338526178:packages-bundle-rollback",
+  "repository_id": 1338526178,
+  "component_id": "packages-bundle-rollback",
+  "repository": "23swccp/dsh-undo",
+  "path": "packages/bundle-rollback",
+  "aliases": [],
+  "name": "dsh-undo-plugin",
+  "entry_type": "plugin",
+  "technical_category": "sessions-messages",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "9d6f39fe967c514fb5db06e4cb612d2913926e2f3d0e7a9d6723d3dc419a0714",
+    "code": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67",
+    "maintenance": "5d0507c17826aa57cf81ece894a4c9f701d8d84c5272645d14b1ebaf6b6631eb"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1338526178-packages-bundle-rollback-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:53:38.670Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1338526178-packages-bundle-rollback-author",
+      "kind": "author_claim",
+      "url": "https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/README.md",
+      "revision": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67",
+      "captured_at": "2026-10-20T10:53:38.670Z",
+      "summary": "为 DSH 组合消息级文件与会话回滚、归档管理、工具卡片及轨迹折叠界面。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/23swccp--dsh-undo--packages-bundle-rollback/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1338526178-packages-bundle-rollback-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/package.json",
+      "revision": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67",
+      "captured_at": "2026-10-20T10:53:38.670Z",
+      "summary": "核查 packages/bundle-rollback/package.json、packages/bundle-rollback/cordis.patch.yml、packages/rollback-undo/src/index.ts、packages/rollback-undo/src/shadow-git.ts、packages/client-rollback-button/src/client/controller.ts；目标bundle的cordis.patch.yml组装七个依赖插件，并禁用宿主两个归档插件以接管namespace；rollback-undo通过私有Shadow Git存文件树，journal记录restoring/complete等阶段，并协调sessionFork和archive。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/23swccp--dsh-undo--packages-bundle-rollback/REVIEWED-SOURCE.json",
+      "limitations": [
+        "完整核查bundle清单/依赖与同固定提交的rollback-undo入口、shadow-git及客户端controller；不把依赖源码LOC算bundleLOC，未测试Git/宿主恢复或所有七依赖。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "面向Agent修改代码后需要撤回某轮文件与对话上下文的开发者；合格回滚须目标文件树正确、分叉会话不再看到已撤回工具历史，且失败可恢复。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1338526178:packages-bundle-rollback",
+          "area": "code",
+          "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:38.670Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "目标bundle的cordis.patch.yml组装七个依赖插件，并禁用宿主两个归档插件以接管namespace；rollback-undo通过私有Shadow Git存文件树，journal记录restoring/complete等阶段，并协调sessionFork和archive。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1338526178:packages-bundle-rollback",
+          "area": "code",
+          "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:38.670Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "完整核查bundle清单/依赖与同固定提交的rollback-undo入口、shadow-git及客户端controller；不把依赖源码LOC算bundleLOC，未测试Git/宿主恢复或所有七依赖。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1338526178:packages-bundle-rollback",
+          "area": "code",
+          "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:38.670Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "bundle仅发布cordis.patch.yml，七个依赖使用^0.1.0-rc.8范围；安装解析结果可能不同于所读仓库提交，必须另固定实际依赖。patch禁用ui-settings-archive与session-archive避免namespace冲突，会影响现有归档插件所有权。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1338526178:packages-bundle-rollback",
+          "area": "code",
+          "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:38.670Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需Git、受支持worktree和插件组合兼容检查，私有快照增加磁盘/扫描开销；持续回滚预览与外部副作用核对需人工。大工作树快照耗时与空间未测，不能从不碰.git推出零资源成本。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1338526178:packages-bundle-rollback",
+          "area": "code",
+          "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:38.670Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "只在备份过且无子模块的独立Git工作区先试，核对安装后的七个依赖版本；用可丢弃修改测试文件和分叉上下文是否一起回到目标点，再考虑日常使用。外部服务写入仍需单独处理。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1338526178:packages-bundle-rollback",
+          "area": "code",
+          "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:38.670Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少手动还文件和重建上下文的交接失误；效果取决于快照覆盖与失败补偿，无法替代外部系统恢复，也不等于所有命令可逆。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1338526178:packages-bundle-rollback",
+          "area": "code",
+          "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:38.670Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "shadow-git.ts用独立GIT_DIR/GIT_INDEX_FILE隔离快照，差异恢复只删除from中出现但目标缺失的路径，避免把未知新文件一并清掉，值得借鉴。index.ts的持久journal与compensate路径展示恢复设计，但跨fork/restore/归档仍需逐窗口验证；移植必须匹配宿主消息边界和会话生命周期。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1338526178:packages-bundle-rollback",
+          "area": "code",
+          "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:38.670Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:53:38.670Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67",
+    "reviewed_at": "2026-10-20T10:53:38.670Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1338526178:packages-bundle-rollback",
+        "area": "code",
+        "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 18,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：文件树与会话分叉的具体组合为实质增量，Git机制为继承；mechanism：私有快照/journal及补偿改变恢复取舍，实质但未运行证实；transferability：跨域回滚思路可迁移，宿主依赖限制为实质；simplification：一次回滚对齐两类状态实质简化，复杂度转入插件。",
+      "basis": "interpretation",
+      "score": 51,
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：撤回文件和对话的交接实质变化；delivery：对齐后的新会话和文件树实质改变可交付状态；reach：GUI入口降低门槛，小幅且需Git；economics：减少手工重建有小幅机制依据，大树资源未测。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "开发者可在备份的无子模块独立工作区试用文件与会话联合撤销；核对七依赖版本及失败补偿，外部副作用单独恢复。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "代码与模型上下文一起撤回任务清楚且反复发生。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "Shadow Git加fork和归档减少文件恢复后历史不一致。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "journal阶段与部分补偿可见，跨系统崩溃恢复尚未实验。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "七插件及私有快照有兼容磁盘成本，拒绝子模块且不覆盖外部系统。"
+      }
+    },
+    "score": 60,
+    "revision": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-20-08-github-1338526178-packages-bundle-rollback-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1338526178:packages-bundle-rollback",
+        "area": "code",
+        "fingerprint": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67"
+      }
+    ]
+  }
+}

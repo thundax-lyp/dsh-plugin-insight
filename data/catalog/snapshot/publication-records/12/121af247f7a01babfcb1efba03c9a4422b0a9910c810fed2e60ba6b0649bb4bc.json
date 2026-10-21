@@ -1,0 +1,17 @@
+{
+  "id": "github:1381843937:root",
+  "repository": "173787247/dsh-wsl-terraform",
+  "path": "",
+  "revision": "549e4b82570a4a13ab900ac03c5593421a8c16e4",
+  "fingerprints": {
+    "directory": "3b5cd5b40001f266d1ada6483a7318fddc5f648dba1e924f247e0bf372ca6538",
+    "code": "549e4b82570a4a13ab900ac03c5593421a8c16e4",
+    "maintenance": "05e49145da1b5a19583827a7f7df8efd60beb8ec0e67a407220bfa31557aa15a"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "5dd8d55fca00cc312711c20facc6b49375545093dabb4b4368031f28082ecde7"
+}

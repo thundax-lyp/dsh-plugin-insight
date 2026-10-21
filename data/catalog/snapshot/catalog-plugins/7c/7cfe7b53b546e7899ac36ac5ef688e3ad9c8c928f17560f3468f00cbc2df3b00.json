@@ -1,0 +1,344 @@
+{
+  "id": "github:1335219884:root",
+  "repository_id": 1335219884,
+  "component_id": "root",
+  "repository": "A3Boy/dsh-web-tools",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-web-tools",
+  "entry_type": "plugin",
+  "technical_category": "context-search",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "7e375fc7f0270b29582c8efe7201f709c851e3b8b897b324cde7d8619c6d83a9",
+    "code": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f",
+    "maintenance": "a45557c4d859bf2f098fee47fb2ef28e8c8a79a135fbfa39abaa7eef534f7667"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1335219884-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:13:22.480Z",
+      "membership": "present"
+    },
+    {
+      "id": "2026-10-21-04-github-1335219884-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-21T04:13:22.480Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1335219884-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/A3Boy/dsh-web-tools/blob/bb68082d1274dc0d28ed5921bb08c7b5070fae7f/README.md",
+      "revision": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f",
+      "captured_at": "2026-10-21T04:13:22.480Z",
+      "summary": "将多个Web搜索和提取服务以及社交平台接到DSH标准搜索接口，提供路由和故障切换。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/a3boy--dsh-web-tools/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1335219884-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/A3Boy/dsh-web-tools/blob/bb68082d1274dc0d28ed5921bb08c7b5070fae7f/src/host/search-hints.ts",
+      "revision": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f",
+      "captured_at": "2026-10-21T04:13:22.480Z",
+      "summary": "核查 src/host/search-hints.ts、src/host/routing-policy.ts、src/host/fetch-security.ts；search-hints从显式查询抽取条件，routing-policy保序/轮转/随机选择首服务；fetch-security检查公共URL与DNS，provider与浏览器适配各自实现原生能力。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/a3boy--dsh-web-tools/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "研究Agent单一搜索配额或服务失败时需继续检索，合格结果还要遵守日期、域名等条件，不能仅以有返回值验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "search-hints从显式查询抽取条件，routing-policy保序/轮转/随机选择首服务；fetch-security检查公共URL与DNS，provider与浏览器适配各自实现原生能力。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT代码，多个API需各自账号/额度，社交检索用独立浏览器profile；未调用外部服务或验证登录。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次配置多key/浏览器，失败重试可能增加API现金支出，持续有适配和会话维护工时；源码无同条件收益测量。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已有多搜索服务的用户先用固定研究问题对照。优先核对硬过滤在每条回退路径仍成立，再看失败率和总调用成本。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可能减少单点中断，不能用更多服务或更多结果证明研究质量提升。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "hint、路由、安全与provider分离值得借鉴，公共fetch有IP/协议/DNS约束；这些边界不自动覆盖所有供应商或社交浏览器数据流，移植需按路径验收。 源码依据：[src/host/search-hints.ts](https://github.com/A3Boy/dsh-web-tools/blob/bb68082d1274dc0d28ed5921bb08c7b5070fae7f/src/host/search-hints.ts)、[src/host/routing-policy.ts](https://github.com/A3Boy/dsh-web-tools/blob/bb68082d1274dc0d28ed5921bb08c7b5070fae7f/src/host/routing-policy.ts)、[src/host/fetch-security.ts](https://github.com/A3Boy/dsh-web-tools/blob/bb68082d1274dc0d28ed5921bb08c7b5070fae7f/src/host/fetch-security.ts)。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对最低公分母代理，增量是区分显式硬过滤与软偏好，并在统一接口下编译原生参数与故障链。搜索内容与原生抓取能力属于外部供应商，插件贡献在约束适配和可用性组织。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "故障切换后语义是否仍等价？不同provider日期/域名/内容提取接口能力不齐，确定性hint不保证用户自然语言约束完全识别；社交路径还依赖登录浏览器和页面。可用性提高不等于召回正确或证据独立性增加。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由硬软条件和异构后端推导，可在路由前比较每个后端的能力矩阵，不支持硬约束则明确拒绝/标注，返回实际应用条件。未验证；用相同日期和域名任务注入429后比较切换前后的违规结果，若仍静默放宽则否定。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335219884:root",
+          "area": "code",
+          "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:13:22.480Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:13:22.480Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f",
+    "reviewed_at": "2026-10-21T04:13:22.480Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335219884:root",
+        "area": "code",
+        "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty多后端适配小档；mechanism保留硬软语义组合半档；transferability模块化半档；simplification统一接口半档。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow故障检索链半档；delivery仍为搜索结果小档；reach已有研究者小档；economics额度调度未测小档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-04-github-1335219884-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "已有多个搜索服务者可用固定问题对照试回退；先核每条路径日期和域名条件，再比较失败率与总调用成本。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "研究检索遇单一配额或服务中断有具体需求。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "多服务路由及公共URL检查减少单点中断。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核hints、路由与各provider能力差异，未验研究质量。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "多key、浏览器登录、重试API费及持续适配成本较高。"
+      }
+    },
+    "score": 60,
+    "revision": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-04-github-1335219884-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335219884:root",
+        "area": "code",
+        "fingerprint": "bb68082d1274dc0d28ed5921bb08c7b5070fae7f"
+      }
+    ]
+  }
+}

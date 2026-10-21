@@ -1,0 +1,337 @@
+{
+  "id": "github:1339462797:root",
+  "repository_id": 1339462797,
+  "component_id": "root",
+  "repository": "AngelosZou/dsh-github-router",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-github-router",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "eb6a590804b52558985f36c84e21f645b54ef886b04b375dd5a15fbff2bd07e0",
+    "code": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923",
+    "maintenance": "60026f77b9b16171982e1a8f1e9238943892ab23f1cb92cdcef9517c4f1690d6"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1339462797-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:11:23.597Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1339462797-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/README.md",
+      "revision": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923",
+      "captured_at": "2026-10-21T08:11:23.597Z",
+      "summary": "为DSH提供只读GitHub工具，在API、gh、git、页面和可选镜像之间路由并汇报分段来源。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-github-router/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1339462797-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/index.js",
+      "revision": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923",
+      "captured_at": "2026-10-21T08:11:23.597Z",
+      "summary": "核查 lib/index.js、lib/tools/api.js、lib/core/runtime.js、lib/routes/api.js、lib/routes/gh.js、lib/routes/git.js、lib/routes/mirror.js；tools内构建API direct/proxy ladder，gh只构造固定只读argv，git写插件fetch缓存而对用户仓库只读；结果按片段记录route，限字节/分页/TTL，mirror默认关闭。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-github-router/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读lib/index.js、lib/tools/api.js、lib/core/runtime.js、lib/routes/api.js、lib/routes/gh.js、lib/routes/git.js、lib/routes/mirror.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "受TLS/代理限制的开发者读取PR/Issue/文件，需要少重复连接且知道内容来自哪个版本/通道。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "tools内构建API direct/proxy ladder，gh只构造固定只读argv，git写插件fetch缓存而对用户仓库只读；结果按片段记录route，限字节/分页/TTL，mirror默认关闭。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读lib/index.js、lib/tools/api.js、lib/core/runtime.js、lib/routes/api.js、lib/routes/gh.js、lib/routes/git.js、lib/routes/mirror.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT、Node和DSH宿主工具；可选gh/git需本机安装，镜像是第三方内容/隐私边界，未证明当前网络可达。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次token/代理/路由配置，持续API限额、fetch缓存和多路回退时间；少Shell回合不等于总网络/模型成本更低。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合经常遇连接失败的只读仓库分析，先禁镜像并核对token范围和分段版本；缺块不能当不存在讨论或变更。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可减少重复网络排障，完整可比结果与节省时间未实测。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "只读argv、token解析与默认镜像关闭、分段失败矩阵值得借鉴；按调用构建cache/远端快照一致性需核验。 源码依据：[lib/index.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/index.js)、[lib/tools/api.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/tools/api.js)、[lib/core/runtime.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/core/runtime.js)、[lib/routes/api.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/routes/api.js)、[lib/routes/gh.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/routes/gh.js)、[lib/routes/git.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/routes/git.js)、[lib/routes/mirror.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/routes/mirror.js)。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对Agent反复修Shell网络，增量是把失败转移到有界、结构化的单工具路由及来源矩阵；GitHub内容、gh/git能力来自上游，宿主外执行不是突破网络本身。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "多路成功能否保证同一PR快照完整？API元数据、git ref、HTML和缓存可能采于不同时间，截断/权限差异也会留下缺块。只读GitHub仍会写本地缓存/使用token并将请求路径暴露可选镜像，不能泛称无副作用。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由分段route与head SHA推导，可把聚合结果绑定共同head/base commit和读取时间窗，不一致时标混合快照而不拼成单一事实。未验证；PR读取中更新head、route缺权限及缓存旧值时应检测差异，比较总回合与完整率。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339462797:root",
+          "area": "code",
+          "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:23.597Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:11:23.597Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923",
+    "reviewed_at": "2026-10-21T08:11:23.597Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1339462797:root",
+        "area": "code",
+        "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 15,
+        "simplification": 8
+      },
+      "rationale": "novelty既有通道组合小档；mechanism分段路由/失败矩阵半档；transferability有界多通道恢复较强；simplification单调用聚合半档，网络复杂性仍在。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow网络排障转工具内半档；delivery带来源的聚合读结果半档；reach受限网络开发者半档；economics可少重试但无总成本测量小档。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-07-github-1339462797-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "常遇GitHub连接失败的只读分析者可禁镜像试多路读取；核token范围、分段版本和缺块，不能把拼接结果当同一完整快照。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "TLS代理环境读PR/Issue/文件的阻碍具体。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "只读API/gh/git阶梯和route标记减少重复连接排障。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核argv、缓存限额及多时点结果，未测完整率和节时。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "API限额、fetch缓存与回退时间在，可选镜像另增数据去向。"
+      }
+    },
+    "score": 65,
+    "revision": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-07-github-1339462797-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1339462797:root",
+        "area": "code",
+        "fingerprint": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923"
+      }
+    ]
+  }
+}

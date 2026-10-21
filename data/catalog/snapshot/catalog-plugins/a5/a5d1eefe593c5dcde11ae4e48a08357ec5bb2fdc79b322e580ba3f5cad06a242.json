@@ -1,0 +1,283 @@
+{
+  "id": "github:1391142974:root",
+  "repository_id": 1391142974,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-registry",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-registry",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "45e9081277b0ea219d757c798cce42dda7254e7b7b841ddf692cb2afe2d9afcf",
+    "code": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56",
+    "maintenance": "c73133540fb0bf94168ab1dd149e641d946b6b25c4a1d001118e841d68c5cf1b"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-07-github-1391142974-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:01:59.327Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-07-github-1391142974-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-registry/blob/ec36b50ceab4f15549c2b2ac7f97033084a3eb56/README.md",
+      "revision": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56",
+      "captured_at": "2026-10-20T10:01:59.327Z",
+      "summary": "从WSL只读查询Windows注册表值和子键，并限制可访问键前缀。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-registry/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-07-github-1391142974-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-registry/blob/ec36b50ceab4f15549c2b2ac7f97033084a3eb56/index.js",
+      "revision": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56",
+      "captured_at": "2026-10-20T10:01:59.327Z",
+      "summary": "核查 index.js、lib/registry-exec.js、lib/registry.js；win_reg校验前缀与Run/RunOnce段后，以转义参数生成PowerShell，查询值或子键并规范化输出。",
+      "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-registry/REVIEWED-SOURCE.json",
+      "limitations": [
+        "检查入口、路径断言、查询脚本及格式化；未访问注册表、运行目标测试或进行宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "WSL中的Agent排查Windows安装和配置，输出可追溯键值而非让用户反复复制注册表信息。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391142974:root",
+          "area": "code",
+          "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:59.327Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "win_reg校验前缀与Run/RunOnce段后，以转义参数生成PowerShell，查询值或子键并规范化输出。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391142974:root",
+          "area": "code",
+          "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:59.327Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "检查入口、路径断言、查询脚本及格式化；未访问注册表、运行目标测试或进行宿主验收。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391142974:root",
+          "area": "code",
+          "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:59.327Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定版本包清单与作者说明已核对；需要WSL互操作、Windows PowerShell和当前账户的注册表读取权限；只读不等于内容无敏感信息。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391142974:root",
+          "area": "code",
+          "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:59.327Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "主要为PowerShell启动、输出上下文和人工核对成本；未测节省时间，外部服务费用不适用。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391142974:root",
+          "area": "code",
+          "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:59.327Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "从已知非敏感键试读，避免把白名单与截断承诺视为已验证安全边界。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391142974:root",
+          "area": "code",
+          "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:59.327Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把Get-Item/Get-ItemProperty接成受限只读工具；增量是跨系统接线和输出约束，注册表查询能力来自Windows。 白名单用startsWith而非路径段边界匹配，不能仅凭前缀断言严密隔离；指定name的查询没有像批量值分支一样在脚本内截断400字符，作者笼统截断说明需限定。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391142974:root",
+          "area": "code",
+          "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:59.327Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "纯规范化与执行分离便于审查，统一路径规范化和结果预算应贯穿各分支。",
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1391142974:root",
+          "area": "code",
+          "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:01:59.327Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:01:59.327Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56",
+    "reviewed_at": "2026-10-20T10:01:59.327Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1391142974:root",
+        "area": "code",
+        "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty为PowerShell工具接线的小幅增量；mechanism为前缀及自动启动键限制的小幅组合；transferability局限Windows配置诊断；simplification仅减少手工命令。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow减少复制配置的小幅流程变化；delivery仍为既有键值无新增交付；reach为WSL Agent提供入口；economics未识别成本结构改变。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+      "basis": "interpretation",
+      "score": 14,
+      "evidence_ids": [
+        "2026-10-20-07-github-1391142974-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "注册表只读取证有便利，但前缀白名单无段边界且name分支缺同等截断，先补范围和预算再接真实配置。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "Windows配置取证任务清楚但人群较窄。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "结构化跨系统查询省手工复制，底层仍是系统接口。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "startsWith和分支截断差异已由源码确认。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "敏感配置泄漏和无界值输出增加审查负担。"
+      }
+    },
+    "score": 46,
+    "revision": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-20-07-github-1391142974-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1391142974:root",
+        "area": "code",
+        "fingerprint": "ec36b50ceab4f15549c2b2ac7f97033084a3eb56"
+      }
+    ]
+  }
+}

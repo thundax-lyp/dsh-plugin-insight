@@ -1,0 +1,337 @@
+{
+  "id": "github:1335843541:root",
+  "repository_id": 1335843541,
+  "component_id": "root",
+  "repository": "AngelosZou/dsh-python-env",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-python-env",
+  "entry_type": "plugin",
+  "technical_category": "runtime-deployment",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "2830629836dd359349952dddc0163dbbe8686a9d20c3ef36bb9a8a964381bdea",
+    "code": "d24039c579b644101577383ef5734fff78d43439",
+    "maintenance": "0cea2a48089529051748d1a79343a1bdfec16b55354944d11153ab38c811a2ad"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1335843541-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:11:28.420Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1335843541-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/README.md",
+      "revision": "d24039c579b644101577383ef5734fff78d43439",
+      "captured_at": "2026-10-21T08:11:28.420Z",
+      "summary": "为DSH提供工作区Python虚拟环境发现、创建、安装、卸包和删除工具，并处理镜像/代理回退。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-python-env/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1335843541-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/index.js",
+      "revision": "d24039c579b644101577383ef5734fff78d43439",
+      "captured_at": "2026-10-21T08:11:28.420Z",
+      "summary": "核查 lib/index.js、lib/policy.js、lib/guard.js、lib/envdir.js、lib/pip.js、lib/tools/install.js；工具经host subprocess执行venv/pip，写工具先检查standing mode，guardAllowedPath以resolve/relative限制路径；cache/tmp重指工作区，pip网络失败换镜像/探代理，jobs支持后台并限时。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-python-env/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读lib/index.js、lib/policy.js、lib/guard.js、lib/envdir.js、lib/pip.js、lib/tools/install.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "项目Python依赖因Shell网络/临时目录限制安装失败，需要可追踪环境和明确写权限。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "工具经host subprocess执行venv/pip，写工具先检查standing mode，guardAllowedPath以resolve/relative限制路径；cache/tmp重指工作区，pip网络失败换镜像/探代理，jobs支持后台并限时。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读lib/index.js、lib/policy.js、lib/guard.js、lib/envdir.js、lib/pip.js、lib/tools/install.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT、Node与系统Python；只用标准库不表示安装包无第三方代码，镜像/代理改变供应链与网络路径。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次Python/venv与索引选择，持续下载、构建、磁盘、锁版本和恢复排错；自动回退可能增加等待，未测节时。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合可信项目依赖的环境管理，先核对允许根、包规格和索引。对不可信包继续用容器/沙箱，不把venv当安全隔离。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可能减少网络环境排错，host安装权限与供应链责任增加。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "写模式fail-closed、argv无shell、故障分类与限时job可借鉴；路径词法检查和pip选项需收紧，重定向tmp只是惯例非强制边界。 源码依据：[lib/index.js](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/index.js)、[lib/policy.js](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/policy.js)、[lib/guard.js](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/guard.js)、[lib/envdir.js](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/envdir.js)、[lib/pip.js](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/pip.js)、[lib/tools/install.js](https://github.com/AngelosZou/dsh-python-env/blob/d24039c579b644101577383ef5734fff78d43439/lib/tools/install.js)。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对手写Shell pip，增量是环境发现、权限模式核对、依赖故障分类与安装过程收据；venv/pip和软件供给来自上游，不是新的隔离机制。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "“工作区内”是否真的限制所有写入？路径guard是词法resolve/relative，未核realpath；packages普通字符串直接入pip argv，除editable外未拒绝--target等选项，包构建代码亦可在host权限执行。检查mode防只读，不等于OS沙箱或保证全局环境绝不受影响。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由host执行补偿控制推导，可将包规格收窄为解析过的依赖表达式，禁止路径/全局改写选项，realpath核对并在受限执行环境装包。未验证；symlink、恶意requirements选项和构建脚本越界样本应被阻止，正常包安装成功率/维护成本另测。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843541:root",
+          "area": "code",
+          "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:11:28.420Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:11:28.420Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "d24039c579b644101577383ef5734fff78d43439",
+    "reviewed_at": "2026-10-21T08:11:28.420Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335843541:root",
+        "area": "code",
+        "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "noveltyvenv/pip集成小档；mechanism模式补偿/回退半档但非隔离突破；transferability故障分类与job半档；simplification项目环境管理半档。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow依赖准备转工具半档；delivery环境/安装收据半档；reach网络受限开发者半档；economics可能少排错但无合格任务成本验证小档。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-07-github-1335843541-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "项目Python维护者应先修realpath与pip选项边界；词法路径guard及包字符串可带--target，不保证仅工作区写，可信依赖也需核索引。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "受Shell网络/tmp限制的Python依赖管理需求明确。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "venv、缓存重指和网络回退减少环境排障步骤。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核standing mode与词法guard，选项和构建代码越界问题明确。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "host安装供应链及写范围不足阻碍核心受限环境保证。"
+      }
+    },
+    "score": 60,
+    "revision": "d24039c579b644101577383ef5734fff78d43439",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-07-github-1335843541-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335843541:root",
+        "area": "code",
+        "fingerprint": "d24039c579b644101577383ef5734fff78d43439"
+      }
+    ]
+  }
+}

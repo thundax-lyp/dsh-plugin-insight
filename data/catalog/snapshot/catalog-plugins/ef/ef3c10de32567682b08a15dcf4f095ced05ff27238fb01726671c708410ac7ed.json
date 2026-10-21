@@ -1,0 +1,283 @@
+{
+  "id": "github:1340340493:root",
+  "repository_id": 1340340493,
+  "component_id": "root",
+  "repository": "240xu/dsh-websearch",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-websearch",
+  "entry_type": "plugin",
+  "technical_category": "context-search",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "44d08fd4fc58fd0976be33969f69936a0d2524344f6562ed88844cf40e6aa313",
+    "code": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
+    "maintenance": "45c60386e2108f086d5a38a2f274a3fe7b3dd66829fa2fe85773612eb3fe0db5"
+  },
+  "sources": [
+    {
+      "id": "2026-10-20-08-github-1340340493-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T10:53:40.012Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-20-08-github-1340340493-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/README.md",
+      "revision": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
+      "captured_at": "2026-10-20T10:53:40.012Z",
+      "summary": "为 DSH 提供聚合网页搜索 provider，合并多个后端结果并支持过滤、缓存和故障降级。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/240xu--dsh-websearch/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-20-08-github-1340340493-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js",
+      "revision": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
+      "captured_at": "2026-10-20T10:53:40.012Z",
+      "summary": "核查 lib/provider.js、lib/rrf.js、lib/breaker.js；lib/provider.js只注册unified provider并发fan-out，限并发/超时、合并URL与排序；rrf.js按成熟RRF合并排名，breaker.js在连续失败时冷却后端且全冷却时放开，cache减少相同请求。",
+      "artifact": "data/runs/2026-10-20-08/snapshots/240xu--dsh-websearch/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查provider限流/超时/收集合并、RRF和breaker核心，未运行任何后端，未独立核实11家服务当前价格、免费额度或免Key路径；静态available仅配置可用。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "面向研究/开发问答中需要多个网络来源的DSH用户；合格检索是相关、可访问且支持任务的结果，而非返回链接数量多。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340340493:root",
+          "area": "code",
+          "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:40.012Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/provider.js只注册unified provider并发fan-out，限并发/超时、合并URL与排序；rrf.js按成熟RRF合并排名，breaker.js在连续失败时冷却后端且全冷却时放开，cache减少相同请求。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340340493:root",
+          "area": "code",
+          "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:40.012Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查provider限流/超时/收集合并、RRF和breaker核心，未运行任何后端，未独立核实11家服务当前价格、免费额度或免Key路径；静态available仅配置可用。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340340493:root",
+          "area": "code",
+          "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:40.012Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "package提供host/client与统一web provider，需将宿主searchProvider指向unified并处理原搜索插件；README的旧/新版本说明不是固定环境运行验收，仓库含tgz不作为本次安装证据。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340340493:root",
+          "area": "code",
+          "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:40.012Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "多后端每次调用和多查询可放大模型/API费用，缓存/冷却可减少重复请求但未测命中；首次配置密钥/代理/实例和持续服务变动排障计人工，不能将部分免Key宣传换算为零成本。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340340493:root",
+          "area": "code",
+          "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:40.012Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先选少量可访问后端，用常见中文与时效问题核对出处、耗时和全部调用预算；逐步增加有独立增益的服务。重要研究仍应打开原文核查，不能把聚合排序当事实验证。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340340493:root",
+          "area": "code",
+          "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:40.012Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "单后端故障时仍有结果的机制可见，降低用户手动换源负担；是否更快、更准取决于来源重叠、网络尾延迟和任务覆盖，未给无实测收益比例。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340340493:root",
+          "area": "code",
+          "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:40.012Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "provider.js以Promise.resolve().then(fn)把同步抛错纳入limiter的finally释放，避免漏归还并发槽，值得借鉴；聚合先完整收集后去重排序避免早截断偏向前序后端。breaker全冷却放开优先可用性，服务共同故障仍会重复尝试，不代表持续隔离保证。",
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1340340493:root",
+          "area": "code",
+          "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+        }
+      ],
+      "reviewed_at": "2026-10-20T10:53:40.012Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T10:53:40.012Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
+    "reviewed_at": "2026-10-20T10:53:40.012Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1340340493:root",
+        "area": "code",
+        "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：聚合搜索/RRF为成熟方案，小幅DSH适配；mechanism：取消、限流、全失败诊断及融合为实质组合；transferability：limiter/融合和breaker可实质迁移；simplification：一个provider管理多后端实质简化配置，服务维护未消除。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：多源搜索与故障切换实质合并；delivery：仍提供候选来源，小幅且未验引用支持；reach：免Key候选入口的小幅潜力，当前可达性未证；economics：缓存/冷却有小幅节省机制，多后端预算可能反增。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-20-08-github-1340340493-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "多源研究用户可先选少量可用后端试用；用中文及时效题核对原文、尾延迟与全部调用预算，再增加独立有益来源。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "问答需多个相关可访问来源，交付标准具体。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "统一provider、容错和RRF减少手动换源，但不构成独立事实核查。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "fan-out、缓存与breaker源码支持机制，检索质量和隔离未测。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "配置多个服务密钥且多查询放大费用，需持续核对来源重叠。"
+      }
+    },
+    "score": 65,
+    "revision": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-20-08-github-1340340493-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1340340493:root",
+        "area": "code",
+        "fingerprint": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9"
+      }
+    ]
+  }
+}

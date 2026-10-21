@@ -1,0 +1,19 @@
+{
+  "id": "github:1342915339:root",
+  "repository": "0QwQ0/dsh-discord-richpresence",
+  "path": "",
+  "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+  "fingerprints": {
+    "directory": "46ebdf429f99206ea011db86936d1bc1fb96564cdbf65cdb89c3cd3be98d076f",
+    "code": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+    "release": "dc02cb8f40eb94f07022d2df074324cf5296994ea546e51db75700b4a982e05f",
+    "maintenance": "77dd4fc5a8f641ea0f7828b459eb1e2da90bcacf1a888a27e3b4d824000f2c19",
+    "compatibility": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "49ab1b99ed2756a0a064a9688d83ce34923b8bd2204d9010d05553f5063b9122"
+}

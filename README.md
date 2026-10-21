@@ -21,7 +21,11 @@
 
 > 从全部当前有效研究中，按采用推荐评分降序选择试用与值得安装项，同分按稳定组件 ID 排序。首页最多5项，完整推荐页最多50项；未评估、不推荐、观察及待复核项不入榜。不足上限时不凑数，评分不代表真实宿主验收。
 
-暂无符合条件的推荐。
+- **[dsh-repeat-stop](data/plugins/173787247--dsh-repeat-stop/INSIGHT.md)**：拦截同一Agent连续出现的同工具同参数调用，提供可配置阈值与排除规则。 适合遭遇同工具同参数反复重试的任务，先核对触发计数与正常轮询排除规则；不能识别全部循环，尚未进行真实宿主验证。 · [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-repeat-stop)
+- **[dsh-session-diff](data/plugins/2002xiaoyu--dsh-session-diff/INSIGHT.md)**：在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。 适合快速查看当前会话常规write/edit的改动；先核对双会话同文件和shell改动的覆盖边界，完整审查仍以Git为准，尚未进行真实宿主验证。 · [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff)
+- **[dsh-sidebar-git-graph](data/plugins/afundog--dsh-sidebar-git-graph/INSIGHT.md)**：在DSH右侧栏显示当前会话仓库的分支提交图、工作树和暂存区差异。 适合在会话旁只读查看Git历史、工作树和暂存区；先确认仓库、扫描截断及刷新时点，不把图谱当CI或完整审查，尚未进行真实宿主验证。 · [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AFunDog/dsh-sidebar-git-graph)
+- **[dsh-which](data/plugins/11111353535--dsh-which/INSIGHT.md)**：解释命令的 PATH 解析结果、被遮蔽副本及环境异常，可选探测版本。 适合排查PATH遮蔽与多版本命令冲突，先只查询并与当前shell对照；对可信二进制再启用版本探测，尚未进行真实宿主验证。
+- **[URL 正文阅读器](data/plugins/2672243194--dsh-read-url/INSIGHT.md)**：读取网页、JSON 与订阅源，清理正文并提供分页续读和批量读取。 适合抓取结果噪声多、常需中文编码和续读的资料阅读，先与原生抓取对照；表格、动态页和关键事实回读原文，尚未进行真实宿主验证。 · [![GitHub ★ 22](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=22&color=yellow&logo=github&style=flat)](https://github.com/2672243194/dsh-read-url) [![npm 30d 2,642](https://img.shields.io/static/v1?label=npm+30d&message=2%2C642&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-read-url) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-read-url)
 
 ## [最新](data/views/columns/LATEST.md)
 

@@ -1,0 +1,283 @@
+{
+  "id": "github:1334134226:root",
+  "repository_id": 1334134226,
+  "component_id": "root",
+  "repository": "3403473060/dsh-inline-images",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-inline-images",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "8ea12e425b8c2822933da38aa2b1ab760905e4743e8728dd17351111fec762b9",
+    "code": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+    "maintenance": "7548a89e59b27a18df123631d1250894bda151d0d6a6755ee77e2f0a2d1ef365"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1334134226-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:02:16.838Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1334134226-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/3403473060/dsh-inline-images/blob/79f8ba778441c86738dedba574f5911fd2b5b2be/README.md",
+      "revision": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+      "captured_at": "2026-10-21T02:02:16.838Z",
+      "summary": "把助手消息中的本地图片路径改写成可在对话正文展示的图片，并提供灯箱与尺寸设置。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3403473060--dsh-inline-images/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1334134226-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/3403473060/dsh-inline-images/blob/79f8ba778441c86738dedba574f5911fd2b5b2be/src/index.ts",
+      "revision": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+      "captured_at": "2026-10-21T02:02:16.838Z",
+      "summary": "核查 src/index.ts、src/client.ts；src/index.ts 在 llm/stream 的 text block-end 扫描路径，核实文件后反向按区间替换为带激活 token 的回环图片路由；src/client.ts 注册灯箱和设置槽位。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3403473060--dsh-inline-images/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交的核心入口与说明抽读；未执行目标代码、测试、插件安装或真实宿主验收，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "本机 DSH Web 用户查看截图或生成图，原先需复制路径开文件，现在希望直接在消息中检查并放大。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334134226:root",
+          "area": "code",
+          "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:16.838Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "src/index.ts 在 llm/stream 的 text block-end 扫描路径，核实文件后反向按区间替换为带激活 token 的回环图片路由；src/client.ts 注册灯箱和设置槽位。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334134226:root",
+          "area": "code",
+          "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:16.838Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交的核心入口与说明抽读；未执行目标代码、测试、插件安装或真实宿主验收，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334134226:root",
+          "area": "code",
+          "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:16.838Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "npm包以 lib/index.js 和 lib/client.js 分发，cordis patch 挂载，构建依赖esbuild；源码依赖宿主服务。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334134226:root",
+          "area": "code",
+          "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:16.838Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次构建、安装并适配宿主 API；持续有本地文件存储和消息历史链接维护成本，无源码要求的外部图像服务费用；远程拓扑排查需要人工。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334134226:root",
+          "area": "code",
+          "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:16.838Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "限同机 Web 环境小范围试用，先检查图片展示、重启后历史链接和文件服务权限；敏感图片或远程访问需先明确可读范围。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334134226:root",
+          "area": "code",
+          "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:16.838Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少复制路径和切换应用的步骤有机制依据；图片加载可靠性和端到端省时未实测。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334134226:root",
+          "area": "code",
+          "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:16.838Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "路径识别支持 Markdown 与裸路径，过滤占位段，替换按倒序区间执行；读取使用宿主 fs 且有字节上限。token通过Math.random生成并置于消息URL，不应由此推导强安全保证。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334134226:root",
+          "area": "code",
+          "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:16.838Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:02:16.838Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+    "reviewed_at": "2026-10-21T02:02:16.838Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1334134226:root",
+        "area": "code",
+        "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 8
+      },
+      "rationale": "novelty：路径到正文集成小幅；mechanism：区间替换和回环服务为常规组合，小幅；transferability：受宿主与本机拓扑约束，小幅；simplification：免手动打开文件实质简化。",
+      "basis": "interpretation",
+      "score": 30,
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：减少查看步骤小幅；delivery：交付仍是已有图片，小幅；reach：降低本机查看门槛小幅；economics：节省切换操作小幅，未测。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-01-github-1334134226-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "同机Web查看生成图者可小范围试用；先验文件权限和重启历史链接，远程浏览器与敏感图另行评估。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "截图直接在消息放大能减少复制路径切应用。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "回环灯箱改善短时查看，持久分享及远程用途没有增益。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "block-end替换和token路由有源码，固定127.0.0.1及重启token限制明确。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "需构建与宿主API适配，文件存留与失效历史链接需维护。"
+      }
+    },
+    "score": 59,
+    "revision": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-01-github-1334134226-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1334134226:root",
+        "area": "code",
+        "fingerprint": "79f8ba778441c86738dedba574f5911fd2b5b2be"
+      }
+    ]
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "id": "github:1334569498:root",
+  "repository_id": 1334569498,
+  "component_id": "root",
+  "repository": "AKS1st/dsh-mermaid",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-mermaid",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "b139a9baf78efe6680a8213c3949f928311d0087ac8aec37e4067d11924832ad",
+    "code": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+    "maintenance": "a864c310f36df7d756f71ad7e2b4bb01cadd639b6d35ca9bcfcee24051118f7b"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1334569498-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:40:36.727Z",
+      "membership": "present"
+    },
+    {
+      "id": "2026-10-21-06-github-1334569498-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-21T05:40:36.727Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1334569498-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/README.md",
+      "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+      "captured_at": "2026-10-21T05:40:36.727Z",
+      "summary": "按视口延迟渲染已完成Mermaid代码块，并提供缩放与错误报告入口。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-mermaid/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1334569498-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AKS1st/dsh-mermaid/blob/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48/src/index.ts",
+      "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+      "captured_at": "2026-10-21T05:40:36.727Z",
+      "summary": "核查 src/index.ts、src/client/index.ts、src/client/dom.ts；主机提供本地UMD和配置，客户端监听稳定代码块DOM，以IntersectionObserver近视口入队串行渲染，strict配置且不调用bindFunctions；失败保留源码并显示操作。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dsh-mermaid/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "阅读模型生成的流程图、时序图，遇语法错误再主动请求模型修复。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "主机提供本地UMD和配置，客户端监听稳定代码块DOM，以IntersectionObserver近视口入队串行渲染，strict配置且不调用bindFunctions；失败保留源码并显示操作。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "本地脚本体积与浏览器布局成本，主动修复才产生模型token费用；DOM兼容维护是持续成本。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先核宿主代码块兼容；错误修复按钮会尝试发送消息，使用前保留已有草稿。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "改善图阅读可能性明确，未有渲染性能或修复成功率对照。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "观察器共享、串行队列、释放清理与错误源码保留值得复用；发送成功标志不等于宿主接收确认。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "将流式消息与图渲染时机分离，防半成品反复渲染，并串行处理近视口任务；图布局与净化来自Mermaid上游。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "sendToAI会覆盖现有textarea草稿，30ms后只检查非空就发Enter，不证明草稿等于报告或已真正提交；DOM与按键模拟绑定宿主约定。strict与文本/边数上限不能保证任意图渲染性能。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：改用宿主草稿事务并在已有草稿时追加/确认，可避免修复入口破坏草稿。以非空草稿、忙状态、不同发送键及快速会话切换核内容保留和实际发送状态。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334569498:root",
+          "area": "code",
+          "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:36.727Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:40:36.727Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+    "reviewed_at": "2026-10-21T05:40:36.727Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1334569498:root",
+        "area": "code",
+        "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：图渲染已有成熟库。 mechanism=15：流式与视口队列是实质接线。 transferability=10：可迁移但DOM协议耦合。 simplification=4：减少手动渲染而增加维护。",
+      "basis": "interpretation",
+      "score": 38,
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 0
+      },
+      "rationale": "workflow=9：阅读到用户修复路径。 delivery=8：发送确认与草稿保护不足。 reach=10：图文用户，受宿主限制。 economics=0：无性能和修复收益对照。 工作流仅取25%档：主要聚合既有个人操作，未证明改变任务组织、分工或交接责任。",
+      "basis": "interpretation",
+      "score": 27,
+      "evidence_ids": [
+        "2026-10-21-06-github-1334569498-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "需读流程图者可先只用渲染；修复按钮已知会覆盖草稿并模拟Enter，未保留草稿时不要使用该按钮。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "阅读模型流程图时序图任务清楚。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "本地串行懒渲染和错误留源码增加直接可读性。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核strict与队列，同时确认修复按钮草稿覆盖和发送边界。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "渲染无模型费，DOM维护和主动修复有成本，须限定只读入口。"
+      }
+    },
+    "score": 65,
+    "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-06-github-1334569498-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1334569498:root",
+        "area": "code",
+        "fingerprint": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48"
+      }
+    ]
+  }
+}

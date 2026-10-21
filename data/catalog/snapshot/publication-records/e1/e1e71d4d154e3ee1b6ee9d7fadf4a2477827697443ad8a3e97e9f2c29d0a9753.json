@@ -1,0 +1,17 @@
+{
+  "id": "github:1336663562:root",
+  "repository": "863683348/dsh-plugin-translation",
+  "path": "",
+  "revision": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+  "fingerprints": {
+    "directory": "02713746586bf09ccc128b49ba73e35920e8af3bac298e547615b185ec636d01",
+    "code": "2238d4d2ff479ddd0ae81d3efbff8b3ee1526854",
+    "maintenance": "1233a4c3501aa62ade52849066fb2c57b49b12c5a2486858a1915956319b337e"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "a93d81f9e08986a2336695f01a42702597709943c8b62be72f3c5202b1a9d7e8"
+}

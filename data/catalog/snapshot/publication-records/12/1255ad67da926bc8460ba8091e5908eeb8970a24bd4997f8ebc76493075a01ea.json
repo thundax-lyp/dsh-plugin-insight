@@ -1,0 +1,17 @@
+{
+  "id": "github:1372993989:root",
+  "repository": "2507483326/dsh-eteams",
+  "path": "",
+  "revision": "cd6bc01ae511901e26c2b47d0a71e471dce262fd",
+  "fingerprints": {
+    "directory": "09ed83abd29f31a0466bb0578615f67940b8bfa8cb3410084d34593646737ceb",
+    "code": "cd6bc01ae511901e26c2b47d0a71e471dce262fd",
+    "maintenance": "8c5964ecda6dfbe44fb2aa4a2941975162ac545150a1b2b6996d007326c7d2f0"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "8c1fb0d87b33275eef23171eaaa2ea69efd47abbd45ec4b842e644dee99399b3"
+}

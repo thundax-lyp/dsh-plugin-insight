@@ -1,0 +1,337 @@
+{
+  "id": "github:1334255250:root",
+  "repository_id": 1334255250,
+  "component_id": "root",
+  "repository": "AcidGr/dsh-web-mobile-fix",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-web-mobile-fix",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "8d870625bf344bde336f0472262bdcc667acdef3f0a53ba130f732dd4a636973",
+    "code": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+    "maintenance": "1c1523f88a811e8b3a839f01aa4fd59519d8adbaab1fd531a7f394b4693603ee"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1334255250-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:35:15.960Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1334255250-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/README.md",
+      "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+      "captured_at": "2026-10-21T05:35:15.960Z",
+      "summary": "调整DSH窄屏布局，并为悬浮窗模式提供会话导航、桥接按钮与软键盘滚动适配。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/acidgr--dsh-web-mobile-fix/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1334255250-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/index.js",
+      "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+      "captured_at": "2026-10-21T05:35:15.960Z",
+      "summary": "核查 lib/index.js、lib/client.js、package.json；client注入700px媒体查询及overlay属性CSS，访问layout/uiWorkspace并提供全局会话切换入口；点击空白调用DSHOverlayBridge，焦点与viewport变化滚到底部。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/acidgr--dsh-web-mobile-fix/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读lib/index.js、lib/client.js、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "手机窄屏与嵌入式悬浮窗操作，合格体验需输入、返回和会话切换不误触。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "client注入700px媒体查询及overlay属性CSS，访问layout/uiWorkspace并提供全局会话切换入口；点击空白调用DSHOverlayBridge，焦点与viewport变化滚到底部。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读lib/index.js、lib/client.js、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT客户端插件，host apply为空；悬浮窗桥接必须由容器提供，普通网页不会自动获得原生窗口。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无模型费；界面回归、GPU模糊/动画和选择器维护成本，未测移动端性能。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先用代表性手机和临时网页profile验证输入与导航。按实际源码评估悬浮窗副作用，禁用后整页重载核查恢复。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可能降低手机布局操作阻碍；README兼容声明不是本轮宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "作用域媒体查询与桥接存在性检查可借鉴；监听清理不齐和定时回调应集中管理。 源码依据：[lib/index.js](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/index.js)、[lib/client.js](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js)、[package.json](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/package.json)。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "增量是将窄屏、悬浮窗控制和软键盘处理接到现有界面；未改变模型任务流程。固定源码功能已超出包描述“纯CSS”。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "禁用能否完整恢复？cleanup移除样式、部分按钮和监听，但未移除onSidebarItemClick监听，也未见撤销全局切换入口和全部延迟任务。DOM class片段匹配可能在宿主升级后误中。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由悬浮窗桥接与清理缺口推导，可把所有事件/全局入口纳入统一disposer，并以宿主语义动作替代DOM点击。未验证；反复启停后监听数与单击动作应保持一次，窄屏键盘切换无误退。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1334255250:root",
+          "area": "code",
+          "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:35:15.960Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:35:15.960Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+    "reviewed_at": "2026-10-21T05:35:15.960Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1334255250:root",
+        "area": "code",
+        "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 8
+      },
+      "rationale": "novelty移动端适配小档；mechanism桥接/布局组合小档；transferability选择器耦合使迁移小档；simplification多控件聚合半档。",
+      "basis": "interpretation",
+      "score": 30,
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow手机操作便利小档；delivery可见交互修补小档；reach窄屏和特定容器小档；economics无成本收益证据为0。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-06-github-1334255250-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "手机用户可在临时profile试窄屏布局；验输入返回及切会话，禁用后整页重载检查残留和延迟任务。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "窄屏输入和导航阻碍是具体移动场景。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "响应式CSS与悬浮窗桥接改善现有操作入口。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核媒体查询和部分cleanup，尚无真机性能验收。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "无模型费，但残留监听、模糊动画和选择器回归需额外维护。"
+      }
+    },
+    "score": 59,
+    "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-06-github-1334255250-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1334255250:root",
+        "area": "code",
+        "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+      }
+    ]
+  }
+}

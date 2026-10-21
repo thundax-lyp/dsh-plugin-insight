@@ -1,0 +1,17 @@
+{
+  "id": "github:1391140376:root",
+  "repository": "173787247/dsh-wsl-service",
+  "path": "",
+  "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+  "fingerprints": {
+    "directory": "f7428424e09c1985a93983839bf8fa930da98b4e9050717962534b652056c138",
+    "code": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+    "maintenance": "3a31d61bb2f71ad3888432d3925d3b33846f7f24d5fe8a8c70cdc8de5612f6ae"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T09:36:48.824Z",
+  "analysis_sha256": "f1a456c9e32e60ae12391cca5773ce707327e7d7abd5171eccc3e3733f465538"
+}

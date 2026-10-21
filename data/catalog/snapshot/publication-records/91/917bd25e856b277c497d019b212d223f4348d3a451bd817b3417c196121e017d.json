@@ -1,0 +1,17 @@
+{
+  "id": "github:1351854118:root",
+  "repository": "173787247/dsh-wsl-dns",
+  "path": "",
+  "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+  "fingerprints": {
+    "directory": "45126a167ab7a474a8d8422c8864e93dcb1b83f7483be825cf1e8f29c63f6eb0",
+    "code": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+    "maintenance": "0b0f23ff158821d8fd8a1a8bba35526f12a5c6cebdc5880db4a82821fd46ef72"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "00e49830e69ba622194f92b6cabf68f2ad0029917c472c11abea4d860a04f402"
+}

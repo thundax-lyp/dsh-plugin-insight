@@ -1,0 +1,17 @@
+{
+  "id": "github:1335349535:root",
+  "repository": "940842546/dsh-permissions",
+  "path": "",
+  "revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+  "fingerprints": {
+    "directory": "2b63332b1d7e94bebbbe6ac405da20dd69f6505ecf00acdd275766c1394e40a8",
+    "code": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+    "maintenance": "467393b3cf757681676e1e3d271d91c870052e1fc166aab1e994a581c300ad89"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "95d0b772f30dd9eefd3d4cb02098601499fbbc37aa424b7bb5f2f3fd86ccf2b7"
+}

@@ -1,0 +1,337 @@
+{
+  "id": "github:1335144603:root",
+  "repository_id": 1335144603,
+  "component_id": "root",
+  "repository": "AKS1st/ikun-theme-skin",
+  "path": "",
+  "aliases": [],
+  "name": "ikun-theme-skin",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "45866ce7ca186d794842e2a11c77cfbf2b8afde9a1c178e51882dfd4b7af3b6d",
+    "code": "c0e59e61332a5e3317365848f73240308d9d9345",
+    "maintenance": "2d0d0cbd7f31aa78eb7abb697e4f1a690c298a9f453bf9a525c6bcf84f842dc1"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1335144603-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:40:38.918Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1335144603-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AKS1st/ikun-theme-skin/blob/c0e59e61332a5e3317365848f73240308d9d9345/README.md",
+      "revision": "c0e59e61332a5e3317365848f73240308d9d9345",
+      "captured_at": "2026-10-21T05:40:38.918Z",
+      "summary": "通过主题、远程照片壁纸与音效提供娱乐化界面皮肤。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--ikun-theme-skin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1335144603-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AKS1st/ikun-theme-skin/blob/c0e59e61332a5e3317365848f73240308d9d9345/index.js",
+      "revision": "c0e59e61332a5e3317365848f73240308d9d9345",
+      "captured_at": "2026-10-21T05:40:38.918Z",
+      "summary": "核查 index.js、src/client.js；空主机apply，客户端注册主题和slots；CSS壁纸轮播读取外部URL，常驻audio播放器，SendWatcher按phase/queue变化去抖播放。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--ikun-theme-skin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "明确偏好IKUN视觉和音效的个人用户；不改变Agent任务能力。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "空主机apply，客户端注册主题和slots；CSS壁纸轮播读取外部URL，常驻audio播放器，SendWatcher按phase/queue变化去抖播放。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "持续图片/音频带宽、动效资源与外部链接维护；无模型token节约证据。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "按个人偏好使用，先确认媒体来源、声音和网络行为可接受。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "娱乐偏好价值不等于生产效率，未有用户反馈或独立效果材料。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "unmount清空audio引用、音量同步与切回主题壁纸释放有细节；第三方媒体变化是复用边界。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "为特定兴趣群体整合外观与反馈声音，有引用清理和音量同步细节；属于个性化组合而非工作流创新。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "资源URL指向第三方且部分main/master可变，离线可用性与内容稳定性依赖外部；audio preload auto及壁纸会有网络请求，不能称完全本地。发送声音从状态推断，不是模型请求成功回执。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：可选本地固定资源包、默认关闭发送音效和尊重减少动态，可降低干扰与网络依赖。用离线、媒体拒绝、忙状态及低端设备比较资源请求、误触发和主观干扰。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335144603:root",
+          "area": "code",
+          "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:40:38.918Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:40:38.918Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "c0e59e61332a5e3317365848f73240308d9d9345",
+    "reviewed_at": "2026-10-21T05:40:38.918Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335144603:root",
+        "area": "code",
+        "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 0
+      },
+      "rationale": "novelty=0：常见主题媒体组合。 mechanism=8：生命周期有细节。 transferability=5：可复用外观但媒体依赖。 simplification=0：不简化任务流程。",
+      "basis": "interpretation",
+      "score": 13,
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow=0：不形成业务流程。 delivery=8：仅个性化效果。 reach=5：特定兴趣受众。 economics=0：无生产收益依据。",
+      "basis": "interpretation",
+      "score": 13,
+      "evidence_ids": [
+        "2026-10-21-06-github-1335144603-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "明确偏好IKUN主题和音效者可小范围试；核第三方媒体请求、声音和离线表现，不将发送声当请求成功。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "特定娱乐审美受众明确。"
+      },
+      "advantage": {
+        "score": 6,
+        "rationale": "壁纸音效组合改变体验，未改变任务流程。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核外部可变资源和状态推断，未验体验效果。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "媒体带宽、动效和外链维护持续，非完全本地。"
+      }
+    },
+    "score": 44,
+    "revision": "c0e59e61332a5e3317365848f73240308d9d9345",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-06-github-1335144603-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335144603:root",
+        "area": "code",
+        "fingerprint": "c0e59e61332a5e3317365848f73240308d9d9345"
+      }
+    ]
+  }
+}

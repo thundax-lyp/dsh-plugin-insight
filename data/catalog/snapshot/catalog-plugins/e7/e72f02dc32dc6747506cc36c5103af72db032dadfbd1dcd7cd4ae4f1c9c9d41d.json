@@ -1,0 +1,337 @@
+{
+  "id": "github:1336658798:root",
+  "repository_id": 1336658798,
+  "component_id": "root",
+  "repository": "863683348/dsh-starter-zh",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-starter-zh",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "55b3888cfbc4ca8cc201bbd3786abaf92f2e975e795ac7255b2ea60a8247d4f1",
+    "code": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe",
+    "maintenance": "b4a513d943a7716e10124164c97739c9773163484147788feadf3ae8db1e8c46"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1336658798-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:44:24.265Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1336658798-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/863683348/dsh-starter-zh/blob/d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe/README.md",
+      "revision": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe",
+      "captured_at": "2026-10-21T03:44:24.265Z",
+      "summary": "在DSH会话中提供中文欢迎、五阶段学习路径、场景插件建议和新手自查清单。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-starter-zh/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1336658798-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/863683348/dsh-starter-zh/blob/d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe/lib/starter.js",
+      "revision": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe",
+      "captured_at": "2026-10-21T03:44:24.265Z",
+      "summary": "核查 lib/starter.js、lib/index.js；starter.js保存五阶段学习路径、固定推荐组和十项清单并渲染文本；index.js注册starter_zh及可关闭的系统提示引导，内容链接到外部中文手册。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-starter-zh/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "中文新用户已启动DSH但不知道profile、安装与开发次序，需要可跟随的入门路径；合格结果是自己完成基础操作，而不是读完欢迎文字。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "starter.js保存五阶段学习路径、固定推荐组和十项清单并渲染文本；index.js注册starter_zh及可关闭的系统提示引导，内容链接到外部中文手册。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "轻量lib与配套手册链接，配置handbookUrl与提示开关；外部教程不是当前包的一部分，需另核实有效性。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无额外专属服务费，仍有模型问答、安装学习和文档维护时间；静态内容过期会把维护负担转移给新手。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合希望中文概览的新用户先阅读路径。执行命令前核对当前宿主帮助和profile，清单由自己逐项确认，推荐插件仍需分别查证。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "有望降低概念搜索负担，是否提高独立完成能力无用户实验支持。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "教学内容与入口接线分离，文本渲染简单可维护；外部链接、命令和推荐是高漂移数据，复用时应建立版本与失效检查，而非把存在即视为有效。 源码依据：[lib/starter.js](https://github.com/863683348/dsh-starter-zh/blob/d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe/lib/starter.js)、[lib/index.js](https://github.com/863683348/dsh-starter-zh/blob/d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe/lib/index.js)。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对离开会话查零散文档，增量是把中文教学次序与场景索引放进Agent工具，让用户能边问边学。核心是内容策划和入口聚合，不是环境诊断或自动化教学评估。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "自查与推荐是否随真实环境变化？starter.js是静态条目与字符串输出，清单并未检测已完成步骤，推荐也不核实插件当前兼容或安装状态。README生态规模与空白主张没有独立验证，因此不据此证明新手需求或推荐正确性。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由静态清单推导，可增加用户主动触发的只读环境检查，把步骤标为“已观察/待用户完成/无法判断”，只给当前版本适用的下一步。未验证假设是减少无效命令和入门卡点。随机新手任务对照静态清单，若首次成功率与求助时间不改善则否定。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336658798:root",
+          "area": "code",
+          "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:24.265Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:44:24.265Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe",
+    "reviewed_at": "2026-10-21T03:44:24.265Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1336658798:root",
+        "area": "code",
+        "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 0,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty教学入口封装小档；mechanism无新诊断机制取0；transferability静态数据小档；simplification会话入口小档。",
+      "basis": "interpretation",
+      "score": 18,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 0
+      },
+      "rationale": "workflow入门次序小档；delivery学习资料小档；reach中文新手半档；economics未改变服务成本结构取0。",
+      "basis": "interpretation",
+      "score": 27,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336658798-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "中文新用户可先读入门路径；执行前回查当前宿主帮助和profile，自行确认清单，静态推荐逐项核兼容。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "已启动但不懂安装开发次序的新手场景明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "会话内中文阶段与索引省零散搜索，非环境诊断。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "固定五阶段十项清单及提示源码可见，不检测真实进度。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "无专用服务费，但过时内容和版本命令会转移学习维护成本。"
+      }
+    },
+    "score": 64,
+    "revision": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-03-github-1336658798-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1336658798:root",
+        "area": "code",
+        "fingerprint": "d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe"
+      }
+    ]
+  }
+}

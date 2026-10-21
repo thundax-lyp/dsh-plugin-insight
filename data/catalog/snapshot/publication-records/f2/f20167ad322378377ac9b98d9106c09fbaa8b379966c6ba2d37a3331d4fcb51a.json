@@ -1,0 +1,17 @@
+{
+  "id": "github:1407379611:root",
+  "repository": "439436269-ctrl/dsh-pinned-sessions",
+  "path": "",
+  "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
+  "fingerprints": {
+    "directory": "f63bb0c0fe4fe824c25c2901ed20d14f1f41853eb958c9d80f2180a52b164b57",
+    "code": "20044d963ce5d0a780915be97491b9d330285bf3",
+    "maintenance": "157f25f8b39d5c5b343af5d9fa0516cb539e0fd35365507c9a1927dd44e89d9a"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "ea0f8c6fc28972adb73777d0291ed506400992ac92af435e4fab19c53ccf7e8f"
+}

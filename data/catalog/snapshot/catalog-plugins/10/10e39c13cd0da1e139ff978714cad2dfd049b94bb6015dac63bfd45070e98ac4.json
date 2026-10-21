@@ -1,0 +1,337 @@
+{
+  "id": "github:1359145352:root",
+  "repository_id": 1359145352,
+  "component_id": "root",
+  "repository": "Aafff623/dsh-callout",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-callout",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "4adc62bb1188125406dbacfed45c57d49745732175255903b4733dc3f594bced",
+    "code": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+    "maintenance": "27fbacc31f40611e1d7efba6ad48ee8cd8d1093187076c9705a56ead805086fe"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1359145352-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:42:34.264Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1359145352-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/README.md",
+      "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+      "captured_at": "2026-10-21T05:42:34.264Z",
+      "summary": "将助手 Markdown 的 GitHub 风格提示标记呈现为语义卡片。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aafff623--dsh-callout/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1359145352-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Aafff623/dsh-callout/blob/0e92c135644be8d84601ea846098f2799ef4dcf7/src/index.ts",
+      "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+      "captured_at": "2026-10-21T05:42:34.264Z",
+      "summary": "核查 src/index.ts、src/client/index.ts、package.json、cordis.patch.yml；Host注入五类标记的输出约定，浏览器MutationObserver在助手Markdown中识别引用首段的直接文本标记，设置插件自有data属性和CSS；窄范围兼容裸标记。初次全扫后只处理脏根，流式修改撤回样式，卸载尝试恢复拥有的原标记。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aafff623--dsh-callout/REVIEWED-SOURCE.json",
+      "limitations": [
+        "根组件src Host格式section、client标记识别/observer/清理与README，未运行构建或页面；lib与src一致性未证明。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "长技术回答中让警告、前提和关键结论更容易被读到；交付物是展示增强，原会话Markdown保持可读。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Host注入五类标记的输出约定，浏览器MutationObserver在助手Markdown中识别引用首段的直接文本标记，设置插件自有data属性和CSS；窄范围兼容裸标记。初次全扫后只处理脏根，流式修改撤回样式，卸载尝试恢复拥有的原标记。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "根组件src Host格式section、client标记识别/observer/清理与README，未运行构建或页面；lib与src一致性未证明。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT双面bundle，仓库提交lib用于Git安装；依赖DSH systemPrompt/Web DOM，不修改核心renderer或持久会话。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金为额外格式提示token，无独立API；人工需理解卡片只是模型标注并维护宿主DOM兼容，长流式输出有观察处理开销。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "希望技术回答更易扫描者可作为展示插件候选；不能将是否出现警告卡片作为执行高影响操作的批准依据。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "保持原文可移植同时改善视觉层次；不保证语义类型正确、风险完整覆盖或行动安全。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "插件data/CSS命名空间、脏根扫描和自写mutation抑制减少互扰；HMR先dispose旧实例，迟到teardown不删新样式，恢复文本只在仍等于本插件产物时发生。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "使用可移植Markdown标记而非修改存储格式，补上宿主普通引用块的语义可见性；Host格式约定与展示识别对齐。核心是受控展示升级与可逆DOM所有权，不能视为风险检测或业务安全能力。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "彩色warning来自谁的判断？类型由模型输出，渲染器不判断命令危险性，也不强制每回复最多一个卡片；漏标危险操作仍普通显示。DOM识别依赖助手/Markdown结构，重渲染或其他插件共同改文本时必须避免恢复旧内容；源码做所有权条件判断但未真实宿主验证。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "为高影响提示附可展开的“触发依据/影响对象”而保持原Markdown可读，可能比仅颜色提高读者定位损失对象的正确率。用相同危险命令说明做盲测，比较理解正确率与阅读时间；若只增加醒目程度而未减少误解，不成立。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145352:root",
+          "area": "code",
+          "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:34.264Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:42:34.264Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+    "reviewed_at": "2026-10-21T05:42:34.264Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1359145352:root",
+        "area": "code",
+        "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "新颖性9：GitHub提示卡片为既有格式；机制15：流式文本/自有变更标记/卸载恢复处理具体；迁移性10：展示所有权模式可复用；简化8：复用Markdown不改存储。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "工作流0：不改变业务任务和验收流程；交付8：呈现语义层次，未提供新的业务结果；覆盖10：技术阅读场景广但限Web结构；经济4：阅读收益未测且Host提示增加少量token。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145352-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "长技术回答阅读者可试callout展示；核流式和卸载恢复，不将模型标色的warning当安全判断或操作批准。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "扫描长回答中的前提和警告是清楚的阅读任务。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "保留Markdown可移植性并加视觉层次，增量具体。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核脏根扫描、所有权恢复和标记识别，无宿主视觉验收。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "仅格式提示token与DOM维护，展示试用可控制且原文保留。"
+      }
+    },
+    "score": 64,
+    "revision": "0e92c135644be8d84601ea846098f2799ef4dcf7",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-06-github-1359145352-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1359145352:root",
+        "area": "code",
+        "fingerprint": "0e92c135644be8d84601ea846098f2799ef4dcf7"
+      }
+    ]
+  }
+}

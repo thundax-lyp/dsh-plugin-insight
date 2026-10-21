@@ -1,0 +1,17 @@
+{
+  "id": "github:1336720864:root",
+  "repository": "AlexYin-Tongji/dsh-plugin-console",
+  "path": "",
+  "revision": "224e53959c1b03f83993b80f8438b49b17d820d6",
+  "fingerprints": {
+    "directory": "2be2ccc8216e982dda96d6b393e1380f64f62e8687692a12bb33293a1da02a7b",
+    "code": "224e53959c1b03f83993b80f8438b49b17d820d6",
+    "maintenance": "8784f1ef84f98ff2957ab184a5f74c5d42377abc73d6c5ae097bd464c07095db"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "10a385ce5044069e226e3b645c001549d2c49e1c63ae57d1f524213ce1270946"
+}

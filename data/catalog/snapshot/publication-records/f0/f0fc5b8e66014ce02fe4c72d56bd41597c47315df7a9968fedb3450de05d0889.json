@@ -1,0 +1,17 @@
+{
+  "id": "github:1417442557:root",
+  "repository": "1687210989/agent-clinic",
+  "path": "",
+  "revision": "e88d6ec63d7a67277bf3c6c86f38a43ee97527c4",
+  "fingerprints": {
+    "directory": "36efafac1d1aafeba036898798ce0ba0732320501186d93af3e374d82cf85514",
+    "code": "e88d6ec63d7a67277bf3c6c86f38a43ee97527c4",
+    "maintenance": "371719b99092800c56c7a47ac93c1c346defffe82b60da115a0603f2031fa183"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T04:25:27.514Z",
+  "analysis_sha256": "933e7320bdbd7c636c53c5644751caa8708d8ae86b2487d27b45564384434445"
+}

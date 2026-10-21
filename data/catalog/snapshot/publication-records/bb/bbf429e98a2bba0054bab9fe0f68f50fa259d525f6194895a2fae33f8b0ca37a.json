@@ -1,0 +1,17 @@
+{
+  "id": "github:1336649545:root",
+  "repository": "863683348/dsh-insight",
+  "path": "",
+  "revision": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b",
+  "fingerprints": {
+    "directory": "747ff1d8588e0d30c7ec692699b4159c6a961c28205deb6c6b43a2e8477162cf",
+    "code": "6fcb8fc9a04b70e391e78d2c41bbfb240b6f021b",
+    "maintenance": "33e06037dff102e9d7056872dd6c83651f42d56c992f86b2eb936a96ca7b2211"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "ecf108550d1612f6bc0fb8dee8100a4fcdbb041e2f91b6a3c7ef9ec96e479216"
+}

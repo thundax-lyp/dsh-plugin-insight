@@ -1,0 +1,245 @@
+{
+  "id": "github:1335704653:root",
+  "repository_id": 1335704653,
+  "component_id": "root",
+  "repository": "117BS/dsh-perlica-ding",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-perlica-ding",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [
+    "提示音",
+    "通知"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "c14dca6f94dd575e6a16ff4821756c76be36d90a4e5f111c0568d2d78ca5b50d",
+    "code": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+    "maintenance": "35185edd72fec89a66b749f18f8c99dbb1cc9d09882e2d8592da285c4ac9dd41"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1335704653-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:13:13.379Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1335704653-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/117BS/dsh-perlica-ding/blob/f9db75c3cff13919659e81311a2b3d62f9af8aab/README.md",
+      "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+      "captured_at": "2026-10-20T03:13:13.379Z",
+      "summary": "根据计划、执行、等待回应和错误状态播放分级提示音，普通问答保持安静。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/117bs--dsh-perlica-ding/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1335704653-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/117BS/dsh-perlica-ding/blob/f9db75c3cff13919659e81311a2b3d62f9af8aab/index.mjs",
+      "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+      "captured_at": "2026-10-20T03:13:13.379Z",
+      "summary": "核查 index.mjs；监听主会话事件和执行类工具，按类别去抖，通过 subprocess 调用系统播放程序；PCM 音量副本有内容缓存。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/117bs--dsh-perlica-ding/REVIEWED-SOURCE.json",
+      "limitations": [
+        "工具调用分类不证明任务成功，未验证平台播放器、静音策略与实际漏报误报。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "后台运行智能体时，用户希望听到需要关注的状态而不盯住窗口。",
+      "evidence_ids": [
+        "20261020-research40-github-1335704653-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335704653:root",
+          "area": "code",
+          "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:13.379Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "监听主会话事件和执行类工具，按类别去抖，通过 subprocess 调用系统播放程序；PCM 音量副本有内容缓存。",
+      "evidence_ids": [
+        "20261020-research40-github-1335704653-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335704653:root",
+          "area": "code",
+          "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:13.379Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "主会话限定与普通问答静音可减少噪声；有效性取决于事件分类是否符合使用者期待。",
+      "evidence_ids": [
+        "20261020-research40-github-1335704653-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335704653:root",
+          "area": "code",
+          "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:13.379Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "没有模型专用调用，但需配置声音与免打扰，密集通知可能反而增加打断。",
+      "evidence_ids": [
+        "20261020-research40-github-1335704653-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335704653:root",
+          "area": "code",
+          "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:13.379Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "参数化 subprocess、PCM 缩放和内容寻址缓存可借鉴；音效资源授权与平台行为仍需单独核查。",
+      "evidence_ids": [
+        "20261020-research40-github-1335704653-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335704653:root",
+          "area": "code",
+          "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:13.379Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。",
+      "evidence_ids": [
+        "20261020-research40-github-1335704653-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335704653:root",
+          "area": "code",
+          "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:13.379Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "工具调用分类不证明任务成功，未验证平台播放器、静音策略与实际漏报误报。",
+      "evidence_ids": [
+        "20261020-research40-github-1335704653-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335704653:root",
+          "area": "code",
+          "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:13.379Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "版本 0.2.1，入口 index.mjs，依赖 subprocess 及 macOS/Windows/Linux 对应播放器。",
+      "evidence_ids": [
+        "20261020-research40-github-1335704653-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335704653:root",
+          "area": "code",
+          "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:13.379Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:13:13.379Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "后台任务用户可先用测试音和短任务试分级提醒，核对去抖、免打扰和平台播放器。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "不用盯屏获知需关注状态的需求明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "主会话限定和分类声音补系统通知但不证明任务成功。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "事件分类、播放和PCM缓存可查，误报漏报未测。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "无额外模型调用，主要负担为音量、资源许可与打断控制。"
+      }
+    },
+    "score": 64,
+    "revision": "f9db75c3cff13919659e81311a2b3d62f9af8aab",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-research40-github-1335704653-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335704653:root",
+        "area": "code",
+        "fingerprint": "f9db75c3cff13919659e81311a2b3d62f9af8aab"
+      }
+    ]
+  }
+}

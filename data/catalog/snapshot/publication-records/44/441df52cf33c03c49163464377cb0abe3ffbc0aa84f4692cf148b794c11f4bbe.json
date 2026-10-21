@@ -1,0 +1,17 @@
+{
+  "id": "github:1344713826:root",
+  "repository": "988hj7tczd-oss/dsh-mcp-tunnel",
+  "path": "",
+  "revision": "ecd7d8e555423123960009f9f8ab878246f0132f",
+  "fingerprints": {
+    "directory": "c4ad574b58e6473fe247019b4e176eca17f468ad35f66c50e606556bd8fa55ab",
+    "code": "ecd7d8e555423123960009f9f8ab878246f0132f",
+    "maintenance": "212a67833ddc1a560f04f4e10602b547202e225233d1ce4ae95edcc3c4c2f800"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T04:06:46Z",
+  "analysis_sha256": "a3aca5670f6db63c5a5a91a71264e676d322272ec04e04990d12605a9e65f660"
+}

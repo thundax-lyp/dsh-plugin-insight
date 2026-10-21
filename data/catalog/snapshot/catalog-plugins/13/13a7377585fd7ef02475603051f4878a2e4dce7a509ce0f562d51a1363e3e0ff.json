@@ -1,0 +1,337 @@
+{
+  "id": "github:1339888505:root",
+  "repository_id": 1339888505,
+  "component_id": "root",
+  "repository": "Andiii208/gzhflow",
+  "path": "",
+  "aliases": [],
+  "name": "gzhflow",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "content-creation",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "4eb003afde08d9279dc34c8cf6d209d4c25f4257293103c1c789f96e6e71bc2a",
+    "code": "3702335770e30ebccc3790556d53aa14c30046f2",
+    "maintenance": "5342bd45660732ecc961fbfb5dfd0fc57847809b759e1174dcdff2c6205eb6b2"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1339888505-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:05:14.502Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1339888505-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Andiii208/gzhflow/blob/3702335770e30ebccc3790556d53aa14c30046f2/README.md",
+      "revision": "3702335770e30ebccc3790556d53aa14c30046f2",
+      "captured_at": "2026-10-21T08:05:14.502Z",
+      "summary": "为公众号内容提供素材、写作、风格质检、配图、排版和推草稿箱的技能及工具流程。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/andiii208--gzhflow/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1339888505-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Andiii208/gzhflow/blob/3702335770e30ebccc3790556d53aa14c30046f2/dsh-preset/tools/gzhflow-tools.mjs",
+      "revision": "3702335770e30ebccc3790556d53aa14c30046f2",
+      "captured_at": "2026-10-21T08:05:14.502Z",
+      "summary": "核查 dsh-preset/tools/gzhflow-tools.mjs、dsh-preset/tools/gzhflow-skill.mjs、scripts/ai_flavor_score.py、scripts/publish_draft.py、package.json；gzhflow-tools经ctx.subprocess运行Python脚本，凭据仅增量env注入；skill provider注册工作流。ai_flavor_score用语料启发规则，publish_draft上传图/封面后draft/add，dry-run仅参数文件检查不取token。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/andiii208--gzhflow/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读dsh-preset/tools/gzhflow-tools.mjs、dsh-preset/tools/gzhflow-skill.mjs、scripts/ai_flavor_score.py、scripts/publish_draft.py、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "内容作者反复产稿并复用风格/经验，合格产物需事实准确、版权清楚、排版可读并经人发布。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "gzhflow-tools经ctx.subprocess运行Python脚本，凭据仅增量env注入；skill provider注册工作流。ai_flavor_score用语料启发规则，publish_draft上传图/封面后draft/add，dry-run仅参数文件检查不取token。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读dsh-preset/tools/gzhflow-tools.mjs、dsh-preset/tools/gzhflow-skill.mjs、scripts/ai_flavor_score.py、scripts/publish_draft.py、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT跨Agent工作流，外部方法/图像服务分别归属；可选主编预设另装，默认bundle并非自动注册该Agent。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次文风/主题/凭据设置；持续模型/图片费、人工事实与版权复核、排版和发布对账，未有合格文章成本实测。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已有公众号编辑流程者先只做本地质检/排版；事实审阅和正式发布仍由人确认，API权限与账户条件另核。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可能减少反复搬运与漏检，分数变低不等于文章更好或更受欢迎。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "subprocess受宿主约束、密钥不进argv、dry-run明确不联网有价值；多次素材写入不具备全事务回滚。 源码依据：[dsh-preset/tools/gzhflow-tools.mjs](https://github.com/Andiii208/gzhflow/blob/3702335770e30ebccc3790556d53aa14c30046f2/dsh-preset/tools/gzhflow-tools.mjs)、[dsh-preset/tools/gzhflow-skill.mjs](https://github.com/Andiii208/gzhflow/blob/3702335770e30ebccc3790556d53aa14c30046f2/dsh-preset/tools/gzhflow-skill.mjs)、[scripts/ai_flavor_score.py](https://github.com/Andiii208/gzhflow/blob/3702335770e30ebccc3790556d53aa14c30046f2/scripts/ai_flavor_score.py)、[scripts/publish_draft.py](https://github.com/Andiii208/gzhflow/blob/3702335770e30ebccc3790556d53aa14c30046f2/scripts/publish_draft.py)、[package.json](https://github.com/Andiii208/gzhflow/blob/3702335770e30ebccc3790556d53aa14c30046f2/package.json)。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对单次写作提示，增量是四库沉淀、阶段产物与确定性/自检/人工三种检查分工；方法源自作者旧工作流和外部风格研究，非原创内容质量算法。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "去AI味分数能否代表好文章？词汇/标点规则不验证事实和论证，也可能误伤个人风格，作者注释已记录误杀与阈值收窄。推草稿链多次外部写入，dry-run不验证API权限，未知结果重试可能重传素材或建重复草稿。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由三种检查与四库推导，可把风格规则改为可解释建议，并将事实/版权审阅与发布收据独立；草稿任务用内容摘要识别未知结果。未验证；作者盲选样本测可读性/保真度，断网后对账不得重复建稿。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1339888505:root",
+          "area": "code",
+          "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:05:14.502Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:05:14.502Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "3702335770e30ebccc3790556d53aa14c30046f2",
+    "reviewed_at": "2026-10-21T08:05:14.502Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1339888505:root",
+        "area": "code",
+        "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty既有编辑方法组合小档；mechanism脚本/技能桥接小档；transferability三类检查分工半档；simplification连续产物工具链半档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow素材到复盘半档；delivery排版/草稿产物半档；reach跨Agent作者半档；economics复用四库可能省重复准备但未测小档。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-07-github-1339888505-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "已有公众号编辑流程者可先试本地质检和排版；分数非事实质量，推草稿需逐次授权核远端结果，未知响应不要直接重试。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "反复产稿复用文风并经人发布的需求明确。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "质检排版与草稿脚本减少搬运及漏项。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核Python工具和启发规则，dry-run不验API权限或去重。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "模型图片与版权事实复核成本仍在，外部多写需对账。"
+      }
+    },
+    "score": 65,
+    "revision": "3702335770e30ebccc3790556d53aa14c30046f2",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-07-github-1339888505-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1339888505:root",
+        "area": "code",
+        "fingerprint": "3702335770e30ebccc3790556d53aa14c30046f2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1422500224:root",
+  "repository": "7gzgn/dsh-profile-stylist",
+  "path": "",
+  "revision": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+  "fingerprints": {
+    "directory": "740f1642ae3dc9d59ed80bb2acb10691c123603bcc973aa2da6d6afc02282a27",
+    "code": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+    "maintenance": "58aa6bc73ce7d7d8dd35f45136e54f2be4c9fd4e293686d3e3a50f958e471efd"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "b1c2168948b4ea56a24b1b63dc24d46ebe3b90d528c8cc9a49ca21a8eea6d565"
+}

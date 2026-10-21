@@ -1,0 +1,337 @@
+{
+  "id": "github:1335045545:root",
+  "repository_id": 1335045545,
+  "component_id": "root",
+  "repository": "54xkeee/dsh-youreyes",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-youreyes",
+  "entry_type": "plugin",
+  "technical_category": "model-provider",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "d83ee762178fb611550ff1e23137cc4eecd1de5ea872eefe91707171dde84eaf",
+    "code": "86f02fa124cd158438e4d9290625d2f8dd610967",
+    "maintenance": "a1ae476f5e6e47dbd8fe86fc306993ea370c88c387f556461abf576db7317e26"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1335045545-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:20.159Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1335045545-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/README.md",
+      "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
+      "captured_at": "2026-10-21T03:16:20.159Z",
+      "summary": "为文本模型接入OpenAI兼容、Gemini、Ollama及IDE视觉通道并保存视觉证据。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/54xkeee--dsh-youreyes/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1335045545-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts",
+      "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
+      "captured_at": "2026-10-21T03:16:20.159Z",
+      "summary": "核查 src/index.ts、src/channels.ts、src/vision-core.ts；src/index.ts注册包装provider及vision工具，channels.ts分发Antigravity/OpenAI/Gemini/Ollama；vision-core组织证据和缓存。allowedImageDirs空数组保留旧版任意路径行为。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/54xkeee--dsh-youreyes/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合已有多种视觉端点、希望保留文本主模型的截图分析；本地Ollama适合需要控制图片外传的任务。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "src/index.ts注册包装provider及vision工具，channels.ts分发Antigravity/OpenAI/Gemini/Ollama；vision-core组织证据和缓存。allowedImageDirs空数组保留旧版任意路径行为。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次配置API或Ollama视觉模型，IDE通道另需可用工作区；现金按远端识图，Ollama消耗本机资源，人工承担OCR与摘要遗漏复核。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "需要多端点或本地视觉的用户可先在隔离会话试用；显式设置通道与允许目录，别只凭图片输入开关判断模型已经支持原图推理。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "统一入口与缓存能减少重复配置与调用，但无同条件准确率、吞吐或独立采用证据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "渠道模块与证据纯函数分离利于替换供应商；真实路径目录校验是可借鉴边界。宽松默认目录和legacy stream修复增加兼容复杂度，应复核宿主版本。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者主张给纯文本模型看图；可确认的贡献是将通用兼容端点及本地Ollama纳入同一视觉证据流程，而非限定单一视觉供应商。README明确继承vision-toolkit机制；缓存、分层证据和压缩恢复属集成实现，不是新视觉算法。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "插件声明图片输入只表示能转交外部识图，不会改变主模型固有能力。空的allowedImageDirs不限制本地图片目录；auto通道选择和云端回退须核对，否则本地识图的预期可能与实际数据路径不符。文字证据可能遗漏原图细节。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：给每条视觉证据附加不可变通道与外传策略，并在回退前检查策略，可减少本地隐私预期错配。以本地失效和云端可用的组合验证是否阻止未授权回退，同时测可用性损失。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335045545:root",
+          "area": "code",
+          "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:20.159Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:20.159Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
+    "reviewed_at": "2026-10-21T03:16:20.159Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335045545:root",
+        "area": "code",
+        "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 15,
+        "simplification": 8
+      },
+      "rationale": "novelty=9：继承vision-toolkit的适配而非新视觉算法。 mechanism=15：通道抽象、缓存与证据复用有实现。 transferability=15：兼容API与Ollama增加可迁移性。 simplification=8：统一入口减少重复配置但需通道核对。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=18：保留文本模型的识图流程可行于源码。 delivery=15：会话证据可复用但不是原图无损表示。 reach=10：多端点扩大覆盖，仍需视觉模型可用。 economics=4：无同条件费用数据，本地也有资源开销。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-02-github-1335045545-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "已有多视觉端点或本地Ollama者可显式通道试用；先设允许目录并核对auto云端回退，关键内容回看原图。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "保留文本主模型并选择本地视觉的截图用户具体。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "多端点共证据缓存比单供应商包装更灵活。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "channels分发与内容缓存源码支持，空allowedImageDirs仍允许任意路径。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "需API或本地模型计算，出网路径和OCR遗漏需人工复核。"
+      }
+    },
+    "score": 65,
+    "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-02-github-1335045545-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335045545:root",
+        "area": "code",
+        "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
+      }
+    ]
+  }
+}

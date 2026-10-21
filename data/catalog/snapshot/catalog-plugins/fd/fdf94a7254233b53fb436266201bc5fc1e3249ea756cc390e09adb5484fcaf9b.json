@@ -1,0 +1,337 @@
+{
+  "id": "github:1415863200:root",
+  "repository_id": 1415863200,
+  "component_id": "root",
+  "repository": "Airisey/dsh-model-failover",
+  "path": "",
+  "aliases": [],
+  "name": "模型接力",
+  "entry_type": "plugin",
+  "technical_category": "model-provider",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "76e858bf7c9bd34b07fe0c3b6be7bccef9c2fafd3b77ddeb0c066d7bd328f0c8",
+    "code": "3221de6a1c9a02333f78e48449fcc272e1b430c0",
+    "maintenance": "e46a4202d06352c576b959004cc0d36c7dcf7a0ae8a24d7ff7a4e9867b3d6056"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1415863200-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:08:33.700Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1415863200-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Airisey/dsh-model-failover/blob/3221de6a1c9a02333f78e48449fcc272e1b430c0/README.md",
+      "revision": "3221de6a1c9a02333f78e48449fcc272e1b430c0",
+      "captured_at": "2026-10-21T08:08:33.700Z",
+      "summary": "把已接入 DSH 的模型组成候选队列，失败时重试、轮换并记录会话隔离。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/airisey--dsh-model-failover/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1415863200-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Airisey/dsh-model-failover/blob/3221de6a1c9a02333f78e48449fcc272e1b430c0/index.js",
+      "revision": "3221de6a1c9a02333f78e48449fcc272e1b430c0",
+      "captured_at": "2026-10-21T08:08:33.700Z",
+      "summary": "核查 index.js、lib/adapter.js、lib/autocontinue.js、lib/store.js、package.json；注册model-failover adapter，队列模板成为可选模型；候选流在出现可见文本或工具调用前缓冲，提交后不在本次流切换。health按会话/模板记录隔离，JSON持久化；另监听整轮结局，在错误/max-tokens时按分开上限followup继续，对所有模型会话生效。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/airisey--dsh-model-failover/REVIEWED-SOURCE.json",
+      "limitations": [
+        "根adapter提交/重试、autocontinue来源/次数、store和入口注册；未核每家模型错误协议、真实账号或UI兼容。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有多模型渠道的用户希望额度/上游故障时继续任务；合格交付是任务正确完成，而不是某个模型开始输出。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "注册model-failover adapter，队列模板成为可选模型；候选流在出现可见文本或工具调用前缓冲，提交后不在本次流切换。health按会话/模板记录隔离，JSON持久化；另监听整轮结局，在错误/max-tokens时按分开上限followup继续，对所有模型会话生效。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "根adapter提交/重试、autocontinue来源/次数、store和入口注册；未核每家模型错误协议、真实账号或UI兼容。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "DSH adapter/bundle加Web设置，复用已经配置的providers；不提供新模型账号，配置/health/log写独立DSH_HOME目录。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金包括同模型再试、备用调用与自动续轮全部token；人工配置模型/推理档、核对重复副作用和隔离误判。概念容错不能直接推出更省钱。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有多模型且主要做可复核任务时可评估；涉及不可重复动作或不希望插件代发用户消息时，应先明确自动续轮范围和来源。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可能减少上游无输出中断和手动换模型；不保证任务完成、模型质量或总成本改善。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "主动向宿主声明maxRetries=0避免双重队列重试；提前中断向下游iterator.return传播取消；配置与隔离运行事实分文件，原子写仅单文件非多进程事务。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相较盲目重试整条请求，明确“已提交内容”的边界，避免在模型开始产出后静默换人；分开候选故障和整轮截断，隔离按会话/模板而非全局误伤。贡献是失败恢复取舍与宿主集成，不能把字节产出当任务完成。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "自动“继续”是否仍是用户授权的同一任务？轮级hook对全部DSH模型生效，构造source.kind=user，看起来与人亲发相同；一次错误可能发生在已有工具副作用后，重启一轮并不具任务幂等。adapter将非空text/tool delta当提交能减少混流，却不能证明答案合格；隔离跨日清空也不代表凭证/配额已恢复。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "把续轮标成插件来源并绑定原turn、错误种类与已完成工具副作用账本，要求未知副作用先查结果而非重发，可能减少重复执行和授权混淆。对工具已成功但响应丢失、纯文本截断、用户停止和用户新输入对照，测重复动作与不当续轮率；若只多发继续且无副作用状态，则不能称业务恢复。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1415863200:root",
+          "area": "code",
+          "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:08:33.700Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:08:33.700Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "3221de6a1c9a02333f78e48449fcc272e1b430c0",
+    "reviewed_at": "2026-10-21T08:08:33.700Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1415863200:root",
+        "area": "code",
+        "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "新颖性9：候选failover/健康隔离为已有模式；机制15：提交前缓冲、分层故障与会话隔离形成实质取舍；迁移性10：提交边界可迁移但依赖chunk协议；简化8：统一多渠道恢复，额外续轮状态仍需维护。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "工作流9：减少手换模型，任务责任不变；交付8：保证活动连续不等于任务成功；覆盖10：多渠道用户可减少单点阻塞；经济4：备用与重试增加调用，合格成本未测。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-07-github-1415863200-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "observe",
+    "reason": "多模型用户可关注无输出切换；全模型会话自动续轮伪装user且可能重复已发生副作用，应先限定范围和来源后再试。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "额度或上游故障后继续任务的场景明确。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "首可见输出前缓冲避免混流，减少手动换模型。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核提交界限与全局轮hook，任务幂等和真实总费未验。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "自动继续影响非选择队列会话，重复动作和备用费用难由用户控界。"
+      }
+    },
+    "score": 60,
+    "revision": "3221de6a1c9a02333f78e48449fcc272e1b430c0",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-07-github-1415863200-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1415863200:root",
+        "area": "code",
+        "fingerprint": "3221de6a1c9a02333f78e48449fcc272e1b430c0"
+      }
+    ]
+  }
+}

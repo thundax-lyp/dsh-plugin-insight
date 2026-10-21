@@ -1,0 +1,17 @@
+{
+  "id": "github:1337487779:root",
+  "repository": "Andiii208/dsh-ultramath",
+  "path": "",
+  "revision": "37d95b1820bb77e97a3efc8fe3cbbeb2e5c7a0d1",
+  "fingerprints": {
+    "directory": "4dbffe78a267201b0937a3db8eaf78d275abfbc450d9b6a720a6c032d8f1b8ac",
+    "code": "37d95b1820bb77e97a3efc8fe3cbbeb2e5c7a0d1",
+    "maintenance": "7ddfca8a3f320fbf5be489313660bdc87918e608073f3a08b725d0d518084c22"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "10529239bd2e26b175728a8cdad3740399c7a2d75e61fbc59d44b0709d4f920a"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1402828137:root",
+  "repository": "AK-blank/dsh-plugin-offpeak-badge",
+  "path": "",
+  "revision": "7baac218a3ac9a7a31964bda164284c4647cf308",
+  "fingerprints": {
+    "directory": "317508dacbcc2655045750babaa3b68588cff8459ab785c466fab0a76332b954",
+    "code": "7baac218a3ac9a7a31964bda164284c4647cf308",
+    "maintenance": "8ac001ce03a8116285eb7ffc8c3ccf473ea1a74082902b5916c9292b714cc8d3"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "430eaa5bc12e68c3d73b3a28e88131b283c15673d29a913f0fbe267d17518a8f"
+}

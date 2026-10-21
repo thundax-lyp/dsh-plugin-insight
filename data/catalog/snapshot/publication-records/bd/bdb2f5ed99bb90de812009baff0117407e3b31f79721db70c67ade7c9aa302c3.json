@@ -1,0 +1,17 @@
+{
+  "id": "github:1409724830:src",
+  "repository": "12we21/cute-fat-fish-pet",
+  "path": "src",
+  "revision": "e53f63e67227671aca092e3334c8611e29b880b6",
+  "fingerprints": {
+    "directory": "3fd6461052211f4b0fdd053bce371492b99b63044fc41b6c35c54a682a35c5b5",
+    "code": "e53f63e67227671aca092e3334c8611e29b880b6",
+    "maintenance": "0481cbbc951e64d846e6fd3a6ddf9702b4a284bf16ff206c0a0de604cd6718af"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T02:51:30Z",
+  "analysis_sha256": "c4aa2c6de4865432fcd061a4bf88cd8bc4bb7b256460b74a459d2cdc61a91216"
+}

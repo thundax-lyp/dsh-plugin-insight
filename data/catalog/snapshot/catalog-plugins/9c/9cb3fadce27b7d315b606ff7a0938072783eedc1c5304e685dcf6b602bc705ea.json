@@ -1,0 +1,337 @@
+{
+  "id": "github:1346533795:root",
+  "repository_id": 1346533795,
+  "component_id": "root",
+  "repository": "Aik358/dsh-cua-pre",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-cua-pre",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "office-operations",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "d0c7b6bbd52199346c8f9dabffea64eab81266744336f8ebfd43bfa7a1713f23",
+    "code": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+    "maintenance": "f4c2f71e8314030babe6582480ddf2f8b1ad7455973d7a618490dbb8f62bacc1"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1346533795-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:42:01.980Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1346533795-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/README.md",
+      "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+      "captured_at": "2026-10-21T05:42:01.980Z",
+      "summary": "以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aik358--dsh-cua-pre/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1346533795-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js",
+      "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+      "captured_at": "2026-10-21T05:42:01.980Z",
+      "summary": "核查 lib/index.js、lib/cua-tools-pre.js、lib/cua-session-pre.js、lib/cua-sidecar-client-pre.js、python/worker_cua_v2.py；host注册工具/loopback配置与帧接口，session在变更后supersede旧state；sidecar用epoch/requestId JSONL桥接；worker重走元素路径，校验RuntimeId（可用时）、type/name及矩形漂移，UIA语义优先、坐标回退。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aik358--dsh-cua-pre/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读lib/index.js、lib/cua-tools-pre.js、lib/cua-session-pre.js、lib/cua-sidecar-client-pre.js、python/worker_cua_v2.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Windows桌面任务需先观察、定位后动作，并区分未执行与可能已执行，尤其不能重复发送/支付等副作用。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "host注册工具/loopback配置与帧接口，session在变更后supersede旧state；sidecar用epoch/requestId JSONL桥接；worker重走元素路径，校验RuntimeId（可用时）、type/name及矩形漂移，UIA语义优先、坐标回退。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读lib/index.js、lib/cua-tools-pre.js、lib/cua-session-pre.js、lib/cua-sidecar-client-pre.js、python/worker_cua_v2.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT标示的Windows预览插件，需Python/Windows UIA依赖；提供的远程安装脚本本轮未执行，非跨平台验收。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次解释器/依赖与权限、允许PID设置，持续UI变动回归、截图存储和可选视觉模型调用；分块缓存节费无本轮测量。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先在可丢弃窗口、明确PID范围验证观察/动作/停止；高影响任务保留人工确认和结果核对，不能将提示纪律当已实现审批。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可减少坐标猜测、提高动作可追踪性，实际任务成功率和跨应用稳定性未测。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "旧观察失权、epoch隔离、未知结果提示和持久kill switch可借鉴；默认空PID列表、UIA降级与原生动作不可取消须明确。 源码依据：[lib/index.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/index.js)、[lib/cua-tools-pre.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-tools-pre.js)、[lib/cua-session-pre.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-session-pre.js)、[lib/cua-sidecar-client-pre.js](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/lib/cua-sidecar-client-pre.js)、[python/worker_cua_v2.py](https://github.com/Aik358/dsh-cua-pre/blob/6b64708e2514ef4a1b9cb6004adb4838d4b114bb/python/worker_cua_v2.py)。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "将观察失效、目标校验、未知动作结果和持久停止纳入同一工具协议，比裸pyautogui坐标脚本更可治理；UIA/SendInput及视觉模型本身来自系统与上游。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "安全语义是否等于实际动作保证？RuntimeId不支持时会降级，矩形容差也不能保证同语义控件；timeout只是等待结果结束，noop不能撤销已发原生动作。付款/删除/外发确认主要是GUIDANCE措辞，不是通用Host硬审批。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由epoch和观察状态推导，可对高影响动作增加Host授权令牌和动作后可核查收据，未知结果冻结同业务动作直到人工或只读对账。未验证；注入worker迟响应/崩溃与UI漂移时应不重放、不误点，确认不可仅靠模型守提示。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1346533795:root",
+          "area": "code",
+          "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:01.980Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:42:01.980Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+    "reviewed_at": "2026-10-21T05:42:01.980Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1346533795:root",
+        "area": "code",
+        "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 15,
+        "simplification": 8
+      },
+      "rationale": "novelty标准CUA工具语义重实现小档；mechanism观察失效/epoch/校验半档；transferability未知结果协议可迁移较高；simplification集成面板半档。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow观察动作核对半档；delivery工具与持久产物半档；reachWindows预览范围小档；economics可能减少误操作但无成功任务成本验证小档。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-06-github-1346533795-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "Windows桌面自动化用户可在可丢弃窗口和明确PID试观察后动作；验停止与未知结果，高影响外发付款保留人工确认。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "UI定位、动作与结果归属明确，尤其需避免重复副作用。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "UIA优先、元素重校和state失效减少坐标盲猜。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核epoch桥及多重定位校验，实际跨应用成功率未测。"
+      },
+      "cost": {
+        "score": 5,
+        "rationale": "解释器权限、UI回归与截图/视觉费用较高，审批主要靠指导纪律。"
+      }
+    },
+    "score": 60,
+    "revision": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-06-github-1346533795-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1346533795:root",
+        "area": "code",
+        "fingerprint": "6b64708e2514ef4a1b9cb6004adb4838d4b114bb"
+      }
+    ]
+  }
+}

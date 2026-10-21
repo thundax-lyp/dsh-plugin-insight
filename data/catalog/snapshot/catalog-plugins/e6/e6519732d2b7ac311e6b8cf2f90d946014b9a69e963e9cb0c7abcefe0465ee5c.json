@@ -1,0 +1,337 @@
+{
+  "id": "github:1336684054:root",
+  "repository_id": 1336684054,
+  "component_id": "root",
+  "repository": "863683348/dsh-plugin-verify",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-plugin-verify",
+  "entry_type": "plugin",
+  "technical_category": "context-search",
+  "business_category": "research-knowledge",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "a4a3a025c8c706087983bdbcf98cfb8b9a5a7358bf6fa69e5e48de2900602c1b",
+    "code": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+    "maintenance": "eaa52852b4f0bfb4c2fb017ac64dda07b3eb666099123e3e700289493a5853a4"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1336684054-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:44:22.162Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1336684054-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/README.md",
+      "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+      "captured_at": "2026-10-21T03:44:22.162Z",
+      "summary": "提供工作区关键词证据检索、配置检查及URL、npm和GitHub只读探测。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-verify/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1336684054-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/verify.js",
+      "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+      "captured_at": "2026-10-21T03:44:22.162Z",
+      "summary": "核查 lib/verify.js、lib/batch.js、lib/index.js；verify.js提取中英文关键词、按命中覆盖打verdict；batch.js并发组织多类检查并按结果特征给confidence；index注册verify工具。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-verify/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Agent研究或插件提交前需要把主张定位到文件与外部元数据；合格交付应是证据与主张逻辑关系清楚，访问成功并不等于主张成立。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "verify.js提取中英文关键词、按命中覆盖打verdict；batch.js并发组织多类检查并按结果特征给confidence；index注册verify工具。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "lib纯JS工具；网络探测使用fetch与超时，URL可跟随重定向，不执行扫描内容。兼容声明与schema lint属于作者材料。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无新增专属模型服务，但扫描文件、网络API与人工阅读引用有时间成本；GitHub限流会限制批量检查，未测总研究时间。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合把它当检索和体检辅助。先看实际命中行与上下文，再给结论；不要依据verified或high自动放行，也不要把unsupported写成证伪。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少人工找行号与重复探测工作；收益依赖研究者继续判断，未提供事实准确率对照。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "纯探测逻辑、注入fetch和有界并发值得借鉴。主要复用成本是把标签与实际证据强度对齐，避免把关键词计数包装成校准置信度；网络可达性也应与业务正确性分层。 源码依据：[lib/verify.js](https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/verify.js)、[lib/batch.js](https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/batch.js)、[lib/index.js](https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/index.js)。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对模型无依据口述，增量是统一文件行号引用和常见只读探测，把原始线索带回研究过程。它实现的是证据发现与结构体检，不是语义事实验证引擎。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "verified与high confidence标签是否过强？scoreClaim仅60%关键词命中即verified，batch的high可由至少两条命中触发；否定、主体归属与相反陈述都可能共享关键词。YAML又只是结构烟检。因此引用可追溯是支持，但不能从覆盖率推出事实正确性或置信概率。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由行级证据与过强判定推导，可将verdict改为“检索覆盖”并附待验证关系，增加相反证据和数字条件核对，再由人或独立验证器形成结论。未验证假设是减少引用正确但结论错误。用相同关键词正反命题盲测，若误verified不降则否定。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1336684054:root",
+          "area": "code",
+          "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:44:22.162Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:44:22.162Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+    "reviewed_at": "2026-10-21T03:44:22.162Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1336684054:root",
+        "area": "code",
+        "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty是检索探测整合小档；mechanism关键词启发式小档；transferability纯检查模块半档；simplification统一入口半档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow证据定位局部便利小档；delivery行级引用小档；reachAgent研究者小档；economics减少重复探测未测小档。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-03-github-1336684054-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "研究者可试文件引文定位和只读探测；逐条看原文否定主体，verified/high仅关键词信号，unsupported不能写成证伪。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "把主张定位到文件与元数据需求明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "统一行号和探测少重复找证据，不具语义验真能力。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "60%词命中及两条high源码明确，YAML仅结构烟检。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "无专属模型服务，API限流和上下文人工解释仍耗时。"
+      }
+    },
+    "score": 64,
+    "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-03-github-1336684054-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1336684054:root",
+        "area": "code",
+        "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+      }
+    ]
+  }
+}

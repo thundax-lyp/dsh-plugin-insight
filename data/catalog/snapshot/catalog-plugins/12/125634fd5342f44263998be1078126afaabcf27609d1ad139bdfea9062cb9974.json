@@ -1,0 +1,245 @@
+{
+  "id": "github:1335060007:root",
+  "repository_id": 1335060007,
+  "component_id": "root",
+  "repository": "1123762794/dsh-web-restart",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-web-restart",
+  "entry_type": "plugin",
+  "technical_category": "runtime-deployment",
+  "business_category": "infrastructure",
+  "tags": [
+    "重启",
+    "Web UI"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "91e28cb64a2b8af6f97a3e072d542cf00eae3244a33cfe8c0ab3d331b31aab8d",
+    "code": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+    "maintenance": "08b79bf3eedf91be2fe180ab3540735ef45c329a1cb8208b10f403a2a329ff06"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1335060007-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:13:11.782Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1335060007-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/README.md",
+      "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+      "captured_at": "2026-10-20T03:13:11.782Z",
+      "summary": "在 Web 侧边栏提供重启按钮，通过独立 PowerShell 进程触发宿主重启脚本。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/1123762794--dsh-web-restart/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1335060007-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1123762794/dsh-web-restart/blob/5de8214051b3245a8cfc825e7e907cf5e57f51d8/lib/index.js",
+      "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+      "captured_at": "2026-10-20T03:13:11.782Z",
+      "summary": "核查 lib/index.js；POST /restart-dsh 延迟启动隐藏 PowerShell，读取硬编码 D:\\1\\dsh-web-host.ps1；健康路由只报告当前进程存活。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/1123762794--dsh-web-restart/REVIEWED-SOURCE.json",
+      "limitations": [
+        "硬编码作者机器路径和 Windows 命令使其不具通用部署条件；响应成功发生在实际重启之前。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Windows 本机调试人员希望从浏览器重启 DSH，不再切回终端。",
+      "evidence_ids": [
+        "20261020-research40-github-1335060007-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060007:root",
+          "area": "code",
+          "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:11.782Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "POST /restart-dsh 延迟启动隐藏 PowerShell，读取硬编码 D:\\1\\dsh-web-host.ps1；健康路由只报告当前进程存活。",
+      "evidence_ids": [
+        "20261020-research40-github-1335060007-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060007:root",
+          "area": "code",
+          "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:11.782Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "便利入口不能替代可靠的进程管理；返回触发成功不能当作重启完成。",
+      "evidence_ids": [
+        "20261020-research40-github-1335060007-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060007:root",
+          "area": "code",
+          "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:11.782Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "需要改造并维护本地脚本，重启会中断运行；一次点击减少操作却增加误触和恢复负担。",
+      "evidence_ids": [
+        "20261020-research40-github-1335060007-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060007:root",
+          "area": "code",
+          "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:11.782Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "独立进程可在宿主退出后继续运行，但固定路径和全权限 shell 使可移植性较弱。",
+      "evidence_ids": [
+        "20261020-research40-github-1335060007-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060007:root",
+          "area": "code",
+          "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:11.782Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "当前更适合参考实现，先在可丢弃 profile 验证脚本路径、失败反馈和会话恢复。",
+      "evidence_ids": [
+        "20261020-research40-github-1335060007-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060007:root",
+          "area": "code",
+          "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:11.782Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "硬编码作者机器路径和 Windows 命令使其不具通用部署条件；响应成功发生在实际重启之前。",
+      "evidence_ids": [
+        "20261020-research40-github-1335060007-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060007:root",
+          "area": "code",
+          "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:11.782Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "版本 0.1.0，依赖 Web 与 shell，当前源码并未提供跨平台自动适配。",
+      "evidence_ids": [
+        "20261020-research40-github-1335060007-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335060007:root",
+          "area": "code",
+          "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:13:11.782Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:13:11.782Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "not_recommended",
+    "reason": "当前硬编码作者Windows脚本路径，不适合新采用；优先CLI或系统服务管理器，参考前先补失败反馈。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "浏览器重启本机调试服务的需求存在但范围窄。"
+      },
+      "advantage": {
+        "score": 6,
+        "rationale": "减少切终端，可靠进程管理仍需外部脚本承担。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已确认固定D盘路径和提前成功响应，非仅缺实测。"
+      },
+      "cost": {
+        "score": 0,
+        "rationale": "必须改造作者路径且中断任务，全权限PowerShell增加恢复负担。"
+      }
+    },
+    "score": 34,
+    "revision": "5de8214051b3245a8cfc825e7e907cf5e57f51d8",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-research40-github-1335060007-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335060007:root",
+        "area": "code",
+        "fingerprint": "5de8214051b3245a8cfc825e7e907cf5e57f51d8"
+      }
+    ]
+  }
+}

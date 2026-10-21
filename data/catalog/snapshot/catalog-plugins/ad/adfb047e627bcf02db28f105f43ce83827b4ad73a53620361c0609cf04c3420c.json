@@ -1,0 +1,254 @@
+{
+  "id": "github:1333328839:root",
+  "repository_id": 1333328839,
+  "component_id": "root",
+  "repository": "01Virex/dsh-status-rotator",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-status-rotator",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [
+    "source-inspected",
+    "runtime-unverified"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "813f8d9859f777bd9f78b4b66ee49a2f4b8a45d867b38acddc9fda6872b2f1a2",
+    "code": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+    "release": "4c656e9b908ee5ac60ad2b0766ef9ec3f1dea81586d1c9d47e6432af9f6dfde2",
+    "maintenance": "d32928f6decdcb30fb2a164494924c56065efeeb803d4f180b1fe781ee2d2cca",
+    "compatibility": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1333328839-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:01:48.610Z",
+      "membership": "present"
+    },
+    {
+      "id": "20261020-research40-github-1333328839-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-20T03:01:48.610Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1333328839-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/README.md",
+      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+      "captured_at": "2026-10-20T03:01:48.610Z",
+      "summary": "为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1333328839-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/01Virex/dsh-status-rotator/blob/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1/lib/index.js",
+      "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+      "captured_at": "2026-10-20T03:01:48.610Z",
+      "summary": "核查 lib/index.js、lib/client.js；Host 保存并提供配置，客户端按阶段和偏好选择文案，支持持久化覆盖与扩展词库。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
+      "limitations": [
+        "lib 客户端很大，仅抽读配置和词库接口；未检查全部动画路径或 UI 性能。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "希望改善等待体验的桌面用户，以更清楚或有趣的状态文案替代默认状态行。",
+      "evidence_ids": [
+        "20261020-research40-github-1333328839-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333328839:root",
+          "area": "code",
+          "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:48.610Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Host 保存并提供配置，客户端按阶段和偏好选择文案，支持持久化覆盖与扩展词库。",
+      "evidence_ids": [
+        "20261020-research40-github-1333328839-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333328839:root",
+          "area": "code",
+          "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:48.610Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "lib 客户端很大，仅抽读配置和词库接口；未检查全部动画路径或 UI 性能。",
+      "evidence_ids": [
+        "20261020-research40-github-1333328839-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333328839:root",
+          "area": "code",
+          "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:48.610Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "清单版本 0.37.0，Host 和 Web client 共同组成 bundle；未验收宿主兼容。",
+      "evidence_ids": [
+        "20261020-research40-github-1333328839-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333328839:root",
+          "area": "code",
+          "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:48.610Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "主要付出配置、冲突排查和界面维护时间，未证明动画改善任务效率。",
+      "evidence_ids": [
+        "20261020-research40-github-1333328839-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333328839:root",
+          "area": "code",
+          "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:48.610Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先只开静态文案，确认设置能保存且与原生状态共存，再逐步启用弹幕和动画。",
+      "evidence_ids": [
+        "20261020-research40-github-1333328839-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333328839:root",
+          "area": "code",
+          "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:48.610Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "配置持久化使个性化可重复；状态文案不是实际进度，不能拿它判断任务是否完成。",
+      "evidence_ids": [
+        "20261020-research40-github-1333328839-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333328839:root",
+          "area": "code",
+          "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:48.610Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "配置临时文件加 rename、Host 与客户端协议分离可借鉴；大体积手工客户端增加适配负担。",
+      "evidence_ids": [
+        "20261020-research40-github-1333328839-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333328839:root",
+          "area": "code",
+          "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:01:48.610Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:01:48.610Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "偏好个性化等待界面的用户可先试静态文案，检查保存、原生状态共存与禁用恢复。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "等待文案个性化需求明确但收益主要是主观体验。"
+      },
+      "advantage": {
+        "score": 6,
+        "rationale": "阶段词库和持久化提供便利，不增加真实进度信息。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "配置和词库接口已读，动画路径与UI性能未完整检查。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "大体积客户端和动画配置提高宿主升级适配成本。"
+      }
+    },
+    "score": 44,
+    "revision": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-research40-github-1333328839-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1333328839:root",
+        "area": "code",
+        "fingerprint": "bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1"
+      }
+    ]
+  }
+}

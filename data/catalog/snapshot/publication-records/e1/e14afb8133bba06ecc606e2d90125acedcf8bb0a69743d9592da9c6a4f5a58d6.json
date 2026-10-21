@@ -1,0 +1,17 @@
+{
+  "id": "github:1402940561:root",
+  "repository": "AK-blank/dsh-plugin-mac-notify",
+  "path": "",
+  "revision": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+  "fingerprints": {
+    "directory": "f387c4855ec2cfcb08096a0dfa7ed2e69b740053e24433dc2bc4be23cfa6d1e5",
+    "code": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+    "maintenance": "e69ccf9bd99340d9f77fd5517141b7d011fb51975198e4d698a19e1e99510940"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T05:26:52Z",
+  "analysis_sha256": "da018cd5cf80f8b909423cbd636739b05b3a337cdbcbc890731b9e03d922b2e4"
+}

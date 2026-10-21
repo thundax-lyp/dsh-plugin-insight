@@ -1,0 +1,337 @@
+{
+  "id": "github:1344713526:dsh-lsp-rust",
+  "repository_id": 1344713526,
+  "component_id": "dsh-lsp-rust",
+  "repository": "988hj7tczd-oss/dsh-lsp-packs",
+  "path": "dsh-lsp-rust",
+  "aliases": [],
+  "name": "dsh-lsp-rust",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "3fbd16230913c2d2dc86da87d32799b7636072bbad57e17571251203d8d9a8b3",
+    "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-rust-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:17:49.611Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-rust-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-rust/README.md",
+      "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+      "captured_at": "2026-10-21T04:17:49.611Z",
+      "summary": "为DSH配置rust-analyzer的Rust代码导航路由。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-rust/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-rust-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-rust/src/index.ts",
+      "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+      "captured_at": "2026-10-21T04:17:49.611Z",
+      "summary": "核查 dsh-lsp-rust/src/index.ts、dsh-lsp-rust/README.md、dsh-lsp-rust/cordis.yml、dsh-lsp-rust/tests/smoke.e2e.ts；rust入口默认rust-analyzer空args，provider rust映射.rs，所有初始化和限制字段传官方stdio底座。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-rust/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合已有Cargo工程、希望在DSH查询trait实现与引用的开发者。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "rust入口默认rust-analyzer空args，provider rust映射.rs，所有初始化和限制字段传官方stdio底座。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次安装工具链及server组件、准备Cargo工程；持续索引和特性配置占资源，人工核宏/feature条件；现金无插件费依据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先核rustup组件与Cargo工程，再用真实trait和跨crate符号试；不要只看可执行路径。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少Rust接线，无真实workspace导航收益对照。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "rust/src配置层明确而不复制分析器，fallback可维持默认路由；广泛catch和扩展丢失需修。统计限定组件，不含rust-analyzer和官方底座。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "把Rust server命令和扩展配置标准化为独立包，减少DSH手工装配；trait实现和sysroot索引归rust-analyzer，不是本包创新。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "README测试创建Cargo.toml并要求rust工具链索引sysroot；PATH上的rustup shim存在不表示component已安装。单trait样例不能覆盖宏生成、features和workspace。catch统一错误与默认扩展fallback会弱化这些故障差异。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：预检区分shim存在、rust-analyzer组件和Cargo工作区加载状态，可降低Rust导航空结果误判。用缺组件、不同features和正常trait项目测故障归因与实现查询命中。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-rust",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:49.611Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:17:49.611Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "reviewed_at": "2026-10-21T04:17:49.611Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1344713526:dsh-lsp-rust",
+        "area": "code",
+        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty=0：分析能力属rust-analyzer。 mechanism=8：标准配置和缺失回退有实现。 transferability=10：薄配置可迁移，Cargo条件外部。 simplification=8：减少DSH接线重复。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=9：Rust导航接入明确。 delivery=8：宏与workspace结果未验。 reach=10：Rust用户适用需工具链。 economics=4：无真实排障时间对照。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "仅在DSH声明<0.2.0、Node>=22.18及官方底座匹配时，已有Cargo工程的开发者可试trait与引用查询；先核rustup组件和sysroot，再用真实跨crate及feature样例验收。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "Rust trait和跨crate导航是具体开发需求。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "rust-analyzer启动及.rs映射省重复配置。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "入口、Cargo测试条件已核，宏与workspace效果无运行支持。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "需工具链组件与Cargo索引，资源和feature配置由用户承担。 宿主声明限<0.2.0，需先核匹配。"
+      }
+    },
+    "score": 59,
+    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-04-github-1344713526-dsh-lsp-rust-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1344713526:dsh-lsp-rust",
+        "area": "code",
+        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1414017637:root",
+  "repository": "AndyYang12345/dsh-dictation-hotkey",
+  "path": "",
+  "revision": "8428219e3e23acd6387548ca7b5e900b081d160c",
+  "fingerprints": {
+    "directory": "a9cf4f68b2cdf101358d62a619983fc25ffedf7b8c828c5ed0f1c37e7c91b8b3",
+    "code": "8428219e3e23acd6387548ca7b5e900b081d160c",
+    "maintenance": "b6f20eccd576e2b4ef7196324576b0c21bd7f89f3a348f301125cdcd7dd09512"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "3e1fe0a3c57041e40a6472efbb0f94e7099819a247f664ca8d7a17ce923f5d7e"
+}

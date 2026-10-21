@@ -1,0 +1,242 @@
+{
+  "id": "github:1381860995:root",
+  "repository_id": 1381860995,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-cal",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-cal",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "office-operations",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "0cc60611589e714d5b8b69a868c02bd1b26a505c80afb03ae3e65df75b7f7192",
+    "code": "675bc5cc7efaf79a171e205e4f570ac2b945bb13",
+    "maintenance": "1e7f8f45bf90b5e0c3cddc7cc40b2aaab01132f0665c41279a855f2f7df7510e"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1381860995-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:36:32.558Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1381860995-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/README.md",
+      "revision": "675bc5cc7efaf79a171e205e4f570ac2b945bb13",
+      "captured_at": "2026-10-20T04:36:32.558Z",
+      "summary": "通过本地khal读取日历列表、今日日程和未来指定天数的安排。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-cal/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1381860995-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/index.js",
+      "revision": "675bc5cc7efaf79a171e205e4f570ac2b945bb13",
+      "captured_at": "2026-10-20T04:36:32.558Z",
+      "summary": "核查 index.js、lib/cal.js；lib/cal.js查找khal，分别调用printcalendars和list，限制未来天数、超时与输出长度；Host注册状态、日历与日程工具。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-cal/REVIEWED-SOURCE.json",
+      "limitations": [
+        "只读查询不配置同步或创建事件；khal配置缺失、时区与同步延迟会影响结果，未做真实日历验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有khal日历的用户希望在会话内查询近期安排，交付应与本地日历一致，不误以为已创建事件。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381860995-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381860995:root",
+          "area": "code",
+          "fingerprint": "675bc5cc7efaf79a171e205e4f570ac2b945bb13"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:32.558Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/cal.js查找khal，分别调用printcalendars和list，限制未来天数、超时与输出长度；Host注册状态、日历与日程工具。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381860995-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381860995:root",
+          "area": "code",
+          "fingerprint": "675bc5cc7efaf79a171e205e4f570ac2b945bb13"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:32.558Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "只读查询不配置同步或创建事件；khal配置缺失、时区与同步延迟会影响结果，未做真实日历验收。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381860995-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381860995:root",
+          "area": "code",
+          "fingerprint": "675bc5cc7efaf79a171e205e4f570ac2b945bb13"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:32.558Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.1.1，Node>=18及本地khal；README顶部仍有0.1.0字样，版本以固定package为准，属可选套件项。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381860995-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381860995:root",
+          "area": "code",
+          "fingerprint": "675bc5cc7efaf79a171e205e4f570ac2b945bb13"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:32.558Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次部署khal和同步账户是主要负担；日常CLI开销低但同步失败需要排查，模型读取日程仍会消耗上下文。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381860995-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381860995:root",
+          "area": "code",
+          "fingerprint": "675bc5cc7efaf79a171e205e4f570ac2b945bb13"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:32.558Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381860995-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381860995:root",
+          "area": "code",
+          "fingerprint": "675bc5cc7efaf79a171e205e4f570ac2b945bb13"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:32.558Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把已有日历读取接入会话有便利，安装它不能自动把企业日历同步进来。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381860995-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381860995:root",
+          "area": "code",
+          "fingerprint": "675bc5cc7efaf79a171e205e4f570ac2b945bb13"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:32.558Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "独立CLI执行器限制输出和超时，calendarCount未知用null；路径探测依赖bash环境，CLI与宿主环境不一致需核实。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1381860995-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1381860995:root",
+          "area": "code",
+          "fingerprint": "675bc5cc7efaf79a171e205e4f570ac2b945bb13"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:32.558Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:36:32.558Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "已有khal用户可试会话查日程，先核日期时区和同步，空结果回查原生日历。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "已有本地日历者顺手查安排的场景清楚。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "会话内列表省切界面，不增加同步和创建事件能力。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "khal参数、超时和null口径可查，真实日程未验。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "已有khal时成本较低，新建同步账户则不宜为插件单独投入。"
+      }
+    },
+    "score": 56,
+    "revision": "675bc5cc7efaf79a171e205e4f570ac2b945bb13",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-incremental40-r2-github-1381860995-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1381860995:root",
+        "area": "code",
+        "fingerprint": "675bc5cc7efaf79a171e205e4f570ac2b945bb13"
+      }
+    ]
+  }
+}

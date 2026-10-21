@@ -1,0 +1,17 @@
+{
+  "id": "github:1324229194:dsh-autocompact",
+  "repository": "5aaee9/pi-agent-extensions",
+  "path": "dsh-autocompact",
+  "revision": "c80abc7c4904fee9206f8649214a211ef84961ff",
+  "fingerprints": {
+    "directory": "2201fb68e5f1ab19b28e25522216eb933fb704fc0e84c9bf98b790ebe564b86a",
+    "code": "c80abc7c4904fee9206f8649214a211ef84961ff",
+    "maintenance": "f108a6c4668b0f78e98eca5fb6fd0314746a08db196363cbdd48758d97a856d5"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "84df7d2495d7176f17fc34686c0ea8bdf804949400692c1834b9b519fcffb541"
+}

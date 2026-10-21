@@ -1,0 +1,245 @@
+{
+  "id": "github:1335558973:root",
+  "repository_id": 1335558973,
+  "component_id": "root",
+  "repository": "0nt-one/dsh-voice-input",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-voice-input-web",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [
+    "语音输入",
+    "Web Speech API"
+  ],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "cbea8645524ee04ca147a39571b31468bd2ce25d6cd731259318108a6350eec9",
+    "code": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+    "maintenance": "96ede2bc6436cf886f5dfa6efb959fc70233578e25277956e73bfa8aa5698804"
+  },
+  "sources": [
+    {
+      "id": "20261020-research40-github-1335558973-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T03:05:40.129Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-research40-github-1335558973-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/0nt-one/dsh-voice-input/blob/c2fceee6a865a8466f3909d3896172f0f2fad2fa/README.md",
+      "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+      "captured_at": "2026-10-20T03:05:40.129Z",
+      "summary": "在输入框旁增加麦克风入口，使用浏览器语音识别把文字写入草稿。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0nt-one--dsh-voice-input/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-research40-github-1335558973-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/0nt-one/dsh-voice-input/blob/c2fceee6a865a8466f3909d3896172f0f2fad2fa/client.js",
+      "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+      "captured_at": "2026-10-20T03:05:40.129Z",
+      "summary": "核查 client.js、lib/index.js；客户端检测 SpeechRecognition/webkitSpeechRecognition，将最终结果追加到输入区，自动发送由本地开关控制。",
+      "artifact": "data/runs/2026-10-20-02/snapshots/0nt-one--dsh-voice-input/REVIEWED-SOURCE.json",
+      "limitations": [
+        "浏览器语音服务不等于保证离线，本轮未核实音频去向、识别准确率或权限行为。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "偏好口述输入的用户，希望先得到可编辑草稿再发送消息。",
+      "evidence_ids": [
+        "20261020-research40-github-1335558973-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335558973:root",
+          "area": "code",
+          "fingerprint": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:40.129Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "客户端检测 SpeechRecognition/webkitSpeechRecognition，将最终结果追加到输入区，自动发送由本地开关控制。",
+      "evidence_ids": [
+        "20261020-research40-github-1335558973-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335558973:root",
+          "area": "code",
+          "fingerprint": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:40.129Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "转写进入草稿保留人工检查点；自动发送会放大识别错误，不能因免密钥就认定隐私已解决。",
+      "evidence_ids": [
+        "20261020-research40-github-1335558973-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335558973:root",
+          "area": "code",
+          "fingerprint": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:40.129Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "不需插件专用密钥，但有听写纠错、权限配置和浏览器服务可用性成本，未测单位输入成本。",
+      "evidence_ids": [
+        "20261020-research40-github-1335558973-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335558973:root",
+          "area": "code",
+          "fingerprint": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:40.129Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "浏览器能力探测与转写生命周期集中在客户端，轻量可借鉴；效果依赖系统语音实现。",
+      "evidence_ids": [
+        "20261020-research40-github-1335558973-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335558973:root",
+          "area": "code",
+          "fingerprint": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:40.129Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先关闭自动发送，用专有名词和噪声样本比较打字与听写的总校对时间。",
+      "evidence_ids": [
+        "20261020-research40-github-1335558973-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335558973:root",
+          "area": "code",
+          "fingerprint": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:40.129Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "浏览器语音服务不等于保证离线，本轮未核实音频去向、识别准确率或权限行为。",
+      "evidence_ids": [
+        "20261020-research40-github-1335558973-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335558973:root",
+          "area": "code",
+          "fingerprint": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:40.129Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "包名 dsh-voice-input-web、版本 0.1.3；不能与同名的其他本地转写项目混同。",
+      "evidence_ids": [
+        "20261020-research40-github-1335558973-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335558973:root",
+          "area": "code",
+          "fingerprint": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+        }
+      ],
+      "reviewed_at": "2026-10-20T03:05:40.129Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T03:05:40.129Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "口述输入用户可关闭自动发送后试用，先比较术语噪声样本的总校对时间并核对音频去向。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "先口述再编辑草稿的输入需求明确。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "麦克风就近入口方便，但系统听写是低耦合替代。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "浏览器识别和草稿追加已查，准确率及离线隐私未核实。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "麦克风权限、浏览器服务可用性和纠错增加成本。"
+      }
+    },
+    "score": 59,
+    "revision": "c2fceee6a865a8466f3909d3896172f0f2fad2fa",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-research40-github-1335558973-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1335558973:root",
+        "area": "code",
+        "fingerprint": "c2fceee6a865a8466f3909d3896172f0f2fad2fa"
+      }
+    ]
+  }
+}

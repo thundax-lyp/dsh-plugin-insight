@@ -1,0 +1,242 @@
+{
+  "id": "github:1351854066:root",
+  "repository_id": 1351854066,
+  "component_id": "root",
+  "repository": "173787247/dsh-wsl-clock",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-wsl-clock",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "678f614c2621f7e27a6a6ac8dca5682f84faedee9e861886d50fc1020286bee0",
+    "code": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+    "maintenance": "a67a2572c27641505532635c181c412a6691bd8de7f7a3a54b9689e485c8a025"
+  },
+  "sources": [
+    {
+      "id": "20261020-incremental40-r2-github-1351854066-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+      "retrieved_at": "2026-10-20T04:36:35.649Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "20261020-incremental40-r2-github-1351854066-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/173787247/dsh-wsl-clock/blob/111cc4c013ef17a495c8790fbfa6373d7abbdebc/README.md",
+      "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+      "captured_at": "2026-10-20T04:36:35.649Z",
+      "summary": "比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-clock/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "20261020-incremental40-r2-github-1351854066-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/173787247/dsh-wsl-clock/blob/111cc4c013ef17a495c8790fbfa6373d7abbdebc/index.js",
+      "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+      "captured_at": "2026-10-20T04:36:35.649Z",
+      "summary": "核查 index.js、lib/clock.js、lib/wsl-host.js；lib/clock.js先取WSL Date.now，再通过PowerShell取Windows毫秒时间，计算偏差等级并返回诊断建议。",
+      "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-clock/REVIEWED-SOURCE.json",
+      "limitations": [
+        "两次采样非同时，PowerShell启动延迟会计入偏差；结果正常不排除DNS、代理或证书故障，不自动校时。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "笔记本休眠后WSL联网或令牌异常，开发者希望先确认时钟是否明显漂移，验收是找到实际故障原因。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351854066-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854066:root",
+          "area": "code",
+          "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:35.649Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/clock.js先取WSL Date.now，再通过PowerShell取Windows毫秒时间，计算偏差等级并返回诊断建议。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351854066-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854066:root",
+          "area": "code",
+          "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:35.649Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "两次采样非同时，PowerShell启动延迟会计入偏差；结果正常不排除DNS、代理或证书故障，不自动校时。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351854066-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854066:root",
+          "area": "code",
+          "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:35.649Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "0.2.0，Node>=18，WSL和Windows PowerShell为必要环境；套件兼容声明不是本轮验收。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351854066-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854066:root",
+          "area": "code",
+          "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:35.649Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无需外部API，主要是进程启动时间和人工排查；重启WSL等建议会中断任务，应计入恢复成本。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351854066-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854066:root",
+          "area": "code",
+          "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:35.649Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先把它当粗粒度线索，临界偏差用系统命令复核；保存工作后再考虑关闭WSL或同步时间。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351854066-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854066:root",
+          "area": "code",
+          "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:35.649Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "把常见休眠漂移变成具名探针有帮助；单次偏差不能直接解释所有TLS失败。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351854066-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854066:root",
+          "area": "code",
+          "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:35.649Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "偏差计算与建议生成是可复用纯函数，读取失败单独返回；顺序采样缺少往返延迟校正，精度边界清楚。",
+      "evidence_ids": [
+        "20261020-incremental40-r2-github-1351854066-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351854066:root",
+          "area": "code",
+          "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+        }
+      ],
+      "reviewed_at": "2026-10-20T04:36:35.649Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-20T04:36:35.649Z",
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "休眠后联网异常者可试粗粒度时钟线索，临界偏差用原生命令复核，修时前保存任务。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "WSL休眠时间漂移排障场景具体但非普遍故障。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "两端时间合并诊断减少命令拼接。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "顺序采样及阈值可查，启动延迟计入偏差限制精度。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "无外部API且不自动改时钟，人工诊断和重启恢复另计。"
+      }
+    },
+    "score": 56,
+    "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "20261020-incremental40-r2-github-1351854066-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1351854066:root",
+        "area": "code",
+        "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+      }
+    ]
+  }
+}

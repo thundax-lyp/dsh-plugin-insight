@@ -1,0 +1,17 @@
+{
+  "id": "github:1334023305:root",
+  "repository": "1HelloMan1/dsh-usage-dashboard-plus",
+  "path": "",
+  "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+  "fingerprints": {
+    "directory": "33246bc293f916923614c1b758506f8492ee21bcb6cbf2416a59a338fb74dea8",
+    "code": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+    "maintenance": "12dfe9df02f45090f517a1a8a4a31da57de9fb5a8989452c15c18f65b26388aa"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T10:40:14Z",
+  "analysis_sha256": "58afa90a647f12f98a624cf1c25c48e16fab9c49b0b1f2edb164c8857486fb76"
+}

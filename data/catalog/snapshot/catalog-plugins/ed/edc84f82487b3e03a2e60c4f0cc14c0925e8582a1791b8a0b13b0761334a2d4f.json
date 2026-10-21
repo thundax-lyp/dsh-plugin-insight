@@ -1,0 +1,337 @@
+{
+  "id": "github:1359145374:root",
+  "repository_id": 1359145374,
+  "component_id": "root",
+  "repository": "Aafff623/dsh-keyboard-manager",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-keyboard-manager",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "f4ccf99ee640a139f112a9fedd0554d0c81f00bf67a2f2b6e9730846fa94627d",
+    "code": "6e4d700ca56445a11d6c185efe9332c3680ad4d7",
+    "maintenance": "6bdc7906703cbd2d82a3158f11de2a045d8d54c40e25b3bf0ba3d9fc49100b17"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-06-github-1359145374-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T05:42:35.559Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-06-github-1359145374-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Aafff623/dsh-keyboard-manager/blob/6e4d700ca56445a11d6c185efe9332c3680ad4d7/README.md",
+      "revision": "6e4d700ca56445a11d6c185efe9332c3680ad4d7",
+      "captured_at": "2026-10-21T05:42:35.559Z",
+      "summary": "以可配置 Ctrl 快捷键切换 DSH 侧栏、右面板和设置。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aafff623--dsh-keyboard-manager/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-06-github-1359145374-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Aafff623/dsh-keyboard-manager/blob/6e4d700ca56445a11d6c185efe9332c3680ad4d7/src/index.ts",
+      "revision": "6e4d700ca56445a11d6c185efe9332c3680ad4d7",
+      "captured_at": "2026-10-21T05:42:35.559Z",
+      "summary": "核查 src/index.ts、src/config.ts、src/client/index.ts、package.json、cordis.patch.yml；Host exact路由提供静态keymap配置；client一次拉取后更新键码表。捕获阶段keydown只接受无其他修饰的Ctrl、非IME/重复/已消费事件；左栏调用layout，右栏优先插件按钮回退原生详情，设置通过按钮/Escape复用界面路径。",
+      "artifact": "data/runs/2026-10-21-06/snapshots/aafff623--dsh-keyboard-manager/REVIEWED-SOURCE.json",
+      "limitations": [
+        "根组件config、Host配置路由和client键盘/按钮路由全路径；未运行浏览器或可选better-sidebar。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "偏好键盘操作的DSH Web用户快速切换布局，保留better-sidebar编辑器的保存操作；交付物是界面开关。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Host exact路由提供静态keymap配置；client一次拉取后更新键码表。捕获阶段keydown只接受无其他修饰的Ctrl、非IME/重复/已消费事件；左栏调用layout，右栏优先插件按钮回退原生详情，设置通过按钮/Escape复用界面路径。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "根组件config、Host配置路由和client键盘/按钮路由全路径；未运行浏览器或可选better-sidebar。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "MIT双面bundle并提交lib，无构建Git安装主张未实操；无webServer时不注册路由，client保默认。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金无API；人工需选择不冲突键码并随宿主/可选插件DOM维护，失败回退或误触会抵消操作收益。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "键盘操作频繁者可列为小型界面增强候选；如有编辑器快捷键或自定义布局，先核对事件消费与目标按钮契约。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少鼠标移动，仍无操作时间或错误率测量；不提供布局状态持久化与任务自动化。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "单监听器、dispose清理、配置迟到后检查disposed，重复键码整体回默认；稳定data标记比哈希类名更易维护，但“最后按钮”弱化了语义路由保证。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "把原生layout服务与可选better-sidebar按钮放在同一键盘动作路由，避开对React内部状态的直接修改；物理键码冲突时回默认表。增量是输入便利与兼容适配，不是新的会话或业务工作流。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "缺标记是否总是安全无动作？右栏找不到带right语义按钮会取最后一个按钮，插件DOM变化时可能点错。即使action找不到目标，外层已preventDefault，原浏览器行为仍被消费；严格Ctrl也未对一般文本输入框让路。配置只启动时拉一次，失联静默默认可能与用户预期不同。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "以稳定的具名动作服务取代“最后按钮”回退，并只在动作被确认处理后消费键盘事件，可能减少兼容误触。对按钮顺序变化、目标消失、编辑器焦点和配置请求失败的固定DOM样例检查不误点/不吞键；若服务不可用应显式禁用该动作。",
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1359145374:root",
+          "area": "code",
+          "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+        }
+      ],
+      "reviewed_at": "2026-10-21T05:42:35.559Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T05:42:35.559Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "6e4d700ca56445a11d6c185efe9332c3680ad4d7",
+    "reviewed_at": "2026-10-21T05:42:35.559Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1359145374:root",
+        "area": "code",
+        "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "新颖性0：三快捷键是成熟输入模式；机制8：原生/插件路由与焦点让路有具体适配；迁移性10：动作路由可借鉴但DOM fallback受限；简化8：统一单监听器减少重复绑定。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "工作流0：只切界面开关；交付8：三动作完整小功能而非新业务产物；覆盖5：偏好Ctrl且使用指定Web布局者；经济4：无模型费用，省操作时间未测。",
+      "basis": "interpretation",
+      "score": 17,
+      "evidence_ids": [
+        "2026-10-21-06-github-1359145374-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "高频键盘用户可用临时键位试布局切换；先核输入框事件消费和右栏按钮，避免与编辑器快捷键冲突。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "减少布局切换鼠标操作的目标明确。"
+      },
+      "advantage": {
+        "score": 6,
+        "rationale": "复用原布局和按钮路径带来局部快捷便利。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "已核Ctrl/IME过滤及最后按钮fallback，未验实际DOM。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "无API费但误点、吞键及选择器变化需用户回归。"
+      }
+    },
+    "score": 52,
+    "revision": "6e4d700ca56445a11d6c185efe9332c3680ad4d7",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-06-github-1359145374-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1359145374:root",
+        "area": "code",
+        "fingerprint": "6e4d700ca56445a11d6c185efe9332c3680ad4d7"
+      }
+    ]
+  }
+}

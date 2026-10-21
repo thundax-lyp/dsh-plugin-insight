@@ -1,0 +1,337 @@
+{
+  "id": "github:1344713526:dsh-lsp-pyright",
+  "repository_id": 1344713526,
+  "component_id": "dsh-lsp-pyright",
+  "repository": "988hj7tczd-oss/dsh-lsp-packs",
+  "path": "dsh-lsp-pyright",
+  "aliases": [],
+  "name": "dsh-lsp-pyright",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "2b8a750f61bb026dedb4b668b0b609c888dc62b246406f269b2ca0ccff380da9",
+    "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-pyright-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T04:17:47.512Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-pyright-author",
+      "kind": "author_claim",
+      "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-pyright/README.md",
+      "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+      "captured_at": "2026-10-21T04:17:47.512Z",
+      "summary": "为DSH配置Pyright的Python与存根文件导航路由。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-pyright/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/988hj7tczd-oss/dsh-lsp-packs/blob/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-pyright/src/index.ts",
+      "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+      "captured_at": "2026-10-21T04:17:47.512Z",
+      "summary": "核查 dsh-lsp-pyright/src/index.ts、dsh-lsp-pyright/README.md、dsh-lsp-pyright/cordis.yml、dsh-lsp-pyright/tests/smoke.e2e.ts；pyright入口默认pyright-langserver --stdio，provider pyright将.py/.pyi映射python，配置与字节/超时限制交官方LspStdio处理。",
+      "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-pyright/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合已有Python项目、希望在DSH查询源码和.pyi存根的开发者。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "pyright入口默认pyright-langserver --stdio，provider pyright将.py/.pyi映射python，配置与字节/超时限制交官方LspStdio处理。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本组件固定package.json、组合配置与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次安装Pyright并配置项目环境和底座；持续维护解释器与类型存根，现金无本包费用证据，人工需核依赖版本。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "先在小Python项目试，再核venv和.pyi优先关系；单文档hover通过不等于全项目类型信息正确。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少Python服务配置，无真实多环境工程效果数据。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "Pyright配置包本身小且透传initializationOptions/configuration，避免复制类型引擎；扩展默认清晰，环境发现与错误细分需由使用者/底座解决。统计只计本组件。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "新增Python及存根扩展的标准配置接线，减少重复注册；Pyright类型分析来自外部server，官方底座提供协议和工具，非本项新推理能力。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "README单文档smoke和docstring hover不能覆盖虚拟环境、第三方导入及多根工程。npm/pip/pipx安装途径的PATH和实际解释器并不由本包选择；有.py路由不表示解释器环境正确。fallback用默认表会丢新增扩展，加载错误也可能不是没装server。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：把所选Python环境与Pyright导入解析配置一同显示，可减少错环境导致的空定义。对两个venv同名包、.pyi与源码冲突样本比较定位和排障时间。",
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1344713526:dsh-lsp-pyright",
+          "area": "code",
+          "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+        }
+      ],
+      "reviewed_at": "2026-10-21T04:17:47.512Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T04:17:47.512Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "reviewed_at": "2026-10-21T04:17:47.512Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1344713526:dsh-lsp-pyright",
+        "area": "code",
+        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty=0：类型分析归Pyright。 mechanism=8：默认及配置透传有实现。 transferability=10：配置可迁移，venv需匹配。 simplification=8：减少手写Python路由。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=9：源码及存根导航接入明确。 delivery=8：多环境准确性未验。 reach=10：Python用户广但需外部服务。 economics=4：无排障工时对照。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "仅在DSH声明<0.2.0、Node>=22.18及官方底座匹配时，Python开发者可先在小项目试Pyright导航；核venv与.pyi优先关系，再看跨文件导入，不能只凭hover验收。",
+    "criteria": {
+      "scenario": {
+        "score": 23,
+        "rationale": "Python源码和类型存根查询是明确任务。"
+      },
+      "advantage": {
+        "score": 13,
+        "rationale": "pyright-langserver及.py/.pyi路由减少接线。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "固定入口可见，单文档作者smoke不足以支持多环境收益。"
+      },
+      "cost": {
+        "score": 10,
+        "rationale": "需Pyright、项目解释器及存根维护，无本包固定费但环境排查仍在。 宿主声明限<0.2.0，需先核匹配。"
+      }
+    },
+    "score": 59,
+    "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-04-github-1344713526-dsh-lsp-pyright-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1344713526:dsh-lsp-pyright",
+        "area": "code",
+        "fingerprint": "258bb6409c504fa1eed20b6f70d13009522ca0ce"
+      }
+    ]
+  }
+}

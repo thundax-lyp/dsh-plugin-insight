@@ -1,0 +1,17 @@
+{
+  "id": "github:1334318461:root",
+  "repository": "283Gawin/dsh-heatmap",
+  "path": "",
+  "revision": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+  "fingerprints": {
+    "directory": "4e867d2797d5fdf181f3a90a48f23198015959eba64d57c291043fb31328d2e6",
+    "code": "4ba131df0980c8c8af72901ca9fa0f31accb9a6d",
+    "maintenance": "979a733be342a317b8efb8c7ec428809f10573c29969be25373619212444e25d"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "3bec8f306bafa7eb7733364d17dd11902795230cdb974197357c93f1f1c7e9ad"
+}

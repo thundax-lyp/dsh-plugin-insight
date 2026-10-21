@@ -1,0 +1,337 @@
+{
+  "id": "github:1422240642:root",
+  "repository_id": 1422240642,
+  "component_id": "root",
+  "repository": "7bder/dsh-plugin-orchd",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-plugin-orchd",
+  "entry_type": "plugin",
+  "technical_category": "sessions-messages",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "37faaee186471c7ea85ef298f659cb2e29f7cc5e9b19fd518080f5a18361c549",
+    "code": "ef331b30c89854e29dc9d4954bd86e457a24b850",
+    "maintenance": "9e8815ee05fb5a3c87dd4c83af9841ff60d2efd7985f0c17045f0357ebfcb540"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1422240642-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:32.229Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1422240642-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/7bder/dsh-plugin-orchd/blob/ef331b30c89854e29dc9d4954bd86e457a24b850/README.md",
+      "revision": "ef331b30c89854e29dc9d4954bd86e457a24b850",
+      "captured_at": "2026-10-21T03:16:32.229Z",
+      "summary": "在DSH右侧栏只读展示当前项目的orchd任务、依赖图、想法和审查时间线。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/7bder--dsh-plugin-orchd/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1422240642-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/7bder/dsh-plugin-orchd/blob/ef331b30c89854e29dc9d4954bd86e457a24b850/lib/orchd-cli.js",
+      "revision": "ef331b30c89854e29dc9d4954bd86e457a24b850",
+      "captured_at": "2026-10-21T03:16:32.229Z",
+      "summary": "核查 lib/orchd-cli.js、lib/cli-invoke.js、lib/install-entry.js、lib/routes.js；lib/orchd-cli.js对命令和参数形状fail-closed白名单校验，关闭自动清理并禁止Python字节码写入；cli-invoke.js绑定项目工作树并规范结果，路由按session推导项目。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/7bder--dsh-plugin-orchd/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已经使用orchd编排项目的开发者需要在聊天旁观察任务与阻塞；合格结果是项目身份正确、状态可追溯且读操作不改变任务账本。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/orchd-cli.js对命令和参数形状fail-closed白名单校验，关闭自动清理并禁止Python字节码写入；cli-invoke.js绑定项目工作树并规范结果，路由按session推导项目。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "插件发布lib与client，依赖项目已有.orchd及Python；默认不额外收窄allowRoots。Desktop安装profile有独立作者说明。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需项目orchd与Python路径；日常缓存TTL减少重复调用但可能陈旧，升级需验证引擎输出兼容。无模型调用增加，未测大型项目刷新时间。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已有orchd项目先在副本试用。先核对会话对应项目、Python/引擎版本以及刷新前后文件和账本不变，勿把面板就绪当作任务验收通过。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少聊天与CLI状态查询之间切换，依赖图有助定位阻塞；没有独立采用或办结效率对照。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "单一spawn入口、参数形状白名单、明确timeout与不支持命令区别可借鉴。维护代价在项目布局、引擎版本与JSON契约；白名单是调用约束，不能成为不可信代码沙箱。 源码依据：[lib/orchd-cli.js](https://github.com/7bder/dsh-plugin-orchd/blob/ef331b30c89854e29dc9d4954bd86e457a24b850/lib/orchd-cli.js)、[lib/cli-invoke.js](https://github.com/7bder/dsh-plugin-orchd/blob/ef331b30c89854e29dc9d4954bd86e457a24b850/lib/cli-invoke.js)、[lib/install-entry.js](https://github.com/7bder/dsh-plugin-orchd/blob/ef331b30c89854e29dc9d4954bd86e457a24b850/lib/install-entry.js)、[lib/routes.js](https://github.com/7bder/dsh-plugin-orchd/blob/ef331b30c89854e29dc9d4954bd86e457a24b850/lib/routes.js)。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对手动运行多条orchd命令，增量是把当前会话与项目只读状态绑定，保留异常、未初始化与缺少能力的区别；它不是新的任务引擎，也不承担claim/review/merge。状态展示与操作责任分离是主要流程价值。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "白名单足以保证只读吗？调用的是项目自带Python引擎，命令名称受限但具体引擎行为不由插件控制；关闭AUTO_CLEAN与剥离身份是有力支持，却不能证明任意版本status无写入。README的真引擎零变化冒烟属于作者报告，本轮未复现，需限制在可信且经过检查的引擎版本。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由白名单和项目引擎依赖推导，可将只读协议做成带引擎版本与状态摘要的导出接口，面板只消费快照，不执行项目代码；保留手动刷新与过期提示。未验证假设是减少观察副作用且不明显增加陈旧状态。对比CLI与快照模式的文件变化和状态延迟，若刷新负担更大且无副作用改善则否定。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422240642:root",
+          "area": "code",
+          "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:32.229Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:32.229Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "ef331b30c89854e29dc9d4954bd86e457a24b850",
+    "reviewed_at": "2026-10-21T03:16:32.229Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1422240642:root",
+        "area": "code",
+        "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty为现有引擎只读集成小档；mechanism白名单与去副作用环境半档；transferability可复用命令边界半档；simplification聚合只读查询半档。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow会话旁观察减少切换半档；delivery仍由orchd验收小档；reach已有orchd人群小档；economics无模型额外调用但未测节省小档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-02-github-1422240642-root-source"
+      ]
+    }
+  },
+  "recommendation": {
+    "rubric": "adoption-v1",
+    "decision": "trial",
+    "reason": "已有可信orchd项目者可在副本试只读面板；固定引擎版本并核对刷新前后账本不变，状态就绪不代表验收完成。",
+    "criteria": {
+      "scenario": {
+        "score": 15,
+        "rationale": "orchd用户在聊天旁看阻塞明确，通用用户不需引擎。"
+      },
+      "advantage": {
+        "score": 19,
+        "rationale": "项目身份绑定与异常分类减少多条CLI切换。"
+      },
+      "evidence": {
+        "score": 13,
+        "rationale": "命令白名单及禁自动清理源码可见，实际Python引擎行为需另验。"
+      },
+      "cost": {
+        "score": 15,
+        "rationale": "无新增模型调用，需Python和引擎兼容维护，缓存可能陈旧。"
+      }
+    },
+    "score": 62,
+    "revision": "ef331b30c89854e29dc9d4954bd86e457a24b850",
+    "reviewed_at": "2026-10-21T09:39:01.705Z",
+    "status": "current",
+    "evaluator": "ai",
+    "evidence_ids": [
+      "2026-10-21-02-github-1422240642-root-source"
+    ],
+    "dependencies": [
+      {
+        "plugin_id": "github:1422240642:root",
+        "area": "code",
+        "fingerprint": "ef331b30c89854e29dc9d4954bd86e457a24b850"
+      }
+    ]
+  }
+}

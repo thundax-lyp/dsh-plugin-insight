@@ -1,0 +1,17 @@
+{
+  "id": "github:1350378777:root",
+  "repository": "173787247/dsh-wsl-gpu",
+  "path": "",
+  "revision": "3a682db355d8d1b9063b975e7a18900a4ae4aa74",
+  "fingerprints": {
+    "directory": "bc08a77297313b5adbe11b47acb2d63175decc566a8bc91caeb56ed679386ea3",
+    "code": "3a682db355d8d1b9063b975e7a18900a4ae4aa74",
+    "maintenance": "03e85e376a328a9945d19c3060af3b11175b13cfb86ccae124827391360d8fec"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-20T09:36:48.824Z",
+  "analysis_sha256": "41696ad1f977f73b0f8060c6c807ec220b9334928fdc58f5ce3cb47cfad64b54"
+}

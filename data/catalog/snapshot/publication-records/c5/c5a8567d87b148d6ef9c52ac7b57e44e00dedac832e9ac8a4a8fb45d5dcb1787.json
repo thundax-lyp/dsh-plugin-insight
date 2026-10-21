@@ -1,0 +1,17 @@
+{
+  "id": "github:1336663986:root",
+  "repository": "863683348/dsh-plugin-gate",
+  "path": "",
+  "revision": "b75c3a1b768448ee84a6fa07735206e6f8945411",
+  "fingerprints": {
+    "directory": "2f708d50635d733848fa18ba383d0a5190103b44540d098f9e9a354c71fa4a63",
+    "code": "b75c3a1b768448ee84a6fa07735206e6f8945411",
+    "maintenance": "83af33291070c65b17086256f6a868f0ebfe0c856fe0c210ce01ee404bb57701"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:36:14Z",
+  "analysis_sha256": "4529636973dacc99e841b62755bc9a9d74e8519c2fa0f46a2b8c1007be29dbab"
+}
