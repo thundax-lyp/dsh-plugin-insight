@@ -189,13 +189,10 @@ export function renderHot(items, limit = 5) {
         items:
             selected
                 .map((e) => {
-                    const npm = e.npmDownloads;
                     return template('HOT-ITEM', {
                         plugin: nameLink(e),
                         summary: clean(e.summary),
-                        metrics: e.listMetrics ? ` · ${e.listMetrics}` : '',
-                        window: `${npm.window_start}～${npm.window_end} UTC`,
-                        package: npm.package_name
+                        metrics: e.listMetrics ? ` · ${e.listMetrics}` : ''
                     });
                 })
                 .join('\n') || '暂无已核实的近30天 npm 下载数据。'
