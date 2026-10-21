@@ -1,0 +1,24 @@
+{
+  "plugin_id": "github:1372623456:root",
+  "revision": "00d77a49b4fcda988e28a489a5ab42e0a4fa78c2",
+  "reason_code": "source_contains_nul",
+  "reason": "固定源码含NUL字节，标准统计器拒绝，未取得完整inventory。",
+  "details": {
+    "plugin_id": "github:1372623456:root",
+    "revision": "00d77a49b4fcda988e28a489a5ab42e0a4fa78c2",
+    "reason_code": "source_contains_nul",
+    "reason": "固定源码含NUL字节，标准统计器拒绝，未取得完整inventory。",
+    "file": "lib/files.js",
+    "bytes": 6145,
+    "nul_offsets": [
+      1010
+    ],
+    "sha256": "df826da5cdbfa163070469b80deeafd9b795388e8ddae4193c5f3579876cc713",
+    "utf8_decodable": true,
+    "source_url": "https://github.com/AIcivilization/dsh-vps-manager/blob/00d77a49b4fcda988e28a489a5ab42e0a4fa78c2/lib/files.js",
+    "detail": "统计器报not UTF-8 text；字节可解码，不能据此断言目标代码不可运行。本次登记既有失败，不重新研究。",
+    "next_step": "版本变化或用户明确要求后重试；先确认合法统计规则，不修改目标源码。"
+  },
+  "blocked_at": "2026-10-21T04:43:41.289Z",
+  "run_id": "2026-10-21-05"
+}

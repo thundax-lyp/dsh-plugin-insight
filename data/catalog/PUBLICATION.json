@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "本轮所选 50，完成 47，受阻 3；当前发布 314",
+  "scope": "本轮所选 3，完成 0，受阻 3；已知同版本受阻跳过 0；当前发布 314",
   "catalog": "data/catalog/PLUGINS.json",
   "catalog_page": "data/views/categories/INDEX.md",
   "recommendations": [
@@ -10661,5 +10661,5 @@
       "analysis_sha256": "94527cbd9c0eb83072dac5999217dd18a5da00127d1eca81dc4f193ea1eda3b5"
     }
   ],
-  "checked_at": "2026-10-21T04:06:46Z"
+  "checked_at": "2026-10-21T04:43:10.993Z"
 }

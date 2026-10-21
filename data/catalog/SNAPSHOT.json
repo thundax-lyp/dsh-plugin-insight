@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "snapshot_digest": "e79256ed4c7843acab2f4337883f6cafe8ddb14d0c5196ff80c33f8202b3490f",
+  "snapshot_digest": "736960abf7ea53caa8f7c71deadbb598ef3ac7b8867fe7864869926b8807912c",
   "head": {
-    "path": "snapshot/head/08/080262912cefc96450bddaac1a197a98da6e7b5acfeb6dd08158710198385acc.json",
-    "sha256": "080262912cefc96450bddaac1a197a98da6e7b5acfeb6dd08158710198385acc"
+    "path": "snapshot/head/9a/9a9e21e660276b66667280989f02779105271f51c89437dfc43090d87b3cbe8c.json",
+    "sha256": "9a9e21e660276b66667280989f02779105271f51c89437dfc43090d87b3cbe8c"
   },
   "parts": {
     "catalog.plugins": {
@@ -8838,6 +8838,23 @@
         "github:1423966960:root": {
           "path": "snapshot/registry/6c/6ce5bd2887629443ad951092b8cae9841bd3d9da9b8e70f68f0dc11aba8494dc.json",
           "sha256": "6ce5bd2887629443ad951092b8cae9841bd3d9da9b8e70f68f0dc11aba8494dc"
+        }
+      }
+    },
+    "research_blocks": {
+      "kind": "map",
+      "refs": {
+        "github:1335034901:root": {
+          "path": "snapshot/research-blocks/e5/e539bcff753b60fe755538457a4c8bb45c3fc999c839f82328f1ed24f89210c6.json",
+          "sha256": "e539bcff753b60fe755538457a4c8bb45c3fc999c839f82328f1ed24f89210c6"
+        },
+        "github:1336693516:root": {
+          "path": "snapshot/research-blocks/06/067afcfb38f398514f2fbf782b9852c4b072b2439a5efbffef1f1fcb96376e7c.json",
+          "sha256": "067afcfb38f398514f2fbf782b9852c4b072b2439a5efbffef1f1fcb96376e7c"
+        },
+        "github:1372623456:root": {
+          "path": "snapshot/research-blocks/79/7992332a50ca6beb7e0575e5c2da56c069fd3294299df1c5fea7fe7dd0a1f591.json",
+          "sha256": "7992332a50ca6beb7e0575e5c2da56c069fd3294299df1c5fea7fe7dd0a1f591"
         }
       }
     },
