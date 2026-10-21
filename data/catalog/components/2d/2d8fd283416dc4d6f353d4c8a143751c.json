@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2d8fd283416dc4d6f353d4c8a143751c",
+    "identity": "github:1365355680:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365355680:root",
+            "repository": "mario841859784/dsh-expert-orchestrator",
+            "path": "",
+            "revision": "613e8868f875215989b30cf7cffe3258c56c6355",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "002841d5cbe93317a1e412b05c84d1c1169b52aeaa4a78cf8e9c6736367faa0b",
+                "code": "613e8868f875215989b30cf7cffe3258c56c6355",
+                "maintenance": "9524847cb53985c8139318fb0b57476efa42545743c8a3d9f09647068faa08a7"
+            }
+        }
+    }
+}

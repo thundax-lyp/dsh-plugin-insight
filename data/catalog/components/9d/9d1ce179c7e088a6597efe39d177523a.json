@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d1ce179c7e088a6597efe39d177523a",
+    "identity": "github:1381558488:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381558488:root",
+            "repository": "PerryLink/dsh-wechat",
+            "path": "",
+            "revision": "bed0042cd972c840db3304ecffdcf2da944a0df4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "dccd83bc874f10d199be32ed894aa083cdd265f4d72cc40b79ad9067a1532e56",
+                "code": "bed0042cd972c840db3304ecffdcf2da944a0df4",
+                "maintenance": "a7dd09f21aefd9d7bc13380d46890330683aa34f2c0249a3146c255621c8bd3e"
+            }
+        }
+    }
+}

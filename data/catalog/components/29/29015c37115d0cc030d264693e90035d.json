@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "29015c37115d0cc030d264693e90035d",
+    "identity": "github:1375422880:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375422880:root",
+            "repository": "The-five-stooges/dsh-deepseek-usage",
+            "path": "",
+            "revision": "e84103948469ba09e102762d203d174f256742c3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6c95531059c705640f2d078e79bd786dd172c317b45ad4bf9ce738b2abb8fe72",
+                "code": "e84103948469ba09e102762d203d174f256742c3",
+                "maintenance": "259a122155e22ac682cbfe05da3783dace9a23dbf34b9872a87300bf27106edb"
+            }
+        }
+    }
+}

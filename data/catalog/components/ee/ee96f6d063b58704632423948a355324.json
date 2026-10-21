@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ee96f6d063b58704632423948a355324",
+    "identity": "github:1423996087:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423996087:root",
+            "repository": "Instant-KING/dsh-ai-library",
+            "path": "",
+            "revision": "811775da9495f746da884e49fe6b2ef577977bdc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e85630e28ebfff2ea7514e48202bdab59c9e775306c8fdaef4818a7599be7546",
+                "code": "811775da9495f746da884e49fe6b2ef577977bdc",
+                "maintenance": "3d9eecdde8190ea3c8b829ad08aff92668e6d5d01ec504dc9f53ca90b001076c"
+            }
+        }
+    }
+}

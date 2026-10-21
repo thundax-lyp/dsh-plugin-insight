@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a34a9bc85981f97f3f380805cef7d8ae",
+    "identity": "github:1424343619:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424343619:root",
+            "repository": "TonyKingWJX/dsh-thinking-bar",
+            "path": "",
+            "revision": "c6b6db54e782d527f9bfb587ff8532a57f2f4f90",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "73904f16e071b75641ba4e780b613c6ee7ea23a41e7f46649d0cd9d05a09f9f1",
+                "code": "c6b6db54e782d527f9bfb587ff8532a57f2f4f90",
+                "maintenance": "a9758086936ad7dce9d67f8941aa67bef102103b573cdb24a631be453fd121db"
+            }
+        }
+    }
+}

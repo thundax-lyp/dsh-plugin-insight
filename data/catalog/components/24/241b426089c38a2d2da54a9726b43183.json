@@ -1,0 +1,369 @@
+{
+    "schema_version": 3,
+    "id": "241b426089c38a2d2da54a9726b43183",
+    "identity": "github:1339316901:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1339316901:root",
+            "repository_id": 1339316901,
+            "component_id": "root",
+            "repository": "00080000/dsh-project-memory",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-project-memory",
+            "entry_type": "plugin",
+            "technical_category": "memory-knowledge",
+            "business_category": "software-delivery",
+            "tags": [
+                "source-inspected",
+                "runtime-unverified"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "code": "21fc69e3e98f3864677e091477b7d543a0e54939",
+                "release": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006",
+                "maintenance": "8b8b0006f9bd94955933408455ffe3a9af4e21bcde14e10912b3dc77756d56d9",
+                "compatibility": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2",
+                "directory": "b8f63d3af5029a01cb542ba2ddfa5dca8caf896ce1c2e672ec0cfb9eb2002bf3"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1339316901-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:00:44.131Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1339316901-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/README.md",
+                    "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+                    "captured_at": "2026-10-20T03:00:44.131Z",
+                    "summary": "为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/00080000--dsh-project-memory/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1339316901-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/index.js",
+                    "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+                    "captured_at": "2026-10-20T03:00:44.131Z",
+                    "summary": "核查 src/index.js、src/auto-inject.js；session 事件同步任务，工具负责索引和检索；when 触发与 guard 收窄限制经验注入。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/00080000--dsh-project-memory/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读入口和注入闸门，未审计全部解析器或测量检索召回率。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "长周期开发者在换会话时找回任务及文件依据，交付物是可定位的上下文。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1339316901-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339316901:root",
+                            "area": "code",
+                            "fingerprint": "21fc69e3e98f3864677e091477b7d543a0e54939"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:00:44.131Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "session 事件同步任务，工具负责索引和检索；when 触发与 guard 收窄限制经验注入。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1339316901-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339316901:root",
+                            "area": "code",
+                            "fingerprint": "21fc69e3e98f3864677e091477b7d543a0e54939"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:00:44.131Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读入口和注入闸门，未审计全部解析器或测量检索召回率。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1339316901-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339316901:root",
+                            "area": "code",
+                            "fingerprint": "21fc69e3e98f3864677e091477b7d543a0e54939"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:00:44.131Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包声明 0.6.3、src/index.js 入口；源码提交与 npm tarball 未做全量比对。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1339316901-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339316901:root",
+                            "area": "code",
+                            "fingerprint": "21fc69e3e98f3864677e091477b7d543a0e54939"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:00:44.131Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "需维护项目索引和纠错；可选向量表及查询扩展增加存储或模型调用，未测总成本。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1339316901-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339316901:root",
+                            "area": "code",
+                            "fingerprint": "21fc69e3e98f3864677e091477b7d543a0e54939"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:00:44.131Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先在一个可丢弃项目中测试旧结论纠错和跨项目隔离，再决定是否长期启用。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1339316901-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339316901:root",
+                            "area": "code",
+                            "fingerprint": "21fc69e3e98f3864677e091477b7d543a0e54939"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:00:44.131Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "任务与文件关联有助于定位；错误经验也会持久化，引用存在不代表当前结论正确。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1339316901-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339316901:root",
+                            "area": "code",
+                            "fingerprint": "21fc69e3e98f3864677e091477b7d543a0e54939"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:00:44.131Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "入口装配与注入准入分离，可借鉴反自激与预算闸门；复用需适配 session 身份。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1339316901-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339316901:root",
+                            "area": "code",
+                            "fingerprint": "21fc69e3e98f3864677e091477b7d543a0e54939"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:00:44.131Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:00:44.131Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "长周期开发者可在可丢弃项目试用任务关联检索，先检查旧结论纠错与跨项目隔离。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "跨会话找回任务和文件依据是反复发生的开发需求。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "任务文件关联及条件注入比手写摘要更易定位，但纠错仍需人。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已抽读入口和注入闸门，解析器完整性与召回率未测。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "向量资源、查询扩展和索引纠错增加存储与模型维护成本。"
+                    }
+                },
+                "score": 65,
+                "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1339316901-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1339316901:root",
+                        "area": "code",
+                        "fingerprint": "21fc69e3e98f3864677e091477b7d543a0e54939"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1339316901:root",
+            "repository": "00080000/dsh-project-memory",
+            "path": "",
+            "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+            "fingerprints": {
+                "code": "21fc69e3e98f3864677e091477b7d543a0e54939",
+                "release": "791a6e9f3737f9aaed9d01de273efee5987d5d7ad5d519de90712295ca28b006",
+                "maintenance": "8b8b0006f9bd94955933408455ffe3a9af4e21bcde14e10912b3dc77756d56d9",
+                "compatibility": "459641f3498e5763feff1286a7dc52843fe0dda3da6f041193e972af40d0c6b2",
+                "directory": "b8f63d3af5029a01cb542ba2ddfa5dca8caf896ce1c2e672ec0cfb9eb2002bf3"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "5f1af65927eb5eb410a6c37bec645403dad51274613a0a4a04ff0f448b4ae515"
+        },
+        "publication.metadata": "data/plugins/00080000--dsh-project-memory/META.json",
+        "publication.summaries": {
+            "text": "为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。",
+            "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+            "source_url": "https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+            "items": {
+                "模型工具": "入口注册任务管理、文档索引和项目记忆检索工具。",
+                "用户命令": "/tasks 汇集任务与经验的交互入口。"
+            }
+        },
+        "publication.advice": {
+            "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+            "text": "先在一个可丢弃项目中测试旧结论纠错和跨项目隔离，再决定是否长期启用。"
+        },
+        "registry": "data/plugins/00080000--dsh-project-memory",
+        "reports": "# dsh-project-memory\n\n> 为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。\n\n## 固定范围与依据\n\n固定提交 [21fc69e3e98f3864677e091477b7d543a0e54939](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:00:44.131Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.js、src/auto-inject.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：长周期开发者在换会话时找回任务及文件依据，交付物是可定位的上下文。\n- **亮点**：session 事件同步任务，工具负责索引和检索；when 触发与 guard 收窄限制经验注入。\n- **思考**：任务与文件关联有助于定位；错误经验也会持久化，引用存在不代表当前结论正确。\n- **建议**：先在一个可丢弃项目中测试旧结论纠错和跨项目隔离，再决定是否长期启用。\n\n## 场景与替代办法\n\n长周期开发者在换会话时找回任务及文件依据，交付物是可定位的上下文。\n\n手写项目摘要更轻；本轮代码指纹已变，应重新检查注入策略，不能继承旧效果判断。\n\n## 依赖与流程\n\n依赖 DSH tools、llm 及 session 事件；项目磁盘可写，增强检索还依赖本地向量资源。\n\n正常工作积累索引，再查询和核对引用；错误条目须主动修订，迁移时携带对应项目存储。\n\n## 成本与效果\n\n需维护项目索引和纠错；可选向量表及查询扩展增加存储或模型调用，未测总成本。\n\n任务与文件关联有助于定位；错误经验也会持久化，引用存在不代表当前结论正确。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e038435a0df8202c9186666bb53d360b2db4e11e09a1d0c3d03d0b68b4713ca5。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 2263 | — | — | 48510 |\n| .js | source | 53 | 14366 | 10430 | 3414 | — |\n| .mjs | source | 6 | 1447 | 1189 | 156 | — |\n| .ts | source | 9 | 1343 | 937 | 324 | — |\n| .tsx | source | 5 | 1563 | 1333 | 151 | — |\n| .mjs | test | 41 | 9671 | 7738 | 1204 | — |\n\n排除 2 项，解析错误 4 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：入口注册任务管理、文档索引和项目记忆检索工具。\n- **用户命令**：/tasks 汇集任务与经验的交互入口。\n\n## 工程亮点\n\n入口装配与注入准入分离，可借鉴反自激与预算闸门；复用需适配 session 身份。\n\n## 分发与兼容\n\n包声明 0.6.3、src/index.js 入口；源码提交与 npm tarball 未做全量比对。\n\n## 历史对照\n\n前次代码指纹为 fe7ac6cab91784a34996aede007d3586f0ff2def；本轮固定为 21fc69e3e98f3864677e091477b7d543a0e54939。手写项目摘要更轻；本轮代码指纹已变，应重新检查注入策略，不能继承旧效果判断。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读入口和注入闸门，未审计全部解析器或测量检索召回率。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用含过期结论的固定任务集比较手写摘要，记录纠错率、无关注入和人工分钟。\n",
+        "metadata": {
+            "repository": "00080000/dsh-project-memory",
+            "repository_id": 1339316901,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 23,
+            "pushed_at": "2026-10-19T16:17:22Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:1489C3:2205A9:6AD8491F and timestamp 2026-10-21 05:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:146083:21E7F7:6AD8491F and timestamp 2026-10-21 05:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:154FC6:22B819:6AD8491F and timestamp 2026-10-21 05:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:2EA514:14A28B:221B81:6AD8491F and timestamp 2026-10-21 05:09:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:14ECF9:225DDA:6AD84920 and timestamp 2026-10-21 05:09:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@yolk_vat-y/dsh-project-memory",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 4533,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40yolk_vat-y%2Fdsh-project-memory",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-24T03:59:38.973Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40yolk_vat-y%2Fdsh-project-memory",
+                    "error": null,
+                    "latest_version": "0.6.3",
+                    "latest_published_at": "2026-10-19T16:21:44.229Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+                "current_revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1339316901:root",
+            "repository": "00080000/dsh-project-memory",
+            "path": "",
+            "revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b8f63d3af5029a01cb542ba2ddfa5dca8caf896ce1c2e672ec0cfb9eb2002bf3",
+                "code": "21fc69e3e98f3864677e091477b7d543a0e54939",
+                "maintenance": "8b8b0006f9bd94955933408455ffe3a9af4e21bcde14e10912b3dc77756d56d9"
+            }
+        }
+    }
+}

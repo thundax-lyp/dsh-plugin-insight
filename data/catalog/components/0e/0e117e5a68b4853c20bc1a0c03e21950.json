@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0e117e5a68b4853c20bc1a0c03e21950",
+    "identity": "github:1367503416:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367503416:root",
+            "repository": "MichengAI/dsh-pua",
+            "path": "",
+            "revision": "791733b1a7c63f7818b36501eeeaa4dc85f9b0ff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4299269b6f407b89981241381e84e0a71a39f078c568550caa87b80b9f10db0b",
+                "code": "791733b1a7c63f7818b36501eeeaa4dc85f9b0ff",
+                "maintenance": "c37b61ab951ecbc76f12695e9466a6ae89d345d558d295778a6eb4dc9a13c665"
+            }
+        }
+    }
+}

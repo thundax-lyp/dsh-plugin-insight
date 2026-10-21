@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "816c4591a1f39caa903bbb129936312b",
+    "identity": "github:1409914782:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409914782:root",
+            "repository": "CarrotFish/dsh-file-and-terminal",
+            "path": "",
+            "revision": "d2409200469f3ba7cb0bb907edda84a21ff81990",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fb177c658bccf73c240c0bf6e84ffaf16cee52e3e7d656ec494068486d740f4e",
+                "code": "d2409200469f3ba7cb0bb907edda84a21ff81990",
+                "maintenance": "a3e7aa6aa43f878c876fc4484621ab2e4eeda199e18dfb95e169c419410d3683"
+            }
+        }
+    }
+}

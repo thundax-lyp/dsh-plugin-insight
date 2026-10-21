@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "edc130d65c1701ca95b3f55fa213dba5",
+    "identity": "github:1333890412:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333890412:root",
+            "repository": "v587d/dsh-opencode-go-usage",
+            "path": "",
+            "revision": "682a7872e6a3bf9313f08b9337319678b8a25895",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "85cba86979e5baa0a993e809b4af10b7f97ad06beaca466d59f4ab1f28c759de",
+                "code": "682a7872e6a3bf9313f08b9337319678b8a25895",
+                "maintenance": "ec74d66cb35a2fb6341a7ded8630a5ec960a7064eaf14404e711ef2172c5a5d4"
+            }
+        }
+    }
+}

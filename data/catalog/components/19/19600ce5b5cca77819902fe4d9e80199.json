@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "19600ce5b5cca77819902fe4d9e80199",
+    "identity": "github:1335635985:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335635985:root",
+            "repository": "tancheng33/dsh-yogacara",
+            "path": "",
+            "revision": "038cf0d780730b9ce492eb2dc0dbcb175b079769",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2b1dc520cc05a60faba879352f5715f33739bf4159a5568335d1367762834bfc",
+                "code": "038cf0d780730b9ce492eb2dc0dbcb175b079769",
+                "maintenance": "1a187178f8cb87258ec7b587383ea53bc3c48a6357b82d1e1e65d4e35d394ceb"
+            }
+        }
+    }
+}

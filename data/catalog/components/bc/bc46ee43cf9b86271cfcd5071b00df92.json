@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bc46ee43cf9b86271cfcd5071b00df92",
+    "identity": "github:1349406454:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349406454:root",
+            "repository": "CHristianREEVEE/dsh-xiuxian-world",
+            "path": "",
+            "revision": "40b314f802d907ffef95dbd3f6d95cfe24768b8d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4a92a5a93c6d538fe96e8e1704870695de959e125eba844366ed3fda9ee32c9a",
+                "code": "40b314f802d907ffef95dbd3f6d95cfe24768b8d",
+                "maintenance": "7c6d991bff83621aa46fc27ca4d953b90e6c52a64165c5d223749ac324abea6a"
+            }
+        }
+    }
+}

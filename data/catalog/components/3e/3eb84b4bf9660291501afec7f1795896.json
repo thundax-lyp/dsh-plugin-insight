@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3eb84b4bf9660291501afec7f1795896",
+    "identity": "github:1350374273:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350374273:root",
+            "repository": "zzy-12345678/dsh-file-convert",
+            "path": "",
+            "revision": "96ae4a57564252bcaf527db9169360d87c16d8c0",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8fa53746b6233e7a0f65265490b403772ce0344da8be40d8a12dbeefcb693e20",
+                "code": "96ae4a57564252bcaf527db9169360d87c16d8c0",
+                "maintenance": "bf79a4e35e820696e725a925c803e9ad9cde533f51813766e99f45d084aeceb7"
+            }
+        }
+    }
+}

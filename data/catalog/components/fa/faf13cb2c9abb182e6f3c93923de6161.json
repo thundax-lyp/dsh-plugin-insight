@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "faf13cb2c9abb182e6f3c93923de6161",
+    "identity": "github:1411879531:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411879531:root",
+            "repository": "caob23/dsh-origin-bridge",
+            "path": "",
+            "revision": "3ad4f6208ae15568358d6013bbdec2d83271c225",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "93efda889dea8ee2070c198bdaec3fb8f9b0908440328a5818eae732e3762043",
+                "code": "3ad4f6208ae15568358d6013bbdec2d83271c225",
+                "maintenance": "07db0d3e0f64bb0f196be7195f984b357602782ab4e2bccaaca72ba18d9fdb81"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "52a02b9fb091e0a66ad2857c9bd073e9",
+    "identity": "github:1413144365:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413144365:root",
+            "repository": "ChaYeWuu/dsh-hyperworkbuddy",
+            "path": "",
+            "revision": "6a9d40b5371c3c94106f39c1b5ca74e40a37ff7a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4ba5a10c91ba4444f16d24f6bd903fd833fb0f3cb63a2a2d43154b901cb719b6",
+                "code": "6a9d40b5371c3c94106f39c1b5ca74e40a37ff7a",
+                "maintenance": "b2035eb1dfb7f9b67b6eea91679b2f2acef0758a7a509dc2682e04b91c09f57b"
+            }
+        }
+    }
+}

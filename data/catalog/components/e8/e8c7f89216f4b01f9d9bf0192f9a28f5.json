@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e8c7f89216f4b01f9d9bf0192f9a28f5",
+    "identity": "github:1360408830:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360408830:root",
+            "repository": "xtd1145/dsh-deepseek-cost-live",
+            "path": "",
+            "revision": "9632e987b7ff3a20f0014009eefec0054a43de12",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f3f50ea7ca36e79110b6d209f299ef3bf23edd72245654d5fc203c0b89d8891a",
+                "code": "9632e987b7ff3a20f0014009eefec0054a43de12",
+                "maintenance": "8bfcb07f9a997a254ba5d2220ade110504df500f9de39ccf956168bd156cccc7"
+            }
+        }
+    }
+}

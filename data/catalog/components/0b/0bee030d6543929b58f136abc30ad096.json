@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0bee030d6543929b58f136abc30ad096",
+    "identity": "github:1342674905:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342674905:root",
+            "repository": "chidaic/dsh-agent-notify",
+            "path": "",
+            "revision": "a41c11bda2e13cd094d4db856b93d7a2569c7747",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b4344ca1b799ca413af9aaaa8d8002310296b4d4d80176f040e79b6182688f4",
+                "code": "a41c11bda2e13cd094d4db856b93d7a2569c7747",
+                "maintenance": "221a31efa05099aee57d1cb3c4b3f2418b1ca1f83e160759722c92a960ba1f3a"
+            }
+        }
+    }
+}

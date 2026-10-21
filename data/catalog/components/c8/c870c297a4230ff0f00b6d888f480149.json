@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c870c297a4230ff0f00b6d888f480149",
+    "identity": "github:1346821258:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346821258:root",
+            "repository": "wenhao4126/dsh-herdr",
+            "path": "",
+            "revision": "3cbea69cb89477a3ae0f9fb93d92d38618df4eab",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8253a8c8e5ca61ca2802f8a517c86a92f81bed000ff92c346a9a786515acb892",
+                "code": "3cbea69cb89477a3ae0f9fb93d92d38618df4eab",
+                "maintenance": "1de607d490a6d8030237927e04b5a77e8c2f3e798b03dfaacf46a589225b471f"
+            }
+        }
+    }
+}

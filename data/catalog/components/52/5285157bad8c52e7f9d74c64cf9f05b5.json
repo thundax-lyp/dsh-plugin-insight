@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5285157bad8c52e7f9d74c64cf9f05b5",
+    "identity": "github:1357830570:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357830570:root",
+            "repository": "sjh9714/routinekit",
+            "path": "",
+            "revision": "59465849426a1f262c5c02d65b5408ffa7f5d232",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b3c29808be51c0796f3296576557ea83f204f84109d957a1de701c66ac76116a",
+                "code": "59465849426a1f262c5c02d65b5408ffa7f5d232",
+                "maintenance": "83ab245948b500737fbe92f04096d68e9e2d0523b21f70e0bf05995edc6996f1"
+            }
+        }
+    }
+}

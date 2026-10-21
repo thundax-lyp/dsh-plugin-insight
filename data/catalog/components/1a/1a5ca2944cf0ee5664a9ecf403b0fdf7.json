@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1a5ca2944cf0ee5664a9ecf403b0fdf7",
+    "identity": "github:1333277183:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333277183:root",
+            "repository": "runzhliu/deepseek-harness-docker",
+            "path": "",
+            "revision": "d482839b469562df36e450c6146ca7afea046a7e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7702c6b0283afcea949564eb9ee78f0bc3a24dd6db1d45b96620dc2daebe9bc6",
+                "code": "d482839b469562df36e450c6146ca7afea046a7e",
+                "maintenance": "c08b4c87c8004d7ad19f65ab23c268771aaa1300e326f0a9ac9b8f75dc406162"
+            }
+        }
+    }
+}

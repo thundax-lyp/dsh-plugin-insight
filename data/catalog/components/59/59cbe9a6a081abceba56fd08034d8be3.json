@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "59cbe9a6a081abceba56fd08034d8be3",
+    "identity": "github:1334310131:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334310131:root",
+            "repository": "pengzhou267-ai/dsh-shop-assistant",
+            "path": "",
+            "revision": "7335654f5f194b25cb1a668dfb05ec28daf9cece",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb27a9933e78994bbb79a19b1ef0fd5eb804ef623e109971d2629d6971757880",
+                "code": "7335654f5f194b25cb1a668dfb05ec28daf9cece",
+                "maintenance": "c6a8351e2bd4b0db46b88cc0362579425c9de5e3dcd14682c8a34cf4b191b325"
+            }
+        }
+    }
+}

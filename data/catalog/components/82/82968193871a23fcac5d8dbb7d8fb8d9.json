@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "82968193871a23fcac5d8dbb7d8fb8d9",
+    "identity": "github:1334172064:plugins-dsh-plugin-deepseek-vision",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334172064:plugins-dsh-plugin-deepseek-vision",
+            "repository": "GOU-GEE/deepseek-vision",
+            "path": "plugins/dsh-plugin-deepseek-vision",
+            "revision": "ab6e74e3f8599196754d3a20181a44d9cb2174b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "314ac0c6edae9595481cb34204fb1916461e04b946cb1539a927037e7184f9aa",
+                "code": "ab6e74e3f8599196754d3a20181a44d9cb2174b8",
+                "maintenance": "c6763b712f90966e974ab07cfeb6368502702bd39b43b292d8c039541178cc52"
+            }
+        }
+    }
+}

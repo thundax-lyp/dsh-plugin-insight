@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aa6f6c39dd3ab7f7a1d4f13db4085d70",
+    "identity": "github:1343920793:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343920793:root",
+            "repository": "scientisbo/dsh-codex-usage",
+            "path": "",
+            "revision": "eb615a6364692763b635681c7521cbad7846f8d3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "064de0c8b8fe354b15222f948574ec8676c44eae18c8c1e364d7d31e4520648c",
+                "code": "eb615a6364692763b635681c7521cbad7846f8d3",
+                "maintenance": "72c6fe8dc77e4082217c4da166becec8e4cbab4f46b5309370ac8549b4007587"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "93faf7cb015cdf99c466372012e8521d",
+    "identity": "github:1351966886:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351966886:root",
+            "repository": "weibaohui/dsh-tasks",
+            "path": "",
+            "revision": "25a3860903b991bfc36bd7430bcfb4565c553451",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e1b043129077fb2c9f028dc56158fe054c71ae83bf53d0baa58bcb538c0473c9",
+                "code": "25a3860903b991bfc36bd7430bcfb4565c553451",
+                "maintenance": "7ebb2604ac2a4bd80c33d807d5fe82f90b33d1d0e95c434f7cc1dcf2f14bde86"
+            }
+        }
+    }
+}

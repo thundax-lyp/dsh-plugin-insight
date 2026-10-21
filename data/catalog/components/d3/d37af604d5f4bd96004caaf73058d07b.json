@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d37af604d5f4bd96004caaf73058d07b",
+    "identity": "github:1420813638:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420813638:root",
+            "repository": "MorixMa/dsh-download-progress",
+            "path": "",
+            "revision": "31f0a28331fede9316e844e554b04a5b928a75f1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dfbe49479df3e03496013f93067d466dda192726dc15386e56ead8c429e5cb57",
+                "code": "31f0a28331fede9316e844e554b04a5b928a75f1",
+                "maintenance": "a4a59347c8e2805affeeea92fec009c142660afb473a12a4a28b5c072880df7c"
+            }
+        }
+    }
+}

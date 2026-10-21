@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f027aa596ab29d229738f59b6d176908",
+    "identity": "github:1334049596:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334049596:root",
+            "repository": "CheshireJCat/blender",
+            "path": "",
+            "revision": "9bd95e97a61096cfae1edb0f88fcd2be54b0adee",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c14fa5b4bf51b42406617b26f0e54bdf33d49b2a87f8fdadf3d627d97684938c",
+                "code": "9bd95e97a61096cfae1edb0f88fcd2be54b0adee",
+                "maintenance": "3a7e7390755120815b7c4c043080a343f3236d2b51af2134c2fc9ef871d95f0e"
+            }
+        }
+    }
+}

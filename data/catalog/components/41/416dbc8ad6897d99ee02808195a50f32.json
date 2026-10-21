@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "416dbc8ad6897d99ee02808195a50f32",
+    "identity": "github:1423308569:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423308569:root",
+            "repository": "soberkeen/dsh-vault",
+            "path": "",
+            "revision": "c028aa3b143c56b280562f5ddbceb1b1607723d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fcbda7c0fdd18fe1296451d8c44ba32a289f8c1ec9b02f014dadf4f1c5ab47c2",
+                "code": "c028aa3b143c56b280562f5ddbceb1b1607723d4",
+                "maintenance": "f71d7368f2f623537cb21c38c177ca1715e87e81f58d1180ef92c851badc677c"
+            }
+        }
+    }
+}

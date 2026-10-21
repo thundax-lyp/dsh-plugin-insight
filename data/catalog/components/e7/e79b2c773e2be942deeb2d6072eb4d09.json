@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e79b2c773e2be942deeb2d6072eb4d09",
+    "identity": "github:1333748978:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333748978:root",
+            "repository": "MichengAI/dsh-codex-desktop",
+            "path": "",
+            "revision": "94797416e5dd795a8bcf6c2e5e2fae84766b5fbf",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "59f730dcbd6dd6b7ead82f85eed7ffa20bdf6bd76a64bdc909902d7aa379fbc4",
+                "code": "94797416e5dd795a8bcf6c2e5e2fae84766b5fbf",
+                "maintenance": "fe20398fa46e396796b1568ca467913677a676861efcaceabe1febeecde95321"
+            }
+        }
+    }
+}

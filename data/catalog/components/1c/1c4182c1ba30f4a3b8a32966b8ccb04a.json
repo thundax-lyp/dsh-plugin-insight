@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "1c4182c1ba30f4a3b8a32966b8ccb04a",
+    "identity": "github:1334721996:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334721996:root",
+            "repository": "NOirBRight/dsh-llm-ollama",
+            "path": "",
+            "revision": "52c34e9246f1631c040cd3dfe328d4e9acea9554",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4f1bae3f677a802c0b2fabadf7e1b7e35e32f6f5d229ec7c5e82b774038db390",
+                "code": "52c34e9246f1631c040cd3dfe328d4e9acea9554",
+                "maintenance": "31f10ad43789eb72a788f79c3c93b472cc1a463d5ce3077f6500f8219c102d2e"
+            }
+        }
+    }
+}

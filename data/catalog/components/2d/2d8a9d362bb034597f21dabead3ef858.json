@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2d8a9d362bb034597f21dabead3ef858",
+    "identity": "github:1339358546:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339358546:root",
+            "repository": "liqiming-whu/dsh-status-card",
+            "path": "",
+            "revision": "4239f88ef53d384b5395e09d9cefafe60d1546a1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c3d183fa186c1ac8c0ce042a8ab329e7d04d9f4aa5d4b658af4ff4b5263ed054",
+                "code": "4239f88ef53d384b5395e09d9cefafe60d1546a1",
+                "maintenance": "bb3c36269c92cc3fedaa68cc17a31ab269f69e5f7fc031fe02b92bde334163d7"
+            }
+        }
+    }
+}

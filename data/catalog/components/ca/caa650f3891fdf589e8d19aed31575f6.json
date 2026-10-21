@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "caa650f3891fdf589e8d19aed31575f6",
+    "identity": "github:1378343495:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378343495:root",
+            "repository": "Yochor-Debug/dsh-float",
+            "path": "",
+            "revision": "db48100596158def519b795bf976354e32ac62aa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d6e5796eab23d4d2efaa9c4c1846ae104399d7785623be169f37fb9f2511e8be",
+                "code": "db48100596158def519b795bf976354e32ac62aa",
+                "maintenance": "d92d5f4ca16bcd16ebc5e3393d565c8a705ff5c5685299d1b4a8a6196b36b7bd"
+            }
+        }
+    }
+}

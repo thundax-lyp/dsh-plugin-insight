@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5702a32e05edcdab81425e2fafec9640",
+    "identity": "github:1420732071:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420732071:root",
+            "repository": "Makk9609/dsh-find-viewer",
+            "path": "",
+            "revision": "01105f901a72a6495496ee2bf5fce811b185531d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "db323c0f1ae5432fcf07ee56799faecff6c33a9407a544f04770af8d439e8cc8",
+                "code": "01105f901a72a6495496ee2bf5fce811b185531d",
+                "maintenance": "91647a45204b9934c24805a19ce68ab0422255f85684d87278b1746d8898190e"
+            }
+        }
+    }
+}

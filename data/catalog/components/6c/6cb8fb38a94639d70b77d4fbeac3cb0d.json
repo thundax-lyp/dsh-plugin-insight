@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6cb8fb38a94639d70b77d4fbeac3cb0d",
+    "identity": "github:1424601696:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424601696:root",
+            "repository": "MochiNek0/dsh-ghost-prompt",
+            "path": "",
+            "revision": "d49c714e35699528339bfd005eb375f9c141ada2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "798644bc51b1dc9b14278aa8f2adcbca0e9f04d2ea882b5f513a82828c810f5c",
+                "code": "d49c714e35699528339bfd005eb375f9c141ada2",
+                "maintenance": "0f6e5f645beec2b11e787aeae990ceb872c8e24445d48907cfeced484f78ef2f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "24b4e827d8b82a468a99eb122c5ba9a2",
+    "identity": "github:1402877335:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402877335:root",
+            "repository": "yijiezhong/dsh-output-setting",
+            "path": "",
+            "revision": "e5babd7815ef8affc83e9ca8c0b71913cd037e31",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aacff692110d17c9ef02bbd47f848d0f7109c8eec354a46f8cb43942442a9468",
+                "code": "e5babd7815ef8affc83e9ca8c0b71913cd037e31",
+                "maintenance": "fc656e72827be9680b8b04a46b9d306b2e13013df3b5914aa336c95bf8430b70"
+            }
+        }
+    }
+}

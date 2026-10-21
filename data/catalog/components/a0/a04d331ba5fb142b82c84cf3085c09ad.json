@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a04d331ba5fb142b82c84cf3085c09ad",
+    "identity": "github:1353014728:packages-ui-workflow",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353014728:packages-ui-workflow",
+            "repository": "RexYoung000/rex-harness",
+            "path": "packages/ui-workflow",
+            "revision": "0632e036027f89ecef28769204c60104ae63178d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e490e06451b633329f820dc72b7053b4a3b14bd7d2f4aab6982a106487762cef",
+                "code": "0632e036027f89ecef28769204c60104ae63178d",
+                "maintenance": "bb15c16fa329141b0cbfb0b613e8f7665f3b769e1fb81b4ab0d53836638272e9"
+            }
+        }
+    }
+}

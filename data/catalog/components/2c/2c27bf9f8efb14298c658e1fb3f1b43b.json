@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2c27bf9f8efb14298c658e1fb3f1b43b",
+    "identity": "github:1345784479:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345784479:root",
+            "repository": "TropicWiden/dsh-history-question-nav",
+            "path": "",
+            "revision": "e6d2056f61afc3f6abd96f206d6cd3683b617130",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "70fed1950166d501023b9df046f3f74d1ef9f19d96780be5d46f5891064be849",
+                "code": "e6d2056f61afc3f6abd96f206d6cd3683b617130",
+                "maintenance": "b265d893dc246c815c10d214d79de64ac2107a1673d9ee8e3820f50b0f790ce4"
+            }
+        }
+    }
+}

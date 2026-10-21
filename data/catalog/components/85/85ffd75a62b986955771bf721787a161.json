@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "85ffd75a62b986955771bf721787a161",
+    "identity": "github:1404374196:packages-dsh-sieve",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404374196:packages-dsh-sieve",
+            "repository": "Sev7eEn7/dsh-sieve",
+            "path": "packages/dsh-sieve",
+            "revision": "5b437749c3ef6617bc16008527cbb9e93ea1c4ec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "02396cde7c467f8cd5a7f1e195180d5eff5012cae9132b3099eb09935457d8f7",
+                "code": "5b437749c3ef6617bc16008527cbb9e93ea1c4ec",
+                "maintenance": "a60e27ccab94b33056970f37ca581643592bc9f8e966cc8c6e52a8bcca9ba714"
+            }
+        }
+    }
+}

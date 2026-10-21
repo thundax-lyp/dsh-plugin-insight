@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9c11dd71881070aa36f1e0447d5a06f1",
+    "identity": "github:1342970553:plugin-dsh-voice-mode",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342970553:plugin-dsh-voice-mode",
+            "repository": "qishuilalala/dsh-voice-mode",
+            "path": "plugin/dsh-voice-mode",
+            "revision": "f8a326891cda50240719211e9835669d7e6334f5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "059dba349b19cf9de226173acc3a9b683eec67953e8a14eff947f779d009f1ef",
+                "code": "f8a326891cda50240719211e9835669d7e6334f5",
+                "maintenance": "c60b719be140f3474a9fe16b0de57d420cd32deda62cba8b594c5835c3512cc7"
+            }
+        }
+    }
+}

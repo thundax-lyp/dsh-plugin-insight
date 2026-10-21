@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7a70b49d9a194f0eb1332daf28fc1677",
+    "identity": "github:1352740600:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352740600:root",
+            "repository": "NattoCB/dsh-plugin-sidebar-views",
+            "path": "",
+            "revision": "b751a5193b97767982626138d4f979db0ac9d6cb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "df197ea569abed0f43c12fa12ec48cd652e00b996d85f15972cb49801328d854",
+                "code": "b751a5193b97767982626138d4f979db0ac9d6cb",
+                "maintenance": "e3b1f6497ff833bdb99521a445405ffec3c95dc0c7cfeb94b99a3c6d96481306"
+            }
+        }
+    }
+}

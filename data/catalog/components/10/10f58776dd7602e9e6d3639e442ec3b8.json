@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "10f58776dd7602e9e6d3639e442ec3b8",
+    "identity": "github:1382292535:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1382292535:root",
+            "repository": "AskTheWay/dsh-jev-interceptor",
+            "path": "",
+            "revision": "2e75c7c666b06cc759e6d7622205fcdb9f7d9636",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "04c69cd345739fea83e9de8cc435e2444a24d7dc40cb1acda7bef267a24f33c3",
+                "code": "2e75c7c666b06cc759e6d7622205fcdb9f7d9636",
+                "maintenance": "15d302e66f011b87f952d182d12e17f182ab8bf1dbbef7310bf5fe593ecfef43"
+            }
+        }
+    }
+}

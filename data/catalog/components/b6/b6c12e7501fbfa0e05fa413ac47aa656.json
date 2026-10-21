@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b6c12e7501fbfa0e05fa413ac47aa656",
+    "identity": "github:1338471127:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338471127:root",
+            "repository": "FlySnailY/dsh-langfuse-plus",
+            "path": "",
+            "revision": "b00174fb7314b6b2745f6aa28189225031b1a1c7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "72c41ca29d9d78d7022645fc648a84941716ce02a21c03b6c6da9e94cbd5aed0",
+                "code": "b00174fb7314b6b2745f6aa28189225031b1a1c7",
+                "maintenance": "00534bb8922442c048f0f617e4a09c1efe4a146768de49c15d30f133c052674e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "42faad6eaa969f5c6415e02c05d91bc6",
+    "identity": "github:1343348298:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343348298:root",
+            "repository": "WSL043/dsh-reasoning-slider",
+            "path": "",
+            "revision": "58da84abc7795d487239757ca1193348b906ab37",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "84175b69613df8eb271fe32a0f418c3108cf1ec5249190fc8a66d668a4f65035",
+                "code": "58da84abc7795d487239757ca1193348b906ab37",
+                "maintenance": "869a7558d1a0f7a34b81191a7291294993da40750f38dc7a277c953fb77787fd"
+            }
+        }
+    }
+}

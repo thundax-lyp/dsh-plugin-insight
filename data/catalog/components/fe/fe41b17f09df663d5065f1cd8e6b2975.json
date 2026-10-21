@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "fe41b17f09df663d5065f1cd8e6b2975",
+    "identity": "github:1329778469:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1329778469:root",
+            "repository": "omdsh-dev/dsh-auto-chess",
+            "path": "",
+            "revision": "cc0728d808cb9c9b563cc6be95e5bf60ae2a5025",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3f33b9c0fb4d70ca56d83aa04c79e851c720b2f277d6c645a1b91c29bb8b0832",
+                "code": "cc0728d808cb9c9b563cc6be95e5bf60ae2a5025",
+                "maintenance": "dbfc0de3baaa3b99478a3bad7ae91cd0210c44c47637a1bd313673f7e630b076"
+            }
+        }
+    }
+}

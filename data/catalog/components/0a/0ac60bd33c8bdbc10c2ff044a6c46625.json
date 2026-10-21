@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ac60bd33c8bdbc10c2ff044a6c46625",
+    "identity": "github:1424259451:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424259451:root",
+            "repository": "sueqet/dsh-complex-project-preset",
+            "path": "",
+            "revision": "a4b965255e08df7f726655546936fa9951f2b8c0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb91089678bd56775465031b5275a7b738b74f08343764ffa7481ee580eddd39",
+                "code": "a4b965255e08df7f726655546936fa9951f2b8c0",
+                "maintenance": "23ce88621c7be20f8c75135447f5a89c54c0694f2337611204d999641c8bf09d"
+            }
+        }
+    }
+}

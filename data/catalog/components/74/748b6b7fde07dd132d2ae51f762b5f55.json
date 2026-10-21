@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "748b6b7fde07dd132d2ae51f762b5f55",
+    "identity": "github:1333771486:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333771486:root",
+            "repository": "zimai233/dsh-figma-to-lottie",
+            "path": "",
+            "revision": "8e21469374ebe4241b515f95552b1d8db8b79bb8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "61b94129d7d8e7ae5a32a9f9c5423dac13ed3eb5c6025467f30bce5e2b99c17a",
+                "code": "8e21469374ebe4241b515f95552b1d8db8b79bb8",
+                "maintenance": "95c6f6d20c06697660b06eedf585af87af7afc2744364a32b2599f2192e02016"
+            }
+        }
+    }
+}

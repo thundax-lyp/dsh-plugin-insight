@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "00d03c55934274aee31439e7a9cfa112",
+    "identity": "github:1334087234:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334087234:root",
+            "repository": "huanyuLv/dsh-balance-tide",
+            "path": "",
+            "revision": "8805c80eeaae26d40156cea9162091a6ab01311e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "415019d7cb3eb4996778ed1b869a5025f9499303434b00d6f2eff9dc32a1fb1f",
+                "code": "8805c80eeaae26d40156cea9162091a6ab01311e",
+                "maintenance": "481c1c40b7babcfb9fc4f4811fc605f609422ffedf94a5abde629c505b933bef"
+            }
+        }
+    }
+}

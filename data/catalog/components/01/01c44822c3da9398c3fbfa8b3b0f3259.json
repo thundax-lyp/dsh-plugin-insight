@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01c44822c3da9398c3fbfa8b3b0f3259",
+    "identity": "github:1381947349:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381947349:root",
+            "repository": "Bingtang1019/dsh-ppt-fusion",
+            "path": "",
+            "revision": "a19f4d3832e92b4c722e305c7b9b67cae9ad8153",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8d9803339a51c0b0e16f1a6fab6329fc6e608671250686cd7b83e7276879835a",
+                "code": "a19f4d3832e92b4c722e305c7b9b67cae9ad8153",
+                "maintenance": "d5494222e89fea4528b66fb99bbdc98a52ff9c20ff4c27ab1f34404a6767430b"
+            }
+        }
+    }
+}

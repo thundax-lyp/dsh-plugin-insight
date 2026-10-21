@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5e8318093b8a5fdb29db0293d0ff554e",
+    "identity": "github:1402107084:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402107084:root",
+            "repository": "lianzhimanye/dsh-bard-0.10",
+            "path": "",
+            "revision": "f3a9f3319073527a3fb231669d24bf95cba84d7a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a05c9ea99c7a47cb6847447eacd38d27d47c4f513ed30d98f94001dfdc6b3809",
+                "code": "f3a9f3319073527a3fb231669d24bf95cba84d7a",
+                "maintenance": "ae4d3a4b1265669e56e802c5fa54da0737aeeb9f7656bfed10637753dbff2c72"
+            }
+        }
+    }
+}

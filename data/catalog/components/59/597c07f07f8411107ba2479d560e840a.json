@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "597c07f07f8411107ba2479d560e840a",
+    "identity": "github:1424147223:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424147223:root",
+            "repository": "guyue211/dsh-gpt-niang-quota",
+            "path": "",
+            "revision": "93b74bdeee4a0c9cc50a9ea09cea4137501a1e93",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "66667d9bc03ea9fd0afc9c150d11d6b637dfa0a52b338aeed12e5f04eb753fdc",
+                "code": "93b74bdeee4a0c9cc50a9ea09cea4137501a1e93",
+                "maintenance": "3d1c85877ab8ed2e1233fecf6ad6fafb2164b05b6e83b1eb5dabac1a9c1ae53b"
+            }
+        }
+    }
+}

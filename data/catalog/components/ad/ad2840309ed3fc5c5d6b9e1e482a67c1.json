@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ad2840309ed3fc5c5d6b9e1e482a67c1",
+    "identity": "github:1403920647:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403920647:root",
+            "repository": "Madao1210/dsh-deep-reading",
+            "path": "",
+            "revision": "bdac0277f1ae1a2db2c4d359beef2afd45481752",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f75555813b5e616b4137dd11a7635148f0fc562ca8bf910c2009290e29c6e30a",
+                "code": "bdac0277f1ae1a2db2c4d359beef2afd45481752",
+                "maintenance": "019982ee09946d82b0c587d15a68be8e84d23364a07388dda9d802809e53d378"
+            }
+        }
+    }
+}

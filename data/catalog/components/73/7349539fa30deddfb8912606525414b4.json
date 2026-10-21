@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7349539fa30deddfb8912606525414b4",
+    "identity": "github:1333974533:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333974533:root",
+            "repository": "Noob-stupid/dsh-plugin-gating-hub",
+            "path": "",
+            "revision": "51f2c56ed222cc925c0d67c5df8066505f087465",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0b3308385c25a8c8f6cd10410a9bea06eb8ee2afa4c83e11dc02b05a7d3a7840",
+                "code": "51f2c56ed222cc925c0d67c5df8066505f087465",
+                "maintenance": "fac47e33496e8d8b3190eccd658a6e39650663826a6fb80b8d6174f2e972489c"
+            }
+        }
+    }
+}

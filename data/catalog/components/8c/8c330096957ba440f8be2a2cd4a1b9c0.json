@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8c330096957ba440f8be2a2cd4a1b9c0",
+    "identity": "github:1335738093:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335738093:root",
+            "repository": "jinhuoooo/dsh-prompt-polish",
+            "path": "",
+            "revision": "287e74e0ff06ff6e822e8428a9635b6dffd07ffd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a1b80659a7383496637b4e1ede6f0a0cb1af11818cdad207c89a1b32d8a2408",
+                "code": "287e74e0ff06ff6e822e8428a9635b6dffd07ffd",
+                "maintenance": "9542e461b96a5b13038295f2e026d2fb131b72c6a6bf3890f8a97596c5db984a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "749364a2bdfa3853b2ac1c3615148611",
+    "identity": "github:1407722784:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407722784:root",
+            "repository": "DeepseekDays/dsh-provider-toggle",
+            "path": "",
+            "revision": "2b0cf3d58faa9c418146f7d2edf14d65c0a0df7a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "15e7c33d84ba566958bc64355de85529a8c1790287efde4804a9fbc7c9bf6350",
+                "code": "2b0cf3d58faa9c418146f7d2edf14d65c0a0df7a",
+                "maintenance": "dc7c6898d413d37ed78adaf15de534b8efbc4d3b5c9cc08ff0452a7464f03ad3"
+            }
+        }
+    }
+}

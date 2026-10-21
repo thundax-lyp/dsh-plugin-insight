@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "37469614999c8d7239b8591594ce8db8",
+    "identity": "github:1333997805:packages-dsh-codex-pet",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333997805:packages-dsh-codex-pet",
+            "repository": "skr311/dsh-codex-pet",
+            "path": "packages/dsh-codex-pet",
+            "revision": "f3c57a84264fea027d26e39bf4d8a813f020f0c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "29273b3ee09086d35cd7771e35096e3c4f7b032447d5215641a793b4810b402e",
+                "code": "f3c57a84264fea027d26e39bf4d8a813f020f0c6",
+                "maintenance": "807397d84e003dd837bf4f7b0ad4e6d881dc47060170e50f43ca34171d86a1ad"
+            }
+        }
+    }
+}

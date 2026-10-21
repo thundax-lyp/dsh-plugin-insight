@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "32f3c8544918113810e144fc56a60064",
+    "identity": "github:1335730417:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335730417:root",
+            "repository": "dhb861832993-star/pbr-render",
+            "path": "",
+            "revision": "8931eb36d84015cfc39e34e8bab126fdbdbdd6f5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f73adb0fe135ae52972f9e536be098e39f442ebb22425d9adfc4963d5b9aceb9",
+                "code": "8931eb36d84015cfc39e34e8bab126fdbdbdd6f5",
+                "maintenance": "59b20b33afa92af27338e50ef5f5d6cd415461d155e95cfa4b3a63b6dd0f961d"
+            }
+        }
+    }
+}

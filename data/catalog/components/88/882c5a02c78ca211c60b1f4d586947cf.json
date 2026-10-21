@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "882c5a02c78ca211c60b1f4d586947cf",
+    "identity": "github:1343299857:plugins-dsh-weather",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343299857:plugins-dsh-weather",
+            "repository": "dennisrongo/dsh-plugins",
+            "path": "plugins/dsh-weather",
+            "revision": "c6e06d6ee21dfd4955555ccb7036a8cb4d6355a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bdf8e32e8133da4e7e27f8f6caf4fe4574cf4ed460214561b51bee37edf94711",
+                "code": "c6e06d6ee21dfd4955555ccb7036a8cb4d6355a4",
+                "maintenance": "1433aa830dcd3f45daf52219106a3671b92d938d488d38ef0c810a479f48da53"
+            }
+        }
+    }
+}

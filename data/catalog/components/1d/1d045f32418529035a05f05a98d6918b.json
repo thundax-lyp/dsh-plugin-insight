@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1d045f32418529035a05f05a98d6918b",
+    "identity": "github:1388213620:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388213620:root",
+            "repository": "ZhangBo-cmd/dsh-coros-badge",
+            "path": "",
+            "revision": "4491f78614b3b08017f9f031640130a4afb6edd4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f6ac97528a90362c578a8bb936a468a8d6fa442941ae1cb0373a06058e777845",
+                "code": "4491f78614b3b08017f9f031640130a4afb6edd4",
+                "maintenance": "55cb9bff07bfd120978218f34d3cf202f2ce453e2673d64dff1b6eb05ed1aa68"
+            }
+        }
+    }
+}

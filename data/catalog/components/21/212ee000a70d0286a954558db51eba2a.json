@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "212ee000a70d0286a954558db51eba2a",
+    "identity": "github:1421589089:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421589089:root",
+            "repository": "sososilencing/dsh-network-engineer",
+            "path": "",
+            "revision": "b046aae500bcdfcd0ffe2560cb9a59daaedf5d84",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a7e7c62b9b8f2693e94e52db384076a1a9a290b9164b0e9689c234f053f984d6",
+                "code": "b046aae500bcdfcd0ffe2560cb9a59daaedf5d84",
+                "maintenance": "a4ef803cbad977094fde530af8389a59d4d0a56b0f28a95a5211a150f1d9c411"
+            }
+        }
+    }
+}

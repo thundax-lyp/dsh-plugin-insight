@@ -1,0 +1,362 @@
+{
+    "schema_version": 3,
+    "id": "a06b3fb7dc05b154140278fb7d5742b7",
+    "identity": "github:1418493685:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1418493685:root",
+            "repository_id": 1418493685,
+            "component_id": "root",
+            "repository": "01NGVI-QINGYI/no-ai-style",
+            "path": "",
+            "aliases": [],
+            "name": "No AI Style",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "content-creation",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "dbd8219bb3eeca19ab2139da9731151fc719a10c0c497c70e7834cc6de5b170b",
+                "code": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                "maintenance": "99ea5d86578937e4dfaa82eec1b90689d128cc2250682884e443e4714f42dc08"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1418493685-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:01:47.849Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1418493685-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/README.md",
+                    "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                    "captured_at": "2026-10-20T03:01:47.849Z",
+                    "summary": "以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1418493685-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/index.js",
+                    "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                    "captured_at": "2026-10-20T03:01:47.849Z",
+                    "summary": "核查 index.js、skills/no-ai-style/SKILL.md；filesystem provider 暴露内嵌 Skill；审阅与改写模式区分权限，真相边界优先于文风。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查 Skill 正文与 provider 接线，未测量事实保真率或评审一致性。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "论文与专业文档作者需要减少机械表达，同时保留事实承诺和引用。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "filesystem provider 暴露内嵌 Skill；审阅与改写模式区分权限，真相边界优先于文风。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查 Skill 正文与 provider 接线，未测量事实保真率或评审一致性。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "清单为 no-ai-style 1.2.1，声明 DSH 版本区间与 skill-filesystem peer 依赖。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "不需额外写作服务，但仍消耗所用模型调用和逐句复核时间；没有成本实测。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "权限模式与事实优先级值得采用；提示词约束不是保真保证，仍由作者承担复核。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "短入口复用宿主 Skill provider，规则正文与客户端入口分离，迁移需验证加载路径。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:01:47.849Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "专业文本作者可先对旧稿做仅审阅试用，逐项核对数字、引用及限定词。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "反复润色专业文本且保留事实承诺的人群明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "可携带的保真与授权规则胜过反复写提示，但直接提示也能完成。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "Skill正文与provider接线可查，事实保真率尚未测量。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无额外写作服务，主要负担为模型调用及逐句校对。"
+                    }
+                },
+                "score": 64,
+                "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1418493685-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1418493685:root",
+                        "area": "code",
+                        "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1418493685:root",
+            "repository": "01NGVI-QINGYI/no-ai-style",
+            "path": "",
+            "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+            "fingerprints": {
+                "directory": "dbd8219bb3eeca19ab2139da9731151fc719a10c0c497c70e7834cc6de5b170b",
+                "code": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                "maintenance": "99ea5d86578937e4dfaa82eec1b90689d128cc2250682884e443e4714f42dc08"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "9844080a66b3f9587fa15b5f107d6182c47fd224d455825a2d9fd1571209d220"
+        },
+        "publication.metadata": "data/plugins/01ngvi-qingyi--no-ai-style/META.json",
+        "publication.summaries": {
+            "text": "以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。",
+            "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+            "source_url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+            "items": {
+                "Skill": "内嵌 no-ai-style 写作审阅与润色 Skill。",
+                "界面": "包清单声明 Web 客户端写作入口。"
+            }
+        },
+        "publication.advice": {
+            "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+            "text": "先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。"
+        },
+        "registry": "data/plugins/01ngvi-qingyi--no-ai-style",
+        "reports": "# No AI Style\n\n> 以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。\n\n## 固定范围与依据\n\n固定提交 [a64e811bf0aa255189a0df2011a6a392c5d59966](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:01:47.849Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：index.js、skills/no-ai-style/SKILL.md。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：论文与专业文档作者需要减少机械表达，同时保留事实承诺和引用。\n- **亮点**：filesystem provider 暴露内嵌 Skill；审阅与改写模式区分权限，真相边界优先于文风。\n- **思考**：权限模式与事实优先级值得采用；提示词约束不是保真保证，仍由作者承担复核。\n- **建议**：先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。\n\n## 场景与替代办法\n\n论文与专业文档作者需要减少机械表达，同时保留事实承诺和引用。\n\n直接提示模型也能润色；该项目把反复使用的保真与授权规则固定为可携带 Skill。\n\n## 依赖与流程\n\n需兼容 DSH 的 skills、agents 与 filesystem provider；效果依赖写作模型和原稿依据。\n\n选择仅审阅或改写模式，提供段落及依据；人工检查变化后才写回正式稿。\n\n## 成本与效果\n\n不需额外写作服务，但仍消耗所用模型调用和逐句复核时间；没有成本实测。\n\n权限模式与事实优先级值得采用；提示词约束不是保真保证，仍由作者承担复核。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1f53722d244977f223c5fa4961fde0ecae04b36a362bdb7befe3c7369b00591e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 375 | 335 | 15 | — |\n| .md | source | 10 | 876 | — | — | 6066 |\n| .mjs | source | 1 | 11 | 9 | 0 | — |\n| .md | example | 2 | 61 | — | — | 375 |\n| .cjs | source | 1 | 349 | 313 | 15 | — |\n| .cjs | test | 1 | 274 | 239 | 13 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Skill**：内嵌 no-ai-style 写作审阅与润色 Skill。\n- **界面**：包清单声明 Web 客户端写作入口。\n\n## 工程亮点\n\n短入口复用宿主 Skill provider，规则正文与客户端入口分离，迁移需验证加载路径。\n\n## 分发与兼容\n\n清单为 no-ai-style 1.2.1，声明 DSH 版本区间与 skill-filesystem peer 依赖。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。直接提示模型也能润色；该项目把反复使用的保真与授权规则固定为可携带 Skill。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查 Skill 正文与 provider 接线，未测量事实保真率或评审一致性。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用十段带统计和限制条件的文本，比较普通润色提示与本 Skill 的事实改动及复核时间。\n",
+        "metadata": {
+            "repository": "01NGVI-QINGYI/no-ai-style",
+            "repository_id": 1418493685,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-10-19T08:23:27Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:148A07:22061D:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:13EA38:215924:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:142433:21A5BE:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:144A6E:21BCE6:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:14928C:220F8F:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "no-ai-style",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/no-ai-style",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/no-ai-style",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                "current_revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1418493685:root",
+            "repository": "01NGVI-QINGYI/no-ai-style",
+            "path": "",
+            "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dbd8219bb3eeca19ab2139da9731151fc719a10c0c497c70e7834cc6de5b170b",
+                "code": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                "maintenance": "99ea5d86578937e4dfaa82eec1b90689d128cc2250682884e443e4714f42dc08"
+            }
+        }
+    }
+}

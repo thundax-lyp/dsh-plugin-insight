@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7337751903f531fb78a4ad058c92b5ef",
+    "identity": "github:1353172692:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353172692:root",
+            "repository": "frank-fan-818/dsh-f1-skin",
+            "path": "",
+            "revision": "d739db5f58c302c326b954287ca8424b7f1f10e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "075e7210a7c2643ace03e308b85b80a792f9434584c8f9deb22a0fd339e5615e",
+                "code": "d739db5f58c302c326b954287ca8424b7f1f10e1",
+                "maintenance": "873353b98d9871c35d2e44db668947c349242fe8421d0d037246082ca57c5431"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fa1ec53cab968f5e2ee53e853e0b472b",
+    "identity": "github:1370890735:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370890735:root",
+            "repository": "dAI-aigc/dsh-wechat",
+            "path": "",
+            "revision": "d23c30a66e641cbfc6c1bc222ba4b33f3805b6e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "86b7c29759103609aabf413d3564e26984ad147a4f9bc95da17b65d21e970b0f",
+                "code": "d23c30a66e641cbfc6c1bc222ba4b33f3805b6e3",
+                "maintenance": "0017f2079150bd7f45f57da118af934f9dfcad0a7d08089009418def26752b98"
+            }
+        }
+    }
+}

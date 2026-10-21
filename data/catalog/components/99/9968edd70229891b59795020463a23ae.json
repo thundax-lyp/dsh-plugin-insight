@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9968edd70229891b59795020463a23ae",
+    "identity": "github:1366873492:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366873492:root",
+            "repository": "qimen039-code/dsh-consumer-audit",
+            "path": "",
+            "revision": "f9910aeb840b2d6cd09b778106201fd89cf6b55c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "39bf158760fb1c2aea5167a7de65f60280edf875e859246c4df0d9c47cae5a58",
+                "code": "f9910aeb840b2d6cd09b778106201fd89cf6b55c",
+                "maintenance": "73719f787fe45855b56f88b2db1b830c09fa1de957439254be7d57658b192c20"
+            }
+        }
+    }
+}

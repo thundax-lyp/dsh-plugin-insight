@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "52df3f7516c6b1c78344886547db1824",
+    "identity": "github:1371243103:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1371243103:root",
+            "repository": "apex-mochen/dsh-todo-continuity",
+            "path": "",
+            "revision": "6cbbf84a53ffff2ba2e740dc0ba729d12e3da4af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a752681c936c787f652c428fc3ca9ac3192100cb0239a4d7f05d58af8b94679c",
+                "code": "6cbbf84a53ffff2ba2e740dc0ba729d12e3da4af",
+                "maintenance": "24613d93becb6362382443c6b7fbc9147963951496477b0e615f5d4cc6a0ecb5"
+            }
+        }
+    }
+}

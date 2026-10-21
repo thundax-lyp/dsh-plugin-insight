@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b9a338cee97bc23b251c507bb3e2bfc7",
+    "identity": "github:1333771144:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333771144:root",
+            "repository": "Luke-Yong/dsh-plugin-knowledge-graph",
+            "path": "",
+            "revision": "30bb1305027bcba773dc241834935f290d7336f0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9be1b4696e767bd3f9c768d0c954e570d51ca0001dbc3e2b8c8125e105b64942",
+                "code": "30bb1305027bcba773dc241834935f290d7336f0",
+                "maintenance": "35519d4051553932571b93e9f97aca51c1512d3a68e9ea091bff886ad23b71dc"
+            }
+        }
+    }
+}

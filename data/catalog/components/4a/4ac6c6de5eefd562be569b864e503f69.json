@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ac6c6de5eefd562be569b864e503f69",
+    "identity": "github:1401489479:packages-dsh-roleplay-state",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401489479:packages-dsh-roleplay-state",
+            "repository": "Firefox2100/dsh-agentic-roleplay",
+            "path": "packages/dsh-roleplay-state",
+            "revision": "b25a11dde64144d540fd1a3fc8d017bd140f34f9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "03de184d3bc8afdf127d85c04b05648841eefdef1d18a15c4dacab1dd83bc36b",
+                "code": "b25a11dde64144d540fd1a3fc8d017bd140f34f9",
+                "maintenance": "3d92fa4981a8ca5da1d7f919188d6c25f6ebcf773e813b36eebe69d446b6e7e3"
+            }
+        }
+    }
+}

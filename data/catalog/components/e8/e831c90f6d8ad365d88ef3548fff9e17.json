@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e831c90f6d8ad365d88ef3548fff9e17",
+    "identity": "github:1383125927:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1383125927:root",
+            "repository": "Eapp1e/dsh-poker",
+            "path": "",
+            "revision": "a142e6c21dd12bc613d179ceb2dd1980971c3d51",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a3afca73ae40b7fd84a4cb101bf945ee0037fbd548e7bcb873b5ba2b3d0400f",
+                "code": "a142e6c21dd12bc613d179ceb2dd1980971c3d51",
+                "maintenance": "641cb450e887a712782ce1bc030e0f3a5cead4f2e73bb8c4b518d166c45c85f7"
+            }
+        }
+    }
+}

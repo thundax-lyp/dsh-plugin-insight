@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "644a9b06148ec69bd5d17e1d8e298ce3",
+    "identity": "github:1375237663:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375237663:root",
+            "repository": "dingchenhui0618-arch/dsh-imagegen-skill",
+            "path": "",
+            "revision": "c43c642083a9c05a25731e14d94079355a8b842f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9d7a50f3b7ff511a806dee392fcc70b8462da1c50821e3459be8407b9b0fa6f6",
+                "code": "c43c642083a9c05a25731e14d94079355a8b842f",
+                "maintenance": "f384fb467ea24821de2382e1e6946ce853b4ab7e53cec95b6e1aa4df24315edd"
+            }
+        }
+    }
+}

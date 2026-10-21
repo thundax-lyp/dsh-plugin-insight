@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "836441a4d56a761db25519bc35c5ba18",
+    "identity": "github:1314502072:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1314502072:root",
+            "repository": "huaweicloud/huaweicloud-devkit",
+            "path": "",
+            "revision": "b0e9f02643110804fc8eef6377dcad99b39960cc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "69df1c2429bf40762529121fc7888c412956678ad45906486ec31e18f665531f",
+                "code": "b0e9f02643110804fc8eef6377dcad99b39960cc",
+                "maintenance": "576b8312c6e7aea4e2bde2b5da3fdfde1801fda8c7e2729eba4d3e339c5252c9"
+            }
+        }
+    }
+}

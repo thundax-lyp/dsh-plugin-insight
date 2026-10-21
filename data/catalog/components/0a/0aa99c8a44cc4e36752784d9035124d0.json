@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0aa99c8a44cc4e36752784d9035124d0",
+    "identity": "github:1348953486:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348953486:root",
+            "repository": "EastMG/dsh-gacha-calendar",
+            "path": "",
+            "revision": "b564397a5bec8cd64e056197faaa032e97d8ee74",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e32a041e40a4d47572de699679e598f4ced7d57f5432541006351671a5628fad",
+                "code": "b564397a5bec8cd64e056197faaa032e97d8ee74",
+                "maintenance": "1cf92754336c38ea8a4c663b58a7e71b9e248c448765065e00e220e9c4f233bb"
+            }
+        }
+    }
+}

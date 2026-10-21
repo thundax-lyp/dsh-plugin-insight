@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0b6f24ece8105f46f724ede881c26fcf",
+    "identity": "github:1334663937:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334663937:root",
+            "repository": "beijingwahw/dsh-companion",
+            "path": "",
+            "revision": "b6161366a0b18c43bb24dd15166de2b5dc6427bd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8b2c678facb57e41ee24b23a6e6335e6192052d20abf7762b634bfb8da2eae78",
+                "code": "b6161366a0b18c43bb24dd15166de2b5dc6427bd",
+                "maintenance": "3fbb2b091d65c8ece6b2a3b364997cbc6074bbd9063d06703bd52cd1e8703079"
+            }
+        }
+    }
+}

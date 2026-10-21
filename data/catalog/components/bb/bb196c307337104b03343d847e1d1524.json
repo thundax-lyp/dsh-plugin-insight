@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bb196c307337104b03343d847e1d1524",
+    "identity": "github:1360321179:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360321179:root",
+            "repository": "MurasakiIzumi/dsh-quake-alert",
+            "path": "",
+            "revision": "e689e4a80f3ada5e7e473a200c934025ac84e4ff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c16abf385eec9754259e63e0d29493aaa1b5cdbdf2e973dd88abae2e96903be4",
+                "code": "e689e4a80f3ada5e7e473a200c934025ac84e4ff",
+                "maintenance": "0ce7366423a0645c1958fee728ad89224f5256990ddcab4b1e76dfb79915ee24"
+            }
+        }
+    }
+}

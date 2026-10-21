@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4db06129c01869b8e9d030e5c0449e3f",
+    "identity": "github:1345724219:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345724219:root",
+            "repository": "KakaruHayate/dsh-degen-heal",
+            "path": "",
+            "revision": "aadb5fd6d0ac2075b31771a32e14d83d78fbe031",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "854220dd9f62a660f254ec8d9b849b309d66367468ff543af0cb7d6b7038063e",
+                "code": "aadb5fd6d0ac2075b31771a32e14d83d78fbe031",
+                "maintenance": "b44c81c01548b659bce157dcddb4a1d76990161c7a36805bb45112c514413e5d"
+            }
+        }
+    }
+}

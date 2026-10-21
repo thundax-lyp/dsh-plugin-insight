@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "6f65ddd4a7ec9e62dfd7c036a5969067",
+    "identity": "github:1333463381:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333463381:root",
+            "repository": "Areium/dsh-fail-logger",
+            "path": "",
+            "revision": "bce6c992d67485475caeed00b8997704b3657d93",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2b77056a686f4f38230d264de4ef6bb9c9c61ba4164de6a600d08682d940b0af",
+                "code": "bce6c992d67485475caeed00b8997704b3657d93",
+                "maintenance": "f1b16462c701d79866c5dbcceee19cb1d7d5608a63a9b2ba33ba6d7bbbeae465"
+            }
+        }
+    }
+}

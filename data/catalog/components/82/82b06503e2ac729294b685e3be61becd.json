@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "82b06503e2ac729294b685e3be61becd",
+    "identity": "github:1332207140:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332207140:root",
+            "repository": "havingautism/dsh-notebooks",
+            "path": "",
+            "revision": "28ac98ae35d65d4c99357dca4f21b83e333a36cb",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "eb34f37a0228a37c5990fe29e227eb3e9ae1d3ea1681ab68e512ac78c2b96de0",
+                "code": "28ac98ae35d65d4c99357dca4f21b83e333a36cb",
+                "maintenance": "8c8df79ba58c172b54226b1467551d053353034adebfecb6a9acee4cd4db53a5"
+            }
+        }
+    }
+}

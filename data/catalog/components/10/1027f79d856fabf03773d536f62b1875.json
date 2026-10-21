@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1027f79d856fabf03773d536f62b1875",
+    "identity": "github:1343385608:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343385608:root",
+            "repository": "Machine-126/dsh-alert-sound",
+            "path": "",
+            "revision": "de7c50934fc83f4e93931305cbdf941b044d70ed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3e19ff4b0b3570f8bd383f4ce7ea2a4ccfd671166e09de9e35a9a0599f14c819",
+                "code": "de7c50934fc83f4e93931305cbdf941b044d70ed",
+                "maintenance": "52a4c3e5617ff91d372c9add1e600b094352f26259f4ac4696a08a8b1da514c5"
+            }
+        }
+    }
+}

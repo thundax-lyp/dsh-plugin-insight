@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "6183d73751a5164ef16c4bb2cfca3f9a",
+    "identity": "github:1336849561:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336849561:root",
+            "repository": "MingoZhou/dsh-replay",
+            "path": "",
+            "revision": "4726896bc3b82d4e11e6bbcd068b8bc58c95d82f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "051d7c8c2dff7a93fc4a5d2a554b5ecb8b46d198c4d1b0d422c2027256dd31f2",
+                "code": "4726896bc3b82d4e11e6bbcd068b8bc58c95d82f",
+                "maintenance": "23d612d65190a6a901aaea30f2c1f13c1a8eb901155fd457633fcc88f829d8c1"
+            }
+        }
+    }
+}

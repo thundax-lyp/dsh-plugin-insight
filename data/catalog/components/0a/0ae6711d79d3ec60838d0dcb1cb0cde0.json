@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ae6711d79d3ec60838d0dcb1cb0cde0",
+    "identity": "github:1265026514:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1265026514:root",
+            "repository": "ali-meoo/meoo-cli",
+            "path": "",
+            "revision": "3cbcb7672220d7d46de2f51ddf474302bfa5d6f0",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "77bb282d4f5762292a25cb9faa194fa52486accf8dfc8d7100401d3420753810",
+                "code": "3cbcb7672220d7d46de2f51ddf474302bfa5d6f0",
+                "maintenance": "fa3e260729cca25b67bacffc08c8570c73156e3dc064ee1d7c6a72c851fd2c87"
+            }
+        }
+    }
+}

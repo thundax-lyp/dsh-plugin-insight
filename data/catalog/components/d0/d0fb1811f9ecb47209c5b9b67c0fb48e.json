@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d0fb1811f9ecb47209c5b9b67c0fb48e",
+    "identity": "github:1338965220:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338965220:root",
+            "repository": "WaveSpeedAI/wavespeed-dsh-skill",
+            "path": "",
+            "revision": "701ed011ae60878c3b0f3cde46e4ab6902918289",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bd7a07a0577b583bb25f0865529bc7b18ea85961b8c3a90b029952af906b1505",
+                "code": "701ed011ae60878c3b0f3cde46e4ab6902918289",
+                "maintenance": "18a56131743dc21f1d3d65245cc579dfdebef4a0b12b7f84196b730aa9af51fa"
+            }
+        }
+    }
+}

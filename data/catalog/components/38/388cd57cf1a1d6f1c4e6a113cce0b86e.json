@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "388cd57cf1a1d6f1c4e6a113cce0b86e",
+    "identity": "github:1344406079:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344406079:root",
+            "repository": "Pudge1996/dsh-composer-stretch",
+            "path": "",
+            "revision": "f4f0aa06ceea9bc58ecf80854a693524a1f8e963",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ffc11e6b075f8cfc5788e66f07eb070170d835a4e0021b6f2ad39504fb24c900",
+                "code": "f4f0aa06ceea9bc58ecf80854a693524a1f8e963",
+                "maintenance": "fd4eb4e9cadb3e190b363e62ab43fd10df3f6cf67fd8367a2fb440f374994b23"
+            }
+        }
+    }
+}

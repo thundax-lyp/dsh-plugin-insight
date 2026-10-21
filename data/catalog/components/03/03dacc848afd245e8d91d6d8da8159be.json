@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "03dacc848afd245e8d91d6d8da8159be",
+    "identity": "github:1334047319:src-plugins-dsh-plugin-setting-mcp",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334047319:src-plugins-dsh-plugin-setting-mcp",
+            "repository": "Ceelog/dsh-plugins",
+            "path": "src/plugins/dsh-plugin-setting-mcp",
+            "revision": "dc4f88670c0e73f1db31799b818cad708c448afa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a5e146e0ea047761639eb1dbc9896d53e3dbe4c8b8c8d093f3639192ca52ab0b",
+                "code": "dc4f88670c0e73f1db31799b818cad708c448afa",
+                "maintenance": "9f85ec3fb7250b6467c1974f495be5720b2f5ac43f71c8732fa643607c2299a4"
+            }
+        }
+    }
+}

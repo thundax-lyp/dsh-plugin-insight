@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "062e81c95d2c3a98a3cf101227381013",
+    "identity": "github:1339305927:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339305927:root",
+            "repository": "EugeneVl/dsh_session_folders",
+            "path": "",
+            "revision": "16e04e3c88eb607055460b26b6d7100165132710",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ce46a0a383b1012aa4609ca35f9d3b6d012c4c9eaaa5fdd55235d2ba72d1a92b",
+                "code": "16e04e3c88eb607055460b26b6d7100165132710",
+                "maintenance": "6d8f3680468658d7d1f9c4f3d6e4cf3d951891c6f4c1a2b842456ad460143d18"
+            }
+        }
+    }
+}

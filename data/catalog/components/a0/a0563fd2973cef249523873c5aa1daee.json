@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a0563fd2973cef249523873c5aa1daee",
+    "identity": "github:1356105066:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356105066:root",
+            "repository": "Jonah-Wu23/dsh-agy-safe",
+            "path": "",
+            "revision": "eff30a94a576bcae62f9c512452f14e9bcc52ded",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a085fef0a7c8ea79032b2aef2733ca408423b2ee346b3669559f768d8096ae9e",
+                "code": "eff30a94a576bcae62f9c512452f14e9bcc52ded",
+                "maintenance": "9f02eac857cb2583796fc892854cdce751cebd009d36b1420bd92e496337fc3b"
+            }
+        }
+    }
+}

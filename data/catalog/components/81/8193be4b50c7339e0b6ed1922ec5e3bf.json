@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8193be4b50c7339e0b6ed1922ec5e3bf",
+    "identity": "github:1410161882:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410161882:root",
+            "repository": "wuanthony397-hash/dsh-codex-peer",
+            "path": "",
+            "revision": "462785afdd5f8d33ddd56006ecb8a498d6ba84e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6521458e733a3c2bff374b3afddf17c16fa306144adaddcb377aa2db265f0ec3",
+                "code": "462785afdd5f8d33ddd56006ecb8a498d6ba84e4",
+                "maintenance": "c4178e09ba2c78b02b68cf09ae13a8837b2802b728384947f806959a433f215c"
+            }
+        }
+    }
+}

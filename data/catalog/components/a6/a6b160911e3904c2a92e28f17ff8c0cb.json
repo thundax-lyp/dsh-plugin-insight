@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a6b160911e3904c2a92e28f17ff8c0cb",
+    "identity": "github:1334111967:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334111967:root",
+            "repository": "golitter/dsh-deepseek-billing",
+            "path": "",
+            "revision": "06c759630496d74a950864cdafb0d54b70ddc666",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e76cd2996a5002d7a63aa2357e1f508132a8fbdac67966fe036b23774fe4f46",
+                "code": "06c759630496d74a950864cdafb0d54b70ddc666",
+                "maintenance": "f7c9e4d72688630f6ebbe838bd8eb8530b07b3b382fa6c1b93a37b54221774ed"
+            }
+        }
+    }
+}

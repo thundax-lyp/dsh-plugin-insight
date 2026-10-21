@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2e8ee54828e45dccbcbb01a806ce7531",
+    "identity": "github:1297415093:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1297415093:root",
+            "repository": "zjsthmjialin/inspiration-deck-workshop",
+            "path": "",
+            "revision": "c2252ed83462623cebc4ffd198d6ffa0af7bea47",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "194c45b24fd2608456ac5ec73fcd10f5eb1e888047e752a32380d8ed4c9ad411",
+                "code": "c2252ed83462623cebc4ffd198d6ffa0af7bea47",
+                "maintenance": "a78f56941b54531235c7a73f6b4e8f3a6d3cd0991cd4a94ee3622ae051a3e2bd"
+            }
+        }
+    }
+}

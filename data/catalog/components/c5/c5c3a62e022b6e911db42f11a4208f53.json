@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c5c3a62e022b6e911db42f11a4208f53",
+    "identity": "github:1339012703:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339012703:root",
+            "repository": "faukwaa/dsh-gap-feed",
+            "path": "",
+            "revision": "754cb1d3bfa6282ecd40d308e9bdc7ef21dbbdf0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "12f99fc5db83b679227afbef678374139b9370ab08763bd04f7015feb1a9e36d",
+                "code": "754cb1d3bfa6282ecd40d308e9bdc7ef21dbbdf0",
+                "maintenance": "5f63336e061b1f2d0c858246fc91242be222adeb697e821071dbc767367f0453"
+            }
+        }
+    }
+}

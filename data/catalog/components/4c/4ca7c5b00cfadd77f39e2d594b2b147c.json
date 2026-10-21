@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "4ca7c5b00cfadd77f39e2d594b2b147c",
+    "identity": "github:1414492607:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1414492607:root",
+            "repository_id": 1414492607,
+            "component_id": "root",
+            "repository": "2026heshao/dsh-draft-attachments",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-draft-attachments",
+            "entry_type": "plugin",
+            "technical_category": "sessions-messages",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "a4a4eed1fdbb0013a1155eb522093a8efbea6006688234edc15d163adb30d6e0",
+                "code": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+                "maintenance": "bc6494623f3bebca846cc4102a35d3db887499d750d60fb3895bb41c2b5372ed"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1414492607-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:48:01.907Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1414492607-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2026heshao/dsh-draft-attachments/blob/f285e67bab926ee3083ee7b3858aa28a6092ec8a/README.md",
+                    "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+                    "captured_at": "2026-10-20T10:48:01.907Z",
+                    "summary": "将 DSH 输入框未发送的附件保存到 IndexedDB，并在会话输入区重挂载时恢复。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-draft-attachments/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1414492607-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2026heshao/dsh-draft-attachments/blob/f285e67bab926ee3083ee7b3858aa28a6092ec8a/lib/client.js",
+                    "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+                    "captured_at": "2026-10-20T10:48:01.907Z",
+                    "summary": "核查 lib/client.js、lib/index.js；lib/client.js 的不可见 conversation.input.dock 哨兵监听 attachmentIds，以300ms去抖存文件字节到 IndexedDB；恢复用 createDrafts 与 addAttachments 重走官方 intake。host apply 为空。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-draft-attachments/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查全部核心 client 持久化/恢复路径和空 host 入口，未运行 IndexedDB、未做切换/崩溃恢复或上传验收；README 的44.7兼容是作者声明。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合经常带图片或文件准备问题、期间切换会话的用户；合格结果是未发送附件按原顺序恢复且发送后不再出现。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414492607:root",
+                            "area": "code",
+                            "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:01.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/client.js 的不可见 conversation.input.dock 哨兵监听 attachmentIds，以300ms去抖存文件字节到 IndexedDB；恢复用 createDrafts 与 addAttachments 重走官方 intake。host apply 为空。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414492607:root",
+                            "area": "code",
+                            "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:01.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查全部核心 client 持久化/恢复路径和空 host 入口，未运行 IndexedDB、未做切换/崩溃恢复或上传验收；README 的44.7兼容是作者声明。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414492607:root",
+                            "area": "code",
+                            "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:01.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package 的 host 仅提供空 apply，业务在浏览器 client，存储属于浏览器 origin；web 与desktop安装并不等于共享一份附件库。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414492607:root",
+                            "area": "code",
+                            "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:01.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "本地保存附件字节增加浏览器存储和读取内存，单附件30MB过滤可见；源码声明120MB会话上限但捕获循环未见合计上限检查，不能把README额度护栏当已完全落实。首次需启用插件，额度失败与恢复不成功需手动重传。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414492607:root",
+                            "area": "code",
+                            "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:01.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "可先用可丢弃附件验证切换、重启、发送后不复活及超限行为，再用于常用流程；敏感附件要把浏览器持久保存纳入清理习惯，不能把它当跨设备草稿同步。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414492607:root",
+                            "area": "code",
+                            "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:01.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "高频切换用户有望少重复选择附件；遇到存储失败仅静默退化并不自动满足“不会丢”的目标，实际收益应按成功恢复率而非注册成功判断。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414492607:root",
+                            "area": "code",
+                            "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:01.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "lib/client.js 通过官方slot和createDrafts降低侵入性，回填拒绝时release草稿减少资源泄漏，适合借鉴为输入草稿扩展。saveDraft将事务错误吞为完成、openDb失败Promise长期缓存，以及异步run缺序列化，都会增加故障排查和重试成本；这些是源码边界而非本次运行失败。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414492607:root",
+                            "area": "code",
+                            "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:01.907Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:48:01.907Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+                "reviewed_at": "2026-10-20T10:48:01.907Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1414492607:root",
+                        "area": "code",
+                        "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：常规持久化适配，小幅；mechanism：官方intake恢复小幅生命周期连接，未形成新一致性机制；transferability：哨兵模式可用于其他草稿类型，实质；simplification：不patch宿主且复用上传流程，实质局部简化。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：减少附件重新选择，小幅；delivery：仍是同一问题附件，可靠性补齐的小幅增量；reach：普通GUI用户可用，小幅；economics：避免重传人工有小幅机制依据，未测实际耗时。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1414492607-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "频繁切换带附件草稿者可用可丢弃文件试用；验证慢存储恢复、发送后不复活及超限，并定期清理敏感字节。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "未发送附件跨会话丢失与重传是具体重复任务。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "IndexedDB保存字节并重走官方intake，补文字草稿缺口。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "捕获恢复与删除effects已查，异步竞态与会话总量护栏未验。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无外部API，增加本地存储且需检查浏览器额度和持久敏感文件。"
+                    }
+                },
+                "score": 70,
+                "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1414492607-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1414492607:root",
+                        "area": "code",
+                        "fingerprint": "f285e67bab926ee3083ee7b3858aa28a6092ec8a"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1414492607:root",
+            "repository": "2026heshao/dsh-draft-attachments",
+            "path": "",
+            "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+            "fingerprints": {
+                "directory": "a4a4eed1fdbb0013a1155eb522093a8efbea6006688234edc15d163adb30d6e0",
+                "code": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+                "maintenance": "bc6494623f3bebca846cc4102a35d3db887499d750d60fb3895bb41c2b5372ed"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "c2ae64c1f004fc8ab4b838348aaa86ceb6de4608d4d9a6777b1e4882b1330db3"
+        },
+        "publication.metadata": "data/plugins/2026heshao--dsh-draft-attachments/META.json",
+        "publication.summaries": {
+            "text": "将 DSH 输入框未发送的附件保存到 IndexedDB，并在会话输入区重挂载时恢复。",
+            "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+            "source_url": "https://github.com/2026heshao/dsh-draft-attachments/blob/f285e67bab926ee3083ee7b3858aa28a6092ec8a/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+            "items": {
+                "界面": "conversation.input.dock不可见哨兵保存与恢复附件草稿"
+            }
+        },
+        "publication.advice": {
+            "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+            "text": "可先用可丢弃附件验证切换、重启、发送后不复活及超限行为，再用于常用流程；敏感附件要把浏览器持久保存纳入清理习惯，不能把它当跨设备草稿同步。"
+        },
+        "registry": "data/plugins/2026heshao--dsh-draft-attachments",
+        "reports": "# dsh-draft-attachments\n\n> 将 DSH 输入框未发送的附件保存到 IndexedDB，并在会话输入区重挂载时恢复。\n\n## 研究范围\n\n- **仓库**：[2026heshao/dsh-draft-attachments](https://github.com/2026heshao/dsh-draft-attachments)\n- **版本号**：1.0.1（[固定提交 f285e67b](https://github.com/2026heshao/dsh-draft-attachments/tree/f285e67bab926ee3083ee7b3858aa28a6092ec8a)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已核查浏览器持久化与恢复通道，贡献是补齐附件草稿生命周期；恢复/清空竞态及浏览器额度未实测，代次提交假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：适合经常带图片或文件准备问题、期间切换会话的用户；合格结果是未发送附件按原顺序恢复且发送后不再出现。\n- **亮点**：相对宿主仅内存附件和用户手动重新上传，插件把字节与元数据按 sessionId 保存，在重新挂载时通过官方入口重建草稿而不是 patch 核心函数。这是有针对性的流程修补，价值在减少中断后的准备重做，不是新的数据库或上传协议。\n- **思考**：决定贡献成立的是“恢复”和“空集合清除”是否有一致的顺序。源码中恢复 effect 异步 loadDraft，另一个 effect 同时观察当前空 attachmentIds 并安排删除；恢复仅看 liveInputRef 和 restored 标记，未发现跨两个操作的持久化代次协议。常规快速读盘可能正常，浏览器慢存储和快速切换应作为证伪场景，当前不能直接断言必丢。\n- **建议**：可先用可丢弃附件验证切换、重启、发送后不复活及超限行为，再用于常用流程；敏感附件要把浏览器持久保存纳入清理习惯，不能把它当跨设备草稿同步。\n\n采用建议：可先用可丢弃附件验证切换、重启、发送后不复活及超限行为，再用于常用流程；敏感附件要把浏览器持久保存纳入清理习惯，不能把它当跨设备草稿同步。\n\n## 核心贡献\n\n相对宿主仅内存附件和用户手动重新上传，插件把字节与元数据按 sessionId 保存，在重新挂载时通过官方入口重建草稿而不是 patch 核心函数。这是有针对性的流程修补，价值在减少中断后的准备重做，不是新的数据库或上传协议。\n\n## 关键质疑\n\n决定贡献成立的是“恢复”和“空集合清除”是否有一致的顺序。源码中恢复 effect 异步 loadDraft，另一个 effect 同时观察当前空 attachmentIds 并安排删除；恢复仅看 liveInputRef 和 restored 标记，未发现跨两个操作的持久化代次协议。常规快速读盘可能正常，浏览器慢存储和快速切换应作为证伪场景，当前不能直接断言必丢。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：以每会话恢复阶段和单调代次约束持久化，恢复结束前不把初始空输入判为用户删除，旧异步捕获不得覆盖较新删除。来自两个独立 effect 的竞态问题；新增状态只应围绕 sessionId，不应把用户发送动作延后。\n\n固定同组图片与文件，延迟IndexedDB读写并快速切换/发送/删除，逐次核对字节哈希、顺序、发送后零复活及内存；与禁用插件手动重传比较。若代次机制仍出现旧写覆盖删除或显著拖慢发送，否定假设。\n\n## 场景与替代办法\n\n适合经常带图片或文件准备问题、期间切换会话的用户；合格结果是未发送附件按原顺序恢复且发送后不再出现。\n\n参照官方文字localStorage草稿与仅内存附件、用户手工重传；插件复用宿主intake，不替代上传后端或改变文件权限。\n\n## 依赖与流程\n\n必需浏览器 IndexedDB、File/Blob、DSH conversation服务和input dock；存储额度、同源策略与输入提交锁决定恢复效果，缺服务直接跳过，未跨浏览器验证。\n\n添加附件→捕获字节/去抖保存→切换时冲刷→挂载读盘→输入仍空才建草稿→官方输入回填；发送或手动删除触发空集合删除记录。被提交锁拒绝时释放新草稿，等待下一次挂载再试。\n\n## 成本与效果\n\n本地保存附件字节增加浏览器存储和读取内存，单附件30MB过滤可见；源码声明120MB会话上限但捕获循环未见合计上限检查，不能把README额度护栏当已完全落实。首次需启用插件，额度失败与恢复不成功需手动重传。\n\n高频切换用户有望少重复选择附件；遇到存储失败仅静默退化并不自动满足“不会丢”的目标，实际收益应按成功恢复率而非注册成功判断。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：49571ac299dfeeb642ae445eaa774d8571613387ee7980424787573acbd632a2。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 314 | 223 | 79 | — |\n| .md | source | 1 | 44 | — | — | 777 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：conversation.input.dock不可见哨兵保存与恢复附件草稿\n\n## 工程亮点\n\nlib/client.js 通过官方slot和createDrafts降低侵入性，回填拒绝时release草稿减少资源泄漏，适合借鉴为输入草稿扩展。saveDraft将事务错误吞为完成、openDb失败Promise长期缓存，以及异步run缺序列化，都会增加故障排查和重试成本；这些是源码边界而非本次运行失败。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/client.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查全部核心 client 持久化/恢复路径和空 host 入口，未运行 IndexedDB、未做切换/崩溃恢复或上传验收；README 的44.7兼容是作者声明。\n- 下一步：固定同组图片与文件，延迟IndexedDB读写并快速切换/发送/删除，逐次核对字节哈希、顺序、发送后零复活及内存；与禁用插件手动重传比较。若代次机制仍出现旧写覆盖删除或显著拖慢发送，否定假设。\n\n## 源码索引\n\n- [lib/client.js](https://github.com/2026heshao/dsh-draft-attachments/blob/f285e67bab926ee3083ee7b3858aa28a6092ec8a/lib/client.js)\n- [lib/index.js](https://github.com/2026heshao/dsh-draft-attachments/blob/f285e67bab926ee3083ee7b3858aa28a6092ec8a/lib/index.js)\n",
+        "metadata": {
+            "repository": "2026heshao/dsh-draft-attachments",
+            "repository_id": 1414492607,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-10-19T10:11:32Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-draft-attachments%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:148E4D:220C01:6AD849CC and timestamp 2026-10-21 05:12:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-draft-attachments%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:141E86:21B441:6AD849CC and timestamp 2026-10-21 05:12:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-draft-attachments%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:140AA8:21A54E:6AD849CC and timestamp 2026-10-21 05:12:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-draft-attachments%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:64792:144CA4:21EB33:6AD849CC and timestamp 2026-10-21 05:12:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-draft-attachments%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:17E195:13EE35:21871A:6AD849CC and timestamp 2026-10-21 05:12:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-draft-attachments",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 23,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-draft-attachments",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-13T02:37:14.708Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-draft-attachments",
+                    "error": null,
+                    "latest_version": "1.0.1",
+                    "latest_published_at": "2026-10-19T10:17:10.780Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+                "current_revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1414492607:root",
+            "repository": "2026heshao/dsh-draft-attachments",
+            "path": "",
+            "revision": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a4a4eed1fdbb0013a1155eb522093a8efbea6006688234edc15d163adb30d6e0",
+                "code": "f285e67bab926ee3083ee7b3858aa28a6092ec8a",
+                "maintenance": "bc6494623f3bebca846cc4102a35d3db887499d750d60fb3895bb41c2b5372ed"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d4b974c88b780903ec0e9d209eeae9ad",
+    "identity": "github:1425611692:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425611692:root",
+            "repository": "kekydream/dsh-meeting-room",
+            "path": "",
+            "revision": "dbec2ae66dcc26983ad86ea28169b95aa8ac7a72",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "60427eca1d9d51e8fc14d1a99c6659cde2b28421ff8370f1d3807177bd46a0c4",
+                "code": "dbec2ae66dcc26983ad86ea28169b95aa8ac7a72",
+                "maintenance": "11e28920537931fa394b121ab81bc364658a6adc3f7f1302c3d90899cc26614a"
+            }
+        }
+    }
+}

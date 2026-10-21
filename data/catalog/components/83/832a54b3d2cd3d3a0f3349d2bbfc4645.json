@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "832a54b3d2cd3d3a0f3349d2bbfc4645",
+    "identity": "github:1335579749:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335579749:root",
+            "repository": "Khellendros97/dsh-launch",
+            "path": "",
+            "revision": "156626494d0afeace2f7c54e18f67704a22529a9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8f0700e62beb7a9e5102324c82712a86d84688167d2d2f53eac2fce46ab2bc29",
+                "code": "156626494d0afeace2f7c54e18f67704a22529a9",
+                "maintenance": "f2b3a3537f1f60fc21232528121da4ccc5785634c352586b6e85f0fd5171a2f3"
+            }
+        }
+    }
+}

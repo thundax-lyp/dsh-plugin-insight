@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c99d33a06454cec4e48f43bf953de1ae",
+    "identity": "github:1395357098:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1395357098:root",
+            "repository": "Yokira404/dsh-thinking-highlight",
+            "path": "",
+            "revision": "00dc0f04c677bfbb8d8cd691994bf1337e5956ae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cb7b3927722c0f0edcab0e2ebb6b804661107564cab6e7ede51c22bee4ee168e",
+                "code": "00dc0f04c677bfbb8d8cd691994bf1337e5956ae",
+                "maintenance": "82619be75b177dd1fc430be14e48581b0ceac36bfb95acbf497a95cc9801be50"
+            }
+        }
+    }
+}

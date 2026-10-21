@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d553de9156d559b90f4cf5e5cad0838d",
+    "identity": "github:1384577856:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384577856:root",
+            "repository": "dougen/dsh-cdp",
+            "path": "",
+            "revision": "3827e7dc0c0a5a0cb8ad8b94d0f35d901a68977d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0e05bd7c481f0dc0e83885f16e757f8a7b74678ec224a8ec4f19b4698eae8997",
+                "code": "3827e7dc0c0a5a0cb8ad8b94d0f35d901a68977d",
+                "maintenance": "3d96030fb26826e9c42899bf17bf371c63ca442f1d6d48d4d1a9d7d2616daf08"
+            }
+        }
+    }
+}

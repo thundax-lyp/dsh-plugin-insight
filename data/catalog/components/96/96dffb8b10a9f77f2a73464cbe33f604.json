@@ -1,0 +1,446 @@
+{
+    "schema_version": 3,
+    "id": "96dffb8b10a9f77f2a73464cbe33f604",
+    "identity": "github:1333975935:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333975935:root",
+            "repository_id": 1333975935,
+            "component_id": "root",
+            "repository": "AKIRACOD/dsh-drag-and-drop",
+            "path": "",
+            "aliases": [],
+            "name": "drag-and-drop（AKIRACOD fork）",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "e2d0ced465eb43bce6bd51af406bf9216bb7075aceb200316d4c9a3509ba88e2",
+                "code": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                "maintenance": "094e04dea0623119044245b3ca96c5e2d3b10a77d9d6e8c95adaf5c99600194c"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1333975935-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:35:06.977Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1333975935-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/README.md",
+                    "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                    "captured_at": "2026-10-21T05:35:06.977Z",
+                    "summary": "将拖入的本地文件/目录定位为真实路径，以可删除芯片送入会话。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/akiracod--dsh-drag-and-drop/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1333975935-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/index.ts",
+                    "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                    "captured_at": "2026-10-21T05:35:06.977Z",
+                    "summary": "核查 src/index.ts、src/locator.ts、src/platform-search.ts、src/protocol.ts、src/client/index.ts、src/client/locator.ts、package.json；先解析拖放URI，缺失路径时向/file-drop/locate提交名字、大小和时间等元数据；Host依次查工作区、常用目录与系统索引。多候选再比较抽样/完整文件摘要或目录结构/内容摘要，最终无法区分时由用户选择。浏览器把路径暂存为芯片，在发送前写入当前会话input服务。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/akiracod--dsh-drag-and-drop/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "根组件src Host路由、定位、平台搜索、浏览器拖放与输入代码、协议、包清单及fork说明。统计根组件，未核定与上游逐行差异，不将所有机制归属fork原创。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "同机运行浏览器与DSH的用户把现有文档或源码目录交给Agent，无需上传副本或手敲绝对路径；合格交付是指向用户原件的正确路径。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "先解析拖放URI，缺失路径时向/file-drop/locate提交名字、大小和时间等元数据；Host依次查工作区、常用目录与系统索引。多候选再比较抽样/完整文件摘要或目录结构/内容摘要，最终无法区分时由用户选择。浏览器把路径暂存为芯片，在发送前写入当前会话input服务。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "根组件src Host路由、定位、平台搜索、浏览器拖放与输入代码、协议、包清单及fork说明。统计根组件，未核定与上游逐行差异，不将所有机制归属fork原创。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "DSH Web双面bundle，包导出lib而源码在src；README称含构建物，本轮未构建或证明src与lib完全对应。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "现金：无新增模型API；人工：构建物/宿主输入接口维护，定位失败需手选或手抄路径。摘要会读取内容，广域目录搜索、系统索引与大目录扫描消耗IO和等待时间。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "可作为同机本地文件输入方案候选；需跨会话频繁操作、远程Host或敏感目录访问控制的场景，先解决会话归属和搜索授权边界。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "相较上传副本保留邻接文件关系，减少路径输入；原文件仍可能由Agent随后修改，拖放并不提供只读保证。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "请求体上限4MiB，搜索有候选数/深度/遍历数上限，execFile平台命令有限时；多候选逐级摘要控制IO，最终歧义不强行选一。副作用路由的输入是类型断言而非完整运行时schema，限流和范围检查仍需宿主保障。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "这是README明确承认的omdsh-dev/bill9109上游fork，不能把路径定位全算本fork原创。本项可辨认的增量是把路径文本暂存改成可删芯片、独立发送按钮并保留纯图片原生路径；底层分阶段识别降低大文件每次全量摘要的开销。价值是输入操作改进，未改变Agent对文件的权限。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "芯片是否与拖放时的会话绑定？pending是apply级数组，flushPending才读取当前会话；切换会话后可能送入另一会话。定位的唯一元数据候选会直接found而不核内容，因此同名同大小的错误候选仍可能被接受；Host后续摘要阶段接受客户端candidates，未见插件内工作区授权校验，不能将搜索范围当权限隔离。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "把待发送项绑定到拖入时的session及文件标识，并在唯一候选也验证小摘要，可能同时降低跨会话误发与误识别。用两个同名同大小不同内容文件、搜索索引过时和拖后切会话的固定案例，要求全部拒绝错误归属；若仅改善外观而误发率不变则假设失败。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333975935:root",
+                            "area": "code",
+                            "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:06.977Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:35:06.977Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                "reviewed_at": "2026-10-21T05:35:06.977Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333975935:root",
+                        "area": "code",
+                        "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "新颖性9：上游已有路径恢复，fork主要输入改进；机制15：元数据/抽样/完整及目录多阶段配合明确；迁移性10：渐进匹配可复用但依赖本机搜索；简化8：芯片减少手抄路径，新增匹配复杂性。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "工作流9：保持文件原位的上下文输入仍是原任务流程；交付8：可删芯片和无文字发送完善入口；覆盖10：文件/目录多系统但仅同机合理；经济4：省操作时间无实测，扫描成本需计入。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1333975935-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "同机拖放原文件者可关注路径定位；先解决pending跨会话、唯一元数据误配及候选读取授权，再用于敏感原件。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "免上传副本和手抄路径的本地输入需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "元数据、摘要及用户选候选保留邻接文件关系。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核匹配阶段与apply级pending，目标会话和读边界有明确缺口。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "广域IO与错会话原件交付成本高，当前敏感范围难控。"
+                    }
+                },
+                "score": 60,
+                "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1333975935-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333975935:root",
+                        "area": "code",
+                        "fingerprint": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333975935:root",
+            "repository": "AKIRACOD/dsh-drag-and-drop",
+            "path": "",
+            "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+            "fingerprints": {
+                "directory": "e2d0ced465eb43bce6bd51af406bf9216bb7075aceb200316d4c9a3509ba88e2",
+                "code": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                "maintenance": "094e04dea0623119044245b3ca96c5e2d3b10a77d9d6e8c95adaf5c99600194c"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "0868289278a3a3842f92c045231183c5ce837e3d36ee75e7771ca2a2cdba40c7"
+        },
+        "publication.metadata": "data/plugins/akiracod--dsh-drag-and-drop/META.json",
+        "publication.summaries": {
+            "text": "将拖入的本地文件/目录定位为真实路径，以可删除芯片送入会话。",
+            "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+            "source_url": "https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+            "items": {
+                "Host 路由": "POST /file-drop/locate执行本地路径定位与摘要比对。",
+                "界面": "全局拖放覆盖层、路径芯片、发送/移除按钮和错误提示。",
+                "事件监听": "浏览器drag/drop、Enter与pointerdown，在提交前把路径写入input服务。"
+            }
+        },
+        "publication.advice": {
+            "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+            "text": "可作为同机本地文件输入方案候选；需跨会话频繁操作、远程Host或敏感目录访问控制的场景，先解决会话归属和搜索授权边界。"
+        },
+        "registry": "data/plugins/akiracod--dsh-drag-and-drop",
+        "reports": "# drag-and-drop（AKIRACOD fork）\n\n> 将拖入的本地文件/目录定位为真实路径，以可删除芯片送入会话。\n\n## 使用建议\n\n可作为同机本地文件输入方案候选；需跨会话频繁操作、远程Host或敏感目录访问控制的场景，先解决会话归属和搜索授权边界。\n\n核查状态：分阶段定位与芯片输入路径可由源码确认；原件识别准确率、跨平台兼容和发送会话正确性未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：同机运行浏览器与DSH的用户把现有文档或源码目录交给Agent，无需上传副本或手敲绝对路径；合格交付是指向用户原件的正确路径。\n- **亮点**：这是README明确承认的omdsh-dev/bill9109上游fork，不能把路径定位全算本fork原创。本项可辨认的增量是把路径文本暂存改成可删芯片、独立发送按钮并保留纯图片原生路径；底层分阶段识别降低大文件每次全量摘要的开销。价值是输入操作改进，未改变Agent对文件的权限。\n- **思考**：芯片是否与拖放时的会话绑定？pending是apply级数组，flushPending才读取当前会话；切换会话后可能送入另一会话。定位的唯一元数据候选会直接found而不核内容，因此同名同大小的错误候选仍可能被接受；Host后续摘要阶段接受客户端candidates，未见插件内工作区授权校验，不能将搜索范围当权限隔离。\n- **建议**：把待发送项绑定到拖入时的session及文件标识，并在唯一候选也验证小摘要，可能同时降低跨会话误发与误识别。用两个同名同大小不同内容文件、搜索索引过时和拖后切会话的固定案例，要求全部拒绝错误归属；若仅改善外观而误发率不变则假设失败。\n\n## 场景与替代办法\n\n同机运行浏览器与DSH的用户把现有文档或源码目录交给Agent，无需上传副本或手敲绝对路径；合格交付是指向用户原件的正确路径。\n\n原生图片附件、复制文件路径或上游拖放插件均可完成部分任务；本fork主要减少文档输入和发送摩擦。\n\n## 能力清单\n\n- **Host 路由**：POST /file-drop/locate执行本地路径定位与摘要比对。\n- **界面**：全局拖放覆盖层、路径芯片、发送/移除按钮和错误提示。\n- **事件监听**：浏览器drag/drop、Enter与pointerdown，在提交前把路径写入input服务。\n\n## 依赖与流程\n\n先解析拖放URI，缺失路径时向/file-drop/locate提交名字、大小和时间等元数据；Host依次查工作区、常用目录与系统索引。多候选再比较抽样/完整文件摘要或目录结构/内容摘要，最终无法区分时由用户选择。浏览器把路径暂存为芯片，在发送前写入当前会话input服务。\n\nDSH webServer、sessions/workspaces/conversation服务，浏览器File API；定位回退依赖mdfind/plocate/Everything或PowerShell及Host文件可读性。\n\n拖放非纯图片→异步定位→成功进入全局pending芯片→发送时合并路径与草稿并清空；失败toast，歧义选择，dispose删除窗口监听和覆盖层。\n\nDSH Web双面bundle，包导出lib而源码在src；README称含构建物，本轮未构建或证明src与lib完全对应。\n\n## 成本与效果\n\n现金：无新增模型API；人工：构建物/宿主输入接口维护，定位失败需手选或手抄路径。摘要会读取内容，广域目录搜索、系统索引与大目录扫描消耗IO和等待时间。\n\n相较上传副本保留邻接文件关系，减少路径输入；原文件仍可能由Agent随后修改，拖放并不提供只读保证。\n\n## 核心贡献\n\n这是README明确承认的omdsh-dev/bill9109上游fork，不能把路径定位全算本fork原创。本项可辨认的增量是把路径文本暂存改成可删芯片、独立发送按钮并保留纯图片原生路径；底层分阶段识别降低大文件每次全量摘要的开销。价值是输入操作改进，未改变Agent对文件的权限。\n\n## 关键质疑\n\n芯片是否与拖放时的会话绑定？pending是apply级数组，flushPending才读取当前会话；切换会话后可能送入另一会话。定位的唯一元数据候选会直接found而不核内容，因此同名同大小的错误候选仍可能被接受；Host后续摘要阶段接受客户端candidates，未见插件内工作区授权校验，不能将搜索范围当权限隔离。\n\n## 工程亮点\n\n请求体上限4MiB，搜索有候选数/深度/遍历数上限，execFile平台命令有限时；多候选逐级摘要控制IO，最终歧义不强行选一。副作用路由的输入是类型断言而非完整运行时schema，限流和范围检查仍需宿主保障。\n\n固定源码依据：[src/index.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/index.ts)、[src/locator.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/locator.ts)、[src/platform-search.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/platform-search.ts)、[src/protocol.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/protocol.ts)、[src/client/index.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/client/index.ts)、[src/client/locator.ts](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/src/client/locator.ts)、[package.json](https://github.com/AKIRACOD/dsh-drag-and-drop/blob/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5/package.json)。\n\n## 未来设计假设（未验证）\n\n把待发送项绑定到拖入时的session及文件标识，并在唯一候选也验证小摘要，可能同时降低跨会话误发与误识别。用两个同名同大小不同内容文件、搜索索引过时和拖后切会话的固定案例，要求全部拒绝错误归属；若仅改善外观而误发率不变则假设失败。\n\n提出而未执行：切换会话、同名不同内容、重复副本、远程Host以及索引缺失案例，分别记录误识别与IO耗时；不把仓库测试文件当通过记录。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：04e9dee7f81559705abad7a2a549a199f8e3fa1e2d5e77cd3d67e36d884ff665。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 7 | 603 | — | — | 5921 |\n| .js | source | 21 | 2541 | 2416 | 108 | — |\n| .mjs | source | 3 | 149 | 127 | 8 | — |\n| .ts | source | 19 | 1357 | 1200 | 29 | — |\n| .ts | test | 9 | 420 | 378 | 11 | — |\n\n排除 19 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.2.0；版本日期：2026-08-14（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[c20646ad](https://github.com/AKIRACOD/dsh-drag-and-drop/tree/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5)；本轮基准：2026-10-21T05:26:52Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根组件src Host路由、定位、平台搜索、浏览器拖放与输入代码、协议、包清单及fork说明。统计根组件，未核定与上游逐行差异，不将所有机制归属fork原创。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "AKIRACOD/dsh-drag-and-drop",
+            "repository_id": 1333975935,
+            "captured_at": "2026-10-21T05:33:25.853Z",
+            "window_start": "2026-09-21T05:33:25.853Z",
+            "stars": 5,
+            "pushed_at": "2026-08-14T08:44:04Z",
+            "issues": {
+                "open": 0,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CB28:27305C:528A0B:5892C3:6AD84EA8 and timestamp 2026-10-21 05:33:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A25.853Z..2026-10-21T05%3A33%3A25.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC60:103F14:504BE2:5655CB:6AD84EA9 and timestamp 2026-10-21 05:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A25.853Z..2026-10-21T05%3A33%3A25.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD48:27069F:52FB5E:590640:6AD84EAA and timestamp 2026-10-21 05:33:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A25.853Z..2026-10-21T05%3A33%3A25.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CE60:44870:53CB0D:59D2BF:6AD84EAB and timestamp 2026-10-21 05:33:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@omdsh-dev/dsh-drag-and-drop",
+                "captured_at": "2026-10-21T05:33:31.316Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40omdsh-dev%2Fdsh-drag-and-drop",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40omdsh-dev%2Fdsh-drag-and-drop",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1333975935:root",
+            "repository": "AKIRACOD/dsh-drag-and-drop",
+            "path": "",
+            "revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e2d0ced465eb43bce6bd51af406bf9216bb7075aceb200316d4c9a3509ba88e2",
+                "code": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                "maintenance": "094e04dea0623119044245b3ca96c5e2d3b10a77d9d6e8c95adaf5c99600194c"
+            }
+        }
+    }
+}

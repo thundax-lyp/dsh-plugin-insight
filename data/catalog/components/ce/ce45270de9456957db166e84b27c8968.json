@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ce45270de9456957db166e84b27c8968",
+    "identity": "github:1402972337:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402972337:plugin",
+            "repository": "ShoTakujo/dsh-platform-usage",
+            "path": "plugin",
+            "revision": "c7d337ddc40eaae53e5d468b6591137184e601da",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "af3affca1479862e8c970532fdfb3fe7efa3b7ed48295610af5a14ceaa50b66d",
+                "code": "c7d337ddc40eaae53e5d468b6591137184e601da",
+                "maintenance": "8e35bedf0d283dcfb351e33466ee3123d7ac065ab629288c899004b05f79df1d"
+            }
+        }
+    }
+}

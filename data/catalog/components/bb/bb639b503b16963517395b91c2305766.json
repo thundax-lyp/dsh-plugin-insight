@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bb639b503b16963517395b91c2305766",
+    "identity": "github:1335876660:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335876660:root",
+            "repository": "SummerSec/dsh-web-auth",
+            "path": "",
+            "revision": "b722e44a881d71fc3eb943627d654a6e293876f8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2f8c6363220e9047aaff0ecb0e82c8ce254559585b5010223d011e41220fc0f1",
+                "code": "b722e44a881d71fc3eb943627d654a6e293876f8",
+                "maintenance": "a82fb5a911357eea3d8b265b744f6a2395051d7667fda21ac312ae234e2e1644"
+            }
+        }
+    }
+}

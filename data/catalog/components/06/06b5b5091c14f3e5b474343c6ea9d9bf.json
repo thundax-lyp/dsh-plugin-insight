@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "06b5b5091c14f3e5b474343c6ea9d9bf",
+    "identity": "github:1334368364:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334368364:root",
+            "repository": "Noelune/unified-agent-memory",
+            "path": "",
+            "revision": "7a68ab2426dd46ac7f83bab18c3bd09539c663a1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0f9bb3f7ebb8d47ac3f799b0c58da8e99f20d530c955cb7092a7d94dd58ddbd2",
+                "code": "7a68ab2426dd46ac7f83bab18c3bd09539c663a1",
+                "maintenance": "ebc376bcc19e8202d09e7ae1acba78941c49d2435537505efa92cd3607a05579"
+            }
+        }
+    }
+}

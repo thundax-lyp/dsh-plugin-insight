@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ee3954728b59eba974a72cf860c88c60",
+    "identity": "github:1413073165:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413073165:root",
+            "repository": "lyonleeeee/dsh-steer",
+            "path": "",
+            "revision": "44cc92b1e20f6272506a4fba10e5fa6f2ca036b5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "47476738ce500c1832a05934b96b5d3aa7e5bdad53708bcbb25172a2baefb0b6",
+                "code": "44cc92b1e20f6272506a4fba10e5fa6f2ca036b5",
+                "maintenance": "82e8aa98545b530b7f97bf0490ffcda6b4b7aa6f198be74a7292013b9c88a9f0"
+            }
+        }
+    }
+}

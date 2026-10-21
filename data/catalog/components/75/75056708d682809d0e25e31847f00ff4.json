@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "75056708d682809d0e25e31847f00ff4",
+    "identity": "github:1334447862:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334447862:root",
+            "repository": "haoranwang0921/dsh-session-cleaner",
+            "path": "",
+            "revision": "32ad4f03474bc6b655e9bc18fb5bb9ecd5ed65ed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e771ecffd108baf7a567ea6fd6d96c5efd80fb4c16f5c595b874b138cc5c3763",
+                "code": "32ad4f03474bc6b655e9bc18fb5bb9ecd5ed65ed",
+                "maintenance": "e01dc06feaacb4876ae0f572ad246799cc07686fcc72c85af262f88288cc23e0"
+            }
+        }
+    }
+}

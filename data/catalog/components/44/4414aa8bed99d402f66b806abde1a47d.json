@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4414aa8bed99d402f66b806abde1a47d",
+    "identity": "github:1353766563:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353766563:root",
+            "repository": "yakoylp/dsh-localnotify",
+            "path": "",
+            "revision": "0f625d3d7f8c2b03711d2792fa87fdc7b67aa7a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7da585a94674885b121b311aba428655c41d6e8fcd955322bd222c241d898c51",
+                "code": "0f625d3d7f8c2b03711d2792fa87fdc7b67aa7a4",
+                "maintenance": "f2e95c13320fbdfc41392934eebce09b5087589b7fb43d3672d2669bff2b877d"
+            }
+        }
+    }
+}

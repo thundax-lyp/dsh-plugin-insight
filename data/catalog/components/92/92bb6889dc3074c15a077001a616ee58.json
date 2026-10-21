@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "92bb6889dc3074c15a077001a616ee58",
+    "identity": "github:1413689800:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413689800:root",
+            "repository": "LihiHe/dsh-thinking-slider",
+            "path": "",
+            "revision": "cd755358750a1fd8a4c2ddac20e2307c0af6fcab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d8fe16cbc0e3c8f1505227dbcfa17f4aebc86c78a560f612521e40c84f6e6c22",
+                "code": "cd755358750a1fd8a4c2ddac20e2307c0af6fcab",
+                "maintenance": "1b95fd12bf9d62b79a4f0e526d49f28c17368e4bdb9ce0d79077da10795ce356"
+            }
+        }
+    }
+}

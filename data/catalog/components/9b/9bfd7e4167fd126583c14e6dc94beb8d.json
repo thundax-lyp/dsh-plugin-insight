@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9bfd7e4167fd126583c14e6dc94beb8d",
+    "identity": "github:1338434572:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338434572:root",
+            "repository": "MoonlitDropOfBlood/dsh-token-stats",
+            "path": "",
+            "revision": "d28a8ab0e8f01baff4b94d3dc43c2d915da2ea74",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bc9428c4b93b2c8327974e812605d1088c3843f1a60c6ff07b28ae1240a6b1fb",
+                "code": "d28a8ab0e8f01baff4b94d3dc43c2d915da2ea74",
+                "maintenance": "16dace1e547b68ca571e4a38d85f83896c4a4cce2ad394ce2f67dc91f3ec0573"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "59bddd8206cfc99947e324bf1afd167c",
+    "identity": "github:1423923556:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423923556:root",
+            "repository": "yezitotempeace/dsh-agent-team-roster",
+            "path": "",
+            "revision": "56b14a8141b4bb40677191e69a70ddb2547aacd0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f49ec5755cf3e8243490e19c56d5fab05a11bf24ec0de6fd941c7ae05e3b9ed3",
+                "code": "56b14a8141b4bb40677191e69a70ddb2547aacd0",
+                "maintenance": "6b7f81a47c7e833b2f496fee517cde48dfa7a5c033d1a3e492085eecbe7a40c6"
+            }
+        }
+    }
+}

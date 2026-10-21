@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6463f92f3b7e7354a1568576bcfac2db",
+    "identity": "github:1347165448:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347165448:root",
+            "repository": "ningbonb/dsh-client-ui-brand",
+            "path": "",
+            "revision": "22e879cb8b0d1a116ef6d0aecadccbd8fd7db26f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "eeef7f5b68dad32962a7bcb77ac7ab9e74d91ba9bf4f5692931ff2adbeee9130",
+                "code": "22e879cb8b0d1a116ef6d0aecadccbd8fd7db26f",
+                "maintenance": "8a6f7447c065b1def095a9fc42847fe1a241d6887136eb351e0e0ddfd1195788"
+            }
+        }
+    }
+}

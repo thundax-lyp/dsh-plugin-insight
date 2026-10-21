@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c04df4d5ab43a14bc6c328fda3191e0e",
+    "identity": "github:1345104108:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345104108:root",
+            "repository": "jer67107-cyber/dsh-skin-chengzi",
+            "path": "",
+            "revision": "fdc7d525ee00850b67a25d21e20b15a2ffa69efc",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "11be9d73a2039aed99827bb6c7479a3a975546ea6f200ed2ce184683c3850335",
+                "code": "fdc7d525ee00850b67a25d21e20b15a2ffa69efc",
+                "maintenance": "9906ca088dc28efd2881e1c8faebfc888361e8b5ed267b4b3bcf0b5be30571dd"
+            }
+        }
+    }
+}

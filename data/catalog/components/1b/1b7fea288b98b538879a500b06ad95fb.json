@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "1b7fea288b98b538879a500b06ad95fb",
+    "identity": "github:1334298839:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334298839:root",
+            "repository": "jiezeng2004-design/dsh-requirements-alignment",
+            "path": "",
+            "revision": "31cf94f38ff4e1e961dfca51098967e861e49cc4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0b92ba19cdf52593c1b740337c903033363136c4faec2b1b7a1694feede7504d",
+                "code": "31cf94f38ff4e1e961dfca51098967e861e49cc4",
+                "maintenance": "0049d3aa8d871e9309fe4d91e841c2960cdc940a21e98911948feb67fac14942"
+            }
+        }
+    }
+}

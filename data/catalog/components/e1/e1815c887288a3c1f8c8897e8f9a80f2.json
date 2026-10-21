@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e1815c887288a3c1f8c8897e8f9a80f2",
+    "identity": "github:1404080555:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404080555:root",
+            "repository": "Wenaixi/dsh-prompt-history",
+            "path": "",
+            "revision": "9d1bd8d3ad118ae86929be09affe69f5a48160f9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b29e4a67b831109a529d9e4af06360b2b75ecad4fd4c41b2f3b6bae331659965",
+                "code": "9d1bd8d3ad118ae86929be09affe69f5a48160f9",
+                "maintenance": "593978d1faf03cf4d76d10cead041e3181c8233c2be1bb1030112b63cd0c0571"
+            }
+        }
+    }
+}

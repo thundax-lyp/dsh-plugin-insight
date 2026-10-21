@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2ed2245baaf471987831d256f6d8bab1",
+    "identity": "github:1380867383:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380867383:root",
+            "repository": "ColorlessBoy/dsh-opencode-usage",
+            "path": "",
+            "revision": "cc8ee2c009c782badcb5df9a3ca0a7cc4f2c1c80",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cac49558d8b0849864ba7aab4f44996f5bb8149e366df5e13c9567d9167a5090",
+                "code": "cc8ee2c009c782badcb5df9a3ca0a7cc4f2c1c80",
+                "maintenance": "8390780ed803f46c551a9830ab8bba9a37ffecf51efdb2923a02c463b5f09c26"
+            }
+        }
+    }
+}

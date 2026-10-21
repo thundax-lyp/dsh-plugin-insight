@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "084111bd647e27a57e101e1430f3304d",
+    "identity": "github:1391093307:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391093307:root",
+            "repository": "yfwu2020/dsh-think-flow",
+            "path": "",
+            "revision": "4a3797e4589da39a101db27ce958bbabe9dec49b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "60e04e8e35a90f2c838cce0c7552f09f2f2b5ee285e04d292430383dd07d7b78",
+                "code": "4a3797e4589da39a101db27ce958bbabe9dec49b",
+                "maintenance": "3ceba3e1962e2e039f9d451bdfc833dfbf37c1d8965aa13a39f57c307a883ce4"
+            }
+        }
+    }
+}

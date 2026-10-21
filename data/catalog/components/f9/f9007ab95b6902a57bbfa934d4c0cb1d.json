@@ -1,0 +1,457 @@
+{
+    "schema_version": 3,
+    "id": "f9007ab95b6902a57bbfa934d4c0cb1d",
+    "identity": "github:1334304098:packages-helmd",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334304098:packages-helmd",
+            "repository_id": 1334304098,
+            "component_id": "packages-helmd",
+            "repository": "ADWMC/helm-d",
+            "path": "packages/helmd",
+            "aliases": [],
+            "name": "helmd",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "5a8dbb4d7bbb21e0bdafa91c30afa13a4e7bf6b21dc65ecaf275116423916832",
+                "code": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                "maintenance": "249d154a5af6e7b8705c53a1999cb1224e9b9d632216697ac80e04c78cb64ad7"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-04-github-1334304098-packages-helmd-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T04:16:51.917Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-04-github-1334304098-packages-helmd-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/README.md",
+                    "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                    "captured_at": "2026-10-21T04:16:51.917Z",
+                    "summary": "提供安全分析预设、领域工具和按需参考，并将Case证据与结论保存在磁盘。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/adwmc--helm-d--packages-helmd/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-04-github-1334304098-packages-helmd-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/src/index.ts",
+                    "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                    "captured_at": "2026-10-21T04:16:51.917Z",
+                    "summary": "核查 packages/helmd/src/index.ts、packages/helmd/src/persist.ts、packages/helmd/src/case.ts、packages/helmd/src/tools/caseflow.ts；组件index注册领域/Case工具并临时包装tools.register，persist仅将字符串结果落证据；caseflow记录finding时验证E编号，deep关闭检查finding数量和证据或no-evidence声明。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/adwmc--helm-d--packages-helmd/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读packages/helmd/src/index.ts、packages/helmd/src/persist.ts、packages/helmd/src/case.ts、packages/helmd/src/tools/caseflow.ts、packages/helmd/package.json；未覆盖全部参考/界面分支与真实并发宿主行为，未运行目标代码、外部工具或安装验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "授权安全分析需要跨会话复核工具输出与结论，合格结果是证据真实、相关且可复现；引用编号存在只是最低结构条件。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "组件index注册领域/Case工具并临时包装tools.register，persist仅将字符串结果落证据；caseflow记录finding时验证E编号，deep关闭检查finding数量和证据或no-evidence声明。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读packages/helmd/src/index.ts、packages/helmd/src/persist.ts、packages/helmd/src/case.ts、packages/helmd/src/tools/caseflow.ts、packages/helmd/package.json；未覆盖全部参考/界面分支与真实并发宿主行为，未运行目标代码、外部工具或安装验收。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT组件与参考资源，依赖宿主tools/systemPrompt及各领域外部工具；本轮不运行安全工具或修改宿主。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次搭分析环境，持续证据落盘、人工复核与外部工具执行成本；更多纪律也增加上下文和整理负担，未测净收益。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合授权样本分析时借鉴Case工作流。先验证持久化和恢复，再人工检查每条证据与结论关系；不将零幻觉标语当准确性保证。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少材料散失与交接重复，缺独立准确率与复现收益验证。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "包装注册统一持久化与领域实现解耦，但只覆盖特定字符串输出与活跃Case。编号存在/数量门禁是结构而非语义，可复用时应保持边界。 源码依据：[packages/helmd/src/index.ts](https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/src/index.ts)、[packages/helmd/src/persist.ts](https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/src/persist.ts)、[packages/helmd/src/case.ts](https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/src/case.ts)、[packages/helmd/src/tools/caseflow.ts](https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/src/tools/caseflow.ts)。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相比无持久材料的聊天分析，增量是Case目录、证据编号、结论关联和恢复接口形成可追踪工作流。领域方法与外部CLI归既有工具，不能从参考篇数推断新检测能力。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "“0幻觉”是否被代码保证？validateEvidenceIds只检查文件名编号，空数组也没有missing；记录的正文不校验证据是否支持结论，no-evidence可用文字说明。引用完整性有价值，但不能推出语义真实性或实验复现，更不能替代宿主权限边界。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由E编号检验推导，可为finding要求非空证据和明确命题/反例/复现步骤，另由独立检查绑定命题与输出摘要。未验证；用存在但不相关的证据、空引用和被改内容挑战，若仍作为已证实结论关案则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334304098:packages-helmd",
+                            "area": "code",
+                            "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:51.917Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T04:16:51.917Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                "reviewed_at": "2026-10-21T04:16:51.917Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334304098:packages-helmd",
+                        "area": "code",
+                        "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty常规证据工作流适配小档；mechanism注册包装/Case门禁半档；transferability证据组织半档；simplification统一落盘半档，不为0幻觉加分。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow分析交接半档；delivery可追溯Case半档；reach安全研究者小档；economics复查收益未测小档。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1334304098-packages-helmd-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "授权安全分析者可在样本Case试证据工作流；先核持久化恢复，逐条验证编号证据与结论关系，不采信零幻觉保证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "跨会话安全分析的材料交接与复核任务清晰。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "Case记录和证据引用减少材料散失，非真实性验证。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核编号校验及no-evidence放行，未验复现准确率。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需分析环境、工具与人工审证，限定授权样本可控。"
+                    }
+                },
+                "score": 65,
+                "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-04-github-1334304098-packages-helmd-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334304098:packages-helmd",
+                        "area": "code",
+                        "fingerprint": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334304098:packages-helmd",
+            "repository": "ADWMC/helm-d",
+            "path": "packages/helmd",
+            "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+            "fingerprints": {
+                "directory": "5a8dbb4d7bbb21e0bdafa91c30afa13a4e7bf6b21dc65ecaf275116423916832",
+                "code": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                "maintenance": "249d154a5af6e7b8705c53a1999cb1224e9b9d632216697ac80e04c78cb64ad7"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T04:06:46Z",
+            "analysis_sha256": "bcdbf6f91417b876cbcd694592d15b53c3b7a0c685bd47256145418f78b85a34"
+        },
+        "publication.metadata": "data/plugins/adwmc--helm-d--packages-helmd/META.json",
+        "publication.summaries": {
+            "text": "提供安全分析预设、领域工具和按需参考，并将Case证据与结论保存在磁盘。",
+            "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+            "source_url": "https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+            "items": {
+                "模型工具": "Case生命周期、证据保存和领域分析工具。",
+                "Agent/Preset": "安全分析预设与分层路由。"
+            }
+        },
+        "publication.advice": {
+            "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+            "text": "适合授权样本分析时借鉴Case工作流。先验证持久化和恢复，再人工检查每条证据与结论关系；不将零幻觉标语当准确性保证。"
+        },
+        "registry": "data/plugins/adwmc--helm-d--packages-helmd",
+        "reports": "# helmd\n\n> 提供安全分析预设、领域工具和按需参考，并将Case证据与结论保存在磁盘。\n\n## 使用建议\n\n适合授权样本分析时借鉴Case工作流。先验证持久化和恢复，再人工检查每条证据与结论关系；不将零幻觉标语当准确性保证。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：授权安全分析需要跨会话复核工具输出与结论，合格结果是证据真实、相关且可复现；引用编号存在只是最低结构条件。\n- **亮点**：相比无持久材料的聊天分析，增量是Case目录、证据编号、结论关联和恢复接口形成可追踪工作流。领域方法与外部CLI归既有工具，不能从参考篇数推断新检测能力。\n- **思考**：“0幻觉”是否被代码保证？validateEvidenceIds只检查文件名编号，空数组也没有missing；记录的正文不校验证据是否支持结论，no-evidence可用文字说明。引用完整性有价值，但不能推出语义真实性或实验复现，更不能替代宿主权限边界。\n- **建议**：由E编号检验推导，可为finding要求非空证据和明确命题/反例/复现步骤，另由独立检查绑定命题与输出摘要。未验证；用存在但不相关的证据、空引用和被改内容挑战，若仍作为已证实结论关案则否定。\n\n## 场景与替代办法\n\n授权安全分析需要跨会话复核工具输出与结论，合格结果是证据真实、相关且可复现；引用编号存在只是最低结构条件。\n\n手工证据目录和实验记录同样可复核；插件自动组织提高便利但不自动提高事实性。\n\n## 能力清单\n\n- **模型工具**：Case生命周期、证据保存和领域分析工具。\n- **Agent/Preset**：安全分析预设与分层路由。\n\n## 依赖与流程\n\nDSH工具注册和事件契约、本地写权限、具体领域CLI；分析授权/样本可运行性和证据质量由使用者负责。\n\nbegin_case建目录，领域工具输出存E编号，record_finding关联，状态恢复后deep检查再end_case；外部CLI结果需显式入链。\n\n## 成本与效果\n\n首次搭分析环境，持续证据落盘、人工复核与外部工具执行成本；更多纪律也增加上下文和整理负担，未测净收益。\n\n减少材料散失与交接重复，缺独立准确率与复现收益验证。\n\n## 核心贡献\n\n相比无持久材料的聊天分析，增量是Case目录、证据编号、结论关联和恢复接口形成可追踪工作流。领域方法与外部CLI归既有工具，不能从参考篇数推断新检测能力。\n\n## 关键质疑\n\n“0幻觉”是否被代码保证？validateEvidenceIds只检查文件名编号，空数组也没有missing；记录的正文不校验证据是否支持结论，no-evidence可用文字说明。引用完整性有价值，但不能推出语义真实性或实验复现，更不能替代宿主权限边界。\n\n\n## 工程亮点\n\n包装注册统一持久化与领域实现解耦，但只覆盖特定字符串输出与活跃Case。编号存在/数量门禁是结构而非语义，可复用时应保持边界。 源码依据：[packages/helmd/src/index.ts](https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/src/index.ts)、[packages/helmd/src/persist.ts](https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/src/persist.ts)、[packages/helmd/src/case.ts](https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/src/case.ts)、[packages/helmd/src/tools/caseflow.ts](https://github.com/ADWMC/helm-d/blob/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39/packages/helmd/src/tools/caseflow.ts)。\n\n## 未来设计假设（未验证）\n\n由E编号检验推导，可为finding要求非空证据和明确命题/反例/复现步骤，另由独立检查绑定命题与输出摘要。未验证；用存在但不相关的证据、空引用和被改内容挑战，若仍作为已证实结论关案则否定。\n\n隔离合法样本检验空引用、不相关E、文件变更、非字符串输出、跨会话恢复和无证据说明，人工盲评结论可复现性。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/helmd；内容摘要：453d575163e882dc47dc164c875725742e5c9ef037063489293eaa070c1d397d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 7 | 1941 | 1504 | 290 | — |\n| .md | source | 367 | 95649 | — | — | 525942 |\n| .mjs | source | 2 | 428 | 316 | 87 | — |\n| .ts | source | 34 | 5576 | 4454 | 727 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[ADWMC/helm-d](https://github.com/ADWMC/helm-d)\n- **版本号**：0.5.0（[固定提交 3c82d9d7](https://github.com/ADWMC/helm-d/tree/3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 packages/helmd/src/index.ts、packages/helmd/src/persist.ts、packages/helmd/src/case.ts、packages/helmd/src/tools/caseflow.ts 及固定范围 inventory；组件：packages/helmd。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读packages/helmd/src/index.ts、packages/helmd/src/persist.ts、packages/helmd/src/case.ts、packages/helmd/src/tools/caseflow.ts、packages/helmd/package.json；未覆盖全部参考/界面分支与真实并发宿主行为，未运行目标代码、外部工具或安装验收。\n- 下一步：隔离合法样本检验空引用、不相关E、文件变更、非字符串输出、跨会话恢复和无证据说明，人工盲评结论可复现性。\n",
+        "metadata": {
+            "repository": "ADWMC/helm-d",
+            "repository_id": 1334304098,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 289,
+            "pushed_at": "2026-10-20T13:23:29Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AADWMC%2Fhelm-d%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:D5CAC:14C633:226D8B:6AD84AEF and timestamp 2026-10-21 05:17:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AADWMC%2Fhelm-d%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:90BBC:14DF72:22990C:6AD84AEF and timestamp 2026-10-21 05:17:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AADWMC%2Fhelm-d%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:223B46:15F4E9:23B72E:6AD84AF0 and timestamp 2026-10-21 05:17:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AADWMC%2Fhelm-d%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:15188B:22D830:6AD84AF0 and timestamp 2026-10-21 05:17:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AADWMC%2Fhelm-d%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C4:1498A8:147D37:223453:6AD84AF0 and timestamp 2026-10-21 05:17:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@adwmc/helm-d",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 391,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40adwmc%2Fhelm-d",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-14T17:29:28.998Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40adwmc%2Fhelm-d",
+                    "error": null,
+                    "latest_version": "0.3.1",
+                    "latest_published_at": "2026-09-14T17:29:29.365Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                "current_revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334304098:packages-helmd",
+            "repository": "ADWMC/helm-d",
+            "path": "packages/helmd",
+            "revision": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5a8dbb4d7bbb21e0bdafa91c30afa13a4e7bf6b21dc65ecaf275116423916832",
+                "code": "3c82d9d7c9fedab4575061bfcf9ea6d8ded8dd39",
+                "maintenance": "249d154a5af6e7b8705c53a1999cb1224e9b9d632216697ac80e04c78cb64ad7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6d538355c84f266c7d49ec5453fb22ab",
+    "identity": "github:1353038186:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353038186:root",
+            "repository": "pn1024/dsh-skill-market",
+            "path": "",
+            "revision": "18e30c32b48ec32cd47241d849dbc78c57ac2bf6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f1258a96f1267fc4750baea3b4ae0a73cbcca2a6630275e4ac50ae0551957f29",
+                "code": "18e30c32b48ec32cd47241d849dbc78c57ac2bf6",
+                "maintenance": "2ffdbf6f1a557b38e9d39622d650e9746adf8e2acc920d543ccc277435b18827"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "370aa881d7163d54a990b14896cf8dea",
+    "identity": "github:1334704639:packages-dsh-file-preview",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334704639:packages-dsh-file-preview",
+            "repository": "UndeadSheep/dsh-file-preview",
+            "path": "packages/dsh-file-preview",
+            "revision": "9b3689bf214cd54779a9da3a9effc3b4f128a2ac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "57f5de70b4dd2a31f0a7cf08afafd1fcd9ca3f19df02014b3c626fe9739172da",
+                "code": "9b3689bf214cd54779a9da3a9effc3b4f128a2ac",
+                "maintenance": "86696c03baeaceb47191023eb64fe80da64a23133e4c22284fd47a59a961b95d"
+            }
+        }
+    }
+}

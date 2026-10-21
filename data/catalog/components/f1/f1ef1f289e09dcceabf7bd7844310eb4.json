@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f1ef1f289e09dcceabf7bd7844310eb4",
+    "identity": "github:1362541370:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362541370:root",
+            "repository": "CAI-MH/dsh-agent-bridge",
+            "path": "",
+            "revision": "5548053ed060905ffa519bf2b95ecfced16d0255",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "687afafbcd475ccce66dc4dff4159b085c506d66dbde728b44c45be896db5131",
+                "code": "5548053ed060905ffa519bf2b95ecfced16d0255",
+                "maintenance": "8dcc647e8713c593d15a7df71ee7f1602cd35980b98df3e6f1d142893979da23"
+            }
+        }
+    }
+}

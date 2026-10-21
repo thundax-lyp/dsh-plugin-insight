@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "854286af140bac03a9e84fa7a0d24b51",
+    "identity": "github:1373820224:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373820224:root",
+            "repository": "jaikensai888/dsh-drawio",
+            "path": "",
+            "revision": "10fcc8bc4c4324d10dd2feb3bcb8f17c11a6c804",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d84ecc5ad4b858fa9000df960c80cd2dd5498e0f6e60451d4e512bad19d3df4",
+                "code": "10fcc8bc4c4324d10dd2feb3bcb8f17c11a6c804",
+                "maintenance": "207d4cb939a8a632e88f88be04a4a65d621881670f454bbc05b470edf57cda33"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e7be539f29134fde4149f93d31f6f4b2",
+    "identity": "github:1330412774:skills-dsh-web-guard-skill-md",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330412774:skills-dsh-web-guard-skill-md",
+            "repository": "fakechris/dsh-harness-ops",
+            "path": "skills/dsh-web-guard/SKILL.md",
+            "revision": "791d8ad59999103c7e6cfa56bb01dd822e4f5687",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "465c1741a121f8b30b0c8af5937212cec25b7bdef42eb913e489df49f540f485",
+                "code": "791d8ad59999103c7e6cfa56bb01dd822e4f5687",
+                "maintenance": "8ca14b80fb5a4b17f6c1feaf7651d630360a26f27fa95bb8d0615647a83d453f"
+            }
+        }
+    }
+}

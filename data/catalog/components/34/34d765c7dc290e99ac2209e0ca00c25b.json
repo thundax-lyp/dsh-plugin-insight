@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "34d765c7dc290e99ac2209e0ca00c25b",
+    "identity": "github:1326893710:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1326893710:root",
+            "repository": "omdsh-dev/DSH-better-sidebar",
+            "path": "",
+            "revision": "83faf70940160e5cd4c5332f5400aa8f4dbbb6d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b12b411debe3a39908989771f2f808c8e0121fbe3c7e55147e96fed3a89e0fdd",
+                "code": "83faf70940160e5cd4c5332f5400aa8f4dbbb6d6",
+                "maintenance": "906f1434bb5de053126e89bb843967005ec0cadd86cb6f9922015b75cb4f2cd8"
+            }
+        }
+    }
+}

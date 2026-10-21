@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "45bd5140a400857840db2c80939b2f2e",
+    "identity": "github:1335679618:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335679618:root",
+            "repository": "rinDBeans/dsh-miraculous-standard",
+            "path": "",
+            "revision": "9b54d1768143709f0718db944e2b01d010874581",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "defe246e1c6a95dcf862a5e1017ec29992e6ad074eba4fd460862f0acf26fb78",
+                "code": "9b54d1768143709f0718db944e2b01d010874581",
+                "maintenance": "67270b2e4eff42737f57765a8a69528a5b70fb3ab17e3861b801831b93208aea"
+            }
+        }
+    }
+}

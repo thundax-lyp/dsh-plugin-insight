@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d5c905e91017afe7b6c1262b08e31afa",
+    "identity": "github:1389354496:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389354496:root",
+            "repository": "G57651/dsh-one-click-restart",
+            "path": "",
+            "revision": "03bd06f1962c8193e367dfb605112d5efee2fbe1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5084d25ed8c0fc8fb4991c93fa3e996fbdcc26c5495b3571985023077299829e",
+                "code": "03bd06f1962c8193e367dfb605112d5efee2fbe1",
+                "maintenance": "ec7b3c1fd5042c0f8aade679dd9821b4b420aa140da005c00a148b200e92fce8"
+            }
+        }
+    }
+}

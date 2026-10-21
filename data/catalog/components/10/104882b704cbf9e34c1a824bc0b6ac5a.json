@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "104882b704cbf9e34c1a824bc0b6ac5a",
+    "identity": "github:1412322368:packages-browser-bridge-browser",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412322368:packages-browser-bridge-browser",
+            "repository": "DightEndless/dsh-browser",
+            "path": "packages/browser/bridge-browser",
+            "revision": "84e6af4422339951389d9410a68439cbf3d42e38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0afe82208fd7d5112b75e6e1d1692d9bb1949fb99ff4dce7117165240a4edb97",
+                "code": "84e6af4422339951389d9410a68439cbf3d42e38",
+                "maintenance": "1df6f90d7a63ae0fc46e70a1c2687a83676fa2537c6816e8369c390cfc654856"
+            }
+        }
+    }
+}

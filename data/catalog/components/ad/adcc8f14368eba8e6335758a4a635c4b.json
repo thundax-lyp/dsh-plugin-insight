@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "adcc8f14368eba8e6335758a4a635c4b",
+    "identity": "github:1375607804:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375607804:root",
+            "repository": "Matcha-Eason/dsh-answer-highlighter",
+            "path": "",
+            "revision": "80cac3e0d725d2a09e17240a11abad1cb7097f6c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "83ebf689276c9ae43ddcf1f3585deaefcde2f984f41110f05cb970b0d9514ee9",
+                "code": "80cac3e0d725d2a09e17240a11abad1cb7097f6c",
+                "maintenance": "857ff48d1ea478d0cae888ed89cadfbaa1004f1e1d65bd848009d44df3e4b3ca"
+            }
+        }
+    }
+}

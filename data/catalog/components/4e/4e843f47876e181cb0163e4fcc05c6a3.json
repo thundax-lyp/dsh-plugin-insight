@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e843f47876e181cb0163e4fcc05c6a3",
+    "identity": "github:1347275611:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347275611:root",
+            "repository": "niushuanan/dsh-token-overview",
+            "path": "",
+            "revision": "159166121c2031816f2ba74f0d0fdf252f17e7f5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b173f242f83e610fb400323da490119d1ff5ed2b80a9b038872e0438d96e8b6e",
+                "code": "159166121c2031816f2ba74f0d0fdf252f17e7f5",
+                "maintenance": "2a2d5675e6aa46103374639bbb30df3630f5f42423ae407e7286b162b200b35f"
+            }
+        }
+    }
+}

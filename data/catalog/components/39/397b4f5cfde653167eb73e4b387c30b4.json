@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "397b4f5cfde653167eb73e4b387c30b4",
+    "identity": "github:1412856218:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412856218:root",
+            "repository": "FurryBear2025/dsh-session-drag-move",
+            "path": "",
+            "revision": "c9cbb0cc49bb915fb40c59256da8843dad6f9b66",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9653115f4fe257b22f639caedb001423a93480ecbe6bd76f688126950a49c4d5",
+                "code": "c9cbb0cc49bb915fb40c59256da8843dad6f9b66",
+                "maintenance": "b41af2dd4048ae84dfbc9182a14ea2ae7bd1556bd1c8715acfc06743bb1a90f5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "06b6b9e72f99d8126b71a6b0b597abb4",
+    "identity": "github:1338155162:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338155162:root",
+            "repository": "magicOF2/dsh-autoload-history",
+            "path": "",
+            "revision": "334063f32333c2c73c254beac258be34a3ee2a2e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ca43990d30f0cfcf2408b6f166512ec26fbb9ea88d5bb549237af05640fbc7d1",
+                "code": "334063f32333c2c73c254beac258be34a3ee2a2e",
+                "maintenance": "d045dba2f06ca324bb91cc30ff9cdce68002ae6608ae43e53eb06e693de768f7"
+            }
+        }
+    }
+}

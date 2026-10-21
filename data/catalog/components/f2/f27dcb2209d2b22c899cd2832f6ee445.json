@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f27dcb2209d2b22c899cd2832f6ee445",
+    "identity": "github:1345717220:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345717220:root",
+            "repository": "Pasumao/dsh-plugin-windows-guard",
+            "path": "",
+            "revision": "e36cba7b5d1c934c87b41b3f096424fb3ba6574f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "25e9639529a1f82e59dd65588fa36a7896e90a8cd1fc06a6afafc5752af462a0",
+                "code": "e36cba7b5d1c934c87b41b3f096424fb3ba6574f",
+                "maintenance": "a402fe24472cf6dc383393224bf86222427f9316f16060b442f93e86df8ddd79"
+            }
+        }
+    }
+}

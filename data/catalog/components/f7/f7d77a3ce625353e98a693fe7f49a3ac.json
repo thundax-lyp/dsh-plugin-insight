@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f7d77a3ce625353e98a693fe7f49a3ac",
+    "identity": "github:1335289663:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335289663:root",
+            "repository": "platonai/dsh-browser4",
+            "path": "",
+            "revision": "fb1c490d0536c33123026876f54b5ae3482aea89",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a6a1aeb8ef9cac8d12f0bbfaa4a23ceeb0c29653d6b9ee4cbdfebfa68745e9a1",
+                "code": "fb1c490d0536c33123026876f54b5ae3482aea89",
+                "maintenance": "f0fa87ad1a5290232f281c1bc04d87903c43708cb29074caeafe699e3cada1ea"
+            }
+        }
+    }
+}

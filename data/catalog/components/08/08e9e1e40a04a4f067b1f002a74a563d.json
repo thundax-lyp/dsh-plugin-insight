@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "08e9e1e40a04a4f067b1f002a74a563d",
+    "identity": "github:1335749688:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335749688:root",
+            "repository": "stoneface10/dsh-codex-connect-plus",
+            "path": "",
+            "revision": "bc8c137a85dbbef7801e4999814643410a384853",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24685ffd6cd336e811c92138e1767dadb070adcd4920b7e9a6462cb1e9412c1d",
+                "code": "bc8c137a85dbbef7801e4999814643410a384853",
+                "maintenance": "802c69636c0525944c791375b21dd5583fa702a1b212301a42a38ec4ad581e72"
+            }
+        }
+    }
+}

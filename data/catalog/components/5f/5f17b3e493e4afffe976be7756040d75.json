@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5f17b3e493e4afffe976be7756040d75",
+    "identity": "github:1334732288:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334732288:root",
+            "repository": "mengyun233/dsh-codex-pet",
+            "path": "",
+            "revision": "5ee4abe0c4ef37082a9dd6cfd794c9a5473e26e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "47b464ed28dfc42ae754c0dd3476245df3d432d995609ab37b7ed9dd0de029f1",
+                "code": "5ee4abe0c4ef37082a9dd6cfd794c9a5473e26e4",
+                "maintenance": "b4ebc579fcb4303719c592ba074bca101660010d292c1a5284d947ac052aa1f2"
+            }
+        }
+    }
+}

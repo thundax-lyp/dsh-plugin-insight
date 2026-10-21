@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e86edd0707c5a417d0068ff4043fa3ac",
+    "identity": "github:1379166355:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379166355:root",
+            "repository": "zhangnan/dsh-chatgpt-oauth",
+            "path": "",
+            "revision": "5116798c3de30e7cb0b4cb207e97a3cbd8c819fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "37747d8194f8c64f059d8334bbdab6e3161c2df892490cb2b22d56e5d5a84c89",
+                "code": "5116798c3de30e7cb0b4cb207e97a3cbd8c819fd",
+                "maintenance": "0e713ea3d8f869e5a3b56eec31046f0d0bfaaf138b26e4951dfe3195e098b234"
+            }
+        }
+    }
+}

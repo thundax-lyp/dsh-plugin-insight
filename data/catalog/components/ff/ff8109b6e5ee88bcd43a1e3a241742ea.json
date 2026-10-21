@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff8109b6e5ee88bcd43a1e3a241742ea",
+    "identity": "github:1359686866:plugins-motor-decision-report",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359686866:plugins-motor-decision-report",
+            "repository": "helllo-shijie/motor-hospital-plugins",
+            "path": "plugins/motor-decision-report",
+            "revision": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "60a38fd08a601436633c159305538fa3ae5019d4f7f9d62b8d6f5acb01b653fc",
+                "code": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+                "maintenance": "ae61c30fd903785b79008e00b9f602996e5f629205daa092405be9d1bae46ae1"
+            }
+        }
+    }
+}

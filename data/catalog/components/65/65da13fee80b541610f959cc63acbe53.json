@@ -1,0 +1,367 @@
+{
+    "schema_version": 3,
+    "id": "65da13fee80b541610f959cc63acbe53",
+    "identity": "github:1359423472:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1359423472:root",
+            "repository_id": 1359423472,
+            "component_id": "root",
+            "repository": "1014029855/dsh-codevault",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-codevault",
+            "entry_type": "plugin",
+            "technical_category": "memory-knowledge",
+            "business_category": "research-knowledge",
+            "tags": [
+                "源码阅读",
+                "笔记",
+                "Obsidian"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "8d03c40f9da0dfe16d6c3dc8061ad75d09584d277c302c6614b183aaea3cda5a",
+                "code": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                "maintenance": "04c778e36182b2e3d47d0490b4c469837092ed590f5aed4c56cc6b7a9f472b0a"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1359423472-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:10:28.172Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1359423472-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/README.md",
+                    "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                    "captured_at": "2026-10-20T03:10:28.172Z",
+                    "summary": "把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1014029855--dsh-codevault/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1359423472-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/index.ts",
+                    "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                    "captured_at": "2026-10-20T03:10:28.172Z",
+                    "summary": "核查 src/index.ts、src/store.ts、src/tools.ts；入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1014029855--dsh-codevault/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "未验证笔记语义正确性、旧卡片过时识别或复杂仓库的检索召回。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "反复阅读相同代码的人需要保留带对象身份的笔记，减少重复整理。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "生成和维护卡片需要模型与人工审阅；只有重复使用时才可能抵消整理成本。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "档案根与只读 vault 分开配置有利于职责清晰；跨工具迁移需核对链接与对象身份。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "未验证笔记语义正确性、旧卡片过时识别或复杂仓库的检索召回。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包版本 0.3.0，Markdown 与 JSONL 档案在本地管理，接入依赖 DSH tools、commands、skills。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1359423472-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1359423472:root",
+                            "area": "code",
+                            "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:28.172Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:10:28.172Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "反复读同模块的开发者可试源码卡片，先检查代码变更后引用和旧结论更新。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "跨会话复用代码阅读笔记的需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "带对象身份的检索和vault关联胜于聊天时间线。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "工具和本地档案机制可查，语义正确与过时识别未测。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "模型制卡和人工维护仅在重复使用时可能摊薄。"
+                    }
+                },
+                "score": 65,
+                "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1359423472-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1359423472:root",
+                        "area": "code",
+                        "fingerprint": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1359423472:root",
+            "repository": "1014029855/dsh-codevault",
+            "path": "",
+            "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+            "fingerprints": {
+                "directory": "8d03c40f9da0dfe16d6c3dc8061ad75d09584d277c302c6614b183aaea3cda5a",
+                "code": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                "maintenance": "04c778e36182b2e3d47d0490b4c469837092ed590f5aed4c56cc6b7a9f472b0a"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "d1f395e206ad4780e1d5120c67827605485d7a0bd7aa62fd90accbda9f1adcd9"
+        },
+        "publication.metadata": "data/plugins/1014029855--dsh-codevault/META.json",
+        "publication.summaries": {
+            "text": "把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。",
+            "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+            "source_url": "https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+            "items": {
+                "模型工具": "源码卡片和 vault 查询维护。",
+                "Skill": "code-reading 阅读框架。",
+                "用户命令": "/codevault 档案入口。"
+            }
+        },
+        "publication.advice": {
+            "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+            "text": "先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。"
+        },
+        "registry": "data/plugins/1014029855--dsh-codevault",
+        "reports": "# dsh-codevault\n\n> 把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。\n\n## 固定范围与依据\n\n固定提交 [14dcb88d65f7d9fcf30b3e6adac5764f705ffae9](https://github.com/1014029855/dsh-codevault/blob/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:10:28.172Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts、src/store.ts、src/tools.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：反复阅读相同代码的人需要保留带对象身份的笔记，减少重复整理。\n- **亮点**：入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。\n- **思考**：对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。\n- **建议**：先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。\n\n## 场景与替代办法\n\n反复阅读相同代码的人需要保留带对象身份的笔记，减少重复整理。\n\nMarkdown 阅读笔记最易迁移；插件额外价值在结构化工具和检索，不是自动保证理解。\n\n## 依赖与流程\n\n依赖本地文件和宿主工具注册，关联 Obsidian 是可选配置；效果依赖笔记质量。\n\n阅读后保存卡片、检索关联知识，再展开原文件核对；失效时更新或删除卡片。\n\n## 成本与效果\n\n生成和维护卡片需要模型与人工审阅；只有重复使用时才可能抵消整理成本。\n\n对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8ec2a3fcb0cd930465b5988484856c0713c74edf82b52bb54cae9ef7ade8b172。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 631 | — | — | 9752 |\n| .js | source | 7 | 2634 | 2320 | 316 | — |\n| .mjs | source | 1 | 390 | 335 | 27 | — |\n| .ts | source | 7 | 3048 | 2463 | 394 | — |\n\n排除 7 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：源码卡片和 vault 查询维护。\n- **Skill**：code-reading 阅读框架。\n- **用户命令**：/codevault 档案入口。\n\n## 工程亮点\n\n档案根与只读 vault 分开配置有利于职责清晰；跨工具迁移需核对链接与对象身份。\n\n## 分发与兼容\n\n包版本 0.3.0，Markdown 与 JSONL 档案在本地管理，接入依赖 DSH tools、commands、skills。\n\n## 历史对照\n\n前次代码指纹为 14dcb88d65f7d9fcf30b3e6adac5764f705ffae9；本轮固定为 14dcb88d65f7d9fcf30b3e6adac5764f705ffae9。Markdown 阅读笔记最易迁移；插件额外价值在结构化工具和检索，不是自动保证理解。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未验证笔记语义正确性、旧卡片过时识别或复杂仓库的检索召回。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用重命名、源码变更、重复对象和删除恢复样本检查档案一致性与引用可追溯。\n",
+        "metadata": {
+            "repository": "1014029855/dsh-codevault",
+            "repository_id": 1359423472,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 3,
+            "pushed_at": "2026-09-16T05:38:49Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:14F36B:226988:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:14E4E0:225142:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:148B9E:2203E0:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:1483F3:21FB3C:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1014029855%2Fdsh-codevault%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:1469BF:21D5C1:6AD848FF and timestamp 2026-10-21 05:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-codevault",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-codevault",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-codevault",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                "current_revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1359423472:root",
+            "repository": "1014029855/dsh-codevault",
+            "path": "",
+            "revision": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8d03c40f9da0dfe16d6c3dc8061ad75d09584d277c302c6614b183aaea3cda5a",
+                "code": "14dcb88d65f7d9fcf30b3e6adac5764f705ffae9",
+                "maintenance": "04c778e36182b2e3d47d0490b4c469837092ed590f5aed4c56cc6b7a9f472b0a"
+            }
+        }
+    }
+}

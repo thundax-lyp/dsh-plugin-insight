@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "51e92089d6c0b5546efc6b485b1b6a78",
+    "identity": "github:1420103913:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420103913:root",
+            "repository": "FideFeiPlane/dsh-auto-maximize",
+            "path": "",
+            "revision": "0186d52973dfb443676454322bd457a5cd138ee9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e606a860e5f9805ed31b36c525e573498c0e0516f6ab199a5ec4c815497d5849",
+                "code": "0186d52973dfb443676454322bd457a5cd138ee9",
+                "maintenance": "068c74dd24910c363b45a050e4141c8e27479da4be6e430a3dd35986eddb9e82"
+            }
+        }
+    }
+}

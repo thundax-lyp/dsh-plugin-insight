@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e12c38ef7ade46216728b58853d81d56",
+    "identity": "github:1334903717:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334903717:root",
+            "repository": "Sim-xia/dsh-vscode-theme",
+            "path": "",
+            "revision": "1e22fa74783f5f84e7ecb8d7b96fb2997dc9d4f8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ec5106720846ba7c2ac5bb5d5e001e77603a76e164e78ecb672f74d3db5866be",
+                "code": "1e22fa74783f5f84e7ecb8d7b96fb2997dc9d4f8",
+                "maintenance": "dabb7a0401a46ea3ca929dbbe5dea4f1950d0c2ea79b29f77bfe45136a1500b4"
+            }
+        }
+    }
+}

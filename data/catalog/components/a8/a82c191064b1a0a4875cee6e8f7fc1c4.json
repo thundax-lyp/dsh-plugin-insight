@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a82c191064b1a0a4875cee6e8f7fc1c4",
+    "identity": "github:1339945190:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339945190:root",
+            "repository": "RyensX/dsh-message-fold",
+            "path": "",
+            "revision": "b40619079758a949a73c6c91507a14a07d72d8b0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "827d54e10da07771fc910d3df75d8659e1f145b98d12af881bb9190f9a719b8d",
+                "code": "b40619079758a949a73c6c91507a14a07d72d8b0",
+                "maintenance": "4866696b02ff73f6fdac63981a7f3074d4f8760343615b202f64a514553447e8"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a58f54eeb363f984ebd5f9604e41761",
+    "identity": "github:1335099437:packages-dsh-tavily",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335099437:packages-dsh-tavily",
+            "repository": "moguiyu/dsh-tavily",
+            "path": "packages/dsh-tavily",
+            "revision": "44cac110b62d994d25bbaaa5eaf80aa5a28b77a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "70381c1fcef6384bee3ff0f14989b2eb6e23874667e5e56e5f89c473a2f258a9",
+                "code": "44cac110b62d994d25bbaaa5eaf80aa5a28b77a7",
+                "maintenance": "ad62b82a0eae62e527b1dfaef2b7d89ed648c37f8633ecc0055c25147c3b6505"
+            }
+        }
+    }
+}

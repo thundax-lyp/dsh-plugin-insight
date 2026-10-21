@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7b3b41891cac47383e14931787338940",
+    "identity": "github:1340292812:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340292812:root",
+            "repository": "GeekRicardo/dsh-convmap",
+            "path": "",
+            "revision": "8308420cea9f5ac8ab0727cca8c680e480cdcdbf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7efb534db63f11a4255710712da062cb83fa580c33f880b07e5b26943d4f6821",
+                "code": "8308420cea9f5ac8ab0727cca8c680e480cdcdbf",
+                "maintenance": "9ea8d42af914638b1514d39a86bd70f92e93038efae483b9b0f7988e8fd589c8"
+            }
+        }
+    }
+}

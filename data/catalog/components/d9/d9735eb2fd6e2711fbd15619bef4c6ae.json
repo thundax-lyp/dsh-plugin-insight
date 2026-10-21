@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d9735eb2fd6e2711fbd15619bef4c6ae",
+    "identity": "github:1339660786:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339660786:root",
+            "repository": "hunter118/dsh-s7r",
+            "path": "",
+            "revision": "e233243a96b3f65a9fd5c3c85da83bcb5acf6def",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8abf68b6b1aa1dfb3c8eb1ccb4f25246d323cce9449a3822228c49e413a4863f",
+                "code": "e233243a96b3f65a9fd5c3c85da83bcb5acf6def",
+                "maintenance": "21b95efaef09fc2d4f0dc2eee65e2b677a94d19707661aeb147d899c55160bcd"
+            }
+        }
+    }
+}

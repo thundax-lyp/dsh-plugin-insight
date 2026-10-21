@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bfa6579c0c1364db927490676a9d78b6",
+    "identity": "github:1418224050:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418224050:root",
+            "repository": "hackmagic/dsh-unreal-agentlink",
+            "path": "",
+            "revision": "e39fddea694aea82a7097023409c567c1e10256a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ddda03fa4147584b4103cedf8cac8ae7578f173bb14b6fe290c46e4a17fe5ef5",
+                "code": "e39fddea694aea82a7097023409c567c1e10256a",
+                "maintenance": "f5209f018d93fb7c6391d88e90ab5ab9984cc448bc9a50caf922c8bbfba2b421"
+            }
+        }
+    }
+}

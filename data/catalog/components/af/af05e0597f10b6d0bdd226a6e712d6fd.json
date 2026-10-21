@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "af05e0597f10b6d0bdd226a6e712d6fd",
+    "identity": "github:1351282919:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351282919:root",
+            "repository": "jimmyzhang219/dsh-plan-and-execute",
+            "path": "",
+            "revision": "cfe697c683d972fea2266e652a4aa623ce91a578",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d2165d7c40c5eb0076ff9762a9082da5cd9e3c6025cb7c88e2d3fb1d7aef6b4c",
+                "code": "cfe697c683d972fea2266e652a4aa623ce91a578",
+                "maintenance": "820f97088559f35892f028c184d3d43335d37cd0d4da6aadb371e920eccabc96"
+            }
+        }
+    }
+}

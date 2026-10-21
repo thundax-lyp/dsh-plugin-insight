@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a390e5450600d52656975db98923f576",
+    "identity": "github:1343833364:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343833364:root",
+            "repository": "JularDepick/dsh-system-monitor-plugin",
+            "path": "",
+            "revision": "f4f01aa90598c2351b1ce0a4fa1a1b250969fad0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "74ab17e7587bbb3ca1ee01025c70ed1e89e269e863a2702a89df9fb9a9b15df5",
+                "code": "f4f01aa90598c2351b1ce0a4fa1a1b250969fad0",
+                "maintenance": "2b963701e7450938dcd5a03d3684529a95510646223036f068dd96cf4faec669"
+            }
+        }
+    }
+}

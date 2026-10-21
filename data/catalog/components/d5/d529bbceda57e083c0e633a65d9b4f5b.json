@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d529bbceda57e083c0e633a65d9b4f5b",
+    "identity": "github:1334560246:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334560246:root",
+            "repository": "Semidia/dsh-sampling-sliders",
+            "path": "",
+            "revision": "19eb0c65bd71500233e581d034894683e4dc2528",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bf7c9f816ae23e6913839b17c39a6ca25298629ebabf2364ac77130eec571a1c",
+                "code": "19eb0c65bd71500233e581d034894683e4dc2528",
+                "maintenance": "31a07e4b5ef9a610c19290fbf6827d3bf00da342d3c558f243dd4453f061828f"
+            }
+        }
+    }
+}

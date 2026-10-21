@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b2b6ec5d31db681423f6d930f3ebeba2",
+    "identity": "github:1354857001:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354857001:root",
+            "repository": "busabase/busabase-dsh-plugin",
+            "path": "",
+            "revision": "c31fb6445e076b8fc1c44e2b24d9b2f4e55ddda5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9de6c5079171ffbf7384cc19a9fe8ecdf4c8aed08071108406425aa443e914d4",
+                "code": "c31fb6445e076b8fc1c44e2b24d9b2f4e55ddda5",
+                "maintenance": "4f197e178879f61a20b13055f7954a4d257d5d2cef174ad3ca5703c61f6d22b6"
+            }
+        }
+    }
+}

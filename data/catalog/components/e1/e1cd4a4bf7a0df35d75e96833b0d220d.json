@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e1cd4a4bf7a0df35d75e96833b0d220d",
+    "identity": "github:1334084046:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334084046:root",
+            "repository": "yangyongzhen/dsh-article-publish",
+            "path": "",
+            "revision": "12f43523d8d13ec82aca117b3179d9ff1f1e0fe1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a9604208bec34ff32da4a2e50e0d439c1a9fc60c315528bb954a2006c7a22a08",
+                "code": "12f43523d8d13ec82aca117b3179d9ff1f1e0fe1",
+                "maintenance": "0f9f58257b6bada6fab8d7be6b8066870541da03f4d1fa0b2543146631a1f83a"
+            }
+        }
+    }
+}

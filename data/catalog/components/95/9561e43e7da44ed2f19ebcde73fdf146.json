@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9561e43e7da44ed2f19ebcde73fdf146",
+    "identity": "github:1333718792:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333718792:root",
+            "repository": "dsh-tauri/deepseek-harness-desktop",
+            "path": "",
+            "revision": "bbeba1c527e6eb7ed1078a7b446667d846db786a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "716610ff93f3bd95c159cae9ab944e7af4af21ea5502e73feb9aacf5826b2886",
+                "code": "bbeba1c527e6eb7ed1078a7b446667d846db786a",
+                "maintenance": "10690d206df742becefce9daaca0eba371d35e0216f12425cece2af2ef255380"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8580cb169d42e6523a31aa577825b7a1",
+    "identity": "github:1353838298:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353838298:root",
+            "repository": "du-u-uck/DSH-Transparent-UI-Plugin",
+            "path": "",
+            "revision": "17ee65eed02ba54ccce5cf1266310439c3734882",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a520a341bdc075bcc0ede658b85ec8a82474d19fb6fca3fc1e56256fd56317f1",
+                "code": "17ee65eed02ba54ccce5cf1266310439c3734882",
+                "maintenance": "6a14c8e032c235a45b475b4541f44aa764af01a73e6bd01424059e1a45bb26f1"
+            }
+        }
+    }
+}

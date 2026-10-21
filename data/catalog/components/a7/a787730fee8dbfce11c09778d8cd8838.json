@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a787730fee8dbfce11c09778d8cd8838",
+    "identity": "github:1347900503:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347900503:root",
+            "repository": "caopu16/dsh-local-memory",
+            "path": "",
+            "revision": "4a2daa2ceea808876340065abdb4a1d8ac5176e9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4799d736dad8a1e9384c01572ba1f3082ad2676ebb35d515f1adfa47a01a68e6",
+                "code": "4a2daa2ceea808876340065abdb4a1d8ac5176e9",
+                "maintenance": "48d938129f33e5ca9d08cc5c97308b963fe11dc6e95b0c55311af96a07a6b327"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "e204a9da3f4102a6b501313ac8758265",
+    "identity": "github:1323731026:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1323731026:root",
+            "repository": "csyangwen/dsh-memory-evolve",
+            "path": "",
+            "revision": "e6f6b84c56f0fc18ba4a6a1a5959fbf86ea9ec8b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d31ec2fd4fda267ff5d348378650df9c638d7a1f26dab28aefd865462a1d8843",
+                "code": "e6f6b84c56f0fc18ba4a6a1a5959fbf86ea9ec8b",
+                "maintenance": "a62dbd7e7dc860d8c9f34e585102ea9f4ce44533db9d2f1cfb7ea59565362518"
+            }
+        }
+    }
+}

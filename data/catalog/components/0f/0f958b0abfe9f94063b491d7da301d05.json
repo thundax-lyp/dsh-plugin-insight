@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0f958b0abfe9f94063b491d7da301d05",
+    "identity": "github:1353443956:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353443956:root",
+            "repository": "qwerty-k-de/dsh-attach-picker",
+            "path": "",
+            "revision": "e18022461c627eb3a88d1e5848ab2d9f230a43d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f9e3b91d59a5d6993106477bda6c8635a3e27ab64f6276af4471540e3518ddfa",
+                "code": "e18022461c627eb3a88d1e5848ab2d9f230a43d6",
+                "maintenance": "ba9818a8ebbbe7b9ac193f8a29aa7fb4cb126a10cf188a3aeec336117a56eb12"
+            }
+        }
+    }
+}

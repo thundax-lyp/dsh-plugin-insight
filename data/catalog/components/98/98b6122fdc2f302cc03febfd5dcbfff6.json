@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "98b6122fdc2f302cc03febfd5dcbfff6",
+    "identity": "github:1333152408:packages-plugins-plugin-team-board",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333152408:packages-plugins-plugin-team-board",
+            "repository": "whyihaveyou/dsh-suite",
+            "path": "packages/plugins/plugin-team-board",
+            "revision": "a30b1e7a53970f0b49f2f6206c9d500c47b8327b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0c8dd4d25aca9fed2adff8b7289bb9374eb566f2e576a7bb085580c0dacb0d2b",
+                "code": "a30b1e7a53970f0b49f2f6206c9d500c47b8327b",
+                "maintenance": "d4bcf5f9d35d47202967b72996e6cbc14ee9bcf02421620f54a6798eb4d89795"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f810591db41392332b8c22175bb3d2c3",
+    "identity": "github:1333356578:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333356578:root",
+            "repository": "JustGenius-s/DSH-Desktop",
+            "path": "",
+            "revision": "9e53cbb3f8289db23a6a1ff0532fa1c63cb2d804",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b3447996051bf195d5775e1b15463692fab93e7a239925babc08f7dd365e757b",
+                "code": "9e53cbb3f8289db23a6a1ff0532fa1c63cb2d804",
+                "maintenance": "c74947e0de7d8bec03b6f344085625f1d87a30d8bd4d17b608f8aade4c25a1c3"
+            }
+        }
+    }
+}

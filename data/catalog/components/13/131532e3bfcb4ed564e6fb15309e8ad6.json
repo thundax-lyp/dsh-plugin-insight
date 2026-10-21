@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "131532e3bfcb4ed564e6fb15309e8ad6",
+    "identity": "github:1334023400:packages-desktop-launcher-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334023400:packages-desktop-launcher-plugin",
+            "repository": "Ch0uHuaZ1/DeepSeek-Harness-Desktop",
+            "path": "packages/desktop-launcher-plugin",
+            "revision": "da036cd9e4b49bf4110f3b077e41e5e96cd01ca5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5b46b0361d8d9a843e28203fb95f6029dd3662c1c0c9fa51f7db587f27cb3076",
+                "code": "da036cd9e4b49bf4110f3b077e41e5e96cd01ca5",
+                "maintenance": "b28855c00169fdab886081b63f64a6e1ef7a75e8e8d66ee4ea03bfa65bc91ba4"
+            }
+        }
+    }
+}

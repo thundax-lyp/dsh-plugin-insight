@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c2e94d85da9332f115cb92cbf072f1d",
+    "identity": "github:1352387770:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352387770:root",
+            "repository": "vollegrewar/dsh-tool-highlight",
+            "path": "",
+            "revision": "f5f0e89101de1b24972f94ab0baf8cc0891f1baf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3226eefb5597f6960a39868d975601734347c1446b49289cc976558e89a440d1",
+                "code": "f5f0e89101de1b24972f94ab0baf8cc0891f1baf",
+                "maintenance": "f23b5f98683bee77ceabea645494878d64e1b7aa57a5b8f30444afa1e64ce734"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "aada12ca6bc68b40f09e23e2c93d1ce8",
+    "identity": "github:1329113397:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1329113397:root",
+            "repository": "Nagi-ovo/dsh-ads",
+            "path": "",
+            "revision": "a5854a37bbe24078878740ae4567e59cc75c29ec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "50225a75e699a9a4eb7a67ef02a10095ac8ff8a1d405d0c89db0de3f377a7118",
+                "code": "a5854a37bbe24078878740ae4567e59cc75c29ec",
+                "maintenance": "281cf63d02139a63e82ed64ce12309f45243114155e2aa24d04577ff3a89b83e"
+            }
+        }
+    }
+}

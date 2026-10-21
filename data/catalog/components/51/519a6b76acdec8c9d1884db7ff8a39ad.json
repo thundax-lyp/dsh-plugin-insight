@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "519a6b76acdec8c9d1884db7ff8a39ad",
+    "identity": "github:1423759851:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423759851:root",
+            "repository": "zhifeiNi/dsh-usage-orb",
+            "path": "",
+            "revision": "da8928b75cf34b3d77db0213ee21e79fc9df6b5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1facdfeed75ecec5740d026e747e9c1c64bb7018d87b8b74a39c8e3fea99ae8c",
+                "code": "da8928b75cf34b3d77db0213ee21e79fc9df6b5b",
+                "maintenance": "b340397e651a594760f4b63eb50b0af0f9721d9ba045dec992832c0f6ea9d551"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5919289ffd1417379629e3b99ad5a8d0",
+    "identity": "github:1232322871:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1232322871:root",
+            "repository": "vostride/agent-qa",
+            "path": "",
+            "revision": "22636e183bb4ee4528bf90db676837369a498e8f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9183c7f631336c8755525b94618cbf6793dd4411153b53f69d61b5bc155218e4",
+                "code": "22636e183bb4ee4528bf90db676837369a498e8f",
+                "maintenance": "41739dbf139f2f93f3683512bb8f32f622ee851c94c0da4a7a8f7c3e9f5e1775"
+            }
+        }
+    }
+}

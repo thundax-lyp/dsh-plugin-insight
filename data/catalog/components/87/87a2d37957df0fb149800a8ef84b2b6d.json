@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "87a2d37957df0fb149800a8ef84b2b6d",
+    "identity": "github:1195794651:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1195794651:root",
+            "repository": "toby-bridges/api-relay-audit",
+            "path": "",
+            "revision": "390de58b83f8e3a7b6c54944c78eae286238dbf5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "dbcdce4bec1bb7a882e90204b509cbb34ee6b2243a69071aa59813e2416606b2",
+                "code": "390de58b83f8e3a7b6c54944c78eae286238dbf5",
+                "maintenance": "84d268b12a354e8bc4f7ef36ec741e5fe0939adc87c329faf023c0f1fc0f359f"
+            }
+        }
+    }
+}

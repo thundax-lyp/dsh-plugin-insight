@@ -99,7 +99,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         (work.session.selected_ids && !work.session.selected_ids.includes(pluginId))
     )
         throw Error('analysis must target one selected pending item');
-    const snapshot = readSnapshotStorage(resolve(ROOT, 'data/catalog/SNAPSHOT.json'));
+    const snapshot = readSnapshotStorage(resolve(ROOT, 'data/catalog/index.jsonl'));
     const old = snapshot.catalog.plugins.find((p) => p.id === pluginId);
     const slug = basename(pluginDirectory({ ...item, component_id: item.id.split(':')[2] }, ROOT));
     const folder = resolve(workPath, '..'),

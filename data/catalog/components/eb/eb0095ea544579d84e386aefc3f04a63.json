@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eb0095ea544579d84e386aefc3f04a63",
+    "identity": "github:1353844392:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353844392:root",
+            "repository": "dpskk2/dsh-chatsync",
+            "path": "",
+            "revision": "b8cbf7221b6bef787be62ef71038f42c57e8bfca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0ce11aed8a7efbe45f7db18d497ee31118c540ed60e102fd3e8e3b81efc9cca4",
+                "code": "b8cbf7221b6bef787be62ef71038f42c57e8bfca",
+                "maintenance": "43ca66f054aa9fcb5621c6433c599698d4e6f7db057cac12a17e4ce6ce6baaf2"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cd3bae676bed548d07505a6b81cba7cd",
+    "identity": "github:1421028819:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421028819:root",
+            "repository": "xmwengxing/dsh-sidebar-enhancement",
+            "path": "",
+            "revision": "fd68b5dc4a93dbeca242d1bf3c8822b368f57d63",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5f6b6c3ba212101d2759f96ec474beb044d3f67e841f10a7b6b868966b541936",
+                "code": "fd68b5dc4a93dbeca242d1bf3c8822b368f57d63",
+                "maintenance": "5c3e7c18faa29f9af22319e8239a3d7ea7dc7bdd82d30831e85d06553982e0e0"
+            }
+        }
+    }
+}

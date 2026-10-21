@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "340d7bc983807ce128b022bfef155bf7",
+    "identity": "github:1405886067:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405886067:root",
+            "repository": "hoshino114/dsh-server-box",
+            "path": "",
+            "revision": "557c0d04b7faf7bcd02c43e8623cc0a7fb600da9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e49f7b6b421dae8ab7fcd8097b2549bc22ab66c80a3eff7f3819400e24fd4a67",
+                "code": "557c0d04b7faf7bcd02c43e8623cc0a7fb600da9",
+                "maintenance": "c7b7a6c7aa02a431ceb201d8f6b00bb056cafeb36c699b26a44f097629dbce9c"
+            }
+        }
+    }
+}

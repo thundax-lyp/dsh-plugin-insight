@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "950e6777e248a6efef51409c48400967",
+    "identity": "github:1333667113:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333667113:root",
+            "repository": "xiaoyanzi191/dsh-desktop",
+            "path": "",
+            "revision": "df48150ddcd907b6e4728d5442eb7b9878f5a8ed",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e86a7a7fa6ed4bec963bb5120dfd7d561e8d5fa915600e470ab6a0d4b537f211",
+                "code": "df48150ddcd907b6e4728d5442eb7b9878f5a8ed",
+                "maintenance": "537c63e0f506102e743f62c380cfaf3920d183e025c45bc6706f7885114a743b"
+            }
+        }
+    }
+}

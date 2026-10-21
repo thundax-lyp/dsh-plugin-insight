@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c3a7c8899224c7d91e4495a676a372d",
+    "identity": "github:1372686634:packages-dsh-refix",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372686634:packages-dsh-refix",
+            "repository": "ckk-09/dsh-refix",
+            "path": "packages/dsh-refix",
+            "revision": "13bd4cc2e0cc7a15f5fbcd394b49321b7c6c7477",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4fa35a1142827c75b6d6f9e7354223200082b9db0805ce08b8f55bc25f80968b",
+                "code": "13bd4cc2e0cc7a15f5fbcd394b49321b7c6c7477",
+                "maintenance": "c564a735afa698fba102af5068324b8fa4c829cc3616691545b00a6948a72fa0"
+            }
+        }
+    }
+}

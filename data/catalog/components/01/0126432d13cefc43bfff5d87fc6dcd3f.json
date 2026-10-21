@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0126432d13cefc43bfff5d87fc6dcd3f",
+    "identity": "github:1185828998:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1185828998:root",
+            "repository": "orziz/odai",
+            "path": "",
+            "revision": "e4b6f41ab3b5d350828d004b4384c582ed8f817e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0072d5e8a64c426a37406d35353c421b4a9d2863e566fd6053bff0564dc49392",
+                "code": "e4b6f41ab3b5d350828d004b4384c582ed8f817e",
+                "maintenance": "6062d591d9149f0e238dadd807193c3d99d4c4e2709e45592eaac3b0cf74193b"
+            }
+        }
+    }
+}

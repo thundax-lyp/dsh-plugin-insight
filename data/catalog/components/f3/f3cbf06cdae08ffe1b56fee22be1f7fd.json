@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f3cbf06cdae08ffe1b56fee22be1f7fd",
+    "identity": "github:1333542028:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333542028:root",
+            "repository": "Wine-Red/dsh-prompt-stash",
+            "path": "",
+            "revision": "23e587ae2824eca8ffed7804ee012da7a4a4354e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33a5391c6fe3beab122158e4b38a2ea50401c39128b49d34d7f1ac1224eedd16",
+                "code": "23e587ae2824eca8ffed7804ee012da7a4a4354e",
+                "maintenance": "7455d34796eefce3fcad77d66629df3b5d65568f412377faec4693c1161eeab9"
+            }
+        }
+    }
+}

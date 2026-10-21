@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8ad5c01a39740691e565f1b8539d3d84",
+    "identity": "github:1401360277:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401360277:root",
+            "repository": "yuehancn/dsh-tool-mining",
+            "path": "",
+            "revision": "2635eaef7de3ea9cf66298e1654aba11edb8ba33",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "52309e6df31c348b5a46385c5aa23c674a78020a646ceb5735197ef586aa3899",
+                "code": "2635eaef7de3ea9cf66298e1654aba11edb8ba33",
+                "maintenance": "4e1222a65c4a996fb6cd635e2cf5d0daa3fc82e1c96bf81874e00e7abc56287c"
+            }
+        }
+    }
+}

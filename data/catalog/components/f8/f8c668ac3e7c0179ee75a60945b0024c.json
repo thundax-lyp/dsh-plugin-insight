@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f8c668ac3e7c0179ee75a60945b0024c",
+    "identity": "github:1399849741:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399849741:root",
+            "repository": "eryi-lab/dsh-gsap",
+            "path": "",
+            "revision": "28710d0c5d0f239e0922f22a98a7b63ba0d3b6f0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a655167b5b495b5fe2f59222fdccbca33cd69575c5ab6495b983da0cffcab13",
+                "code": "28710d0c5d0f239e0922f22a98a7b63ba0d3b6f0",
+                "maintenance": "b4d26bef4d692cbbb2ae50ccec83dcc11a42aae2f36997d1143e9ec2252d0260"
+            }
+        }
+    }
+}

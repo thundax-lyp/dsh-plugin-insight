@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0701a327c8bd241032adbb9012e60894",
+    "identity": "github:1371163522:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1371163522:root",
+            "repository": "apex-mochen/dsh-sandbox-arg-guard",
+            "path": "",
+            "revision": "7ea097a80f1ad2c15146a02fc19ef7d7d97b0ed7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "38e3617bfce47f535bcefa477b0e292f47a49b3403b62c27ae42d6b46d49ddd1",
+                "code": "7ea097a80f1ad2c15146a02fc19ef7d7d97b0ed7",
+                "maintenance": "0d88e0cde527bf9158658e0f1d2e489017974d1e7d67ebb974aac12095b0d1db"
+            }
+        }
+    }
+}

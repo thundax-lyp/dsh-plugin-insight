@@ -1,0 +1,363 @@
+{
+    "schema_version": 3,
+    "id": "4f87e563b6a6f940dd493a5e067270b1",
+    "identity": "github:1334654243:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334654243:root",
+            "repository_id": 1334654243,
+            "component_id": "root",
+            "repository": "1624318455/dsh-plugin-tavily",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-tavily",
+            "entry_type": "plugin",
+            "technical_category": "context-search",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "11600ef83aed1ae15c5cc18bae00ae4dfc90f7ee6e65e303e27166e193447945",
+                "code": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+                "maintenance": "5de7840606fab81a9c304c317a92d3800ba33d08e251d4fde8d52407e499bb6d"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1334654243-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:34:35.453Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1334654243-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/README.md",
+                    "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+                    "captured_at": "2026-10-20T04:34:35.453Z",
+                    "summary": "把Tavily搜索与页面提取接入宿主web服务，提供参数设置、额度状态与引擎切换。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-tavily/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1334654243-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/index.ts",
+                    "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+                    "captured_at": "2026-10-20T04:34:35.453Z",
+                    "summary": "核查 src/index.ts、src/provider.ts、cordis.patch.yml；src/provider.ts实现web.search与fetch提供者，按请求解析密钥环，支持缓存与受限重试；可显式切换或在特定故障时回退DeepSeek。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-tavily/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "安装会改变宿主搜索提供者；keyless声明不保证上游接受请求。搜索结果与生成答案仍需核对原文，未测相关率或完整性。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "经常做联网研究的用户希望统一搜索参数并取回来源，合格结果是相关且可追溯的证据，不只是搜索成功。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334654243-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334654243:root",
+                            "area": "code",
+                            "fingerprint": "b759f328e21c7dbc24da5f2266e84c2da4d227f8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:35.453Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "src/provider.ts实现web.search与fetch提供者，按请求解析密钥环，支持缓存与受限重试；可显式切换或在特定故障时回退DeepSeek。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334654243-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334654243:root",
+                            "area": "code",
+                            "fingerprint": "b759f328e21c7dbc24da5f2266e84c2da4d227f8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:35.453Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "安装会改变宿主搜索提供者；keyless声明不保证上游接受请求。搜索结果与生成答案仍需核对原文，未测相关率或完整性。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334654243-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334654243:root",
+                            "area": "code",
+                            "fingerprint": "b759f328e21c7dbc24da5f2266e84c2da4d227f8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:35.453Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.6.2，Host及Client同包，依赖DSH web与凭据/设置服务；固定源码不证明当前Tavily或可选提取后端兼容。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334654243-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334654243:root",
+                            "area": "code",
+                            "fingerprint": "b759f328e21c7dbc24da5f2266e84c2da4d227f8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:35.453Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "API额度、advanced搜索和页面提取可能分别计费；缓存减少请求也会影响新鲜度，失败重试和人工核查计入总成本，未做实测。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334654243-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334654243:root",
+                            "area": "code",
+                            "fingerprint": "b759f328e21c7dbc24da5f2266e84c2da4d227f8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:35.453Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先确认安装后的默认引擎和查询数据去向，用少量已知问题核对来源；额度错误时处理key，不期待自动换引擎掩盖失败。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334654243-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334654243:root",
+                            "area": "code",
+                            "fingerprint": "b759f328e21c7dbc24da5f2266e84c2da4d227f8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:35.453Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "统一设置和明确回退类型有利于诊断；丰富参数并不能代替同问题的检索质量比较。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334654243-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334654243:root",
+                            "area": "code",
+                            "fingerprint": "b759f328e21c7dbc24da5f2266e84c2da4d227f8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:35.453Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "区分401/429密钥级故障与网络/5xx服务故障，取消信号与超时分开分类；多密钥、缓存及多后端组合增加状态核查面。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1334654243-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334654243:root",
+                            "area": "code",
+                            "fingerprint": "b759f328e21c7dbc24da5f2266e84c2da4d227f8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:35.453Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:34:35.453Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "联网研究者可少量已知问题试搜索接入，先核默认引擎、数据去向与来源，记录额度和缓存时效。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "统一搜索参数并取可追溯来源的任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "设置与故障类型明确，尚无优于原生搜索的质量比较。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "密钥故障与服务故障分流可查，上游兼容和相关率未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "API提取费用、密钥与多后端缓存状态需维护。"
+                    }
+                },
+                "score": 59,
+                "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1334654243-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334654243:root",
+                        "area": "code",
+                        "fingerprint": "b759f328e21c7dbc24da5f2266e84c2da4d227f8"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334654243:root",
+            "repository": "1624318455/dsh-plugin-tavily",
+            "path": "",
+            "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+            "fingerprints": {
+                "directory": "11600ef83aed1ae15c5cc18bae00ae4dfc90f7ee6e65e303e27166e193447945",
+                "code": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+                "maintenance": "5de7840606fab81a9c304c317a92d3800ba33d08e251d4fde8d52407e499bb6d"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "3f20bfa3bed0ca23c05a338948c0f2c958d1e205c69b58b0247896c91f1b55ab"
+        },
+        "publication.metadata": "data/plugins/1624318455--dsh-plugin-tavily/META.json",
+        "publication.summaries": {
+            "text": "把Tavily搜索与页面提取接入宿主web服务，提供参数设置、额度状态与引擎切换。",
+            "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+            "source_url": "https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+            "items": {
+                "后台": "Tavily搜索、提取与引擎切换。",
+                "Host 路由": "连通性探测与状态查询。",
+                "界面": "搜索参数与额度状态卡片。"
+            }
+        },
+        "publication.advice": {
+            "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+            "text": "先确认安装后的默认引擎和查询数据去向，用少量已知问题核对来源；额度错误时处理key，不期待自动换引擎掩盖失败。"
+        },
+        "registry": "data/plugins/1624318455--dsh-plugin-tavily",
+        "reports": "# dsh-plugin-tavily\n\n> 把Tavily搜索与页面提取接入宿主web服务，提供参数设置、额度状态与引擎切换。\n\n## 固定范围与依据\n\n固定提交 [b759f328e21c7dbc24da5f2266e84c2da4d227f8](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T04:34:35.453Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：src/index.ts、src/provider.ts、cordis.patch.yml。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：经常做联网研究的用户希望统一搜索参数并取回来源，合格结果是相关且可追溯的证据，不只是搜索成功。\n- **亮点**：src/provider.ts实现web.search与fetch提供者，按请求解析密钥环，支持缓存与受限重试；可显式切换或在特定故障时回退DeepSeek。\n- **思考**：统一设置和明确回退类型有利于诊断；丰富参数并不能代替同问题的检索质量比较。\n- **建议**：先确认安装后的默认引擎和查询数据去向，用少量已知问题核对来源；额度错误时处理key，不期待自动换引擎掩盖失败。\n\n## 场景与替代办法\n\n经常做联网研究的用户希望统一搜索参数并取回来源，合格结果是相关且可追溯的证据，不只是搜索成功。\n\n此前未入档；宿主原生搜索为直接对照，同条件下检索相关性、来源覆盖与费用仍未知。\n\n## 依赖与流程\n\n需要Tavily账号或实际可用keyless通道、网络和宿主web服务；DeepSeek回退另需其配置，缓存时效由任务新鲜度要求决定。\n\n配置并探测，执行查询，查看引用与实际引擎，必要时取正文；故障按额度/网络分类处理，避免无限重试或把缓存当新来源。\n\n## 成本与效果\n\nAPI额度、advanced搜索和页面提取可能分别计费；缓存减少请求也会影响新鲜度，失败重试和人工核查计入总成本，未做实测。\n\n统一设置和明确回退类型有利于诊断；丰富参数并不能代替同问题的检索质量比较。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8fd6ad0bc651fb10eb5e1cfc8f69cdb103cc2c8b16c9039fb478826cacf36036。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .cjs | source | 1 | 2690 | 2395 | 411 | — |\n| .mjs | source | 3 | 1734 | 1330 | 399 | — |\n| .md | source | 2 | 601 | — | — | 9088 |\n| .ts | source | 10 | 4299 | 2914 | 1152 | — |\n| .tsx | source | 3 | 1002 | 852 | 131 | — |\n| .mjs | test | 5 | 812 | 556 | 200 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：Tavily搜索、提取与引擎切换。\n- **Host 路由**：连通性探测与状态查询。\n- **界面**：搜索参数与额度状态卡片。\n\n## 工程亮点\n\n区分401/429密钥级故障与网络/5xx服务故障，取消信号与超时分开分类；多密钥、缓存及多后端组合增加状态核查面。\n\n## 分发与兼容\n\n0.6.2，Host及Client同包，依赖DSH web与凭据/设置服务；固定源码不证明当前Tavily或可选提取后端兼容。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；宿主原生搜索为直接对照，同条件下检索相关性、来源覆盖与费用仍未知。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：安装会改变宿主搜索提供者；keyless声明不保证上游接受请求。搜索结果与生成答案仍需核对原文，未测相关率或完整性。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：固定问题集比较默认搜索，覆盖429、超时、取消、密钥轮换和过期缓存，统计有用来源数与每次合格研究成本。\n",
+        "metadata": {
+            "repository": "1624318455/dsh-plugin-tavily",
+            "repository_id": 1334654243,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 5,
+            "pushed_at": "2026-09-12T06:52:31Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:1546AE:22CD03:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:14744C:21FAF7:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:142E6F:21B656:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:14EC8F:226F57:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:146A02:21F7FE:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@dsh-external/dsh-plugin-tavily",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40dsh-external%2Fdsh-plugin-tavily",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-plugin-tavily",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+                "current_revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334654243:root",
+            "repository": "1624318455/dsh-plugin-tavily",
+            "path": "",
+            "revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "11600ef83aed1ae15c5cc18bae00ae4dfc90f7ee6e65e303e27166e193447945",
+                "code": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
+                "maintenance": "5de7840606fab81a9c304c317a92d3800ba33d08e251d4fde8d52407e499bb6d"
+            }
+        }
+    }
+}

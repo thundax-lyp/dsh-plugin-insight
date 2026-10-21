@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "419fd9d1d6f5eaaa0b7d478e93d97d93",
+    "identity": "github:1334015817:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334015817:root",
+            "repository": "Jiyr0119/dsh-workspace-explorer",
+            "path": "",
+            "revision": "b7dfc30ea37ba8ee5774a845c8a08a737df16326",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e7e81d03c33f2f9e95be295b4194a9fc846bd24013721eba23ca20b51ba25757",
+                "code": "b7dfc30ea37ba8ee5774a845c8a08a737df16326",
+                "maintenance": "6c273a65568a57b9fa2450594a3dc3acfe60add26337f6f59e9a3d964104d49b"
+            }
+        }
+    }
+}

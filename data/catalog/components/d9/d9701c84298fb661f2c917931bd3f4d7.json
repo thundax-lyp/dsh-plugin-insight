@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d9701c84298fb661f2c917931bd3f4d7",
+    "identity": "github:1387245591:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1387245591:root",
+            "repository": "Yuer6327/ModelTester",
+            "path": "",
+            "revision": "73b4c7023f9252d85e538f3554445d3566cb478a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1db83df622410a8ed9312e355aa9a8d2a0a8c8b64470312e3d7f5705b7d1573b",
+                "code": "73b4c7023f9252d85e538f3554445d3566cb478a",
+                "maintenance": "9d2eac898455166db6beaedc10c2c063c95c6a8587b21dbe0721a830fffd3118"
+            }
+        }
+    }
+}

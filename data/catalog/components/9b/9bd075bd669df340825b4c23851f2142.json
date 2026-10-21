@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9bd075bd669df340825b4c23851f2142",
+    "identity": "github:1363866429:plugins-smart-list",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363866429:plugins-smart-list",
+            "repository": "converk/dsh-tweaks",
+            "path": "plugins/smart-list",
+            "revision": "b807001b97514497caac151986ec86dd6c0530e9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "303d02293e24445a7986c897f23a0fa026fe3b837ca002a245c3ebeca6c0d06f",
+                "code": "b807001b97514497caac151986ec86dd6c0530e9",
+                "maintenance": "43e0c1c8140f38bf01e4ea4efbe645c37634b9307b4392651621f62a7d1f7632"
+            }
+        }
+    }
+}

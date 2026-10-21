@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "75306e2bafefe80b794f3c13244a5e27",
+    "identity": "github:1422246547:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422246547:root",
+            "repository": "chimneyQ/dsh-context-toolkit",
+            "path": "",
+            "revision": "34caec47e2a67908b82e60cc4bf09dc3dccf4c8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f4ce777b46a525ef056ff4ea75917b4aa0836848711180e53b43d69398583f9e",
+                "code": "34caec47e2a67908b82e60cc4bf09dc3dccf4c8a",
+                "maintenance": "4c579be3caba400c7890653d09b2edfc5639fe8e039acee451d91273ae60a2e8"
+            }
+        }
+    }
+}

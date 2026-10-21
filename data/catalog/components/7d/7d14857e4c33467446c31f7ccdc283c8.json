@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d14857e4c33467446c31f7ccdc283c8",
+    "identity": "github:1369155407:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369155407:root",
+            "repository": "GreyRaphael/dsh-web-fetch-moli",
+            "path": "",
+            "revision": "51fdb3ad5f50f85ab74c86e658dde32e6009f9e2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e0749612f0b311a2e288a1049fb2957e0c91daf7e16ac357e45182174ac5a45e",
+                "code": "51fdb3ad5f50f85ab74c86e658dde32e6009f9e2",
+                "maintenance": "1df3922cbbbc947170636454b2d92e7d40306c61677730ff3abeb1a1e3ca6824"
+            }
+        }
+    }
+}

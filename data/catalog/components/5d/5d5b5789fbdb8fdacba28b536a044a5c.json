@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d5b5789fbdb8fdacba28b536a044a5c",
+    "identity": "github:1154200345:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1154200345:root",
+            "repository": "yogsoth-ai/de-anthropocentric-research-engine",
+            "path": "",
+            "revision": "b70ee8f9db7794071c24b7e9eae5fe48134f309b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bf44f446f88112e8bc95a0c0c255eb3378e1893a124b640392c560f82929dfcf",
+                "code": "b70ee8f9db7794071c24b7e9eae5fe48134f309b",
+                "maintenance": "ad05a869a0611c308234518d39b51e5440649e2d0ec5f92d87afe40ff2cd19fe"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "30d27a201e0c02159b88e8cb7d74088f",
+    "identity": "github:1339661326:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339661326:root",
+            "repository": "sunyuhuirong/shl-session-history",
+            "path": "",
+            "revision": "72eaa85033cbdc1381a3eb62df42a9f48ed1f1de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "485cc5e89f87dbd9d6b849b1c33b3102184937ec9fb8994a9906efb96293459b",
+                "code": "72eaa85033cbdc1381a3eb62df42a9f48ed1f1de",
+                "maintenance": "9cd193fc7afdb4185480237f88b95c3cfc45a69292a77e763c78ffe58ff15c29"
+            }
+        }
+    }
+}

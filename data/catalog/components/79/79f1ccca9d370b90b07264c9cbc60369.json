@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "79f1ccca9d370b90b07264c9cbc60369",
+    "identity": "github:1347439572:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347439572:root",
+            "repository": "STARDUSTLC666/dsh-dream",
+            "path": "",
+            "revision": "8a0ae7fd67560fb7075660677b474cb6f07f0f83",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3918399eb4b8982ad60d78e395a2869378837472426808e6a83d4f27c71292ec",
+                "code": "8a0ae7fd67560fb7075660677b474cb6f07f0f83",
+                "maintenance": "a98c73adb6d662b5a4f7a254c880e88801ed02d1ddece76da462e9b86c817e20"
+            }
+        }
+    }
+}

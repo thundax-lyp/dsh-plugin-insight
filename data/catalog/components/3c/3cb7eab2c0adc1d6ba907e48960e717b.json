@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3cb7eab2c0adc1d6ba907e48960e717b",
+    "identity": "github:1345004804:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345004804:root",
+            "repository": "Carrick-K7/dsh-ai-quota",
+            "path": "",
+            "revision": "20ee68ad5a21ca80c07f4aa5cbf9375e81b2d152",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "43d430e0a47200e53f70c1a56b1154e6517119d8c40820ba1b121303d37e0f17",
+                "code": "20ee68ad5a21ca80c07f4aa5cbf9375e81b2d152",
+                "maintenance": "c795f5f85bb138ab460f2a58bf98b9c99995ea673bc8c9dc9a69ab35f2c69abc"
+            }
+        }
+    }
+}

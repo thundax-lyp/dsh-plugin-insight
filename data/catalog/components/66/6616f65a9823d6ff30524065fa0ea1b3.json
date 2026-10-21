@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6616f65a9823d6ff30524065fa0ea1b3",
+    "identity": "github:1337304153:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337304153:root",
+            "repository": "zerorigin-studio/dsh-deepseek-chat",
+            "path": "",
+            "revision": "8825b0852171a6ba295e993450565a8c990cd681",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a87bf0cabb1b1b060aa59d79919a5e7dc782285578d090e435dc79d703b468c2",
+                "code": "8825b0852171a6ba295e993450565a8c990cd681",
+                "maintenance": "15050e149fa4cfbf755aaf2f4d439e1a4ae615f16b9ec3f1c794dad96f060864"
+            }
+        }
+    }
+}

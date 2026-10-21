@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "71b1a7b67a8f09e058589b22aff10d65",
+    "identity": "github:1400425098:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1400425098:root",
+            "repository": "CaiMingshen/dsh-icloud-calendar",
+            "path": "",
+            "revision": "ccf780a32b2ab60107c644809fcbec682f14ba7e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bcf98136ca4a570970935add085ed5c2af3ca17a216143dbaa1f69682aecc12b",
+                "code": "ccf780a32b2ab60107c644809fcbec682f14ba7e",
+                "maintenance": "bb4e3707b80d401595c870c40575d1b3155c2f7b5f0ed9acdb648b0d9bcea33f"
+            }
+        }
+    }
+}

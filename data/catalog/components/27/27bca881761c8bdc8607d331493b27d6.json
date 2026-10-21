@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "27bca881761c8bdc8607d331493b27d6",
+    "identity": "github:1334959701:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334959701:root",
+            "repository": "YuanyuanMa03/dsh-funnel",
+            "path": "",
+            "revision": "596361966226a89c2361ac0250b41f6541ce9ea5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1480e12b3b15079c66699e8d6f760de2ef82c9e74f01140db115d03a6c6cb798",
+                "code": "596361966226a89c2361ac0250b41f6541ce9ea5",
+                "maintenance": "cc71401fb4e7345546bea11d9d950913dc9200d3984db95a78396d7e35a2a370"
+            }
+        }
+    }
+}

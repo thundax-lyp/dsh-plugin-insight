@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "490601c174d4e69de5d8eb5d19349c0c",
+    "identity": "github:1335950944:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335950944:root",
+            "repository": "Jannchie/dsh-artifact",
+            "path": "",
+            "revision": "c5450a81d56ba3efaa860ef6b76a9614b31755d3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "16b8abaae6e299d64ee30b0713ed7fbe77c9d54a7edd24d9f40e4ef884ca44a6",
+                "code": "c5450a81d56ba3efaa860ef6b76a9614b31755d3",
+                "maintenance": "aae0878c872f0921b504b1fe59f9777dbf01dcf6147aea677270daf6a2000ca9"
+            }
+        }
+    }
+}

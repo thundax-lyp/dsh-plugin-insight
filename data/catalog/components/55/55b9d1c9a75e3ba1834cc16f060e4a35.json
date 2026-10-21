@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "55b9d1c9a75e3ba1834cc16f060e4a35",
+    "identity": "github:1411835489:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411835489:root",
+            "repository": "ebluffy/dsh-model-router",
+            "path": "",
+            "revision": "5b675fadeed83d49e0ae06da424fd4a697ba8afc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ea9f30f2dabed2acd2454b1f2723e41dfcc41a3c0ae81b2300c43940fe21f443",
+                "code": "5b675fadeed83d49e0ae06da424fd4a697ba8afc",
+                "maintenance": "ed00dc5c9dd002698477ad536f2f164cbcb9c0c053957974419e2cf26c0871d8"
+            }
+        }
+    }
+}

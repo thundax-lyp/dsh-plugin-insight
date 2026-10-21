@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5b7ceea5025309f058bbdf44c3b5beea",
+    "identity": "github:1333701949:packages-cli",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333701949:packages-cli",
+            "repository": "Jesse-njx/dsh-plugin-manager",
+            "path": "packages/cli",
+            "revision": "d0fbacf017706bc05ec415d07c38bd0a79b05cec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7900d9a7b27b6cff6764af0c7c5212d3352a1a5a52b7cd17db6c11c7c3ca4b4f",
+                "code": "d0fbacf017706bc05ec415d07c38bd0a79b05cec",
+                "maintenance": "bfd0e1ac54b6a7d609d8bd03869b195913ee335a022332cf1e175d9162af4097"
+            }
+        }
+    }
+}

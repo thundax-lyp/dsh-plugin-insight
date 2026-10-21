@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7fc5e389434433eb3f236018bfc8ad78",
+    "identity": "github:1351201208:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351201208:root",
+            "repository": "zhubaohi/dsh-gpu-pulse",
+            "path": "",
+            "revision": "ad11e86c27372ac9bdc5568d3f2fd3cab83c9f3b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5c12dcf88634908eeddf549e252b96c442a9a2392ede55420057c271dd19dc04",
+                "code": "ad11e86c27372ac9bdc5568d3f2fd3cab83c9f3b",
+                "maintenance": "35d0b6a08a45e7b0c43c8cba15b4248075a6263ba99d959877985643e6e2794b"
+            }
+        }
+    }
+}

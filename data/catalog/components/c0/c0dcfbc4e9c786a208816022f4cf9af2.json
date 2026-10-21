@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c0dcfbc4e9c786a208816022f4cf9af2",
+    "identity": "github:1334664870:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334664870:root",
+            "repository": "Tommy00748/dsh-theme-cyberpunk2077",
+            "path": "",
+            "revision": "a3681ee431f59c64b8bf37d34ee609ddc7811278",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e75a9fedaf7655c172c974673f8ace22ca7e2aadc71ca016757ff5743cbb4cde",
+                "code": "a3681ee431f59c64b8bf37d34ee609ddc7811278",
+                "maintenance": "c6376d0d6c3bd00be46b29842aa1a1a69490f8a60ce7f30d4fc3d0da7cddddc6"
+            }
+        }
+    }
+}

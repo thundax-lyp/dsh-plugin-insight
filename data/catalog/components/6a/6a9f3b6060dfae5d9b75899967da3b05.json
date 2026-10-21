@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a9f3b6060dfae5d9b75899967da3b05",
+    "identity": "github:1347132891:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347132891:root",
+            "repository": "Binaryinject/dsh-review-checkout",
+            "path": "",
+            "revision": "54596d8abfb727daa2438fc171e6593c6cf5558f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "35a461e78ece2b6c4ff179d904c6f409eaf0db0591b55aeadcdb7b57493a51c2",
+                "code": "54596d8abfb727daa2438fc171e6593c6cf5558f",
+                "maintenance": "75c9e6633868cfa54d51f0223eb153b8237b2437f0c1a5f75157748cd68ae68e"
+            }
+        }
+    }
+}

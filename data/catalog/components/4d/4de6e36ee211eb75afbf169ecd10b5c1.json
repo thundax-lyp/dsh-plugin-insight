@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4de6e36ee211eb75afbf169ecd10b5c1",
+    "identity": "github:1339589595:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339589595:root",
+            "repository": "kui123456789/dsh-codex-workflow",
+            "path": "",
+            "revision": "8fc5d5d80a735d7772b64694b8aca0ae0129e82e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "714c79a50425f832e312c86cf750e64791e6c8359980958ce0724263b9aaba61",
+                "code": "8fc5d5d80a735d7772b64694b8aca0ae0129e82e",
+                "maintenance": "b1f79070cf78e8e9a326cb59ba48a478a587552c487dd2486ec6bf273952e05d"
+            }
+        }
+    }
+}

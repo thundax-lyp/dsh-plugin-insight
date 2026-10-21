@@ -1,0 +1,347 @@
+{
+    "schema_version": 3,
+    "id": "776657e144457b368af6889a120a88b6",
+    "identity": "github:1342915339:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1342915339:root",
+            "repository_id": 1342915339,
+            "component_id": "root",
+            "repository": "0QwQ0/dsh-discord-richpresence",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-discord-richpresence",
+            "entry_type": "plugin",
+            "technical_category": "channels-remote",
+            "business_category": "personal-productivity",
+            "tags": [
+                "source-inspected",
+                "runtime-unverified"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "46ebdf429f99206ea011db86936d1bc1fb96564cdbf65cdb89c3cd3be98d076f",
+                "code": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+                "release": "dc02cb8f40eb94f07022d2df074324cf5296994ea546e51db75700b4a982e05f",
+                "maintenance": "77dd4fc5a8f641ea0f7828b459eb1e2da90bcacf1a888a27e3b4d824000f2c19",
+                "compatibility": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1342915339-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:03:53.699Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1342915339-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/README.md",
+                    "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+                    "captured_at": "2026-10-20T03:03:53.699Z",
+                    "summary": "把 DSH 的粗粒度活动或可选丰富状态同步到本地 Discord Rich Presence。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/0qwq0--dsh-discord-richpresence/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1342915339-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js",
+                    "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+                    "captured_at": "2026-10-20T03:03:53.699Z",
+                    "summary": "核查 lib/index.js、lib/discord-rpc.js；Host 聚合活动信号，通过本地 Discord RPC 更新文案；丰富模式按最短展示间隔轮换数据。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/0qwq0--dsh-discord-richpresence/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "默认模糊文案仍对外暴露活动，丰富模式增加时间和用量信息；没有跨平台隐私验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "希望向 Discord 联系人展示工作状态的桌面用户，而非需要团队任务追踪的部署。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1342915339-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342915339:root",
+                            "area": "code",
+                            "fingerprint": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:53.699Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host 聚合活动信号，通过本地 Discord RPC 更新文案；丰富模式按最短展示间隔轮换数据。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1342915339-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342915339:root",
+                            "area": "code",
+                            "fingerprint": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:53.699Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "默认模糊文案仍对外暴露活动，丰富模式增加时间和用量信息；没有跨平台隐私验收。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1342915339-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342915339:root",
+                            "area": "code",
+                            "fingerprint": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:53.699Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包与本地 Discord 客户端共同决定可用性，GitHub 源码存在不证明 RPC 已连接。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1342915339-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342915339:root",
+                            "area": "code",
+                            "fingerprint": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:53.699Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无额外模型服务，持续代价是常驻连接、重连和隐私配置；没有资源占用实测。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1342915339-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342915339:root",
+                            "area": "code",
+                            "fingerprint": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:53.699Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先只开模糊状态，检查实际 Discord 展示内容和断线重连，再考虑丰富模式。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1342915339-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342915339:root",
+                            "area": "code",
+                            "fingerprint": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:53.699Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少手动改状态，但不能证明专注度或工作产出；企业环境应先确认活动公开政策。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1342915339-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342915339:root",
+                            "area": "code",
+                            "fingerprint": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:53.699Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "把状态模板与 RPC 传输分离便于检查外发数据；复用时需重新评估默认文案和更新频率。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1342915339-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342915339:root",
+                            "area": "code",
+                            "fingerprint": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:53.699Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:03:53.699Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需要向Discord展示活动的桌面用户可先试模糊状态，核对外发字段和断线重连。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "展示个人活动有小众明确需求，不适合任务追踪。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "自动RPC状态省手工更新，系统勿扰已能满足部分目的。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "本地RPC和状态模板源码可查，跨平台展示未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "常驻连接和隐私配置增加持续负担。"
+                    }
+                },
+                "score": 44,
+                "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1342915339-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1342915339:root",
+                        "area": "code",
+                        "fingerprint": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1342915339:root",
+            "repository": "0QwQ0/dsh-discord-richpresence",
+            "path": "",
+            "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+            "fingerprints": {
+                "directory": "46ebdf429f99206ea011db86936d1bc1fb96564cdbf65cdb89c3cd3be98d076f",
+                "code": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+                "release": "dc02cb8f40eb94f07022d2df074324cf5296994ea546e51db75700b4a982e05f",
+                "maintenance": "77dd4fc5a8f641ea0f7828b459eb1e2da90bcacf1a888a27e3b4d824000f2c19",
+                "compatibility": "58641cb8ddb5084a8b58bf5e5efcabcba66dfa29de62b27d6b4ff7587d2775da"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "49ab1b99ed2756a0a064a9688d83ce34923b8bd2204d9010d05553f5063b9122"
+        },
+        "publication.metadata": "data/plugins/0qwq0--dsh-discord-richpresence/META.json",
+        "publication.summaries": {
+            "text": "把 DSH 的粗粒度活动或可选丰富状态同步到本地 Discord Rich Presence。",
+            "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+            "source_url": "https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+            "items": {
+                "后台": "本地 Discord RPC 连接、活动更新与重连。"
+            }
+        },
+        "publication.advice": {
+            "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+            "text": "先只开模糊状态，检查实际 Discord 展示内容和断线重连，再考虑丰富模式。"
+        },
+        "registry": "data/plugins/0qwq0--dsh-discord-richpresence",
+        "reports": "# dsh-discord-richpresence\n\n> 把 DSH 的粗粒度活动或可选丰富状态同步到本地 Discord Rich Presence。\n\n## 固定范围与依据\n\n固定提交 [bf8d34b4a4c52e9128a44ca7abf6a7de52880266](https://github.com/0QwQ0/dsh-discord-richpresence/blob/bf8d34b4a4c52e9128a44ca7abf6a7de52880266/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:03:53.699Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js、lib/discord-rpc.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：希望向 Discord 联系人展示工作状态的桌面用户，而非需要团队任务追踪的部署。\n- **亮点**：Host 聚合活动信号，通过本地 Discord RPC 更新文案；丰富模式按最短展示间隔轮换数据。\n- **思考**：减少手动改状态，但不能证明专注度或工作产出；企业环境应先确认活动公开政策。\n- **建议**：先只开模糊状态，检查实际 Discord 展示内容和断线重连，再考虑丰富模式。\n\n## 场景与替代办法\n\n希望向 Discord 联系人展示工作状态的桌面用户，而非需要团队任务追踪的部署。\n\n手工状态或系统勿扰更轻；本轮源码核查支持自动同步机制，不支持效率提升结论。\n\n## 依赖与流程\n\n依赖本地 Discord IPC、应用 ID 及 DSH 活动信号；远程无桌面部署未必适用。\n\n配置应用和文案，后台连接 Discord；未启动或断线时等待重连，用户从 Discord 实际状态验收。\n\n## 成本与效果\n\n无额外模型服务，持续代价是常驻连接、重连和隐私配置；没有资源占用实测。\n\n减少手动改状态，但不能证明专注度或工作产出；企业环境应先确认活动公开政策。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0ff9836dc1caf0da43a4c709aad548310ffb67514ccaba9e4bd3db451095a170。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 518 | — | — | 4632 |\n| .js | source | 3 | 1305 | 940 | 270 | — |\n| .mjs | test | 7 | 762 | 608 | 81 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：本地 Discord RPC 连接、活动更新与重连。\n\n## 工程亮点\n\n把状态模板与 RPC 传输分离便于检查外发数据；复用时需重新评估默认文案和更新频率。\n\n## 分发与兼容\n\n包与本地 Discord 客户端共同决定可用性，GitHub 源码存在不证明 RPC 已连接。\n\n## 历史对照\n\n前次代码指纹为 bf8d34b4a4c52e9128a44ca7abf6a7de52880266；本轮固定为 bf8d34b4a4c52e9128a44ca7abf6a7de52880266。手工状态或系统勿扰更轻；本轮源码核查支持自动同步机制，不支持效率提升结论。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：默认模糊文案仍对外暴露活动，丰富模式增加时间和用量信息；没有跨平台隐私验收。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：模拟 Discord 关闭、重启及多会话切换，抓取外发字段并核对真实用户会话选择。\n",
+        "metadata": {
+            "repository": "0QwQ0/dsh-discord-richpresence",
+            "repository_id": 1342915339,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-09-19T14:05:45Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-discord-richpresence",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-discord-richpresence",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-discord-richpresence",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+                "current_revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1342915339:root",
+            "repository": "0QwQ0/dsh-discord-richpresence",
+            "path": "",
+            "revision": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "46ebdf429f99206ea011db86936d1bc1fb96564cdbf65cdb89c3cd3be98d076f",
+                "code": "bf8d34b4a4c52e9128a44ca7abf6a7de52880266",
+                "maintenance": "77dd4fc5a8f641ea0f7828b459eb1e2da90bcacf1a888a27e3b4d824000f2c19"
+            }
+        }
+    }
+}

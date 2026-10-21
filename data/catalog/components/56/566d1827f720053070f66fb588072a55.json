@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "566d1827f720053070f66fb588072a55",
+    "identity": "github:1405575215:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405575215:root",
+            "repository": "lyp88997/dsh-moli-browser",
+            "path": "",
+            "revision": "cd25e30a456d9e6e3d104e9d2ae785f0bc58d5d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2185b0fa717b6aa35e6ff37e7aa3b91020294b5493686704f741fb9d455058ba",
+                "code": "cd25e30a456d9e6e3d104e9d2ae785f0bc58d5d4",
+                "maintenance": "5c9dad81baebf125040d45d32155e6909afc9a6a1a823e98999ca7ffe2c222f3"
+            }
+        }
+    }
+}

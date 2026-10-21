@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e8304aa28a195b036aab66849b2098b8",
+    "identity": "github:1334011962:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334011962:root",
+            "repository": "Letter2025/dsh-model-failover",
+            "path": "",
+            "revision": "bdcffd3410bb1ab6ad3ae3381963d13c8fde4b64",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0460ee9aee99cb66436919eaff7a57308f16bd4431a125ce0c1af3bd61a8426",
+                "code": "bdcffd3410bb1ab6ad3ae3381963d13c8fde4b64",
+                "maintenance": "3c993686587c3ca5303a60b5085abee00b993df468c11b9f5fe30e525571c619"
+            }
+        }
+    }
+}

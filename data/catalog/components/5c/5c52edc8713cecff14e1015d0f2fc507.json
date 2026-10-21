@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5c52edc8713cecff14e1015d0f2fc507",
+    "identity": "github:1384477273:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384477273:root",
+            "repository": "nineknineTK/dsh-plugin-geo3d-modeling",
+            "path": "",
+            "revision": "0c5eb975de5237cccca9cc8768a34f1dd569444d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2206eb32ee54b5dd06752235d32042f8c163b45b7c5c7c6d5178ced2a80246ad",
+                "code": "0c5eb975de5237cccca9cc8768a34f1dd569444d",
+                "maintenance": "b755b8fcb194665a22d161696cb8cbc343723f0e60efe60f89476ebd05b37180"
+            }
+        }
+    }
+}

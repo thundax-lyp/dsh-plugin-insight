@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0418f09398d8c522f73de95172b04088",
+    "identity": "github:1365896878:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365896878:root",
+            "repository": "Kirisame1969/dsh-project-based-learning",
+            "path": "",
+            "revision": "2e0d8d1942e84221c514d455016c5ea402447cec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e6a40b3d49ac4b1ff56dc08edfb065c565678346bebd6405f6d5859f3f311e7",
+                "code": "2e0d8d1942e84221c514d455016c5ea402447cec",
+                "maintenance": "e1accea58dd665ed225d943babcafaba7faab5d87c6ea29610bbe8b4ba74b654"
+            }
+        }
+    }
+}

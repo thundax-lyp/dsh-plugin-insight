@@ -1,0 +1,450 @@
+{
+    "schema_version": 3,
+    "id": "3e047a08dfef6f14e57bc712f1629b9e",
+    "identity": "github:1356219122:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1356219122:root",
+            "repository_id": 1356219122,
+            "component_id": "root",
+            "repository": "Andor-Z/dsh-turn-outline",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-turn-outline",
+            "entry_type": "plugin",
+            "technical_category": "sessions-messages",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "ee914df13be53be679606d57d3e192c7382c5289093f9eeb5306e5e83e57c559",
+                "code": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+                "maintenance": "ffcbd40a2a7cf3344b11b2ec3975147191b076dde606a5be85b9d7af33f158d9"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1356219122-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:05:16.228Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1356219122-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/README.md",
+                    "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+                    "captured_at": "2026-10-21T08:05:16.228Z",
+                    "summary": "把DSH会话事件折叠为轮次轨迹，并在better-sidebar侧栏定位回聊天或轨迹视图。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/andor-z--dsh-turn-outline/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1356219122-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/src/index.ts",
+                    "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+                    "captured_at": "2026-10-21T08:05:16.228Z",
+                    "summary": "核查 src/index.ts、src/trail-model.ts、src/client/trail-jump.ts、src/client/useTrail.ts；host只读事件路由live借用冻结snapshot，cold路径LRU+2秒probe缓存分页；TrailFolder增量按turn编号折叠，jump通过uiConversation anchorSeq与loadOlder，旧宿主回退snapshot。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/andor-z--dsh-turn-outline/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读src/index.ts、src/trail-model.ts、src/client/trail-jump.ts、src/client/useTrail.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "长会话用户回查某轮输入、工具与输出，合格导航应指向同一事件而非看似相似文本。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "host只读事件路由live借用冻结snapshot，cold路径LRU+2秒probe缓存分页；TrailFolder增量按turn编号折叠，jump通过uiConversation anchorSeq与loadOlder，旧宿主回退snapshot。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读src/index.ts、src/trail-model.ts、src/client/trail-jump.ts、src/client/useTrail.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT客户端/host插件，better-sidebar可选peer但无它就不显示tab；版本接口变化需兼容。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无额外LLM费；首次侧栏依赖，持续事件缓存/浏览器渲染与升级回归成本，未测大日志延迟。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已用better-sidebar的长会话用户先试，核对压缩前历史和并行工具的定位；重大追溯仍查看完整日志。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少回看滚动成本的机制合理，未有实测时间收益。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "pure事件折叠、live/cold路径和有界LRU分开可借鉴；不能将粗摘要或信任fence解释为完整内容/认证保证。 源码依据：[src/index.ts](https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/src/index.ts)、[src/trail-model.ts](https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/src/trail-model.ts)、[src/client/trail-jump.ts](https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/src/client/trail-jump.ts)、[src/client/useTrail.ts](https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/src/client/useTrail.ts)。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对LLM生成标题大纲，增量是无模型事件折叠及结构化seq跳转，降低摘要幻觉与调用费；原会话与视图索引由宿主提供。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "零AI是否等于“无失败态/秒开”？历史分页、过期view、缺better-sidebar或路由拒绝都有条件；摘要只取末文本和工具预览，不能当完整审计。自建browser fence防跨站/DNS rebinding而非用户认证。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由seq定位与折叠推导，可在摘要显示覆盖范围/被折叠事件数，并验证点击目标seq与当前展示一致。未验证；压缩、steering、并行工具和加载旧页时测误跳及遗漏，错误不得默默跳近似位置。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356219122:root",
+                            "area": "code",
+                            "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:05:16.228Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:05:16.228Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+                "reviewed_at": "2026-10-21T08:05:16.228Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1356219122:root",
+                        "area": "code",
+                        "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty事件导航适配小档；mechanism增量折叠/seq定位半档；transferability纯折叠模式半档；simplification免LLM摘要半档。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow回看便利小档；delivery导航摘要小档；reach依赖侧栏用户小档；economics免额外LLM费用小档但整体收益未测。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1356219122-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已用better-sidebar的长会话用户可试轮次大纲；核压缩前历史和并行工具锚点，摘要预览不替代完整审计日志。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "回查某轮输入工具输出有明确高频场景。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "事件折叠与anchorSeq分页定位比相似文本搜索可追溯。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核冻结快照、缓存与回退，未测大日志时延。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "无LLM费，但侧栏依赖、事件缓存及宿主回归需维护。"
+                    }
+                },
+                "score": 65,
+                "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1356219122-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1356219122:root",
+                        "area": "code",
+                        "fingerprint": "64fad2e2ecb71af1b78031989ff01d20ad25807b"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1356219122:root",
+            "repository": "Andor-Z/dsh-turn-outline",
+            "path": "",
+            "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+            "fingerprints": {
+                "directory": "ee914df13be53be679606d57d3e192c7382c5289093f9eeb5306e5e83e57c559",
+                "code": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+                "maintenance": "ffcbd40a2a7cf3344b11b2ec3975147191b076dde606a5be85b9d7af33f158d9"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "abda37b1e9848e4d1a4a30ebe922afc24a9bf36d64d406df2775fea8d3ce6196"
+        },
+        "publication.metadata": "data/plugins/andor-z--dsh-turn-outline/META.json",
+        "publication.summaries": {
+            "text": "把DSH会话事件折叠为轮次轨迹，并在better-sidebar侧栏定位回聊天或轨迹视图。",
+            "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+            "source_url": "https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+            "items": {
+                "界面": "better-sidebar轮次轨迹与结构化定位。",
+                "Host 路由": "只读分页会话事件。",
+                "事件监听": "会话变化驱动增量刷新。"
+            }
+        },
+        "publication.advice": {
+            "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+            "text": "适合已用better-sidebar的长会话用户先试，核对压缩前历史和并行工具的定位；重大追溯仍查看完整日志。"
+        },
+        "registry": "data/plugins/andor-z--dsh-turn-outline",
+        "reports": "# dsh-turn-outline\n\n> 把DSH会话事件折叠为轮次轨迹，并在better-sidebar侧栏定位回聊天或轨迹视图。\n\n## 使用建议\n\n适合已用better-sidebar的长会话用户先试，核对压缩前历史和并行工具的定位；重大追溯仍查看完整日志。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：长会话用户回查某轮输入、工具与输出，合格导航应指向同一事件而非看似相似文本。\n- **亮点**：相对LLM生成标题大纲，增量是无模型事件折叠及结构化seq跳转，降低摘要幻觉与调用费；原会话与视图索引由宿主提供。\n- **思考**：零AI是否等于“无失败态/秒开”？历史分页、过期view、缺better-sidebar或路由拒绝都有条件；摘要只取末文本和工具预览，不能当完整审计。自建browser fence防跨站/DNS rebinding而非用户认证。\n- **建议**：由seq定位与折叠推导，可在摘要显示覆盖范围/被折叠事件数，并验证点击目标seq与当前展示一致。未验证；压缩、steering、并行工具和加载旧页时测误跳及遗漏，错误不得默默跳近似位置。\n\n## 场景与替代办法\n\n长会话用户回查某轮输入、工具与输出，合格导航应指向同一事件而非看似相似文本。\n\n宿主原轨迹完整但回看费力；此插件做导航压缩，不生成新业务交付物。\n\n## 能力清单\n\n- **界面**：better-sidebar轮次轨迹与结构化定位。\n- **Host 路由**：只读分页会话事件。\n- **事件监听**：会话变化驱动增量刷新。\n\n## 依赖与流程\n\nDSH sessions/sessionQuery/webServer、uiConversation和better-sidebar；旧/新host能力探测决定定位路径。\n\n订阅会话变化→分页取增量→折叠轮次→按工具筛选→加载历史并定位anchorSeq；缺peer时不注册tab。\n\n## 成本与效果\n\n无额外LLM费；首次侧栏依赖，持续事件缓存/浏览器渲染与升级回归成本，未测大日志延迟。\n\n减少回看滚动成本的机制合理，未有实测时间收益。\n\n## 核心贡献\n\n相对LLM生成标题大纲，增量是无模型事件折叠及结构化seq跳转，降低摘要幻觉与调用费；原会话与视图索引由宿主提供。\n\n## 关键质疑\n\n零AI是否等于“无失败态/秒开”？历史分页、过期view、缺better-sidebar或路由拒绝都有条件；摘要只取末文本和工具预览，不能当完整审计。自建browser fence防跨站/DNS rebinding而非用户认证。\n\n\n## 工程亮点\n\npure事件折叠、live/cold路径和有界LRU分开可借鉴；不能将粗摘要或信任fence解释为完整内容/认证保证。 源码依据：[src/index.ts](https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/src/index.ts)、[src/trail-model.ts](https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/src/trail-model.ts)、[src/client/trail-jump.ts](https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/src/client/trail-jump.ts)、[src/client/useTrail.ts](https://github.com/Andor-Z/dsh-turn-outline/blob/64fad2e2ecb71af1b78031989ff01d20ad25807b/src/client/useTrail.ts)。\n\n## 未来设计假设（未验证）\n\n由seq定位与折叠推导，可在摘要显示覆盖范围/被折叠事件数，并验证点击目标seq与当前展示一致。未验证；压缩、steering、并行工具和加载旧页时测误跳及遗漏，错误不得默默跳近似位置。\n\n用长日志含steering/compaction/并行call和重复文本，核对边界/跳转seq、缓存上限及缺peer禁用；不把测试声明当本轮运行。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4b322525ef8927f4b4938e0e13beb2c17627968f09987ec298a8126438d9a25e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 85 | 61 | 15 | — |\n| .md | source | 3 | 368 | — | — | 5329 |\n| .tsx | source | 2 | 720 | 584 | 85 | — |\n| .ts | source | 9 | 2891 | 2315 | 409 | — |\n| .tsx | test | 2 | 375 | 302 | 45 | — |\n| .ts | test | 4 | 1281 | 1121 | 64 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Andor-Z/dsh-turn-outline](https://github.com/Andor-Z/dsh-turn-outline)\n- **版本号**：0.3.1（[固定提交 64fad2e2](https://github.com/Andor-Z/dsh-turn-outline/tree/64fad2e2ecb71af1b78031989ff01d20ad25807b)）\n- **版本日期**：2026-10-01（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/trail-model.ts、src/client/trail-jump.ts、src/client/useTrail.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读src/index.ts、src/trail-model.ts、src/client/trail-jump.ts、src/client/useTrail.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：用长日志含steering/compaction/并行call和重复文本，核对边界/跳转seq、缓存上限及缺peer禁用；不把测试声明当本轮运行。\n",
+        "metadata": {
+            "repository": "Andor-Z/dsh-turn-outline",
+            "repository_id": 1356219122,
+            "captured_at": "2026-10-21T08:02:26.564Z",
+            "window_start": "2026-09-21T08:02:26.564Z",
+            "stars": 1,
+            "pushed_at": "2026-10-01T04:40:03Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndor-Z%2Fdsh-turn-outline%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD6A:10F8F5:6E47C7:763C52:6AD87196 and timestamp 2026-10-21 08:02:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndor-Z%2Fdsh-turn-outline%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D160:2707DA:70F1C5:78E5D4:6AD8719A and timestamp 2026-10-21 08:02:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndor-Z%2Fdsh-turn-outline%20is%3Aissue%20created%3A2026-09-21T08%3A02%3A26.564Z..2026-10-21T08%3A02%3A26.564Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D55C:4F21B:6B9DFE:7395DD:6AD8719D and timestamp 2026-10-21 08:02:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndor-Z%2Fdsh-turn-outline%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A02%3A26.564Z..2026-10-21T08%3A02%3A26.564Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D698:26CA49:6DA0E3:759451:6AD8719E and timestamp 2026-10-21 08:02:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndor-Z%2Fdsh-turn-outline%20is%3Aissue%20updated%3A2026-09-21T08%3A02%3A26.564Z..2026-10-21T08%3A02%3A26.564Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D79A:272FB3:6B91D6:738873:6AD8719F and timestamp 2026-10-21 08:02:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-turn-outline",
+                "captured_at": "2026-10-21T08:02:39.728Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1546,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-turn-outline",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-03T17:45:45.400Z",
+                    "captured_at": "2026-10-21T08:02:39.728Z",
+                    "source_url": "https://registry.npmjs.org/dsh-turn-outline",
+                    "error": null,
+                    "latest_version": "0.3.1",
+                    "latest_published_at": "2026-09-30T14:44:22.764Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1356219122:root",
+            "repository": "Andor-Z/dsh-turn-outline",
+            "path": "",
+            "revision": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ee914df13be53be679606d57d3e192c7382c5289093f9eeb5306e5e83e57c559",
+                "code": "64fad2e2ecb71af1b78031989ff01d20ad25807b",
+                "maintenance": "ffcbd40a2a7cf3344b11b2ec3975147191b076dde606a5be85b9d7af33f158d9"
+            }
+        }
+    }
+}

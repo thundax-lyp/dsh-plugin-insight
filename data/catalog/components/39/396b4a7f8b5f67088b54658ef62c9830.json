@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "396b4a7f8b5f67088b54658ef62c9830",
+    "identity": "github:1340088201:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340088201:root",
+            "repository": "WZZNNE/DSH-CyberWorkStation",
+            "path": "",
+            "revision": "54855352ddc1a46f62c26ebb8ba6e9e2a4f07875",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "55e8a36997a35ac232315a782d5cbb0e6079c65d7f12f810e75bd37bc3a8330a",
+                "code": "54855352ddc1a46f62c26ebb8ba6e9e2a4f07875",
+                "maintenance": "e7fed2ef21a738ff3f524f7c4d0aa0761ef0060784d261993545572fed828e54"
+            }
+        }
+    }
+}

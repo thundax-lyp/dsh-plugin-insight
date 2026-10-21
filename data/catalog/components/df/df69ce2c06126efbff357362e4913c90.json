@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "df69ce2c06126efbff357362e4913c90",
+    "identity": "github:1385817076:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1385817076:root",
+            "repository": "jide315/dsh-reasoning-language",
+            "path": "",
+            "revision": "8670b98e9d73c8bce9cd76c9ee60762c236dc8f9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aae81bc08043900b6942f630ee127134d528e7a571402a72f9899c5c9de56e21",
+                "code": "8670b98e9d73c8bce9cd76c9ee60762c236dc8f9",
+                "maintenance": "316c3a029d3990e3655af2504234860ddc9648cf108e3719a4c3ac38f2c6125b"
+            }
+        }
+    }
+}

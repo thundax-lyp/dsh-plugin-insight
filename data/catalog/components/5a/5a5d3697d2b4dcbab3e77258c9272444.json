@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a5d3697d2b4dcbab3e77258c9272444",
+    "identity": "github:1359108396:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359108396:root",
+            "repository": "FaMuer/dsh-real-fish-pet",
+            "path": "",
+            "revision": "5510c4ad1cad9d3e29f3074550b25ae368da6d14",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "da5067094a62f180d134d6c2899a175aa1894219546f6e74f117a84dbde960df",
+                "code": "5510c4ad1cad9d3e29f3074550b25ae368da6d14",
+                "maintenance": "07db19d8ec083b5fca074625ad2b2dc9688c9d417137ddd5c9dcda0c9952271f"
+            }
+        }
+    }
+}

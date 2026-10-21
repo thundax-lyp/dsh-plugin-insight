@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "87ad014b015f7f07a09895539271d535",
+    "identity": "github:1334246540:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334246540:root",
+            "repository": "kingOfSoySauce/dsh-liang-skin",
+            "path": "",
+            "revision": "a598702bdcdd51cd201b96bdd60efc89a255c787",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2951ee943dc36688a376df5f67570cff0c9a792e999f8cc89e9aec5c5edb1c45",
+                "code": "a598702bdcdd51cd201b96bdd60efc89a255c787",
+                "maintenance": "66cf0afd3847bb7c23d1b05ac35ede516a0bd234ed3e5b7cecca58700be4a454"
+            }
+        }
+    }
+}

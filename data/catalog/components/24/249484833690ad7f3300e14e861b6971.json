@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "249484833690ad7f3300e14e861b6971",
+    "identity": "github:1255088873:dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1255088873:dsh-plugin",
+            "repository": "xinchen03/minta",
+            "path": "dsh-plugin",
+            "revision": "4255d6eec620361e76a52b5eb24608478a3c6835",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0e153ce41be2d15f1fdb4acb368e4898376fce2293c9b3a8409022458dd5a7d",
+                "code": "4255d6eec620361e76a52b5eb24608478a3c6835",
+                "maintenance": "2ef1d0d684389cb3f1b0d5599bea3d55684bcba6447b8b80283b8cb86b8b4da0"
+            }
+        }
+    }
+}

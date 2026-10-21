@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dcdbfc96c5b1677ded66becdd1801e87",
+    "identity": "github:1339800682:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339800682:root",
+            "repository": "memorax-ai/the-binding-of-dsh",
+            "path": "",
+            "revision": "e06d0a41e0c864cbf97220b96e7e9a8a6d03ce12",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "da7d9cb38d6b68a80b077f6484c586d8438fdbbe83e4baabee137959713f1675",
+                "code": "e06d0a41e0c864cbf97220b96e7e9a8a6d03ce12",
+                "maintenance": "7d397c9dfc25fc74ec8cff872a57dac7e1b5ac6ef7ded4fc25ea8bf3f265f64e"
+            }
+        }
+    }
+}

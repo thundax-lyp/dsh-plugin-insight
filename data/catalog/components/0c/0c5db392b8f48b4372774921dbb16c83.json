@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c5db392b8f48b4372774921dbb16c83",
+    "identity": "github:1334402420:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334402420:root",
+            "repository": "SaiSenBox/dsh-boot-guard",
+            "path": "",
+            "revision": "50aa4dc4e6e23f8c1f39c7c16963a89d4af5a774",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0d31541eaa7324ae9715aa2cdacee913ee12e35f2f183d820e1d408810982e9",
+                "code": "50aa4dc4e6e23f8c1f39c7c16963a89d4af5a774",
+                "maintenance": "c9584b9f5728cc3e3fecd6aec4de58a46a9eab933fc1adbf58c7c369526187c1"
+            }
+        }
+    }
+}

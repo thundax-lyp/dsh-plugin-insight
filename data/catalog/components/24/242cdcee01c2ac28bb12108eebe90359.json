@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "242cdcee01c2ac28bb12108eebe90359",
+    "identity": "github:1332659211:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332659211:root",
+            "repository": "yjh051108/dsh-super-injector",
+            "path": "",
+            "revision": "e2fca6e2dc5d926bb33fbd1376780bb5e93f4974",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bafcbcf719e70d0529ffb999c0b5494823645140b51af84b4d5affd528f66bf7",
+                "code": "e2fca6e2dc5d926bb33fbd1376780bb5e93f4974",
+                "maintenance": "fcdc615c15e3874ee0bd391083c6a3eef7de2706d31442017b05e028253e62d4"
+            }
+        }
+    }
+}

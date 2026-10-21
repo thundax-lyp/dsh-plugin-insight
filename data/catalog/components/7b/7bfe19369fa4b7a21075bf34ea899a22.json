@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7bfe19369fa4b7a21075bf34ea899a22",
+    "identity": "github:1377743080:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377743080:root",
+            "repository": "WDahah/portable-dsh-multi-agent-plugin",
+            "path": "",
+            "revision": "d0a5c3e86235e80a3cb05f827268d3199b6a1342",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "22fc084cd4cde7c52ae55ee43e93f3e00ff3d7f6beb4f23708bf62f0df3f5147",
+                "code": "d0a5c3e86235e80a3cb05f827268d3199b6a1342",
+                "maintenance": "0f6d8a05f9069c066a86881d2208d747dda09fb13e9bb3325d9ef270259b8d41"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "967920e56aeb719e244ef3b992f26605",
+    "identity": "github:1337617939:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337617939:root",
+            "repository": "SkyloveQiu/dsh-finreport",
+            "path": "",
+            "revision": "ffc2987a8c6938cb26132dfa6b848274497c2c65",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "53336e7232e9daf114a5ab3d8589cc2e7a78ba3a3d11091a6acdc4f392aff45a",
+                "code": "ffc2987a8c6938cb26132dfa6b848274497c2c65",
+                "maintenance": "74dc50c4d2150162fb3d4cb2575deeb17e3a638ec4c3556b91cb9f6d4840ffe2"
+            }
+        }
+    }
+}

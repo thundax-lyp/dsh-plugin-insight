@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "444d10c8d4b16c4a94714191913b2c77",
+    "identity": "github:1424174287:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424174287:root",
+            "repository": "TINGOD2006/dsh-scratch-vault",
+            "path": "",
+            "revision": "6b95931758789540b62d30666149b82db5beaeb4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0673a4552a00f97b1f9e98b60605e31f0aa52886bcbe3957b192bec4cf9c0efe",
+                "code": "6b95931758789540b62d30666149b82db5beaeb4",
+                "maintenance": "4944729bcc6dc21f58ff9fa644f405ff9b5ce0f322332f8bc1ac4b1311ec554c"
+            }
+        }
+    }
+}

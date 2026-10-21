@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "747d66549a8ecabf058b4d145c70f13b",
+    "identity": "github:1335005109:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335005109:root",
+            "repository": "lhuans/dsh-genui",
+            "path": "",
+            "revision": "dfe7532fef16e8dc49b1f4588b14717c696949f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "93cf9b6dbf6af66eb2360bc8ce5677408839d2e816d86bc3c54f601b022db839",
+                "code": "dfe7532fef16e8dc49b1f4588b14717c696949f3",
+                "maintenance": "43834e52f249625b5dcf66c691d9dd7d1ce7d4e470751f27220c1c5d516130c3"
+            }
+        }
+    }
+}

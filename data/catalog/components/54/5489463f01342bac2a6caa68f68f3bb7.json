@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5489463f01342bac2a6caa68f68f3bb7",
+    "identity": "github:1343319081:plugins-liang-harness-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343319081:plugins-liang-harness-plugin",
+            "repository": "Flycat43/liang-desktop-pet",
+            "path": "plugins/liang-harness-plugin",
+            "revision": "36e367799357a16ee2d4c2de79eacca879deef0f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "589fae80873af8a8da638dcb55b6fffc98a15254befefaf9d0c049afbfe479b5",
+                "code": "36e367799357a16ee2d4c2de79eacca879deef0f",
+                "maintenance": "3f84d276d85b90b6b626e18b10adc94eda86119577e657a5cd3e795504566f2d"
+            }
+        }
+    }
+}

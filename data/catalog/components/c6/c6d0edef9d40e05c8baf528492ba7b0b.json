@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c6d0edef9d40e05c8baf528492ba7b0b",
+    "identity": "github:1420842334:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420842334:root",
+            "repository": "Void-LifeStream/dsh-cuda",
+            "path": "",
+            "revision": "feeeb222bf12eca1bf83dc320d290196d732c75e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e97f81bbe19027db666623b4347f65f4176ee6a6f877c9b81077df5f6692dafd",
+                "code": "feeeb222bf12eca1bf83dc320d290196d732c75e",
+                "maintenance": "f8c8f0641a5af5cce85455bf11a36749f31dacba3731e3c38a1312863d7fdfc9"
+            }
+        }
+    }
+}

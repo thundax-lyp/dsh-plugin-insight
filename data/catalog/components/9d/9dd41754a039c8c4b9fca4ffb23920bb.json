@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9dd41754a039c8c4b9fca4ffb23920bb",
+    "identity": "github:1415103065:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415103065:root",
+            "repository": "FantastyQAQ/dsh-doxygen",
+            "path": "",
+            "revision": "cbee980b4d5e114448e993e53d88c647ac79c982",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "28c8b942bdde829ca1f679c61847e5de319cfd8a1d4eb7f6ec6c00c650d09ebc",
+                "code": "cbee980b4d5e114448e993e53d88c647ac79c982",
+                "maintenance": "816efa89c78f123aede1ac979c89aca95f93eac0e3f425013fcdbea695d1e628"
+            }
+        }
+    }
+}

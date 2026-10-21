@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "301e318f6250ec89d3f0ab9829900373",
+    "identity": "github:1364000027:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364000027:root",
+            "repository": "we39/dsh-jumpserver",
+            "path": "",
+            "revision": "f0ad53d3615b8d5ef109dfa90b027edc85534eae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "10989ae5b9c764b2c82ab751e034e3d07cda1c9808979905d3fcaae4e75c39b8",
+                "code": "f0ad53d3615b8d5ef109dfa90b027edc85534eae",
+                "maintenance": "a4b730c6390fd7fbf221e43a56b859d656338b3ad8f3bc2da0e281aca6f560f0"
+            }
+        }
+    }
+}

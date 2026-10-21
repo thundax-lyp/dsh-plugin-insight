@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "77e4feebec4dba4d7f7bc6383e0d4304",
+    "identity": "github:1404464987:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404464987:root",
+            "repository": "ESROAMER/codex-dsh-collab",
+            "path": "",
+            "revision": "abdc2368bdbc0b74cb58cd83e27254da8dc4784a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e893ae826f9e30b92ce50d8c9e2d2273b0b7ff19c4b2e4cb87f5fa7d18df736b",
+                "code": "abdc2368bdbc0b74cb58cd83e27254da8dc4784a",
+                "maintenance": "e9224e0767fd752d55a8b76e608689712be0614f1e9cc67737fd1910721293e5"
+            }
+        }
+    }
+}

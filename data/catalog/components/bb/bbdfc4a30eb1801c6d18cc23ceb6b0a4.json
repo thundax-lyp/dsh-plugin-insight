@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bbdfc4a30eb1801c6d18cc23ceb6b0a4",
+    "identity": "github:1412307377:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412307377:root",
+            "repository": "WhatCannotBeSaid/eva-inspired-theme",
+            "path": "",
+            "revision": "b724a210625ff17c7cd5c3708fe3a39a77725799",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8feda82343b4b884b81c50baf1a9a565d0a4aaaaac6f1cac09abdb9ca3206d83",
+                "code": "b724a210625ff17c7cd5c3708fe3a39a77725799",
+                "maintenance": "b502cdfac4e7d0138e19e18b4e30d65f6dca1711db78eea57a2d0b79d1f88b28"
+            }
+        }
+    }
+}

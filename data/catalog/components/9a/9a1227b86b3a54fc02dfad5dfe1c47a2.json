@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9a1227b86b3a54fc02dfad5dfe1c47a2",
+    "identity": "github:1396957356:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396957356:root",
+            "repository": "yuluo554/dsh-prompt-polisher",
+            "path": "",
+            "revision": "b235f99dcec50f79030053719fde008d517e0713",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc7ca651eccd1a76bfc35debc5345c64899e74699d31d05012c6b66e41903c40",
+                "code": "b235f99dcec50f79030053719fde008d517e0713",
+                "maintenance": "0aa28fa73b78a29ad8cc78f72eaa4d907a93682a8882358e2fc82c8105f3cd80"
+            }
+        }
+    }
+}

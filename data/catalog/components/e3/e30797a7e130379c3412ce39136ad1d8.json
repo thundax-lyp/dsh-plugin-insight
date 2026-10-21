@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e30797a7e130379c3412ce39136ad1d8",
+    "identity": "github:1425253725:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425253725:root",
+            "repository": "ZRAZN/dsh-effort-slider-split-seat",
+            "path": "",
+            "revision": "73e2a8c5e09ddf2383f065e64955deee81ba08a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c4bb9f72bbf23735f8919d2e460d65e8b3c3f124f007c1122afab4f1a23f0240",
+                "code": "73e2a8c5e09ddf2383f065e64955deee81ba08a7",
+                "maintenance": "185c8b6eb71d770b78f026af9729de2558356ddc33c35ddf33b37174363a0f34"
+            }
+        }
+    }
+}

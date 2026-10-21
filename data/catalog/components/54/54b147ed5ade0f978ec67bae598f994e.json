@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "54b147ed5ade0f978ec67bae598f994e",
+    "identity": "github:1333415037:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333415037:root",
+            "repository": "lonelymoon87/dsh-guardian",
+            "path": "",
+            "revision": "6091479072ea236249a858467d481708868678e8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c27a073394688acd167d92710ac97bb9f6b2517a7cfe147045ae592d928a9c31",
+                "code": "6091479072ea236249a858467d481708868678e8",
+                "maintenance": "52a558efb9a9e97100366615861d3c945bbd8e85383e349d6e8dfcb1ab48f4eb"
+            }
+        }
+    }
+}

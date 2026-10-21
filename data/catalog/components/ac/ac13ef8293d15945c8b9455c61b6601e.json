@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ac13ef8293d15945c8b9455c61b6601e",
+    "identity": "github:1334988009:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334988009:root",
+            "repository": "ingleav626-art/dsh-native-launcher",
+            "path": "",
+            "revision": "5afce0539b8104794ef036bdfcc6e1bdabcf7655",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "85fb300260d718a820b7f65e84e6748a0f03ed1aa82f5acb13bec06a8b4e616b",
+                "code": "5afce0539b8104794ef036bdfcc6e1bdabcf7655",
+                "maintenance": "2d37c983a4bf64cf1792fd53ce99ff761d3ce0fb2f37f6fe72f1b11b51b7ca48"
+            }
+        }
+    }
+}

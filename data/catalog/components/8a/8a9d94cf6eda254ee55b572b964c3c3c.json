@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a9d94cf6eda254ee55b572b964c3c3c",
+    "identity": "github:1402028786:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402028786:root",
+            "repository": "orphiczhou/dsh-region-probe",
+            "path": "",
+            "revision": "c42e5e52b431e2e8cdfa4b2e26a53565937eb064",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "05963bb9d14ae35c6ffa02d3e0e2166efe25914737e61dbb080452c4a57fcfba",
+                "code": "c42e5e52b431e2e8cdfa4b2e26a53565937eb064",
+                "maintenance": "6be3435eabb1bec9a6c0c56dc19293298ff8a832d6aa6b1b998a09ef44745db2"
+            }
+        }
+    }
+}

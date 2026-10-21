@@ -1,0 +1,433 @@
+{
+    "schema_version": 3,
+    "id": "4c57b5f85dfc73ab3cb220864bfcc249",
+    "identity": "github:1335281982:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335281982:root",
+            "repository_id": 1335281982,
+            "component_id": "root",
+            "repository": "AlyceStocking/dsh-yukimi-theme",
+            "path": "",
+            "aliases": [],
+            "name": "Yukimi theme",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "3c489c8cd6c9da01071e3287d16e56cc49fdb26130581470616dea8750f32f50",
+                "code": "4b162a3572e894e71001f3cefd0105519d5c4461",
+                "maintenance": "c609a4aee03acf41ae4d13bc1a3aa223f0e9d81d98cf69eff2a8a3e8ebf4777d"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1335281982-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:14:15.806Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1335281982-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AlyceStocking/dsh-yukimi-theme/blob/4b162a3572e894e71001f3cefd0105519d5c4461/README.md",
+                    "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+                    "captured_at": "2026-10-21T08:14:15.806Z",
+                    "summary": "为 DSH 添加雪美主题，并在 Windows 桌面以独立桌宠显示会话提醒。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/alycestocking--dsh-yukimi-theme/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1335281982-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AlyceStocking/dsh-yukimi-theme/blob/4b162a3572e894e71001f3cefd0105519d5c4461/lib/index.js",
+                    "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+                    "captured_at": "2026-10-21T08:14:15.806Z",
+                    "summary": "核查 lib/index.js、lib/desktop-state.js、lib/desktop-process.js、lib/client.js、desktop/main.cjs、package.json；Web client绘主题与小人；Windows desktop Host跟踪顶层Agent、turn与待回答/审批投影，聚合预设文案状态。启动Electron helper，通过随机命名管道和token握手同步；点击提醒经navigation/ack和原生openSession返回指定会话，helper保存偏好/去重ID。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/alycestocking--dsh-yukimi-theme/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "根Host桌面事件、desktop-state/process、client导航与desktop持久化相关代码；未审计全部主题CSS/素材或Electron二进制，未运行桌面。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "喜欢角色主题且后台等待任务的个人用户，以桌宠察觉提问/审批再返回原会话；提醒不是自动授权或项目完成证明。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Web client绘主题与小人；Windows desktop Host跟踪顶层Agent、turn与待回答/审批投影，聚合预设文案状态。启动Electron helper，通过随机命名管道和token握手同步；点击提醒经navigation/ack和原生openSession返回指定会话，helper保存偏好/去重ID。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "根Host桌面事件、desktop-state/process、client导航与desktop持久化相关代码；未审计全部主题CSS/素材或Electron二进制，未运行桌面。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "Web与Windows Desktop路径不同，源码不含被忽略Electron运行时，需完整打包；helper仅win32 desktop profile启动。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "现金无额外模型调用；人工是Electron完整包/偏好维护、素材来源及兼容；动画/置顶/辅助进程有资源和干扰成本，无效率测量。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "角色主题偏好和后台提醒需求同时存在时可评估；对可靠告警有要求应先测helper失败与原请求状态，不能用点击通知代替审批。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "保留原会话处理路径，减少发送正文到辅助进程；趣味与注意力收益未实测。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "管道随机token握手/超时、单helper连接、不开放额外TCP；结束按单调turn去重，等待事件与投影对账，偏好临时写rename。少发数据与不代答是可借鉴边界。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将装饰主题扩展为不转发聊天正文的后台人机交接提醒，区分持续等待与短时结束，session ID让回到原上下文有明确路径。增量是事件到桌宠状态的适配，非授权决策或任务执行体系。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "桌宠可见是否等于未解决事项被人处理？完成通知按turn/end而非项目验收；persistent等待只有对应投影/事件消除，导航ack也只表示页面接收跳转，不证明用户已回答。helper退出后state.active=false但未见自动重启，不能把Web/桌宠降级当持续可靠告警。标题仍被传送，最小数据不是完全无敏感信息。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "把提醒定义成“待察觉/已打开/原请求已解决”三态，并在helper不可用时把未解决数交回宿主显式提示，可能减少把点击当办结。对helper崩溃、重启重放、打开错会话及打开后未答复案例核对持续等待；若只清通知不确认原请求，则假设失败。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335281982:root",
+                            "area": "code",
+                            "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:14:15.806Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:14:15.806Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+                "reviewed_at": "2026-10-21T08:14:15.806Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335281982:root",
+                        "area": "code",
+                        "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "新颖性9：角色桌宠/通知模式已有；机制15：等待投影、事件去重、IPC和原生导航结合具体；迁移性10：最小化状态通知可复用；简化4：外置helper增加生命周期/打包负担。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "工作流9：改善人返回任务入口，批准责任不变；交付8：通知状态而非业务完成；覆盖5：Windows桌面个人主题用户；经济0：未见成本结构改变，装饰不等于生产力收益。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1335281982-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "同时喜爱角色与后台提醒者可试桌宠；先测helper失败、返回指定会话与原请求状态，导航ack不等于回答或审批。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "主题偏好叠加后台介入提醒的用户明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "指定会话导航与少量预设状态比纯装饰有具体增量。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核管道token和状态投影，helper退出未自动重启。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "无额外模型费但Electron、素材与置顶动画有维护和干扰成本。"
+                    }
+                },
+                "score": 59,
+                "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1335281982-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335281982:root",
+                        "area": "code",
+                        "fingerprint": "4b162a3572e894e71001f3cefd0105519d5c4461"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335281982:root",
+            "repository": "AlyceStocking/dsh-yukimi-theme",
+            "path": "",
+            "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+            "fingerprints": {
+                "directory": "3c489c8cd6c9da01071e3287d16e56cc49fdb26130581470616dea8750f32f50",
+                "code": "4b162a3572e894e71001f3cefd0105519d5c4461",
+                "maintenance": "c609a4aee03acf41ae4d13bc1a3aa223f0e9d81d98cf69eff2a8a3e8ebf4777d"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "c9ec45681bdc7699ed34d280cc59ad88ed02b51f572ba106d84f67e3c4c4fc7e"
+        },
+        "publication.metadata": "data/plugins/alycestocking--dsh-yukimi-theme/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 添加雪美主题，并在 Windows 桌面以独立桌宠显示会话提醒。",
+            "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+            "source_url": "https://github.com/AlyceStocking/dsh-yukimi-theme/blob/4b162a3572e894e71001f3cefd0105519d5c4461/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+            "items": {
+                "事件监听": "顶层Agent、会话事件、问题/审批投影驱动提醒。",
+                "Host 路由": "认证Connection /yukimi状态/偏好/导航确认RPC。",
+                "界面": "Web主题与Windows独立桌宠/气泡。",
+                "后台": "Electron helper经命名管道同步状态与偏好。"
+            }
+        },
+        "publication.advice": {
+            "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+            "text": "角色主题偏好和后台提醒需求同时存在时可评估；对可靠告警有要求应先测helper失败与原请求状态，不能用点击通知代替审批。"
+        },
+        "registry": "data/plugins/alycestocking--dsh-yukimi-theme",
+        "reports": "# Yukimi theme\n\n> 为 DSH 添加雪美主题，并在 Windows 桌面以独立桌宠显示会话提醒。\n\n## 使用建议\n\n角色主题偏好和后台提醒需求同时存在时可评估；对可靠告警有要求应先测helper失败与原请求状态，不能用点击通知代替审批。\n\n核查状态：事件映射、IPC与会话导航接线源码可确认；真实Windows层级、多屏及提醒到达未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：喜欢角色主题且后台等待任务的个人用户，以桌宠察觉提问/审批再返回原会话；提醒不是自动授权或项目完成证明。\n- **亮点**：将装饰主题扩展为不转发聊天正文的后台人机交接提醒，区分持续等待与短时结束，session ID让回到原上下文有明确路径。增量是事件到桌宠状态的适配，非授权决策或任务执行体系。\n- **思考**：桌宠可见是否等于未解决事项被人处理？完成通知按turn/end而非项目验收；persistent等待只有对应投影/事件消除，导航ack也只表示页面接收跳转，不证明用户已回答。helper退出后state.active=false但未见自动重启，不能把Web/桌宠降级当持续可靠告警。标题仍被传送，最小数据不是完全无敏感信息。\n- **建议**：把提醒定义成“待察觉/已打开/原请求已解决”三态，并在helper不可用时把未解决数交回宿主显式提示，可能减少把点击当办结。对helper崩溃、重启重放、打开错会话及打开后未答复案例核对持续等待；若只清通知不确认原请求，则假设失败。\n\n## 场景与替代办法\n\n喜欢角色主题且后台等待任务的个人用户，以桌宠察觉提问/审批再返回原会话；提醒不是自动授权或项目完成证明。\n\n原生通知/任务栏状态或普通主题；本项加入角色化可见提醒，不替代系统告警。\n\n## 能力清单\n\n- **事件监听**：顶层Agent、会话事件、问题/审批投影驱动提醒。\n- **Host 路由**：认证Connection /yukimi状态/偏好/导航确认RPC。\n- **界面**：Web主题与Windows独立桌宠/气泡。\n- **后台**：Electron helper经命名管道同步状态与偏好。\n\n## 依赖与流程\n\nWeb client绘主题与小人；Windows desktop Host跟踪顶层Agent、turn与待回答/审批投影，聚合预设文案状态。启动Electron helper，通过随机命名管道和token握手同步；点击提醒经navigation/ack和原生openSession返回指定会话，helper保存偏好/去重ID。\n\nWindows Desktop、完整Electron helper与DSH connection/agents/sessionProjections，Web主题另依赖slots/DOM；素材/运行时需可用。\n\n加载主题→desktop启动helper→跟踪顶层会话→汇总等待/结束提示→点击发navigation→页面openSession并ack→原请求解决后消除；停用清监听并关helper。\n\nWeb与Windows Desktop路径不同，源码不含被忽略Electron运行时，需完整打包；helper仅win32 desktop profile启动。\n\n## 成本与效果\n\n现金无额外模型调用；人工是Electron完整包/偏好维护、素材来源及兼容；动画/置顶/辅助进程有资源和干扰成本，无效率测量。\n\n保留原会话处理路径，减少发送正文到辅助进程；趣味与注意力收益未实测。\n\n## 核心贡献\n\n将装饰主题扩展为不转发聊天正文的后台人机交接提醒，区分持续等待与短时结束，session ID让回到原上下文有明确路径。增量是事件到桌宠状态的适配，非授权决策或任务执行体系。\n\n## 关键质疑\n\n桌宠可见是否等于未解决事项被人处理？完成通知按turn/end而非项目验收；persistent等待只有对应投影/事件消除，导航ack也只表示页面接收跳转，不证明用户已回答。helper退出后state.active=false但未见自动重启，不能把Web/桌宠降级当持续可靠告警。标题仍被传送，最小数据不是完全无敏感信息。\n\n## 工程亮点\n\n管道随机token握手/超时、单helper连接、不开放额外TCP；结束按单调turn去重，等待事件与投影对账，偏好临时写rename。少发数据与不代答是可借鉴边界。\n\n固定源码依据：[lib/index.js](https://github.com/AlyceStocking/dsh-yukimi-theme/blob/4b162a3572e894e71001f3cefd0105519d5c4461/lib/index.js)、[lib/desktop-state.js](https://github.com/AlyceStocking/dsh-yukimi-theme/blob/4b162a3572e894e71001f3cefd0105519d5c4461/lib/desktop-state.js)、[lib/desktop-process.js](https://github.com/AlyceStocking/dsh-yukimi-theme/blob/4b162a3572e894e71001f3cefd0105519d5c4461/lib/desktop-process.js)、[lib/client.js](https://github.com/AlyceStocking/dsh-yukimi-theme/blob/4b162a3572e894e71001f3cefd0105519d5c4461/lib/client.js)、[desktop/main.cjs](https://github.com/AlyceStocking/dsh-yukimi-theme/blob/4b162a3572e894e71001f3cefd0105519d5c4461/desktop/main.cjs)、[package.json](https://github.com/AlyceStocking/dsh-yukimi-theme/blob/4b162a3572e894e71001f3cefd0105519d5c4461/package.json)。\n\n## 未来设计假设（未验证）\n\n把提醒定义成“待察觉/已打开/原请求已解决”三态，并在helper不可用时把未解决数交回宿主显式提示，可能减少把点击当办结。对helper崩溃、重启重放、打开错会话及打开后未答复案例核对持续等待；若只清通知不确认原请求，则假设失败。\n\n未执行；拟在helper退出/多屏/最小化、重放turn与未答请求场景验证实际可见、准确跳转和等待不误清。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3ef62667cfff30014b2450cd316bd628edc886a6d1a06cb5b701b7c5dc766865。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 8 | 1608 | 1487 | 44 | — |\n| .cjs | source | 2 | 348 | 333 | 13 | — |\n| .md | source | 3 | 341 | — | — | 9035 |\n| .mjs | source | 6 | 455 | 419 | 9 | — |\n| .mjs | test | 12 | 1781 | 1654 | 10 | — |\n| .cjs | test | 1 | 31 | 31 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：1.2.0-desktop.3；版本日期：2026-10-13（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[4b162a35](https://github.com/AlyceStocking/dsh-yukimi-theme/tree/4b162a3572e894e71001f3cefd0105519d5c4461)；本轮基准：2026-10-21T07:52:12Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根Host桌面事件、desktop-state/process、client导航与desktop持久化相关代码；未审计全部主题CSS/素材或Electron二进制，未运行桌面。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "AlyceStocking/dsh-yukimi-theme",
+            "repository_id": 1335281982,
+            "captured_at": "2026-10-21T08:01:25.625Z",
+            "window_start": "2026-09-21T08:01:25.625Z",
+            "stars": 0,
+            "pushed_at": "2026-10-13T11:52:58Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7DC8:4E142:67469F:6F39B3:6AD87159 and timestamp 2026-10-21 08:01:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8186:4F21B:6B711D:736542:6AD8715C and timestamp 2026-10-21 08:01:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20created%3A2026-09-21T08%3A01%3A25.625Z..2026-10-21T08%3A01%3A25.625Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 853E:26CA49:6D76AF:7566A9:6AD8715F and timestamp 2026-10-21 08:01:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A01%3A25.625Z..2026-10-21T08%3A01%3A25.625Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 894C:502CD:6AD82D:72CBD8:6AD87162 and timestamp 2026-10-21 08:01:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20updated%3A2026-09-21T08%3A01%3A25.625Z..2026-10-21T08%3A01%3A25.625Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A8E:264749:6DC821:75BBC7:6AD87163 and timestamp 2026-10-21 08:01:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ]
+        },
+        "discovery.plugins": {
+            "id": "github:1335281982:root",
+            "repository": "AlyceStocking/dsh-yukimi-theme",
+            "path": "",
+            "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3c489c8cd6c9da01071e3287d16e56cc49fdb26130581470616dea8750f32f50",
+                "code": "4b162a3572e894e71001f3cefd0105519d5c4461",
+                "maintenance": "c609a4aee03acf41ae4d13bc1a3aa223f0e9d81d98cf69eff2a8a3e8ebf4777d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "02f655666db98ced860054c6e7428bd8",
+    "identity": "github:1335166160:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335166160:root",
+            "repository": "happpsee/dsh-desktop-app",
+            "path": "",
+            "revision": "d6877b9f12c50c897b902f7276c3ea110a0d0228",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6f04178c3b2f15e98c0a9a1fff525dc43ef7c26f361d9e252f466309895cdd21",
+                "code": "d6877b9f12c50c897b902f7276c3ea110a0d0228",
+                "maintenance": "9e99912912b88b575fb97a42b8ee9bb5f77b3370ac6336800968d6dea9296612"
+            }
+        }
+    }
+}

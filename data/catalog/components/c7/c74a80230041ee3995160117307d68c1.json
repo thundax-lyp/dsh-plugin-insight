@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c74a80230041ee3995160117307d68c1",
+    "identity": "github:1337511446:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337511446:root",
+            "repository": "raullenchai/rapid-mlx-dsh-provider",
+            "path": "",
+            "revision": "88f98e7835989c3a05813e475ada4ce0b3c94267",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "267b7e9d379a4e679bb2d7bd25d58838888467a1090b7cd5dd3f29bcc513df34",
+                "code": "88f98e7835989c3a05813e475ada4ce0b3c94267",
+                "maintenance": "96b9fc1bb2b0abf73b95e8609d5ecc2a27baf98b4541bf096624962a145a842d"
+            }
+        }
+    }
+}

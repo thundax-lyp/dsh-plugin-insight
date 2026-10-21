@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "73d8e9edc0f54264332c7ebfb75e00d7",
+    "identity": "github:1335314049:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335314049:root",
+            "repository": "Len7183/DSH-Think-zh",
+            "path": "",
+            "revision": "2ba0a1e338410b44c07f221087907e210ad65b59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "08388f66196516e152ebd4976c9f557f945cb2f7aa422153abb4e02e278ce36b",
+                "code": "2ba0a1e338410b44c07f221087907e210ad65b59",
+                "maintenance": "f64e26f98597524c981b1bbdc3f2fda672efe840d02b0056e99e898e81d5a044"
+            }
+        }
+    }
+}

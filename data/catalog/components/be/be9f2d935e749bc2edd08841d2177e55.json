@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "be9f2d935e749bc2edd08841d2177e55",
+    "identity": "github:1349940201:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349940201:root",
+            "repository": "better-er/dsh-edit-diff",
+            "path": "",
+            "revision": "2eaeb5e869534dac66567006148183260b5b5e1e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cdd6ce3a789d2cb3070bf7eee7b6e430e9b1c77829cbce1a812c70a7ad9671d6",
+                "code": "2eaeb5e869534dac66567006148183260b5b5e1e",
+                "maintenance": "c8263304af2092e5778f8daec9b747b9ef3e8a98905c18b89750dca1cb0300f8"
+            }
+        }
+    }
+}

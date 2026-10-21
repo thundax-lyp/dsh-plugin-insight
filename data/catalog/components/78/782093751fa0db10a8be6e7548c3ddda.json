@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "782093751fa0db10a8be6e7548c3ddda",
+    "identity": "github:1389035449:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389035449:root",
+            "repository": "mistnest/dsh-cuigengji-plugin",
+            "path": "",
+            "revision": "31ede9f94ad22dfc7e1d512e14386bda11ec7319",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a7c7f70f091235b3db3f1c4cbfebecb7b61c1419ee22c525b3d27b0bbdb18baf",
+                "code": "31ede9f94ad22dfc7e1d512e14386bda11ec7319",
+                "maintenance": "27ce7582c1115f1cb5fe2c3abc164f47fac9ed21addce63d19da050697ea43c7"
+            }
+        }
+    }
+}

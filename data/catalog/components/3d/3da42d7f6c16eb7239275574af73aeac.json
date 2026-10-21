@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3da42d7f6c16eb7239275574af73aeac",
+    "identity": "github:1340236138:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340236138:root",
+            "repository": "Web0926/dsh-llm-verifier",
+            "path": "",
+            "revision": "ce06d928d495b865920aa0b24907a3b8d3ead669",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8a2390a6e071a29c4fa0be0221d9bc65e602c71ca90e6ee888b26151874b3ba9",
+                "code": "ce06d928d495b865920aa0b24907a3b8d3ead669",
+                "maintenance": "9dc7b22d7eec04a11bc643a34b30ff60588c41077de15d6d76523bc667f76ca4"
+            }
+        }
+    }
+}

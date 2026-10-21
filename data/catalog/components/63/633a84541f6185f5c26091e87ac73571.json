@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "633a84541f6185f5c26091e87ac73571",
+    "identity": "github:1367947272:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367947272:root",
+            "repository": "ttmouse/dsh-model-picker",
+            "path": "",
+            "revision": "6d7881aef2c2c29f8396667dbe956229488968d5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0ccdac2446bbfc5c861f88ce4a3ae832d0af8ab65b6362ff172778ecb62cfce1",
+                "code": "6d7881aef2c2c29f8396667dbe956229488968d5",
+                "maintenance": "458608cac1f675f66b956e224e89954756b414d02b38000fbb2d139c6b1acb37"
+            }
+        }
+    }
+}

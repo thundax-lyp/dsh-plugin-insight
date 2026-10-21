@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "16edfce06e7f89b6feee18366a2a095f",
+    "identity": "github:1343567618:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343567618:root",
+            "repository": "sxl19951101/dsh-done-sound",
+            "path": "",
+            "revision": "255bf983c3fa223990d284f06bf05af49757cd06",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b0fd841255f79ccc66a1fb021e97b4ad6b39c877cb4a0bb627331481cc120ce1",
+                "code": "255bf983c3fa223990d284f06bf05af49757cd06",
+                "maintenance": "b193de8ba11b3cb4cafb8f786926f65ec50f072fe4a6bfcb65f504f704f49c16"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a533bb3805566028b80dc19e5a8a4df8",
+    "identity": "github:1333597569:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333597569:root",
+            "repository": "STARDUSTLC666/dsh-calendar",
+            "path": "",
+            "revision": "2ea6b5f7aac6baa88bb6556c290098b1ae2a271f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "29a060359c0852abeeb0577087dde78cca8e426f4d21e68c9bcc25d4a481e94d",
+                "code": "2ea6b5f7aac6baa88bb6556c290098b1ae2a271f",
+                "maintenance": "c5f1b2131545d7dbcae59ca090804f5afa61391eb40c6d5d371551535f3b41b6"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f565daf5d8ed3ddca738ef1bd0e84331",
+    "identity": "github:1347881610:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347881610:root",
+            "repository": "fu827707013/dsh-concurrency-guard",
+            "path": "",
+            "revision": "3dd579fddd968d430dd23cfc51106cf8f64ee5e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d3bc501e261fbfa597dd8f33b2ffee4137df19424d115c88b538b8e4a1b7f20",
+                "code": "3dd579fddd968d430dd23cfc51106cf8f64ee5e1",
+                "maintenance": "61ae48864c13f2de4aadef27c3d591ebd1fdc95b7c46c7e8b21073115e216ca0"
+            }
+        }
+    }
+}

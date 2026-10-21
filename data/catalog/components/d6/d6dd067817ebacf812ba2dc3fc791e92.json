@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d6dd067817ebacf812ba2dc3fc791e92",
+    "identity": "github:1269132133:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1269132133:root",
+            "repository": "kuangre123/codex-switch",
+            "path": "",
+            "revision": "091074849de70d058bff8f6f4529f393a06fa5b1",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4b7f156b64ac37fb9f6f6af1b272d821c822b6319fdf9902e2e8e7be9268cfc6",
+                "code": "091074849de70d058bff8f6f4529f393a06fa5b1",
+                "maintenance": "205e4e0f736433988b8baa5e63582e64d207e1c6288093cbcabfa26dcaec9745"
+            }
+        }
+    }
+}

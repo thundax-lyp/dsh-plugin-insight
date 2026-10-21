@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8e333815691bdc37278345bfc250e120",
+    "identity": "github:1335249084:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335249084:root",
+            "repository": "jiamuAi/dsh-token-usage",
+            "path": "",
+            "revision": "6b42e9ebef228c6e8da7f570603d5d898eef2102",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "86a32fe86ee55eae94f83b5f09a20708f5c64c90b1569e2e1a628e9c578d03d5",
+                "code": "6b42e9ebef228c6e8da7f570603d5d898eef2102",
+                "maintenance": "e596043fa025e1da8bc876480af9cb52408188605d6be318eabc31b96045d5c8"
+            }
+        }
+    }
+}

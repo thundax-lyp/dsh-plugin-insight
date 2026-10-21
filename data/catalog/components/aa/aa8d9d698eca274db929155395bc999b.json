@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aa8d9d698eca274db929155395bc999b",
+    "identity": "github:1338741448:packages-dsh-memory-bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338741448:packages-dsh-memory-bundle",
+            "repository": "QIANLING-0831/dsh-memory-plus",
+            "path": "packages/dsh-memory-bundle",
+            "revision": "197185d19b8a73a21624ac024606116d646abe7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7b2f87dddd7557e05c6289ef8dff8299228ae04fc75c88ebfe4c0bd2fae59681",
+                "code": "197185d19b8a73a21624ac024606116d646abe7f",
+                "maintenance": "000f91704ddd2083ee9421c5ee67dff2b6bc9cdc4a7bbf98eba96d7e0410e96a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "34f63318990a0ef30814e2ca38b9e811",
+    "identity": "github:1377512288:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377512288:root",
+            "repository": "Nwflower/dsh-claude-style",
+            "path": "",
+            "revision": "ac1405748c44778d8fdca71de359fa89d8b54048",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "79fad1ab5b136bfcb79d8ac89349f8b374d111061b98a5ae544b3947f78839a1",
+                "code": "ac1405748c44778d8fdca71de359fa89d8b54048",
+                "maintenance": "6e60c829c3731da8afcd9b22501a22405dea9a329b6707bb7e1ff79adb47c4a0"
+            }
+        }
+    }
+}

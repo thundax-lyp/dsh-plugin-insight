@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "82a21abfe343faecd00674ea9a3f700e",
+    "identity": "github:1334962833:dsh-librarian",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334962833:dsh-librarian",
+            "repository": "margbug01/dsh-ma-plugins",
+            "path": "dsh-librarian",
+            "revision": "d554ce499f792fc3434f071262af76becb0b7634",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2240ff27912a6333f6ed706d5dc90d98eafd059ebc7db16ccca74eb86893ac52",
+                "code": "d554ce499f792fc3434f071262af76becb0b7634",
+                "maintenance": "b5dfe2de3b4b3abbb09b21a149d7abdb84b423834b725b38165138bf774e9c5d"
+            }
+        }
+    }
+}

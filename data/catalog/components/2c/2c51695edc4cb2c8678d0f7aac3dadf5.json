@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2c51695edc4cb2c8678d0f7aac3dadf5",
+    "identity": "github:1335151014:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335151014:root",
+            "repository": "mingzeng21/dsh-notion",
+            "path": "",
+            "revision": "eac024696e7036d3b7d9eeec3130d3eeddbe3fe3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0209ef5568f100132381a9938ab738c100da55f9806f19227b1c1474d9725541",
+                "code": "eac024696e7036d3b7d9eeec3130d3eeddbe3fe3",
+                "maintenance": "42f41c740feded7fae89e213d4f688811ff3df97a3380cc4ea0c2ee066b7f61c"
+            }
+        }
+    }
+}

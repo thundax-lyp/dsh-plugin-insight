@@ -1,0 +1,366 @@
+{
+    "schema_version": 3,
+    "id": "e8477004868d572be9a375d6b58bd708",
+    "identity": "github:1400927706:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1400927706:root",
+            "repository_id": 1400927706,
+            "component_id": "root",
+            "repository": "121212165/dsh-plugin-quota",
+            "path": "",
+            "aliases": [],
+            "name": "Quota 用量仪表",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [
+                "token",
+                "预算",
+                "系统提示"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "22a4bbd15747c8fbdf39e38c36f2a8692ada38018acfd897e495b40c0f716f1b",
+                "code": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+                "maintenance": "b2f435d6e2c930bb5d1602e1b320e3e0de07cf706e2df2db08f8b7dcf692d585"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1400927706-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:13:17.788Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1400927706-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/121212165/dsh-plugin-quota/blob/a705c9d0cb5f025ce6eebd3e8c17a37d161a8628/README.md",
+                    "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+                    "captured_at": "2026-10-20T03:13:17.788Z",
+                    "summary": "累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/121212165--dsh-plugin-quota/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1400927706-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/121212165/dsh-plugin-quota/blob/a705c9d0cb5f025ce6eebd3e8c17a37d161a8628/src/plugin.ts",
+                    "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+                    "captured_at": "2026-10-20T03:13:17.788Z",
+                    "summary": "核查 src/plugin.ts；监听 assistant/message usage 累加本地账本，通过 systemPrompt 注入一行仪表，/qm 与工具展示统计。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/121212165--dsh-plugin-quota/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "预测是基于历史与裕量的估计；提示模型注意预算不是不可绕过的计费硬闸。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "长任务开发者希望在继续调用前看到消耗趋势和可能的预算边界。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1400927706-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1400927706:root",
+                            "area": "code",
+                            "fingerprint": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:17.788Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "监听 assistant/message usage 累加本地账本，通过 systemPrompt 注入一行仪表，/qm 与工具展示统计。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1400927706-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1400927706:root",
+                            "area": "code",
+                            "fingerprint": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:17.788Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "及时可见的消耗有助于做继续决策；金额和下步预测不能替代账单与强制限额。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1400927706-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1400927706:root",
+                            "area": "code",
+                            "fingerprint": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:17.788Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "注入有上下文开销，价表和用量去重需维护；没有测量预算预警的准确率和净节省。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1400927706-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1400927706:root",
+                            "area": "code",
+                            "fingerprint": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:17.788Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "展示与原始累计分层、微单位金额存储可借鉴；重放事件和跨进程写入要专项验收。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1400927706-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1400927706:root",
+                            "area": "code",
+                            "fingerprint": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:17.788Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1400927706-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1400927706:root",
+                            "area": "code",
+                            "fingerprint": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:17.788Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "预测是基于历史与裕量的估计；提示模型注意预算不是不可绕过的计费硬闸。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1400927706-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1400927706:root",
+                            "area": "code",
+                            "fingerprint": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:17.788Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "版本 0.2.0，依赖 commands、tools、systemPrompt；实际估价需要配置价格或计费数据库。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1400927706-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1400927706:root",
+                            "area": "code",
+                            "fingerprint": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:17.788Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:13:17.788Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "长任务用户可先与一天供应商用量对账，检查重复事件与币种后试预算提醒。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "调用前了解预算趋势有明确决策用途。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "近实时仪表补厂商账单延迟，但不构成硬限额。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "usage账本和提示注入可查，预测及重放去重未测。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "注入占上下文，价格和事件去重增加维护负担。"
+                    }
+                },
+                "score": 59,
+                "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1400927706-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1400927706:root",
+                        "area": "code",
+                        "fingerprint": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1400927706:root",
+            "repository": "121212165/dsh-plugin-quota",
+            "path": "",
+            "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+            "fingerprints": {
+                "directory": "22a4bbd15747c8fbdf39e38c36f2a8692ada38018acfd897e495b40c0f716f1b",
+                "code": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+                "maintenance": "b2f435d6e2c930bb5d1602e1b320e3e0de07cf706e2df2db08f8b7dcf692d585"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "df5883774045a41d020c96e15dbafe6e8079e0070fc275ea897bf33725bac407"
+        },
+        "publication.metadata": "data/plugins/121212165--dsh-plugin-quota/META.json",
+        "publication.summaries": {
+            "text": "累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。",
+            "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+            "source_url": "https://github.com/121212165/dsh-plugin-quota/blob/a705c9d0cb5f025ce6eebd3e8c17a37d161a8628/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+            "items": {
+                "模型工具": "quota_meter 提供会话仪表。",
+                "用户命令": "/qm 查看用量与预测。"
+            }
+        },
+        "publication.advice": {
+            "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+            "text": "先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。"
+        },
+        "registry": "data/plugins/121212165--dsh-plugin-quota",
+        "reports": "# Quota 用量仪表\n\n> 累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。\n\n## 固定范围与依据\n\n固定提交 [a705c9d0cb5f025ce6eebd3e8c17a37d161a8628](https://github.com/121212165/dsh-plugin-quota/blob/a705c9d0cb5f025ce6eebd3e8c17a37d161a8628/src/plugin.ts)；组件路径：仓库根。核查时间 2026-10-20T03:13:17.788Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/plugin.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：长任务开发者希望在继续调用前看到消耗趋势和可能的预算边界。\n- **亮点**：监听 assistant/message usage 累加本地账本，通过 systemPrompt 注入一行仪表，/qm 与工具展示统计。\n- **思考**：及时可见的消耗有助于做继续决策；金额和下步预测不能替代账单与强制限额。\n- **建议**：先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。\n\n## 场景与替代办法\n\n长任务开发者希望在继续调用前看到消耗趋势和可能的预算边界。\n\n提供商账单更权威且有延迟；本插件提供近实时提示，不能认定是结算系统。\n\n## 依赖与流程\n\n依赖宿主 usage 字段和上下文窗口信息；提供商缺字段时无法由界面补出真实用量。\n\n记录真实用量、查看仪表并人工调整任务预算；差异从事件、去重、价格来源逐项核对。\n\n## 成本与效果\n\n注入有上下文开销，价表和用量去重需维护；没有测量预算预警的准确率和净节省。\n\n及时可见的消耗有助于做继续决策；金额和下步预测不能替代账单与强制限额。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7eaf9e903d11f7a8efd24657d7a3c8c63f7f504c392518f181984d86b63f04a6。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 84 | — | — | 1638 |\n| .ts | source | 4 | 977 | 769 | 128 | — |\n| .ts | test | 3 | 867 | 730 | 51 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：quota_meter 提供会话仪表。\n- **用户命令**：/qm 查看用量与预测。\n\n## 工程亮点\n\n展示与原始累计分层、微单位金额存储可借鉴；重放事件和跨进程写入要专项验收。\n\n## 分发与兼容\n\n版本 0.2.0，依赖 commands、tools、systemPrompt；实际估价需要配置价格或计费数据库。\n\n## 历史对照\n\n前次代码指纹为 a705c9d0cb5f025ce6eebd3e8c17a37d161a8628；本轮固定为 a705c9d0cb5f025ce6eebd3e8c17a37d161a8628。提供商账单更权威且有延迟；本插件提供近实时提示，不能认定是结算系统。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：预测是基于历史与裕量的估计；提示模型注意预算不是不可绕过的计费硬闸。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用已知调用序列测试缓存、工具长输出、重放、重启和币种，衡量预测误差。\n",
+        "metadata": {
+            "repository": "121212165/dsh-plugin-quota",
+            "repository_id": 1400927706,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-10-19T09:48:14Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:1420F3:21A070:6AD84912 and timestamp 2026-10-21 05:09:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:14F6C9:226FC4:6AD84912 and timestamp 2026-10-21 05:09:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:146E50:21DD0E:6AD84913 and timestamp 2026-10-21 05:09:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:9F47E:14ACBA:22289F:6AD84913 and timestamp 2026-10-21 05:09:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-quota%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:D1FDD:147295:21FADE:6AD84913 and timestamp 2026-10-21 05:09:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-quota",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 126,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-quota",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-16T06:01:21.852Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-quota",
+                    "error": null,
+                    "latest_version": "0.1.1",
+                    "latest_published_at": "2026-08-16T08:46:16.099Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+                "current_revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1400927706:root",
+            "repository": "121212165/dsh-plugin-quota",
+            "path": "",
+            "revision": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "22a4bbd15747c8fbdf39e38c36f2a8692ada38018acfd897e495b40c0f716f1b",
+                "code": "a705c9d0cb5f025ce6eebd3e8c17a37d161a8628",
+                "maintenance": "b2f435d6e2c930bb5d1602e1b320e3e0de07cf706e2df2db08f8b7dcf692d585"
+            }
+        }
+    }
+}

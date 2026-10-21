@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "82e3cb48c894bb1d31f1b1b62f7bd3f1",
+    "identity": "github:1383225062:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1383225062:root",
+            "repository": "xling001/dsh-reading-companion",
+            "path": "",
+            "revision": "3d5c27dc015ba649d3c8ef7d4b8efc7e72de9b3a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "27b148875d61fceae29ff34401b438d6906e6c25bd95ec28a4205e79ab185fe8",
+                "code": "3d5c27dc015ba649d3c8ef7d4b8efc7e72de9b3a",
+                "maintenance": "f6a6204ce20223712c2c197c336e3838cd9166d0d3ee548c1c2ea98cc42958fc"
+            }
+        }
+    }
+}

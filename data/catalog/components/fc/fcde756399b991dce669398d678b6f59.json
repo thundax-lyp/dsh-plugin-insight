@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fcde756399b991dce669398d678b6f59",
+    "identity": "github:1344059328:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344059328:root",
+            "repository": "yaopushen/dsh-plugin-background-tasks",
+            "path": "",
+            "revision": "f17ee3369bc7beada9071026248e00c20f8db197",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "420f1f9010e7c8bc80de425902f9428bde3e63af7270d2a95008545ad89675a2",
+                "code": "f17ee3369bc7beada9071026248e00c20f8db197",
+                "maintenance": "82df658154f3ed624cd90861225c65036cc88e41c80fe509728e48f36c527159"
+            }
+        }
+    }
+}

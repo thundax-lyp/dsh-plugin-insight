@@ -280,8 +280,8 @@ export const atomicWrite = (path, value) => {
 
 export const apply = (catalogPath, prepared) => {
     if (prepared?.plan_version !== 1) throw new Error('unsupported plan version');
-    if (resolve(catalogPath) === resolve(ROOT, CATALOG) && existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json')))
-        throw new Error('formal catalog is derived from SNAPSHOT.json; use snapshot staging and merge');
+    if (resolve(catalogPath) === resolve(ROOT, CATALOG) && existsSync(resolve(ROOT, 'data/catalog/index.jsonl')))
+        throw new Error('formal catalog is stored in index.jsonl; use snapshot staging and merge');
     const lockPath = `${catalogPath}.lock`;
     // Exclusive creation serializes writers without a native addon. Never steal a lock.
     let lock;
@@ -306,7 +306,7 @@ export const apply = (catalogPath, prepared) => {
     }
 };
 
-export const main = (args = process.argv.slice(2)) => {
+export const main = async (args = process.argv.slice(2)) => {
     const [command, ...rest] = args;
     const allowed = {
         validate: ['catalog', 'observations'],
@@ -323,8 +323,14 @@ export const main = (args = process.argv.slice(2)) => {
         if (!values[key]) throw new Error(`--${key} is required`);
         return values[key];
     };
+    const official = !values.catalog && existsSync(resolve(ROOT, 'data/catalog/index.jsonl'));
+    if (official && command !== 'validate') throw Error('use snapshot stage/plan/apply for the formal catalog');
     if (command === 'validate') {
-        validate(read(catalogPath));
+        const catalog = official
+            ? (await import('./snapshot-storage.mjs')).readSnapshotStorage(resolve(ROOT, 'data/catalog/index.jsonl'))
+                  .catalog
+            : read(catalogPath);
+        validate(catalog);
         if (values.observations) validateObservations(read(values.observations));
         console.log('Data validation passed');
     } else if (command === 'plan') {
@@ -338,10 +344,8 @@ export const main = (args = process.argv.slice(2)) => {
 };
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-    try {
-        main();
-    } catch (error) {
+    main().catch((error) => {
         console.error(`Error: ${error.message}`);
         process.exitCode = 1;
-    }
+    });
 }

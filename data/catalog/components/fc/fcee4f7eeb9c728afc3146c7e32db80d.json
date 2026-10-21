@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fcee4f7eeb9c728afc3146c7e32db80d",
+    "identity": "github:1392337314:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392337314:root",
+            "repository": "shinelon/dsh-workspace-group-plugin",
+            "path": "",
+            "revision": "15be22d8ffd1682106528797d14374cfed1411a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c4f4ebde2dea18e5472c3b276e1322e1668c1da192ec9def38b82dc92d20b165",
+                "code": "15be22d8ffd1682106528797d14374cfed1411a7",
+                "maintenance": "8d88941f1c8f6c22fd340e1b0b13172f3a53c45cbbea4127bb815cb51b4f9743"
+            }
+        }
+    }
+}

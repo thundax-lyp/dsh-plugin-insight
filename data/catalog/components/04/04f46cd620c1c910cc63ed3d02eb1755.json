@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "04f46cd620c1c910cc63ed3d02eb1755",
+    "identity": "github:1351648919:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351648919:root",
+            "repository": "IcedWatermelonJuice/dsh-provider-veark",
+            "path": "",
+            "revision": "8e70a72de1e329733bd3944e2a17814f471b9278",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "277b202ba05b48dc84bef73cd59b1a8851219fd920e5281a6965788a0e3be564",
+                "code": "8e70a72de1e329733bd3944e2a17814f471b9278",
+                "maintenance": "53bd45095f4747af0c0a680cf60f231b6fbac23edde3e4cba9a1ba97f59057c4"
+            }
+        }
+    }
+}

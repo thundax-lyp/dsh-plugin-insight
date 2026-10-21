@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c92975b1553c1e9e47f351340c6a4393",
+    "identity": "github:1335085824:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335085824:root",
+            "repository": "skiuniverse/dsh-running-liang",
+            "path": "",
+            "revision": "657ff6d58bd94a39070cc0ce5265d88cd342838e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0149cc920dc266454f31bddebb1f6be473d9f40e70dcb7abe4b0df507efdda1e",
+                "code": "657ff6d58bd94a39070cc0ce5265d88cd342838e",
+                "maintenance": "9408b6137dc0d43a9c6382cb1ea92196467f99c213738d709e9646b08b8a0f8e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ff5fd27143906ac7dced33d7854cd3b",
+    "identity": "github:1342866581:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342866581:root",
+            "repository": "hyrinx/dsh-plugin-open-with",
+            "path": "",
+            "revision": "8d08464ab739e1e0387dd0d9b9abcd51155fca6f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b708181ecc171276970563cfb3f2e82ccb2aca6d300da4e261ac023fcfd79bf9",
+                "code": "8d08464ab739e1e0387dd0d9b9abcd51155fca6f",
+                "maintenance": "5f1284c580e2f253afd9ee8a258696aa1b81bd78e4d0d35bc4d735ded2bebe74"
+            }
+        }
+    }
+}

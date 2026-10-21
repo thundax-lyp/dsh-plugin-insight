@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b769ec9ab338c1d9fb9b0e3516d390a1",
+    "identity": "github:1308234922:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1308234922:root",
+            "repository": "Tiger3807861189/J-Space-Cognition-Suite",
+            "path": "",
+            "revision": "b2023124a1fa08278e3ee82aefa8ed9faeade995",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6d33bb3e708589c31ae753fb4d66030556b2c71b9f989e8c88b8438172e61053",
+                "code": "b2023124a1fa08278e3ee82aefa8ed9faeade995",
+                "maintenance": "310bfa23c224a571bc4468ce919c3fd4aac709a62fe5a6d300185d36264f25d3"
+            }
+        }
+    }
+}

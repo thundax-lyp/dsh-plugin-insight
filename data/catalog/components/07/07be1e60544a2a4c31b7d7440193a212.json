@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "07be1e60544a2a4c31b7d7440193a212",
+    "identity": "github:1367547995:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367547995:root",
+            "repository": "hasan-aghayev/dsh-session-resilience",
+            "path": "",
+            "revision": "01c0b755649b3554276c47794c56eab0944debfd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "003e536e4da99bd9ee591c3953bd8daaae248a0f8747f3c84c00a7313fed2ce0",
+                "code": "01c0b755649b3554276c47794c56eab0944debfd",
+                "maintenance": "f8d4d79c725895da9b945a1cf49ccc7d538738ac1409c78c7dc8d4a592f42aca"
+            }
+        }
+    }
+}

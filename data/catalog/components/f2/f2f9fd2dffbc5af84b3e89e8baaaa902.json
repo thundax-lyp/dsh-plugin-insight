@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f2f9fd2dffbc5af84b3e89e8baaaa902",
+    "identity": "github:1416289723:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416289723:root",
+            "repository": "vegerot/deepseek-harness-session-cost-pill",
+            "path": "",
+            "revision": "484ac2ee1dc2a1e796257fcee4ec1224b1819967",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3a909d1bd426e888ffebf83fe7e75a6cc48fd3aa68686dac22a6f38d67f7585d",
+                "code": "484ac2ee1dc2a1e796257fcee4ec1224b1819967",
+                "maintenance": "033ee1813fe342a8cb227ef26562acb677a698f16cc4d7bf3ac2fae1f2bcb37b"
+            }
+        }
+    }
+}

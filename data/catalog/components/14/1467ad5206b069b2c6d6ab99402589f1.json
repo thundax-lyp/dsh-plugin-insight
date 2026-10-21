@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1467ad5206b069b2c6d6ab99402589f1",
+    "identity": "github:1381391598:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381391598:root",
+            "repository": "Edge-Echo/dsh-driftwatch",
+            "path": "",
+            "revision": "18cace85f7372548b2b50e007915cc5b3e44486e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c611a7465227c259c4ccaa9ae4d46b4c0d0170fff07e05d71571bb97241dcd3f",
+                "code": "18cace85f7372548b2b50e007915cc5b3e44486e",
+                "maintenance": "8ee5c26224cc60bce57e73686e540d8b7ba4288180e1928eba12bab079dc2f49"
+            }
+        }
+    }
+}

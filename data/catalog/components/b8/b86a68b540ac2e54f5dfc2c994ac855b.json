@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b86a68b540ac2e54f5dfc2c994ac855b",
+    "identity": "github:1334749350:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334749350:root",
+            "repository": "yuloong07-star/dsh-prompt-system",
+            "path": "",
+            "revision": "c5041c97371d7f449feaf0bf7775f1bcba664ca0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "48f5616de643c1904b44b79a2e29f6509637ede9ce76baea732563b518ca990c",
+                "code": "c5041c97371d7f449feaf0bf7775f1bcba664ca0",
+                "maintenance": "b4ed096115c46b451b0251fc6696e9695a1fda12acbe1f56c985016af92ac59a"
+            }
+        }
+    }
+}

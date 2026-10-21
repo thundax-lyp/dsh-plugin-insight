@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dd76a1929f01d4d55e80017e13fbe28e",
+    "identity": "github:1333850417:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333850417:root",
+            "repository": "akslcw/dsh-negative-ledger",
+            "path": "",
+            "revision": "f530823a5f2c7da3c3d2fa756a74563ff67645d0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8b09add1fdbd8f2e272f66e2f06ad9c76f869cb5f904f25a1457eab3c4af7b94",
+                "code": "f530823a5f2c7da3c3d2fa756a74563ff67645d0",
+                "maintenance": "89fa12ef582d1cf02158ea5b9bd3685a65a252bc9b4a650a7a4836d8a9094718"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "386f5e99f078707d775981a9334ccc87",
+    "identity": "github:1338388484:packages-usage-stats",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338388484:packages-usage-stats",
+            "repository": "moonlight2893267956/dsh-usage-stats",
+            "path": "packages/usage-stats",
+            "revision": "ea36c12a0b0583c1974758e3f457d76af1d1711b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7074f4952e7dca1b3f973faae16a78f2a779ed58f9d142b7b8fcef5075f9f10d",
+                "code": "ea36c12a0b0583c1974758e3f457d76af1d1711b",
+                "maintenance": "6fe2bf3cd8e88fe3fbadefe423cce111ca66ab33a2097054e6019ba72ee4ad39"
+            }
+        }
+    }
+}

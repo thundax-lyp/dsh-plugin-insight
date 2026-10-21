@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2e07ad76767e8d9f30f83a8d700367a1",
+    "identity": "github:1349635927:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349635927:root",
+            "repository": "dingminhua/dsh-connect-trae",
+            "path": "",
+            "revision": "9cfcc44367f606a57bdf61873a0454c23cf393a2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "43bc50752d31408d4409f97c3976bd613415e3bba384543f35eb41812f3c22ae",
+                "code": "9cfcc44367f606a57bdf61873a0454c23cf393a2",
+                "maintenance": "9aa4c54a920e3e260b11156ce87a4dfcd2f41de4124e4782c9b152f1e4fed038"
+            }
+        }
+    }
+}

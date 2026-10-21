@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c78ad460157cceeb374ebe532839238d",
+    "identity": "github:1382040745:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1382040745:root",
+            "repository": "yefengliu1/dsh-agent-grid",
+            "path": "",
+            "revision": "4968d5c5a96c2b86a1eccb00c63f3aed61e7faf6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e8edf487eea53b8b9a0e7e6f51b83b193ce9d6b5ddbb7fd3929d72358a9e6e49",
+                "code": "4968d5c5a96c2b86a1eccb00c63f3aed61e7faf6",
+                "maintenance": "f3dea79e0510a6dc0ac1f9fa500b5240ddbdc72abc98b1ca733a2b9b81ea2994"
+            }
+        }
+    }
+}

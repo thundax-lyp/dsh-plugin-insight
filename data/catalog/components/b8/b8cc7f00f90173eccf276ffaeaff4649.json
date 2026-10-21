@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b8cc7f00f90173eccf276ffaeaff4649",
+    "identity": "github:1334024633:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334024633:root",
+            "repository": "cyijun/dsh-surfing-plugin",
+            "path": "",
+            "revision": "40041327e552157bafcc9bba866925b775c1469d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9462c982932aa0c9e23225427cbaa03786b3c3d942fe15206acebfaf929cdf4e",
+                "code": "40041327e552157bafcc9bba866925b775c1469d",
+                "maintenance": "9c04a8a2d85d6264a2b12fe75d823540470591d2cc7b61ed6370e19179097681"
+            }
+        }
+    }
+}

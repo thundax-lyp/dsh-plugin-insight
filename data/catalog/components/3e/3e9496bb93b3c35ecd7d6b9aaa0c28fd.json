@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e9496bb93b3c35ecd7d6b9aaa0c28fd",
+    "identity": "github:1404494230:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404494230:root",
+            "repository": "juliankang4/dsh-locale-ko",
+            "path": "",
+            "revision": "bdad6973147b17ecd8283ffbf73fbf931cf0c32f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "70a8d35cbd0975bef9dd34c70d8d47e8be0091531f2101ee90bb7adef0a95832",
+                "code": "bdad6973147b17ecd8283ffbf73fbf931cf0c32f",
+                "maintenance": "4860d2346627d6fe0ed3858c4603deb626d601f8dc527481ef1fe7d3981b9e0d"
+            }
+        }
+    }
+}

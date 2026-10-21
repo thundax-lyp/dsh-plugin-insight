@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69b24b0c4971858ffa39599202196d06",
+    "identity": "github:1338661949:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338661949:root",
+            "repository": "Semidia/baseurl-probe",
+            "path": "",
+            "revision": "90e91d557210ee66d61f99998533b9099547c78b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "cadb3d785318f522bc8329612a85199a2727fcde55c50ec8ec5fd039d327b14b",
+                "code": "90e91d557210ee66d61f99998533b9099547c78b",
+                "maintenance": "65273bd73e38c7a63d28b492c7a4014033734abc43fe351980b709180106d7d1"
+            }
+        }
+    }
+}

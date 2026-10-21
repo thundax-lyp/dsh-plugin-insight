@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "10f4be50b3ec3974dc577597c8a79b65",
+    "identity": "github:1420835744:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420835744:root",
+            "repository": "ZiYuan258/dsh-mcp-control",
+            "path": "",
+            "revision": "3790f01094c3b1f31b2113d710f29fee4b893501",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6eb14b6dc2961a3beebcff9425f944345e3099bc28c5f28c572b465a83a2e893",
+                "code": "3790f01094c3b1f31b2113d710f29fee4b893501",
+                "maintenance": "cb1c26e9119c99eddf73caf60d60a19bb88e585e33d23d2e0518b2bbc792696b"
+            }
+        }
+    }
+}

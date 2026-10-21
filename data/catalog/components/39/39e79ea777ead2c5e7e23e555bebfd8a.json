@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "39e79ea777ead2c5e7e23e555bebfd8a",
+    "identity": "github:1396089715:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396089715:root",
+            "repository": "functy23/dsh-fullscreen-settings",
+            "path": "",
+            "revision": "dd57665a894fa2f56a196a2c83e4efbdc77ed10c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cca0179ca7f94a42c5ffb64f6b671ce7d2f27a1890daecc10c2c42a3fa00ad04",
+                "code": "dd57665a894fa2f56a196a2c83e4efbdc77ed10c",
+                "maintenance": "7a77426f81a8c059238a1cc3f7a0d5bd62a328cb83edcc03c760d1c4667297dd"
+            }
+        }
+    }
+}

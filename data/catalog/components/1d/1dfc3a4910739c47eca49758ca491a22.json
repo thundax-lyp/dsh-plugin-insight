@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1dfc3a4910739c47eca49758ca491a22",
+    "identity": "github:1340346717:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340346717:root",
+            "repository": "JohnXu22786/rss-digest",
+            "path": "",
+            "revision": "dd7e4e0fab013424fa7baa8272ba8fe1975db0aa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0e64058bdaf161cb1e95ab0eb3ced0ba0cde8fa0b6fd42f5897ede272a183ac5",
+                "code": "dd7e4e0fab013424fa7baa8272ba8fe1975db0aa",
+                "maintenance": "a752d75045211e7a5b1490f6a235b6cd0d2db9844b8ede88d9a5381015607682"
+            }
+        }
+    }
+}

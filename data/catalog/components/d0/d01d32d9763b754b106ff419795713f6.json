@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d01d32d9763b754b106ff419795713f6",
+    "identity": "github:1372818095:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372818095:root",
+            "repository": "WanchunLian/dsh-draft-polish",
+            "path": "",
+            "revision": "2c0ff640a170ee46ff99bee4e14dc9bc1f04b1fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "32133a0b3b8b45df74ef3febbe98d2d6f890898a6eded19ebf4195d56758b96e",
+                "code": "2c0ff640a170ee46ff99bee4e14dc9bc1f04b1fc",
+                "maintenance": "8062ac4ee8e427b43212f836f1adc3f76438c183329285032727e126ff1ef1cb"
+            }
+        }
+    }
+}

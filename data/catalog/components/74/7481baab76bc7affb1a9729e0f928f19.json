@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7481baab76bc7affb1a9729e0f928f19",
+    "identity": "github:1321280738:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1321280738:root",
+            "repository": "Awesome-AI-Pedia/Awesome-AI-Pedia",
+            "path": "",
+            "revision": "9438d8bcbeeb34fc5f83d784cbb8f1e7a43003fc",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e0f667b1ac250a6ce4def42c126af45899e06f9dcdf008c23ad48b69b079a95b",
+                "code": "9438d8bcbeeb34fc5f83d784cbb8f1e7a43003fc",
+                "maintenance": "37575439a70d178b029b0614f1218e766b97eadc4be6ff012ef14d4a303f115a"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "060b4d67315ebc6ad62bcc65d0576145",
+    "identity": "github:1333673564:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333673564:root",
+            "repository": "Fishquito7/dsh-skill-mcp-panel",
+            "path": "",
+            "revision": "83adb6cd68827b84ceb44b6ed698013c73041af1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bc01a1d3e90c641add832c378e3852f8ed70565245e48316d92ae1950da5b375",
+                "code": "83adb6cd68827b84ceb44b6ed698013c73041af1",
+                "maintenance": "bba96cfb56eccb7b9b9dd3d90751f6f208092b4f0d77f0a68edb2dab67fabb3d"
+            }
+        }
+    }
+}

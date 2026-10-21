@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2929a06a10976eb4f1e7ae030cdd51c8",
+    "identity": "github:1231135337:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1231135337:root",
+            "repository": "strukto-ai/mirage",
+            "path": "",
+            "revision": "4ffa07150a5e0646a838367f9904fd9656f14611",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bad78c667912b9becbbaeffa6895b878267aa8285457b130ec9fb0bd5cd3c0b5",
+                "code": "4ffa07150a5e0646a838367f9904fd9656f14611",
+                "maintenance": "1e09f5404172eb18baa203ef193e427dce1c078fa61395a4120950d41a966db5"
+            }
+        }
+    }
+}

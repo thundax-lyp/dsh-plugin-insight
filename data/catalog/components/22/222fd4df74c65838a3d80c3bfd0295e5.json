@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "222fd4df74c65838a3d80c3bfd0295e5",
+    "identity": "github:1395536634:packages-dsh-focus-composer",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1395536634:packages-dsh-focus-composer",
+            "repository": "Yaoxxxxxxx/dsh-plugins",
+            "path": "packages/dsh-focus-composer",
+            "revision": "2e412c9794c7a41721fc514d06d96e2560e5b2f1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6b4b9edcb0e141d90f3616b54ba0c5aadc7dec158645ced746d36fec3b1e4312",
+                "code": "2e412c9794c7a41721fc514d06d96e2560e5b2f1",
+                "maintenance": "0abb0cf4e6c605ab83003d1776b9afac02d391b1084d49bd64489537fafff453"
+            }
+        }
+    }
+}

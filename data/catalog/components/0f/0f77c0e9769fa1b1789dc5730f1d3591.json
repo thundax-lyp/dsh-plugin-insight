@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0f77c0e9769fa1b1789dc5730f1d3591",
+    "identity": "github:1343971813:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343971813:root",
+            "repository": "xiaoso456/dsh-run-config",
+            "path": "",
+            "revision": "13ea004833c7ef51b37b8cacc3869d1f0d5a414b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9b1bf9f860abde262049335704aed9cd0cea4b2be19f69f6edb41228c30b5abe",
+                "code": "13ea004833c7ef51b37b8cacc3869d1f0d5a414b",
+                "maintenance": "550b1c6b064e74bdeb67004beff4f87d15a4ec5161c0d1e4e626ebfdbf752c98"
+            }
+        }
+    }
+}

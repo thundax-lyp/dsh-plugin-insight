@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1ed4732677f1a9f8efc1916f2c036bdd",
+    "identity": "github:1338913551:packages-dsh-mcp-firecrawl",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338913551:packages-dsh-mcp-firecrawl",
+            "repository": "PyModel/dsh-research-plugins",
+            "path": "packages/dsh-mcp-firecrawl",
+            "revision": "19db055efedef3d87962fda35b7f692eed98c403",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "adc114748731c5972ea99b15ff9379cec4c70fe2657fbc34f3150155b68f621f",
+                "code": "19db055efedef3d87962fda35b7f692eed98c403",
+                "maintenance": "a99598e0aecd06796f48c2411a14bec80dc9939d7ef286b4230895d3237fd549"
+            }
+        }
+    }
+}

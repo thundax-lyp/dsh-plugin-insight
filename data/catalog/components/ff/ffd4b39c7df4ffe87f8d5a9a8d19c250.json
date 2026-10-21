@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ffd4b39c7df4ffe87f8d5a9a8d19c250",
+    "identity": "github:1333157512:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333157512:root",
+            "repository": "UynajGI/dsh-ssh",
+            "path": "",
+            "revision": "5b7b451477f61d9b5444d3a02b8773abaeb56ba9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6665768fe82f03c9381b38c065c2028baf45edb574353471ea682b77622ac38f",
+                "code": "5b7b451477f61d9b5444d3a02b8773abaeb56ba9",
+                "maintenance": "fb2559054f048da396adc5917fed1b2b10e7d31bf274b319d2afa73642023a50"
+            }
+        }
+    }
+}

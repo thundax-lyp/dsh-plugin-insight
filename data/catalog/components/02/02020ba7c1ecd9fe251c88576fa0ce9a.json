@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "02020ba7c1ecd9fe251c88576fa0ce9a",
+    "identity": "github:1416082351:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416082351:root",
+            "repository": "Moolight/dsh-tes-spinner",
+            "path": "",
+            "revision": "7610ba8c35363cf55cfc4110fbcd8f97cdce86ff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bc1ec9412a53b784cdbcc1a716d89c07d679ee3234344608e58b96f661521816",
+                "code": "7610ba8c35363cf55cfc4110fbcd8f97cdce86ff",
+                "maintenance": "cc317424e94f0d9a9b0fe2da0f60104755a6e677b575f5ca627790a111965033"
+            }
+        }
+    }
+}

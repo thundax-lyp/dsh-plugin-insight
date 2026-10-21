@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5822ee7530440e7f6c0ad516c177fd0e",
+    "identity": "github:1335688817:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335688817:root",
+            "repository": "good-boy4069/dsh-mobile-remote",
+            "path": "",
+            "revision": "f0ce76aeac09896835f3ca482d78d7854185ad82",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b7756442806e8056ac1db51b99e8b5d15e75f270caffe9564f06b9b559ca2676",
+                "code": "f0ce76aeac09896835f3ca482d78d7854185ad82",
+                "maintenance": "eff98c5a67f825528d1c88e144e5c7c5e4bdb7340a209a7bacb87f27d1f16557"
+            }
+        }
+    }
+}

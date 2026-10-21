@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0637df8818e22424789d31492f94e98f",
+    "identity": "github:1392908664:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392908664:root",
+            "repository": "smellgamed3/dsh-plugin-list-sync",
+            "path": "",
+            "revision": "98be60b650e80bca0cc4ac67d13ac3d542982207",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5ae531f986eac1c5dfd1b98f0058955577dec155f92f0a6f00744a4618af4bf3",
+                "code": "98be60b650e80bca0cc4ac67d13ac3d542982207",
+                "maintenance": "b8c2f2da7401490af3a4ac222da608bdea308d21a6e3ff04d6f6dbd9dcfd2ae7"
+            }
+        }
+    }
+}

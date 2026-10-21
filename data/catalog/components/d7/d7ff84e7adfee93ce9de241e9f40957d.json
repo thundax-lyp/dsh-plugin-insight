@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d7ff84e7adfee93ce9de241e9f40957d",
+    "identity": "github:1335912966:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335912966:root",
+            "repository": "kingOfSoySauce/dsh-skin-market",
+            "path": "",
+            "revision": "2a6c762f6373249e8fc05adf8f6a8a6e16973b1d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f7ce170c378da62f2b845147a6fd566e0f7ece0ba9c5a71b74ecbbcec0f72860",
+                "code": "2a6c762f6373249e8fc05adf8f6a8a6e16973b1d",
+                "maintenance": "8831c15e49db524f9eb695857ebcd79b218eb07e5b2aa063bf7b914a781c25ff"
+            }
+        }
+    }
+}

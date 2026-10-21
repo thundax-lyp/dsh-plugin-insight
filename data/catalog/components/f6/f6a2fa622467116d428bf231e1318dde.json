@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f6a2fa622467116d428bf231e1318dde",
+    "identity": "github:1335664789:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335664789:root",
+            "repository": "dsh-niao/dsh-niao-quick-open",
+            "path": "",
+            "revision": "572efa89887ccb8331b318412406b9975f9684b4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e6fd396c218e55c4720583792a90c72df597ded0bf393f04ebae4433af66ccb2",
+                "code": "572efa89887ccb8331b318412406b9975f9684b4",
+                "maintenance": "6cebfc432cf9cc531a7a4d83354d45cdd0f21f8ecbff8b8db78bd6a9b97f5cc9"
+            }
+        }
+    }
+}

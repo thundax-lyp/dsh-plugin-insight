@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4d03f7525e9db4c9842329ca8f299233",
+    "identity": "github:1337006553:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337006553:root",
+            "repository": "tianxia--/dsh-llm-local-token",
+            "path": "",
+            "revision": "b61be2b39bf8e026e8865862e0cf78af5e3b0b4a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a3092e461370db1ea574b51b9f9092ba7fa9b8ff23a6b5c2f3868e936e352aba",
+                "code": "b61be2b39bf8e026e8865862e0cf78af5e3b0b4a",
+                "maintenance": "00732dff5ac53783b00fc8ae87ff4ddd9eebf01366e68ef315582ac42d4e559d"
+            }
+        }
+    }
+}

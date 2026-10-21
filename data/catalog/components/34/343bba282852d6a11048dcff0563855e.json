@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "343bba282852d6a11048dcff0563855e",
+    "identity": "github:1355861179:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355861179:root",
+            "repository": "Vinzelles/dsh-clearview",
+            "path": "",
+            "revision": "dc8aaf672d19a3ff6c34ff5fc7b380320fd0cfdc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6a45b2100c46c8e78aac8e76dc3d385c197618d5688683e3d6d94b901ae82eb4",
+                "code": "dc8aaf672d19a3ff6c34ff5fc7b380320fd0cfdc",
+                "maintenance": "fc0a3d134935fb5ce5fa1ce82e4c18c288300986da694b27b66f21c3a7c99b19"
+            }
+        }
+    }
+}

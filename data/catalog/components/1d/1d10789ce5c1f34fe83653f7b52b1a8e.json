@@ -1,0 +1,365 @@
+{
+    "schema_version": 3,
+    "id": "1d10789ce5c1f34fe83653f7b52b1a8e",
+    "identity": "github:1366583376:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1366583376:root",
+            "repository_id": 1366583376,
+            "component_id": "root",
+            "repository": "1032740078/dsh-web-url-view",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-web-url-view",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "infrastructure",
+            "tags": [
+                "局域网访问",
+                "Web 地址"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "76d6b17c0f72239c5497f99de647d636db6262255b65a70109650eb554131cf0",
+                "code": "193343093186016080a81c5512c6936809daff25",
+                "maintenance": "25823bb92ea9eec9d63256c82351e66f5364afc2dceea2874e2d7a71dfdc2dc3"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1366583376-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:11:13.276Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1366583376-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md",
+                    "revision": "193343093186016080a81c5512c6936809daff25",
+                    "captured_at": "2026-10-20T03:11:13.276Z",
+                    "summary": "显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1366583376-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/index.ts",
+                    "revision": "193343093186016080a81c5512c6936809daff25",
+                    "captured_at": "2026-10-20T03:11:13.276Z",
+                    "summary": "核查 src/index.ts、src/service.ts、src/fixed-entry.ts；固定端口代理在内部换取当前实例会话 cookie，转发 HTTP/WebSocket 并处理 Host、Origin 与 cookie。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "未做认证审计或真实网络测试；固定入口持有目标会话能力，不能视为普通无权限书签。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "桌面版每次重启更换端口和令牌时，用户希望有稳定的浏览器入口。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "固定端口代理在内部换取当前实例会话 cookie，转发 HTTP/WebSocket 并处理 Host、Origin 与 cookie。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "稳定地址能减少复制地址的操作；将访问扩展到局域网会改变访问控制需求。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无需模型调用，代价是额外监听端口和代理状态，升级时要核查信任边界。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "固定入口与易变目标分离有可借鉴性，但重写请求头和代持 cookie 需要专门审查。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "未做认证审计或真实网络测试；固定入口持有目标会话能力，不能视为普通无权限书签。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包版本 0.1.0，依赖连接和 Web 服务；源码与打包库体积需分开理解。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:11:13.276Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "频繁重启桌面实例的用户可限回环试固定入口，先验旧令牌失效与外部Origin拒绝。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "端口令牌更换导致入口不稳的痛点具体。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "固定代理省复制地址，但原生带令牌地址更简单。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "HTTP和WebSocket握手代理可查，认证网络行为未实测。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "监听端口与代持cookie引入额外信任边界维护。"
+                    }
+                },
+                "score": 59,
+                "revision": "193343093186016080a81c5512c6936809daff25",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1366583376-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1366583376:root",
+                        "area": "code",
+                        "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1366583376:root",
+            "repository": "1032740078/dsh-web-url-view",
+            "path": "",
+            "revision": "193343093186016080a81c5512c6936809daff25",
+            "fingerprints": {
+                "directory": "76d6b17c0f72239c5497f99de647d636db6262255b65a70109650eb554131cf0",
+                "code": "193343093186016080a81c5512c6936809daff25",
+                "maintenance": "25823bb92ea9eec9d63256c82351e66f5364afc2dceea2874e2d7a71dfdc2dc3"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "b0d362fcde057bfc08c9156b8c2ca5186768a1602e1ff25ce79a6712aa1270ee"
+        },
+        "publication.metadata": "data/plugins/1032740078--dsh-web-url-view/META.json",
+        "publication.summaries": {
+            "text": "显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。",
+            "revision": "193343093186016080a81c5512c6936809daff25",
+            "source_url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "193343093186016080a81c5512c6936809daff25",
+            "items": {
+                "Host 路由": "固定端口 HTTP/WebSocket 转发。",
+                "界面": "查看当前访问地址。"
+            }
+        },
+        "publication.advice": {
+            "revision": "193343093186016080a81c5512c6936809daff25",
+            "text": "先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。"
+        },
+        "registry": "data/plugins/1032740078--dsh-web-url-view",
+        "reports": "# dsh-web-url-view\n\n> 显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。\n\n## 固定范围与依据\n\n固定提交 [193343093186016080a81c5512c6936809daff25](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:11:13.276Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts、src/service.ts、src/fixed-entry.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：桌面版每次重启更换端口和令牌时，用户希望有稳定的浏览器入口。\n- **亮点**：固定端口代理在内部换取当前实例会话 cookie，转发 HTTP/WebSocket 并处理 Host、Origin 与 cookie。\n- **思考**：稳定地址能减少复制地址的操作；将访问扩展到局域网会改变访问控制需求。\n- **建议**：先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。\n\n## 场景与替代办法\n\n桌面版每次重启更换端口和令牌时，用户希望有稳定的浏览器入口。\n\n复制宿主原生带令牌地址最简单；固定代理只在频繁重启且明确网络边界时值得增加。\n\n## 依赖与流程\n\n依赖宿主认证握手、WebSocket 和当前目标端口，不能脱离宿主认证实现单独保证安全。\n\n查看当前地址或打开固定端口；重启后代理重新取得目标会话，失败时检查握手和绑定地址。\n\n## 成本与效果\n\n无需模型调用，代价是额外监听端口和代理状态，升级时要核查信任边界。\n\n稳定地址能减少复制地址的操作；将访问扩展到局域网会改变访问控制需求。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e01146b826cfba304a4890d14eb979a282dce5f49064163b11e94e71c63b203e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 12 | 11342 | 9891 | 1880 | — |\n| .md | source | 2 | 384 | — | — | 3075 |\n| .ts | source | 10 | 1097 | 586 | 443 | — |\n| .tsx | source | 1 | 206 | 160 | 32 | — |\n\n排除 11 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：固定端口 HTTP/WebSocket 转发。\n- **界面**：查看当前访问地址。\n\n## 工程亮点\n\n固定入口与易变目标分离有可借鉴性，但重写请求头和代持 cookie 需要专门审查。\n\n## 分发与兼容\n\n包版本 0.1.0，依赖连接和 Web 服务；源码与打包库体积需分开理解。\n\n## 历史对照\n\n前次代码指纹为 193343093186016080a81c5512c6936809daff25；本轮固定为 193343093186016080a81c5512c6936809daff25。复制宿主原生带令牌地址最简单；固定代理只在频繁重启且明确网络边界时值得增加。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未做认证审计或真实网络测试；固定入口持有目标会话能力，不能视为普通无权限书签。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：验证旧令牌失效、目标重启、异源请求、WebSocket 与回环/局域网绑定差异。\n",
+        "metadata": {
+            "repository": "1032740078/dsh-web-url-view",
+            "repository_id": 1366583376,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-09-13T09:19:57Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:14AE98:222747:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:1465BD:21E185:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:1493B4:221964:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:14DD92:2255C7:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14434B:21B14A:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-web-url-view",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-web-url-view",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-web-url-view",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "193343093186016080a81c5512c6936809daff25",
+                "current_revision": "193343093186016080a81c5512c6936809daff25",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1366583376:root",
+            "repository": "1032740078/dsh-web-url-view",
+            "path": "",
+            "revision": "193343093186016080a81c5512c6936809daff25",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "76d6b17c0f72239c5497f99de647d636db6262255b65a70109650eb554131cf0",
+                "code": "193343093186016080a81c5512c6936809daff25",
+                "maintenance": "25823bb92ea9eec9d63256c82351e66f5364afc2dceea2874e2d7a71dfdc2dc3"
+            }
+        }
+    }
+}

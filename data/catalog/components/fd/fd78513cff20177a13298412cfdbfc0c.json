@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fd78513cff20177a13298412cfdbfc0c",
+    "identity": "github:1407713591:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407713591:root",
+            "repository": "SOH4C4759/dsh-plugin-cicd",
+            "path": "",
+            "revision": "f162a3227f189e086abcdc33712e7e657c771ea3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "db1774d50a1e3bb75aa9997ffd16f7d49ca54be22421e6a0f7caac8274e66e53",
+                "code": "f162a3227f189e086abcdc33712e7e657c771ea3",
+                "maintenance": "9ab645a5f76bdab5a1c8427224cad93509638af827f916765b7639db7b050293"
+            }
+        }
+    }
+}

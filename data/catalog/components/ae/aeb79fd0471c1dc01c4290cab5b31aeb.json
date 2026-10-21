@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aeb79fd0471c1dc01c4290cab5b31aeb",
+    "identity": "github:1372540366:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372540366:root",
+            "repository": "hoyyang/dsh-android-pane",
+            "path": "",
+            "revision": "50b32acd58a4b598013f9923c1e1f86e11a6a6d5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ce666913177dccdb4128b94d0b05263f492b8e2e887f8cda01be8b8ac87ccdc1",
+                "code": "50b32acd58a4b598013f9923c1e1f86e11a6a6d5",
+                "maintenance": "3181eac7804047fc2f84454898711aa3a8159eb6887c1686d1dcb5a40ce4f8ee"
+            }
+        }
+    }
+}

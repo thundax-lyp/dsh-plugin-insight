@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2b41abb72edc9e709611ca644254a603",
+    "identity": "github:1351784022:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351784022:root",
+            "repository": "Exagone313/dsh-podman",
+            "path": "",
+            "revision": "eac2d5265216a9bb9a01203e6628f3a791e743eb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ad2df68ec6e814ce76a8127fec143d78287d3cf9846f85be2f43175fe9de2e71",
+                "code": "eac2d5265216a9bb9a01203e6628f3a791e743eb",
+                "maintenance": "37d3e39eaef256f60d72331db03928bcd3d0e7cdcf5c9a0bec61f301e6b46c0b"
+            }
+        }
+    }
+}

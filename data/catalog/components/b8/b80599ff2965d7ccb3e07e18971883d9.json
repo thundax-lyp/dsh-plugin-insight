@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b80599ff2965d7ccb3e07e18971883d9",
+    "identity": "github:1425215508:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425215508:root",
+            "repository": "Rosynb666/dsh-whale-catch",
+            "path": "",
+            "revision": "150e0e74822a3df67ed64eccf273b82da139b812",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e3588f4b7f849b99761a5f114d78ac33afd2b59d620a347ef17b0d0c3e0981a",
+                "code": "150e0e74822a3df67ed64eccf273b82da139b812",
+                "maintenance": "bc6d18161ff2605ab897fab60619623807445742b45aa87c95c08810f01a79cb"
+            }
+        }
+    }
+}

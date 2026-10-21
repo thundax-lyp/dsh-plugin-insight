@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4661b7630f6d5c799177e691f57feb56",
+    "identity": "github:1334519411:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334519411:root",
+            "repository": "JuneLearn/dsh-image2-draw",
+            "path": "",
+            "revision": "78972d05d604a73fed32323cd3ec3e5506e2fdfe",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f2b996219d89446cc171a7d44abd97eda24e73476d0417a8bca63a353d8bea7b",
+                "code": "78972d05d604a73fed32323cd3ec3e5506e2fdfe",
+                "maintenance": "2804ad80bd8278b107a5a5f4ca55bc5177ca091beae8c40f8f0410a2bc9aff5f"
+            }
+        }
+    }
+}

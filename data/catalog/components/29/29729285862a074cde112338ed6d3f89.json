@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "29729285862a074cde112338ed6d3f89",
+    "identity": "github:1377874436:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377874436:root",
+            "repository": "dingchenhui0618-arch/dsh-in-hand",
+            "path": "",
+            "revision": "c8712a23d585b46ac0b967139d956999e818da58",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8dc1f4ca47c081727a1e9b66d3914e8e7f2b27cb76168de4ad72ad5933e3c537",
+                "code": "c8712a23d585b46ac0b967139d956999e818da58",
+                "maintenance": "b493eab3e5c08a11274b467230e09c0765e73b047a740bff90601480545fcfd5"
+            }
+        }
+    }
+}

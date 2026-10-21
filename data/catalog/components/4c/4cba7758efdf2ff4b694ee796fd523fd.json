@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4cba7758efdf2ff4b694ee796fd523fd",
+    "identity": "github:1334792807:packages-bundle-zentao",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334792807:packages-bundle-zentao",
+            "repository": "haoyu-qi/dsh-zentao",
+            "path": "packages/bundle/zentao",
+            "revision": "022f6bf6a965efd10581a1d3954d9e0b340a4713",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eb2756b5cbd2b106e35c9dc3193c58a76df1589108f6d99973029373ba3a3b7b",
+                "code": "022f6bf6a965efd10581a1d3954d9e0b340a4713",
+                "maintenance": "09e873549b8bd53371d0475924fa241a7fe53a54f42214f68057a4e11ef7b721"
+            }
+        }
+    }
+}

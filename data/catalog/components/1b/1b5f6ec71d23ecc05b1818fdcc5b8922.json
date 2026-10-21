@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1b5f6ec71d23ecc05b1818fdcc5b8922",
+    "identity": "github:1334083745:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334083745:root",
+            "repository": "Hotsteel2901/dsh-client-ui-mobile-adapt",
+            "path": "",
+            "revision": "5392650bc287550b66d0f50364391928f0b01966",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d9b806469a0b0a6544c13c3e24eda47fd4b6771724d1739eed2a6d6ae6cfafaf",
+                "code": "5392650bc287550b66d0f50364391928f0b01966",
+                "maintenance": "2248cae4a167d6e3f1184d2f463cf3e6b755cfe5f1be19fea8ec381270d3596e"
+            }
+        }
+    }
+}

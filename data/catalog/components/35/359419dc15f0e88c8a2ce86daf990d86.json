@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "359419dc15f0e88c8a2ce86daf990d86",
+    "identity": "github:1335248751:packages-dsh-ssh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335248751:packages-dsh-ssh",
+            "repository": "DamonKoy/dsh-web-ui",
+            "path": "packages/dsh-ssh",
+            "revision": "3647a33fa467e0335260468614f6eed04b196c38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "13da43a63f1e0db34f5246b2354a0187de4666c9780002620f3c6fd1d824799a",
+                "code": "3647a33fa467e0335260468614f6eed04b196c38",
+                "maintenance": "3006678a3da32375f98dde533cd5999a73ad41afc20c676065b8dc945d77b3a6"
+            }
+        }
+    }
+}

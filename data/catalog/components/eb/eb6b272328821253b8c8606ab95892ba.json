@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eb6b272328821253b8c8606ab95892ba",
+    "identity": "github:1397386399:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397386399:root",
+            "repository": "EvilJoker/dsh-experimental-computer-use-linux-nde-mcp",
+            "path": "",
+            "revision": "65264b45fb07561d9e45c37a28414b90b61c6c1c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "39d2b5b0b8c6f745c654fc8406dfad3004dbc0bbc26a99bc4609bdb0a8b7b1a8",
+                "code": "65264b45fb07561d9e45c37a28414b90b61c6c1c",
+                "maintenance": "bc89cc995edfd93283a8af2b05d26f9a06db4e00ee84da23d745ba81d288e37c"
+            }
+        }
+    }
+}

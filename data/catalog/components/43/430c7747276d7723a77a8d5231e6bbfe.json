@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "430c7747276d7723a77a8d5231e6bbfe",
+    "identity": "github:1397435461:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397435461:root",
+            "repository": "Leo-Cjw/dsh-pharos",
+            "path": "",
+            "revision": "4314c36d50d86eb73096c846e96749683eca8437",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "20c01d0089a5afd52f84f67326a0cf91ae40a73ef18777b26c638f0fc95f7f25",
+                "code": "4314c36d50d86eb73096c846e96749683eca8437",
+                "maintenance": "31262386dc917521893bd124b72e5d1cc74cb3ee053a1ad01fbc03ce4a344f4e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6e5f0f3d66786e0b233369bb05a7e25d",
+    "identity": "github:1363435957:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363435957:root",
+            "repository": "yunxiyang/dsh-loop-continue",
+            "path": "",
+            "revision": "197110cf3a171e32e2d4071fe8688c0fa3a6a626",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c43ba689c6cde1e6e3a071b4597c43067663f5e9a1f6be1e713469b3e5616aed",
+                "code": "197110cf3a171e32e2d4071fe8688c0fa3a6a626",
+                "maintenance": "ba90129f356c1afba6561ebb6068d77bfd10cab971d2186a836c9075d108f3f3"
+            }
+        }
+    }
+}

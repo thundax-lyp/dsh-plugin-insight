@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f005ecd895464a720017229d3abc0f41",
+    "identity": "github:1275436512:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1275436512:root",
+            "repository": "EthanYoQ/AI-Novel-Writer",
+            "path": "",
+            "revision": "7e6b827fcced4f37184da834acc52ff9f222965a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "037f93df8383cd9a4a89636ad27940018c6c16a4009938f1f452590f13e960b2",
+                "code": "7e6b827fcced4f37184da834acc52ff9f222965a",
+                "maintenance": "db1c003197d4b0970f09dcbba09cdad5fb4ad0461f0374766228ee6300e59bd8"
+            }
+        }
+    }
+}

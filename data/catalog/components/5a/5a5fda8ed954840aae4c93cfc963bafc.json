@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "5a5fda8ed954840aae4c93cfc963bafc",
+    "identity": "github:1319853777:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1319853777:root",
+            "repository": "ChongCyrus/Vibe-Mathematics",
+            "path": "",
+            "revision": "fdb74f6a79fffa100dc09d8e76c7208e89bdce9a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5c27c3a79dd65f61ea34af0ed2d9bbe05fd19c0083cc0476494e719d91ac7bbb",
+                "code": "fdb74f6a79fffa100dc09d8e76c7208e89bdce9a",
+                "maintenance": "f59cabe888632c3d93533ae743f1ca713da12a1634f9fbfee0fb75fa8f1274c5"
+            }
+        }
+    }
+}

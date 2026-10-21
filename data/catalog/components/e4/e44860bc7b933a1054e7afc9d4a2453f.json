@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e44860bc7b933a1054e7afc9d4a2453f",
+    "identity": "github:1343777469:packages-quote-message",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343777469:packages-quote-message",
+            "repository": "sumomok/dsh-plugins",
+            "path": "packages/quote-message",
+            "revision": "f9547e4074efdd62013a1f44bf405c50699e51e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5186353cc654f47068a4d8b317c977674c49ef030d2d4fcc529ab907b15e0fea",
+                "code": "f9547e4074efdd62013a1f44bf405c50699e51e4",
+                "maintenance": "9c6662971e7f7aec80d20fc6583f958638f241ffd1ca9335477f3e52b160111c"
+            }
+        }
+    }
+}

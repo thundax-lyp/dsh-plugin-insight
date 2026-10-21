@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "88e5baa2f5e6c496b8dd0039f8e6dd3b",
+    "identity": "github:1413179932:packages-tally-ui",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413179932:packages-tally-ui",
+            "repository": "wfengq/dsh-Tally",
+            "path": "packages/tally-ui",
+            "revision": "e9cbf3529557185b9eac305c5c7ca569573383c8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b2f4ad49a5391c644394299683e05450161e597498bd745d82b801c80bab724a",
+                "code": "e9cbf3529557185b9eac305c5c7ca569573383c8",
+                "maintenance": "49bf8f5854339e3e06ca746fdf0c9f6f6afc7b574728ab8d338d00250044a510"
+            }
+        }
+    }
+}

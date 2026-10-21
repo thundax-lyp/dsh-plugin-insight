@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "46658a3ff1cf7277876b4b13fb0b71f1",
+    "identity": "github:1336777325:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336777325:root",
+            "repository": "kobenfang/BigPlan",
+            "path": "",
+            "revision": "52065045c5001e38d9802618a66f9c1afcce587a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d2884e85cd8b9945737630ffd1ed8f9a92bbe818c7e66399bbae0d3ff7448b2",
+                "code": "52065045c5001e38d9802618a66f9c1afcce587a",
+                "maintenance": "9ab7f4c6fa5922ad932921a05adf2ebb6566ec336ca00735eaa4cb624f5e8c9a"
+            }
+        }
+    }
+}

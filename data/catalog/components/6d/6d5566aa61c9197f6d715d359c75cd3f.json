@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6d5566aa61c9197f6d715d359c75cd3f",
+    "identity": "github:1410780429:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410780429:root",
+            "repository": "zxbc/dsh-vscode-themes2",
+            "path": "",
+            "revision": "75c3b49dd4a7523d7c10dca0e64ebd98f7c1cc75",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f53a97d3946393c30c6f3bcbf5d0face0d242cf7f16d765ab1e80fc7e495aceb",
+                "code": "75c3b49dd4a7523d7c10dca0e64ebd98f7c1cc75",
+                "maintenance": "09f932ecd706af96e5ac77ad2e8e4820be486d8d92be17ab7dd7bb90cba29d95"
+            }
+        }
+    }
+}

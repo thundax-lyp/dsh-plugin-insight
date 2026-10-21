@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9482bfbff9679b99b4bb0c6efba4de3b",
+    "identity": "github:1425003245:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425003245:root",
+            "repository": "luyiheng1111/dsh-context-window-picker",
+            "path": "",
+            "revision": "d6a543a657293f2eab1807e9a8c977049aa3b5dd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ef1d61251f4ca02b1a3f5c91fd12773840323930500ef570947f82d79f22dac4",
+                "code": "d6a543a657293f2eab1807e9a8c977049aa3b5dd",
+                "maintenance": "c4ac5235d92ad8a2da2185df3dbb2ace93eb7bca2776286f9dff4563d2618575"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "06df05141f38c2162a11ba1f3a1b3c4b",
+    "identity": "github:1343010305:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343010305:root",
+            "repository": "kikomaotu/ccs-balance",
+            "path": "",
+            "revision": "b8fa0a962e7d3bc8315a0fa6795214c66fe43716",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "058985109fd45f35e5ca5d40ddf2d169dcd80caa6d2007ff1ce27a2f37a4c445",
+                "code": "b8fa0a962e7d3bc8315a0fa6795214c66fe43716",
+                "maintenance": "08fca5c757f4f3a3a2f64e48cc8b2c3d8ad03c6558eb92b02f38b4406c8c20ce"
+            }
+        }
+    }
+}

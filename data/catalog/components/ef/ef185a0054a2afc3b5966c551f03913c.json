@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ef185a0054a2afc3b5966c551f03913c",
+    "identity": "github:1014729376:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1014729376:root",
+            "repository": "MemTensor/MemOS",
+            "path": "",
+            "revision": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a294e51c20e09ec135d55a3f9c380b8fc917ce5f16a9ef254338cc0a1061f875",
+                "code": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+                "maintenance": "43df541ad3b9f2cdb25df40a3c0f0908a4f10f4e42e242ff1d0c055fb53f0a66"
+            }
+        }
+    }
+}

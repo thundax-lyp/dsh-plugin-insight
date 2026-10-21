@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cdcd6aedf87acc866bf7a0a972fc2c98",
+    "identity": "github:1350182867:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350182867:root",
+            "repository": "qixin-ai-data/dsh-qixin-insight-mcp-oauth",
+            "path": "",
+            "revision": "6714f8320a66e32822252986956dad0803b47028",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "55b4dc69cc1ca7973b66b6026631fb800dd9b4e024356e196b6e794591c3eb81",
+                "code": "6714f8320a66e32822252986956dad0803b47028",
+                "maintenance": "43bdbea47fe036106a8a92df1720f5afaaa2061ea6641052ce84e6e5c41b2b1c"
+            }
+        }
+    }
+}

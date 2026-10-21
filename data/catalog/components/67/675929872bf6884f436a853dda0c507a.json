@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "675929872bf6884f436a853dda0c507a",
+    "identity": "github:1335818140:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335818140:root",
+            "repository": "zhang-jiazhi/dsh-stats-panel",
+            "path": "",
+            "revision": "3da4a44cec599dd030b645298f6730b66742b74d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bd2afd0e1e6343436006fdb0bbe6a9c537413815184a5bc6cb1814f831f9e0c6",
+                "code": "3da4a44cec599dd030b645298f6730b66742b74d",
+                "maintenance": "c4362c7248e160520f9491c239c14ce600b3e09f265b58bb58dbabd156f5db00"
+            }
+        }
+    }
+}

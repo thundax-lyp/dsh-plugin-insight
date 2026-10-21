@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "137767c475a941e8d81bfee8624db551",
+    "identity": "github:1335018184:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335018184:root",
+            "repository": "dragonbaba/dsh-routing-suite",
+            "path": "",
+            "revision": "436bab5ff0a2346602591dbc67a43f723f6b67a8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "148602f38dd626f6ea08c9751a94e686b2c99c64a58886cddf55a52014299c0a",
+                "code": "436bab5ff0a2346602591dbc67a43f723f6b67a8",
+                "maintenance": "12dac9702661bc8da76ac1648ed22036fd5b3a913587dcc5bd84491d20a38035"
+            }
+        }
+    }
+}

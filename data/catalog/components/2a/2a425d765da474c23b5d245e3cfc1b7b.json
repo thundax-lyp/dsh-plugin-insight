@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2a425d765da474c23b5d245e3cfc1b7b",
+    "identity": "github:1369243844:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369243844:root",
+            "repository": "zhang24xiao/dsh-snippets",
+            "path": "",
+            "revision": "2cff30206d370d3829bf69742d6567078e1ba272",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "546bb38469fc139c8ca684d422bcddfa26696efe1962d70bc61aed98b042a613",
+                "code": "2cff30206d370d3829bf69742d6567078e1ba272",
+                "maintenance": "433b0d41c38d08d8d5940aa4928e70ab096c2be7d163a2d755817acf8550e0df"
+            }
+        }
+    }
+}

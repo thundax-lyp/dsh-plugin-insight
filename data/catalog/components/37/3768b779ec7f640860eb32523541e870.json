@@ -1,0 +1,444 @@
+{
+    "schema_version": 3,
+    "id": "3768b779ec7f640860eb32523541e870",
+    "identity": "github:1352089397:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1352089397:root",
+            "repository_id": 1352089397,
+            "component_id": "root",
+            "repository": "Aliuyanfeng/dsh-soul",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-soul",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "58b391b14bcd6295e77b8ec131ac9c4e06b6089d840265e0a879e24b9daf73ac",
+                "code": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+                "maintenance": "90335f548b1a0f8e91154fd1504a37edeb60d6823032e221b1925048efc29dd0"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1352089397-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:08:46.378Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1352089397-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Aliuyanfeng/dsh-soul/blob/17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0/README.md",
+                    "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+                    "captured_at": "2026-10-21T08:08:46.378Z",
+                    "summary": "管理分层人设配置、提示词注入、变更历史及带确认的人设修改。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/aliuyanfeng--dsh-soul/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1352089397-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Aliuyanfeng/dsh-soul/blob/17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0/index.mjs",
+                    "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+                    "captured_at": "2026-10-21T08:08:46.378Z",
+                    "summary": "核查 index.mjs、lib/injection.mjs、lib/store.mjs、lib/history.mjs；systemPrompt同步text provider取单份配置快照，Global→Workspace→Session合并；活动会话另注入生产者自持snapshot；串行写队列原子保存配置，历史JSONL尽力追加。set_persona走宿主审批或文本确认。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/aliuyanfeng--dsh-soul/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户按全局、工作区或会话设置回复风格，并检查当前真正注入的配置。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "systemPrompt同步text provider取单份配置快照，Global→Workspace→Session合并；活动会话另注入生产者自持snapshot；串行写队列原子保存配置，历史JSONL尽力追加。set_persona走宿主审批或文本确认。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "配置/作用域和历史维护、提示额外token与人工审阅；跨进程并发不是进程内写队列能完全解决，审计失败有告警但配置仍成功。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合显式风格管理；先核作用域和实际注入，重要规则仍由宿主权限和验收保障。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "配置可观测性有实现，无风格遵循率、幻觉或效率改善验证。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "interpolate:false防用户模板语法破坏装配，配置失败不静默默认覆盖、同步单快照和注入来源格式可借鉴；人设预设不冒充Agent/Preset注册。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将人设从散落文本改为有来源、作用域、预览和变更历史的配置流程，工具变更区分批准/拒绝/不可用。贡献在状态管理与交接，不是可持续自演化人格。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "会话覆盖缓存未命中时先按上层配置装配、后台读盘下一轮生效，首次实际人设可能不同于用户预期。审计在配置成功后独立写，workspaces不进字段审计/哈希，回滚不能称所有作用域完整事务恢复；送达也不等于模型遵守。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：将首轮作用域加载作为明确就绪条件，并给每轮可审计配置摘要，可减少“保存了却没生效”的歧义。以新会话、冷缓存、工作区覆盖、审计失败核实际system文本及回滚范围；不能对齐则不标已生效。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1352089397:root",
+                            "area": "code",
+                            "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:46.378Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:08:46.378Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+                "reviewed_at": "2026-10-21T08:08:46.378Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1352089397:root",
+                        "area": "code",
+                        "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：人设提示既有，分层治理有增量。 mechanism=15：快照/确认/持久化有实质取舍。 transferability=10：可复用配置方法但宿主耦合。 simplification=4：统一配置减少散落，状态面仍复杂。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=18：显式提议审批改变修改责任。 delivery=8：可审阅配置历史，非模型质量保证。 reach=5：风格配置人群，非新渠道。 economics=4：减少重复配置可能但无总成本验证。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1352089397-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需显式风格管理者可试全局/工作区/会话配置；核首轮实际注入与下一轮覆盖，审计回滚非全作用域事务。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "管理回复风格作用域和实际配置的目标清晰。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "分层快照与可观测注入减少隐性人设配置混乱。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核串行原子写、异步会话缓存及审计缺口，遵循率未测。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "提示token、历史审阅及跨进程竞争仍需维护，权限不能靠风格规则。"
+                    }
+                },
+                "score": 65,
+                "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1352089397-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1352089397:root",
+                        "area": "code",
+                        "fingerprint": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1352089397:root",
+            "repository": "Aliuyanfeng/dsh-soul",
+            "path": "",
+            "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+            "fingerprints": {
+                "directory": "58b391b14bcd6295e77b8ec131ac9c4e06b6089d840265e0a879e24b9daf73ac",
+                "code": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+                "maintenance": "90335f548b1a0f8e91154fd1504a37edeb60d6823032e221b1925048efc29dd0"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "0c98bd341f14e428283ccafbd2fa3cf1aba7b2ab2221993a901c3a9502989eff"
+        },
+        "publication.metadata": "data/plugins/aliuyanfeng--dsh-soul/META.json",
+        "publication.summaries": {
+            "text": "管理分层人设配置、提示词注入、变更历史及带确认的人设修改。",
+            "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+            "source_url": "https://github.com/Aliuyanfeng/dsh-soul/blob/17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+            "items": {
+                "模型工具": "set_persona受确认的人设修改",
+                "用户命令": "/soul配置与预设管理",
+                "后台": "系统提示装配、作用域缓存与历史持久化",
+                "Host 路由": "人设/历史/作用域管理",
+                "界面": "人设设置、预览和时间线"
+            }
+        },
+        "publication.advice": {
+            "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+            "text": "适合显式风格管理；先核作用域和实际注入，重要规则仍由宿主权限和验收保障。"
+        },
+        "registry": "data/plugins/aliuyanfeng--dsh-soul",
+        "reports": "# dsh-soul\n\n> 管理分层人设配置、提示词注入、变更历史及带确认的人设修改。\n\n## 使用建议\n\n适合显式风格管理；先核作用域和实际注入，重要规则仍由宿主权限和验收保障。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：用户按全局、工作区或会话设置回复风格，并检查当前真正注入的配置。\n- **亮点**：将人设从散落文本改为有来源、作用域、预览和变更历史的配置流程，工具变更区分批准/拒绝/不可用。贡献在状态管理与交接，不是可持续自演化人格。\n- **思考**：会话覆盖缓存未命中时先按上层配置装配、后台读盘下一轮生效，首次实际人设可能不同于用户预期。审计在配置成功后独立写，workspaces不进字段审计/哈希，回滚不能称所有作用域完整事务恢复；送达也不等于模型遵守。\n- **建议**：未验证假设：将首轮作用域加载作为明确就绪条件，并给每轮可审计配置摘要，可减少“保存了却没生效”的歧义。以新会话、冷缓存、工作区覆盖、审计失败核实际system文本及回滚范围；不能对齐则不标已生效。\n\n## 场景与替代办法\n\n参照手写系统提示与宿主配置；增量是作用域解析、可预览的人设编译、变更审计及确认入口；不实现模型个性学习。\n\n## 能力清单\n\n- **模型工具**：set_persona受确认的人设修改\n- **用户命令**：/soul配置与预设管理\n- **后台**：系统提示装配、作用域缓存与历史持久化\n- **Host 路由**：人设/历史/作用域管理\n- **界面**：人设设置、预览和时间线\n\n## 依赖与流程\n\nsystemPrompt同步text provider取单份配置快照，Global→Workspace→Session合并；活动会话另注入生产者自持snapshot；串行写队列原子保存配置，历史JSONL尽力追加。set_persona走宿主审批或文本确认。\n\n宿主systemPrompt、tools/commands、approval和会话/workspace服务及客户端slot；模型遵循人设是效果依赖，不由配置代码保证。\n\n编辑/选预设→校验/预览→保存或工具提议确认→写配置→记录历史→刷新注入→查看送达；撤销一条及以后改动，损坏文件保留并拒普通覆盖。\n\n## 成本与效果\n\n配置/作用域和历史维护、提示额外token与人工审阅；跨进程并发不是进程内写队列能完全解决，审计失败有告警但配置仍成功。\n\n配置可观测性有实现，无风格遵循率、幻觉或效率改善验证。\n\n## 核心贡献\n\n将人设从散落文本改为有来源、作用域、预览和变更历史的配置流程，工具变更区分批准/拒绝/不可用。贡献在状态管理与交接，不是可持续自演化人格。\n\n## 关键质疑\n\n会话覆盖缓存未命中时先按上层配置装配、后台读盘下一轮生效，首次实际人设可能不同于用户预期。审计在配置成功后独立写，workspaces不进字段审计/哈希，回滚不能称所有作用域完整事务恢复；送达也不等于模型遵守。\n\n## 工程亮点\n\ninterpolate:false防用户模板语法破坏装配，配置失败不静默默认覆盖、同步单快照和注入来源格式可借鉴；人设预设不冒充Agent/Preset注册。\n\n源码依据：[index.mjs](https://github.com/Aliuyanfeng/dsh-soul/blob/17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0/index.mjs)、[lib/injection.mjs](https://github.com/Aliuyanfeng/dsh-soul/blob/17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0/lib/injection.mjs)、[lib/store.mjs](https://github.com/Aliuyanfeng/dsh-soul/blob/17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0/lib/store.mjs)、[lib/history.mjs](https://github.com/Aliuyanfeng/dsh-soul/blob/17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0/lib/history.mjs)。\n\n## 未来设计假设（未验证）\n\n未验证假设：将首轮作用域加载作为明确就绪条件，并给每轮可审计配置摘要，可减少“保存了却没生效”的歧义。以新会话、冷缓存、工作区覆盖、审计失败核实际system文本及回滚范围；不能对齐则不标已生效。\n\n未来固定宿主核首轮覆盖、审批降级、并发写/历史失败和模型遵循；本轮未修改人设或注入消息。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：07320c535e365623ca8d09bbfd3b44c29e9fe2d543c3a0c92d88536e7c436da8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 23 | 26357 | 18436 | 6137 | — |\n| .md | source | 9 | 3439 | — | — | 80903 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Aliuyanfeng/dsh-soul](https://github.com/Aliuyanfeng/dsh-soul)\n- **版本号**：0.9.0（[固定提交 17e6624e](https://github.com/Aliuyanfeng/dsh-soul/tree/17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0)）\n- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：index.mjs、lib/injection.mjs、lib/store.mjs、lib/history.mjs、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来固定宿主核首轮覆盖、审批降级、并发写/历史失败和模型遵循；本轮未修改人设或注入消息。\n",
+        "metadata": {
+            "repository": "Aliuyanfeng/dsh-soul",
+            "repository_id": 1352089397,
+            "captured_at": "2026-10-21T08:00:29.372Z",
+            "window_start": "2026-09-21T08:00:29.372Z",
+            "stars": 4,
+            "pushed_at": "2026-10-21T07:26:42Z",
+            "issues": {
+                "open": null,
+                "closed": 2,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": 2
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAliuyanfeng%2Fdsh-soul%20is%3Aissue%20is%3Aopen&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3AAliuyanfeng%2Fdsh-soul%20is%3Aissue%20is%3Aopen&per_page=1\": net/http: TLS handshake timeout"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAliuyanfeng%2Fdsh-soul%20is%3Aissue%20created%3A2026-09-21T08%3A00%3A29.372Z..2026-10-21T08%3A00%3A29.372Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4D46:4B9BC:6C0337:73F1E0:6AD87132 and timestamp 2026-10-21 08:00:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAliuyanfeng%2Fdsh-soul%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A00%3A29.372Z..2026-10-21T08%3A00%3A29.372Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4F90:507C6:6E31A8:762488:6AD87134 and timestamp 2026-10-21 08:00:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-soul",
+                "captured_at": "2026-10-21T08:00:53.532Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 2373,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-soul",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-29T09:07:00.318Z",
+                    "captured_at": "2026-10-21T08:00:53.532Z",
+                    "source_url": "https://registry.npmjs.org/dsh-soul",
+                    "error": null,
+                    "latest_version": "0.8.0",
+                    "latest_published_at": "2026-10-19T06:53:21.245Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1352089397:root",
+            "repository": "Aliuyanfeng/dsh-soul",
+            "path": "",
+            "revision": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "58b391b14bcd6295e77b8ec131ac9c4e06b6089d840265e0a879e24b9daf73ac",
+                "code": "17e6624ea5d3f3bd9b077eb4aaca8c0cfe9455f0",
+                "maintenance": "90335f548b1a0f8e91154fd1504a37edeb60d6823032e221b1925048efc29dd0"
+            }
+        }
+    }
+}

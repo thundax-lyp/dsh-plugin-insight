@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3d0474849cf088d6a023fd01fe4875ae",
+    "identity": "github:1346810282:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346810282:root",
+            "repository": "shixiong0529/dsh-schedule-enable",
+            "path": "",
+            "revision": "15f36fa8ee5a8a0d7c84a19ebe66c0ea2ca413ba",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "723531d4b0e00b2e5ee02a3f4d1e08322a33939596610eef4ed1e0f6f5e192f7",
+                "code": "15f36fa8ee5a8a0d7c84a19ebe66c0ea2ca413ba",
+                "maintenance": "a53b8325e8f7112c54890b0d13b8559685c32d1e9a4dc93213915a7cfe7978d1"
+            }
+        }
+    }
+}

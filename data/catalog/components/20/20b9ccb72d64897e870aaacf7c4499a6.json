@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "20b9ccb72d64897e870aaacf7c4499a6",
+    "identity": "github:1349278800:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349278800:root",
+            "repository": "TencentCloud/cloudq-for-dsh",
+            "path": "",
+            "revision": "7fe68d858696c20e676ee0df1598a1956d45f853",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a226becca9c76e7f59a905360ee7d5d9aec75a6468ee3652b4801275d50f234e",
+                "code": "7fe68d858696c20e676ee0df1598a1956d45f853",
+                "maintenance": "04b9109c4e09732fee61180d8782bf980936f82b1ae5c322235d3013410db537"
+            }
+        }
+    }
+}

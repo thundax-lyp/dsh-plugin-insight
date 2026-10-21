@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0cba8d42bf26bf16f9f0ccc931a39525",
+    "identity": "github:1350440749:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350440749:root",
+            "repository": "RyanShen3/dsh-toutiao-reader",
+            "path": "",
+            "revision": "04248db67a9149e04477fadb163c13dc9b6825e9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b14ca5aca94a7902d87ac292b2cbe4e1034c3e6ff9ee95627b11a0d0edc179d2",
+                "code": "04248db67a9149e04477fadb163c13dc9b6825e9",
+                "maintenance": "40b80b5d1879285b06a26c52f6b9a7ac443494b93b153ace027ff861f35b695b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e18c658aad0fd226beea88e2f02fc3ad",
+    "identity": "github:1362944355:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362944355:root",
+            "repository": "idoall/dsh-update-status",
+            "path": "",
+            "revision": "59cae64f8288761be3a9db4442efa0cc45027b9a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "20806328bcf6eb20f702fe0d16f7699bda507c656235cd2b666e4f5db1e4a72a",
+                "code": "59cae64f8288761be3a9db4442efa0cc45027b9a",
+                "maintenance": "45bac9606eb26ab1aa26b64a0a0ebf64cce59d9148ccef7fcc5498c466f6cd22"
+            }
+        }
+    }
+}

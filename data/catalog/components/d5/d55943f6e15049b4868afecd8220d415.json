@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d55943f6e15049b4868afecd8220d415",
+    "identity": "github:1342382831:plugins-dsh-my-guardian",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342382831:plugins-dsh-my-guardian",
+            "repository": "baosfeng/my-dsh-plugins",
+            "path": "plugins/dsh-my-guardian",
+            "revision": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ba5862d69bcfd9e38e7a19f878cca84a6fa00b3310f2c2e95ff6b8db61266e3e",
+                "code": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
+                "maintenance": "fb9b774cd98aed1498b3728886e651d430a33b9df901c2194b4f19380c3f5850"
+            }
+        }
+    }
+}

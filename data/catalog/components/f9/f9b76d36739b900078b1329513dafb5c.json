@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9b76d36739b900078b1329513dafb5c",
+    "identity": "github:1380758125:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380758125:root",
+            "repository": "skyzhao1223/dsh-agent-token-stats",
+            "path": "",
+            "revision": "0af2dbd1608562dc64af6b58a40fabc2c7dc237e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5eceb91f6d877044ec69739eaad8ded31819be23ec09e48cb6460de0763cb85b",
+                "code": "0af2dbd1608562dc64af6b58a40fabc2c7dc237e",
+                "maintenance": "4fe8334c2609f49e86cf81feaca35cdef5ffd22c02d7ba64085339dbf823e949"
+            }
+        }
+    }
+}

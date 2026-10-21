@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7360680fc1a5b997236096e456917fcc",
+    "identity": "github:1346304806:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346304806:root",
+            "repository": "NecromanAlbert/dsh-skill-slash-fuzzy",
+            "path": "",
+            "revision": "66ddb8867f47598a2a0bb02abca33d142e0e3bfa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "206913b7e5c5b366d6355d53069998f068987f36ff73b3ea3672ed70e3f5605f",
+                "code": "66ddb8867f47598a2a0bb02abca33d142e0e3bfa",
+                "maintenance": "7950379dcfe36314a8c2ed3722a5ae07c0977acc55301558ed835fb374e4c943"
+            }
+        }
+    }
+}

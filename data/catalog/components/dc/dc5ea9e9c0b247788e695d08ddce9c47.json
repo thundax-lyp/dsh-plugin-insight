@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dc5ea9e9c0b247788e695d08ddce9c47",
+    "identity": "github:1398124498:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398124498:root",
+            "repository": "Erbsen16/dsh-client-ui-dracula",
+            "path": "",
+            "revision": "dde48b1d8038d35520acb4d1e5e5724985bb11cc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3fb593dce81d85eb2609b6cd1e8f71077af995dc094678655386fcacc74a45bf",
+                "code": "dde48b1d8038d35520acb4d1e5e5724985bb11cc",
+                "maintenance": "bb3205d7bf08c321c4f27304147b960b3cc36e0d0ea85f7a3ee532c0606730d0"
+            }
+        }
+    }
+}

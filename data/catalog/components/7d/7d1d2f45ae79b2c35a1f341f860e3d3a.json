@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d1d2f45ae79b2c35a1f341f860e3d3a",
+    "identity": "github:1398397478:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398397478:root",
+            "repository": "praystring/dsh-send-debounce",
+            "path": "",
+            "revision": "d99f32277ff8dc19e5853c8fd0f6a8f2c4c35802",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "55d84a07a4bcd2820eaaa5dd50bb1f8ba5eeefb6046b11c9958880b60fc8b8c8",
+                "code": "d99f32277ff8dc19e5853c8fd0f6a8f2c4c35802",
+                "maintenance": "3bc7ea673a67b80f61a7e988f075ee3f38d5780d15e3d6100dd67bcffc4de27b"
+            }
+        }
+    }
+}

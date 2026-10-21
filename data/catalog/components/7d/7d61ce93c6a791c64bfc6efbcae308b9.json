@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d61ce93c6a791c64bfc6efbcae308b9",
+    "identity": "github:1379617582:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379617582:root",
+            "repository": "kai-GitHubaccount/dsh-usage-panel",
+            "path": "",
+            "revision": "20539997ba8f84f4e313b3e68becaac47d370ec4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d1c2a62d2aea919fded3c38aea754a2c5edfc57a7e09bca49dac90b7a5b8c924",
+                "code": "20539997ba8f84f4e313b3e68becaac47d370ec4",
+                "maintenance": "afea583aa7b5c3cb9edf194100e09e5f67ac872fa2384b21ea4193513006be1a"
+            }
+        }
+    }
+}

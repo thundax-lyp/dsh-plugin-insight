@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8fad86cfa42146dc5175030bd83d7365",
+    "identity": "github:1333305802:packages-channels",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333305802:packages-channels",
+            "repository": "wsz987/dsh-channels",
+            "path": "packages/channels",
+            "revision": "8401caaa340cc0ec5b29e473569993e49d2b3a5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "361fd4dda04d3a147b46a7a5905536bbe7cd6d6fe8aed3a33643ca540bfc25da",
+                "code": "8401caaa340cc0ec5b29e473569993e49d2b3a5b",
+                "maintenance": "2ab4711ad7ccbccf48cec9c4118b660f4f8a6b4830881f819dcab6b56ab99628"
+            }
+        }
+    }
+}

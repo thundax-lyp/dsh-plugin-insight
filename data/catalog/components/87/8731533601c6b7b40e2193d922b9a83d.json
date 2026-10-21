@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8731533601c6b7b40e2193d922b9a83d",
+    "identity": "github:1420411834:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420411834:root",
+            "repository": "Oliveryfaso/dsh-pet-company",
+            "path": "",
+            "revision": "77e94a950a20b78ea029907aae248dfeb5d7b1d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de0f0ce5232ee1936316ec26c56de21f4c4bc2a2c03d33f7c50abc307c871347",
+                "code": "77e94a950a20b78ea029907aae248dfeb5d7b1d4",
+                "maintenance": "99c1eda2472edf1c3ddc13ff7d518fc0b44f4c923a775aa9bd3d1f1c2a5399e4"
+            }
+        }
+    }
+}

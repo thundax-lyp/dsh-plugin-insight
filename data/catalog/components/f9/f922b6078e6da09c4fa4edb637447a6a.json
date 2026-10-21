@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f922b6078e6da09c4fa4edb637447a6a",
+    "identity": "github:1334767490:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334767490:root",
+            "repository": "xmutfyh/dsh-plugin-writing-guard",
+            "path": "",
+            "revision": "f03f1202dd8273acc2d8f8705a6663aac09a8a38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6684334aa196db1cc29cb345879f8ef5afb60d584b8bc1f811f552f194b8976a",
+                "code": "f03f1202dd8273acc2d8f8705a6663aac09a8a38",
+                "maintenance": "37c3dcde192835d74f609711b12fe5f2e391872e17aaf0ead7b8b304675402bd"
+            }
+        }
+    }
+}

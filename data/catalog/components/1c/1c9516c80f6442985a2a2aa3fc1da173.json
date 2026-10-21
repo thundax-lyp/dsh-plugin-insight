@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c9516c80f6442985a2a2aa3fc1da173",
+    "identity": "github:1335835193:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335835193:root",
+            "repository": "ChrisZhangWG/dsh-codex-meter",
+            "path": "",
+            "revision": "5f28607bbcebd9a77838386df9e0760c2d2be292",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d757614ec398e3f09f22a519547cb1d8e452c7fd1ebccbdea87f72a7bc416ebb",
+                "code": "5f28607bbcebd9a77838386df9e0760c2d2be292",
+                "maintenance": "d8fe71427cba4ec49b3471e48330ede67d7d6e9fc8cb592a49cd039bda45d0e7"
+            }
+        }
+    }
+}

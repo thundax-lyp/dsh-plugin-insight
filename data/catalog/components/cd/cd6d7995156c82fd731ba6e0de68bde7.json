@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cd6d7995156c82fd731ba6e0de68bde7",
+    "identity": "github:1417017846:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417017846:root",
+            "repository": "chengzhi-c/dsh-wtq-pool",
+            "path": "",
+            "revision": "c904e3b771cfa13797211a36bda97e6fd85b7812",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5e9aa7b970f79da6a1b7f153f920f16e7193c45c1746a66279efd824cee0bef2",
+                "code": "c904e3b771cfa13797211a36bda97e6fd85b7812",
+                "maintenance": "c8b1202ab78f71c9bb5eadced27b49163b20e68c24a54cb7ec17618f2b101247"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "89ef45ef4cc07680a470043fb24c41c5",
+    "identity": "github:1415750815:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415750815:root",
+            "repository": "zhengqiuyang/dsh-read-guard",
+            "path": "",
+            "revision": "636ed6a74b55e0bb0d7f8767b13cb4211ad45cd0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2f7d56f06c9403d0c1d1a60cbbc6f69d8ac08e46b65fc99ce8c45495af0e720d",
+                "code": "636ed6a74b55e0bb0d7f8767b13cb4211ad45cd0",
+                "maintenance": "5dd89d1290e3cfa122acb6c5c29072d51a1405a2ca47cfe62a026f868d956dfd"
+            }
+        }
+    }
+}

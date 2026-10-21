@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6e44773aaae79f919240b81bf806a276",
+    "identity": "github:1244140731:dsh-cue-data-mcp",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1244140731:dsh-cue-data-mcp",
+            "repository": "sensedeal/cue-skills",
+            "path": "dsh/cue-data-mcp",
+            "revision": "4dcaf25917cf9647a7e4e57f00190f3b9e9ce0e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "14adbb0e7d7e11fa576ce4c5a4b5fce7c64ac0fa56ffb4b7ac5252f7f1dd0c34",
+                "code": "4dcaf25917cf9647a7e4e57f00190f3b9e9ce0e1",
+                "maintenance": "7c5241d2d369f4b3424c2e184fd770dfe38897416b49b1b2ca249d788c392635"
+            }
+        }
+    }
+}

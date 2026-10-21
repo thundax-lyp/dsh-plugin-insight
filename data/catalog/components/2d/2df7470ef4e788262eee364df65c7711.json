@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2df7470ef4e788262eee364df65c7711",
+    "identity": "github:1326723754:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1326723754:root",
+            "repository": "omdsh-dev/dsh-feishu-notify",
+            "path": "",
+            "revision": "ab8c97f9a137dc094124b46c28c9baa219d526b5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "79bf5835709bbdff0a54052cf29b8c79fe3499472b32a9b9daa72c0db411a6c6",
+                "code": "ab8c97f9a137dc094124b46c28c9baa219d526b5",
+                "maintenance": "6bf08457b14108c5833515f5fa679461c63b5c31eb3e56065829bd64ecac8777"
+            }
+        }
+    }
+}

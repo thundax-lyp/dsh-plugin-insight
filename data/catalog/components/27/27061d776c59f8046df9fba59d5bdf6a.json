@@ -1,0 +1,450 @@
+{
+    "schema_version": 3,
+    "id": "27061d776c59f8046df9fba59d5bdf6a",
+    "identity": "github:1335992154:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335992154:root",
+            "repository_id": 1335992154,
+            "component_id": "root",
+            "repository": "AdonisSheldon/dsh-openai-oauth",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-openai-oauth",
+            "entry_type": "plugin",
+            "technical_category": "model-provider",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "e2373a6aacdc0aec7c753e8a5c34c17dc525ad23128decafa6a385790031bfe7",
+                "code": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+                "maintenance": "4eda328c046a354ebe1bc7c780dec414e9573a7bb76dd3ebc9b629786b3dfe98"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1335992154-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:37:56.096Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1335992154-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/README.md",
+                    "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+                    "captured_at": "2026-10-21T05:37:56.096Z",
+                    "summary": "通过浏览器或设备码登录ChatGPT，将Codex模型作为DSH原生LLM适配器提供。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/adonissheldon--dsh-openai-oauth/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1335992154-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/index.ts",
+                    "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+                    "captured_at": "2026-10-21T05:37:56.096Z",
+                    "summary": "核查 src/index.ts、src/adapter.ts、src/credential-store.ts、src/auth-controller.ts、src/stream.ts、package.json；llm注册openai-codex适配器，OAuth controller支持PKCE/设备码；凭据锁定原子写，模型集合刷新token，stream/replay把上游事件转DSH模型事件；Web绑定强制127.0.0.1。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/adonissheldon--dsh-openai-oauth/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读src/index.ts、src/adapter.ts、src/credential-store.ts、src/auth-controller.ts、src/stream.ts、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "有Codex访问资格的本机用户希望沿用DSH会话、工具和模型选择器。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "llm注册openai-codex适配器，OAuth controller支持PKCE/设备码；凭据锁定原子写，模型集合刷新token，stream/replay把上游事件转DSH模型事件；Web绑定强制127.0.0.1。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读src/index.ts、src/adapter.ts、src/credential-store.ts、src/auth-controller.ts、src/stream.ts、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT社区插件与第三方协议/实现归属见NOTICE；macOS/Linux、限定DSH版本，非官方服务承诺。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "已有账户资格、首次授权和凭据维护；持续订阅/额度及协议跟进成本，本轮未核实账号可用性或费用。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "仅在本机临时profile核对工具和中断续聊语义；先确认账户授权条件和凭据清理方式，再替代现有模型连接。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少跨应用上下文搬运，未证明稳定配额或任务质量提升。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "锁、原子替换、路径检查和loopback强制边界较清晰；直接适配仍受上游协议变动影响。 源码依据：[src/index.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/index.ts)、[src/adapter.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/adapter.ts)、[src/credential-store.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/credential-store.ts)、[src/auth-controller.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/auth-controller.ts)、[src/stream.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/stream.ts)、[package.json](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/package.json)。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对启动独立Codex代理，增量是直接模型路由和DSH事件/工具语义适配。模型能力与账户配额归上游，OAuth标准不算原创。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "原生外观能否保证协议等价？适配器明确拒绝不支持的maxTokens等选项，重放、工具结果和流式停止原因仍需真实任务验收。凭据虽权限收紧仍明文，卸载保留，不能当作密钥保险库。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由显式选项拒绝与replay转换推导，可提供模型能力协商及事件保真度收据，提前暴露不支持特性。未验证；同一含工具、图片、中断续聊任务对照事件序列和结果，静默降级应为0。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335992154:root",
+                            "area": "code",
+                            "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:56.096Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:37:56.096Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+                "reviewed_at": "2026-10-21T05:37:56.096Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335992154:root",
+                        "area": "code",
+                        "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty既有OAuth模型接线小档；mechanism协议/重放/凭据适配半档；transferability显式能力拒绝与存储模式半档；simplification免独立代理半档。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow沿用既有会话便利小档；delivery原生模型入口半档；reach限定账户/平台小档；economics订阅与协议成本未验证取0。",
+                    "basis": "interpretation",
+                    "score": 29,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1335992154-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "具备Codex账户资格的本机用户可在临时profile试模型适配；先核授权条件、凭据清理、工具与中断续聊语义。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "保留DSH会话工具而接入已有账户模型的用户明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "OAuth和流式协议映射减少跨应用搬运。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核PKCE、凭据原子写和事件重放，无真实任务兼容验收。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "账户额度、协议跟进与卸载保留明文凭据需持续管理。"
+                    }
+                },
+                "score": 60,
+                "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1335992154-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335992154:root",
+                        "area": "code",
+                        "fingerprint": "ba29660530fe05779b06f129a0c0ed5c2237b73f"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335992154:root",
+            "repository": "AdonisSheldon/dsh-openai-oauth",
+            "path": "",
+            "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+            "fingerprints": {
+                "directory": "e2373a6aacdc0aec7c753e8a5c34c17dc525ad23128decafa6a385790031bfe7",
+                "code": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+                "maintenance": "4eda328c046a354ebe1bc7c780dec414e9573a7bb76dd3ebc9b629786b3dfe98"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "d373afdc72b3ce7285544e16b1b991a8fd036d21214c0e59739de895b1a1fadc"
+        },
+        "publication.metadata": "data/plugins/adonissheldon--dsh-openai-oauth/META.json",
+        "publication.summaries": {
+            "text": "通过浏览器或设备码登录ChatGPT，将Codex模型作为DSH原生LLM适配器提供。",
+            "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+            "source_url": "https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+            "items": {
+                "后台": "OAuth会话、凭据刷新与LLM适配器。",
+                "Host 路由": "本机OAuth管理接口。",
+                "界面": "授权与模型选择集成。"
+            }
+        },
+        "publication.advice": {
+            "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+            "text": "仅在本机临时profile核对工具和中断续聊语义；先确认账户授权条件和凭据清理方式，再替代现有模型连接。"
+        },
+        "registry": "data/plugins/adonissheldon--dsh-openai-oauth",
+        "reports": "# dsh-openai-oauth\n\n> 通过浏览器或设备码登录ChatGPT，将Codex模型作为DSH原生LLM适配器提供。\n\n## 使用建议\n\n仅在本机临时profile核对工具和中断续聊语义；先确认账户授权条件和凭据清理方式，再替代现有模型连接。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：有Codex访问资格的本机用户希望沿用DSH会话、工具和模型选择器。\n- **亮点**：相对启动独立Codex代理，增量是直接模型路由和DSH事件/工具语义适配。模型能力与账户配额归上游，OAuth标准不算原创。\n- **思考**：原生外观能否保证协议等价？适配器明确拒绝不支持的maxTokens等选项，重放、工具结果和流式停止原因仍需真实任务验收。凭据虽权限收紧仍明文，卸载保留，不能当作密钥保险库。\n- **建议**：由显式选项拒绝与replay转换推导，可提供模型能力协商及事件保真度收据，提前暴露不支持特性。未验证；同一含工具、图片、中断续聊任务对照事件序列和结果，静默降级应为0。\n\n## 场景与替代办法\n\n有Codex访问资格的本机用户希望沿用DSH会话、工具和模型选择器。\n\n原生API key或独立Codex客户端各有成熟路径；此插件减少外部代理层但承担协议适配。\n\n## 能力清单\n\n- **后台**：OAuth会话、凭据刷新与LLM适配器。\n- **Host 路由**：本机OAuth管理接口。\n- **界面**：授权与模型选择集成。\n\n## 依赖与流程\n\nDSH llm与可选attachments/webServer，上游Codex OAuth和模型接口；CLI bin是登录入口，非DSH注册命令。\n\n用户授权，写本地凭据，模型选择触发适配器转换请求/事件并刷新token；退出清凭据，卸载前需主动退出。\n\n## 成本与效果\n\n已有账户资格、首次授权和凭据维护；持续订阅/额度及协议跟进成本，本轮未核实账号可用性或费用。\n\n减少跨应用上下文搬运，未证明稳定配额或任务质量提升。\n\n## 核心贡献\n\n相对启动独立Codex代理，增量是直接模型路由和DSH事件/工具语义适配。模型能力与账户配额归上游，OAuth标准不算原创。\n\n## 关键质疑\n\n原生外观能否保证协议等价？适配器明确拒绝不支持的maxTokens等选项，重放、工具结果和流式停止原因仍需真实任务验收。凭据虽权限收紧仍明文，卸载保留，不能当作密钥保险库。\n\n\n## 工程亮点\n\n锁、原子替换、路径检查和loopback强制边界较清晰；直接适配仍受上游协议变动影响。 源码依据：[src/index.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/index.ts)、[src/adapter.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/adapter.ts)、[src/credential-store.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/credential-store.ts)、[src/auth-controller.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/auth-controller.ts)、[src/stream.ts](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/src/stream.ts)、[package.json](https://github.com/AdonisSheldon/dsh-openai-oauth/blob/ba29660530fe05779b06f129a0c0ed5c2237b73f/package.json)。\n\n## 未来设计假设（未验证）\n\n由显式选项拒绝与replay转换推导，可提供模型能力协商及事件保真度收据，提前暴露不支持特性。未验证；同一含工具、图片、中断续聊任务对照事件序列和结果，静默降级应为0。\n\n核对工具调用/图片/上下文重放、取消、刷新竞态与凭据损坏；日志不得含token，远程Web绑定应拒绝。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1e6fca9d4a8270e6418a45400a70c155748ffa041cb55ca0a43bee7c46ada309。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 6 | 309 | — | — | 2366 |\n| .js | source | 4 | 3022 | 2907 | 171 | — |\n| .ts | source | 18 | 2937 | 2635 | 104 | — |\n| .tsx | source | 1 | 297 | 274 | 3 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AdonisSheldon/dsh-openai-oauth](https://github.com/AdonisSheldon/dsh-openai-oauth)\n- **版本号**：0.1.0（[固定提交 ba296605](https://github.com/AdonisSheldon/dsh-openai-oauth/tree/ba29660530fe05779b06f129a0c0ed5c2237b73f)）\n- **版本日期**：2026-08-21（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/adapter.ts、src/credential-store.ts、src/auth-controller.ts、src/stream.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读src/index.ts、src/adapter.ts、src/credential-store.ts、src/auth-controller.ts、src/stream.ts、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：核对工具调用/图片/上下文重放、取消、刷新竞态与凭据损坏；日志不得含token，远程Web绑定应拒绝。\n",
+        "metadata": {
+            "repository": "AdonisSheldon/dsh-openai-oauth",
+            "repository_id": 1335992154,
+            "captured_at": "2026-10-21T05:34:36.817Z",
+            "window_start": "2026-09-21T05:34:36.817Z",
+            "stars": 9,
+            "pushed_at": "2026-08-20T16:23:48Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9392:1F14A0:AE3EDB:FA9887:6AD84EEE and timestamp 2026-10-21 05:34:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 94F0:360622:A9AB61:F4823D:6AD84EEF and timestamp 2026-10-21 05:34:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A36.817Z..2026-10-21T05%3A34%3A36.817Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9602:38A53A:AEAE2B:FB1450:6AD84EF0 and timestamp 2026-10-21 05:34:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A36.817Z..2026-10-21T05%3A34%3A36.817Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 986C:28E3E1:AEF62F:FB0C1F:6AD84EF2 and timestamp 2026-10-21 05:34:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A36.817Z..2026-10-21T05%3A34%3A36.817Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 996C:3BA9DC:AA605C:F473DE:6AD84EF3 and timestamp 2026-10-21 05:34:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-openai-oauth",
+                "captured_at": "2026-10-21T05:34:43.750Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 814,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-openai-oauth",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-14T16:04:29.875Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-openai-oauth",
+                    "error": null,
+                    "latest_version": "0.4.0",
+                    "latest_published_at": "2026-08-14T16:04:30.245Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1335992154:root",
+            "repository": "AdonisSheldon/dsh-openai-oauth",
+            "path": "",
+            "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e2373a6aacdc0aec7c753e8a5c34c17dc525ad23128decafa6a385790031bfe7",
+                "code": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+                "maintenance": "4eda328c046a354ebe1bc7c780dec414e9573a7bb76dd3ebc9b629786b3dfe98"
+            }
+        }
+    }
+}

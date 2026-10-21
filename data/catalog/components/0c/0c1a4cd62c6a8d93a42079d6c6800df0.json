@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c1a4cd62c6a8d93a42079d6c6800df0",
+    "identity": "github:1360890953:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360890953:root",
+            "repository": "kakajun/dsh-web-recorder",
+            "path": "",
+            "revision": "079f0c702d5193627be081cf73d5f516360dba8e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2baaca995065204a8ca684f125a8fbb80b537c9dbad127f3942967d9f312c92e",
+                "code": "079f0c702d5193627be081cf73d5f516360dba8e",
+                "maintenance": "ed25ed7be6f776085c430a056e27eceaef27b4aa72a4ac870eff49a0f8173ff8"
+            }
+        }
+    }
+}

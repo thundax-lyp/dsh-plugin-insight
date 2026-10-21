@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "93e1a3895cbb0c258200a37ea0d8d9e8",
+    "identity": "github:1424401816:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424401816:root",
+            "repository": "SilverLark257/move45clock",
+            "path": "",
+            "revision": "98ad4fec29e8886dec9c812d6ff09419d519b267",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8e7775a7a6101a03c4bb7a85fa81a207985a2de8fe0cb41bed606e2553522b13",
+                "code": "98ad4fec29e8886dec9c812d6ff09419d519b267",
+                "maintenance": "f8a95ba5d6f2154551a45035e637729f9965615aaf9c27a54a04f8cea7852923"
+            }
+        }
+    }
+}

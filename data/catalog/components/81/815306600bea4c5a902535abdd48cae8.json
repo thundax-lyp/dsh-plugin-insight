@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "815306600bea4c5a902535abdd48cae8",
+    "identity": "github:1365336780:plugins-web-style",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365336780:plugins-web-style",
+            "repository": "Yinxe/dshp",
+            "path": "plugins/web-style",
+            "revision": "05138744877ff041210fa7e71e5c2446da017f14",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e45da5a55a75c220fd1b991da124f7c8681f44d2bcf872d479273cca97105d81",
+                "code": "05138744877ff041210fa7e71e5c2446da017f14",
+                "maintenance": "9cf94ef1ccebddf1fd5f018f35276c1d0f1108cfe23d180768b06f734ba4b97a"
+            }
+        }
+    }
+}

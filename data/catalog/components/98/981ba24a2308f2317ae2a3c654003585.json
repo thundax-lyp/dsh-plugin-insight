@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "981ba24a2308f2317ae2a3c654003585",
+    "identity": "github:1335150755:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335150755:root",
+            "repository": "somnusovis/dsh-multi-workspace",
+            "path": "",
+            "revision": "96cd8427bd72d8a70e7590191ca058c40eb17c87",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1dc9f242efe2cb0227a0d7cd06ef83f83ca6bac825750a6f97fc58f6205581e4",
+                "code": "96cd8427bd72d8a70e7590191ca058c40eb17c87",
+                "maintenance": "7ec445b50a4e2519a6e31fc36f02078b66ba38411b6186d5b6d77a676c6c2db3"
+            }
+        }
+    }
+}

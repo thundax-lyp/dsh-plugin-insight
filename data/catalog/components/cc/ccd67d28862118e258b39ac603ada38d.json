@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ccd67d28862118e258b39ac603ada38d",
+    "identity": "github:1412977387:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412977387:root",
+            "repository": "LiuJiaCheng11/dsh-postman",
+            "path": "",
+            "revision": "e00615068a3ae4804b98f870885143008adbc6b1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "16d12075e8e6e6818f539ae0d01f223e7c93bcffb4b44a7c900b9ad8f48f8aba",
+                "code": "e00615068a3ae4804b98f870885143008adbc6b1",
+                "maintenance": "179aa63a99491b67bec4ea88eba5beb560a7e9f8e65aef604a3b35f03ae5b712"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "601c571ed09ba164afb5a384ea33569b",
+    "identity": "github:1351482127:packages-gameassist-knowledge",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351482127:packages-gameassist-knowledge",
+            "repository": "w4xxx/dsh-xia-plugins",
+            "path": "packages/gameassist-knowledge",
+            "revision": "220290d7d1665ca16ce8b01c6aa216170a936fa6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "214fae63cc07d819495dc8a46c34500130138c27e1b7c795f1d41633b8b5d35d",
+                "code": "220290d7d1665ca16ce8b01c6aa216170a936fa6",
+                "maintenance": "f02ec02d7a79078957fac2d50ccf009799a3465683861ad24549658457401091"
+            }
+        }
+    }
+}

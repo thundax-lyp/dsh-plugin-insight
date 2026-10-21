@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "857b67fd4e1853556a7674f5067c0cce",
+    "identity": "github:1337575314:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337575314:root",
+            "repository": "TongY1n/ui-muyu",
+            "path": "",
+            "revision": "ef96072b8b2663b4bf87f7cc01adb5cb30612e71",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "37be931a0e52308e9b1cbd5c4cdebdcc9d481214270c6e02caa3275343edfcbe",
+                "code": "ef96072b8b2663b4bf87f7cc01adb5cb30612e71",
+                "maintenance": "227422ac834a3518baa22d14740b621c6458379794ebafacf4c47ec302fc413f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a46ab1c715cae5d5f1c2bc14f215b0ca",
+    "identity": "github:1424259493:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424259493:root",
+            "repository": "wangtheme-coder/dsh-dragon-control",
+            "path": "",
+            "revision": "fac8dd6df117f8f472eb5f110e5cf43c90f931fe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3b116f2336805340bd21d79a23060cc8e229bdec827b3c5ee22b4e54653810ee",
+                "code": "fac8dd6df117f8f472eb5f110e5cf43c90f931fe",
+                "maintenance": "fb42099573e68cccb5b38a8dcbf4f826a25bd3b1a8d600bdb0cd447c292fc2b5"
+            }
+        }
+    }
+}

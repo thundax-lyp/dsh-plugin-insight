@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "38421eb519a29a585e3d4ae251b7950a",
+    "identity": "github:1335902722:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335902722:root",
+            "repository": "azure5100/huahua-dsh-plugin-orchestra",
+            "path": "",
+            "revision": "a128b7858c02fd4621593411b386d66f9f1400b0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "76570ad9558fe10ebf8fcddbe54393f7e2e09ff7af5243c430c2d1bb018ac6f0",
+                "code": "a128b7858c02fd4621593411b386d66f9f1400b0",
+                "maintenance": "029a5ce43232fec6901921b0fe59b9e2389d9a450e03ee7da0fcf0cecc97add0"
+            }
+        }
+    }
+}

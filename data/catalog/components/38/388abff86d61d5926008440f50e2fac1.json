@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "388abff86d61d5926008440f50e2fac1",
+    "identity": "github:1361594513:plugins-dsh-auto-update",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361594513:plugins-dsh-auto-update",
+            "repository": "Tuhuaqing/just-dsh-plugins",
+            "path": "plugins/dsh-auto-update",
+            "revision": "bae399bb2a6fdb4d9a75562e7979e27ec9478ada",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e50b08127046e31e5b0e6d55548668a20fae0e3d8e17436816a6165bb2c04d52",
+                "code": "bae399bb2a6fdb4d9a75562e7979e27ec9478ada",
+                "maintenance": "c75058ecce7779b2b9d439110f4632bfe11983712075dddc00b721763a2b6e97"
+            }
+        }
+    }
+}

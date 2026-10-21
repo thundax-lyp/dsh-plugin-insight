@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "157b6d0300f046e2f960d696c13b954a",
+    "identity": "github:1359686866:plugins-motor-case-kb",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359686866:plugins-motor-case-kb",
+            "repository": "helllo-shijie/motor-hospital-plugins",
+            "path": "plugins/motor-case-kb",
+            "revision": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "42df94de45b5d8f4bb8fd77187780b92a02d6957b766568e3677051530669d62",
+                "code": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+                "maintenance": "ae61c30fd903785b79008e00b9f602996e5f629205daa092405be9d1bae46ae1"
+            }
+        }
+    }
+}

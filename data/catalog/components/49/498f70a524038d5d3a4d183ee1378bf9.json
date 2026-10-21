@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "498f70a524038d5d3a4d183ee1378bf9",
+    "identity": "github:1334418410:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334418410:root",
+            "repository": "starslittle/dsh-blue-whale",
+            "path": "",
+            "revision": "e18aa1e27e98df98c478b8d24076a94e64d43ed5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a2b66ced5652ed4641b1c5bd2235d3d81efa9d720354c06147eb33d78fd93b69",
+                "code": "e18aa1e27e98df98c478b8d24076a94e64d43ed5",
+                "maintenance": "a354d36aa5cba7ebbb8e0e15ec399f21d959778d86b925cd45fcf46ff331351d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "061ce345d1dfe1706b897d2959a84fe4",
+    "identity": "github:1334469516:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334469516:root",
+            "repository": "tuogusa/dsh-whale-background",
+            "path": "",
+            "revision": "701b3f5e19a15ebf6c777502edd7549c956ff618",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "09d04eb629b47f746b6b74c6ca225573cf4b3bf51084fb25d44b286b8b531639",
+                "code": "701b3f5e19a15ebf6c777502edd7549c956ff618",
+                "maintenance": "6400c6b18e102d398b72cef25630bc04a790002abb61b30ab98f79f38c04373a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eb82f5aff51e80b6b0b7a8643929b42c",
+    "identity": "github:1356180416:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356180416:root",
+            "repository": "jcaiagent7143-ui/linkdigest-mcp",
+            "path": "",
+            "revision": "2be5e220159390dd8c02b9fe18438ec7179002fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1c3f286d4037541072786c907568c6c04e548fa1e775cc748af929bbba762206",
+                "code": "2be5e220159390dd8c02b9fe18438ec7179002fd",
+                "maintenance": "6f25789cfb921237c1e193a545ece335ad16439714f8a859549aa8b9cdbf879d"
+            }
+        }
+    }
+}

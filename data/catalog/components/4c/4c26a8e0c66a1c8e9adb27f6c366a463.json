@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c26a8e0c66a1c8e9adb27f6c366a463",
+    "identity": "github:1349970092:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349970092:root",
+            "repository": "xchannel1987/dsh-mobile-xc",
+            "path": "",
+            "revision": "9619b87b661ad9bebd9b0947dc259b3a31146f3d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ae5badb98b33f13d6975422f09c76ea898af41bca606e9982bd5769d8e1b42e4",
+                "code": "9619b87b661ad9bebd9b0947dc259b3a31146f3d",
+                "maintenance": "89d91af1bb51da0170e2edb151f798b07c744ed2f58231c280ed7310c2d88fb0"
+            }
+        }
+    }
+}

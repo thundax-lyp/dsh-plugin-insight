@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2a4aed3a0b605fc990b42e4a36da6edc",
+    "identity": "github:1333856966:dsh-rules-manager",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333856966:dsh-rules-manager",
+            "repository": "jilian-dsh/dsh-rules-manager",
+            "path": "dsh-rules-manager",
+            "revision": "91617e28945cfa6f5dc13ef78f242331434b7436",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e5896db4893a2a48d2e997852cb2364c459f2920a7e2311780959a46f9ba44bb",
+                "code": "91617e28945cfa6f5dc13ef78f242331434b7436",
+                "maintenance": "10baebd88d35d1165b8c2db246332509c4ecb94c144bb28fc4d0665c690de7d0"
+            }
+        }
+    }
+}

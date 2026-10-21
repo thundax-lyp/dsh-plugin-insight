@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "362bfb704b917477964c3a5219fbc68e",
+    "identity": "github:1358317875:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358317875:root",
+            "repository": "ArcaneOrion/dsh-model-selector-search",
+            "path": "",
+            "revision": "1961202137a3a06b9512131ff502b074610ac5b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1509ef3b1957b4c655b12dff4177eb6ffff3061d487d72778fed06065432cb49",
+                "code": "1961202137a3a06b9512131ff502b074610ac5b3",
+                "maintenance": "52771176b82d407416b218b8325f2c8588cb2d252d91e4a66cee08f0d87227e3"
+            }
+        }
+    }
+}

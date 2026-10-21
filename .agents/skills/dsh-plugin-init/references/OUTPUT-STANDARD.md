@@ -11,12 +11,12 @@
 研究事实的唯一正式真相是当前档案及其引用的当前分析、来源和必要证据；本轮记录先在 runs 暂存，校验后最终合并。完整语义见[数据契约](../../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)。
 展示输入只组织当前成果，生成页面不承担人工研究真相。下一轮、当前校验和页面生成不应依赖旧 SESSION、历史 manifest 链或已经合并的 runs。
 
-正式快照为 `data/catalog/SNAPSHOT.json` 索引及 `data/catalog/snapshot/` 不可变条目；WORK 暂存与索引原子切换由 snapshot-data.mjs 和共享存储层实现。分析原文、展示数据和必要证据内容由索引引用的条目保存；文件式档案、META 和页面是可重新生成的兼容输出。迁移缺失原件有显式限制，不当作新验证。
+正式快照为 `data/catalog/index.jsonl`、按 MD5 ID 分桶的组件 JSON、`state.json` 全局状态与独立必要证据；物理格式、摘要和事务恢复见数据契约。每个组件的分析原文、META、推荐评估和展示数据集中保存，README、分类及详情是可重新生成的页面。迁移缺失原件有显式限制，不当作新验证。
 
 ## README 生成物与读者路由
 
 项目根 `README.md` 是面向读者的研究成果总入口，由 `npm run render:research` 生成，不手工维护。
-生成输入为 `data/catalog/PUBLICATION.json`，结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
+生成输入为当前 `data/catalog/index.jsonl` 还原的 publication，逻辑结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
 README 由独立块函数合成：标题、头图与定位说明 → 分类导航 → 推荐 → 最新 → 最热 → 分类精选 → 研究出处 → LICENSE → 更新时间。
 LICENSE 区块链接根 `LICENSE`，标明 CC0-1.0，位于末尾更新时间之前。
 Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／HOME-NAVIGATION／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORIES／SOURCES 为块模板，
@@ -65,14 +65,12 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 产物 | 位置 | 要求 |
 |---|---|---|
 | 研究入口 | 根 `README.md` | 由模板生成，插件标题链接稳定详情入口 |
-| 唯一正式快照索引 | `data/catalog/SNAPSHOT.json` | 当前条目引用及语义摘要；原子合并点 |
-| 正式快照条目 | `data/catalog/snapshot/<section>/<前缀>/<sha256>.json` | 按内容复用的档案、发现分组、报告、META、发布输入及证据对象 |
+| 唯一正式快照索引 | `data/catalog/index.jsonl` | 一行一个组件，按 MD5 ID 升序，查询属性与详情摘要由完整记录派生 |
+| 完整组件记录 | `data/catalog/components/<id前两位>/<id>.json` | UTF-8、indent=4，集中保存该组件全部已知数据 |
+| 全局状态 | `data/catalog/state.json` | 全局来源、原始顺序、事务与摘要，不重复档案 |
+| 必要证据 | `data/catalog/evidence/<前缀>/<sha256>.json` | 按内容复用的证据正文 |
 | 本轮工作记录 | `data/runs/<round>/WORK.json` | v2保存固定基线与过程文件摘要索引；合并后可按引用清理 |
-| 档案兼容输出 | `data/catalog/PLUGINS.json` | 从正式快照生成，不单独人工维护 |
-| 发布兼容输出 | `data/catalog/PUBLICATION.json` | 从快照生成，records 保存当前有效完成记录，不引用历史会话 |
-| 插件路径注册表 | `data/catalog/PLUGIN-PATHS.json` | 稳定 ID 到可读插件目录的唯一映射 |
 | 当前详情展示 | `data/plugins/<plugin-slug>/INSIGHT.md` | 从快照 reports 原文生成，包含最新 Issue 信息 |
-| 当前 META | `data/plugins/<plugin-slug>/META.json` | 当前采集结果；本轮采集先暂存，核实后更新 |
 | 旧运行清单 | `data/manifests/<round>.json` | 新文件由 .gitignore 忽略；已跟踪且仍被当前工具或详情引用的文件暂留，解除依赖后删除 |
 | 本地来源输入与问题 | `data/runs/<round>/INPUT.json`、`INPUT-PROBLEMS.json` | Git 忽略；固定目录解析、身份核实结果与未解决边界 |
 | 本地会话与进度 | `data/runs/<round>/SESSION.json` | Git 忽略；v2为指向同轮WORK的兼容入口；实际会话头、状态和检查点独立存储 |
@@ -89,7 +87,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 临时计划／缓存／源码检出 | 系统临时目录或 `data/tmp/`、`cache/`、`checkouts/` | 可重建且不提交，不放正式证据 |
 
 `plugin-slug` 首次由 owner、repo 组成 `owner--repo`，子组件追加稳定组件名；统一小写。
-首次分配写入注册表，仓库改名或组件移动后保持目录不变，不根据新名字再次创建目录。
+首次分配写入组件完整记录的 registry 字段，仓库改名或组件移动后保持目录不变，不根据新名字再次创建目录。
 `round` 使用北京时间日期与当日序号 `YYYY-MM-DD-NN`（至少两位，从01起），如 `2026-10-19-03`；新轮次使用未占用目录，不能复用历史编号。日期是轮次开始日，续跑跨日不改名。SESSION、REPORT、RECOMMENDATIONS 及 SOURCE、META 等文件不再重复添加时间；精确时间保留在 JSON 字段中。独立 META 采集批次可在 snapshots 下使用独立批次目录，避免覆盖已有证据。
 观察 `run_id` 使用轮次与插件标识形成唯一 ID；历史内部 ID、提交 SHA 与精确 ISO 时间保留在字段中，不为改目录而改身份。
 

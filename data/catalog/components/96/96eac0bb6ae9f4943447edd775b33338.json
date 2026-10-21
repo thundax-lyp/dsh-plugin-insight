@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "96eac0bb6ae9f4943447edd775b33338",
+    "identity": "github:1368482263:dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368482263:dsh-plugin",
+            "repository": "CZ-ZL/duo",
+            "path": "dsh-plugin",
+            "revision": "6b9d1e261f64df2995b9add32404cd72189f496b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "64cc161dc7aee9c955a4c166df152df2092b9f5f7d1d9bd209e60d188b28a4c7",
+                "code": "6b9d1e261f64df2995b9add32404cd72189f496b",
+                "maintenance": "237dc8ff3f48d1040043f70163cd5e96c709814fb7d79cce979d0196e6aebbd2"
+            }
+        }
+    }
+}

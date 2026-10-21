@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ebef8317b17f9754154ec7d7a56501d",
+    "identity": "github:1334368080:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334368080:root",
+            "repository": "Noelune/dsh-agent-relay",
+            "path": "",
+            "revision": "07d0d5bfa07ce4e6b495b5cfd840a2f331bd6316",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e12eab3d17177a5ba3055aad9b420bc8eda284d15b706e7318414fa47a27b3a",
+                "code": "07d0d5bfa07ce4e6b495b5cfd840a2f331bd6316",
+                "maintenance": "e34b25fe0e068f1ba970f12ba00edd86d8bd46d95b0c3e799bb82910a1a2af3a"
+            }
+        }
+    }
+}

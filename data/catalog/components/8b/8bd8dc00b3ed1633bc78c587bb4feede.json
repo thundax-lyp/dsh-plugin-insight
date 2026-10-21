@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8bd8dc00b3ed1633bc78c587bb4feede",
+    "identity": "github:1338190243:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338190243:root",
+            "repository": "shinjiyu/holdem",
+            "path": "",
+            "revision": "4f2c293bef9cb6a67348ae3999ea445e6a96a27b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f193b05ee7305d51f314a1bfe0feb40488e9dcca7ff3bad21191ed1b6dd7c58a",
+                "code": "4f2c293bef9cb6a67348ae3999ea445e6a96a27b",
+                "maintenance": "a030d0ea0ced3d8b32defa4c6bc48953b9c2ca8bb21dca03808acc7ee71da765"
+            }
+        }
+    }
+}

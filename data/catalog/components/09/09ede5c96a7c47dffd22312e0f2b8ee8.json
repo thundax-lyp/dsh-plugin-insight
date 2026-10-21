@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "09ede5c96a7c47dffd22312e0f2b8ee8",
+    "identity": "github:1340829074:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340829074:root",
+            "repository": "taltara/capmark",
+            "path": "",
+            "revision": "dd113b436b5c263eeaa16517b250a2205f8d6081",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3a13ba19c83dd6f7c68e6440194c3c81fcc62a6e998bba1168da451a7d235f07",
+                "code": "dd113b436b5c263eeaa16517b250a2205f8d6081",
+                "maintenance": "fc5e0408712ff13b4ac950f7c517dbca30e684ce3cb74ab53b4183a029f7c52a"
+            }
+        }
+    }
+}

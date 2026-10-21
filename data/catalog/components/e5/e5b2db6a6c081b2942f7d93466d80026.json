@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5b2db6a6c081b2942f7d93466d80026",
+    "identity": "github:1335236911:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335236911:root",
+            "repository": "ayahunter/dsh-plugin-clinic",
+            "path": "",
+            "revision": "c62b8136a4f71eeb6e2084e907d9e5010ab4d011",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c5f8d5bc107971574cb9547eb41e09b39e5b54e9a832be67ca0c41912c5bfa04",
+                "code": "c62b8136a4f71eeb6e2084e907d9e5010ab4d011",
+                "maintenance": "476e06e6536f72f64439d405db0a53af30fcfccc5d6a2b5838a4caebd1c54e9e"
+            }
+        }
+    }
+}

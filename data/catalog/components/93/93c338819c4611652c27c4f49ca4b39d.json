@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "93c338819c4611652c27c4f49ca4b39d",
+    "identity": "github:1418213676:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418213676:root",
+            "repository": "liujianqiao701/dsh-test-framework",
+            "path": "",
+            "revision": "bbb070e5fc5fbe4e72e2d6b530f842f214f9bad0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3496e548daeb5e97ae0a9f669ccb2d738308b992ab30612e693b42130d31ee6f",
+                "code": "bbb070e5fc5fbe4e72e2d6b530f842f214f9bad0",
+                "maintenance": "f33b7a6863d2b350eaeb2035a6e68d2544ce445943198c6b450fae7315472ca2"
+            }
+        }
+    }
+}

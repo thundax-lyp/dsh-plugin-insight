@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "36fa793b53dd5f1f22e60c7a5dfae8af",
+    "identity": "github:1411547680:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411547680:root",
+            "repository": "TheFold060629/dsh-task-assist",
+            "path": "",
+            "revision": "47790951deee4df4872af787c6a44c219fba99b2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "104d309135cbec91fef62b8ff8be8ae175f1c9fb9fb576f7ecaaa158d75ebdc1",
+                "code": "47790951deee4df4872af787c6a44c219fba99b2",
+                "maintenance": "19f346cdfe442d0c9915fd1056254b7e98d29d9cc0a4e9e980a8ba87b8f31f87"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "62e1e23eb7a95fa6004905065a37769c",
+    "identity": "github:1424161884:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424161884:root",
+            "repository": "Vikrant-Aleph/dsh-opencode-bridge",
+            "path": "",
+            "revision": "859da225a2657ea26a2d09511b5f9216e14ed135",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9f715a1ec6ef75ad5141fb90e72cea81cdd04997495244b18e68ae52d4611b52",
+                "code": "859da225a2657ea26a2d09511b5f9216e14ed135",
+                "maintenance": "6cf845466d21ec9eab8ae5e04aaad4417df96e471ae95679fba503c9a71adb61"
+            }
+        }
+    }
+}

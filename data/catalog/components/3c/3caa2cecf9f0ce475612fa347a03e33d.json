@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3caa2cecf9f0ce475612fa347a03e33d",
+    "identity": "github:1424559630:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424559630:root",
+            "repository": "HildebrandYu/dsh-open-with",
+            "path": "",
+            "revision": "d3886d69f4b2cb0bc58cfd6895577cf861da72a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4797c305de62db54784cf32c0655e9879e7749b9dbb93a4bbea8dba12fcc8788",
+                "code": "d3886d69f4b2cb0bc58cfd6895577cf861da72a9",
+                "maintenance": "692d912654b1bfcca411a9b128954f5468c0a7ebb46bd5c68a99064ad4d62419"
+            }
+        }
+    }
+}

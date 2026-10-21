@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "e8c29ef263c4a2840b024926df33387b",
+    "identity": "github:1344673026:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344673026:root",
+            "repository": "vonweller/dsh-skillhub",
+            "path": "",
+            "revision": "c30af43be915eb5c28b8db6f092672c5cbb39b54",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3ea4030ff5f191b35a7ea505f3261885b14ab7409c08668e55df4a9ae786f9c8",
+                "code": "c30af43be915eb5c28b8db6f092672c5cbb39b54",
+                "maintenance": "195d1095446fa5e1a5d3f14456286a747d2a442ed66c8befb7c28de33def7a45"
+            }
+        }
+    }
+}

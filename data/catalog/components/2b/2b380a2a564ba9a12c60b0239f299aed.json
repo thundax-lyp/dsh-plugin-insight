@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "2b380a2a564ba9a12c60b0239f299aed",
+    "identity": "github:1333779860:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333779860:root",
+            "repository": "Yuuz12/dsh-webui-auth",
+            "path": "",
+            "revision": "c82c8a15971a8ac68b6c8b5a11f5a7127b39eb92",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1314d43ffcfc0ff320c88fe6ee25b532958c128e7e17f6e86e3c0461c1c88e76",
+                "code": "c82c8a15971a8ac68b6c8b5a11f5a7127b39eb92",
+                "maintenance": "dfaf65a32df4a1f4935e2f17c12076e68b695cd85eef688966261b2b106a4f88"
+            }
+        }
+    }
+}

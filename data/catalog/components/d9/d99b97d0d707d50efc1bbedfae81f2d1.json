@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d99b97d0d707d50efc1bbedfae81f2d1",
+    "identity": "github:1415669540:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415669540:root",
+            "repository": "pokiimon/dsh-memory-eternal-fork",
+            "path": "",
+            "revision": "3a9492f5d17af3c6eec260e233ebae6af464f0c2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "499e45039c5c1aa323a5543da771a34c36bddb730f3cf51fa1b46580a4c0c9c4",
+                "code": "3a9492f5d17af3c6eec260e233ebae6af464f0c2",
+                "maintenance": "329c41022544fca4184895ffa9a6f73c636ba360143d98998d43a44b35ee30e2"
+            }
+        }
+    }
+}

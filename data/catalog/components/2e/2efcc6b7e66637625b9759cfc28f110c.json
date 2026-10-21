@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2efcc6b7e66637625b9759cfc28f110c",
+    "identity": "github:1363623855:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363623855:root",
+            "repository": "huangfuren/dsh-conversation",
+            "path": "",
+            "revision": "041a8e165a3f1df4ea8018c127de80a538955dcb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "23dff3f458d4d504365e9848bf2fda6c4a48e62aecb729c35d3dd9e867f524ed",
+                "code": "041a8e165a3f1df4ea8018c127de80a538955dcb",
+                "maintenance": "618a5e4490a34f0343ddc99038ebae4e32025e937b0e4cd173914a5a2ed53802"
+            }
+        }
+    }
+}

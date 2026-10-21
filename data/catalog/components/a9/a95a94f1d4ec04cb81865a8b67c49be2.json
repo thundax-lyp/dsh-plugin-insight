@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a95a94f1d4ec04cb81865a8b67c49be2",
+    "identity": "github:1361080830:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361080830:root",
+            "repository": "mo-n/dsh-provider-qoder",
+            "path": "",
+            "revision": "943d54f6bbbd0492e053b2bf6496910b326e1c38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d75623c65c784a8643776c6b50158b37d12b7a0f22827160b785660787cf689a",
+                "code": "943d54f6bbbd0492e053b2bf6496910b326e1c38",
+                "maintenance": "8c7d9f7d8ac640f389571c038038f2db17d74afcd77aab4ed5ca444890e35c6a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5c2cf186805db076da7721433e9d8620",
+    "identity": "github:1402681038:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402681038:root",
+            "repository": "drscrewdriver/dsh-paste-dock",
+            "path": "",
+            "revision": "edd6f2d290b9daa02f0d8355565ecac7b9626621",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5b012a1693d882471300bc15a9fd95da5730c7333de8038dae1d9a7115304b26",
+                "code": "edd6f2d290b9daa02f0d8355565ecac7b9626621",
+                "maintenance": "d01fa24ba6754b8b065c835c91e72a6cbaf672f0f63755f15cf9b3a6e1e13660"
+            }
+        }
+    }
+}

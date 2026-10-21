@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7903225afde0b112c824591a5104f264",
+    "identity": "github:1415654468:packages-dsh-hiddify",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415654468:packages-dsh-hiddify",
+            "repository": "Cjrrrrrrrr/dsh-plugins",
+            "path": "packages/dsh-hiddify",
+            "revision": "3d546b1dcd534ba412f5eaa7989368e0d5f5e006",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e7653e8e6f890981bd3acc4ab6b65ef706b66362ea5924017d513ff90f510b23",
+                "code": "3d546b1dcd534ba412f5eaa7989368e0d5f5e006",
+                "maintenance": "f6251047ad6adaa3f9a5df9b74d14707738f9fb9045ec478bbf4f4ab03838c03"
+            }
+        }
+    }
+}

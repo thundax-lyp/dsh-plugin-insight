@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fc37204280021be5853f1fd207823efb",
+    "identity": "github:1384481279:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384481279:root",
+            "repository": "azazo1/dsh-reduce-effects",
+            "path": "",
+            "revision": "e5848b1c9d3edb9c3883f8fdece40648ea148d6e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "31bca6521b803652684c248fa2dc8376d61785386857a24081f46e8990ff2209",
+                "code": "e5848b1c9d3edb9c3883f8fdece40648ea148d6e",
+                "maintenance": "7ff2ae484bfdae0ee421cd1c8b914161c1c0c7d87eddb3450314c4354ce6c922"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "95311618d6e33ae18c6877d4b576bb28",
+    "identity": "github:1346676388:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346676388:root",
+            "repository": "Lorodn4x/dsh-voice",
+            "path": "",
+            "revision": "5c9ebd9d662b647c3e38ac3eb3f604dae9dcd832",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ac8fa4dd0f4f4de7c1abf9b4466e5160c6817faacdf9f87c24606ca5b05af415",
+                "code": "5c9ebd9d662b647c3e38ac3eb3f604dae9dcd832",
+                "maintenance": "4287dbf9b1f8b6b37e36d4d81d002c0099f52c63a0acedad9e81b9dee8fbd264"
+            }
+        }
+    }
+}

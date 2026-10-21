@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3cfd0fa12675a5c0d8b017e8d7b4fe88",
+    "identity": "github:1338344149:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338344149:root",
+            "repository": "Tencent-TDS/dsh-kuikly-expert",
+            "path": "",
+            "revision": "e4969568984a20ce7af0be53ef6c3002e9fdfb27",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "13050f1eb1b81b5a0ffd12e8f080ad617b73ba6d7c6bac2028d954769521df6f",
+                "code": "e4969568984a20ce7af0be53ef6c3002e9fdfb27",
+                "maintenance": "43849b8674b60b8bfc6be19999f6d8f5e8c48434d4929d9b3bc9328511d493cc"
+            }
+        }
+    }
+}

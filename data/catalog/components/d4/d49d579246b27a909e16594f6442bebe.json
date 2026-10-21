@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d49d579246b27a909e16594f6442bebe",
+    "identity": "github:1356892982:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356892982:root",
+            "repository": "MaxHou-infinity/cli-doctor",
+            "path": "",
+            "revision": "3b5604875d22cf2b5065aa0d2cd5ff9ba77bd407",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "572a34429250ab15da108a3dca66a22e8300e1ada7dbf3abb6b86d9c9367e47b",
+                "code": "3b5604875d22cf2b5065aa0d2cd5ff9ba77bd407",
+                "maintenance": "1006a63dd1f317262f743c20a2629eb5833571a12512173a1c480d26e877e3fb"
+            }
+        }
+    }
+}

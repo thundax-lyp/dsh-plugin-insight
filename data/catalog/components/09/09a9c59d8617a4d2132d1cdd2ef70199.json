@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "09a9c59d8617a4d2132d1cdd2ef70199",
+    "identity": "github:1336044501:packages-dsh-verify-isolated",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336044501:packages-dsh-verify-isolated",
+            "repository": "wingsky-1/dsh-plugin-hub",
+            "path": "packages/dsh-verify-isolated",
+            "revision": "887d3b3ab83a8104fb9bb147bc6e4d9af2718d29",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d01efa7869d1f28e73fb99758a16c655d6355322eeda3909aa4f935225f46739",
+                "code": "887d3b3ab83a8104fb9bb147bc6e4d9af2718d29",
+                "maintenance": "244b6709d224f2f41c21823880dfe4fcde29ad5089d98328b2a3cabd1c16a29c"
+            }
+        }
+    }
+}

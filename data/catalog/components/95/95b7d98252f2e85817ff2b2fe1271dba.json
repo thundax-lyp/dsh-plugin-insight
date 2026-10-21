@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "95b7d98252f2e85817ff2b2fe1271dba",
+    "identity": "github:1336911755:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336911755:root",
+            "repository": "faith1688/dsh-usage-meter-harness",
+            "path": "",
+            "revision": "5bf6ae1dba8372a86de1cdae16ac256d37dce6d9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1ddc3ccff315e87094e7a68accabf18b5ba0974f7db88917291a1dcc1be49a52",
+                "code": "5bf6ae1dba8372a86de1cdae16ac256d37dce6d9",
+                "maintenance": "37347ec906c2db8e03de03aff4273015e959214923d9bb8a08c094a068f79830"
+            }
+        }
+    }
+}

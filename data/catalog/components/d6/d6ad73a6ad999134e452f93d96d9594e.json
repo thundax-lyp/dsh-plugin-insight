@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d6ad73a6ad999134e452f93d96d9594e",
+    "identity": "github:1401476500:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401476500:root",
+            "repository": "QingYunA/answer-me-with-html",
+            "path": "",
+            "revision": "76c3c6d39270138f3dfa6d577a3afb02178b3a1d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bf5e99710f3a40d6edc7787e669c5b5e9a08ebf1e8d9a9bf24c1c70e96ff8ae1",
+                "code": "76c3c6d39270138f3dfa6d577a3afb02178b3a1d",
+                "maintenance": "858b9c30d22d540675ece59a6c3cd2365375ff5c30adf036bfb1421e47578219"
+            }
+        }
+    }
+}

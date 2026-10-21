@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7277e5e491ba7912611f9403e2c32fcf",
+    "identity": "github:1422910686:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422910686:root",
+            "repository": "Archaofan/dsh-source-deck",
+            "path": "",
+            "revision": "eabe490b860a817c39258f7deac368a011ded6ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f7bd7cb0d741f6464ac07479b1489dcc0e04cbe0ca64edd9093e79da34c722d0",
+                "code": "eabe490b860a817c39258f7deac368a011ded6ea",
+                "maintenance": "3dff7062ec0b17335b6828ffdcd0a4f9772c193caa06aa4c86a67d99ccd0d751"
+            }
+        }
+    }
+}

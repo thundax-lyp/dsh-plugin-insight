@@ -1,0 +1,450 @@
+{
+    "schema_version": 3,
+    "id": "2ac4a4bfa9fdbbd8538b9e6514011efa",
+    "identity": "github:1340492214:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1340492214:root",
+            "repository_id": 1340492214,
+            "component_id": "root",
+            "repository": "AKS1st/dock-files",
+            "path": "",
+            "aliases": [],
+            "name": "dock-files",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "983fcdf396ccc238853c54eba420139aa7d6b1312fc1023e569f2561b7161e56",
+                "code": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "maintenance": "99d184e2cbeea68029862dea12ec2ff34a236aeeca6a440cad47a68a50155f77"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1340492214-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:36:03.703Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1340492214-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/README.md",
+                    "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                    "captured_at": "2026-10-21T05:36:03.703Z",
+                    "summary": "为Dock提供文件树、viewer分派、文件变更与上传下载通道。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-files/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1340492214-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts",
+                    "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                    "captured_at": "2026-10-21T05:36:03.703Z",
+                    "summary": "核查 src/index.ts、src/client/index.ts、src/client/openBridge.ts；主机/wb-files路由进行工作区解析、文件树、创建/复制/移动/删除及传输；客户端提供ctx.files、图标/viewer注册并把原有openResource资源桥接至workbench.openPath。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-files/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要从会话工作区浏览文件、在Dock打开并管理文件的用户。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "主机/wb-files路由进行工作区解析、文件树、创建/复制/移动/删除及传输；客户端提供ctx.files、图标/viewer注册并把原有openResource资源桥接至workbench.openPath。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "多种文件操作与大上传维护面大，服务器磁盘/带宽、ZIP内存和浏览器任务状态均有成本；无模型token调用。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用隔离工作区核对根目录与删除/传输行为，再接入重要文件。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "有减少文件入口重复操作的可能，未测可靠性、传输吞吐或恢复收益。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "realpath约束、上传大小控制、viewer注册释放与原生打开回退有具体实现；权限分支和资源身份要一致验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将文件资源入口、可扩展viewer和传输反馈组成文件域，使工作台扩展无需重复文件树与路径打开逻辑。服务端真实文件副作用而非模型提示；复制来的辅助方法不计独创。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "多数请求sessionCwdOf在会话缺失时退到process.cwd，而流式上传严格要求会话；openBridge的probePath请求未带sessionId，可能按另一根目录探测并回退原生打开。任务在内存中，暂停恢复不是进程重启续传；递归删除具有实际副作用。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：每个探测与变更携带明确会话资源根、缺失即拒绝，可减少跨工作区误判。以不同cwd会话、失效session、绝对/资源URL、重启传输矩阵检查目标一致性和误操作率。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:03.703Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:36:03.703Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "reviewed_at": "2026-10-21T05:36:03.703Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492214:root",
+                        "area": "code",
+                        "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty=9：文件管理与桥接属成熟模式。 mechanism=15：文件域及变更传输真实实现。 transferability=10：viewer机制可供其他扩展复用。 simplification=8：统一入口省步骤但操作面大。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=18：浏览打开与变更闭环。 delivery=15：会话回退和重启恢复需验证。 reach=10：Dock文件用户，受工作区契约限制。 economics=4：无性能与维护收益对照。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492214-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "Dock文件管理用户应先统一session根解析与缺会话拒绝；probe未带sessionId和process.cwd回退可能操作另一根，重要文件暂缓。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "工作区浏览管理及传输有明确需求。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "树、viewer桥接和操作聚合减少重复入口。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核多路由根解析差异和内存任务，未验可靠恢复。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "递归删除与错根风险叠加ZIP/上传资源成本，当前核心归属需修。"
+                    }
+                },
+                "score": 60,
+                "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1340492214-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492214:root",
+                        "area": "code",
+                        "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1340492214:root",
+            "repository": "AKS1st/dock-files",
+            "path": "",
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "fingerprints": {
+                "directory": "983fcdf396ccc238853c54eba420139aa7d6b1312fc1023e569f2561b7161e56",
+                "code": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "maintenance": "99d184e2cbeea68029862dea12ec2ff34a236aeeca6a440cad47a68a50155f77"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "18f5e605acc50319c928f5b9bf4fcea110c53f24e61bb08d075c3140044ae016"
+        },
+        "publication.metadata": "data/plugins/aks1st--dock-files/META.json",
+        "publication.summaries": {
+            "text": "为Dock提供文件树、viewer分派、文件变更与上传下载通道。",
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "source_url": "https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "items": {
+                "界面": "文件树、传输视图与可扩展文件viewer",
+                "Host 路由": "/wb-files文件查询、变更和传输",
+                "后台": "客户端files注册与打开桥接服务"
+            }
+        },
+        "publication.advice": {
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "text": "先用隔离工作区核对根目录与删除/传输行为，再接入重要文件。"
+        },
+        "registry": "data/plugins/aks1st--dock-files",
+        "reports": "# dock-files\n\n> 为Dock提供文件树、viewer分派、文件变更与上传下载通道。\n\n## 使用建议\n\n先用隔离工作区核对根目录与删除/传输行为，再接入重要文件。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：需要从会话工作区浏览文件、在Dock打开并管理文件的用户。\n- **亮点**：将文件资源入口、可扩展viewer和传输反馈组成文件域，使工作台扩展无需重复文件树与路径打开逻辑。服务端真实文件副作用而非模型提示；复制来的辅助方法不计独创。\n- **思考**：多数请求sessionCwdOf在会话缺失时退到process.cwd，而流式上传严格要求会话；openBridge的probePath请求未带sessionId，可能按另一根目录探测并回退原生打开。任务在内存中，暂停恢复不是进程重启续传；递归删除具有实际副作用。\n- **建议**：未验证假设：每个探测与变更携带明确会话资源根、缺失即拒绝，可减少跨工作区误判。以不同cwd会话、失效session、绝对/资源URL、重启传输矩阵检查目标一致性和误操作率。\n\n## 场景与替代办法\n\n参照原生文件栏、系统文件管理器与作者注明复用的dsh-better-sidebar文件辅助代码；增量是统一files服务、viewer注册和Dock打开桥接。\n\n## 能力清单\n\n- **界面**：文件树、传输视图与可扩展文件viewer\n- **Host 路由**：/wb-files文件查询、变更和传输\n- **后台**：客户端files注册与打开桥接服务\n\n## 依赖与流程\n\n主机/wb-files路由进行工作区解析、文件树、创建/复制/移动/删除及传输；客户端提供ctx.files、图标/viewer注册并把原有openResource资源桥接至workbench.openPath。\n\n宿主webServer/sessions/webRuntime与Dock workbench；fflate用于ZIP，具体编辑/预览由注册viewer扩展承担。\n\n选会话→懒加载树→viewer匹配打开路径；变更走主机文件操作，上传/下载显示内存任务并支持当次暂停取消。\n\n## 成本与效果\n\n多种文件操作与大上传维护面大，服务器磁盘/带宽、ZIP内存和浏览器任务状态均有成本；无模型token调用。\n\n有减少文件入口重复操作的可能，未测可靠性、传输吞吐或恢复收益。\n\n## 核心贡献\n\n将文件资源入口、可扩展viewer和传输反馈组成文件域，使工作台扩展无需重复文件树与路径打开逻辑。服务端真实文件副作用而非模型提示；复制来的辅助方法不计独创。\n\n## 关键质疑\n\n多数请求sessionCwdOf在会话缺失时退到process.cwd，而流式上传严格要求会话；openBridge的probePath请求未带sessionId，可能按另一根目录探测并回退原生打开。任务在内存中，暂停恢复不是进程重启续传；递归删除具有实际副作用。\n\n## 工程亮点\n\nrealpath约束、上传大小控制、viewer注册释放与原生打开回退有具体实现；权限分支和资源身份要一致验收。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts)、[src/client/index.ts](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/index.ts)、[src/client/openBridge.ts](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/openBridge.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：每个探测与变更携带明确会话资源根、缺失即拒绝，可减少跨工作区误判。以不同cwd会话、失效session、绝对/资源URL、重启传输矩阵检查目标一致性和误操作率。\n\n在隔离树验证会话根、软链接、流式取消清理和递归删除确认；不将内存resume称耐久恢复。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d35a94cbd0fb4093d36d448628ad907074afcb2efdcd9d86b150d9695d4b473b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 3600 | 3300 | 314 | — |\n| .md | source | 2 | 135 | — | — | 2500 |\n| .ts | source | 10 | 3231 | 2499 | 498 | — |\n| .tsx | source | 2 | 1476 | 1281 | 121 | — |\n| .ts | test | 1 | 143 | 132 | 15 | — |\n| .mjs | source | 1 | 48 | 38 | 8 | — |\n\n排除 12 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dock-files](https://github.com/AKS1st/dock-files)\n- **版本号**：0.4.0（[固定提交 d24224be](https://github.com/AKS1st/dock-files/tree/d24224beb8cf024a9c6e79fe97445001d73150b8)）\n- **版本日期**：2026-10-01（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/client/index.ts、src/client/openBridge.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：在隔离树验证会话根、软链接、流式取消清理和递归删除确认；不将内存resume称耐久恢复。\n",
+        "metadata": {
+            "repository": "AKS1st/dock-files",
+            "repository_id": 1340492214,
+            "captured_at": "2026-10-21T05:33:32.052Z",
+            "window_start": "2026-09-21T05:33:32.052Z",
+            "stars": 5,
+            "pushed_at": "2026-09-30T18:55:30Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D1AA:4DAEE:50A30A:56AE29:6AD84EAD and timestamp 2026-10-21 05:33:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D2A2:10A7AB:50C59B:56CF8F:6AD84EAE and timestamp 2026-10-21 05:33:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A32.052Z..2026-10-21T05%3A33%3A32.052Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D3AC:50F71:5183DD:578B3E:6AD84EAF and timestamp 2026-10-21 05:33:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A32.052Z..2026-10-21T05%3A33%3A32.052Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D4CA:258D23:571474:5D1D81:6AD84EB0 and timestamp 2026-10-21 05:33:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A32.052Z..2026-10-21T05%3A33%3A32.052Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D626:27CB2C:553151:5B3B58:6AD84EB1 and timestamp 2026-10-21 05:33:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dock-files",
+                "captured_at": "2026-10-21T05:33:37.603Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1384,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-files",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-23T06:01:11.578Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dock-files",
+                    "error": null,
+                    "latest_version": "0.4.0",
+                    "latest_published_at": "2026-09-30T18:55:07.611Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1340492214:root",
+            "repository": "AKS1st/dock-files",
+            "path": "",
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "983fcdf396ccc238853c54eba420139aa7d6b1312fc1023e569f2561b7161e56",
+                "code": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "maintenance": "99d184e2cbeea68029862dea12ec2ff34a236aeeca6a440cad47a68a50155f77"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7cbf3c234c4eff9f148bfb1ecb25a3e5",
+    "identity": "github:1329448333:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1329448333:root",
+            "repository": "HuanLinOTO/dsh-plugin-auto-blame",
+            "path": "",
+            "revision": "7a51349548da0c1fffee5b893ec45f4f9fa9a54b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7d9690f12240d678eb4955afe2822ee92a3073b4684d3ba4a58604ace1a5b357",
+                "code": "7a51349548da0c1fffee5b893ec45f4f9fa9a54b",
+                "maintenance": "4b988bb3fe21dc588f8f5e34391e6c13a87e1be5e82d708f1cae6d26747b42a3"
+            }
+        }
+    }
+}

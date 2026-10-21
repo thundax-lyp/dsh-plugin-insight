@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d88ef0b2749ba487aaf2ced1cdaf1f9",
+    "identity": "github:1337172310:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337172310:root",
+            "repository": "NattoCB/dsh-plugin-memory",
+            "path": "",
+            "revision": "a83fccef21f74d5242df5df0ab5c0be7ae8ddf8b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4761b3c7029d87a26f39e18fb0e9d2c7bd22a1a6f9075c1173004a9c9732cd5e",
+                "code": "a83fccef21f74d5242df5df0ab5c0be7ae8ddf8b",
+                "maintenance": "8cc39d27c3091e40d6bc11b19746a4bead292d9ddd28102ca1e5310de9d933eb"
+            }
+        }
+    }
+}

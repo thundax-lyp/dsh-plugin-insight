@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "632acabf084ec2ea94aa7b14927b9aa4",
+    "identity": "github:1376777535:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1376777535:root",
+            "repository_id": 1376777535,
+            "component_id": "root",
+            "repository": "2404723600/dsh-router-loomy",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-router-loomy",
+            "entry_type": "plugin",
+            "technical_category": "model-provider",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "e52daf6aa97e4acd7dfb420c89e5dda09cc4f0bf43adda0037968de2d7b24e14",
+                "code": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                "maintenance": "f009ffe1139278eae0c1230c0e61d02bd9d5e55e04d9caea112a36f2f9770c67"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1376777535-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:53:39.340Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1376777535-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/README.md",
+                    "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                    "captured_at": "2026-10-20T10:53:39.340Z",
+                    "summary": "将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2404723600--dsh-router-loomy/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1376777535-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/index.ts",
+                    "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                    "captured_at": "2026-10-20T10:53:39.340Z",
+                    "summary": "核查 src/index.ts、src/accounts.ts、src/provider.ts、src/api/sse.ts；src/index.ts向router.suppliers追加工厂；accounts.ts扫描本机auth-session.json并TTL缓存，provider.ts处理通道差异；api/sse.ts透传字节同时检查finish_reason/usage和迟到错误，通用选号交给router核心。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2404723600--dsh-router-loomy/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读供应商注册、账号文件读取、provider编排与SSE判据；未访问实际auth-session、未运行上游smoke，未证明当前所有Loomy版本契约相同。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "src/index.ts向router.suppliers追加工厂；accounts.ts扫描本机auth-session.json并TTL缓存，provider.ts处理通道差异；api/sse.ts透传字节同时检查finish_reason/usage和迟到错误，通用选号交给router核心。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读供应商注册、账号文件读取、provider编排与SSE判据；未访问实际auth-session、未运行上游smoke，未证明当前所有Loomy版本契约相同。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "以router供应商工厂接入而非另注册完整llm系统，结构镜像contract减少构建对宿主包依赖，但运行契约漂移仍需适配；Windows客户端探测路径占主要说明。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需要Loomy登录、router核心与profile装配；持续消耗上游额度、客户端维护、失效会话和断流重试人工，价格/收益未核算。自动读取避免复制密钥但增加本机客户端状态依赖。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少手动粘贴会话与通道差异维护，把共同路由逻辑留给核心；可靠性收益取决于非公开客户端存储和上游SSE稳定，未有同条件合格率对照。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "api/sse.ts在原始流透传旁嗅探错误并扣住不完整[DONE]，将字节保真和成功语义分开，值得借鉴；accounts.ts读取文件失败可回退上次成功缓存，这利于短暂写入但可能继续使用旧身份。移植要定义缓存有效性和核心重试契约。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1376777535:root",
+                            "area": "code",
+                            "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:39.340Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:53:39.340Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                "reviewed_at": "2026-10-20T10:53:39.340Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1376777535:root",
+                        "area": "code",
+                        "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty：已有router范式的供应商适配，小幅；mechanism：区分带DONE截断与上限为实质机制增量，局限于观测契约；transferability：流成功语义守卫可迁移，实质；simplification：复用核心只留差异，小幅。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：自动读登录态减少粘贴，小幅；delivery：提供同类模型答案而非新业务成果，小幅；reach：已有Loomy用户接入DSH，小幅；economics：少手动维护但重复流成本未知，小幅机制依据。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1376777535-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有Loomy和router环境者可用非敏感只读问题试用；验证账号、流收尾和重登，断流时核查重复请求。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "既有Loomy用户复用模型通道明确，通用用户无需新依赖。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "自动读取会话并适配SSE省复制，核心路由仍归router。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "账户TTL与finish_reason守卫已查，合法格式变化可能误判。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "依赖非公开客户端状态与上游额度，失效登录及重试有持续负担。"
+                    }
+                },
+                "score": 46,
+                "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1376777535-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1376777535:root",
+                        "area": "code",
+                        "fingerprint": "ccabca348ca2194287f0770ce348283fdb8bf3d8"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1376777535:root",
+            "repository": "2404723600/dsh-router-loomy",
+            "path": "",
+            "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+            "fingerprints": {
+                "directory": "e52daf6aa97e4acd7dfb420c89e5dda09cc4f0bf43adda0037968de2d7b24e14",
+                "code": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                "maintenance": "f009ffe1139278eae0c1230c0e61d02bd9d5e55e04d9caea112a36f2f9770c67"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "5f643846bcdb57d8e4bc50c974cbecef6b7cc62630db58c69dc32e9c82d34dfb"
+        },
+        "publication.metadata": "data/plugins/2404723600--dsh-router-loomy/META.json",
+        "publication.summaries": {
+            "text": "将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。",
+            "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+            "source_url": "https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+            "items": {
+                "后台": "router.suppliers的Loomy工厂、本机登录态读取及SSE收尾守卫",
+                "Host 路由": "Loomy客户端状态与登录操作页面路由"
+            }
+        },
+        "publication.advice": {
+            "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+            "text": "已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。"
+        },
+        "registry": "data/plugins/2404723600--dsh-router-loomy",
+        "reports": "# dsh-router-loomy\n\n> 将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。\n\n## 研究范围\n\n- **仓库**：[2404723600/dsh-router-loomy](https://github.com/2404723600/dsh-router-loomy)\n- **版本号**：0.2.0（[固定提交 ccabca34](https://github.com/2404723600/dsh-router-loomy/tree/ccabca348ca2194287f0770ce348283fdb8bf3d8)）\n- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已确认本地登录态适配与SSE完整性守卫，作者自称OpenAI兼容不等于官方通道稳定承诺；未打开客户端、未读用户凭证或调用Loomy，截断判据迁移未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。\n- **亮点**：作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。\n- **思考**：缺finish_reason是否总能判断坏流并安全重试？sse.ts用completion_tokens>=maxTokens区分撞上限，否则判截断，只有推理无正文也判失败；这匹配作者观测，但合法上游格式变化或usage漏报可能误判。强制核心重试还会增加费用，已产生工具副作用的流需格外核对，不能把重试等同无损补齐。\n- **建议**：已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。\n\n采用建议：已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。\n\n## 核心贡献\n\n作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。\n\n## 关键质疑\n\n缺finish_reason是否总能判断坏流并安全重试？sse.ts用completion_tokens>=maxTokens区分撞上限，否则判截断，只有推理无正文也判失败；这匹配作者观测，但合法上游格式变化或usage漏报可能误判。强制核心重试还会增加费用，已产生工具副作用的流需格外核对，不能把重试等同无损补齐。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：把流完整性判据按上游版本存为兼容档，并向核心同时上报原始收尾事实与判定置信度，允许“结果未知”而非立即重试。来自当前硬编码判据和会话TTL读取；代价是核心契约扩展及版本样本维护。\n\n保留脱敏正常/截断/撞上限/纯推理/迟到错误SSE样本，固定核心版本比较误判率、重复请求与最终完整回答；再换客户端版本验证会话更新。兼容档若不能降低误重试或增加过多未知结果，则否定假设。\n\n## 场景与替代办法\n\n面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。\n\n参照手工OpenAI兼容端点和traework适配器；本项是供应商差异适配，核心路由贡献不重复归属，也不把客户端账号可读当官方授权稳定性证据。\n\n## 依赖与流程\n\n必需dsh-router核心、供应商契约及Loomy有效登录态/网络；本机自动读取依赖安装目录布局，可手填会话作为降级，仍需保护credential store。状态页需webServer，变更操作含进程级CSRF令牌。\n\n已登录客户端→注册供应商→扫描/缓存会话→核心选号→插件加追踪头发请求→透传/聚合响应→守卫判断收尾并报告迟到错误→核心决定重试/冷却。登录失效需客户端重登或替换Key。\n\n## 成本与效果\n\n首次需要Loomy登录、router核心与profile装配；持续消耗上游额度、客户端维护、失效会话和断流重试人工，价格/收益未核算。自动读取避免复制密钥但增加本机客户端状态依赖。\n\n减少手动粘贴会话与通道差异维护，把共同路由逻辑留给核心；可靠性收益取决于非公开客户端存储和上游SSE稳定，未有同条件合格率对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3ba40aa237d7de3df8a5c39c89e9d507f8cb59cfb060c8feb6c8bde7f06306cd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 321 | — | — | 3040 |\n| .mjs | source | 1 | 109 | 87 | 14 | — |\n| .ts | source | 16 | 3185 | 2180 | 779 | — |\n| .ts | test | 6 | 771 | 618 | 85 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：router.suppliers的Loomy工厂、本机登录态读取及SSE收尾守卫\n- **Host 路由**：Loomy客户端状态与登录操作页面路由\n\n## 工程亮点\n\napi/sse.ts在原始流透传旁嗅探错误并扣住不完整[DONE]，将字节保真和成功语义分开，值得借鉴；accounts.ts读取文件失败可回退上次成功缓存，这利于短暂写入但可能继续使用旧身份。移植要定义缓存有效性和核心重试契约。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/accounts.ts、src/provider.ts、src/api/sse.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读供应商注册、账号文件读取、provider编排与SSE判据；未访问实际auth-session、未运行上游smoke，未证明当前所有Loomy版本契约相同。\n- 下一步：保留脱敏正常/截断/撞上限/纯推理/迟到错误SSE样本，固定核心版本比较误判率、重复请求与最终完整回答；再换客户端版本验证会话更新。兼容档若不能降低误重试或增加过多未知结果，则否定假设。\n\n## 源码索引\n\n- [src/index.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/index.ts)\n- [src/accounts.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/accounts.ts)\n- [src/provider.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts)\n- [src/api/sse.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/api/sse.ts)\n",
+        "metadata": {
+            "repository": "2404723600/dsh-router-loomy",
+            "repository_id": 1376777535,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-16T03:11:52Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:B3C47:14698C:2215D9:6AD849EF and timestamp 2026-10-21 05:13:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:144D7D:21DE97:6AD849F0 and timestamp 2026-10-21 05:13:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14AD95:22479A:6AD849F0 and timestamp 2026-10-21 05:13:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:E4386:151BBE:22AA6F:6AD849F0 and timestamp 2026-10-21 05:13:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2404723600%2Fdsh-router-loomy%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13DF42:2176CD:6AD849F0 and timestamp 2026-10-21 05:13:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-router-loomy",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1685,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-router-loomy",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-19T08:14:06.400Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-router-loomy",
+                    "error": null,
+                    "latest_version": "0.2.0",
+                    "latest_published_at": "2026-10-16T03:28:43.789Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                "current_revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1376777535:root",
+            "repository": "2404723600/dsh-router-loomy",
+            "path": "",
+            "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e52daf6aa97e4acd7dfb420c89e5dda09cc4f0bf43adda0037968de2d7b24e14",
+                "code": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+                "maintenance": "f009ffe1139278eae0c1230c0e61d02bd9d5e55e04d9caea112a36f2f9770c67"
+            }
+        }
+    }
+}

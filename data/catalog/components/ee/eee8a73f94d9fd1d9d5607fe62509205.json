@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eee8a73f94d9fd1d9d5607fe62509205",
+    "identity": "github:1372678150:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372678150:root",
+            "repository": "lemonxiny55/dsh-composition-doctor",
+            "path": "",
+            "revision": "58acdbf5a92d71270c859b0418b20c5b65ac6d65",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "014f2377caa81f6a14d5b3104333fd63082c6fd0dbe696259543c4e3b3cd313e",
+                "code": "58acdbf5a92d71270c859b0418b20c5b65ac6d65",
+                "maintenance": "7ea7f726d30c65e6251c8a136420161d61aead840804b596aba0c37068f0619c"
+            }
+        }
+    }
+}

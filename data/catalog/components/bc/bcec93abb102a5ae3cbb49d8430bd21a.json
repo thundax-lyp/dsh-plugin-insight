@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bcec93abb102a5ae3cbb49d8430bd21a",
+    "identity": "github:1384691694:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384691694:root",
+            "repository": "Jaylor-Wang/dsh-awesome-agent-preset",
+            "path": "",
+            "revision": "a2d8ba9ee72062f393b7df2a60303ee1481e225f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "21721ef5182ea655b6258e0811c4c3abaf5d410841eb37f05b2f63d04d9bb85f",
+                "code": "a2d8ba9ee72062f393b7df2a60303ee1481e225f",
+                "maintenance": "264de17313a572800f9b1554a5636c39b818c996a870d85b94285fef1b4ca2cb"
+            }
+        }
+    }
+}

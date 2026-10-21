@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4959152efd720a82bb621193cbeb55ae",
+    "identity": "github:1335123674:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335123674:root",
+            "repository": "solstice621/dsh-token-usage-dashboard",
+            "path": "",
+            "revision": "a72d6c3b706e370cb3a88229d3b58eb1faab2438",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e13796e8ab781e9de5539cc5a27591222e0dab1788929ee70562391a85adbb2a",
+                "code": "a72d6c3b706e370cb3a88229d3b58eb1faab2438",
+                "maintenance": "3ccf20ac0634767c2bafbac753885a52cef175bf4a67d0714621a65bb969298d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d5c9a30325cf09ed2c911861734afd82",
+    "identity": "github:1404620005:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404620005:root",
+            "repository": "flycucu/dsh-icon-changer",
+            "path": "",
+            "revision": "d6c0b5380b1ec4bf6f177da9e3a838fe2dd9f807",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "90b5eaab33d58f0888f95dc849310ec0df4939c3fe4dfcfbe2488e786b9dcf3d",
+                "code": "d6c0b5380b1ec4bf6f177da9e3a838fe2dd9f807",
+                "maintenance": "458617fbabb0ad82d0ed2b9255eb81389a14d219fa2b1e47cb7e807b311d60d9"
+            }
+        }
+    }
+}

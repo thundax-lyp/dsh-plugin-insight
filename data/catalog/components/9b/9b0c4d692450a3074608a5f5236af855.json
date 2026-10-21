@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9b0c4d692450a3074608a5f5236af855",
+    "identity": "github:1425442522:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425442522:root",
+            "repository": "FLL123-Arch/game-crash-doctor",
+            "path": "",
+            "revision": "bf378b2911afd75530e08ad7968c9fa068479940",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "76e08e5dd6ad2c69ae13e3f5a1cef5775bfb36167153f18c60ae7c83fa28a81c",
+                "code": "bf378b2911afd75530e08ad7968c9fa068479940",
+                "maintenance": "221ebb84769e1fb9847b76a94fbe0535d5d48912529bd79bbbd5e984dfe576d2"
+            }
+        }
+    }
+}

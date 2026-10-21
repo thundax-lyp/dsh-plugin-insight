@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "979a91ae3c29c4a8d17124bf81ba4dc7",
+    "identity": "github:1344805612:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344805612:root",
+            "repository": "Modellix/dsh-modellix",
+            "path": "",
+            "revision": "b402e13a59392002ca5655f455bd611afa8600ec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e88d327377cfc7fd756a2b92fc409f569355f5c777474880f2b82ef7733e6b4f",
+                "code": "b402e13a59392002ca5655f455bd611afa8600ec",
+                "maintenance": "8fe5557859f6c972967723cf363eddd73b023f215fa4fdb222285a8d624cb051"
+            }
+        }
+    }
+}

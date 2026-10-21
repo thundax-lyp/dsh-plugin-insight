@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "965a99ef4e885367e8125e144e16e0f1",
+    "identity": "github:1348272367:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348272367:root",
+            "repository": "FranklinZaneDurant/agent-discipline",
+            "path": "",
+            "revision": "b431b1bca1056659a901cb7d45d5c8a2f3b9ab94",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "24a32760204b2d89d5054095c40c8de31ffa9d766f1a5252b985850c1421d4c7",
+                "code": "b431b1bca1056659a901cb7d45d5c8a2f3b9ab94",
+                "maintenance": "640fe5251999faaa3249733f24e3cccde4fd031727d733dd79664682da9a0a3a"
+            }
+        }
+    }
+}

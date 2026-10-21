@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d98ddaf8f10af3a32f2652e8b8fa8d46",
+    "identity": "github:1334115490:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334115490:root",
+            "repository": "Karbo123/DSH-EvoResearch",
+            "path": "",
+            "revision": "7453572a3a03be08dfb681e609bce8f4faca0698",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "29275b152e7960bdad5399469c64301113e905e5789685085233e4829ca9bb18",
+                "code": "7453572a3a03be08dfb681e609bce8f4faca0698",
+                "maintenance": "c446a6d9f3a0db3e10e7671b9eddf146a7c4351018baddaba43e41ac4d7fac3c"
+            }
+        }
+    }
+}

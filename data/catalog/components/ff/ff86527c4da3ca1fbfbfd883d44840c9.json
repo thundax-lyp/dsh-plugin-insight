@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff86527c4da3ca1fbfbfd883d44840c9",
+    "identity": "github:1335358790:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335358790:root",
+            "repository": "YeqingTang/dsh-session-flow",
+            "path": "",
+            "revision": "61c1a150596ada2260250dabe1c1f18e9a29da80",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "99df37b7de412943760169d6d66925ce1393ec9e6c4d02c3f1db6db47d3068f0",
+                "code": "61c1a150596ada2260250dabe1c1f18e9a29da80",
+                "maintenance": "a1dad0f056cb7c6f3f88a8aba1316a97ffa41563f34b86b41b24198b19b761cb"
+            }
+        }
+    }
+}

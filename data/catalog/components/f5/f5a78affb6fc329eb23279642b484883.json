@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f5a78affb6fc329eb23279642b484883",
+    "identity": "github:1362562946:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362562946:root",
+            "repository": "PerryLink/dsh-autotier",
+            "path": "",
+            "revision": "93ed1fce32837aa68e9709bdb2559879fd7407d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6a1a6e6da30814cdd3fd0093d054dab22edeaf5bb0864f351855c7ef1da915b7",
+                "code": "93ed1fce32837aa68e9709bdb2559879fd7407d8",
+                "maintenance": "ecc60e12975e520ae72594f96635fbc6c50a5985d31988e970834056d01670d9"
+            }
+        }
+    }
+}

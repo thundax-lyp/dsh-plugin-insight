@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4d64f7c76853b30b0d5f0fa5cb3fe9d7",
+    "identity": "github:1344872469:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344872469:root",
+            "repository": "anonRTtty/dsh-api-balance-displayer-plugin",
+            "path": "",
+            "revision": "5789e998777a9cc53254a3bdb97598adbe0d2423",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9736c63399fba172fc0cd4bad58896114554547dcc27672ba0a7bbc90f93af49",
+                "code": "5789e998777a9cc53254a3bdb97598adbe0d2423",
+                "maintenance": "46b5646f65edede03555387dd966c9326dcb9bccb4a9ccfbf761440194161389"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a9d4f2c73b387116002a37230de7292f",
+    "identity": "github:1423970512:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423970512:root",
+            "repository": "shijiacheng520/dsh-skill-groups",
+            "path": "",
+            "revision": "cce638c2f523e2db998308c52d3cb8ac4d61a5bf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bbb01cfe2695d3b0220f8aefd7dcc4373289d0499138c84988576e5e508d4c72",
+                "code": "cce638c2f523e2db998308c52d3cb8ac4d61a5bf",
+                "maintenance": "e314345e755830486f7b3951b1269e331bae108f110708b3262eea8032479016"
+            }
+        }
+    }
+}

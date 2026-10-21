@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "30140eddbb0b697b688e6838c0088dbf",
+    "identity": "github:1334369479:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334369479:root",
+            "repository": "better-er/dsh-tool-autoexpand",
+            "path": "",
+            "revision": "9c01f235b7288d1bd74191755908a415aec27e0d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "28070f403c5039cfa18a9ca16ef4e85d092af55fec99e3a8644eb873b58e1fbc",
+                "code": "9c01f235b7288d1bd74191755908a415aec27e0d",
+                "maintenance": "6d8b83d77f43d4b2c3f19d16c9b63f60c40ab6a9f237a4882e09f851c2645e12"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d078d3283cf0e1324798bf5eedfa4ec5",
+    "identity": "github:1310112680:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1310112680:root",
+            "repository": "bauerelizabeth07139/plan-guardian-skill",
+            "path": "",
+            "revision": "d2072f5624bfef49cf50bf40c1ca0309d9d9e466",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d08a0fcde5bf3f55760245debf600ca922e626f60a9c900f0b3c8a219ed9ccdc",
+                "code": "d2072f5624bfef49cf50bf40c1ca0309d9d9e466",
+                "maintenance": "435f974b4be4d1cecad07f8f3b4c352dac0455a3ad961eec33635470f1a47c6b"
+            }
+        }
+    }
+}

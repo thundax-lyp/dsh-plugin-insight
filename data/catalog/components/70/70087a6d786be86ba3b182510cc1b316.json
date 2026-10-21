@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "70087a6d786be86ba3b182510cc1b316",
+    "identity": "github:1333641225:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333641225:root",
+            "repository": "zimzaza4/dsh-bash-win",
+            "path": "",
+            "revision": "6526764300670b1d0315cb16fa9f8e0af5f51ad5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2332f55e32bea7417536e391b72f6545ab8bd30cb54dccb355a6a98fa37869ec",
+                "code": "6526764300670b1d0315cb16fa9f8e0af5f51ad5",
+                "maintenance": "e69c923c5ea68e663412fba4e2a20a153c60861bb48b4df979c956d965b61e25"
+            }
+        }
+    }
+}

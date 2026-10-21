@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "bbc1497d5f1f7bf6a7b1c3a0d0112ae9",
+    "identity": "github:1339169270:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339169270:root",
+            "repository": "fancr-code/dsh-tray-launcher",
+            "path": "",
+            "revision": "c5d6ae1fa11951d3bea4b95e669c4908e48ba652",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "13888d495bc7880a3aa4bd3243c3dd0ab6253d6658f0abdc5bef4ae87d97071e",
+                "code": "c5d6ae1fa11951d3bea4b95e669c4908e48ba652",
+                "maintenance": "1de2e6f35f6d717ffd2f56b72bf99ac02c16fe40e1f14f8ee4074cc560ed7c9d"
+            }
+        }
+    }
+}

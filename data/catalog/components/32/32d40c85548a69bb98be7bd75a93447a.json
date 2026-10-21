@@ -1,0 +1,458 @@
+{
+    "schema_version": 3,
+    "id": "32d40c85548a69bb98be7bd75a93447a",
+    "identity": "github:1336366824:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336366824:root",
+            "repository_id": 1336366824,
+            "component_id": "root",
+            "repository": "534119219/chicheng-peak",
+            "path": "",
+            "aliases": [],
+            "name": "chicheng-peak",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "d853de835f4aa1c6451145779723f6fe1d85b47722341d99f75c4cee0bbaa44f",
+                "code": "b89dc9a63eb270736fae63e43445b421477c02ab",
+                "maintenance": "f13afab74f3d6fbc99477910496df43d9edbfa520fdf0b41f01ab6969f7c1e86"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1336366824-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:12:51.637Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1336366824-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/534119219/chicheng-peak/blob/b89dc9a63eb270736fae63e43445b421477c02ab/README.md",
+                    "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+                    "captured_at": "2026-10-21T03:12:51.637Z",
+                    "summary": "按配置时区与峰谷时段显示 DSH 边缘和输入框光效，并发送阶段提醒。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-peak/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1336366824-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/534119219/chicheng-peak/blob/b89dc9a63eb270736fae63e43445b421477c02ab/lib/index.js",
+                    "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+                    "captured_at": "2026-10-21T03:12:51.637Z",
+                    "summary": "核查 lib/index.js、lib/client.js、test/engine.test.mjs、package.json；lib/index.js用Intl时区字段计算phaseAt/nextTransition，服务端tick触发提前/固定时点提醒，firedKeys去重；client显示独立页面边缘、输入框和角标光效。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-peak/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读时区引擎、fired去重、渠道分发、配置校验与客户端接线；未核实现行官方价格、实际消息送达或浏览器动画兼容。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "按时间安排API任务的个人用户，从界面颜色与推送获知自己配置的阶段，交付阶段提示而非自动调整账单或模型路由。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js用Intl时区字段计算phaseAt/nextTransition，服务端tick触发提前/固定时点提醒，firedKeys去重；client显示独立页面边缘、输入框和角标光效。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读时区引擎、fired去重、渠道分发、配置校验与客户端接线；未核实现行官方价格、实际消息送达或浏览器动画兼容。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "web bundle，host零第三方运行时依赖；设置图标可能需要官方shell补丁，不等于核心时段能力的稳定扩展接口。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次核对当前价格、时区、窗口与通知目标；持续维护规则和渠道，动画增加注意力负担。现金节省取决于真实请求计费，不能从颜色估算；无单位任务对照。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "需要时间提示的人可先使用自定义时段；把颜色当提醒，发请求前以自己账户和模型的实际价格为准，并测试提醒渠道，别依赖它保证送达。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "在输入操作时降低忘记时段的概率；是否节约费用仍取决于任务可延迟性及真实计价，插件没有自动迁移任务。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "阶段计算、模板、配置清洗与推送分离可复用；窗口校验拒绝无效区间，去重状态持久化。发送前标记与时区偏移估算是复用到可靠调度前需要重做的边界。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对查看时钟或设置普通日历提醒，新增DSH当前输入场景中的持续阶段信号，以及网页关闭后仍可由host分发提醒。时区/调度与pushNotifier/messaging为既有能力；贡献在时段配置与工作界面、提前提醒的组合，不是已证实节费机制。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "颜色所示“低峰”是否对应当前模型、账户和真实账单？代码根据固定默认窗口与可配置覆盖判断，不读取实时价格或识别每次请求是否享受折扣；作者的定价描述可能漂移。fireReminder先加入firedKeys再等待发送，失败仍记录已触发，不能推断可靠送达；zonedEpoch用参考时点估算偏移，夏令时跨越也需单独核查。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：把提醒绑定到带来源/生效期的模型价格规则，并把“已调度/已接收/用户已处理”分层，可减少过期时段误导及失败后漏提醒。由当前固定窗口与发送前去重推导，未实现。用规则过期、时区切换和渠道失败三组对照检查误提示率、重复/漏发与人工确认负担；必须有可靠价格源，不能自动假定低峰便宜。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336366824:root",
+                            "area": "code",
+                            "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:12:51.637Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:12:51.637Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+                "reviewed_at": "2026-10-21T03:12:51.637Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336366824:root",
+                        "area": "code",
+                        "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty 小幅：时段提醒与DSH光效集成；mechanism 小幅：Intl与轮询去重均常规；transferability 小幅：可迁移排班提醒但未有新的调度抽象；simplification 小幅：即时视觉与host提醒共配置。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 小幅：提醒用户而不改变执行组织；delivery 小幅：交付阶段提示；reach 小幅：关闭网页可经渠道提醒；economics 小幅：可能移时任务但缺现价和账单验证。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336366824-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需要价时段提醒者可按自定义时段试用；以自己模型账户价格为准，先验通知失败与夏令时，颜色不保证节费。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "可推迟请求者避免忘记时段需求具体。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "输入场景持续信号比看时钟方便，但不调度实际任务。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "Intl时区和去重源码支持提醒，发送前记fired会漏失败重试。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无新增模型调用，价表渠道和动画打断需维护管理。"
+                    }
+                },
+                "score": 64,
+                "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1336366824-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336366824:root",
+                        "area": "code",
+                        "fingerprint": "b89dc9a63eb270736fae63e43445b421477c02ab"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336366824:root",
+            "repository": "534119219/chicheng-peak",
+            "path": "",
+            "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+            "fingerprints": {
+                "directory": "d853de835f4aa1c6451145779723f6fe1d85b47722341d99f75c4cee0bbaa44f",
+                "code": "b89dc9a63eb270736fae63e43445b421477c02ab",
+                "maintenance": "f13afab74f3d6fbc99477910496df43d9edbfa520fdf0b41f01ab6969f7c1e86"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "1db2a37a31d2ccb4df644b3ec94caad5dec41bcb72e6a249d64eb62404baae42"
+        },
+        "publication.metadata": "data/plugins/534119219--chicheng-peak/META.json",
+        "publication.summaries": {
+            "text": "按配置时区与峰谷时段显示 DSH 边缘和输入框光效，并发送阶段提醒。",
+            "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+            "source_url": "https://github.com/534119219/chicheng-peak/blob/b89dc9a63eb270736fae63e43445b421477c02ab/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+            "items": {
+                "Host 路由": "时段状态/配置与提醒管理API。",
+                "界面": "页面边缘、输入框与角标提示。",
+                "后台": "时段计算、提前/固定时点渠道提醒。"
+            }
+        },
+        "publication.advice": {
+            "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+            "text": "需要时间提示的人可先使用自定义时段；把颜色当提醒，发请求前以自己账户和模型的实际价格为准，并测试提醒渠道，别依赖它保证送达。"
+        },
+        "registry": "data/plugins/534119219--chicheng-peak",
+        "reports": "# chicheng-peak\n\n> 按配置时区与峰谷时段显示 DSH 边缘和输入框光效，并发送阶段提醒。\n\n## 使用建议\n\n需要时间提示的人可先使用自定义时段；把颜色当提醒，发请求前以自己账户和模型的实际价格为准，并测试提醒渠道，别依赖它保证送达。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码支持可配置时段与提醒；README所述官方定价没有在本轮核实，源码默认时段不能作为现行账单依据，未来实价绑定是假设。\n\n- **用途**：按时间安排API任务的个人用户，从界面颜色与推送获知自己配置的阶段，交付阶段提示而非自动调整账单或模型路由。\n- **亮点**：相对查看时钟或设置普通日历提醒，新增DSH当前输入场景中的持续阶段信号，以及网页关闭后仍可由host分发提醒。时区/调度与pushNotifier/messaging为既有能力；贡献在时段配置与工作界面、提前提醒的组合，不是已证实节费机制。\n- **思考**：颜色所示“低峰”是否对应当前模型、账户和真实账单？代码根据固定默认窗口与可配置覆盖判断，不读取实时价格或识别每次请求是否享受折扣；作者的定价描述可能漂移。fireReminder先加入firedKeys再等待发送，失败仍记录已触发，不能推断可靠送达；zonedEpoch用参考时点估算偏移，夏令时跨越也需单独核查。\n- **建议**：待验证假设：把提醒绑定到带来源/生效期的模型价格规则，并把“已调度/已接收/用户已处理”分层，可减少过期时段误导及失败后漏提醒。由当前固定窗口与发送前去重推导，未实现。用规则过期、时区切换和渠道失败三组对照检查误提示率、重复/漏发与人工确认负担；必须有可靠价格源，不能自动假定低峰便宜。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n按时间安排API任务的个人用户，从界面颜色与推送获知自己配置的阶段，交付阶段提示而非自动调整账单或模型路由。\n\n参照普通日历/定时提醒与DSH主题效果；未对其他价格调度插件做测量。\n\n### 能力、流程与依赖\n\nlib/index.js用Intl时区字段计算phaseAt/nextTransition，服务端tick触发提前/固定时点提醒，firedKeys去重；client显示独立页面边缘、输入框和角标光效。\n\n- **Host 路由**：时段状态/配置与提醒管理API。\n- **界面**：页面边缘、输入框与角标提示。\n- **后台**：时段计算、提前/固定时点渠道提醒。\n\nDSH Web与Intl时区数据；远程提醒可选pushNotifier或messaging，本地通知需浏览器权限及页面存在。\n\n用户配置窗口/时区→host计算阶段和下次转折→客户端显示光效→tick找到提前或固定时点→记录去重键并发送→显示最近结果；渠道失败不等于重新调度。\n\nweb bundle，host零第三方运行时依赖；设置图标可能需要官方shell补丁，不等于核心时段能力的稳定扩展接口。\n\n### 效果、成本与限制\n\n在输入操作时降低忘记时段的概率；是否节约费用仍取决于任务可延迟性及真实计价，插件没有自动迁移任务。\n\n首次核对当前价格、时区、窗口与通知目标；持续维护规则和渠道，动画增加注意力负担。现金节省取决于真实请求计费，不能从颜色估算；无单位任务对照。\n\n颜色所示“低峰”是否对应当前模型、账户和真实账单？代码根据固定默认窗口与可配置覆盖判断，不读取实时价格或识别每次请求是否享受折扣；作者的定价描述可能漂移。fireReminder先加入firedKeys再等待发送，失败仍记录已触发，不能推断可靠送达；zonedEpoch用参考时点估算偏移，夏令时跨越也需单独核查。\n\n### 核心贡献与工程亮点\n\n相对查看时钟或设置普通日历提醒，新增DSH当前输入场景中的持续阶段信号，以及网页关闭后仍可由host分发提醒。时区/调度与pushNotifier/messaging为既有能力；贡献在时段配置与工作界面、提前提醒的组合，不是已证实节费机制。\n\n阶段计算、模板、配置清洗与推送分离可复用；窗口校验拒绝无效区间，去重状态持久化。发送前标记与时区偏移估算是复用到可靠调度前需要重做的边界。\n\n源码依据：[lib/index.js](https://github.com/534119219/chicheng-peak/blob/b89dc9a63eb270736fae63e43445b421477c02ab/lib/index.js)、[lib/client.js](https://github.com/534119219/chicheng-peak/blob/b89dc9a63eb270736fae63e43445b421477c02ab/lib/client.js)、[test/engine.test.mjs](https://github.com/534119219/chicheng-peak/blob/b89dc9a63eb270736fae63e43445b421477c02ab/test/engine.test.mjs)、[package.json](https://github.com/534119219/chicheng-peak/blob/b89dc9a63eb270736fae63e43445b421477c02ab/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：把提醒绑定到带来源/生效期的模型价格规则，并把“已调度/已接收/用户已处理”分层，可减少过期时段误导及失败后漏提醒。由当前固定窗口与发送前去重推导，未实现。用规则过期、时区切换和渠道失败三组对照检查误提示率、重复/漏发与人工确认负担；必须有可靠价格源，不能自动假定低峰便宜。\n\n隔离宿主验证转折前后、重启10分钟补偿窗口、失败后重试语义、DST边界与实际显示；价格需单独从官方规则核对，本轮不作节费结论。\n\n## 核查说明\n\n- 版本号：0.1.0；版本日期：2026-08-26（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[b89dc9a6](https://github.com/534119219/chicheng-peak/tree/b89dc9a63eb270736fae63e43445b421477c02ab)；本次截止 2026-10-21T03:00:27Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读时区引擎、fired去重、渠道分发、配置校验与客户端接线；未核实现行官方价格、实际消息送达或浏览器动画兼容。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e56a59f0ae36cc49a9526d468584e32525d5a8bea40782100047ee8c2203bb77。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 164 | — | — | 1933 |\n| .js | source | 2 | 2991 | 2624 | 215 | — |\n| .mjs | test | 4 | 549 | 434 | 61 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "metadata": {
+            "repository": "534119219/chicheng-peak",
+            "repository_id": 1336366824,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 5,
+            "pushed_at": "2026-08-26T14:46:39Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-peak%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C4:F5216:A64034:EEF4BA:6AD84A38 and timestamp 2026-10-21 05:14:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-peak%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C5:1ADA16:A3926E:EAFC18:6AD84A38 and timestamp 2026-10-21 05:14:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-peak%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:F5D0E:A9D023:F2DD49:6AD84A38 and timestamp 2026-10-21 05:14:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-peak%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:F5D0E:A9D065:F2DDB7:6AD84A38 and timestamp 2026-10-21 05:14:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-peak%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:383860:A86A76:F1BBA8:6AD84A39 and timestamp 2026-10-21 05:14:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "chicheng-peak",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/chicheng-peak",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/chicheng-peak",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+                "current_revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336366824:root",
+            "repository": "534119219/chicheng-peak",
+            "path": "",
+            "revision": "b89dc9a63eb270736fae63e43445b421477c02ab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d853de835f4aa1c6451145779723f6fe1d85b47722341d99f75c4cee0bbaa44f",
+                "code": "b89dc9a63eb270736fae63e43445b421477c02ab",
+                "maintenance": "f13afab74f3d6fbc99477910496df43d9edbfa520fdf0b41f01ab6969f7c1e86"
+            }
+        }
+    }
+}

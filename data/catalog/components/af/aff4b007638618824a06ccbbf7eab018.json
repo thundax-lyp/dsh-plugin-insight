@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aff4b007638618824a06ccbbf7eab018",
+    "identity": "github:1346050059:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346050059:root",
+            "repository": "dongsheng123132/dsh-attestation-proof",
+            "path": "",
+            "revision": "50fc87738318e8d37dfe54727c815b1d34804213",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3fe9741824b531364dc3f73e8869ab48cbb3b8cad940e5e31e8b666334beebe5",
+                "code": "50fc87738318e8d37dfe54727c815b1d34804213",
+                "maintenance": "143ecd28f7d09b7a223d98ab1d949e65c9505aac8b5eeee6d1bcbb0a94181535"
+            }
+        }
+    }
+}

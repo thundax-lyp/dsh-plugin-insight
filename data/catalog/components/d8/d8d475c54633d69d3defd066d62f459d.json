@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d8d475c54633d69d3defd066d62f459d",
+    "identity": "github:1334373890:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334373890:root",
+            "repository": "timeance/dsh-approve-for-me",
+            "path": "",
+            "revision": "0fe15f0f8e564e46f5320ae945025b3fe0c94a85",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "776e63ab11f25d520334a4c7db5c0d9d85f7153f803a7d7b9c05a790aaa9e804",
+                "code": "0fe15f0f8e564e46f5320ae945025b3fe0c94a85",
+                "maintenance": "01b272f6582598af5140a96d4ab3b735b643543bf9e114604f7de2cd9e270186"
+            }
+        }
+    }
+}

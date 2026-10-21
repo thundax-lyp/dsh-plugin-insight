@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1240904f131741d63b6ba76c07cf8002",
+    "identity": "github:1425082493:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425082493:root",
+            "repository": "Bai-Ziyi/dsh-proxy-control",
+            "path": "",
+            "revision": "598f870119435ba289d3ce620314d27474e84596",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3335bdea0df072b37a31fe999d28b5faed06daf08fa42ac1d19adf5dac6ebc83",
+                "code": "598f870119435ba289d3ce620314d27474e84596",
+                "maintenance": "0eedef17c9a6c58444f4b18ca16f300bf6f668181e8254c8bc13cbbc4813905d"
+            }
+        }
+    }
+}

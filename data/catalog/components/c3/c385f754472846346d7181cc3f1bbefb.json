@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c385f754472846346d7181cc3f1bbefb",
+    "identity": "github:1359686866:plugins-motor-parts-selector",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359686866:plugins-motor-parts-selector",
+            "repository": "helllo-shijie/motor-hospital-plugins",
+            "path": "plugins/motor-parts-selector",
+            "revision": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f1b6fa9cc4c0c5a95fcc81a6fcb9482959d7b5bff31a527efa716f64a488c53a",
+                "code": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+                "maintenance": "ae61c30fd903785b79008e00b9f602996e5f629205daa092405be9d1bae46ae1"
+            }
+        }
+    }
+}

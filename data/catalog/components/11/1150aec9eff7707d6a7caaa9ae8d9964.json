@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1150aec9eff7707d6a7caaa9ae8d9964",
+    "identity": "github:1333746654:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333746654:root",
+            "repository": "EvilIrving/dsh-repro",
+            "path": "",
+            "revision": "e51736ba583830462e0cca4d808ec3e0b7001bcd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8df8f67a97d67b62762a5af4f35437ba6eb00279bf941458c47d51fef82ec721",
+                "code": "e51736ba583830462e0cca4d808ec3e0b7001bcd",
+                "maintenance": "f7324e8163a113934cb77fba22d9827b1b79069ed8fb4f5b56aac137d8a79a3e"
+            }
+        }
+    }
+}

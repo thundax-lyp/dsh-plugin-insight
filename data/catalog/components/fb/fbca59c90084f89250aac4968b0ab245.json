@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fbca59c90084f89250aac4968b0ab245",
+    "identity": "github:1418544210:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418544210:root",
+            "repository": "songzhiyin/dsh-local-model",
+            "path": "",
+            "revision": "9f48779ba1c7698bd8d40f548d6e882df09639c1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eac17abe9e87d914c2e9f756bb2e044d3fefbb95bd0860ef5e3256111ebc26ee",
+                "code": "9f48779ba1c7698bd8d40f548d6e882df09639c1",
+                "maintenance": "c678128a4010bf9cf28b7feb22adced4821d214051e5f97959e3daacba309408"
+            }
+        }
+    }
+}

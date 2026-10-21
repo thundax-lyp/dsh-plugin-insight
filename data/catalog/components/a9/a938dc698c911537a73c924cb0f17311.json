@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a938dc698c911537a73c924cb0f17311",
+    "identity": "github:1352172692:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352172692:root",
+            "repository": "yuioi666/dsh-conversation-nav-dots",
+            "path": "",
+            "revision": "3e9559b34848235f30130a0ffb9abefbee3e8381",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ad6da4ac2047ba658390b8d82288491a8415adc40a2718bb68783a4fb879f9e2",
+                "code": "3e9559b34848235f30130a0ffb9abefbee3e8381",
+                "maintenance": "11cb55137be3c7ccda1a00b9496248a405c69aa13106700202bb6a218ef6237e"
+            }
+        }
+    }
+}

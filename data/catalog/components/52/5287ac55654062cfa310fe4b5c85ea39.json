@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5287ac55654062cfa310fe4b5c85ea39",
+    "identity": "github:1377157880:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377157880:root",
+            "repository": "Yazzyk/dsh-file-shield",
+            "path": "",
+            "revision": "78c0bc150806fc7e20fc8ccd60988040849bfd66",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0900011bc2eb6fea226900ff3d297026e003b3e49b294af513e16800a0152b57",
+                "code": "78c0bc150806fc7e20fc8ccd60988040849bfd66",
+                "maintenance": "d46f4549fccfca7a22342a3ac3619b780929972891e04af42df9f57865191508"
+            }
+        }
+    }
+}

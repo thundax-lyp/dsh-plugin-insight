@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ec09a68debf9ff1fd8c4de7ef8da6560",
+    "identity": "github:1401835758:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401835758:root",
+            "repository": "meowmeowloong/dsh-session-id-for-desktop",
+            "path": "",
+            "revision": "95881e6a7c13a3d2790296f04ac79bfedc36b334",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "55b6dcae058e5917181def8a5a252e7e672e9a8436025ef20ee3347eb3b2c41b",
+                "code": "95881e6a7c13a3d2790296f04ac79bfedc36b334",
+                "maintenance": "67f13e3a782eb41073f7b0b0bc0afeefa4225dc419038f3b54da443d124efae1"
+            }
+        }
+    }
+}

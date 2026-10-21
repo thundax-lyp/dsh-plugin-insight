@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3c5cdff0c14c27bb0ec5a621dcbf99ad",
+    "identity": "github:1372262801:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372262801:root",
+            "repository": "hasan-aghayev/dsh-task-orchestrator",
+            "path": "",
+            "revision": "1a768d8b46b135485b6d85b9d0c388b70ffc5bff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d45938ce8e260fa332aa9322720ed4d43313507d5b5e1c32063e5983d74bd214",
+                "code": "1a768d8b46b135485b6d85b9d0c388b70ffc5bff",
+                "maintenance": "1764b906a103a9179aa42d7d64bb42aca2b24076dac8b374fe26d331b69ff680"
+            }
+        }
+    }
+}

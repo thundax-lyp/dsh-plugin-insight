@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6028b8045e14f8a57a731b916c380dab",
+    "identity": "github:1369450224:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369450224:root",
+            "repository": "lucyTrump/dsh-runninghub-api",
+            "path": "",
+            "revision": "bb3b4f20f970148599b891488893248d3e85cb88",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f2a3624170625056383dac1b144edd6c3286cc0e8da1d39317402ca3f7108c40",
+                "code": "bb3b4f20f970148599b891488893248d3e85cb88",
+                "maintenance": "b4bc52150f87f777dc20484bb60b07bd673ca78af904cd5081720a5cd81fed05"
+            }
+        }
+    }
+}

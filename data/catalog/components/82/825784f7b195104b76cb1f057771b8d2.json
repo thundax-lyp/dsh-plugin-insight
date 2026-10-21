@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "825784f7b195104b76cb1f057771b8d2",
+    "identity": "github:1335105425:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335105425:root",
+            "repository": "SaiSenBox/dsh-prompt-manager",
+            "path": "",
+            "revision": "d55b31bb4dad65e061a652b32d52fa5ddd31bb30",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8e9ff237fb4282d3906668f9c71beaba581222b88724cc2bb8344745e09e3dd5",
+                "code": "d55b31bb4dad65e061a652b32d52fa5ddd31bb30",
+                "maintenance": "3098bd1e1a4f0ba8b231c03a9b99e6626f64812f3d698b78690ee7bc17a7ceef"
+            }
+        }
+    }
+}

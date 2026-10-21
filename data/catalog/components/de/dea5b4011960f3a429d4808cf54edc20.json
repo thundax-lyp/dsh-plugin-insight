@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dea5b4011960f3a429d4808cf54edc20",
+    "identity": "github:1335756869:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335756869:root",
+            "repository": "jinsiyu/dsh-auto-open-web",
+            "path": "",
+            "revision": "99587f1280c92f6fc018deafc1399a22530da7d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "00e7239d1a18d7f3f414538b5abca62feb983ab503556b9ed64485a071b73d11",
+                "code": "99587f1280c92f6fc018deafc1399a22530da7d4",
+                "maintenance": "17a1b57aeac19b0b4b8dd1f6c671550c0aaa9e104b8ba011fc38b53cb707f53a"
+            }
+        }
+    }
+}

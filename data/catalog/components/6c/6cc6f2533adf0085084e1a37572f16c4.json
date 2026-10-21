@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "6cc6f2533adf0085084e1a37572f16c4",
+    "identity": "github:1391140376:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1391140376:root",
+            "repository_id": 1391140376,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-service",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-service",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f7428424e09c1985a93983839bf8fa930da98b4e9050717962534b652056c138",
+                "code": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+                "maintenance": "3a31d61bb2f71ad3888432d3925d3b33846f7f24d5fe8a8c70cdc8de5612f6ae"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-07-github-1391140376-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:02:00.686Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-07-github-1391140376-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-service/blob/6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727/README.md",
+                    "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+                    "captured_at": "2026-10-20T10:02:00.686Z",
+                    "summary": "从WSL查询Windows服务列表、状态、运行账户、进程和依赖关系。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-service/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-07-github-1391140376-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-service/blob/6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727/index.js",
+                    "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+                    "captured_at": "2026-10-20T10:02:00.686Z",
+                    "summary": "核查 index.js、lib/service-exec.js、lib/service.js；win_services生成Get-Service或Win32_Service查询，列表可按名称或状态过滤，detail补充账户、二进制及双向依赖。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-service/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读入口、PowerShell与字段规范化，未查询Windows服务或进行运行验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "Agent排查Windows后台服务问题时，先收集状态和依赖证据再由用户决定修复。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140376:root",
+                            "area": "code",
+                            "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:00.686Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "win_services生成Get-Service或Win32_Service查询，列表可按名称或状态过滤，detail补充账户、二进制及双向依赖。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140376:root",
+                            "area": "code",
+                            "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:00.686Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读入口、PowerShell与字段规范化，未查询Windows服务或进行运行验收。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140376:root",
+                            "area": "code",
+                            "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:00.686Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定版本包清单与作者说明已核对；需要WSL互操作、PowerShell、CIM服务和账户查询权限；数据只是即时快照。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140376:root",
+                            "area": "code",
+                            "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:00.686Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "跨进程查询、人工解释与重复采样成本，未证明平均修复时间下降。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140376:root",
+                            "area": "code",
+                            "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:00.686Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先对已知服务核对detail；不要由停止状态或空依赖直接决定删除、重启。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140376:root",
+                            "area": "code",
+                            "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:00.686Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把服务概况和详细依赖接入对话，减少人工跨系统采集；服务控制与诊断结论仍不由插件提供。 detail中依赖查询异常被吞掉为空数组，空依赖可能是未能读取而非确实没有；状态参数all被直接用于Status比较也需核对实际语义。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140376:root",
+                            "area": "code",
+                            "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:00.686Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "查询与规范化分离清楚，依赖方向命名直观；失败与空结果应区别。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140376:root",
+                            "area": "code",
+                            "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:02:00.686Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:02:00.686Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+                "reviewed_at": "2026-10-20T10:02:00.686Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1391140376:root",
+                        "area": "code",
+                        "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty为既有Windows查询适配；mechanism为列表和依赖整合；transferability限于类似诊断工具；simplification减少手工采集。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow为诊断证据聚合的小幅改善；delivery不新增修复交付；reach提供WSL入口；economics无已识别结构变化。 固定版本源码支持接口和流程存在，未执行目标代码；分数表达相对文中基线的设计解释，不代表效果、采用或收益验证。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1391140376-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "Windows服务排障者可对已知服务试detail，先回查依赖读取错误和all过滤，不凭空依赖决定重启。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "会话内收集服务状态及依赖的任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "合并CIM详情省取证步骤，不自动给根因。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "查询和方向规范化可查，依赖异常退空与all语义需复核。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "权限和重复采样需人工，错误空结果增加补查。"
+                    }
+                },
+                "score": 59,
+                "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-07-github-1391140376-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1391140376:root",
+                        "area": "code",
+                        "fingerprint": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1391140376:root",
+            "repository": "173787247/dsh-wsl-service",
+            "path": "",
+            "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+            "fingerprints": {
+                "directory": "f7428424e09c1985a93983839bf8fa930da98b4e9050717962534b652056c138",
+                "code": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+                "maintenance": "3a31d61bb2f71ad3888432d3925d3b33846f7f24d5fe8a8c70cdc8de5612f6ae"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T09:36:48.824Z",
+            "analysis_sha256": "f1a456c9e32e60ae12391cca5773ce707327e7d7abd5171eccc3e3733f465538"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-service/META.json",
+        "publication.summaries": {
+            "text": "从WSL查询Windows服务列表、状态、运行账户、进程和依赖关系。",
+            "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+            "source_url": "https://github.com/173787247/dsh-wsl-service/blob/6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+            "items": {
+                "模型工具": "win_services：服务列表与详细状态查询。"
+            }
+        },
+        "publication.advice": {
+            "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+            "text": "先对已知服务核对detail；不要由停止状态或空依赖直接决定删除、重启。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-service",
+        "reports": "# dsh-wsl-service\n\n> 从WSL查询Windows服务列表、状态、运行账户、进程和依赖关系。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-service](https://github.com/173787247/dsh-wsl-service)\n- **版本号**：0.1.0（[固定提交 6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727](https://github.com/173787247/dsh-wsl-service/tree/6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：把服务概况和详细依赖接入对话，减少人工跨系统采集；服务控制与诊断结论仍不由插件提供。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：Agent排查Windows后台服务问题时，先收集状态和依赖证据再由用户决定修复。\n- **亮点**：把服务概况和详细依赖接入对话，减少人工跨系统采集；服务控制与诊断结论仍不由插件提供。\n- **思考**：detail中依赖查询异常被吞掉为空数组，空依赖可能是未能读取而非确实没有；状态参数all被直接用于Status比较也需核对实际语义。\n- **建议**：待验证假设：每个依赖字段附带读取成功状态，可减少把未知依赖当无依赖的误诊；增加字段能否改善判断仍需试验。\n\n采用建议：先对已知服务核对detail；不要由停止状态或空依赖直接决定删除、重启。\n\n## 核心贡献\n\n把服务概况和详细依赖接入对话，减少人工跨系统采集；服务控制与诊断结论仍不由插件提供。\n\n## 关键质疑\n\ndetail中依赖查询异常被吞掉为空数组，空依赖可能是未能读取而非确实没有；状态参数all被直接用于Status比较也需核对实际语义。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：每个依赖字段附带读取成功状态，可减少把未知依赖当无依赖的误诊；增加字段能否改善判断仍需试验。\n\n对已知依赖服务及无权限样例与原生命令对照，检查错误是否可区分；若模型仍把unknown当空则需调整展示。\n\n## 场景与替代办法\n\nAgent排查Windows后台服务问题时，先收集状态和依赖证据再由用户决定修复。\n\n直接Get-Service/CIM或服务管理器；插件聚合字段但不提供根因归因。\n\n## 依赖与流程\n\n需要WSL互操作、PowerShell、CIM服务和账户查询权限；数据只是即时快照。\n\n先查列表，再按确切name请求detail，核对依赖与权限后人工执行修复。\n\n## 成本与效果\n\n跨进程查询、人工解释与重复采样成本，未证明平均修复时间下降。\n\n把服务概况和详细依赖接入对话，减少人工跨系统采集；服务控制与诊断结论仍不由插件提供。 detail中依赖查询异常被吞掉为空数组，空依赖可能是未能读取而非确实没有；状态参数all被直接用于Status比较也需核对实际语义。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：92e2ec6d3a23dc95ae60041eff2fef7e0de00ce8df458409582e5d03584bc1e7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 117 | — | — | 424 |\n| .js | source | 4 | 257 | 221 | 12 | — |\n| .js | test | 1 | 36 | 32 | 1 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：win_services：服务列表与详细状态查询。\n\n## 工程亮点\n\n查询与规范化分离清楚，依赖方向命名直观；失败与空结果应区别。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/service-exec.js、lib/service.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读入口、PowerShell与字段规范化，未查询Windows服务或进行运行验收。\n- 下一步：对已知依赖服务及无权限样例与原生命令对照，检查错误是否可区分；若模型仍把unknown当空则需调整展示。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-service",
+            "repository_id": 1391140376,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-29T15:32:46Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-service%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:148767:220106:6AD849AE and timestamp 2026-10-21 05:12:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-service%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14A278:223326:6AD849AE and timestamp 2026-10-21 05:12:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-service%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:156002:22EC3B:6AD849AE and timestamp 2026-10-21 05:12:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-service%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:1430F9:21B1D3:6AD849AE and timestamp 2026-10-21 05:12:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-service%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14B716:224488:6AD849AF and timestamp 2026-10-21 05:12:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-wsl-service",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-service",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-service",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+                "current_revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1391140376:root",
+            "repository": "173787247/dsh-wsl-service",
+            "path": "",
+            "revision": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f7428424e09c1985a93983839bf8fa930da98b4e9050717962534b652056c138",
+                "code": "6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727",
+                "maintenance": "3a31d61bb2f71ad3888432d3925d3b33846f7f24d5fe8a8c70cdc8de5612f6ae"
+            }
+        }
+    }
+}

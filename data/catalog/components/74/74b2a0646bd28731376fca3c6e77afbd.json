@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "74b2a0646bd28731376fca3c6e77afbd",
+    "identity": "github:1349290861:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349290861:root",
+            "repository": "BaoBao1996121/dsh-restart-ui",
+            "path": "",
+            "revision": "18005ae82d343a6a6c7cdb64c559769e80ffdea5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9cdede1a4e343b6add1d8b1b824a4c60250a6e2afba44b97a372447eb0c46c4e",
+                "code": "18005ae82d343a6a6c7cdb64c559769e80ffdea5",
+                "maintenance": "c3e9ead9b09140c03dbc52666e3b6eb5db362c17c723388cce4dbb0608e77e71"
+            }
+        }
+    }
+}

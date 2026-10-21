@@ -1,0 +1,436 @@
+{
+    "schema_version": 3,
+    "id": "27310f7ee33f5e682958cef963e71749",
+    "identity": "github:1402771540:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1402771540:root",
+            "repository_id": 1402771540,
+            "component_id": "root",
+            "repository": "A42Null/dsh-opencode-zen-plugin",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-opencode-zen-plugin",
+            "entry_type": "plugin",
+            "technical_category": "model-provider",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "8e54fb5a7a6c7f1e9136995200ff36878bcf92f45cd2e930813b225000a2cc2b",
+                "code": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                "maintenance": "e248d056b853456ca3a1ee09ca4e0ae66fbb47e238487d9de1599ca0bb8d7bad"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-04-github-1402771540-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T04:13:23.414Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-04-github-1402771540-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/README.md",
+                    "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                    "captured_at": "2026-10-21T04:13:23.414Z",
+                    "summary": "把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-04-github-1402771540-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js",
+                    "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                    "captured_at": "2026-10-21T04:13:23.414Z",
+                    "summary": "核查 lib/index.js；lib/index.js定时拉模型ID与models.dev元数据、用模型名前缀/例外表选四类协议，统一SSE事件与推理参数，并用watchdog中断无活动流。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "持有Console API key的用户希望在DSH使用目录中的聊天模型，合格结果需文本、工具调用、usage和错误都正确映射。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js定时拉模型ID与models.dev元数据、用模型名前缀/例外表选四类协议，统一SSE事件与推理参数，并用watchdog中断无活动流。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT双面JS包，需付费Console账号与key；免费层默认隐藏，静态目录不是当前授权证明，未核实当前模型供给/价格。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "配置key与资金，实际调用按服务收费，自动刷新/失败重试有开销；跨协议适配维护持续，无费用节省实测。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已有Console账号的用户先对固定模型验证文本、工具和usage。目录出现不代表可用，保留原生provider回退。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少逐模型配置，但不提高模型本身能力或证明更低成本。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "协议builder/stream转换/watchdog分区、可操作错误分类可借鉴；单文件协议映射和模型命名例外是维护热点，静态元数据应标来源。 源码依据：[lib/index.js](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js)。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相比手工逐模型配置，增量是动态目录、协议路由和错误分类一体化；模型能力与服务供给属于Console，上下文元数据来自外部目录。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "模型可选是否等于已兼容？apiForModel用名字路由、未知默认chat，目录离线可用静态回落；新模型协议变更或元数据过期会显示却不可调用。状态ok可与lastError并存，不能用目录非空认定服务健康。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由命名路由与回落推导，可为模型记录协议来源、元数据日期和最近能力探测状态，未知模型先标待确认。未验证；用新前缀/过期元数据/工具调用流测试，若仍把未验证项展示为完整支持则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1402771540:root",
+                            "area": "code",
+                            "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T04:13:23.414Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                "reviewed_at": "2026-10-21T04:13:23.414Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1402771540:root",
+                        "area": "code",
+                        "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty多协议provider适配小档；mechanism目录路由组合半档；transferability流转换半档；simplification自动目录半档。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow配置便利小档；delivery现有模型接入小档；reach跨服务用户半档；economics未测小档。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1402771540-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有Console账号者可对固定模型试文本、工具和usage映射；保留原provider回退，目录可见不可当可调用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "现有账号将模型接入DSH的目标明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "自动模型目录和四协议映射省逐模型配置。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核路由例外和SSE/watchdog，未跑真实模型，健康状态有歧义。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需key及服务资金，协议和元数据变化带来持续维护。"
+                    }
+                },
+                "score": 59,
+                "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-04-github-1402771540-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1402771540:root",
+                        "area": "code",
+                        "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1402771540:root",
+            "repository": "A42Null/dsh-opencode-zen-plugin",
+            "path": "",
+            "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+            "fingerprints": {
+                "directory": "8e54fb5a7a6c7f1e9136995200ff36878bcf92f45cd2e930813b225000a2cc2b",
+                "code": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                "maintenance": "e248d056b853456ca3a1ee09ca4e0ae66fbb47e238487d9de1599ca0bb8d7bad"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T04:06:46Z",
+            "analysis_sha256": "c71cfaa7a6ff541badf8dc7562af21ae4e8d24e067ab0e22de72b3973c8aaca9"
+        },
+        "publication.metadata": "data/plugins/a42null--dsh-opencode-zen-plugin/META.json",
+        "publication.summaries": {
+            "text": "把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。",
+            "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+            "source_url": "https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+            "items": {
+                "后台": "周期同步模型目录和缓存元数据。",
+                "界面": "模型配置与选择接线。"
+            }
+        },
+        "publication.advice": {
+            "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+            "text": "适合已有Console账号的用户先对固定模型验证文本、工具和usage。目录出现不代表可用，保留原生provider回退。"
+        },
+        "registry": "data/plugins/a42null--dsh-opencode-zen-plugin",
+        "reports": "# dsh-opencode-zen-plugin\n\n> 把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。\n\n## 使用建议\n\n适合已有Console账号的用户先对固定模型验证文本、工具和usage。目录出现不代表可用，保留原生provider回退。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：持有Console API key的用户希望在DSH使用目录中的聊天模型，合格结果需文本、工具调用、usage和错误都正确映射。\n- **亮点**：相比手工逐模型配置，增量是动态目录、协议路由和错误分类一体化；模型能力与服务供给属于Console，上下文元数据来自外部目录。\n- **思考**：模型可选是否等于已兼容？apiForModel用名字路由、未知默认chat，目录离线可用静态回落；新模型协议变更或元数据过期会显示却不可调用。状态ok可与lastError并存，不能用目录非空认定服务健康。\n- **建议**：由命名路由与回落推导，可为模型记录协议来源、元数据日期和最近能力探测状态，未知模型先标待确认。未验证；用新前缀/过期元数据/工具调用流测试，若仍把未验证项展示为完整支持则否定。\n\n## 场景与替代办法\n\n持有Console API key的用户希望在DSH使用目录中的聊天模型，合格结果需文本、工具调用、usage和错误都正确映射。\n\n手工配置OpenAI兼容地址更少代码但不能涵盖四协议；此插件承受目录与协议维护。\n\n## 能力清单\n\n- **后台**：周期同步模型目录和缓存元数据。\n- **界面**：模型配置与选择接线。\n\n## 依赖与流程\n\nDSH llm provider注册、Console网络与授权，models.dev可选缓存；不同模型图像/工具/推理能力需独立核查。\n\n保存key，拉目录与元数据，模型选择后按路由建请求，转换流并报告usage/错误；无事件时watchdog终止供用户处理。\n\n## 成本与效果\n\n配置key与资金，实际调用按服务收费，自动刷新/失败重试有开销；跨协议适配维护持续，无费用节省实测。\n\n减少逐模型配置，但不提高模型本身能力或证明更低成本。\n\n## 核心贡献\n\n相比手工逐模型配置，增量是动态目录、协议路由和错误分类一体化；模型能力与服务供给属于Console，上下文元数据来自外部目录。\n\n## 关键质疑\n\n模型可选是否等于已兼容？apiForModel用名字路由、未知默认chat，目录离线可用静态回落；新模型协议变更或元数据过期会显示却不可调用。状态ok可与lastError并存，不能用目录非空认定服务健康。\n\n\n## 工程亮点\n\n协议builder/stream转换/watchdog分区、可操作错误分类可借鉴；单文件协议映射和模型命名例外是维护热点，静态元数据应标来源。 源码依据：[lib/index.js](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js)。\n\n## 未来设计假设（未验证）\n\n由命名路由与回落推导，可为模型记录协议来源、元数据日期和最近能力探测状态，未知模型先标待确认。未验证；用新前缀/过期元数据/工具调用流测试，若仍把未验证项展示为完整支持则否定。\n\n固定模型分别验证四协议文本、工具增量、usage、错误和取消，模拟目录失败/未知ID/idle，检查不伪造支持状态。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bd216de8f156c6bae738d9a2a586b1a106b44ec47ef6ab3a03a82015bd36d854。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1716 | 1513 | 95 | — |\n| .md | source | 2 | 370 | — | — | 4465 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[A42Null/dsh-opencode-zen-plugin](https://github.com/A42Null/dsh-opencode-zen-plugin)\n- **版本号**：0.3.6（[固定提交 e1d00543](https://github.com/A42Null/dsh-opencode-zen-plugin/tree/e1d0054333d5f8185f3d6e55f563e5fe91e19b29)）\n- **版本日期**：2026-10-04（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：固定模型分别验证四协议文本、工具增量、usage、错误和取消，模拟目录失败/未知ID/idle，检查不伪造支持状态。\n",
+        "metadata": {
+            "repository": "A42Null/dsh-opencode-zen-plugin",
+            "repository_id": 1402771540,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 4,
+            "pushed_at": "2026-10-04T07:52:01Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "@a42null/dsh-opencode-zen-plugin",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 400,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40a42null%2Fdsh-opencode-zen-plugin",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-04T06:50:49.958Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40a42null%2Fdsh-opencode-zen-plugin",
+                    "error": null,
+                    "latest_version": "0.3.6",
+                    "latest_published_at": "2026-10-04T07:04:18.435Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                "current_revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1402771540:root",
+            "repository": "A42Null/dsh-opencode-zen-plugin",
+            "path": "",
+            "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8e54fb5a7a6c7f1e9136995200ff36878bcf92f45cd2e930813b225000a2cc2b",
+                "code": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                "maintenance": "e248d056b853456ca3a1ee09ca4e0ae66fbb47e238487d9de1599ca0bb8d7bad"
+            }
+        }
+    }
+}

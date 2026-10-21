@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6ccca34cc9da9d2767cec74ce77e9ab2",
+    "identity": "github:1337173256:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337173256:root",
+            "repository": "PiedPiper911/dsh-workflow-canvas",
+            "path": "",
+            "revision": "2abc2538d3d204ebad66069341684592c548d6bb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a4419f3ef0cc48426f9d4e7b3ed4ad2e48c03bf7cfcd857764b24eb87811a8f",
+                "code": "2abc2538d3d204ebad66069341684592c548d6bb",
+                "maintenance": "515dd3a9dcffcee205ab5800ded849c2e80c816c79104d40c2d5c4512817af44"
+            }
+        }
+    }
+}

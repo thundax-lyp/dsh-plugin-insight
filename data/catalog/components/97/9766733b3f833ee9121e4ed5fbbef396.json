@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9766733b3f833ee9121e4ed5fbbef396",
+    "identity": "github:1343448220:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343448220:root",
+            "repository": "maoyuching/dsh-voice-chat",
+            "path": "",
+            "revision": "2bce2a5d2ec9f84a791f5aa891635959e2c344c8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bcf75567ec709d766ee83e721675c0087189e2c0c5f04e8dd5c9e1d414ec62d5",
+                "code": "2bce2a5d2ec9f84a791f5aa891635959e2c344c8",
+                "maintenance": "8028f310bef97b77755a63cbfb989c73540a591249d2a5a765dfd0f24452561f"
+            }
+        }
+    }
+}

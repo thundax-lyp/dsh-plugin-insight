@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "35922cf5ec5e444ff8d62d0e6fa23583",
+    "identity": "github:1227102698:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1227102698:root",
+            "repository": "crafter-station/petdex",
+            "path": "",
+            "revision": "31c0aee7f4fb387774b87d40e8047dc0f9cea94b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "05c6ecd7cbd2f7235dc8c96ae7e3263081609f95b9e134b3bdb74fb3fdaf5a31",
+                "code": "31c0aee7f4fb387774b87d40e8047dc0f9cea94b",
+                "maintenance": "ca701ac2c3af540057810ed9fcd1fc1dded526d3b8c2b5f02a40470e554a04d5"
+            }
+        }
+    }
+}

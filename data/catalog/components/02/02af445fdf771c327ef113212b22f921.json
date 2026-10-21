@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "02af445fdf771c327ef113212b22f921",
+    "identity": "github:1334841171:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334841171:root",
+            "repository": "duyanta123/dsh-preset-scaffold",
+            "path": "",
+            "revision": "413d518f791360bd9b28ad0dd36f2bab0f21d835",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "13b693d1ad2d034471fb7dcedee2ca5ff3bda2d5df2f629da71e8ffa864108c3",
+                "code": "413d518f791360bd9b28ad0dd36f2bab0f21d835",
+                "maintenance": "6287164b47966db5f9dfa1031265443058433244281bf6967ec5a4b188448cba"
+            }
+        }
+    }
+}

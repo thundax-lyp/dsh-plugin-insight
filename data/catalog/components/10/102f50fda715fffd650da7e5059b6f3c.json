@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "102f50fda715fffd650da7e5059b6f3c",
+    "identity": "github:1421563994:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421563994:root",
+            "repository": "tianyao2003/dsh-find-ideas",
+            "path": "",
+            "revision": "0a9d9f5913b9248d565aa55650eb1e9af31cdeb4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8b8e74aca12d826042d512e80ce7eb79c07617df5e2942f3ff12d6b0eea9379b",
+                "code": "0a9d9f5913b9248d565aa55650eb1e9af31cdeb4",
+                "maintenance": "3b849eb8f92bcabb2612a0d08ca3213ad59bcb1f7eaf66b553e0f52660da6d43"
+            }
+        }
+    }
+}

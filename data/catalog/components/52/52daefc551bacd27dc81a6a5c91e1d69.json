@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "52daefc551bacd27dc81a6a5c91e1d69",
+    "identity": "github:1335058602:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335058602:root",
+            "repository": "LaplaceYoung/dsh-directorx",
+            "path": "",
+            "revision": "d63c425b4d6c40f3db30ccd433d24ed34947c8af",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a4d3f426452592f91ba677e7faf9afef73c9bccfba350a558e3ea0a31f938c82",
+                "code": "d63c425b4d6c40f3db30ccd433d24ed34947c8af",
+                "maintenance": "00e7b1339b34894c4770e557c0ea159a60bf245f92592d42663f042561aab3bd"
+            }
+        }
+    }
+}

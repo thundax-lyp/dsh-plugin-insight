@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8657500bd1cf19690f34482b3a56ed87",
+    "identity": "github:1171186947:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1171186947:root",
+            "repository": "LiPu-jpg/Openwrite",
+            "path": "",
+            "revision": "c662440f351436e666b6f996d3bdb3274f351b31",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a2da73bf73316b1dba99e7d15e395b08e843b040123cccf3f07eee85b7014a2",
+                "code": "c662440f351436e666b6f996d3bdb3274f351b31",
+                "maintenance": "c5b997b8f5e48846632b6218942ab91f5c2cc82dc11749d1c429a2be36baa30f"
+            }
+        }
+    }
+}

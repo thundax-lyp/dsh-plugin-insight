@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "102714fbffa4b670a2560abbfb6347c9",
+    "identity": "github:1409900393:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409900393:root",
+            "repository": "ruaibeite/dsh-files-to-chat",
+            "path": "",
+            "revision": "4bb01c2b0f00c2f368832290714cceae51dc20bb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c1664e83e6b20cd6ea597593adf3b1afe68ac4939bae3d542aa634d0cc8973b3",
+                "code": "4bb01c2b0f00c2f368832290714cceae51dc20bb",
+                "maintenance": "6d945b232887ae4492e8e26f214c7b3e42ee267bf4a87e80ede6ce258a4333a1"
+            }
+        }
+    }
+}

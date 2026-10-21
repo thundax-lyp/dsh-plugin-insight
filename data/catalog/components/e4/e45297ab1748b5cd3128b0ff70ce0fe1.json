@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e45297ab1748b5cd3128b0ff70ce0fe1",
+    "identity": "github:1273041438:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1273041438:root",
+            "repository": "zjsthmjialin/pdf-background-gray-codex-skill",
+            "path": "",
+            "revision": "c224d16deba0c48c247403707f14b11f416473f3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e75ff9f515f742c42e23e63cb3027c60e1378d67a0149f30150a405b75c0e664",
+                "code": "c224d16deba0c48c247403707f14b11f416473f3",
+                "maintenance": "dbb8411cb7ac46455ff28c4f289b729c88824603c725d2cb27ce57718cbf810c"
+            }
+        }
+    }
+}

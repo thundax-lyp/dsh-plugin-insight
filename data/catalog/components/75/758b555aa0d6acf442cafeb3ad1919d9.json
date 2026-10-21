@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "758b555aa0d6acf442cafeb3ad1919d9",
+    "identity": "github:1338815374:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338815374:root",
+            "repository": "whitefirer/dsh-niulai-pet",
+            "path": "",
+            "revision": "0f1ffcd0c79ea313812bd2bd9591827f95994ada",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "579d907b574adcc9f431587bf9cbab457f83b0f82a1c1cd930825874e7c3df3b",
+                "code": "0f1ffcd0c79ea313812bd2bd9591827f95994ada",
+                "maintenance": "97afb65b417b80e0836c87b92355f477510adad7aa116bc39ab242613e6dd37f"
+            }
+        }
+    }
+}

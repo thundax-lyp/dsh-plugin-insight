@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ccd08ab03f10d483e52f4b818fd09362",
+    "identity": "github:1333718292:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333718292:root",
+            "repository": "jiayan-xu/dsh-memoria",
+            "path": "",
+            "revision": "436a55a823f77f063cfe8bec301790326115f447",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "517fd7aa64b7f865adb8a94e001032a25cc2b4bbb4870ed2fe91c150c3f7dbae",
+                "code": "436a55a823f77f063cfe8bec301790326115f447",
+                "maintenance": "e5c6dcd6b2c165bdfb688f1165aa3c446a23c2c759d6982a469b7a5618033f14"
+            }
+        }
+    }
+}

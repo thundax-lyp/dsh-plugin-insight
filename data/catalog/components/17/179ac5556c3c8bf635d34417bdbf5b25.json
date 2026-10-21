@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "179ac5556c3c8bf635d34417bdbf5b25",
+    "identity": "github:1423003102:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423003102:root",
+            "repository": "pyh-pan/dsh-openai-oauth",
+            "path": "",
+            "revision": "110399b391cd3f38f376360577aa0edf9518f3e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "368cf87a09f6755ee9fd0642cbd33378b421224d5c51c50268732e3de96a3cac",
+                "code": "110399b391cd3f38f376360577aa0edf9518f3e4",
+                "maintenance": "d064bbb8e623d07554890c5c36b6d567d72fa5eea2983bf94dcfe7af089da871"
+            }
+        }
+    }
+}

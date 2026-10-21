@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4d9a72d36cfff8778d3fbac4620c5161",
+    "identity": "github:1350219098:dsh-remote",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350219098:dsh-remote",
+            "repository": "JochenYang/dsh-remote",
+            "path": "dsh-remote",
+            "revision": "92efa27fd15bc487119bdb0e104b46e28f0d3039",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8e01b477ad9a4f7e62bdacb99f0b0cf9e5490ecea4d25aafe9387e1cb3960bee",
+                "code": "92efa27fd15bc487119bdb0e104b46e28f0d3039",
+                "maintenance": "02ba08488cf7bc7a03bd43c445a9d031db9844c544aa19cb93fe5b5c8c158cca"
+            }
+        }
+    }
+}

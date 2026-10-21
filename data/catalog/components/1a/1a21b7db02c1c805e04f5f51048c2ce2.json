@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1a21b7db02c1c805e04f5f51048c2ce2",
+    "identity": "github:1380812459:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380812459:root",
+            "repository": "gordan-code/dsh-jev-advisor",
+            "path": "",
+            "revision": "d743b0fd558006ba7e418cdfe3d88bf53dd184e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ce3b755e354fd2218942b7e8278433670f0a7b42afc576a66af7bcd8dd67aa44",
+                "code": "d743b0fd558006ba7e418cdfe3d88bf53dd184e4",
+                "maintenance": "f69f99a1d5df9773a494eeae4b8f1640bc802de050c66e82a4c678ed4370cd6f"
+            }
+        }
+    }
+}

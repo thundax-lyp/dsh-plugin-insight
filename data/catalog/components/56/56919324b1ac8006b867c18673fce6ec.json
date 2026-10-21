@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "56919324b1ac8006b867c18673fce6ec",
+    "identity": "github:1412070170:dsh-tavily-search",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412070170:dsh-tavily-search",
+            "repository": "zhiqiangme/dsh-plugins",
+            "path": "dsh-tavily-search",
+            "revision": "01d0c8b2fdf3cb99ad4b1febfcc6a5b04716bb42",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1558a1040caa8612a1f35d953f942bc068d31d06536874746dc2b1e5a42a505b",
+                "code": "01d0c8b2fdf3cb99ad4b1febfcc6a5b04716bb42",
+                "maintenance": "e467b2ea7791b7dba75d4ea7d3bd2bd60c372b114f097535b0ca93fa5b2e20f9"
+            }
+        }
+    }
+}

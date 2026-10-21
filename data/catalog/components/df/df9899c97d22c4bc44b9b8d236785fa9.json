@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "df9899c97d22c4bc44b9b8d236785fa9",
+    "identity": "github:1336684054:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336684054:root",
+            "repository_id": 1336684054,
+            "component_id": "root",
+            "repository": "863683348/dsh-plugin-verify",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-verify",
+            "entry_type": "plugin",
+            "technical_category": "context-search",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "a4a3a025c8c706087983bdbcf98cfb8b9a5a7358bf6fa69e5e48de2900602c1b",
+                "code": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+                "maintenance": "eaa52852b4f0bfb4c2fb017ac64dda07b3eb666099123e3e700289493a5853a4"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1336684054-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:44:22.162Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1336684054-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/README.md",
+                    "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+                    "captured_at": "2026-10-21T03:44:22.162Z",
+                    "summary": "提供工作区关键词证据检索、配置检查及URL、npm和GitHub只读探测。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-verify/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1336684054-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/verify.js",
+                    "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+                    "captured_at": "2026-10-21T03:44:22.162Z",
+                    "summary": "核查 lib/verify.js、lib/batch.js、lib/index.js；verify.js提取中英文关键词、按命中覆盖打verdict；batch.js并发组织多类检查并按结果特征给confidence；index注册verify工具。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-verify/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "Agent研究或插件提交前需要把主张定位到文件与外部元数据；合格交付应是证据与主张逻辑关系清楚，访问成功并不等于主张成立。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "verify.js提取中英文关键词、按命中覆盖打verdict；batch.js并发组织多类检查并按结果特征给confidence；index注册verify工具。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "lib纯JS工具；网络探测使用fetch与超时，URL可跟随重定向，不执行扫描内容。兼容声明与schema lint属于作者材料。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无新增专属模型服务，但扫描文件、网络API与人工阅读引用有时间成本；GitHub限流会限制批量检查，未测总研究时间。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合把它当检索和体检辅助。先看实际命中行与上下文，再给结论；不要依据verified或high自动放行，也不要把unsupported写成证伪。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少人工找行号与重复探测工作；收益依赖研究者继续判断，未提供事实准确率对照。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "纯探测逻辑、注入fetch和有界并发值得借鉴。主要复用成本是把标签与实际证据强度对齐，避免把关键词计数包装成校准置信度；网络可达性也应与业务正确性分层。 源码依据：[lib/verify.js](https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/verify.js)、[lib/batch.js](https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/batch.js)、[lib/index.js](https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/index.js)。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对模型无依据口述，增量是统一文件行号引用和常见只读探测，把原始线索带回研究过程。它实现的是证据发现与结构体检，不是语义事实验证引擎。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "verified与high confidence标签是否过强？scoreClaim仅60%关键词命中即verified，batch的high可由至少两条命中触发；否定、主体归属与相反陈述都可能共享关键词。YAML又只是结构烟检。因此引用可追溯是支持，但不能从覆盖率推出事实正确性或置信概率。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由行级证据与过强判定推导，可将verdict改为“检索覆盖”并附待验证关系，增加相反证据和数字条件核对，再由人或独立验证器形成结论。未验证假设是减少引用正确但结论错误。用相同关键词正反命题盲测，若误verified不降则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336684054:root",
+                            "area": "code",
+                            "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:44:22.162Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:44:22.162Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+                "reviewed_at": "2026-10-21T03:44:22.162Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336684054:root",
+                        "area": "code",
+                        "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty是检索探测整合小档；mechanism关键词启发式小档；transferability纯检查模块半档；simplification统一入口半档。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow证据定位局部便利小档；delivery行级引用小档；reachAgent研究者小档；economics减少重复探测未测小档。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336684054-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "研究者可试文件引文定位和只读探测；逐条看原文否定主体，verified/high仅关键词信号，unsupported不能写成证伪。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "把主张定位到文件与元数据需求明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "统一行号和探测少重复找证据，不具语义验真能力。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "60%词命中及两条high源码明确，YAML仅结构烟检。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无专属模型服务，API限流和上下文人工解释仍耗时。"
+                    }
+                },
+                "score": 64,
+                "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1336684054-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336684054:root",
+                        "area": "code",
+                        "fingerprint": "5a70cbdc230ee19bb4578e52440e18cc93153ee8"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336684054:root",
+            "repository": "863683348/dsh-plugin-verify",
+            "path": "",
+            "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+            "fingerprints": {
+                "directory": "a4a3a025c8c706087983bdbcf98cfb8b9a5a7358bf6fa69e5e48de2900602c1b",
+                "code": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+                "maintenance": "eaa52852b4f0bfb4c2fb017ac64dda07b3eb666099123e3e700289493a5853a4"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "472ea20521bcfb8f25c2a6ab9684cbc343337e65f223a00ff2e1ff40ded12ecf"
+        },
+        "publication.metadata": "data/plugins/863683348--dsh-plugin-verify/META.json",
+        "publication.summaries": {
+            "text": "提供工作区关键词证据检索、配置检查及URL、npm和GitHub只读探测。",
+            "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+            "source_url": "https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+            "items": {
+                "模型工具": "verify聚合claim/config/url/npm/repo/batch只读检查。"
+            }
+        },
+        "publication.advice": {
+            "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+            "text": "适合把它当检索和体检辅助。先看实际命中行与上下文，再给结论；不要依据verified或high自动放行，也不要把unsupported写成证伪。"
+        },
+        "registry": "data/plugins/863683348--dsh-plugin-verify",
+        "reports": "# dsh-plugin-verify\n\n> 提供工作区关键词证据检索、配置检查及URL、npm和GitHub只读探测。\n\n## 使用建议\n\n适合把它当检索和体检辅助。先看实际命中行与上下文，再给结论；不要依据verified或high自动放行，也不要把unsupported写成证伪。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：Agent研究或插件提交前需要把主张定位到文件与外部元数据；合格交付应是证据与主张逻辑关系清楚，访问成功并不等于主张成立。\n- **亮点**：相对模型无依据口述，增量是统一文件行号引用和常见只读探测，把原始线索带回研究过程。它实现的是证据发现与结构体检，不是语义事实验证引擎。\n- **思考**：verified与high confidence标签是否过强？scoreClaim仅60%关键词命中即verified，batch的high可由至少两条命中触发；否定、主体归属与相反陈述都可能共享关键词。YAML又只是结构烟检。因此引用可追溯是支持，但不能从覆盖率推出事实正确性或置信概率。\n- **建议**：由行级证据与过强判定推导，可将verdict改为“检索覆盖”并附待验证关系，增加相反证据和数字条件核对，再由人或独立验证器形成结论。未验证假设是减少引用正确但结论错误。用相同关键词正反命题盲测，若误verified不降则否定。\n\n## 场景与替代办法\n\nAgent研究或插件提交前需要把主张定位到文件与外部元数据；合格交付应是证据与主张逻辑关系清楚，访问成功并不等于主张成立。\n\nrg与HTTP请求可完成底层工作；插件价值在聚合与行级输出，语义判断仍须另做。\n\n## 能力清单\n\n- **模型工具**：verify聚合claim/config/url/npm/repo/batch只读检查。\n\n## 依赖与流程\n\n需要宿主文件读工具、HTTP访问及GitHub/npm可达性；结论依赖检索范围、关键词质量与人工解释，YAML复杂语法需真正解析器。\n\n指定主张/配置/URL等范围，工具搜索或探测并给引用与结果，研究者检查原文、反例和范围，再形成有限结论。\n\n## 成本与效果\n\n无新增专属模型服务，但扫描文件、网络API与人工阅读引用有时间成本；GitHub限流会限制批量检查，未测总研究时间。\n\n减少人工找行号与重复探测工作；收益依赖研究者继续判断，未提供事实准确率对照。\n\n## 核心贡献\n\n相对模型无依据口述，增量是统一文件行号引用和常见只读探测，把原始线索带回研究过程。它实现的是证据发现与结构体检，不是语义事实验证引擎。\n\n## 关键质疑\n\nverified与high confidence标签是否过强？scoreClaim仅60%关键词命中即verified，batch的high可由至少两条命中触发；否定、主体归属与相反陈述都可能共享关键词。YAML又只是结构烟检。因此引用可追溯是支持，但不能从覆盖率推出事实正确性或置信概率。\n\n\n## 工程亮点\n\n纯探测逻辑、注入fetch和有界并发值得借鉴。主要复用成本是把标签与实际证据强度对齐，避免把关键词计数包装成校准置信度；网络可达性也应与业务正确性分层。 源码依据：[lib/verify.js](https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/verify.js)、[lib/batch.js](https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/batch.js)、[lib/index.js](https://github.com/863683348/dsh-plugin-verify/blob/5a70cbdc230ee19bb4578e52440e18cc93153ee8/lib/index.js)。\n\n## 未来设计假设（未验证）\n\n由行级证据与过强判定推导，可将verdict改为“检索覆盖”并附待验证关系，增加相反证据和数字条件核对，再由人或独立验证器形成结论。未验证假设是减少引用正确但结论错误。用相同关键词正反命题盲测，若误verified不降则否定。\n\n以真假相反、主体替换与数字边界命题检验命中标签，复杂合法/非法YAML与正式解析器对照，记录误放行与复核工时。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b0bf0c57fde02996f969647e373644b5738ffa7fdfe78f493fb06f7b13c47c86。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 6 | 157 | — | — | 1278 |\n| .js | source | 3 | 688 | 548 | 111 | — |\n| .mjs | source | 1 | 117 | 103 | 7 | — |\n| .mjs | test | 2 | 215 | 199 | 11 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-plugin-verify](https://github.com/863683348/dsh-plugin-verify)\n- **版本号**：1.1.2（[固定提交 5a70cbdc](https://github.com/863683348/dsh-plugin-verify/tree/5a70cbdc230ee19bb4578e52440e18cc93153ee8)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/verify.js、lib/batch.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：以真假相反、主体替换与数字边界命题检验命中标签，复杂合法/非法YAML与正式解析器对照，记录误放行与复核工时。\n",
+        "metadata": {
+            "repository": "863683348/dsh-plugin-verify",
+            "repository_id": 1336684054,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-09-11T03:26:41Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-verify%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:1B0790:A5BE12:EEDDAE:6AD84A8D and timestamp 2026-10-21 05:15:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-verify%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:3FE178:A96BBC:F2DEFA:6AD84A8D and timestamp 2026-10-21 05:15:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-verify%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:F5D0E:AA474A:F389B9:6AD84A8D and timestamp 2026-10-21 05:15:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-verify%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:25685:A8E030:F1EBA9:6AD84A8E and timestamp 2026-10-21 05:15:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-verify%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:24642:A9D019:F36261:6AD84A8E and timestamp 2026-10-21 05:15:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-verify",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 839,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-verify",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-19T15:30:02.834Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-verify",
+                    "error": null,
+                    "latest_version": "1.1.1",
+                    "latest_published_at": "2026-09-11T02:35:39.651Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+                "current_revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336684054:root",
+            "repository": "863683348/dsh-plugin-verify",
+            "path": "",
+            "revision": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a4a3a025c8c706087983bdbcf98cfb8b9a5a7358bf6fa69e5e48de2900602c1b",
+                "code": "5a70cbdc230ee19bb4578e52440e18cc93153ee8",
+                "maintenance": "eaa52852b4f0bfb4c2fb017ac64dda07b3eb666099123e3e700289493a5853a4"
+            }
+        }
+    }
+}

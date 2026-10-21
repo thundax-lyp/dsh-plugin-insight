@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2e768322958cf03e94df6dea38dfe24a",
+    "identity": "github:1423529802:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423529802:root",
+            "repository": "houdinicc/dsh-raindrop",
+            "path": "",
+            "revision": "1d58a435d6a6baa8b18f6825e656d9b8798153d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a1e4efa15957810a6401f64ace5cc8bd3a8ac5a638934ab56e5ee339cfb12925",
+                "code": "1d58a435d6a6baa8b18f6825e656d9b8798153d6",
+                "maintenance": "516c90b629b4d99e0ad2ac1483265ed20e6a6166a92a42026c842c43d1889be2"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c82f443ad42807ac0a84c6f7c07f3cfb",
+    "identity": "github:1373862854:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373862854:root",
+            "repository": "xiaobbl/dsh-opencode-go-model-list",
+            "path": "",
+            "revision": "fdf887e2009627aff22d22f3ca932919266755a3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0f659c454a3cc3a0e9f44e669c11a4704525d5eb640adf4ba08eb4ac3c52dd64",
+                "code": "fdf887e2009627aff22d22f3ca932919266755a3",
+                "maintenance": "0703ef7ac54810e385c1de71e81fe3696147820f618e52243a2d92abef8b2845"
+            }
+        }
+    }
+}

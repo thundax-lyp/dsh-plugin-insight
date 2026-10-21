@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c70f43285e574f53978822536fa180eb",
+    "identity": "github:1424581325:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424581325:root",
+            "repository": "donyue7/dsh-aoci-bind",
+            "path": "",
+            "revision": "5704f90964f8d16d0cd9205634f52369da6db751",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb37bd4d9b257a5627999d70eb3bdc9e52a87230ba037f91528cd91bb91c0a09",
+                "code": "5704f90964f8d16d0cd9205634f52369da6db751",
+                "maintenance": "08317401e4be874af5d0db4ec5fd32c0d1ec17bcf58bebc10e720c341431c3f8"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "43b1140678f2e87f81b925c5e9cfd8c2",
+    "identity": "github:1404377228:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404377228:root",
+            "repository": "du-yuxuan/OneKey-Models",
+            "path": "",
+            "revision": "4b62dfaa550d6a1d0ba3094a824029a660a15aac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2ae217e668c7bcc34ed14f57342a294032396db4816a90da000c481e6c5785d7",
+                "code": "4b62dfaa550d6a1d0ba3094a824029a660a15aac",
+                "maintenance": "00674894609954f7eaedf9e93e54525e231d5400b1f2dae4863812c9e4649e97"
+            }
+        }
+    }
+}

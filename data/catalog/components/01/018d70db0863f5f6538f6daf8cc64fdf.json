@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "018d70db0863f5f6538f6daf8cc64fdf",
+    "identity": "github:1425385228:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425385228:root",
+            "repository": "Toximiner/dsh-tokmeter",
+            "path": "",
+            "revision": "484eaa1cabaa7238221b43a0bf125019e3b38239",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b5dae6a1d38c6f38fb0da211a8f34e97798e51be20d515664646374109dc5aad",
+                "code": "484eaa1cabaa7238221b43a0bf125019e3b38239",
+                "maintenance": "4e60c1b8563c54e8d82d7164028bc99d311faabb1b9ba1dc312d690b4be5bc4f"
+            }
+        }
+    }
+}

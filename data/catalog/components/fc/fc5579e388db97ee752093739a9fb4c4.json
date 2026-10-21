@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "fc5579e388db97ee752093739a9fb4c4",
+    "identity": "github:1334737435:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334737435:root",
+            "repository": "RevolutionLA/dsh-dream-skin",
+            "path": "",
+            "revision": "9807bf6888b31d4eef40c05413548028e90321db",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "09a6949e2bea8a417a9ec463df34080e816a9fdff859f91e393ab6f277706d1e",
+                "code": "9807bf6888b31d4eef40c05413548028e90321db",
+                "maintenance": "fc1c5afcdf11a7f405d7a2ae0da128aa25cb451428925d59fce017cbe96e6775"
+            }
+        }
+    }
+}

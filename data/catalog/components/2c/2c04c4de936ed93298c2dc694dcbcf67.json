@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2c04c4de936ed93298c2dc694dcbcf67",
+    "identity": "github:1389314603:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389314603:root",
+            "repository": "lovezi0/dsh-workspace-acl-allow",
+            "path": "",
+            "revision": "34dc579447f075b3d407568523e9ba53ad108f94",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b649c36162ee30a42666633e8368543d312b338d419f0d3cb52b85b7296d0a0",
+                "code": "34dc579447f075b3d407568523e9ba53ad108f94",
+                "maintenance": "eb063967b4b84b59f765063abf05fc412ba9e6a1c5e8eeac9321cbf8abc23fc7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "07e16f643227c2c8d0192f4578cbb9bc",
+    "identity": "github:1148960257:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1148960257:root",
+            "repository": "zhukunpenglinyutong/desktop-cc-gui",
+            "path": "",
+            "revision": "6434632ec69861da906e15abb0c08964d11c0e2f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "88cd38e2ca8d50eed0b8e6d16c3275a1289c2c1b670711e2c5909d64b9b1ef3d",
+                "code": "6434632ec69861da906e15abb0c08964d11c0e2f",
+                "maintenance": "9dafad8ea557427a1a790de12d56a1ac8ae1ee3adac2245a4d70b8bf4e1f0b6e"
+            }
+        }
+    }
+}

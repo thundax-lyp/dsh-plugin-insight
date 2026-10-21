@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6fe64fbf6b91b225ed67df697fa324ba",
+    "identity": "github:1409080705:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409080705:root",
+            "repository": "WindFromKadath/dsh-plugin-workspace-archive",
+            "path": "",
+            "revision": "4af491479a7de1d8248ae3c8049d13ebe0b5f0c0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ab1f33a2a71768141141ce9fc26460cf62d8e4e6043d5108dcbb6882c8db9396",
+                "code": "4af491479a7de1d8248ae3c8049d13ebe0b5f0c0",
+                "maintenance": "840c71fad213f143525967a65f8a9554f2a75dbe0c0df29c52c05a8e467ce5d5"
+            }
+        }
+    }
+}

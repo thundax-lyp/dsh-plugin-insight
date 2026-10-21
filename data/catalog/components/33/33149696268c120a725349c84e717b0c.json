@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "33149696268c120a725349c84e717b0c",
+    "identity": "github:1340075177:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340075177:root",
+            "repository": "XMoon/dsh-subagent-router",
+            "path": "",
+            "revision": "d0dff2768d8f1104e2de0f6fdd3dc43ff0b7312e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "72460904188b2db31766ea41ccb07f4296f2e71a28a40d8cf9526881b6348992",
+                "code": "d0dff2768d8f1104e2de0f6fdd3dc43ff0b7312e",
+                "maintenance": "9cb8635844c10c5d2b7e4d21a05b83ac820bc496aeb6285b7e746953566a3c2d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2fe74795a7fd298e85cf414038c6f0a4",
+    "identity": "github:1345304864:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345304864:root",
+            "repository": "fjzzwxp/dsh-mnemosyne-memory",
+            "path": "",
+            "revision": "e98a92bac39831d07ddb53deb46b7a2786fbc6f9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0ae3329a0eb0aedf3f3175baae242f8bf6ea64c187b3f1969c608a9c8db7a022",
+                "code": "e98a92bac39831d07ddb53deb46b7a2786fbc6f9",
+                "maintenance": "732de34cbbcad96517b13fca90c088aa1304f2ea3dba31e96963b747b377c081"
+            }
+        }
+    }
+}

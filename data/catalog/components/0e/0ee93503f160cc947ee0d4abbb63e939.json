@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ee93503f160cc947ee0d4abbb63e939",
+    "identity": "github:1343906022:dsh-client-ui-second-brain",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343906022:dsh-client-ui-second-brain",
+            "repository": "aduo-111/second-brain",
+            "path": "dsh-client-ui-second-brain",
+            "revision": "3159551e429208f1828df084d41effe7c605f776",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8d673e6ed58e5cb6e27b819909a473e41f0d7b6bdd6cd55a143cef016c9c73ee",
+                "code": "3159551e429208f1828df084d41effe7c605f776",
+                "maintenance": "2a6ca447628262659a639cb6dd509e302c88843ead02114e0fbac61dc5c55741"
+            }
+        }
+    }
+}

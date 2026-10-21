@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "879535fcc85a6a666225a49b378089a0",
+    "identity": "github:1335643915:adapters-dsh-native",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335643915:adapters-dsh-native",
+            "repository": "philmingdao/anno",
+            "path": "adapters/dsh-native",
+            "revision": "69db95d533c93d310f4e05ae789679f2e096e844",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0c09f9e808d37741f1c42f5ccbde394850df272266b840906718e1ed3d1039dd",
+                "code": "69db95d533c93d310f4e05ae789679f2e096e844",
+                "maintenance": "97183eac37e19a69560807b9f8bf9a2ffbb8dbeb88fbf0ef133ee50490f40c84"
+            }
+        }
+    }
+}

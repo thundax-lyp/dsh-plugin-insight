@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eae5cf35c3b5ca9bb66d8d177102a0e9",
+    "identity": "github:1345833243:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345833243:root",
+            "repository": "tma1-ai/dsh-otel",
+            "path": "",
+            "revision": "87fa8d65e442db48ee75798d75fabe60f70bdaab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2c2b7a3982138ce2416d256a2a9c48f7a507bb2208c2b4256cf7c4b3aa5ee498",
+                "code": "87fa8d65e442db48ee75798d75fabe60f70bdaab",
+                "maintenance": "231be89a9362d397a841fe0e197563a9ba57bcfeaee82aa17c7cb6616137e394"
+            }
+        }
+    }
+}

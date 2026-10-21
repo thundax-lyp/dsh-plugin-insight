@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0a42baa15840c3601f9ec0e17636859c",
+    "identity": "github:1409887158:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409887158:root",
+            "repository": "dingchenhui0618-arch/dsh-warden",
+            "path": "",
+            "revision": "e4fe30cd4914528de9e4c6867fbc96a020093818",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b43de25879aa95280e9a9bc27f3c19df9e36537fba7f62d86c80dc25db0f81af",
+                "code": "e4fe30cd4914528de9e4c6867fbc96a020093818",
+                "maintenance": "257d7715510011d5a317244020ce6a66033dc9548bb4f0005fa2002a0b024ab9"
+            }
+        }
+    }
+}

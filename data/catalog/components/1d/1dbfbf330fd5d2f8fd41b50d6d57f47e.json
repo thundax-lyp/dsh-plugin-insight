@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1dbfbf330fd5d2f8fd41b50d6d57f47e",
+    "identity": "github:1345944469:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345944469:root",
+            "repository": "HenryHwong/dsh-ui-billing",
+            "path": "",
+            "revision": "cc67f44fd2ae48c201196472734aed503fe2380f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "59f4b8f66c6b4f9be518eeebe7caa2ccd34776f4c4925bd7e20c03c502d0d07b",
+                "code": "cc67f44fd2ae48c201196472734aed503fe2380f",
+                "maintenance": "942a2d211aca769c2c7f517cb79fb0ced8409411d31f6e267a72d652ca696741"
+            }
+        }
+    }
+}

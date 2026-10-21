@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3437ab77c739fb67b65b60d7e1cd3d45",
+    "identity": "github:1344923635:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344923635:root",
+            "repository": "lsh2002/dsh-custom-fonts",
+            "path": "",
+            "revision": "648efa35ef90ebd1375e545598c4a2da86f22bed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ef1a350b0316259eff012182b2e62a9150814941b7dc4446e601d4b5dd98b5bd",
+                "code": "648efa35ef90ebd1375e545598c4a2da86f22bed",
+                "maintenance": "f3500d094eb60e2836d3fb49be8bf2fcfa6fb0c5f21f8ee04622c9e9b30f2e51"
+            }
+        }
+    }
+}

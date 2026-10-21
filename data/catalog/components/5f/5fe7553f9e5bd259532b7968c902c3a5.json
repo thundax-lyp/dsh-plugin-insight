@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5fe7553f9e5bd259532b7968c902c3a5",
+    "identity": "github:1369398336:packages-dsh-memory",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369398336:packages-dsh-memory",
+            "repository": "ECNU/EduWork",
+            "path": "packages/dsh-memory",
+            "revision": "4277582de87dc0a16eb67528225314e4591a369b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3ac0b692a69aa02ed633028ca423bcea5b8ecdc4e2a29bd4279a7ab616e4c1d4",
+                "code": "4277582de87dc0a16eb67528225314e4591a369b",
+                "maintenance": "66b250ae108f42287fee765980af40160c853dc5552a6dfd0b01af81f4fc0da2"
+            }
+        }
+    }
+}

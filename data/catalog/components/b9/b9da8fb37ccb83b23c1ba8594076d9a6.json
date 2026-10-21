@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b9da8fb37ccb83b23c1ba8594076d9a6",
+    "identity": "github:1335807796:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335807796:root",
+            "repository": "genius-alray/dsh-mermaid-render",
+            "path": "",
+            "revision": "b490dda4c804071afe802e5bdf196c67264daaba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0cfb564a31e7bae9345560e77f81b99f3c9f7ae3ba15ddc5fad811a4c0e68363",
+                "code": "b490dda4c804071afe802e5bdf196c67264daaba",
+                "maintenance": "1b0c69553bdce47908c8f98f170f8b40b999c1081fa6562e3dfae5c4ab5e6549"
+            }
+        }
+    }
+}

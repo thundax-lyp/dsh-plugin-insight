@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "901104dc596e72ae489ab4eb12df6162",
+    "identity": "github:1346527109:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346527109:root",
+            "repository": "Ardig24/dsh-trajectory-ablation",
+            "path": "",
+            "revision": "503adf17f92624740b1911e1cc8cf96f85803e32",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "cc01fbddbbac9022a15574f929f768bc87d03ce9c98bb87333ee57a2ade5aa8d",
+                "code": "503adf17f92624740b1911e1cc8cf96f85803e32",
+                "maintenance": "dcd43829e7d47aa2ee8b8f313940472131b9a6e74b3e23aabfb9224bd676234c"
+            }
+        }
+    }
+}

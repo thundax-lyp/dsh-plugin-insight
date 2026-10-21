@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "70a491230b0baedee2ff378be4b16df1",
+    "identity": "github:1335237926:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335237926:root",
+            "repository": "WM-CODER/custom-first-control-prompt",
+            "path": "",
+            "revision": "cab57abe28d565839e026e0018b292aa32d55531",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "983f340e440317d059829cdb720c56be622ae480bb13557452fe5f9d9b40bca5",
+                "code": "cab57abe28d565839e026e0018b292aa32d55531",
+                "maintenance": "0df9dadfe5e6525098113d3b7d2e9165a89fce92d90f6dd6120a3b5dde20f995"
+            }
+        }
+    }
+}

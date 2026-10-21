@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c05ebc07cbc8dc2d26444545ec14f49d",
+    "identity": "github:1334383443:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334383443:root",
+            "repository": "vinyumao/dsh-opencode-usage",
+            "path": "",
+            "revision": "191b1d32b0ec0d29a4305eae89a825faf0658bf0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5062983b1a463afb5b0b86a52de5f520fdf5d19c23daa7bf6ddc66ba64376f99",
+                "code": "191b1d32b0ec0d29a4305eae89a825faf0658bf0",
+                "maintenance": "444aea199f531b9acbb3b127c393c0540e905a0be8643d27c1b532ec3428502f"
+            }
+        }
+    }
+}

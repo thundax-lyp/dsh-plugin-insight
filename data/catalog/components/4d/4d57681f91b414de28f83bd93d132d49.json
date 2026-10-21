@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4d57681f91b414de28f83bd93d132d49",
+    "identity": "github:1336819389:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336819389:root",
+            "repository": "ruijiaang-lab/dsh-wallpaper-engine",
+            "path": "",
+            "revision": "a35d21c758a0cc6be0aa9a0e1c50cb386e1f674e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "48a68b3c8220d4124e957d17f9f1f44042d8a9afcb1cea377ff749a33dff7fbb",
+                "code": "a35d21c758a0cc6be0aa9a0e1c50cb386e1f674e",
+                "maintenance": "ebdf919b145331b035006ef7c763b5e8ddec70195a60889012e52b27dd4a17e4"
+            }
+        }
+    }
+}

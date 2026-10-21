@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6d4405bf419c75eb4a7dfcf06d41d525",
+    "identity": "github:1205593265:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1205593265:root",
+            "repository": "inthepond/ff-toolkit",
+            "path": "",
+            "revision": "0b4a00c57cf14118a3f2d6f5182f1ff85879d885",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "feb5ed2852252e37109eb7c07482e07f934e384f4f932a471448d61226167a91",
+                "code": "0b4a00c57cf14118a3f2d6f5182f1ff85879d885",
+                "maintenance": "1d7172b9a64a4473089c99c131a54d213abdc2115ced73be43ba8357c1d5f881"
+            }
+        }
+    }
+}

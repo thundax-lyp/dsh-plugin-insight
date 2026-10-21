@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "edd295415eb0dc24c6bb48027639beb9",
+    "identity": "github:1398567861:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398567861:root",
+            "repository": "xiangrikuibaize/dsh-tide-badge",
+            "path": "",
+            "revision": "c1ea16eba55caa33444ef73e638b969ca47fe0dd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "86027c9b9ea236a15a7a0c5ea15eaa88488661e730b3a5efac4009612480d42f",
+                "code": "c1ea16eba55caa33444ef73e638b969ca47fe0dd",
+                "maintenance": "a42f34c505fd0bce12f378f25c8913ff275504c423bc18bd96938d2fa2edcc77"
+            }
+        }
+    }
+}

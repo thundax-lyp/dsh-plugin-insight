@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "2271ee7a218214e6ffe3251e20234fb4",
+    "identity": "github:1422091204:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1422091204:root",
+            "repository_id": 1422091204,
+            "component_id": "root",
+            "repository": "7gzgn/dsh-leak-guard",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-leak-guard",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f5e12ca2cc57089d925756310ca4a0e4768a00bd12d3202e02789f62756d246f",
+                "code": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+                "maintenance": "d7d40e991879352c382d08438964b166b56d1cfeafb70cf9f383eddfec6b1aaa"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1422091204-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:43:25.323Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1422091204-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/7gzgn/dsh-leak-guard/blob/8b578f80898b80acc77285f3f4c095b433dda0a4/README.md",
+                    "revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+                    "captured_at": "2026-10-21T03:43:25.323Z",
+                    "summary": "在 DSH 通过本地规则扫描指定文件或目录中的凭据，并返回脱敏发现。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-leak-guard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1422091204-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/7gzgn/dsh-leak-guard/blob/8b578f80898b80acc77285f3f4c095b433dda0a4/lib/index.js",
+                    "revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+                    "captured_at": "2026-10-21T03:43:25.323Z",
+                    "summary": "核查 lib/index.js、lib/scanner.js、lib/patterns.js、package.json；index注册leak_guard和系统引导；scanner先粗筛再匹配patterns规则，对占位符放行，跳目录/二进制/大文件并以严重度汇总，默认不写盘不联网。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-leak-guard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读入口、规则与扫描遍历/限额；未跑目标测试，无准确率、全历史或发布物覆盖验证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者在推送或外发前检查当前工作树的明显凭据，交付带位置、规则和掩码的候选发现供人处理。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "index注册leak_guard和系统引导；scanner先粗筛再匹配patterns规则，对占位符放行，跳目录/二进制/大文件并以严重度汇总，默认不写盘不联网。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读入口、规则与扫描遍历/限额；未跑目标测试，无准确率、全历史或发布物覆盖验证。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "ESM host工具，声明DSH 0.2线；工具schema兼容降级是作者设计，不等于本轮加载通过。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次确定扫描根和规则，持续人工确认候选、轮换实际泄露凭据及处理误报；无外部请求费用，CPU/耗时及单位发布成本未测。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合发布前补查明显秘密；显式传项目路径，查看所有跳过项，再检查真实打包文件与Git历史，别把ok当无泄露保证。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "离线脱敏降低把秘密再发给模型审计的需要；作用是有限规则的兜底，不替代发布流程控制。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "scanner与patterns分离、敏感结果只留前6字符、lstat避免跟随symlink便于复用；截断与skip必须在可靠审计中升级为明确范围状态。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对临时让模型阅读文件找秘密，增量是把固定规则、掩码与位置整理为DSH可调用工具，支持离线复核；正则秘密扫描与熵检测是既有方法，本插件不证明有新的检测算法。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "ok=true能否当发布干净证明？只表示扫描范围内未命中critical/high，dist/build等默认排除，单文件1MiB、前20000行和超过5000字符行的限制会漏掉实际发布物；扫描不强制拦截push且不读Git历史。若模型选错path，提示“必须调用”仍无完整覆盖保证。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：让扫描输入绑定实际发布文件manifest及摘要，并把跳过/截断计入incomplete而非干净，可降低遗漏发布物的假安全感。由默认目录排除与行限制推导，未实现。把测试密钥分别放dist、长行、尾部和正常源码，对照manifest扫描与当前工具的遗漏率及误报处理时间；不能用零命中替代完整性。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422091204:root",
+                            "area": "code",
+                            "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:43:25.323Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:43:25.323Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+                "reviewed_at": "2026-10-21T03:43:25.323Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422091204:root",
+                        "area": "code",
+                        "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty 小幅：传统秘密规则的DSH包装；mechanism 小幅：粗筛/脱敏未突破检测约束；transferability 小幅：零依赖scanner可复用；simplification 小幅：统一工具输出。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 小幅：发布前增加核查步骤；delivery 小幅：位置与掩码候选报告；reach 小幅：Agent可调离线工具；economics 小幅：少手工逐文件查找，误报/漏报成本未测。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422091204-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "发布前可补扫明显凭据；显式项目路径并看全部跳过项，实际打包目录和Git历史另扫，ok不是无泄露证明。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "推送外发前定位明显秘密是明确重复任务。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "离线脱敏位置报告比让模型读全秘密稳妥，但属有限正则兜底。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "粗筛及规则源码可见，dist/build、1MiB和行长等排除限制明确。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无网络费用，人工确认误报、补覆盖和真密钥轮换仍必要。"
+                    }
+                },
+                "score": 64,
+                "revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1422091204-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422091204:root",
+                        "area": "code",
+                        "fingerprint": "8b578f80898b80acc77285f3f4c095b433dda0a4"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1422091204:root",
+            "repository": "7gzgn/dsh-leak-guard",
+            "path": "",
+            "revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+            "fingerprints": {
+                "directory": "f5e12ca2cc57089d925756310ca4a0e4768a00bd12d3202e02789f62756d246f",
+                "code": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+                "maintenance": "d7d40e991879352c382d08438964b166b56d1cfeafb70cf9f383eddfec6b1aaa"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "325f4e86a55582b881b6e8cc33de85cf0d115f92f0a58b49d135aa92cd76bbf6"
+        },
+        "publication.metadata": "data/plugins/7gzgn--dsh-leak-guard/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 通过本地规则扫描指定文件或目录中的凭据，并返回脱敏发现。",
+            "revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+            "source_url": "https://github.com/7gzgn/dsh-leak-guard/blob/8b578f80898b80acc77285f3f4c095b433dda0a4/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+            "items": {
+                "模型工具": "leak_guard扫描与规则清单。"
+            }
+        },
+        "publication.advice": {
+            "revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+            "text": "适合发布前补查明显秘密；显式传项目路径，查看所有跳过项，再检查真实打包文件与Git历史，别把ok当无泄露保证。"
+        },
+        "registry": "data/plugins/7gzgn--dsh-leak-guard",
+        "reports": "# dsh-leak-guard\n\n> 在 DSH 通过本地规则扫描指定文件或目录中的凭据，并返回脱敏发现。\n\n## 使用建议\n\n适合发布前补查明显秘密；显式传项目路径，查看所有跳过项，再检查真实打包文件与Git历史，别把ok当无泄露保证。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认本地扫描与脱敏输出；未运行扫描或测召回，未来完整性门禁是假设。\n\n- **用途**：开发者在推送或外发前检查当前工作树的明显凭据，交付带位置、规则和掩码的候选发现供人处理。\n- **亮点**：相对临时让模型阅读文件找秘密，增量是把固定规则、掩码与位置整理为DSH可调用工具，支持离线复核；正则秘密扫描与熵检测是既有方法，本插件不证明有新的检测算法。\n- **思考**：ok=true能否当发布干净证明？只表示扫描范围内未命中critical/high，dist/build等默认排除，单文件1MiB、前20000行和超过5000字符行的限制会漏掉实际发布物；扫描不强制拦截push且不读Git历史。若模型选错path，提示“必须调用”仍无完整覆盖保证。\n- **建议**：待验证假设：让扫描输入绑定实际发布文件manifest及摘要，并把跳过/截断计入incomplete而非干净，可降低遗漏发布物的假安全感。由默认目录排除与行限制推导，未实现。把测试密钥分别放dist、长行、尾部和正常源码，对照manifest扫描与当前工具的遗漏率及误报处理时间；不能用零命中替代完整性。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n开发者在推送或外发前检查当前工作树的明显凭据，交付带位置、规则和掩码的候选发现供人处理。\n\n参照常规正则秘密扫描与模型手工检查；未做与其他扫描器召回/速度基准。\n\n### 能力、流程与依赖\n\nindex注册leak_guard和系统引导；scanner先粗筛再匹配patterns规则，对占位符放行，跳目录/二进制/大文件并以严重度汇总，默认不写盘不联网。\n\n- **模型工具**：leak_guard扫描与规则清单。\n\nDSH工具/系统提示注册与Node文件API；目标路径权限和规则前缀决定覆盖，不依赖网络。\n\n显式选路径→遍历/跳过→粗筛/规则→掩码排序→用户修复→重新扫描；工具本身不发布也不撤销泄露。\n\nESM host工具，声明DSH 0.2线；工具schema兼容降级是作者设计，不等于本轮加载通过。\n\n### 效果、成本与限制\n\n离线脱敏降低把秘密再发给模型审计的需要；作用是有限规则的兜底，不替代发布流程控制。\n\n首次确定扫描根和规则，持续人工确认候选、轮换实际泄露凭据及处理误报；无外部请求费用，CPU/耗时及单位发布成本未测。\n\nok=true能否当发布干净证明？只表示扫描范围内未命中critical/high，dist/build等默认排除，单文件1MiB、前20000行和超过5000字符行的限制会漏掉实际发布物；扫描不强制拦截push且不读Git历史。若模型选错path，提示“必须调用”仍无完整覆盖保证。\n\n### 核心贡献与工程亮点\n\n相对临时让模型阅读文件找秘密，增量是把固定规则、掩码与位置整理为DSH可调用工具，支持离线复核；正则秘密扫描与熵检测是既有方法，本插件不证明有新的检测算法。\n\nscanner与patterns分离、敏感结果只留前6字符、lstat避免跟随symlink便于复用；截断与skip必须在可靠审计中升级为明确范围状态。\n\n源码依据：[lib/index.js](https://github.com/7gzgn/dsh-leak-guard/blob/8b578f80898b80acc77285f3f4c095b433dda0a4/lib/index.js)、[lib/scanner.js](https://github.com/7gzgn/dsh-leak-guard/blob/8b578f80898b80acc77285f3f4c095b433dda0a4/lib/scanner.js)、[lib/patterns.js](https://github.com/7gzgn/dsh-leak-guard/blob/8b578f80898b80acc77285f3f4c095b433dda0a4/lib/patterns.js)、[package.json](https://github.com/7gzgn/dsh-leak-guard/blob/8b578f80898b80acc77285f3f4c095b433dda0a4/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：让扫描输入绑定实际发布文件manifest及摘要，并把跳过/截断计入incomplete而非干净，可降低遗漏发布物的假安全感。由默认目录排除与行限制推导，未实现。把测试密钥分别放dist、长行、尾部和正常源码，对照manifest扫描与当前工具的遗漏率及误报处理时间；不能用零命中替代完整性。\n\n隔离合成数据覆盖长行、尾部、dist、占位符、symlink和大文件，记录跳过与真实发布manifest差异；当前不执行目标。\n\n## 核查说明\n\n- 版本号：0.1.1；版本日期：2026-10-18（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[8b578f80](https://github.com/7gzgn/dsh-leak-guard/tree/8b578f80898b80acc77285f3f4c095b433dda0a4)；本次截止 2026-10-21T03:36:14Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读入口、规则与扫描遍历/限额；未跑目标测试，无准确率、全历史或发布物覆盖验证。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：00debd5fe6ada168eb51c52f4d2b87112b33135756fa0d45da5169c2a8dfe3e7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 760 | 587 | 113 | — |\n| .md | source | 1 | 107 | — | — | 1050 |\n| .mjs | test | 2 | 122 | 88 | 20 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "metadata": {
+            "repository": "7gzgn/dsh-leak-guard",
+            "repository_id": 1422091204,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-17T23:52:50Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-leak-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:208D3:AACA82:F41F5F:6AD84A84 and timestamp 2026-10-21 05:15:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-leak-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:208D3:AACAD4:F41FD6:6AD84A84 and timestamp 2026-10-21 05:15:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-leak-guard%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:F5216:A6AE82:EF9267:6AD84A85 and timestamp 2026-10-21 05:15:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-leak-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:25685:A8D43F:F1DA13:6AD84A85 and timestamp 2026-10-21 05:15:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-leak-guard%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:24642:A9C54F:F35298:6AD84A85 and timestamp 2026-10-21 05:15:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-leak-guard",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-leak-guard",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-leak-guard",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+                "current_revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1422091204:root",
+            "repository": "7gzgn/dsh-leak-guard",
+            "path": "",
+            "revision": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f5e12ca2cc57089d925756310ca4a0e4768a00bd12d3202e02789f62756d246f",
+                "code": "8b578f80898b80acc77285f3f4c095b433dda0a4",
+                "maintenance": "d7d40e991879352c382d08438964b166b56d1cfeafb70cf9f383eddfec6b1aaa"
+            }
+        }
+    }
+}

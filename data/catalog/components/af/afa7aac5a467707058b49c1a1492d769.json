@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "afa7aac5a467707058b49c1a1492d769",
+    "identity": "github:1401797592:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401797592:root",
+            "repository": "bitxeno/dsh-magpie-connect",
+            "path": "",
+            "revision": "9e5aa35991108a0ecdacd88afa37b50828dc882b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "924f064ea465aa0fbe9aebac52e291f34d989626c0d932b955fb1aae501f113f",
+                "code": "9e5aa35991108a0ecdacd88afa37b50828dc882b",
+                "maintenance": "662fb3713de4a0c873e765157e7abc0980736815a94e4c6dd33a964aa8163938"
+            }
+        }
+    }
+}

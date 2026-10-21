@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "04490d6db54fd5c8bee671190a34e8f9",
+    "identity": "github:1334116121:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334116121:root",
+            "repository": "SeverusZh/dsh-yolo-mode",
+            "path": "",
+            "revision": "a83f46ae78ef948d0e544a09b521283ece0adcb3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aa939fa66efe4ce537a2e804f4db804ed4cc9842cdda36b2fb2562cb62935120",
+                "code": "a83f46ae78ef948d0e544a09b521283ece0adcb3",
+                "maintenance": "0896ea4f7fea646d5afe3c5ba27ff8edbdb7925c8759bda251a9c907aa97f1c4"
+            }
+        }
+    }
+}

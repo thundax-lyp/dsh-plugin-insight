@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "6b22cedbcabb0789d5736b677e1ec881",
+    "identity": "github:1336147683:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336147683:root",
+            "repository": "PerryLink/dsh-observe",
+            "path": "",
+            "revision": "48151ccf0cdf010042d95368ef64daf718896b42",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9175617a1708896cf09ed5255935290eda334db921405217df63f9c55b76931b",
+                "code": "48151ccf0cdf010042d95368ef64daf718896b42",
+                "maintenance": "f37b5e26cf04f264aea56ac1fcdd155dfedc801ad46625587cd488098da1623b"
+            }
+        }
+    }
+}

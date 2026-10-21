@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "be427258f935815439dfcace1094317c",
+    "identity": "github:1376892639:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376892639:root",
+            "repository": "Ztyss/dsh-llm-provider",
+            "path": "",
+            "revision": "b70f8303247abe4d8ae17cc8b095ab109e9cc1b9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "746307b2e0064c675cde8999481b42ac071864b4d786a618d102f217ce234325",
+                "code": "b70f8303247abe4d8ae17cc8b095ab109e9cc1b9",
+                "maintenance": "9957bb286f6eb59553fd283aff111f2fbad20ed205a4d19ae3c412ace7ceb86c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "91f5f9f36fb4f3517a75304e8d5cafc8",
+    "identity": "github:1335736894:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335736894:root",
+            "repository": "Nrxous/dsh-context7",
+            "path": "",
+            "revision": "4fdaf40151cb3677ea7a0af849b6af65c85dee03",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "63b583aa71523e6954a8f509014086ed39a0dcd4032daa3d3b2a51f008405df3",
+                "code": "4fdaf40151cb3677ea7a0af849b6af65c85dee03",
+                "maintenance": "61ea56ae2e48370306dc771d95bea5c0930e73e6f9964571bb13a7f743f807ec"
+            }
+        }
+    }
+}

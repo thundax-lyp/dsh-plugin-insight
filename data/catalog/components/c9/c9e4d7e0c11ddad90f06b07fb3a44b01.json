@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c9e4d7e0c11ddad90f06b07fb3a44b01",
+    "identity": "github:1388582919:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388582919:root",
+            "repository": "shiyan688/dsh-paperdesk",
+            "path": "",
+            "revision": "8a6cbad4872f89daba983fec93ade0281d7d5eab",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "48c91b781675bce1fd4fd30f50d3ae392f5cdb53476d6337a1b1e7e04c55f648",
+                "code": "8a6cbad4872f89daba983fec93ade0281d7d5eab",
+                "maintenance": "f22aa5f210e86f0c2213a32c0efe85117de24aa3e01000057c8e0eedc1763103"
+            }
+        }
+    }
+}

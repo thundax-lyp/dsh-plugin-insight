@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "edd42d7a477af8729eb876ff07540ab0",
+    "identity": "github:1334365870:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334365870:root",
+            "repository": "HR2AY/DSH-Plan-Graph",
+            "path": "",
+            "revision": "e7d4919902c5149b26b40246ddc425ae4dbfcdce",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b4d49d7711979b2de5789887472f5425f792df3e5009639a5cbe87890e9ad75f",
+                "code": "e7d4919902c5149b26b40246ddc425ae4dbfcdce",
+                "maintenance": "94b4145c7171e901a3250c69144cac466cd22454fadde3e57a348f008ada5209"
+            }
+        }
+    }
+}

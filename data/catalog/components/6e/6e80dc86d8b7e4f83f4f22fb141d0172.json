@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6e80dc86d8b7e4f83f4f22fb141d0172",
+    "identity": "github:1346803013:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346803013:root",
+            "repository": "luxueliu/luxueliu-dsh-story",
+            "path": "",
+            "revision": "568dce67f7af6fd05a9db9e709970e1a9b65aa0c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ee662cce1b199d46c98bfa2074ecc799164bd3fa72176dc3d67d1dcba8b90bef",
+                "code": "568dce67f7af6fd05a9db9e709970e1a9b65aa0c",
+                "maintenance": "7dfafbb069c3ce4a162da20419cc5721c52407607de605f2a36b796a77d7d41e"
+            }
+        }
+    }
+}

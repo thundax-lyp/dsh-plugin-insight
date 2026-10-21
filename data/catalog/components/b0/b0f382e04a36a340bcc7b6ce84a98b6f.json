@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b0f382e04a36a340bcc7b6ce84a98b6f",
+    "identity": "github:1423412234:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423412234:root",
+            "repository": "KJHAJKSLFHA/dsh-computer-use-next",
+            "path": "",
+            "revision": "7e7519dedfa71409c4cac03fe1b0c79d7e0d7c1e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d098d9308d26654f05cf985bcb9dcd1ce39bec682150b9368e267f1bd08fe847",
+                "code": "7e7519dedfa71409c4cac03fe1b0c79d7e0d7c1e",
+                "maintenance": "1ae67642d7cc1d337458d7eb622cfed63499cdff8b18bb35f265e680e98a75fe"
+            }
+        }
+    }
+}

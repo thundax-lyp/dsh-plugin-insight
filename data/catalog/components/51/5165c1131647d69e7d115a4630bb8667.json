@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5165c1131647d69e7d115a4630bb8667",
+    "identity": "github:1334219711:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334219711:root",
+            "repository": "yewenyell-lang/dsh-workloads",
+            "path": "",
+            "revision": "1e78056e6aef68622678191536dde6e12a46d0a0",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "af0a1d6d0129243720abb9b3025099602017bd72b967467c4ccc24b7340081d3",
+                "code": "1e78056e6aef68622678191536dde6e12a46d0a0",
+                "maintenance": "a35bc36cbe390f7569918fd5de72d06dad4f2d9f9023f0675b39c25f64c38945"
+            }
+        }
+    }
+}

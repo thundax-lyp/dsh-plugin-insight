@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d6299273e7173968e31eda585e1a6fa6",
+    "identity": "github:1360277643:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360277643:root",
+            "repository": "xingzhen199186/dsh-insight-tree",
+            "path": "",
+            "revision": "b267bd745849b473bc7d3cd475c0590a8c6a7354",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3c059de2e95b854db6c7428d382cc48c7fa91cd37f6d5724588ac6c6d8b516f7",
+                "code": "b267bd745849b473bc7d3cd475c0590a8c6a7354",
+                "maintenance": "43d9e355d4931f3d0e84a2f2e70d2a905a82df15cbbcef826d6888b34e117aba"
+            }
+        }
+    }
+}

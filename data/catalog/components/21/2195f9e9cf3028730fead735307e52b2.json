@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2195f9e9cf3028730fead735307e52b2",
+    "identity": "github:1334763603:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334763603:plugin",
+            "repository": "CHplus0/dsh-learning-mode",
+            "path": "plugin",
+            "revision": "960afb6bf0233f283870a6613cf1804d5717345e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "50c6c2603b617fef79051aa7c119991816bbaac11c6c66612ccefc3f2edd03db",
+                "code": "960afb6bf0233f283870a6613cf1804d5717345e",
+                "maintenance": "2b9c60e966de81dce6e2e3adcd4e564bb789d7b1e22a6528e40dbbaf344cb588"
+            }
+        }
+    }
+}

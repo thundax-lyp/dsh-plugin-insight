@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aa6b0bce1e1bedd72b502fc17752fa2d",
+    "identity": "github:1407002120:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407002120:root",
+            "repository": "himi-li/dsh-reasoning-loop-guard",
+            "path": "",
+            "revision": "3cacee0305ab5f9da2c53a0e5f68802030c96b34",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3868d6c0b0fae19e2c24356e0e1842206f020766b57d5b1390a23cb2376feb63",
+                "code": "3cacee0305ab5f9da2c53a0e5f68802030c96b34",
+                "maintenance": "21798160b3b217ed3abe0b96a5a9dbd62dda0444355807bdbfdc3f0e9ff3d916"
+            }
+        }
+    }
+}

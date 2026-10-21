@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2c5e988d0b12c73473bde83959f68e54",
+    "identity": "github:1344978581:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344978581:root",
+            "repository": "yangwuan55/dsh-feishu-integration",
+            "path": "",
+            "revision": "4ee69a1c0628ee61b1d12bdb32e05ab2c37a61dd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "851bd52b1b3fde58c5e41fc7720834f1e28246dce0c80a698ffb4290d39f4ae4",
+                "code": "4ee69a1c0628ee61b1d12bdb32e05ab2c37a61dd",
+                "maintenance": "b696839e1ff0a02d1fb18ecc9537e7a75b6e595f774568f31a697645583b854f"
+            }
+        }
+    }
+}

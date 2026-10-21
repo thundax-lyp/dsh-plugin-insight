@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "24866f1aa8cd6ba3bdc096f0a72cc87e",
+    "identity": "github:1393144751:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1393144751:root",
+            "repository": "yannicksong0106/dsh-550c-boot",
+            "path": "",
+            "revision": "62f9fa5c219b2a3bccf076077893da09c8695fd6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "70e076b0152940c7fbe27dc55c1d9e806919e81b3829b2cf44028923d14cd437",
+                "code": "62f9fa5c219b2a3bccf076077893da09c8695fd6",
+                "maintenance": "f156c75a40260db4844b8de3c9ac636e1f1d11c776d8fd82b3380291e9c610d8"
+            }
+        }
+    }
+}

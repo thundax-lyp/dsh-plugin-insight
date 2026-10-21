@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a310f60278594ba1f0fc4ba66eecfd4",
+    "identity": "github:1359686866:plugins-motor-cost-quote",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359686866:plugins-motor-cost-quote",
+            "repository": "helllo-shijie/motor-hospital-plugins",
+            "path": "plugins/motor-cost-quote",
+            "revision": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "350c8722eba3177d42a852f04f0b830ad8f03c6d3bf76bbcff102973b9297c77",
+                "code": "6b13e4bb39d30f795b9af8402034f0c0a88f7ab9",
+                "maintenance": "ae61c30fd903785b79008e00b9f602996e5f629205daa092405be9d1bae46ae1"
+            }
+        }
+    }
+}

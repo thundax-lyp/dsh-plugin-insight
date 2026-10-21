@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e49e272fb862ee15e0606a95408a96e9",
+    "identity": "github:1346582883:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346582883:root",
+            "repository": "Flonger/dsh-multi-clear",
+            "path": "",
+            "revision": "fe06a6a059354a3432728fc5045e234bea71c162",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "524577be62984e76aa9962c0bd8ca3d1dc6ce412b27c3b14eb049dd53b034ed4",
+                "code": "fe06a6a059354a3432728fc5045e234bea71c162",
+                "maintenance": "109f92697461eee8a3b11ce5592cd3365322f4d0b8de0c389e462aa4bddb93df"
+            }
+        }
+    }
+}

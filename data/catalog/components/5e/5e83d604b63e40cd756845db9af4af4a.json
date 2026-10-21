@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5e83d604b63e40cd756845db9af4af4a",
+    "identity": "github:1389638003:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389638003:root",
+            "repository": "kyle123740/dsh-message-recall",
+            "path": "",
+            "revision": "fba02ce70aafc26a6312b0280a9f3b284a8fd998",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "987190e575ef09405a4c92f8289746e2882c4f1e4dddbd0131f22cffa86ec030",
+                "code": "fba02ce70aafc26a6312b0280a9f3b284a8fd998",
+                "maintenance": "1366300990fa141e9b3071f965664ba3aa12e91bdfbc77163d8423a7790f7063"
+            }
+        }
+    }
+}

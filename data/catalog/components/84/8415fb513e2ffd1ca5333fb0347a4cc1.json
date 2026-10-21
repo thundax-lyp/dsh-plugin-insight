@@ -1,0 +1,439 @@
+{
+    "schema_version": 3,
+    "id": "8415fb513e2ffd1ca5333fb0347a4cc1",
+    "identity": "github:1351375738:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1351375738:root",
+            "repository_id": 1351375738,
+            "component_id": "root",
+            "repository": "Aik358/dsh-literature",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Literature",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "184609b1829de872ecf5957c78e465006e75ec50963cbb25d79ded6d3741c652",
+                "code": "fc6650ef12747de08512d99c2f9c8388572b7724",
+                "maintenance": "28a52fa6612a6e938b2647daef637ebfd7b4b279560bc168804676e77a5c7fc7"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1351375738-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:06:16.038Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1351375738-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/README.md",
+                    "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+                    "captured_at": "2026-10-21T08:06:16.038Z",
+                    "summary": "在 DSH 侧窗识别文献、抓取元数据、下载阅读 PDF 并管理本地文献库。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/aik358--dsh-literature/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1351375738-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/src/node/index.js",
+                    "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+                    "captured_at": "2026-10-21T08:06:16.038Z",
+                    "summary": "核查 src/node/index.js、src/node/tools.js、src/node/fetch/pdf.js、src/node/store/db.js、src/node/http.js、src/node/ai.js、lib/index.js、package.json；Host注册路由和按需挂载的literature工具，pipeline连接标识解析、外部元数据与PDF来源；独立JSON shadow store保存条目、任务、批注，避免直接写Zotero内部库。AI阅读抽取PDF文本最多60000字符，经steer送入指定或最近会话；client提供文献/阅读侧窗。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/aik358--dsh-literature/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "根src/node入口、tools、PDF获取、shadow store、HTTP围栏与AI交接，另核lib/index.js对应缺陷；未审计全部reader/引用格式或执行构建。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "研究者把对话中的标识符/标题转成可阅读归档条目，并将阅读问题送回当前会话；合格交付是标识、全文与引用对应正确。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host注册路由和按需挂载的literature工具，pipeline连接标识解析、外部元数据与PDF来源；独立JSON shadow store保存条目、任务、批注，避免直接写Zotero内部库。AI阅读抽取PDF文本最多60000字符，经steer送入指定或最近会话；client提供文献/阅读侧窗。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "根src/node入口、tools、PDF获取、shadow store、HTTP围栏与AI交接，另核lib/index.js对应缺陷；未审计全部reader/引用格式或执行构建。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "DSH Web bundle导出lib，src为开发原件；Node与Host工具/系统提示/回环webServer，PDF文本抽取及可选Zotero按实际配置另依赖。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "现金：原宿主模型与外部元数据/下载网络，AI全文问答增加上下文；人工：匹配同名文献、下载失败、引用/页码和冲突合并复核。本地PDF/批注存储及升级迁移有维护成本。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "需要会话旁阅读/归档可评估其设计；先修复并核对下载候选变量，再考虑核心全文流程，不依据作者一键/全文宣称直接采用。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少复制标识、切软件和搬阅读内容的步骤；正确文献归属与完整阅读仍需独立核对。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "shadow store延迟持久化并在flush等待在途写，状态与Zotero分离减少schema冲突；AI源文加资料界限，HTTP限制loopback Host/远端地址。来源判断与下载缺陷表明工具丰富不等于闭环通过。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将文献发现、元数据、阅读与引用集中在会话旁，并把文献状态与Zotero内部schema隔离；工具按意图/面板启用减少无关上下文负担。增量是研究资料交接与本地库集成，不是文献正确性或AI阅读算法创新。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "一键落入全文库的核心路径是否成立？src/node/fetch/pdf.js的push闭包读取未声明trusted，且提交lib/index.js同样存在Boolean(trusted)；遇到非空候选URL时有ReferenceError风险，不能以源码/构建目录区别回避。即使修复，AI全文只截前60000字符且页码由模型概括，不能当完整论文核读；“本地”指转发/存储，不代表外部元数据与模型调用不联网。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "把每条资料的标识、下载来源、PDF摘要和覆盖页段绑定到引用/问答输出，可减少“元数据正确但全文错误/未读全”的误归属。先以已知PDF和错误候选测试下载链，再对超长论文尾部问题要求明确未覆盖；若仍生成未见页码或引用错误，则不成立。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351375738:root",
+                            "area": "code",
+                            "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:06:16.038Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:06:16.038Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+                "reviewed_at": "2026-10-21T08:06:16.038Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351375738:root",
+                        "area": "code",
+                        "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "新颖性9：文献库/ChatPDF为既有流程的DSH集成；机制15：按需工具挂载、shadow store与阅读交接有具体取舍；迁移性10：外部库schema隔离可复用；简化8：统一资料入口但联网与导出依赖仍在。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "工作流9：集中检索阅读入口，研究责任不变；交付15：资料/笔记/引用可作为组合成果但下载缺陷待验；覆盖10：不用外部文献软件也可建库，仍依赖模型与网络；经济4：API与阅读成本收益未测。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1351375738-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "会话旁文献阅读者应先修PDF候选路径未声明trusted导致的核心下载错误，再验标识、全文和引用；60000字符不能当全文核读。",
+                "criteria": {
+                    "scenario": {
+                        "score": 30,
+                        "rationale": "研究者归档阅读及把问题送回会话有清晰任务。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "标识解析、独立shadow库及侧窗阅读减少搬运步骤。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "源码和lib均见trusted引用缺口，核心全文下载风险明确。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "外部元数据、PDF、模型及引用校对成本之外还有核心流程阻碍。"
+                    }
+                },
+                "score": 67,
+                "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1351375738-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351375738:root",
+                        "area": "code",
+                        "fingerprint": "fc6650ef12747de08512d99c2f9c8388572b7724"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1351375738:root",
+            "repository": "Aik358/dsh-literature",
+            "path": "",
+            "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+            "fingerprints": {
+                "directory": "184609b1829de872ecf5957c78e465006e75ec50963cbb25d79ded6d3741c652",
+                "code": "fc6650ef12747de08512d99c2f9c8388572b7724",
+                "maintenance": "28a52fa6612a6e938b2647daef637ebfd7b4b279560bc168804676e77a5c7fc7"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "04e319fc087b92d39bf55ba79776c3844577a47e9b0110a682c24e623c5b773c"
+        },
+        "publication.metadata": "data/plugins/aik358--dsh-literature/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 侧窗识别文献、抓取元数据、下载阅读 PDF 并管理本地文献库。",
+            "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+            "source_url": "https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+            "items": {
+                "模型工具": "按需挂载literature查询/检索/引用/笔记/保存/图表等定义。",
+                "Host 路由": "文献识别、资料/批注/下载与阅读服务接口。",
+                "界面": "文献侧窗与PDF阅读/批注入口。",
+                "事件监听": "会话活动与文献意图触发按需工具挂载。"
+            }
+        },
+        "publication.advice": {
+            "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+            "text": "需要会话旁阅读/归档可评估其设计；先修复并核对下载候选变量，再考虑核心全文流程，不依据作者一键/全文宣称直接采用。"
+        },
+        "registry": "data/plugins/aik358--dsh-literature",
+        "reports": "# DSH Literature\n\n> 在 DSH 侧窗识别文献、抓取元数据、下载阅读 PDF 并管理本地文献库。\n\n## 使用建议\n\n需要会话旁阅读/归档可评估其设计；先修复并核对下载候选变量，再考虑核心全文流程，不依据作者一键/全文宣称直接采用。\n\n核查状态：识别/存储/阅读交接设计可核查；下载主路径存在静态可定位的未定义变量，实际效果未运行验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：研究者把对话中的标识符/标题转成可阅读归档条目，并将阅读问题送回当前会话；合格交付是标识、全文与引用对应正确。\n- **亮点**：将文献发现、元数据、阅读与引用集中在会话旁，并把文献状态与Zotero内部schema隔离；工具按意图/面板启用减少无关上下文负担。增量是研究资料交接与本地库集成，不是文献正确性或AI阅读算法创新。\n- **思考**：一键落入全文库的核心路径是否成立？src/node/fetch/pdf.js的push闭包读取未声明trusted，且提交lib/index.js同样存在Boolean(trusted)；遇到非空候选URL时有ReferenceError风险，不能以源码/构建目录区别回避。即使修复，AI全文只截前60000字符且页码由模型概括，不能当完整论文核读；“本地”指转发/存储，不代表外部元数据与模型调用不联网。\n- **建议**：把每条资料的标识、下载来源、PDF摘要和覆盖页段绑定到引用/问答输出，可减少“元数据正确但全文错误/未读全”的误归属。先以已知PDF和错误候选测试下载链，再对超长论文尾部问题要求明确未覆盖；若仍生成未见页码或引用错误，则不成立。\n\n## 场景与替代办法\n\n研究者把对话中的标识符/标题转成可阅读归档条目，并将阅读问题送回当前会话；合格交付是标识、全文与引用对应正确。\n\n浏览器检索+Zotero/PDF阅读器+手动粘贴；插件缩短入口距离，不替代事实查核。\n\n## 能力清单\n\n- **模型工具**：按需挂载literature查询/检索/引用/笔记/保存/图表等定义。\n- **Host 路由**：文献识别、资料/批注/下载与阅读服务接口。\n- **界面**：文献侧窗与PDF阅读/批注入口。\n- **事件监听**：会话活动与文献意图触发按需工具挂载。\n\n## 依赖与流程\n\nHost注册路由和按需挂载的literature工具，pipeline连接标识解析、外部元数据与PDF来源；独立JSON shadow store保存条目、任务、批注，避免直接写Zotero内部库。AI阅读抽取PDF文本最多60000字符，经steer送入指定或最近会话；client提供文献/阅读侧窗。\n\nDSH tools/systemPrompt/agents/webServer、外部Crossref/arXiv/OpenAlex等服务、PDF解析；Zotero/导出渠道可选。\n\n识别标识→元数据→下载候选→本地保存→阅读/批注→选段或截断全文发会话→用户核对引用与答案；失败分类重试仍需人工，不自动证明全文已获取。\n\nDSH Web bundle导出lib，src为开发原件；Node与Host工具/系统提示/回环webServer，PDF文本抽取及可选Zotero按实际配置另依赖。\n\n## 成本与效果\n\n现金：原宿主模型与外部元数据/下载网络，AI全文问答增加上下文；人工：匹配同名文献、下载失败、引用/页码和冲突合并复核。本地PDF/批注存储及升级迁移有维护成本。\n\n减少复制标识、切软件和搬阅读内容的步骤；正确文献归属与完整阅读仍需独立核对。\n\n## 核心贡献\n\n将文献发现、元数据、阅读与引用集中在会话旁，并把文献状态与Zotero内部schema隔离；工具按意图/面板启用减少无关上下文负担。增量是研究资料交接与本地库集成，不是文献正确性或AI阅读算法创新。\n\n## 关键质疑\n\n一键落入全文库的核心路径是否成立？src/node/fetch/pdf.js的push闭包读取未声明trusted，且提交lib/index.js同样存在Boolean(trusted)；遇到非空候选URL时有ReferenceError风险，不能以源码/构建目录区别回避。即使修复，AI全文只截前60000字符且页码由模型概括，不能当完整论文核读；“本地”指转发/存储，不代表外部元数据与模型调用不联网。\n\n## 工程亮点\n\nshadow store延迟持久化并在flush等待在途写，状态与Zotero分离减少schema冲突；AI源文加资料界限，HTTP限制loopback Host/远端地址。来源判断与下载缺陷表明工具丰富不等于闭环通过。\n\n固定源码依据：[src/node/index.js](https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/src/node/index.js)、[src/node/tools.js](https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/src/node/tools.js)、[src/node/fetch/pdf.js](https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/src/node/fetch/pdf.js)、[src/node/store/db.js](https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/src/node/store/db.js)、[src/node/http.js](https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/src/node/http.js)、[src/node/ai.js](https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/src/node/ai.js)、[lib/index.js](https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/lib/index.js)、[package.json](https://github.com/Aik358/dsh-literature/blob/fc6650ef12747de08512d99c2f9c8388572b7724/package.json)。\n\n## 未来设计假设（未验证）\n\n把每条资料的标识、下载来源、PDF摘要和覆盖页段绑定到引用/问答输出，可减少“元数据正确但全文错误/未读全”的误归属。先以已知PDF和错误候选测试下载链，再对超长论文尾部问题要求明确未覆盖；若仍生成未见页码或引用错误，则不成立。\n\n未运行目标或下载。最小验证先用固定公开PDF的候选构建检查ReferenceError，再用同名异文献/超长尾部问题验证身份与覆盖范围。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：45db91f6e180cd1680ef88f1fb242bf4bec81f3fe331e5238fd586219e3efe80。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 13 | 2330 | — | — | 29088 |\n| .mjs | source | 7 | 1713 | 1331 | 228 | — |\n| .js | source | 42 | 45420 | 40510 | 4437 | — |\n| .cjs | source | 13 | 5611 | 4764 | 526 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.3.6；版本日期：2026-09-17（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[fc6650ef](https://github.com/Aik358/dsh-literature/tree/fc6650ef12747de08512d99c2f9c8388572b7724)；本轮基准：2026-10-21T07:52:12Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根src/node入口、tools、PDF获取、shadow store、HTTP围栏与AI交接，另核lib/index.js对应缺陷；未审计全部reader/引用格式或执行构建。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "Aik358/dsh-literature",
+            "repository_id": 1351375738,
+            "captured_at": "2026-10-21T07:59:10.094Z",
+            "window_start": "2026-09-21T07:59:10.094Z",
+            "stars": 8,
+            "pushed_at": "2026-09-16T17:27:20Z",
+            "issues": {
+                "open": 1,
+                "closed": 5,
+                "created_30d": 2,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-literature%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A10.094Z..2026-10-21T07%3A59%3A10.094Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C67A:273DF7:6D79EB:756493:6AD870D9 and timestamp 2026-10-21 07:59:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-literature%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A10.094Z..2026-10-21T07%3A59%3A10.094Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CA9E:26CA49:6D1E07:7506B0:6AD870DC and timestamp 2026-10-21 07:59:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@a9i5k4/dsh-literature",
+                "captured_at": "2026-10-21T07:59:25.082Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1971,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40a9i5k4%2Fdsh-literature",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-30T12:23:37.628Z",
+                    "captured_at": "2026-10-21T07:59:25.082Z",
+                    "source_url": "https://registry.npmjs.org/%40a9i5k4%2Fdsh-literature",
+                    "error": null,
+                    "latest_version": "0.3.6",
+                    "latest_published_at": "2026-09-08T05:53:27.070Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1351375738:root",
+            "repository": "Aik358/dsh-literature",
+            "path": "",
+            "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "184609b1829de872ecf5957c78e465006e75ec50963cbb25d79ded6d3741c652",
+                "code": "fc6650ef12747de08512d99c2f9c8388572b7724",
+                "maintenance": "28a52fa6612a6e938b2647daef637ebfd7b4b279560bc168804676e77a5c7fc7"
+            }
+        }
+    }
+}

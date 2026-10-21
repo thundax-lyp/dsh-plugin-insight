@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "960d66429e819988bcde2ce18ed3047c",
+    "identity": "github:1424013982:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424013982:root",
+            "repository": "netbka/local-commander-plugins",
+            "path": "",
+            "revision": "dec604f744267cc872c032cd530329416b12f7ae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d3280be87726d5e001760f1556c89ca0527ce761f2f62747107495696296155e",
+                "code": "dec604f744267cc872c032cd530329416b12f7ae",
+                "maintenance": "711c774a42cf746b587c2032ec6760044a47940ae233d670b3c456ed0c2d93f0"
+            }
+        }
+    }
+}

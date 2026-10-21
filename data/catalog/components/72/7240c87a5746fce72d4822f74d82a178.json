@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7240c87a5746fce72d4822f74d82a178",
+    "identity": "github:1335022594:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335022594:root",
+            "repository": "good-boy4069/dsh-vision-guard",
+            "path": "",
+            "revision": "54706cde2e2624f270c0beb1f4f339f932d14320",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f65147d3e839ea6fdcae735715dbee84296ac2a265edf7324b681cf1f8a3117a",
+                "code": "54706cde2e2624f270c0beb1f4f339f932d14320",
+                "maintenance": "602178e7cda8b54e205f0aa79fc262b961d2a4dcbf940f99b9e41fc60e31fd1c"
+            }
+        }
+    }
+}

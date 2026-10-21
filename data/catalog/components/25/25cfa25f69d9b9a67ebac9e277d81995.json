@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "25cfa25f69d9b9a67ebac9e277d81995",
+    "identity": "github:1354525766:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354525766:root",
+            "repository": "liaoyuqing/dsh-llm-error-retry",
+            "path": "",
+            "revision": "1e3a8c9a87d407a0d837f8136457612cc5e6dd0a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "df354e4a05fdb7ce8e3ff2a60825ba6d31bcd68752811d27c0395d6cf56dd7d1",
+                "code": "1e3a8c9a87d407a0d837f8136457612cc5e6dd0a",
+                "maintenance": "67edb4136845fdf43f618a1c8a38c19a3705dbf372a2f50a1e3d390d38f187e9"
+            }
+        }
+    }
+}

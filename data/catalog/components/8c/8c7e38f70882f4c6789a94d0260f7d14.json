@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8c7e38f70882f4c6789a94d0260f7d14",
+    "identity": "github:1360456250:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360456250:root",
+            "repository": "zampie/sakura-afternoon-skin",
+            "path": "",
+            "revision": "eb134ba54642c7b0a29d5900a4875d44a77fa3f0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7d58853f90ca98e56c0427a0dbe1296abd513bbfc39dae847cabe1f0ef8f72b4",
+                "code": "eb134ba54642c7b0a29d5900a4875d44a77fa3f0",
+                "maintenance": "7e889464097f6b13fc2be969f3d11d4cac6c454bc755493fb1222845b65a8783"
+            }
+        }
+    }
+}

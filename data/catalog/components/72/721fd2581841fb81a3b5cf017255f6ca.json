@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "721fd2581841fb81a3b5cf017255f6ca",
+    "identity": "github:1352588086:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352588086:root",
+            "repository": "yangdongzhen590/dsh-knj-extension-center",
+            "path": "",
+            "revision": "f344958e2c6b6dfb25386131fc93ccb4dc29c179",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f0f4d4798df6cd3caf6ba2bf9a9bffc10a293bef78dad91462e10c8bb4e55e55",
+                "code": "f344958e2c6b6dfb25386131fc93ccb4dc29c179",
+                "maintenance": "66155c030da81c90e766230a76149d8bb84a073f285266e4dc257d814bdd8802"
+            }
+        }
+    }
+}

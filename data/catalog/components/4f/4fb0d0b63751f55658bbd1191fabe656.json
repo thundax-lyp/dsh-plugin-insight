@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4fb0d0b63751f55658bbd1191fabe656",
+    "identity": "github:1341951692:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341951692:root",
+            "repository": "L3n3L/dsh-resume",
+            "path": "",
+            "revision": "26403f653f60a40c9d3d08b95486501b18869cdd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "edd2ab4457eb18125baec58628d2c03d6a66dcc0dc0c5079a8d4318393e36397",
+                "code": "26403f653f60a40c9d3d08b95486501b18869cdd",
+                "maintenance": "30d3c08f7e3dfc2248273150b6b24b7b8cc07e0d3bbb59a51129de186147b311"
+            }
+        }
+    }
+}

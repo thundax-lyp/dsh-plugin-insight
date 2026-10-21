@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "382199123e424f861d882c7f7abcd065",
+    "identity": "github:1419011778:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419011778:root",
+            "repository": "jidekaixin2dian/dsh-team-flow",
+            "path": "",
+            "revision": "1a9c3ea3d59e97077d966e676d18031482095c60",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "893a8f820fc232bbfc7ce3500e6eb69872891dcaaee93ec282c6c1cfcb71b045",
+                "code": "1a9c3ea3d59e97077d966e676d18031482095c60",
+                "maintenance": "e4fa86cc1d33d46eebf5eaaf0673da865f2ecefbfde5c1cc46a98e103dda6b01"
+            }
+        }
+    }
+}

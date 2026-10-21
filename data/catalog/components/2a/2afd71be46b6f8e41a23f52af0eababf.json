@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2afd71be46b6f8e41a23f52af0eababf",
+    "identity": "github:1336062772:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336062772:root",
+            "repository": "JimChen-g/dsh-action-outbox",
+            "path": "",
+            "revision": "888d04742adca7e888b80a89532b940adfd79d5a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5b471a2f5c710971d882ea07f423a1da82938abe0912692b358bb3ae4d63c6d2",
+                "code": "888d04742adca7e888b80a89532b940adfd79d5a",
+                "maintenance": "304b27659379d86b6c90d45fd13835fe3a80630ff2c7d5492ab5025122f316ee"
+            }
+        }
+    }
+}

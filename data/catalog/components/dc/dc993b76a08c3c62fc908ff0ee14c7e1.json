@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dc993b76a08c3c62fc908ff0ee14c7e1",
+    "identity": "github:1409620044:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409620044:root",
+            "repository": "jerryxff26-alt/dsh-delivery-board",
+            "path": "",
+            "revision": "899689e68ae879377a23c4050747544d1057c1ef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0767009b354db349ffe802f3404b82bb0cab81003bdf51d68b47f2572da330eb",
+                "code": "899689e68ae879377a23c4050747544d1057c1ef",
+                "maintenance": "0002a7c32e11c957d78e522bfede27db37997b49eba5fcdec524b8b53f5fa9bb"
+            }
+        }
+    }
+}

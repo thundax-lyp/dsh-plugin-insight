@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1e21c844ccd14a1e8faa6919e15fc904",
+    "identity": "github:1335099437:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335099437:root",
+            "repository": "moguiyu/dsh-tavily",
+            "path": "",
+            "revision": "44cac110b62d994d25bbaaa5eaf80aa5a28b77a7",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "df23edafed4e84d58e0650e38134c9fa00a6e3b65d4e51b2e1b10a45c869ec1b",
+                "code": "44cac110b62d994d25bbaaa5eaf80aa5a28b77a7",
+                "maintenance": "ad62b82a0eae62e527b1dfaef2b7d89ed648c37f8633ecc0055c25147c3b6505"
+            }
+        }
+    }
+}

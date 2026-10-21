@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e3f1412fca33379dfcb471ea2e4b10ac",
+    "identity": "github:1408743797:plugins-akasha-session",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408743797:plugins-akasha-session",
+            "repository": "Ersith/akasha-book",
+            "path": "plugins/akasha-session",
+            "revision": "549de29e817762232af47a018fa70c64e1af6923",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f650160e5f290bd1dd74e4fc20dbbc99a7ce56260a0b0c8cd5a51505e67525ff",
+                "code": "549de29e817762232af47a018fa70c64e1af6923",
+                "maintenance": "3b76afc867af56ca015379fff65dbb60f728172a5dc324cf25361351a20dc43b"
+            }
+        }
+    }
+}

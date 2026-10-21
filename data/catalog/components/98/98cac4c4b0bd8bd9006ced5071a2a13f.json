@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "98cac4c4b0bd8bd9006ced5071a2a13f",
+    "identity": "github:1415657934:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415657934:root",
+            "repository": "wct-lab/dsh-docchain",
+            "path": "",
+            "revision": "30dc51675a16b944ddc0a0965bcc6e6b59dea3cb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8f4668807e52ca84648ff623d4a37f0169f3740b01ac668dc66b526a29089fdb",
+                "code": "30dc51675a16b944ddc0a0965bcc6e6b59dea3cb",
+                "maintenance": "54c6439b51dead80e5515e60a4932871317a13c9bce4a73622f2fc0dacdf543d"
+            }
+        }
+    }
+}

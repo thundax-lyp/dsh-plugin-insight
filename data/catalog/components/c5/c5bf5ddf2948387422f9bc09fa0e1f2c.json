@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c5bf5ddf2948387422f9bc09fa0e1f2c",
+    "identity": "github:1358248621:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358248621:root",
+            "repository": "Bazley13/dsh-multi-model-orchestrator",
+            "path": "",
+            "revision": "65c916a4aa3654b9bbdf46ca6e7301ffc89a00ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0ab0d8eeee9dfc1f708b32486eb9cdfd41ccdb14cd42b199db332dc900b60079",
+                "code": "65c916a4aa3654b9bbdf46ca6e7301ffc89a00ca",
+                "maintenance": "1e10498bd878be37084fdb30c2a89e3bc5f93d9945ac64f6a1a099efc844710a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1494fbcdb8e7e92608380f3f8986dc0a",
+    "identity": "github:1335134043:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335134043:root",
+            "repository": "ruby1304/dsh-vision-subagent",
+            "path": "",
+            "revision": "0e55e84bde9d3cb9b64c2e8bc7b5bfaa3123c437",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "51ce19fe7a47420a1c1e1ce9e2621a04609dd828b8d685962b90ee7707849b06",
+                "code": "0e55e84bde9d3cb9b64c2e8bc7b5bfaa3123c437",
+                "maintenance": "9adb13f090fbd100d3c33d8e4dfdb27eaf59133f5e30cc17265371cbb6e6d52f"
+            }
+        }
+    }
+}

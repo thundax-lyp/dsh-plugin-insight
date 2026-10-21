@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4accb558dc4591c66884c92b6d7880af",
+    "identity": "github:1333657529:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333657529:root",
+            "repository": "grunmin/dsh-acp-enhanced",
+            "path": "",
+            "revision": "bfca7c300c1af301485cc9aff495a4588f2b0ab7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "873b4eb0847933809239e551317c7ebdeb15f232f6901d934c546fbea864f77b",
+                "code": "bfca7c300c1af301485cc9aff495a4588f2b0ab7",
+                "maintenance": "f83938ac6694132521c3be466106538cfb507998c2212f3ac5cc437b5708b78b"
+            }
+        }
+    }
+}

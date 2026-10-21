@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff2fb039e569e008d036561a2cfe7470",
+    "identity": "github:1351865260:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351865260:root",
+            "repository": "yunxiyang/dsh-web-search-litellm",
+            "path": "",
+            "revision": "b3b44000413c32409bf02bd72ea953503705390f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6f469044adaab805a6c8e3056cf35cb035076c0c2723fcd83163521b739e2118",
+                "code": "b3b44000413c32409bf02bd72ea953503705390f",
+                "maintenance": "fd12a516b799e1a7f33aed11f7e1428d2192269414ec3b726309d9647bd1bb63"
+            }
+        }
+    }
+}

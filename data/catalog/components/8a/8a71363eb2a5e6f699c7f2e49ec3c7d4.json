@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a71363eb2a5e6f699c7f2e49ec3c7d4",
+    "identity": "github:1335080638:dsh-review",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335080638:dsh-review",
+            "repository": "Tlyer233/dsh-vscode-review",
+            "path": "dsh-review",
+            "revision": "18ed68705376feea97ffc76260948648efc2701d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d63a725dfa92337fca667f958a7a6ac30e01069ebb3b4261a94e192ef7a84aa8",
+                "code": "18ed68705376feea97ffc76260948648efc2701d",
+                "maintenance": "431ec4568ba61498445e23cc176a7d24b8f4ff0568654ce409cb1a046b17215f"
+            }
+        }
+    }
+}

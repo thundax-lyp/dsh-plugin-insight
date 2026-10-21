@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c5f654c606ae3fc28a6f7a2f2a5a8a23",
+    "identity": "github:1379654694:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379654694:root",
+            "repository": "PerryLink/dsh-laya",
+            "path": "",
+            "revision": "cb1259a33d36bfd28899947afd9bd328541635e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0048457c2c6ac9d87d5fa5820a6b6869f8f24a245ec1cedaf1e46725cf942af5",
+                "code": "cb1259a33d36bfd28899947afd9bd328541635e3",
+                "maintenance": "7158e673d46feb52572ba30ca145b8b9130b66f01cf9433c72f8a926bb46b3e2"
+            }
+        }
+    }
+}

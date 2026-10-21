@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "775f15f87811043770b34d0daa1f4b06",
+    "identity": "github:1334728941:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334728941:root",
+            "repository": "yauntyour/DSH-Multimodal",
+            "path": "",
+            "revision": "b0795a47a899c7d148e7299420a000928188780f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bd6e275d2f7d2b288ad9dda3a94bf81f37c4c3d994d0240d2762af5b44c8db31",
+                "code": "b0795a47a899c7d148e7299420a000928188780f",
+                "maintenance": "2dfb58e5ea92fa17735067a5656d52e78323ef46cf40a2a01d4ab6c250d988f9"
+            }
+        }
+    }
+}

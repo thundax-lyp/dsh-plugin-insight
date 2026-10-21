@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "13c277790a3c602558ed3c140902fc48",
+    "identity": "github:1358941273:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358941273:root",
+            "repository": "addie-ace/dsh-livebench-rankings",
+            "path": "",
+            "revision": "f95466d0fce3a098779b13f4eb7e9414453b8251",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3f42f9b1658cf4ccd62ea24a58cff34eb345e9995b53c77c9937dbc8386223aa",
+                "code": "f95466d0fce3a098779b13f4eb7e9414453b8251",
+                "maintenance": "4bc4a71660536547c7e5310b11079bfefd9a01dba854307a289823e27fb1983e"
+            }
+        }
+    }
+}

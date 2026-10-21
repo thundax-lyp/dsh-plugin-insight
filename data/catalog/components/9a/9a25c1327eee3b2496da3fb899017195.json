@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9a25c1327eee3b2496da3fb899017195",
+    "identity": "github:1424037407:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424037407:root",
+            "repository": "NoCandles/dsh-stock-bar",
+            "path": "",
+            "revision": "fe53bcbb8845a215e58ed9b1c11b2e58f8a6d0f8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b6be6c142c97ef9aa9783ccf7b8d0575896a83cfa3579acd32b3f56aed969a1e",
+                "code": "fe53bcbb8845a215e58ed9b1c11b2e58f8a6d0f8",
+                "maintenance": "4041230d4cc9a0c0c4ccf286c52771d62dde8ef2481ff4911701286cfd6c24e4"
+            }
+        }
+    }
+}

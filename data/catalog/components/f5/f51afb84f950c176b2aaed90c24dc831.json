@@ -1,0 +1,450 @@
+{
+    "schema_version": 3,
+    "id": "f51afb84f950c176b2aaed90c24dc831",
+    "identity": "github:1412623357:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1412623357:root",
+            "repository_id": 1412623357,
+            "component_id": "root",
+            "repository": "AhYi8/dsh-gotify-notify",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-gotify-notify",
+            "entry_type": "plugin",
+            "technical_category": "channels-remote",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "c6e98f08572541ff5f559cf915a61d7c3228ce0bc655ba6235e771156896d95f",
+                "code": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+                "maintenance": "8cdc99c9f85902a8033896e41d3bdb686028c3225eccd0b1e4bb72324132387f"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1412623357-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:40:04.046Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1412623357-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AhYi8/dsh-gotify-notify/blob/6fe16310caa4233bb09086cd76c8dfb4b3e871c7/README.md",
+                    "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+                    "captured_at": "2026-10-21T05:40:04.046Z",
+                    "summary": "将DSH轮次结束和部分等待用户输入事件推送至Gotify，并提供原因过滤、优先级与凭据设置。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/ahyi8--dsh-gotify-notify/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1412623357-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AhYi8/dsh-gotify-notify/blob/6fe16310caa4233bb09086cd76c8dfb4b3e871c7/lib/index.js",
+                    "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+                    "captured_at": "2026-10-21T05:40:04.046Z",
+                    "summary": "核查 lib/index.js、client/client.js；session/event过滤turn/end与指定提问tool/call；排除子Agent、轮次/原因过滤，问题按session+callId内存去重；Gotify客户端缓存绑定服务器的token，401/403清缓存重取一次。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/ahyi8--dsh-gotify-notify/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读lib/index.js、client/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户离开DSH窗口仍需知道何时查看结果或回答问题，成功推送不等于人已读或任务验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "session/event过滤turn/end与指定提问tool/call；排除子Agent、轮次/原因过滤，问题按session+callId内存去重；Gotify客户端缓存绑定服务器的token，401/403清缓存重取一次。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读lib/index.js、client/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT通知插件，Gotify服务器与客户端独立部署；凭据优先宿主库，直接token配置仍存在。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次服务器与凭据设置，持续网络/通知噪声和服务运维；无模型费但未测省等待时间。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先确认Gotify目的地址与正文，再用测试通知和测试会话验证；勿依靠它接收权限审批或判业务完成。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可能减少盯屏，受通知渠道可靠性和告警疲劳限制。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "服务器绑定token缓存、固定脱敏错误码与可热改过滤有用；去重只在内存且先于发送，应明确尽力通知语义。 源码依据：[lib/index.js](https://github.com/AhYi8/dsh-gotify-notify/blob/6fe16310caa4233bb09086cd76c8dfb4b3e871c7/lib/index.js)、[client/client.js](https://github.com/AhYi8/dsh-gotify-notify/blob/6fe16310caa4233bb09086cd76c8dfb4b3e871c7/client/client.js)。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对单一完成通知，增量是用户介入提问和结束原因分流，复用DSH凭据引用与Gotify分发。并未覆盖宿主权限审批或建立送达确认。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "等待输入是否可靠送达？问题在发送前登记去重，失败仍不再推同一调用，重启/500上限清空又可重复；turn/end未见同类去重。默认服务地址和正文含会话标题/目录需用户核对数据去向。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由发送前去重取舍推导，可区分待发送/已接受/已读，并用有界持久outbox提供可见重试。未验证；网络断开/恢复、宿主重启后对同事件测漏重报和端侧可见次数。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412623357:root",
+                            "area": "code",
+                            "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:04.046Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:40:04.046Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+                "reviewed_at": "2026-10-21T05:40:04.046Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1412623357:root",
+                        "area": "code",
+                        "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "noveltyGotify事件适配小档；mechanism过滤/凭据/缓存小档；transferability通知模式半档；simplification面板配置半档。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow离屏提醒便利小档；delivery分类通知小档；reach有Gotify接收端用户小档；economics无实测成本结构变化0。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1412623357-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有Gotify者可试测试通知与测试会话；核目的地址和正文，观察失败去重和漏报，不作为权限批准或业务完成依据。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "离开窗口接收完成和问题提醒有明确需求。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "按会话与提问过滤推送降低盯屏需求。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核token重取及发送前去重，实际送达未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "无模型费但需服务器、凭据及告警噪声维护。"
+                    }
+                },
+                "score": 59,
+                "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1412623357-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1412623357:root",
+                        "area": "code",
+                        "fingerprint": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1412623357:root",
+            "repository": "AhYi8/dsh-gotify-notify",
+            "path": "",
+            "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+            "fingerprints": {
+                "directory": "c6e98f08572541ff5f559cf915a61d7c3228ce0bc655ba6235e771156896d95f",
+                "code": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+                "maintenance": "8cdc99c9f85902a8033896e41d3bdb686028c3225eccd0b1e4bb72324132387f"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "b4dbfb0558c969c04d11991e70be9b02d1e696fb9f40827226937e9932888550"
+        },
+        "publication.metadata": "data/plugins/ahyi8--dsh-gotify-notify/META.json",
+        "publication.summaries": {
+            "text": "将DSH轮次结束和部分等待用户输入事件推送至Gotify，并提供原因过滤、优先级与凭据设置。",
+            "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+            "source_url": "https://github.com/AhYi8/dsh-gotify-notify/blob/6fe16310caa4233bb09086cd76c8dfb4b3e871c7/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+            "items": {
+                "事件监听": "会话结束与特定提问调用通知。",
+                "界面": "配置与发送测试通知。",
+                "Host 路由": "测试通知接口。"
+            }
+        },
+        "publication.advice": {
+            "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+            "text": "先确认Gotify目的地址与正文，再用测试通知和测试会话验证；勿依靠它接收权限审批或判业务完成。"
+        },
+        "registry": "data/plugins/ahyi8--dsh-gotify-notify",
+        "reports": "# dsh-gotify-notify\n\n> 将DSH轮次结束和部分等待用户输入事件推送至Gotify，并提供原因过滤、优先级与凭据设置。\n\n## 使用建议\n\n先确认Gotify目的地址与正文，再用测试通知和测试会话验证；勿依靠它接收权限审批或判业务完成。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：用户离开DSH窗口仍需知道何时查看结果或回答问题，成功推送不等于人已读或任务验收。\n- **亮点**：相对单一完成通知，增量是用户介入提问和结束原因分流，复用DSH凭据引用与Gotify分发。并未覆盖宿主权限审批或建立送达确认。\n- **思考**：等待输入是否可靠送达？问题在发送前登记去重，失败仍不再推同一调用，重启/500上限清空又可重复；turn/end未见同类去重。默认服务地址和正文含会话标题/目录需用户核对数据去向。\n- **建议**：由发送前去重取舍推导，可区分待发送/已接受/已读，并用有界持久outbox提供可见重试。未验证；网络断开/恢复、宿主重启后对同事件测漏重报和端侧可见次数。\n\n## 场景与替代办法\n\n用户离开DSH窗口仍需知道何时查看结果或回答问题，成功推送不等于人已读或任务验收。\n\n桌面通知不需远端服务但离机不可达；Gotify提供跨设备通道而增加外部数据路径。\n\n## 能力清单\n\n- **事件监听**：会话结束与特定提问调用通知。\n- **界面**：配置与发送测试通知。\n- **Host 路由**：测试通知接口。\n\n## 依赖与流程\n\nDSH session/event与可选凭据/webServer、Gotify HTTP服务和接收客户端；口令换应用token会创建/复用远端应用。\n\n解析已保存配置与凭据，获取Gotify应用token，监听事件套模板推送；失败记录日志，测试接口另做同源/回环检查。\n\n## 成本与效果\n\n首次服务器与凭据设置，持续网络/通知噪声和服务运维；无模型费但未测省等待时间。\n\n可能减少盯屏，受通知渠道可靠性和告警疲劳限制。\n\n## 核心贡献\n\n相对单一完成通知，增量是用户介入提问和结束原因分流，复用DSH凭据引用与Gotify分发。并未覆盖宿主权限审批或建立送达确认。\n\n## 关键质疑\n\n等待输入是否可靠送达？问题在发送前登记去重，失败仍不再推同一调用，重启/500上限清空又可重复；turn/end未见同类去重。默认服务地址和正文含会话标题/目录需用户核对数据去向。\n\n\n## 工程亮点\n\n服务器绑定token缓存、固定脱敏错误码与可热改过滤有用；去重只在内存且先于发送，应明确尽力通知语义。 源码依据：[lib/index.js](https://github.com/AhYi8/dsh-gotify-notify/blob/6fe16310caa4233bb09086cd76c8dfb4b3e871c7/lib/index.js)、[client/client.js](https://github.com/AhYi8/dsh-gotify-notify/blob/6fe16310caa4233bb09086cd76c8dfb4b3e871c7/client/client.js)。\n\n## 未来设计假设（未验证）\n\n由发送前去重取舍推导，可区分待发送/已接受/已读，并用有界持久outbox提供可见重试。未验证；网络断开/恢复、宿主重启后对同事件测漏重报和端侧可见次数。\n\n测试子Agent、原因过滤、重复问题、推送失败后恢复、服务器切换与无凭据；核对正文最小化和真实设备接收。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6285aa39cab5674ff5ee3d1912e430603208339a7dd99e054851f9d4fcd4dd31。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1598 | 1044 | 457 | — |\n| .md | source | 1 | 179 | — | — | 2656 |\n| .mjs | source | 3 | 1350 | 1091 | 203 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AhYi8/dsh-gotify-notify](https://github.com/AhYi8/dsh-gotify-notify)\n- **版本号**：2.4.0（[固定提交 6fe16310](https://github.com/AhYi8/dsh-gotify-notify/tree/6fe16310caa4233bb09086cd76c8dfb4b3e871c7)）\n- **版本日期**：2026-10-13（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、client/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/index.js、client/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：测试子Agent、原因过滤、重复问题、推送失败后恢复、服务器切换与无凭据；核对正文最小化和真实设备接收。\n",
+        "metadata": {
+            "repository": "AhYi8/dsh-gotify-notify",
+            "repository_id": 1412623357,
+            "captured_at": "2026-10-21T05:34:47.676Z",
+            "window_start": "2026-09-21T05:34:47.676Z",
+            "stars": 0,
+            "pushed_at": "2026-10-13T12:36:52Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A03C:3FE178:AFC2F1:FC2443:6AD84EF9 and timestamp 2026-10-21 05:34:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3132:26516E:51C108:57CF02:6AD84EFA and timestamp 2026-10-21 05:34:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A47.676Z..2026-10-21T05%3A34%3A47.676Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 322E:AA00D:558857:5B996F:6AD84EFB and timestamp 2026-10-21 05:34:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A47.676Z..2026-10-21T05%3A34%3A47.676Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3324:258D23:574959:5D56A8:6AD84EFC and timestamp 2026-10-21 05:34:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A47.676Z..2026-10-21T05%3A34%3A47.676Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3444:4B9BC:540A87:5A17C7:6AD84EFC and timestamp 2026-10-21 05:34:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-gotify-notify",
+                "captured_at": "2026-10-21T05:34:53.215Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 398,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-gotify-notify",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-10T02:59:41.388Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-gotify-notify",
+                    "error": null,
+                    "latest_version": "2.4.0",
+                    "latest_published_at": "2026-10-13T12:36:13.111Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1412623357:root",
+            "repository": "AhYi8/dsh-gotify-notify",
+            "path": "",
+            "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c6e98f08572541ff5f559cf915a61d7c3228ce0bc655ba6235e771156896d95f",
+                "code": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+                "maintenance": "8cdc99c9f85902a8033896e41d3bdb686028c3225eccd0b1e4bb72324132387f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fe5adfe6534895fa178b85a171ca7cc2",
+    "identity": "github:1330412774:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330412774:root",
+            "repository": "fakechris/dsh-harness-ops",
+            "path": "",
+            "revision": "791d8ad59999103c7e6cfa56bb01dd822e4f5687",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "993de70ae584769534591c4becc8553906746e1ecfc2fa6e542e9948a91f5b98",
+                "code": "791d8ad59999103c7e6cfa56bb01dd822e4f5687",
+                "maintenance": "8ca14b80fb5a4b17f6c1feaf7651d630360a26f27fa95bb8d0615647a83d453f"
+            }
+        }
+    }
+}

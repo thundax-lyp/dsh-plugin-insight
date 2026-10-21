@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d9e6b61b4a4dcb31ef5dbe4c2ac636b4",
+    "identity": "github:1336527565:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336527565:root",
+            "repository": "jean3690/dsh-devtoolbox",
+            "path": "",
+            "revision": "9cbe5077dcc1dd17761a562c745c0e7589170c54",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "91cd625e6006edabcd4dfdd1d632f1f89f1d4d9274b40b8b6d0a1658013e307e",
+                "code": "9cbe5077dcc1dd17761a562c745c0e7589170c54",
+                "maintenance": "cfdce1f282d5f9676b8a8024b7ababea1819d9d0ef6634c42b967e91d8c456e1"
+            }
+        }
+    }
+}

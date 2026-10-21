@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9f76195f082cae3104368f6688795190",
+    "identity": "github:1333788844:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333788844:root",
+            "repository": "linyp/dsh-plugin-langfuse",
+            "path": "",
+            "revision": "4014187d3b8e84c0b483ebfe712746140d2be9be",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d2b483b2987edf2cfda0891bcfdce498b86dff2c1c9550e42f166411b92395fd",
+                "code": "4014187d3b8e84c0b483ebfe712746140d2be9be",
+                "maintenance": "9fe29c1bab59a8cba96c555df58df3a7488f1aacc20c67de2b1572a996200f69"
+            }
+        }
+    }
+}

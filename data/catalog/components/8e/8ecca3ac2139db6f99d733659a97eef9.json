@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8ecca3ac2139db6f99d733659a97eef9",
+    "identity": "github:1425485912:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425485912:root",
+            "repository": "iStarryDust/dsh-scheduled-tasks",
+            "path": "",
+            "revision": "444cbc59b80e490db9413ac1272cf3adb76b1b6e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3f0b7e998760970dbb1c5ee916e4f88d2129dc11a17773a0bb1ca6682914d46b",
+                "code": "444cbc59b80e490db9413ac1272cf3adb76b1b6e",
+                "maintenance": "81e085366e874aca412b0013868402b5a7e9ad27733b9c30cbeb0a63f29775cb"
+            }
+        }
+    }
+}

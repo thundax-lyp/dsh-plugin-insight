@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "97a4d3d57e179f366c635b1b08c0acb2",
+    "identity": "github:1335061834:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335061834:root",
+            "repository": "kirigayakazima/dsh-usage-vendor-stats",
+            "path": "",
+            "revision": "74cab299ec4b877e09313faa6b43edda0c7ae7f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b997c5c900136e6ff2c6731a1c9bc66b5c5964f7b6c2d5bbbccec716f20ff6e1",
+                "code": "74cab299ec4b877e09313faa6b43edda0c7ae7f3",
+                "maintenance": "566eecc397bc3540bf20fc4c465d8bdfc51f90f12fb28659147a6c970ccc5ec9"
+            }
+        }
+    }
+}

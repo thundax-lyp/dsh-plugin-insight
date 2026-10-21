@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c1fd9a11de23c11e84fe1842a4905e51",
+    "identity": "github:1334367589:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334367589:root",
+            "repository": "WhitePlusMS/dsh-input-plus",
+            "path": "",
+            "revision": "cee1c7907e7f5ad1b38971d316d39c07d787967d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9986ca61d8615117b43b54f431a002236c11e0c967826daa6712a25861e13a7e",
+                "code": "cee1c7907e7f5ad1b38971d316d39c07d787967d",
+                "maintenance": "d7699567f1b2b481127ebe7c2256a421eb4b151f55e7d3c01214ebf8a92e61a7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e57d472ea47d9deb72bd66397609fe2a",
+    "identity": "github:1349624915:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349624915:root",
+            "repository": "tumi-huakai/dsh-plugin-meow-speech",
+            "path": "",
+            "revision": "d57aac4b7b35dd698d06e4bd1144b422ce1dc089",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8804771a3b2227ec78fac9d3a34ac5109d03d721a7cc90327399f7dfa45384b0",
+                "code": "d57aac4b7b35dd698d06e4bd1144b422ce1dc089",
+                "maintenance": "efdfbeae358b7034d4ce8666e62423b92caf294f001478b47668c545876734bf"
+            }
+        }
+    }
+}

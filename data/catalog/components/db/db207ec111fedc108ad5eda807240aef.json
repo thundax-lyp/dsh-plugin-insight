@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "db207ec111fedc108ad5eda807240aef",
+    "identity": "github:1333100071:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333100071:root",
+            "repository": "Anionex/dsh-vision-toolkit",
+            "path": "",
+            "revision": "18a05b12dca54ce74538bd7d8b921491bb0d7f6a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b92f44366f5e37e7f6c1d78cb74d573a7f665d0ddb650bce7e6e52daf994ed96",
+                "code": "18a05b12dca54ce74538bd7d8b921491bb0d7f6a",
+                "maintenance": "be9b678067b3a39b25bdab4096a924e55a3b080b4ad49bfab3b30c36c906496d"
+            }
+        }
+    }
+}

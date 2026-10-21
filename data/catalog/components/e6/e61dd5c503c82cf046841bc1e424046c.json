@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e61dd5c503c82cf046841bc1e424046c",
+    "identity": "github:1311659579:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1311659579:root",
+            "repository": "Dariandai/dsh-starter-pack",
+            "path": "",
+            "revision": "95de3d8b2dcea9b766b2ce60a20440442a240ceb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "788620ae0acbd3ba49c136315811ae4f86ea9bf33362c0b1ab7046b2cdf3e2f0",
+                "code": "95de3d8b2dcea9b766b2ce60a20440442a240ceb",
+                "maintenance": "fe40235943905f24bd0e1f555107fce111dd603df24344aae85c46377d949d32"
+            }
+        }
+    }
+}

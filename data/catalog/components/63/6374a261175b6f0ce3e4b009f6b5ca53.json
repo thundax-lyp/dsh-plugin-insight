@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6374a261175b6f0ce3e4b009f6b5ca53",
+    "identity": "github:1229168545:packages-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1229168545:packages-dsh",
+            "repository": "OpenPetsHQ/openpets",
+            "path": "packages/dsh",
+            "revision": "5290e133596ee2f4f84f398d6669bb405b2b8824",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "21428667d334c36b4239047bd399d7b23cb19d174879114c5b2cfa1048e8c5cc",
+                "code": "5290e133596ee2f4f84f398d6669bb405b2b8824",
+                "maintenance": "7bd5a323259eb5bb02df24dbf263d1bc9a5887887bdafd8fa818fc7ba0e93d9d"
+            }
+        }
+    }
+}

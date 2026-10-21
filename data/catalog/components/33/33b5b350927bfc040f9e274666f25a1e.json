@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "33b5b350927bfc040f9e274666f25a1e",
+    "identity": "github:1343582217:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343582217:root",
+            "repository": "westwind2022/dsh-stock-jt",
+            "path": "",
+            "revision": "6e7cbcd7bf79fc6f328ab51415678a70b31b4d0a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a90eff3a7678b119c1c87e0819673732ea6daf86d3f6c82c521c3f1e86c08370",
+                "code": "6e7cbcd7bf79fc6f328ab51415678a70b31b4d0a",
+                "maintenance": "09cebb0525600456a28d67f038d3c102ba50a3d50466698dd89103b8daf66583"
+            }
+        }
+    }
+}

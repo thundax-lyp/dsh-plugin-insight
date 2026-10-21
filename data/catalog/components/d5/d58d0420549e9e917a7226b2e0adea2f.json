@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d58d0420549e9e917a7226b2e0adea2f",
+    "identity": "github:1168322081:plugins-dsh-multivibe",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1168322081:plugins-dsh-multivibe",
+            "repository": "thibautrey/multivibe",
+            "path": "plugins/dsh-multivibe",
+            "revision": "c0d57be63f2b918a983fd008c3c7f385c784bbc6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0540ba8caca25459d29d7646015216e31b7cf755ef9e189eaba94db1ea734307",
+                "code": "c0d57be63f2b918a983fd008c3c7f385c784bbc6",
+                "maintenance": "7f08be50112cc0cab13f5b9322ce21a94f643f0d126faeb0e6e96d7cb2be9106"
+            }
+        }
+    }
+}

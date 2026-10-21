@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fe34598795a58e00c333b0b2495437c9",
+    "identity": "github:1335702549:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335702549:root",
+            "repository": "Isanti2016/dsh-quicksight",
+            "path": "",
+            "revision": "648123d4a605e53bf74c0e6189462004ba4bc9b7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "18b6b6f30e5be277539a611b57c418945522cef8affbc9e5e67c11efad00b7fb",
+                "code": "648123d4a605e53bf74c0e6189462004ba4bc9b7",
+                "maintenance": "337e3d718ab7f5993be396f721a536d1345423a04e94c542e22bfe124a2ae668"
+            }
+        }
+    }
+}

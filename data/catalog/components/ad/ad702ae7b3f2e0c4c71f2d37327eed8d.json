@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ad702ae7b3f2e0c4c71f2d37327eed8d",
+    "identity": "github:1425756483:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425756483:root",
+            "repository": "guokecloud/dsh-session-janitor",
+            "path": "",
+            "revision": "3ea8e814b16b7670c1688ba093fdb46ef41eaaaa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9f9d5d710098bba5cd4d3846235371b1675eebdb7462c947ac014c0a09550b95",
+                "code": "3ea8e814b16b7670c1688ba093fdb46ef41eaaaa",
+                "maintenance": "54dea0f641bf96365be85dd69f58f6965592e211757407d377a0ac56b3b31e01"
+            }
+        }
+    }
+}

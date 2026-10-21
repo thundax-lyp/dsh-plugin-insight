@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e0a2ecf3cc82dfb7f0678c3b95c7f87e",
+    "identity": "github:1334941794:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334941794:root",
+            "repository": "RealHacker/dsh-theme-colorizer",
+            "path": "",
+            "revision": "bef973bff46bb11499a7c212ccaa384a2ff60962",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb792b5b5eb03b997777be2f1c84eb97e1969c64f53f9870d299f4019a8eaad9",
+                "code": "bef973bff46bb11499a7c212ccaa384a2ff60962",
+                "maintenance": "33ad9be6af0bb16f014d93f23d56e6d730a62d0c77321ae076eaa24a3f86e86b"
+            }
+        }
+    }
+}

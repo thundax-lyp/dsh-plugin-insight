@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "278788e5bf84a9f519578f6d0749a6bb",
+    "identity": "github:1339133771:packages-use-browser",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339133771:packages-use-browser",
+            "repository": "ankye/dsh_use_browser",
+            "path": "packages/use-browser",
+            "revision": "a76635182b8c440034fe762d582c937ca724d2c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eb3833ff89a5e2ddaf30a0b275d4d8f0b245571d1f1f02924a7451f4e6017787",
+                "code": "a76635182b8c440034fe762d582c937ca724d2c4",
+                "maintenance": "a4eac718914d05fb3564e3132bb36d65dfab63b93562c7cd6547037a3021c557"
+            }
+        }
+    }
+}

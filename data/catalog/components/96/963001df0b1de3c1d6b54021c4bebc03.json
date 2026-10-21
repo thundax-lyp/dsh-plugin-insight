@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "963001df0b1de3c1d6b54021c4bebc03",
+    "identity": "github:1334399945:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334399945:root",
+            "repository": "xiongjiamu/dsh-atomgit",
+            "path": "",
+            "revision": "0593abd4c14e3225ece2d229324c0510769fd897",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "926cf3d2f7c1b6b2bfa764e7d6b76481f2bc1720b2c4291466847dd38c87635d",
+                "code": "0593abd4c14e3225ece2d229324c0510769fd897",
+                "maintenance": "3056c72d96e32e85669d88561fec53ee64e5802524b84b9a41857786c6685615"
+            }
+        }
+    }
+}

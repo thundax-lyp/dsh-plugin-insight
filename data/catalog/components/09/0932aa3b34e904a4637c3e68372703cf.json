@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0932aa3b34e904a4637c3e68372703cf",
+    "identity": "github:1337065588:plugins-dsh-xiwen",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337065588:plugins-dsh-xiwen",
+            "repository": "kaiwangleo/xiwen",
+            "path": "plugins/dsh-xiwen",
+            "revision": "dafd9b050f9045bde3b1a693113d39f76bb7339f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e0b41de61318ea7ec2cd30082d76e696acbb9fd20a24eff960516ededbcc6e72",
+                "code": "dafd9b050f9045bde3b1a693113d39f76bb7339f",
+                "maintenance": "6f0f58812d1d465a628be82995678da3382b19ae68149d2397a607302d2f0ec7"
+            }
+        }
+    }
+}

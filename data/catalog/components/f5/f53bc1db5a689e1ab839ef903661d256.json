@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f53bc1db5a689e1ab839ef903661d256",
+    "identity": "github:1335234371:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335234371:root",
+            "repository": "nishuoyang/dsh-wallpaper-bg",
+            "path": "",
+            "revision": "ea350232fbbe01be97bb7fdfe23705bb317eb4e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6008453f7ea0c12f51101194b01ace4c03ff5cccaf32eab9d3c5270c822eae29",
+                "code": "ea350232fbbe01be97bb7fdfe23705bb317eb4e1",
+                "maintenance": "6b29c70b41680bc4a60fb3435e68d5092561ebf6ec03ede0e9439b6a606bb859"
+            }
+        }
+    }
+}

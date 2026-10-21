@@ -1,0 +1,450 @@
+{
+    "schema_version": 3,
+    "id": "cf21e19444c11cb6fc40a545204c103a",
+    "identity": "github:1388463793:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1388463793:root",
+            "repository_id": 1388463793,
+            "component_id": "root",
+            "repository": "AWL-MC2/DSH-Plugin_awl",
+            "path": "",
+            "aliases": [],
+            "name": "type-tune（DSH-Plugin_awl）",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "fad29182f7c59465c875572eb7eebce2959b0bb9cbd09e1f73ad7982e29eec22",
+                "code": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                "maintenance": "314b826274297682ffa0ffafc5adc3fc4129330529dea77346dc2ef8081127e3"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1388463793-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:41:15.270Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1388463793-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/README.md",
+                    "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                    "captured_at": "2026-10-21T05:41:15.270Z",
+                    "summary": "调节 DSH Web 字体、文字对比度、光晕与内容特效。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/awl-mc2--dsh-plugin_awl/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1388463793-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js",
+                    "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                    "captured_at": "2026-10-21T05:41:15.270Z",
+                    "summary": "核查 index.js、client.js、package.json、cordis.patch.yml；Host扫描两处字体目录、解析sfnt家族名并以manifest/font/state路由服务；/style命令与浏览器共享DSH_HOME/type-tune.json。浏览器动态CSS与预览渲染，localStorage作缓存，宿主不可达则降级本地；可见页每两秒轮询新revision。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/awl-mc2--dsh-plugin_awl/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "根Host字体解析/扫描、共享状态/路由/命令，以及client状态同步与settings注册；视觉效果未渲染测量，不执行目标。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "壁纸或主题使次要文字难读的用户调整会话阅读样式；交付物是可恢复的个人排版配置，不是模型结果质量提升。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host扫描两处字体目录、解析sfnt家族名并以manifest/font/state路由服务；/style命令与浏览器共享DSH_HOME/type-tune.json。浏览器动态CSS与预览渲染，localStorage作缓存，宿主不可达则降级本地；可见页每两秒轮询新revision。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "根Host字体解析/扫描、共享状态/路由/命令，以及client状态同步与settings注册；视觉效果未渲染测量，不执行目标。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "Apache-2.0双面bundle，无构建的提交JS，Host可选注入webServer/commands；桌面无路由时仅浏览器缓存，命令共享不成立。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "现金无新增API；人工是字体文件管理、偏好调整、升级CSS选择器维护。动画/正文特效会增加渲染负担，字体首次加载有开销，收益未实测。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "需要修复主题文字可读性者可评估静态阅读预设；先确认本地状态可持久，特效是否有利于阅读应按实际长文测量。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "统一字体/样式与恢复操作，主价值是阅读舒适和减少手调CSS；不保证无障碍合规或提高工作产出。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "sfnt解析做边界检查、字体数量与体积有限制，同名家族确定性取舍且报告落选；write-rename减少半文件，但吞错与无并发条件令耐久性声明过强。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相较手写CSS，把字体发现、阅读对比与预设调节做成双入口，并用present区分尚未配置和明确恢复默认，避免迁移抹掉旧偏好。它是可读性配置集成，不能由WCAG预览徽标推出壁纸背景上所有文字均达标。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "共享状态是否真有持久确认？saveState写临时文件rename失败被吞掉，仍返回新revision；浏览器可把未落盘状态当成功且下一次重启丢失。全量配置POST没有expected revision，多标签并发可覆盖。字体/manifest读路由无认证，暴露网络的Host会扩大可读范围，不能用写同源检查代替访问授权。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "把写入错误和expectedRevision纳入状态协议，浏览器只在持久成功后推进revision，可能减少假成功和双标签丢配置。对只读home、rename失败和两个标签同时更改不同字段验证不回成功且冲突可见；若配置仍静默覆盖，则协议未实现预期。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1388463793:root",
+                            "area": "code",
+                            "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:41:15.270Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                "reviewed_at": "2026-10-21T05:41:15.270Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1388463793:root",
+                        "area": "code",
+                        "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "新颖性9：CSS排版预设已有；机制15：字体解析、共享状态/缓存降级具实现细节；迁移性10：present语义与双入口可复用；简化8：替代手改CSS但状态同步增加维护。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "工作流9：改善个人阅读设置而非业务交付；交付8：可恢复预设但持久错误可能假成功；覆盖10：多字体/亮暗主题人群较广；经济4：无模型费用，省时和阅读收益未测。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1388463793-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "文字难读者可关注静态排版预设；saveState吞rename错误仍报revision且无并发版本检查，先修持久确认后再依赖共享样式。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "主题造成文字可读性问题的人群明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "字体管理、统一配置与恢复减少手改CSS。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核状态写入与字体路由，确认落盘假成功和多标签覆盖。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "配置丢失、网络字体读取与CSS回归增加维护，当前先解决真持久。"
+                    }
+                },
+                "score": 54,
+                "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1388463793-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1388463793:root",
+                        "area": "code",
+                        "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1388463793:root",
+            "repository": "AWL-MC2/DSH-Plugin_awl",
+            "path": "",
+            "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+            "fingerprints": {
+                "directory": "fad29182f7c59465c875572eb7eebce2959b0bb9cbd09e1f73ad7982e29eec22",
+                "code": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                "maintenance": "314b826274297682ffa0ffafc5adc3fc4129330529dea77346dc2ef8081127e3"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "0aff1a9d8a65de11e406c4dd9ad959bbcc4f4748e8795cfabad13f2d434453e2"
+        },
+        "publication.metadata": "data/plugins/awl-mc2--dsh-plugin_awl/META.json",
+        "publication.summaries": {
+            "text": "调节 DSH Web 字体、文字对比度、光晕与内容特效。",
+            "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+            "source_url": "https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+            "items": {
+                "Host 路由": "字体manifest、字体内容及共享style状态读写。",
+                "用户命令": "/style查看与改变预设、字体、对比、特效和恢复默认。",
+                "界面": "设置卡、动态排版CSS、自定义字体与浮动预览。"
+            }
+        },
+        "publication.advice": {
+            "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+            "text": "需要修复主题文字可读性者可评估静态阅读预设；先确认本地状态可持久，特效是否有利于阅读应按实际长文测量。"
+        },
+        "registry": "data/plugins/awl-mc2--dsh-plugin_awl",
+        "reports": "# type-tune（DSH-Plugin_awl）\n\n> 调节 DSH Web 字体、文字对比度、光晕与内容特效。\n\n## 使用建议\n\n需要修复主题文字可读性者可评估静态阅读预设；先确认本地状态可持久，特效是否有利于阅读应按实际长文测量。\n\n核查状态：字体发现、共享状态和样式渲染源码可确认；视觉可读性、对比达标和真实兼容未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：壁纸或主题使次要文字难读的用户调整会话阅读样式；交付物是可恢复的个人排版配置，不是模型结果质量提升。\n- **亮点**：相较手写CSS，把字体发现、阅读对比与预设调节做成双入口，并用present区分尚未配置和明确恢复默认，避免迁移抹掉旧偏好。它是可读性配置集成，不能由WCAG预览徽标推出壁纸背景上所有文字均达标。\n- **思考**：共享状态是否真有持久确认？saveState写临时文件rename失败被吞掉，仍返回新revision；浏览器可把未落盘状态当成功且下一次重启丢失。全量配置POST没有expected revision，多标签并发可覆盖。字体/manifest读路由无认证，暴露网络的Host会扩大可读范围，不能用写同源检查代替访问授权。\n- **建议**：把写入错误和expectedRevision纳入状态协议，浏览器只在持久成功后推进revision，可能减少假成功和双标签丢配置。对只读home、rename失败和两个标签同时更改不同字段验证不回成功且冲突可见；若配置仍静默覆盖，则协议未实现预期。\n\n## 场景与替代办法\n\n壁纸或主题使次要文字难读的用户调整会话阅读样式；交付物是可恢复的个人排版配置，不是模型结果质量提升。\n\n宿主字号/主题设置或用户CSS能覆盖部分需求；插件增加字体发现、恢复与双入口同步。\n\n## 能力清单\n\n- **Host 路由**：字体manifest、字体内容及共享style状态读写。\n- **用户命令**：/style查看与改变预设、字体、对比、特效和恢复默认。\n- **界面**：设置卡、动态排版CSS、自定义字体与浮动预览。\n\n## 依赖与流程\n\nHost扫描两处字体目录、解析sfnt家族名并以manifest/font/state路由服务；/style命令与浏览器共享DSH_HOME/type-tune.json。浏览器动态CSS与预览渲染，localStorage作缓存，宿主不可达则降级本地；可见页每两秒轮询新revision。\n\nDSH Web React/slots/locale、CSS color-mix等浏览器能力，Host字体目录和DSH_HOME写权限；字体授权由用户自行确保。\n\n放字体→扫描manifest→调预设/预览→POST共享状态并缓存→/style局部修改→浏览器轮询→recover写null配置；Host缺失时退本地模式。\n\nApache-2.0双面bundle，无构建的提交JS，Host可选注入webServer/commands；桌面无路由时仅浏览器缓存，命令共享不成立。\n\n## 成本与效果\n\n现金无新增API；人工是字体文件管理、偏好调整、升级CSS选择器维护。动画/正文特效会增加渲染负担，字体首次加载有开销，收益未实测。\n\n统一字体/样式与恢复操作，主价值是阅读舒适和减少手调CSS；不保证无障碍合规或提高工作产出。\n\n## 核心贡献\n\n相较手写CSS，把字体发现、阅读对比与预设调节做成双入口，并用present区分尚未配置和明确恢复默认，避免迁移抹掉旧偏好。它是可读性配置集成，不能由WCAG预览徽标推出壁纸背景上所有文字均达标。\n\n## 关键质疑\n\n共享状态是否真有持久确认？saveState写临时文件rename失败被吞掉，仍返回新revision；浏览器可把未落盘状态当成功且下一次重启丢失。全量配置POST没有expected revision，多标签并发可覆盖。字体/manifest读路由无认证，暴露网络的Host会扩大可读范围，不能用写同源检查代替访问授权。\n\n## 工程亮点\n\nsfnt解析做边界检查、字体数量与体积有限制，同名家族确定性取舍且报告落选；write-rename减少半文件，但吞错与无并发条件令耐久性声明过强。\n\n固定源码依据：[index.js](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js)、[client.js](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/client.js)、[package.json](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/package.json)、[cordis.patch.yml](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/cordis.patch.yml)。\n\n## 未来设计假设（未验证）\n\n把写入错误和expectedRevision纳入状态协议，浏览器只在持久成功后推进revision，可能减少假成功和双标签丢配置。对只读home、rename失败和两个标签同时更改不同字段验证不回成功且冲突可见；若配置仍静默覆盖，则协议未实现预期。\n\n未运行或渲染；拟先故障注入持久化与并发测试，再在真实壁纸/长文本上测对比与动画开销，不把预览值替代全页测量。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cc73805bc555d0533bcc6860460a9a24b182818f63d1a7cc9869c2cd0fa57a3e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 2147 | 1608 | 408 | — |\n| .md | source | 1 | 137 | — | — | 1865 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.1；版本日期：2026-09-30（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[02b8cec9](https://github.com/AWL-MC2/DSH-Plugin_awl/tree/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19)；本轮基准：2026-10-21T05:26:52Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根Host字体解析/扫描、共享状态/路由/命令，以及client状态同步与settings注册；视觉效果未渲染测量，不执行目标。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "AWL-MC2/DSH-Plugin_awl",
+            "repository_id": 1388463793,
+            "captured_at": "2026-10-21T05:34:07.904Z",
+            "window_start": "2026-09-21T05:34:07.904Z",
+            "stars": 0,
+            "pushed_at": "2026-09-30T13:44:56Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FCC8:25D4C9:5868B3:5E71B0:6AD84ED1 and timestamp 2026-10-21 05:34:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FE02:275C9A:54AC3F:5AB9F9:6AD84ED2 and timestamp 2026-10-21 05:34:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A07.904Z..2026-10-21T05%3A34%3A07.904Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 731E:3E2FA6:AFED09:FBB272:6AD84ED3 and timestamp 2026-10-21 05:34:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A07.904Z..2026-10-21T05%3A34%3A07.904Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 745E:1ADA16:A9EC67:F448A4:6AD84ED4 and timestamp 2026-10-21 05:34:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A07.904Z..2026-10-21T05%3A34%3A07.904Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 759C:3E2FA6:AFEFF9:FBB6E5:6AD84ED5 and timestamp 2026-10-21 05:34:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-type-tune",
+                "captured_at": "2026-10-21T05:34:13.769Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 290,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-type-tune",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-26T04:47:48.726Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-type-tune",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-09-26T04:47:48.957Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1388463793:root",
+            "repository": "AWL-MC2/DSH-Plugin_awl",
+            "path": "",
+            "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fad29182f7c59465c875572eb7eebce2959b0bb9cbd09e1f73ad7982e29eec22",
+                "code": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                "maintenance": "314b826274297682ffa0ffafc5adc3fc4129330529dea77346dc2ef8081127e3"
+            }
+        }
+    }
+}

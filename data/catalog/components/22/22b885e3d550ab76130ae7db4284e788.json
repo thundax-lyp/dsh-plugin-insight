@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "22b885e3d550ab76130ae7db4284e788",
+    "identity": "github:1339806686:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339806686:root",
+            "repository": "Wayne036/dsh-plugin-login-gate",
+            "path": "",
+            "revision": "35929d5a8e322e5e19af3b0f13dcf6d74c01dfd2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "acc9341adba328d6d6401fa5db4b1175716a133fc2f06ba94425ac05c708cf82",
+                "code": "35929d5a8e322e5e19af3b0f13dcf6d74c01dfd2",
+                "maintenance": "f7f375f0478b5e309b980fdb0e0b5f1346a14d45345404eb1748f2fc6df601ef"
+            }
+        }
+    }
+}

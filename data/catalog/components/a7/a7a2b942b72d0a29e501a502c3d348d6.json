@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a7a2b942b72d0a29e501a502c3d348d6",
+    "identity": "github:1401232226:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401232226:root",
+            "repository": "SkanderBog/dsh-pdf-reader",
+            "path": "",
+            "revision": "16e0da37ce754dced5de6f5d2e802278ede3bcfc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "69334c12627f6b33cbfbe634282c3a5c51d0039733506baa090c1a9ca7e6c4c7",
+                "code": "16e0da37ce754dced5de6f5d2e802278ede3bcfc",
+                "maintenance": "1a3b7cd3ec3473d7323efdf52fa001ffd8d814bc3bff9d484f5f7e1aa0ae98a4"
+            }
+        }
+    }
+}

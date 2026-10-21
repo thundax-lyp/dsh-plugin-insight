@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d1dc6aea0eacc598730845019fba9afb",
+    "identity": "github:1347961512:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347961512:root",
+            "repository": "Oliver0804/dsh-openrouter-monitor",
+            "path": "",
+            "revision": "1cac8c70b1d47ad6ed6d8103cada1bda6b1807ad",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "692ba9a26c8cdae414fc3ccd291ab6da8d468b75dc741b4896238200b166da8c",
+                "code": "1cac8c70b1d47ad6ed6d8103cada1bda6b1807ad",
+                "maintenance": "0e5d3d6e0eba3dc42e3b5b14f03d91290b7d0c2a5e9004439724ca925f88324b"
+            }
+        }
+    }
+}

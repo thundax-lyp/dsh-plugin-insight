@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ed642937e3ad6f6c967871468de8df1",
+    "identity": "github:1336996171:reference-butler-skeleton",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336996171:reference-butler-skeleton",
+            "repository": "yangfei222666-9/xiaojiu-ops-brain",
+            "path": "reference/butler-skeleton",
+            "revision": "c8426808c398df090ac810e4d2c59da22e67b894",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a8ee7a15b4139cf2f72c0b9ec767170d26cfcff1905dca16d754dcb12272fe0c",
+                "code": "c8426808c398df090ac810e4d2c59da22e67b894",
+                "maintenance": "9db1d1230ed137c2f96f2e6f307410b1bd5b75e2e91355f986c4c592a304c44f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "365e00e943656ba4b5def0e4f6991e8f",
+    "identity": "github:1413307917:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413307917:root",
+            "repository": "dingchenhui0618-arch/dsh-signal-pet",
+            "path": "",
+            "revision": "6f8b1e45e2f7b910be5f8cff72b2ca53cdaa0cff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7aeeedee448d25e87e05e79fecea59977b676d5a3247eda694c4cbb99c044746",
+                "code": "6f8b1e45e2f7b910be5f8cff72b2ca53cdaa0cff",
+                "maintenance": "1566fff7f5774e68c95597da78f591f8374c4b4c38ac2c9638bb6f3fb4cba5e3"
+            }
+        }
+    }
+}

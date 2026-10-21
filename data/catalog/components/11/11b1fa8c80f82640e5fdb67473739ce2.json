@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11b1fa8c80f82640e5fdb67473739ce2",
+    "identity": "github:1419317452:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419317452:root",
+            "repository": "po-et/dsh-sheet-diff",
+            "path": "",
+            "revision": "6cb1450a1b1da58b738b8bfd18d85e5c132e5ddd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7d19ee98bc5278c42e87bb339455663eafe2e3af1ce106d19292f2ff0876aa1f",
+                "code": "6cb1450a1b1da58b738b8bfd18d85e5c132e5ddd",
+                "maintenance": "01dcefbefe69fc888839b9af19d65b17639a170027d1efd735a8be2dbde4c7c0"
+            }
+        }
+    }
+}

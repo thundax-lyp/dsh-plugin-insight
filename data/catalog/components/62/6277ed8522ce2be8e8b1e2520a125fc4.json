@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6277ed8522ce2be8e8b1e2520a125fc4",
+    "identity": "github:1250328893:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1250328893:root",
+            "repository": "kobenfang/Eyes",
+            "path": "",
+            "revision": "853957e11e369a65fb1a92cdd177ff8a1de10d75",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f4c3e51482d83b594703a39c44b393353f7455267a399e67bbad652acc49601d",
+                "code": "853957e11e369a65fb1a92cdd177ff8a1de10d75",
+                "maintenance": "fd710745e489eca13c732a1c92c11aeda716fc04c975bd08603aea6611222af8"
+            }
+        }
+    }
+}

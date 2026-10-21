@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c360b316c238b6960e87586e4c7b0b34",
+    "identity": "github:1337407137:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337407137:root",
+            "repository": "dingyi580/dsh-conversation-rail",
+            "path": "",
+            "revision": "bf198d53833deea611ab86509120ce5bf6a0a35e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ec9d3d154d0dac18d99ccd8ca4c76e0833a6357b61bb4efa089f10d71f0f5ada",
+                "code": "bf198d53833deea611ab86509120ce5bf6a0a35e",
+                "maintenance": "6fdf7ff690bf0075f26d0cc5fe2fae99980bdb2532e9872e61de9368238c5830"
+            }
+        }
+    }
+}

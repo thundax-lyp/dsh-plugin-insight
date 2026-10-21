@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d701cb00caf51fe6166a15571f2df84e",
+    "identity": "github:1347340759:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347340759:root",
+            "repository": "berserk0501/dsh-soundscape",
+            "path": "",
+            "revision": "9e1c9589eefcd125e34c6e25f15e5c636e32cf26",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "387aa15cbd71c94f73280b95b3f1ead80a42345f6b3a1bfab0e186bed4382a91",
+                "code": "9e1c9589eefcd125e34c6e25f15e5c636e32cf26",
+                "maintenance": "a1ce8699182a138a3d520a3f1e7bf9809abadfae4188acaf841688f85a6e7e64"
+            }
+        }
+    }
+}

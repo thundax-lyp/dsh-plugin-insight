@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "092864b832e8a24619736ad6bdf181b3",
+    "identity": "github:1339024711:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339024711:root",
+            "repository": "Hudson-Junior-Wang/dsh-search-switcher",
+            "path": "",
+            "revision": "33012f4f0e004be60e72ef71106a3c50df8869fe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a60d7e23d10bf3280082c031a5023399475041b5c124eaca53ef094582abd6eb",
+                "code": "33012f4f0e004be60e72ef71106a3c50df8869fe",
+                "maintenance": "a5dca7c9784707304d51fb272255fbe140fb6bd49fa1a6caa2d10dd890173271"
+            }
+        }
+    }
+}

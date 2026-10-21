@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "52558a6b11fa9f888291f132ebc3c831",
+    "identity": "github:1248774202:dsh-flowix-memory",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1248774202:dsh-flowix-memory",
+            "repository": "text2future/flowix",
+            "path": "dsh-flowix-memory",
+            "revision": "af97a440590ba85f15048736e4487210ae8bb1d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "79104fbd3eb60660646c9aa9e1e175cf96260250fda3fe30a156f8c4b8d1bba0",
+                "code": "af97a440590ba85f15048736e4487210ae8bb1d7",
+                "maintenance": "3563f9d87fbe4dd9253df8d77a98c0595465b2f3f1008903fcbe05d9aed80416"
+            }
+        }
+    }
+}

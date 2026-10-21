@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "018c1347d3be548c10a2a9f8bbe7abff",
+    "identity": "github:1372555478:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372555478:root",
+            "repository": "wcytjy/dsh-meal-picker",
+            "path": "",
+            "revision": "7564bc47143ba1fe09210f46e594fd1035508e6c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "defc693ea797c1b3dab2bb642da0aaed6c7847a828c1504d9ba4941184775fb9",
+                "code": "7564bc47143ba1fe09210f46e594fd1035508e6c",
+                "maintenance": "2a207d92cbad40e14e94b84d9755e177b47c7b579da232f1ec5610b384778b0d"
+            }
+        }
+    }
+}

@@ -1,0 +1,404 @@
+{
+    "schema_version": 3,
+    "id": "e8ac728412e8ef384c3fa54be7cc7bf1",
+    "identity": "github:1412141303:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1412141303:root",
+            "repository_id": 1412141303,
+            "component_id": "root",
+            "repository": "439436269-ctrl/dsh-session-path",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-session-path",
+            "entry_type": "plugin",
+            "technical_category": "sessions-messages",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "200c706ee0aac3b031c7841bdda8b4beb0301ff4b849e58735b177c755e5573a",
+                "code": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+                "maintenance": "42e389ff15c68ccee04746dd8b5a8ebab96884ea00d0d2e7ebc0475521ccec71"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1412141303-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:05:44.957Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1412141303-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/439436269-ctrl/dsh-session-path/blob/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607/README.md",
+                    "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+                    "captured_at": "2026-10-21T02:05:44.957Z",
+                    "summary": "定位 DSH 会话日志并导出可读 Markdown 或 JSONL 交接文件。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-session-path/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1412141303-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/439436269-ctrl/dsh-session-path/blob/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607/lib/handoff.js",
+                    "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+                    "captured_at": "2026-10-21T02:05:44.957Z",
+                    "summary": "核查 lib/handoff.js、lib/tools.js、lib/trust.js、lib/route.js；handoff.js读取压缩日志，将用户/助手文本及工具调用摘要映射为Markdown条目，或输出JSONL；route与trust限制HTTP读取路径来源。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-session-path/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要让另一个Agent接续已完成会话的用户，合格交付是可读、有会话身份和截断说明的记录。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412141303:root",
+                            "area": "code",
+                            "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:44.957Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "handoff.js读取压缩日志，将用户/助手文本及工具调用摘要映射为Markdown条目，或输出JSONL；route与trust限制HTTP读取路径来源。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412141303:root",
+                            "area": "code",
+                            "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:44.957Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412141303:root",
+                            "area": "code",
+                            "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:44.957Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412141303:root",
+                            "area": "code",
+                            "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:44.957Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次安装及适配日志代际；每次交接需读盘、解压并复核截断，导出长期保存还带隐私和磁盘清理成本，无新增外部模型费用。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412141303:root",
+                            "area": "code",
+                            "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:44.957Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "需要接续时优先检查Markdown导出及截断；JSONL预算语义与长日志内存问题确认前，不用作有界最新上下文保证。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412141303:root",
+                            "area": "code",
+                            "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:44.957Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少让Agent直接读压缩文件的失败有机制依据；接续任务成功率取决于工具结果、附件和被截断信息。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412141303:root",
+                            "area": "code",
+                            "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:44.957Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "Markdown区分上下文注入与用户原话，工具参数缩至240字；文件名清理sessionId。trust校验Host和Origin hostname，不能当完整用户鉴权。 [固定源码](https://github.com/439436269-ctrl/dsh-session-path/blob/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607/lib/handoff.js#L1)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412141303:root",
+                            "area": "code",
+                            "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:05:44.957Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:05:44.957Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+                "reviewed_at": "2026-10-21T02:05:44.957Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1412141303:root",
+                        "area": "code",
+                        "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：可读交接适配小幅；mechanism：日志投影与预算截断实质但格式不一致；transferability：有日志契约可复用实质；simplification：少人工解压实质。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：跨会话交接实质；delivery：可读文件实质；reach：Agent可读取小幅；economics：减少人工搬运小幅，长日志成本未测。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1412141303-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需Agent接续者可先试Markdown导出并检查截断；JSONL保头与全量收集限制未解决前不用作有界最新记录。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "已完成长会话转可读交接记录需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "解压整理工具摘要比让Agent直接读压缩日志可靠性更易检查。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "Markdown倒序预算源码明确，JSONL正序与全量内存限制同时存在。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "无新增模型费，但大日志解压、隐私清理与版本适配有成本。"
+                    }
+                },
+                "score": 65,
+                "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1412141303-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1412141303:root",
+                        "area": "code",
+                        "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1412141303:root",
+            "repository": "439436269-ctrl/dsh-session-path",
+            "path": "",
+            "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+            "fingerprints": {
+                "directory": "200c706ee0aac3b031c7841bdda8b4beb0301ff4b849e58735b177c755e5573a",
+                "code": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+                "maintenance": "42e389ff15c68ccee04746dd8b5a8ebab96884ea00d0d2e7ebc0475521ccec71"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "373f694c37bbcccf9e6c57ac9425d9de51148056077d0b86d1fedd41f77fa34e"
+        },
+        "publication.metadata": "data/plugins/439436269-ctrl--dsh-session-path/META.json",
+        "publication.summaries": {
+            "text": "定位 DSH 会话日志并导出可读 Markdown 或 JSONL 交接文件。",
+            "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+            "source_url": "https://github.com/439436269-ctrl/dsh-session-path/blob/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+            "items": {
+                "模型工具": "session_path与session_handoff",
+                "Host 路由": "只读会话路径resolve接口",
+                "界面": "会话路径复制按钮和菜单"
+            }
+        },
+        "publication.advice": {
+            "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+            "text": "需要接续时优先检查Markdown导出及截断；JSONL预算语义与长日志内存问题确认前，不用作有界最新上下文保证。"
+        },
+        "registry": "data/plugins/439436269-ctrl--dsh-session-path",
+        "reports": "# dsh-session-path\n\n> 定位 DSH 会话日志并导出可读 Markdown 或 JSONL 交接文件。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-session-path](https://github.com/439436269-ctrl/dsh-session-path)\n- **版本号**：0.1.2（[固定提交 9ffc7b3f](https://github.com/439436269-ctrl/dsh-session-path/tree/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607)）\n- **版本日期**：2026-10-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：需要让另一个Agent接续已完成会话的用户，合格交付是可读、有会话身份和截断说明的记录。\n- **亮点**：相对只复制不可直接read的压缩日志路径，把日志转成可读交接文件是实质工作流增量；Markdown保留最近条目能适配接续。Zstd解压及路径工具是现成机制组合，不证明语义交接完整。\n- **思考**：是否真的按预算保留最近上下文且内存有界？renderEntries倒序保留尾部，但renderJsonl正序累积直到预算耗尽，保留的是头部；writeHandoff先收集全部records/entries，逐帧解压不能推出整个导出内存有界。该源码反例影响长会话接续主张，尚未运行复现。\n- **建议**：需要接续时优先检查Markdown导出及截断；JSONL预算语义与长日志内存问题确认前，不用作有界最新上下文保证。\n\n采用建议：需要接续时优先检查Markdown导出及截断；JSONL预算语义与长日志内存问题确认前，不用作有界最新上下文保证。\n\n## 核心贡献\n\n相对只复制不可直接read的压缩日志路径，把日志转成可读交接文件是实质工作流增量；Markdown保留最近条目能适配接续。Zstd解压及路径工具是现成机制组合，不证明语义交接完整。\n\n## 关键质疑\n\n是否真的按预算保留最近上下文且内存有界？renderEntries倒序保留尾部，但renderJsonl正序累积直到预算耗尽，保留的是头部；writeHandoff先收集全部records/entries，逐帧解压不能推出整个导出内存有界。该源码反例影响长会话接续主张，尚未运行复现。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：对两种格式共用有界尾部缓冲，显示被删区间与最后事件ID，可同时改善一致性和长日志内存；新增负担是跨记录边界预算与超大单记录策略。\n\n生成首尾含不同决策的长日志，对MD与JSONL设小预算，检查尾部决策和峰值内存；若仍只保留开头或内存随全日志线性增长则否定假设。\n\n## 场景与替代办法\n\n需要让另一个Agent接续已完成会话的用户，合格交付是可读、有会话身份和截断说明的记录。\n\n参照直接复制日志路径或人工复制对话；自动交接文件更可读，但不等于完整可回放会话。\n\n## 依赖与流程\n\n依赖可用会话日志、Zstd解码、宿主tools与fs访问；导出默认写DSH_HOME/session-handoff，需要目录权限。\n\n解析sessionId→定位日志→解压→抽取可读条目→预算截断→写固定会话名文件→另一会话read；缺日志明确报错。\n\n## 成本与效果\n\n首次安装及适配日志代际；每次交接需读盘、解压并复核截断，导出长期保存还带隐私和磁盘清理成本，无新增外部模型费用。\n\n减少让Agent直接读压缩文件的失败有机制依据；接续任务成功率取决于工具结果、附件和被截断信息。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：018f90e21e6d1d040eabd513c3dd23b1ae3625819f18dd4f36da7d8e93875d90。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 219 | — | — | 1906 |\n| .js | source | 12 | 1558 | 962 | 514 | — |\n| .mjs | test | 1 | 308 | 265 | 28 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：session_path与session_handoff\n- **Host 路由**：只读会话路径resolve接口\n- **界面**：会话路径复制按钮和菜单\n\n## 工程亮点\n\nMarkdown区分上下文注入与用户原话，工具参数缩至240字；文件名清理sessionId。trust校验Host和Origin hostname，不能当完整用户鉴权。 [固定源码](https://github.com/439436269-ctrl/dsh-session-path/blob/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607/lib/handoff.js#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/handoff.js、lib/tools.js、lib/trust.js、lib/route.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：生成首尾含不同决策的长日志，对MD与JSONL设小预算，检查尾部决策和峰值内存；若仍只保留开头或内存随全日志线性增长则否定假设。\n",
+        "metadata": {
+            "repository": "439436269-ctrl/dsh-session-path",
+            "repository_id": 1412141303,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-09T16:42:16Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-session-path%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:B3C47:146B8C:221981:6AD849FA and timestamp 2026-10-21 05:13:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-session-path%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:12770C:1512CF:22A96C:6AD849FA and timestamp 2026-10-21 05:13:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-session-path%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:14715B:21F36E:6AD849FA and timestamp 2026-10-21 05:13:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-session-path%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:142999:21C622:6AD849FB and timestamp 2026-10-21 05:13:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-session-path%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:1413B7:21B516:6AD849FB and timestamp 2026-10-21 05:13:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-session-path",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 667,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-session-path",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-09T16:30:12.290Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-session-path",
+                    "error": null,
+                    "latest_version": "0.1.2",
+                    "latest_published_at": "2026-10-09T16:40:07.827Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+                "current_revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1412141303:root",
+            "repository": "439436269-ctrl/dsh-session-path",
+            "path": "",
+            "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "200c706ee0aac3b031c7841bdda8b4beb0301ff4b849e58735b177c755e5573a",
+                "code": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+                "maintenance": "42e389ff15c68ccee04746dd8b5a8ebab96884ea00d0d2e7ebc0475521ccec71"
+            }
+        }
+    }
+}

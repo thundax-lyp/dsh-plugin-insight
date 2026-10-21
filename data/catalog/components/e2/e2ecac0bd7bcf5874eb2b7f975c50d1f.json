@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e2ecac0bd7bcf5874eb2b7f975c50d1f",
+    "identity": "github:1369293914:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369293914:root",
+            "repository": "xinyang920/dsh-caps-beacon",
+            "path": "",
+            "revision": "9c7738f7b9873e3954a3284863be4fda58b2ec58",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e3d2cc569ea7e98f969c180a32fd33a4523bab7b3c41b1bf6d68432aa0fffda4",
+                "code": "9c7738f7b9873e3954a3284863be4fda58b2ec58",
+                "maintenance": "cff49e845b13a6ece6976670a18f2c124413c5ef4121b225697700bfe7bec741"
+            }
+        }
+    }
+}

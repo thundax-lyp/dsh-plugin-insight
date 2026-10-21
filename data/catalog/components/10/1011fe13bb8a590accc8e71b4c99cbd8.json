@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1011fe13bb8a590accc8e71b4c99cbd8",
+    "identity": "github:1401885078:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401885078:root",
+            "repository": "wuwaka/dsh-rehearsal",
+            "path": "",
+            "revision": "c826176e4f3af9a761d042bf2402fe05a294b1c9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c96722f4b954a57f595edebb408bd64d53bef71e4d2eccc282574feba3ba0d1f",
+                "code": "c826176e4f3af9a761d042bf2402fe05a294b1c9",
+                "maintenance": "461f2041aea7146850fe87e78ecd40575c050d2cb350854ba0b323254af3e0a3"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "63332ecf0bc4609e50f66ec93a5825fb",
+    "identity": "github:1338018045:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338018045:root",
+            "repository": "zzx-dear/dsh-capybara-notify",
+            "path": "",
+            "revision": "2341191c21555eb71d744b4dc8723c64e7ece330",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "08e737a1729855ed2765820115a3fed33de6e4e5c6ce7802f031e5e7daa5276b",
+                "code": "2341191c21555eb71d744b4dc8723c64e7ece330",
+                "maintenance": "057304ab9bb1a4c5ad1618df6670b1eed8da9fcd2fb4cf9eac25bf331465679b"
+            }
+        }
+    }
+}

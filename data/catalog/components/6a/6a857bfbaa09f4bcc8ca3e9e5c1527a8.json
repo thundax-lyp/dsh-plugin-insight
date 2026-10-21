@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a857bfbaa09f4bcc8ca3e9e5c1527a8",
+    "identity": "github:1398233237:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398233237:root",
+            "repository": "bauerelizabeth07139/nai",
+            "path": "",
+            "revision": "331d575b50bb9202fef5b4444434596cbc154043",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "86fcc2b940457596651ed580bfade9ff762397eb0152a50e7fbc3329df9f25bc",
+                "code": "331d575b50bb9202fef5b4444434596cbc154043",
+                "maintenance": "1e0bcf2bf1da6ba9d4272f9849616e376f5fdf6530113cad888981d54157382f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fd313325406e40382e5f172c4278a9bf",
+    "identity": "github:1333254657:dsh-mneme",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333254657:dsh-mneme",
+            "repository": "slow-stack/mneme",
+            "path": "dsh-mneme",
+            "revision": "d9ada6f3b4b9e9255d3a0d39332cd800b74a686b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "70ae16c362c54c68327708d30ead085ff81dc420aeb62c2c94b90d5399c6bbaf",
+                "code": "d9ada6f3b4b9e9255d3a0d39332cd800b74a686b",
+                "maintenance": "69bddc9c5b7bd1e363cbff4482a264311b1a52031c2faf5b2206deb3870293e6"
+            }
+        }
+    }
+}

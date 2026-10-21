@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "13c042d554121e8b228dee5b0b7bc740",
+    "identity": "github:1379992723:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379992723:root",
+            "repository": "kittimzhe/dsh-session-eval",
+            "path": "",
+            "revision": "8a9742776d961e96c72895bf7647ffa1bd25a630",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fe7be63ebd238f213845d2711c3ca12c768bbdc318a4b5d988536cae50c34c22",
+                "code": "8a9742776d961e96c72895bf7647ffa1bd25a630",
+                "maintenance": "31ad48c547875b3a4c6b3cb3820302caef93707e8b1a25fbb66921f74e0a04ba"
+            }
+        }
+    }
+}

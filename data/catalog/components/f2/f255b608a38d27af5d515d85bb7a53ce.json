@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f255b608a38d27af5d515d85bb7a53ce",
+    "identity": "github:1334891199:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334891199:root",
+            "repository": "Jamailar/beav-deepseek-harness",
+            "path": "",
+            "revision": "2804d549d2ba127e3d0fcc2dc15b916135242a49",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fdd9f81bb6152b299595c64111d52e0953ee46f5939e52e04b92d36c8fb782c6",
+                "code": "2804d549d2ba127e3d0fcc2dc15b916135242a49",
+                "maintenance": "e30513903815a916fa5b8bb4b516ff2f85530ffaff74e89653a1c67899b7ee4e"
+            }
+        }
+    }
+}

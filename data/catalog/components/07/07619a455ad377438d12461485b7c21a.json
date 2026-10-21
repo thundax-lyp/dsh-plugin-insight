@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "07619a455ad377438d12461485b7c21a",
+    "identity": "github:1337137104:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337137104:root",
+            "repository": "PocketSWPU/dsh-serendipity",
+            "path": "",
+            "revision": "ecb8ef85cf527b414cf0ced2e9af76e3e1b9128d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "28060064a50c3cffd7dcfb3c76a9b0e34b0fe868458dfbd2c0a50616b561b41e",
+                "code": "ecb8ef85cf527b414cf0ced2e9af76e3e1b9128d",
+                "maintenance": "34b0c5fa51dacb62a0078924970158e74edb0115dbaa44915669c5cf2508f098"
+            }
+        }
+    }
+}

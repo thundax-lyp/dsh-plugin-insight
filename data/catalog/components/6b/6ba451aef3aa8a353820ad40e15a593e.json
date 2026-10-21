@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6ba451aef3aa8a353820ad40e15a593e",
+    "identity": "github:1333418376:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333418376:root",
+            "repository": "Ericwong5021/deepseek-plugin-store",
+            "path": "",
+            "revision": "b1d0b4d0bc230a3726483aa6ae6e0566cee2ff36",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2667c55969e156d491d69b60d7bae6d8ba64b07ddee62999d160f55ebf85b713",
+                "code": "b1d0b4d0bc230a3726483aa6ae6e0566cee2ff36",
+                "maintenance": "2eacff6dbb487de41a4a462e032e3d434605adee1e4a2da6555144046029af92"
+            }
+        }
+    }
+}

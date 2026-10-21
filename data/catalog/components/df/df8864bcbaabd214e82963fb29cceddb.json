@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "df8864bcbaabd214e82963fb29cceddb",
+    "identity": "github:1378190454:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378190454:root",
+            "repository": "JuntaoXiao/PDF-electronic-signature",
+            "path": "",
+            "revision": "703c3e91efd853fc8e2d3671c51a06fb43f03d2b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cbf6cb2d5143aaf4cb6db6f9979b63468c2e95c3febfa7a20fc4d21e39843a01",
+                "code": "703c3e91efd853fc8e2d3671c51a06fb43f03d2b",
+                "maintenance": "9a7928f2b5b11f31c1232fc3c3329baa5ea4ef616cd2e813608af53a6cff7e26"
+            }
+        }
+    }
+}

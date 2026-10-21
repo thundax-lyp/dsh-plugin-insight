@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d04ea2d916c8ad91b0943e9f03cb016",
+    "identity": "github:1365239484:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365239484:root",
+            "repository": "X1A0BAN/dsh-survival-mode",
+            "path": "",
+            "revision": "98b922bee7c5843f3357f09ed2a02ac3d2cb85c7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8676017da2d554f2c35647e823dc8400f9e0f62a7a622d4b47863781601273ab",
+                "code": "98b922bee7c5843f3357f09ed2a02ac3d2cb85c7",
+                "maintenance": "b7d009955f8d245bebae5220a8c4440c8710c16e680612f444dcc508fba05b7e"
+            }
+        }
+    }
+}

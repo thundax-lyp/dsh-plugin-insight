@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "deab7d22631e6baa8bce7483518e20d4",
+    "identity": "github:1348068455:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348068455:root",
+            "repository": "chen731215-dev/dsh-muv-engine",
+            "path": "",
+            "revision": "84cb0c5c24ac0e02d5d984bfc2838924195c2df6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "18c32e3cecf00ee15e00be6b04aae74f3085227af1ca53fbc73ea13d238fb619",
+                "code": "84cb0c5c24ac0e02d5d984bfc2838924195c2df6",
+                "maintenance": "106b79faef0669930ef3475714fcae5c04b5804dce1a03beb1768b854ec43bc0"
+            }
+        }
+    }
+}

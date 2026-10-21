@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f3cc6a0a1be3c5731f6ad770e5a8d9f2",
+    "identity": "github:1372715111:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372715111:root",
+            "repository": "Jaylor-Wang/dsh-tool-lsp",
+            "path": "",
+            "revision": "3244d8ec49073ab69b6712c35f8c36b970fc9520",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dfc3e6f9a2274c6fa8b9a88d505e16862377a9d9375f133148f4ab71c72be1c9",
+                "code": "3244d8ec49073ab69b6712c35f8c36b970fc9520",
+                "maintenance": "adb6479ab5a3b9c3c9361a94af525c00097ba351ab8c4df44fcdbeb3f4233901"
+            }
+        }
+    }
+}

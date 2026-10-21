@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "6f4e5bc1bfee1057af86cb52bb897006",
+    "identity": "github:1351967092:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351967092:root",
+            "repository": "weibaohui/skills-management",
+            "path": "",
+            "revision": "9419cf1af1d1f5e1f6adf77f15fe1138d48517c1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fd18ef923824cc10325ba7cfedc74c0cbb6211b1a68c080daa283da912a07e58",
+                "code": "9419cf1af1d1f5e1f6adf77f15fe1138d48517c1",
+                "maintenance": "082b9d8248a5eb1b8778b3d6cb43c2358660741b2b78a6915e603665522c5136"
+            }
+        }
+    }
+}

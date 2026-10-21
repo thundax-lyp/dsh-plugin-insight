@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "40172d7723259169751d1d7974e55c09",
+    "identity": "github:1336864972:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336864972:root",
+            "repository": "islibaodong/dsh-login",
+            "path": "",
+            "revision": "6bbda1d6757825027331bf04acd76e4698a90ad5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5c20304592f2955402016778e213c10d9a7f3eba81e75313171a08d38e9ff3d9",
+                "code": "6bbda1d6757825027331bf04acd76e4698a90ad5",
+                "maintenance": "aefce717bc4d72b24b4640a7c9709da2e37687fad2d24b3331244d7e9d1f1397"
+            }
+        }
+    }
+}

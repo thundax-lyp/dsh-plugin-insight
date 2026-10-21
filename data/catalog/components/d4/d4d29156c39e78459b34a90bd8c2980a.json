@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d4d29156c39e78459b34a90bd8c2980a",
+    "identity": "github:1364351083:plugins-dsh-dock-bridge",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364351083:plugins-dsh-dock-bridge",
+            "repository": "wjingshan/dsh-dock-launcher",
+            "path": "plugins/dsh-dock-bridge",
+            "revision": "78678e484c0d836508aaa6f180843490f9205629",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3f82743eaf177849c4f73d10293585014b65762b1a8440b9a1d7aeeaeb2aaf3a",
+                "code": "78678e484c0d836508aaa6f180843490f9205629",
+                "maintenance": "b9ac9adc9ba408f145b85fe85ad95563b5dd2d234d6d75e8525e994c1876c882"
+            }
+        }
+    }
+}

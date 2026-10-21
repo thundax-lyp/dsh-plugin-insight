@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1991329e6a08cc6bf860237148df6550",
+    "identity": "github:1333708029:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333708029:root",
+            "repository": "kerwin2046/dsh-pin-recall",
+            "path": "",
+            "revision": "61817c21006f51bbdd6ab8dd252af56cac59b6e2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "09ab5e08136b4f116ce4881bd78d97b7f57f93f28df8c08ab283e856064ca377",
+                "code": "61817c21006f51bbdd6ab8dd252af56cac59b6e2",
+                "maintenance": "16a852c548ff05bdfcc93e59cabc969160fa37cd54908184ac794b5cee3d4d57"
+            }
+        }
+    }
+}

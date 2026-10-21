@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e21abb540b3437f4f84bcb7fc1f18a82",
+    "identity": "github:1336185734:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336185734:root",
+            "repository": "AntaresCorn/dsh-auto-reviewer",
+            "path": "",
+            "revision": "4eff126d8687c7a5cdf9273f7d9ca1b5e6b9a14e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7ae2238e31b3064f37b7d456682f02bdac572f93659a0ea9f6c62099f74de486",
+                "code": "4eff126d8687c7a5cdf9273f7d9ca1b5e6b9a14e",
+                "maintenance": "3711003c5f0dff7a0007f882445d574977e2840186a1cb290f79a773dda2ce35"
+            }
+        }
+    }
+}

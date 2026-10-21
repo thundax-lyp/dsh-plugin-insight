@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "62f94df991031be1acbc9bbb91bbd343",
+    "identity": "github:1387128674:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1387128674:root",
+            "repository": "huzhengbang2007/dsh-orca-glass",
+            "path": "",
+            "revision": "42bde86bdb28350e2aee3780af742eed89272b70",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a5c9dc8554fbe4119f80f9ac4af7ff5d9f9eb560dae70822e1a8dc42b0b06f56",
+                "code": "42bde86bdb28350e2aee3780af742eed89272b70",
+                "maintenance": "b1150935c512f689bb12a1f7aa4ae16178f727cf49ee2b9e5c5ffd09800d4177"
+            }
+        }
+    }
+}

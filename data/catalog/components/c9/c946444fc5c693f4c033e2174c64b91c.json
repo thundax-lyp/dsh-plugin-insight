@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c946444fc5c693f4c033e2174c64b91c",
+    "identity": "github:1335224415:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335224415:root",
+            "repository": "Leeminjing/dsh-messages-sanitizer",
+            "path": "",
+            "revision": "bcc381dcb26585f0c3ccb914f30a737714621f6d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3740ac5addb4dfee68c7ca501672350a9d3dfb33cffb995706ccc6f67500e327",
+                "code": "bcc381dcb26585f0c3ccb914f30a737714621f6d",
+                "maintenance": "dbfe1a50058a95ab61f49162b3c6d914bca78016b9c8e73c7e65eecd0749322f"
+            }
+        }
+    }
+}

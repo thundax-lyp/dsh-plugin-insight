@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4cd3dc72d7ff044e3eab3f67e4b9e54a",
+    "identity": "github:1345883186:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345883186:root",
+            "repository": "fengyungithub/dsh-short-video-studio",
+            "path": "",
+            "revision": "9f7443661fb1b577753ca057f547e119b2abe974",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "19120ff38ba348229453e56a70d8755dfab4c4d5c6359bae25537db5c0a2e44c",
+                "code": "9f7443661fb1b577753ca057f547e119b2abe974",
+                "maintenance": "d8cfe1b938dd78df5b5dbd73b6be21be8269a30aac58fe14563ab45adcf3366c"
+            }
+        }
+    }
+}

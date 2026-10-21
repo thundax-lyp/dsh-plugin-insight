@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "96161e1b8b30dd8ccc22b5f241e72bf5",
+    "identity": "github:1359970625:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359970625:root",
+            "repository": "ct-jyjntc/dsh-model-modality",
+            "path": "",
+            "revision": "792ebfbc643f4113624be83fbf09d711a2fd2e95",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc8d0cd593a1f897ae32ea5c5d8eaffdf842cc898ba6f45072c8c59f176bda61",
+                "code": "792ebfbc643f4113624be83fbf09d711a2fd2e95",
+                "maintenance": "37411f6d34b389f93b666dbacb1cbb62c5f178d11b2ffceac0a3709d02d88811"
+            }
+        }
+    }
+}

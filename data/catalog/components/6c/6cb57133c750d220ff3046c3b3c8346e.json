@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6cb57133c750d220ff3046c3b3c8346e",
+    "identity": "github:1339360951:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339360951:root",
+            "repository": "MDR-EX1000/dsh-desktop-kit",
+            "path": "",
+            "revision": "c244d675f4a4b206a5a46191465322bb539a83b7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fe7e14819fad50cf52e7be05402ca0219d57cb3db291af3a42066644ef876ab3",
+                "code": "c244d675f4a4b206a5a46191465322bb539a83b7",
+                "maintenance": "8405baa99bc36a9149f8d0b731e603d1627311897ea82c30fc73795d9715e969"
+            }
+        }
+    }
+}

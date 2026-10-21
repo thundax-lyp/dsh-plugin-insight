@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4b81d6e49eec956b9609e8689e72682b",
+    "identity": "github:1343656184:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343656184:root",
+            "repository": "iimaguest/phone-tunnel-pool",
+            "path": "",
+            "revision": "4cbeedb31a8d3e446d57c6a97864d1e00b5afd89",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0cc09382cbdd51123796c0bb4ad485685f978e34e1f8f839ea437a9cf1c6a821",
+                "code": "4cbeedb31a8d3e446d57c6a97864d1e00b5afd89",
+                "maintenance": "b46f66f450c08f5e3532719339c605325799d214177f13b98d7181a66f2cb879"
+            }
+        }
+    }
+}

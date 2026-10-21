@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b6791a79ff9bd98a36592e731f8bfba5",
+    "identity": "github:1335110228:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335110228:root",
+            "repository": "WSL043/dsh-chat-manager",
+            "path": "",
+            "revision": "20ed9bec6f808cd9fb39d4b7f858b652d2cdb7c5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0f7a5a10ee58312a7b166b1f3a4dbb598e2e6a5e30e9aad860bbd7ca6807a516",
+                "code": "20ed9bec6f808cd9fb39d4b7f858b652d2cdb7c5",
+                "maintenance": "738415f84fc125749b5c0063225aafac50f7729974a75e9ab28e2a77779b6f97"
+            }
+        }
+    }
+}

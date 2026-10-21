@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0357a96dee20f78535e1ee270fa4168a",
+    "identity": "github:1356797073:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356797073:root",
+            "repository": "MurasakiIzumi/dsh-ticker-jp",
+            "path": "",
+            "revision": "0c87f157104ec82f756806d6972a04ec8e8619f7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "574a87fc2012f568e217a34fba92d871979a4b18ebbc190ad6ea1babcc339208",
+                "code": "0c87f157104ec82f756806d6972a04ec8e8619f7",
+                "maintenance": "6288ae654c891165b0de56a4e5ea3384953eb916044d47af2f1e7e85adff24c3"
+            }
+        }
+    }
+}

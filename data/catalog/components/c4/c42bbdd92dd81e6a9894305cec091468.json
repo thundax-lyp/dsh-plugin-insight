@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c42bbdd92dd81e6a9894305cec091468",
+    "identity": "github:1182135360:dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1182135360:dsh-plugin",
+            "repository": "zhaoolee/notes",
+            "path": "dsh-plugin",
+            "revision": "6a9b6a3f02a3dd189117bd511d840e44e0c665d5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e144699f8f81619fed8319db4f30253bedbe0660227715508683ae02994f33bc",
+                "code": "6a9b6a3f02a3dd189117bd511d840e44e0c665d5",
+                "maintenance": "2595fa2eb668f8720200f2a663050ea02b210d5ef2b722a1150c161baa50c436"
+            }
+        }
+    }
+}

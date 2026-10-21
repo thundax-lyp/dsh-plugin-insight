@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d6f679cfa5ba24079fcf62ef1beabae3",
+    "identity": "github:1190568968:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1190568968:root",
+            "repository": "upstash/skills",
+            "path": "",
+            "revision": "3f5e1dd5ef9919ec30b4fcaff25963a8dcffb0db",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9aee5ab73476cc49a5e475a717e19333593d05f940c457dd8ea2ff5cdf5a47f1",
+                "code": "3f5e1dd5ef9919ec30b4fcaff25963a8dcffb0db",
+                "maintenance": "c8723fd3b92bdd55dd9d4e7214a8cb03f7275b763b37e67e36c6ba77dfd2eb78"
+            }
+        }
+    }
+}

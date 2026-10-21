@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "93cabd5f6ebe142f8ef70239010b4327",
+    "identity": "github:1405882936:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405882936:root",
+            "repository": "zhz8888/dsh-radeon-cloud-patcher",
+            "path": "",
+            "revision": "6ceb5fb1b2c753a61b9791ba8d3294573f7da608",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3a4e021a591097f18832f394f1432a8e6cd0206cf25e9fe037ccc711420a3bd8",
+                "code": "6ceb5fb1b2c753a61b9791ba8d3294573f7da608",
+                "maintenance": "80461df7381cdbbe42137b145879cc105e00a9200fcdf93c53881a6d319d1511"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "de3bd44fdcb1b6605dea6b00cf6f1612",
+    "identity": "github:1338178221:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338178221:root",
+            "repository": "uriekang1211-bot/dsh-ssq-plugin",
+            "path": "",
+            "revision": "08a3281ab8ff2c168f7cde9a56af0887c6d56bd6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6f721863f05fd69392eef60789c753758cfe2ec9ba9312e08ac60624452d4dae",
+                "code": "08a3281ab8ff2c168f7cde9a56af0887c6d56bd6",
+                "maintenance": "5e478df3bc4bb3e5b72ca414da80a1ee4e385a4306e5a7c882575157261cf336"
+            }
+        }
+    }
+}

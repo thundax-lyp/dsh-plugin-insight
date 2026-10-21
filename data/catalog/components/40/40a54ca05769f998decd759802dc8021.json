@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "40a54ca05769f998decd759802dc8021",
+    "identity": "github:1314807642:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1314807642:root",
+            "repository": "starsstreaming/beautiCode",
+            "path": "",
+            "revision": "aea32209f02de0e14b7248ac870f5868e195d167",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3dd98c677f9c3bd2190a9d666f175ee90d0778a5166f59dbd1672bf81a083522",
+                "code": "aea32209f02de0e14b7248ac870f5868e195d167",
+                "maintenance": "a6d8e49473718f6ead4705281b59e4f3cb5068255a6587efa084c656cc2982f7"
+            }
+        }
+    }
+}

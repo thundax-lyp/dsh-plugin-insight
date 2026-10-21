@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4d5a1ce692c69d5fc9a8dac5d7fb19d9",
+    "identity": "github:1335735813:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335735813:root",
+            "repository": "FeatherHunter/dsh-prompt",
+            "path": "",
+            "revision": "542afe2e9eba6854a2a2d44a0e42b2059d020109",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ae849c8790a52e5fcea6ef7d71d0e0414a4386d2d679b10d1b54e8673e88f6e7",
+                "code": "542afe2e9eba6854a2a2d44a0e42b2059d020109",
+                "maintenance": "6288eff6efefabdaf0d42b68941583e80c3f47ea7272d4235ee2390e05f3e589"
+            }
+        }
+    }
+}

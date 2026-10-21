@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7317b55aad789da68bf8def430298476",
+    "identity": "github:1348237800:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348237800:root",
+            "repository": "Rudyy898/dsh-drag-path",
+            "path": "",
+            "revision": "8c0549d9e41e0cf3bb2676e83ba6fbe072656eac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ffd12e260d477f5bc7629586673653c4bdf5a0d5ad6cd32be8779c1054eb2746",
+                "code": "8c0549d9e41e0cf3bb2676e83ba6fbe072656eac",
+                "maintenance": "ff6843fe3719776f1873b5ddbf04c340a6c6d5edbaae5367d1a8f3ea117e6667"
+            }
+        }
+    }
+}

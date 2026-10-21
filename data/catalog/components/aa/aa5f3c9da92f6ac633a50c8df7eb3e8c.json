@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aa5f3c9da92f6ac633a50c8df7eb3e8c",
+    "identity": "github:1335983168:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335983168:root",
+            "repository": "pazz11/Jnpz",
+            "path": "",
+            "revision": "e4a1b72756ec786a5f750bc75a1131eeefe7d6cb",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f05c9dda920e499b8d964466fdff399e42419183edb5aa9ee16c4339766fce65",
+                "code": "e4a1b72756ec786a5f750bc75a1131eeefe7d6cb",
+                "maintenance": "3c46c2eff4066382a87a901dba39e12b8f32f581f9308a4f01cc668c62fbebd3"
+            }
+        }
+    }
+}

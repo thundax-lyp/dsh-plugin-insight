@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8a5c565c0ec0497335eb4bf81d8382c4",
+    "identity": "github:1333850130:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333850130:root",
+            "repository": "RAFOLIE/dsh-desktop-windowos",
+            "path": "",
+            "revision": "5419e676622fccdf1983d1cfdf61625a3460a0ee",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e79184d9ac99b1153cb4dc5888f2ac722c535c725b1c0e49cd11f983b0592bed",
+                "code": "5419e676622fccdf1983d1cfdf61625a3460a0ee",
+                "maintenance": "f7874726bfa9b5e81124752cba10444dd59c1274f5fc1cf9cfe5596f4e0deb68"
+            }
+        }
+    }
+}

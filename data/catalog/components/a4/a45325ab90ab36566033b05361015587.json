@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a45325ab90ab36566033b05361015587",
+    "identity": "github:1333722443:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333722443:root",
+            "repository": "Stormycry-cryp/dsh-AuthInOne",
+            "path": "",
+            "revision": "190ecc2d834ba06da008522684e689324a9c2706",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8d90f6d61a40937bb649f971498571b76bdaa066ea67a172c259ee241ca2552b",
+                "code": "190ecc2d834ba06da008522684e689324a9c2706",
+                "maintenance": "7d2fdded837ac75d8724453532ca6d7743adaead51807a16621633474a1fc6a0"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a58dfe40adb2f54d82a6f223ba682146",
+    "identity": "github:1334618124:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334618124:root",
+            "repository": "d-dev0101/open-sea-skin",
+            "path": "",
+            "revision": "387740c974f3fd47ef22eebd7c20da4645f2f213",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "08abbbbcc41907f1f98c8670e999e17d75709f5d0880b21600ccceb6be88ec59",
+                "code": "387740c974f3fd47ef22eebd7c20da4645f2f213",
+                "maintenance": "5dfc9b96dc04ed142fd8b0d872b7fd952c2aeaaa394d015043eccf0b06eb3009"
+            }
+        }
+    }
+}

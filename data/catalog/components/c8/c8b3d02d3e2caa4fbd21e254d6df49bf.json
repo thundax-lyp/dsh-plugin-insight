@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c8b3d02d3e2caa4fbd21e254d6df49bf",
+    "identity": "github:1401076690:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401076690:root",
+            "repository": "yuehancn/dsh-tool-invoice",
+            "path": "",
+            "revision": "bdc641d72c1328e506c9f7a873ab5915dcfc85d3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "26389ec434c87f75fbbe6f203dc0248b9b5f1d078926b10ca1a5825bb94cf829",
+                "code": "bdc641d72c1328e506c9f7a873ab5915dcfc85d3",
+                "maintenance": "97fe3156cbf2146b1bab04b8a24cfc16761276e7b5eb20d5f4e57544fef0e813"
+            }
+        }
+    }
+}

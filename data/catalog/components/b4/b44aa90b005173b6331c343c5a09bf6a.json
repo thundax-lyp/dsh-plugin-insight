@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b44aa90b005173b6331c343c5a09bf6a",
+    "identity": "github:1404186957:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404186957:root",
+            "repository": "HOPE-LGNF/dsh-state-notifier",
+            "path": "",
+            "revision": "907c2cf619f796ed9e1603c1b5929f6f0a5d1f5c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "51de2159abb84ac1ebcef4ad7895b7b0a069a5a7d9feb24c8296d54389c06994",
+                "code": "907c2cf619f796ed9e1603c1b5929f6f0a5d1f5c",
+                "maintenance": "1e406c8f81f10825df98374b39f60d427c7c1a97a0decb4f82ed40f873b8640b"
+            }
+        }
+    }
+}

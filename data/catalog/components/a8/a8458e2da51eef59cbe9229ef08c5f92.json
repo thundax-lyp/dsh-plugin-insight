@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8458e2da51eef59cbe9229ef08c5f92",
+    "identity": "github:1334246460:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334246460:root",
+            "repository": "KeLearns/dsh-token-usage",
+            "path": "",
+            "revision": "210ddf8f17699fdabc0982e999d5ad90ef38a425",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0cdeeadf90b3aa955655c4f1a22633e6d8c04fbe176b8bde595f75419742ccf",
+                "code": "210ddf8f17699fdabc0982e999d5ad90ef38a425",
+                "maintenance": "6ef8da8b18292b9f267352053de62648e2eec27da552ef3d81588b73f8108aeb"
+            }
+        }
+    }
+}

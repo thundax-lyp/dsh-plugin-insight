@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "79d029de578a9edafc1dcea24e776818",
+    "identity": "github:1423798451:plugins-dsh-agent-pet",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423798451:plugins-dsh-agent-pet",
+            "repository": "rpegorov/agent-pet",
+            "path": "plugins/dsh-agent-pet",
+            "revision": "610dabeb71d84ccd1fc0cb2b7a2995ea9c0df7e9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "41abc9d012667bc0005f9fdacb7a5a03f8b7a4085e7aa0f8821c0aef58e7d453",
+                "code": "610dabeb71d84ccd1fc0cb2b7a2995ea9c0df7e9",
+                "maintenance": "a8e30002e3d3848461f7b062b98d6eb7b6d3db6cc76a5e9565d02b1d7253c0fd"
+            }
+        }
+    }
+}

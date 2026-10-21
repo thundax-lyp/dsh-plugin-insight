@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ba365b7cc67d888c9ee970b7b7c49388",
+    "identity": "github:1336479693:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336479693:root",
+            "repository": "dingyi222666/dsh-wakatime",
+            "path": "",
+            "revision": "13e2b45826a1a75557a7581ab4df84f6efbc0d56",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5354c9b129ecfe2d65f4d8c363aa2048a497885a2e124b6b128c6b73b3d71b76",
+                "code": "13e2b45826a1a75557a7581ab4df84f6efbc0d56",
+                "maintenance": "2e2206281365590cc29d48bbc1ea3cee5ae8bcc5a51c16e9837a87fb15d7772f"
+            }
+        }
+    }
+}

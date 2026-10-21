@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e0168204d8b8707e0d2de308c351adbb",
+    "identity": "github:1344320001:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344320001:root",
+            "repository": "leonardoxr/dsh-image-preview",
+            "path": "",
+            "revision": "dc7d9d83011c5a1bfeffca4b3ab1ac0c85c5aada",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "07673fd03cac542bf9e4990ba943d46a055be0bf2c00bacd3c893086dc4ff8d6",
+                "code": "dc7d9d83011c5a1bfeffca4b3ab1ac0c85c5aada",
+                "maintenance": "41fa441ec6218d88e1b5e2fd39af0cfa2603e7c3dbcbe37260460feeb3c738bf"
+            }
+        }
+    }
+}

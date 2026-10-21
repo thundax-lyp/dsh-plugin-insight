@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "45734034967fe6b8abdbdc35c13e0619",
+    "identity": "github:1373194304:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373194304:root",
+            "repository": "SkyblueeeLabs/dsh-iconic-launcher",
+            "path": "",
+            "revision": "68fd4bff1a88cab904368677a23a05ef8fbf5350",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "736a4357988f7bac3d34a444db603798e84990c618ebcebe420b057c93523835",
+                "code": "68fd4bff1a88cab904368677a23a05ef8fbf5350",
+                "maintenance": "691072a2623ffd5519a70e4ff05fe887f498044cec74d64de26df7e05e7d0595"
+            }
+        }
+    }
+}

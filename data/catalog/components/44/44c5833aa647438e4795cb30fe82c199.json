@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "44c5833aa647438e4795cb30fe82c199",
+    "identity": "github:1351596729:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351596729:root",
+            "repository": "randomix777/dsh-opencode-zen",
+            "path": "",
+            "revision": "05fe1dc329d1226ab994ebb8bd94a89bf83918f7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7c30b14d3711e1a06b4676b82ab9447f55b167c1b9d2a7a5e9fe2dd9b00b6c5f",
+                "code": "05fe1dc329d1226ab994ebb8bd94a89bf83918f7",
+                "maintenance": "ce44a412723ffba44aeea77ffc6e8096b26bb8d91ee093a8d9c6284de1129684"
+            }
+        }
+    }
+}

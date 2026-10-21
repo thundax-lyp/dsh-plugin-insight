@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3248a9d6995cd7e8da970e1897bebc82",
+    "identity": "github:1348197945:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348197945:root",
+            "repository": "QChengW/dsh-conversation-shortcuts",
+            "path": "",
+            "revision": "045acf1d2372ffefc82af4f24c353199e282a505",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5e8538cbab2f18af308f7497edabe3e673028bc4a219a99334c16cadca30c7c4",
+                "code": "045acf1d2372ffefc82af4f24c353199e282a505",
+                "maintenance": "53eed5f2c7d09e7ab6e69eac0ca5c90733176437819a745361294271fc96c6e8"
+            }
+        }
+    }
+}

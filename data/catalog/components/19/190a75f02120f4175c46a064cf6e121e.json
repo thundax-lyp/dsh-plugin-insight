@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "190a75f02120f4175c46a064cf6e121e",
+    "identity": "github:1337306269:packages-citeciter",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337306269:packages-citeciter",
+            "repository": "kirkchinese/CiteCiter",
+            "path": "packages/citeciter",
+            "revision": "f84ae837cde50668dbfb2493ad769643d0fc24e7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b4395c6a8244570691088e96f4ff4a4cbebd0492df8e48e0267d77b3b423ad7c",
+                "code": "f84ae837cde50668dbfb2493ad769643d0fc24e7",
+                "maintenance": "e1962889c1f1940a4b0c55d9fb4328452bc1388b874e0a2c89e05f6027b7df50"
+            }
+        }
+    }
+}

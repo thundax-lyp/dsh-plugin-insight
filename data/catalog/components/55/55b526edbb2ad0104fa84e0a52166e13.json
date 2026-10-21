@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "55b526edbb2ad0104fa84e0a52166e13",
+    "identity": "github:1410002805:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410002805:root",
+            "repository": "Everglow28/dsh-glm-quota-dock",
+            "path": "",
+            "revision": "4834d2f6dfa61e180c040f90b7ae688b55ce51d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a38e29983fe1774bfc2f73b5ed98cb04081645195c713d0054ee2abb92bde208",
+                "code": "4834d2f6dfa61e180c040f90b7ae688b55ce51d7",
+                "maintenance": "dc97ef05231fb3b20781bbc53f68b1eba92fe90fd44db0f611738172fbad6ccd"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "955b048a5b1c7703d36f10612e2460cb",
+    "identity": "github:1335645491:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335645491:root",
+            "repository": "ringoage/dsh-subagent-model-picker",
+            "path": "",
+            "revision": "771082e64f3a1a8a1ab8b2f4e44d073b3d27ea2b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8770aefb8c05e9b322c3abfb0e197a011b6a521367ae48601043d26e5cf1213b",
+                "code": "771082e64f3a1a8a1ab8b2f4e44d073b3d27ea2b",
+                "maintenance": "457b4a50f598dc95ac91a31ca5b841060802dfd98b4298500659d8ac1dcc2575"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b1a6b268a544bfc512d8161803265e3d",
+    "identity": "github:1335115190:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335115190:root",
+            "repository": "ttmouse/dsh-dingtalk-channel",
+            "path": "",
+            "revision": "ee4a098c6086241bca8a4f393d122f377f9f04a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f3af9fca2fe7abe8c6a44db7c553bb3016433ab0b37c2c2de3b9dccb1cbbf367",
+                "code": "ee4a098c6086241bca8a4f393d122f377f9f04a6",
+                "maintenance": "31e50bde1c52d45a1d9de95ce01fc18a756eb59363b0b66172535a7d9011c10f"
+            }
+        }
+    }
+}

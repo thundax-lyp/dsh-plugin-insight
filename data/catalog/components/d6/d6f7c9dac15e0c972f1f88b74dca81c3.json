@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d6f7c9dac15e0c972f1f88b74dca81c3",
+    "identity": "github:1336271160:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336271160:root",
+            "repository": "Liu-ZA-81/dsh-theme-firefly",
+            "path": "",
+            "revision": "22a172cde2b8f4f55c4267c55d969e770d11d911",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "be5a24f6e2d65910355629751b9a0cb115b606b619a790c2485f233590c41503",
+                "code": "22a172cde2b8f4f55c4267c55d969e770d11d911",
+                "maintenance": "9048cdf77cf2a698d865e5d8edf0e15643bfe8d7eeaaee673cda8a8585f0c320"
+            }
+        }
+    }
+}

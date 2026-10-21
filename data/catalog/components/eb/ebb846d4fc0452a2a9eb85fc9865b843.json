@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ebb846d4fc0452a2a9eb85fc9865b843",
+    "identity": "github:1334136067:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334136067:root",
+            "repository": "memorax-ai/dsh-harmony",
+            "path": "",
+            "revision": "98079df6bf2cae311cd67269daa9664dcd682f64",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "68703c54c7112ce7a197b0aac5f8952cb11061d7fa0286982264ba3d72c04371",
+                "code": "98079df6bf2cae311cd67269daa9664dcd682f64",
+                "maintenance": "3fcc65df9df353205b4bd6d75b8b7bbbfb0fc78ac6850516bb3baff7a4a1e883"
+            }
+        }
+    }
+}

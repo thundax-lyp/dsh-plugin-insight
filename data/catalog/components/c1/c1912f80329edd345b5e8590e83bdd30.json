@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c1912f80329edd345b5e8590e83bdd30",
+    "identity": "github:1333983488:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333983488:root",
+            "repository": "MaxHou-infinity/dsh-scout",
+            "path": "",
+            "revision": "237e21bb75ba47bbaad3b7f812d37ca4c7a4890b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bc30bc895709829a439dc789a484165e020103644beb3fea9ef50b3c8538a06a",
+                "code": "237e21bb75ba47bbaad3b7f812d37ca4c7a4890b",
+                "maintenance": "9d6d30a16d2ac964e578d0542bfc55fefeac4f32245a2b7570af4caba0109f6c"
+            }
+        }
+    }
+}

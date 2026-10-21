@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "98735368b785ab651c814f76bd3bb328",
+    "identity": "github:1361192126:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361192126:root",
+            "repository": "ShawnKung/dsh-balance-monitor",
+            "path": "",
+            "revision": "ef4dfdb36bd9735df4063a475d8e174a60785572",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b16e5f773f2a3ae00575788f625dd31b86bc1375e17d9a7b2d681e715909ea06",
+                "code": "ef4dfdb36bd9735df4063a475d8e174a60785572",
+                "maintenance": "e5414775702c2486424118c80079ed9698764eb21beb8c7352f937a898368ee0"
+            }
+        }
+    }
+}

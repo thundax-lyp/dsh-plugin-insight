@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c3705edcb70312927c5d249a314f44c9",
+    "identity": "github:1424518922:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424518922:root",
+            "repository": "xiezouqu12/agent-trees",
+            "path": "",
+            "revision": "9657ea3ef278307c9177cc9b91b65e909a85c2ce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ce6400a5f54d752aa768ff8b5df2faf4b1ea5a1d14f3b272f7d5e13681b91f0d",
+                "code": "9657ea3ef278307c9177cc9b91b65e909a85c2ce",
+                "maintenance": "2b8119682886450c36e7971a9f314c5eed1ee882fef2fb328294f546062ada3b"
+            }
+        }
+    }
+}

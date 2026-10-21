@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d1aa52316a61670ea64fa08a516a931",
+    "identity": "github:1347560612:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347560612:root",
+            "repository": "SleepEggTart/dsh-dev-wrapped",
+            "path": "",
+            "revision": "4b33b94be9640fd9234e9b3b664c90a7d29fe737",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b362b6417e3561c680297fea01e219e1284501007d7ae9c365089e6ebacc0473",
+                "code": "4b33b94be9640fd9234e9b3b664c90a7d29fe737",
+                "maintenance": "525dcc8a2ec81744f45f4860cab917f1ef002e8f056ff606cb4410ee3f6dd0ae"
+            }
+        }
+    }
+}

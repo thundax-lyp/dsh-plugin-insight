@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d4fb2ff7660242ebee5ad25f76e1d9d5",
+    "identity": "github:1354720430:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354720430:root",
+            "repository": "weibaohui/context-razor",
+            "path": "",
+            "revision": "653e2ec9d62a75d8f605a3cd52b6771ef31a228f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a1f02eadefd2aa7153f9a67b08f7496c4734cfe2718fda5221b3c2e578062676",
+                "code": "653e2ec9d62a75d8f605a3cd52b6771ef31a228f",
+                "maintenance": "eacbaa67de4bc3d20463417bd2411d9a89e67620d4d4677366f42f57a400fa4c"
+            }
+        }
+    }
+}

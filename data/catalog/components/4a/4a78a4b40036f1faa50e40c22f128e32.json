@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4a78a4b40036f1faa50e40c22f128e32",
+    "identity": "github:1335514789:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335514789:root",
+            "repository": "SingleOne/dsh-notify-center",
+            "path": "",
+            "revision": "c8a38ab945bfdaa8cd240fbe1ebfd4a55183cc5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4f2394cf95db5cf4e36b8a844e047ec5d0e553d68e5cd2f11e7bf8e0d2be38e1",
+                "code": "c8a38ab945bfdaa8cd240fbe1ebfd4a55183cc5b",
+                "maintenance": "3991fcdadcc73eae9d205d1a14910c9bd3e3550677c6cfc5aa3d072480e1d9ac"
+            }
+        }
+    }
+}

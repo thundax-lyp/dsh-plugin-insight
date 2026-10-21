@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1536eadf06693b50f7af4c869fe72f1e",
+    "identity": "github:1339110580:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339110580:root",
+            "repository": "oil-oil/dsh-oil-creator",
+            "path": "",
+            "revision": "58bd30d0d05b04e149552e8bdb4ff0becae614f0",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a0020fff7ad98128e608d909485b1d6c6ecbc7c321add1ad1da2efef71fc123b",
+                "code": "58bd30d0d05b04e149552e8bdb4ff0becae614f0",
+                "maintenance": "7826dca6376b8952fc965086fc7ea8a62d99f429816ff489e1d2892119b2e03e"
+            }
+        }
+    }
+}

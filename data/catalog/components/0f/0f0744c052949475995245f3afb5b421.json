@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0f0744c052949475995245f3afb5b421",
+    "identity": "github:1397069169:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397069169:root",
+            "repository": "project-hy/dsh-claude-delegate",
+            "path": "",
+            "revision": "4feb2c11ca749f3e5359bdb44ba9875ffe9f3421",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bed94fad934f205be07e135ad2bcaa0ca606c4f2d3150370d6bcbd38fb014f7f",
+                "code": "4feb2c11ca749f3e5359bdb44ba9875ffe9f3421",
+                "maintenance": "d4dbc1f62e16b3e0390e60e56f6558c52c4feca757bb4401529729312f796c43"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aab68c54d189406a8a08f7b7b1252ebc",
+    "identity": "github:1425026433:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425026433:root",
+            "repository": "chengzhao-dev/dsh-quarto-book",
+            "path": "",
+            "revision": "742b3ac7c4460d3530ffdfd6e629adbdae2975cd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bddf434ac0b2140fb72b64b6fcde7a9431cc22319e6d589f85bf62f698c0b766",
+                "code": "742b3ac7c4460d3530ffdfd6e629adbdae2975cd",
+                "maintenance": "82d312bf419fca9feefbbd6dcaffcb811da645d7f03f4501cde9c395a2550630"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "89c5eb11dbdec7ace60831703a5e1e7d",
+    "identity": "github:1392911219:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392911219:root",
+            "repository": "mocilukalbj/dsh-open-code-review",
+            "path": "",
+            "revision": "ffce585e2f931f4151fc609ae50253bbb0077d32",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "337d87bc33f8c18a3b3b9097ef58fa07e4c33dffb9cb228213a7965fbd8c1039",
+                "code": "ffce585e2f931f4151fc609ae50253bbb0077d32",
+                "maintenance": "ba119b99424ed956dc422649b0dc08939285c22b2e214cc2b45f7670edd4f1bf"
+            }
+        }
+    }
+}

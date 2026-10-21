@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "10aec59a7dbc2fd5224c7d8fc7650863",
+    "identity": "github:1337799906:adapters-deepseek-harness",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337799906:adapters-deepseek-harness",
+            "repository": "jermaine123123/agent-context-editor",
+            "path": "adapters/deepseek-harness",
+            "revision": "759646d8d73c504d7480b9def3e7a0af56c667af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "80247ea6e37bdb765a0ef25c8783b8bb12cd258c026b8b2279f28994ed4d7509",
+                "code": "759646d8d73c504d7480b9def3e7a0af56c667af",
+                "maintenance": "d7e6c9cfe9c803649e6da9243226a95a2ba3703fd1274f45037136e9fce85685"
+            }
+        }
+    }
+}

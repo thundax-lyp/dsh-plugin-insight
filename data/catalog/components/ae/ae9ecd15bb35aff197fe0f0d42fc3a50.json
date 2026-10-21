@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae9ecd15bb35aff197fe0f0d42fc3a50",
+    "identity": "github:1335091727:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335091727:root",
+            "repository": "weisiren000/dsh-remote-ssh-ops",
+            "path": "",
+            "revision": "5231a460ec6fc5488841002378771873510de2f4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "91ab8ac9e93159ad6841d46c0ebd363ea59d8821db385e4a33863b0e15c8d8aa",
+                "code": "5231a460ec6fc5488841002378771873510de2f4",
+                "maintenance": "108f5b758788ee4a42216c965f15dc1e3e2ee1f95f7bdc92f22241ad0fe78a1c"
+            }
+        }
+    }
+}

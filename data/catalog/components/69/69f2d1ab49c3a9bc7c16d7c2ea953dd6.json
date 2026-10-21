@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69f2d1ab49c3a9bc7c16d7c2ea953dd6",
+    "identity": "github:1357550982:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357550982:root",
+            "repository": "iasiv5/dsh-skins",
+            "path": "",
+            "revision": "d61f07d41b01903f0b4fdf6755eef247ab439138",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5feb678247a9f729819c85c4dff4dbf2e6af393bb6bb37de76a56e1b8790efaf",
+                "code": "d61f07d41b01903f0b4fdf6755eef247ab439138",
+                "maintenance": "7f274677f0cd0a5ea09f7828ab4a3322a282e42854248dc57ad9191595e9587b"
+            }
+        }
+    }
+}

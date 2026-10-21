@@ -1,0 +1,458 @@
+{
+    "schema_version": 3,
+    "id": "e4db8a9bea5e9672029962e443d76abb",
+    "identity": "github:1337350700:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1337350700:root",
+            "repository_id": 1337350700,
+            "component_id": "root",
+            "repository": "863683348/dsh-memory-setup",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-memory-setup",
+            "entry_type": "plugin",
+            "technical_category": "memory-knowledge",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "7e1b1aeac5596f5376f2aadc4cb56a7e611857341145438b0ba54e3b44608398",
+                "code": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+                "maintenance": "8c47435f1e3bfb07eab201310eac88e82fac751f0554f4b1fa84ac9be86a1760"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1337350700-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:48:29.923Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1337350700-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/863683348/dsh-memory-setup/blob/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43/README.md",
+                    "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+                    "captured_at": "2026-10-21T03:48:29.923Z",
+                    "summary": "保存工作区偏好、约定与纠错教训，支持知识检索、快照和上下文注入。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-memory-setup/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1337350700-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/863683348/dsh-memory-setup/blob/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43/lib/index.js",
+                    "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+                    "captured_at": "2026-10-21T03:48:29.923Z",
+                    "summary": "核查 lib/index.js、lib/memory.js、lib/kb-tools.js；lib/index.js通过ctx.fs读取工作区JSON，保存时做revision比较、备份及sha256；memory.js去重教训、分层和渲染；kb-tools.js可向配置的embeddingEndpoint发送内容以做语义检索。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-memory-setup/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合反复在同一工作区工作、愿意审阅长期记忆的用户；记忆正确性要靠来源与复核。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js通过ctx.fs读取工作区JSON，保存时做revision比较、备份及sha256；memory.js去重教训、分层和渲染；kb-tools.js可向配置的embeddingEndpoint发送内容以做语义检索。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次整理现有约定与导入资料；持续成本为注入token、错误教训复核及快照维护。启用embedding时有端点费用和内容外传，人工纠错成本不能被自动去重掩盖。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合在单个非敏感项目先试。先确认记忆来源、备份恢复和并发写入，再决定是否启用外部embedding；重复出现的教训也要核实后再升为约定。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可减少每次重复提供偏好，未证真实长期任务成功率或重复错误下降。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "纯记忆变换与宿主IO分离、revision校验和hash提高可审阅性；revision检查与写入并非原子事务，不能宣称彻底避免并发覆盖。KB写入与主记忆也有不同的保护强度，应分别验证。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "作者定位可审计个人记忆层；实际增量是把偏好、项目约定、纠错复盘与知识库整合成可导出JSON，并让宿主上下文自动读取。相对手写AGENTS，新增结构化更新、快照与相似教训合并；不会自动证明被记住的教训正确或改善长期任务。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "README的nothing leaves your machine只适用于未启用外部embedding：kb-tools会把查询或条目发到配置端点。上下文memCtx、focusQuery与30秒节流是插件级状态，多个工作区同时使用时须验证是否会串用或延迟刷新。自动按hits提升为约定会强化重复但错误的教训，evidence可为null，不能把频次当真值。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：将上下文缓存按工作区隔离，并在教训晋升前要求独立证据状态，可减少跨项目污染及错误固化。用两个工作区不同约定、快速交替和重复错误教训轨迹比较注入命中与误晋升；若证据门槛阻碍有效记忆，保留人工确认通道。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1337350700:root",
+                            "area": "code",
+                            "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:29.923Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:48:29.923Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+                "reviewed_at": "2026-10-21T03:48:29.923Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1337350700:root",
+                        "area": "code",
+                        "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty=9：结构记忆与检索均有已有参照。 mechanism=15：版本、快照、晋升及注入有实际机制。 transferability=10：纯变换易复用，宿主缓存边界待验。 simplification=8：减少重复提供资料，但记忆复核不能省。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=18：录入、纠错、检索、恢复链条较完整。 delivery=15：JSON和快照可交付，事实正确性未证。 reach=10：工作区用户适用，外部embedding有条件。 economics=4：可能省重复token，无长期净收益数据。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1337350700-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "可审计记忆有价值，但memCtx/focusQuery为插件级且频次可升无证据教训；先验证工作区隔离和纠错来源，再启自动注入。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "同工作区反复提供偏好约定需求具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "结构更新备份加可导出JSON比手写约定更方便。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "revision比较和哈希可查，embedding会外发、null证据也可按hits升级。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "注入token、错误强化纠正和跨区隔离验证成本高。"
+                    }
+                },
+                "score": 60,
+                "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1337350700-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1337350700:root",
+                        "area": "code",
+                        "fingerprint": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1337350700:root",
+            "repository": "863683348/dsh-memory-setup",
+            "path": "",
+            "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+            "fingerprints": {
+                "directory": "7e1b1aeac5596f5376f2aadc4cb56a7e611857341145438b0ba54e3b44608398",
+                "code": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+                "maintenance": "8c47435f1e3bfb07eab201310eac88e82fac751f0554f4b1fa84ac9be86a1760"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "81e03e98a57d6341b5f7305187eccc4ee261c3455b18493c90c713b1d90a533a"
+        },
+        "publication.metadata": "data/plugins/863683348--dsh-memory-setup/META.json",
+        "publication.summaries": {
+            "text": "保存工作区偏好、约定与纠错教训，支持知识检索、快照和上下文注入。",
+            "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+            "source_url": "https://github.com/863683348/dsh-memory-setup/blob/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+            "items": {
+                "模型工具": "memory_setup/status/update/project/review及快照、导入导出、知识检索工具",
+                "后台": "工作区JSON记忆、备份及可选embedding",
+                "事件监听": "上下文记忆刷新"
+            }
+        },
+        "publication.advice": {
+            "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+            "text": "适合在单个非敏感项目先试。先确认记忆来源、备份恢复和并发写入，再决定是否启用外部embedding；重复出现的教训也要核实后再升为约定。"
+        },
+        "registry": "data/plugins/863683348--dsh-memory-setup",
+        "reports": "# dsh-memory-setup\n\n> 保存工作区偏好、约定与纠错教训，支持知识检索、快照和上下文注入。\n\n## 使用建议\n\n适合在单个非敏感项目先试。先确认记忆来源、备份恢复和并发写入，再决定是否启用外部embedding；重复出现的教训也要核实后再升为约定。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。\n\n## 洞察短评\n\n- **用途**：适合反复在同一工作区工作、愿意审阅长期记忆的用户；记忆正确性要靠来源与复核。\n- **亮点**：作者定位可审计个人记忆层；实际增量是把偏好、项目约定、纠错复盘与知识库整合成可导出JSON，并让宿主上下文自动读取。相对手写AGENTS，新增结构化更新、快照与相似教训合并；不会自动证明被记住的教训正确或改善长期任务。\n- **思考**：README的nothing leaves your machine只适用于未启用外部embedding：kb-tools会把查询或条目发到配置端点。上下文memCtx、focusQuery与30秒节流是插件级状态，多个工作区同时使用时须验证是否会串用或延迟刷新。自动按hits提升为约定会强化重复但错误的教训，evidence可为null，不能把频次当真值。\n- **建议**：待验证假设：将上下文缓存按工作区隔离，并在教训晋升前要求独立证据状态，可减少跨项目污染及错误固化。用两个工作区不同约定、快速交替和重复错误教训轨迹比较注入命中与误晋升；若证据门槛阻碍有效记忆，保留人工确认通道。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是项目AGENTS、手写笔记及外部记忆服务；项目提供本地结构化工作流，仍需人工治理内容。\n\n### 能力、依赖与流程\n\nlib/index.js通过ctx.fs读取工作区JSON，保存时做revision比较、备份及sha256；memory.js去重教训、分层和渲染；kb-tools.js可向配置的embeddingEndpoint发送内容以做语义检索。\n\n- **模型工具**：memory_setup/status/update/project/review及快照、导入导出、知识检索工具\n- **后台**：工作区JSON记忆、备份及可选embedding\n- **事件监听**：上下文记忆刷新\n\n宿主tools/fs/systemPrompt及消息接口；本地工作区.dsh-memory-setup目录。可选OpenAI兼容embedding服务、密钥和模型，启用后网络不再为零。\n\n初次录入或项目提取预览→保存版本/备份→定时刷新上下文→记录错误修复→相似合并/可选晋升→快照导出；冲突提示重新读取再应用。\n\n### 成本与效果\n\n首次整理现有约定与导入资料；持续成本为注入token、错误教训复核及快照维护。启用embedding时有端点费用和内容外传，人工纠错成本不能被自动去重掩盖。\n\n可减少每次重复提供偏好，未证真实长期任务成功率或重复错误下降。\n\n### 工程亮点\n\n纯记忆变换与宿主IO分离、revision校验和hash提高可审阅性；revision检查与写入并非原子事务，不能宣称彻底避免并发覆盖。KB写入与主记忆也有不同的保护强度，应分别验证。\n\n源码依据：[lib/index.js](https://github.com/863683348/dsh-memory-setup/blob/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43/lib/index.js)、[lib/memory.js](https://github.com/863683348/dsh-memory-setup/blob/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43/lib/memory.js)、[lib/kb-tools.js](https://github.com/863683348/dsh-memory-setup/blob/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43/lib/kb-tools.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：将上下文缓存按工作区隔离，并在教训晋升前要求独立证据状态，可减少跨项目污染及错误固化。用两个工作区不同约定、快速交替和重复错误教训轨迹比较注入命中与误晋升；若证据门槛阻碍有效记忆，保留人工确认通道。\n\n验证双工作区隔离、30秒内保存刷新、并发revision冲突、空evidence晋升及embedding实际请求目标；本轮未执行。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：23625d0b0a800f22b6780e39a245a0e6e0f8be1be7e0120b7586ba08147642e7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 5 | 2204 | 1947 | 148 | — |\n| .md | source | 3 | 109 | — | — | 1126 |\n| .mjs | source | 1 | 117 | 103 | 7 | — |\n| .mjs | test | 4 | 417 | 369 | 6 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-memory-setup](https://github.com/863683348/dsh-memory-setup)\n- **版本号**：1.2.0（[固定提交 989e8a5e](https://github.com/863683348/dsh-memory-setup/tree/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、lib/memory.js、lib/kb-tools.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。\n- 下一步：验证双工作区隔离、30秒内保存刷新、并发revision冲突、空evidence晋升及embedding实际请求目标；本轮未执行。\n",
+        "metadata": {
+            "repository": "863683348/dsh-memory-setup",
+            "repository_id": 1337350700,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-11T03:26:11Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:10742:144F73:22017E:6AD84AB3 and timestamp 2026-10-21 05:16:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:15371F:22ED0E:6AD84AB3 and timestamp 2026-10-21 05:16:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14A69E:2252FD:6AD84AB3 and timestamp 2026-10-21 05:16:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:33975D:149D9A:223A1C:6AD84AB3 and timestamp 2026-10-21 05:16:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-memory-setup%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:B65AE:13B94D:215F98:6AD84AB3 and timestamp 2026-10-21 05:16:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-memory-setup",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 158,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-memory-setup",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-19T15:29:48.317Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-memory-setup",
+                    "error": null,
+                    "latest_version": "1.2.0",
+                    "latest_published_at": "2026-08-19T15:29:48.563Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+                "current_revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1337350700:root",
+            "repository": "863683348/dsh-memory-setup",
+            "path": "",
+            "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7e1b1aeac5596f5376f2aadc4cb56a7e611857341145438b0ba54e3b44608398",
+                "code": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+                "maintenance": "8c47435f1e3bfb07eab201310eac88e82fac751f0554f4b1fa84ac9be86a1760"
+            }
+        }
+    }
+}

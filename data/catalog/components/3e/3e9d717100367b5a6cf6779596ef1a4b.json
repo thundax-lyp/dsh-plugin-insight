@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e9d717100367b5a6cf6779596ef1a4b",
+    "identity": "github:1396132820:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396132820:root",
+            "repository": "guzhou079-arch/deepseek-harness-android",
+            "path": "",
+            "revision": "0b2bf0d79a68631caf899b5db88781b488e470ae",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "464e3cb97712be0d23a8c968f4c4b0f3d37db8c266a908a3b0df430b686871e1",
+                "code": "0b2bf0d79a68631caf899b5db88781b488e470ae",
+                "maintenance": "d6a07e0c5419c63c8f63bcea22f83132ae273e7017a391f8ce3e09e71eea7b0e"
+            }
+        }
+    }
+}

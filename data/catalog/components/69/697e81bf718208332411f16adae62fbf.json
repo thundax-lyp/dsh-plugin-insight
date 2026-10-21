@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "697e81bf718208332411f16adae62fbf",
+    "identity": "github:1376448167:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376448167:root",
+            "repository": "Qulierm/orbital-agents",
+            "path": "",
+            "revision": "9b70374a3c2a15cbd6fb01a852ef169bd36b1282",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9ef3b3f8ebe6ee4de0947834e7583fa46fc0daa79a8dfba282a4ae3b07947d72",
+                "code": "9b70374a3c2a15cbd6fb01a852ef169bd36b1282",
+                "maintenance": "352a26176882e68947251e583877f5be57a6b30e7136a81098f9c267e65f2371"
+            }
+        }
+    }
+}

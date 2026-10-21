@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7e33686d73d9f898be9d87e287e597ea",
+    "identity": "github:1356854106:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356854106:root",
+            "repository": "master1Sun/dsh-file-workbench-lib",
+            "path": "",
+            "revision": "a4c27b59391ae659f39aba31dedad53d87fcfd41",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0ba90f9ca9250e8780508dd4e818d137dc9953b79381d94858b44df532b4a2a2",
+                "code": "a4c27b59391ae659f39aba31dedad53d87fcfd41",
+                "maintenance": "82b2e8dbb96b4baf7fe838478710daefaca57b015bea41acb1dbefe842763047"
+            }
+        }
+    }
+}

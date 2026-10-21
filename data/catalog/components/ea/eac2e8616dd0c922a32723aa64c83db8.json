@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eac2e8616dd0c922a32723aa64c83db8",
+    "identity": "github:1334119636:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334119636:root",
+            "repository": "SamizuHM/dsh-client-ui-theme-xp",
+            "path": "",
+            "revision": "3cc412f4e877c127dea2e5b6e3413e5ddc95ce97",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d464c8b40c4ed22a936a5b252863ce28fb8e5f6503686e7b35118279103df4cd",
+                "code": "3cc412f4e877c127dea2e5b6e3413e5ddc95ce97",
+                "maintenance": "a506ba44da25762aa4b6362e0b2eb27a28b8911625683707333586e802ab4516"
+            }
+        }
+    }
+}

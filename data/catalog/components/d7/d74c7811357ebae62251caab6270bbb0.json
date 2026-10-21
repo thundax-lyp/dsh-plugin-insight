@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d74c7811357ebae62251caab6270bbb0",
+    "identity": "github:1416786967:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416786967:root",
+            "repository": "YiuTerran/dsh-wps365-plugin",
+            "path": "",
+            "revision": "455c6ea1ece1ea26c76c5fb56f3f1cc0ea837fbd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6f31d96edcd7b14646dc58dab8e5376ad8d764dcd023b721620329b49aa366d7",
+                "code": "455c6ea1ece1ea26c76c5fb56f3f1cc0ea837fbd",
+                "maintenance": "8a08ee33f3e663c59315d9c6970fd8ac1ba4b7849a1e62c75382122e02e32b4c"
+            }
+        }
+    }
+}

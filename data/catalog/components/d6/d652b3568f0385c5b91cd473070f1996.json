@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d652b3568f0385c5b91cd473070f1996",
+    "identity": "github:1404250132:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404250132:root",
+            "repository": "copylee711/dsh-office",
+            "path": "",
+            "revision": "050b0c29d8dc15ce9c456ff47434731515b49f69",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a35d8380f7c4362d65312edd79386bfa1c2d6e0090c4a4d7f0a76692f2f4054f",
+                "code": "050b0c29d8dc15ce9c456ff47434731515b49f69",
+                "maintenance": "efafd8004527b687e43a0e2b87d155bd7d2025613995b4739c0bb34fec377100"
+            }
+        }
+    }
+}

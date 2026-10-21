@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8ebed6ae7ed4de67004388a93da69e8e",
+    "identity": "github:1340107348:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340107348:root",
+            "repository": "WODE25500/dsh-codex",
+            "path": "",
+            "revision": "fab0a35e55335b664cde515f18cbc24dca315dc2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "061ad87764c843aa535260750b0bc63f09765a5b797a9ba2d9ac21103d86fef9",
+                "code": "fab0a35e55335b664cde515f18cbc24dca315dc2",
+                "maintenance": "fe588355137a8122e51292d3ddb4de2e616748074092f900209caa83af6d3264"
+            }
+        }
+    }
+}

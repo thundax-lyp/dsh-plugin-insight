@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cb7f1e5ca0ebd0cb7bf4be981fdc60b1",
+    "identity": "github:1340323663:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340323663:root",
+            "repository": "haoku123/dsh-blast-radius",
+            "path": "",
+            "revision": "26540e9309d1433f929641570f075997e27aedcc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dde060c27652517fbf754128e089418415c1e944318956979ed1f3891e5ded38",
+                "code": "26540e9309d1433f929641570f075997e27aedcc",
+                "maintenance": "6c1d4512c23e1a91339ec45ed177745ce236a75fdc9fc08fbf2352b6c8966585"
+            }
+        }
+    }
+}

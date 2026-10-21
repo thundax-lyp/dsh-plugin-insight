@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e8abe04016dddb4321593ab834a80097",
+    "identity": "github:1410313095:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410313095:root",
+            "repository": "westanke/dsh-remote-bridge",
+            "path": "",
+            "revision": "473d2b859d74ddb4f6ae8119206b33de1eeb9285",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e234ec1c494b7645256752a9e5de9fa0f0d8cd176e2457403025a33cff8a49f",
+                "code": "473d2b859d74ddb4f6ae8119206b33de1eeb9285",
+                "maintenance": "d33fb3d93f8cc1a4cac68fc33a2d0df8c0773af7933747d28e39bcf0cfbcd195"
+            }
+        }
+    }
+}

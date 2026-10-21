@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c5d8f14cbd4bb9f923a4f647113d733d",
+    "identity": "github:1328601495:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1328601495:root",
+            "repository": "HuanLinOTO/dsh-plugin-mineru",
+            "path": "",
+            "revision": "374edb93b9543a4040aed88f122ddf1ecbd6812e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "33afd6b1cf085aaabc445eadd2e2045cc81f6d9962fccc5902c4ec2ea909a69d",
+                "code": "374edb93b9543a4040aed88f122ddf1ecbd6812e",
+                "maintenance": "b02a81d4764e7c6985a85860af5959887a9cafadd26f8f52bdaa3fb681dccb9f"
+            }
+        }
+    }
+}

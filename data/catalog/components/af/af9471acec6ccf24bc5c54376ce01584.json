@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "af9471acec6ccf24bc5c54376ce01584",
+    "identity": "github:1346913048:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346913048:root",
+            "repository": "WyattJHayes/dsh-feishu-channel",
+            "path": "",
+            "revision": "5654df35ae40545066d6bde91ea0df0c991415d5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ce6f3d31ca02c19cd1412372a13ef8b82c308c914f848519a493f536654f1279",
+                "code": "5654df35ae40545066d6bde91ea0df0c991415d5",
+                "maintenance": "b05bb5b98740fc1a676c380f9efa1d0196f6ff498abe961a9f9fbddf9a9874c9"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d63b218dfbd8ac3a5c65b7618497e20",
+    "identity": "github:1362401774:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362401774:root",
+            "repository": "LittleBlackTong/dsh-plugin-cron",
+            "path": "",
+            "revision": "13b29dad344ecc77c21582b06cb1e6a786fc2de9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e9c6823c38c48416ac65689b25953d85b961499e8105aeb257839e1f01c7b788",
+                "code": "13b29dad344ecc77c21582b06cb1e6a786fc2de9",
+                "maintenance": "05b1a5086311edc7df7e65c582841baaff2a5cd65cca371ae255df89229295a5"
+            }
+        }
+    }
+}

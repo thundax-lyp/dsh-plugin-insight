@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae95efa2a93c0a3dba0fd0bb74d72bd2",
+    "identity": "github:1408743797:plugins-mcp-akasha",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408743797:plugins-mcp-akasha",
+            "repository": "Ersith/akasha-book",
+            "path": "plugins/mcp-akasha",
+            "revision": "549de29e817762232af47a018fa70c64e1af6923",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a6e04fa58b8931f051a9933259e9b9eb47726c1fffddfda8effcf735b8f8e1b2",
+                "code": "549de29e817762232af47a018fa70c64e1af6923",
+                "maintenance": "3b76afc867af56ca015379fff65dbb60f728172a5dc324cf25361351a20dc43b"
+            }
+        }
+    }
+}

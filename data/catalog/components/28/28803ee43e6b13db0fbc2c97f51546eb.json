@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "28803ee43e6b13db0fbc2c97f51546eb",
+    "identity": "github:1338415473:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338415473:root",
+            "repository": "Zenjibad/dsh-drop-any-file",
+            "path": "",
+            "revision": "80a7b703a0696c710e32ebd23deed365e12afa2e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a4810261d18c56fdfd239dbfd02a8f964f3df0aa1934539f590efc0822f863b",
+                "code": "80a7b703a0696c710e32ebd23deed365e12afa2e",
+                "maintenance": "b1944acf3be06202a659dac82d059098740fd417e07ba0241088e7ec3f08ffae"
+            }
+        }
+    }
+}

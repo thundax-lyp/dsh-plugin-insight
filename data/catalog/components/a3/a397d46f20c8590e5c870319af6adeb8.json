@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a397d46f20c8590e5c870319af6adeb8",
+    "identity": "github:1353687670:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353687670:root",
+            "repository": "heartmove/dsh-session-bridge",
+            "path": "",
+            "revision": "4a20e3219fa8d500306f6f3a34f9dfaf7db90a07",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2d411b7f55f3bdabec93f723726042ae7ebd8f33b9b06e108827589146c50c89",
+                "code": "4a20e3219fa8d500306f6f3a34f9dfaf7db90a07",
+                "maintenance": "5b5c5955c9dbe8ce2eb1730096171f80f5ea08904238754fd85de52e86cd68c8"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "16655f345c2357bf482dcb28323316b3",
+    "identity": "github:1334033019:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334033019:root",
+            "repository": "bilbillm/deepseek-harness-angelina-themes",
+            "path": "",
+            "revision": "ee74b2d6852173c0c1de39f6973685255de7229b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3b061cbd94d7163bfa814017e517d77a231682e9a05784da0b5b6f19704aa1ac",
+                "code": "ee74b2d6852173c0c1de39f6973685255de7229b",
+                "maintenance": "7d92ac6044b4502a85d651ef0ea6d868c5660f55e5ca2cb7a34da0ee288672da"
+            }
+        }
+    }
+}

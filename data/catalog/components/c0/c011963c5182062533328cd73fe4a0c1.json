@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "c011963c5182062533328cd73fe4a0c1",
+    "identity": "github:1336870027:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336870027:root",
+            "repository_id": 1336870027,
+            "component_id": "root",
+            "repository": "7dgroup-ai/dsh-skill-7d-git-commit",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-skill-7d-git-commit",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "9587f9867f0822966d96178d7ae334166941502822c567d3a7f8dbafcc2fa8ae",
+                "code": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+                "maintenance": "ba203103b697af2479010470f076ccd4bb35fbf84aa21e38b5aca8ab5764d9ca"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1336870027-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:16:34.334Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1336870027-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/README.md",
+                    "revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+                    "captured_at": "2026-10-21T03:16:34.334Z",
+                    "summary": "为DSH注册7DGroup提交规范Skill，在生成提交信息前引导校验中文标签与格式。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/7dgroup-ai--dsh-skill-7d-git-commit/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1336870027-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/src/index.ts",
+                    "revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+                    "captured_at": "2026-10-21T03:16:34.334Z",
+                    "summary": "核查 src/index.ts、src/invariant.ts、assets/7d-git-commit/SKILL.md、assets/7d-git-commit/references/git-commit-message.md；src/index.ts注册固定bundled Skill；Skill.md要求生成前逐项检查标签、长度、禁词、正文与豁免，invariant.ts检查同名Skill可见性和遮蔽。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/7dgroup-ai--dsh-skill-7d-git-commit/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "采用7DGroup提交规范的开发团队需要在push前减少提交信息返工；合格结果是消息符合实际服务端规则并准确描述变更。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "src/index.ts注册固定bundled Skill；Skill.md要求生成前逐项检查标签、长度、禁词、正文与豁免，invariant.ts检查同名Skill可见性和遮蔽。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包包含Skill、资源、invariant与GitLab集成文档；安装不等于部署服务端hook，Git安装prepare构建需另行授权。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次对齐团队实际规则和hook模式；日常消息检查与修正可增加token/人工，升级要同步两端规则。没有拒绝push率与工时统计。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "仅对采用此中文提交规范的团队有直接价值。先核对服务端实际warn/reject与豁免规则，再用边界消息验证；需要硬门禁时保留确定性hook。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可减少遗忘格式的返工，但不证明提交内容准确或审计质量改善。对不同规范团队迁移成本可能超过收益。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "Skill资源和provider接线简单，invariant针对shadowing给出具体来源诊断可借鉴。语义规范与执行约束分层清楚才可复用，不能以启动不变量替代消息校验。 源码依据：[src/index.ts](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/src/index.ts)、[src/invariant.ts](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/src/invariant.ts)、[assets/7d-git-commit/SKILL.md](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/assets/7d-git-commit/SKILL.md)、[assets/7d-git-commit/references/git-commit-message.md](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/assets/7d-git-commit/references/git-commit-message.md)。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对人工查规范文档，增量是将组织规范放到生成提交信息的工作流中，并通过invariant暴露本地同名Skill遮蔽。业务上把规则提醒前移，但并未在工具执行前提供确定性消息校验器。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "README所谓client-side guard是否严格拦截git commit？实际src/invariant.ts只检查Provider可见，格式检查由模型遵循Skill完成；服务端hook文档又区分warn与reject并允许skip-check。因此提示前移有价值，但不能把它当不可绕过的策略执行。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由提示与服务端双份规范推导，可从同一机器可读规则生成Skill说明和本地/服务端校验器，消息候选先通过确定性检查再由模型解释修正。未验证假设是降低规则漂移和被拒push，不自动决定提交内容。用字符边界、豁免与多行案例对照客户端/服务端结果，若不一致率不降则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336870027:root",
+                            "area": "code",
+                            "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:34.334Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:16:34.334Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+                "reviewed_at": "2026-10-21T03:16:34.334Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336870027:root",
+                        "area": "code",
+                        "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 0,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty组织规范封装小档；mechanism无确定性消息执行机制取0；transferability规则资源小档；simplification生成前提醒小档。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow前移规范提醒小档；delivery标准消息小档；reach规范团队小档；economics未证资源重组取0。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1336870027-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "采用7DGroup规范的团队可试提交提示；先核服务端warn/reject及豁免，边界消息实际验hook，模型提醒不是硬拦截。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "特定团队提交格式返工需求清楚，其他规范增益有限。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "规则前移和遮蔽检测减少遗忘，但确定性格式检查仍靠外部hook。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "bundled Skill与invariant可见，invariant只查可见性不校验消息。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无必要外部服务，需同步团队两端规则和复核真实变更含义。"
+                    }
+                },
+                "score": 56,
+                "revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1336870027-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336870027:root",
+                        "area": "code",
+                        "fingerprint": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336870027:root",
+            "repository": "7dgroup-ai/dsh-skill-7d-git-commit",
+            "path": "",
+            "revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+            "fingerprints": {
+                "directory": "9587f9867f0822966d96178d7ae334166941502822c567d3a7f8dbafcc2fa8ae",
+                "code": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+                "maintenance": "ba203103b697af2479010470f076ccd4bb35fbf84aa21e38b5aca8ab5764d9ca"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "abc07c5781c00797a894f4dbcac95ef22133089f08db354af352726fa0b40344"
+        },
+        "publication.metadata": "data/plugins/7dgroup-ai--dsh-skill-7d-git-commit/META.json",
+        "publication.summaries": {
+            "text": "为DSH注册7DGroup提交规范Skill，在生成提交信息前引导校验中文标签与格式。",
+            "revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+            "source_url": "https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+            "items": {
+                "Skill": "注册7d-git-commit并按需提供提交规范。"
+            }
+        },
+        "publication.advice": {
+            "revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+            "text": "仅对采用此中文提交规范的团队有直接价值。先核对服务端实际warn/reject与豁免规则，再用边界消息验证；需要硬门禁时保留确定性hook。"
+        },
+        "registry": "data/plugins/7dgroup-ai--dsh-skill-7d-git-commit",
+        "reports": "# dsh-skill-7d-git-commit\n\n> 为DSH注册7DGroup提交规范Skill，在生成提交信息前引导校验中文标签与格式。\n\n## 使用建议\n\n仅对采用此中文提交规范的团队有直接价值。先核对服务端实际warn/reject与豁免规则，再用边界消息验证；需要硬门禁时保留确定性hook。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：采用7DGroup提交规范的开发团队需要在push前减少提交信息返工；合格结果是消息符合实际服务端规则并准确描述变更。\n- **亮点**：相对人工查规范文档，增量是将组织规范放到生成提交信息的工作流中，并通过invariant暴露本地同名Skill遮蔽。业务上把规则提醒前移，但并未在工具执行前提供确定性消息校验器。\n- **思考**：README所谓client-side guard是否严格拦截git commit？实际src/invariant.ts只检查Provider可见，格式检查由模型遵循Skill完成；服务端hook文档又区分warn与reject并允许skip-check。因此提示前移有价值，但不能把它当不可绕过的策略执行。\n- **建议**：由提示与服务端双份规范推导，可从同一机器可读规则生成Skill说明和本地/服务端校验器，消息候选先通过确定性检查再由模型解释修正。未验证假设是降低规则漂移和被拒push，不自动决定提交内容。用字符边界、豁免与多行案例对照客户端/服务端结果，若不一致率不降则否定。\n\n## 场景与替代办法\n\n采用7DGroup提交规范的开发团队需要在push前减少提交信息返工；合格结果是消息符合实际服务端规则并准确描述变更。\n\n直接写commit-msg hook可严格检查格式且无需模型；Skill增加规则解释与生成便利，适合与hook配合。\n\n## 能力清单\n\n- **Skill**：注册7d-git-commit并按需提供提交规范。\n\n## 依赖与流程\n\n依赖DSH skills与invariants；效果依赖模型遵循指令和团队实际规则一致。GitLab hook属于单独部署责任。\n\n模型读取变更并选择标签，按Skill检查后形成消息；用户或Agent提交，push时由实际服务端hook再判定，错误需修改消息或解释豁免。\n\n## 成本与效果\n\n首次对齐团队实际规则和hook模式；日常消息检查与修正可增加token/人工，升级要同步两端规则。没有拒绝push率与工时统计。\n\n可减少遗忘格式的返工，但不证明提交内容准确或审计质量改善。对不同规范团队迁移成本可能超过收益。\n\n## 核心贡献\n\n相对人工查规范文档，增量是将组织规范放到生成提交信息的工作流中，并通过invariant暴露本地同名Skill遮蔽。业务上把规则提醒前移，但并未在工具执行前提供确定性消息校验器。\n\n## 关键质疑\n\nREADME所谓client-side guard是否严格拦截git commit？实际src/invariant.ts只检查Provider可见，格式检查由模型遵循Skill完成；服务端hook文档又区分warn与reject并允许skip-check。因此提示前移有价值，但不能把它当不可绕过的策略执行。\n\n\n## 工程亮点\n\nSkill资源和provider接线简单，invariant针对shadowing给出具体来源诊断可借鉴。语义规范与执行约束分层清楚才可复用，不能以启动不变量替代消息校验。 源码依据：[src/index.ts](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/src/index.ts)、[src/invariant.ts](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/src/invariant.ts)、[assets/7d-git-commit/SKILL.md](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/assets/7d-git-commit/SKILL.md)、[assets/7d-git-commit/references/git-commit-message.md](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/blob/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6/assets/7d-git-commit/references/git-commit-message.md)。\n\n## 未来设计假设（未验证）\n\n由提示与服务端双份规范推导，可从同一机器可读规则生成Skill说明和本地/服务端校验器，消息候选先通过确定性检查再由模型解释修正。未验证假设是降低规则漂移和被拒push，不自动决定提交内容。用字符边界、豁免与多行案例对照客户端/服务端结果，若不一致率不降则否定。\n\n固定规则集比较人工提示与Skill的首次合规率、语义准确性、被拒push次数；特别核查50/70字符、Merge与skip-check边界。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：50a5b6489d5b1da9048733b9826e71042932df2af729138554816bccd078ed67。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 1282 | — | — | 11820 |\n| .ts | source | 3 | 142 | 78 | 51 | — |\n| .ts | test | 1 | 36 | 32 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[7dgroup-ai/dsh-skill-7d-git-commit](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit)\n- **版本号**：0.1.0-rc.3（[固定提交 557e05f5](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/tree/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6)）\n- **版本日期**：2026-08-19（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/invariant.ts、assets/7d-git-commit/SKILL.md、assets/7d-git-commit/references/git-commit-message.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：固定规则集比较人工提示与Skill的首次合规率、语义准确性、被拒push次数；特别核查50/70字符、Merge与skip-check边界。\n",
+        "metadata": {
+            "repository": "7dgroup-ai/dsh-skill-7d-git-commit",
+            "repository_id": 1336870027,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-08-19T01:16:04Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-git-commit%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:208D3:AAB4C0:F40052:6AD84A75 and timestamp 2026-10-21 05:15:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-git-commit%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:F5216:A69920:EF7379:6AD84A75 and timestamp 2026-10-21 05:15:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-git-commit%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:1B0790:A59DB3:EEAF02:6AD84A76 and timestamp 2026-10-21 05:15:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-git-commit%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:F5216:A699B3:EF7460:6AD84A76 and timestamp 2026-10-21 05:15:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7dgroup-ai%2Fdsh-skill-7d-git-commit%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:28E3E1:A84ED3:F1713F:6AD84A76 and timestamp 2026-10-21 05:15:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@7dgroup/dsh-skill-7d-git-commit",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%407dgroup%2Fdsh-skill-7d-git-commit",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%407dgroup%2Fdsh-skill-7d-git-commit",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+                "current_revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336870027:root",
+            "repository": "7dgroup-ai/dsh-skill-7d-git-commit",
+            "path": "",
+            "revision": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9587f9867f0822966d96178d7ae334166941502822c567d3a7f8dbafcc2fa8ae",
+                "code": "557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6",
+                "maintenance": "ba203103b697af2479010470f076ccd4bb35fbf84aa21e38b5aca8ab5764d9ca"
+            }
+        }
+    }
+}

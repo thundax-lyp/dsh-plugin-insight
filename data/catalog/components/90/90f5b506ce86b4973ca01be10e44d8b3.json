@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90f5b506ce86b4973ca01be10e44d8b3",
+    "identity": "github:1340770597:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340770597:root",
+            "repository": "MeghanBao/dsh-backstory",
+            "path": "",
+            "revision": "280c0d758c0294f53f2c156c26978dc0a47d126c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e0a620129ad92857d66f20a4d70d9702db152d54b820dd5952ccbea15a4ebbed",
+                "code": "280c0d758c0294f53f2c156c26978dc0a47d126c",
+                "maintenance": "89a078cec40192a727bf197f5323f427f86aa287d62e18ae1783ce0cfc67a59f"
+            }
+        }
+    }
+}

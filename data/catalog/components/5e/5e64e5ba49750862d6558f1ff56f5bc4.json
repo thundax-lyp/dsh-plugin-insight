@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5e64e5ba49750862d6558f1ff56f5bc4",
+    "identity": "github:1362315807:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362315807:root",
+            "repository": "CARVIN94/dsh-router-ext-rtk",
+            "path": "",
+            "revision": "163dd947db4a247ea388f85419414a9228782d26",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "49765dc22c608a1dfb61d78c608a8f600c7eeeac48c6a895a275443580977fb8",
+                "code": "163dd947db4a247ea388f85419414a9228782d26",
+                "maintenance": "8f917f416e5e0da9a67a882363827d1eca6f896cb91ab5f759bc390f3ef67ff5"
+            }
+        }
+    }
+}

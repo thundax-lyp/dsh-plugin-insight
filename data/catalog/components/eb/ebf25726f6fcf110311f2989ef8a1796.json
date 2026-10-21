@@ -1,0 +1,366 @@
+{
+    "schema_version": 3,
+    "id": "ebf25726f6fcf110311f2989ef8a1796",
+    "identity": "github:1334504487:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334504487:root",
+            "repository_id": 1334504487,
+            "component_id": "root",
+            "repository": "1052326311/dsh-plan-lattice",
+            "path": "",
+            "aliases": [],
+            "name": "Plan Lattice",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [
+                "长任务",
+                "恢复",
+                "证据门禁"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "22361395f77bc831523107a180c153081f5fdc0bfca9c0ffc5d5c92bfdc05e8f",
+                "code": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+                "maintenance": "4e8411228b94b1319fce61b2d923d9d799ba9b637240578aaa410f2b72048866"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1334504487-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:11:14.619Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1334504487-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1052326311/dsh-plan-lattice/blob/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3/README.md",
+                    "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+                    "captured_at": "2026-10-20T03:11:14.619Z",
+                    "summary": "从原生会话事实恢复长任务连续性，并提供显式启用的递归工作图控制。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1052326311--dsh-plan-lattice/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1334504487-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1052326311/dsh-plan-lattice/blob/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3/src/index.ts",
+                    "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+                    "captured_at": "2026-10-20T03:11:14.619Z",
+                    "summary": "核查 src/index.ts、src/native-continuity.ts、BENCHMARK.md；native-continuity 从会话事件折叠计划、当回合 Todo 和最近委派结果；完整 Lattice 另有契约与行动依据控制。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1052326311--dsh-plan-lattice/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "本检出为未发布 rc.8 工作，作者保留多次负面/超预算试验；不能把机制压力测试推广为编码收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "跨压缩和重启的长任务需要恢复已批准计划、待办及委派结果，减少依据丢失。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1334504487-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334504487:root",
+                            "area": "code",
+                            "fingerprint": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:14.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "native-continuity 从会话事件折叠计划、当回合 Todo 和最近委派结果；完整 Lattice 另有契约与行动依据控制。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1334504487-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334504487:root",
+                            "area": "code",
+                            "fingerprint": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:14.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "从宿主已有事实恢复比模型重写计划更易追溯；恢复正确也不等于任务产出质量提升。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1334504487-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334504487:root",
+                            "area": "code",
+                            "fingerprint": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:14.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "完整控制需要状态和验收维护；作者实验中存在超预算，不能宣称普遍减少 token。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1334504487-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334504487:root",
+                            "area": "code",
+                            "fingerprint": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:14.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "机械执行凭证不冒充语义完成、负面实验保留门槛值得借鉴；宿主事件与权限耦合较深。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1334504487-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334504487:root",
+                            "area": "code",
+                            "fingerprint": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:14.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先对照原生行为测试压缩和重启恢复，再单独评估显式完整控制，避免将两模式效果混为一谈。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1334504487-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334504487:root",
+                            "area": "code",
+                            "fingerprint": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:14.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "本检出为未发布 rc.8 工作，作者保留多次负面/超预算试验；不能把机制压力测试推广为编码收益。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1334504487-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334504487:root",
+                            "area": "code",
+                            "fingerprint": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:14.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package 0.4.0-rc.8，作者说明稳定版仍为 0.3.0，候选源码与公开发行物必须区分。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1334504487-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334504487:root",
+                            "area": "code",
+                            "fingerprint": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:11:14.619Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:11:14.619Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "长任务连续性有潜力，但当前是未发布rc且作者有超预算实验，先核对发行物并对照原生恢复。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "压缩重启后恢复批准计划和委派事实需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "从宿主事实折叠恢复比模型重写更可追溯。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "连续性源码与作者负面实验可查，编码收益未复跑。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "完整控制引入契约验收维护，作者已有超预算结果。"
+                    }
+                },
+                "score": 60,
+                "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1334504487-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334504487:root",
+                        "area": "code",
+                        "fingerprint": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334504487:root",
+            "repository": "1052326311/dsh-plan-lattice",
+            "path": "",
+            "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+            "fingerprints": {
+                "directory": "22361395f77bc831523107a180c153081f5fdc0bfca9c0ffc5d5c92bfdc05e8f",
+                "code": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+                "maintenance": "4e8411228b94b1319fce61b2d923d9d799ba9b637240578aaa410f2b72048866"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "8a84140368fe5ad6badb91f520363582cb08ae2544739da68c4869cfa2b2b353"
+        },
+        "publication.metadata": "data/plugins/1052326311--dsh-plan-lattice/META.json",
+        "publication.summaries": {
+            "text": "从原生会话事实恢复长任务连续性，并提供显式启用的递归工作图控制。",
+            "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+            "source_url": "https://github.com/1052326311/dsh-plan-lattice/blob/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+            "items": {
+                "后台": "原生会话连续性恢复。",
+                "模型工具": "显式完整模式的 Lattice 控制工具。"
+            }
+        },
+        "publication.advice": {
+            "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+            "text": "先对照原生行为测试压缩和重启恢复，再单独评估显式完整控制，避免将两模式效果混为一谈。"
+        },
+        "registry": "data/plugins/1052326311--dsh-plan-lattice",
+        "reports": "# Plan Lattice\n\n> 从原生会话事实恢复长任务连续性，并提供显式启用的递归工作图控制。\n\n## 固定范围与依据\n\n固定提交 [ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3](https://github.com/1052326311/dsh-plan-lattice/blob/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:11:14.619Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts、src/native-continuity.ts、BENCHMARK.md。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：跨压缩和重启的长任务需要恢复已批准计划、待办及委派结果，减少依据丢失。\n- **亮点**：native-continuity 从会话事件折叠计划、当回合 Todo 和最近委派结果；完整 Lattice 另有契约与行动依据控制。\n- **思考**：从宿主已有事实恢复比模型重写计划更易追溯；恢复正确也不等于任务产出质量提升。\n- **建议**：先对照原生行为测试压缩和重启恢复，再单独评估显式完整控制，避免将两模式效果混为一谈。\n\n## 场景与替代办法\n\n跨压缩和重启的长任务需要恢复已批准计划、待办及委派结果，减少依据丢失。\n\n原生计划/Todo 是必须对照；本轮只核查源码和作者材料，没有复跑任何基准。\n\n## 依赖与流程\n\n依赖 DSH 会话、工具及生命周期契约；真正收益取决于模型、任务和压缩路径。\n\n默认连续性路径观察宿主事实，完整模式显式建立契约；恢复异常时回查事件和依据摘要。\n\n## 成本与效果\n\n完整控制需要状态和验收维护；作者实验中存在超预算，不能宣称普遍减少 token。\n\n从宿主已有事实恢复比模型重写计划更易追溯；恢复正确也不等于任务产出质量提升。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f5f553f8b7f8a68cd48321dbb7daeb5e81172cba2b45b8611688d3ea2a13ccd8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 72 | 8122 | — | — | 62377 |\n| .mjs | source | 285 | 65400 | 61299 | 240 | — |\n| .ts | example | 1 | 130 | 121 | 0 | — |\n| .js | example | 5 | 42 | 35 | 0 | — |\n| .md | example | 17 | 90 | — | — | 584 |\n| .mjs | example | 64 | 3814 | 3179 | 330 | — |\n| .js | source | 98 | 6842 | 6273 | 0 | — |\n| .mjs | test | 24 | 3271 | 3085 | 11 | — |\n| .ts | source | 23 | 12113 | 11013 | 400 | — |\n| .ts | test | 79 | 19850 | 18373 | 84 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：原生会话连续性恢复。\n- **模型工具**：显式完整模式的 Lattice 控制工具。\n\n## 工程亮点\n\n机械执行凭证不冒充语义完成、负面实验保留门槛值得借鉴；宿主事件与权限耦合较深。\n\n## 分发与兼容\n\npackage 0.4.0-rc.8，作者说明稳定版仍为 0.3.0，候选源码与公开发行物必须区分。\n\n## 历史对照\n\n前次代码指纹为 ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3；本轮固定为 ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3。原生计划/Todo 是必须对照；本轮只核查源码和作者材料，没有复跑任何基准。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：本检出为未发布 rc.8 工作，作者保留多次负面/超预算试验；不能把机制压力测试推广为编码收益。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用相同任务和预算对照原生，覆盖压缩、冷恢复、委派与中断，预注册质量和成本门槛。\n",
+        "metadata": {
+            "repository": "1052326311/dsh-plan-lattice",
+            "repository_id": 1334504487,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 3,
+            "pushed_at": "2026-08-31T01:44:32Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:10742:13F4CE:216931:6AD84903 and timestamp 2026-10-21 05:09:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:14C58E:2245E1:6AD84903 and timestamp 2026-10-21 05:09:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:1E49B1:1445D9:21AB0F:6AD84903 and timestamp 2026-10-21 05:09:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:149D3E:220A3B:6AD84903 and timestamp 2026-10-21 05:09:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1052326311%2Fdsh-plan-lattice%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:145B3E:21DEB0:6AD84904 and timestamp 2026-10-21 05:09:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plan-lattice",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plan-lattice",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plan-lattice",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+                "current_revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334504487:root",
+            "repository": "1052326311/dsh-plan-lattice",
+            "path": "",
+            "revision": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "22361395f77bc831523107a180c153081f5fdc0bfca9c0ffc5d5c92bfdc05e8f",
+                "code": "ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3",
+                "maintenance": "4e8411228b94b1319fce61b2d923d9d799ba9b637240578aaa410f2b72048866"
+            }
+        }
+    }
+}

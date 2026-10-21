@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8abc70ac70a045880d37b9a7a9716113",
+    "identity": "github:1363509279:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363509279:root",
+            "repository": "Meteor-system/dsh-codegraph",
+            "path": "",
+            "revision": "79ac4eda3003c0b6c82c7f74306dac7116ae6006",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3eef5d60b29586bb9ee3558f827b143669c7ab04fd0ed4d3bb12a35a09dfbf78",
+                "code": "79ac4eda3003c0b6c82c7f74306dac7116ae6006",
+                "maintenance": "62deddd3936fd6bfd4b09f26a93c8c605b00e3e06c38c6cfd6563f161359e077"
+            }
+        }
+    }
+}

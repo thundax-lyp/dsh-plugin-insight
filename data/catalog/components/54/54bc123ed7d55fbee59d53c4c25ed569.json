@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "54bc123ed7d55fbee59d53c4c25ed569",
+    "identity": "github:1343284915:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343284915:root",
+            "repository": "loyalchiiina/dsh-chat-image-lightbox",
+            "path": "",
+            "revision": "5039061d1f75f153eb63451195d065427a876977",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ccaf5c9dfadff1496d80b2124341e2368042d8a91b09f7ee49f22a4e1fe68b26",
+                "code": "5039061d1f75f153eb63451195d065427a876977",
+                "maintenance": "04277c06cc82670f1ce679ab463791c48c0b3e585f54c943707d7043ca7a3675"
+            }
+        }
+    }
+}

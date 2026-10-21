@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6b592c319b76cc86e1b52a9eafd33a98",
+    "identity": "github:1412305354:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412305354:root",
+            "repository": "serra006/dsh-connect-opencode",
+            "path": "",
+            "revision": "14533bdb09542fb1fa3095a872823ea570e11172",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "682a2752a0968236d14c010ee8b6e8a5b3967c2138d61bf8c10f6a5216121d40",
+                "code": "14533bdb09542fb1fa3095a872823ea570e11172",
+                "maintenance": "f704be9bbb879313c3926c80e9c724113f5642a4c63efbd918d77ab8220f2fb0"
+            }
+        }
+    }
+}

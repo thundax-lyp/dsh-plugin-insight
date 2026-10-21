@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bbb343ca5612c99454fefc63033dfb49",
+    "identity": "github:1339250329:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339250329:root",
+            "repository": "zenglihunter/dsh-petdex-pet",
+            "path": "",
+            "revision": "e07c675d493b09f15a1bea18ec6421fdd646f3b9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e4795f7104b07455beb930b4d2fe1c72801b34ec9a8c325e26b591631efcb769",
+                "code": "e07c675d493b09f15a1bea18ec6421fdd646f3b9",
+                "maintenance": "dbdd0bdf1edb5b54bd752662b2e74224add3fba5b7a66cdf80ec7a8b6508b424"
+            }
+        }
+    }
+}

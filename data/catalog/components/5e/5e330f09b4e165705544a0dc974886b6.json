@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5e330f09b4e165705544a0dc974886b6",
+    "identity": "github:1397591331:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397591331:root",
+            "repository": "MyRemme/dsh-computer-use-guard",
+            "path": "",
+            "revision": "62d720f3026a0494c42404e2e0c087085e88d5fa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a919cba7874d226bc038af6f02b3df195cddcb6de06cb2126b193fdfdfef1cef",
+                "code": "62d720f3026a0494c42404e2e0c087085e88d5fa",
+                "maintenance": "b1cbfd7a0aa2c4c5f0347146dfb4359a5d65839164148a58ab68661b03b7116f"
+            }
+        }
+    }
+}

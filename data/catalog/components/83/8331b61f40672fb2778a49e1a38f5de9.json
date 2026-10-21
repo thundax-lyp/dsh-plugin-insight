@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8331b61f40672fb2778a49e1a38f5de9",
+    "identity": "github:1351776430:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351776430:root",
+            "repository": "d3vmeh/dsh-logbook",
+            "path": "",
+            "revision": "c4ced44ab9babd920631939e23f7e4b614d7f5b6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "be8406be0cada742a9f0fc5bde5a78ca35500e948b974c90d4b283247c52a33e",
+                "code": "c4ced44ab9babd920631939e23f7e4b614d7f5b6",
+                "maintenance": "2bc4b8b89425f8540be8422723b60ffa0266ffb82507b19bf8c2dc826072ed2a"
+            }
+        }
+    }
+}

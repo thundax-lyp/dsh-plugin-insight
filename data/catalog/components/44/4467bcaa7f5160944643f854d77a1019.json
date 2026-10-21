@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4467bcaa7f5160944643f854d77a1019",
+    "identity": "github:1334864020:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334864020:root",
+            "repository": "JesmonX/dsh-web-shell",
+            "path": "",
+            "revision": "97f9ce4dc3c4c836bab0b8c30afed10a1160b520",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b7d952077db2022a3911d1f2e024dc8060f42f9d4ee7829ba506733bdbfd7043",
+                "code": "97f9ce4dc3c4c836bab0b8c30afed10a1160b520",
+                "maintenance": "476dbfd1fd9784e9310123c874bd9268b39925d3a367b30aac372a0c7ee8aca8"
+            }
+        }
+    }
+}

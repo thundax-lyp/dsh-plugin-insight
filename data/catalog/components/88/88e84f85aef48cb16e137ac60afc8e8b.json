@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "88e84f85aef48cb16e137ac60afc8e8b",
+    "identity": "github:1333986968:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333986968:root",
+            "repository": "Phant0Meow/dsh-meow-memory",
+            "path": "",
+            "revision": "033df8589467bbe17a2c40dc864283b960795ec5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c054a796d96631ec00f9d99fca1443ee52843b2bcfe134b330d2cf4d9262eee6",
+                "code": "033df8589467bbe17a2c40dc864283b960795ec5",
+                "maintenance": "7036b6db36ccaacd08e5b58223ad5c4fddfc7ff751b472c98d777f784246970a"
+            }
+        }
+    }
+}

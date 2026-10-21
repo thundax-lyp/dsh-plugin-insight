@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "723edb9833a218c6206432fc0e1de905",
+    "identity": "github:1334493583:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334493583:root",
+            "repository": "starslittle/dsh-queue-plus",
+            "path": "",
+            "revision": "ed6448d4828d5fd5c3933dc3c1e08340b9fbc2f9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "89e39ee4a065d9c267d1cf31ce022dc47661360e5fd837849f71bea546bd57fc",
+                "code": "ed6448d4828d5fd5c3933dc3c1e08340b9fbc2f9",
+                "maintenance": "4fd8edc95a4e1501b7f088b03571a641bd01802fda7faca630212c06019de212"
+            }
+        }
+    }
+}

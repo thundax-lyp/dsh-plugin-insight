@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "38da644b067f717759dc1fbf2e091eaa",
+    "identity": "github:1360088350:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360088350:root",
+            "repository": "WongYuYe/dsh-diff-card",
+            "path": "",
+            "revision": "d722f7601105f6e0ae6f38f83d2a343bac4ad8b5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3f83a3dd44e8b33e52619f5095f96c35041eaf4d07491b8155c9282486416e3d",
+                "code": "d722f7601105f6e0ae6f38f83d2a343bac4ad8b5",
+                "maintenance": "6a67ad59a33d67cf7dffb0dec3aaa5650f1b8ea3faf9988a38747cb4a334dbc1"
+            }
+        }
+    }
+}

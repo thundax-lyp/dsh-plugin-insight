@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b07ed8ce926ae38cae7e7d01a9e7a9fc",
+    "identity": "github:1333656562:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333656562:root",
+            "repository": "MicroHEROX/dsh-exa-mcp",
+            "path": "",
+            "revision": "be2fe2afddc729ff9417f947d654838f513fb8ef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "11abe84859e4f7dc15e220948fa39dabb4c35a4dbe0d46962f77edf4a50d2284",
+                "code": "be2fe2afddc729ff9417f947d654838f513fb8ef",
+                "maintenance": "ee8afea72391c4dd2820f36c3580b3ec3935b01b3a008832102f8be72811c8f3"
+            }
+        }
+    }
+}

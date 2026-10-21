@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b1b1ffa818b0f5716cd841021ff97dbb",
+    "identity": "github:1333100390:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333100390:root",
+            "repository": "Anionex/dsh-turn-rewind",
+            "path": "",
+            "revision": "5b33fd51925dbd615836d72323e89262796efae5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e400522c7e502da53380f2b8d58dee70b284ff4f5249246555d3ea2b5a7a87eb",
+                "code": "5b33fd51925dbd615836d72323e89262796efae5",
+                "maintenance": "3ac749cb25ab68f4fd0e311af596aab208192b60d973243081839781f3412048"
+            }
+        }
+    }
+}

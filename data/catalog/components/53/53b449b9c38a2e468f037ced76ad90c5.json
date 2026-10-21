@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "53b449b9c38a2e468f037ced76ad90c5",
+    "identity": "github:1334804691:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334804691:root",
+            "repository": "YZz-S/dsh-notifier",
+            "path": "",
+            "revision": "1979ea18ed4ac20591db1852f7c1a6e198f79cf2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "56626ed29fc6474c13698a723be9226632a543be8980009b021b9d2bb512e67b",
+                "code": "1979ea18ed4ac20591db1852f7c1a6e198f79cf2",
+                "maintenance": "5aff0eb6839f66e89ce1fabaa248bd0f92c60cddeb9907c2cefdcfd5cd9a496e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a35c8694c86c8ec5a44769d492cf85e",
+    "identity": "github:1404514487:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404514487:root",
+            "repository": "Azetus/dsh-quorfloat",
+            "path": "",
+            "revision": "df11ad94d291aa49f41403656c096d5389bde3de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b66473c2e94ac4ca99359f3ebae0ea5a1bca0a0254aaade3383dd1ce41a738fc",
+                "code": "df11ad94d291aa49f41403656c096d5389bde3de",
+                "maintenance": "36aa44ccd0e1eff27c4dbfe85aead9abcbd4211472bfbed1a3f19352c9203849"
+            }
+        }
+    }
+}

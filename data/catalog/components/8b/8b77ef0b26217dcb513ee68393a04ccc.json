@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8b77ef0b26217dcb513ee68393a04ccc",
+    "identity": "github:1344540534:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344540534:root",
+            "repository": "cofy-x/dsh-console",
+            "path": "",
+            "revision": "15c0940b5f30542e9b6a5c8d16952a0b955ebc67",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4c3113341647261364d7d3be8150f499ec24ba0b8db83eba5e0576385cd214a4",
+                "code": "15c0940b5f30542e9b6a5c8d16952a0b955ebc67",
+                "maintenance": "cf9e8f54983ce9dbb13cff2c5192992a7ec8474396e4af39a643d049cbda76a1"
+            }
+        }
+    }
+}

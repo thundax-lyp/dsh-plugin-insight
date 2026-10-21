@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1438aaeb1717486566f2c66256750f3a",
+    "identity": "github:1340431396:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340431396:root",
+            "repository": "TOBYCAI/dsh-sessions-manager",
+            "path": "",
+            "revision": "1a2cb2aee0ba4e028fdb5e4d4c173a81d5786809",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9260a61def36d4e841515f7ac2396d97e6d48854370d3bf7e3d74111f10ff230",
+                "code": "1a2cb2aee0ba4e028fdb5e4d4c173a81d5786809",
+                "maintenance": "a981e6463c2693164a0e4b9670d01805be5252edf157a21faba1ce53191bbaf2"
+            }
+        }
+    }
+}

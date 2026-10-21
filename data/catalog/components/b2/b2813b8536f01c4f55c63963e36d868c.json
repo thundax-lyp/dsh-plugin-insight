@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b2813b8536f01c4f55c63963e36d868c",
+    "identity": "github:1334192086:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334192086:root",
+            "repository": "jingzhao-l/iterate-plugin",
+            "path": "",
+            "revision": "e7834126c5a28216422f2594d247670981e633fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a98b1b392334dacbbd14981150111516f6bcea5313ab02db14af2c701411424f",
+                "code": "e7834126c5a28216422f2594d247670981e633fc",
+                "maintenance": "94cc680cadc7f59b1e214994a263e5740245b4549b64495e3509693423fdfc3f"
+            }
+        }
+    }
+}

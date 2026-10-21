@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "99187dc70a506cd484364537568718a8",
+    "identity": "github:1420937774:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420937774:root",
+            "repository": "Wanyi424/dsh-quick-translate",
+            "path": "",
+            "revision": "b2f2bf070d681f9b910bce74863e6806978644f4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6e266c12bef7362f158e7706c8c8484b14cd7bbf46567b0a986f809e98cfad5f",
+                "code": "b2f2bf070d681f9b910bce74863e6806978644f4",
+                "maintenance": "e34674eadd98fc82053998138aa448567f1cf3bedc889578a825fa9258a6d5ba"
+            }
+        }
+    }
+}

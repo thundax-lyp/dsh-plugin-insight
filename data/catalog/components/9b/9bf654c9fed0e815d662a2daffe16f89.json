@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9bf654c9fed0e815d662a2daffe16f89",
+    "identity": "github:1259110872:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1259110872:root",
+            "repository": "dabaicai001/starhub",
+            "path": "",
+            "revision": "0faf8f4db916efa10558862f3c32e46187b05d87",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d1e1e32565ee1d4fd27437f8171aa05b8eb28e3c97afd8085cdcc0e8c3d643a9",
+                "code": "0faf8f4db916efa10558862f3c32e46187b05d87",
+                "maintenance": "ba34cfae6bfb91167f5988abb8eebafbda3e7983cb2cacb530c82ab6387e692f"
+            }
+        }
+    }
+}

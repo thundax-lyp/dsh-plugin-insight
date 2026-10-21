@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ea594c0ad38b97a2a91d888a225d978d",
+    "identity": "github:1401876969:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401876969:root",
+            "repository": "BangBang-03/dsh-client-ui-quote",
+            "path": "",
+            "revision": "3d0610a9d735945ddd58ff6ea23116bc7a3aab61",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ee37e2dd54b5ba4ceb7d1d1f0f20bd027daff8dcce8e7683a09a9c61aa71ce0d",
+                "code": "3d0610a9d735945ddd58ff6ea23116bc7a3aab61",
+                "maintenance": "a737c8e659dae4f56c7ac794953a60a8603436fd05dd8d0f984de9a6ef1e03ca"
+            }
+        }
+    }
+}

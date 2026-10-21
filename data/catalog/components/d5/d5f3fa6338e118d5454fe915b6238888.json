@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d5f3fa6338e118d5454fe915b6238888",
+    "identity": "github:1405196557:plugins-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405196557:plugins-dsh",
+            "repository": "Jovan1666/commandcode-usage",
+            "path": "plugins/dsh",
+            "revision": "c1b0bbfb982ca43eabf122ce92cd628fedff7337",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a79080d722b57f3775161724daf6d0563f7aa42f0ff94cbf218b04d2a9fa012a",
+                "code": "c1b0bbfb982ca43eabf122ce92cd628fedff7337",
+                "maintenance": "7a23102275221510eef269e352bc246d6ecdc45d0cd9452709c3a85324c217c8"
+            }
+        }
+    }
+}

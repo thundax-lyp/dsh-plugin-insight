@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e8225b2c633c63428d93ec9ea8470242",
+    "identity": "github:1335759416:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335759416:root",
+            "repository": "Chhlafiu4312/dsh-mcp-bridge",
+            "path": "",
+            "revision": "0e04cd340031f3c46c3bd889e5eac90aa2afd013",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "48e736ed8aa6fd006541f6a414ccde4d20e84a68d191975cdbbd49945c484112",
+                "code": "0e04cd340031f3c46c3bd889e5eac90aa2afd013",
+                "maintenance": "e2ea1846f25a19b7da70bc7dca9d8790c698d1f617b465176658addf10af93cb"
+            }
+        }
+    }
+}

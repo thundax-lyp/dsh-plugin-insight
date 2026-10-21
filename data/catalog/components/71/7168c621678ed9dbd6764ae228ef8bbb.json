@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7168c621678ed9dbd6764ae228ef8bbb",
+    "identity": "github:1401710157:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401710157:root",
+            "repository": "pk14742952-AD/dsh-host-rsi",
+            "path": "",
+            "revision": "6d4a593b4e6514b262a701b4297bfdd69917cdbe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c84c530715cf1c34614c513ba583caa95b4adf9fb12ac2160584eb08f9817ff0",
+                "code": "6d4a593b4e6514b262a701b4297bfdd69917cdbe",
+                "maintenance": "050ca9bdd7e5686c90bca404b07775db4a153b24837182439cde760755ab27f4"
+            }
+        }
+    }
+}

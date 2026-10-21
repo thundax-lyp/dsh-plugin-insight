@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "687261fe032628df3df25508658c7f96",
+    "identity": "github:1338031704:packages-dsh-agent-mail",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338031704:packages-dsh-agent-mail",
+            "repository": "dff652/deepseek-harness-community-plugins",
+            "path": "packages/dsh-agent-mail",
+            "revision": "f0c9923f4e4461d87726d55f922a8686573d5ca3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "09bb346b07d5bebee9b6ed04efa3988f16a6b308d606a1389155c09f9d7e29d4",
+                "code": "f0c9923f4e4461d87726d55f922a8686573d5ca3",
+                "maintenance": "19410f7821d33c5de58ca5e1215e6f21f8d1dcaba943d1d0e3be3cf96dcdbe66"
+            }
+        }
+    }
+}

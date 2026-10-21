@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "08ffefc54037ecca3dd4d9882f8f560d",
+    "identity": "github:1353766228:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353766228:root",
+            "repository": "l2685209197/dsh-pdf-translate",
+            "path": "",
+            "revision": "31d6cc0dd0207fd6d6c86ac69605a9d8e95376b2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1f96bdeb54187e7208087006f9fca186f74188f85a819494fb58bf38d8afa378",
+                "code": "31d6cc0dd0207fd6d6c86ac69605a9d8e95376b2",
+                "maintenance": "d5f8a05e5a01cd9992eef1efbcd9b8c2a78236decb0a16cee56d33e55486e2a0"
+            }
+        }
+    }
+}

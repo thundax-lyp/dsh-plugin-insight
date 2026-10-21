@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "019a3739fda54e210adc161086cffd6a",
+    "identity": "github:1390662264:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1390662264:root",
+            "repository": "bigbigtooth/DSH-DevOps-Plugin",
+            "path": "",
+            "revision": "7f14876b105d58d2578f6ae33b3a3bee617ddc03",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cbc5174858103b28866710b5816fde887d344df3dac62fd556708aad2564274a",
+                "code": "7f14876b105d58d2578f6ae33b3a3bee617ddc03",
+                "maintenance": "5b8a770a6abc718b2025fb4f254aba1de57e9e6d9da20dbe3c90d3f12fada66a"
+            }
+        }
+    }
+}

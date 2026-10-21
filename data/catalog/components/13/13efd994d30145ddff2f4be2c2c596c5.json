@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "13efd994d30145ddff2f4be2c2c596c5",
+    "identity": "github:1344968125:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344968125:root",
+            "repository": "imlishiyuan/dsh-keep-running",
+            "path": "",
+            "revision": "deac9202bdf2c5f664e42358ef0f455e22a2e2e8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e83e9a0130690f987c53b624f6e277297de6010ff85e848fe067e571bddeddc4",
+                "code": "deac9202bdf2c5f664e42358ef0f455e22a2e2e8",
+                "maintenance": "061ffbe25a131e17bb0a4d8c7d8655cc4f8fa278cdc4a5eb46fc0929a8f7deb9"
+            }
+        }
+    }
+}

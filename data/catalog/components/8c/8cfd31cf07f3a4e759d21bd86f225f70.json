@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8cfd31cf07f3a4e759d21bd86f225f70",
+    "identity": "github:1400501988:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1400501988:root",
+            "repository": "lux09947-cmyk/dsh-re",
+            "path": "",
+            "revision": "98caa604478def9baf83a730a1c760869432fdb2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dc3cc477a8901e289a34ccc855cfd00c15a289edb80cce2185430f1339e1e699",
+                "code": "98caa604478def9baf83a730a1c760869432fdb2",
+                "maintenance": "a892700f57d63d89311dad1803a3414e59de89821388c47943364b751b6127fa"
+            }
+        }
+    }
+}

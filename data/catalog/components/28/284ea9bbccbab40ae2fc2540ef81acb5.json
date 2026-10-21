@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "284ea9bbccbab40ae2fc2540ef81acb5",
+    "identity": "github:1414488115:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414488115:root",
+            "repository": "RevxZxCx/dsh-where-did-my-tokens-go",
+            "path": "",
+            "revision": "ba16a7ae3227e797ff653452b1ed696a8c3b8d9f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b343c38fe6abeacd61549dbd5001afd8a7a593f471f7665a4c68c9af815e37d2",
+                "code": "ba16a7ae3227e797ff653452b1ed696a8c3b8d9f",
+                "maintenance": "1bcd0ae99f47a88ec7a3bd649939111923dc65d64ac04042a5693307da0a73e4"
+            }
+        }
+    }
+}

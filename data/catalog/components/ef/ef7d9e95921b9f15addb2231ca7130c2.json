@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ef7d9e95921b9f15addb2231ca7130c2",
+    "identity": "github:1359944017:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359944017:root",
+            "repository": "bainianlaoyao/dsh-session-robustness",
+            "path": "",
+            "revision": "6eb594960af419585ab050e5b7ca550888c3d4bd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "49425ea8d7ea1e989f5f33ffdd19e3bdce6dc5ad95e0521049d4fa14b9df2852",
+                "code": "6eb594960af419585ab050e5b7ca550888c3d4bd",
+                "maintenance": "5b644613d678277c459eb668adcc470fc32845ab522d7c9061f77d985cfe9865"
+            }
+        }
+    }
+}

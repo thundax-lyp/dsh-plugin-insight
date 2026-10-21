@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6ff4fd67259e599732fe27d3de34820c",
+    "identity": "github:1376900119:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376900119:root",
+            "repository": "liancha22/dsh-puzzle-mode",
+            "path": "",
+            "revision": "faa01d5258abaa66c6a05de182fe9522693a51d2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e7996344658882730b12843a4239c8baeac366d830acf0102cc11c32da7ac5ee",
+                "code": "faa01d5258abaa66c6a05de182fe9522693a51d2",
+                "maintenance": "24ddf1d4493eaba440327611aa6cc955c0420537c38a1ad92c7de541e9742636"
+            }
+        }
+    }
+}

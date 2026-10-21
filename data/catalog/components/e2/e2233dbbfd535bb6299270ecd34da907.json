@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e2233dbbfd535bb6299270ecd34da907",
+    "identity": "github:1339148138:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339148138:root",
+            "repository": "tiantianlaolao/dsh-astock-research",
+            "path": "",
+            "revision": "1767eb6ad3c96c144d08d0c779a1377c0d204b94",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a20455cc71a180add057fe2e0be666e0ccf478ebae9d90e37e178c4919c1b6d",
+                "code": "1767eb6ad3c96c144d08d0c779a1377c0d204b94",
+                "maintenance": "3b41360431b7fdf2178761a21df301a92a47274d76442f5e3fd5d5873a287d11"
+            }
+        }
+    }
+}

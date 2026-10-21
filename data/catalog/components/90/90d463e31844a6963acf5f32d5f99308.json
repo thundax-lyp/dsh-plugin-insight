@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90d463e31844a6963acf5f32d5f99308",
+    "identity": "github:1336281180:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336281180:root",
+            "repository": "ljr282341583/dsh-convo-cost",
+            "path": "",
+            "revision": "e50308bfc9ad3c93dc670cea2c0f7500a5785b41",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b5203deb839a346be51b8bebe85f3c85abafb6ea3b9e17fe4af60ba49b53c6b0",
+                "code": "e50308bfc9ad3c93dc670cea2c0f7500a5785b41",
+                "maintenance": "1f111d7b3b38a0d90d9493803169c71b39f33543c26d99a2d5f2fe64b7452dc9"
+            }
+        }
+    }
+}

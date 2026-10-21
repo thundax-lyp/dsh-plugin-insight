@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e85852f2866b528e93cf5b7d518e60a3",
+    "identity": "github:1335816329:npm-package",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335816329:npm-package",
+            "repository": "Breeze136/dsh-kb-rag",
+            "path": "npm-package",
+            "revision": "3a0b7e74150c5b6c906c3f7c8079a4d601964911",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fe7f6302317bb7c19b498ac510e8c3d5293aa1edb204b33f6aed6beeee99bf6f",
+                "code": "3a0b7e74150c5b6c906c3f7c8079a4d601964911",
+                "maintenance": "30b3b908d9ee13f20570e6516771691968c15b01c1d61adba49ce10fd455daa2"
+            }
+        }
+    }
+}

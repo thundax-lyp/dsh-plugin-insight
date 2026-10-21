@@ -1,0 +1,430 @@
+{
+    "schema_version": 3,
+    "id": "155aef84907b4432982685bf4eab49eb",
+    "identity": "github:1353726715:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1353726715:root",
+            "repository_id": 1353726715,
+            "component_id": "root",
+            "repository": "All3nCN/dsh-qa-suite-N23",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-qa-suite-N23",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "07ef0535d86ed9577f4d87a2ea6734ceccb659d8b5a400628a50b2fc898dec2c",
+                "code": "8f473567166944bf9ea94afaad294ced49034691",
+                "maintenance": "a8dd90477953d24348f924fa053af288ce964905d2c44f1a165205b807928b1c"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1353726715-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:03:04.632Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1353726715-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/All3nCN/dsh-qa-suite-N23/blob/8f473567166944bf9ea94afaad294ced49034691/README.md",
+                    "revision": "8f473567166944bf9ea94afaad294ced49034691",
+                    "captured_at": "2026-10-21T08:03:04.632Z",
+                    "summary": "组合后台TypeScript诊断工具与提示驱动的本地多镜头代码审查命令。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/all3ncn--dsh-qa-suite-n23/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1353726715-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/All3nCN/dsh-qa-suite-N23/blob/8f473567166944bf9ea94afaad294ced49034691/index.js",
+                    "revision": "8f473567166944bf9ea94afaad294ced49034691",
+                    "captured_at": "2026-10-21T08:03:04.632Z",
+                    "summary": "核查 index.js、lib/core.js、lib/commands.js；fs/observed按项目防抖spawn tsc，缓存诊断供code_check读取；/code-review只是followup注入多子代理、评分、落报告的工作流文本，不是代码内调度器。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/all3ncn--dsh-qa-suite-n23/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者编辑TS后取诊断，或主动组织本地代码审查并人工确认问题。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "fs/observed按项目防抖spawn tsc，缓存诊断供code_check读取；/code-review只是followup注入多子代理、评分、落报告的工作流文本，不是代码内调度器。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "后台编译CPU、每项目缓存与60秒超时；审查多模型调用、复核和报告写入额外费用与人工，未测合格问题单位成本。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先核多项目下诊断归属；审查命令是提示流程，重要问题须代码复现，置信度不是准确率。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可减少手动tsc与提示重复输入，无审查质量或效率实测。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "直接Node运行tsc、abort/timeout、dirty重跑和dispose清理具体；prompt工作流与编译器实际执行应分别复用。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "组合确定性诊断与模型审查两个入口，提供局部开发便利；未见二者以诊断证据约束审查放行的共同机制，不能把合包视新质量闸门。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "code_check优先runtime.roots()[0]最近全局项目而非当前会话，已有缓存时不再用调用方cwd，可能把A项目诊断回给B。多镜头和80阈值只在提示中，由模型执行与自评分，不是可校准质量保障。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：按会话/项目绑定诊断，并把诊断版本与审查范围作为输入证据，可减少错项目与泛化审查。交错两项目编辑/调用，注入真实缺陷对比问题接受率、漏报与总token；未改善则保留独立工具。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1353726715:root",
+                            "area": "code",
+                            "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:03:04.632Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:03:04.632Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "8f473567166944bf9ea94afaad294ced49034691",
+                "reviewed_at": "2026-10-21T08:03:04.632Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1353726715:root",
+                        "area": "code",
+                        "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 0,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=0：机制明确归两份上游。 mechanism=8：合包未改变质量约束。 transferability=10：诊断运行时可复用。 simplification=4：一个包省配置，缺证据联动。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow=9：便利组合非新分工。 delivery=8：提示要求报告，未强制合格验收。 reach=5：TS及subagent用户范围有限。 economics=0：无总预算收益证据。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1353726715-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "多项目开发者应先修code_check优先全局项目缓存导致诊断串项目；审查命令仅提示流程，修后仍需复现问题而非信任自评分。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "TS编辑后诊断和主动代码审查的任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "防抖tsc与审查提示省重复命令，未自动执行质量门禁。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核roots()[0]缓存归属错误和提示式多镜头。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "后台编译与多模型审阅成本之外，当前诊断目标错误妨碍核心用途。"
+                    }
+                },
+                "score": 54,
+                "revision": "8f473567166944bf9ea94afaad294ced49034691",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1353726715-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1353726715:root",
+                        "area": "code",
+                        "fingerprint": "8f473567166944bf9ea94afaad294ced49034691"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1353726715:root",
+            "repository": "All3nCN/dsh-qa-suite-N23",
+            "path": "",
+            "revision": "8f473567166944bf9ea94afaad294ced49034691",
+            "fingerprints": {
+                "directory": "07ef0535d86ed9577f4d87a2ea6734ceccb659d8b5a400628a50b2fc898dec2c",
+                "code": "8f473567166944bf9ea94afaad294ced49034691",
+                "maintenance": "a8dd90477953d24348f924fa053af288ce964905d2c44f1a165205b807928b1c"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "d3612d867b514f378a7dede7127bd01a62f2ca912bf8cbaddcedb83241831699"
+        },
+        "publication.metadata": "data/plugins/all3ncn--dsh-qa-suite-n23/META.json",
+        "publication.summaries": {
+            "text": "组合后台TypeScript诊断工具与提示驱动的本地多镜头代码审查命令。",
+            "revision": "8f473567166944bf9ea94afaad294ced49034691",
+            "source_url": "https://github.com/All3nCN/dsh-qa-suite-N23/blob/8f473567166944bf9ea94afaad294ced49034691/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "8f473567166944bf9ea94afaad294ced49034691",
+            "items": {
+                "模型工具": "code_check类型诊断",
+                "用户命令": "/code-review提示驱动本地审查",
+                "事件监听": "fs/observed编辑后防抖检查",
+                "后台": "tsc缓存和子进程生命周期"
+            }
+        },
+        "publication.advice": {
+            "revision": "8f473567166944bf9ea94afaad294ced49034691",
+            "text": "先核多项目下诊断归属；审查命令是提示流程，重要问题须代码复现，置信度不是准确率。"
+        },
+        "registry": "data/plugins/all3ncn--dsh-qa-suite-n23",
+        "reports": "# dsh-qa-suite-N23\n\n> 组合后台TypeScript诊断工具与提示驱动的本地多镜头代码审查命令。\n\n## 使用建议\n\n先核多项目下诊断归属；审查命令是提示流程，重要问题须代码复现，置信度不是准确率。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：开发者编辑TS后取诊断，或主动组织本地代码审查并人工确认问题。\n- **亮点**：组合确定性诊断与模型审查两个入口，提供局部开发便利；未见二者以诊断证据约束审查放行的共同机制，不能把合包视新质量闸门。\n- **思考**：code_check优先runtime.roots()[0]最近全局项目而非当前会话，已有缓存时不再用调用方cwd，可能把A项目诊断回给B。多镜头和80阈值只在提示中，由模型执行与自评分，不是可校准质量保障。\n- **建议**：未验证假设：按会话/项目绑定诊断，并把诊断版本与审查范围作为输入证据，可减少错项目与泛化审查。交错两项目编辑/调用，注入真实缺陷对比问题接受率、漏报与总token；未改善则保留独立工具。\n\n## 场景与替代办法\n\n明确吸收dsh-code-check及dsh-command-code-review，去掉PR回评；增量为合包与宿主接线，两个上游机制非本项目原创。\n\n## 能力清单\n\n- **模型工具**：code_check类型诊断\n- **用户命令**：/code-review提示驱动本地审查\n- **事件监听**：fs/observed编辑后防抖检查\n- **后台**：tsc缓存和子进程生命周期\n\n## 依赖与流程\n\nfs/observed按项目防抖spawn tsc，缓存诊断供code_check读取；/code-review只是followup注入多子代理、评分、落报告的工作流文本，不是代码内调度器。\n\n宿主tools/commands/fs事件与会话header、项目TypeScript/tsconfig；审查效果另依赖subagent、模型与写工具遵循提示。\n\n编辑→按最近tsconfig检查→工具返回诊断；命令→Agent接提示→自行多镜头/去重/评分/写报告→人工核；失败tsc以unavailable报告。\n\n## 成本与效果\n\n后台编译CPU、每项目缓存与60秒超时；审查多模型调用、复核和报告写入额外费用与人工，未测合格问题单位成本。\n\n可减少手动tsc与提示重复输入，无审查质量或效率实测。\n\n## 核心贡献\n\n组合确定性诊断与模型审查两个入口，提供局部开发便利；未见二者以诊断证据约束审查放行的共同机制，不能把合包视新质量闸门。\n\n## 关键质疑\n\ncode_check优先runtime.roots()[0]最近全局项目而非当前会话，已有缓存时不再用调用方cwd，可能把A项目诊断回给B。多镜头和80阈值只在提示中，由模型执行与自评分，不是可校准质量保障。\n\n## 工程亮点\n\n直接Node运行tsc、abort/timeout、dirty重跑和dispose清理具体；prompt工作流与编译器实际执行应分别复用。\n\n源码依据：[index.js](https://github.com/All3nCN/dsh-qa-suite-N23/blob/8f473567166944bf9ea94afaad294ced49034691/index.js)、[lib/core.js](https://github.com/All3nCN/dsh-qa-suite-N23/blob/8f473567166944bf9ea94afaad294ced49034691/lib/core.js)、[lib/commands.js](https://github.com/All3nCN/dsh-qa-suite-N23/blob/8f473567166944bf9ea94afaad294ced49034691/lib/commands.js)。\n\n## 未来设计假设（未验证）\n\n未验证假设：按会话/项目绑定诊断，并把诊断版本与审查范围作为输入证据，可减少错项目与泛化审查。交错两项目编辑/调用，注入真实缺陷对比问题接受率、漏报与总token；未改善则保留独立工具。\n\n未来隔离双项目核缓存选择、正在运行返回旧诊断、取消/重跑；审查用标注缺陷和人工复现核，不运行本轮测试。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：ef874150864b2a28dcea42bdecdbb1e63e7eee474c87745937c27082bc682a4c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 290 | — | — | 1908 |\n| .js | source | 3 | 849 | 648 | 100 | — |\n| .mjs | test | 1 | 199 | 160 | 21 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[All3nCN/dsh-qa-suite-N23](https://github.com/All3nCN/dsh-qa-suite-N23)\n- **版本号**：0.1.0（[固定提交 8f473567](https://github.com/All3nCN/dsh-qa-suite-N23/tree/8f473567166944bf9ea94afaad294ced49034691)）\n- **版本日期**：2026-09-02（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：index.js、lib/core.js、lib/commands.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来隔离双项目核缓存选择、正在运行返回旧诊断、取消/重跑；审查用标注缺陷和人工复现核，不运行本轮测试。\n",
+        "metadata": {
+            "repository": "All3nCN/dsh-qa-suite-N23",
+            "repository_id": 1353726715,
+            "captured_at": "2026-10-21T08:00:53.394Z",
+            "window_start": "2026-09-21T08:00:53.394Z",
+            "stars": 0,
+            "pushed_at": "2026-09-01T16:41:43Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "@all3cn/dsh-qa-suite-n23",
+                "captured_at": "2026-10-21T08:01:03.201Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 22,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40all3cn%2Fdsh-qa-suite-n23",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-01T16:42:36.029Z",
+                    "captured_at": "2026-10-21T08:01:03.201Z",
+                    "source_url": "https://registry.npmjs.org/%40all3cn%2Fdsh-qa-suite-n23",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-09-01T16:42:36.336Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1353726715:root",
+            "repository": "All3nCN/dsh-qa-suite-N23",
+            "path": "",
+            "revision": "8f473567166944bf9ea94afaad294ced49034691",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "07ef0535d86ed9577f4d87a2ea6734ceccb659d8b5a400628a50b2fc898dec2c",
+                "code": "8f473567166944bf9ea94afaad294ced49034691",
+                "maintenance": "a8dd90477953d24348f924fa053af288ce964905d2c44f1a165205b807928b1c"
+            }
+        }
+    }
+}

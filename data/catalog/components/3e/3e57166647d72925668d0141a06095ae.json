@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3e57166647d72925668d0141a06095ae",
+    "identity": "github:1333200468:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333200468:root",
+            "repository": "Nwflower/dsh-chat-import",
+            "path": "",
+            "revision": "814a3407f7d4f31935ce15fd4c372bdc13d859c1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "215b9c04cc621314c588712206ef289e1ddeb5e27ba201ec6488c4338f97ed70",
+                "code": "814a3407f7d4f31935ce15fd4c372bdc13d859c1",
+                "maintenance": "fcdfb2494e21fe60ca2c18bcc82eeb7c4c2f3be2bb4751844900af7a13df6687"
+            }
+        }
+    }
+}

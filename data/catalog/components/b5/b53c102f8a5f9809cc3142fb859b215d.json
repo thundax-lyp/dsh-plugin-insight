@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b53c102f8a5f9809cc3142fb859b215d",
+    "identity": "github:1346064785:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346064785:root",
+            "repository": "Momojie-S/dsh-subagent-idle-delivery",
+            "path": "",
+            "revision": "a19cc9cf617127c6e939d1c085f1f240501fec14",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7719bc77e478a11b0fd5de4ce383947b4fb12d64d58325a5b03379fbcca20c86",
+                "code": "a19cc9cf617127c6e939d1c085f1f240501fec14",
+                "maintenance": "7574eee6d886b42ac7660ff4392260ad9787f8f4d696be6352b49ee24c63396c"
+            }
+        }
+    }
+}

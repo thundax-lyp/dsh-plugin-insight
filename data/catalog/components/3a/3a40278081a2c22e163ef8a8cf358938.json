@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3a40278081a2c22e163ef8a8cf358938",
+    "identity": "github:1397552608:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397552608:root",
+            "repository": "Lostforest7/dsh-encoding",
+            "path": "",
+            "revision": "dcce12a068a1065ee08eaaf68f4c0a30a38a569b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e8955312dc28e583cb42ac5b30671a6a7b29550ff7a51187f5a56b9c702eef6",
+                "code": "dcce12a068a1065ee08eaaf68f4c0a30a38a569b",
+                "maintenance": "914527b0018c90fb630e07109693fd8a66bdc1b534fef3fe634eb043678920c9"
+            }
+        }
+    }
+}

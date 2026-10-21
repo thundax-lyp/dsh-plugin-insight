@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f035a99062baad40cac8b004f19684a8",
+    "identity": "github:1336675373:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336675373:root",
+            "repository": "SiriLee/dsh-edit-approval",
+            "path": "",
+            "revision": "6ce885c986f9b463c99aa82d9fd84e247b92687a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "314d1e20857adb917ad0d4a44265d7945cfb7049f893746e6c044fd146385f9c",
+                "code": "6ce885c986f9b463c99aa82d9fd84e247b92687a",
+                "maintenance": "2dbd6d40af6056951119c38c86d2b2719c8f556f5937ff82b857f769f98bafd6"
+            }
+        }
+    }
+}

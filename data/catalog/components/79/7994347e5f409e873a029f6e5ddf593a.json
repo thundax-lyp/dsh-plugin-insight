@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7994347e5f409e873a029f6e5ddf593a",
+    "identity": "github:1345017956:dsh-swarm-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345017956:dsh-swarm-plugin",
+            "repository": "stephenlzc/dsh-swarm-panel",
+            "path": "dsh-swarm-plugin",
+            "revision": "39adee7e7d207600e9eaa418a7909e9ef884130b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4a3cdde5aa74b10b4e7f1adf1527d236601e1b7512c30e2405e829390fd5b3d2",
+                "code": "39adee7e7d207600e9eaa418a7909e9ef884130b",
+                "maintenance": "56534d81c759df73b6ac0f7478a6c5944dc2bda67f5f168e8b1d36abd4d86185"
+            }
+        }
+    }
+}

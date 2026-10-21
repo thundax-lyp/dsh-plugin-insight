@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a37765d1563e5c4f422868b8a5899ef7",
+    "identity": "github:1423081304:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423081304:root",
+            "repository": "XWIDE/dsh-xwide-annotation",
+            "path": "",
+            "revision": "ccf843f233a7348c6f3f21d549d700918ff4e95a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "be49137543bfb2ca1b0f4b30a4ebf85f9352cc74c36f1edac30595f701717ade",
+                "code": "ccf843f233a7348c6f3f21d549d700918ff4e95a",
+                "maintenance": "978aa7ead31dca7a957401c99020a8e5926e98eab6156626adf535c9bb5c2b01"
+            }
+        }
+    }
+}

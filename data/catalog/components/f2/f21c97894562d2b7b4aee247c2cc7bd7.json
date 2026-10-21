@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f21c97894562d2b7b4aee247c2cc7bd7",
+    "identity": "github:1402441279:packages-bridge",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402441279:packages-bridge",
+            "repository": "youbaiyun/dsh-browser-crossplatform",
+            "path": "packages/bridge",
+            "revision": "4c4e32d9a845652bad6735ba9191b666725b1c8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2dedd747f12c6295001f2c15773bb9fddc25f6084487ae714bba051612d87235",
+                "code": "4c4e32d9a845652bad6735ba9191b666725b1c8a",
+                "maintenance": "c9dfb4386eb65b1980502e400098b2e23b471d9ba35a21faaa23fab769ea439d"
+            }
+        }
+    }
+}

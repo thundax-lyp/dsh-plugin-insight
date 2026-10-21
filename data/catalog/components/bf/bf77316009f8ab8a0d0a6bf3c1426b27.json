@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf77316009f8ab8a0d0a6bf3c1426b27",
+    "identity": "github:1337801265:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337801265:root",
+            "repository": "stuarthu/dsh-crew",
+            "path": "",
+            "revision": "4be28ecb610010c508feb9f36951ab6c57cee9e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "64ede6291a343b3fb9081c3b5bf616a809d4537fbaea45a9e15ea0ef48b88a28",
+                "code": "4be28ecb610010c508feb9f36951ab6c57cee9e1",
+                "maintenance": "d71346a5bca087b4cb79ff0ad8b6bc6e916475bde3dee71f98906824c5ec674b"
+            }
+        }
+    }
+}

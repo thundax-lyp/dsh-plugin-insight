@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b29d81f8d8174805d0a9de6cfb2ba361",
+    "identity": "github:1424035753:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424035753:root",
+            "repository": "zuihouye/dsh-agnes-tools",
+            "path": "",
+            "revision": "d8b00cc76d0b8c0ef378076c3c68b756a28ba22b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aee0659e703111a540bf65fdf5f87c5b32a498e3383ecc9bbef45bb65f90b64a",
+                "code": "d8b00cc76d0b8c0ef378076c3c68b756a28ba22b",
+                "maintenance": "76bffbd702d15aa380e55f431bc4d40d795c9fb9eff3cff7c636d56f90b21395"
+            }
+        }
+    }
+}

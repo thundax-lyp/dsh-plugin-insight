@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8571715431269e0da5f69be79e2997d",
+    "identity": "github:1345714015:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345714015:root",
+            "repository": "kane-le/dsh-deepseek-usage",
+            "path": "",
+            "revision": "e542391b3f24e0777e006d7b50ac9e6a99b0a408",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ba347eb12b1e2c8743e927fcda07d97baf9a6d2f542801bffc5eb6a9b192fa06",
+                "code": "e542391b3f24e0777e006d7b50ac9e6a99b0a408",
+                "maintenance": "bc84e6050dadb071ad16d1b242984bdd71c8b609222d450cbf76100de20e81bc"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f667920bb3075c360c4578917b3fc830",
+    "identity": "github:1398381545:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398381545:root",
+            "repository": "TixAn9/DSHdesktop-restart-bottom",
+            "path": "",
+            "revision": "e442ff7cfb2162d1270f5c0a48c3e06c4f49190e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e7966df02345a6535a24b016daa43383908f2f36fb40628006728e7a2ffccff",
+                "code": "e442ff7cfb2162d1270f5c0a48c3e06c4f49190e",
+                "maintenance": "dc6ebbabab458cf914e83ee8d198bef23c0487eae5eb1fd3bfb1516a676f8bd8"
+            }
+        }
+    }
+}

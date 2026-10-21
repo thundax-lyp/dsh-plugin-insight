@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3cfeb409380d6431a52c40be0a6199e7",
+    "identity": "github:1335036706:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335036706:root",
+            "repository": "Frog755/dsh-wallpaper",
+            "path": "",
+            "revision": "1044d3b74ddc2b324dfad048a469bee404f06c83",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "426d2c08d6d0042d442d9a8ae08811d572461f6b6a4d025147c62862f81885e2",
+                "code": "1044d3b74ddc2b324dfad048a469bee404f06c83",
+                "maintenance": "21477c30a01b0fe1aee8c4af4bf3c67d5fa86f8cb6726b62f40aade3ce10e796"
+            }
+        }
+    }
+}

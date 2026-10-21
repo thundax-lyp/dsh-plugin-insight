@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "70ec2cb5c362c61ae791e5563e8ed8ea",
+    "identity": "github:1333472422:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333472422:root",
+            "repository": "loudMore/dsh-drop-to-path",
+            "path": "",
+            "revision": "d938c1ddf14e86ddbad5e634f0118e6ace857668",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6e6696a9592999113580dccca90fd6de685b04e5beeb61d925d658a1a5dab99f",
+                "code": "d938c1ddf14e86ddbad5e634f0118e6ace857668",
+                "maintenance": "b7dc0795cce2079f572655548e8921d18ad934a7bd03ae067de27324f44e1422"
+            }
+        }
+    }
+}

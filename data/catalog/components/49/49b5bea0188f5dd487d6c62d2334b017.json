@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "49b5bea0188f5dd487d6c62d2334b017",
+    "identity": "github:1409583504:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409583504:root",
+            "repository": "sumingwang233/dsh-code-review-graph",
+            "path": "",
+            "revision": "070feb0d022c36eebffbc9aa9c2f5e7617c89898",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a4d1b71a5c8d754fe28d0a7eeecd11699d981ac6c5042e3b6ae805b24ddf64f",
+                "code": "070feb0d022c36eebffbc9aa9c2f5e7617c89898",
+                "maintenance": "198e0400a97ff29c12c9718c203a9ff1857c85f917fd57516cf97c4deb03921d"
+            }
+        }
+    }
+}

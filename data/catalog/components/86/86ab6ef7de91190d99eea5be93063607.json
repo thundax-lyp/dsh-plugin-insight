@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "86ab6ef7de91190d99eea5be93063607",
+    "identity": "github:1335082381:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335082381:plugin",
+            "repository": "zhu168/dsh-save-money",
+            "path": "plugin",
+            "revision": "adaa4ba539ae528e749895620ba1c2a84f394951",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d40c8a5001cf689812bcebc8708b885832de813f97c477992e9ebc80f089e92f",
+                "code": "adaa4ba539ae528e749895620ba1c2a84f394951",
+                "maintenance": "834c4fdf04b0590c8edfb73ced58db16dd2b30078a0eace29bc8db3fb1ac8b8b"
+            }
+        }
+    }
+}

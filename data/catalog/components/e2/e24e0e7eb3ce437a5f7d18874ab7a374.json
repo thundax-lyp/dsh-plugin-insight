@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e24e0e7eb3ce437a5f7d18874ab7a374",
+    "identity": "github:1339400021:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339400021:root",
+            "repository": "yamingmou/dsh-retrace",
+            "path": "",
+            "revision": "aa55921f7cb7bc7c1066f1e4ced1d554a9ae8086",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "34c2bc0f654ac2199b28d929490aabcd3afd65b9bb41139ac673c604dfa10e42",
+                "code": "aa55921f7cb7bc7c1066f1e4ced1d554a9ae8086",
+                "maintenance": "4903d9c39a9963844d3caf53348f59c4b7b200056dea15ed6bb7086ca0a59647"
+            }
+        }
+    }
+}

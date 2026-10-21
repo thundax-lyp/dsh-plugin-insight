@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e5ec3e4798550efed3448f9f4b30a94",
+    "identity": "github:1335126576:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335126576:root",
+            "repository": "guo6x/dsh-housekeeper",
+            "path": "",
+            "revision": "9d4c3be7d01d9c86e96cbe8d5a7088c1e6f4548c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "caeb398685462dc4614a6c5d5b0782adf4afdcc8cb8f2acbcc0a006c83504726",
+                "code": "9d4c3be7d01d9c86e96cbe8d5a7088c1e6f4548c",
+                "maintenance": "d39fb391e6f45d1ac31e872767d074bf24e19e194e0b83ef71ea4235412f1bc0"
+            }
+        }
+    }
+}

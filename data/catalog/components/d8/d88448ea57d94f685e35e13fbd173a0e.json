@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d88448ea57d94f685e35e13fbd173a0e",
+    "identity": "github:1339436351:packages-client-tell",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339436351:packages-client-tell",
+            "repository": "dphmoblie/dsh-error-tell",
+            "path": "packages/client-tell",
+            "revision": "d332567c49bfc1bf968ce776081ab8728f0c979d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5ab5d69ba07664692ff1ae63340a2397c6e76c6c9436a91a0ea24f94030bdd3b",
+                "code": "d332567c49bfc1bf968ce776081ab8728f0c979d",
+                "maintenance": "bad5f36c239a16bfc4786673efc991e7dd9f0e98c10b509f25f3b7e8eef66d2c"
+            }
+        }
+    }
+}

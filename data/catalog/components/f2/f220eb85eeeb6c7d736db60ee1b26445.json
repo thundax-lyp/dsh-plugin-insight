@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f220eb85eeeb6c7d736db60ee1b26445",
+    "identity": "github:1349428136:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349428136:root",
+            "repository": "runcat-tommy/dsh-theme-manager",
+            "path": "",
+            "revision": "e77b02298f116d0d2c1393cb07d387d2dfd78d0c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c68f430ce0b7ebf1531885e9629c5fa0fccbf62870552fa663507a399b1ffdd8",
+                "code": "e77b02298f116d0d2c1393cb07d387d2dfd78d0c",
+                "maintenance": "fbe4b4d383b468281014529b77ae405a420bedb6a1f8242ff8c947acd90efc18"
+            }
+        }
+    }
+}

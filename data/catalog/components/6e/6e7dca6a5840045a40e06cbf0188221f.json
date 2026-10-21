@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6e7dca6a5840045a40e06cbf0188221f",
+    "identity": "github:1408934161:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408934161:root",
+            "repository": "lone-wolf-akela/dsh-sandboxie-redirect",
+            "path": "",
+            "revision": "3269c5de1d003561f7adea7f89db4f603be700a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5739fa70f7bf872fc43bfb2797767aae56a307b62ee7ba418be6990016fe0d15",
+                "code": "3269c5de1d003561f7adea7f89db4f603be700a7",
+                "maintenance": "b4e0d8d15aea3f843592db0b3777dee6bfd73dd18d03e47c82e1c9580b54b0fc"
+            }
+        }
+    }
+}

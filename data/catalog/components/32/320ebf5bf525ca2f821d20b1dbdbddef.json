@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "320ebf5bf525ca2f821d20b1dbdbddef",
+    "identity": "github:1356681194:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356681194:root",
+            "repository": "iasiv5/dsh-copilot-auth",
+            "path": "",
+            "revision": "a53f8fa64ca0364176fb2212b949b8b7a8618924",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "58ce9b1f53a90c5fdd673a4436aa294956ce5793ed77f470d46797b82beaddc4",
+                "code": "a53f8fa64ca0364176fb2212b949b8b7a8618924",
+                "maintenance": "5472b98f2780939b77b5b650a24f755b0e8a9a4a92da9988d9442f893c2bedf9"
+            }
+        }
+    }
+}

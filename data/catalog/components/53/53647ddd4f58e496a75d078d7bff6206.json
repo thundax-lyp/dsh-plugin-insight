@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "53647ddd4f58e496a75d078d7bff6206",
+    "identity": "github:1336867202:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336867202:root",
+            "repository": "changlianxiya-139/dsh-ambiguity-handling",
+            "path": "",
+            "revision": "a47dfc9fb3c23aebbb4fb612a833b48bb5f7950c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "091563ce3dc901bee5c90e12c7f6f945905de19a38e447237370933b595f25d6",
+                "code": "a47dfc9fb3c23aebbb4fb612a833b48bb5f7950c",
+                "maintenance": "f4f0888447c326de739b81045fd95209be02c87c84b784e4800d971a6eaa2a59"
+            }
+        }
+    }
+}

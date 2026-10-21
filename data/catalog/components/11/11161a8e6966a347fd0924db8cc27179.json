@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11161a8e6966a347fd0924db8cc27179",
+    "identity": "github:1336621274:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336621274:root",
+            "repository": "Soulize/hard-flash",
+            "path": "",
+            "revision": "06c20ded45e6a3cf80db91717c9e0e2928d04e74",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "445a45077744e969813a652fd90853cea0fbe71608515b8df9d0745a12148b78",
+                "code": "06c20ded45e6a3cf80db91717c9e0e2928d04e74",
+                "maintenance": "880554d2a10368609ca1d82242bfdf6559c536be9f209b240aa41d3c7d5a5891"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "07b9e8450c8e9f0c7f18ee0b7148be25",
+    "identity": "github:1344772058:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344772058:root",
+            "repository": "wutian122/dsh-remote-shell",
+            "path": "",
+            "revision": "184013598dcaa5b2de37c463e61c3f84d73bb1f4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cfb59004d152899bd26d2cd456a07276ea117b95481817c85bbcd71725f60089",
+                "code": "184013598dcaa5b2de37c463e61c3f84d73bb1f4",
+                "maintenance": "d549fadbd47744c9148b3aa1d2a3ff14eb0924c83efd82f08a317589f2230c0e"
+            }
+        }
+    }
+}

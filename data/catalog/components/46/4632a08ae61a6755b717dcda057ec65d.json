@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4632a08ae61a6755b717dcda057ec65d",
+    "identity": "github:1366993429:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366993429:root",
+            "repository": "whoiszzj/dsh-opencodego",
+            "path": "",
+            "revision": "dacdd8988ac330d8eec28e22ab6078ccd485c456",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f8aea9d3bb7281c6104d07b089a950725e5fff7a1cfb17298591c85daf9693b6",
+                "code": "dacdd8988ac330d8eec28e22ab6078ccd485c456",
+                "maintenance": "d279dd8f415bd9dcadfdc514185aaf2aeb651da6991161e36f2f075ea0d51362"
+            }
+        }
+    }
+}

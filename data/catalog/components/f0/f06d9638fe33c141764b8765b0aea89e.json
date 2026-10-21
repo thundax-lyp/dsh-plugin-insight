@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f06d9638fe33c141764b8765b0aea89e",
+    "identity": "github:1422886907:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422886907:root",
+            "repository": "wweir/dsh-advisor",
+            "path": "",
+            "revision": "e60ab17592c8e182f65bd94a3fc2fe37f76a6f54",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d2fd4dfb8160f040425fd7eb6b79ef365e1b05d6ea990b8d79eee3edf30795e4",
+                "code": "e60ab17592c8e182f65bd94a3fc2fe37f76a6f54",
+                "maintenance": "d7902d067aa8cf04aa0432914110e6f2978ba83f5b030181d38f1f214a8f8e77"
+            }
+        }
+    }
+}

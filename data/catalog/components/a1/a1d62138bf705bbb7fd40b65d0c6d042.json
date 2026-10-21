@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a1d62138bf705bbb7fd40b65d0c6d042",
+    "identity": "github:1381562627:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1381562627:root",
+            "repository": "drscrewdriver/dsh-opensheet-sidebar",
+            "path": "",
+            "revision": "033a2f6c80fb05d209f8fb5b4189506bd423d39a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3055ace50b95a4a6e9f1509fef488dfdc3699f31670c3e486d62c0894f4ce707",
+                "code": "033a2f6c80fb05d209f8fb5b4189506bd423d39a",
+                "maintenance": "ec9fc441592f935ff9f7f732d952c910c2efc71d1027ac6caca18177f2892203"
+            }
+        }
+    }
+}

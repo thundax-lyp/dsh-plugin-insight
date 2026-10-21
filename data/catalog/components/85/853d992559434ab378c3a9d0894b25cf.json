@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "853d992559434ab378c3a9d0894b25cf",
+    "identity": "github:1374062632:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374062632:root",
+            "repository": "liaoyuqing/dsh_workspace_switch",
+            "path": "",
+            "revision": "361f9c2b7d6eeb19498715c2dd3979fa8413bfa9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b2b17d2903b4997bae288ebdc57a4735d18510b99201e68c971250e66e5dfaee",
+                "code": "361f9c2b7d6eeb19498715c2dd3979fa8413bfa9",
+                "maintenance": "8b2083eab844adcc8e4bec9d252d04cf2d9b77db917344fec4773f278f3baa27"
+            }
+        }
+    }
+}

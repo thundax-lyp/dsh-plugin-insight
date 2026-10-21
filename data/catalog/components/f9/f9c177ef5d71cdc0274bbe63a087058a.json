@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9c177ef5d71cdc0274bbe63a087058a",
+    "identity": "github:1383096232:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1383096232:root",
+            "repository": "liaowenqi123/dsh-meeting-coordinator",
+            "path": "",
+            "revision": "125d5abc4a08a3e5d5582178ec76d804b59d83c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7bc092940079a6f7cc3d7dc4b050d300a9c9445c4fc42105390ac036f5fa4c03",
+                "code": "125d5abc4a08a3e5d5582178ec76d804b59d83c4",
+                "maintenance": "f85bb8f11aa3f2bb464d7749ee676257aee2ab0eed72ccd5bf20edc1dea38b20"
+            }
+        }
+    }
+}

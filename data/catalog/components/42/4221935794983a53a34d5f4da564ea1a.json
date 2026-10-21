@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4221935794983a53a34d5f4da564ea1a",
+    "identity": "github:1379258041:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379258041:root",
+            "repository": "wpeng77/dsh-llm-trace",
+            "path": "",
+            "revision": "9fffd238f16e1ee7f96fd39a1b3a471a03ada2b6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b1670e666a911ccc58f2097828058768f602dd9778c2721270de7090886a23f",
+                "code": "9fffd238f16e1ee7f96fd39a1b3a471a03ada2b6",
+                "maintenance": "2956967bca820911719cc57b0975fe092542a809e1ae963f9ccb3fae93f46c0c"
+            }
+        }
+    }
+}

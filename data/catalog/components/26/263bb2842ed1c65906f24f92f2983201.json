@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "263bb2842ed1c65906f24f92f2983201",
+    "identity": "github:1345005121:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345005121:root",
+            "repository": "pan17/dsh-minimax-usage",
+            "path": "",
+            "revision": "c6be4e8e412537a1919cedbf22591da48da92138",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f42c5e3dab1e9c2522d83bda1a08d871a530df3987dffbd1da71569d8c0c44dc",
+                "code": "c6be4e8e412537a1919cedbf22591da48da92138",
+                "maintenance": "c480cb102d7c7dd3b8de0ca682afcf7a4fa4ccf137f5128fe5eb64bba760dce1"
+            }
+        }
+    }
+}

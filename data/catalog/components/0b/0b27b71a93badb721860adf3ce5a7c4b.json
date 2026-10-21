@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0b27b71a93badb721860adf3ce5a7c4b",
+    "identity": "github:1367125926:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367125926:root",
+            "repository": "lsjspl/dsh-reel",
+            "path": "",
+            "revision": "d3b19ffc012201f4444b6d7279e4caf8865e571f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a3f4bce9e2dd067c1fbd0b9a146f757122ae21586690797def9e55f256bcdae7",
+                "code": "d3b19ffc012201f4444b6d7279e4caf8865e571f",
+                "maintenance": "7ac44ad2eabf5c05c15d6107f45290cd4afa1975726b4c935337566f9d4b15af"
+            }
+        }
+    }
+}

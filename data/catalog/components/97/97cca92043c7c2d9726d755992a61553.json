@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "97cca92043c7c2d9726d755992a61553",
+    "identity": "github:1339634170:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339634170:root",
+            "repository": "HaoyueQin/deepseek-harness-background",
+            "path": "",
+            "revision": "3d449323c25f707ca62a5187016cd9dcf1720c8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "acea7af9ed6a513c38660d20392c2ea06855b1573b54d2e38d037260f71a567c",
+                "code": "3d449323c25f707ca62a5187016cd9dcf1720c8a",
+                "maintenance": "0ed3a70e0db6668d35fac74cbed57994f8826afd625a6c07afca10d40a03158d"
+            }
+        }
+    }
+}

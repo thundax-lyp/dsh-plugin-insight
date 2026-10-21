@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "867ca2d8a8cb070491a33b5ffae73690",
+    "identity": "github:1406616913:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406616913:root",
+            "repository": "xraywu/dsh-service-monitor",
+            "path": "",
+            "revision": "9525db94e5321b9b8fd23f0d7e4bd8f6f7b29b15",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7ac6ed00806dcfd7d6ac2f2fbd4a70ef33de7dc7abf0d335c5141c613e49418a",
+                "code": "9525db94e5321b9b8fd23f0d7e4bd8f6f7b29b15",
+                "maintenance": "e3035faf21d952776350a55db338e25f10d3c8b64026d50773ad236a9a0dee8e"
+            }
+        }
+    }
+}

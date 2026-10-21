@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9f514593e0255cdb178e3d2073a730a3",
+    "identity": "github:1392388057:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392388057:root",
+            "repository": "f-e-n-g-0531/dsh-vcs",
+            "path": "",
+            "revision": "b52ee80b4ac8833a5eeb9c1863ee52b3743e3ba7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a55c37e30d54dcdf7387f65e3a713cf17ea8b6f206dfe2109a4bf9f32a59eec",
+                "code": "b52ee80b4ac8833a5eeb9c1863ee52b3743e3ba7",
+                "maintenance": "247dfba3ee16de0995fbb239093ea171dde7702f0dce19a188bbee973a608a4f"
+            }
+        }
+    }
+}

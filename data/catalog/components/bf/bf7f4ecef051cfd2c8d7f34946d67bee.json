@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf7f4ecef051cfd2c8d7f34946d67bee",
+    "identity": "github:1348550365:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348550365:root",
+            "repository": "qgx1992/dsh-ui-tools",
+            "path": "",
+            "revision": "ad7b8a4930604b2595d66e3029876c4173b7b739",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0027a9453624e142bad8aa461f95f0766e508cb36274a7fbf126a71750f92ff",
+                "code": "ad7b8a4930604b2595d66e3029876c4173b7b739",
+                "maintenance": "0d2044d29ddd95a684145f205dcbe75db288adb6db3bdf60d615c560da42fe76"
+            }
+        }
+    }
+}

@@ -1,0 +1,381 @@
+{
+    "schema_version": 3,
+    "id": "b7f693c0145f5bd0c537d8c81cba0700",
+    "identity": "github:1372976273:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1372976273:root",
+            "repository_id": 1372976273,
+            "component_id": "root",
+            "repository": "2002XiaoYu/dsh-session-diff",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-session-diff",
+            "entry_type": "plugin",
+            "technical_category": "sessions-messages",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "b50163b3079c034b6c69078f8b484802c1f324ae8af0ec793020459cba710e88",
+                "code": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+                "maintenance": "f368a363a3f2b57b46bdd2899c8c6e8e24240b065fa02fa222180f3d5e4dcd6a"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1372976273-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:52:59.777Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1372976273-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/README.md",
+                    "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+                    "captured_at": "2026-10-20T10:52:59.777Z",
+                    "summary": "在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2002xiaoyu--dsh-session-diff/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1372976273-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/src/80-apply.js",
+                    "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+                    "captured_at": "2026-10-20T10:52:59.777Z",
+                    "summary": "核查 src/80-apply.js、src/50-store.js、src/40-reader.js、src/30-diff.js；从会话节点收集write/edit hunk，按路径聚合并用Myers差异；只有本会话确有变更的地址才canOpen接管，文件通过Remote分页读取并有上限。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2002xiaoyu--dsh-session-diff/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者想确认本轮会话改了哪些文件，不希望Git里其他会话的改动混入；验收是对应会话工具事件的准确变更视图。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1372976273:root",
+                            "area": "code",
+                            "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:59.777Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "从会话节点收集write/edit hunk，按路径聚合并用Myers差异；只有本会话确有变更的地址才canOpen接管，文件通过Remote分页读取并有上限。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1372976273:root",
+                            "area": "code",
+                            "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:59.777Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1372976273:root",
+                            "area": "code",
+                            "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:59.777Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1372976273:root",
+                            "area": "code",
+                            "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:59.777Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "不需要另加模型调用；代价是浏览器读取、差异计算和人工确认覆盖范围。大文件或多变更节点的耗时未测。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1372976273:root",
+                            "area": "code",
+                            "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:59.777Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合快速检查当前会话的常规write/edit；跨会话、shell改动和大文件仍用Git或专门差异工具复核。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1372976273:root",
+                            "area": "code",
+                            "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:59.777Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "会话归属能减少筛选噪声；不能代替完整代码审查或仓库变更盘点。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1372976273:root",
+                            "area": "code",
+                            "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:59.777Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "src/80-apply.js 的canOpen仅接管实际有变更地址，减少与原生查看器冲突；src/50-store.js按节点数和最后seq记忆聚合，src/40-reader.js显式保留truncated。事件基线与当前文件版本一致性是后续复用重点。 源码：[src/80-apply.js](https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/src/80-apply.js)、[src/50-store.js](https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/src/50-store.js)、[src/40-reader.js](https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/src/40-reader.js)、[src/30-diff.js](https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/src/30-diff.js)。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1372976273:root",
+                            "area": "code",
+                            "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:52:59.777Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:52:59.777Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+                "reviewed_at": "2026-10-20T10:52:59.777Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1372976273:root",
+                        "area": "code",
+                        "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：成熟diff的会话适配；mechanism：作用域接管局部改善；transferability：事件归属显示可复用；simplification：复用原点击入口省步骤。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：局部减少查找改动；delivery：提供会话级变更清单；reach：降低Git筛选门槛；economics：无新调用但审查省时未测。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1372976273-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "适合快速查看当前会话常规write/edit的改动；先核对双会话同文件和shell改动的覆盖边界，完整审查仍以Git为准，尚未进行真实宿主验证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 30,
+                        "rationale": "代码修改后核对本会话变更是高频、可直接检查的工作环节。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "按会话工具事件组织差异，补充git diff混合工作树改动时的归属信息。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码支持事件与差异展示，客户端DOM、多会话归属和大文件未运行验证。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "只读辅助视图较易退出，但事件覆盖、大文件及宿主升级仍有维护成本。"
+                    }
+                },
+                "score": 77,
+                "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+                "reviewed_at": "2026-10-21T09:16:52.633Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1372976273-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1372976273:root",
+                        "area": "code",
+                        "fingerprint": "f5b20d0001bb9955c4eebe0f2037507769e55197"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1372976273:root",
+            "repository": "2002XiaoYu/dsh-session-diff",
+            "path": "",
+            "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+            "fingerprints": {
+                "directory": "b50163b3079c034b6c69078f8b484802c1f324ae8af0ec793020459cba710e88",
+                "code": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+                "maintenance": "f368a363a3f2b57b46bdd2899c8c6e8e24240b065fa02fa222180f3d5e4dcd6a"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "9b2ba19599a44d2416181b15fc19c802b4973d3d00022029317d9e86283ae5a9"
+        },
+        "publication.metadata": "data/plugins/2002xiaoyu--dsh-session-diff/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。",
+            "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+            "source_url": "https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+            "items": {
+                "界面": "会话文件差异视图与变更文件列表"
+            }
+        },
+        "publication.advice": {
+            "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+            "text": "适合快速检查当前会话的常规write/edit；跨会话、shell改动和大文件仍用Git或专门差异工具复核。"
+        },
+        "registry": "data/plugins/2002xiaoyu--dsh-session-diff",
+        "reports": "# dsh-session-diff\n\n> 在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。\n\n## 研究范围\n\n- **仓库**：[2002XiaoYu/dsh-session-diff](https://github.com/2002XiaoYu/dsh-session-diff)\n- **版本号**：0.1.0（[固定提交 f5b20d0](https://github.com/2002XiaoYu/dsh-session-diff/tree/f5b20d0001bb9955c4eebe0f2037507769e55197)）\n- **版本日期**：2026-09-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献机制有固定源码支持；效果与采用收益为条件性解释，后续设计假设尚未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：开发者想确认本轮会话改了哪些文件，不希望Git里其他会话的改动混入；验收是对应会话工具事件的准确变更视图。\n- **亮点**：相对工作区git diff，增量是会话作用域归属和就地侧栏呈现；原生查看器保留给未修改文件，避免抢占所有文档。差异算法属成熟方法，贡献在事件归属与宿主展示接线。\n- **思考**：会话工具事件能覆盖多少实际文件修改最关键：shell修改、外部编辑或工具未记录旧文本，不能由write/edit节点推得完整历史；当前文件还可能被另一会话改动。readWholeFile有限行/页数，展示截断不能看作全文件审计。\n- **建议**：适合快速检查当前会话的常规write/edit；跨会话、shell改动和大文件仍用Git或专门差异工具复核。\n\n采用建议：适合快速检查当前会话的常规write/edit；跨会话、shell改动和大文件仍用Git或专门差异工具复核。\n\n## 核心贡献\n\n相对工作区git diff，增量是会话作用域归属和就地侧栏呈现；原生查看器保留给未修改文件，避免抢占所有文档。差异算法属成熟方法，贡献在事件归属与宿主展示接线。\n\n## 关键质疑\n\n会话工具事件能覆盖多少实际文件修改最关键：shell修改、外部编辑或工具未记录旧文本，不能由write/edit节点推得完整历史；当前文件还可能被另一会话改动。readWholeFile有限行/页数，展示截断不能看作全文件审计。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：为hunk保留文件版本摘要并把当前内容偏离显示为“外部变更”，可减少多会话归属混淆。来自事件基线和实时重读之间的差距；无需接管文件写入，但要增加版本查询与冲突UI。\n\n两会话交替修改同文件并加入shell编辑、删除与超过读取上限文件，对比git与插件显示，记录遗漏和错归属；如无可靠旧版本就只显示“事件覆盖子集”，不宣称完整差异。\n\n## 场景与替代办法\n\n开发者想确认本轮会话改了哪些文件，不希望Git里其他会话的改动混入；验收是对应会话工具事件的准确变更视图。\n\n参照git diff和原生文本侧栏；没有执行客户端DOM与真实宿主验收。\n\n## 依赖与流程\n\n需要DSH会话投影、workspaceFiles Remote及sidebarRightTabs接口；只显示宿主能读取的文件和会话留下的变更记录。\n\n打开本会话write/edit行或会话变更页，按节点聚合差异并分页读取当前文本；新事件触发重算；读取失败或截断需回到源码/Git核对。\n\n## 成本与效果\n\n不需要另加模型调用；代价是浏览器读取、差异计算和人工确认覆盖范围。大文件或多变更节点的耗时未测。\n\n会话归属能减少筛选噪声；不能代替完整代码审查或仓库变更盘点。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9c0879eba083665136b783608eb9f705b55cffd30ddc359c2e606d7226935c9e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 12 | 3441 | 2803 | 406 | — |\n| .md | source | 2 | 315 | — | — | 3498 |\n| .mjs | source | 1 | 67 | 36 | 21 | — |\n| .mjs | test | 2 | 645 | 523 | 83 | — |\n\n排除 0 项，解析错误 4 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：会话文件差异视图与变更文件列表\n\n## 工程亮点\n\nsrc/80-apply.js 的canOpen仅接管实际有变更地址，减少与原生查看器冲突；src/50-store.js按节点数和最后seq记忆聚合，src/40-reader.js显式保留truncated。事件基线与当前文件版本一致性是后续复用重点。 源码：[src/80-apply.js](https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/src/80-apply.js)、[src/50-store.js](https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/src/50-store.js)、[src/40-reader.js](https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/src/40-reader.js)、[src/30-diff.js](https://github.com/2002XiaoYu/dsh-session-diff/blob/f5b20d0001bb9955c4eebe0f2037507769e55197/src/30-diff.js)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/80-apply.js、src/50-store.js、src/40-reader.js、src/30-diff.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。\n- 下一步：两会话交替修改同文件并加入shell编辑、删除与超过读取上限文件，对比git与插件显示，记录遗漏和错归属；如无可靠旧版本就只显示“事件覆盖子集”，不宣称完整差异。\n",
+        "metadata": {
+            "repository": "2002XiaoYu/dsh-session-diff",
+            "repository_id": 1372976273,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-18T03:05:30Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-session-diff",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-session-diff",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-session-diff",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+                "current_revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1372976273:root",
+            "repository": "2002XiaoYu/dsh-session-diff",
+            "path": "",
+            "revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b50163b3079c034b6c69078f8b484802c1f324ae8af0ec793020459cba710e88",
+                "code": "f5b20d0001bb9955c4eebe0f2037507769e55197",
+                "maintenance": "f368a363a3f2b57b46bdd2899c8c6e8e24240b065fa02fa222180f3d5e4dcd6a"
+            }
+        }
+    }
+}

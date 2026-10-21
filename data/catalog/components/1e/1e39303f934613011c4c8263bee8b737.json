@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1e39303f934613011c4c8263bee8b737",
+    "identity": "github:1341035666:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341035666:root",
+            "repository": "sryimnoob123/dsh-web-search-ollama",
+            "path": "",
+            "revision": "7ea6b68b5733e43ccec6f58600f71bbad8513382",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "870b5b16663a56ee3c588d4dd29f830183e3f7874d8cb6c528bb1188298a38fc",
+                "code": "7ea6b68b5733e43ccec6f58600f71bbad8513382",
+                "maintenance": "dd774ecf19f78b619fb62919ba6ecf36b3f952ab782e15ad001af74abebb6fd6"
+            }
+        }
+    }
+}

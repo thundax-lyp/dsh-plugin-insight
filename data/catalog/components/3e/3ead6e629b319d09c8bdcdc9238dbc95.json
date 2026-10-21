@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ead6e629b319d09c8bdcdc9238dbc95",
+    "identity": "github:1368183478:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368183478:root",
+            "repository": "KasenRi/dsh-orbit",
+            "path": "",
+            "revision": "5cf55a0eaeb58a0396738f0cfcd3a6af7dfd89fb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7fd82ba115527d9844dc6458112380f02b2e7df3af50d6ede3488085cfd6fa5c",
+                "code": "5cf55a0eaeb58a0396738f0cfcd3a6af7dfd89fb",
+                "maintenance": "fa6d6f678958d658895934fe8743b3e689a96aa3243616c4eca9658bb38c9222"
+            }
+        }
+    }
+}

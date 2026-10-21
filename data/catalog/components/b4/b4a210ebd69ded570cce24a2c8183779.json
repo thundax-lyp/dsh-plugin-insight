@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b4a210ebd69ded570cce24a2c8183779",
+    "identity": "github:1345662020:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345662020:root",
+            "repository": "jypjypjypjyp/dsh-guardrail",
+            "path": "",
+            "revision": "b4e1a0daee668c4e67cefd62c770af41b4eb522d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2a055a73bd19355d17b460f0c26fdaa546b309787143a5b634ea38841a140f97",
+                "code": "b4e1a0daee668c4e67cefd62c770af41b4eb522d",
+                "maintenance": "62e853b27ef62d56f156a07e0b592ae14f07645445ab8abcb27ba9151ca84d89"
+            }
+        }
+    }
+}

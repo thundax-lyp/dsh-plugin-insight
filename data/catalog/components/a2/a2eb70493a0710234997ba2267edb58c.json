@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a2eb70493a0710234997ba2267edb58c",
+    "identity": "github:1334344912:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334344912:root",
+            "repository": "fieldnote-ops/keyringseam",
+            "path": "",
+            "revision": "22fdc53f882d55cb865511247622af51d2344796",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "38ef76d7150e9ebbe65079887b17e9ffa4507667cfc69f197cf2290aaf33d7f9",
+                "code": "22fdc53f882d55cb865511247622af51d2344796",
+                "maintenance": "50b74733791ba7c657e974666f79f56f2622d27cea2a2ed6413b6d3f4783ebd3"
+            }
+        }
+    }
+}

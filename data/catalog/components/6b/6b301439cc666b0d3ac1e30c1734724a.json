@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6b301439cc666b0d3ac1e30c1734724a",
+    "identity": "github:1333984168:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333984168:root",
+            "repository": "loguhan/dsh-workshop",
+            "path": "",
+            "revision": "cf36f61f708100d9f2c67db3a1722a8b85b53757",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "90bb30adb7f28d9ddfff273aa333e5efbb51fe87e5311cd2089f8f936fcf553b",
+                "code": "cf36f61f708100d9f2c67db3a1722a8b85b53757",
+                "maintenance": "d67021d90f763f11b8d0bf072d2bac5665862e89fb3b4490d9b720231f9ffb68"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "db6bcd9f27864407bfbfc92b5a4e63d2",
+    "identity": "github:1349151823:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349151823:root",
+            "repository": "windrover/dsh-minimal-UI-panels",
+            "path": "",
+            "revision": "5110656c795b1997499115485025550f19dc6b8e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "05696367ed0767796a1e40691dac1092dc80babd7616702a1ac1d4218f7e0b33",
+                "code": "5110656c795b1997499115485025550f19dc6b8e",
+                "maintenance": "2cd6c073500a8ddbfad02c4c4cb78aec11d2704af30829b05929fe1c3aa4d047"
+            }
+        }
+    }
+}

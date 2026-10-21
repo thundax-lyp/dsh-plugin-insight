@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f792654b1217464a08c3749fd4ddc816",
+    "identity": "github:1405674811:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405674811:root",
+            "repository": "JiewiW/dsh-cot-anchor",
+            "path": "",
+            "revision": "2ee261edad380b8e821d10658dba07d3b839d429",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "adb1945eb04b59fcf7b153ce5a40e6ae9486861d2ffdd1a3445d4030176b82c2",
+                "code": "2ee261edad380b8e821d10658dba07d3b839d429",
+                "maintenance": "a4563a22f9f994aef8cfe9298f7374a8b923cc86adc4090f44960d7e1354f8cf"
+            }
+        }
+    }
+}

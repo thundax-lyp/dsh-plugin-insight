@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f8bfd3d78c36b4096beea9ce4817c10c",
+    "identity": "github:1350079726:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350079726:root",
+            "repository": "Fast-Editor/lynkr-dsh-plugin",
+            "path": "",
+            "revision": "5b8d7affae2aa62762d188914d15e045cb59aab3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "80fe9ad08edb93d409ff5f9040602ec8bc37aa1cd519e152a04074b3ab79e004",
+                "code": "5b8d7affae2aa62762d188914d15e045cb59aab3",
+                "maintenance": "480480b594520acc4b030f3a01d0514b853398d47f42e681a779a86895d9c258"
+            }
+        }
+    }
+}

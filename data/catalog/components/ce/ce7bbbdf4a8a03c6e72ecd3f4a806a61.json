@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ce7bbbdf4a8a03c6e72ecd3f4a806a61",
+    "identity": "github:1350605813:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350605813:root",
+            "repository": "hellogit2021/avoid-ai-writing-cn",
+            "path": "",
+            "revision": "c5f3a09f88955cf62bbe4a33d93ed0294bfcd54c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8e4b7bf60a42db18056c3f718d5db43ab0c607d95273545d7b769ce77980bdb1",
+                "code": "c5f3a09f88955cf62bbe4a33d93ed0294bfcd54c",
+                "maintenance": "08bfa6ff95047b7490022f27cb1d9dc4f3c750787db8a4149d7ec8e1928e5682"
+            }
+        }
+    }
+}

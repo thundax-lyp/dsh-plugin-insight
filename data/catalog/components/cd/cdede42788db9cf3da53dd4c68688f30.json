@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cdede42788db9cf3da53dd4c68688f30",
+    "identity": "github:1414175697:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414175697:root",
+            "repository": "liushQAQ/dsh-weixin-plus",
+            "path": "",
+            "revision": "1a7c59688b6b08c02a6319795d9f2aaa03c69ac6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8331f1ef6d7fdc56ef4859473e205ff8d3c47b2a81d862e29e672a85a355ce0b",
+                "code": "1a7c59688b6b08c02a6319795d9f2aaa03c69ac6",
+                "maintenance": "854d72689ae3e528623753bf27a514eb6d19d0596164204d6e127f236b57f294"
+            }
+        }
+    }
+}

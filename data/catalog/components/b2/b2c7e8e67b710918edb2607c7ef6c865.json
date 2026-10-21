@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b2c7e8e67b710918edb2607c7ef6c865",
+    "identity": "github:1424622278:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424622278:root",
+            "repository": "liaoyuqing/dsh-shutdown-idle",
+            "path": "",
+            "revision": "56f7d916a0bb5e8f3a11d581e6bffbdb89ed4562",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "34707c24e1d1b2d383968bb3d872840034428efa69fe21d15c3dd8821d9c799a",
+                "code": "56f7d916a0bb5e8f3a11d581e6bffbdb89ed4562",
+                "maintenance": "3c7124e0949b526df558b6e066858ef5187ed7838d08c868bbf85f1b25a2dc14"
+            }
+        }
+    }
+}

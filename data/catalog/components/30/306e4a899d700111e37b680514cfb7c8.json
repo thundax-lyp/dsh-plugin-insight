@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "306e4a899d700111e37b680514cfb7c8",
+    "identity": "github:1408789310:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408789310:root",
+            "repository": "PerryLink/dsh-evidence-check",
+            "path": "",
+            "revision": "16909d3ad0f330d2768fa6aec5433ec76372bb77",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eb618cd1e5769a3fc1e3a7eb38c131834d98db6f1c269f5c62e88955668f193a",
+                "code": "16909d3ad0f330d2768fa6aec5433ec76372bb77",
+                "maintenance": "7c543e4884cd15f7bcd7630088eeac88ac780f5f968a6cacf8003e2d51facefd"
+            }
+        }
+    }
+}

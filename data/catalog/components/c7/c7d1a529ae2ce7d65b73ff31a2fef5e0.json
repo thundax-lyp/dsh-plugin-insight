@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c7d1a529ae2ce7d65b73ff31a2fef5e0",
+    "identity": "github:1334155300:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334155300:root",
+            "repository": "Rxiain/dsh-openviking",
+            "path": "",
+            "revision": "ea1880e0f1ec856229e1b7aee11d615964ee34d0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7b9d0bef386cf2868a80a3fc66a795face6ced45ae0605e4c14634bf9a8c8224",
+                "code": "ea1880e0f1ec856229e1b7aee11d615964ee34d0",
+                "maintenance": "1ce8bc63af784cab473e7544a1f43f0f145948153fe4d1152eaa5ae5a5b84098"
+            }
+        }
+    }
+}

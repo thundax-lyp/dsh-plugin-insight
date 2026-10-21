@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7e99ef7dec6b0d163994410c21de9dbe",
+    "identity": "github:1333948630:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333948630:root",
+            "repository": "sanshanya/better-model-provider",
+            "path": "",
+            "revision": "b2771e35be4dbad33ba732c909b41efc8a55ccc2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bd6cd674a2b4e1fe2ee2e42b73bacaf39ea92e86fcee6f8301bd69bdc2bef0fb",
+                "code": "b2771e35be4dbad33ba732c909b41efc8a55ccc2",
+                "maintenance": "712349fc5fa18ac1b2ceb7f2b91b509769a6fb7cfbab8a166a8b6e527d1f43c1"
+            }
+        }
+    }
+}

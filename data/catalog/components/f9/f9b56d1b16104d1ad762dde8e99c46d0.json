@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9b56d1b16104d1ad762dde8e99c46d0",
+    "identity": "github:1338533589:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338533589:root",
+            "repository": "jacujay/dsh-model-balance",
+            "path": "",
+            "revision": "db0c331a0d6d92ee9596cc55a31527e6052a935d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "774b3f304477a064593b963345df53bfc78c9b7b932fc04bbab7ab14db809426",
+                "code": "db0c331a0d6d92ee9596cc55a31527e6052a935d",
+                "maintenance": "f374b9bb269fb517250d81b607e8b89b6462c9e56996b0ceda4ef4f2d3499b6c"
+            }
+        }
+    }
+}

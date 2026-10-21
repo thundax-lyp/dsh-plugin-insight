@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8e69878423bd8c4397fcca2e53532c56",
+    "identity": "github:1344029191:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344029191:root",
+            "repository": "NonchalantLudens/dsh-side-dir",
+            "path": "",
+            "revision": "3f971e30db3952be88fa41256207a0591f4aec5c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f95187f7763d05a3c49eb533ad260d6cb019a7e377f1dda88bc3eb5a2e7a4ea0",
+                "code": "3f971e30db3952be88fa41256207a0591f4aec5c",
+                "maintenance": "041c5dce2721b45023cd9662cea968dd067e30ecaa8bdecf9341b06d556cf8ac"
+            }
+        }
+    }
+}

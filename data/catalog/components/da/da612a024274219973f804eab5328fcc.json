@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "da612a024274219973f804eab5328fcc",
+    "identity": "github:1334586481:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334586481:root",
+            "repository": "yjh051108/dsh-routing-suite",
+            "path": "",
+            "revision": "195273352f23bff7f9023ebe2ec0cdbdf9c98f10",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5d81762445ea7820b484d06d6a445910f89dbbfcbb7b3ff0f574d1aaff0fe25b",
+                "code": "195273352f23bff7f9023ebe2ec0cdbdf9c98f10",
+                "maintenance": "69b3ab602a3224e765a1ce4fe44a05f0370007921add6be2fbc421502c793e8a"
+            }
+        }
+    }
+}

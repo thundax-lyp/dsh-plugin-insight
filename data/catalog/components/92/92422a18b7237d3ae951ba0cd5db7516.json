@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "92422a18b7237d3ae951ba0cd5db7516",
+    "identity": "github:1347543031:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347543031:root",
+            "repository": "Ultmebius/universal-plugin-hub",
+            "path": "",
+            "revision": "4da7aca071874a39121e70bf200fe84309afc72e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b78b5b148dcaadb13c92a9bd020fb3de39c4c14bf20ef8b59e133d049126d3e",
+                "code": "4da7aca071874a39121e70bf200fe84309afc72e",
+                "maintenance": "5d89a911e3356d482865fbeab5aa78073af3424381ce90d932ccec3efce09815"
+            }
+        }
+    }
+}

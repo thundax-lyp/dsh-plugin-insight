@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f27c23c85f1988d94c9aff309e32c8bb",
+    "identity": "github:1340581082:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340581082:root",
+            "repository": "MindLab-Research/dsh-generative-ui",
+            "path": "",
+            "revision": "999b1b679524dfe3ee9217e4b9abff4dacb058bf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "533b1065983633a3436cfa60254dc2954c72e0a53bd663110b0d9d18cadb061f",
+                "code": "999b1b679524dfe3ee9217e4b9abff4dacb058bf",
+                "maintenance": "e9195a696ce437038392c6b99afafd120870dd365144f21269d28077b3f260db"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "377d2e4c7d6e1bbc0dc6c15a5aa8f968",
+    "identity": "github:1351657156:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351657156:root",
+            "repository": "Pappet/dsh-tool-imagegen",
+            "path": "",
+            "revision": "1dde51d145f1cbbd810bc4f116d1af449c69e82c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "563e828b69edf172a896abc04d53fda6b5a0e4e58f17be54ec7771508bd3b6f0",
+                "code": "1dde51d145f1cbbd810bc4f116d1af449c69e82c",
+                "maintenance": "0b186e232b67fb1b3cc9df3b798d4584f3bb062c57d8d6b01d1635e0df4e4923"
+            }
+        }
+    }
+}

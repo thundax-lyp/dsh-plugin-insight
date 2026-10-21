@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f258b790d0ace40c967aee5c47d69b20",
+    "identity": "github:1188682315:packages-baro-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1188682315:packages-baro-dsh",
+            "repository": "jigjoy-ai/baro",
+            "path": "packages/baro-dsh",
+            "revision": "9843f59bf63a2678f7512519a13218442741fb50",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a49c59ff8e3a6e0574c7e7e6dfa51aa1ee4faba22c2e113c018b4ddbf3f67f88",
+                "code": "9843f59bf63a2678f7512519a13218442741fb50",
+                "maintenance": "e6ffcefdb268079743f8840cecede51484367fa562e3d31c50cf79d17de2b3e1"
+            }
+        }
+    }
+}

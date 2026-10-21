@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90ba6e5285cffc2cef0835b3c4a2c02a",
+    "identity": "github:1349908899:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349908899:root",
+            "repository": "better-er/dsh-cache-billing",
+            "path": "",
+            "revision": "0f2bba94b522f7cd6e1c487bacb4fded69095275",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "72bd743cb868b7d0d9f99346c26977d2b83f6fdd032d2245e1fb7cb4c00da5ef",
+                "code": "0f2bba94b522f7cd6e1c487bacb4fded69095275",
+                "maintenance": "4853d8a7369f35cd5955c243c81189c979069ca2d77d6ef9bd426af31cc5e08b"
+            }
+        }
+    }
+}

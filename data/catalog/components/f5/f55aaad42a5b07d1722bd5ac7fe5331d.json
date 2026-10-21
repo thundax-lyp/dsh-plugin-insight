@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f55aaad42a5b07d1722bd5ac7fe5331d",
+    "identity": "github:1334813049:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334813049:root",
+            "repository": "Laplace-bit/dsh-smooth-stream",
+            "path": "",
+            "revision": "00e443462db769e6cf31c913a464571ce6c80440",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b6559d2686ce5a5da80f2cd38a443ec2cd95d433983ba7d9f972c83962ee49c3",
+                "code": "00e443462db769e6cf31c913a464571ce6c80440",
+                "maintenance": "5b53cd9dd647746629f8477a86473817fec2024eff916c079be594db37b7b417"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a26e1ed7fd9af21b73d25542f158ef8e",
+    "identity": "github:1425496128:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425496128:root",
+            "repository": "M1r0er/dsh-inkvault",
+            "path": "",
+            "revision": "c8c8e945b60aa51a9c9208992c608753b4993fc6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "375b01796573a594b865ed8b9a93a70881d4dde46857fc151ed245426590b50f",
+                "code": "c8c8e945b60aa51a9c9208992c608753b4993fc6",
+                "maintenance": "a5dddcb7abef7d95ffcd4ee324101a326a81f6bf1084079afb543d2d7c3feb24"
+            }
+        }
+    }
+}

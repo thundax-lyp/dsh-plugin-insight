@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7136dab2a13dae23c2fd7620d2a17f92",
+    "identity": "github:1345782391:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345782391:plugin",
+            "repository": "anweat/dsh-substrate",
+            "path": "plugin",
+            "revision": "39c03cf293c9a4ca96b2f07938648e3304e96fbc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "998420a4e2343c895d737c28df1e92103cd032a0107d0f7e4e9f037c40976f39",
+                "code": "39c03cf293c9a4ca96b2f07938648e3304e96fbc",
+                "maintenance": "cac72c9ca69597da820eab8fb7aaf09592ff62bc6bb584ebfe76e5963ae7bb2d"
+            }
+        }
+    }
+}

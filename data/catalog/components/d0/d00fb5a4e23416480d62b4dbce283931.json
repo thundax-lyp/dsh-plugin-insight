@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "d00fb5a4e23416480d62b4dbce283931",
+    "identity": "github:1334939514:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334939514:root",
+            "repository": "MichengAI/dsh-agency-agents",
+            "path": "",
+            "revision": "4504e593e52286045c62a424d70423350d461d5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3d98feb6ce3ff55735bd8fccae2a19707512d9cd5ac51fd2b1d61fff7e5eee54",
+                "code": "4504e593e52286045c62a424d70423350d461d5b",
+                "maintenance": "1e3ce8d5efd7833fdd0b7852c04f1673a094dbea6e9b6f07abef38c94c353546"
+            }
+        }
+    }
+}

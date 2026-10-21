@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "09a164e44d2b97276a997e43dab8a19b",
+    "identity": "github:1359740626:bundle-wasm",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359740626:bundle-wasm",
+            "repository": "tylina/dsh-tylina",
+            "path": "bundle-wasm",
+            "revision": "5ea98ee4c6315cbc241395ba18e7f97e11e3a972",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "60375ab06090b126858338f339ca510e03d328bc6efcce15612781e9a4e30b1c",
+                "code": "5ea98ee4c6315cbc241395ba18e7f97e11e3a972",
+                "maintenance": "a429fd6e50c1a12375991e3455d115dd5f8b592f430fd109ab0b2b885105ed14"
+            }
+        }
+    }
+}

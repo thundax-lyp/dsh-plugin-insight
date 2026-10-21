@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "641cc70414462082c2214ff3a4cf747b",
+    "identity": "github:1351137851:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351137851:root",
+            "repository": "bigharm/dsh-agentnoodle",
+            "path": "",
+            "revision": "a899a2e7ac4f28ea1d5d442e604f3006a02a88a8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b34f6783af1d6a8fa6e2f91368a274f43924fac42b85149e1dfac8441b1e8444",
+                "code": "a899a2e7ac4f28ea1d5d442e604f3006a02a88a8",
+                "maintenance": "69efe0728967c4cc32d2723788e9332b7dece8f02130731a7f821d072fd01242"
+            }
+        }
+    }
+}

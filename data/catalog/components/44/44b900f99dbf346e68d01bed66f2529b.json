@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "44b900f99dbf346e68d01bed66f2529b",
+    "identity": "github:1335569961:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335569961:root",
+            "repository": "Oyama-Mahiro-F/dsh-env-switcher",
+            "path": "",
+            "revision": "02b0e13511ec2cf09735ec4f1fe77aa2db7349b0",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c058e9e72a0486fd220715700d5af774207e435184fcbbfeeb5c24ebb5940760",
+                "code": "02b0e13511ec2cf09735ec4f1fe77aa2db7349b0",
+                "maintenance": "ebf4d6d01f52c97aa39ba39f39d5561d3f9a501130a2db6bb50d164d6af64646"
+            }
+        }
+    }
+}

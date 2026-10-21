@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "930686887f0bc581913d09f569a5fb91",
+    "identity": "github:1128123594:examples-dsh-memory-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1128123594:examples-dsh-memory-plugin",
+            "repository": "volcengine/OpenViking",
+            "path": "examples/dsh-memory-plugin",
+            "revision": "401c1f7ef1e42388c4326a293081b786db4cc162",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "63f89a9c15b6c3e7c2f4d5b9cd16a2fc2f38c3e741cd7d597c21b58d175e79c4",
+                "code": "401c1f7ef1e42388c4326a293081b786db4cc162",
+                "maintenance": "55d40e85ab24572cddaf5f6575de79e838047c80fa1ed34136897b194469278d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0162e663d979bce0137edddc2a7aeae7",
+    "identity": "github:1340359492:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340359492:root",
+            "repository": "lihang-lh/dsh-task-panel",
+            "path": "",
+            "revision": "7c0c3d8aff808488735b318578221b94cde9ef8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "159dda4332dec62d19ea59f946cada97028e24945538885d507025b399e1486e",
+                "code": "7c0c3d8aff808488735b318578221b94cde9ef8a",
+                "maintenance": "7c24e6f3321a17959649299e90750a09ea41ad41599692399ba7b558d8358eed"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "de5cea2a9d23f0ecb50e4d12578ad687",
+    "identity": "github:1335694365:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335694365:root",
+            "repository": "zhengjy01/dsh-settings-nav-organizer",
+            "path": "",
+            "revision": "b1c379bb7d968ba65ef4eb6420bf0f7efe3efe76",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de8c7bfa9a88c28ced78902c05e6cfdd14da14cf5732b82595c720b8ea0e9a94",
+                "code": "b1c379bb7d968ba65ef4eb6420bf0f7efe3efe76",
+                "maintenance": "9b2405fdfc14f15bad1a4c7d7c3b72c3ab7886dce5cdad9cfa55520f5abc6310"
+            }
+        }
+    }
+}

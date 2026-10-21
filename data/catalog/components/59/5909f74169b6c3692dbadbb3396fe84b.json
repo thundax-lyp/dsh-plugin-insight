@@ -1,0 +1,340 @@
+{
+    "schema_version": 3,
+    "id": "5909f74169b6c3692dbadbb3396fe84b",
+    "identity": "github:1351854118:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1351854118:root",
+            "repository_id": 1351854118,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-dns",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-dns",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "45126a167ab7a474a8d8422c8864e93dcb1b83f7483be825cf1e8f29c63f6eb0",
+                "code": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+                "maintenance": "0b0f23ff158821d8fd8a1a8bba35526f12a5c6cebdc5880db4a82821fd46ef72"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1351854118-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:38:13.331Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1351854118-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-dns/blob/04d6ff1aff856dd22b78c53013a9286efa0ddc35/README.md",
+                    "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+                    "captured_at": "2026-10-20T04:38:13.331Z",
+                    "summary": "比较WSL与Windows的IPv4解析结果，读取nameserver并提供DNS、VPN与网络排查提示。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-dns/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1351854118-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-dns/blob/04d6ff1aff856dd22b78c53013a9286efa0ddc35/index.js",
+                    "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+                    "captured_at": "2026-10-20T04:38:13.331Z",
+                    "summary": "核查 index.js、lib/dns.js、lib/wsl-host.js；lib/dns.js读取resolv.conf，分别调用Node resolve4和Windows GetHostAddresses，去重排序后标记地址集合不一致。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-dns/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只看IPv4，两端DNS走不同接口；CDN和负载均衡也会合法返回不同集合，mismatch不能直接诊断劫持或错误。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "WSL联网异常而Windows正常时，用户需要两端同域名解析证据，以缩小故障范围。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854118-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854118:root",
+                            "area": "code",
+                            "fingerprint": "04d6ff1aff856dd22b78c53013a9286efa0ddc35"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:13.331Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/dns.js读取resolv.conf，分别调用Node resolve4和Windows GetHostAddresses，去重排序后标记地址集合不一致。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854118-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854118:root",
+                            "area": "code",
+                            "fingerprint": "04d6ff1aff856dd22b78c53013a9286efa0ddc35"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:13.331Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只看IPv4，两端DNS走不同接口；CDN和负载均衡也会合法返回不同集合，mismatch不能直接诊断劫持或错误。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854118-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854118:root",
+                            "area": "code",
+                            "fingerprint": "04d6ff1aff856dd22b78c53013a9286efa0ddc35"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:13.331Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.2.0，Node>=18，依赖WSL与PowerShell；默认探测少量开发服务域名，不能代表所有网络正常。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854118-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854118:root",
+                            "area": "code",
+                            "fingerprint": "04d6ff1aff856dd22b78c53013a9286efa0ddc35"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:13.331Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "每个域名需两端解析和PowerShell调用，批量时可能累积延迟；人工确认VPN策略与误报占时间，无实测排障收益。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854118-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854118:root",
+                            "area": "code",
+                            "fingerprint": "04d6ff1aff856dd22b78c53013a9286efa0ddc35"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:13.331Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "只作为差异线索，先用稳定测试域名核对，再结合HTTPS与代理探针；企业分流DNS环境不要仅因不一致改配置。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854118-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854118:root",
+                            "area": "code",
+                            "fingerprint": "04d6ff1aff856dd22b78c53013a9286efa0ddc35"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:13.331Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "同屏比较便于发现单侧解析失败；地址不同只支持差异事实，不支持唯一故障原因。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854118-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854118:root",
+                            "area": "code",
+                            "fingerprint": "04d6ff1aff856dd22b78c53013a9286efa0ddc35"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:13.331Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "结果注释与建议生成是纯函数，错误解析退空数组；失败原因细节丢失，需要原生DNS输出补证。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854118-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854118:root",
+                            "area": "code",
+                            "fingerprint": "04d6ff1aff856dd22b78c53013a9286efa0ddc35"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:38:13.331Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:38:13.331Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "双端联网排障者可用稳定域名试DNS对比，结合VPN和HTTPS复核，不因mismatch直接改DNS。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "Windows正常而WSL失败的差异诊断需求明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "并排解析证据省整理，不增加IPv6或完整网络诊断。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "IPv4集合比较可查，CDN合法差异及退空会限制结论。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "仅解析与跨进程开销，主要负担为策略复核和误报。"
+                    }
+                },
+                "score": 64,
+                "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1351854118-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351854118:root",
+                        "area": "code",
+                        "fingerprint": "04d6ff1aff856dd22b78c53013a9286efa0ddc35"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1351854118:root",
+            "repository": "173787247/dsh-wsl-dns",
+            "path": "",
+            "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+            "fingerprints": {
+                "directory": "45126a167ab7a474a8d8422c8864e93dcb1b83f7483be825cf1e8f29c63f6eb0",
+                "code": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+                "maintenance": "0b0f23ff158821d8fd8a1a8bba35526f12a5c6cebdc5880db4a82821fd46ef72"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "00e49830e69ba622194f92b6cabf68f2ad0029917c472c11abea4d860a04f402"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-dns/META.json",
+        "publication.summaries": {
+            "text": "比较WSL与Windows的IPv4解析结果，读取nameserver并提供DNS、VPN与网络排查提示。",
+            "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+            "source_url": "https://github.com/173787247/dsh-wsl-dns/blob/04d6ff1aff856dd22b78c53013a9286efa0ddc35/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+            "items": {
+                "模型工具": "dns_doctor。"
+            }
+        },
+        "publication.advice": {
+            "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+            "text": "只作为差异线索，先用稳定测试域名核对，再结合HTTPS与代理探针；企业分流DNS环境不要仅因不一致改配置。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-dns",
+        "reports": "# dsh-wsl-dns\n\n> 比较WSL与Windows的IPv4解析结果，读取nameserver并提供DNS、VPN与网络排查提示。\n\n## 固定范围与依据\n\n固定提交 [04d6ff1aff856dd22b78c53013a9286efa0ddc35](https://github.com/173787247/dsh-wsl-dns/blob/04d6ff1aff856dd22b78c53013a9286efa0ddc35/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:38:13.331Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、lib/dns.js、lib/wsl-host.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：WSL联网异常而Windows正常时，用户需要两端同域名解析证据，以缩小故障范围。\n- **亮点**：lib/dns.js读取resolv.conf，分别调用Node resolve4和Windows GetHostAddresses，去重排序后标记地址集合不一致。\n- **思考**：同屏比较便于发现单侧解析失败；地址不同只支持差异事实，不支持唯一故障原因。\n- **建议**：只作为差异线索，先用稳定测试域名核对，再结合HTTPS与代理探针；企业分流DNS环境不要仅因不一致改配置。\n\n## 场景与替代办法\n\nWSL联网异常而Windows正常时，用户需要两端同域名解析证据，以缩小故障范围。\n\n此前未入档；nslookup/Resolve-DnsName等原生命令为对照，本项减少手动整理但未扩展到完整网络诊断。\n\n## 依赖与流程\n\n需要两端解析器和Windows互操作，DNS服务器、VPN、缓存与网络策略决定答案；IPv6-only服务不在当前口径。\n\n选故障域名执行dns_doctor，查看单侧空结果和mismatch，结合网络策略复核；更改DNS后再检查真实目标请求。\n\n## 成本与效果\n\n每个域名需两端解析和PowerShell调用，批量时可能累积延迟；人工确认VPN策略与误报占时间，无实测排障收益。\n\n同屏比较便于发现单侧解析失败；地址不同只支持差异事实，不支持唯一故障原因。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3d575e1abc7f7696b156e36a5f44e46936f4e4147869ace9ef9da5499a212a22。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 95 | — | — | 546 |\n| .js | source | 3 | 261 | 234 | 2 | — |\n| .js | test | 1 | 65 | 59 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：dns_doctor。\n\n## 工程亮点\n\n结果注释与建议生成是纯函数，错误解析退空数组；失败原因细节丢失，需要原生DNS输出补证。\n\n## 分发与兼容\n\n0.2.0，Node>=18，依赖WSL与PowerShell；默认探测少量开发服务域名，不能代表所有网络正常。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；nslookup/Resolve-DnsName等原生命令为对照，本项减少手动整理但未扩展到完整网络诊断。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只看IPv4，两端DNS走不同接口；CDN和负载均衡也会合法返回不同集合，mismatch不能直接诊断劫持或错误。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：在split-DNS、CDN、单侧超时和IPv6-only样本下核对误报，以目标HTTPS恢复作为办结标准而非地址集合相同。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-dns",
+            "repository_id": 1351854118,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-29T15:04:19Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-wsl-dns",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-dns",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-dns",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+                "current_revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1351854118:root",
+            "repository": "173787247/dsh-wsl-dns",
+            "path": "",
+            "revision": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "45126a167ab7a474a8d8422c8864e93dcb1b83f7483be825cf1e8f29c63f6eb0",
+                "code": "04d6ff1aff856dd22b78c53013a9286efa0ddc35",
+                "maintenance": "0b0f23ff158821d8fd8a1a8bba35526f12a5c6cebdc5880db4a82821fd46ef72"
+            }
+        }
+    }
+}

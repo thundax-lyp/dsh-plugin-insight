@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "286d6278a4fdff7f934be7b1c6bed751",
+    "identity": "github:1405676414:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405676414:root",
+            "repository": "VibeDev-Si/dsh-ecosystem",
+            "path": "",
+            "revision": "f22316d165ac6c8efcf33058409a529d13772d73",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9be177833c4afed799216006a64c1f87723b799b85473419c6ef51766c69f840",
+                "code": "f22316d165ac6c8efcf33058409a529d13772d73",
+                "maintenance": "cb1e1f0969c32fb0b44d9e416bf627ba7d43fe2701b7ee4ca6945a2033d34165"
+            }
+        }
+    }
+}

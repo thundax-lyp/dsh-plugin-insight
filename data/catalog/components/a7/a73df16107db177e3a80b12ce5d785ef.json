@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a73df16107db177e3a80b12ce5d785ef",
+    "identity": "github:1409620432:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409620432:root",
+            "repository": "wukiQAQ/dsh-enter-using",
+            "path": "",
+            "revision": "a1a519bab9b4ce307b33376046b79cfae3b835b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0ab3980957647f72ae7edd718d46015cf1772c1b6dc37263af4b27b631bf8c0e",
+                "code": "a1a519bab9b4ce307b33376046b79cfae3b835b3",
+                "maintenance": "5394053cf607c459fc3dbd150349b32742af998a0b1b082f532b5b291381f02a"
+            }
+        }
+    }
+}

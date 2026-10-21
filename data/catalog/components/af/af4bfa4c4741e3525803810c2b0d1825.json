@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "af4bfa4c4741e3525803810c2b0d1825",
+    "identity": "github:1207803853:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1207803853:root",
+            "repository": "SummerSec/AI-Inner-Os",
+            "path": "",
+            "revision": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2a9741867c956307b0cd2b7aa1d158075339067f8604a38d5d6edb9dcd05c15b",
+                "code": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                "maintenance": "3e6dd9f2ce80a878822ccedc8eddb2d76b6baf53c6cdfb1b70dbfe683e1afec8"
+            }
+        }
+    }
+}

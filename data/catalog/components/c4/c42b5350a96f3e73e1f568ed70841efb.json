@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c42b5350a96f3e73e1f568ed70841efb",
+    "identity": "github:1201143178:integrations-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1201143178:integrations-dsh",
+            "repository": "linxuhao/AItelier",
+            "path": "integrations/dsh",
+            "revision": "9e163fa26245bf647337df663611dfb411662e12",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6290a97716cd690c4dccd755e958becb0b542242d994f846e42284655369e09f",
+                "code": "9e163fa26245bf647337df663611dfb411662e12",
+                "maintenance": "09a241039b88450279b7d5b10df4e9dc96e488b57ea569beb8525d92db3919b2"
+            }
+        }
+    }
+}

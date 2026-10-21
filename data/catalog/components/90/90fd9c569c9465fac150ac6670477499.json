@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90fd9c569c9465fac150ac6670477499",
+    "identity": "github:1333851444:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333851444:root",
+            "repository": "WilliamLIiii/DeepSeek-Harness-billing-plugin",
+            "path": "",
+            "revision": "69dce8eb3236ad447c8c446e903d7df7d605dc36",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "064489085a7372296dbd66d17e7b79719af171fd1ba9b2563e267c269ab8b0a5",
+                "code": "69dce8eb3236ad447c8c446e903d7df7d605dc36",
+                "maintenance": "adc2d5587e15b689813f1951d594a3e83b37ab1d8256437f861f40bad98e890d"
+            }
+        }
+    }
+}

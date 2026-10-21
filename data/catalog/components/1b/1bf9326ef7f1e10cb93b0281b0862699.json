@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1bf9326ef7f1e10cb93b0281b0862699",
+    "identity": "github:1421478310:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421478310:root",
+            "repository": "ZZZZZZZ-ZZZZZ/dsh-attachment-library",
+            "path": "",
+            "revision": "bc9305147710d20d3e039cb407bcb5f4572af2f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b1b9f3b651d9efc707639a5ad220d894c76a63f4af8878effe351d1daea9223f",
+                "code": "bc9305147710d20d3e039cb407bcb5f4572af2f3",
+                "maintenance": "8550bb659d7fc1af495c60eee45a64a47e1120bff03b998306d2cfca739c65c4"
+            }
+        }
+    }
+}

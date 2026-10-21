@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff0925466a9c15c8cdd68c04ea14633e",
+    "identity": "github:1334791300:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334791300:root",
+            "repository": "Moresyl/dsh-studio",
+            "path": "",
+            "revision": "b2e6b167cb528716c5cc0b7ef2cea96ddeff251e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aa851be7fc918df4366ce3c4cf35bbefd8473fa9f5e05f2402e38483d6e9ba06",
+                "code": "b2e6b167cb528716c5cc0b7ef2cea96ddeff251e",
+                "maintenance": "00608a99e0f1917203f4c0fecefadcd39112faec474435153b0e47073b4138f8"
+            }
+        }
+    }
+}

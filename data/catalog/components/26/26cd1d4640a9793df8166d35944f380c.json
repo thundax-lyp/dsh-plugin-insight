@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "26cd1d4640a9793df8166d35944f380c",
+    "identity": "github:1334002949:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334002949:root",
+            "repository": "kouyichi/dsh-tui-app",
+            "path": "",
+            "revision": "6ea58773be9528c9b432f98b00b497f120a56916",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "21a0335de4df08396391a34a90264ca9a072c8677b591189795a462002403e50",
+                "code": "6ea58773be9528c9b432f98b00b497f120a56916",
+                "maintenance": "de0da3a0573b7ccf2b7e0991f6355a86329cad1fba691f7eb65f7a1204143c0a"
+            }
+        }
+    }
+}

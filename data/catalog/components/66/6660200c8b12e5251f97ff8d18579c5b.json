@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6660200c8b12e5251f97ff8d18579c5b",
+    "identity": "github:1335555035:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335555035:root",
+            "repository": "mtty-ai/mmx-quota-tool",
+            "path": "",
+            "revision": "98cdac017137117a9396a440a44ab39b9fb37335",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eaaac649f757de50aae87d4299ca475695259af24e76776fb7025d3299d82e11",
+                "code": "98cdac017137117a9396a440a44ab39b9fb37335",
+                "maintenance": "b9e3b64a8192ed6461b1b93e069cc56147830c4fe5f072a35365d373b3591bae"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cdcbbd7ca19d49af8362b725972d5ae0",
+    "identity": "github:1204369117:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1204369117:root",
+            "repository": "tong-io/tongflow",
+            "path": "",
+            "revision": "fce4987200e8ae44db2830e0a2fa2985275d6d36",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "771efd0a2213179300ec00e14c2cf0897a04803764e075a7e70ad7e09b22ef18",
+                "code": "fce4987200e8ae44db2830e0a2fa2985275d6d36",
+                "maintenance": "991257de2c3b2529e9cde4aa0ecfc60391e40adb97c6daf8b3040fd2458bfbb1"
+            }
+        }
+    }
+}

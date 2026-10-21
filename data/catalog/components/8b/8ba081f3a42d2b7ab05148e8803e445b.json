@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8ba081f3a42d2b7ab05148e8803e445b",
+    "identity": "github:1335862537:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335862537:root",
+            "repository": "niiang/dsh-kimino-theme",
+            "path": "",
+            "revision": "11c787a034938cc511c64be9e029a9c5782d28c1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1cf499cbe35809662a1e868bb0474e33d5a4926ff7240d40b97dc80b09517bc3",
+                "code": "11c787a034938cc511c64be9e029a9c5782d28c1",
+                "maintenance": "c54894ad3b0569deba1783f021c5bee11724f445dd647d04ca75cfeab5420815"
+            }
+        }
+    }
+}

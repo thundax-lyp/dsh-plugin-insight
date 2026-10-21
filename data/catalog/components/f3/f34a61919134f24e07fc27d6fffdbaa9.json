@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f34a61919134f24e07fc27d6fffdbaa9",
+    "identity": "github:1373874035:xy-dsh-question-nav",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373874035:xy-dsh-question-nav",
+            "repository": "Xinyuan-Gao/xy-dsh",
+            "path": "xy-dsh-question-nav",
+            "revision": "ab82e6360132fa6a5240b9460c4836a79427c5b2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b91f42459d642d9e650988484606dab833f766fdb51ef1a183c864dfb8b0615f",
+                "code": "ab82e6360132fa6a5240b9460c4836a79427c5b2",
+                "maintenance": "0f94f506ac287254936ddce7139ab95ed04037050eaaaaeb8421aac44829898f"
+            }
+        }
+    }
+}

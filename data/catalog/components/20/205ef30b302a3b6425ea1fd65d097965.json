@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "205ef30b302a3b6425ea1fd65d097965",
+    "identity": "github:1342961132:web-fetch",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342961132:web-fetch",
+            "repository": "CREAIT-nl/dsh-plugins",
+            "path": "web-fetch",
+            "revision": "c6086194b046a24cdd782ddba46961151a1e5388",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2fa99e69390dff9e62f26dd4b35c89dfc5e244a202b7e3ccf86a35ee766ec0b2",
+                "code": "c6086194b046a24cdd782ddba46961151a1e5388",
+                "maintenance": "6968784152db5df6f5f613ff0291cbfd3b086d725430f3e564b9bb01021a5836"
+            }
+        }
+    }
+}

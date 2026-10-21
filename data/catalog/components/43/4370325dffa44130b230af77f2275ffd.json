@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "4370325dffa44130b230af77f2275ffd",
+    "identity": "github:1334197173:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334197173:root",
+            "repository": "zhijun-dai/Solarized-dsh-theme",
+            "path": "",
+            "revision": "a5b4bd74062688f3de805050422e6168091952f8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b5d772a1ecb4c3672270df9439478f65853092240b27fde95a1131866bbf18e2",
+                "code": "a5b4bd74062688f3de805050422e6168091952f8",
+                "maintenance": "4e711a54c35052219c56227da20faf97e65184725722e514e2d8953ecf6ad5b6"
+            }
+        }
+    }
+}

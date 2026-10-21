@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf8274131bfee48c4a23ad730c1b708d",
+    "identity": "github:1334360545:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334360545:root",
+            "repository": "Bernardxu123/dsh-mobile-gate",
+            "path": "",
+            "revision": "06e0ea87101d1330c573cb01acecd67e36764413",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "df127d9f25e2cb1355c4a0c8054c44ba8ac5f1f3ba8ed7434caa23a24e48fc2e",
+                "code": "06e0ea87101d1330c573cb01acecd67e36764413",
+                "maintenance": "2d415d1dfd9c01d344a5be4eae62d995cc0bfbbd8b316bd6fbf3b0f71dba533e"
+            }
+        }
+    }
+}

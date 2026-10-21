@@ -1,0 +1,348 @@
+{
+    "schema_version": 3,
+    "id": "8f16317ad9894aad679d5c0c29fac596",
+    "identity": "github:1343420855:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1343420855:root",
+            "repository_id": 1343420855,
+            "component_id": "root",
+            "repository": "0QwQ0/dsh-ui-auth",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-ui-auth",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "infrastructure",
+            "tags": [
+                "source-inspected",
+                "runtime-unverified"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "7260dce638b495e79b8bf86856e6055e42c8b3424d62003815aab825e8aedcbd",
+                "code": "6c5e87b44be4e973b092910968001916bb97d22e",
+                "release": "fa64a55690411e8a387e54869dd13b38d4b270cf641db52d58af7ec5f809efbb",
+                "maintenance": "a29570cef2ee4395b9b2eded3ffc91c884cf4371729661c4e69b53ad75982040",
+                "compatibility": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1343420855-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:03:54.621Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1343420855-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/README.md",
+                    "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+                    "captured_at": "2026-10-20T03:03:54.621Z",
+                    "summary": "为 DSH Web 提供登录、用户管理和认证网关，并支持 TOTP、Passkey 与会话隔离。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/0qwq0--dsh-ui-auth/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1343420855-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/lib/index.js",
+                    "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+                    "captured_at": "2026-10-20T03:03:54.621Z",
+                    "summary": "核查 lib/index.js、src/client.ts；包装 HTTP 与 upgrade 入口，现代网关按会话处理认证；宿主能力缺失时 fail-closed。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/0qwq0--dsh-ui-auth/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读鉴权入口与客户端，未完成全路由越权、密码学、会话隔离或代理部署安全审计。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要让多个用户访问 DSH Web 的部署者，需要认证入口和数据访问边界。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1343420855-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343420855:root",
+                            "area": "code",
+                            "fingerprint": "6c5e87b44be4e973b092910968001916bb97d22e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:54.621Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "包装 HTTP 与 upgrade 入口，现代网关按会话处理认证；宿主能力缺失时 fail-closed。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1343420855-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343420855:root",
+                            "area": "code",
+                            "fingerprint": "6c5e87b44be4e973b092910968001916bb97d22e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:54.621Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读鉴权入口与客户端，未完成全路由越权、密码学、会话隔离或代理部署安全审计。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1343420855-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343420855:root",
+                            "area": "code",
+                            "fingerprint": "6c5e87b44be4e973b092910968001916bb97d22e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:54.621Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "清单版本 0.7.1，目标为 DSH 0.2.0 系列；作者明确停止 legacy 支持，不应混用旧部署说明。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1343420855-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343420855:root",
+                            "area": "code",
+                            "fingerprint": "6c5e87b44be4e973b092910968001916bb97d22e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:54.621Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "需维护账号、密钥、恢复方式和反向代理配置；省掉自写登录页不代表省掉安全运维。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1343420855-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343420855:root",
+                            "area": "code",
+                            "fingerprint": "6c5e87b44be4e973b092910968001916bb97d22e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:54.621Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1343420855-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343420855:root",
+                            "area": "code",
+                            "fingerprint": "6c5e87b44be4e973b092910968001916bb97d22e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:54.621Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "统一入口与关闭式失败路径是有效机制；全接口安全仍依赖覆盖、宿主升级和反代配置。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1343420855-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343420855:root",
+                            "area": "code",
+                            "fingerprint": "6c5e87b44be4e973b092910968001916bb97d22e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:54.621Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "集中处理 transport 与注销清理可降低散落拦截；打包客户端含第三方代码，不应把其行数算原创。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1343420855-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1343420855:root",
+                            "area": "code",
+                            "fingerprint": "6c5e87b44be4e973b092910968001916bb97d22e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:54.621Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:03:54.621Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "多用户入口治理有潜力，但认证覆盖与隔离属核心缺口，先在隔离环境审查HTTP、WebSocket和反代。",
+                "criteria": {
+                    "scenario": {
+                        "score": 30,
+                        "rationale": "多用户访问的认证和数据隔离是强需求。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "统一transport入口及fail-closed较散落拦截更易治理。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "现代鉴权入口有源码支持，完整越权和会话隔离未审。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "账号密钥恢复与反代配置需要专门安全运维，限0.2.0系列。"
+                    }
+                },
+                "score": 67,
+                "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1343420855-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1343420855:root",
+                        "area": "code",
+                        "fingerprint": "6c5e87b44be4e973b092910968001916bb97d22e"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1343420855:root",
+            "repository": "0QwQ0/dsh-ui-auth",
+            "path": "",
+            "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+            "fingerprints": {
+                "directory": "7260dce638b495e79b8bf86856e6055e42c8b3424d62003815aab825e8aedcbd",
+                "code": "6c5e87b44be4e973b092910968001916bb97d22e",
+                "release": "fa64a55690411e8a387e54869dd13b38d4b270cf641db52d58af7ec5f809efbb",
+                "maintenance": "a29570cef2ee4395b9b2eded3ffc91c884cf4371729661c4e69b53ad75982040",
+                "compatibility": "93d850f58e10b032540c27c2fbefee51b8f0f3eeada3deaf94d4e195db93a79b"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "d5a0f30836e096570ea9129096188b3a8582968e928e14758cd4e0dff0a712da"
+        },
+        "publication.metadata": "data/plugins/0qwq0--dsh-ui-auth/META.json",
+        "publication.summaries": {
+            "text": "为 DSH Web 提供登录、用户管理和认证网关，并支持 TOTP、Passkey 与会话隔离。",
+            "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+            "source_url": "https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+            "items": {
+                "Host 路由": "认证网关及 HTTP/WebSocket 访问裁决。",
+                "界面": "登录与用户管理设置页面。"
+            }
+        },
+        "publication.advice": {
+            "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+            "text": "先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。"
+        },
+        "registry": "data/plugins/0qwq0--dsh-ui-auth",
+        "reports": "# dsh-ui-auth\n\n> 为 DSH Web 提供登录、用户管理和认证网关，并支持 TOTP、Passkey 与会话隔离。\n\n## 固定范围与依据\n\n固定提交 [6c5e87b44be4e973b092910968001916bb97d22e](https://github.com/0QwQ0/dsh-ui-auth/blob/6c5e87b44be4e973b092910968001916bb97d22e/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:03:54.621Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js、src/client.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：需要让多个用户访问 DSH Web 的部署者，需要认证入口和数据访问边界。\n- **亮点**：包装 HTTP 与 upgrade 入口，现代网关按会话处理认证；宿主能力缺失时 fail-closed。\n- **思考**：统一入口与关闭式失败路径是有效机制；全接口安全仍依赖覆盖、宿主升级和反代配置。\n- **建议**：先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。\n\n## 场景与替代办法\n\n需要让多个用户访问 DSH Web 的部署者，需要认证入口和数据访问边界。\n\n反向代理认证是可替代的入口层，但未必有宿主会话隔离；两者要按同一越权用例比较。\n\n## 依赖与流程\n\n需要现代 webServer、connection 契约和持久化认证状态；TOTP、Passkey 还受浏览器与站点条件影响。\n\n初始化管理员后建立普通用户并测试权限；升级前备份认证材料，异常时采用受控恢复流程。\n\n## 成本与效果\n\n需维护账号、密钥、恢复方式和反向代理配置；省掉自写登录页不代表省掉安全运维。\n\n统一入口与关闭式失败路径是有效机制；全接口安全仍依赖覆盖、宿主升级和反代配置。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：899ef6bf9e10d0f20336ae41438de66b117eb4343f7e61d4c6043911fd2bf986。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 14 | 3381 | — | — | 58130 |\n| .js | source | 12 | 9818 | 8996 | 849 | — |\n| .ts | source | 12 | 8122 | 6639 | 1044 | — |\n| .cjs | test | 2 | 288 | 244 | 19 | — |\n| .mjs | test | 35 | 6084 | 4406 | 1302 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：认证网关及 HTTP/WebSocket 访问裁决。\n- **界面**：登录与用户管理设置页面。\n\n## 工程亮点\n\n集中处理 transport 与注销清理可降低散落拦截；打包客户端含第三方代码，不应把其行数算原创。\n\n## 分发与兼容\n\n清单版本 0.7.1，目标为 DSH 0.2.0 系列；作者明确停止 legacy 支持，不应混用旧部署说明。\n\n## 历史对照\n\n前次代码指纹为 6c5e87b44be4e973b092910968001916bb97d22e；本轮固定为 6c5e87b44be4e973b092910968001916bb97d22e。反向代理认证是可替代的入口层，但未必有宿主会话隔离；两者要按同一越权用例比较。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读鉴权入口与客户端，未完成全路由越权、密码学、会话隔离或代理部署安全审计。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用两个用户覆盖未登录 API、未知路径、WebSocket、会话读取与升级失败，确认没有旁路。\n",
+        "metadata": {
+            "repository": "0QwQ0/dsh-ui-auth",
+            "repository_id": 1343420855,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 9,
+            "pushed_at": "2026-10-16T15:32:26Z",
+            "issues": {
+                "open": 0,
+                "closed": 3,
+                "created_30d": 2,
+                "closed_30d": 2,
+                "updated_30d": 2
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-ui-auth",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1594,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-ui-auth",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-07T14:16:36.163Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-ui-auth",
+                    "error": null,
+                    "latest_version": "0.7.1",
+                    "latest_published_at": "2026-10-16T14:46:34.446Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+                "current_revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1343420855:root",
+            "repository": "0QwQ0/dsh-ui-auth",
+            "path": "",
+            "revision": "6c5e87b44be4e973b092910968001916bb97d22e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7260dce638b495e79b8bf86856e6055e42c8b3424d62003815aab825e8aedcbd",
+                "code": "6c5e87b44be4e973b092910968001916bb97d22e",
+                "maintenance": "a29570cef2ee4395b9b2eded3ffc91c884cf4371729661c4e69b53ad75982040"
+            }
+        }
+    }
+}

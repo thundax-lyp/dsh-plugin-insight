@@ -1,0 +1,369 @@
+{
+    "schema_version": 3,
+    "id": "51637e357950b4b9ac93b785ef246bd4",
+    "identity": "github:1333368566:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333368566:root",
+            "repository_id": 1333368566,
+            "component_id": "root",
+            "repository": "030611/dsh-telemetry-redactor",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Telemetry Redactor",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "infrastructure",
+            "tags": [
+                "source-inspected",
+                "runtime-unverified"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "b329d4ab0601baaa2a28b29e5b7e43e037d6e334ea31872a05e6a19fd3d92a3d",
+                "code": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+                "release": "fae03e4c9f4ea1c1eaba164c4dccfd1248b3b97b312675faec3f99cedf38abd7",
+                "maintenance": "7015fa5f0c893e440a45edf89d0bef9b040afb1f89703f3aae0d0094071b9c11",
+                "compatibility": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1333368566-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:03:50.778Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "20261020-research40-github-1333368566-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-20T03:03:50.778Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1333368566-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/README.md",
+                    "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+                    "captured_at": "2026-10-20T03:03:50.778Z",
+                    "summary": "在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/030611--dsh-telemetry-redactor/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1333368566-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/src/index.ts",
+                    "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+                    "captured_at": "2026-10-20T03:03:50.778Z",
+                    "summary": "核查 src/index.ts；session-telemetry/record 前置规则调用 next 后递归生成脱敏记录，不重写规范会话。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/030611--dsh-telemetry-redactor/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "键名与模式匹配不能覆盖未知秘密，遥测脱敏不保护原始日志或其他联网通道。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "向观测后端发送会话遥测的部署者需要减少凭据外传，输入是遥测副本。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333368566-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333368566:root",
+                            "area": "code",
+                            "fingerprint": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:50.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "session-telemetry/record 前置规则调用 next 后递归生成脱敏记录，不重写规范会话。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333368566-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333368566:root",
+                            "area": "code",
+                            "fingerprint": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:50.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "键名与模式匹配不能覆盖未知秘密，遥测脱敏不保护原始日志或其他联网通道。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333368566-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333368566:root",
+                            "area": "code",
+                            "fingerprint": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:50.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "清单版本 0.1.0，依赖 telemetry peer 接口；未比较发布包与固定提交。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333368566-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333368566:root",
+                            "area": "code",
+                            "fingerprint": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:50.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "需要维护规则与例外，误删观测字段会增加排障时间；未测延迟和泄漏率。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333368566-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333368566:root",
+                            "area": "code",
+                            "fingerprint": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:50.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333368566-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333368566:root",
+                            "area": "code",
+                            "fingerprint": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:50.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "在统一出口处理副本有清晰边界；它是遥测防护的一层，不能替代凭据权限和全链路审计。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333368566-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333368566:root",
+                            "area": "code",
+                            "fingerprint": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:50.778Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "瀑布组合和新对象返回便于叠加规则；复用时必须验证 next 顺序及宿主副本契约。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333368566-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333368566:root",
+                            "area": "code",
+                            "fingerprint": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:03:50.778Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:03:50.778Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有遥测出口的部署者可用假密钥试验脱敏，先核对漏删、误删及原始日志保留。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "出站会话遥测中的凭据暴露是明确重复风险。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "宿主语义出口处理副本可补采集网关防护但范围有限。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "递归脱敏瀑布源码已查，未知秘密覆盖及泄漏率未验。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无模型调用且不改原会话，需维护规则例外与保真检查。"
+                    }
+                },
+                "score": 70,
+                "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1333368566-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333368566:root",
+                        "area": "code",
+                        "fingerprint": "811b0b1abf424e57045ab5a5eaa203660ca43908"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333368566:root",
+            "repository": "030611/dsh-telemetry-redactor",
+            "path": "",
+            "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+            "fingerprints": {
+                "directory": "b329d4ab0601baaa2a28b29e5b7e43e037d6e334ea31872a05e6a19fd3d92a3d",
+                "code": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+                "release": "fae03e4c9f4ea1c1eaba164c4dccfd1248b3b97b312675faec3f99cedf38abd7",
+                "maintenance": "7015fa5f0c893e440a45edf89d0bef9b040afb1f89703f3aae0d0094071b9c11",
+                "compatibility": "e622b973b7fcda23d2b3f4546f7d2aa313190b282a80058e1ea212dda5c6a615"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "347ae9412dea30e73d278006e5434a3ddaf842315b1d0eb742c5a32694be0df8"
+        },
+        "publication.metadata": "data/plugins/030611--dsh-telemetry-redactor/META.json",
+        "publication.summaries": {
+            "text": "在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。",
+            "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+            "source_url": "https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+            "items": {
+                "事件监听": "session-telemetry/record 瀑布规则对出站副本做脱敏。"
+            }
+        },
+        "publication.advice": {
+            "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+            "text": "先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。"
+        },
+        "registry": "data/plugins/030611--dsh-telemetry-redactor",
+        "reports": "# DSH Telemetry Redactor\n\n> 在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。\n\n## 固定范围与依据\n\n固定提交 [811b0b1abf424e57045ab5a5eaa203660ca43908](https://github.com/030611/dsh-telemetry-redactor/blob/811b0b1abf424e57045ab5a5eaa203660ca43908/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:03:50.778Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：向观测后端发送会话遥测的部署者需要减少凭据外传，输入是遥测副本。\n- **亮点**：session-telemetry/record 前置规则调用 next 后递归生成脱敏记录，不重写规范会话。\n- **思考**：在统一出口处理副本有清晰边界；它是遥测防护的一层，不能替代凭据权限和全链路审计。\n- **建议**：先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。\n\n## 场景与替代办法\n\n向观测后端发送会话遥测的部署者需要减少凭据外传，输入是遥测副本。\n\n也可在采集网关脱敏；该插件靠近宿主语义，但保护范围比系统级数据治理窄。\n\n## 依赖与流程\n\n需要支持对应 telemetry waterfall 的 DSH，收益取决于真正走该出口的后端。\n\n配置替换文本后观察遥测；漏报新增规则，误报调整例外，再验证原始日志未被改变。\n\n## 成本与效果\n\n需要维护规则与例外，误删观测字段会增加排障时间；未测延迟和泄漏率。\n\n在统一出口处理副本有清晰边界；它是遥测防护的一层，不能替代凭据权限和全链路审计。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6b26ce09934a0e857f9e6c6fdaa11eba21acd81f909d5fdb2da1e59e0eec8a1a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 393 | — | — | 4906 |\n| .mjs | source | 4 | 110 | 102 | 0 | — |\n| .ts | source | 4 | 313 | 273 | 15 | — |\n| .ts | test | 3 | 408 | 363 | 3 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **事件监听**：session-telemetry/record 瀑布规则对出站副本做脱敏。\n\n## 工程亮点\n\n瀑布组合和新对象返回便于叠加规则；复用时必须验证 next 顺序及宿主副本契约。\n\n## 分发与兼容\n\n清单版本 0.1.0，依赖 telemetry peer 接口；未比较发布包与固定提交。\n\n## 历史对照\n\n前次代码指纹为 811b0b1abf424e57045ab5a5eaa203660ca43908；本轮固定为 811b0b1abf424e57045ab5a5eaa203660ca43908。也可在采集网关脱敏；该插件靠近宿主语义，但保护范围比系统级数据治理窄。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：键名与模式匹配不能覆盖未知秘密，遥测脱敏不保护原始日志或其他联网通道。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用合成假秘密和真实字段结构做出站抓取，分别统计漏脱敏、误脱敏及额外延迟。\n",
+        "metadata": {
+            "repository": "030611/dsh-telemetry-redactor",
+            "repository_id": 1333368566,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-08-14T13:06:41Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-telemetry-redactor%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:153ED3:22BF9B:6AD84926 and timestamp 2026-10-21 05:09:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-telemetry-redactor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:155185:22BABE:6AD84926 and timestamp 2026-10-21 05:09:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-telemetry-redactor%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:13EB6D:215B18:6AD84926 and timestamp 2026-10-21 05:09:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-telemetry-redactor",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1182,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-telemetry-redactor",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-14T07:09:07.583Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-telemetry-redactor",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-08-14T07:09:07.871Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+                "current_revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1333368566:root",
+            "repository": "030611/dsh-telemetry-redactor",
+            "path": "",
+            "revision": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b329d4ab0601baaa2a28b29e5b7e43e037d6e334ea31872a05e6a19fd3d92a3d",
+                "code": "811b0b1abf424e57045ab5a5eaa203660ca43908",
+                "maintenance": "7015fa5f0c893e440a45edf89d0bef9b040afb1f89703f3aae0d0094071b9c11"
+            }
+        }
+    }
+}

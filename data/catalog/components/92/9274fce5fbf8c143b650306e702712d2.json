@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9274fce5fbf8c143b650306e702712d2",
+    "identity": "github:1374450645:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374450645:root",
+            "repository": "Helly0000/dsh-life-game",
+            "path": "",
+            "revision": "3461b44cb3daae5b830d2c53c60526a07c2fa6fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "012ad62799b0c58c53a993ff9f850f5675f40ef9ffb98cfdb72dc7ecb0e4ccd5",
+                "code": "3461b44cb3daae5b830d2c53c60526a07c2fa6fd",
+                "maintenance": "dffb46c37180c41595803fbb9efdba8148ab99af5d6eee9bbba504a7bc3c7ebe"
+            }
+        }
+    }
+}

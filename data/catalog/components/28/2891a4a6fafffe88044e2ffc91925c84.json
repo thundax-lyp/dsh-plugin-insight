@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2891a4a6fafffe88044e2ffc91925c84",
+    "identity": "github:1333303761:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333303761:root",
+            "repository": "pingfanfan/hello-dsh",
+            "path": "",
+            "revision": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "61438cd3637c1f938c28ae84a72171b12cbde565652deb58433476d1bc91438f",
+                "code": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                "maintenance": "0113cbb4634a0ab0449065fedd6d90608b8a3c85f49c9aa05ca8cf08393e44ce"
+            }
+        }
+    }
+}

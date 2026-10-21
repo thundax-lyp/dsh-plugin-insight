@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2101ba9d00c88cc9b0b0207deb65a121",
+    "identity": "github:1376440395:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376440395:root",
+            "repository": "Saretheya/dsh-lantern",
+            "path": "",
+            "revision": "d540598640507483960b8c73b8ecfc1400531df0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b5f5206411af698c878e1e9b7e3ba6584211ae520c428f1abec293c9a9694409",
+                "code": "d540598640507483960b8c73b8ecfc1400531df0",
+                "maintenance": "b237f57d3ccb8578475f62ecb6e3f30086dc960be6430bf51e041f564a23f153"
+            }
+        }
+    }
+}

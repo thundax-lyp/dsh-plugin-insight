@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0aa8a3f0c5b40ca255de7f3515132e74",
+    "identity": "github:1372453325:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372453325:root",
+            "repository": "Shr-CS/dsh-wechat-channel",
+            "path": "",
+            "revision": "c56eeb1c502235dcbf650cac4ee37432b29aa308",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3a90f3e56239233f07231aee57b2e079778a65d5ed5cf34f29ab113906148c6a",
+                "code": "c56eeb1c502235dcbf650cac4ee37432b29aa308",
+                "maintenance": "31c05663286bac780a16bc8ae096e048a44ef1088786cc5d2fba3a486a48df19"
+            }
+        }
+    }
+}

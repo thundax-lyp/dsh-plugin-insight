@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "082bcf54e878c73682c5873f030c1b8b",
+    "identity": "github:1422351273:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422351273:root",
+            "repository": "SAXEM1997/dsh-ppt-master-wrapper",
+            "path": "",
+            "revision": "a2836a59bd4c087ceae03ec953c39684da9a71f7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "091076afce2e87a531ea0e436a1e179f73330617d19d7c2b2a6db6ad52acc5fd",
+                "code": "a2836a59bd4c087ceae03ec953c39684da9a71f7",
+                "maintenance": "18b3f8b1b22bb30ec4028224b169d620fccdec4d784a3dbb9d69014b973594ba"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6f6342ea564959d67bcfd8882b723ef0",
+    "identity": "github:1372811938:packages-dsh-notes-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372811938:packages-dsh-notes-plugin",
+            "repository": "PPawnsir/dsh-notes-plugin",
+            "path": "packages/dsh-notes-plugin",
+            "revision": "d06b6b263f124cd158778ee0b48fc8c71955a9b0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e42426888ede31f8541b1dd8c2b5a7bb66f6f4ac4a7cbdd1be784a94d16da0d5",
+                "code": "d06b6b263f124cd158778ee0b48fc8c71955a9b0",
+                "maintenance": "ce0adb851fe8baa2ae60aec3a4080cf087325fc243ee856a5c20d10f72c92ccd"
+            }
+        }
+    }
+}

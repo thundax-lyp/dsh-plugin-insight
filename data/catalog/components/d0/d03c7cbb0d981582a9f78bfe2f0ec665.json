@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d03c7cbb0d981582a9f78bfe2f0ec665",
+    "identity": "github:1335090393:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335090393:root",
+            "repository": "ChuanTianML/dsh-chat-tidy",
+            "path": "",
+            "revision": "b8ea6c2f30555577b4d7ac7fecb8783b96ac03d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6bce991f8307535f445e2205f622aef17ba886159893f6c151cac4cb2e1f6cde",
+                "code": "b8ea6c2f30555577b4d7ac7fecb8783b96ac03d8",
+                "maintenance": "d244b828a9216b25b2ea3c7c04ce271fc1e12ceabbf6f06fd3b8b865fd305ff6"
+            }
+        }
+    }
+}

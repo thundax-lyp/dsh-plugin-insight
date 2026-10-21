@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f5a5a079b5bd6178763c2c90b84e7c0f",
+    "identity": "github:1361167488:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361167488:root",
+            "repository": "techflag/dsh-plugin-ssh",
+            "path": "",
+            "revision": "3ae87385bf379d6c2df82fab1856cabe3553e758",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b4b4b9b8a4131640cf6a2f19db59e58cec82aa1295eccefa8a138801f00f2f6b",
+                "code": "3ae87385bf379d6c2df82fab1856cabe3553e758",
+                "maintenance": "342447fc6748a0d1dbdf0b14761c2f45171e03b89a0d1a9f7c39fc414c7460a4"
+            }
+        }
+    }
+}

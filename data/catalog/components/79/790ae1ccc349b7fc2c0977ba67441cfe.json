@@ -1,0 +1,361 @@
+{
+    "schema_version": 3,
+    "id": "790ae1ccc349b7fc2c0977ba67441cfe",
+    "identity": "github:1351854066:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1351854066:root",
+            "repository_id": 1351854066,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-clock",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-clock",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "678f614c2621f7e27a6a6ac8dca5682f84faedee9e861886d50fc1020286bee0",
+                "code": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+                "maintenance": "a67a2572c27641505532635c181c412a6691bd8de7f7a3a54b9689e485c8a025"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1351854066-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:36:35.649Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1351854066-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-clock/blob/111cc4c013ef17a495c8790fbfa6373d7abbdebc/README.md",
+                    "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+                    "captured_at": "2026-10-20T04:36:35.649Z",
+                    "summary": "比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-clock/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1351854066-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-clock/blob/111cc4c013ef17a495c8790fbfa6373d7abbdebc/index.js",
+                    "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+                    "captured_at": "2026-10-20T04:36:35.649Z",
+                    "summary": "核查 index.js、lib/clock.js、lib/wsl-host.js；lib/clock.js先取WSL Date.now，再通过PowerShell取Windows毫秒时间，计算偏差等级并返回诊断建议。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-clock/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "两次采样非同时，PowerShell启动延迟会计入偏差；结果正常不排除DNS、代理或证书故障，不自动校时。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "笔记本休眠后WSL联网或令牌异常，开发者希望先确认时钟是否明显漂移，验收是找到实际故障原因。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854066-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854066:root",
+                            "area": "code",
+                            "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:35.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/clock.js先取WSL Date.now，再通过PowerShell取Windows毫秒时间，计算偏差等级并返回诊断建议。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854066-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854066:root",
+                            "area": "code",
+                            "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:35.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "两次采样非同时，PowerShell启动延迟会计入偏差；结果正常不排除DNS、代理或证书故障，不自动校时。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854066-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854066:root",
+                            "area": "code",
+                            "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:35.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.2.0，Node>=18，WSL和Windows PowerShell为必要环境；套件兼容声明不是本轮验收。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854066-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854066:root",
+                            "area": "code",
+                            "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:35.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无需外部API，主要是进程启动时间和人工排查；重启WSL等建议会中断任务，应计入恢复成本。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854066-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854066:root",
+                            "area": "code",
+                            "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:35.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先把它当粗粒度线索，临界偏差用系统命令复核；保存工作后再考虑关闭WSL或同步时间。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854066-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854066:root",
+                            "area": "code",
+                            "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:35.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把常见休眠漂移变成具名探针有帮助；单次偏差不能直接解释所有TLS失败。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854066-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854066:root",
+                            "area": "code",
+                            "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:35.649Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "偏差计算与建议生成是可复用纯函数，读取失败单独返回；顺序采样缺少往返延迟校正，精度边界清楚。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351854066-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854066:root",
+                            "area": "code",
+                            "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:35.649Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:36:35.649Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "休眠后联网异常者可试粗粒度时钟线索，临界偏差用原生命令复核，修时前保存任务。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "WSL休眠时间漂移排障场景具体但非普遍故障。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "两端时间合并诊断减少命令拼接。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "顺序采样及阈值可查，启动延迟计入偏差限制精度。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无外部API且不自动改时钟，人工诊断和重启恢复另计。"
+                    }
+                },
+                "score": 56,
+                "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1351854066-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351854066:root",
+                        "area": "code",
+                        "fingerprint": "111cc4c013ef17a495c8790fbfa6373d7abbdebc"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1351854066:root",
+            "repository": "173787247/dsh-wsl-clock",
+            "path": "",
+            "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+            "fingerprints": {
+                "directory": "678f614c2621f7e27a6a6ac8dca5682f84faedee9e861886d50fc1020286bee0",
+                "code": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+                "maintenance": "a67a2572c27641505532635c181c412a6691bd8de7f7a3a54b9689e485c8a025"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "6e1009dca6a9dddd4dde0aafcc8bb2f56b1961fb0da7f8e9cf3f9af8e9fdc263"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-clock/META.json",
+        "publication.summaries": {
+            "text": "比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。",
+            "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+            "source_url": "https://github.com/173787247/dsh-wsl-clock/blob/111cc4c013ef17a495c8790fbfa6373d7abbdebc/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+            "items": {
+                "模型工具": "clock_doctor。"
+            }
+        },
+        "publication.advice": {
+            "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+            "text": "先把它当粗粒度线索，临界偏差用系统命令复核；保存工作后再考虑关闭WSL或同步时间。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-clock",
+        "reports": "# dsh-wsl-clock\n\n> 比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。\n\n## 固定范围与依据\n\n固定提交 [111cc4c013ef17a495c8790fbfa6373d7abbdebc](https://github.com/173787247/dsh-wsl-clock/blob/111cc4c013ef17a495c8790fbfa6373d7abbdebc/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:36:35.649Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、lib/clock.js、lib/wsl-host.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：笔记本休眠后WSL联网或令牌异常，开发者希望先确认时钟是否明显漂移，验收是找到实际故障原因。\n- **亮点**：lib/clock.js先取WSL Date.now，再通过PowerShell取Windows毫秒时间，计算偏差等级并返回诊断建议。\n- **思考**：把常见休眠漂移变成具名探针有帮助；单次偏差不能直接解释所有TLS失败。\n- **建议**：先把它当粗粒度线索，临界偏差用系统命令复核；保存工作后再考虑关闭WSL或同步时间。\n\n## 场景与替代办法\n\n笔记本休眠后WSL联网或令牌异常，开发者希望先确认时钟是否明显漂移，验收是找到实际故障原因。\n\n此前未入档；手工比较date和Windows时间同样可行，本项减少收集与格式化步骤。\n\n## 依赖与流程\n\n依赖WSL识别和Windows时间读取权限，诊断阈值需适应启动延迟；网络故障仍要其他证据。\n\n运行clock_doctor，核对两端UTC与等级，必要时手工验证并修时；修复后重新请求目标服务确认。\n\n## 成本与效果\n\n无需外部API，主要是进程启动时间和人工排查；重启WSL等建议会中断任务，应计入恢复成本。\n\n把常见休眠漂移变成具名探针有帮助；单次偏差不能直接解释所有TLS失败。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：38470592c12ee46549ef06f680260be9232bf521ce15adddce57e92d630a7733。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 94 | — | — | 560 |\n| .js | source | 3 | 198 | 174 | 4 | — |\n| .js | test | 1 | 35 | 31 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：clock_doctor。\n\n## 工程亮点\n\n偏差计算与建议生成是可复用纯函数，读取失败单独返回；顺序采样缺少往返延迟校正，精度边界清楚。\n\n## 分发与兼容\n\n0.2.0，Node>=18，WSL和Windows PowerShell为必要环境；套件兼容声明不是本轮验收。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；手工比较date和Windows时间同样可行，本项减少收集与格式化步骤。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：两次采样非同时，PowerShell启动延迟会计入偏差；结果正常不排除DNS、代理或证书故障，不自动校时。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：在已知偏移和慢PowerShell场景下测量误差，记录阈值误报；以实际TLS请求恢复作为办结条件。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-clock",
+            "repository_id": 1351854066,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-29T15:03:46Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clock%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:14BE3B:224461:6AD8495E and timestamp 2026-10-21 05:10:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clock%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:154A7B:22D35F:6AD8495E and timestamp 2026-10-21 05:10:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clock%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:24715:144041:21B6F7:6AD8495E and timestamp 2026-10-21 05:10:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clock%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:1FA705:13D69A:21532D:6AD8495E and timestamp 2026-10-21 05:10:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-clock%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:10742:14050A:2186EC:6AD8495E and timestamp 2026-10-21 05:10:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-wsl-clock",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-clock",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-clock",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+                "current_revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1351854066:root",
+            "repository": "173787247/dsh-wsl-clock",
+            "path": "",
+            "revision": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "678f614c2621f7e27a6a6ac8dca5682f84faedee9e861886d50fc1020286bee0",
+                "code": "111cc4c013ef17a495c8790fbfa6373d7abbdebc",
+                "maintenance": "a67a2572c27641505532635c181c412a6691bd8de7f7a3a54b9689e485c8a025"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9ab76bcca890dc4f6339f3d489c7f305",
+    "identity": "github:1333842753:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333842753:root",
+            "repository": "sorsama/deepseek-harness-mobile",
+            "path": "",
+            "revision": "bca37177b68e81806adb2dec6f3ef8ae9918e35c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "eb1762c07d8350866e7b02f1b8495d2227c98bc0ee1e1e623f3baf2f5e7a4e83",
+                "code": "bca37177b68e81806adb2dec6f3ef8ae9918e35c",
+                "maintenance": "55d1e4a4599ca893b17a96e024bae40e9ec1687816b61e6ee658ec9c6bc333ad"
+            }
+        }
+    }
+}

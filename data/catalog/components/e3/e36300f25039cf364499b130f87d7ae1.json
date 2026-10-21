@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e36300f25039cf364499b130f87d7ae1",
+    "identity": "github:1348064612:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348064612:root",
+            "repository": "lyuwen/dsh-thinking-summary",
+            "path": "",
+            "revision": "5fb6709a6b746db8fee41a1bca790fb6e4d6a6d9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0e92cac4729fa20f7b1e580947617faba0cd0879fce5900bb28561d480354193",
+                "code": "5fb6709a6b746db8fee41a1bca790fb6e4d6a6d9",
+                "maintenance": "1f0cf057d5d15c1ca4b1b6b06f57c9a68098cce95b86ebade71d28ca12fe50ec"
+            }
+        }
+    }
+}

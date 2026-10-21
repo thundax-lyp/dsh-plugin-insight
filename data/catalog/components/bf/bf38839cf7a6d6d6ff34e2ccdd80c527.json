@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf38839cf7a6d6d6ff34e2ccdd80c527",
+    "identity": "github:1408584005:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408584005:root",
+            "repository": "caimc21069065-prog/dsh-my-music",
+            "path": "",
+            "revision": "0c20c3c4ebf4d67971adb438f0b7b22d0bdf9b67",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4b79fabd7b33b45aa785c63e9b3d29e39c911b2c110e77e5b1235a52d499b8b0",
+                "code": "0c20c3c4ebf4d67971adb438f0b7b22d0bdf9b67",
+                "maintenance": "1b4fdfe84312897cc44b59a14649d24b30d78316a23908937853ecb3c91d8cc2"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf173e3e373950732f940205a22d68e9",
+    "identity": "github:1356982920:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356982920:root",
+            "repository": "GooDAnDReaDY/dsh-cron",
+            "path": "",
+            "revision": "942f15f5e1d04e9eb451305fc2269773ee19cc07",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fd51c467d5fbe6cafbed2a845fbb55bea344b6ade88059c8c43c0b66dcba43a6",
+                "code": "942f15f5e1d04e9eb451305fc2269773ee19cc07",
+                "maintenance": "d51550c12882395e692c8dfb7ac5d6f01c21f352909c556c9a5e8c02f500b170"
+            }
+        }
+    }
+}

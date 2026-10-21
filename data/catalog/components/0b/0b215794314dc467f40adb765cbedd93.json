@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0b215794314dc467f40adb765cbedd93",
+    "identity": "github:1340388282:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340388282:root",
+            "repository": "JohnXu22786/market-watch",
+            "path": "",
+            "revision": "9f5bccbe8e49f8279e526c84b0b21f021d7ff31c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4520d3407ba562aad849ee3bff1eeab1964cf6bd7b06dc28517353a020eec6b3",
+                "code": "9f5bccbe8e49f8279e526c84b0b21f021d7ff31c",
+                "maintenance": "9d3482e9e55a90fde2d472b9c77ad762d895ad12e49579fd3a3cebd041856d1b"
+            }
+        }
+    }
+}

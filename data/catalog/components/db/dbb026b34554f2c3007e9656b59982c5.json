@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dbb026b34554f2c3007e9656b59982c5",
+    "identity": "github:1346852281:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346852281:root",
+            "repository": "bamboostrip/dsh-llm-capabilities",
+            "path": "",
+            "revision": "537efa64f0794c0221bdb1d9ffdad7bdb194d1b2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bca2d89da6e067bac3ff767843bc748797674482d2cae7c81a2d5dab3ed55a1c",
+                "code": "537efa64f0794c0221bdb1d9ffdad7bdb194d1b2",
+                "maintenance": "91c2bd051d8c2468ea29583fad839494ee8cc4089f4195e97d1f8cb849cf3613"
+            }
+        }
+    }
+}

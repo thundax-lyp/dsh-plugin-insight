@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "03719309ea83b63add44665d22e9cfff",
+    "identity": "github:1420017952:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420017952:root",
+            "repository": "Phoeky/dsh-refresh-plugin",
+            "path": "",
+            "revision": "f97cb977b83d1979f063b997db688f5301c8fcf6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b3be29eb25beffb31cf30563820ce4adf8ade2d2a5112806fbe900cab9ffd0b0",
+                "code": "f97cb977b83d1979f063b997db688f5301c8fcf6",
+                "maintenance": "03776747ac044d2bb12a87db48bd434504a66bccb3f5d73c89adb1fe86c87b99"
+            }
+        }
+    }
+}

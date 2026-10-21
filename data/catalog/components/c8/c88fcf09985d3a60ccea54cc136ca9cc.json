@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c88fcf09985d3a60ccea54cc136ca9cc",
+    "identity": "github:1334587853:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334587853:root",
+            "repository": "STARDUSTLC666/dsh-docker",
+            "path": "",
+            "revision": "6d88bb114db01d5238a8a1187fdf9a5d1ff786c8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f0c4cf483e6d6132a1a36a4ea2e638e1f4f2c4e411d217f34476eeca5094e92c",
+                "code": "6d88bb114db01d5238a8a1187fdf9a5d1ff786c8",
+                "maintenance": "10ac625af450711990eac1c5c6c6b40373a0bfb4537ca723980ce67837721e60"
+            }
+        }
+    }
+}

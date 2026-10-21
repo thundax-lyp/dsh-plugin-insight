@@ -1,0 +1,366 @@
+{
+    "schema_version": 3,
+    "id": "758d4a81f827fa308801bb6f6586a215",
+    "identity": "github:1423215373:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1423215373:root",
+            "repository_id": 1423215373,
+            "component_id": "root",
+            "repository": "11111353535/dsh-reaper",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-reaper",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "software-delivery",
+            "tags": [
+                "进程回收",
+                "端口",
+                "安全预览"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "ca766f8acaafdc158b3b986039dc5580e78188d8f622141b6ff9832eca35f268",
+                "code": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                "maintenance": "d343690021d555311d6b233312b01322250284f834d1c0fb52d5903139231749"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1423215373-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:13:08.878Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1423215373-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/README.md",
+                    "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                    "captured_at": "2026-10-20T03:13:08.878Z",
+                    "summary": "盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-reaper/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1423215373-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js",
+                    "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                    "captured_at": "2026-10-20T03:13:08.878Z",
+                    "summary": "核查 lib/index.js、lib/kill.js；按宿主祖先链、工作区和保护规则评级，默认返回计划，confirm:true 才执行，发信号前再次检查保护。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-reaper/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "未验证 PID 复用、系统枚举与跨平台归属准确率；confirm 参数不等同于总会弹出人工审批。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "智能体遗留开发服务占用端口时，开发者需要区分可清理进程与宿主及系统服务。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "按宿主祖先链、工作区和保护规则评级，默认返回计划，confirm:true 才执行，发信号前再次检查保护。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "归属和不可覆盖的保护规则比裸 kill 端口更有约束，但启发式归属仍不是授权证明。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "减少人工找进程的潜在收益需与误判、终止恢复和跨平台维护成本一起评估。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "深度优先终止子进程、结束后确认端口释放可借鉴；预览与真实执行之间仍有时间差。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "未验证 PID 复用、系统枚举与跨平台归属准确率；confirm 参数不等同于总会弹出人工审批。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "版本 0.1.0，需要系统进程与端口枚举能力，权限和工具可用性影响结果。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:13:08.878Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "端口排障者可只试扫描预览，对照系统工具确认归属，终止仅限可丢弃开发进程。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "遗留开发服务占端口的清理任务具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "祖先链、工作区保护和执行前复查胜过裸kill。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "计划确认与保护路径可查，PID复用及归属准确率未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "系统权限和平台枚举需维护，误终止恢复成本不能忽略。"
+                    }
+                },
+                "score": 65,
+                "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1423215373-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1423215373:root",
+                        "area": "code",
+                        "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1423215373:root",
+            "repository": "11111353535/dsh-reaper",
+            "path": "",
+            "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+            "fingerprints": {
+                "directory": "ca766f8acaafdc158b3b986039dc5580e78188d8f622141b6ff9832eca35f268",
+                "code": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                "maintenance": "d343690021d555311d6b233312b01322250284f834d1c0fb52d5903139231749"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "694146a2938d987de54fe704b13cc49ecdd7eb937e45e72644ba840c5259a06d"
+        },
+        "publication.metadata": "data/plugins/11111353535--dsh-reaper/META.json",
+        "publication.summaries": {
+            "text": "盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。",
+            "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+            "source_url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+            "items": {
+                "模型工具": "端口扫描与可确认的进程清理。",
+                "用户命令": "/reap 查看进程归属。"
+            }
+        },
+        "publication.advice": {
+            "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+            "text": "先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。"
+        },
+        "registry": "data/plugins/11111353535--dsh-reaper",
+        "reports": "# dsh-reaper\n\n> 盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。\n\n## 固定范围与依据\n\n固定提交 [b0412244e623d54fbf0bded66cba5203de8c85c4](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:13:08.878Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js、lib/kill.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：智能体遗留开发服务占用端口时，开发者需要区分可清理进程与宿主及系统服务。\n- **亮点**：按宿主祖先链、工作区和保护规则评级，默认返回计划，confirm:true 才执行，发信号前再次检查保护。\n- **思考**：归属和不可覆盖的保护规则比裸 kill 端口更有约束，但启发式归属仍不是授权证明。\n- **建议**：先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。\n\n## 场景与替代办法\n\n智能体遗留开发服务占用端口时，开发者需要区分可清理进程与宿主及系统服务。\n\n系统端口与进程工具透明但需手工关联；高风险环境宜保留人工判断。\n\n## 依赖与流程\n\n需要本机系统命令、进程权限及正确工作区；容器和远程映射会改变观察范围。\n\n扫描、核对计划、显式确认后清理，再核查释放结果；误归属时保护并重新确认。\n\n## 成本与效果\n\n减少人工找进程的潜在收益需与误判、终止恢复和跨平台维护成本一起评估。\n\n归属和不可覆盖的保护规则比裸 kill 端口更有约束，但启发式归属仍不是授权证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7bd33fe6818e62474866b7fbe1eab28b166b0a311ae8b9993d73af7c668a74a3。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 6 | 1944 | 1203 | 605 | — |\n| .md | source | 2 | 336 | — | — | 2870 |\n| .mjs | source | 1 | 77 | 42 | 26 | — |\n| .mjs | test | 3 | 690 | 540 | 74 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：端口扫描与可确认的进程清理。\n- **用户命令**：/reap 查看进程归属。\n\n## 工程亮点\n\n深度优先终止子进程、结束后确认端口释放可借鉴；预览与真实执行之间仍有时间差。\n\n## 分发与兼容\n\n版本 0.1.0，需要系统进程与端口枚举能力，权限和工具可用性影响结果。\n\n## 历史对照\n\n前次代码指纹为 b0412244e623d54fbf0bded66cba5203de8c85c4；本轮固定为 b0412244e623d54fbf0bded66cba5203de8c85c4。系统端口与进程工具透明但需手工关联；高风险环境宜保留人工判断。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未验证 PID 复用、系统枚举与跨平台归属准确率；confirm 参数不等同于总会弹出人工审批。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：在测试进程树中覆盖宿主保护、同名服务、PID 变化、拒绝权限和 TERM 后仍存活。\n",
+        "metadata": {
+            "repository": "11111353535/dsh-reaper",
+            "repository_id": 1423215373,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-17T11:00:28Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:10742:13F5DE:216B07:6AD84909 and timestamp 2026-10-21 05:09:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:14C680:2247D7:6AD84909 and timestamp 2026-10-21 05:09:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:1E49B1:1446EB:21ACEF:6AD84909 and timestamp 2026-10-21 05:09:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:149E73:220C52:6AD8490A and timestamp 2026-10-21 05:09:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:145C3C:21E080:6AD8490A and timestamp 2026-10-21 05:09:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-reaper",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-reaper",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-reaper",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                "current_revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1423215373:root",
+            "repository": "11111353535/dsh-reaper",
+            "path": "",
+            "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ca766f8acaafdc158b3b986039dc5580e78188d8f622141b6ff9832eca35f268",
+                "code": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                "maintenance": "d343690021d555311d6b233312b01322250284f834d1c0fb52d5903139231749"
+            }
+        }
+    }
+}

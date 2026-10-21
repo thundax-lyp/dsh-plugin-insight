@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a328062e0223698f395e78fa51e471b2",
+    "identity": "github:1399187623:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399187623:root",
+            "repository": "Lostforest7/dsh-revise",
+            "path": "",
+            "revision": "dc5f0608c33794b98d9d2db494cab5b158d10fa3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bd67fb141c5d4c681423867923c9bc37b88fd59eb52204cfac29434d18ee76b0",
+                "code": "dc5f0608c33794b98d9d2db494cab5b158d10fa3",
+                "maintenance": "966b710f237341c21b3b919ade957b56f18413447ec6d7f9fa59dda5bcc71959"
+            }
+        }
+    }
+}

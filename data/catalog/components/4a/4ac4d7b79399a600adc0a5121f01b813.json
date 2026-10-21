@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ac4d7b79399a600adc0a5121f01b813",
+    "identity": "github:1390165975:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1390165975:root",
+            "repository": "hanbernate/dsh-save-button",
+            "path": "",
+            "revision": "82041681491e387e2f05e9cfa8b6d2f365646bbb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24aba57a6a68e379f7c355700333328520ac8f9c0844b218dc870d94868dbc34",
+                "code": "82041681491e387e2f05e9cfa8b6d2f365646bbb",
+                "maintenance": "5a28cfedc2bc4d8a2094d3682199f0afb8a676e253327ca4d977e21216d75b09"
+            }
+        }
+    }
+}

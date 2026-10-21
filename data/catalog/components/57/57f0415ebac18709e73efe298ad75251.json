@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "57f0415ebac18709e73efe298ad75251",
+    "identity": "github:1379778120:dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379778120:dsh-plugin",
+            "repository": "RockingSisyphus/dsh-focus-supervisor",
+            "path": "dsh-plugin",
+            "revision": "3bbbe2c68b9d476e115e66fcf9f1c569a0c2e087",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c3092980a2b95adaa5ac78ee40df9a21d3aa549d7169464b94293ef80731e898",
+                "code": "3bbbe2c68b9d476e115e66fcf9f1c569a0c2e087",
+                "maintenance": "fea85f14e6446d35c8086496b7582da78e18adc12c84a1a1929b6d02232dce9d"
+            }
+        }
+    }
+}

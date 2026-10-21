@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "13e5f78f852d8bd6a256b26240cf1106",
+    "identity": "github:1335011656:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335011656:root",
+            "repository": "Physicolor/dsh-ui-harmonizer",
+            "path": "",
+            "revision": "99ab31aa8809c08d887ece531382ee33bc063cbc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "86f40a01252c8a8d3cbe3d3e97db201d55c745d1b878507358490de1b5de4ade",
+                "code": "99ab31aa8809c08d887ece531382ee33bc063cbc",
+                "maintenance": "ea9282bd6937b4888b593893e0358d92e6f9ce4d55ae3e61beac89ed0c05024a"
+            }
+        }
+    }
+}

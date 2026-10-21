@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "77e74b1f58a2e2e5ab1fa63f632cc07f",
+    "identity": "github:1393297122:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1393297122:root",
+            "repository": "lildanger/dsh-skin-win2000",
+            "path": "",
+            "revision": "908ff7d80554721d40e15ef30c7c378e054db551",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "21ed42bacbe5c7d1e3680fe04c3be233d160dcfc4656a908ca0e5b061208b23e",
+                "code": "908ff7d80554721d40e15ef30c7c378e054db551",
+                "maintenance": "6f479ec3c00c6870f570bbab0dce7d59ee70cc68e56f2aa36b085c9295b27e29"
+            }
+        }
+    }
+}

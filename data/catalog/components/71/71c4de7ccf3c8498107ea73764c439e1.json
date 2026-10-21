@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "71c4de7ccf3c8498107ea73764c439e1",
+    "identity": "github:1344630699:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344630699:root",
+            "repository": "CLASSLU/dsh-telegram-bridge",
+            "path": "",
+            "revision": "2adaaafe173064074f835bfa0af8ab9bc08d670f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9b518fea4cdc9b955183bb857e353c64a8c3ded713cb3ef3424cd5242abf1584",
+                "code": "2adaaafe173064074f835bfa0af8ab9bc08d670f",
+                "maintenance": "980506192c4873698864e568c1df4df82cab50b49c454d7f941db93d24385499"
+            }
+        }
+    }
+}

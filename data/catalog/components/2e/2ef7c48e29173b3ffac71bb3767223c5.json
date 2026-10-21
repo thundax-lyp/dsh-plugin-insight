@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2ef7c48e29173b3ffac71bb3767223c5",
+    "identity": "github:1350430116:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350430116:root",
+            "repository": "lsqace-del/dsh-progress",
+            "path": "",
+            "revision": "46921541f8de72647e1d953fda7242ec93bfbd00",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b36e78047b9e29f113d0f44b67b52ef6b5f25a37fba41706f3c2b12468cd750e",
+                "code": "46921541f8de72647e1d953fda7242ec93bfbd00",
+                "maintenance": "302977e6310e63274ea442566e0e0040adab2ec1e45221f33651ee5c8f1fcad6"
+            }
+        }
+    }
+}

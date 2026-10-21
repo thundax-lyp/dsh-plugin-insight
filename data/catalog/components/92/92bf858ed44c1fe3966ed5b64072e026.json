@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "92bf858ed44c1fe3966ed5b64072e026",
+    "identity": "github:1344469129:packages-dsh-desktop-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344469129:packages-dsh-desktop-plugin",
+            "repository": "FuqiangCraft/dsh-desktop",
+            "path": "packages/dsh-desktop-plugin",
+            "revision": "8a807c1b09134e3c232f4991ab8c9a6f615f0b3f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "256e58625e660b0777ce428d58602871d93b5077861eb339d7040af28889879b",
+                "code": "8a807c1b09134e3c232f4991ab8c9a6f615f0b3f",
+                "maintenance": "0064cedb2b0f43fccc5361222b958d2d3517449761775e43d879afdfe6bfc3ee"
+            }
+        }
+    }
+}

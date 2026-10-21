@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "00ecb21e58835870e5eb96c103978f2e",
+    "identity": "github:1406785061:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406785061:root",
+            "repository": "xxszyh/dsh-gui-handoff",
+            "path": "",
+            "revision": "8713543795a619012679b75e815bc044ebd73df2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6dd21505d3ea1e11142a2512ff545771d73d3383b241ebb3424a9ad71b5f8ee7",
+                "code": "8713543795a619012679b75e815bc044ebd73df2",
+                "maintenance": "8b46f320238f1f3dfd91103a36a046cef64c08fcbc53bbf355cab376137d28fe"
+            }
+        }
+    }
+}

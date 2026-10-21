@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7f309665d984c39bace22be6bfa02f7",
+    "identity": "github:1333125623:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333125623:root",
+            "repository": "LaplaceYoung/oh-my-dsh",
+            "path": "",
+            "revision": "37b66715ce55f1ad7669f12d73c7a56763e90eeb",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2a4ff6709750e91a67e8baaae0174c4a9cec5d8efca0524e97029f6601f16a56",
+                "code": "37b66715ce55f1ad7669f12d73c7a56763e90eeb",
+                "maintenance": "d07e939cc65daa4ba530206e129924e2edd2b5de8bedb2fc74114796d8e91d10"
+            }
+        }
+    }
+}

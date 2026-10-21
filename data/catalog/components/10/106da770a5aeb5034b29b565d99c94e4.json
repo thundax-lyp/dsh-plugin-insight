@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "106da770a5aeb5034b29b565d99c94e4",
+    "identity": "github:1393972603:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1393972603:root",
+            "repository": "syyr1987/dsh-linghun-assembler",
+            "path": "",
+            "revision": "5c69ce4d64872654739aa7ac57c474f90a569ef2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0fe700036112c1ee726f898a72939e697bc8f07643f870b989b2001535fd515d",
+                "code": "5c69ce4d64872654739aa7ac57c474f90a569ef2",
+                "maintenance": "6dd5aa5e09ba56064b603736e17d33020ece57caac527ae13b873d1118d250d8"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e89a6af82e3f20b9299f976a26e1ca6f",
+    "identity": "github:1333686575:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333686575:root",
+            "repository": "He2way/dsh-task-console",
+            "path": "",
+            "revision": "5157e3703f674902af3042d34bc8af9e39e2f085",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "50caa241c86d2579e99e7c12462148c99a38c335df6ac688d01eca09034fb058",
+                "code": "5157e3703f674902af3042d34bc8af9e39e2f085",
+                "maintenance": "348cc7a3c3465f2a2c43b5dc6ec1161606648cba0d450cfb7abb7417c7caf2e0"
+            }
+        }
+    }
+}

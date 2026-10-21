@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7364e09a8f4df3ee6ca09a86145ba401",
+    "identity": "github:1422935219:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422935219:root",
+            "repository": "appthin/dsh-rea-agents",
+            "path": "",
+            "revision": "5956dc953840063189713689ece0fe4bf9a476d6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1158945a86946cc6894852928b3cc590a5cc0006b18dbd882cbea006f291a3b7",
+                "code": "5956dc953840063189713689ece0fe4bf9a476d6",
+                "maintenance": "00587dff4a00088d026f415d09a06d07a9b8b52dfec17c1f55e9ddbed8edc904"
+            }
+        }
+    }
+}

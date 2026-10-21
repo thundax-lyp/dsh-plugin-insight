@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b96a83d62816aeb053e5882cb5718176",
+    "identity": "github:1333787962:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333787962:root",
+            "repository": "flymysql/dsh-remote",
+            "path": "",
+            "revision": "16a0b6a286853a6a3b5bdd18bf7050f1beaf7abc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7c8471f40207942bee1366e1e293c77c6f859f029ebf4d18067ff26ef2e59205",
+                "code": "16a0b6a286853a6a3b5bdd18bf7050f1beaf7abc",
+                "maintenance": "8802e7d5c5cdcf9f198aff6d7e2d1b9ab4616be0f0c8b0f57ef9b9224bccc516"
+            }
+        }
+    }
+}

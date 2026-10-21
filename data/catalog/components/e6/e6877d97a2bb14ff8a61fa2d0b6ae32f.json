@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6877d97a2bb14ff8a61fa2d0b6ae32f",
+    "identity": "github:1410197708:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410197708:root",
+            "repository": "Jackbessaliuz/dsh-memory-semantic",
+            "path": "",
+            "revision": "64a76647f5f081a420a5db82155403eff692d14a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c4c9be1cfbe3aef1f7bb2b9f8c29634693965084823cdf5c9ff98193f2a6ed6b",
+                "code": "64a76647f5f081a420a5db82155403eff692d14a",
+                "maintenance": "b0de892d8a0c6e2a5108f7f1abf033ef3dfabb6451dfd1293f5f38642008d66c"
+            }
+        }
+    }
+}

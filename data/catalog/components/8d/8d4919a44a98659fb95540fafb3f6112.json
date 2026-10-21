@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8d4919a44a98659fb95540fafb3f6112",
+    "identity": "github:1334866349:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334866349:root",
+            "repository": "Max-Null/dsh-memory",
+            "path": "",
+            "revision": "a7a9474f2ffadd98e5b77426702608fa62dd2e35",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b70ef41c52057f68aa11473f09ddc967a4a092ebcd403f4c04a1f2df0c75b07e",
+                "code": "a7a9474f2ffadd98e5b77426702608fa62dd2e35",
+                "maintenance": "2026713b9c6657a08626f4518b44d4e595f5e78270bb83e509bf3be504196310"
+            }
+        }
+    }
+}

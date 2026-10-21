@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e710ecfd41b666918d458a834e2d28f",
+    "identity": "github:1338355594:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338355594:root",
+            "repository": "Renji004/dsh-omni-vision",
+            "path": "",
+            "revision": "661ac80f70c9784580b7ce2edb75edb9db170f1f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3dc31395b4163901e49c978ac09a9f5c965c6db7d4a5e9de7e788e5da95ba956",
+                "code": "661ac80f70c9784580b7ce2edb75edb9db170f1f",
+                "maintenance": "f0131a80f6891dfa7da939ef8258d391e44ab5d2dbb652ffe6abd4b18a536fb2"
+            }
+        }
+    }
+}

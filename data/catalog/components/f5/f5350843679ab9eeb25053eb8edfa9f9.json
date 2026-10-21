@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f5350843679ab9eeb25053eb8edfa9f9",
+    "identity": "github:1336940095:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336940095:root",
+            "repository": "maddogfinance/dsh-trading",
+            "path": "",
+            "revision": "f26dbca15beef1a0e139a5c7db5155d3734cfb7c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "226f7467b7525987d257d3021c67d4980a8035f409c531e124bfff029a56968c",
+                "code": "f26dbca15beef1a0e139a5c7db5155d3734cfb7c",
+                "maintenance": "c075c9e2e126d5bcda33a2968c8516ecd42d078b34737f96830202d93b3ef4d1"
+            }
+        }
+    }
+}

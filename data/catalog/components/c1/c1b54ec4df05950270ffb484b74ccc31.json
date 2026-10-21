@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c1b54ec4df05950270ffb484b74ccc31",
+    "identity": "github:1364220096:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364220096:root",
+            "repository": "StevenZha0/dsh-vae-theme",
+            "path": "",
+            "revision": "aba8af9d8965328477cf17615700cc4d1d4fde9b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb6f2b5711821392626145fd6e32e12ec607c1a020f845ed67ed49f562b7ecc7",
+                "code": "aba8af9d8965328477cf17615700cc4d1d4fde9b",
+                "maintenance": "a0d8c9073e2279534d6311a769773e447d44dbef5f954f5a5042a9125e99767c"
+            }
+        }
+    }
+}

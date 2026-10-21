@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d0af3e8b8ce72adcf651e264a2f5c811",
+    "identity": "github:1296647613:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1296647613:root",
+            "repository": "Alisa0808/vox-director",
+            "path": "",
+            "revision": "6a85a7c341610442a6a5b1885e6e0217ab82a11f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b1286532e137b563642dd0d089bd32314df608a69421197499db7f2e323b43a0",
+                "code": "6a85a7c341610442a6a5b1885e6e0217ab82a11f",
+                "maintenance": "4b1f43c76c0083ac7b5d33cce1b1903877abedff9729b71c08989dcfa5833620"
+            }
+        }
+    }
+}

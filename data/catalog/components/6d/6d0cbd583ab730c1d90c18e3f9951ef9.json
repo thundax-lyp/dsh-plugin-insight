@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6d0cbd583ab730c1d90c18e3f9951ef9",
+    "identity": "github:1207705027:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1207705027:root",
+            "repository": "SummerSec/SumSec-Skills",
+            "path": "",
+            "revision": "0d2008079a873fcfba5b8a674f0d3d4850740bf9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4723e63b768c036071e4ec3af8a5094907ec99df6abb7254380ceac6fe13ee84",
+                "code": "0d2008079a873fcfba5b8a674f0d3d4850740bf9",
+                "maintenance": "fd2436c24fd00d103e51cc2a33c26422f5ba8e0137a2c78fcf2dca1efb488cb2"
+            }
+        }
+    }
+}

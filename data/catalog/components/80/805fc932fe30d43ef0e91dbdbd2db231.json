@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "805fc932fe30d43ef0e91dbdbd2db231",
+    "identity": "github:1345742254:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345742254:root",
+            "repository": "wangyuanchuan2022/dsh-mobile-ux",
+            "path": "",
+            "revision": "63d2c71dd7c7962119b7ed2f0389bbda74e745fc",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "efd0cc68eea0c7149955e06f6eba409f6168b58f834dcdf2d3a128e31a179a1d",
+                "code": "63d2c71dd7c7962119b7ed2f0389bbda74e745fc",
+                "maintenance": "48eb58fc704dc67b00ac9691fef2d2005c54470482042f6b816889d05022c475"
+            }
+        }
+    }
+}

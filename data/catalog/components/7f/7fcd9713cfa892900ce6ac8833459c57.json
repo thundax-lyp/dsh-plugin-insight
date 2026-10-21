@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7fcd9713cfa892900ce6ac8833459c57",
+    "identity": "github:1376703793:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376703793:root",
+            "repository": "nanami-0713/dsh-jev-decide",
+            "path": "",
+            "revision": "9971c65d098087a745e536589862e05d44b1a177",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a951951f7a274e9381839f8437186402b67b9c8a5ef3f4f41c07354c92525d8",
+                "code": "9971c65d098087a745e536589862e05d44b1a177",
+                "maintenance": "4bf9cd829dc6a942d66ab9a72f26105252608315ef9b704e9e5dd409b2223f43"
+            }
+        }
+    }
+}

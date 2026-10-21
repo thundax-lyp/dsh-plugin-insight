@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "109de807189e0cd5ccf77e1e90e735f8",
+    "identity": "github:1374075274:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374075274:root",
+            "repository": "peng456/dsh-plugin-mesh",
+            "path": "",
+            "revision": "90e49bb87b3c6fcef4365c817e1efb145a55ca23",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "90d4544b46e2ab632c0d80aa0ed0f40fc57e2d9342ba204850c6c56d8a42259c",
+                "code": "90e49bb87b3c6fcef4365c817e1efb145a55ca23",
+                "maintenance": "300b73d6825f92be09080e8717e7f3ca3e27b6c5ac9f97c9b3bbb3d64451fa3c"
+            }
+        }
+    }
+}

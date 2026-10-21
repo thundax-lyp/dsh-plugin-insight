@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "08230da10d6b3de085cbae0de365c5d4",
+    "identity": "github:1337471517:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337471517:root",
+            "repository": "weopenfire-git/dsh-market-quote",
+            "path": "",
+            "revision": "0db2102fc453ff5f56ce656ad50269f8a63ecdaa",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7636cbe6009b7b3294dd3dc16b388342dda13f6289cb0f0bb640ecc4c97586ed",
+                "code": "0db2102fc453ff5f56ce656ad50269f8a63ecdaa",
+                "maintenance": "7e91311e0683e20879416578f728816d8e1ef128c95ff6823816fd2cf364536e"
+            }
+        }
+    }
+}

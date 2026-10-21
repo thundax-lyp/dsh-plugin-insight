@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bdb151d061f8a21e7f9464b91f2fad88",
+    "identity": "github:1329669219:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1329669219:root",
+            "repository": "MnemosyneOS/mnemosyne",
+            "path": "",
+            "revision": "175e7399160b333bba4452a29e83fd31d994a7f8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "09c6262308e6fb48c18ff08f4bcfd74e7efd86343e038fe1dc6e08f28e2f1853",
+                "code": "175e7399160b333bba4452a29e83fd31d994a7f8",
+                "maintenance": "e1f20f79d36dfbcc83f7580c4deeffeaa79d59980dd2cd548cee6f114004890c"
+            }
+        }
+    }
+}

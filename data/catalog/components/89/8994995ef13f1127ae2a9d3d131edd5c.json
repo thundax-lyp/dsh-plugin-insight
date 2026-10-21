@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8994995ef13f1127ae2a9d3d131edd5c",
+    "identity": "github:1024118326:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1024118326:root",
+            "repository": "Tencent/WeKnora",
+            "path": "",
+            "revision": "81f0dc2d3676048bc747ef02107ef6bfba2ae869",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bc42d64924bd7e7f7df4b6501a7705082077c14150d6f154193889541cce3a1e",
+                "code": "81f0dc2d3676048bc747ef02107ef6bfba2ae869",
+                "maintenance": "eef5bc48617b96f3020a5b00a82625fdac518769180a9e88e93bd974febc218e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1a844c33324dc3a00209a92c37232839",
+    "identity": "github:1336900714:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336900714:root",
+            "repository": "yabolee-kkk/dsh-streaming-mcp-bridge",
+            "path": "",
+            "revision": "f6c96745cbc9b8fd1a376b20d090ce27c464806e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b8343ac77c5e94e55ab6b55597b28844678733e7c770ec66d92886e7c078117a",
+                "code": "f6c96745cbc9b8fd1a376b20d090ce27c464806e",
+                "maintenance": "367b69031ccbd64e39677446e8b1c1019d30285f71ba759f74a098bc173b5de4"
+            }
+        }
+    }
+}

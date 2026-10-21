@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9cde1cf3984485cd38632f06a964e161",
+    "identity": "github:1362348495:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362348495:root",
+            "repository": "sueqet/dsh-todo-board",
+            "path": "",
+            "revision": "46e4b7ad59aa04edd379ee6e2c3b8012a1077475",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "08b1ad13fb7e44617b67f4067f2a681cd1129e1e03ced2efb376ce78c4867ede",
+                "code": "46e4b7ad59aa04edd379ee6e2c3b8012a1077475",
+                "maintenance": "0afc31905953dc14737ef58aa15c50e430e57f6e3458712b5d034a6cdcf9e2cd"
+            }
+        }
+    }
+}

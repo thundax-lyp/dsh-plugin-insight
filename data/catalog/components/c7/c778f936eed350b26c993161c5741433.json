@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c778f936eed350b26c993161c5741433",
+    "identity": "github:1358524811:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358524811:root",
+            "repository": "pure-craft/dsh-capability-panel",
+            "path": "",
+            "revision": "aff4ae83acd82c44f3489de66f46989959a0910e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e3e82e694864596f4a79082cb34b90e49e8fd6e3aee4bd79555b7c93ca21612c",
+                "code": "aff4ae83acd82c44f3489de66f46989959a0910e",
+                "maintenance": "4c345cb40264b3e2ac6f50fdbb163ee6801d0bae9d6e4ef5e7c1912ded1a0357"
+            }
+        }
+    }
+}

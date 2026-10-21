@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8efe00423ca44d500e758afc0a8fa057",
+    "identity": "github:1377841815:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377841815:root",
+            "repository": "PangXitong/dsh-restart-button",
+            "path": "",
+            "revision": "826fbdfe3c6cb71002b80f78b72928615686aa4e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4cff920098bd9162109a8a1d6186d0cc65e57d879e35ea4322efb84cce208db7",
+                "code": "826fbdfe3c6cb71002b80f78b72928615686aa4e",
+                "maintenance": "82e7e6d7d9b6fa483543ba2a9b93c8c71df74d8b7b93de3996f38e4a2e5fd2c0"
+            }
+        }
+    }
+}

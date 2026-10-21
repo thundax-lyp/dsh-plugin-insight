@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6b31cf41a6f662780634873b75b38265",
+    "identity": "github:1339170873:tool-vision",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339170873:tool-vision",
+            "repository": "xing666173/dsh-vision-hub",
+            "path": "tool-vision",
+            "revision": "17e42af2ae7176e9a6b43d1bcec674a60044aff6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "613150ca78dba36d39feb347d6d4bac2e63bc0e2689dc2dc27dd78565ebb2c34",
+                "code": "17e42af2ae7176e9a6b43d1bcec674a60044aff6",
+                "maintenance": "eac9b1a1105be809ab67225042249893a53e2f86e71f0f7cb96d70636acb297d"
+            }
+        }
+    }
+}

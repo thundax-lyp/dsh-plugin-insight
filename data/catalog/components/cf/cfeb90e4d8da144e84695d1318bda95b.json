@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cfeb90e4d8da144e84695d1318bda95b",
+    "identity": "github:1365412162:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365412162:root",
+            "repository": "liudejua27-blip/fitmeet-dsh-plugin",
+            "path": "",
+            "revision": "4ad3e1eabb7d2c365771050b19fbfc62f9db3568",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "408ad0a56edf40465d1b0ab3560712a33614ddcb84b94440a21cddaa57f83d48",
+                "code": "4ad3e1eabb7d2c365771050b19fbfc62f9db3568",
+                "maintenance": "006792cbdc82d1b53a3235869af3c4e91a4e4cd317422e0688df271abd43dfb7"
+            }
+        }
+    }
+}

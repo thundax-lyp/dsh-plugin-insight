@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "03c5f62b6ccc30df6eb3366b431018b6",
+    "identity": "github:1368442919:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368442919:root",
+            "repository": "gezi-wen/dsh-skill-authoring",
+            "path": "",
+            "revision": "9ad56782d0a6959d47b30c61458942a70d4b7984",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0c3ff3690d4721a3f050d19c985d6e2d5ac0bc6e87cb910210b77a37fbac2306",
+                "code": "9ad56782d0a6959d47b30c61458942a70d4b7984",
+                "maintenance": "535f27568e33cb06e781216583c24c329aa6204912a023f907ff82c1cafd2e39"
+            }
+        }
+    }
+}

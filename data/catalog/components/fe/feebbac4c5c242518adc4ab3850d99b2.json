@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "feebbac4c5c242518adc4ab3850d99b2",
+    "identity": "github:1334476908:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334476908:root",
+            "repository": "umineko987/dsh-search-enhance",
+            "path": "",
+            "revision": "651cf14c2fd9740d275282ba5bda0a023e0c9077",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "778ee83e4aec356a149f93415e69a7e377409ae7008a6473fe8a686fbd1e50a7",
+                "code": "651cf14c2fd9740d275282ba5bda0a023e0c9077",
+                "maintenance": "21546ce6af2133a4562e849a0620584ec3023118521a589cd0109a09cf372ae2"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ef5c1f3743298d6c35cab083eae2196f",
+    "identity": "github:1346971146:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346971146:root",
+            "repository": "iwtown/dsh-llm-wiki",
+            "path": "",
+            "revision": "0f0d17bf8cf2a286cf630e2b756eed2d10a02bb2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8452650216f2b45495c88cf96d74ab83762b05ce015b9397a22bf78177ca37f0",
+                "code": "0f0d17bf8cf2a286cf630e2b756eed2d10a02bb2",
+                "maintenance": "188d131a883d862bf0d183c23477161f3560abea8a0e17d910529cc9ad88867f"
+            }
+        }
+    }
+}

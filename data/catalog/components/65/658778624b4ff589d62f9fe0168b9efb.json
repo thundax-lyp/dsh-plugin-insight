@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "658778624b4ff589d62f9fe0168b9efb",
+    "identity": "github:1336776704:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336776704:root",
+            "repository": "kobenfang/Big8",
+            "path": "",
+            "revision": "ab5ff2fa8d44363c198ef07e6e4acf477b511084",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2f37272260e86c64f3fc64ea9c792a8b3f437973338d7b148b332493e205d281",
+                "code": "ab5ff2fa8d44363c198ef07e6e4acf477b511084",
+                "maintenance": "20f83f525a88f98d95bb44cbbddb6ca9e6e4e46d22d3d4a921116327a5a924fc"
+            }
+        }
+    }
+}

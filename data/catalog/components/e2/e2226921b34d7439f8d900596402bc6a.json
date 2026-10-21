@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e2226921b34d7439f8d900596402bc6a",
+    "identity": "github:1333992919:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333992919:root",
+            "repository": "truelove-dreamer/dsh-plugin-git-workflow",
+            "path": "",
+            "revision": "cddc8bc530b7f51e6b47d56fa3338412b4f82448",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "94de1f5cb91c74324a09888744cf993f1776afa206e0f198aa7bcd570633f62a",
+                "code": "cddc8bc530b7f51e6b47d56fa3338412b4f82448",
+                "maintenance": "2e36db8707d4a2d6f1c77ce0b7d5453d0dd7ad76cb8de618d96dca0e364af0ec"
+            }
+        }
+    }
+}

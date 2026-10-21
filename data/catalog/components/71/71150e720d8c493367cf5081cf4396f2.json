@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "71150e720d8c493367cf5081cf4396f2",
+    "identity": "github:1342716912:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342716912:root",
+            "repository": "qwert702/dsh-commander",
+            "path": "",
+            "revision": "4d54d63e22df56e84d7fd5dc27513ce05654abf9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "91ea6cba2c75d709b7222dc49062d85ce12d9474eebad0ac51171119af0ba10b",
+                "code": "4d54d63e22df56e84d7fd5dc27513ce05654abf9",
+                "maintenance": "34dd87615f22d37a77fc6c2b1e45dacc7fbf7d989d4ca1de59890a8d1dab675c"
+            }
+        }
+    }
+}

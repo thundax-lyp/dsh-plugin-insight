@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "365b3967419af534ac751b1e7c99daf5",
+    "identity": "github:1337972266:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337972266:root",
+            "repository": "PolinniZhong/dsh-omi-voice",
+            "path": "",
+            "revision": "025489d85f14cf9c48ba0b94fd6b059e64a34597",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9889f2d40e04490986fafdf6c2c3aa776c7919bbd64e6adbab9e5343052c8b4f",
+                "code": "025489d85f14cf9c48ba0b94fd6b059e64a34597",
+                "maintenance": "8078233a95a5462919c03e298fe0bd817155c8576668cf21ca6ded24cca22875"
+            }
+        }
+    }
+}

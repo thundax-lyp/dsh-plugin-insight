@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "13e391e3fb7ad76a2924b4939c08c477",
+    "identity": "github:1410763356:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410763356:root",
+            "repository": "slow-stack/dsh-study-desk",
+            "path": "",
+            "revision": "23e464f33a7d2c5da8fa8e16448cca31c94e8f47",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5363c069f07526f5b1d06ceb28cf69ba3f2eb721c404742a596e57504653f2d0",
+                "code": "23e464f33a7d2c5da8fa8e16448cca31c94e8f47",
+                "maintenance": "b970e72b7c79765a307492368a8f7f27c124824afa8eb2b38c8f383833816d18"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a4168bbf250342103bf3db14f0f9c011",
+    "identity": "github:1379301398:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379301398:root",
+            "repository": "mia-wong1016/dsh-codex-plus",
+            "path": "",
+            "revision": "e107f6eb892b6052005f3183c40e86ec2265c636",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eee389f17f0ed0077870422c46688dfb52c38273d0d3598e99215b1e17259af5",
+                "code": "e107f6eb892b6052005f3183c40e86ec2265c636",
+                "maintenance": "3b28fbee98b0dea6013a182535323de61c4c365bf8bef4195dd77f8aa2f80800"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "501506d8ff9e5d17aa5109af2b666da0",
+    "identity": "github:1337934922:adapters-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337934922:adapters-dsh",
+            "repository": "Cheeserackery/deepseek-time",
+            "path": "adapters/dsh",
+            "revision": "453c269dbdd90d47885f0d619966e6d48d168ae8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "601404e86d44f2f1ca39e90ebd40f95e264cdd67218f9689e312b716ba696697",
+                "code": "453c269dbdd90d47885f0d619966e6d48d168ae8",
+                "maintenance": "ad4c1502a77362461efa0521ce9b9bc8479db647cf32f694470429709749c650"
+            }
+        }
+    }
+}

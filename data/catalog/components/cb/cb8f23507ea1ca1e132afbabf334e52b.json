@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cb8f23507ea1ca1e132afbabf334e52b",
+    "identity": "github:1333326476:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333326476:root",
+            "repository": "Civitasv/dsh-plugin-colorscheme",
+            "path": "",
+            "revision": "59c18e0eac2ed20bd58bf71d19e4d0e08f7ea80f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "99612c86274cd5cc75b5e5325ecee274d0f3e558a5a60913e98b51c4293b8fc8",
+                "code": "59c18e0eac2ed20bd58bf71d19e4d0e08f7ea80f",
+                "maintenance": "012b2827690497c92c35736a67b9945ab2d2c4e48c736652f108bfbb439ad866"
+            }
+        }
+    }
+}

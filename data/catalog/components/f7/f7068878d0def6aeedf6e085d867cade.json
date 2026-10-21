@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f7068878d0def6aeedf6e085d867cade",
+    "identity": "github:1403011534:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403011534:root",
+            "repository": "guzhou079-arch/dsh-plugin-android-vscreen",
+            "path": "",
+            "revision": "394bfcb87fae48bf08038933fb64ad88626940bd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7650f94f755006fbb9822b02a8bdf2a6d1623febaa110932677133d1c38c347b",
+                "code": "394bfcb87fae48bf08038933fb64ad88626940bd",
+                "maintenance": "cee73cbf202667ca4eb28b5262d3996127b3455fbf83eabf1301c3f2bf0eb937"
+            }
+        }
+    }
+}

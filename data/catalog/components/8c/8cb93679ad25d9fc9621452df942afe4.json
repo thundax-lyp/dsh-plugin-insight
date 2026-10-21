@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8cb93679ad25d9fc9621452df942afe4",
+    "identity": "github:1379297066:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379297066:root",
+            "repository": "tr1v3r/dsh-ltm",
+            "path": "",
+            "revision": "13749eede82b47ab0698e2bede72fc8106fe70a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f9072a0ae4e2686f280dc784074f0b8ce6c58b50189d117e709b5ee94040eedf",
+                "code": "13749eede82b47ab0698e2bede72fc8106fe70a6",
+                "maintenance": "5ede11275018c4cc2eece6e465e250490de57645033cc2f337fcc02365c254e8"
+            }
+        }
+    }
+}

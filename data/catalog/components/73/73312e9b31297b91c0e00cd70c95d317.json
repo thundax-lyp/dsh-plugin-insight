@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "73312e9b31297b91c0e00cd70c95d317",
+    "identity": "github:1405829487:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405829487:root",
+            "repository": "ahian-lee/dsh-attention-notifier",
+            "path": "",
+            "revision": "31ad97a8765c9ee2d95a73cb338a6a317a6aff9d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3052820d7b76598dd399e0ee78badc458be4329dc51637100437860748ade419",
+                "code": "31ad97a8765c9ee2d95a73cb338a6a317a6aff9d",
+                "maintenance": "102ac4a853345147cd53242c2990697187f22e2e6edb45673fb0c7c0663874f6"
+            }
+        }
+    }
+}

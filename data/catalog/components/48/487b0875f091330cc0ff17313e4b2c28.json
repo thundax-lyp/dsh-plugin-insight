@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "487b0875f091330cc0ff17313e4b2c28",
+    "identity": "github:1386678507:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1386678507:root",
+            "repository": "mengqi1436/DSH-Rtk-rewrite",
+            "path": "",
+            "revision": "e006af044582ffd6e58ed6eff01a7624f4e5921b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f2c3427ed09db71bd6c9c0713dd1bc22cf368c3c8d95d97d805e3ad57188121b",
+                "code": "e006af044582ffd6e58ed6eff01a7624f4e5921b",
+                "maintenance": "7e5ef4935aa369f6bc95bfc2718d0e9a69832193643325d3505a8d81d516486e"
+            }
+        }
+    }
+}

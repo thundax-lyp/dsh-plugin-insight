@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7b696b65fbccf24392c89cc0a445932",
+    "identity": "github:1416824928:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416824928:root",
+            "repository": "lishuo4096/dsh-enet-review",
+            "path": "",
+            "revision": "8668406fd8a91635778561607a5367be77e58b6b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ae276cdee5d1af30d8d2174fec2b6e5c1218f6f7c35a6730630336f1c66d42c5",
+                "code": "8668406fd8a91635778561607a5367be77e58b6b",
+                "maintenance": "8863ea698dd95be87d58863692eca831822b0393cff6aaf946fe52f48641ff10"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c682fc7876fa2a7a6bdcc7a9715ef5b8",
+    "identity": "github:1279415698:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1279415698:root",
+            "repository": "sakikoTGW/pack-agent",
+            "path": "",
+            "revision": "0406f77b36728e0a93cf8851f37087c2aa33db8c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b05d764b00206b636623e14a78a57b089ee5764b13ce8da9c67ea2002aa64031",
+                "code": "0406f77b36728e0a93cf8851f37087c2aa33db8c",
+                "maintenance": "92f7014a203e64d7dc19dce7e76e365b6f99e561fb1de7c96f83a4501d9246a4"
+            }
+        }
+    }
+}

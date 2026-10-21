@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "85f990febcb3418cfe9d175f6fc55e45",
+    "identity": "github:1333123776:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333123776:root",
+            "repository": "Small-tailqwq/dsh-deep-whale",
+            "path": "",
+            "revision": "9f198960e8d28b2dfb7495443a1b752b4e4a4486",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c825e0fc0a4eac5e60d1eac403506b000cc6bdfe9c472f8e5ebe02cc6ebdfce3",
+                "code": "9f198960e8d28b2dfb7495443a1b752b4e4a4486",
+                "maintenance": "59899d59fdbcb2ff6e3d410dfc0346768d410fa9087a77af9ec78d18e40300ae"
+            }
+        }
+    }
+}

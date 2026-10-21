@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fe70d4655a537edaa8a3ccfdcd58da80",
+    "identity": "github:1424091016:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424091016:root",
+            "repository": "FormalistBlue/dsh-everforest",
+            "path": "",
+            "revision": "6987ae32a02e25625b518edf36f043821afa2313",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7b12730bf5dab4b7b65254e56de2ce36c8be3ea40cb7e6afcbb79154a300c71b",
+                "code": "6987ae32a02e25625b518edf36f043821afa2313",
+                "maintenance": "c7f6fe1813a5c8afd19ce7414b72635912a6b11cb22168a0108d907b54956b2f"
+            }
+        }
+    }
+}

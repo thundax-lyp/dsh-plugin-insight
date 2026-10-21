@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7953ed10a4a90b7ccef79e61ce447772",
+    "identity": "github:1421651315:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421651315:root",
+            "repository": "zhangjie-2007/dsh-voice",
+            "path": "",
+            "revision": "6658d77d398f30fe947ce4e60dd0f6ff58dd0552",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4e78ea6ce029eeaa83dc60fe068a8a733f7ea74c54ab4a9422fcb3cf91621788",
+                "code": "6658d77d398f30fe947ce4e60dd0f6ff58dd0552",
+                "maintenance": "681fc946f1ec7d5d98040403ebaced20de9ce69b1123febbfb5ab525e5ab1c71"
+            }
+        }
+    }
+}

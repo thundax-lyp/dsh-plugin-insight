@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "edb9d3410d8ae2cb386fa4e73bb8ceee",
+    "identity": "github:1334495619:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334495619:root",
+            "repository": "SpookySandwich/dsh-plugin-smooth-stream",
+            "path": "",
+            "revision": "02ca036718d922ec46c477fb0a97a122c2768256",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0a63ae8f6e84361b1b7def7bf5167d1d1738713ff694816b7f1182f291de051a",
+                "code": "02ca036718d922ec46c477fb0a97a122c2768256",
+                "maintenance": "9bb8f56218cd2d35a0cafe703b5fcaf578d1dcbe8650c138e45316ae21a74a9e"
+            }
+        }
+    }
+}

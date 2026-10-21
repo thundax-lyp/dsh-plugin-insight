@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ba798d247b6921fd9c2c5d018c9f1f4",
+    "identity": "github:1335173161:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335173161:root",
+            "repository": "huanghai-lab/dsh-custom-instructions",
+            "path": "",
+            "revision": "53bf72514f25dcf400d382499662c3f94cbc0dc3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "675c3226a8ef852dffa2681f532ab2b139e3f52b25c3964a1f1981cba8eb7def",
+                "code": "53bf72514f25dcf400d382499662c3f94cbc0dc3",
+                "maintenance": "4e00934b60940126a88cbec7ea7f76d9f2ebdda9d032368d1ba3abf15bea3a07"
+            }
+        }
+    }
+}

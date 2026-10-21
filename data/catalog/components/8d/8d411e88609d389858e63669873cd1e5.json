@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8d411e88609d389858e63669873cd1e5",
+    "identity": "github:1421492448:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421492448:root",
+            "repository": "HAN-050917/dsh-plugin-dsweb-harness",
+            "path": "",
+            "revision": "e71cdce9892e998044a4d27ccbd1f7c947e26b3d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "321aa6cfc39701119bf90322c2f22556eef3e51a2116b347bbf3a452b68ad527",
+                "code": "e71cdce9892e998044a4d27ccbd1f7c947e26b3d",
+                "maintenance": "932cc4dab9fef2ff9260649fdbfa9f9fb00414e8966e2d7d32837f53ade3a654"
+            }
+        }
+    }
+}

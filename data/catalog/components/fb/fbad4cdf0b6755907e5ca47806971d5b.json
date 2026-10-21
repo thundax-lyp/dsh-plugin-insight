@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fbad4cdf0b6755907e5ca47806971d5b",
+    "identity": "github:1378405571:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378405571:root",
+            "repository": "yumiao-dev/dsh-chat-thinking-editor",
+            "path": "",
+            "revision": "6fab4a6562a12ce67eb1842fc0da1201c33d802b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f974a9b7d24429e041ff388afe284da83dc8c916935af1f50e8c311afdbba16d",
+                "code": "6fab4a6562a12ce67eb1842fc0da1201c33d802b",
+                "maintenance": "c24bd35aca94037e490623e54f0b327522da97d83820d467a1124df7686b8c79"
+            }
+        }
+    }
+}

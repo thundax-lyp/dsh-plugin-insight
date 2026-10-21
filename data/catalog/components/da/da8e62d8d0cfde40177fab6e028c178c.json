@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da8e62d8d0cfde40177fab6e028c178c",
+    "identity": "github:1333909415:packages-bundle-remote-access-web",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333909415:packages-bundle-remote-access-web",
+            "repository": "wikkd/dsh-remote-access-web",
+            "path": "packages/bundle/remote-access-web",
+            "revision": "73e3ef308d1efbc6673650c22f6d3491677474a0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "69cba5fe764b5620bbf3aa863918b32b2758cebf6e5c05954584c9e0ae64c654",
+                "code": "73e3ef308d1efbc6673650c22f6d3491677474a0",
+                "maintenance": "eabc155503ff5f1cdbdffa36cf2ed885093f8ec5050328b1d9877d3773ff37ee"
+            }
+        }
+    }
+}

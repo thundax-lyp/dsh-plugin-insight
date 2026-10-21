@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0e226ef311ba7df2380ee63704e22e9e",
+    "identity": "github:1361316870:packages-dsh-agent-board",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361316870:packages-dsh-agent-board",
+            "repository": "PPawnsir/task-board-plugin",
+            "path": "packages/dsh-agent-board",
+            "revision": "b886f4607c06cd130294c7a60df5664120e082a5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ee77132d27c2b56c404b9924a476c8389ad0238b2ae476c0b0ed477b8ceef2b0",
+                "code": "b886f4607c06cd130294c7a60df5664120e082a5",
+                "maintenance": "adeb4a54ef735787ed01706a0dd15a31b69fc9712fa34cfbe0fc41b9670930c6"
+            }
+        }
+    }
+}

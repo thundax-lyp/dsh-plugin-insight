@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "15f6742c34e14a0050634381fd16a2be",
+    "identity": "github:1369662537:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369662537:root",
+            "repository": "OMSociety/dsh-fishpai",
+            "path": "",
+            "revision": "b6529f466209ffcd340cc12ed4d2413538474e83",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a6e33fec2f5ab132e49e1cba4d9a2272a50007c3e247318bffdea9471648400",
+                "code": "b6529f466209ffcd340cc12ed4d2413538474e83",
+                "maintenance": "dc5e2ddf2bfa2ea55134a65124b967ccd30842f53f4e7318d81940f0ec0a05da"
+            }
+        }
+    }
+}

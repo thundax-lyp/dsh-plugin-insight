@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6f321e185e5fd751190cf2a69995dea3",
+    "identity": "github:1342382831:plugins-dsh-task-reliability",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342382831:plugins-dsh-task-reliability",
+            "repository": "baosfeng/my-dsh-plugins",
+            "path": "plugins/dsh-task-reliability",
+            "revision": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3ac17b370a9fbca357ddb3dac7bf3c2997fec2f7255eea7ccb212661f840d7da",
+                "code": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
+                "maintenance": "fb9b774cd98aed1498b3728886e651d430a33b9df901c2194b4f19380c3f5850"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "af0f5b26f062e9c25a22da06cb93e841",
+    "identity": "github:1334442247:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334442247:root",
+            "repository": "HanaAyane/dsh-reasoning-effort",
+            "path": "",
+            "revision": "7ecbf7e6c9a72bf120297e92ffce60cb4a4b6a0c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "549db64d0bc2715f3050355cba4b9a6642fb8139ae1fed5c353655f37efb53c3",
+                "code": "7ecbf7e6c9a72bf120297e92ffce60cb4a4b6a0c",
+                "maintenance": "d19524e90fc20414b22ccbbcd44c6ed2a51ba34bdc80a0eb0deff66700192845"
+            }
+        }
+    }
+}

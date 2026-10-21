@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "502640ea55921374fce8de2ac002618e",
+    "identity": "github:1358235817:dsh-session-notes",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358235817:dsh-session-notes",
+            "repository": "dsboylw/LazyNoobsCockloft",
+            "path": "dsh-session-notes",
+            "revision": "8b9f143476445e3fdfa8c6093aa6eccbf8d575a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0198990f718a4ae2a85f437d901dd1bf0ac3833b250b651f1c79ca82fca0cb86",
+                "code": "8b9f143476445e3fdfa8c6093aa6eccbf8d575a9",
+                "maintenance": "bb61b0deb192a32a6c688f5acaf46a6bdafa89ccfa47f484f145d960066e3478"
+            }
+        }
+    }
+}

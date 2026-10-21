@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a483e349cc70ccd1ef91ceecb5f153e9",
+    "identity": "github:1337545070:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337545070:root",
+            "repository": "corrinehu/dsh-workbuddy-connect",
+            "path": "",
+            "revision": "c0ed88e3712d3bb2e2deff5fddec1181e6222973",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness",
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b35f6307cbf688e101c02d722ed7a451accb911e93769441985f31aa5d831d7",
+                "code": "c0ed88e3712d3bb2e2deff5fddec1181e6222973",
+                "maintenance": "761b61c7a46a51e9ffe200f9c0f02575d149c4fc7b9af5da665e3ead2b722efe"
+            }
+        }
+    }
+}

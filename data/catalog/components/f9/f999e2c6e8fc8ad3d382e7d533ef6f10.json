@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f999e2c6e8fc8ad3d382e7d533ef6f10",
+    "identity": "github:1323387669:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1323387669:root",
+            "repository": "LoserFox/telegram",
+            "path": "",
+            "revision": "a0a9ca11e427b62217250e2e561f6ad3c49d13f2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "97ee3f06de40b5cbbf5d07b40d5d3cd18303f2448d14e72bf8a0498bcf432cba",
+                "code": "a0a9ca11e427b62217250e2e561f6ad3c49d13f2",
+                "maintenance": "237ed7e186970c676625f11da604645faa1a3e0c7ca04256dda686ba595fb3c4"
+            }
+        }
+    }
+}

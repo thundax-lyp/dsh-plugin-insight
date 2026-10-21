@@ -1,0 +1,449 @@
+{
+    "schema_version": 3,
+    "id": "8d441890d7ee509fe223027d4bcb9e34",
+    "identity": "github:1340492184:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1340492184:root",
+            "repository_id": 1340492184,
+            "component_id": "root",
+            "repository": "AKS1st/dock",
+            "path": "",
+            "aliases": [],
+            "name": "dock",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "ab4faf55bad0b1e72d0a6bacd3b68154dd669ebfbaca83794358d732ed2bf154",
+                "code": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                "maintenance": "bb1d6194e9367dcf3e971ff15f574dceaa46ff9ef310c9a7ccb7957231d00d25"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1340492184-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:36:02.549Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1340492184-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/README.md",
+                    "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                    "captured_at": "2026-10-21T05:36:02.549Z",
+                    "summary": "向扩展提供活动栏、浮窗、编辑视图、状态和设置注册服务的客户端工作台。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1340492184-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/index.ts",
+                    "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                    "captured_at": "2026-10-21T05:36:02.549Z",
+                    "summary": "核查 src/index.ts、src/client/index.ts、src/client/contract.ts、src/client/service.ts；客户端先ctx.provide(workbench)，service管理插件、活动、面板、编辑、状态、命令和设置注册；layout/settings存储本地布局，Shell渲染各扩展。主机入口不实现业务路由。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要在DSH聊天旁组织多个文件/工具面板的用户与扩展作者。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "客户端先ctx.provide(workbench)，service管理插件、活动、面板、编辑、状态、命令和设置注册；layout/settings存储本地布局，Shell渲染各扩展。主机入口不实现业务路由。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需迁移入口与扩展接线；持续承担工作台契约和布局兼容。无模型调用，界面与本地存储成本随窗口数增加。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先与少量扩展验证打开、关闭和重载；将布局持久化与文件保存分别验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "统一交互有减少重复开发的潜力，没有扩展迁移工时或真实使用收益数据。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "注册器带disposer、重复ID检测及统一beforeClose是可借鉴机制；契约副本同步与本地布局迁移是后续维护条件。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "以独立注册域、实例seed和关闭钩子减少每个扩展自建窗口的重复工作；注册ID冲突拒绝、释放时按定义身份清理，生命周期比单纯固定按钮更完整。没有实现新窗口协议或远程一致性。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "各扩展vendored类型契约只在编译时检查，真实ctx.workbench版本兼容仍需验收。localStorage是浏览器本地状态，不等于跨设备同步或可靠工作成果存储；异步关闭钩子正确性不代表业务保存已成功。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：服务启动公开能力版本并让扩展按需求协商，可将方法缺失转为明确兼容提示。用旧新扩展、拒绝/异步关闭和卸载重载矩阵比较故障定位时间及状态丢失。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492184:root",
+                            "area": "code",
+                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:36:02.549Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:36:02.549Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                "reviewed_at": "2026-10-21T05:36:02.549Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492184:root",
+                        "area": "code",
+                        "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty=9：IDE式工作台已有先例。mechanism=15：注册、实例seed与关闭钩子形成可核查的机制组合，但未证实相对宿主侧栏突破关键限制。transferability=15：文件浏览与编辑扩展直接采用共同服务，迁移模式可见，跨宿主兼容未验。simplification=8：统一窗口减少重复接线，维护契约仍有成本。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=18：扩展打开到关闭流程清晰。 delivery=15：兼容与持久化未在宿主验证。 reach=10：面向采用Dock的开发者用户。 economics=4：无开发工时对照。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492184-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需要聊天旁多面板者和扩展作者可先接少量扩展；验打开关闭重载及版本契约，布局持久化不能代替文件保存。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "统一文件工具面板与扩展接线有明确用户。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "workbench服务集中活动、面板与命令，减少重复壳层。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核注册和localStorage，真实扩展迁移效果未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "无模型费但迁移入口、契约版本与多窗口内存需维护。"
+                    }
+                },
+                "score": 65,
+                "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1340492184-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492184:root",
+                        "area": "code",
+                        "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1340492184:root",
+            "repository": "AKS1st/dock",
+            "path": "",
+            "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+            "fingerprints": {
+                "directory": "ab4faf55bad0b1e72d0a6bacd3b68154dd669ebfbaca83794358d732ed2bf154",
+                "code": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                "maintenance": "bb1d6194e9367dcf3e971ff15f574dceaa46ff9ef310c9a7ccb7957231d00d25"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "12d414ac90f5d072d4ccccea665c82791f9cf547a9e0c5eece250e07862487d5"
+        },
+        "publication.metadata": "data/plugins/aks1st--dock/META.json",
+        "publication.summaries": {
+            "text": "向扩展提供活动栏、浮窗、编辑视图、状态和设置注册服务的客户端工作台。",
+            "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+            "source_url": "https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+            "items": {
+                "界面": "四边Dock、浮窗、设置与布局",
+                "后台": "客户端workbench扩展注册及视图生命周期服务"
+            }
+        },
+        "publication.advice": {
+            "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+            "text": "先与少量扩展验证打开、关闭和重载；将布局持久化与文件保存分别验收。"
+        },
+        "registry": "data/plugins/aks1st--dock",
+        "reports": "# dock\n\n> 向扩展提供活动栏、浮窗、编辑视图、状态和设置注册服务的客户端工作台。\n\n## 使用建议\n\n先与少量扩展验证打开、关闭和重载；将布局持久化与文件保存分别验收。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：需要在DSH聊天旁组织多个文件/工具面板的用户与扩展作者。\n- **亮点**：以独立注册域、实例seed和关闭钩子减少每个扩展自建窗口的重复工作；注册ID冲突拒绝、释放时按定义身份清理，生命周期比单纯固定按钮更完整。没有实现新窗口协议或远程一致性。\n- **思考**：各扩展vendored类型契约只在编译时检查，真实ctx.workbench版本兼容仍需验收。localStorage是浏览器本地状态，不等于跨设备同步或可靠工作成果存储；异步关闭钩子正确性不代表业务保存已成功。\n- **建议**：未验证假设：服务启动公开能力版本并让扩展按需求协商，可将方法缺失转为明确兼容提示。用旧新扩展、拒绝/异步关闭和卸载重载矩阵比较故障定位时间及状态丢失。\n\n## 场景与替代办法\n\n参照IDE工作台与宿主原有侧栏；本项贡献是DSH客户端的统一注册、布局和视图生命周期，文件读写并非基座自身能力。\n\n## 能力清单\n\n- **界面**：四边Dock、浮窗、设置与布局\n- **后台**：客户端workbench扩展注册及视图生命周期服务\n\n## 依赖与流程\n\n客户端先ctx.provide(workbench)，service管理插件、活动、面板、编辑、状态、命令和设置注册；layout/settings存储本地布局，Shell渲染各扩展。主机入口不实现业务路由。\n\n宿主uiSession、React客户端环境和扩展复制的WorkbenchService契约；文件、Git、预览等功能由另行安装的扩展提供。\n\n基座启动→扩展注册带disposer的定义→用户打开视图实例→更新布局→关闭/替换前运行beforeClose→本地保存布局。\n\n## 成本与效果\n\n首次需迁移入口与扩展接线；持续承担工作台契约和布局兼容。无模型调用，界面与本地存储成本随窗口数增加。\n\n统一交互有减少重复开发的潜力，没有扩展迁移工时或真实使用收益数据。\n\n## 核心贡献\n\n以独立注册域、实例seed和关闭钩子减少每个扩展自建窗口的重复工作；注册ID冲突拒绝、释放时按定义身份清理，生命周期比单纯固定按钮更完整。没有实现新窗口协议或远程一致性。\n\n## 关键质疑\n\n各扩展vendored类型契约只在编译时检查，真实ctx.workbench版本兼容仍需验收。localStorage是浏览器本地状态，不等于跨设备同步或可靠工作成果存储；异步关闭钩子正确性不代表业务保存已成功。\n\n## 工程亮点\n\n注册器带disposer、重复ID检测及统一beforeClose是可借鉴机制；契约副本同步与本地布局迁移是后续维护条件。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/index.ts)、[src/client/index.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/index.ts)、[src/client/contract.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/contract.ts)、[src/client/service.ts](https://github.com/AKS1st/dock/blob/8535f6e24670931d9e93fb087ab474e38aa01856/src/client/service.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：服务启动公开能力版本并让扩展按需求协商，可将方法缺失转为明确兼容提示。用旧新扩展、拒绝/异步关闭和卸载重载矩阵比较故障定位时间及状态丢失。\n\n固定宿主核注册释放、异步拒绝关闭、扩展缺失恢复、localStorage异常与契约版本差异；本轮未启动。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3bdaa863442cceb79cf27b16961389ebca0e4b541f955b77c445fc90de1f0203。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 2814 | 2500 | 313 | — |\n| .md | source | 2 | 248 | — | — | 3267 |\n| .tsx | source | 3 | 999 | 823 | 120 | — |\n| .ts | source | 12 | 2437 | 1826 | 472 | — |\n| .ts | test | 2 | 406 | 363 | 9 | — |\n| .mjs | source | 1 | 53 | 38 | 13 | — |\n\n排除 15 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dock](https://github.com/AKS1st/dock)\n- **版本号**：0.2.4（[固定提交 8535f6e2](https://github.com/AKS1st/dock/tree/8535f6e24670931d9e93fb087ab474e38aa01856)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/client/index.ts、src/client/contract.ts、src/client/service.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：固定宿主核注册释放、异步拒绝关闭、扩展缺失恢复、localStorage异常与契约版本差异；本轮未启动。\n",
+        "metadata": {
+            "repository": "AKS1st/dock",
+            "repository_id": 1340492184,
+            "captured_at": "2026-10-21T05:33:42.766Z",
+            "window_start": "2026-09-21T05:33:42.766Z",
+            "stars": 10,
+            "pushed_at": "2026-09-30T03:52:26Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE1E:105D00:506489:566CB4:6AD84EB8 and timestamp 2026-10-21 05:33:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF0E:103F14:505778:566258:6AD84EB9 and timestamp 2026-10-21 05:33:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A42.766Z..2026-10-21T05%3A33%3A42.766Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E020:4DAEE:50AA8C:56B688:6AD84EB9 and timestamp 2026-10-21 05:33:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A42.766Z..2026-10-21T05%3A33%3A42.766Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E112:27CB2C:55385E:5B42F3:6AD84EBA and timestamp 2026-10-21 05:33:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A42.766Z..2026-10-21T05%3A33%3A42.766Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E254:4C3CE:516A4A:577820:6AD84EBB and timestamp 2026-10-21 05:33:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dock-base",
+                "captured_at": "2026-10-21T05:33:48.134Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1532,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-base",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-25T06:42:32.569Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dock-base",
+                    "error": null,
+                    "latest_version": "0.2.4",
+                    "latest_published_at": "2026-09-30T03:53:30.567Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1340492184:root",
+            "repository": "AKS1st/dock",
+            "path": "",
+            "revision": "8535f6e24670931d9e93fb087ab474e38aa01856",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ab4faf55bad0b1e72d0a6bacd3b68154dd669ebfbaca83794358d732ed2bf154",
+                "code": "8535f6e24670931d9e93fb087ab474e38aa01856",
+                "maintenance": "bb1d6194e9367dcf3e971ff15f574dceaa46ff9ef310c9a7ccb7957231d00d25"
+            }
+        }
+    }
+}

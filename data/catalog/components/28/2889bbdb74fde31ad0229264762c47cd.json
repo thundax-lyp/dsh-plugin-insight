@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2889bbdb74fde31ad0229264762c47cd",
+    "identity": "github:1334051613:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334051613:root",
+            "repository": "bujue600-arch/dsh-testgen",
+            "path": "",
+            "revision": "1730f3927342dbbe75e981d81a0d64ae76a1f245",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6b157d5d1fb9bf33ae133dbc895e8226a08fad1d1c74727ffdfde965bf48d42d",
+                "code": "1730f3927342dbbe75e981d81a0d64ae76a1f245",
+                "maintenance": "f79a1987aba65a6dca349f6802a48ad78229177e5c22752b54197d1eec061932"
+            }
+        }
+    }
+}

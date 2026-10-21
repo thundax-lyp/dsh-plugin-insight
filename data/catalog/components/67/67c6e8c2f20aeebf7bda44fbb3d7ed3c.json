@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "67c6e8c2f20aeebf7bda44fbb3d7ed3c",
+    "identity": "github:1423997536:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423997536:root",
+            "repository": "amstlkqp114514/dsh-desktop-tweaks",
+            "path": "",
+            "revision": "956e857d97367d611a737f19c0e8e79faa9cc970",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "681d018dc953b169a41acfa1f422d3439d620000e55b08291e8b085482f6eb90",
+                "code": "956e857d97367d611a737f19c0e8e79faa9cc970",
+                "maintenance": "0411d2e0943621c3766bd576affa3698170c75aea7b29789330467a3ff8460a7"
+            }
+        }
+    }
+}

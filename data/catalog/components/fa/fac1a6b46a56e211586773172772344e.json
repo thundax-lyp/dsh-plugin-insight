@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fac1a6b46a56e211586773172772344e",
+    "identity": "github:1334810821:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334810821:root",
+            "repository": "gloryxpnv/dsh-tool-vision",
+            "path": "",
+            "revision": "35789ca6d71a711d09c1b9dc914f767c42b386b4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24335297c7b14b6800affc63f88f6244d2e016f240681c1a1a2895a4d245ac54",
+                "code": "35789ca6d71a711d09c1b9dc914f767c42b386b4",
+                "maintenance": "34be60783c32dbca65e30f8224823ea5ec0f90a002580f64d19c524fdda9fb78"
+            }
+        }
+    }
+}

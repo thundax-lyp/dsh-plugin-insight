@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3390a373197ae7ee7d7e98e86e3f95e3",
+    "identity": "github:1346163378:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346163378:root",
+            "repository": "drscrewdriver/dsh-session-guard",
+            "path": "",
+            "revision": "3c15f52f77d6005d785e44f68dfeda10106d2c1f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e966fb5f454f64acd07fa712ad3decece4a94931033996ad8067dbe5b6d6fc99",
+                "code": "3c15f52f77d6005d785e44f68dfeda10106d2c1f",
+                "maintenance": "e907ec92b92017ff525e43e1e272c32dbf7c6bff7fbd448ead6b2c61791402cc"
+            }
+        }
+    }
+}

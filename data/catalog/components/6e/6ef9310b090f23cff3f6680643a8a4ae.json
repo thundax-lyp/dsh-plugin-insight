@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6ef9310b090f23cff3f6680643a8a4ae",
+    "identity": "github:1353094362:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353094362:root",
+            "repository": "gengwg/dsh-kubectl-guard",
+            "path": "",
+            "revision": "867c973f6bb350fa70fe3837a9d8f176f86b7f4c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "87d0fe3ba77f36a421ba6229b49055e3942a5f29ee76320ca2e63e66e2abab4f",
+                "code": "867c973f6bb350fa70fe3837a9d8f176f86b7f4c",
+                "maintenance": "3e1e92f50aa82e1678bedadd8e24058caad2e5a068a855154e75789f85b2dc4d"
+            }
+        }
+    }
+}

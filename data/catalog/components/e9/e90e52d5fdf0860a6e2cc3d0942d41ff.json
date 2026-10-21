@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e90e52d5fdf0860a6e2cc3d0942d41ff",
+    "identity": "github:1320245804:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1320245804:root",
+            "repository": "windyslime/DeepSee",
+            "path": "",
+            "revision": "2d53cecf261fd40770bb84820b08bdf2da514d6e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "49be47e5b0c2096bb20eab18759943aaa503ca15dd19cc3a37e08d12eef85d8c",
+                "code": "2d53cecf261fd40770bb84820b08bdf2da514d6e",
+                "maintenance": "2104ca78b9ff9cf5987aa88b2ddf1153f929df955d335a0402d2b0622639c430"
+            }
+        }
+    }
+}

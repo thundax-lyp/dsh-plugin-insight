@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8bfba85afe58f2f4292e44a148c9eb9b",
+    "identity": "github:1407586429:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407586429:root",
+            "repository": "aomk20201110-commits/CST_AI",
+            "path": "",
+            "revision": "437fba67677b4a7d652901c1dd55625b713f16f0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ce82b023518de2ecd11e91091f0e1e8ec596d58576a1c3f1e73146c89acbf179",
+                "code": "437fba67677b4a7d652901c1dd55625b713f16f0",
+                "maintenance": "ee20045d5184585d41f665f2bc25671355cdd154c359f0865724bb90f5933137"
+            }
+        }
+    }
+}

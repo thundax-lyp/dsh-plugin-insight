@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a1362620762a0f4afe48b59feb77522e",
+    "identity": "github:1333350638:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333350638:root",
+            "repository": "Jesse-njx/dsh-skillport",
+            "path": "",
+            "revision": "4066391673ea9c410860fa0e4d7e20727f9cc582",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "177baca936ba968c8f194296a58e7c9a3c6cd885703227e36d821e288d71219f",
+                "code": "4066391673ea9c410860fa0e4d7e20727f9cc582",
+                "maintenance": "aef6064fa59bf1f189b299d060452b1b2231ed81078aa03c0d24abc637163be7"
+            }
+        }
+    }
+}

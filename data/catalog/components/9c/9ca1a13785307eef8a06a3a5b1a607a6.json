@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9ca1a13785307eef8a06a3a5b1a607a6",
+    "identity": "github:1346089817:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346089817:root",
+            "repository": "oksure/dsh-mobile-comfort",
+            "path": "",
+            "revision": "8b71ee39ad3b2cbb5747780ba74c1bc286d922f2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0f5f683c645904792590553439fd11a02cef606e99c3ea38e19eb488806e17a6",
+                "code": "8b71ee39ad3b2cbb5747780ba74c1bc286d922f2",
+                "maintenance": "ea45df3aa236cd2bcef3af5d29414b215562c10d7b4c471507cc14857fa1d00a"
+            }
+        }
+    }
+}

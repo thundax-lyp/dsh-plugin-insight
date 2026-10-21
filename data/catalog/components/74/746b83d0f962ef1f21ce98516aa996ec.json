@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "746b83d0f962ef1f21ce98516aa996ec",
+    "identity": "github:1338450565:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338450565:root",
+            "repository": "MoonlitDropOfBlood/dsh-memory-manager",
+            "path": "",
+            "revision": "4e0cc78ef30d8333f55b71e98e39b6d4497129e8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "78dc2c11af151c625fa18470a14d952f43d5536f06637b3d4c56da5d1523b1d8",
+                "code": "4e0cc78ef30d8333f55b71e98e39b6d4497129e8",
+                "maintenance": "70c5545b9f6d648786746b28f9f7c5ad21635c7f8645e7e0f1b715064cf7c35b"
+            }
+        }
+    }
+}

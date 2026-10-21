@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "09bcce5340ee3c2431430b699a25a42c",
+    "identity": "github:1347297789:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347297789:root",
+            "repository": "Flan246/dsh-latex-guard",
+            "path": "",
+            "revision": "45b326bf9f5dfab8884c0fa9580cb90298bc85d5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9b70fa712f5d9b37867a5042e472a7b15525cf3a52533569f5ca0b1f8e35d1ef",
+                "code": "45b326bf9f5dfab8884c0fa9580cb90298bc85d5",
+                "maintenance": "0fec2ee5b92c814ffb608e72edef5a5172e130cc120b7d1962de2da225d3d46a"
+            }
+        }
+    }
+}

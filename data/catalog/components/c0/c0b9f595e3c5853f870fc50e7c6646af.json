@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c0b9f595e3c5853f870fc50e7c6646af",
+    "identity": "github:1384776689:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384776689:root",
+            "repository": "kahomesl/dsh-chat-diff-summary-legacy",
+            "path": "",
+            "revision": "ef5ea1f1f5a4616ea4c8b06ed9fc842cfa2bedd6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "73198ae4d65848856004e52845b47bf75ef63498b094073a3daabcb30234cb7d",
+                "code": "ef5ea1f1f5a4616ea4c8b06ed9fc842cfa2bedd6",
+                "maintenance": "4bc9e4d55a1548e9ed96c759de02a7a0d27160415139e6306f1a22f20b314f25"
+            }
+        }
+    }
+}

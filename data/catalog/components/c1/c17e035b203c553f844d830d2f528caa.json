@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c17e035b203c553f844d830d2f528caa",
+    "identity": "github:1374433085:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374433085:root",
+            "repository": "VermilionPasvikin/dsh-coderag",
+            "path": "",
+            "revision": "7d196543f9b202297166a765f28e21682bd8e45c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d758777d8e872163d6350a916cdef77779236e777db457bc82577bf0f9286965",
+                "code": "7d196543f9b202297166a765f28e21682bd8e45c",
+                "maintenance": "0e5790888c122816032dd260109f9097acfc6d6e504d5a998eb5ceb076d48810"
+            }
+        }
+    }
+}

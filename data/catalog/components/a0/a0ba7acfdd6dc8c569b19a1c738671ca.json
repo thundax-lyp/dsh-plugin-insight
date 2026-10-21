@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a0ba7acfdd6dc8c569b19a1c738671ca",
+    "identity": "github:1408157736:packages-dsh-app-packager",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408157736:packages-dsh-app-packager",
+            "repository": "lw0129a/dsh-app-packager",
+            "path": "packages/dsh-app-packager",
+            "revision": "61b58a898106d179c0babbf7d584a60aadaa4848",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de77c1af909843fc985c12c69238170a138188537a9474f6c541677952d7f3c0",
+                "code": "61b58a898106d179c0babbf7d584a60aadaa4848",
+                "maintenance": "f17dc3ab4a3d60f96dcf13f8c5bc265fb0d342f6f97afcc205cffe2c240784ed"
+            }
+        }
+    }
+}

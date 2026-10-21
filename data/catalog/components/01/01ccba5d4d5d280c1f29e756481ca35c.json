@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01ccba5d4d5d280c1f29e756481ca35c",
+    "identity": "github:1330151924:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330151924:root",
+            "repository": "whiteguo233/dsh-cc-connect",
+            "path": "",
+            "revision": "3c2b1e19cc432d5239dea0408f3dfb60e33084af",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ed8c4ff480ffbba5de5ccfde3c965366970e88c5b605f5467e57a12d9db17091",
+                "code": "3c2b1e19cc432d5239dea0408f3dfb60e33084af",
+                "maintenance": "de8a729d9875a5e7c64e27fae0ae1e36316eeb6d7daa591f788d98f448f5d4c9"
+            }
+        }
+    }
+}

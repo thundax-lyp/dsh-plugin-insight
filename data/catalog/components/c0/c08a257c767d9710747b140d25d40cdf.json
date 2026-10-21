@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c08a257c767d9710747b140d25d40cdf",
+    "identity": "github:1418397813:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418397813:root",
+            "repository": "Phocinae/dsh-evidence",
+            "path": "",
+            "revision": "7ed33d40d71947ed9690bfc5d116747e349ba196",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b05044b8b7053193b8c6c9baf00ab6280c7532b31712c9c05f937d32cf146769",
+                "code": "7ed33d40d71947ed9690bfc5d116747e349ba196",
+                "maintenance": "45c72d99d921eadbe560ff27026d3dc7672f3c8cac0b9c82f032ce7002ce6c2f"
+            }
+        }
+    }
+}

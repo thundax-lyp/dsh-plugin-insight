@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "657f0a0592f3f15c6685290a2af9585c",
+    "identity": "github:1334147011:plugins-forge-memory",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334147011:plugins-forge-memory",
+            "repository": "jinguanghai/deepseek-harness-forge-plugins",
+            "path": "plugins/forge-memory",
+            "revision": "ad4e2dd73be06dc72fc05e0e1775032270bc3a0d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "00f5c0e5e3d17230dc7a15f9f2482f2c6907d0d9a2d4d23b9b562deac47e43bb",
+                "code": "ad4e2dd73be06dc72fc05e0e1775032270bc3a0d",
+                "maintenance": "cc63a08ef5929f674a8f9e78898cc36c70c9d32edb8e2bbfff92d522360abe7a"
+            }
+        }
+    }
+}

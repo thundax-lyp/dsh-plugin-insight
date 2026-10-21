@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f402735a592992002b42b432a44a41b2",
+    "identity": "github:1372540781:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372540781:root",
+            "repository": "ZZJQ678/dsh-global-context",
+            "path": "",
+            "revision": "9e9875b5836c1f68910bf9551a55f4cac7f418d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d2d5712ca043cab1d36e7053ffb692e150cdfaa12d960dbd9f462acbc6d46a78",
+                "code": "9e9875b5836c1f68910bf9551a55f4cac7f418d8",
+                "maintenance": "355ef92f98b200cc0072fe545aa8208ad45927f5770792ffc7f5145e7fcdcb00"
+            }
+        }
+    }
+}

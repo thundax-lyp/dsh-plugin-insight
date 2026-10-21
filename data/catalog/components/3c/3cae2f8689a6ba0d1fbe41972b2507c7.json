@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3cae2f8689a6ba0d1fbe41972b2507c7",
+    "identity": "github:1333252932:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333252932:root",
+            "repository": "techysy/deepseek-harness-fnos",
+            "path": "",
+            "revision": "cc44e0dc7f9c716a54154e0fb53a1be68769bb54",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "edd24c66c4f57f2da8b9e470074351f93008912f30f56bc0174046db6203ab24",
+                "code": "cc44e0dc7f9c716a54154e0fb53a1be68769bb54",
+                "maintenance": "03cc656920871f8ac647240a93c4848f7e6a57f8684cb864ba405e095c3a38df"
+            }
+        }
+    }
+}

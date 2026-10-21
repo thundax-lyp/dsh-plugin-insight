@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3e2430958836e62eb516b6d35872fb63",
+    "identity": "github:1335241492:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335241492:root",
+            "repository": "dream-num/dsh-univer-office",
+            "path": "",
+            "revision": "8f85ce4074fdbe51416b6c337468bb916a302c2a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "139473468d6f54aeedf2506c11ddb9c39076e577d067559a28f953c8264120be",
+                "code": "8f85ce4074fdbe51416b6c337468bb916a302c2a",
+                "maintenance": "36ce1d8ef464a1a41734f9ae782f79febb3b8f95ef3455f374dd6e72e2b699ed"
+            }
+        }
+    }
+}

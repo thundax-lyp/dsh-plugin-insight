@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "214c1a55cca7c8d7d125692c643bd350",
+    "identity": "github:1412877751:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412877751:root",
+            "repository": "hojas/dsh-price-tip",
+            "path": "",
+            "revision": "2bcd3161aedab23a6608b3df164d1e30031e952c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0299445d063b2e4c507c8dd6902f065f6040dedaf74efcaf972d6e5213ac57f0",
+                "code": "2bcd3161aedab23a6608b3df164d1e30031e952c",
+                "maintenance": "b879b9591725c752132c1e33743eedfe7c4b4ed8e1b2b2ac67e75092c01b465e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e7d52dfe91907ab6ae617ebc158b7d29",
+    "identity": "github:1336803272:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336803272:root",
+            "repository": "winditer/dsh-prompt-optimizer",
+            "path": "",
+            "revision": "be0fb0a07380a20a81287dedb17a3400aa88b592",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a33e7819a3f6419184f0cac5948ab47fed60e99e946caa109015087f85cfa30d",
+                "code": "be0fb0a07380a20a81287dedb17a3400aa88b592",
+                "maintenance": "b9b9187226f1d69cc574cd11078b0b97658651adb81f6ae13daf43379c59d3f2"
+            }
+        }
+    }
+}

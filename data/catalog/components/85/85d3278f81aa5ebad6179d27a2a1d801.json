@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "85d3278f81aa5ebad6179d27a2a1d801",
+    "identity": "github:1415358215:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415358215:root",
+            "repository": "JoblessJoe/dsh-restart-anywhere",
+            "path": "",
+            "revision": "bc53724833fd017049111edf6c7e8fc856fffc3e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1f51240fab24680b14c4b6764623c7250bef3d977f1b81384f6316eaec9ca168",
+                "code": "bc53724833fd017049111edf6c7e8fc856fffc3e",
+                "maintenance": "9bdd66ddefe2a31c02550ce841093ce3c05d1f5bd1bdf6533265680650e22286"
+            }
+        }
+    }
+}

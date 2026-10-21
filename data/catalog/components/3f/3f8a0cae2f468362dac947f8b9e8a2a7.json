@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3f8a0cae2f468362dac947f8b9e8a2a7",
+    "identity": "github:1345763192:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345763192:root",
+            "repository": "icearia0219/dsh-memory-spaces",
+            "path": "",
+            "revision": "f276ecc859262e23f5c4f6239755df5e4f977821",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1448fd48a8a26db10faae45e789f52c856b2b1e8d71da449b4d5d1668b591555",
+                "code": "f276ecc859262e23f5c4f6239755df5e4f977821",
+                "maintenance": "d34b0e5362b334364353ee9c4bec4b3cb2a81f9267599941b19b4ae0b42a0f0a"
+            }
+        }
+    }
+}

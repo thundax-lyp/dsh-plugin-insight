@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e7483bd5ee3d08a3e6fcf7111679db28",
+    "identity": "github:1397659735:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397659735:root",
+            "repository": "songshuhuoban/dsh-next-input",
+            "path": "",
+            "revision": "3c8c9167d8a7e6c97543d97c5e32e325eaec2b5a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4b20c02423fce17946510c5be7b725a0d67cbfdb74298b9c4e50042e9b04baa0",
+                "code": "3c8c9167d8a7e6c97543d97c5e32e325eaec2b5a",
+                "maintenance": "e6494b3484dc5465ceb6774657c8d03857daeb58ec1cf11f0a3aa43626d7deee"
+            }
+        }
+    }
+}

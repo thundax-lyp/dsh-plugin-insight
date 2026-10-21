@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7f055051041d00678d1f87ad16bd9b1",
+    "identity": "github:1395557277:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1395557277:root",
+            "repository": "ajia1206/dsh-restart",
+            "path": "",
+            "revision": "0fe60fa30352f6a38cd41b227ddb24e66a1d7d9f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0d871b7bf1e8d7f4f2a582e8fc448e69e5ccc7bcd014279cf2525f9f8ed3b5b",
+                "code": "0fe60fa30352f6a38cd41b227ddb24e66a1d7d9f",
+                "maintenance": "25a2e26426a9f9f635cda4720c54f7400a536bdbf40239751006675f0460e808"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1ba1f5a519affddffc52da5d9d98cbe0",
+    "identity": "github:1307364253:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1307364253:root",
+            "repository": "tetckx/deep-structural-analysis-skill",
+            "path": "",
+            "revision": "07b5ad8564cbbb352ad93e8a733ca835e43a448e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6ad88d964e4220c30c0e22f584f445f3c681f635e46af61670b939ad45012528",
+                "code": "07b5ad8564cbbb352ad93e8a733ca835e43a448e",
+                "maintenance": "dad76580f764ba2166ac5b61814ca3db7c441bdf785ff4216ebf574e3389a5aa"
+            }
+        }
+    }
+}

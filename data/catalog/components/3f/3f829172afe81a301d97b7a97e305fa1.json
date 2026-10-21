@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3f829172afe81a301d97b7a97e305fa1",
+    "identity": "github:1407409202:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407409202:root",
+            "repository": "SuperWheel/dsh-cliworker-now",
+            "path": "",
+            "revision": "09d8e5485bc49e8a3b8bec2fc001e98ed954f9b6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0cffc41c66ca5edea84a9eaaf1d718fca87488a7eea7cecea1c4fb6620ebd3a7",
+                "code": "09d8e5485bc49e8a3b8bec2fc001e98ed954f9b6",
+                "maintenance": "9e939d2feadc23b48fb8e5360a746bb515a50ad203a85ad2ac4f836f37da337f"
+            }
+        }
+    }
+}

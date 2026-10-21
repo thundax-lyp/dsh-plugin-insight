@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5b34ea22bf65774c5d96fb00b31f36c9",
+    "identity": "github:1303848201:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1303848201:root",
+            "repository": "theBigGavin/marketingdashboard",
+            "path": "",
+            "revision": "f793de6f9f9874c120585cd6f6b293333067fa46",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a10d0f4b19a63b90b376066673771c27c6dfacb97ee568af51318d37592e008",
+                "code": "f793de6f9f9874c120585cd6f6b293333067fa46",
+                "maintenance": "abc6e609be20322cb3679699a8bb7a592a110bf3bc027935ba8fcb2d1584639e"
+            }
+        }
+    }
+}

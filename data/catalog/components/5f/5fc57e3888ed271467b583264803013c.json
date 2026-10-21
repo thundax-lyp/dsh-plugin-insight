@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "5fc57e3888ed271467b583264803013c",
+    "identity": "github:1333911514:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333911514:root",
+            "repository": "Leon0555/dsh-lan-access",
+            "path": "",
+            "revision": "4d206e35836a9d1d8c0d94c440039cda85364dde",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0244e7ca0ae52e16f43d5a908e29cc59c103b88523f1a8b4399e0a1577b8e6f3",
+                "code": "4d206e35836a9d1d8c0d94c440039cda85364dde",
+                "maintenance": "ad2a828844b71cc8c7f5410a16f4bef2b18d5729ca006bd8cf351137eb2722b1"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b73023010600c4b3d7fa88ae094c9b3",
+    "identity": "github:1398565323:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398565323:root",
+            "repository": "Very12345/dsh-computer-use-windows",
+            "path": "",
+            "revision": "1dd3c42ea81f2d836f01aa7e4ebb316b9ead8514",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5153426ba395414be09bf17373e7957a600a8955f1fe5dbcaa25f3ea2a009e99",
+                "code": "1dd3c42ea81f2d836f01aa7e4ebb316b9ead8514",
+                "maintenance": "315811a7b9d5870b1484f1f80c2cacce84f2e5659f27a73c5bcc022603e5645a"
+            }
+        }
+    }
+}

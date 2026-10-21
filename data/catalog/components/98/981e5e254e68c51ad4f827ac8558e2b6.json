@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "981e5e254e68c51ad4f827ac8558e2b6",
+    "identity": "github:1340823555:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340823555:root",
+            "repository": "YeqingTang/dsh-task-watcher-plugin",
+            "path": "",
+            "revision": "2a8b9ed501eac72d521233d4d05d66c9e4f7c16a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8a98fa18ce3a74bf98a21828b5195cefdde50fece7f89880d7643bfcddd5d5df",
+                "code": "2a8b9ed501eac72d521233d4d05d66c9e4f7c16a",
+                "maintenance": "64cf703bdeff7cd29e2ad2fe1b51d075166cbfcc4ba977d3b14eee38cec8b785"
+            }
+        }
+    }
+}

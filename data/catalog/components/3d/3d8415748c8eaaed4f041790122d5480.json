@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3d8415748c8eaaed4f041790122d5480",
+    "identity": "github:1409937226:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409937226:root",
+            "repository": "BaoBao1996121/dsh-chatgpt-subscription",
+            "path": "",
+            "revision": "acefe84769766e0f7c8f8356591afbc676b52339",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "49dbcf50f7aaf4cbeb5a7aa8b1028234e6393bf75387e57a40e4d626727452fc",
+                "code": "acefe84769766e0f7c8f8356591afbc676b52339",
+                "maintenance": "f153686026fb5e62290545dd6b69de293ba9b314ba7a9cbc334b81d409e860d4"
+            }
+        }
+    }
+}

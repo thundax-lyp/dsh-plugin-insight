@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "68dfc50901c05cb9f6625b845f8ff859",
+    "identity": "github:1304997851:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1304997851:root",
+            "repository": "taxueseek/argo",
+            "path": "",
+            "revision": "32428bc90aae9fe111dceec3d5ab2e89a2bad070",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aa3d285fde9da92fac0754ab8004e6ebb9227d032a935c4c868d3af767479417",
+                "code": "32428bc90aae9fe111dceec3d5ab2e89a2bad070",
+                "maintenance": "b5d4525dd61d6b0da724767310392afa31b29085a3360909185567a0a51ea69a"
+            }
+        }
+    }
+}

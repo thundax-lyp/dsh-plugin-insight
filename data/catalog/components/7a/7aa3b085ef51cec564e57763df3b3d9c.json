@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7aa3b085ef51cec564e57763df3b3d9c",
+    "identity": "github:1347047955:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347047955:root",
+            "repository": "m1452700576/dsh-app-updater",
+            "path": "",
+            "revision": "2fbedc5603ebe23c180072e5a4f717129726ec8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8690ec0d6d34be7c1de8b5a8e4d5d46897050628cbe982dd0a1059576a21af2e",
+                "code": "2fbedc5603ebe23c180072e5a4f717129726ec8a",
+                "maintenance": "c1011f03a2acd649f1037856f047b8f835ca3a38862509de6994ecc904bb155f"
+            }
+        }
+    }
+}

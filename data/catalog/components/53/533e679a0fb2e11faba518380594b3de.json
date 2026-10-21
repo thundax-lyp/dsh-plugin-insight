@@ -1,0 +1,374 @@
+{
+    "schema_version": 3,
+    "id": "533e679a0fb2e11faba518380594b3de",
+    "identity": "github:1333136466:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333136466:root",
+            "repository_id": 1333136466,
+            "component_id": "root",
+            "repository": "0xsline/dsh-spotlight",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-spotlight",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [
+                "命令面板",
+                "键盘操作"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "439343cfe7f96069bb65fe106eec5629ed7c44ee51ec373efc001d59000319b7",
+                "code": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+                "maintenance": "7953d9ed42f7af082be42f439f1ff668e3589333d46d5a5376f1719d393492c5"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1333136466-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:10:25.705Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "20261020-research40-github-1333136466-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-20T03:10:25.705Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1333136466-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/0xsline/dsh-spotlight/blob/b3565e8629d9a393d764681e96f4c41100cc12fa/README.md",
+                    "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+                    "captured_at": "2026-10-20T03:10:25.705Z",
+                    "summary": "以键盘命令面板统一查找原生命令、近期会话和插件入口。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/0xsline--dsh-spotlight/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1333136466-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/0xsline/dsh-spotlight/blob/b3565e8629d9a393d764681e96f4c41100cc12fa/src/client/index.ts",
+                    "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+                    "captured_at": "2026-10-20T03:10:25.705Z",
+                    "summary": "核查 src/client/index.ts；客户端注入 sessions、commands 和 pluginInventory，挂载面板并通过原生 commandUi 注册 /spotlight。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/0xsline--dsh-spotlight/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "未验证模糊匹配质量、键盘冲突或不同宿主版本的命令枚举完整性。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "大量使用快捷键的 DSH Web 用户需要减少在会话与设置之间寻找入口的操作。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333136466-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333136466:root",
+                            "area": "code",
+                            "fingerprint": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:25.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "客户端注入 sessions、commands 和 pluginInventory，挂载面板并通过原生 commandUi 注册 /spotlight。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333136466-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333136466:root",
+                            "area": "code",
+                            "fingerprint": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:25.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "复用原生命令注册表可降低双份清单漂移；命令数量增加并不自动提升检索体验。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333136466-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333136466:root",
+                            "area": "code",
+                            "fingerprint": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:25.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "不必额外调用模型，但需要学习快捷键与排查入口兼容，未测节省点击次数。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333136466-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333136466:root",
+                            "area": "code",
+                            "fingerprint": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:25.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "挂载与释放在 effect 中配对，生命周期清晰；跨版本复用需核对所有注入服务。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333136466-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333136466:root",
+                            "area": "code",
+                            "fingerprint": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:25.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用常用的十条命令与十个会话检查搜索命中和导航，再决定是否替代原生入口。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333136466-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333136466:root",
+                            "area": "code",
+                            "fingerprint": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:25.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "未验证模糊匹配质量、键盘冲突或不同宿主版本的命令枚举完整性。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333136466-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333136466:root",
+                            "area": "code",
+                            "fingerprint": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:25.705Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "组件 @0xsline/dsh-spotlight 0.0.2，客户端与宿主服务契约绑定较紧。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1333136466-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333136466:root",
+                            "area": "code",
+                            "fingerprint": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:25.705Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:10:25.705Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "适合高频键盘操作、经常查找命令与会话的用户，先与原生菜单对照搜索命中和导航，并核对快捷键冲突；尚未进行真实宿主验证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "命令和会话较多时有明确查找需求，轻量用户不一定需要额外入口。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "跨命令、会话与插件统一搜索有便利，但原生菜单已覆盖部分用途。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码支持服务注入、面板与原生命令注册，模糊检索质量和命令完整性未实测。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无额外模型调用且生命周期有清理，持续负担为宿主服务兼容和快捷键冲突。"
+                    }
+                },
+                "score": 64,
+                "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+                "reviewed_at": "2026-10-21T09:16:52.633Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1333136466-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333136466:root",
+                        "area": "code",
+                        "fingerprint": "b3565e8629d9a393d764681e96f4c41100cc12fa"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333136466:root",
+            "repository": "0xsline/dsh-spotlight",
+            "path": "",
+            "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+            "fingerprints": {
+                "directory": "439343cfe7f96069bb65fe106eec5629ed7c44ee51ec373efc001d59000319b7",
+                "code": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+                "maintenance": "7953d9ed42f7af082be42f439f1ff668e3589333d46d5a5376f1719d393492c5"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "17257f5937fd1fed1fe3cf2b70fe23f859d663395ee389295c1b114295706073"
+        },
+        "publication.metadata": "data/plugins/0xsline--dsh-spotlight/META.json",
+        "publication.summaries": {
+            "text": "以键盘命令面板统一查找原生命令、近期会话和插件入口。",
+            "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+            "source_url": "https://github.com/0xsline/dsh-spotlight/blob/b3565e8629d9a393d764681e96f4c41100cc12fa/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+            "items": {
+                "界面": "键盘面板与会话导航。",
+                "用户命令": "/spotlight 打开面板。"
+            }
+        },
+        "publication.advice": {
+            "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+            "text": "先用常用的十条命令与十个会话检查搜索命中和导航，再决定是否替代原生入口。"
+        },
+        "registry": "data/plugins/0xsline--dsh-spotlight",
+        "reports": "# dsh-spotlight\n\n> 以键盘命令面板统一查找原生命令、近期会话和插件入口。\n\n## 固定范围与依据\n\n固定提交 [b3565e8629d9a393d764681e96f4c41100cc12fa](https://github.com/0xsline/dsh-spotlight/blob/b3565e8629d9a393d764681e96f4c41100cc12fa/src/client/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:10:25.705Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/client/index.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：大量使用快捷键的 DSH Web 用户需要减少在会话与设置之间寻找入口的操作。\n- **亮点**：客户端注入 sessions、commands 和 pluginInventory，挂载面板并通过原生 commandUi 注册 /spotlight。\n- **思考**：复用原生命令注册表可降低双份清单漂移；命令数量增加并不自动提升检索体验。\n- **建议**：先用常用的十条命令与十个会话检查搜索命中和导航，再决定是否替代原生入口。\n\n## 场景与替代办法\n\n大量使用快捷键的 DSH Web 用户需要减少在会话与设置之间寻找入口的操作。\n\n原生斜杠菜单无需额外插件；只有跨入口搜索更顺手时才有迁移价值。\n\n## 依赖与流程\n\n依赖 Web DOM、会话目录、命令 UI 和插件库存服务，没有对应服务时面板不能独立工作。\n\n打开面板搜索，选择命令或会话交给宿主执行；异常先检查服务与快捷键冲突。\n\n## 成本与效果\n\n不必额外调用模型，但需要学习快捷键与排查入口兼容，未测节省点击次数。\n\n复用原生命令注册表可降低双份清单漂移；命令数量增加并不自动提升检索体验。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1c49cd982a9082aeed427245684e21c7b1971cf615da1f98d21bef06ac2ba32f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 13 | 980 | — | — | 9699 |\n| .mjs | source | 3 | 311 | 249 | 32 | — |\n| .ts | source | 13 | 1092 | 857 | 141 | — |\n| .ts | test | 8 | 545 | 474 | 12 | — |\n| .md | test | 2 | 16 | — | — | 229 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：键盘面板与会话导航。\n- **用户命令**：/spotlight 打开面板。\n\n## 工程亮点\n\n挂载与释放在 effect 中配对，生命周期清晰；跨版本复用需核对所有注入服务。\n\n## 分发与兼容\n\n组件 @0xsline/dsh-spotlight 0.0.2，客户端与宿主服务契约绑定较紧。\n\n## 历史对照\n\n前次代码指纹为 b3565e8629d9a393d764681e96f4c41100cc12fa；本轮固定为 b3565e8629d9a393d764681e96f4c41100cc12fa。原生斜杠菜单无需额外插件；只有跨入口搜索更顺手时才有迁移价值。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未验证模糊匹配质量、键盘冲突或不同宿主版本的命令枚举完整性。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：测试空目录、大量会话、快捷键冲突、卸载后监听释放与命令权限继承。\n",
+        "metadata": {
+            "repository": "0xsline/dsh-spotlight",
+            "repository_id": 1333136466,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 23,
+            "pushed_at": "2026-08-24T09:03:11Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:141BF4:2197F0:6AD848FB and timestamp 2026-10-21 05:09:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:14929F:221732:6AD848FB and timestamp 2026-10-21 05:09:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:14DC99:2253F3:6AD848FB and timestamp 2026-10-21 05:09:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14422C:21AF60:6AD848FC and timestamp 2026-10-21 05:09:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A0xsline%2Fdsh-spotlight%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:1546BA:22A9F2:6AD848FC and timestamp 2026-10-21 05:09:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@0xsline/dsh-spotlight",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 634,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%400xsline%2Fdsh-spotlight",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-14T09:37:00.387Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%400xsline%2Fdsh-spotlight",
+                    "error": null,
+                    "latest_version": "0.0.2",
+                    "latest_published_at": "2026-08-14T10:40:32.291Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+                "current_revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1333136466:root",
+            "repository": "0xsline/dsh-spotlight",
+            "path": "",
+            "revision": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "439343cfe7f96069bb65fe106eec5629ed7c44ee51ec373efc001d59000319b7",
+                "code": "b3565e8629d9a393d764681e96f4c41100cc12fa",
+                "maintenance": "7953d9ed42f7af082be42f439f1ff668e3589333d46d5a5376f1719d393492c5"
+            }
+        }
+    }
+}

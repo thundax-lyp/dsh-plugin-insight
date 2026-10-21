@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f2d344c0020bf6acf78c9f74e2e1b437",
+    "identity": "github:1346223524:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346223524:root",
+            "repository": "0N3-0/dsh-tui-mcp-manager",
+            "path": "",
+            "revision": "6df5ee5f59ec14fefed3dc3e6f165a20840148e9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b5b38739135a7b0fb45b6ac62b93d38ae2eb7b32fd5c56e3b559b42d9045a056",
+                "code": "6df5ee5f59ec14fefed3dc3e6f165a20840148e9",
+                "maintenance": "86a03c85984f1cbe41dd578b64b914bd25fa6c000898b97440162f6e66eaf7f6"
+            }
+        }
+    }
+}

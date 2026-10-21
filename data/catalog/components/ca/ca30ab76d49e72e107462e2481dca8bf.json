@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ca30ab76d49e72e107462e2481dca8bf",
+    "identity": "github:1334711481:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334711481:root",
+            "repository": "moononnn/DeepSeek-Harness-biaoqingbao",
+            "path": "",
+            "revision": "e8a81042230b33a4800d7c4f01238d368998b0d5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7a156e6cecd49dff2ebee42e50974a1457b15bbb5d90e0f091eff3b182962dc9",
+                "code": "e8a81042230b33a4800d7c4f01238d368998b0d5",
+                "maintenance": "4f3628db7fcaed3b1949d1bf61852573e791ef1d7a4fa0521b6e40630b6bdbae"
+            }
+        }
+    }
+}

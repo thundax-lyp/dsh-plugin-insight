@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1662ae5e34f963fa8d354b24c5007e78",
+    "identity": "github:1334717658:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334717658:root",
+            "repository": "V-dev-388/dsh-usage-meter",
+            "path": "",
+            "revision": "1a0a4f25495f5d40430b5d9809cf66e5f458432e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "41494b781ecfbfc61ea181ad0949fb3cbb9f282d7f91a10cc4b2e82ba4c992d6",
+                "code": "1a0a4f25495f5d40430b5d9809cf66e5f458432e",
+                "maintenance": "61ef660670e45af558d80a1d06f6cff81822cb276175b2909999b6f7bfe4427a"
+            }
+        }
+    }
+}

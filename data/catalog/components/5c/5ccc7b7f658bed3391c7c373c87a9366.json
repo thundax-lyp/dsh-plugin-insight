@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5ccc7b7f658bed3391c7c373c87a9366",
+    "identity": "github:1338093653:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338093653:root",
+            "repository": "wydddddcool/dsh-hover-approve",
+            "path": "",
+            "revision": "70cd0c3176431eab98c8f8158f7381d7d7ecea2c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9e41968ef956bdd198dfdbd894496537cfcd48419564c592c652d590418e0c98",
+                "code": "70cd0c3176431eab98c8f8158f7381d7d7ecea2c",
+                "maintenance": "929c4a05b27ab01322d74245a61eee6f35df4a6e6d25a8b8a33971784a8b2a91"
+            }
+        }
+    }
+}

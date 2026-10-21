@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "212c1559d1bae03e433baae3a5382604",
+    "identity": "github:1348207658:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348207658:root",
+            "repository": "mldhao/dsh-conversation-strip",
+            "path": "",
+            "revision": "48a999090ccae018f75fdbfba3d2479983ea5bc6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "706a629aae6bf52d43bb8fb418ed721b9d1db0d0bede158a50d402fd7be3988d",
+                "code": "48a999090ccae018f75fdbfba3d2479983ea5bc6",
+                "maintenance": "de50c920373ebd5e935bb66202e858a19542ff49f17a2d878ea6eeb9d6405ece"
+            }
+        }
+    }
+}

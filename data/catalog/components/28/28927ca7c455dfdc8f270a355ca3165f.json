@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "28927ca7c455dfdc8f270a355ca3165f",
+    "identity": "github:1370083201:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370083201:root",
+            "repository": "GooDAnDReaDY/dsh-issue-reporter",
+            "path": "",
+            "revision": "12d7da45819deec297c7a87051c1b54de3f89bb9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c2c7425da9d427769104c096cb8cdb1c0d336fd4b43cb5b5513065c57aedc4ed",
+                "code": "12d7da45819deec297c7a87051c1b54de3f89bb9",
+                "maintenance": "32a4a71ea3e3e5a2010187496e9703e1ed51712c829b0ff9b96db72e7d0bf15f"
+            }
+        }
+    }
+}

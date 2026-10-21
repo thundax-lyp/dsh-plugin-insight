@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90e1159dca28149a36aa1921f8c593ef",
+    "identity": "github:1377263298:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377263298:root",
+            "repository": "OzzyDeng-JunDeng/dsh-keyless-search",
+            "path": "",
+            "revision": "94c574bf0c0997656a94f0024851cb2b81bbd18e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7f45d7820fe04c4b6d5e9da18b4ed2d49812a6dae9aa81b15650b431435d4aeb",
+                "code": "94c574bf0c0997656a94f0024851cb2b81bbd18e",
+                "maintenance": "9a10be6f9062315f96049c9b7ed8bab40e2de04c86094e4cda341a05fcc66be4"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3f2ae5317c11dcf7e20c84268f85cff9",
+    "identity": "github:1346880957:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346880957:root",
+            "repository": "lengzhanbao/dsh-raiden-theme",
+            "path": "",
+            "revision": "8cad8cc18f5915c1cafdaea5d414a43bacf78610",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7825ebabc2bedd9155fad2942d70c90bda8d4f6f98612ffe9b885841f1cf6735",
+                "code": "8cad8cc18f5915c1cafdaea5d414a43bacf78610",
+                "maintenance": "1573c884e287cd217ab3ccd5bd2df735311a63416807fb7e57fbfb3cfcb040de"
+            }
+        }
+    }
+}

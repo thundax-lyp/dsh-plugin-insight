@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5301ebe4db342e6f8dfbc9c8d9d92d4",
+    "identity": "github:1382805576:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1382805576:root",
+            "repository": "pbwheel/dsh-workbuddy-expert",
+            "path": "",
+            "revision": "17abcb35bad974dd86bee586d1dbf391fbd9db91",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "afe4bc97a59986f18d85bbda54567f4fb95d5fbf30805fd64df1874c3db3fa07",
+                "code": "17abcb35bad974dd86bee586d1dbf391fbd9db91",
+                "maintenance": "2905a4cda71d3422f807d3e534b9c1a7090e380304ad153b09bda0e670980ce9"
+            }
+        }
+    }
+}

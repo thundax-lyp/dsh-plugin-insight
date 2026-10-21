@@ -1,0 +1,458 @@
+{
+    "schema_version": 3,
+    "id": "db3aa5538b1dc3849bfda5a0c45824dd",
+    "identity": "github:1367597810:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1367597810:root",
+            "repository_id": 1367597810,
+            "component_id": "root",
+            "repository": "99galaxy/dsh-plugin-market",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-market（99galaxy）",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "74ed71f8fc3c00f706e6b1e7be80fbf9035aaf7dffb0a770d02006f43c51791f",
+                "code": "b97664510aafd55a74f17e304e271956f1c07659",
+                "maintenance": "76ecee8e8c1d5745cbb80bb03fddefd0b02344849fa0af55f8d36f46c5d57c39"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-04-github-1367597810-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T04:19:18.728Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-04-github-1367597810-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/99galaxy/dsh-plugin-market/blob/b97664510aafd55a74f17e304e271956f1c07659/README.md",
+                    "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+                    "captured_at": "2026-10-21T04:19:18.728Z",
+                    "summary": "在 DSH 设置页浏览社区插件目录、查看安装版本并执行安装。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/99galaxy--dsh-plugin-market/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-04-github-1367597810-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/99galaxy/dsh-plugin-market/blob/b97664510aafd55a74f17e304e271956f1c07659/index.js",
+                    "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+                    "captured_at": "2026-10-21T04:19:18.728Z",
+                    "summary": "核查 index.js、market-core.mjs、client/client.js、package.json；index提供list/install同源HTTP，helper抓多来源目录缓存1小时、读profile安装清单，safeSpec解析安装命令后以单argv给Node helper再调用pnpm；client提供三个页内tab。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/99galaxy--dsh-plugin-market/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读index/helper/client和manifest；未验证目录当前规模、镜像、pnpm安装或版本实际兼容。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户在GUI查目录与已安装/可更新项，点击安装；交付profile依赖变化，仍须重启和核对插件加载。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "index提供list/install同源HTTP，helper抓多来源目录缓存1小时、读profile安装清单，safeSpec解析安装命令后以单argv给Node helper再调用pnpm；client提供三个页内tab。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读index/helper/client和manifest；未验证目录当前规模、镜像、pnpm安装或版本实际兼容。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "host/client现成产物，固定web profile；更新版本来自目录，不是每插件源码实时比较。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次装bundle并重启，持续网络/缓存/更新源核查和失败日志维护；无平台费实测，安装后测试成本另计。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "主要用web profile的人先浏览目录；点击前检查来源和版本，固定commit用户别直接更新，其他profile先核目标，安装后重启确认加载。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "降低发现与操作门槛，不能把目录热度、版本高或安装成功当采用推荐。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "避免shell、拒绝leading-dash选项、安装串行锁和缓存失效可借鉴；目录信任/profile选择及安装后验收仍需明确。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对逐条复制安装命令，增量是同屏目录/安装/更新比较、多源缓存与界面操作。目录与pnpm能力归上游，本插件提供接线与状态整理；目录收录/下载不等于质量或兼容。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "“装当前profile”与更新是否符合用户预期？index硬编码PROFILE=web，安装/清单都传web；放到其他profile不自动跟随。更新执行目录命令可能从固定Git commit转npm源；多来源回退没有内容同一性证明。pnpm exit0也只说明安装流程结束，不是插件加载或宿主业务验收。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：从宿主取得明确profile并让用户审核旧spec→新spec/版本摘要，目录回退绑定签名或摘要，可减少错profile与来源漂移。由硬编码web和目录命令驱动推导，未实现。对照desktop/custom profile、Git固定版转npm及镜像内容不同，测目标准确性和拒绝未知来源；更新保持人工确认。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1367597810:root",
+                            "area": "code",
+                            "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:19:18.728Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T04:19:18.728Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+                "reviewed_at": "2026-10-21T04:19:18.728Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1367597810:root",
+                        "area": "code",
+                        "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 小幅：常规插件商店DSH适配；mechanism 小幅：缓存/版本比较/子进程常规；transferability 小幅：profile硬编码限制；simplification 实质：浏览与安装状态同页。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 实质：目录到安装交接减少；delivery 小幅：依赖变更未含验收；reach 实质：GUI降低命令门槛；economics 小幅：少复制，供应链复核成本未测。",
+                    "basis": "interpretation",
+                    "score": 40,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1367597810-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "web profile用户可先浏览目录；安装更新前核硬编码目标与来源版本，固定commit或其他profile应暂缓直接更新。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "GUI发现、安装与更新插件有具体用户需求。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "同页目录和安装清单降低操作门槛。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核safeSpec和安装调用，硬编码web及来源漂移影响核心操作。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "重启验收、缓存核查和版本来源恢复负担明显，错profile风险未消除。"
+                    }
+                },
+                "score": 54,
+                "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-04-github-1367597810-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1367597810:root",
+                        "area": "code",
+                        "fingerprint": "b97664510aafd55a74f17e304e271956f1c07659"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1367597810:root",
+            "repository": "99galaxy/dsh-plugin-market",
+            "path": "",
+            "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+            "fingerprints": {
+                "directory": "74ed71f8fc3c00f706e6b1e7be80fbf9035aaf7dffb0a770d02006f43c51791f",
+                "code": "b97664510aafd55a74f17e304e271956f1c07659",
+                "maintenance": "76ecee8e8c1d5745cbb80bb03fddefd0b02344849fa0af55f8d36f46c5d57c39"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T04:06:46Z",
+            "analysis_sha256": "9749c6a6d217527b43c7299f0dd9708486edcd6e8c23240b5025cff3fa579be4"
+        },
+        "publication.metadata": "data/plugins/99galaxy--dsh-plugin-market/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 设置页浏览社区插件目录、查看安装版本并执行安装。",
+            "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+            "source_url": "https://github.com/99galaxy/dsh-plugin-market/blob/b97664510aafd55a74f17e304e271956f1c07659/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+            "items": {
+                "Host 路由": "目录列表和安装HTTP。",
+                "界面": "全部/已安装/可更新设置页。",
+                "后台": "目录缓存、多来源回退与pnpm helper。"
+            }
+        },
+        "publication.advice": {
+            "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+            "text": "主要用web profile的人先浏览目录；点击前检查来源和版本，固定commit用户别直接更新，其他profile先核目标，安装后重启确认加载。"
+        },
+        "registry": "data/plugins/99galaxy--dsh-plugin-market",
+        "reports": "# dsh-plugin-market（99galaxy）\n\n> 在 DSH 设置页浏览社区插件目录、查看安装版本并执行安装。\n\n## 使用建议\n\n主要用web profile的人先浏览目录；点击前检查来源和版本，固定commit用户别直接更新，其他profile先核目标，安装后重启确认加载。\n\n核查状态：源码支持目录/安装工具链；未联网抓目录、安装包或宿主验收，目录可信度与供应链未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：用户在GUI查目录与已安装/可更新项，点击安装；交付profile依赖变化，仍须重启和核对插件加载。\n- **亮点**：相对逐条复制安装命令，增量是同屏目录/安装/更新比较、多源缓存与界面操作。目录与pnpm能力归上游，本插件提供接线与状态整理；目录收录/下载不等于质量或兼容。\n- **思考**：“装当前profile”与更新是否符合用户预期？index硬编码PROFILE=web，安装/清单都传web；放到其他profile不自动跟随。更新执行目录命令可能从固定Git commit转npm源；多来源回退没有内容同一性证明。pnpm exit0也只说明安装流程结束，不是插件加载或宿主业务验收。\n- **建议**：待验证假设：从宿主取得明确profile并让用户审核旧spec→新spec/版本摘要，目录回退绑定签名或摘要，可减少错profile与来源漂移。由硬编码web和目录命令驱动推导，未实现。对照desktop/custom profile、Git固定版转npm及镜像内容不同，测目标准确性和拒绝未知来源；更新保持人工确认。\n\n## 场景与替代办法\n\n用户在GUI查目录与已安装/可更新项，点击安装；交付profile依赖变化，仍须重启和核对插件加载。\n\n参照手工dsh plugin add和常规市场UI；不将目录内容认作插件质量证据。\n\n## 能力清单\n\n- **Host 路由**：目录列表和安装HTTP。\n- **界面**：全部/已安装/可更新设置页。\n- **后台**：目录缓存、多来源回退与pnpm helper。\n\n## 依赖与流程\n\nindex提供list/install同源HTTP，helper抓多来源目录缓存1小时、读profile安装清单，safeSpec解析安装命令后以单argv给Node helper再调用pnpm；client提供三个页内tab。\n\nDSH webServer/settings槽位、Node/pnpm/profile写权限、目录域/镜像/CDN/npm可达性。\n\n读取缓存/回退抓目录→比web已装版本→用户选安装→同源JSON校验/safeSpec→helper/pnpm→失效清单缓存→用户重启核载入。\n\nhost/client现成产物，固定web profile；更新版本来自目录，不是每插件源码实时比较。\n\n## 成本与效果\n\n首次装bundle并重启，持续网络/缓存/更新源核查和失败日志维护；无平台费实测，安装后测试成本另计。\n\n降低发现与操作门槛，不能把目录热度、版本高或安装成功当采用推荐。\n\n## 核心贡献\n\n相对逐条复制安装命令，增量是同屏目录/安装/更新比较、多源缓存与界面操作。目录与pnpm能力归上游，本插件提供接线与状态整理；目录收录/下载不等于质量或兼容。\n\n## 关键质疑\n\n“装当前profile”与更新是否符合用户预期？index硬编码PROFILE=web，安装/清单都传web；放到其他profile不自动跟随。更新执行目录命令可能从固定Git commit转npm源；多来源回退没有内容同一性证明。pnpm exit0也只说明安装流程结束，不是插件加载或宿主业务验收。\n\n## 工程亮点\n\n避免shell、拒绝leading-dash选项、安装串行锁和缓存失效可借鉴；目录信任/profile选择及安装后验收仍需明确。\n\n固定源码依据：[index.js](https://github.com/99galaxy/dsh-plugin-market/blob/b97664510aafd55a74f17e304e271956f1c07659/index.js)、[market-core.mjs](https://github.com/99galaxy/dsh-plugin-market/blob/b97664510aafd55a74f17e304e271956f1c07659/market-core.mjs)、[client/client.js](https://github.com/99galaxy/dsh-plugin-market/blob/b97664510aafd55a74f17e304e271956f1c07659/client/client.js)、[package.json](https://github.com/99galaxy/dsh-plugin-market/blob/b97664510aafd55a74f17e304e271956f1c07659/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：从宿主取得明确profile并让用户审核旧spec→新spec/版本摘要，目录回退绑定签名或摘要，可减少错profile与来源漂移。由硬编码web和目录命令驱动推导，未实现。对照desktop/custom profile、Git固定版转npm及镜像内容不同，测目标准确性和拒绝未知来源；更新保持人工确认。\n\n隔离profile验证web硬编码、来源更新差异、恶意spec拒绝、镜像漂移和安装后加载失败；本轮不执行安装。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：81750f2aa86d077b0ae9878b91578555c792f9671d56728288dbef6ef9596606。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1180 | 932 | 174 | — |\n| .mjs | source | 19 | 2881 | 2201 | 469 | — |\n| .md | source | 1 | 157 | — | — | 1459 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：1.1.1；版本日期：2026-09-23（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[b9766451](https://github.com/99galaxy/dsh-plugin-market/tree/b97664510aafd55a74f17e304e271956f1c07659)；本轮基准：2026-10-21T04:06:46Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：抽读index/helper/client和manifest；未验证目录当前规模、镜像、pnpm安装或版本实际兼容。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "99galaxy/dsh-plugin-market",
+            "repository_id": 1367597810,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-09-23T14:15:37Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A99galaxy%2Fdsh-plugin-market%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:208D3:AB7FE5:F52885:6AD84B09 and timestamp 2026-10-21 05:18:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A99galaxy%2Fdsh-plugin-market%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:208D3:AB801C:F528C8:6AD84B09 and timestamp 2026-10-21 05:18:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A99galaxy%2Fdsh-plugin-market%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:24642:AA754F:F4573C:6AD84B09 and timestamp 2026-10-21 05:18:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A99galaxy%2Fdsh-plugin-market%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:F5216:A76B53:F0A388:6AD84B0A and timestamp 2026-10-21 05:18:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A99galaxy%2Fdsh-plugin-market%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:3FE178:AA0F61:F3D329:6AD84B0A and timestamp 2026-10-21 05:18:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@99galaxy/dsh-plugin-market",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1454,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%4099galaxy%2Fdsh-plugin-market",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-18T18:34:20.856Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%4099galaxy%2Fdsh-plugin-market",
+                    "error": null,
+                    "latest_version": "1.1.1",
+                    "latest_published_at": "2026-09-23T14:18:47.425Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "b97664510aafd55a74f17e304e271956f1c07659",
+                "current_revision": "b97664510aafd55a74f17e304e271956f1c07659",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1367597810:root",
+            "repository": "99galaxy/dsh-plugin-market",
+            "path": "",
+            "revision": "b97664510aafd55a74f17e304e271956f1c07659",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "74ed71f8fc3c00f706e6b1e7be80fbf9035aaf7dffb0a770d02006f43c51791f",
+                "code": "b97664510aafd55a74f17e304e271956f1c07659",
+                "maintenance": "76ecee8e8c1d5745cbb80bb03fddefd0b02344849fa0af55f8d36f46c5d57c39"
+            }
+        }
+    }
+}

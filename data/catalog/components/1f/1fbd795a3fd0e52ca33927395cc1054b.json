@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "1fbd795a3fd0e52ca33927395cc1054b",
+    "identity": "github:1340952761:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340952761:root",
+            "repository": "ianho7/dsh-port-inspector",
+            "path": "",
+            "revision": "5ad914492d2c06ecc66bb93932cd5146dd5a6d40",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3a09b2465cf29fa5deb511a7d0d5fd4a8059e01b02bce9e3809b9f10535aa7ad",
+                "code": "5ad914492d2c06ecc66bb93932cd5146dd5a6d40",
+                "maintenance": "a1ad34f5c7722580b83c4c55e32bd9db4350acfe5a4a56069942ba984ab04053"
+            }
+        }
+    }
+}

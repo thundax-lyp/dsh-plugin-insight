@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9b3f3772e7cc8b52c634ecdb5aeaba91",
+    "identity": "github:1334178589:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334178589:root",
+            "repository": "MoFeng2223/dsh-claude-provider",
+            "path": "",
+            "revision": "d0e9787ce187cd6387afc2e54cd7de1313e6154a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "453633e02873454cfb577b1c02035946a1ac89965b9c81e9428bf1be9121ae1f",
+                "code": "d0e9787ce187cd6387afc2e54cd7de1313e6154a",
+                "maintenance": "928a3dbfaaf25336a35d23cbf4dae06be10926e76513f7432e3b19843fdbb153"
+            }
+        }
+    }
+}

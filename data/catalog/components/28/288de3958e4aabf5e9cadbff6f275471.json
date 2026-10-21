@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "288de3958e4aabf5e9cadbff6f275471",
+    "identity": "github:1345209661:packages-dsh-tech-lead",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1345209661:packages-dsh-tech-lead",
+            "repository_id": 1345209661,
+            "component_id": "packages-dsh-tech-lead",
+            "repository": "240xu/verdict-engine",
+            "path": "packages/dsh-tech-lead",
+            "aliases": [],
+            "name": "dsh-tech-lead（旧组件）",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "96cc1a5138aadcc7a9fd1d41606050585e8c44ad8cc3e4c606c269f778476089",
+                "code": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                "maintenance": "de05162b4a408e6ecbb9af824df2df62f3ad71dc79f8626d698feb4e1239d402"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:53:40.729Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/README.md",
+                    "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                    "captured_at": "2026-10-20T10:53:40.729Z",
+                    "summary": "为 DSH 提供只读工程治理工具，检查任务分级、计划、证据、门禁、上下文及变更预览。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/240xu--verdict-engine--packages-dsh-tech-lead/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/package.json",
+                    "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                    "captured_at": "2026-10-20T10:53:40.729Z",
+                    "summary": "核查 packages/dsh-tech-lead/package.json、packages/dsh-tech-lead/src/index.js、packages/dsh-tech-lead/src/tools.js、packages/dsh-tech-lead/src/tools/mutation.js、packages/dsh-tech-lead/src/core/gate.js、packages/dsh-tech-lead/src/protocol.js；packages/dsh-tech-lead/src/index.js注册只读工具，tools.js及分域模块把传入JSON交给纯core函数；gate.js核对角色/锚点/盲评人数，mutation工具只预览并拒绝执行型标记。protocol统一截断输出。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/240xu--verdict-engine--packages-dsh-tech-lead/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅研究packages/dsh-tech-lead固定旧组件，抽读入口、工具定义、gate及protocol，不将同仓dsh-themis和nomos的新功能迁入；未执行工具/目标测试或真实门禁。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向需要让Agent工程规范可机械复核的团队；合格结果是指出调用者输入中违反规则的字段，而非证明真实代码或环境已经满足发布标准。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "packages/dsh-tech-lead/src/index.js注册只读工具，tools.js及分域模块把传入JSON交给纯core函数；gate.js核对角色/锚点/盲评人数，mutation工具只预览并拒绝执行型标记。protocol统一截断输出。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅研究packages/dsh-tech-lead固定旧组件，抽读入口、工具定义、gate及protocol，不将同仓dsh-themis和nomos的新功能迁入；未执行工具/目标测试或真实门禁。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package为@240xu/dsh-tech-lead 1.0.0，绑定@deepseek-ai/dsh-tools 0.1.0-rc.7；根README面向新单包dsh-themis，当前条目存在维护/迁移边界，不能凭根文档直接安装旧组件。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需把工程事实整理成JSON与角色/证据账本，持续维护指纹、时间和规则版本；本组件无网络/子进程的路径可见，但生成输入仍消耗模型和人工，未测是否比简洁检查表省时间。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "能让规则违例更稳定地被呈现，对重复治理有潜在价值；实际交付质量取决于事实包和执行责任，不能将只读判定升级为自动阻止发布或已完成验收。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "纯core与tools分离便于单独复用判据，mutation preview把命令作为惰性字符串有清晰副作用边界。protocol.js会将超500条裸finding数组直接slice而无法附warning，可能使调用方误读完整性；复用时应约定截断标志并注意本组件与新包协议不同。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                            "area": "code",
+                            "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:53:40.729Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:53:40.729Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                "reviewed_at": "2026-10-20T10:53:40.729Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                        "area": "code",
+                        "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：成熟lint/schema用于工程治理的小幅新接线；mechanism：确定性规则和只读预览改变执行约束，实质，但不验事实；transferability：纯函数判据可实质跨工具迁移；simplification：统一计算检查实质简化，旧协议及复制core增加维护。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：口头规范转机器检查实质改变分工；delivery：得到结构判断但非真实验收，小幅；reach：有JSON调用能力团队的小幅入口；economics：可少重复人工检查但输入账本有成本，小幅且未实测。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "not_recommended",
+                "reason": "新采用者不优先选旧dsh-tech-lead组件，应先核对dsh-themis迁移；存量仅作输入一致性检查，真实证据与截断需另审。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "团队规范机械复核场景明确，但事实由调用方整理。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "确定性规则胜过纯提示，旧路径较新单包无明确新增采用优势。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已查gate字符串判据及裸数组500条截断，无法验真锚点。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "固定旧工具依赖、迁移与事实JSON维护成本，难支持新安装。"
+                    }
+                },
+                "score": 54,
+                "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1345209661-packages-dsh-tech-lead-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1345209661:packages-dsh-tech-lead",
+                        "area": "code",
+                        "fingerprint": "c7e23f9e131694af6dbd9f3ed11301602a514864"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1345209661:packages-dsh-tech-lead",
+            "repository": "240xu/verdict-engine",
+            "path": "packages/dsh-tech-lead",
+            "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+            "fingerprints": {
+                "directory": "96cc1a5138aadcc7a9fd1d41606050585e8c44ad8cc3e4c606c269f778476089",
+                "code": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                "maintenance": "de05162b4a408e6ecbb9af824df2df62f3ad71dc79f8626d698feb4e1239d402"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "ab8889ce406b1f4fa476921af9f67984c46f8f32ae5b8bf2d047b80aa257730f"
+        },
+        "publication.metadata": "data/plugins/240xu--verdict-engine--packages-dsh-tech-lead/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 提供只读工程治理工具，检查任务分级、计划、证据、门禁、上下文及变更预览。",
+            "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+            "source_url": "https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+            "items": {
+                "模型工具": "只读任务分级、状态/计划/证据/门禁检查、上下文分析及变更预览工具定义"
+            }
+        },
+        "publication.advice": {
+            "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+            "text": "新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。"
+        },
+        "registry": "data/plugins/240xu--verdict-engine--packages-dsh-tech-lead",
+        "reports": "# dsh-tech-lead（旧组件）\n\n> 为 DSH 提供只读工程治理工具，检查任务分级、计划、证据、门禁、上下文及变更预览。\n\n## 研究范围\n\n- **仓库**：[240xu/verdict-engine](https://github.com/240xu/verdict-engine)\n- **版本号**：1.0.0（[固定提交 c7e23f9e](https://github.com/240xu/verdict-engine/tree/c7e23f9e131694af6dbd9f3ed11301602a514864)）\n- **版本日期**：2026-09-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n目标固定组件支持只读治理判定，当前根README主推dsh-themis并明确旧拆分包弃用；不能将新包24入口或v2协议承诺归给本组件。未运行工具或检验实际工程结果，证据真实性绑定假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：面向需要让Agent工程规范可机械复核的团队；合格结果是指出调用者输入中违反规则的字段，而非证明真实代码或环境已经满足发布标准。\n- **亮点**：相对纯文本规范靠模型自觉，本项把任务分级、证据字段和门禁条件做成确定性的只读计算，减少遗漏格式与角色分工检查；原创增量在规则可执行化和一致输出，而非证明输入事实为真。组件内复制core、固定旧工具依赖，必须按所选路径评价。\n- **思考**：“机械门禁通过”能否等于真实独立评审完成？gate.js比较字符串身份、非空锚点和报告数量，不读取文件、执行命令或验证评审身份，空输入在部分判据缺省时也不表达外部环境合格。最强支持是能精确检出输入矛盾，最强反例是构造格式完整但虚假的证据仍可能过机械子集。\n- **建议**：新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。\n\n采用建议：新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。\n\n## 核心贡献\n\n相对纯文本规范靠模型自觉，本项把任务分级、证据字段和门禁条件做成确定性的只读计算，减少遗漏格式与角色分工检查；原创增量在规则可执行化和一致输出，而非证明输入事实为真。组件内复制core、固定旧工具依赖，必须按所选路径评价。\n\n## 关键质疑\n\n“机械门禁通过”能否等于真实独立评审完成？gate.js比较字符串身份、非空锚点和报告数量，不读取文件、执行命令或验证评审身份，空输入在部分判据缺省时也不表达外部环境合格。最强支持是能精确检出输入矛盾，最强反例是构造格式完整但虚假的证据仍可能过机械子集。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：由外部只读证据采集器产生签名/摘要绑定的事实包，工具只检验来源与当前revision匹配，并将自报字段与已采集事实分开。来源是纯计算边界与虚假锚点问题；代价是信任根、版本更新和证据采集维护，不能把模型自报签名当真实性。\n\n对同一组真实工程事实注入缺锚点、重叠身份、虚构证据、陈旧revision和超500finding，对比本组件/手工检查表及外部事实绑定；观察漏报、误放行和输入整理时间。若采集绑定不能识别虚构/过期事实或成本过高，则否定假设。\n\n## 场景与替代办法\n\n面向需要让Agent工程规范可机械复核的团队；合格结果是指出调用者输入中违反规则的字段，而非证明真实代码或环境已经满足发布标准。\n\n参照同仓纯文本Skill和常规schema/lint：增量是工程治理规则计算化；当前新单包与旧组件同时存在，采用判断须以目标路径和实际协议为准。\n\n## 依赖与流程\n\n必需DSH tools注册服务和固定旧版dsh-tools，输入事实/角色/证据由调用者提供；目标没有自动读取仓库或验真服务，效果依赖账本质量。向新单包迁移需核对工具名、输入模式与输出协议。\n\n调用者收集事实→序列化JSON→选分级/计划/证据/门禁工具→解析结果与截断边界→人工或外部流程决定改动/发布；非法输入返回结构错误，工具自身不执行修复或放行外部系统。\n\n## 成本与效果\n\n首次需把工程事实整理成JSON与角色/证据账本，持续维护指纹、时间和规则版本；本组件无网络/子进程的路径可见，但生成输入仍消耗模型和人工，未测是否比简洁检查表省时间。\n\n能让规则违例更稳定地被呈现，对重复治理有潜在价值；实际交付质量取决于事实包和执行责任，不能将只读判定升级为自动阻止发布或已完成验收。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tech-lead；内容摘要：540e2b8ee060e39d1ed16960bae2eaa130228912d9477397bd29b60a6fd2f329。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 26 | 1711 | 1479 | 140 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：只读任务分级、状态/计划/证据/门禁检查、上下文分析及变更预览工具定义\n\n## 工程亮点\n\n纯core与tools分离便于单独复用判据，mutation preview把命令作为惰性字符串有清晰副作用边界。protocol.js会将超500条裸finding数组直接slice而无法附warning，可能使调用方误读完整性；复用时应约定截断标志并注意本组件与新包协议不同。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-tech-lead/package.json、packages/dsh-tech-lead/src/index.js、packages/dsh-tech-lead/src/tools.js、packages/dsh-tech-lead/src/tools/mutation.js、packages/dsh-tech-lead/src/core/gate.js、packages/dsh-tech-lead/src/protocol.js 及固定范围 inventory；组件：packages/dsh-tech-lead。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅研究packages/dsh-tech-lead固定旧组件，抽读入口、工具定义、gate及protocol，不将同仓dsh-themis和nomos的新功能迁入；未执行工具/目标测试或真实门禁。\n- 下一步：对同一组真实工程事实注入缺锚点、重叠身份、虚构证据、陈旧revision和超500finding，对比本组件/手工检查表及外部事实绑定；观察漏报、误放行和输入整理时间。若采集绑定不能识别虚构/过期事实或成本过高，则否定假设。\n\n## 源码索引\n\n- [packages/dsh-tech-lead/package.json](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/package.json)\n- [packages/dsh-tech-lead/src/index.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/index.js)\n- [packages/dsh-tech-lead/src/tools.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/tools.js)\n- [packages/dsh-tech-lead/src/tools/mutation.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/tools/mutation.js)\n- [packages/dsh-tech-lead/src/core/gate.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/core/gate.js)\n- [packages/dsh-tech-lead/src/protocol.js](https://github.com/240xu/verdict-engine/blob/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead/src/protocol.js)\n",
+        "metadata": {
+            "repository": "240xu/verdict-engine",
+            "repository_id": 1345209661,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-21T15:59:35Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:A0E1B:10A9D4:6AD849F2 and timestamp 2026-10-21 05:13:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:156DB2:230385:6AD849F3 and timestamp 2026-10-21 05:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:142769:21C2B2:6AD849F3 and timestamp 2026-10-21 05:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:14123B:21B255:6AD849F3 and timestamp 2026-10-21 05:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fverdict-engine%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:143DDD:21C822:6AD849F3 and timestamp 2026-10-21 05:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@240xu/dsh-tech-lead",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 67,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40240xu%2Fdsh-tech-lead",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-26T05:28:43.935Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40240xu%2Fdsh-tech-lead",
+                    "error": null,
+                    "latest_version": "1.0.0",
+                    "latest_published_at": "2026-08-26T05:28:44.235Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                "current_revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1345209661:packages-dsh-tech-lead",
+            "repository": "240xu/verdict-engine",
+            "path": "packages/dsh-tech-lead",
+            "revision": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "96cc1a5138aadcc7a9fd1d41606050585e8c44ad8cc3e4c606c269f778476089",
+                "code": "c7e23f9e131694af6dbd9f3ed11301602a514864",
+                "maintenance": "de05162b4a408e6ecbb9af824df2df62f3ad71dc79f8626d698feb4e1239d402"
+            }
+        }
+    }
+}

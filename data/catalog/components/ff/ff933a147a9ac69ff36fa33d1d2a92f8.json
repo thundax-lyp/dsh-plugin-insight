@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff933a147a9ac69ff36fa33d1d2a92f8",
+    "identity": "github:1366039150:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366039150:root",
+            "repository": "whiteS18/dsh-mcp-servers-panel",
+            "path": "",
+            "revision": "273f5677d2603ca9ea96316ecefb5759d2f0a9c1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6e75d707e223da16333c14f1e39a402e811a35a24ef362f390db712f8f1007a9",
+                "code": "273f5677d2603ca9ea96316ecefb5759d2f0a9c1",
+                "maintenance": "d9fd5a6811b223196c318b44b30256aad55644b74c90d208b8b4aedc4674fdb7"
+            }
+        }
+    }
+}

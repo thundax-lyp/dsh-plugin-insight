@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "130be4eba040132c9e73460ee6394d71",
+    "identity": "github:1336201295:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336201295:root",
+            "repository": "beiyege-01/dsh-voice-ai-girlfriend-plugin",
+            "path": "",
+            "revision": "b0ac0fe37abd7a9f1e486d24c9bd1c70d2cd3728",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b739350272e54a14d5627a99a0ae6fe48636cff5fde6795781ef98eb2bb55bbc",
+                "code": "b0ac0fe37abd7a9f1e486d24c9bd1c70d2cd3728",
+                "maintenance": "f9efe974f6558b9a498fe6ca5c9305dac250c4a6df59b41b99f9e684b678a56f"
+            }
+        }
+    }
+}

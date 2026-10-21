@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ddc0aa1e26046f4f12ac46e5c2d7967",
+    "identity": "github:1423121380:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423121380:root",
+            "repository": "GallenShao/dsh-faster-compress",
+            "path": "",
+            "revision": "ecb081f6d33bfd8ae96754c6a71717e1f6cb8686",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b7aec1215bc9c93011fd97ca05f76f0bb5cc7224e7e0227e0a5e4f2ba11c8b54",
+                "code": "ecb081f6d33bfd8ae96754c6a71717e1f6cb8686",
+                "maintenance": "57350095d851896c6cdd1cdcd1aa131f3489cfd8a6d4c97da420704b58a289b0"
+            }
+        }
+    }
+}

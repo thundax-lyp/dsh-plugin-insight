@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d91bb8f7e5923e48c280bede4d94637e",
+    "identity": "github:1396986243:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396986243:root",
+            "repository": "wangzhanchao883/dsh-no-long-sit",
+            "path": "",
+            "revision": "3a9d43767e48e39b3fb95cc1e90ba1c2bc685ef9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b837acc48e76a68fc3e0f49b363d8b3a237d5e79a1c22d9699ddc41f7b17b48c",
+                "code": "3a9d43767e48e39b3fb95cc1e90ba1c2bc685ef9",
+                "maintenance": "c0428e65d1fd60aa4d07afdba31eb6b9d068739eda51b364dff54ef605fe4cf9"
+            }
+        }
+    }
+}

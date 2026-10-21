@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0448198eec974a77972c6ba6cd6891bf",
+    "identity": "github:1346833837:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346833837:root",
+            "repository": "yishengdaxiaonengjihui/dsh-poor-router",
+            "path": "",
+            "revision": "722798952af78a3f6d48ce9dbbc334a00eed0c75",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8f036766dca31e206edab125b81bb3e1bf51e42bbbc6d9780a645ab9d1b98aa8",
+                "code": "722798952af78a3f6d48ce9dbbc334a00eed0c75",
+                "maintenance": "a017ec1c4b2c0fd21a42e0fd1ce522e0757292b72c667b5ac33be9b66c982c4c"
+            }
+        }
+    }
+}

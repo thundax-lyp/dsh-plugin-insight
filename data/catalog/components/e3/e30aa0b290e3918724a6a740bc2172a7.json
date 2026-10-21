@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e30aa0b290e3918724a6a740bc2172a7",
+    "identity": "github:1334473746:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334473746:plugin",
+            "repository": "moonquake2004/dsh-doctor",
+            "path": "plugin",
+            "revision": "159c263b2c9945c12678b15a8466ee398e3d2f89",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "73db0f2e6fd652359f5082ba70898cc0727950c4986817b22ff14dda6fad06dd",
+                "code": "159c263b2c9945c12678b15a8466ee398e3d2f89",
+                "maintenance": "7616be8fa1e42e4a66f9e738ea9730c314f56d52dd0589001dd3f472b14328a5"
+            }
+        }
+    }
+}

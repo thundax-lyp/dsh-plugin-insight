@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7740c6609911d22358e18dfaae23b581",
+    "identity": "github:1374412690:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374412690:root",
+            "repository": "Mlte0907/dsh-brake",
+            "path": "",
+            "revision": "0f87e7ecf13fe8e5f090c05cff71e648cf332111",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "25312a705c9afd5fb0205ed0aca7e5e4628fbe6fe7b95bbd881c37ff3c35a3d7",
+                "code": "0f87e7ecf13fe8e5f090c05cff71e648cf332111",
+                "maintenance": "28eb0969b149aa0f2c929d81e9bc65865ce80f9926e1e3996771f9a292c6293d"
+            }
+        }
+    }
+}

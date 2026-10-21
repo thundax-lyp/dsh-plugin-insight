@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "96483ae31dfa6fffefd7dc7c3df57c41",
+    "identity": "github:1342406010:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342406010:root",
+            "repository": "xuanyuanluoxue/computer-use-vision",
+            "path": "",
+            "revision": "9bbbaeab3e88e19148d805b4b40d4b307b9068a0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "10980eeded063cfd3617b2e2766b8cd481eb67d8029e2aba53b1f0779e583fb0",
+                "code": "9bbbaeab3e88e19148d805b4b40d4b307b9068a0",
+                "maintenance": "8b59b93dadcca3d217c5fb742e0158fa62c3b942d121ccf8fa95c2c81c678b6b"
+            }
+        }
+    }
+}

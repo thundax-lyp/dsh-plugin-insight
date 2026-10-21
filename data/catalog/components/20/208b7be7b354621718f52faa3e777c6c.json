@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "208b7be7b354621718f52faa3e777c6c",
+    "identity": "github:1333012627:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333012627:root",
+            "repository": "icodesign/orbis",
+            "path": "",
+            "revision": "f8c7dbadbf772fe6aa37aa41814d6acfae5061ad",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "26e642b9563c5bf0b8a350db38520241bd3c37d44d8a1f9a4345b95dc63a26a6",
+                "code": "f8c7dbadbf772fe6aa37aa41814d6acfae5061ad",
+                "maintenance": "c98b8aaf00790f7888b6774d10a244ce411c21250382cfdec0a508ab80a3eeac"
+            }
+        }
+    }
+}

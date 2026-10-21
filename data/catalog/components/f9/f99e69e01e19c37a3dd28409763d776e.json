@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f99e69e01e19c37a3dd28409763d776e",
+    "identity": "github:1362541466:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362541466:root",
+            "repository": "CAI-MH/dsh-plugin-forge",
+            "path": "",
+            "revision": "bcab51c241c4deabbc11d4c9d5ef9e3505b2fa4c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "67c5b75f1bac65b62cf9fa1816dab85c8a69ad328aa622070e5599f60451ec63",
+                "code": "bcab51c241c4deabbc11d4c9d5ef9e3505b2fa4c",
+                "maintenance": "972ffa7857239fa3edffe139673b650f791cb8af37fbdb7fdea8d1e63546d75f"
+            }
+        }
+    }
+}

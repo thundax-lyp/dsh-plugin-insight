@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "29301578ef231679b65d2128a6a061bf",
+    "identity": "github:1336063071:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336063071:root",
+            "repository": "jing-hy/dsh-task-runner",
+            "path": "",
+            "revision": "61bcfea2b82cc9726215b4855ab7a355b41b341b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cd534fd1f89cc5d0e36f3428c5c8b51f074af25deb7b4dd595114d1641c4be1e",
+                "code": "61bcfea2b82cc9726215b4855ab7a355b41b341b",
+                "maintenance": "4ae6cd0782c1341dfa8d966cf0e4262954dad92e929e211e3d7782893edbc5a8"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fadb205e71dcd0b41341952fba5e351c",
+    "identity": "github:1334902203:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334902203:root",
+            "repository": "MartinDelophy/dsh-timeline-studio-plugin",
+            "path": "",
+            "revision": "201ccc563bcbccac6f5a0b88fc2b138495dc6e08",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "026b8564a297d43045b24c6baf043fc3a3b30302cb4ce3647662d2c01a1da629",
+                "code": "201ccc563bcbccac6f5a0b88fc2b138495dc6e08",
+                "maintenance": "2fa1476608e4896b649a8dcd71dbc34df2c31daf1e2f35317089d15f8671eac1"
+            }
+        }
+    }
+}

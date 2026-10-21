@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bc1f5a326c739b9c358c91210d97589f",
+    "identity": "github:1321152436:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1321152436:root",
+            "repository": "pulseaiclub/phi",
+            "path": "",
+            "revision": "8afc20aca890e23da073937df9795e4ae40c709a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "eff5c365a9a7ded74f6ca20082340bdf0eb3dc615f412b71f3773191519682e6",
+                "code": "8afc20aca890e23da073937df9795e4ae40c709a",
+                "maintenance": "16a37cc986f479adb2d9db4c323f679c771fde007defd0978987e0884600632e"
+            }
+        }
+    }
+}

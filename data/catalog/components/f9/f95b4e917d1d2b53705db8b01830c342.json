@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f95b4e917d1d2b53705db8b01830c342",
+    "identity": "github:1349580586:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349580586:root",
+            "repository": "zsspub/dsh-personal-todo",
+            "path": "",
+            "revision": "4a2684b9d73d7a51c43535dd5e808f3de477dd65",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "be690230c36e3e42a28eb90948ba2bc541527df084090b40e1f84c1a2ac9d1fa",
+                "code": "4a2684b9d73d7a51c43535dd5e808f3de477dd65",
+                "maintenance": "89ec36821ffe5be9ab30beed8b2cc1ac637c0202fdd5deb5fecc03e7bdb09aa5"
+            }
+        }
+    }
+}

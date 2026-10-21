@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8e50089dde211617d716b0695d125f9f",
+    "identity": "github:1375495729:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375495729:root",
+            "repository": "cccc12138/dsh-read-aloud",
+            "path": "",
+            "revision": "0a8ff66d4a43817477b9ac6a765f6fcc0fd78cef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8254bfd59fe9d90a739b60176b35e3a0375b077b832e983e3c5168f514d82710",
+                "code": "0a8ff66d4a43817477b9ac6a765f6fcc0fd78cef",
+                "maintenance": "280b7ac581d19c72fb8f15b98e54e8efd45e445ee4f3d27bc629f57389796e15"
+            }
+        }
+    }
+}

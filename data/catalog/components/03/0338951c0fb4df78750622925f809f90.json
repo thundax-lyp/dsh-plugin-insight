@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0338951c0fb4df78750622925f809f90",
+    "identity": "github:1333767819:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333767819:root",
+            "repository": "nonewind/dsh-spend",
+            "path": "",
+            "revision": "d621227bc878c748905743e1fde454979af10000",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2224f3373a5e3f5de2d94eae8c90d8d4d19c986b04a74a4f661fc90305efce9c",
+                "code": "d621227bc878c748905743e1fde454979af10000",
+                "maintenance": "9a9fc2a2034dcfaa2970796a498a8c1c5fe355c1ce0fc5fa938a6d9c4c2572bb"
+            }
+        }
+    }
+}

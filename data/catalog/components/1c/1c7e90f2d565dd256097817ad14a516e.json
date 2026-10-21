@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c7e90f2d565dd256097817ad14a516e",
+    "identity": "github:1374398007:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374398007:root",
+            "repository": "qiqibabyy/dsh-pet-desktop",
+            "path": "",
+            "revision": "4d19c08fdeef54cfd38d8bfd7e6b4ad17fdea22b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e8065ca474a52aeae2c854815a65b3345d9d8bea043dd2caf4d5b1e505a8a094",
+                "code": "4d19c08fdeef54cfd38d8bfd7e6b4ad17fdea22b",
+                "maintenance": "3a50dc029ec9b54a09b4b338cd67bc92e60b97567fbb6a215cb95d58a967e3e1"
+            }
+        }
+    }
+}

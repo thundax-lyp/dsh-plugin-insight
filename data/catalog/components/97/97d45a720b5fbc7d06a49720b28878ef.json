@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "97d45a720b5fbc7d06a49720b28878ef",
+    "identity": "github:1399056806:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399056806:root",
+            "repository": "floydc-sz/dsh-serial-debugger",
+            "path": "",
+            "revision": "8553b4a285850bdfd0466f7fd777d1f7d5b6f803",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "833b094f8d613a760a73851209498375d355aa36022e733c89922829e9f7e757",
+                "code": "8553b4a285850bdfd0466f7fd777d1f7d5b6f803",
+                "maintenance": "aa7507c3a1f251e47797aafc8379bc55a7422edfdd6ccf59f5c901ce1745a2ec"
+            }
+        }
+    }
+}

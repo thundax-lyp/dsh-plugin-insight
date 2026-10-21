@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ec51ff7803cb835c758c9abfdc2f233f",
+    "identity": "github:1334913515:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334913515:root",
+            "repository": "PAKIKNOWLEDGE/dsh-auto-classifier",
+            "path": "",
+            "revision": "44550f8c38c857b7e05f0440af988fdba486523c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4596216340dec375de5741b7d7f72d0dbc633d22500f1eb219d19876dc63b1a1",
+                "code": "44550f8c38c857b7e05f0440af988fdba486523c",
+                "maintenance": "d8e9881f70cf2175e897b29ee2818554170a39de7dcb9f44360ede3c9bd031bf"
+            }
+        }
+    }
+}

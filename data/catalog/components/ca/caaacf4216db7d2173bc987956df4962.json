@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "caaacf4216db7d2173bc987956df4962",
+    "identity": "github:1341817495:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341817495:root",
+            "repository": "LucienLL/dsh-plugin-proxy",
+            "path": "",
+            "revision": "0cc1554e614273e7a5ff36aba2a595bade50f5a3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "52f8714d44eaa8f85d3e0035a5aaef630e70b47bca3d0a9495d69f359c96d7df",
+                "code": "0cc1554e614273e7a5ff36aba2a595bade50f5a3",
+                "maintenance": "89bb31b117e46a6a31e1ea1d663aaf37cce1c33ca13d954a10ff036372cea536"
+            }
+        }
+    }
+}

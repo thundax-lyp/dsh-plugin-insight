@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b9cac1b71f147df13cb924006395d284",
+    "identity": "github:1335095892:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335095892:root",
+            "repository": "Devin-AXIS/deepseek-design",
+            "path": "",
+            "revision": "62ee529e84423ba63e823b23860293a43b6eb03b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7b3048816c23486703ae01afd04a936fb0e8d1a2531473b748d48e8b138c4f95",
+                "code": "62ee529e84423ba63e823b23860293a43b6eb03b",
+                "maintenance": "e69160919ed01cfedeb40c0517483950163bd76b2c94ec8339f78ddac4daaaed"
+            }
+        }
+    }
+}

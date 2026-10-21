@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7b5ee79b20d990a999dad3761565faec",
+    "identity": "github:1338653275:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338653275:root",
+            "repository": "LFM097384/Context-Prism",
+            "path": "",
+            "revision": "4ecb4d85dd511d3b864762a9fb5e926d53c70810",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2282bbf403491b191f636f04d0d5e0b7708a6f34c1906f5dfb7bd26a4e41117b",
+                "code": "4ecb4d85dd511d3b864762a9fb5e926d53c70810",
+                "maintenance": "4bbe5a64d4caba2f30196de8f3fc4890953744d1740710334eb0f4efaf3e180a"
+            }
+        }
+    }
+}

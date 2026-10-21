@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8bab4bd5315a717668a3eb5768c1a977",
+    "identity": "github:1335170419:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335170419:root",
+            "repository": "february2015/dsh-dingo",
+            "path": "",
+            "revision": "9f2274ce29c342c36584ff2ef52b30d399c14cfd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4b17a4364371f5e50e81a17dcbe13f0aa6c4bd59d42cb404a523ddbf73f55151",
+                "code": "9f2274ce29c342c36584ff2ef52b30d399c14cfd",
+                "maintenance": "8b162f20a3d4d387579d790eed3dee447080bb6b719d126f8344e930ddaa990a"
+            }
+        }
+    }
+}

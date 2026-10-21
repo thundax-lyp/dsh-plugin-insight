@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e2acb05c52329530c83b92b9f8798699",
+    "identity": "github:1338187137:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338187137:root",
+            "repository": "mike-lee0120/dsh-cost-dashboard",
+            "path": "",
+            "revision": "4aabf4aeb619443e01d36e73b2bf15203decfbdf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "af6d54ed0a9d7622b2a62f4ec05dc7c824d7a90c631f27d457b039a943550d1c",
+                "code": "4aabf4aeb619443e01d36e73b2bf15203decfbdf",
+                "maintenance": "3d4923d02493b6f060d3625543bf17769acbe0bc18185a10d7e3bf782aeffaf2"
+            }
+        }
+    }
+}

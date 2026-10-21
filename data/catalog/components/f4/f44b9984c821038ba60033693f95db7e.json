@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f44b9984c821038ba60033693f95db7e",
+    "identity": "github:1342061613:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342061613:root",
+            "repository": "zp-home/dsh-weixin-clawbot",
+            "path": "",
+            "revision": "1bd036bab5d9478e91f06b293762fe0bdcefb4d7",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9137380202ef36cc73726a2f0bcc96723025d5bd8474fe07716a3b305de11bf1",
+                "code": "1bd036bab5d9478e91f06b293762fe0bdcefb4d7",
+                "maintenance": "225ad432f9ff0b11dcad05590b77de96e21155ffa8af90208c085e91406918e3"
+            }
+        }
+    }
+}

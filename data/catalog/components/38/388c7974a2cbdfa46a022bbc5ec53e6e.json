@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "388c7974a2cbdfa46a022bbc5ec53e6e",
+    "identity": "github:1336663652:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336663652:root",
+            "repository_id": 1336663652,
+            "component_id": "root",
+            "repository": "863683348/dsh-plugin-local-life",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-local-life",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "de94ba3182c1930ca13ed9503fa38ef69f14ea6ef30d7654dcadf56cd7a2bc51",
+                "code": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                "maintenance": "80f3055d492084c5f25bd5cf3a0e9c0cff9da255ed2179b68903954c4e87ded2"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1336663652-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:49:43.690Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1336663652-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/README.md",
+                    "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                    "captured_at": "2026-10-21T03:49:43.690Z",
+                    "summary": "提供预算、分账、单价、折扣、单位、账本和分期等日常计算辅助。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-local-life/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1336663652-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js",
+                    "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                    "captured_at": "2026-10-21T03:49:43.690Z",
+                    "summary": "核查 lib/index.js、lib/local.js；lib/index.js注册local_life按action调用local.js；代码做金额取整、单位因子换算、折扣规则、贷款表与静态出行清单，不做网络请求或账本持久化。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-local-life/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合把已有购物、分账或账本数字交给确定函数处理；不是本地商家、实时价格或交通信息服务。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js注册local_life按action调用local.js；代码做金额取整、单位因子换算、折扣规则、贷款表与静态出行清单，不做网络请求或账本持久化。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需确认币种、单位与折扣语义；无模块网络费，宿主模型token另计。人工要核取整、满减门槛和贷款口径，错误参数及一分钱差额都可能增加协调成本。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合日常计算草稿。先用已知答案核单位和取整，实际分账总和再加一遍；出行要求另查当前官方信息。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可减少重复输入计算器，但没有节时或账务准确率的独立对照。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "local纯函数集中并有部分输入约束，便于复用；单位归一化与因子表不一致、浮点尾差说明必须验证跨函数契约。无需文件副作用是轻量点，不能因此称计算全正确。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "作者定位日常算术工具；实际增量是把常用生活计算封成统一DSH入口并返回文字/结构结果，减少模型自由心算。相比手工计算器，模型可整理输入；不是新的预算方法或自动记账平台。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "unitConvert先将输入单位转小写，而UNIT_FACTORS.volume保存L大写键，导致L/升与ml等组合可能因l找不到而拒绝。splitBill仅在舍入差额绝对值>0.01时修正，账单10元三人各3.33的0.01差额可能保留，不能保证分摊和精确等于总额。出行清单是静态模板，不是现行规则核实。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：用规范化单位注册表与最小货币单位整数分配，可减少别名不一致和分账差额。对L/l/升别名、10元三人和带小费加权分账做守恒核对，再比较人工纠错；未验证，不将浮点计算称精确账务。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336663652:root",
+                            "area": "code",
+                            "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:43.690Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:49:43.690Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                "reviewed_at": "2026-10-21T03:49:43.690Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336663652:root",
+                        "area": "code",
+                        "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 0,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=0：基础算术和单位转换是常规方法。 mechanism=8：有确定函数，别名和守恒存在缺口。 transferability=10：纯函数可复用前需补输入契约。 simplification=4：统一入口便利，错误需要复核。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=9：覆盖局部日常计算步骤。 delivery=8：可生成结果，尚非精确账务。 reach=10：一般用户适用，实际服务未接入。 economics=4：无节时或准确率对照。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336663652-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "生活算术集成有潜力，但L单位小写错接和三人分10元少一分影响核心计算；先修单位和取整再用已知答案验。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "购物分账和数字整理任务具体。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "统一工具少开计算器，当前算术边界问题削弱采用增益。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "unitConvert键大小写与splitBill严格大于0.01源码明确。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "无专用网络费，但金额与单位错误增加实际协调复核负担。"
+                    }
+                },
+                "score": 52,
+                "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1336663652-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336663652:root",
+                        "area": "code",
+                        "fingerprint": "c7abe0935ceab43d784019fb42caf600b3aaadc5"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336663652:root",
+            "repository": "863683348/dsh-plugin-local-life",
+            "path": "",
+            "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+            "fingerprints": {
+                "directory": "de94ba3182c1930ca13ed9503fa38ef69f14ea6ef30d7654dcadf56cd7a2bc51",
+                "code": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                "maintenance": "80f3055d492084c5f25bd5cf3a0e9c0cff9da255ed2179b68903954c4e87ded2"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "aa24487a15f53c11fe10158b67fe2886aed261db3ce4ead69fe600733e098231"
+        },
+        "publication.metadata": "data/plugins/863683348--dsh-plugin-local-life/META.json",
+        "publication.summaries": {
+            "text": "提供预算、分账、单价、折扣、单位、账本和分期等日常计算辅助。",
+            "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+            "source_url": "https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+            "items": {
+                "模型工具": "local_life预算、分账、换算、账本汇总和分期辅助"
+            }
+        },
+        "publication.advice": {
+            "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+            "text": "适合日常计算草稿。先用已知答案核单位和取整，实际分账总和再加一遍；出行要求另查当前官方信息。"
+        },
+        "registry": "data/plugins/863683348--dsh-plugin-local-life",
+        "reports": "# dsh-plugin-local-life\n\n> 提供预算、分账、单价、折扣、单位、账本和分期等日常计算辅助。\n\n## 使用建议\n\n适合日常计算草稿。先用已知答案核单位和取整，实际分账总和再加一遍；出行要求另查当前官方信息。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。\n\n## 洞察短评\n\n- **用途**：适合把已有购物、分账或账本数字交给确定函数处理；不是本地商家、实时价格或交通信息服务。\n- **亮点**：作者定位日常算术工具；实际增量是把常用生活计算封成统一DSH入口并返回文字/结构结果，减少模型自由心算。相比手工计算器，模型可整理输入；不是新的预算方法或自动记账平台。\n- **思考**：unitConvert先将输入单位转小写，而UNIT_FACTORS.volume保存L大写键，导致L/升与ml等组合可能因l找不到而拒绝。splitBill仅在舍入差额绝对值>0.01时修正，账单10元三人各3.33的0.01差额可能保留，不能保证分摊和精确等于总额。出行清单是静态模板，不是现行规则核实。\n- **建议**：待验证假设：用规范化单位注册表与最小货币单位整数分配，可减少别名不一致和分账差额。对L/l/升别名、10元三人和带小费加权分账做守恒核对，再比较人工纠错；未验证，不将浮点计算称精确账务。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是计算器、电子表格和人工清单；项目提供对话工具入口，覆盖浅于专业账务或行程服务。\n\n### 能力、依赖与流程\n\nlib/index.js注册local_life按action调用local.js；代码做金额取整、单位因子换算、折扣规则、贷款表与静态出行清单，不做网络请求或账本持久化。\n\n- **模型工具**：local_life预算、分账、换算、账本汇总和分期辅助\n\n宿主tools/systemPrompt、Schemastery；数字、币种、单位和规则由调用者提供，不接银行、地图或商家数据库。\n\n整理用户数字和规则→调用action→确定计算或静态清单→人工核单位和合计→再实际支付/出行；插件不执行支付。\n\n### 成本与效果\n\n首次需确认币种、单位与折扣语义；无模块网络费，宿主模型token另计。人工要核取整、满减门槛和贷款口径，错误参数及一分钱差额都可能增加协调成本。\n\n可减少重复输入计算器，但没有节时或账务准确率的独立对照。\n\n### 工程亮点\n\nlocal纯函数集中并有部分输入约束，便于复用；单位归一化与因子表不一致、浮点尾差说明必须验证跨函数契约。无需文件副作用是轻量点，不能因此称计算全正确。\n\n源码依据：[lib/index.js](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/index.js)、[lib/local.js](https://github.com/863683348/dsh-plugin-local-life/blob/c7abe0935ceab43d784019fb42caf600b3aaadc5/lib/local.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：用规范化单位注册表与最小货币单位整数分配，可减少别名不一致和分账差额。对L/l/升别名、10元三人和带小费加权分账做守恒核对，再比较人工纠错；未验证，不将浮点计算称精确账务。\n\n核对L/升/ml别名、分摊守恒、无效roundTo、负折扣和零利率分期，按真实规则复核清单；本轮未执行目标代码。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cfd1c3b774e3cf07ac017068fa627cfc0cb9006e4edfe4c87340afe979de4eb0。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 554 | 497 | 35 | — |\n| .md | source | 4 | 160 | — | — | 1341 |\n| .mjs | test | 1 | 200 | 175 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-plugin-local-life](https://github.com/863683348/dsh-plugin-local-life)\n- **版本号**：0.3.2（[固定提交 c7abe093](https://github.com/863683348/dsh-plugin-local-life/tree/c7abe0935ceab43d784019fb42caf600b3aaadc5)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、lib/local.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。\n- 下一步：核对L/升/ml别名、分摊守恒、无效roundTo、负折扣和零利率分期，按真实规则复核清单；本轮未执行目标代码。\n",
+        "metadata": {
+            "repository": "863683348/dsh-plugin-local-life",
+            "repository_id": 1336663652,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-09-11T03:26:31Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-local-life%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:14C2C2:227FB5:6AD84AC5 and timestamp 2026-10-21 05:16:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-local-life%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:10742:1452D0:22074B:6AD84AC5 and timestamp 2026-10-21 05:16:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-local-life%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:147EEF:223D39:6AD84AC5 and timestamp 2026-10-21 05:16:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-local-life%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:150EF8:22C89B:6AD84AC5 and timestamp 2026-10-21 05:16:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-local-life%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:1549FC:22F7A5:6AD84AC6 and timestamp 2026-10-21 05:16:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-local-life",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 857,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-local-life",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-18T04:30:10.109Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-local-life",
+                    "error": null,
+                    "latest_version": "0.3.2",
+                    "latest_published_at": "2026-09-11T02:45:01.966Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                "current_revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336663652:root",
+            "repository": "863683348/dsh-plugin-local-life",
+            "path": "",
+            "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de94ba3182c1930ca13ed9503fa38ef69f14ea6ef30d7654dcadf56cd7a2bc51",
+                "code": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+                "maintenance": "80f3055d492084c5f25bd5cf3a0e9c0cff9da255ed2179b68903954c4e87ded2"
+            }
+        }
+    }
+}

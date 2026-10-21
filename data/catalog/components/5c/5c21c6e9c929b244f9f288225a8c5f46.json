@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "5c21c6e9c929b244f9f288225a8c5f46",
+    "identity": "github:1350378631:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1350378631:root",
+            "repository_id": 1350378631,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-path",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-path",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "d5a437ec41d1cfe21c716c69f24e0c5b34243e491a2cc09fef8c3150cf0ebbfc",
+                "code": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+                "maintenance": "128eb7d83cf37f7e4828689ccd3c52d3833b46dbd21570576d8b7804dc09d41f"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-07-github-1350378631-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:01:55.658Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-07-github-1350378631-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-path/blob/e82233f94e1d77c35657e06bfd032a03e353e3ba/README.md",
+                    "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+                    "captured_at": "2026-10-20T10:01:55.658Z",
+                    "summary": "转换Windows与WSL路径，附带挂载盘、换行和工作区位置提示。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-path/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-07-github-1350378631-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-path/blob/e82233f94e1d77c35657e06bfd032a03e353e3ba/index.js",
+                    "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+                    "captured_at": "2026-10-20T10:01:55.658Z",
+                    "summary": "核查 index.js、lib/path.js；path_convert以盘符和UNC规则双向映射，pathTags分类路径并返回建议。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-path/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查入口和转换函数，未访问两侧文件系统验证映射。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户在Windows界面与WSL工具之间交接路径时，避免把盘符直接交给Linux命令。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378631:root",
+                            "area": "code",
+                            "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:55.658Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "path_convert以盘符和UNC规则双向映射，pathTags分类路径并返回建议。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378631:root",
+                            "area": "code",
+                            "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:55.658Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查入口和转换函数，未访问两侧文件系统验证映射。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378631:root",
+                            "area": "code",
+                            "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:55.658Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定版本包清单与作者说明已核对；依赖实际WSL发行版与挂载布局，字符串转换本身不检查文件存在。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378631:root",
+                            "area": "code",
+                            "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:55.658Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "主要为路径核对人工，无外部调用费用和端到端节省测量。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378631:root",
+                            "area": "code",
+                            "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:55.658Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "单发行版先测试往返；多发行版必须核对distro，不直接使用转换出的同名Linux路径。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378631:root",
+                            "area": "code",
+                            "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:55.658Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "将路径语法转换与工作区提示组合，降低重复说明；映射规则不是新的文件系统访问机制。 UNC解析可返回另一个发行版名称，但生成的Linux绝对路径本身不携带发行版身份；转换不代表当前发行版能读到同一文件。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378631:root",
+                            "area": "code",
+                            "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:55.658Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "转换、标签与建议分离易于覆盖边界，结构化发行版身份比纯字符串更重要。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350378631:root",
+                            "area": "code",
+                            "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:55.658Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:01:55.658Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+                "reviewed_at": "2026-10-20T10:01:55.658Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1350378631:root",
+                        "area": "code",
+                        "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty：盘符/UNC规则加提示为小幅适配；mechanism：字符串映射为常规机制，未带发行版身份至消费端；transferability：转换/建议分层可局部迁移；simplification：减少路径手改但未验证文件存在。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": null
+                    },
+                    "rationale": "workflow：便利跨系统路径交接；delivery：未改变文件或任务交付；reach：改善不熟悉路径规则用户的入口；economics：缺跨发行版错误减少与核查负担比较。",
+                    "basis": "interpretation",
+                    "score": null,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1350378631-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "跨系统用户可先单发行版试路径往返，多发行版必须核对distro和文件存在再使用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "盘符与Linux路径交接的错误风险具体。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "双向映射带解释，wslpath已有相似功能。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "映射可查，Linux结果不携带发行版身份且未验存在。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "纯转换无服务费，主要为人工目标核对。"
+                    }
+                },
+                "score": 64,
+                "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-07-github-1350378631-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1350378631:root",
+                        "area": "code",
+                        "fingerprint": "e82233f94e1d77c35657e06bfd032a03e353e3ba"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1350378631:root",
+            "repository": "173787247/dsh-wsl-path",
+            "path": "",
+            "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+            "fingerprints": {
+                "directory": "d5a437ec41d1cfe21c716c69f24e0c5b34243e491a2cc09fef8c3150cf0ebbfc",
+                "code": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+                "maintenance": "128eb7d83cf37f7e4828689ccd3c52d3833b46dbd21570576d8b7804dc09d41f"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T09:36:48.824Z",
+            "analysis_sha256": "506847fb9a4af75257e732d312b1b2f435986b3db9b437f5ecffef257f261be8"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-path/META.json",
+        "publication.summaries": {
+            "text": "转换Windows与WSL路径，附带挂载盘、换行和工作区位置提示。",
+            "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+            "source_url": "https://github.com/173787247/dsh-wsl-path/blob/e82233f94e1d77c35657e06bfd032a03e353e3ba/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+            "items": {
+                "模型工具": "path_convert：Windows与WSL双向路径转换。"
+            }
+        },
+        "publication.advice": {
+            "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+            "text": "单发行版先测试往返；多发行版必须核对distro，不直接使用转换出的同名Linux路径。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-path",
+        "reports": "# dsh-wsl-path\n\n> 转换Windows与WSL路径，附带挂载盘、换行和工作区位置提示。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-path](https://github.com/173787247/dsh-wsl-path)\n- **版本号**：0.2.0（[固定提交 e82233f94e1d77c35657e06bfd032a03e353e3ba](https://github.com/173787247/dsh-wsl-path/tree/e82233f94e1d77c35657e06bfd032a03e353e3ba)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：将路径语法转换与工作区提示组合，降低重复说明；映射规则不是新的文件系统访问机制。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：用户在Windows界面与WSL工具之间交接路径时，避免把盘符直接交给Linux命令。\n- **亮点**：将路径语法转换与工作区提示组合，降低重复说明；映射规则不是新的文件系统访问机制。\n- **思考**：UNC解析可返回另一个发行版名称，但生成的Linux绝对路径本身不携带发行版身份；转换不代表当前发行版能读到同一文件。\n- **建议**：待验证假设：把发行版身份作为路径对象的一部分保留到消费端，可降低跨发行版错读；若用户仅单发行版则价值有限。\n\n采用建议：单发行版先测试往返；多发行版必须核对distro，不直接使用转换出的同名Linux路径。\n\n## 核心贡献\n\n将路径语法转换与工作区提示组合，降低重复说明；映射规则不是新的文件系统访问机制。\n\n## 关键质疑\n\nUNC解析可返回另一个发行版名称，但生成的Linux绝对路径本身不携带发行版身份；转换不代表当前发行版能读到同一文件。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：把发行版身份作为路径对象的一部分保留到消费端，可降低跨发行版错读；若用户仅单发行版则价值有限。\n\n用两个发行版的同名路径做往返转换，检查身份是否保留，再测盘符根、中文和相对路径拒绝。\n\n## 场景与替代办法\n\n用户在Windows界面与WSL工具之间交接路径时，避免把盘符直接交给Linux命令。\n\nwslpath或手动转换；插件补充解释，但不能替代系统实际解析。\n\n## 依赖与流程\n\n依赖实际WSL发行版与挂载布局，字符串转换本身不检查文件存在。\n\n明确方向和输入路径，核对返回发行版与盘符，再在目标环境验证存在性。\n\n## 成本与效果\n\n主要为路径核对人工，无外部调用费用和端到端节省测量。\n\n将路径语法转换与工作区提示组合，降低重复说明；映射规则不是新的文件系统访问机制。 UNC解析可返回另一个发行版名称，但生成的Linux绝对路径本身不携带发行版身份；转换不代表当前发行版能读到同一文件。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4a70c37bdfcbb8d634e060b12e69ea0e9b4dbe23e72ee6109abfcc26d0995123。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 164 | — | — | 835 |\n| .js | source | 3 | 255 | 228 | 10 | — |\n| .js | test | 1 | 27 | 24 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：path_convert：Windows与WSL双向路径转换。\n\n## 工程亮点\n\n转换、标签与建议分离易于覆盖边界，结构化发行版身份比纯字符串更重要。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/path.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查入口和转换函数，未访问两侧文件系统验证映射。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。\n- 下一步：用两个发行版的同名路径做往返转换，检查身份是否保留，再测盘符根、中文和相对路径拒绝。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-path",
+            "repository_id": 1350378631,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-29T15:07:59Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-path%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:30A0ED:143DFA:21C2F8:6AD84999 and timestamp 2026-10-21 05:11:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-path%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:149E96:222C36:6AD84999 and timestamp 2026-10-21 05:11:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-path%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:13FD69:218D95:6AD84999 and timestamp 2026-10-21 05:11:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-path%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:330C23:14421E:21C78D:6AD8499A and timestamp 2026-10-21 05:11:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-path%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:1425A9:21AF5A:6AD8499A and timestamp 2026-10-21 05:11:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-wsl-path",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-path",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-path",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+                "current_revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1350378631:root",
+            "repository": "173787247/dsh-wsl-path",
+            "path": "",
+            "revision": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d5a437ec41d1cfe21c716c69f24e0c5b34243e491a2cc09fef8c3150cf0ebbfc",
+                "code": "e82233f94e1d77c35657e06bfd032a03e353e3ba",
+                "maintenance": "128eb7d83cf37f7e4828689ccd3c52d3833b46dbd21570576d8b7804dc09d41f"
+            }
+        }
+    }
+}

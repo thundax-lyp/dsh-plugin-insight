@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "889d3a2e0f010673f9ef8439da063327",
+    "identity": "github:1415208358:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415208358:root",
+            "repository": "BaoBao1996121/dsh-huaci-pinglun",
+            "path": "",
+            "revision": "3d15cf5df573b288409590f078efc4ea31fc0c8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f92113674b8566cb44660d64a942116363f88d6789d53ff63d400a22152b404f",
+                "code": "3d15cf5df573b288409590f078efc4ea31fc0c8a",
+                "maintenance": "0e77c66215ba61fdba3898603ac340d3cbbe5054b20020871af7c8de58c780e6"
+            }
+        }
+    }
+}

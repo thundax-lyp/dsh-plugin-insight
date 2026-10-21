@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6269a78a05fd7db930429cdf09469428",
+    "identity": "github:1320201099:plugins-dsh-tinytitan",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1320201099:plugins-dsh-tinytitan",
+            "repository": "Pummelchen/TinyTitan",
+            "path": "plugins/dsh-tinytitan",
+            "revision": "7dfded2573fa0eb53c5a19489fe8000570854af9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "758a49071e0b6850f82c15ad936cc206071aac263d5f6e450587351361ef4aac",
+                "code": "7dfded2573fa0eb53c5a19489fe8000570854af9",
+                "maintenance": "58b8d9cf0e970da48ee282c63f1dc0ef72c2d56692a5eb390328df899ab5744a"
+            }
+        }
+    }
+}

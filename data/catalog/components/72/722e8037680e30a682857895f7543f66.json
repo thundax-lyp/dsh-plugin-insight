@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "722e8037680e30a682857895f7543f66",
+    "identity": "github:1401765388:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401765388:root",
+            "repository": "moeform-re/dsh-review-md-preview",
+            "path": "",
+            "revision": "9448b3cf73c9e9c032a49b5e007ee2ae63e99426",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "feae4f8f32b9016ae42b8fcddd1b83f987f36359a1a2bc68fd607226cd1e761f",
+                "code": "9448b3cf73c9e9c032a49b5e007ee2ae63e99426",
+                "maintenance": "42f980eea978182313b0924ee18f23a39a9097075324d99f623b7acf764c11a6"
+            }
+        }
+    }
+}

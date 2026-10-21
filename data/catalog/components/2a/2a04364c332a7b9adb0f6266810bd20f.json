@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2a04364c332a7b9adb0f6266810bd20f",
+    "identity": "github:1337254484:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337254484:root",
+            "repository": "Xidong-AI/dsh-rate-limiter",
+            "path": "",
+            "revision": "594300e6fa55de8d411996e914a2fa06b3832432",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cd557ec8a6d45ace8794ac8e25baaa3dddbea154a5b001a133f74d8201bd9bcf",
+                "code": "594300e6fa55de8d411996e914a2fa06b3832432",
+                "maintenance": "623579fd5899b34a1b2adf6004e7c46647e50f6aa590a8bf556f6164e7ca7092"
+            }
+        }
+    }
+}

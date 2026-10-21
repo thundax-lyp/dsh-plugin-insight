@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aa5a6e1dc5faa70ce20ed7dc88498e36",
+    "identity": "github:1342165727:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342165727:root",
+            "repository": "ParticleLight/dsh-browser-plus",
+            "path": "",
+            "revision": "d4249f3a20d52a50e61d7de33087cdb47d02e1fe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "219d7d898fdc77f0a7436c573c0ae4f5259b8f2857f4eefdc8ab98c19a779ca6",
+                "code": "d4249f3a20d52a50e61d7de33087cdb47d02e1fe",
+                "maintenance": "de96d5d2b460fe3bd0019823a89083428cf1265725aecb465868368cde53c718"
+            }
+        }
+    }
+}

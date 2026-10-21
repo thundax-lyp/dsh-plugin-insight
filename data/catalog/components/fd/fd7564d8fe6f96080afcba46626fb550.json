@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fd7564d8fe6f96080afcba46626fb550",
+    "identity": "github:1374443726:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374443726:root",
+            "repository": "lubanqihao9875/dsh-figma-mcp",
+            "path": "",
+            "revision": "7369b0b15223118510156048fe45aad6940ac5e6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5c2b4b20d0d976feb32b76cc7da8a218145acbf6a3bd8a33d1c3a5f83a75971a",
+                "code": "7369b0b15223118510156048fe45aad6940ac5e6",
+                "maintenance": "23baad085bbfa4c402de8bd85ea8da30adb27b76fc3f461d95b3cc994da189f2"
+            }
+        }
+    }
+}

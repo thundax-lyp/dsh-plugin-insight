@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d03ac4b689119fff02c782fc4b3dcaf",
+    "identity": "github:1345878499:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345878499:root",
+            "repository": "hzpeng57/dsh-lens-rail",
+            "path": "",
+            "revision": "465812323d6167150e530d548378d916bcde119c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f719a97aa5c7fc03faff1ca09eceecccd455fceca34788d02d278d8ee15028a3",
+                "code": "465812323d6167150e530d548378d916bcde119c",
+                "maintenance": "7b2461dd70c3a590c7155d0244840507b6de105842a8a542f74d9a6ca3a51a63"
+            }
+        }
+    }
+}

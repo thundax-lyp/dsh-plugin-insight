@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7871985127643901e3dd64ce2c502eb0",
+    "identity": "github:1418147811:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418147811:root",
+            "repository": "ymck-x/dsh-session-continuity",
+            "path": "",
+            "revision": "f22b8f98693d9d252a863025625f1ef3cbcfa318",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2d3b4a7054baa28d474c6a3689f9edbf4534bea9a9ceecbe8bc9be2febf3a5a8",
+                "code": "f22b8f98693d9d252a863025625f1ef3cbcfa318",
+                "maintenance": "712fe7fe020791925a2cab8a1b98c8f2919116e6cf1a4a2baa01f55938dfa2e7"
+            }
+        }
+    }
+}

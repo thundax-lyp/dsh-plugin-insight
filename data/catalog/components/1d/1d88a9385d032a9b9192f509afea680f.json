@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1d88a9385d032a9b9192f509afea680f",
+    "identity": "github:1408005479:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408005479:root",
+            "repository": "drscrewdriver/dsh-preset-doctor",
+            "path": "",
+            "revision": "bf852a7fd298f54b5bf5c30083d913682cac710f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e437971f27df91b1ebf736029a1f73b8ed2a9fd5e99869ec6e89e4a4c683e55f",
+                "code": "bf852a7fd298f54b5bf5c30083d913682cac710f",
+                "maintenance": "0f787bc89831d601eba2e436b7baa253b7a1ebc664338af86b5c9ff06feb404a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1f3998b256b4eb3b1d47e700f1e8fa63",
+    "identity": "github:1334871947:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334871947:root",
+            "repository": "ChangedenCZD/dsh-minimal-turbo",
+            "path": "",
+            "revision": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7d47dcefcc48d7245bf3ccbd3132d4156e88043466d0214b128538b5069a4905",
+                "code": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                "maintenance": "717a240a8389badfccd52e394d481afa8d73055b283832652568b0aed2118015"
+            }
+        }
+    }
+}

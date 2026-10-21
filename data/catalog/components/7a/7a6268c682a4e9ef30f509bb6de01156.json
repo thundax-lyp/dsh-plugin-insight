@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7a6268c682a4e9ef30f509bb6de01156",
+    "identity": "github:1307156567:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1307156567:root",
+            "repository": "skyf0xx/hedgehog",
+            "path": "",
+            "revision": "6889540d19e9cb393453a85dc2ca65da5af5559f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b86bdbf025850861a23bd6735814435b9990797218774093d107ef8ac8585cb9",
+                "code": "6889540d19e9cb393453a85dc2ca65da5af5559f",
+                "maintenance": "622e4a5c8b8c765bfaab529605092b0ac2be3ce060c5c09a8f2a83464ba6bed6"
+            }
+        }
+    }
+}

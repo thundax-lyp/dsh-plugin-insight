@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4658c074c9d20337b970f37acc4f6efe",
+    "identity": "github:1421951854:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421951854:root",
+            "repository": "dgy970516/dsh-status-turbo",
+            "path": "",
+            "revision": "a748b7628247669ccac7ca00e566522f1ab1c72f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8e1d5d0c2d04f034aa0b43460e597ad5cbd6805984cff9c2ccf7dc95d3031796",
+                "code": "a748b7628247669ccac7ca00e566522f1ab1c72f",
+                "maintenance": "ccc581787f4f0fbf57381fb76c7e2c43728e1aa91cfd22ce921119d0936303e7"
+            }
+        }
+    }
+}

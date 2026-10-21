@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fbd89047f2d23465fe7e58c257108836",
+    "identity": "github:1334020974:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334020974:root",
+            "repository": "cocode-agency/cocode",
+            "path": "",
+            "revision": "5c30dde7966c42df84b3c108317fc345b013f494",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ccb41dcddc6ad89c6eabb33474a8931be7baa8c703b9f4872e389a03b4cc2cf0",
+                "code": "5c30dde7966c42df84b3c108317fc345b013f494",
+                "maintenance": "c5ff97d80da9e5383027e32df6c5712248be7f42dfe77f8d4954b96b740947e5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "31c3aadb495cb895bde326084c27d1cf",
+    "identity": "github:1421891345:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421891345:root",
+            "repository": "faxble/dsh-model-picker",
+            "path": "",
+            "revision": "bf59a91a2276e0c85b822a4fd355cb488cfa3afc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c6945376468dd82a2fdd77166b630dd663a8da3a829eb74b6d7883a668145a6e",
+                "code": "bf59a91a2276e0c85b822a4fd355cb488cfa3afc",
+                "maintenance": "f04ee7eb13ae72cf21c78b9f43960f65abc79a2903e05579ade95aba4e2cdd6e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "09513f9278b5b2c38593bfa2ba01db4b",
+    "identity": "github:1410505049:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410505049:root",
+            "repository": "liaoyuqing/model-failover-manager",
+            "path": "",
+            "revision": "b61b8fcaf535d4c4a46d1e1296d2ada04fdaef52",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "164250192e72d942bd2ababd71d3862a0ad566ec56dc463a21481b8daad78a6c",
+                "code": "b61b8fcaf535d4c4a46d1e1296d2ada04fdaef52",
+                "maintenance": "7d71e59e0d77e5984687d0ae9ff52ed5c36a349bcb0e4bd1c7ef341ad65b68b5"
+            }
+        }
+    }
+}

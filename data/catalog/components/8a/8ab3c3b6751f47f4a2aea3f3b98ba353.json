@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8ab3c3b6751f47f4a2aea3f3b98ba353",
+    "identity": "github:1336078781:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336078781:root",
+            "repository": "Coprexist/dsh-session-recovery",
+            "path": "",
+            "revision": "4f8b877fdc23e982c4e0d452e447b44bdd78b36e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e42a51fe8eaecc1cf99bdc75f90803eeefcc0465e299228ad642d906e5c86b8",
+                "code": "4f8b877fdc23e982c4e0d452e447b44bdd78b36e",
+                "maintenance": "80d4dc31eebfdc51f0b1a52688d005aaa8ddd7bc844b538a4d534e6a5d44d275"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d8f5fca9aacf8288e87443d8dbb49d70",
+    "identity": "github:1333708305:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333708305:root",
+            "repository": "Ayase34/gal-view",
+            "path": "",
+            "revision": "d002fe0e7051c618a2665af3c653f9838cd6aa8a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e88cec2e7ac651a30d7f3782e242da7b6a0f84fc15461c5ef2ee64784968f1d4",
+                "code": "d002fe0e7051c618a2665af3c653f9838cd6aa8a",
+                "maintenance": "2beb760d36d29c1f78a935a6f22db15184b5e5efbfafe925e4dbbe478a95ea06"
+            }
+        }
+    }
+}

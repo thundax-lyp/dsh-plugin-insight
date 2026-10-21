@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4dd69c837786b966ebaef575ce7cdac6",
+    "identity": "github:1348804134:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348804134:root",
+            "repository": "yminghua/dsh-plugin-compare",
+            "path": "",
+            "revision": "cc39a163c680d8630164ce9dc3c4336bfe02255d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b21865b2fca00d3c1c71dd110173f804f0aca461e34e3eb5b0afea16d3f826e0",
+                "code": "cc39a163c680d8630164ce9dc3c4336bfe02255d",
+                "maintenance": "ead8ada068101bd66bd3bf9f4343c1dcae1ea78d9344ece886492f61d6258a60"
+            }
+        }
+    }
+}

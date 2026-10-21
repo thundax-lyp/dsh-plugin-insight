@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fbaab77772e0a310cc5a395fd6d998ea",
+    "identity": "github:1074165057:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1074165057:root",
+            "repository": "taptap/instant-games-open-mcp",
+            "path": "",
+            "revision": "3c444b78fa77f6530d088a1674d319da982bb3cb",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8e66c932ae2787e745d9cfec12125daa7eaf77e4ca8abca481a9918e892b1b40",
+                "code": "3c444b78fa77f6530d088a1674d319da982bb3cb",
+                "maintenance": "1a7fafada01f4a438039c75e477d59bd35b1caa0bffad54ce9f96fe822c4c801"
+            }
+        }
+    }
+}

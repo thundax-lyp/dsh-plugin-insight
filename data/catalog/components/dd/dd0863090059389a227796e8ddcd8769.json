@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dd0863090059389a227796e8ddcd8769",
+    "identity": "github:1408498404:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408498404:root",
+            "repository": "Som2233/dsh-session-task-tags",
+            "path": "",
+            "revision": "3d77857876da49afff12212f7d9fc7ba6d2493a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eeb5ee00baf2a31c5a9287a87e5c5a07513d858a7d486d6ccac25582768e1aec",
+                "code": "3d77857876da49afff12212f7d9fc7ba6d2493a7",
+                "maintenance": "67e25ea71e968495fb667188b617c0184422df96f7126eac6a6fd7671abef7a5"
+            }
+        }
+    }
+}

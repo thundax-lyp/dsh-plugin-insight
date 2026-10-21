@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7ec0856ccf44cb3c4c376ae076433a3e",
+    "identity": "github:1340353591:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340353591:root",
+            "repository": "JohnXu22786/session-export",
+            "path": "",
+            "revision": "f14f062726fb9ad04ab6dff2a19fc99095e610d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "79f32c0f2b9f899ca9974a19dff800a374e11e102bf605c4661b107ce502f88e",
+                "code": "f14f062726fb9ad04ab6dff2a19fc99095e610d8",
+                "maintenance": "b6ecb7c0b21ac58386c3d9fc6888e3cb0e20773107d6359a908e26561583f93b"
+            }
+        }
+    }
+}

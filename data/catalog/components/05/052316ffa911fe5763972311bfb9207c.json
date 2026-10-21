@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "052316ffa911fe5763972311bfb9207c",
+    "identity": "github:1420528484:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420528484:root",
+            "repository": "Maple-Yoli/dsh-notice-card",
+            "path": "",
+            "revision": "c933682ddf5fa02856b92fb6596a1314004aec44",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "143bf99852a2580b12e6f1c6a4b2dc174bfb183dfd82b8067a25fb7cf99f4f64",
+                "code": "c933682ddf5fa02856b92fb6596a1314004aec44",
+                "maintenance": "f6713a6041004ddf1bcbfb6df970f1eabf1266a30cd79fb0f6d766eded28e81c"
+            }
+        }
+    }
+}

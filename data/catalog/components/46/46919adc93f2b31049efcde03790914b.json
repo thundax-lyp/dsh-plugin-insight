@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "46919adc93f2b31049efcde03790914b",
+    "identity": "github:1366848824:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366848824:root",
+            "repository": "Limbo-137/dsh-typst-preview",
+            "path": "",
+            "revision": "d5ea7c289b023bf849a57f7b4c3bebdf06e481e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4b41d4f34dd6c8daa86d23d841d60bbc67d276942908fb20b76bc66879ebebef",
+                "code": "d5ea7c289b023bf849a57f7b4c3bebdf06e481e1",
+                "maintenance": "9fb5586e77699994ba40e5b672b704517f62655bd02979280fdbd473b678f306"
+            }
+        }
+    }
+}

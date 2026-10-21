@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "82a6e43c839b604da4bf987fdf0ba10e",
+    "identity": "github:1339020591:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339020591:root",
+            "repository": "ListenJ/axiom-kb-dsh",
+            "path": "",
+            "revision": "7f9047f4b9c41eeaec67fb68dc53c8c8a9672eea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5e3cb49807ee8565ac5dca36c39e9a09528b105a1e6c8d549f3659833f8c6c6e",
+                "code": "7f9047f4b9c41eeaec67fb68dc53c8c8a9672eea",
+                "maintenance": "3cc9e7bf6eada0cc576f8ae947ffe8a5e59cd661cb94a476f79a68801997027d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "72eed27d594d1efcaf943cfbefa38169",
+    "identity": "github:1369846550:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369846550:root",
+            "repository": "wangzhanchao883/dsh-lost-and-found",
+            "path": "",
+            "revision": "9b313c66a2f1e14641cb858d37c8e9a6ef69bec3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c60fcd595734b083bc5370a49b1fcc4250d0a5e40bbf0448c956f46a28d3f745",
+                "code": "9b313c66a2f1e14641cb858d37c8e9a6ef69bec3",
+                "maintenance": "61c341d171818592470b790d8fe41c0fefe641e8663a625b539fc4b0cd37e792"
+            }
+        }
+    }
+}

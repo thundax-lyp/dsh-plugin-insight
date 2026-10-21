@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "79fd3bbd87f6a72a5d004486fb67fd91",
+    "identity": "github:1333698683:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333698683:root",
+            "repository": "ChuanTianML/dsh-local-share",
+            "path": "",
+            "revision": "4924a02898ccc68fb1d9e480d8c8bc299853b753",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3dd40d6fbe36da3b83fbbd671300460a6d7213b6862de67e2405459273361f57",
+                "code": "4924a02898ccc68fb1d9e480d8c8bc299853b753",
+                "maintenance": "c80b153d422e18b4a92f6124601271d91e95f613b9f7620abb47a361b8a50eee"
+            }
+        }
+    }
+}

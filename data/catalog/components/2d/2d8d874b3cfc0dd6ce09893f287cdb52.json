@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2d8d874b3cfc0dd6ce09893f287cdb52",
+    "identity": "github:1403369211:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403369211:root",
+            "repository": "sailoumili/dsh-file-opener",
+            "path": "",
+            "revision": "3ef8fa42df9bc3bfa8a90fdaf710982b9892286f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "92116f1eea87b3148921581f4aece137804b36f4b9352019b6d334858d481858",
+                "code": "3ef8fa42df9bc3bfa8a90fdaf710982b9892286f",
+                "maintenance": "4380078463a11793f43f59e8be7f2d8e68e4826f93d8b5f4118cf858e6f18b8e"
+            }
+        }
+    }
+}

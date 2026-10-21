@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da508da4fe09bffcebd10f53e6ea92c2",
+    "identity": "github:1347141925:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347141925:root",
+            "repository": "gameswu/dsh-human-coding",
+            "path": "",
+            "revision": "03289e97ef9e14ae209bcdf3cceea457b95b3682",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e12819acec16cc665775101fe2d2f14703cafeb6d10035cf6e3aa63e89a2475d",
+                "code": "03289e97ef9e14ae209bcdf3cceea457b95b3682",
+                "maintenance": "49fc7927a4245f98d2edd85abd38dea59e5beb8fdd860dbbe1f1a7dd70d72774"
+            }
+        }
+    }
+}

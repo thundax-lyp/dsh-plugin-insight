@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "775cfcd7a041c229494ce3eb8e59bcf4",
+    "identity": "github:1413834289:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413834289:root",
+            "repository": "wjingshan/dsh-sidebar-focus",
+            "path": "",
+            "revision": "b47c4ea2931822147231e4082d198d27ba80c8a6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dc8443e9975ead00205cabeb70b2e014435b3dd72d85fa697a08c961fc51dd4f",
+                "code": "b47c4ea2931822147231e4082d198d27ba80c8a6",
+                "maintenance": "b3dbc469235c25e4893c1aa31f720c75efc3921efa8715ada27e79d5949e4dd9"
+            }
+        }
+    }
+}

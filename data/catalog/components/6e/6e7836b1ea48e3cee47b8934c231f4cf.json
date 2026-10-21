@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6e7836b1ea48e3cee47b8934c231f4cf",
+    "identity": "github:1363866429:plugins-prompt-history",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1363866429:plugins-prompt-history",
+            "repository": "converk/dsh-tweaks",
+            "path": "plugins/prompt-history",
+            "revision": "b807001b97514497caac151986ec86dd6c0530e9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c6dc9ef223d5bddd8e519684e3a63fd751ae252fd34c222a5434e216f864aa60",
+                "code": "b807001b97514497caac151986ec86dd6c0530e9",
+                "maintenance": "43e0c1c8140f38bf01e4ea4efbe645c37634b9307b4392651621f62a7d1f7632"
+            }
+        }
+    }
+}

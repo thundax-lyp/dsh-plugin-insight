@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9ba4a950f7419d06cb3bb81351dac32c",
+    "identity": "github:1424278730:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424278730:root",
+            "repository": "iStarryDust/dsh-ui-liquid-glass",
+            "path": "",
+            "revision": "4435609dd54921f8c5c06ecb7e8bd4ae8987102f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8b6ee5fb276e594f6f04a5a341c2ab0fa6f30ecf3977358eacc392e63b5c773a",
+                "code": "4435609dd54921f8c5c06ecb7e8bd4ae8987102f",
+                "maintenance": "ae540f7b1200dcc24d291e73ae316badc0ee320ccbb71800040bd3172342f684"
+            }
+        }
+    }
+}

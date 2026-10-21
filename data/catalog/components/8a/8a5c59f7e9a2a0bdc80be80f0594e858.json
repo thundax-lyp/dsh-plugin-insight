@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a5c59f7e9a2a0bdc80be80f0594e858",
+    "identity": "github:1414459546:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414459546:root",
+            "repository": "Dclef/dsh-cursor-dev",
+            "path": "",
+            "revision": "a054076191c74aa6547777a4ef689fcc3796b544",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "206b80bd1513b9603be866e2eec622a322c695303a0b7b9ebea1f0ffdaa72594",
+                "code": "a054076191c74aa6547777a4ef689fcc3796b544",
+                "maintenance": "bf6171d2b68cf1f2d3e1da56010e64ef31f0eb6d7d2407a4fe83464937fd5d06"
+            }
+        }
+    }
+}

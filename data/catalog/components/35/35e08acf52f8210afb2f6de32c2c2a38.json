@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "35e08acf52f8210afb2f6de32c2c2a38",
+    "identity": "github:1346682771:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346682771:root",
+            "repository": "Lorodn4x/dsh-firecrawl",
+            "path": "",
+            "revision": "96fb9ca4e1b19bb1d0df041be308d13a67ea7081",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2cb56e20bced805b765a8df57aadd1db5ea55969c5f235b70c9bd4ce7506bd6d",
+                "code": "96fb9ca4e1b19bb1d0df041be308d13a67ea7081",
+                "maintenance": "bd810aa8c0e99337aa47c9db295cf3b9eee44fb6836a6b41f78991f416ddc3fc"
+            }
+        }
+    }
+}

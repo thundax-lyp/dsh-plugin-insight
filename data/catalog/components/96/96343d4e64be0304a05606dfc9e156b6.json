@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "96343d4e64be0304a05606dfc9e156b6",
+    "identity": "github:1349778583:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349778583:root",
+            "repository": "LWLAymh/dsh-edit-guardian",
+            "path": "",
+            "revision": "74602d75aa788acf1a35bdc96cf823615e4abc0d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a8351f92e1c47ba634ef49eaa249e7cf48dac52e72df473e2dab5cf67393ca28",
+                "code": "74602d75aa788acf1a35bdc96cf823615e4abc0d",
+                "maintenance": "863ee65c0ff344b150c890f71c119ca1ec8d45ab199fbdaa29184fb391d1a2b3"
+            }
+        }
+    }
+}

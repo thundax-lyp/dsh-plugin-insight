@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "54f770c67a2799941932412dff8d73f3",
+    "identity": "github:1346720077:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346720077:root",
+            "repository": "beartackler/dsh-bridge",
+            "path": "",
+            "revision": "5ca0c3823b7b711e8648e508f4085b17aaf88521",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aa114782ec2d46b8b64f2e29a517907795a636a0bcfd313c767283bdcc8f3124",
+                "code": "5ca0c3823b7b711e8648e508f4085b17aaf88521",
+                "maintenance": "51de4f1f29f1691e723ddce5a4c5f8d6c637d7c04d716379d11aa1b1f515aa7a"
+            }
+        }
+    }
+}

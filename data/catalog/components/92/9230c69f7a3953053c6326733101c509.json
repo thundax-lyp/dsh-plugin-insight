@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9230c69f7a3953053c6326733101c509",
+    "identity": "github:1345915848:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345915848:root",
+            "repository": "wpc725562-dotcom/deepfusion",
+            "path": "",
+            "revision": "9ac7939a63c42decaf40287ec2a690af74a0d240",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b678a5b61cab564fede0f87b6a0ebddb24b1073917fbfcfa3f2e6ce0e1b9ca01",
+                "code": "9ac7939a63c42decaf40287ec2a690af74a0d240",
+                "maintenance": "85ac746e0dd5ba8e6d143a8b62cd0b1a3e21d9addb3139426a31c0a91adc0ca5"
+            }
+        }
+    }
+}

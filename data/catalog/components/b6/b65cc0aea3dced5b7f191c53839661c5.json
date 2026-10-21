@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b65cc0aea3dced5b7f191c53839661c5",
+    "identity": "github:1362444734:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362444734:root",
+            "repository": "Harzva/dsh-superterminal",
+            "path": "",
+            "revision": "1a313755ed1cd8e8c0d678b3e6ff939ee2e3d1d3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8fb970d8d8eca7f22caed3c46a9536d8afa66cbf600930669888012a92221786",
+                "code": "1a313755ed1cd8e8c0d678b3e6ff939ee2e3d1d3",
+                "maintenance": "c015863b8c29e0653eecb81b5d20b1c834d1d3826b7175db39a62d80cb9f1ecd"
+            }
+        }
+    }
+}

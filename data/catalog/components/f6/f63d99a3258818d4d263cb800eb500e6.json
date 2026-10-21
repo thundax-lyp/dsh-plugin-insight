@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f63d99a3258818d4d263cb800eb500e6",
+    "identity": "github:1350473639:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350473639:root",
+            "repository": "oopsylol/dsh-waaagh-ork",
+            "path": "",
+            "revision": "c75c36f739cbcf9b9695786b16e52142d99f05cc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "56391eda3f7e8e6bc08f314d19224cb42bc8e6f3ec602535f84cfdbb33c84631",
+                "code": "c75c36f739cbcf9b9695786b16e52142d99f05cc",
+                "maintenance": "82d5426c4e46fc1e103c987926d1f8e650e725d3f3fbba9916b3e9916b4ba282"
+            }
+        }
+    }
+}

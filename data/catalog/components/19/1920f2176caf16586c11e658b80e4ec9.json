@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1920f2176caf16586c11e658b80e4ec9",
+    "identity": "github:1368251372:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368251372:root",
+            "repository": "xie129716/computer-user-vision",
+            "path": "",
+            "revision": "e10491d868d7ed67ad1461b48fb9df32f2b3f8a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3f491b4241f95fe0d5dd192ea4566801f6eea1af2004a3efb94b2ce6e0703183",
+                "code": "e10491d868d7ed67ad1461b48fb9df32f2b3f8a9",
+                "maintenance": "e54da681bc12815faafea9f3ff11e2342e462674f18ec7a974dbaccc97f46ae7"
+            }
+        }
+    }
+}

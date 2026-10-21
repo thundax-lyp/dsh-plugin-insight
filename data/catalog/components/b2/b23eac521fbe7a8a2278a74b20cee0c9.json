@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b23eac521fbe7a8a2278a74b20cee0c9",
+    "identity": "github:1340685799:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340685799:root",
+            "repository": "cxdyun/dsh-skills-marketplace",
+            "path": "",
+            "revision": "bb72787232c94904d075c8c00e0881638c7284bb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aae35ff5229346a13bf9a48b14a17018158ff2f48d2bb5b9aac855a4c19fa5e2",
+                "code": "bb72787232c94904d075c8c00e0881638c7284bb",
+                "maintenance": "266e762c006cb18eb7725a0544e7220058b5db9cde99310f4415985776c8a2b5"
+            }
+        }
+    }
+}

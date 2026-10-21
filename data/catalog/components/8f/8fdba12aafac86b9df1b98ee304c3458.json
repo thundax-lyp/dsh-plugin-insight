@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8fdba12aafac86b9df1b98ee304c3458",
+    "identity": "github:1348672360:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348672360:root",
+            "repository": "Luawig/dsh-cloudflare-access",
+            "path": "",
+            "revision": "82f46ce8bf13fbf033d8a8f2bf14659e81ca7fed",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4dc30e06de13af176f4116f2d8f36a601d0d64ebcdd218f919829e069cd91b72",
+                "code": "82f46ce8bf13fbf033d8a8f2bf14659e81ca7fed",
+                "maintenance": "d4b91b4f269977da31acf0c85191de6173467f5e5e081faea04d95f04b5515f6"
+            }
+        }
+    }
+}

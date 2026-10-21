@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6410a321375431f3247dce76801c7a6",
+    "identity": "github:1333317835:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333317835:root",
+            "repository": "2BingLing/dsh-market",
+            "path": "",
+            "revision": "8ac1e3c5cb5382f5ac8182a11692f0cfe3be2695",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "018b8ad28918b431dc6d9886e8b2035f8e7524cf96bdb62c98c8859012b3544b",
+                "code": "8ac1e3c5cb5382f5ac8182a11692f0cfe3be2695",
+                "maintenance": "3588d56a062758b3ebb3b33563c3610a71433be8abfa42a542bf54ea0d88662c"
+            }
+        }
+    }
+}

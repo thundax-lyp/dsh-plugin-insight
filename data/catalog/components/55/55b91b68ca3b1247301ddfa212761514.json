@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "55b91b68ca3b1247301ddfa212761514",
+    "identity": "github:1336495862:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336495862:root",
+            "repository": "liuyuelintop/dsh-conversation-exporter",
+            "path": "",
+            "revision": "a7375d3ab5ce07e202b0822f44db15fe8417edf1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3e633fc6f9f8229fb128dda8889c4857f4031dfb525884f1f68b60c6d40a577e",
+                "code": "a7375d3ab5ce07e202b0822f44db15fe8417edf1",
+                "maintenance": "0fc7d48967d5aed4aaf97b2faf8d99b0f2eec69ff52561da6793074a7bd8809b"
+            }
+        }
+    }
+}

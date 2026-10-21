@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f6e4e4cd6237ccd10f0e2851ca8640a",
+    "identity": "github:1364104772:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364104772:root",
+            "repository": "jiekesu967/dsh-markitdown",
+            "path": "",
+            "revision": "2542aba28441dc54d04d4cf4592760680f5e6c9c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "00776813f5540193b543e3387a2bf5183f282750575e12f526095b2499f6f5dc",
+                "code": "2542aba28441dc54d04d4cf4592760680f5e6c9c",
+                "maintenance": "6bbd9f090a3183ac32285720f2a9200d2d0ab85bc03f8e6c5a576ea620d8543e"
+            }
+        }
+    }
+}

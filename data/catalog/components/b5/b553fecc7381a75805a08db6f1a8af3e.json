@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b553fecc7381a75805a08db6f1a8af3e",
+    "identity": "github:1328795096:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1328795096:root",
+            "repository": "bill9109/dsh-webbridge",
+            "path": "",
+            "revision": "b0544c8659c9b21f2b8a023fc58b43e183afea8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3b0c58ef116fdb41ba6e99dd2340e3d5eaa9e5a2a90241424d292821422cdabf",
+                "code": "b0544c8659c9b21f2b8a023fc58b43e183afea8a",
+                "maintenance": "be47e2fb6b8873adf4657d051acecbda37e2e949a2757fecc49085eec3524673"
+            }
+        }
+    }
+}

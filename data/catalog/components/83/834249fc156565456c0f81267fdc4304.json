@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "834249fc156565456c0f81267fdc4304",
+    "identity": "github:1408794031:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408794031:root",
+            "repository": "PerryLink/dsh-hazchem-check",
+            "path": "",
+            "revision": "725e349720757dff7cdbc1ea9cbaac75fe11afb3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "45e4b44a713c0ff05637e25f4ef093315a8e63e3ac1cf596adea12d53383d4f3",
+                "code": "725e349720757dff7cdbc1ea9cbaac75fe11afb3",
+                "maintenance": "9c5f3ec8bc6e372b0149ac6b288345419e70083a0d5ed2a15f387e6666c5724d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90ae92724063e6b85b4dd5fc8f854b35",
+    "identity": "github:1419136667:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419136667:root",
+            "repository": "nanshang328/dsh-desk-card",
+            "path": "",
+            "revision": "0d7b8c9813bb53455e70e87bc2eefd21c19e8019",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b29d3cb84a38a0f9d7da176c387461a975fd0df5c58305be75e8238bc678f638",
+                "code": "0d7b8c9813bb53455e70e87bc2eefd21c19e8019",
+                "maintenance": "9fcd8f7f07314e5a04877ec45647b9cd7b3c0d80619617f22760e2b26814c468"
+            }
+        }
+    }
+}

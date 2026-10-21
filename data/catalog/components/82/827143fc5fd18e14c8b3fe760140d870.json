@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "827143fc5fd18e14c8b3fe760140d870",
+    "identity": "github:1334189917:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334189917:root",
+            "repository": "MoonCoder-HAPPY/SpecWorkflow",
+            "path": "",
+            "revision": "e4ae8e02b927caaf0b97324bde795e90495e3384",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "06d5da833362bfd012885a43aea1b75b38dcce2e29af077698d373bae692e760",
+                "code": "e4ae8e02b927caaf0b97324bde795e90495e3384",
+                "maintenance": "4e2e0ddebf94a211f2e2d860bf8adf6ef19af18d57f1186d93f607e3ce9e15a7"
+            }
+        }
+    }
+}

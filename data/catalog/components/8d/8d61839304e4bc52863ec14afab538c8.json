@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8d61839304e4bc52863ec14afab538c8",
+    "identity": "github:1350223444:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350223444:root",
+            "repository": "sunyuhuirong/fsviewer",
+            "path": "",
+            "revision": "54fc3c52e007ec71b263b886284641a369abf5a1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fba8a6e66b42f8c570779694be9cabfc1460b6e0effc82bce38448e5cb2b719b",
+                "code": "54fc3c52e007ec71b263b886284641a369abf5a1",
+                "maintenance": "87fb83009fdcb118e379f818dcf56f121020c312e9454d10ee48129a94e53173"
+            }
+        }
+    }
+}

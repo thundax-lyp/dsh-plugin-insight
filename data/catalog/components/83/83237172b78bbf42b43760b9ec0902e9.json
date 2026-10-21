@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "83237172b78bbf42b43760b9ec0902e9",
+    "identity": "github:1371853409:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1371853409:root",
+            "repository": "fashionmascherine-svg/formalswarm",
+            "path": "",
+            "revision": "458719d2d89948d9847ff5ff13ca9a64c679f404",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1f4419958de159874b1208f819b42faf1162dfa24ad34eb838608154370c6a76",
+                "code": "458719d2d89948d9847ff5ff13ca9a64c679f404",
+                "maintenance": "e27025f3ac241be0bbe08014ca57a5ab6d1952a4580cfae28e46ff5c1a8958d7"
+            }
+        }
+    }
+}

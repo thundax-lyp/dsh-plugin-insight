@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fcc22a0253b72c1a04ef12a5af4d247d",
+    "identity": "github:1335999086:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335999086:root",
+            "repository": "MJorgin/skill-bartender",
+            "path": "",
+            "revision": "6beb7e0770661b5d08a9ae6a792041d185701fa9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "059b427b6775162e24d048506e474a1061473e71d44ed5c0e5b7f1578bf65055",
+                "code": "6beb7e0770661b5d08a9ae6a792041d185701fa9",
+                "maintenance": "29ea4331e83ea79dce2bf9e9a6e80d6c4b41b3aefa8b30ca9cac4f1d6d440354"
+            }
+        }
+    }
+}

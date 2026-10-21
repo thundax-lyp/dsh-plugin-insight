@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5af4f6efb5e13049835f95846218387b",
+    "identity": "github:1414284940:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414284940:root",
+            "repository": "shuxidemosheng/dsh-tool-workflow-plus",
+            "path": "",
+            "revision": "3bfd515fc92c482d43775b79c9feb30711b8f90a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "70f3e41a09758c1d87d0371fb64c40ab3d5e10156c2ea30fb7034f1d4be7cf6a",
+                "code": "3bfd515fc92c482d43775b79c9feb30711b8f90a",
+                "maintenance": "82d26992255075b0982edccd517587793c68a53ebb2413b71cc28a87bca07100"
+            }
+        }
+    }
+}

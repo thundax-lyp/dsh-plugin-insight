@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2384d62be815eb4d9b7f36daff593b79",
+    "identity": "github:1365404317:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365404317:root",
+            "repository": "xine2009cn/dsh-branch-inbox-guard",
+            "path": "",
+            "revision": "a5ab75460badb89d7bebda60edfae6310627f42a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "20fbd5b021655a8d6bb121860de7d49c047b9277ef7b87fb6c7c6a2cf695d246",
+                "code": "a5ab75460badb89d7bebda60edfae6310627f42a",
+                "maintenance": "bd320a0980ac58c85c8a24d080f399120d19de527b3c5c017d63ce76417a8cf8"
+            }
+        }
+    }
+}

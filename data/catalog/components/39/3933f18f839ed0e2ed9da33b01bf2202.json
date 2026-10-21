@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3933f18f839ed0e2ed9da33b01bf2202",
+    "identity": "github:1337859535:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337859535:root",
+            "repository": "xiaheng1/dsh-turn-nav",
+            "path": "",
+            "revision": "74b128343ddb6d33014bdbeb77c9b1d0c0491026",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1736ce6af42fac97f50eda6d4b8d41f2a208dd407789885746615f74d42af514",
+                "code": "74b128343ddb6d33014bdbeb77c9b1d0c0491026",
+                "maintenance": "485374be840e3e758a9aef0bededd484425c4ccce331a0f38201eef83a814087"
+            }
+        }
+    }
+}

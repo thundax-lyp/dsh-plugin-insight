@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f319ca0df1ebbffd61d0d8b8030178d",
+    "identity": "github:1404802897:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404802897:root",
+            "repository": "montersy123/dsh-skill-market",
+            "path": "",
+            "revision": "4cda93094d9c147e1774e39a8d88581264862d4c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7fbe0a65ced6e87529b1c81c177e028d3a38cfb4450473b564b3d9d279600696",
+                "code": "4cda93094d9c147e1774e39a8d88581264862d4c",
+                "maintenance": "0683e86d6477f9d4ec0b7c3f59b8aa20e8398b8670ae0f2e5bcc10445c22e460"
+            }
+        }
+    }
+}

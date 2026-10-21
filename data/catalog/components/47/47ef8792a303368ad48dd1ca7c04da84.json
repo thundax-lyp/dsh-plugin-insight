@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "47ef8792a303368ad48dd1ca7c04da84",
+    "identity": "github:1353040939:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353040939:root",
+            "repository": "yahoolcj/dsh-plugin-zerone",
+            "path": "",
+            "revision": "40f2eb763dce2c708e7cece63c04610774e84130",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "18210ef0a54069b00f9d83702045907ece2350d9e01aa0ed3c1b087872f205a9",
+                "code": "40f2eb763dce2c708e7cece63c04610774e84130",
+                "maintenance": "c6ed410a89ff68021cb48bb6e858a40d8c3745ee8f8512b23261cd30a2c9cd79"
+            }
+        }
+    }
+}

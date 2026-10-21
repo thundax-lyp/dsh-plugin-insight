@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0a3f581b2238b9c6478eaa10ccdc0f34",
+    "identity": "github:1376053947:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376053947:root",
+            "repository": "thissensen/dsh-agent-studio",
+            "path": "",
+            "revision": "9e55620b7d25603f9f0f5ec764e9f627d2cb1786",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6a25bc65536ef7dcd43980a5d46830753bd87d503c83246cd6161ebbb58bc3f2",
+                "code": "9e55620b7d25603f9f0f5ec764e9f627d2cb1786",
+                "maintenance": "dd6c2bbe719184acf16b8f55892e4bd5efdcfbb3a4dc79642c2f5caf75db1e8b"
+            }
+        }
+    }
+}

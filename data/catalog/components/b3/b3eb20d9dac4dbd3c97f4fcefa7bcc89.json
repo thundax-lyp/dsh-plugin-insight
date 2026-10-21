@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b3eb20d9dac4dbd3c97f4fcefa7bcc89",
+    "identity": "github:1351235387:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351235387:root",
+            "repository": "QWE13-ART/dsh-tool-folder",
+            "path": "",
+            "revision": "bd75e270d7104ed48ead0139dea48a30e90e482a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4b3f22a773291aef28b762850056e2f336e53edbc835a9344ea6ced32a1791ba",
+                "code": "bd75e270d7104ed48ead0139dea48a30e90e482a",
+                "maintenance": "0e2ce601d63817adf851c86cfc976d73ae7d14afdac3c09b5f1fbd2c2459652a"
+            }
+        }
+    }
+}

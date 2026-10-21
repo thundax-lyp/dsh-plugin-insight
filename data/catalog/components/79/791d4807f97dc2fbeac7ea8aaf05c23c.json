@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "791d4807f97dc2fbeac7ea8aaf05c23c",
+    "identity": "github:1384435305:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384435305:root",
+            "repository": "fnnas-labs/fnos-cli-skill",
+            "path": "",
+            "revision": "f288f89f094253e38ff0c8e2c2be38a473bb1b62",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "36a60a9a28d7c5f5a7cefc45eb56121ac7192dd5c47e0c32e652f330e71d215e",
+                "code": "f288f89f094253e38ff0c8e2c2be38a473bb1b62",
+                "maintenance": "9bdd6be306bf69c09462511fa5ead05425ae0ebb0ea170f0e6e8bda49524c2e4"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "be3fa48fdd62a5bd99b30ab458fa3b05",
+    "identity": "github:1345826369:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345826369:root",
+            "repository": "thomasvvugt/dsh-kanban-flow",
+            "path": "",
+            "revision": "50cf5fc56d56e81a390ef321364b84e0d8d6ed89",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3905f4e7a3ea173015448821a5c4f223cd3539482fd706808d90eb614c9f9a73",
+                "code": "50cf5fc56d56e81a390ef321364b84e0d8d6ed89",
+                "maintenance": "9786d276de9fdd393158a4992cdba05d9da15df98de96ec7ec569aa3e2e096d9"
+            }
+        }
+    }
+}

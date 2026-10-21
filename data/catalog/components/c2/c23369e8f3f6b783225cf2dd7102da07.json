@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c23369e8f3f6b783225cf2dd7102da07",
+    "identity": "github:1333788175:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333788175:root",
+            "repository": "Clizo1209/dsh-playwright-browser",
+            "path": "",
+            "revision": "e6131c5de3a45f4f48dc81f76895abfcafb4cf02",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1937773bc482140a4493003c0c9c0006b3ca89e84d409484d081c0b0ca8969c5",
+                "code": "e6131c5de3a45f4f48dc81f76895abfcafb4cf02",
+                "maintenance": "3bcbdb662a9f6ded0d54fc6884a23c0876bb1ca2a440f06be4dd04e03810fe04"
+            }
+        }
+    }
+}

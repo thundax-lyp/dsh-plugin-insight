@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5745f3c53a7e1abac3b4fc809de15348",
+    "identity": "github:1343674616:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343674616:root",
+            "repository": "KannaKuron/dsh-gitbash-shell",
+            "path": "",
+            "revision": "5965fa767971417521941c4bf1f85257334e557a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3853ffd1ac06a6d9ae65c66ba00f5fe6d64872f8d72e15947a4ab8a5444e77a1",
+                "code": "5965fa767971417521941c4bf1f85257334e557a",
+                "maintenance": "03be7e88ceae27ab445a86d1c4210f3b28c12be22159ddf23714f3da349a9ab6"
+            }
+        }
+    }
+}

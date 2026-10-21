@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c1a4aa6f4ed7e2aa07e09a28882837b",
+    "identity": "github:1344896059:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344896059:root",
+            "repository": "cfanmaoli/kimi-webbridge-dsh",
+            "path": "",
+            "revision": "49c9052fa490258c9af8f95a4bfc56b90ac3be93",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8fde2c3067d3e9f9775920503bc1dfe61bdd62591f294f08362f6bb0dd658966",
+                "code": "49c9052fa490258c9af8f95a4bfc56b90ac3be93",
+                "maintenance": "3d28343be047454fd0950864a322ede8df9e9612ec23c887d453e8093fbe1c02"
+            }
+        }
+    }
+}

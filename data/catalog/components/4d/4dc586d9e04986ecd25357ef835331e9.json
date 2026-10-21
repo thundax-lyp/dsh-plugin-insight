@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "4dc586d9e04986ecd25357ef835331e9",
+    "identity": "github:1346148908:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346148908:root",
+            "repository": "NecromanAlbert/dsh-show-media",
+            "path": "",
+            "revision": "cc3e0df1b4dc89e937834b11cb13752818b7bbc4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "45396caa620bf54ec91392e0493948c69d293a7c71f0f9624ed7b647f6c2bc9d",
+                "code": "cc3e0df1b4dc89e937834b11cb13752818b7bbc4",
+                "maintenance": "9419fe78f767ed2d457f6096fabece08a6bcc022056ff877ff0ca0a3d74112c4"
+            }
+        }
+    }
+}

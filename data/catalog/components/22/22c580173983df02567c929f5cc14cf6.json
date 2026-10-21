@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "22c580173983df02567c929f5cc14cf6",
+    "identity": "github:1163808211:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1163808211:root",
+            "repository": "liustack/modlens",
+            "path": "",
+            "revision": "aa108d1796e3c4b5a6790516e2fcde87a35b189f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7c5466690f9c3ff70f2f1710bbf0fc75026c7aba1e4e6cbe0c9e828d655cc290",
+                "code": "aa108d1796e3c4b5a6790516e2fcde87a35b189f",
+                "maintenance": "100b191fa483dd6ee1ce5581cbbff58d72a73fdd1fe4663ced87b843f853d3d6"
+            }
+        }
+    }
+}

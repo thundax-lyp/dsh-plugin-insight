@@ -1,0 +1,361 @@
+{
+    "schema_version": 3,
+    "id": "88bc44e96e69d7704db54663e4fe6998",
+    "identity": "github:1350325873:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1350325873:root",
+            "repository_id": 1350325873,
+            "component_id": "root",
+            "repository": "173787247/dsh-tool-budget",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-tool-budget",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "1ae6ddce5424963618b9f825646956791d90647adbf881ec18ac4e0830b68730",
+                "code": "c80641689728dc918a0f6fb03797e98e09a4496e",
+                "maintenance": "0364cc6d82aaaff95575abbfef66699ecf83e8964e8c7c2be8e5ea2972f5e53a"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1350325873-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:36:29.563Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1350325873-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-tool-budget/blob/c80641689728dc918a0f6fb03797e98e09a4496e/README.md",
+                    "revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+                    "captured_at": "2026-10-20T04:36:29.563Z",
+                    "summary": "按运行中的Agent限制工具调用总次数，支持包含与排除规则并在超额时拦截。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-tool-budget/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1350325873-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-tool-budget/blob/c80641689728dc918a0f6fb03797e98e09a4496e/index.js",
+                    "revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+                    "captured_at": "2026-10-20T04:36:29.563Z",
+                    "summary": "核查 index.js、lib/budget.js；index.js在tools.guard统计调用，默认80次；WeakSet防同一exec重复计数，WeakMap把每个Agent预算分开。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/173787247--dsh-tool-budget/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "限的是工具调用次数，非模型费用、token或整个团队总预算；重启与新Agent对象会改变计数范围，排除工具不计。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "长任务工具调用失控时，用户需要明确停止点，合格结果是在预算内办结或及时交接，而非盲目增加调用。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350325873-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350325873:root",
+                            "area": "code",
+                            "fingerprint": "c80641689728dc918a0f6fb03797e98e09a4496e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:29.563Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "index.js在tools.guard统计调用，默认80次；WeakSet防同一exec重复计数，WeakMap把每个Agent预算分开。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350325873-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350325873:root",
+                            "area": "code",
+                            "fingerprint": "c80641689728dc918a0f6fb03797e98e09a4496e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:29.563Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "限的是工具调用次数，非模型费用、token或整个团队总预算；重启与新Agent对象会改变计数范围，排除工具不计。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350325873-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350325873:root",
+                            "area": "code",
+                            "fingerprint": "c80641689728dc918a0f6fb03797e98e09a4496e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:29.563Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.1.2，Node>=18，Host-only依赖tools.guard和系统提示服务；作者套件兼容声明未在本轮宿主重跑。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350325873-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350325873:root",
+                            "area": "code",
+                            "fingerprint": "c80641689728dc918a0f6fb03797e98e09a4496e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:29.563Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无额外模型调用，但过早拦截会产生人工交接与重开任务成本；不能把次数上限换算成固定现金上限。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350325873-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350325873:root",
+                            "area": "code",
+                            "fingerprint": "c80641689728dc918a0f6fb03797e98e09a4496e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:29.563Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先按一类任务观察正常调用分布，再设阈值；长后台任务查询可排除，但排除列表应保持有限。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350325873-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350325873:root",
+                            "area": "code",
+                            "fingerprint": "c80641689728dc918a0f6fb03797e98e09a4496e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:29.563Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "硬停止点可以防止无限尝试；若开多个子Agent，总调用和费用仍可能成倍增加。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350325873-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350325873:root",
+                            "area": "code",
+                            "fingerprint": "c80641689728dc918a0f6fb03797e98e09a4496e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:29.563Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "guard和post-execute复用计数路径、exec去重使接口兼容更清楚；状态不落盘，恢复后预算连续性需另做管理。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1350325873-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350325873:root",
+                            "area": "code",
+                            "fingerprint": "c80641689728dc918a0f6fb03797e98e09a4496e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:36:29.563Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:36:29.563Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "适合需要明确工具调用停止点的长任务，先观察同类任务调用量再设阈值；只限制每Agent调用次数，不是团队现金预算，尚未进行真实宿主验证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 30,
+                        "rationale": "长任务无界尝试需要明确交接点，目标和观察指标具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "相对token限额或人工时间盒，增加执行前的工具调用次数约束。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码支持逐Agent计数与去重，未执行并发、边界次数或重载验收。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "误停会增加交接成本，多Agent和重启改变预算范围，阈值需持续校准。"
+                    }
+                },
+                "score": 72,
+                "revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+                "reviewed_at": "2026-10-21T09:16:52.633Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1350325873-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1350325873:root",
+                        "area": "code",
+                        "fingerprint": "c80641689728dc918a0f6fb03797e98e09a4496e"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1350325873:root",
+            "repository": "173787247/dsh-tool-budget",
+            "path": "",
+            "revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+            "fingerprints": {
+                "directory": "1ae6ddce5424963618b9f825646956791d90647adbf881ec18ac4e0830b68730",
+                "code": "c80641689728dc918a0f6fb03797e98e09a4496e",
+                "maintenance": "0364cc6d82aaaff95575abbfef66699ecf83e8964e8c7c2be8e5ea2972f5e53a"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "3f284276743402fdf3cc09c10081279f9a9b0f6d2e875b61eed6ba56a9386fc3"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-tool-budget/META.json",
+        "publication.summaries": {
+            "text": "按运行中的Agent限制工具调用总次数，支持包含与排除规则并在超额时拦截。",
+            "revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+            "source_url": "https://github.com/173787247/dsh-tool-budget/blob/c80641689728dc918a0f6fb03797e98e09a4496e/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+            "items": {
+                "后台": "每Agent工具总次数guard及排除规则。"
+            }
+        },
+        "publication.advice": {
+            "revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+            "text": "先按一类任务观察正常调用分布，再设阈值；长后台任务查询可排除，但排除列表应保持有限。"
+        },
+        "registry": "data/plugins/173787247--dsh-tool-budget",
+        "reports": "# dsh-tool-budget\n\n> 按运行中的Agent限制工具调用总次数，支持包含与排除规则并在超额时拦截。\n\n## 固定范围与依据\n\n固定提交 [c80641689728dc918a0f6fb03797e98e09a4496e](https://github.com/173787247/dsh-tool-budget/blob/c80641689728dc918a0f6fb03797e98e09a4496e/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:36:29.563Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：index.js、lib/budget.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：长任务工具调用失控时，用户需要明确停止点，合格结果是在预算内办结或及时交接，而非盲目增加调用。\n- **亮点**：index.js在tools.guard统计调用，默认80次；WeakSet防同一exec重复计数，WeakMap把每个Agent预算分开。\n- **思考**：硬停止点可以防止无限尝试；若开多个子Agent，总调用和费用仍可能成倍增加。\n- **建议**：先按一类任务观察正常调用分布，再设阈值；长后台任务查询可排除，但排除列表应保持有限。\n\n## 场景与替代办法\n\n长任务工具调用失控时，用户需要明确停止点，合格结果是在预算内办结或及时交接，而非盲目增加调用。\n\n此前未入档；模型token限额或人工时间盒是其他控制，本项补工具次数维度，与重复调用检测职责不同。\n\n## 依赖与流程\n\n依赖宿主执行guard且传入Agent对象，工具粒度和排除规则决定额度含义；仍需要用户定义合格交付。\n\n设maxCalls，运行到办结或被拦，查看已产出证据再决定接管或开新任务；不把自动提示结论当验收。\n\n## 成本与效果\n\n无额外模型调用，但过早拦截会产生人工交接与重开任务成本；不能把次数上限换算成固定现金上限。\n\n硬停止点可以防止无限尝试；若开多个子Agent，总调用和费用仍可能成倍增加。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bb09f9f7986e02c69110d4dfea2edaeb4fa5ba1f64c4c2ae70872c9a4309dc7f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 216 | — | — | 1137 |\n| .js | source | 2 | 100 | 81 | 5 | — |\n| .js | test | 2 | 107 | 95 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：每Agent工具总次数guard及排除规则。\n\n## 工程亮点\n\nguard和post-execute复用计数路径、exec去重使接口兼容更清楚；状态不落盘，恢复后预算连续性需另做管理。\n\n## 分发与兼容\n\n0.1.2，Node>=18，Host-only依赖tools.guard和系统提示服务；作者套件兼容声明未在本轮宿主重跑。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；模型token限额或人工时间盒是其他控制，本项补工具次数维度，与重复调用检测职责不同。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：限的是工具调用次数，非模型费用、token或整个团队总预算；重启与新Agent对象会改变计数范围，排除工具不计。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：覆盖边界第80/81次、并发、排除项、子Agent和重载，确认计数与实际工具副作用一致并统计误停后的恢复成本。\n",
+        "metadata": {
+            "repository": "173787247/dsh-tool-budget",
+            "repository_id": 1350325873,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-30T03:25:08Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-tool-budget%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:24715:143F1A:21B50D:6AD84958 and timestamp 2026-10-21 05:10:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-tool-budget%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:1476B3:21FF3F:6AD84958 and timestamp 2026-10-21 05:10:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-tool-budget%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:145B4D:21D5E0:6AD84958 and timestamp 2026-10-21 05:10:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-tool-budget%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:D1FDD:1480D9:22138D:6AD84958 and timestamp 2026-10-21 05:10:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-tool-budget%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:14FCBF:2275DD:6AD84958 and timestamp 2026-10-21 05:10:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-tool-budget",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-tool-budget",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-tool-budget",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+                "current_revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1350325873:root",
+            "repository": "173787247/dsh-tool-budget",
+            "path": "",
+            "revision": "c80641689728dc918a0f6fb03797e98e09a4496e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1ae6ddce5424963618b9f825646956791d90647adbf881ec18ac4e0830b68730",
+                "code": "c80641689728dc918a0f6fb03797e98e09a4496e",
+                "maintenance": "0364cc6d82aaaff95575abbfef66699ecf83e8964e8c7c2be8e5ea2972f5e53a"
+            }
+        }
+    }
+}

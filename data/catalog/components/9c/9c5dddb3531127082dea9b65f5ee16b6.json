@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9c5dddb3531127082dea9b65f5ee16b6",
+    "identity": "github:1349970919:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349970919:root",
+            "repository": "xchannel1987/dsh-power-xc",
+            "path": "",
+            "revision": "ab3f0ad78da21b30fa3590bf7530248746ce07a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0dbed30e22ff2de6195dbaf2b23baa2d87c0f1e9703a5e3b4e2107b0e9e68e9",
+                "code": "ab3f0ad78da21b30fa3590bf7530248746ce07a9",
+                "maintenance": "bf5cd495c05ef673baf077fb7d8f99f7baf52011ac926408305ea6fc8eae9233"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "68de6d46ed2c6c7f80f531b10e9919a1",
+    "identity": "github:1337496684:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337496684:root",
+            "repository": "weopenfire-git/dsh-plugin-pub-review",
+            "path": "",
+            "revision": "a2771e214793f82357b34b3dca3fa96183148744",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "72ba17f81b2f2614bb3fd9c69b0ab420280497068eb11b62684af01a7ccc0f71",
+                "code": "a2771e214793f82357b34b3dca3fa96183148744",
+                "maintenance": "a9cc51552c9f325f0d8c2fb5ec002c450c016516641ef44cf23026cea9d63b73"
+            }
+        }
+    }
+}

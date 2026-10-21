@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f0e0768b560cddf7e37ac53ca770bbdf",
+    "identity": "github:1415654468:packages-dsh-scholar",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415654468:packages-dsh-scholar",
+            "repository": "Cjrrrrrrrr/dsh-plugins",
+            "path": "packages/dsh-scholar",
+            "revision": "3d546b1dcd534ba412f5eaa7989368e0d5f5e006",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f68886423d4eb92b5498997a4ad5df0c66c67ed41d71ad2c4967b2d7d24dfdff",
+                "code": "3d546b1dcd534ba412f5eaa7989368e0d5f5e006",
+                "maintenance": "f6251047ad6adaa3f9a5df9b74d14707738f9fb9045ec478bbf4f4ab03838c03"
+            }
+        }
+    }
+}

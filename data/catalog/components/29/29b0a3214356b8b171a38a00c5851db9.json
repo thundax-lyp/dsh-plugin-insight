@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "29b0a3214356b8b171a38a00c5851db9",
+    "identity": "github:1335003508:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335003508:root",
+            "repository": "wx-yss/dsh-message-rail",
+            "path": "",
+            "revision": "c937c4852ac40cebf0dc52d0db579ba886e65212",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "225240d7dace7fc6f41c6a84a31dc0606157b17e84715fefab3e1c99b02210bf",
+                "code": "c937c4852ac40cebf0dc52d0db579ba886e65212",
+                "maintenance": "0b796260a4c3b516f9b3e30c268d9e0b38c644a7f14ae3473cffceaa1709486c"
+            }
+        }
+    }
+}

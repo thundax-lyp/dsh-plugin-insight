@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9ca38d309118b4b9d912ba37872eb50",
+    "identity": "github:1341524381:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341524381:root",
+            "repository": "Gastronomicluna/Matrix-code",
+            "path": "",
+            "revision": "990576ab3116f6bb85534f28fc0d815a75055850",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6ae5f9e936efe8073eb3ab73316a74df452f12000d13c263ae0d0ae5cd70042a",
+                "code": "990576ab3116f6bb85534f28fc0d815a75055850",
+                "maintenance": "1ff11d6c8ff6032aa9190be52dff1dd42163af5faa77692da79b78d0fd0fce04"
+            }
+        }
+    }
+}

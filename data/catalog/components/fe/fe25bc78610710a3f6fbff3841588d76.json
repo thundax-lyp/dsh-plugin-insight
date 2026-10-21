@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fe25bc78610710a3f6fbff3841588d76",
+    "identity": "github:1425680604:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425680604:root",
+            "repository": "Sacredbluedragon/dsh-bili-watch",
+            "path": "",
+            "revision": "4f59b52235b7af51e016f0ed109be334f98904d3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d80f115725e4e9458f107364dc5a551256dd863f2bb0f657ffa42c9e877b1df6",
+                "code": "4f59b52235b7af51e016f0ed109be334f98904d3",
+                "maintenance": "39e760cbc03a5d2db089b025caad7c238cdfb08f393a9e8aa4a0c132994ee8a3"
+            }
+        }
+    }
+}

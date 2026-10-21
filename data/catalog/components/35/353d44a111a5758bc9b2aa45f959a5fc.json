@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "353d44a111a5758bc9b2aa45f959a5fc",
+    "identity": "github:1390144642:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1390144642:root",
+            "repository": "Theflowyears/dsh-arknights-theme",
+            "path": "",
+            "revision": "69385daf4eb5c642ab549a850a9e1d3ae221642e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "afcc19e14526b7235c5e65691bd508f1c9cb2976cc353d2da288839024b59eb9",
+                "code": "69385daf4eb5c642ab549a850a9e1d3ae221642e",
+                "maintenance": "1d9fea6cf318656d06f7d8a17107261f23adcff9b29f77e869885c61a8de2062"
+            }
+        }
+    }
+}

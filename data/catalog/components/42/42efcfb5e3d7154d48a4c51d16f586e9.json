@@ -1,0 +1,439 @@
+{
+    "schema_version": 3,
+    "id": "42efcfb5e3d7154d48a4c51d16f586e9",
+    "identity": "github:1334119885:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334119885:root",
+            "repository_id": 1334119885,
+            "component_id": "root",
+            "repository": "AngelosZou/dsh-multi-folder",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-multi-folder",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "5390bae6999aef50400eeabc85f8cbae1db64e1d16abbb60c9e8bb99fc29c5d6",
+                "code": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+                "maintenance": "56bf4b77734bb42b99d046fb87fb984fa9136f893cc5f7ee1501760beda7666e"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1334119885-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:11:25.044Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-10-21-07-github-1334119885-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-21T08:11:25.044Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1334119885-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/README.md",
+                    "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+                    "captured_at": "2026-10-21T08:11:25.044Z",
+                    "summary": "为DSH工作区配置次级目录，在原工具和会话权限模式下读写执行，并补充目录提示与文件菜单。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-multi-folder/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1334119885-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js",
+                    "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+                    "captured_at": "2026-10-21T08:11:25.044Z",
+                    "summary": "核查 lib/index.js、lib/client.js；配置存DSH storages，按workspace载入并规范目录；tools/execute截获write/edit/bash/pwsh，在命中次目录时复制standing policy仅改workspaceRoot；通知排到消息边界，Typert支持sessionless配置与@菜单。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/angeloszou--dsh-multi-folder/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "跨源码/测试/文档仓库任务需要同会话操作多个明确授权目录，主cwd与各目录身份仍须可追踪。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "配置存DSH storages，按workspace载入并规范目录；tools/execute截获write/edit/bash/pwsh，在命中次目录时复制standing policy仅改workspaceRoot；通知排到消息边界，Typert支持sessionless配置与@菜单。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT宿主工具管道适配插件，依赖具体DSH fs/shell/jobs/Typert版本；全局配置持久保留。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次目录授权、跨仓库上下文与权限理解，持续多仓库回归/提交协调和插件API维护；未测任务效率。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合确需同时操作多个可信仓库者，先用临时目录核对read-only与workspace-write，并检查显示的全部授权根。跨仓库提交和回滚仍分别验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少切工作区摩擦，权限范围扩大和版本耦合需用户承担。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "先await配置hydration、调用归属后不错误回退、后台使用同policy可借鉴；配置键碰撞与工具覆盖面值得优先核查。 源码依据：[lib/index.js](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js)、[lib/client.js](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/client.js)。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对仅把目录路径写提示，增量是扩展原工具实际可写/执行根并保留模式与后台job接线；不产生多仓库事务，git分支/主cwd仍由宿主与工具负责。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "等同主工作区权限是否覆盖每条路径？仅截获特定工具，显式escalation交回默认pipeline，新宿主工具/API需适配；配置文件名将非字母数字折叠并小写，不同workspace可能碰名，共享/错配目录需验证。目录配置权限不是每次操作确认。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由re-root policy与路径配置推导，可用canonical路径hash作存储键、显示授权根变更收据并将所有工具统一交宿主多根policy。未验证；碰撞路径、符号链接、后台任务和配置删除时应保持授权归属且无旧根继续写。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334119885:root",
+                            "area": "code",
+                            "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:25.044Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:11:25.044Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+                "reviewed_at": "2026-10-21T08:11:25.044Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334119885:root",
+                        "area": "code",
+                        "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty多根工作区适配小档；mechanism重root且保留模式半档；transferability策略传递/所有权模式较强；simplification复用原工具半档。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 0
+                    },
+                    "rationale": "workflow多仓库同会话半档；delivery未改变单仓交付责任小档；reach跨仓任务用户半档；economics权限维护与节时未证0。",
+                    "basis": "interpretation",
+                    "score": 36,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1334119885-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "确需多可信仓库者可在临时目录试额外授权根；核read-only和workspace-write，配置名折叠可能碰撞，逐个确认全部目录及提交回滚。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "源码测试文档多仓库同会话操作需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "保留主cwd并复用站立策略扩根减少切工作区摩擦。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核特定工具拦截和配置规范化，未验所有新工具兼容。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "扩大写权限、目录碰名和跨仓库版本协调需用户持续承担。"
+                    }
+                },
+                "score": 60,
+                "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1334119885-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334119885:root",
+                        "area": "code",
+                        "fingerprint": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334119885:root",
+            "repository": "AngelosZou/dsh-multi-folder",
+            "path": "",
+            "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+            "fingerprints": {
+                "directory": "5390bae6999aef50400eeabc85f8cbae1db64e1d16abbb60c9e8bb99fc29c5d6",
+                "code": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+                "maintenance": "56bf4b77734bb42b99d046fb87fb984fa9136f893cc5f7ee1501760beda7666e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "9bad15082ecad8277be863d8188f3bb95f5ad63e82fcc2ac76fa71552a211a47"
+        },
+        "publication.metadata": "data/plugins/angeloszou--dsh-multi-folder/META.json",
+        "publication.summaries": {
+            "text": "为DSH工作区配置次级目录，在原工具和会话权限模式下读写执行，并补充目录提示与文件菜单。",
+            "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+            "source_url": "https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+            "items": {
+                "用户命令": "/multi-folder管理次级目录。",
+                "界面": "会话/新建页目录配置与@菜单。",
+                "事件监听": "工具管道、prompt assemble与消息边界通知。",
+                "后台": "目录配置与索引维护。"
+            }
+        },
+        "publication.advice": {
+            "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+            "text": "适合确需同时操作多个可信仓库者，先用临时目录核对read-only与workspace-write，并检查显示的全部授权根。跨仓库提交和回滚仍分别验收。"
+        },
+        "registry": "data/plugins/angeloszou--dsh-multi-folder",
+        "reports": "# dsh-multi-folder\n\n> 为DSH工作区配置次级目录，在原工具和会话权限模式下读写执行，并补充目录提示与文件菜单。\n\n## 使用建议\n\n适合确需同时操作多个可信仓库者，先用临时目录核对read-only与workspace-write，并检查显示的全部授权根。跨仓库提交和回滚仍分别验收。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：跨源码/测试/文档仓库任务需要同会话操作多个明确授权目录，主cwd与各目录身份仍须可追踪。\n- **亮点**：相对仅把目录路径写提示，增量是扩展原工具实际可写/执行根并保留模式与后台job接线；不产生多仓库事务，git分支/主cwd仍由宿主与工具负责。\n- **思考**：等同主工作区权限是否覆盖每条路径？仅截获特定工具，显式escalation交回默认pipeline，新宿主工具/API需适配；配置文件名将非字母数字折叠并小写，不同workspace可能碰名，共享/错配目录需验证。目录配置权限不是每次操作确认。\n- **建议**：由re-root policy与路径配置推导，可用canonical路径hash作存储键、显示授权根变更收据并将所有工具统一交宿主多根policy。未验证；碰撞路径、符号链接、后台任务和配置删除时应保持授权归属且无旧根继续写。\n\n## 场景与替代办法\n\n跨源码/测试/文档仓库任务需要同会话操作多个明确授权目录，主cwd与各目录身份仍须可追踪。\n\n多个独立会话隔离更清晰，普通绝对路径在workspace-write会拒绝；插件有意扩大同任务范围。\n\n## 能力清单\n\n- **用户命令**：/multi-folder管理次级目录。\n- **界面**：会话/新建页目录配置与@菜单。\n- **事件监听**：工具管道、prompt assemble与消息边界通知。\n- **后台**：目录配置与索引维护。\n\n## 依赖与流程\n\nDSH fs/shell/sandboxPolicy/tools/jobs/commands/systemPrompt与可选Typert客户端，目录须真实可达。\n\n用户加目录→Host保存配置→提示注入/@菜单→命中次目录工具重新root policy执行→变更消息边界通知；明确升级请求仍走原审批。\n\n## 成本与效果\n\n首次目录授权、跨仓库上下文与权限理解，持续多仓库回归/提交协调和插件API维护；未测任务效率。\n\n减少切工作区摩擦，权限范围扩大和版本耦合需用户承担。\n\n## 核心贡献\n\n相对仅把目录路径写提示，增量是扩展原工具实际可写/执行根并保留模式与后台job接线；不产生多仓库事务，git分支/主cwd仍由宿主与工具负责。\n\n## 关键质疑\n\n等同主工作区权限是否覆盖每条路径？仅截获特定工具，显式escalation交回默认pipeline，新宿主工具/API需适配；配置文件名将非字母数字折叠并小写，不同workspace可能碰名，共享/错配目录需验证。目录配置权限不是每次操作确认。\n\n\n## 工程亮点\n\n先await配置hydration、调用归属后不错误回退、后台使用同policy可借鉴；配置键碰撞与工具覆盖面值得优先核查。 源码依据：[lib/index.js](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js)、[lib/client.js](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/client.js)。\n\n## 未来设计假设（未验证）\n\n由re-root policy与路径配置推导，可用canonical路径hash作存储键、显示授权根变更收据并将所有工具统一交宿主多根policy。未验证；碰撞路径、符号链接、后台任务和配置删除时应保持授权归属且无旧根继续写。\n\n构造规范化同名workspace、symlink、只读/写模式、显式升级与后台job，删授权后测试新操作及通知；核对每种工具走哪层policy。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：38153fffbc9697cacce1750a438e4d55797af4aca73b52721128016e6d7e2fda。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 7 | 1310 | — | — | 12120 |\n| .js | source | 2 | 3332 | 2439 | 756 | — |\n| .mjs | test | 3 | 2313 | 1842 | 329 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AngelosZou/dsh-multi-folder](https://github.com/AngelosZou/dsh-multi-folder)\n- **版本号**：0.3.3（[固定提交 5921c0e2](https://github.com/AngelosZou/dsh-multi-folder/tree/5921c0e2fd2623bc0757b8f13feaf73cee3648ca)）\n- **版本日期**：2026-10-10（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：构造规范化同名workspace、symlink、只读/写模式、显式升级与后台job，删授权后测试新操作及通知；核对每种工具走哪层policy。\n",
+        "metadata": {
+            "repository": "AngelosZou/dsh-multi-folder",
+            "repository_id": 1334119885,
+            "captured_at": "2026-10-21T08:02:58.604Z",
+            "window_start": "2026-09-21T08:02:58.604Z",
+            "stars": 10,
+            "pushed_at": "2026-10-10T06:58:49Z",
+            "issues": {
+                "open": 0,
+                "closed": 2,
+                "created_30d": 2,
+                "closed_30d": 2,
+                "updated_30d": 2
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-multi-folder",
+                "captured_at": "2026-10-21T08:03:13.030Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 2077,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-multi-folder",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-14T12:07:25.310Z",
+                    "captured_at": "2026-10-21T08:03:13.030Z",
+                    "source_url": "https://registry.npmjs.org/dsh-multi-folder",
+                    "error": null,
+                    "latest_version": "0.3.3",
+                    "latest_published_at": "2026-10-10T07:00:53.324Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334119885:root",
+            "repository": "AngelosZou/dsh-multi-folder",
+            "path": "",
+            "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5390bae6999aef50400eeabc85f8cbae1db64e1d16abbb60c9e8bb99fc29c5d6",
+                "code": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+                "maintenance": "56bf4b77734bb42b99d046fb87fb984fa9136f893cc5f7ee1501760beda7666e"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c8247608552b02342336a2d1332c598c",
+    "identity": "github:1347216434:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347216434:root",
+            "repository": "maxmilian/dsh-grafana-query",
+            "path": "",
+            "revision": "18e9e4b4d6b5efb3181836a5bbb05bf6b0fbfd4e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6c9f2a8bcf6bd4d79f5be70544fa1b5a3ce31b7a0febbe9d3e0cb274507444d4",
+                "code": "18e9e4b4d6b5efb3181836a5bbb05bf6b0fbfd4e",
+                "maintenance": "ad25b12388a9484213e170acea5120e048b80d35dd05efd0d47f7983d9ddd5be"
+            }
+        }
+    }
+}

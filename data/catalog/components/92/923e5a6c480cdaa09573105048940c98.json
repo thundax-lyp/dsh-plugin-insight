@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "923e5a6c480cdaa09573105048940c98",
+    "identity": "github:1335611080:skins-pramanix-eyjafjalla",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335611080:skins-pramanix-eyjafjalla",
+            "repository": "DocJlm/dsh-arknights",
+            "path": "skins/pramanix-eyjafjalla",
+            "revision": "75b3203864ca6bc4c987734e8a4e6bf600c2d85c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "15680e0b68c128c334f59e6b079de5830abca421a4513ee03f86d092c1e0e830",
+                "code": "75b3203864ca6bc4c987734e8a4e6bf600c2d85c",
+                "maintenance": "bb9326ddae5b84054b1a19b7db40f6e2f318ceaf2bb32dc9e12060c7bbedd4a8"
+            }
+        }
+    }
+}

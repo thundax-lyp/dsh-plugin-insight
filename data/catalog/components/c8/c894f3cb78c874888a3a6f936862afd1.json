@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c894f3cb78c874888a3a6f936862afd1",
+    "identity": "github:1287911455:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1287911455:root",
+            "repository": "BingoAgentTouch/Personal_MCP",
+            "path": "",
+            "revision": "52879b58fd3d5c2439de33cba5aed3bfec977d9a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d9a203527eb21191a3aa15b3275b49eee71f6ab016756e268f987d22be77b460",
+                "code": "52879b58fd3d5c2439de33cba5aed3bfec977d9a",
+                "maintenance": "36f4c51193f80fe04f25730b29170d667fea5a3d678ba92da7da15e8be158904"
+            }
+        }
+    }
+}

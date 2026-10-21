@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d6681c09c2e2844b88cd9ea0654914da",
+    "identity": "github:1341362160:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341362160:root",
+            "repository": "sujingkpo/dsh-change-review-live",
+            "path": "",
+            "revision": "f3ef86a658df448e8fc2b26b6869ae267376765d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "08b297e4f7c6c1c9731b09b767db5496303719be5bc7695a95087b4aec030094",
+                "code": "f3ef86a658df448e8fc2b26b6869ae267376765d",
+                "maintenance": "ea76862fb75720163f8bc6dbd9fbecc51b7677c5bf7e3c726a790527fecab4f7"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "df356fdfdf1f88aead7535e37865a629",
+    "identity": "github:1334139750:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334139750:root",
+            "repository": "SeverusZh/dsh-plugin-subagent-director",
+            "path": "",
+            "revision": "a6225e499817e3935c2063a1119126dc6d44f971",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b2cbf31079cd1c6132b6777614e07e0cca1a54fafd0948f7260d883bdc542a0e",
+                "code": "a6225e499817e3935c2063a1119126dc6d44f971",
+                "maintenance": "e69815575ee9c6700018fbd34a9787436214efd5ee332357b83aa5f771e86d33"
+            }
+        }
+    }
+}

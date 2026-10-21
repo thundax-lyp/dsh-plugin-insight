@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6e7a319b3c80a504c2bd3f281f326419",
+    "identity": "github:1423154111:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423154111:root",
+            "repository": "SeaViod/dsh-plugin-deepsearch",
+            "path": "",
+            "revision": "0dde8bfd3690f258c5ec8608f13283f8cc5a8419",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f4be866f1bad8a1a9ffd39b94ca8baf711c96b436b4cfa54e126d53adf67f4bb",
+                "code": "0dde8bfd3690f258c5ec8608f13283f8cc5a8419",
+                "maintenance": "868a0255e3d0221d5dff0413b882d2d2fb828e360659dd10ea94ba188fdace1f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a5cfc936ef8873ac65a6b74a46f420dc",
+    "identity": "github:1340227774:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340227774:root",
+            "repository": "zyfgood/dsh-feishu-bot",
+            "path": "",
+            "revision": "26fca2c08e2c26cff020daee5e6bbfdf42a0c177",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "abac546dfb60425d28230ab094415a2f08c761b254c913daa6e9f53fb39c3380",
+                "code": "26fca2c08e2c26cff020daee5e6bbfdf42a0c177",
+                "maintenance": "b6386ea8cd1a0fe5a93b0432e0d24f721c665da364a300efc16ae080c75bc893"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "daae1387fcdb3c03ee0f96ca0f58fa77",
+    "identity": "github:1335079681:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335079681:root",
+            "repository": "sumarilkkxx/dsh-artifact",
+            "path": "",
+            "revision": "3faae245d4d938702209f21a5db4682a50547a66",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3add7d4676af91c1214a63848c3bc16f820f037731cf9465ae18a02081209ce6",
+                "code": "3faae245d4d938702209f21a5db4682a50547a66",
+                "maintenance": "1536350900d32b3ee1e6ddc5889bbde3d41720717fae75aa4384c5528ce18330"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f51594aa54276a530dd78de38a0d9b92",
+    "identity": "github:1413226939:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413226939:root",
+            "repository": "Ssrs-Pro-Max/dsh-image-tiler",
+            "path": "",
+            "revision": "243763b812fa4312136b1369690a95644aeec5cb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d40504abf92fc84949c91bc887f4868226827410579c4e444a29659ffe551fa5",
+                "code": "243763b812fa4312136b1369690a95644aeec5cb",
+                "maintenance": "b8f994f4320b514a9513c744ca5db496061ed45982bf61bfdfd44ac30a47d367"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "24c595a15b0681084c8bf9e8358c2044",
+    "identity": "github:1419195089:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419195089:root",
+            "repository": "FYZB2020/dsh-voice-doubao",
+            "path": "",
+            "revision": "0ac454be791d8ca1766e05870a23855b92c01262",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "00bf2b4ef87c37a961dfd3b9f5a74ef422abec1df7ca1ee3ac1ee0e845b70565",
+                "code": "0ac454be791d8ca1766e05870a23855b92c01262",
+                "maintenance": "33523862258af0cd8f9801d821bca87ed75a3f2ce86531ca9552c33561af1fa0"
+            }
+        }
+    }
+}

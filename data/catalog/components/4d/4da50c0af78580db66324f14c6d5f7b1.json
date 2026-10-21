@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4da50c0af78580db66324f14c6d5f7b1",
+    "identity": "github:1418027885:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418027885:root",
+            "repository": "xinspark/dsh-win-pwsh7",
+            "path": "",
+            "revision": "98e084e0f61aca6b889edf71f8fb5911ee71f122",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2ccfc7e49d96528989950feafc402d74993f8556b929bc9353cb6510bef6de12",
+                "code": "98e084e0f61aca6b889edf71f8fb5911ee71f122",
+                "maintenance": "afb8d57942c20e3bdd91390869d16529a2f7a4754c646f4a0128702f243d39f1"
+            }
+        }
+    }
+}

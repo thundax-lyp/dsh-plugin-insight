@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8282f52be068c15ea8fdbbec9ad9412b",
+    "identity": "github:1336139290:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336139290:root",
+            "repository": "lyq3/dsh-skin-nebula",
+            "path": "",
+            "revision": "57b9f7ff42faf9e71e038fb4f7c1826804eb47c7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ef25580051a7cc60268311f4dbfd97d737ba96e36b86d09af84ba75d72c4dbc2",
+                "code": "57b9f7ff42faf9e71e038fb4f7c1826804eb47c7",
+                "maintenance": "9d9f6db58ff784b7f1e658d6116f713a2c9e9c91ae9e59ec0579b2640ec9741f"
+            }
+        }
+    }
+}

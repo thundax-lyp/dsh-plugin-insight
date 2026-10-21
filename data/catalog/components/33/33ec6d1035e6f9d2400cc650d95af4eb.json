@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "33ec6d1035e6f9d2400cc650d95af4eb",
+    "identity": "github:1404289093:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404289093:root",
+            "repository": "eghrhegpe/dsh-connect-modelscope-token-plan",
+            "path": "",
+            "revision": "db85a0da8757535186a15a178acd75ee014ff459",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "53d864951ed5ea2fbb4b633c885ecad449363aed88105302c93e6e28bb465cea",
+                "code": "db85a0da8757535186a15a178acd75ee014ff459",
+                "maintenance": "91f14271d60b4a6d21a0f4276709907573a2eed9387d0e5a298606380a71f335"
+            }
+        }
+    }
+}

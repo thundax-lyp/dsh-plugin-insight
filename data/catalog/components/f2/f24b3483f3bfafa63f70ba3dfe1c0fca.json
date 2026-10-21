@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f24b3483f3bfafa63f70ba3dfe1c0fca",
+    "identity": "github:1354622747:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354622747:root",
+            "repository": "xchannel1987/dsh-notify-xc",
+            "path": "",
+            "revision": "6e9f3d6b26d60da62c34d932e71901a78df91c40",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "605c665008bac01a16ce444e035f447ebe0eab873b1eb4eaad2ae5557b124725",
+                "code": "6e9f3d6b26d60da62c34d932e71901a78df91c40",
+                "maintenance": "4ceb92d8d6a6a08cf683d4338bc11d1cab82c277a89714c97108c0ea59add573"
+            }
+        }
+    }
+}

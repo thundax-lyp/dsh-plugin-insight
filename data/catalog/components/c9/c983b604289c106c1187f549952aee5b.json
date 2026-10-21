@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c983b604289c106c1187f549952aee5b",
+    "identity": "github:1338104725:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338104725:root",
+            "repository": "acebang0303/dsh-quick-launch",
+            "path": "",
+            "revision": "205327a2b17ee9ca7836db7554358bb540be8389",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0f126d4a334ea441ff6b633cc95b0807d7c915a6a051a021e2d31008a83c3a57",
+                "code": "205327a2b17ee9ca7836db7554358bb540be8389",
+                "maintenance": "60ae917e03346ce773511e14bd2666ceb59294af31dbce61864781bd0db6a828"
+            }
+        }
+    }
+}

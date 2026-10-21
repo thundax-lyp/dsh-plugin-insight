@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6136a04a78c1ce343f92f16f10dec4c1",
+    "identity": "github:1336218721:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336218721:root",
+            "repository": "ilps2/dsh-video-understand",
+            "path": "",
+            "revision": "1e05b801ce02a62ea5cadb7583c7f1233c18b6eb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9804d42ac9bcbe6cefefc5cc17edda6b83fc30232c73e377ff63002496cda182",
+                "code": "1e05b801ce02a62ea5cadb7583c7f1233c18b6eb",
+                "maintenance": "6d564d47ccbd1fa9d6c4735b40530c85d06b70431a836ae8ad0619d2ee53135c"
+            }
+        }
+    }
+}

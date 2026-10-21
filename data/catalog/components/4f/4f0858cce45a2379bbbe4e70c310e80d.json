@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f0858cce45a2379bbbe4e70c310e80d",
+    "identity": "github:1139128402:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1139128402:root",
+            "repository": "Vladimir-Human/humanizer-ru",
+            "path": "",
+            "revision": "9922280b6bfc83a7947442f2141fe649b35e0f33",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9dfcb975db07f698779509a65cd972d9378449e3abe5cb9d8218168f463b3e11",
+                "code": "9922280b6bfc83a7947442f2141fe649b35e0f33",
+                "maintenance": "1589f9932a037b3f5859923ab265abc6fa100e20d0c1e786420b7667be256209"
+            }
+        }
+    }
+}

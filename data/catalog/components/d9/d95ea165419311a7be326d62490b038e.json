@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d95ea165419311a7be326d62490b038e",
+    "identity": "github:1335322369:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335322369:root",
+            "repository": "r600a-code/dsh-swarm-router",
+            "path": "",
+            "revision": "fc051ea2ad05fc27ad7271630b7e0bd7ebb24bb9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ff2e61ea614d844c82cc6c7eeb134cb66697ffe7dbb3131090fcbd4e64ca47b2",
+                "code": "fc051ea2ad05fc27ad7271630b7e0bd7ebb24bb9",
+                "maintenance": "4f614727366e2ec517881b0e74f8f02dedeca2267b3cef144b43cebc1bbc7f66"
+            }
+        }
+    }
+}

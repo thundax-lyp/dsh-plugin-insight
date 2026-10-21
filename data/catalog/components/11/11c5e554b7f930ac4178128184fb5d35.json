@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11c5e554b7f930ac4178128184fb5d35",
+    "identity": "github:1385625581:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1385625581:root",
+            "repository": "adithyanraj03/dsh-memory-recall",
+            "path": "",
+            "revision": "cff81cf3fde5d7a7cf43f0ebfb8aa4229a6ba5ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "059950459fb7f98be852c9e453ce03c2fa68e98d24fe5ddb82f603a2ed1d00a0",
+                "code": "cff81cf3fde5d7a7cf43f0ebfb8aa4229a6ba5ea",
+                "maintenance": "eb4039d86bde3017780ba2b97cf52fad2239da8a19c655d836f889ca54ec0866"
+            }
+        }
+    }
+}

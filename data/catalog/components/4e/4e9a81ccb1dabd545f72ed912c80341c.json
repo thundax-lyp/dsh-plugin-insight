@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e9a81ccb1dabd545f72ed912c80341c",
+    "identity": "github:1338623352:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338623352:root",
+            "repository": "huangdaxianer/dsh-dual-model-eval",
+            "path": "",
+            "revision": "799b701efc099bff629dcc1441febec71e3adf75",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f61b1e88df490f8f6d115f94e9c9192609b9af9e9886a2c1ed90037e05024dd9",
+                "code": "799b701efc099bff629dcc1441febec71e3adf75",
+                "maintenance": "2821b90fd4ef3d213aecdeb5a1feb655149f8d4914ef581d6e3561f949b3c85b"
+            }
+        }
+    }
+}

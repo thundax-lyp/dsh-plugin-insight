@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "ac5c453c78564495036756517eb9ce00",
+    "identity": "github:1364766828:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1364766828:root",
+            "repository_id": 1364766828,
+            "component_id": "root",
+            "repository": "2286893544/feishu-dsh-plugin",
+            "path": "",
+            "aliases": [],
+            "name": "feishu-dsh-plugin（2286893544）",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "cf73cba8bd5cfe8543b7be5cba5de2387228a14b6c8deccaecdf0105bf77d174",
+                "code": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+                "maintenance": "f5fb72024e909e2c8459612a77bde3792725ac437bf2109ef94ba5324c3ad6c9"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1364766828-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:51:09.113Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1364766828-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2286893544/feishu-dsh-plugin/blob/8cb7f88b0eed0b8c59932e381f52f096c7e56df9/README.md",
+                    "revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+                    "captured_at": "2026-10-20T10:51:09.113Z",
+                    "summary": "通过企业自建飞书应用为 DSH 提供消息、云文档、多维表格、表格与权限操作工具。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2286893544--feishu-dsh-plugin/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1364766828-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2286893544/feishu-dsh-plugin/blob/8cb7f88b0eed0b8c59932e381f52f096c7e56df9/lib/index.js",
+                    "revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+                    "captured_at": "2026-10-20T10:51:09.113Z",
+                    "summary": "核查 lib/index.js、lib/client.js、lib/png.js；lib/index.js逐项注册feishu工具与技能provider；lib/client.js用tenant_access_token调用开放平台，创建后autoGrantOwner尝试给grantOpenId full_access；lib/png.js在本地编码简单图表PNG。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/2286893544--feishu-dsh-plugin/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读工具注册、创建授权、REST客户端和本地图表代码，未调用真实飞书API、未复现作者烟测，未确认所有工具参数在当前平台均有效。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向用自建机器人管理文档和群消息的团队，合格交付需内容写入、目标人员可见，图表标签与原数据一致。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364766828:root",
+                            "area": "code",
+                            "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:09.113Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js逐项注册feishu工具与技能provider；lib/client.js用tenant_access_token调用开放平台，创建后autoGrantOwner尝试给grantOpenId full_access；lib/png.js在本地编码简单图表PNG。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364766828:root",
+                            "area": "code",
+                            "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:09.113Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读工具注册、创建授权、REST客户端和本地图表代码，未调用真实飞书API、未复现作者烟测，未确认所有工具参数在当前平台均有效。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364766828:root",
+                            "area": "code",
+                            "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:09.113Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "npm名来自package及README为dsh-plugin-feishu，源码内附feishu技能assets；settings、环境变量与profile配置有多层回退，不能因UI密钥脱敏推断本地配置已加密。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364766828:root",
+                            "area": "code",
+                            "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:09.113Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需发布机器人scopes、加入目标群、共享原文档及配置grantOpenId；日常模型与API调用和授权排错，图表中文需另生成图像再插入，增加人工。未测每份文档费用/人工分钟。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364766828:root",
+                            "area": "code",
+                            "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:09.113Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有自建机器人且权限清楚的团队可在测试群和可丢弃文档先试；确认创建后目标人可打开再扩展。中文图表先用外部可核对图片，不直接依赖当前ASCII字库输出。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364766828:root",
+                            "area": "code",
+                            "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:09.113Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把消息和文档整理接进Agent可少一次人工复制；生成资产可见性和图表标签完整才是有效交付，不能把25个工具当25种已验收流程。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364766828:root",
+                            "area": "code",
+                            "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:09.113Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "autoGrantOwner把授权失败与创建结果区分，避免掩盖已成功副作用，值得借鉴为多阶段API流程；目前返回字符串使机器难以精确分辨阶段。png.js本地编码移除绘图库依赖但5×7字库不含汉字，维护和复用必须限定ASCII标签。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1364766828:root",
+                            "area": "code",
+                            "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:51:09.113Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:51:09.113Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+                "reviewed_at": "2026-10-20T10:51:09.113Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1364766828:root",
+                        "area": "code",
+                        "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：平台API包装和本地图表小幅组合；mechanism：创建后补授权为小幅流程接线，非新身份机制；transferability：多阶段保留成功结果可实质复用；simplification：纯Node省一套环境，实质但中文受限。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：Agent内容到群/文档交接有实质变化；delivery：原API资产与简单插图为有限增量；reach：机器人团队GUI配置小幅扩展；economics：少依赖环境/手工复制，小幅，授权失败人工未测。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1364766828-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有飞书机器人的团队可在测试群试用文档消息；先确认目标人可打开，授权失败只补授权，中文图表用外部图片核对。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "机器人文档与消息整理是明确办公任务。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "减少复制与分享步骤，但应用资产不等于个人所有权。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "tenant调用和autoGrantOwner已查，授权失败仍保留成果，未验真实权限。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需scopes与群权限，图表ASCII字库和补授权增加人工。"
+                    }
+                },
+                "score": 59,
+                "revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1364766828-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1364766828:root",
+                        "area": "code",
+                        "fingerprint": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1364766828:root",
+            "repository": "2286893544/feishu-dsh-plugin",
+            "path": "",
+            "revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+            "fingerprints": {
+                "directory": "cf73cba8bd5cfe8543b7be5cba5de2387228a14b6c8deccaecdf0105bf77d174",
+                "code": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+                "maintenance": "f5fb72024e909e2c8459612a77bde3792725ac437bf2109ef94ba5324c3ad6c9"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "e7994271437bacb73197efd40a9da440f36ac33ac5966499e7d81610f4721a7d"
+        },
+        "publication.metadata": "data/plugins/2286893544--feishu-dsh-plugin/META.json",
+        "publication.summaries": {
+            "text": "通过企业自建飞书应用为 DSH 提供消息、云文档、多维表格、表格与权限操作工具。",
+            "revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+            "source_url": "https://github.com/2286893544/feishu-dsh-plugin/blob/8cb7f88b0eed0b8c59932e381f52f096c7e56df9/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+            "items": {
+                "模型工具": "飞书消息、文档、表格、多维表格及权限工具定义",
+                "Skill": "通过技能provider提供feishu工作流材料"
+            }
+        },
+        "publication.advice": {
+            "revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+            "text": "已有自建机器人且权限清楚的团队可在测试群和可丢弃文档先试；确认创建后目标人可打开再扩展。中文图表先用外部可核对图片，不直接依赖当前ASCII字库输出。"
+        },
+        "registry": "data/plugins/2286893544--feishu-dsh-plugin",
+        "reports": "# feishu-dsh-plugin（2286893544）\n\n> 通过企业自建飞书应用为 DSH 提供消息、云文档、多维表格、表格与权限操作工具。\n\n## 研究范围\n\n- **仓库**：[2286893544/feishu-dsh-plugin](https://github.com/2286893544/feishu-dsh-plugin)\n- **版本号**：0.1.0（[固定提交 8cb7f88b](https://github.com/2286893544/feishu-dsh-plugin/tree/8cb7f88b0eed0b8c59932e381f52f096c7e56df9)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n核查了应用身份、创建后授权和本地图表机制；工具与技能定义存在不等于目标租户已挂载、可访问。作者25项声明未作为本次运行计数，权限结果与中文图表未实测。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：面向用自建机器人管理文档和群消息的团队，合格交付需内容写入、目标人员可见，图表标签与原数据一致。\n- **亮点**：相对通用HTTP工具加人工分享，本项把常用飞书任务及创建后授权联结，并以零外部依赖PNG生成补上图表插入。核心是应用机器人工作流的便利，而不是新的认证协议或原生图表引擎；“纯Node”避免Python部署但不自动证明端到端低成本。\n- **思考**：创建成功是否意味着操作者拥有可用结果？autoGrantOwner失败返回auto-grant failed文本，仍保留创建成果，且grantOpenId可为空。它避免授权失败丢失文档，却把可访问性复核交给模型/用户；应用身份共享权限也不等同于个人原生所有权。群权限和文档归属是采用前必须实际核对的边界。\n- **建议**：已有自建机器人且权限清楚的团队可在测试群和可丢弃文档先试；确认创建后目标人可打开再扩展。中文图表先用外部可核对图片，不直接依赖当前ASCII字库输出。\n\n采用建议：已有自建机器人且权限清楚的团队可在测试群和可丢弃文档先试；确认创建后目标人可打开再扩展。中文图表先用外部可核对图片，不直接依赖当前ASCII字库输出。\n\n## 核心贡献\n\n相对通用HTTP工具加人工分享，本项把常用飞书任务及创建后授权联结，并以零外部依赖PNG生成补上图表插入。核心是应用机器人工作流的便利，而不是新的认证协议或原生图表引擎；“纯Node”避免Python部署但不自动证明端到端低成本。\n\n## 关键质疑\n\n创建成功是否意味着操作者拥有可用结果？autoGrantOwner失败返回auto-grant failed文本，仍保留创建成果，且grantOpenId可为空。它避免授权失败丢失文档，却把可访问性复核交给模型/用户；应用身份共享权限也不等同于个人原生所有权。群权限和文档归属是采用前必须实际核对的边界。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：把create与grant结果拆成结构化独立阶段，返回可重试grant任务而不重新create；验收先检查目标用户能访问。来源是当前文本附注可能被忽略，而授权失败不应再制造文档。代价是增加任务状态和权限查询调用。\n\n同一测试用户分别配置有效/缺失/无权限grantOpenId，创建后以该用户打开并记录阶段结果；注入授权失败验证补授权不重复创建；用中英文图表核对标签。结构化阶段若不能减少遗漏授权和重复资产，则否定假设。\n\n## 场景与替代办法\n\n面向用自建机器人管理文档和群消息的团队，合格交付需内容写入、目标人员可见，图表标签与原数据一致。\n\n参照人工复制+分享、通用HTTP脚本及同轮用户OAuth集成；本项以应用资产加分享满足机器人场景，不能把授权后访问视为和个人所有权完全相同。\n\n## 依赖与流程\n\n需要飞书企业自建应用、tenant凭据、已发布scopes和群/文档访问权限；全程应用身份，可配置对人授权，未实现同轮2048lr的用户OAuth路径。图表仅本地渲染，插图仍需平台上传权限。\n\n配置应用→连接测试→Agent选工具→缓存tenant token→创建内容→尝试给目标人授权→返回创建/授权文本→操作者打开核对。授权失败应在已有文档上补授权，不盲目重复创建。\n\n## 成本与效果\n\n首次需发布机器人scopes、加入目标群、共享原文档及配置grantOpenId；日常模型与API调用和授权排错，图表中文需另生成图像再插入，增加人工。未测每份文档费用/人工分钟。\n\n把消息和文档整理接进Agent可少一次人工复制；生成资产可见性和图表标签完整才是有效交付，不能把25个工具当25种已验收流程。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：78078d909c8bc9a6a176379d60fd305725522be4a81a6f07d938948276abae0e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 178 | — | — | 1931 |\n| .js | source | 6 | 1784 | 1492 | 159 | — |\n| .mjs | source | 3 | 526 | 463 | 27 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：飞书消息、文档、表格、多维表格及权限工具定义\n- **Skill**：通过技能provider提供feishu工作流材料\n\n## 工程亮点\n\nautoGrantOwner把授权失败与创建结果区分，避免掩盖已成功副作用，值得借鉴为多阶段API流程；目前返回字符串使机器难以精确分辨阶段。png.js本地编码移除绘图库依赖但5×7字库不含汉字，维护和复用必须限定ASCII标签。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js、lib/png.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读工具注册、创建授权、REST客户端和本地图表代码，未调用真实飞书API、未复现作者烟测，未确认所有工具参数在当前平台均有效。\n- 下一步：同一测试用户分别配置有效/缺失/无权限grantOpenId，创建后以该用户打开并记录阶段结果；注入授权失败验证补授权不重复创建；用中英文图表核对标签。结构化阶段若不能减少遗漏授权和重复资产，则否定假设。\n\n## 源码索引\n\n- [lib/index.js](https://github.com/2286893544/feishu-dsh-plugin/blob/8cb7f88b0eed0b8c59932e381f52f096c7e56df9/lib/index.js)\n- [lib/client.js](https://github.com/2286893544/feishu-dsh-plugin/blob/8cb7f88b0eed0b8c59932e381f52f096c7e56df9/lib/client.js)\n- [lib/png.js](https://github.com/2286893544/feishu-dsh-plugin/blob/8cb7f88b0eed0b8c59932e381f52f096c7e56df9/lib/png.js)\n\n## 比较依赖\n\n本篇仅作固定机制比较，不继承对方运行结论，不增加档案循环依赖。\n\n- `github:1418842530:root`，code `17ed9c0dada4b40580dcf1e1b07918716a94f69d`：[2048lr 身份选择实现](https://github.com/2048lr/dsh-feishu/blob/17ed9c0dada4b40580dcf1e1b07918716a94f69d/lib/identity.js)，调用前选择用户/应用身份。\n- `github:1364766828:root`，code `8cb7f88b0eed0b8c59932e381f52f096c7e56df9`：[2286893544 创建与授权实现](https://github.com/2286893544/feishu-dsh-plugin/blob/8cb7f88b0eed0b8c59932e381f52f096c7e56df9/lib/index.js)，应用身份创建后按 grantOpenId 尝试授予访问。\n",
+        "metadata": {
+            "repository": "2286893544/feishu-dsh-plugin",
+            "repository_id": 1364766828,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-09-11T11:09:01Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2286893544%2Ffeishu-dsh-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:12AB5A:13B48E:214A00:6AD849EB and timestamp 2026-10-21 05:13:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2286893544%2Ffeishu-dsh-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:128E3:14C804:225C32:6AD849EB and timestamp 2026-10-21 05:13:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2286893544%2Ffeishu-dsh-plugin%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:146DA0:21ED8C:6AD849EB and timestamp 2026-10-21 05:13:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2286893544%2Ffeishu-dsh-plugin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:143C29:21C583:6AD849EB and timestamp 2026-10-21 05:13:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2286893544%2Ffeishu-dsh-plugin%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:63412:A96E8:6AD849EB and timestamp 2026-10-21 05:13:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-feishu",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-feishu",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-feishu",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+                "current_revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1364766828:root",
+            "repository": "2286893544/feishu-dsh-plugin",
+            "path": "",
+            "revision": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cf73cba8bd5cfe8543b7be5cba5de2387228a14b6c8deccaecdf0105bf77d174",
+                "code": "8cb7f88b0eed0b8c59932e381f52f096c7e56df9",
+                "maintenance": "f5fb72024e909e2c8459612a77bde3792725ac437bf2109ef94ba5324c3ad6c9"
+            }
+        }
+    }
+}

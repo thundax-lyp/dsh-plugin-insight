@@ -16,8 +16,8 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 新一轮与当前快照比较，不要求上一轮 SESSION、manifest 链或 runs 归档；历史版本需要时从 Git 查阅。
 具体合并、证据落位及清理条件以[数据契约](../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)为准。
 
-正式真相由 `data/catalog/SNAPSHOT.json` v2 索引及 `data/catalog/snapshot/` 条目组成，存储见共享 `snapshot-storage.schema.json`，还原后的逻辑结构见 `snapshot.schema.json`；本轮工作入口为 `data/runs/<round>/WORK.json`，新建时使用 v2 小索引，INPUT、队列、会话状态与单项结果分开保存，完整逻辑结构见 `snapshot-work.schema.json`，拆分存储见 `work-storage.schema.json`。正式快照用共享 snapshot-storage 读取器加载，WORK／SESSION 用过程读取器加载，不直接读取索引后假设内嵌完整数据。
-使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／migrate-work／clean。`PLUGINS.json`、`PUBLICATION.json`、路径注册表、META 与页面是可重建的兼容输出，不再单独人工写入。
+正式真相由 `data/catalog/index.jsonl`、`data/catalog/components/<id前两位>/<id>.json`、全局 `state.json` 与独立证据组成；物理 id 为 canonical identity 的 MD5，完整格式见共享数据契约及 `component-storage.schema.json`，还原后的逻辑结构见 `snapshot.schema.json`。本轮工作入口仍为 `data/runs/<round>/WORK.json`，存储见 `work-storage.schema.json`，完整逻辑结构见 `snapshot-work.schema.json`。正式快照与 WORK／SESSION 均使用共享读取器，不假设索引内嵌完整数据。
+使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／migrate-work／clean。档案、路径、META 和发布数据集中在组件完整记录；不再生成旧聚合 JSON 或独立展示 META。页面是可重建输出，不单独人工写入。
 首次迁移才使用 `snapshot bootstrap`；它保留现有分析，明确列出缺失历史原件，不把迁移当成本轮研究。已有快照时不得重做 bootstrap。
 旧 research／publication 的正式写入不再用于新流程；命令及恢复语义见[会话与合并恢复](references/SESSION-OPERATIONS.md)。
 

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9bcde48633583306451ac8c5bee7a47b",
+    "identity": "github:1398055858:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398055858:root",
+            "repository": "bauerelizabeth07139/tangsan",
+            "path": "",
+            "revision": "aea08b49cfe89c411ab8d34acb31cda2371ce926",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7a31815c2a2a74dcde0bb3900c3201f4f9898d562b3364b664a8c6c0343b5c0b",
+                "code": "aea08b49cfe89c411ab8d34acb31cda2371ce926",
+                "maintenance": "0a7a7c5d25b23d4f9d749164325b63823a5f8500953bfc2856ff247fc0157426"
+            }
+        }
+    }
+}

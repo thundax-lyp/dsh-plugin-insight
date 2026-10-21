@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2a26d7dbd88f4992ef233c682ea66bff",
+    "identity": "github:1388650167:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1388650167:root",
+            "repository": "longgege-cd/dsh-skin-pixel-anime",
+            "path": "",
+            "revision": "ca3255f7d93bbead5a313b258a3dff04222d1f6e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "76b24c99bc092103382560d38ef54364843dba1061aca65ec83ebac1f5a8ca2e",
+                "code": "ca3255f7d93bbead5a313b258a3dff04222d1f6e",
+                "maintenance": "85329c6321b7ed0bb320a4c753e981ba04587d30b367566698bddfffbf351414"
+            }
+        }
+    }
+}

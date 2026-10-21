@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c5222a4eee5df886746c2e8dedf9e2b7",
+    "identity": "github:1412900683:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412900683:root",
+            "repository": "huayuguo/dsh-gitee-chat",
+            "path": "",
+            "revision": "45aa5a4aec7ddf2a76095232aed899b32d438c27",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de31454883e7c5fa8e2d67b3f2e40e51994f0634533ed11919da46762767b549",
+                "code": "45aa5a4aec7ddf2a76095232aed899b32d438c27",
+                "maintenance": "1773aa14d6ff0717bb0b19e0cc3abfd7960070f800ab54f2c1d35a8019baa9af"
+            }
+        }
+    }
+}

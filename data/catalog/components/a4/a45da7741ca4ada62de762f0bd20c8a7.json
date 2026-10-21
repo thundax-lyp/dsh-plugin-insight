@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a45da7741ca4ada62de762f0bd20c8a7",
+    "identity": "github:1334922966:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334922966:root",
+            "repository": "FuzzySoul/dsh-free-vision",
+            "path": "",
+            "revision": "9daa0dc4b42920c129bec5988765a585a0523843",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "869360cbf5cceb199077db46ae02ff461da9a54dfeb7e5043d39e20b352a1465",
+                "code": "9daa0dc4b42920c129bec5988765a585a0523843",
+                "maintenance": "66ed0e142064e1c3995c268e6d298f2ce8f53a0525bfe07ef5b634c9731fb3c5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "64e668f9f865e74eb07407ebd61a31d6",
+    "identity": "github:1333349060:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333349060:root",
+            "repository": "AlliotTech/deepseek-harness-docker",
+            "path": "",
+            "revision": "5dc1c167f43f96860e5387235c321c4373d53e7a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5439e0bdcd79726dee7f2cdf81cd91657cd0b05056e46a5f3f49808293f79a2a",
+                "code": "5dc1c167f43f96860e5387235c321c4373d53e7a",
+                "maintenance": "856d564e89cae3172344c88c1ab247533c964cb6f98a481869853f6ee947a8e5"
+            }
+        }
+    }
+}

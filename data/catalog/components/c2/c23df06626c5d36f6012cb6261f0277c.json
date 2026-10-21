@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c23df06626c5d36f6012cb6261f0277c",
+    "identity": "github:1333586713:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333586713:root",
+            "repository": "YELEBAI/dsh-plugin-marketplace",
+            "path": "",
+            "revision": "4c63439bf62e878b69e1a8957b3efa89eb66aaaf",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0123f442395fc4a4d0dd11f3f7d7c3f67e8136c7bfd7528ec87081d6a6d85ea6",
+                "code": "4c63439bf62e878b69e1a8957b3efa89eb66aaaf",
+                "maintenance": "23b99108fd65c6b3e33430bb28da78555cb77b8ea1b1f2ba5dec619689a3afe6"
+            }
+        }
+    }
+}

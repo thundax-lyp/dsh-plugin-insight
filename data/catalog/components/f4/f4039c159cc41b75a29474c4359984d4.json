@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4039c159cc41b75a29474c4359984d4",
+    "identity": "github:1341668811:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341668811:root",
+            "repository": "hjj345/dsh-sm-context-piano",
+            "path": "",
+            "revision": "ef0384a3b9158009f868d62e28bb92ddf83fb3f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb655c7acd429354f38a83ad47e94173bdd25caa5a5c3c98ba023475f8ac97f1",
+                "code": "ef0384a3b9158009f868d62e28bb92ddf83fb3f3",
+                "maintenance": "cd7106df8fec17b4573c75bea1647667ecf460ff01b0f688f934fe910cf8e328"
+            }
+        }
+    }
+}

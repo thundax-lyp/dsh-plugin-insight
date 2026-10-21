@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "24308cdf7f2735f2c0b18f913a0dac36",
+    "identity": "github:1338418005:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338418005:root",
+            "repository": "soslowsnail/dsh-scenery-background",
+            "path": "",
+            "revision": "05620f7d7167735a8057cc1195d6fa283fc14ae5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "52546fdd5816ca6f61a4f3c57a5593b4b1c49bb5405a5945ea2aff367c58cea3",
+                "code": "05620f7d7167735a8057cc1195d6fa283fc14ae5",
+                "maintenance": "c2d65557db5a03a2746a42c123906d581559ddf380fe076989c0cc70348850f7"
+            }
+        }
+    }
+}

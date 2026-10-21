@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fb6c34e6f45a0a4e6ddd866b77c6b049",
+    "identity": "github:1341393010:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341393010:root",
+            "repository": "jmxsxwyzjdwl/dsh-mmroute",
+            "path": "",
+            "revision": "799e17bcbf2ea417e49dc36aa7a41cf889353d34",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb998aee68ec8a7c3153a72b2996525bd7a3fa3a6a545ebd07cb49ae2feb5f0d",
+                "code": "799e17bcbf2ea417e49dc36aa7a41cf889353d34",
+                "maintenance": "5cc5c682495e15541b8ce2af57a079f190165b24fe978514577a86cbf5bb2214"
+            }
+        }
+    }
+}

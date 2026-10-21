@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "93792efe4b78d029596861b25aa25e1f",
+    "identity": "github:1333068434:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333068434:root",
+            "repository": "FSMargoo/dsh-at-file",
+            "path": "",
+            "revision": "da602d1a8f1b417b8a1d8d4059e0f4cb1c353524",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f0aeb70f71ccdb6c5af08d8f4b099039d25795035d11611e3f1ec6f9289d8442",
+                "code": "da602d1a8f1b417b8a1d8d4059e0f4cb1c353524",
+                "maintenance": "1b333aeb84da6326203f26ca41b3fc20fe7f198380fa1121d5eba34d30caa695"
+            }
+        }
+    }
+}

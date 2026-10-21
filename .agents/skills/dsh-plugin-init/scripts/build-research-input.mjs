@@ -349,8 +349,8 @@ export async function main(args = process.argv.slice(2)) {
         awesome,
         harness,
         catalog:
-            existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json')) && !values.catalog
-                ? readSnapshotStorage(resolve(ROOT, 'data/catalog/SNAPSHOT.json')).catalog
+            existsSync(resolve(ROOT, 'data/catalog/index.jsonl')) && !values.catalog
+                ? readSnapshotStorage(resolve(ROOT, 'data/catalog/index.jsonl')).catalog
                 : read(catalogPath),
         completeAwesome: values['complete-awesome'],
         completeHarness: values['complete-harness']

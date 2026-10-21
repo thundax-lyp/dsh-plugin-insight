@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "747cd4a66d48c64a637d9722b54875d4",
+    "identity": "github:1345944714:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345944714:root",
+            "repository": "vanhungbui-11/dsh-wallpaper-bridge",
+            "path": "",
+            "revision": "46fa39d2724a36bd50b575c4d29dd62686daf069",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "bdf4b3d12dba03a69885c272d6918b9d5e56dedbbba74e936e41dda4934f9969",
+                "code": "46fa39d2724a36bd50b575c4d29dd62686daf069",
+                "maintenance": "2b09df8b56f171664145e02126c306f6efa86f0f67a3cd70c9fb6e4655f3e02d"
+            }
+        }
+    }
+}

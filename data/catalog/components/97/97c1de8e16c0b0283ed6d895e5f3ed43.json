@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "97c1de8e16c0b0283ed6d895e5f3ed43",
+    "identity": "github:1354241970:packages-dsh-context-manager",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354241970:packages-dsh-context-manager",
+            "repository": "mzzsfy/dsh-plugin",
+            "path": "packages/dsh-context-manager",
+            "revision": "ef78178469af825c662b6850afc3cbcde593d3b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2032795b45128bc6c29a9ba757161e171b755696de0a00e5fc301b3f9337bb6c",
+                "code": "ef78178469af825c662b6850afc3cbcde593d3b3",
+                "maintenance": "1cffc0df00eb6f1f17f82160122dc9baba104fe94755a94c38be062ac0f6cb72"
+            }
+        }
+    }
+}

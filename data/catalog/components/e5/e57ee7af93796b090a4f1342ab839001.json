@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e57ee7af93796b090a4f1342ab839001",
+    "identity": "github:1344954735:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344954735:root",
+            "repository": "AKI2253/Sidor_Character",
+            "path": "",
+            "revision": "4b4cb38d6ca281f715f449cb2ccdf61deb5da38c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5d719eb759e06ec60db51b7964450a528cf8b94ef9d1b4a64f6300b59c6d2654",
+                "code": "4b4cb38d6ca281f715f449cb2ccdf61deb5da38c",
+                "maintenance": "18b190bbab0b4971a85b930ce9cf4d728e63a1e30e591e6a5f9f70b6250ef298"
+            }
+        }
+    }
+}

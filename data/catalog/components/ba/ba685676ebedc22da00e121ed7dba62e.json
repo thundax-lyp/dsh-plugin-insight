@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ba685676ebedc22da00e121ed7dba62e",
+    "identity": "github:1323612604:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1323612604:root",
+            "repository": "william-jin-cmu/dsh-companion",
+            "path": "",
+            "revision": "3cdc8887d428e6c70b0fd7ea13c3900479aee6d5",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c12b1a7dc2c4bffb70e7c990006ea460383a7fdf035241d76485f8b51e735d92",
+                "code": "3cdc8887d428e6c70b0fd7ea13c3900479aee6d5",
+                "maintenance": "a224ece13f199439e2796d76e0fe4b309bbcf56b27f2446e76dc1ce6e191df49"
+            }
+        }
+    }
+}

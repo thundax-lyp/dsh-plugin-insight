@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "4c043d262530557c04dafeba497f36c4",
+    "identity": "github:1333152408:packages-plugins-plugin-session-export",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333152408:packages-plugins-plugin-session-export",
+            "repository": "whyihaveyou/dsh-suite",
+            "path": "packages/plugins/plugin-session-export",
+            "revision": "a30b1e7a53970f0b49f2f6206c9d500c47b8327b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a4c27dbcac50b2f1c3a029a0c47d789343ea7d1cb9f92736f7b9565e4b06c37b",
+                "code": "a30b1e7a53970f0b49f2f6206c9d500c47b8327b",
+                "maintenance": "d4bcf5f9d35d47202967b72996e6cbc14ee9bcf02421620f54a6798eb4d89795"
+            }
+        }
+    }
+}

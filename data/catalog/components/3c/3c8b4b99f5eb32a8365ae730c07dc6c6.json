@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3c8b4b99f5eb32a8365ae730c07dc6c6",
+    "identity": "github:1273041438:dsh-pdf-background-gray",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1273041438:dsh-pdf-background-gray",
+            "repository": "zjsthmjialin/pdf-background-gray-codex-skill",
+            "path": "dsh-pdf-background-gray",
+            "revision": "c224d16deba0c48c247403707f14b11f416473f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "016946aecb058580d7226ab2d4072fcf44abf1c53207a2f9431f565c13f4c224",
+                "code": "c224d16deba0c48c247403707f14b11f416473f3",
+                "maintenance": "dbb8411cb7ac46455ff28c4f289b729c88824603c725d2cb27ce57718cbf810c"
+            }
+        }
+    }
+}

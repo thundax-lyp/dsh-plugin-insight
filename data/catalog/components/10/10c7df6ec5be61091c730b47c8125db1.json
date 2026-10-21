@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "10c7df6ec5be61091c730b47c8125db1",
+    "identity": "github:1333898352:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333898352:root",
+            "repository": "joejojoking-cloud/dsh-file-explorer",
+            "path": "",
+            "revision": "4b3a609649af9d81b75e91dc194a74bf6b026811",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6bd47710c431215a80b249a28bc167795b5bfd02354e8099b33d29371465bb9e",
+                "code": "4b3a609649af9d81b75e91dc194a74bf6b026811",
+                "maintenance": "5626fd144bfb957150e17619f4bfeff2dd95fc72157d0b790983edd6a48b4a13"
+            }
+        }
+    }
+}

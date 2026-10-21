@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "010b158045dc494cbcd835d8b46c56c4",
+    "identity": "github:1334255018:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334255018:root",
+            "repository": "zhijun-dai/Catppuccin-dsh-theme",
+            "path": "",
+            "revision": "9d18edc84a13fb6009391677046ddedec267ecdc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3cb55e581d09c3e0dbb589880ea179702908a096a9760e594bbd96e0bc14bdde",
+                "code": "9d18edc84a13fb6009391677046ddedec267ecdc",
+                "maintenance": "831e9bfb1359ad5a3bc94910899a58126dfe8c2eadcd477c67f140c34777d618"
+            }
+        }
+    }
+}

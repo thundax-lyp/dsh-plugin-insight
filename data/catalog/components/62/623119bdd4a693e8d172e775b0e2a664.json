@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "623119bdd4a693e8d172e775b0e2a664",
+    "identity": "github:1334140477:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334140477:root",
+            "repository": "LeemanCheung/dsh-whale-animation",
+            "path": "",
+            "revision": "ba3a88969420eb540746eedea4511c645ad71af7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "39b476440163402dc46c1633c3bbb96c08dd844b6cea0aa6d21930b2d22cd400",
+                "code": "ba3a88969420eb540746eedea4511c645ad71af7",
+                "maintenance": "2a830b89c816464f5950647719b7fb8e46abb447c2aeade4f7bbcf2d839b0dd2"
+            }
+        }
+    }
+}

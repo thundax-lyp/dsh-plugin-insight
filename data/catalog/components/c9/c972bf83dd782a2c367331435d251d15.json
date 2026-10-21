@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c972bf83dd782a2c367331435d251d15",
+    "identity": "github:1335062426:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335062426:root",
+            "repository": "pyf2818/dsh-bili-widget",
+            "path": "",
+            "revision": "7d564f5f134389a905b5f39485469d602eee2b4a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0097448bf4f0a21311b1206b319879ed225c11e8b17e3d7bf357aae88b313e60",
+                "code": "7d564f5f134389a905b5f39485469d602eee2b4a",
+                "maintenance": "abcecacb99ba61c63d94cc29cc32a49a9bce4e752bfd8b2983f0abe54a6c8fc8"
+            }
+        }
+    }
+}

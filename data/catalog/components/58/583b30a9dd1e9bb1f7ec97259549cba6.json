@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "583b30a9dd1e9bb1f7ec97259549cba6",
+    "identity": "github:1394546064:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394546064:root",
+            "repository": "CoolTea001/dsh-cool-git",
+            "path": "",
+            "revision": "2d3c15f455f66c7231a94049e74e8a87d68748e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ef9683490aa959150c44e8595e01882737d012a7ecacc7a33c6331abe612d52e",
+                "code": "2d3c15f455f66c7231a94049e74e8a87d68748e1",
+                "maintenance": "5a4f2a1f8d8959f47943e39db90839191125c770cc0d753feb0de59dc34e0b59"
+            }
+        }
+    }
+}

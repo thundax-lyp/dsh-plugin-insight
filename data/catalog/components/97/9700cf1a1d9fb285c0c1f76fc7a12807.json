@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9700cf1a1d9fb285c0c1f76fc7a12807",
+    "identity": "github:1311057273:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1311057273:root",
+            "repository": "FuRongJun-1999/CommonTrustProtocol",
+            "path": "",
+            "revision": "5b427e0341cb5d98ef749cdd9ad90fc3994979e3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "13c396ad9afcecec78c555fd95eb708e34273bfe1488a76c2b8104c779a601ac",
+                "code": "5b427e0341cb5d98ef749cdd9ad90fc3994979e3",
+                "maintenance": "ec104d57516482539547b54be233223313908fcc59c3a66b192ff2aa908c0516"
+            }
+        }
+    }
+}

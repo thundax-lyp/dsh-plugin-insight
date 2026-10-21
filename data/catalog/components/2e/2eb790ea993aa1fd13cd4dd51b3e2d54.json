@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2eb790ea993aa1fd13cd4dd51b3e2d54",
+    "identity": "github:1348437541:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348437541:root",
+            "repository": "Fakek0f3sT/dsh-mcp-diff",
+            "path": "",
+            "revision": "42ae60c234bfa81a71be124db025f30119d46cc0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f1c8c7cb1a13d5a26d04a0fd9e23d34a750836bfdfc1013ee98702588247e22d",
+                "code": "42ae60c234bfa81a71be124db025f30119d46cc0",
+                "maintenance": "e1d2970c18066c560f065b0a244f231a8e60804afba7bad3963c7e3fbe830d92"
+            }
+        }
+    }
+}

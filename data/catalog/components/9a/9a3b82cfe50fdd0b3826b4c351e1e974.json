@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9a3b82cfe50fdd0b3826b4c351e1e974",
+    "identity": "github:1398538630:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1398538630:root",
+            "repository": "JauLukNgai/dsh-on-phone",
+            "path": "",
+            "revision": "34b8af50009e7038d52ea9fd9c72c87c47668b8b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "486d9c1825547811e49db87eb75cc7570058079b52ae9998ad087e69487b5308",
+                "code": "34b8af50009e7038d52ea9fd9c72c87c47668b8b",
+                "maintenance": "a152fc462c90546cb5dc5a64308141130f10a2e81fe71d865092ba46b4d98e88"
+            }
+        }
+    }
+}

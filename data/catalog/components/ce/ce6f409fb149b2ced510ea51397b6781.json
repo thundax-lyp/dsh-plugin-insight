@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ce6f409fb149b2ced510ea51397b6781",
+    "identity": "github:1408812230:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408812230:root",
+            "repository": "samsam560/chat-share-card",
+            "path": "",
+            "revision": "caa8b74f563be1ffb796f1f035e34d676884c931",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a9acccb51dcf7adf48b26046820c1e67f8db94bcd10a3133fe8c432fc071efc5",
+                "code": "caa8b74f563be1ffb796f1f035e34d676884c931",
+                "maintenance": "79848d431824b3ac3668564b7e1f583c75ba2720674df24909019168eddeca38"
+            }
+        }
+    }
+}

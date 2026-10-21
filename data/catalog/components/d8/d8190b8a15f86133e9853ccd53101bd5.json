@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d8190b8a15f86133e9853ccd53101bd5",
+    "identity": "github:1340838178:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340838178:root",
+            "repository": "duhu2000/dsh-mcp-connector",
+            "path": "",
+            "revision": "9c2a8a36003dc50482b5ee8568e4c5cd69eb0f8b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "27efdb84897f8c18e1c8beeecd03b3dd5886f5a1222fe54e28d8b7f70e3615e3",
+                "code": "9c2a8a36003dc50482b5ee8568e4c5cd69eb0f8b",
+                "maintenance": "8c20cc2febfd606c0a766805f22e071187f4896e62846d68c2e0297fa03c8702"
+            }
+        }
+    }
+}

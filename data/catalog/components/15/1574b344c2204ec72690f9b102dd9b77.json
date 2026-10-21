@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1574b344c2204ec72690f9b102dd9b77",
+    "identity": "github:1333465802:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333465802:root",
+            "repository": "chushixixin/dsh-harness-mcp-server",
+            "path": "",
+            "revision": "d174cea870aaa9f6dd67f2e9c3f3e3fa0f0e041e",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "85a403a8f1453095f461bc39afbe63f60ca77cc44d85cd2db3391e33a3c04759",
+                "code": "d174cea870aaa9f6dd67f2e9c3f3e3fa0f0e041e",
+                "maintenance": "2be695825234ec809a405b733dea97962b2b9e284e6622635d1d53de3a9543be"
+            }
+        }
+    }
+}

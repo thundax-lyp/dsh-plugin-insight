@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7c4e36d0788b2a8990fb640097e8d4fc",
+    "identity": "github:1339835016:packages-hermit-budget",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339835016:packages-hermit-budget",
+            "repository": "jorinyang/dsh-hermit",
+            "path": "packages/hermit-budget",
+            "revision": "f857ae3b2337a9a59401635b8e7141792fafad7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fa17f94648e97b820e1f190b159127a9729254fba0e34cd89925159589c29229",
+                "code": "f857ae3b2337a9a59401635b8e7141792fafad7f",
+                "maintenance": "c0e501e6d292ce744ab26496eb747073a336cf38f941437194375b10003c5568"
+            }
+        }
+    }
+}

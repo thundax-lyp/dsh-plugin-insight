@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "050ac4b1f5699f418e954e7ee04e9835",
+    "identity": "github:1335242266:packages-dsh-secret-redactor",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335242266:packages-dsh-secret-redactor",
+            "repository": "DamonKoy/dsh-plugins",
+            "path": "packages/dsh-secret-redactor",
+            "revision": "48110ca2779b59d36edec46c8aff97b6a50322aa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e01df978f9b8e2aad152f8e6dabd59593c5c467355995da24c323ee03fc78fc7",
+                "code": "48110ca2779b59d36edec46c8aff97b6a50322aa",
+                "maintenance": "453a21010ff9e5a58388084e0ac95103a7f99cf05d36b4c8bf7cd86ebe909268"
+            }
+        }
+    }
+}

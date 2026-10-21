@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fc974dbd75c051bf9b03b831f1d4881b",
+    "identity": "github:1351482127:packages-gameassist-memory",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351482127:packages-gameassist-memory",
+            "repository": "w4xxx/dsh-xia-plugins",
+            "path": "packages/gameassist-memory",
+            "revision": "220290d7d1665ca16ce8b01c6aa216170a936fa6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de06b3829d6d87684437e6a6f7adc05b54a54b487af836114aa12e5e9e8206f7",
+                "code": "220290d7d1665ca16ce8b01c6aa216170a936fa6",
+                "maintenance": "f02ec02d7a79078957fac2d50ccf009799a3465683861ad24549658457401091"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0e1aca881c376b07228765a951e96e8c",
+    "identity": "github:1335828671:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335828671:root",
+            "repository": "chenbin-dev/dsh-auth-everying",
+            "path": "",
+            "revision": "27da010e03f1da4e7e2be523a4f3d46fe4b0394f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "93a4bd0dbfd30d09e63356cbf6270f7afc5bb9000883330804c0b0d99a59bfb1",
+                "code": "27da010e03f1da4e7e2be523a4f3d46fe4b0394f",
+                "maintenance": "3df4ebefd67fbb34d3e680df529d4b3eae19980c7bfefc44e8ea07140b5c1d8f"
+            }
+        }
+    }
+}

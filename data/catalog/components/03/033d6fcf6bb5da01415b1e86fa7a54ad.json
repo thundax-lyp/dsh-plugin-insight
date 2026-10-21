@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "033d6fcf6bb5da01415b1e86fa7a54ad",
+    "identity": "github:1334473695:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334473695:root",
+            "repository": "wuykjl/dsh-equip-engine",
+            "path": "",
+            "revision": "95110d4d27d6806377a9c97f7e3be8fe4fec73b6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b4f6fb00cb0b512dfdd392b8f34c67f04fa4a819cb054d87eedb6ab9a3556a6e",
+                "code": "95110d4d27d6806377a9c97f7e3be8fe4fec73b6",
+                "maintenance": "48f9bafd20f405744fbf9508a56af89e343f23560fa2acc9a87cabbb4c2b4033"
+            }
+        }
+    }
+}

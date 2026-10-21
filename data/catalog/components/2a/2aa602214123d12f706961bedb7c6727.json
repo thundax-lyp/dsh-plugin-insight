@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2aa602214123d12f706961bedb7c6727",
+    "identity": "github:1424246813:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424246813:root",
+            "repository": "HerTa-st/dsh-balance-card",
+            "path": "",
+            "revision": "21ef6303a34c0df8312418551ad935eef5412e87",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d1e75cce7de5be830fa648e362ab4b3a4e5b4463289c12fdc2b4461cb4efc878",
+                "code": "21ef6303a34c0df8312418551ad935eef5412e87",
+                "maintenance": "7f8e5c2d54318c40beb729d4eb9ea7a0b2f8a9b1bfbd8bd63598393f06c5e568"
+            }
+        }
+    }
+}

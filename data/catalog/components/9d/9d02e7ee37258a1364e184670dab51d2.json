@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d02e7ee37258a1364e184670dab51d2",
+    "identity": "github:1358316691:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358316691:root",
+            "repository": "ArcaneOrion/dsh-model-channel-manager",
+            "path": "",
+            "revision": "bcb5c5a634552e357aa0ae992f3396d19048f2a3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a7d20a12eac9e7becf7a285e0cc3c2855707cd213c420e43ad48c303eaa160a1",
+                "code": "bcb5c5a634552e357aa0ae992f3396d19048f2a3",
+                "maintenance": "68d4b0aa7483838fee44b617f321ec03373ef99033eb80e57e4e8e627edf9f4e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "621dcd8ec012da76f1057c3779473e10",
+    "identity": "github:1402657458:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402657458:root",
+            "repository": "panando/dsh-pua",
+            "path": "",
+            "revision": "121a341923663a37089c58060f2fd16e6cd758f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "178b968f76403e1fb2d5ec62107683c6d4ddd363b468005977d79a397c786b94",
+                "code": "121a341923663a37089c58060f2fd16e6cd758f3",
+                "maintenance": "a105e720a555688267fd12766b7a9cdfb2d59ed63af9774302b1c26cadd82f11"
+            }
+        }
+    }
+}

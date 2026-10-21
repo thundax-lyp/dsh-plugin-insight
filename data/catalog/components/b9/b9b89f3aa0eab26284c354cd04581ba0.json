@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b9b89f3aa0eab26284c354cd04581ba0",
+    "identity": "github:1425237701:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425237701:root",
+            "repository": "DeZhou123/dsh-model-orchestrator",
+            "path": "",
+            "revision": "e5ef0146de3ace391b9e76f7cbe2f3ba6076d836",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c44544bf08ad9824ab6634efd751c4aa3dc2e64afe606426b7c4b2738d8841d1",
+                "code": "e5ef0146de3ace391b9e76f7cbe2f3ba6076d836",
+                "maintenance": "c6a21d95b5449739e98c1ac6fbd53862686279e24f1fb1feaa909d3407c7a323"
+            }
+        }
+    }
+}

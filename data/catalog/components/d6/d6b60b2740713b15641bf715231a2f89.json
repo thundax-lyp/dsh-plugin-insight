@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d6b60b2740713b15641bf715231a2f89",
+    "identity": "github:1412024648:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412024648:root",
+            "repository": "furkancak1r/dsh-composer-plus",
+            "path": "",
+            "revision": "9b280101f63ab0dbd32901b067855d9565329ae0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6164ba8df82f06ca85d53ff922d716b89e0a42182a24a1353d04a94bcd05f245",
+                "code": "9b280101f63ab0dbd32901b067855d9565329ae0",
+                "maintenance": "0e4f29c8f53c50cd1c69d59f71c551b16b62bb44859a483bdc0f41d7d587cbde"
+            }
+        }
+    }
+}

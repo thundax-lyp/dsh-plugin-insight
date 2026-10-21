@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bc3ec7104e595e47df04ffbb6f6cbf18",
+    "identity": "github:1340697786:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340697786:root",
+            "repository": "WintryGrass/dsh-multi-candidate",
+            "path": "",
+            "revision": "4bdf1107089d226264922ffe7fdec3e0155b295f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "efb4b6265d81c08cde515a29e28284e9c8cf0c259ee39c6306c7bc58b471e6b2",
+                "code": "4bdf1107089d226264922ffe7fdec3e0155b295f",
+                "maintenance": "debc0a8daa2b91007da4c22c1ef50770db04dc82df974ea6ed182568149a7188"
+            }
+        }
+    }
+}

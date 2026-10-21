@@ -1,0 +1,450 @@
+{
+    "schema_version": 3,
+    "id": "69e7efaf13c970e30ae3f0c7420bc973",
+    "identity": "github:1336092482:01-content",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336092482:01-content",
+            "repository_id": 1336092482,
+            "component_id": "01-content",
+            "repository": "Aisland-SJL/dsh-worktable",
+            "path": "01_content",
+            "aliases": [],
+            "name": "dsh-worktable（01_content）",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "e8c1104a3b4044f551c6940dfed8b37ceec4d0b2ced7b3c0a263a2d3f9ef6867",
+                "code": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+                "maintenance": "c34d5070dcaeb63bd99ea170af4d58d2da7b18017deb355d96b87a3f6c920754"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1336092482-01-content-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:13:57.104Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1336092482-01-content-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/README.md",
+                    "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+                    "captured_at": "2026-10-21T08:13:57.104Z",
+                    "summary": "在侧栏提供项目抽屉、分栏窗格、会话绑定与项目产物挂载。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/aisland-sjl--dsh-worktable--01-content/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1336092482-01-content-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/index.ts",
+                    "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+                    "captured_at": "2026-10-21T08:13:57.104Z",
+                    "summary": "核查 01_content/src/index.ts、01_content/src/client/index.tsx、01_content/src/client/widgetMount.ts、01_content/src/client/split.tsx；01_content主机注册文件/写入/工作区/终端路由，客户端slots与split引擎存布局；WidgetMountRegistry用project/pane/session/bindingId生成专属manifest，并在目录/窗口变化时撤销旧关联。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/aisland-sjl--dsh-worktable--01-content/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者把多个项目、会话和本地预览组织在同一工作台，需人工验收各项目产物。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "01_content主机注册文件/写入/工作区/终端路由，客户端slots与split引擎存布局；WidgetMountRegistry用project/pane/session/bindingId生成专属manifest，并在目录/窗口变化时撤销旧关联。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "配置项目和绑定、模型任务token与人工复核、文件和终端维护；本地layout不跨浏览器来源同步，iframe网页有自身网络/资源成本。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用隔离项目验证绑定、结果归属、关闭撤销和终端；本地文件和完整Shell权限须与使用环境匹配。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "项目隔离身份有具体实现，作者Windows验证不等于本轮宿主验收；无并行交付效率或错误挂载率数据。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "绑定持久化失败阻止任务发送、失效关联显式撤销与专属结果路径可借鉴；布局存储和文件内容不是同一隔离层。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将会话产物交接绑定到具体项目窗格，避免按共享目录盲读结果的常见歧义；这是身份与交接机制的增量，终端/浏览器/原生会话能力分别来自宿主与上游。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "manifest隔离不等于文件沙箱：主机file/write直接pathResolve用户路径，写端无本组件工作区containment；终端继承process.env且执行完整shell，路由未见本包独立信任检查。多个项目主动指同一产物仍能互改，挂载身份正确不能证明内容独立。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：把产物能力绑定规范根/目标摘要和生成版本，在挂载前核引用，可同时减少错挂与旧内容覆盖。用同目录两项目、改绑/关闭、同名结果和迟到完成核身份/内容一致性；未拒迟到产物则不做自动验收。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336092482:01-content",
+                            "area": "code",
+                            "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:13:57.104Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:13:57.104Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+                "reviewed_at": "2026-10-21T08:13:57.104Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336092482:01-content",
+                        "area": "code",
+                        "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：工作台已有先例，身份交接具体。 mechanism=15：绑定和撤销改变结果归属约束。 transferability=10：可迁移交接模式但宿主状态耦合。 simplification=4：集中窗口，不消除文件权限复杂。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow=18：项目窗格会话交接更明确。 delivery=8：挂载非合格产物验收。 reach=5：需会话API/本地文件的开发者。 economics=0：无端到端成本结构数据。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1336092482-01-content-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "多项目工作台用户可关注绑定身份设计；文件写入无工作区containment且终端完整shell，先解决路由信任与文件边界再接真实项目。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "多个项目会话与预览统一组织的需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "专属manifest与解绑降低跨项目展示错挂。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核绑定registry，文件/终端范围与界面隔离不等价。"
+                    },
+                    "cost": {
+                        "score": 0,
+                        "rationale": "任意路径写入和继承环境shell使文件安全边界不足，核心管理风险高。"
+                    }
+                },
+                "score": 55,
+                "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1336092482-01-content-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336092482:01-content",
+                        "area": "code",
+                        "fingerprint": "6cb86b6c73b3c356373e06cd81e08952542ea040"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336092482:01-content",
+            "repository": "Aisland-SJL/dsh-worktable",
+            "path": "01_content",
+            "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+            "fingerprints": {
+                "directory": "e8c1104a3b4044f551c6940dfed8b37ceec4d0b2ced7b3c0a263a2d3f9ef6867",
+                "code": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+                "maintenance": "c34d5070dcaeb63bd99ea170af4d58d2da7b18017deb355d96b87a3f6c920754"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "bea17d11c8f2a175d96d4b44eeb74ee9bc2ceb48bebffa23d3c233b195f1aa1b"
+        },
+        "publication.metadata": "data/plugins/aisland-sjl--dsh-worktable--01-content/META.json",
+        "publication.summaries": {
+            "text": "在侧栏提供项目抽屉、分栏窗格、会话绑定与项目产物挂载。",
+            "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+            "source_url": "https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+            "items": {
+                "界面": "项目抽屉、控制室和分栏窗口",
+                "Host 路由": "工作台文件/工作区/终端接口",
+                "后台": "项目窗格绑定和产物挂载"
+            }
+        },
+        "publication.advice": {
+            "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+            "text": "先用隔离项目验证绑定、结果归属、关闭撤销和终端；本地文件和完整Shell权限须与使用环境匹配。"
+        },
+        "registry": "data/plugins/aisland-sjl--dsh-worktable--01-content",
+        "reports": "# dsh-worktable（01_content）\n\n> 在侧栏提供项目抽屉、分栏窗格、会话绑定与项目产物挂载。\n\n## 使用建议\n\n先用隔离项目验证绑定、结果归属、关闭撤销和终端；本地文件和完整Shell权限须与使用环境匹配。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：开发者把多个项目、会话和本地预览组织在同一工作台，需人工验收各项目产物。\n- **亮点**：将会话产物交接绑定到具体项目窗格，避免按共享目录盲读结果的常见歧义；这是身份与交接机制的增量，终端/浏览器/原生会话能力分别来自宿主与上游。\n- **思考**：manifest隔离不等于文件沙箱：主机file/write直接pathResolve用户路径，写端无本组件工作区containment；终端继承process.env且执行完整shell，路由未见本包独立信任检查。多个项目主动指同一产物仍能互改，挂载身份正确不能证明内容独立。\n- **建议**：未验证假设：把产物能力绑定规范根/目标摘要和生成版本，在挂载前核引用，可同时减少错挂与旧内容覆盖。用同目录两项目、改绑/关闭、同名结果和迟到完成核身份/内容一致性；未拒迟到产物则不做自动验收。\n\n## 场景与替代办法\n\n参照宿主会话栏、普通浏览器/终端及侧栏工作台；本组件增量是项目×窗格×会话绑定与有身份的产物挂载，非整仓所有能力。\n\n## 能力清单\n\n- **界面**：项目抽屉、控制室和分栏窗口\n- **Host 路由**：工作台文件/工作区/终端接口\n- **后台**：项目窗格绑定和产物挂载\n\n## 依赖与流程\n\n01_content主机注册文件/写入/工作区/终端路由，客户端slots与split引擎存布局；WidgetMountRegistry用project/pane/session/bindingId生成专属manifest，并在目录/窗口变化时撤销旧关联。\n\n宿主slots/会话/connection服务，终端可选ws/node-pty；浏览器来源localStorage存项目/布局，模型完成自定义任务才可能产生产物。独立package版本0.4.0以组件材料为准。\n\n建项目/绑定会话→选窗口任务→先持久绑定身份→发送宿主会话→读取当前manifest/产物→挂载窗口→人工验收；旧关联拒绝补挂，失败保留待办。\n\n## 成本与效果\n\n配置项目和绑定、模型任务token与人工复核、文件和终端维护；本地layout不跨浏览器来源同步，iframe网页有自身网络/资源成本。\n\n项目隔离身份有具体实现，作者Windows验证不等于本轮宿主验收；无并行交付效率或错误挂载率数据。\n\n## 核心贡献\n\n将会话产物交接绑定到具体项目窗格，避免按共享目录盲读结果的常见歧义；这是身份与交接机制的增量，终端/浏览器/原生会话能力分别来自宿主与上游。\n\n## 关键质疑\n\nmanifest隔离不等于文件沙箱：主机file/write直接pathResolve用户路径，写端无本组件工作区containment；终端继承process.env且执行完整shell，路由未见本包独立信任检查。多个项目主动指同一产物仍能互改，挂载身份正确不能证明内容独立。\n\n## 工程亮点\n\n绑定持久化失败阻止任务发送、失效关联显式撤销与专属结果路径可借鉴；布局存储和文件内容不是同一隔离层。\n\n源码依据：[01_content/src/index.ts](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/index.ts)、[01_content/src/client/index.tsx](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/index.tsx)、[01_content/src/client/widgetMount.ts](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts)、[01_content/src/client/split.tsx](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/split.tsx)。\n\n## 未来设计假设（未验证）\n\n未验证假设：把产物能力绑定规范根/目标摘要和生成版本，在挂载前核引用，可同时减少错挂与旧内容覆盖。用同目录两项目、改绑/关闭、同名结果和迟到完成核身份/内容一致性；未拒迟到产物则不做自动验收。\n\n未来隔离工作区核路由外层授权、manifest身份、软链接/目标范围与终端清理；本轮未启动或发任务。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：01_content；内容摘要：a884ad56fb3fa44d187743b10926390942f5ca88214576be3a43cdc77af02fad。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 4 | 565 | 446 | 94 | — |\n| .mjs | test | 1 | 72 | 45 | 14 | — |\n| .js | source | 2 | 24411 | 23005 | 1945 | — |\n| .md | source | 1 | 88 | — | — | 2236 |\n| .ts | source | 14 | 2400 | 2088 | 201 | — |\n| .tsx | source | 2 | 6500 | 5790 | 500 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Aisland-SJL/dsh-worktable](https://github.com/Aisland-SJL/dsh-worktable)\n- **版本号**：0.4.0（[固定提交 6cb86b6c](https://github.com/Aisland-SJL/dsh-worktable/tree/6cb86b6c73b3c356373e06cd81e08952542ea040)）\n- **版本日期**：2026-10-03（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：01_content/src/index.ts、01_content/src/client/index.tsx、01_content/src/client/widgetMount.ts、01_content/src/client/split.tsx、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来隔离工作区核路由外层授权、manifest身份、软链接/目标范围与终端清理；本轮未启动或发任务。\n",
+        "metadata": {
+            "repository": "Aisland-SJL/dsh-worktable",
+            "repository_id": 1336092482,
+            "captured_at": "2026-10-21T07:59:31.721Z",
+            "window_start": "2026-09-21T07:59:31.721Z",
+            "stars": 772,
+            "pushed_at": "2026-10-03T05:03:23Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAisland-SJL%2Fdsh-worktable%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE06:1889E9:8545F4:8D31A2:6AD870E8 and timestamp 2026-10-21 07:59:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAisland-SJL%2Fdsh-worktable%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DFB2:4E2C1:6BC391:73ACEF:6AD870E9 and timestamp 2026-10-21 07:59:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAisland-SJL%2Fdsh-worktable%20is%3Aissue%20created%3A2026-09-21T07%3A59%3A31.721Z..2026-10-21T07%3A59%3A31.721Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E492:51118:66AE67:6E9B31:6AD870ED and timestamp 2026-10-21 07:59:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAisland-SJL%2Fdsh-worktable%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A31.721Z..2026-10-21T07%3A59%3A31.721Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E6B0:1FA872:6C308C:741E4A:6AD870EE and timestamp 2026-10-21 07:59:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAisland-SJL%2Fdsh-worktable%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A31.721Z..2026-10-21T07%3A59%3A31.721Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E812:2750FB:661FDB:6E0DF0:6AD870EF and timestamp 2026-10-21 07:59:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-worktable",
+                "captured_at": "2026-10-21T07:59:43.387Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-worktable",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:59:43.387Z",
+                    "source_url": "https://registry.npmjs.org/dsh-worktable",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336092482:01-content",
+            "repository": "Aisland-SJL/dsh-worktable",
+            "path": "01_content",
+            "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e8c1104a3b4044f551c6940dfed8b37ceec4d0b2ced7b3c0a263a2d3f9ef6867",
+                "code": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+                "maintenance": "c34d5070dcaeb63bd99ea170af4d58d2da7b18017deb355d96b87a3f6c920754"
+            }
+        }
+    }
+}

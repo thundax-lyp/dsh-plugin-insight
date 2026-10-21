@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "72a6fedcb9d973ee07978fa0461517f4",
+    "identity": "github:1374086773:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374086773:root",
+            "repository": "adithyanraj03/dsh-graft-plugin",
+            "path": "",
+            "revision": "4ec20848e412b195017e135b744e12a4146104d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e3bfa3dd743c7081d7ce40019f8c7c5d7556def2fe992d5b0e07f88af642caa3",
+                "code": "4ec20848e412b195017e135b744e12a4146104d7",
+                "maintenance": "c2c2b65e121682a3053e6f9891d5a650f6152376aa8201662c81853174f3064f"
+            }
+        }
+    }
+}

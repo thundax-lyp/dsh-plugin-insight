@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5a1c437606faac66641fd2c74c3c3d9",
+    "identity": "github:1391983444:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391983444:root",
+            "repository": "songshuhuoban/dsh-environment-tray",
+            "path": "",
+            "revision": "8514dc3a4b91f6cc8161f5cf70738f711629ce52",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cf7f78f3c1486ab39101653a8fed0c2627e7b37d27ffe1d9def4b2732e7c5b61",
+                "code": "8514dc3a4b91f6cc8161f5cf70738f711629ce52",
+                "maintenance": "f69f5f817d8da377c6e3ae2c17bd1f6a6314c1c880389e128cfbd2b4d783c939"
+            }
+        }
+    }
+}

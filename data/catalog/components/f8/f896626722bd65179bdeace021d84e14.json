@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f896626722bd65179bdeace021d84e14",
+    "identity": "github:1335046216:packages-search",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335046216:packages-search",
+            "repository": "hyzyn/dsh-plugin-kit",
+            "path": "packages/search",
+            "revision": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c7783c5dc09227272b4f0fc263368a09cbf42a396088a0021ecbe64950ea1997",
+                "code": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+                "maintenance": "2e7b920c8063d40c640ac1413638a8754c56991d360e6f103eb8ec2a73934260"
+            }
+        }
+    }
+}

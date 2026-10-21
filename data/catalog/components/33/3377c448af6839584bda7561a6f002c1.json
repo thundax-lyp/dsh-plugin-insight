@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3377c448af6839584bda7561a6f002c1",
+    "identity": "github:1350740318:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350740318:root",
+            "repository": "The-latest-one/dsh-branch-workspace-folders",
+            "path": "",
+            "revision": "28c2b92ed180a812560750a6c72894cd2e42b401",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c09b950150adcddf5581978c73954b0d52ccdef56e65342dcd7dbae8125b8d77",
+                "code": "28c2b92ed180a812560750a6c72894cd2e42b401",
+                "maintenance": "aa7ce55ba7408b7961513dd39a29620c69b491772cb9c4057a8b16cc958e1bd8"
+            }
+        }
+    }
+}

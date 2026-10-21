@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b1607e6b57f43a49d902aebf06e192fc",
+    "identity": "github:1354241970:packages-dsh-settings-nav-icons",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354241970:packages-dsh-settings-nav-icons",
+            "repository": "mzzsfy/dsh-plugin",
+            "path": "packages/dsh-settings-nav-icons",
+            "revision": "ef78178469af825c662b6850afc3cbcde593d3b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "198bc61b897b98b1acf51f578940dfb1c2d699cc5dc1fef5c3cacdd4d20d3a0d",
+                "code": "ef78178469af825c662b6850afc3cbcde593d3b3",
+                "maintenance": "1cffc0df00eb6f1f17f82160122dc9baba104fe94755a94c38be062ac0f6cb72"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "966878331b92fab9c459ab5b9bbd8066",
+    "identity": "github:1384513431:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384513431:root",
+            "repository": "anze225-max/dsh-mimo-connect",
+            "path": "",
+            "revision": "7ab3f61b250dd9c403779a30d17275afe0b71948",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "80b732b6e8c5dba02601d069362e1846b701050a09d3c99f3a0e12d981b098ea",
+                "code": "7ab3f61b250dd9c403779a30d17275afe0b71948",
+                "maintenance": "25e38d93703575909b4fab85e9d0113705a4de06f9ba9b79f63738fd6a82ce9d"
+            }
+        }
+    }
+}

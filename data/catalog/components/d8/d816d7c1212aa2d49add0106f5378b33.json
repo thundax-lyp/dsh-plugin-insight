@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d816d7c1212aa2d49add0106f5378b33",
+    "identity": "github:1423387293:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423387293:root",
+            "repository": "Wangxiaolu0716/ctf-solve-teach",
+            "path": "",
+            "revision": "f31675c92381d3e36f2d3e408de9d50ea78d8217",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b322f451aa065b38ad22e514b33163c9675eda8d90d586f80c2c952322bd7c87",
+                "code": "f31675c92381d3e36f2d3e408de9d50ea78d8217",
+                "maintenance": "aa3f2483041280db4e5020b29c4949716bc72f57c8a736d25fdd907ce60aeab3"
+            }
+        }
+    }
+}

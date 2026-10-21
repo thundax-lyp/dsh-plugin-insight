@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94802a7571349131c77c337a91f57e56",
+    "identity": "github:1377290715:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377290715:root",
+            "repository": "slow-stack/euthyna",
+            "path": "",
+            "revision": "d1901e094c2e46beb6d096feab85b726c78a1128",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a3dbb3dce978448e6a965597f9a715f10a0fcfab5e0b3c3fae7b7f2637eaba3c",
+                "code": "d1901e094c2e46beb6d096feab85b726c78a1128",
+                "maintenance": "ed5c8af580b4bfd178699674324416012d7c1a1a8e4084a573caec6d2cab28db"
+            }
+        }
+    }
+}

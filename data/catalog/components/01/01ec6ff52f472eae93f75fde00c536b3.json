@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01ec6ff52f472eae93f75fde00c536b3",
+    "identity": "github:1340400125:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340400125:root",
+            "repository": "ZutoMayoo/totoTheCat",
+            "path": "",
+            "revision": "dec5e6b5da34dde07fa62d4dff9bac7169c8adf8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b28e19b93cf6ae9c3586d810269e8bef9ad125537757690fc37a46d074f3a115",
+                "code": "dec5e6b5da34dde07fa62d4dff9bac7169c8adf8",
+                "maintenance": "923e2d288fd09a15c01137e1b898a0815890710e51363ea039160c9b095c2a86"
+            }
+        }
+    }
+}

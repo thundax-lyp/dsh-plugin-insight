@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "81de18ec3da6699d622b631a233a7013",
+    "identity": "github:1334055650:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334055650:root",
+            "repository": "QT-Chen/dsh-mic-input",
+            "path": "",
+            "revision": "92d6dec9ad8226cc2fd38a91c628bdf47e71a95f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1336cbca7bca05afd61f33359bfd5c1b69fdef31b7d10f8dc988165beee7cf25",
+                "code": "92d6dec9ad8226cc2fd38a91c628bdf47e71a95f",
+                "maintenance": "401a52ce323d8b41f3cb5a8ab8a413fe12118a04507668311b2dc535e39fa777"
+            }
+        }
+    }
+}

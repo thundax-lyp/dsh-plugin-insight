@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0867fd4a3c5049583a49d6da43374ea8",
+    "identity": "github:1336522130:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336522130:root",
+            "repository": "MlittleFriend/dsh-character-profiler",
+            "path": "",
+            "revision": "9417ad1a6d084a29c7e050c39afb823cbbce3273",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "30d5cc1c9956422db4b0d3bd0100ede815417c53aa6ab91bfeea0142e05436fe",
+                "code": "9417ad1a6d084a29c7e050c39afb823cbbce3273",
+                "maintenance": "9ffcbb2aca467f63db84e5d6a12b58dda5f0cbff29d8fab2d5f993f27868bdd4"
+            }
+        }
+    }
+}

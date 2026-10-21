@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2cbbbc4c537646fbce947c8a63e5aca4",
+    "identity": "github:1276665883:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1276665883:root",
+            "repository": "Tencent/BrowserSkill",
+            "path": "",
+            "revision": "6214e3d6a3d74eaf39c0202c4f182b5755974da9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2004766e29ba57d415d739b92d0c8e1a31855f0e9fe8f1b7aebbb751cbd68a14",
+                "code": "6214e3d6a3d74eaf39c0202c4f182b5755974da9",
+                "maintenance": "200264235c51df4415e37b881277ed412c78b46c1349a23e034f185ed0beae64"
+            }
+        }
+    }
+}

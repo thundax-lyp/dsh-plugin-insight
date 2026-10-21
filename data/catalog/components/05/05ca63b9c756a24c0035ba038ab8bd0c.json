@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "05ca63b9c756a24c0035ba038ab8bd0c",
+    "identity": "github:1345908895:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345908895:root",
+            "repository": "toustifer/dsh-harvest",
+            "path": "",
+            "revision": "e642718f4488b6b0a1cc3c6501042cde998ed8e5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b51e400baeb46fabb792531323629e28b9e5639d37769d8be70b72ba63c0e7d9",
+                "code": "e642718f4488b6b0a1cc3c6501042cde998ed8e5",
+                "maintenance": "82f52964c1ddca80ecd5ef9fe5c849097483f83ff3ea586b2a10627cc692928b"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "9ba7164e1171eb953be1d214f555438a",
+    "identity": "github:1345581688:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345581688:root",
+            "repository": "QinpanWan/dsh-doc-quick",
+            "path": "",
+            "revision": "89740fc6509f852c710c34f0cf290cbf45389272",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ae23dc606a2f6f42ba4f515da61a64287643afa09505f1b228b5782f8fee7062",
+                "code": "89740fc6509f852c710c34f0cf290cbf45389272",
+                "maintenance": "29570c186fbee4632c18bd512f55f1938ffefee6e3447adb67bf9292c202371a"
+            }
+        }
+    }
+}

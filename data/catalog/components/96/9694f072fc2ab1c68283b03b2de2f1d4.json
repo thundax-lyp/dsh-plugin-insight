@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9694f072fc2ab1c68283b03b2de2f1d4",
+    "identity": "github:1339045665:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339045665:root",
+            "repository": "naodeng/dsh-qa",
+            "path": "",
+            "revision": "5e9453fd8a8bac532c407d33acea5be0b6f2d04b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "34176ba7fd7e567198cfa096fa65a4aae74f52abe82c91781831436b451c59be",
+                "code": "5e9453fd8a8bac532c407d33acea5be0b6f2d04b",
+                "maintenance": "7abdd1f279792275942c8d1c33295a309b6b77ce2f0c212ffbe06fd6a83b91b2"
+            }
+        }
+    }
+}

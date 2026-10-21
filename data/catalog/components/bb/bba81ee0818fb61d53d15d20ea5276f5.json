@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bba81ee0818fb61d53d15d20ea5276f5",
+    "identity": "github:1407528633:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407528633:root",
+            "repository": "Deanyu148/dsh-import-newapi",
+            "path": "",
+            "revision": "52d722ca95fd1ae576004aa1bd80c540c8fef7ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "22800ecebbbf117549254b1a3e4e0e364e466758fe6ba1ba7ab7372df6fd6ad1",
+                "code": "52d722ca95fd1ae576004aa1bd80c540c8fef7ea",
+                "maintenance": "00242a0f78e5cbde776a2065401f75ea785ca3adab920930728e9782299dc16a"
+            }
+        }
+    }
+}

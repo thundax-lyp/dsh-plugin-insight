@@ -1,0 +1,465 @@
+{
+    "schema_version": 3,
+    "id": "b9f11c480442ad3539c75f93e25986ea",
+    "identity": "github:1335047324:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335047324:root",
+            "repository_id": 1335047324,
+            "component_id": "root",
+            "repository": "2672243194/dsh-read-url",
+            "path": "",
+            "aliases": [],
+            "name": "URL 正文阅读器",
+            "entry_type": "plugin",
+            "technical_category": "context-search",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "25d57ed11a85fa382e28ee910384828ce7d034e8c802916649cae6d1c445dee1",
+                "code": "57d9316770af0d12d932c616c2bf22386d0314dc",
+                "maintenance": "e76e59cf6e4de3de25f85d980bff294ba0de286811683914c91a5c14542307c7"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1335047324-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:11:01.497Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-10-21-01-github-1335047324-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-21T02:11:01.497Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1335047324-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2672243194/dsh-read-url/blob/57d9316770af0d12d932c616c2bf22386d0314dc/README.md",
+                    "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+                    "captured_at": "2026-10-21T02:11:01.497Z",
+                    "summary": "读取网页、JSON 与订阅源，清理正文并提供分页续读和批量读取。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/2672243194--dsh-read-url/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1335047324-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2672243194/dsh-read-url/blob/57d9316770af0d12d932c616c2bf22386d0314dc/index.js",
+                    "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+                    "captured_at": "2026-10-21T02:11:01.497Z",
+                    "summary": "核查 index.js、spa.js、proxy-fallback.js、package.json；优先通过 ctx.web.fetch 获取已解码 html/text；只在服务缺失或 WEB_PROVIDER_UNAVAILABLE 时降级。正文提取、编码处理、分页串联与会话缓存共用 fetchResource；显式直连来源在跳转链持续限制 origin。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/2672243194--dsh-read-url/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查抓取路由、正文工具与SPA/代理模块；未对真实网站运行，未全覆盖手写HTML规则。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "研究者和开发者从文档、文章或 API 提取适量内容，交付保留来源及续读位置的正文；已能返回完整正文的宿主 web_fetch 是首选对照。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "优先通过 ctx.web.fetch 获取已解码 html/text；只在服务缺失或 WEB_PROVIDER_UNAVAILABLE 时降级。正文提取、编码处理、分页串联与会话缓存共用 fetchResource；显式直连来源在跳转链持续限制 origin。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查抓取路由、正文工具与SPA/代理模块；未对真实网站运行，未全覆盖手写HTML规则。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "版本1.9.3，ESM主入口，Node>=20；README 的历史比较与作者网络测量只作作者报告。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次主要为网络与可选浏览器配置；持续成本包含分页额外请求、缓存过期和抽取误差的人工核对。节省token比例未在本轮实测。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已有抓取结果噪声多、常需中文编码和续读的场景先对照使用；答案依赖表格或动态页面时核对原文与截断标记。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可提高有限上下文下的资料密度，但密度不等于证据完整；收益需以相同问题的合格回答比较。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "fetchResource 集中保持路由边界和共享 AbortSignal，值得借鉴；大体量手写 HTML提取规则增加维护负担，复用需保留异常网页样本回归。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对直接把整页传给模型，增量是内容类型归一、正文清理、按段落截断和可续读的组合。index.js:358-409 保留 provider 的 HTTP/策略错误，减少降级路径绕过上游规则；这比仅比较输出字符数更值得复用。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "压缩输出可能把关键表格行、导航或分页上下文一起丢掉。作者旧版竞品表明确不适用于新 DeepSeek Fetch provider，不能据其推出当前优势；缓存、清理和额外分页也会影响新鲜度与耗时。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：把被省略块和分页来源摘要随续读游标返回，可使研究任务按问题主动补读，而不是一味压缩。依据是已有 charsStart/returned 与来源截断标记，但正确性仍依赖抽取召回；需付出少量元数据 token。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335047324:root",
+                            "area": "code",
+                            "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:01.497Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:11:01.497Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+                "reviewed_at": "2026-10-21T02:11:01.497Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335047324:root",
+                        "area": "code",
+                        "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：正文提取和分页已有先例，增量是DSH seam适配。 mechanism：共享路由和策略错误保留明确约束回退行为。 transferability：可迁移至有相同响应契约的抓取系统，网页规则有维护成本。 simplification：类型归一与续读减少模型侧处理，质量未实测。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：省去手工清理和逐页抓取，研究复核责任不变。 delivery：输出可续读正文和元数据，较整页更易使用。 reach：无密钥核心降低使用门槛，动态页面仍有条件。 economics：预期减少冗余token，尚无同质量单位成本数据。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1335047324-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "适合抓取结果噪声多、常需中文编码和续读的资料阅读，先与原生抓取对照；表格、动态页和关键事实回读原文，尚未进行真实宿主验证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 30,
+                        "rationale": "文档和网页资料读取是高频任务，保留来源及续读位置有明确交付用途。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "正文清理、编码归一和有界续读形成可解释组合，原生抓取已够用时增益有限。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码支持统一fetchResource与provider错误保留，未对真实网站或全部HTML规则运行验证。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "手写抽取规则、分页请求和可选浏览器增加维护与核对成本，节省token未实测。"
+                    }
+                },
+                "score": 72,
+                "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+                "reviewed_at": "2026-10-21T09:16:52.633Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1335047324-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335047324:root",
+                        "area": "code",
+                        "fingerprint": "57d9316770af0d12d932c616c2bf22386d0314dc"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335047324:root",
+            "repository": "2672243194/dsh-read-url",
+            "path": "",
+            "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+            "fingerprints": {
+                "directory": "25d57ed11a85fa382e28ee910384828ce7d034e8c802916649cae6d1c445dee1",
+                "code": "57d9316770af0d12d932c616c2bf22386d0314dc",
+                "maintenance": "e76e59cf6e4de3de25f85d980bff294ba0de286811683914c91a5c14542307c7"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "ec1b979071e99b90144701eb5a008525af30df637e23fdf368ecf6081d63fa3e"
+        },
+        "publication.metadata": "data/plugins/2672243194--dsh-read-url/META.json",
+        "publication.summaries": {
+            "text": "读取网页、JSON 与订阅源，清理正文并提供分页续读和批量读取。",
+            "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+            "source_url": "https://github.com/2672243194/dsh-read-url/blob/57d9316770af0d12d932c616c2bf22386d0314dc/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+            "items": {
+                "模型工具": "read_url、read_url_batch、read_url_links、read_url_site提供正文、续读与批量读取。"
+            }
+        },
+        "publication.advice": {
+            "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+            "text": "适合已有抓取结果噪声多、常需中文编码和续读的场景先对照使用；答案依赖表格或动态页面时核对原文与截断标记。"
+        },
+        "registry": "data/plugins/2672243194--dsh-read-url",
+        "reports": "# URL 正文阅读器\n\n> 读取网页、JSON 与订阅源，清理正文并提供分页续读和批量读取。\n\n## 使用建议\n\n适合已有抓取结果噪声多、常需中文编码和续读的场景先对照使用；答案依赖表格或动态页面时核对原文与截断标记。\n\n核查状态：源码支持本文所述机制与有限集成贡献；效果、宿主兼容和独立采用未验证。未来设计假设仅为推演，未实现、未验证。 只执行研究工程的统计/装配与结构验证，未安装插件、运行目标代码/测试或做真实宿主验收。\n\n- **用途**：研究者和开发者从文档、文章或 API 提取适量内容，交付保留来源及续读位置的正文；已能返回完整正文的宿主 web_fetch 是首选对照。\n- **亮点**：相对直接把整页传给模型，增量是内容类型归一、正文清理、按段落截断和可续读的组合。index.js:358-409 保留 provider 的 HTTP/策略错误，减少降级路径绕过上游规则；这比仅比较输出字符数更值得复用。\n- **思考**：压缩输出可能把关键表格行、导航或分页上下文一起丢掉。作者旧版竞品表明确不适用于新 DeepSeek Fetch provider，不能据其推出当前优势；缓存、清理和额外分页也会影响新鲜度与耗时。\n- **建议**：适合已有抓取结果噪声多、常需中文编码和续读的场景先对照使用；答案依赖表格或动态页面时核对原文与截断标记。\n\n## 能力与限制\n\n对照当前宿主提供方与简单 fetch/正文提取；未采用作者旧竞品表作为当前运行证据。\n\n优先通过 ctx.web.fetch 获取已解码 html/text；只在服务缺失或 WEB_PROVIDER_UNAVAILABLE 时降级。正文提取、编码处理、分页串联与会话缓存共用 fetchResource；显式直连来源在跳转链持续限制 origin。\n\n\nNode >=20；核心无 npm runtime依赖。ctx.web 可用性决定提供方内容；SPA/browser和代理回退的环境另有条件，不能把核心零依赖等同所有模式无需浏览器。显式直连配置需谨慎限定 origin。\n\n模型调用 read_url/批量/链接/站点工具→选择 seam 或受限直连→解码和正文抽取→有限分页→截断返回；不足时按游标续读。错误保留 HTTP/provider 失败；插件 effect 清理会话缓存。\n\n首次主要为网络与可选浏览器配置；持续成本包含分页额外请求、缓存过期和抽取误差的人工核对。节省token比例未在本轮实测。\n\n可提高有限上下文下的资料密度，但密度不等于证据完整；收益需以相同问题的合格回答比较。\n\n## 能力清单\n\n- **模型工具**：read_url、read_url_batch、read_url_links、read_url_site提供正文、续读与批量读取。\n\n## 工程分析\n\nfetchResource 集中保持路由边界和共享 AbortSignal，值得借鉴；大体量手写 HTML提取规则增加维护负担，复用需保留异常网页样本回归。\n\n版本1.9.3，ESM主入口，Node>=20；README 的历史比较与作者网络测量只作作者报告。\n\n固定源码依据：[index.js L358–409](https://github.com/2672243194/dsh-read-url/blob/57d9316770af0d12d932c616c2bf22386d0314dc/index.js#L358-L409)；[index.js L2680–2741](https://github.com/2672243194/dsh-read-url/blob/57d9316770af0d12d932c616c2bf22386d0314dc/index.js#L2680-L2741)。上述贡献与关键质疑均限定于这些固定源码，不把测试文件存在当运行通过。\n\n## 未来设计假设（未验证）\n\n待验证假设：把被省略块和分页来源摘要随续读游标返回，可使研究任务按问题主动补读，而不是一味压缩。依据是已有 charsStart/returned 与来源截断标记，但正确性仍依赖抽取召回；需付出少量元数据 token。\n\n最小验证与否定条件：固定 HTML文档、长表、GBK页面、RSS 和 provider text 各一组问题，对照原生 web_fetch；记录答案所需事实召回、输出token、请求数和总耗时。若短输出提高但关键事实召回下降，则不成立“同质量省token”。\n\n## 核查说明\n\n- 版本依据：仓库：[2672243194/dsh-read-url](https://github.com/2672243194/dsh-read-url)；固定提交：[57d93167](https://github.com/2672243194/dsh-read-url/tree/57d9316770af0d12d932c616c2bf22386d0314dc)；版本号：1.9.3；版本日期：2026-10-19（固定提交日期，北京时间，非包发布日期）。\n- 已检查与未覆盖范围：核查抓取路由、正文工具与SPA/代理模块；未对真实网站运行，未全覆盖手写HTML规则。\n- 证据限制：作者功能摘要来自固定版本README；未核实独立用户采用、同条件效果或端到端收益。版本、证据原文与inventory绑定保存在本项JSON；GitHub/npm统计仅作背景，不构成采用证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；版本号：1.9.3；版本日期：2026-10-19（固定提交日期，北京时间，非包发布日期）；组件：根；内容摘要：43f4e9eb38089365a0dbb7fd8d64a2ef3b5e29246eabcfcbd273a15465bc198b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 1567 | — | — | 32828 |\n| .mjs | source | 17 | 4955 | 4491 | 559 | — |\n| .js | source | 3 | 3140 | 1542 | 1536 | — |\n\n排除 0 项；解析错误 0 项。统计为固定Git范围，源码抽读不冒充全面审计；JS/TS与Markdown分别计量。默认排除为启发式，不能从LOC推算原创量或工时。\n\n",
+        "metadata": {
+            "repository": "2672243194/dsh-read-url",
+            "repository_id": 1335047324,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 22,
+            "pushed_at": "2026-10-19T08:21:29Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2672243194%2Fdsh-read-url%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:14776C:21FDD2:6AD84A19 and timestamp 2026-10-21 05:14:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2672243194%2Fdsh-read-url%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:144524:21D4CF:6AD84A19 and timestamp 2026-10-21 05:14:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2672243194%2Fdsh-read-url%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14CDC4:226A46:6AD84A19 and timestamp 2026-10-21 05:14:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2672243194%2Fdsh-read-url%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:1413B4:21B632:6AD84A1A and timestamp 2026-10-21 05:14:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2672243194%2Fdsh-read-url%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:3E0DB6:142BE3:21CCCC:6AD84A1A and timestamp 2026-10-21 05:14:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-read-url",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 2642,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-read-url",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-19T14:31:25.643Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-read-url",
+                    "error": null,
+                    "latest_version": "1.9.3",
+                    "latest_published_at": "2026-10-19T08:23:47.394Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+                "current_revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1335047324:root",
+            "repository": "2672243194/dsh-read-url",
+            "path": "",
+            "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "25d57ed11a85fa382e28ee910384828ce7d034e8c802916649cae6d1c445dee1",
+                "code": "57d9316770af0d12d932c616c2bf22386d0314dc",
+                "maintenance": "e76e59cf6e4de3de25f85d980bff294ba0de286811683914c91a5c14542307c7"
+            }
+        }
+    }
+}

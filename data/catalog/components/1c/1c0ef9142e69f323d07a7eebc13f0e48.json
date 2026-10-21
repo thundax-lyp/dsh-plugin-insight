@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c0ef9142e69f323d07a7eebc13f0e48",
+    "identity": "github:1336456954:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336456954:root",
+            "repository": "omicverse/dsh-omicos",
+            "path": "",
+            "revision": "3b4d3fcb68996440ca62be211172154032b0c64c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6c8cc04ca90502793fdeda7fe44268561fbdce322d9b885525230f6936fe659b",
+                "code": "3b4d3fcb68996440ca62be211172154032b0c64c",
+                "maintenance": "7523e90fb0843513013c7e9a00c2f203270cc41fd29814e0a0f6635314577f38"
+            }
+        }
+    }
+}

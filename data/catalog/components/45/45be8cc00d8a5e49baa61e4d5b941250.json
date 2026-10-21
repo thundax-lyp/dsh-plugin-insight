@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "45be8cc00d8a5e49baa61e4d5b941250",
+    "identity": "github:1383566222:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1383566222:root",
+            "repository": "CJYLZS/dsh-browser",
+            "path": "",
+            "revision": "e804195f2e83f277afb5f7dc01695536e73b9e02",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6b3bb1a5175a42c7aecd1614a20f518167625ecc68686608e7ec2e186a43d449",
+                "code": "e804195f2e83f277afb5f7dc01695536e73b9e02",
+                "maintenance": "59be1b7de95254847878fd52187002b9ef526f8f841f6b448e2c4df30ee96f7b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a895ed1db05cddb612d9cd8e19763be2",
+    "identity": "github:1362680291:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362680291:root",
+            "repository": "Jumqyc/dsh-wsl-gpufix",
+            "path": "",
+            "revision": "46febbbd649574533e6e94db13bb2b55c0566352",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "478d0d7991ec65d21f09a13258961dae1144045ac77aabca8eee406c0b66ffd2",
+                "code": "46febbbd649574533e6e94db13bb2b55c0566352",
+                "maintenance": "249ca20928a331751c0a7c624d32840ddfc147dff861df7f265ca4cab236774e"
+            }
+        }
+    }
+}

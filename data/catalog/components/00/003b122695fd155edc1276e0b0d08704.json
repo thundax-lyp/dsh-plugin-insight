@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "003b122695fd155edc1276e0b0d08704",
+    "identity": "github:1343948786:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343948786:root",
+            "repository": "FAVKTOXIC/dsh-theme-liquid-glass",
+            "path": "",
+            "revision": "2d10a5ff53f08429e0d9e6582c89ee9e9fa1099d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "38b6d356cf3fc24eb85a425a70ea12bb7c8f1f61a7bde60470ae27a2afc53be0",
+                "code": "2d10a5ff53f08429e0d9e6582c89ee9e9fa1099d",
+                "maintenance": "f297fdd1df8902b10d1fd37b229ecd9807f77f66c5423739177b646397330d61"
+            }
+        }
+    }
+}

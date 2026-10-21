@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "952a3c04a023f2124c89fdded87b5dcb",
+    "identity": "github:1333714112:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333714112:root",
+            "repository": "LaoYueHanNi/dsh-token-usage",
+            "path": "",
+            "revision": "7cb25c72fc0c47b7e3a533ec31be996ba6b120ee",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "806e0091facbc53eb4b89ce1da5829c4b6f1194a3b9f525582f37917ec676748",
+                "code": "7cb25c72fc0c47b7e3a533ec31be996ba6b120ee",
+                "maintenance": "5e96a3dac53ad87c355094626d23355f660643657fd62ffad9a2f3d09fa828be"
+            }
+        }
+    }
+}

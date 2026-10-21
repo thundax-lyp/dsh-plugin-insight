@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d5a3c961eb95fad15c92ae00adf6e469",
+    "identity": "github:1408790612:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408790612:root",
+            "repository": "PerryLink/dsh-fmea-table-check",
+            "path": "",
+            "revision": "ab0ba05e62d2f0491ea89c32b418627c709f75fe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "555e6876e443a61e7c18a65b54264c46c3b33d0149574921c42a180e7083131d",
+                "code": "ab0ba05e62d2f0491ea89c32b418627c709f75fe",
+                "maintenance": "b8776d79d69d653d6c30f7c51cd3b73d37d560a1fcb5e33ce7b4e3cd990cf994"
+            }
+        }
+    }
+}

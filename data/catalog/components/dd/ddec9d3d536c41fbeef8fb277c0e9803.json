@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ddec9d3d536c41fbeef8fb277c0e9803",
+    "identity": "github:1343838043:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343838043:root",
+            "repository": "imkingjh999/dsh-deepsea",
+            "path": "",
+            "revision": "397e68db4cb67bbe6f01562bed667dcdbb615644",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "25fcdfc52f53e40356b01210b65d2f7dea2b580831c30334df240718d3dc9232",
+                "code": "397e68db4cb67bbe6f01562bed667dcdbb615644",
+                "maintenance": "a998def8b0a3effb0c652a3d8011c3702f68f46cfde67ddb2be299d7c22b04fd"
+            }
+        }
+    }
+}

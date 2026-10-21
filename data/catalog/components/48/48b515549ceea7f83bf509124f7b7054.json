@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "48b515549ceea7f83bf509124f7b7054",
+    "identity": "github:1335165426:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335165426:root",
+            "repository": "Isilsolme/dsh-splash-launcher",
+            "path": "",
+            "revision": "d3a0c4a9d7525ca1d8edc3e2280c7d86f4501101",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e59c5027b494277b439a8a6ba1db72855f100cab9d5e162d295229353b76dc89",
+                "code": "d3a0c4a9d7525ca1d8edc3e2280c7d86f4501101",
+                "maintenance": "440b50290cadc9a5eb9ae6c158b3a786582ab5dcd05d438cd69d37b2611e7bcf"
+            }
+        }
+    }
+}

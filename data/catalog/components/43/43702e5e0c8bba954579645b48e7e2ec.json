@@ -1,0 +1,449 @@
+{
+    "schema_version": 3,
+    "id": "43702e5e0c8bba954579645b48e7e2ec",
+    "identity": "github:1340492424:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1340492424:root",
+            "repository_id": 1340492424,
+            "component_id": "root",
+            "repository": "AKS1st/dock-markdown",
+            "path": "",
+            "aliases": [],
+            "name": "dock-markdown",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "2c2334d69874ce1966cf8536b21f3897dfa732c7bac122fa3a89af4a96c3e1eb",
+                "code": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                "maintenance": "3c435994189e924eccbe87bd7cc9c189e9b5de8f2bf6b29fcf57794952524fe4"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1340492424-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:37:31.253Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1340492424-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/README.md",
+                    "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                    "captured_at": "2026-10-21T05:37:31.253Z",
+                    "summary": "将Markdown净化渲染、目录与本地资源解析接入Dock。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-markdown/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1340492424-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts",
+                    "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                    "captured_at": "2026-10-21T05:37:31.253Z",
+                    "summary": "核查 src/index.ts、src/client/index.ts、src/client/MarkdownView.tsx；MarkdownView调用dock-editor的fs.read，以marked生成HTML再DOMPurify.sanitize；/resolve按文档目录、Git根、会话根查本地资源，图片内联data URL，链接workbench打开。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-markdown/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "阅读工作区说明文档并跳转相关文件，必要时切换编辑器。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "MarkdownView调用dock-editor的fs.read，以marked生成HTML再DOMPurify.sanitize；/resolve按文档目录、Git根、会话根查本地资源，图片内联data URL，链接workbench打开。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "三个扩展及git解析维护，全文HTML和base64图片增加内存，无模型token调用。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合有限Markdown阅读；先确认editor依赖、资源来源与截断提示。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可降低文档跳转成本，未有阅读效率与安全独立验证。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "净化在渲染后执行、引用异步更新和目录slug处理有实质实现；资源读取权限须单独说明。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把文档目录、锚点、资源优先级和编辑切换整合成阅读工作流；渲染与净化归上游库，不是新Markdown方言。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "文件读取实际依赖另一个插件路由，workbench/files注入成功不能证明文档可读。资源解析有意不限工作区，读取外部绝对资源是功能边界；继承editor截断意味着长文可能不完整，不能当全文审阅。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：为每个资源展示最终来源根并对缺依赖/截断显式告警，可减少错误阅读。用同名资源多根、缺editor、大文档和失效链接核定位正确率及用户误读。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492424:root",
+                            "area": "code",
+                            "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:31.253Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:37:31.253Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                "reviewed_at": "2026-10-21T05:37:31.253Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492424:root",
+                        "area": "code",
+                        "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：基于既有Markdown工具。 mechanism=8：本地引用与宿主跳转集成。 transferability=10：阅读接线可复用但依赖多。 simplification=4：省跳转但故障链更长。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 0
+                    },
+                    "rationale": "workflow=18：阅读导航闭环。 delivery=8：完整性和依赖缺失待验。 reach=10：Dock文档读者适用。 economics=0：无时间与维护对照。",
+                    "basis": "interpretation",
+                    "score": 36,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492424-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "Dock用户可在有限长度Markdown试阅读跳转；先核editor依赖和外部资源，长文会继承截断，不能作全文审阅。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "读工作区说明及关联文件需求明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "净化HTML与本地资源桥接减少文档切换。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核marked/DOMPurify及资源解析，依赖editor路由未真实验收。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需三扩展与Git解析维护，HTML/图片内存和外部读取需核。"
+                    }
+                },
+                "score": 59,
+                "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1340492424-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492424:root",
+                        "area": "code",
+                        "fingerprint": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1340492424:root",
+            "repository": "AKS1st/dock-markdown",
+            "path": "",
+            "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+            "fingerprints": {
+                "directory": "2c2334d69874ce1966cf8536b21f3897dfa732c7bac122fa3a89af4a96c3e1eb",
+                "code": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                "maintenance": "3c435994189e924eccbe87bd7cc9c189e9b5de8f2bf6b29fcf57794952524fe4"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "3879d3e4c4e3f0ce487f585fd7e32393f53d98da44187c00ea139225f5380597"
+        },
+        "publication.metadata": "data/plugins/aks1st--dock-markdown/META.json",
+        "publication.summaries": {
+            "text": "将Markdown净化渲染、目录与本地资源解析接入Dock。",
+            "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+            "source_url": "https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+            "items": {
+                "界面": "Markdown预览、目录与编辑切换",
+                "Host 路由": "/dock-markdown/resolve资源查找"
+            }
+        },
+        "publication.advice": {
+            "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+            "text": "适合有限Markdown阅读；先确认editor依赖、资源来源与截断提示。"
+        },
+        "registry": "data/plugins/aks1st--dock-markdown",
+        "reports": "# dock-markdown\n\n> 将Markdown净化渲染、目录与本地资源解析接入Dock。\n\n## 使用建议\n\n适合有限Markdown阅读；先确认editor依赖、资源来源与截断提示。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：阅读工作区说明文档并跳转相关文件，必要时切换编辑器。\n- **亮点**：把文档目录、锚点、资源优先级和编辑切换整合成阅读工作流；渲染与净化归上游库，不是新Markdown方言。\n- **思考**：文件读取实际依赖另一个插件路由，workbench/files注入成功不能证明文档可读。资源解析有意不限工作区，读取外部绝对资源是功能边界；继承editor截断意味着长文可能不完整，不能当全文审阅。\n- **建议**：未验证假设：为每个资源展示最终来源根并对缺依赖/截断显式告警，可减少错误阅读。用同名资源多根、缺editor、大文档和失效链接核定位正确率及用户误读。\n\n## 场景与替代办法\n\n参照marked、DOMPurify和IDE Markdown预览；增量是本地引用查找与Dock跳转。\n\n## 能力清单\n\n- **界面**：Markdown预览、目录与编辑切换\n- **Host 路由**：/dock-markdown/resolve资源查找\n\n## 依赖与流程\n\nMarkdownView调用dock-editor的fs.read，以marked生成HTML再DOMPurify.sanitize；/resolve按文档目录、Git根、会话根查本地资源，图片内联data URL，链接workbench打开。\n\nDock/files、额外dock-editor读路由、宿主webServer/sessions/webRuntime和git可执行程序；marked/DOMPurify打包。\n\n选择md→读取有限文本→净化HTML→异步解析相对图片/链接→目录导航或切编辑；mdx扩展不代表执行React。\n\n## 成本与效果\n\n三个扩展及git解析维护，全文HTML和base64图片增加内存，无模型token调用。\n\n可降低文档跳转成本，未有阅读效率与安全独立验证。\n\n## 核心贡献\n\n把文档目录、锚点、资源优先级和编辑切换整合成阅读工作流；渲染与净化归上游库，不是新Markdown方言。\n\n## 关键质疑\n\n文件读取实际依赖另一个插件路由，workbench/files注入成功不能证明文档可读。资源解析有意不限工作区，读取外部绝对资源是功能边界；继承editor截断意味着长文可能不完整，不能当全文审阅。\n\n## 工程亮点\n\n净化在渲染后执行、引用异步更新和目录slug处理有实质实现；资源读取权限须单独说明。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/index.ts)、[src/client/index.ts](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/client/index.ts)、[src/client/MarkdownView.tsx](https://github.com/AKS1st/dock-markdown/blob/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54/src/client/MarkdownView.tsx)。\n\n## 未来设计假设（未验证）\n\n未验证假设：为每个资源展示最终来源根并对缺依赖/截断显式告警，可减少错误阅读。用同名资源多根、缺editor、大文档和失效链接核定位正确率及用户误读。\n\n隔离资料核净化样例、相对引用优先级、长文提示、缺依赖及链接打开目标；不把DOMPurify存在等同完整审计。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：da8358ce874f6c8643086fd514b81c1c98d1906b1276bb8251ec7b964245582b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 4725 | 4179 | 565 | — |\n| .md | source | 2 | 128 | — | — | 1374 |\n| .ts | source | 5 | 849 | 495 | 281 | — |\n| .tsx | source | 1 | 501 | 398 | 70 | — |\n| .mjs | source | 1 | 52 | 38 | 12 | — |\n\n排除 6 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dock-markdown](https://github.com/AKS1st/dock-markdown)\n- **版本号**：0.1.2（[固定提交 64cbfd89](https://github.com/AKS1st/dock-markdown/tree/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/client/index.ts、src/client/MarkdownView.tsx、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：隔离资料核净化样例、相对引用优先级、长文提示、缺依赖及链接打开目标；不把DOMPurify存在等同完整审计。\n",
+        "metadata": {
+            "repository": "AKS1st/dock-markdown",
+            "repository_id": 1340492424,
+            "captured_at": "2026-10-21T05:33:35.485Z",
+            "window_start": "2026-09-21T05:33:35.485Z",
+            "stars": 3,
+            "pushed_at": "2026-09-11T08:05:48Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D698:26CA49:54B83B:5AC188:6AD84EB1 and timestamp 2026-10-21 05:33:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D76C:10E8BA:5786B6:5D91E5:6AD84EB2 and timestamp 2026-10-21 05:33:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A35.485Z..2026-10-21T05%3A33%3A35.485Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D84A:4F1F4:5106AA:570F7A:6AD84EB3 and timestamp 2026-10-21 05:33:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A35.485Z..2026-10-21T05%3A33%3A35.485Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D944:1112D2:5022FB:562CCF:6AD84EB4 and timestamp 2026-10-21 05:33:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-markdown%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A35.485Z..2026-10-21T05%3A33%3A35.485Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DAC8:110389:553F29:5B480D:6AD84EB5 and timestamp 2026-10-21 05:33:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dock-markdown",
+                "captured_at": "2026-10-21T05:33:41.614Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 900,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-markdown",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-23T06:01:22.424Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dock-markdown",
+                    "error": null,
+                    "latest_version": "0.1.2",
+                    "latest_published_at": "2026-09-11T08:18:34.260Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1340492424:root",
+            "repository": "AKS1st/dock-markdown",
+            "path": "",
+            "revision": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2c2334d69874ce1966cf8536b21f3897dfa732c7bac122fa3a89af4a96c3e1eb",
+                "code": "64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54",
+                "maintenance": "3c435994189e924eccbe87bd7cc9c189e9b5de8f2bf6b29fcf57794952524fe4"
+            }
+        }
+    }
+}

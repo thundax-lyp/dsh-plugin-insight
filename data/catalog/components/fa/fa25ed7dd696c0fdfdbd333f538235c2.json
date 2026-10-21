@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fa25ed7dd696c0fdfdbd333f538235c2",
+    "identity": "github:1334954105:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334954105:root",
+            "repository": "SongMiao-tech/dsh-prompt-optimizer",
+            "path": "",
+            "revision": "4e304b82f5fbf508346cd460c349f730f3b4ca6f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4faaed472aafd280e75c3f19f0b60b950d95fb538285c0b9093305c778a2d4cd",
+                "code": "4e304b82f5fbf508346cd460c349f730f3b4ca6f",
+                "maintenance": "a861ba9910f4cc19ba1296903139d94edf3ebea5aeaa325c1f2dc7ecb478b679"
+            }
+        }
+    }
+}

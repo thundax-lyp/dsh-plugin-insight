@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c222367ad3e87d025483ba3f9a3e1af0",
+    "identity": "github:1341422810:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341422810:root",
+            "repository": "lakabuji-arch/dsh-model-accordion",
+            "path": "",
+            "revision": "e417fab5b186f34bb56fa822208f39d97640a178",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5f58965713154c6ad15aa5e87876881ad02d2b33b01289a8e38b40d92e9581eb",
+                "code": "e417fab5b186f34bb56fa822208f39d97640a178",
+                "maintenance": "0410f5048e7562a58ce022ae8c1c8bdc43165fa8bb531ab602171ee634454e88"
+            }
+        }
+    }
+}

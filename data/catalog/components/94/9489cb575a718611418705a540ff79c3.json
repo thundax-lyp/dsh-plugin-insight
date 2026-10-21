@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "9489cb575a718611418705a540ff79c3",
+    "identity": "github:1333336629:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333336629:root",
+            "repository": "MAXeaglet/dsh-bash-terminal",
+            "path": "",
+            "revision": "1b339c277fefaae18794623a07c051c3fc76fd5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "141aa364f78cc1d4a10b24e293956331845d94cd25fae858bbe782b4984731fd",
+                "code": "1b339c277fefaae18794623a07c051c3fc76fd5b",
+                "maintenance": "a122a13c8698c867002b9db87c1075cfdd31b9b77ac94e43d834fe8bcf0815c6"
+            }
+        }
+    }
+}

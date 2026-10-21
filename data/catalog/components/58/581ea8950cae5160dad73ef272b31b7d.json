@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "581ea8950cae5160dad73ef272b31b7d",
+    "identity": "github:1379332605:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379332605:root",
+            "repository": "SugarFatFree/dsh-agent-extension",
+            "path": "",
+            "revision": "3dd07e4dff4df10c64f300ac8785f8cdcbd67211",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e3c67afc07af59d22cba4a2fe1ec0804adeb17a96c71915abbc99d8f9bfe4003",
+                "code": "3dd07e4dff4df10c64f300ac8785f8cdcbd67211",
+                "maintenance": "7e093172e53ae088b42842681a8ee5f35f33ec2eb470ef27d2f63db68bcc26a8"
+            }
+        }
+    }
+}

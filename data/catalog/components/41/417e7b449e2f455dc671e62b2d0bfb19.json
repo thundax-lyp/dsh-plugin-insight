@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "417e7b449e2f455dc671e62b2d0bfb19",
+    "identity": "github:113965016:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:113965016:root",
+            "repository": "Molunerfinn/PicGo",
+            "path": "",
+            "revision": "25104f65c97e58799486c8c47317367f6e0d1913",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "dfbf9e9350a6b50c4110cc201131f9895e8eeaab186e678b0de010276d34476c",
+                "code": "25104f65c97e58799486c8c47317367f6e0d1913",
+                "maintenance": "11f41690732bbc5c138a3452b8284bc0c8995461ba1199ff97a19c8d769046f8"
+            }
+        }
+    }
+}

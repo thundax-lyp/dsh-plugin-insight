@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8dda46034992b431f11c44e183eee018",
+    "identity": "github:1359039191:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359039191:root",
+            "repository": "john-walks-slow/dsh-zen",
+            "path": "",
+            "revision": "182474d707054e0643234a355e3b03710031f2c9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ea1c207c080b2dbd84d58dc738a2caef8806803a2b55c11543706b17e9736e91",
+                "code": "182474d707054e0643234a355e3b03710031f2c9",
+                "maintenance": "3524cd4d85e8a8e22a382cee8ec50d808dc87220155aa835c5fd3f4a7e8c0539"
+            }
+        }
+    }
+}

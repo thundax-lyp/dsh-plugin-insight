@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5bedc37b888e545ae7f78a6a97699c85",
+    "identity": "github:1378058148:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378058148:root",
+            "repository": "RrcoVer0/dsh-webnovel-writer",
+            "path": "",
+            "revision": "ade53fd9eecd68d257a43628ad4998d9a7ebe59a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d9ad3a41dfa76c03345350bc0de01a42124632afb9989b58b73247fcabcd1b47",
+                "code": "ade53fd9eecd68d257a43628ad4998d9a7ebe59a",
+                "maintenance": "32364177274871f4b146ed77f84e809d6dd377432d6e59c98686f31b683d986e"
+            }
+        }
+    }
+}

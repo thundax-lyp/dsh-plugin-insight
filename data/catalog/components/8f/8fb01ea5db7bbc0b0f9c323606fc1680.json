@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8fb01ea5db7bbc0b0f9c323606fc1680",
+    "identity": "github:1251230907:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1251230907:root",
+            "repository": "BillyChen123/qdd",
+            "path": "",
+            "revision": "f5d2c93c6c5067c0c71a3ce135234d594e64edbe",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3c478eb18489c8df603cba96fe41960164996ba61540035a5506c6ec999082f0",
+                "code": "f5d2c93c6c5067c0c71a3ce135234d594e64edbe",
+                "maintenance": "05d6f6d667054d3981a7386f02fd7119af7187c6dd1b24f5c86f3736912d3eaa"
+            }
+        }
+    }
+}

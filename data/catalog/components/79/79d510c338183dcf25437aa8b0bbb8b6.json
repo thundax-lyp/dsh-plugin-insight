@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "79d510c338183dcf25437aa8b0bbb8b6",
+    "identity": "github:1334434866:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334434866:root",
+            "repository": "limbo947/dsh-recall-plugin",
+            "path": "",
+            "revision": "8cc95f9e782b71fa5e50878eb21d2badf6233ac1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6cde6c6f58c6a50efec772fb7f09f90f663b12beea6ad12c7c7f544b3052d792",
+                "code": "8cc95f9e782b71fa5e50878eb21d2badf6233ac1",
+                "maintenance": "207e177aee89759f81b6ca451f426f3f0c1698d25256c5e52e075204bcfbcbc7"
+            }
+        }
+    }
+}

@@ -1,0 +1,458 @@
+{
+    "schema_version": 3,
+    "id": "6a098e4e93fbd7acfef54d62c6a30f6b",
+    "identity": "github:1404700411:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1404700411:root",
+            "repository_id": 1404700411,
+            "component_id": "root",
+            "repository": "962599627/agent-development-constraints",
+            "path": "",
+            "aliases": [],
+            "name": "agent-development-constraints",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f00f39e43c605ea56c417b34f13dda5e0ec1bbd32f2dd3976cf755c0964f7cd6",
+                "code": "fc9af918ac14f03d63bee299cab90862adbc8963",
+                "maintenance": "d971f2f067fe71e55d01a40ad15f22ac9008b5f0aee91b66aa83d0a51d3bcf0c"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1404700411-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:49:10.248Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1404700411-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/README.md",
+                    "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+                    "captured_at": "2026-10-21T03:49:10.248Z",
+                    "summary": "将开发教训整理为项目约束库，提供提炼、精简流程及DSH约束提示和查询工具。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/962599627--agent-development-constraints/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1404700411-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/index.mjs",
+                    "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+                    "captured_at": "2026-10-21T03:49:10.248Z",
+                    "summary": "核查 index.mjs、core/DISTILL.md、core/PRUNE.md、scripts/sanitize-check.sh、install.sh；DISTILL/PRUNE定义人工筛选与规则生命周期；index.mjs查找项目约束并在符合enter条件时每Agent注入一次brief，注册constraints及用量辅助工具；sanitize-check仅执行配置的脱敏正则检查。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/962599627--agent-development-constraints/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "反复遇到同类开发错误的团队希望将事故记录转成有触发、检查和证据的规则；合格结果是同类错误减少且规则维护负担可控。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "DISTILL/PRUNE定义人工筛选与规则生命周期；index.mjs查找项目约束并在符合enter条件时每Agent注入一次brief，注册constraints及用量辅助工具；sanitize-check仅执行配置的脱敏正则检查。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "同时包含项目安装脚本、hook/提炼文档与DSH入口，安装会修改项目AGENTS及约束目录；本轮只读，未执行这些脚本。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次裁剪规则与技术栈库，持续提炼、去重、维护检查及注入token有成本；作者收益与token声明未独立复现。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合有重复事故且愿意维护规则检查的团队先选少量规则试用。安装前审阅AGENTS修改与hook范围，不把提示注入当硬门禁，也不要直接照搬全部规则。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可把经验变成可追溯的维护资产，是否降低重复缺陷依赖规则质量与执行，不由文档数量证明。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "单一VERSION来源、四字段规则与分层精简可借鉴；runtime注入沿真实decision结构复制减少猜字段，但宿主消息契约仍需适配。探针落盘和跨会话用量读取应在部署说明中明确。 源码依据：[index.mjs](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/index.mjs)、[core/DISTILL.md](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/core/DISTILL.md)、[core/PRUNE.md](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/core/PRUNE.md)、[scripts/sanitize-check.sh](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/scripts/sanitize-check.sh)、[install.sh](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/install.sh)。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对无限增长开发日志，增量是用规则/触发/检查/证据四字段加精简流程组织经验，再用宿主上下文接线提醒模型。所谓self-evolving实际依赖人或Agent执行提炼，不是自动证明规则有效或全规则强制执行。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "“记录→规则→enforcement”闭环是否完整？通用约束主要是上下文注入，不能阻止违规则代码；确定性hook只覆盖脱敏规则。index顶部只读/无写注释与writeProbe和配置文件写入不一致，说明治理材料也需核查当前实现。无证据证明15条阈值或固定token节省普适。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由规则已有检查字段推导，可为每条规则绑定可执行检查与触发覆盖计数，按误报/漏报决定保留、降级或删除，提示仅承担解释。未验证假设是减少规则膨胀且提高实际拦截。以历史已知事故和新任务回放比较纯提示与检查绑定，若重复错误/维护时间不改善则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1404700411:root",
+                            "area": "code",
+                            "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:49:10.248Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:49:10.248Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+                "reviewed_at": "2026-10-21T03:49:10.248Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1404700411:root",
+                        "area": "code",
+                        "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty经验治理组织小档；mechanism规则生命周期与运行提醒组合半档；transferability跨项目四字段方法半档；simplification分层精简半档，未将自我叙述算验证。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow从事故到规则半档；delivery可检查规则资产小档；reach开发团队小档；economics复发成本改善未测小档。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1404700411-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "有重复事故且愿维护规则的团队可选少量试用；先审AGENTS写入和hook，通用约束靠提示、仅脱敏有确定检查。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "将反复事故转规则检查证据目标明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "四字段及DISTILL/PRUNE比无限开发日志便于治理。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "brief接线与sanitize hook可查，自进化和节token未独立验证。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "提炼去重和注入token有持续成本，需保护本地规则并核探针落盘。"
+                    }
+                },
+                "score": 65,
+                "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1404700411-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1404700411:root",
+                        "area": "code",
+                        "fingerprint": "fc9af918ac14f03d63bee299cab90862adbc8963"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1404700411:root",
+            "repository": "962599627/agent-development-constraints",
+            "path": "",
+            "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+            "fingerprints": {
+                "directory": "f00f39e43c605ea56c417b34f13dda5e0ec1bbd32f2dd3976cf755c0964f7cd6",
+                "code": "fc9af918ac14f03d63bee299cab90862adbc8963",
+                "maintenance": "d971f2f067fe71e55d01a40ad15f22ac9008b5f0aee91b66aa83d0a51d3bcf0c"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "00b5c76087d210fbf8e3b96d8aea75247ea8f9ec88123bb0de09c2f9964463b4"
+        },
+        "publication.metadata": "data/plugins/962599627--agent-development-constraints/META.json",
+        "publication.summaries": {
+            "text": "将开发教训整理为项目约束库，提供提炼、精简流程及DSH约束提示和查询工具。",
+            "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+            "source_url": "https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+            "items": {
+                "模型工具": "constraints查询规则及用量辅助工具。",
+                "事件监听": "pre-step在条件满足时注入项目brief。",
+                "界面": "约束与用量状态卡片。"
+            }
+        },
+        "publication.advice": {
+            "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+            "text": "适合有重复事故且愿意维护规则检查的团队先选少量规则试用。安装前审阅AGENTS修改与hook范围，不把提示注入当硬门禁，也不要直接照搬全部规则。"
+        },
+        "registry": "data/plugins/962599627--agent-development-constraints",
+        "reports": "# agent-development-constraints\n\n> 将开发教训整理为项目约束库，提供提炼、精简流程及DSH约束提示和查询工具。\n\n## 使用建议\n\n适合有重复事故且愿意维护规则检查的团队先选少量规则试用。安装前审阅AGENTS修改与hook范围，不把提示注入当硬门禁，也不要直接照搬全部规则。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：反复遇到同类开发错误的团队希望将事故记录转成有触发、检查和证据的规则；合格结果是同类错误减少且规则维护负担可控。\n- **亮点**：相对无限增长开发日志，增量是用规则/触发/检查/证据四字段加精简流程组织经验，再用宿主上下文接线提醒模型。所谓self-evolving实际依赖人或Agent执行提炼，不是自动证明规则有效或全规则强制执行。\n- **思考**：“记录→规则→enforcement”闭环是否完整？通用约束主要是上下文注入，不能阻止违规则代码；确定性hook只覆盖脱敏规则。index顶部只读/无写注释与writeProbe和配置文件写入不一致，说明治理材料也需核查当前实现。无证据证明15条阈值或固定token节省普适。\n- **建议**：由规则已有检查字段推导，可为每条规则绑定可执行检查与触发覆盖计数，按误报/漏报决定保留、降级或删除，提示仅承担解释。未验证假设是减少规则膨胀且提高实际拦截。以历史已知事故和新任务回放比较纯提示与检查绑定，若重复错误/维护时间不改善则否定。\n\n## 场景与替代办法\n\n反复遇到同类开发错误的团队希望将事故记录转成有触发、检查和证据的规则；合格结果是同类错误减少且规则维护负担可控。\n\nAGENTS.md和普通事故复盘都能存知识；插件补组织方法与会话提示，但需要证明比简单规则库更有效。\n\n## 能力清单\n\n- **模型工具**：constraints查询规则及用量辅助工具。\n- **事件监听**：pre-step在条件满足时注入项目brief。\n- **界面**：约束与用量状态卡片。\n\n## 依赖与流程\n\nDSH tools与pre-step decision契约、本地项目规则库；hook依赖Git/bash或PowerShell及正则配置，效果依赖真实事故证据与持续人工治理。\n\n完成任务后人工判断教训，按DISTILL筛选抽象并写检查，再PRUNE降级/合并；后续会话读brief/工具，确定性检查仅在已配置hook触发时执行。\n\n## 成本与效果\n\n首次裁剪规则与技术栈库，持续提炼、去重、维护检查及注入token有成本；作者收益与token声明未独立复现。\n\n可把经验变成可追溯的维护资产，是否降低重复缺陷依赖规则质量与执行，不由文档数量证明。\n\n## 核心贡献\n\n相对无限增长开发日志，增量是用规则/触发/检查/证据四字段加精简流程组织经验，再用宿主上下文接线提醒模型。所谓self-evolving实际依赖人或Agent执行提炼，不是自动证明规则有效或全规则强制执行。\n\n## 关键质疑\n\n“记录→规则→enforcement”闭环是否完整？通用约束主要是上下文注入，不能阻止违规则代码；确定性hook只覆盖脱敏规则。index顶部只读/无写注释与writeProbe和配置文件写入不一致，说明治理材料也需核查当前实现。无证据证明15条阈值或固定token节省普适。\n\n\n## 工程亮点\n\n单一VERSION来源、四字段规则与分层精简可借鉴；runtime注入沿真实decision结构复制减少猜字段，但宿主消息契约仍需适配。探针落盘和跨会话用量读取应在部署说明中明确。 源码依据：[index.mjs](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/index.mjs)、[core/DISTILL.md](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/core/DISTILL.md)、[core/PRUNE.md](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/core/PRUNE.md)、[scripts/sanitize-check.sh](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/scripts/sanitize-check.sh)、[install.sh](https://github.com/962599627/agent-development-constraints/blob/fc9af918ac14f03d63bee299cab90862adbc8963/install.sh)。\n\n## 未来设计假设（未验证）\n\n由规则已有检查字段推导，可为每条规则绑定可执行检查与触发覆盖计数，按误报/漏报决定保留、降级或删除，提示仅承担解释。未验证假设是减少规则膨胀且提高实际拦截。以历史已知事故和新任务回放比较纯提示与检查绑定，若重复错误/维护时间不改善则否定。\n\n挑选有明确反例的规则，比较普通AGENTS、仅brief、brief+可执行检查的重复错误率、误拦截与维护工时；检查安装重复运行是否保留本地规则。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：427fe5acf1d1f4082d48ba6338b49fc9cb2ec117c926bbcb975ba93866fecbb3。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 963 | 738 | 158 | — |\n| .md | source | 20 | 4107 | — | — | 42772 |\n| .md | example | 1 | 168 | — | — | 1460 |\n| .mjs | source | 1 | 1767 | 1178 | 503 | — |\n| .mjs | test | 1 | 893 | 600 | 223 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[962599627/agent-development-constraints](https://github.com/962599627/agent-development-constraints)\n- **版本号**：0.26.8（[固定提交 fc9af918](https://github.com/962599627/agent-development-constraints/tree/fc9af918ac14f03d63bee299cab90862adbc8963)）\n- **版本日期**：2026-10-05（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 index.mjs、core/DISTILL.md、core/PRUNE.md、scripts/sanitize-check.sh、install.sh 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：挑选有明确反例的规则，比较普通AGENTS、仅brief、brief+可执行检查的重复错误率、误拦截与维护工时；检查安装重复运行是否保留本地规则。\n",
+        "metadata": {
+            "repository": "962599627/agent-development-constraints",
+            "repository_id": 1404700411,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-05T12:01:30Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:592A:144149:220695:6AD84ABA and timestamp 2026-10-21 05:16:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:33975D:149F10:223C87:6AD84ABA and timestamp 2026-10-21 05:16:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:1E8271:149BB0:224A8E:6AD84ABA and timestamp 2026-10-21 05:16:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C7:2B28:15329C:23158B:6AD84ABA and timestamp 2026-10-21 05:16:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A962599627%2Fagent-development-constraints%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:159CCE:2357B4:6AD84ABA and timestamp 2026-10-21 05:16:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "agent-development-constraints",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/agent-development-constraints",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/agent-development-constraints",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+                "current_revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1404700411:root",
+            "repository": "962599627/agent-development-constraints",
+            "path": "",
+            "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f00f39e43c605ea56c417b34f13dda5e0ec1bbd32f2dd3976cf755c0964f7cd6",
+                "code": "fc9af918ac14f03d63bee299cab90862adbc8963",
+                "maintenance": "d971f2f067fe71e55d01a40ad15f22ac9008b5f0aee91b66aa83d0a51d3bcf0c"
+            }
+        }
+    }
+}

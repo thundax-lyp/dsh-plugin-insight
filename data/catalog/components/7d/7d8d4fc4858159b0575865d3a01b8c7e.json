@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7d8d4fc4858159b0575865d3a01b8c7e",
+    "identity": "github:1345690505:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345690505:root",
+            "repository": "minyang-chen/dsh-stock-lookup",
+            "path": "",
+            "revision": "471c1aadf79a9880dffc6410a114561de45f5fdd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8ca0cfa77695aaaf54e733fca0095e371b6cc1fb91deddb2c4054ef5e5ef21b8",
+                "code": "471c1aadf79a9880dffc6410a114561de45f5fdd",
+                "maintenance": "c0aee4f3cb4e0a78522b1804e42b1dc91ef191c461e901aaef2f33548b7599cf"
+            }
+        }
+    }
+}

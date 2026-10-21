@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "05cebbffe26e2273210a43763df1653c",
+    "identity": "github:1333917455:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333917455:root",
+            "repository": "anweat/dsh-restart",
+            "path": "",
+            "revision": "556e4b4f60702c505863e1533a96b2166932b33d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "eb11de1944eb4a063f2beb2272b938667bcae97c28b2157a5cf761f595a54c73",
+                "code": "556e4b4f60702c505863e1533a96b2166932b33d",
+                "maintenance": "8e6f11f674c22f06a16463ab0212554ada96b1df524bd586d5045761209e9d5a"
+            }
+        }
+    }
+}

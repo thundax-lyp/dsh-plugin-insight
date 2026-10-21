@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7ea7c876e82c8343f76ef818e6ab10e1",
+    "identity": "github:1402197279:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402197279:root",
+            "repository": "reverse-PAI/dsh-minimal-session-delete",
+            "path": "",
+            "revision": "e98009caba9064dab6c5c5c74292e0cfdc7a2463",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f6ec72166d70c211bdb4bed0dc4d9aa737fb772c71a98448bac2d0e842338ab0",
+                "code": "e98009caba9064dab6c5c5c74292e0cfdc7a2463",
+                "maintenance": "56f703d6f7792213dc4ca3e5062e02e3a8dc45dda812b6f57a6badc8434abcc4"
+            }
+        }
+    }
+}

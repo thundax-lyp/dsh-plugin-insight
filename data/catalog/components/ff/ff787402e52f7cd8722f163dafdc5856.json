@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff787402e52f7cd8722f163dafdc5856",
+    "identity": "github:1354258564:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354258564:root",
+            "repository": "oh-my-engine/dsh-plugin-oh-my-engine",
+            "path": "",
+            "revision": "d961a06e26e5103aec2d4a4fd21bd20fa192dc2e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "273d116678b3d168ea4103f546ee38a099d8019a418a5e17566b56bef453aa03",
+                "code": "d961a06e26e5103aec2d4a4fd21bd20fa192dc2e",
+                "maintenance": "22ca9a8bec4efffba4de37c536fcc2d6f6aee64f8c1b1ce317767d0d03402e00"
+            }
+        }
+    }
+}

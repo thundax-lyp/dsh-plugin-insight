@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f907d71d35e341f9fc1ff61f7939949",
+    "identity": "github:1333791299:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333791299:root",
+            "repository": "ICCuse/dsh-pain-point-check",
+            "path": "",
+            "revision": "1dfa372a1d9ed5b58f9f1683c150fbcf101bb268",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e68209b88f0148f1a79ad1104b523ed8f2f38429db1ee0b5af6f72d55897c6e8",
+                "code": "1dfa372a1d9ed5b58f9f1683c150fbcf101bb268",
+                "maintenance": "4e81b3cba98b0b0e664f73e9dfd265d54efd2b37128346d6ca6b2b7fbe142bb7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2e0fdf6d062501dafa722d6f13680cbd",
+    "identity": "github:1423982739:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423982739:root",
+            "repository": "skyjjgw/dsh-plugin-android-preview",
+            "path": "",
+            "revision": "e8e4b2bc2cfb2caabc1a93b19eb4c01bd04138f9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9ea07eac1e60b0310830be868a6d4582a438a2274095b279e6a0e65155f590a0",
+                "code": "e8e4b2bc2cfb2caabc1a93b19eb4c01bd04138f9",
+                "maintenance": "7f72cfe13809d6ad5852d6d27ab4ddcccc436fb28509f4bf938112f07384b9b0"
+            }
+        }
+    }
+}

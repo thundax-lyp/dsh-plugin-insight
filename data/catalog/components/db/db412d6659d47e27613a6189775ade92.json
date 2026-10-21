@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "db412d6659d47e27613a6189775ade92",
+    "identity": "github:1380537479:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380537479:root",
+            "repository": "TetraSsky/dsh-offpeak",
+            "path": "",
+            "revision": "8f9740b5deb04a23e8d3fc5d50889940a17d5cc2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7fdfaaa52fba7d4157f13200c67463cf3fa5afa2f07946e2c5563735a4607162",
+                "code": "8f9740b5deb04a23e8d3fc5d50889940a17d5cc2",
+                "maintenance": "f2c64c66441e64a6801916445edeac347535b046a004be93d7516518dd37ab72"
+            }
+        }
+    }
+}

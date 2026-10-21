@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "662148383811576251b9564289867c0b",
+    "identity": "github:1335816329:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335816329:root",
+            "repository": "Breeze136/dsh-kb-rag",
+            "path": "",
+            "revision": "3a0b7e74150c5b6c906c3f7c8079a4d601964911",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d945aa3bc4a866c9cd3c1189d74fd434f764a90060d40ec02826278e2750814b",
+                "code": "3a0b7e74150c5b6c906c3f7c8079a4d601964911",
+                "maintenance": "30b3b908d9ee13f20570e6516771691968c15b01c1d61adba49ce10fd455daa2"
+            }
+        }
+    }
+}

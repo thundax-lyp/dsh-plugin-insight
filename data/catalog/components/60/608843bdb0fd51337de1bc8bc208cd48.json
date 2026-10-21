@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "608843bdb0fd51337de1bc8bc208cd48",
+    "identity": "github:1420815233:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420815233:root",
+            "repository": "Void-LifeStream/dsh-gemini-kitten-widget",
+            "path": "",
+            "revision": "358118b55dc1da0918779676067356e859c026ae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "230ecf89999ce10b57420de029c6d5175d75982aa951704d5e0c6530d783cb58",
+                "code": "358118b55dc1da0918779676067356e859c026ae",
+                "maintenance": "bb45aa3d3a914eb32e6798f488b8b33c454918e858fdbc78f9ca9c8ebab8b24b"
+            }
+        }
+    }
+}

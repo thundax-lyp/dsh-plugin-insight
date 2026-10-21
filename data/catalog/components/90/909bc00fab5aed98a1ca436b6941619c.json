@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "909bc00fab5aed98a1ca436b6941619c",
+    "identity": "github:1333484746:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333484746:root",
+            "repository": "Hu9956/dsh-codex-provider",
+            "path": "",
+            "revision": "36854a484039bcb15d3b5ff78fa2f9ee590e93ab",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ff4f9fdfb1265daa37c45ff0ec03d695fc229783464150805bff29df13b9c167",
+                "code": "36854a484039bcb15d3b5ff78fa2f9ee590e93ab",
+                "maintenance": "b7f5222724a6f2c4f0e2a6e196da04d250343539221bcdcd4fddecd753a40602"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b6a7464d1b19458f32c5981ff726ce24",
+    "identity": "github:1370162186:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370162186:root",
+            "repository": "lau4tin1/dsh-skill-router",
+            "path": "",
+            "revision": "cb3d6c2678f8eda79132e0bb5e8796bd7ac6335d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d20da19572d0f16b7dee7c21a15c144c891651e1c5206536e2ce059b0b18af85",
+                "code": "cb3d6c2678f8eda79132e0bb5e8796bd7ac6335d",
+                "maintenance": "67ca3f5f3723a46d31d91d60bc0aa7e02a43b45504d8aa93eaee0a6ac57d7254"
+            }
+        }
+    }
+}

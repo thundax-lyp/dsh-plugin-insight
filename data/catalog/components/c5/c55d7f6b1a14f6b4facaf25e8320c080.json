@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c55d7f6b1a14f6b4facaf25e8320c080",
+    "identity": "github:1369580037:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369580037:root",
+            "repository": "xiguazhiPrince/dsh-session-map",
+            "path": "",
+            "revision": "5bdcda2bf84eb8ee6d0c9bcf6aacf5557b6796f8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "214013c01d2d3e4daa931234b021be2166e03519dd7699a91e8b1bc7a8067465",
+                "code": "5bdcda2bf84eb8ee6d0c9bcf6aacf5557b6796f8",
+                "maintenance": "d5a28b14f5be2576c4fa5e7095521e925a7b18a6d553f42b8cbc121801aa2e05"
+            }
+        }
+    }
+}

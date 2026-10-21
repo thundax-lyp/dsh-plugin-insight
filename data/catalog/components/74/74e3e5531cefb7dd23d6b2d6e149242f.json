@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "74e3e5531cefb7dd23d6b2d6e149242f",
+    "identity": "github:1333570170:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333570170:root",
+            "repository": "LoserFox/marisa-distro",
+            "path": "",
+            "revision": "4aa96256d0af09fa65e64679a1c7826342e9ded2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "38f32863eb470bc910b2f139174a56b636896493e3686458a59f813ba8fbc497",
+                "code": "4aa96256d0af09fa65e64679a1c7826342e9ded2",
+                "maintenance": "674a15bbd0f0364ce978c77b33414018d58c7ff0a85b97aa374f4fd32d16e395"
+            }
+        }
+    }
+}

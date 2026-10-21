@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9497492d7e6e079c0765474fb0363a03",
+    "identity": "github:1333830869:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333830869:root",
+            "repository": "Socialist-Sister/dsh-collaboration",
+            "path": "",
+            "revision": "fd3e10e1ff3ba8c2ca10addde8326a4274a3a576",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7ea5d64cdd038fdb7718a7b1fc3b60f641ed40f00717ade0b7d877760eae9662",
+                "code": "fd3e10e1ff3ba8c2ca10addde8326a4274a3a576",
+                "maintenance": "3887d04e06503e4140bcffd54656253af58a2335f16b69da33dd1a0952785876"
+            }
+        }
+    }
+}

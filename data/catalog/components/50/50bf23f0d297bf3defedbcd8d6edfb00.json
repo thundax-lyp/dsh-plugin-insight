@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "50bf23f0d297bf3defedbcd8d6edfb00",
+    "identity": "github:1338640495:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338640495:root",
+            "repository": "dundunhan/dsh-video-lens",
+            "path": "",
+            "revision": "9ef313c3a0a7e9786f9464cfc23b675ac1dfb8f9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "284e824f912105e7fcc8eca236fcf1ed4ec4cd0046e25a2bf85617f9dbd5f223",
+                "code": "9ef313c3a0a7e9786f9464cfc23b675ac1dfb8f9",
+                "maintenance": "310507924d007290c74bb2670267ec04bcc2b21384c6ec33c4e7f0263f15d13f"
+            }
+        }
+    }
+}

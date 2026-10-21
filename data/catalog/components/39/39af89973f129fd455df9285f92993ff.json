@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "39af89973f129fd455df9285f92993ff",
+    "identity": "github:1413897334:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1413897334:root",
+            "repository_id": 1413897334,
+            "component_id": "root",
+            "repository": "439436269-ctrl/dsh-ai-arcade",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-ai-arcade",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "other",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "b0f68c9c65ec125d8dd92fe19ada8644354d4ed563f45de1c99890ff546eaa8d",
+                "code": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                "maintenance": "8817222f71e1a1525ca0c44c956bdfb7e461299b50e4c6417652e91c94d64091"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1413897334-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:09:38.532Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1413897334-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/README.md",
+                    "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                    "captured_at": "2026-10-21T02:09:38.532Z",
+                    "summary": "在 DSH 中提供双脑贪吃蛇和中国象棋，结合本地规则引擎与模型策略解说。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-ai-arcade/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1413897334-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js",
+                    "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                    "captured_at": "2026-10-21T02:09:38.532Z",
+                    "summary": "核查 lib/brain.js、src/client/games/xiangqi/ai.js、src/client/games/snake.js、lib/trust.js；brain.js通过宿主llm.stream调用模型并解析正文/思考，provider缺省自动发现；客户端本地规则与搜索执行走法，模型在候选约束内表达策略和解说。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-ai-arcade/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "希望在DSH内娱乐或观察模型策略表达的用户；合格结果是合法、流畅游戏而不是模型棋力基准。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "brain.js通过宿主llm.stream调用模型并解析正文/思考，provider缺省自动发现；客户端本地规则与搜索执行走法，模型在候选约束内表达策略和解说。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次构建并配置可用模型；模型调用消耗token且可能因reasoning参数失败重试，持续游戏频率决定费用；本地渲染另占CPU。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "本地规则与模型慢请求分离有助于体验稳定；娱乐满意度与模型增益未本轮实测。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "resolveTarget先核实配置再发现可用provider；streamBrain区分finish错误并在reasoning参数拒绝时去掉参数重试一次。注释low与README off表述应由实际设置为准。 [固定源码](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js#L1)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413897334:root",
+                            "area": "code",
+                            "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:38.532Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:09:38.532Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                "reviewed_at": "2026-10-21T02:09:38.532Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1413897334:root",
+                        "area": "code",
+                        "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：快慢循环分离在该宿主实质；mechanism：合法候选与本地兜底实质；transferability：意图执行分层实质可复用；simplification：避免模型实时控制实质。",
+                    "basis": "interpretation",
+                    "score": 51,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：娱乐交互小幅；delivery：已有游戏附加解说小幅；reach：宿主内可玩小幅；economics：减少逐步模型调用小幅，收益未测。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1413897334-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "希望DSH内娱乐者可设调用预算后试用；模型文本不等于棋力，不以胜率或作者延迟数字选生产模型。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "轻量娱乐需求成立，但非生产交付或模型评测。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "整合游戏与解说减少切换，本地引擎承担棋力，模型额外价值有限。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "brain文本与本地规则分工源码可见，娱乐满意度未测。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "游戏调用及失败重试会耗token，本地CPU和配置也有成本。"
+                    }
+                },
+                "score": 44,
+                "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1413897334-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1413897334:root",
+                        "area": "code",
+                        "fingerprint": "877d80ccce081eb76343ddacfb591f6c404b8ddd"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1413897334:root",
+            "repository": "439436269-ctrl/dsh-ai-arcade",
+            "path": "",
+            "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+            "fingerprints": {
+                "directory": "b0f68c9c65ec125d8dd92fe19ada8644354d4ed563f45de1c99890ff546eaa8d",
+                "code": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                "maintenance": "8817222f71e1a1525ca0c44c956bdfb7e461299b50e4c6417652e91c94d64091"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "c621e13c6748222bd06ce690f239f660ba27876043ccd541d84ea35c0a41b270"
+        },
+        "publication.metadata": "data/plugins/439436269-ctrl--dsh-ai-arcade/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 中提供双脑贪吃蛇和中国象棋，结合本地规则引擎与模型策略解说。",
+            "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+            "source_url": "https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+            "items": {
+                "界面": "贪吃蛇和中国象棋街机面板",
+                "后台": "宿主模型流调用及本地规则搜索"
+            }
+        },
+        "publication.advice": {
+            "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+            "text": "娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。"
+        },
+        "registry": "data/plugins/439436269-ctrl--dsh-ai-arcade",
+        "reports": "# dsh-ai-arcade\n\n> 在 DSH 中提供双脑贪吃蛇和中国象棋，结合本地规则引擎与模型策略解说。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-ai-arcade](https://github.com/439436269-ctrl/dsh-ai-arcade)\n- **版本号**：0.1.0（[固定提交 877d80cc](https://github.com/439436269-ctrl/dsh-ai-arcade/tree/877d80ccce081eb76343ddacfb591f6c404b8ddd)）\n- **版本日期**：2026-10-11（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：希望在DSH内娱乐或观察模型策略表达的用户；合格结果是合法、流畅游戏而不是模型棋力基准。\n- **亮点**：相对让LLM逐帧直接控制游戏，贡献在快循环本地规则与慢循环模型意图分离；模型失联时保留可运行游戏。中国象棋棋力主要来自本地搜索，不能归为模型推理增强。\n- **思考**：模型真的影响胜负还是只增加拟人说明？作者明确本地引擎承担棋力，brain调用仅返回文本，合法性与具体行动还需客户端约束；模型延迟与失败时兜底让游戏可玩，却使胜率不能作为模型能力证据。\n- **建议**：娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。\n\n采用建议：娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。\n\n## 核心贡献\n\n相对让LLM逐帧直接控制游戏，贡献在快循环本地规则与慢循环模型意图分离；模型失联时保留可运行游戏。中国象棋棋力主要来自本地搜索，不能归为模型推理增强。\n\n## 关键质疑\n\n[核查分支](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js#L196)。\n\n模型真的影响胜负还是只增加拟人说明？作者明确本地引擎承担棋力，brain调用仅返回文本，合法性与具体行动还需客户端约束；模型延迟与失败时兜底让游戏可玩，却使胜率不能作为模型能力证据。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：把策略卡可执行字段与解说分离，记录实际采纳比例，能检验模型是否提供超越本地默认策略的价值；代价是字段验证与策略回放记录。\n\n固定随机种子和对手，比较无模型、本地默认、模型策略三组的合法率/胜率/时延/费用；若采纳策略不改善结果则否定模型贡献假设。\n\n## 场景与替代办法\n\n希望在DSH内娱乐或观察模型策略表达的用户；合格结果是合法、流畅游戏而不是模型棋力基准。\n\n参照纯本地游戏与LLM直接出走法；本项目是拟人娱乐组合，不是新棋类搜索算法。\n\n## 依赖与流程\n\n依赖宿主llm和Web路由、游戏页面及浏览器；模型可选，失败时本地规则仍承担玩法。\n\n打开iframe游戏→本地回合推进→按需请求brain→消费策略/说明→超时或错误显示并兜底；暂停交由本地游戏。\n\n## 成本与效果\n\n首次构建并配置可用模型；模型调用消耗token且可能因reasoning参数失败重试，持续游戏频率决定费用；本地渲染另占CPU。\n\n本地规则与模型慢请求分离有助于体验稳定；娱乐满意度与模型增益未本轮实测。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9ec63ae656f8f39195f5858bb67b2bd10311a436597ed182e610f4a1806c1c94。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 115 | — | — | 1460 |\n| .js | source | 18 | 3429 | 2234 | 948 | — |\n| .mjs | test | 2 | 387 | 295 | 61 | — |\n| .mjs | source | 2 | 194 | 145 | 35 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：贪吃蛇和中国象棋街机面板\n- **后台**：宿主模型流调用及本地规则搜索\n\n## 工程亮点\n\nresolveTarget先核实配置再发现可用provider；streamBrain区分finish错误并在reasoning参数拒绝时去掉参数重试一次。注释low与README off表述应由实际设置为准。 [固定源码](https://github.com/439436269-ctrl/dsh-ai-arcade/blob/877d80ccce081eb76343ddacfb591f6c404b8ddd/lib/brain.js#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/brain.js、src/client/games/xiangqi/ai.js、src/client/games/snake.js、lib/trust.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：固定随机种子和对手，比较无模型、本地默认、模型策略三组的合法率/胜率/时延/费用；若采纳策略不改善结果则否定模型贡献假设。\n",
+        "metadata": {
+            "repository": "439436269-ctrl/dsh-ai-arcade",
+            "repository_id": 1413897334,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-11T05:37:15Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:14404F:21DAD9:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:12AB5A:13BBC3:2156B8:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:14763C:21FBB0:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:144446:21D301:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-ai-arcade%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14CC18:2267A1:6AD84A13 and timestamp 2026-10-21 05:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-ai-arcade",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 299,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-ai-arcade",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-11T05:31:31.226Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-ai-arcade",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-10-11T05:32:27.336Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                "current_revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1413897334:root",
+            "repository": "439436269-ctrl/dsh-ai-arcade",
+            "path": "",
+            "revision": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b0f68c9c65ec125d8dd92fe19ada8644354d4ed563f45de1c99890ff546eaa8d",
+                "code": "877d80ccce081eb76343ddacfb591f6c404b8ddd",
+                "maintenance": "8817222f71e1a1525ca0c44c956bdfb7e461299b50e4c6417652e91c94d64091"
+            }
+        }
+    }
+}

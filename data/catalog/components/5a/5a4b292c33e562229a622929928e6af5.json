@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a4b292c33e562229a622929928e6af5",
+    "identity": "github:1412613979:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412613979:root",
+            "repository": "oihai/dsh-harness-trace",
+            "path": "",
+            "revision": "3ab328b008c0a13c461b04c994241ab9c454c767",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0b7c574b241e159b4fef76ef4db6225a0040ddbfe185fbb1d90932b15e3d951",
+                "code": "3ab328b008c0a13c461b04c994241ab9c454c767",
+                "maintenance": "2e0ba784e12f4cc81ded564f22b011c6f5eff783fafb6d8605cf464e001be941"
+            }
+        }
+    }
+}

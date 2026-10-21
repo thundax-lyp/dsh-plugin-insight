@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9932754de1e3c5fa0fb08710c7fc29fc",
+    "identity": "github:1280115203:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1280115203:root",
+            "repository": "zhoushoujianwork/easyeda-agent",
+            "path": "",
+            "revision": "7cde1ae1769d3e8c50fd9ada43f9bcc166d69d70",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "88f6c42eb6dca0166f91174d21e9fbf277e8b694852b9aa23cfeb86d538f3921",
+                "code": "7cde1ae1769d3e8c50fd9ada43f9bcc166d69d70",
+                "maintenance": "a5569f65acb410b1a6a001e28287694cbd1ba7a3ff96b3aba044f2f2262edeb4"
+            }
+        }
+    }
+}

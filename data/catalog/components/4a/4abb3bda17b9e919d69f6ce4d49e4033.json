@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4abb3bda17b9e919d69f6ce4d49e4033",
+    "identity": "github:1423476381:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423476381:root",
+            "repository": "drliuhuan/dsh-plugin-zoom",
+            "path": "",
+            "revision": "df41821d7eb3ae84651322afd176aee1e078fd4f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "89a5d11ef46a334c6f4b58e1d4081e9ac277db53aaa66c93ce6df2342a2fc6f3",
+                "code": "df41821d7eb3ae84651322afd176aee1e078fd4f",
+                "maintenance": "ae2d49bb1d6e2302ccf0fb524dcc33709ac76f483dd1e98d6c55544d3565819d"
+            }
+        }
+    }
+}

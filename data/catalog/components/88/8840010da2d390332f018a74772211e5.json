@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8840010da2d390332f018a74772211e5",
+    "identity": "github:1418503404:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418503404:root",
+            "repository": "xiamubumu/dsh-context-reclaim",
+            "path": "",
+            "revision": "c2cee5c4d7bed8d6a6d1501833e0db1d003e08a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2ebce1757fde5a6d7e61c2054f59e241ce4b3c1297952b6b4ff56d8641d33dac",
+                "code": "c2cee5c4d7bed8d6a6d1501833e0db1d003e08a4",
+                "maintenance": "ca021961a9b3b101d9d5e2019b100b82f241cba4ff835f27302d97af9c7471b6"
+            }
+        }
+    }
+}

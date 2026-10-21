@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f8427d018b92b4b784837d014830a776",
+    "identity": "github:1350564873:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350564873:root",
+            "repository": "oxlyn/dsh-flyout-sidebar",
+            "path": "",
+            "revision": "e2e984bee8c57926d99ea8e41fe9c18a4ce08dcb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ba55ad18fcc6e64f14c8b203eb45eec52e26f29f18c2f6bf3230d5953057d2f4",
+                "code": "e2e984bee8c57926d99ea8e41fe9c18a4ce08dcb",
+                "maintenance": "91e0561e917e372cca5183f724786b67cab8c1844ed1f63d02e2aa01d36e5c2b"
+            }
+        }
+    }
+}

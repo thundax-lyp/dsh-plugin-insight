@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "635d72e6219b6887dd05c4d047eefbdb",
+    "identity": "github:1338527485:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338527485:root",
+            "repository": "lamost423/dsh-maze",
+            "path": "",
+            "revision": "fb83f3076b4683f23672cefd571e63534f5bc166",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "de639397c564e87df6373a6e234c46787a81cbfb66888660dba89787734b4e60",
+                "code": "fb83f3076b4683f23672cefd571e63534f5bc166",
+                "maintenance": "8088adc105eb5aba0cd2fa72ece17098e3c33ea627bd290085cc39c991f91b21"
+            }
+        }
+    }
+}

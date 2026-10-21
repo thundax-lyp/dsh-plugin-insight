@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e60835fd0300171577026d8e6460e108",
+    "identity": "github:1361171818:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361171818:root",
+            "repository": "shengyvself/dsh-reading-pad",
+            "path": "",
+            "revision": "a9768647f10c31ca9695fc83b17ae6f37cc4ac4d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7e5ebdac27a2d6469b1a04aa791f5ae38867a1ac7c44cb993b0ad702a1590b63",
+                "code": "a9768647f10c31ca9695fc83b17ae6f37cc4ac4d",
+                "maintenance": "1368f8f6d0299e6072549f165a6f5f0c0cd0a995ab4b37d6b93f0e9e3a59d8a6"
+            }
+        }
+    }
+}

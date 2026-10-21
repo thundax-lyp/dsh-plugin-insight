@@ -1,0 +1,450 @@
+{
+    "schema_version": 3,
+    "id": "d67a81027a16f64b27983b506d12abe1",
+    "identity": "github:1334255288:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334255288:root",
+            "repository_id": 1334255288,
+            "component_id": "root",
+            "repository": "AcidGr/dsh-web-lan-access",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-web-lan-access",
+            "entry_type": "plugin",
+            "technical_category": "channels-remote",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "d89f7163bb197360a9638ac2b246125d5e67e2059e7b4173fc25da06d5a4e37f",
+                "code": "dd1bb4766725b985330da906154adcf435e2c439",
+                "maintenance": "427737da65e646a866211579dee03457e9f4b1920009434fe0861778dbb79762"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1334255288-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:35:14.854Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-10-21-06-github-1334255288-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-21T05:35:14.854Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1334255288-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AcidGr/dsh-web-lan-access/blob/dd1bb4766725b985330da906154adcf435e2c439/README.md",
+                    "revision": "dd1bb4766725b985330da906154adcf435e2c439",
+                    "captured_at": "2026-10-21T05:35:14.854Z",
+                    "summary": "让DSH网页监听全部网卡，并为局域网页面提供Host能力声明与地址信任配置。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/acidgr--dsh-web-lan-access/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1334255288-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AcidGr/dsh-web-lan-access/blob/dd1bb4766725b985330da906154adcf435e2c439/lib/index.js",
+                    "revision": "dd1bb4766725b985330da906154adcf435e2c439",
+                    "captured_at": "2026-10-21T05:35:14.854Z",
+                    "summary": "核查 lib/index.js、lib/webserver.js、cordis.patch.yml；WebServer子类只救援wildcard校验错误，再用loopback重验其他配置；bundle替换监听器并枚举非internal IPv4作trustedHosts；tapIndex在head首部注入ownsHost transport。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/acidgr--dsh-web-lan-access/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读lib/index.js、lib/webserver.js、cordis.patch.yml；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "可信私网内跨设备访问DSH，要求能打开设置且访问边界明确。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "WebServer子类只救援wildcard校验错误，再用loopback重验其他配置；bundle替换监听器并枚举非internal IPv4作trustedHosts；tapIndex在head首部注入ownsHost transport。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读lib/index.js、lib/webserver.js、cordis.patch.yml；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT插件，继承宿主WebServer，Node需支持getBuiltinModule；兼容性受宿主校验错误文本和扩展点约束。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无模型费；首次网络/认证配置，持续宿主升级及网络边界运维成本。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "只在已有可信访问控制的临时私网环境核查；先证明未认证请求不能写宿主，再考虑日常远程使用。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少远程接入的配置断点，未证明安全部署或跨设备效率。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "用loopback重验保留端口/TLS等约束、tap清理可借鉴；依赖错误文本和隐式网卡信任需回归。 源码依据：[lib/index.js](https://github.com/AcidGr/dsh-web-lan-access/blob/dd1bb4766725b985330da906154adcf435e2c439/lib/index.js)、[lib/webserver.js](https://github.com/AcidGr/dsh-web-lan-access/blob/dd1bb4766725b985330da906154adcf435e2c439/lib/webserver.js)、[cordis.patch.yml](https://github.com/AcidGr/dsh-web-lan-access/blob/dd1bb4766725b985330da906154adcf435e2c439/cordis.patch.yml)。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将监听、Host地址围栏与客户端能力声明配套，解决只加载页面但API/设置不可用的问题。网络服务和权限机制来自宿主，插件主要是兼容适配。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "能访问是否等于已认证？trustedHosts按本机地址生成、ownsHost是页面声明，均不鉴别人或设备。通配监听还主动解除宿主原有限制；有VPN网卡不等于所有可达请求可信。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由三层接线推导，可将远程能力声明绑定短期认证会话及允许接口清单，保持监听地址与用户身份分离。未验证；无凭据、过期会话和新网卡加入均应不能取得Host写能力，否则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255288:root",
+                            "area": "code",
+                            "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:35:14.854Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:35:14.854Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "dd1bb4766725b985330da906154adcf435e2c439",
+                "reviewed_at": "2026-10-21T05:35:14.854Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334255288:root",
+                        "area": "code",
+                        "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty多处兼容接线小档；mechanism针对性校验救援小档；transferability监听/地址/能力分层可迁移半档；simplification多网卡配置半档。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow远程入口便利小档，未重组任务；delivery页面设置可达小档；reach可信私网场景小档；economics未见成本结构变化为0。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1334255288-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "跨设备私网用户应先证明未认证请求不能写宿主；通配监听和ownsHost不提供身份保证，已有访问控制后再评估。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "可信私网跨设备访问DSH的需求清晰。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "修复wildcard校验和transport配置断点。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核监听及trustedHosts构造，未证未授权访问被拦。"
+                    },
+                    "cost": {
+                        "score": 0,
+                        "rationale": "主动解除原限制且无身份认证保证，网络边界维护负担关键。"
+                    }
+                },
+                "score": 49,
+                "revision": "dd1bb4766725b985330da906154adcf435e2c439",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1334255288-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334255288:root",
+                        "area": "code",
+                        "fingerprint": "dd1bb4766725b985330da906154adcf435e2c439"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334255288:root",
+            "repository": "AcidGr/dsh-web-lan-access",
+            "path": "",
+            "revision": "dd1bb4766725b985330da906154adcf435e2c439",
+            "fingerprints": {
+                "directory": "d89f7163bb197360a9638ac2b246125d5e67e2059e7b4173fc25da06d5a4e37f",
+                "code": "dd1bb4766725b985330da906154adcf435e2c439",
+                "maintenance": "427737da65e646a866211579dee03457e9f4b1920009434fe0861778dbb79762"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "189405ad1cf7b0cda208942af5fb580c955c6d4fd69c92b120def86646c28813"
+        },
+        "publication.metadata": "data/plugins/acidgr--dsh-web-lan-access/META.json",
+        "publication.summaries": {
+            "text": "让DSH网页监听全部网卡，并为局域网页面提供Host能力声明与地址信任配置。",
+            "revision": "dd1bb4766725b985330da906154adcf435e2c439",
+            "source_url": "https://github.com/AcidGr/dsh-web-lan-access/blob/dd1bb4766725b985330da906154adcf435e2c439/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "dd1bb4766725b985330da906154adcf435e2c439",
+            "items": {
+                "Host 路由": "继承WebServer监听与index tap接线。",
+                "界面": "远程页面Host transport声明。"
+            }
+        },
+        "publication.advice": {
+            "revision": "dd1bb4766725b985330da906154adcf435e2c439",
+            "text": "只在已有可信访问控制的临时私网环境核查；先证明未认证请求不能写宿主，再考虑日常远程使用。"
+        },
+        "registry": "data/plugins/acidgr--dsh-web-lan-access",
+        "reports": "# dsh-web-lan-access\n\n> 让DSH网页监听全部网卡，并为局域网页面提供Host能力声明与地址信任配置。\n\n## 使用建议\n\n只在已有可信访问控制的临时私网环境核查；先证明未认证请求不能写宿主，再考虑日常远程使用。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：可信私网内跨设备访问DSH，要求能打开设置且访问边界明确。\n- **亮点**：将监听、Host地址围栏与客户端能力声明配套，解决只加载页面但API/设置不可用的问题。网络服务和权限机制来自宿主，插件主要是兼容适配。\n- **思考**：能访问是否等于已认证？trustedHosts按本机地址生成、ownsHost是页面声明，均不鉴别人或设备。通配监听还主动解除宿主原有限制；有VPN网卡不等于所有可达请求可信。\n- **建议**：由三层接线推导，可将远程能力声明绑定短期认证会话及允许接口清单，保持监听地址与用户身份分离。未验证；无凭据、过期会话和新网卡加入均应不能取得Host写能力，否则否定。\n\n## 场景与替代办法\n\n可信私网内跨设备访问DSH，要求能打开设置且访问边界明确。\n\n显式绑定单一私网地址或经认证代理更窄；此方案方便多网卡，增加暴露范围。\n\n## 能力清单\n\n- **Host 路由**：继承WebServer监听与index tap接线。\n- **界面**：远程页面Host transport声明。\n\n## 依赖与流程\n\nDSH webServer/webStartup/connection与os.networkInterfaces；认证和TLS需部署层另行负责。\n\n禁用默认监听器，挂子类监听全部接口，重建trustedHosts，页面启动时声明Host所有权并使用普通fetch。\n\n## 成本与效果\n\n无模型费；首次网络/认证配置，持续宿主升级及网络边界运维成本。\n\n减少远程接入的配置断点，未证明安全部署或跨设备效率。\n\n## 核心贡献\n\n将监听、Host地址围栏与客户端能力声明配套，解决只加载页面但API/设置不可用的问题。网络服务和权限机制来自宿主，插件主要是兼容适配。\n\n## 关键质疑\n\n能访问是否等于已认证？trustedHosts按本机地址生成、ownsHost是页面声明，均不鉴别人或设备。通配监听还主动解除宿主原有限制；有VPN网卡不等于所有可达请求可信。\n\n\n## 工程亮点\n\n用loopback重验保留端口/TLS等约束、tap清理可借鉴；依赖错误文本和隐式网卡信任需回归。 源码依据：[lib/index.js](https://github.com/AcidGr/dsh-web-lan-access/blob/dd1bb4766725b985330da906154adcf435e2c439/lib/index.js)、[lib/webserver.js](https://github.com/AcidGr/dsh-web-lan-access/blob/dd1bb4766725b985330da906154adcf435e2c439/lib/webserver.js)、[cordis.patch.yml](https://github.com/AcidGr/dsh-web-lan-access/blob/dd1bb4766725b985330da906154adcf435e2c439/cordis.patch.yml)。\n\n## 未来设计假设（未验证）\n\n由三层接线推导，可将远程能力声明绑定短期认证会话及允许接口清单，保持监听地址与用户身份分离。未验证；无凭据、过期会话和新网卡加入均应不能取得Host写能力，否则否定。\n\n最小验证比较普通页面与未认证远程请求的读写能力，加入VPN/换IP并重载，卸载后重启检查恢复。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1d0a91c9f7c4f0b92b5fa0b3d4df933557aa4ca6b4ec0c1b971d09f8db9bcf50。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 212 | 77 | 121 | — |\n| .md | source | 2 | 387 | — | — | 3975 |\n| .js | test | 1 | 106 | 94 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AcidGr/dsh-web-lan-access](https://github.com/AcidGr/dsh-web-lan-access)\n- **版本号**：1.4.0（[固定提交 dd1bb476](https://github.com/AcidGr/dsh-web-lan-access/tree/dd1bb4766725b985330da906154adcf435e2c439)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/webserver.js、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/index.js、lib/webserver.js、cordis.patch.yml；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：最小验证比较普通页面与未认证远程请求的读写能力，加入VPN/换IP并重载，卸载后重启检查恢复。\n",
+        "metadata": {
+            "repository": "AcidGr/dsh-web-lan-access",
+            "repository_id": 1334255288,
+            "captured_at": "2026-10-21T05:34:26.960Z",
+            "window_start": "2026-09-21T05:34:26.960Z",
+            "stars": 39,
+            "pushed_at": "2026-10-17T17:57:09Z",
+            "issues": {
+                "open": 0,
+                "closed": 3,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-lan-access%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A26.960Z..2026-10-21T05%3A34%3A26.960Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B42:F5216:AD369E:F8F9C3:6AD84EE6 and timestamp 2026-10-21 05:34:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-lan-access%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A26.960Z..2026-10-21T05%3A34%3A26.960Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8C50:1B0790:ABCEF3:F7CC56:6AD84EE7 and timestamp 2026-10-21 05:34:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-lan-access%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A26.960Z..2026-10-21T05%3A34%3A26.960Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8D86:1B0790:ABD082:F7CE5F:6AD84EE8 and timestamp 2026-10-21 05:34:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-web-lan-access",
+                "captured_at": "2026-10-21T05:34:33.449Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1548,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-web-lan-access",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-14T14:57:40.425Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-web-lan-access",
+                    "error": null,
+                    "latest_version": "1.3.2",
+                    "latest_published_at": "2026-09-10T07:05:26.948Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334255288:root",
+            "repository": "AcidGr/dsh-web-lan-access",
+            "path": "",
+            "revision": "dd1bb4766725b985330da906154adcf435e2c439",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d89f7163bb197360a9638ac2b246125d5e67e2059e7b4173fc25da06d5a4e37f",
+                "code": "dd1bb4766725b985330da906154adcf435e2c439",
+                "maintenance": "427737da65e646a866211579dee03457e9f4b1920009434fe0861778dbb79762"
+            }
+        }
+    }
+}

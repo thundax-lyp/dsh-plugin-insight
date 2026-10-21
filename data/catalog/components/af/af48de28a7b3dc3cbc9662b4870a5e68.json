@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "af48de28a7b3dc3cbc9662b4870a5e68",
+    "identity": "github:1335298978:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335298978:root",
+            "repository": "Hua1Q1nG/dsh-prompt-self",
+            "path": "",
+            "revision": "aac7d4206a0f17a6cc5cf392408ee617f495fb6f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c2f04846995b81cf1ea5bbe3e213774263458d49eb3510434962b4d6ec6157e0",
+                "code": "aac7d4206a0f17a6cc5cf392408ee617f495fb6f",
+                "maintenance": "4d57cc1b41bb9f700df3e05ab7a99a3ae6bd4200b62b6233c6ef1e5f0a1f9bbb"
+            }
+        }
+    }
+}

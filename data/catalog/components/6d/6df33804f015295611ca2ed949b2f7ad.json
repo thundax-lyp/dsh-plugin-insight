@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6df33804f015295611ca2ed949b2f7ad",
+    "identity": "github:1334763314:packages-dsh-attachment-upload",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334763314:packages-dsh-attachment-upload",
+            "repository": "lbh1nb/dsh-plugins",
+            "path": "packages/dsh-attachment-upload",
+            "revision": "34f8192fbe200e5e6dfe72b5c655e1e371498203",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2114d4d7d112b0c6827f780d8187d52b49bcdb71b6194e4509158a574251ce03",
+                "code": "34f8192fbe200e5e6dfe72b5c655e1e371498203",
+                "maintenance": "330baa93eb1cbcae931e127b4062cb72edf4061dfe00873023b86ff860853944"
+            }
+        }
+    }
+}

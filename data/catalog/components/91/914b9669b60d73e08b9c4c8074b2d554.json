@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "914b9669b60d73e08b9c4c8074b2d554",
+    "identity": "github:1416583095:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416583095:root",
+            "repository": "R-roker315/dsh-Alist-",
+            "path": "",
+            "revision": "18811378a3abeb1e48b6bc3c8b7406548c80c478",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4c30b88aacb248b755a86a8ae5d4ffd2104bd11581d81323dc39903687ac2598",
+                "code": "18811378a3abeb1e48b6bc3c8b7406548c80c478",
+                "maintenance": "bfd290d8fef7d35b155e57a622fd007f0ed9fee8031eea89016b937c05c5b9db"
+            }
+        }
+    }
+}

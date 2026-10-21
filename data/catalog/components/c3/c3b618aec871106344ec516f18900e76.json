@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c3b618aec871106344ec516f18900e76",
+    "identity": "github:1409914226:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409914226:root",
+            "repository": "agi321/dsh-temp-chat",
+            "path": "",
+            "revision": "321bff314f7c5ad93377ea1dabf45d4a6f7f44fa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8109970a6ca47fc460f83f3778d0eb8ff48efa32674f7ebbe9356ab7104549ec",
+                "code": "321bff314f7c5ad93377ea1dabf45d4a6f7f44fa",
+                "maintenance": "dbf6797549acb45c1043f6478f4fa29518c9b44a0f27b49cc0ddfaa31c3c2c39"
+            }
+        }
+    }
+}

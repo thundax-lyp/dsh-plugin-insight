@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1db85ae61907e59d7ac2bc3f278572af",
+    "identity": "github:1423143778:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423143778:root",
+            "repository": "xt765/dsh-selection-quote",
+            "path": "",
+            "revision": "e371083eb8d77f1f71c1260b6f9e967f424e8286",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "97f10f1b18757980ad12f33a32e1949837b2abdda535eeaca27a9eec7b2e4399",
+                "code": "e371083eb8d77f1f71c1260b6f9e967f424e8286",
+                "maintenance": "ed738bda0f717e8c00d4ec03dfa945f1a70e89a7b10c3d413037ffeed5988625"
+            }
+        }
+    }
+}

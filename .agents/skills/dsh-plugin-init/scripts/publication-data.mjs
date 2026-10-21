@@ -196,7 +196,7 @@ export function planPublication(current, manifest, input, catalog, manifestPath,
 }
 
 export function applyPublication(path, plan, root = ROOT) {
-    if (resolve(path) === resolve(ROOT, PUBLICATION) && existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json')))
+    if (resolve(path) === resolve(ROOT, PUBLICATION) && existsSync(resolve(ROOT, 'data/catalog/index.jsonl')))
         throw new Error('formal publication is derived; use snapshot merge');
     if (plan?.plan_version !== 1) throw new Error('unsupported publication plan version');
     const manifestPath = plan?.summary?.manifest;
@@ -236,7 +236,7 @@ export function applyPublication(path, plan, root = ROOT) {
     }
 }
 
-export function main(args = process.argv.slice(2)) {
+export async function main(args = process.argv.slice(2)) {
     const [command, ...rest] = args;
     if (!['validate', 'plan', 'apply'].includes(command))
         throw new Error('Usage: publication-data.mjs validate|plan|apply [options]');
@@ -256,8 +256,15 @@ export function main(args = process.argv.slice(2)) {
         if (!values[key]) throw new Error(`--${key} is required`);
         return values[key];
     };
+    const official = !values.publication && existsSync(resolve(ROOT, 'data/catalog/index.jsonl'));
+    if (official && command !== 'validate') throw Error('use snapshot stage/plan/apply for formal publication');
     if (command === 'validate') {
-        validatePublication(read(publicationPath));
+        const publication = official
+            ? (await import('../../_shared/scripts/snapshot-storage.mjs')).readSnapshotStorage(
+                  resolve(ROOT, 'data/catalog/index.jsonl')
+              ).publication
+            : read(publicationPath);
+        validatePublication(publication);
         console.log('Publication validation passed');
         return;
     }
@@ -289,7 +296,7 @@ export function main(args = process.argv.slice(2)) {
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
     try {
-        main();
+        await main();
     } catch (error) {
         console.error(`Error: ${error.message}`);
         process.exitCode = 1;

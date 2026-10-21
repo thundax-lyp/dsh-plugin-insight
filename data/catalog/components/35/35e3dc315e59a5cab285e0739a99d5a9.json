@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "35e3dc315e59a5cab285e0739a99d5a9",
+    "identity": "github:1334114196:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334114196:root",
+            "repository": "jiezeng2004-design/dsh-chatgpt-bridge",
+            "path": "",
+            "revision": "b78a575e886de1644db5273df88907bd2f2163fa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b5d6b2de6c8902295877e8a74f60a6cf49eba940ab8957a991afdcf2e40bb8a7",
+                "code": "b78a575e886de1644db5273df88907bd2f2163fa",
+                "maintenance": "2494b2bcf083a6f059171c611c10bdbe398eb5fe6ce42592cb369041f0e44148"
+            }
+        }
+    }
+}

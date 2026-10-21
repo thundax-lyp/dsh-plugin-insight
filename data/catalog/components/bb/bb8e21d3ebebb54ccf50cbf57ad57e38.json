@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bb8e21d3ebebb54ccf50cbf57ad57e38",
+    "identity": "github:1404814256:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404814256:root",
+            "repository": "XWIDE/dsh-picflow",
+            "path": "",
+            "revision": "f747fdd9a228422660a608155bda03e78a6da8ac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bb481a22331aa78cae7b5e2433c0b70f64a00e3744016971622cd3ceb4b3d5f2",
+                "code": "f747fdd9a228422660a608155bda03e78a6da8ac",
+                "maintenance": "c9552d85f3f6db255913edbbdbe23d1cbcff931fdd623d5d86dfa0ce19dd02b1"
+            }
+        }
+    }
+}

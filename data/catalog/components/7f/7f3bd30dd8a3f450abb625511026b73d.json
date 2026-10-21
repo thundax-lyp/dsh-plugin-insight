@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7f3bd30dd8a3f450abb625511026b73d",
+    "identity": "github:1385813590:packages-dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1385813590:packages-dsh-plugin",
+            "repository": "zhujunzhujunzhu/ai-token-report",
+            "path": "packages/dsh-plugin",
+            "revision": "338f604bcc36ef28bbdedf6871c8ebcf1602b530",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ee71c62b0628e7dabdf79ca2c6b4d03b76428c9e686bf4e20003a4a0089a6660",
+                "code": "338f604bcc36ef28bbdedf6871c8ebcf1602b530",
+                "maintenance": "768febd3f0e8fbcbda94a7844f0e256493193e5c4273714faa29b4e6897ea9f5"
+            }
+        }
+    }
+}

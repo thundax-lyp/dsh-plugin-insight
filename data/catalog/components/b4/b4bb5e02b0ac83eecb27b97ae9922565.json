@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b4bb5e02b0ac83eecb27b97ae9922565",
+    "identity": "github:1419669069:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1419669069:root",
+            "repository": "huhu23333/dsh-reasoning-distill",
+            "path": "",
+            "revision": "bcf028e3bebe2b9b9b5f0122389264c3b5b33707",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "718fb7f8e31eec1b7d4bb54c36e974e8cfe24ec8d2ffc5cbc15ab75fd8b960a0",
+                "code": "bcf028e3bebe2b9b9b5f0122389264c3b5b33707",
+                "maintenance": "ad72d165fcfccb89da6f4d2bf0b7304eca1871d0bb1776fdf2367c8203e647e5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9e5693fec80c5b61878f798ab247fe24",
+    "identity": "github:1389238583:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1389238583:root",
+            "repository": "sunzphy/dsh-sidebar-status",
+            "path": "",
+            "revision": "d1e8723e7529cf3e12f286ad00f805a4afa8ec5a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4b680c1ef6b3d57cde66b2c91ed3a3a274a92469718c5d73c64f9fc106a18165",
+                "code": "d1e8723e7529cf3e12f286ad00f805a4afa8ec5a",
+                "maintenance": "3882de2c306ff6d6d8b0890d3fa141eeb6afefed95fe67ef0f579c00a0af8303"
+            }
+        }
+    }
+}

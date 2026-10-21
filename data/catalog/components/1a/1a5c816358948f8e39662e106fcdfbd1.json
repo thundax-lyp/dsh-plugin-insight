@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1a5c816358948f8e39662e106fcdfbd1",
+    "identity": "github:1337012667:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337012667:root",
+            "repository": "kingguuu8-svg/dsh-pi-compatible",
+            "path": "",
+            "revision": "6a026456d6c5d742f5767a585236c6be441357a0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a5016e72dac1eaedcae403667b60f641c48d4a3ef03f4aef99449be1e3426532",
+                "code": "6a026456d6c5d742f5767a585236c6be441357a0",
+                "maintenance": "6c29fee720a0b5e190af74598efd7a7a23c0e1695c90db9b53a58303904cff27"
+            }
+        }
+    }
+}

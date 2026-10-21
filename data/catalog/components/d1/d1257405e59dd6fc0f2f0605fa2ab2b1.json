@@ -1,0 +1,47 @@
+{
+    "schema_version": 3,
+    "id": "d1257405e59dd6fc0f2f0605fa2ab2b1",
+    "identity": "github:1348239040:root",
+    "data": {
+        "research_blocks": {
+            "plugin_id": "github:1348239040:root",
+            "revision": "6c2429930d0a943ccedba7b3baba31f001bbd45f",
+            "reason_code": "source_contains_nul",
+            "reason": "src/fs-ops.ts可解码为UTF-8，但含1个NUL字节，标准文本统计拒绝；未生成完整inventory。",
+            "details": {
+                "reason_code": "source_contains_nul",
+                "reason": "src/fs-ops.ts可解码为UTF-8，但含1个NUL字节，标准文本统计拒绝；未生成完整inventory。",
+                "plugin_id": "github:1348239040:root",
+                "revision": "6c2429930d0a943ccedba7b3baba31f001bbd45f",
+                "details": {
+                    "path": "src/fs-ops.ts",
+                    "bytes": 4277,
+                    "sha256": "1d4881740e1b3e22ae97b1de7275c9d5c7fc6b2ca337dab2a8c6167afe9b5463",
+                    "nul_bytes": 1,
+                    "utf8_error": null,
+                    "source_url": "https://github.com/Aealen/dsh-coding-workspace/blob/6c2429930d0a943ccedba7b3baba31f001bbd45f/src/fs-ops.ts",
+                    "nul_offsets": [
+                        3220
+                    ]
+                },
+                "next_step": "由维护者澄清NUL是否预期并提供可统计的新固定修订；不删除或改写原源码，不将统计拒绝解释为运行失败。"
+            },
+            "blocked_at": "2026-10-21T05:37:30.870Z",
+            "run_id": "2026-10-21-06"
+        },
+        "discovery.plugins": {
+            "id": "github:1348239040:root",
+            "repository": "Aealen/dsh-coding-workspace",
+            "path": "",
+            "revision": "6c2429930d0a943ccedba7b3baba31f001bbd45f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "576ffaba6b693c9960b9773b2e78f07772880bee7e13856c78d34002e2d42de3",
+                "code": "6c2429930d0a943ccedba7b3baba31f001bbd45f",
+                "maintenance": "2843d73ef9806ed3fce377203c4c547e791a90790e97836d7841f1f4620522a9"
+            }
+        }
+    }
+}

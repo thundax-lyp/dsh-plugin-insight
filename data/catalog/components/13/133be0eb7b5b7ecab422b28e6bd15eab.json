@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "133be0eb7b5b7ecab422b28e6bd15eab",
+    "identity": "github:1333936445:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333936445:root",
+            "repository": "UNLINEARITY/dsh-code",
+            "path": "",
+            "revision": "7de989b94c7eab5d074422512729385f650699ce",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8cb4d2a5e7e3c3434c624c3f7833f2dfc8a2a36f5231c7b580f500f74e29ca9e",
+                "code": "7de989b94c7eab5d074422512729385f650699ce",
+                "maintenance": "20dabb9e2c8afbecc27a324a3969cdbf20fa4a92569497583f552fea41342c1a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "acabe2d0ed36d6e018ab6ef389b4e6b0",
+    "identity": "github:1367991813:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367991813:root",
+            "repository": "gulagala001/opencu",
+            "path": "",
+            "revision": "112b76a390663bd317f53e27d2fcef81998c2aef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f6aacaa41ab7576dc1f024c7e5e3166a89714aac8f0490706f8dc9601458b339",
+                "code": "112b76a390663bd317f53e27d2fcef81998c2aef",
+                "maintenance": "809736b247a0e42fb9fd3ad6f71e37836574f2491934aed931726e687b4451f0"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b1ce68668ae2bed3d24a5bb4671e3d4b",
+    "identity": "github:1335910394:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335910394:root",
+            "repository": "zhangjunjesse/dsh-claude-code",
+            "path": "",
+            "revision": "663f802ea19ba8111644aa116e7a013552c03812",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e09fb9bc49936415bd31fbcaf3d77e86ccfa9ccfd2278da1c7a7993334f57af4",
+                "code": "663f802ea19ba8111644aa116e7a013552c03812",
+                "maintenance": "1beaafbbcbb3fb0d45eb9fecf789d1f116666f42f736b148cc384a3e4ccf86be"
+            }
+        }
+    }
+}

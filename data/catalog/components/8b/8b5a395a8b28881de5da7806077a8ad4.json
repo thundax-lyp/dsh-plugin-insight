@@ -1,0 +1,365 @@
+{
+    "schema_version": 3,
+    "id": "8b5a395a8b28881de5da7806077a8ad4",
+    "identity": "github:1423215448:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1423215448:root",
+            "repository_id": 1423215448,
+            "component_id": "root",
+            "repository": "11111353535/dsh-folderwatch",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-folderwatch",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [
+                "文件监视",
+                "变更批处理"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "5895c44d65283eeeec82f5505277a217a26ed391d9265a1abe6502e267aebbfe",
+                "code": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                "maintenance": "c4e415eb7273b37c72d43bc8ddedd54bfca399474dd206ce2a15864bfce10a91"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1423215448-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:13:07.446Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1423215448-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md",
+                    "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                    "captured_at": "2026-10-20T03:13:07.446Z",
+                    "summary": "监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-folderwatch/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1423215448-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js",
+                    "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                    "captured_at": "2026-10-20T03:13:07.446Z",
+                    "summary": "核查 lib/index.js、lib/watch.js；周期扫描与快照差分作为主路径，fs.watch 只提示加速；批量去抖、冷却和短时自身写入账本抑制回声。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-folderwatch/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "未验证跨平台事件完整性、截断目录漏报或长期运行；短时路径抑制也可能隐藏同时发生的外部写入。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "等待构建报告、下载或共享目录交接的智能体需要发现外部变化，减少反复手工查询。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "周期扫描与快照差分作为主路径，fs.watch 只提示加速；批量去抖、冷却和短时自身写入账本抑制回声。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "准确变化摘要比轮询提示更利于交接；通知到达并不保证后续任务成功。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "周期遍历消耗文件系统资源，wake 模式额外启动模型回合；收益需对照扫描规模与通知频率。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "通知节流、扫描上限和监测提示分离可借鉴；目录超限与无法读取必须作为覆盖缺口看待。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "未验证跨平台事件完整性、截断目录漏报或长期运行；短时路径抑制也可能隐藏同时发生的外部写入。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "版本 0.1.0，纯 Host 工具，通知需要原会话可解析和 agent 的 inject/followup。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1423215448-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215448:root",
+                            "area": "code",
+                            "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:13:07.446Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:13:07.446Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "适合外部文件交接频繁的任务，先以queue模式监听小目录，核对漏报、重复和自身写入抑制，再开放自动唤醒；尚未进行真实宿主验证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "构建报告、下载及共享目录交接的需求具体，但收益取决于外部变更频率。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "快照差分、批量去抖与自写抑制比手工定时查询有明确机制增量。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码支持扫描与投递机制，未执行目标代码、宿主验收或长期漏报测试。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "持续遍历和自动唤醒有资源与模型成本，超限目录及会话断开仍需人工排查。"
+                    }
+                },
+                "score": 65,
+                "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                "reviewed_at": "2026-10-21T09:16:52.633Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1423215448-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1423215448:root",
+                        "area": "code",
+                        "fingerprint": "c11125d12738945d291b6067fb5fa03ea48c1c08"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1423215448:root",
+            "repository": "11111353535/dsh-folderwatch",
+            "path": "",
+            "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+            "fingerprints": {
+                "directory": "5895c44d65283eeeec82f5505277a217a26ed391d9265a1abe6502e267aebbfe",
+                "code": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                "maintenance": "c4e415eb7273b37c72d43bc8ddedd54bfca399474dd206ce2a15864bfce10a91"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "5edb7bf47c0858a01b9d68ed9a615be954d3263b41a103251abc8baa5826d98f"
+        },
+        "publication.metadata": "data/plugins/11111353535--dsh-folderwatch/META.json",
+        "publication.summaries": {
+            "text": "监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。",
+            "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+            "source_url": "https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+            "items": {
+                "模型工具": "创建、检查和移除目录监测。",
+                "后台": "快照扫描与批量消息交付。"
+            }
+        },
+        "publication.advice": {
+            "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+            "text": "先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。"
+        },
+        "registry": "data/plugins/11111353535--dsh-folderwatch",
+        "reports": "# dsh-folderwatch\n\n> 监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。\n\n## 固定范围与依据\n\n固定提交 [c11125d12738945d291b6067fb5fa03ea48c1c08](https://github.com/11111353535/dsh-folderwatch/blob/c11125d12738945d291b6067fb5fa03ea48c1c08/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:13:07.446Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js、lib/watch.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：等待构建报告、下载或共享目录交接的智能体需要发现外部变化，减少反复手工查询。\n- **亮点**：周期扫描与快照差分作为主路径，fs.watch 只提示加速；批量去抖、冷却和短时自身写入账本抑制回声。\n- **思考**：准确变化摘要比轮询提示更利于交接；通知到达并不保证后续任务成功。\n- **建议**：先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。\n\n## 场景与替代办法\n\n等待构建报告、下载或共享目录交接的智能体需要发现外部变化，减少反复手工查询。\n\n定时检查实现更简单但延迟高；仅在外部异步交接频繁时值得引入持续监控。\n\n## 依赖与流程\n\n依赖 tools、commands、可读文件系统及活跃会话；不能把本机扫描当成远程共享文件系统强一致保证。\n\n明确目录和过滤后布置监听，检查通知再读取实际文件，任务结束解除监听；漏报时手动检查并看扫描错误。\n\n## 成本与效果\n\n周期遍历消耗文件系统资源，wake 模式额外启动模型回合；收益需对照扫描规模与通知频率。\n\n准确变化摘要比轮询提示更利于交接；通知到达并不保证后续任务成功。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c87d1102451f431c02c2a4cf0a88a1effe958c93ebb76e8aff2edfa55075f4d0。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 8 | 2246 | 1048 | 1073 | — |\n| .md | source | 2 | 414 | — | — | 3707 |\n| .mjs | source | 1 | 155 | 88 | 51 | — |\n| .mjs | test | 4 | 1228 | 488 | 689 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：创建、检查和移除目录监测。\n- **后台**：快照扫描与批量消息交付。\n\n## 工程亮点\n\n通知节流、扫描上限和监测提示分离可借鉴；目录超限与无法读取必须作为覆盖缺口看待。\n\n## 分发与兼容\n\n版本 0.1.0，纯 Host 工具，通知需要原会话可解析和 agent 的 inject/followup。\n\n## 历史对照\n\n前次代码指纹为 c11125d12738945d291b6067fb5fa03ea48c1c08；本轮固定为 c11125d12738945d291b6067fb5fa03ea48c1c08。定时检查实现更简单但延迟高；仅在外部异步交接频繁时值得引入持续监控。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未验证跨平台事件完整性、截断目录漏报或长期运行；短时路径抑制也可能隐藏同时发生的外部写入。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：测试突发改写、删除重建、断开会话、超限目录和与自身写入同时发生的外部修改。\n",
+        "metadata": {
+            "repository": "11111353535/dsh-folderwatch",
+            "repository_id": 1423215448,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-17T11:00:39Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:20AC7E:144587:21BA26:6AD84907 and timestamp 2026-10-21 05:09:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:149489:221B06:6AD84908 and timestamp 2026-10-21 05:09:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:1FA705:13C0EA:2130F5:6AD84908 and timestamp 2026-10-21 05:09:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:1466C7:21E366:6AD84908 and timestamp 2026-10-21 05:09:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-folderwatch%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14445D:21B330:6AD84908 and timestamp 2026-10-21 05:09:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-folderwatch",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-folderwatch",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-folderwatch",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                "current_revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1423215448:root",
+            "repository": "11111353535/dsh-folderwatch",
+            "path": "",
+            "revision": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5895c44d65283eeeec82f5505277a217a26ed391d9265a1abe6502e267aebbfe",
+                "code": "c11125d12738945d291b6067fb5fa03ea48c1c08",
+                "maintenance": "c4e415eb7273b37c72d43bc8ddedd54bfca399474dd206ce2a15864bfce10a91"
+            }
+        }
+    }
+}

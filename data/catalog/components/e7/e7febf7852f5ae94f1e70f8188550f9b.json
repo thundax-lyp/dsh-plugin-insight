@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "e7febf7852f5ae94f1e70f8188550f9b",
+    "identity": "github:1335089275:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335089275:root",
+            "repository": "hongyue0721/dsh-kimicode-swarm",
+            "path": "",
+            "revision": "311d6f42a26070501c87a70eebf628391ce7604c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3f1c3ebd7b54cb00b00813815f675a557e8d671f6ff7c1030c9daed081c3a532",
+                "code": "311d6f42a26070501c87a70eebf628391ce7604c",
+                "maintenance": "4d5ed7181f7cfb514c6a843534906ae05a8d816308826a0a4a0494470b3cf038"
+            }
+        }
+    }
+}

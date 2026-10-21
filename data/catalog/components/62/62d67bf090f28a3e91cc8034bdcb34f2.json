@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "62d67bf090f28a3e91cc8034bdcb34f2",
+    "identity": "github:1360629358:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360629358:root",
+            "repository": "better-er/dsh-pause",
+            "path": "",
+            "revision": "fd79b1ef22464a61c521063cb3734349c09b5f15",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ceb2c6513073b7c705bf8f7e9922998d9113660899c3f82e7465dd9031faf62f",
+                "code": "fd79b1ef22464a61c521063cb3734349c09b5f15",
+                "maintenance": "d7706081be59944537e9fa058a0a512bd6e740a9b146f6f27ca6d2b0370d8c1d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bdfc4d615a3c4a2dc5a974c29cbb7b23",
+    "identity": "github:1361245294:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361245294:root",
+            "repository": "Decodo/dsh-web-fetch",
+            "path": "",
+            "revision": "a121a4ef67d9427b09ee02e477f18cc8702ef788",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "51b74b6515c48048e7401886101ad2cfa71584fda734cbf0187b5b50b833b891",
+                "code": "a121a4ef67d9427b09ee02e477f18cc8702ef788",
+                "maintenance": "e0beac89dac43bed6ab8c8f9c02bed7635d3b48b92151cde72a5583897861ab1"
+            }
+        }
+    }
+}

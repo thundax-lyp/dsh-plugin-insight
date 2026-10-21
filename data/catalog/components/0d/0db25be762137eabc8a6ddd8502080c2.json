@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0db25be762137eabc8a6ddd8502080c2",
+    "identity": "github:1385008300:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1385008300:root",
+            "repository": "baifagg/dsh-plugin-busy-workspace",
+            "path": "",
+            "revision": "988bf471aa1530ebef2821241ef81fa4292bcc72",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8f1f207f53cadcc136d2664506cf29cc4de52cefe84ed544b49a978f132a614e",
+                "code": "988bf471aa1530ebef2821241ef81fa4292bcc72",
+                "maintenance": "6477cf7f0b2a143324a05db63b80dd879098baecf79de555c6c318e2048b16c8"
+            }
+        }
+    }
+}

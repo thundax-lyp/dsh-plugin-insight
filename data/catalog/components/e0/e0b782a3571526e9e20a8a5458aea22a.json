@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e0b782a3571526e9e20a8a5458aea22a",
+    "identity": "github:1360312762:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360312762:root",
+            "repository": "MrmoLabs/dsh-yorha-ui",
+            "path": "",
+            "revision": "6497a671620d101951c2e68dbb6c2084b55db40e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "be9124562feead70c7a0c0bdcd4e41ad07cbd096e696709130739ccfdb6cd3a5",
+                "code": "6497a671620d101951c2e68dbb6c2084b55db40e",
+                "maintenance": "426b14b453b431f92afeb70988d87b4409460b36489e63a40ba126991a121314"
+            }
+        }
+    }
+}

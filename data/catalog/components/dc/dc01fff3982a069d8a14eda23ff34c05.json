@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dc01fff3982a069d8a14eda23ff34c05",
+    "identity": "github:1338432739:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338432739:root",
+            "repository": "MoonlitDropOfBlood/dsh-archive-manager",
+            "path": "",
+            "revision": "ef12a69350feb26ccbc9cfbc3b2bd977bace3ec4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3be5afc9761420dff9151e7c2e8b8bbd3d018ea965a52f834a8f668e40918f9d",
+                "code": "ef12a69350feb26ccbc9cfbc3b2bd977bace3ec4",
+                "maintenance": "63ed59b3f941f5ddd51b7f3d02c751317f4831afa1a490f7685695e0acaef908"
+            }
+        }
+    }
+}

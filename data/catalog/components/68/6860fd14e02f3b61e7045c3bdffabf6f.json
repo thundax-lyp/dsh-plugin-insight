@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6860fd14e02f3b61e7045c3bdffabf6f",
+    "identity": "github:1347941925:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347941925:root",
+            "repository": "Shonean/deepseek-harness-vscode-desktop",
+            "path": "",
+            "revision": "be5ea06574a5704125af750b6347df82dca8a7e4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fba6507101e91ae89ef6f02a1c232d45a5157a8c28876b894a755879b1cc41df",
+                "code": "be5ea06574a5704125af750b6347df82dca8a7e4",
+                "maintenance": "76dbb84243325e07762647744834a9fa9ab6da67742ea0dd9e9821460a0b61ec"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2f78a69afb003541cefc1c24bcd3e1db",
+    "identity": "github:1396771137:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396771137:root",
+            "repository": "WuShichao/dsh-ipynb-preview",
+            "path": "",
+            "revision": "12befce94b3ca061b96b3e0e4f7c742dc4f36acb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "89dff25e46565a4df7d492cd34267b911e047a35eee9177d96485c928375c989",
+                "code": "12befce94b3ca061b96b3e0e4f7c742dc4f36acb",
+                "maintenance": "69de5c90ba553505ad633f636df53fc488564573c0de8b322a86e56acbc28a7e"
+            }
+        }
+    }
+}

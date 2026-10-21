@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b58039984ce9fc1e78a7ef1d512a89b",
+    "identity": "github:1392348014:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392348014:root",
+            "repository": "dzwalker/dsh-session-keepwarm",
+            "path": "",
+            "revision": "12e1693f266eb6b6f182d2c23e7accc8466a3c5c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e3afc63ef5cf0fb927e5ba7e4ad0ff47018df31ac377327d1c28ed4e507cbf16",
+                "code": "12e1693f266eb6b6f182d2c23e7accc8466a3c5c",
+                "maintenance": "5203436da9621788bf1df7a98e6d9c1462249da3fc08742c6448cbed3ef7607c"
+            }
+        }
+    }
+}

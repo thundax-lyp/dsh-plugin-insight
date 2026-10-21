@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "68f01b686dba6baa870c5b175ce7f152",
+    "identity": "github:1343946285:packages-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343946285:packages-plugin",
+            "repository": "alextangson/dsh-dispatch",
+            "path": "packages/plugin",
+            "revision": "5f379d40ce56b17eb6fb71668112aa75d436133d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d4f9de026da4e6f5f40fb671cb6e0e58a7e51b07056cc82cda91bf6bd132864d",
+                "code": "5f379d40ce56b17eb6fb71668112aa75d436133d",
+                "maintenance": "5b821758a07fca98c369a8377db5c09959297fedc49d7feb631676ebfe9757ef"
+            }
+        }
+    }
+}

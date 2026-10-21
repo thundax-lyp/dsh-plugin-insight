@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "358e8dfd8c1a175b325e578379c7e0e7",
+    "identity": "github:1399742055:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399742055:root",
+            "repository": "zkforge/dsh-claude-desktop-theme",
+            "path": "",
+            "revision": "5dd3a450f707cf8acb5090e4fd853f5712a89a42",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e427fb839d2ccfd075e4ca7bd2e18218df423929cf8c07a90bd5d5789c20de57",
+                "code": "5dd3a450f707cf8acb5090e4fd853f5712a89a42",
+                "maintenance": "413874e030a4e977c9c035c5909d14cd6c78d8e76af6c8041ad692a9fb56d1a3"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6b0a517ae420fc7b55f2570cf658c412",
+    "identity": "github:1333771656:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333771656:root",
+            "repository": "zimai233/dsh-adhd-copilot",
+            "path": "",
+            "revision": "6527cb64b11b7265ba576e195bd008a5aa066be5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ad8bc439511646f340dd19746c1f6ab68a30e6370c086784896d35e547abb652",
+                "code": "6527cb64b11b7265ba576e195bd008a5aa066be5",
+                "maintenance": "86c2d49221daac974a46b965e3e06c31864b0378d69bfbba1a10e08d3b8e657e"
+            }
+        }
+    }
+}

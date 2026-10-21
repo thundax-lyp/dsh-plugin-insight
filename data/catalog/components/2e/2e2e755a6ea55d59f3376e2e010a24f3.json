@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2e2e755a6ea55d59f3376e2e010a24f3",
+    "identity": "github:1346992957:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346992957:root",
+            "repository": "shaomingbo/dsh-open-in-editor",
+            "path": "",
+            "revision": "d4e971d85b08814b291256c94496024a6d2ded29",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "eb8490af5969d988961b7bb170282d89b81a24d6ba233acf4ea0511d6dd471b9",
+                "code": "d4e971d85b08814b291256c94496024a6d2ded29",
+                "maintenance": "d8f59c7524cfbb9e7a6434132de77387bb6cacb0361b9c1dcf125e886aaaee7b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "81a95f018f987363dcf58e45de636257",
+    "identity": "github:1335629422:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335629422:root",
+            "repository": "tancheng33/dsh-credentials-vault",
+            "path": "",
+            "revision": "5aba0e64569913103e686f658ca6a09b011aa254",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "140cb0de97c3177d4c79951fda411cbff0f8ba48bdc0ddee8656091c46dce88b",
+                "code": "5aba0e64569913103e686f658ca6a09b011aa254",
+                "maintenance": "b2f902f91d6c40b026441c21bf3a0a60203b9703d13b36cfdbb1c90488d1beb8"
+            }
+        }
+    }
+}

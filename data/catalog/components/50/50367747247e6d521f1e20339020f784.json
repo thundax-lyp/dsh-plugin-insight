@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "50367747247e6d521f1e20339020f784",
+    "identity": "github:1333961880:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333961880:root",
+            "repository": "Visol-456/dsh-llm-fallback",
+            "path": "",
+            "revision": "c90188ba7bd4241feb62a2174445a69c09b27342",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "adaa515a09cefa0efbb579733a452b5ec4effc0869c7bf1a905f5cfd2ee4b23f",
+                "code": "c90188ba7bd4241feb62a2174445a69c09b27342",
+                "maintenance": "d025da0a7427308eeb9ab943f49d84c8f678df243b7ecd908333550f657c1ad1"
+            }
+        }
+    }
+}

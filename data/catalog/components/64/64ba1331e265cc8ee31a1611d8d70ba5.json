@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "64ba1331e265cc8ee31a1611d8d70ba5",
+    "identity": "github:1391632191:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391632191:root",
+            "repository": "JessenReinhart/dsh-tokenslash",
+            "path": "",
+            "revision": "d5c74949487df9d04352dc5c977e98340dbb7780",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8595ad4facac50fb7c5633325cf087db819ba543ad4f3b8b863316410f86fbb7",
+                "code": "d5c74949487df9d04352dc5c977e98340dbb7780",
+                "maintenance": "4cc1ae0ed0d773a7b87cb48fc7df43b359d99a79ed5118197c41267642611c8c"
+            }
+        }
+    }
+}

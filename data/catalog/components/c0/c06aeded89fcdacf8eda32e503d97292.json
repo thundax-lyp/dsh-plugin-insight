@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c06aeded89fcdacf8eda32e503d97292",
+    "identity": "github:1334521013:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334521013:root",
+            "repository": "xbzbing/dsh-auth-gateway",
+            "path": "",
+            "revision": "9e75b655b14d4309b59e7941d9c4cdb3a5a2b996",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2f009cea8e34a69a7ed076858c786a9d19fd03f4dc760c2b07b884bf6130fb5b",
+                "code": "9e75b655b14d4309b59e7941d9c4cdb3a5a2b996",
+                "maintenance": "f843ad99783f3668f7ffec318d17052dc3ee6633685dac565b04eab0de3571e5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8f3f02bcb8f1fe88ee917e3b9d92e489",
+    "identity": "github:1334203726:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334203726:root",
+            "repository": "superboy911/dsh-model-router",
+            "path": "",
+            "revision": "98ca5cec34ce1f980be99c225d49bbd6fb021682",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8d5300194b47b0b901ef06728b1d25545ce9b0c276269fd7646b38953ddad4f6",
+                "code": "98ca5cec34ce1f980be99c225d49bbd6fb021682",
+                "maintenance": "cb275352325b18f7b818bda5ca5f6194e397167cb7d734b096ebc4d1c73d9f6e"
+            }
+        }
+    }
+}

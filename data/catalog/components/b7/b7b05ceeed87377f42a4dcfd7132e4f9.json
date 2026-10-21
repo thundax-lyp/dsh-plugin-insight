@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7b05ceeed87377f42a4dcfd7132e4f9",
+    "identity": "github:1371288742:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1371288742:root",
+            "repository": "yizhixiaokong/dsh-compose-panel",
+            "path": "",
+            "revision": "877c00ec3321479eddb09963c5db60ed4cedbd33",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "75433216275f7e4b87bb29b09549f6814e88febb4be08180f33a68dc9b93a562",
+                "code": "877c00ec3321479eddb09963c5db60ed4cedbd33",
+                "maintenance": "393916aa90957fa415141370be758598241ddff8f03a1cd195246d339b3cf577"
+            }
+        }
+    }
+}

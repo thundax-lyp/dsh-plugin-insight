@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d59015bcfed4f2722cbd02eec0ff9833",
+    "identity": "github:1335701661:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335701661:root",
+            "repository": "EagleClark/dsh-genshin-lisa-notice",
+            "path": "",
+            "revision": "04e130fab5adef22c76e3fc3c87d3d72a77d5f7b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "37a49be23224b9ee6fdb87318da9ce6ba84f90398c9ad3b7bd06b23dfed365fa",
+                "code": "04e130fab5adef22c76e3fc3c87d3d72a77d5f7b",
+                "maintenance": "1906837e3942ce8e6f91fc8f370bb33c759a5e4afbb58f0751d6fad8724f374e"
+            }
+        }
+    }
+}

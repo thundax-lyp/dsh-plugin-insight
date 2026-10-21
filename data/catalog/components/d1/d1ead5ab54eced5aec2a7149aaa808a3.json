@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d1ead5ab54eced5aec2a7149aaa808a3",
+    "identity": "github:1344552096:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344552096:root",
+            "repository": "afoxsss/dsh-conversation-map",
+            "path": "",
+            "revision": "c6702ed4755f5989bfd677a2933b8d0266fe8eaf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7e8510cfd8a07187c6c56385658fe9f248b8e4945968c58fd1b812caf2175c32",
+                "code": "c6702ed4755f5989bfd677a2933b8d0266fe8eaf",
+                "maintenance": "6e8098c1f4ed9c77d1b8a8243a0248fe8afa8c5e947db3f90cfcb6429b27398c"
+            }
+        }
+    }
+}

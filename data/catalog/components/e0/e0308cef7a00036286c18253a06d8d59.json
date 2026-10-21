@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e0308cef7a00036286c18253a06d8d59",
+    "identity": "github:1327795364:packages-dsh-tool-calculator",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-calculator",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-calculator",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f9f89d3aa094cfc450f865b5bc45344ffcb4b7e489976632e49f731145e4b453",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            }
+        }
+    }
+}

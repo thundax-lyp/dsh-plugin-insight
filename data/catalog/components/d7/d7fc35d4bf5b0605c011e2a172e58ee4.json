@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d7fc35d4bf5b0605c011e2a172e58ee4",
+    "identity": "github:1353136134:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353136134:root",
+            "repository": "spechenxin/jimu",
+            "path": "",
+            "revision": "2b496703530e00140a868f122827ebe002a3f75e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5768257ff4e9fedb6bd8e448b01c03faf0a9b714a8153d8977870b503b5c980f",
+                "code": "2b496703530e00140a868f122827ebe002a3f75e",
+                "maintenance": "0f62fef5c0377f505192151e4c310f200679f2a9c60ec947b0ae1a4d367c8b00"
+            }
+        }
+    }
+}

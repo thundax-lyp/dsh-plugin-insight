@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0110436058a9c125abfb7f4ab42a547a",
+    "identity": "github:1401619796:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401619796:root",
+            "repository": "liwei9745/dsh-genbox-plugin",
+            "path": "",
+            "revision": "7068202ad383feadc9618f167b8c92f04bca037a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c4fa5dd813c9abb5e1fd4174581261925aa0021b63bbe5932f5deab7a170e67c",
+                "code": "7068202ad383feadc9618f167b8c92f04bca037a",
+                "maintenance": "55188b2f2e9e1275734e66f52914dab8259d1e4b6427b4986229f0b34d29f58b"
+            }
+        }
+    }
+}

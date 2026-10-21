@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "61afe9aa7d6920ec04046ec2b63a6337",
+    "identity": "github:1421704325:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421704325:root",
+            "repository": "Firefly-TheHerta/dsh-boot-video-manager",
+            "path": "",
+            "revision": "ac0ae3628ef256e64b375ae37c9e2ec17f1902d4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6d998742fc505cee92a0dbee15c67ccd85fe48920e528e784a029b0c57e5d6f8",
+                "code": "ac0ae3628ef256e64b375ae37c9e2ec17f1902d4",
+                "maintenance": "a2d9f78f8518eedc8d06df6c7f0ba07d67052ccf642df9a76f4b9df58a0495ba"
+            }
+        }
+    }
+}

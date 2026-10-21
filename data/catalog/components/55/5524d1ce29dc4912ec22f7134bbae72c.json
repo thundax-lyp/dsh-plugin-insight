@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5524d1ce29dc4912ec22f7134bbae72c",
+    "identity": "github:1335288737:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335288737:root",
+            "repository": "Samge0/dsh-plugin-qcc",
+            "path": "",
+            "revision": "9add16b489ae26c21fdea45f8eb2d61e37951186",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c47808644a140d215e77bf9d98f07f0f2e4b290e753ba12eccf88f4515506837",
+                "code": "9add16b489ae26c21fdea45f8eb2d61e37951186",
+                "maintenance": "536eb509835d36bd583d97748cfca72cfb273cd493ef64ddb3e7fe863460ff33"
+            }
+        }
+    }
+}

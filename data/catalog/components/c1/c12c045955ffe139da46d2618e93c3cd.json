@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c12c045955ffe139da46d2618e93c3cd",
+    "identity": "github:1422902432:packages-dsh-ai-research",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422902432:packages-dsh-ai-research",
+            "repository": "fomalhaut1998/dsh-ai-research",
+            "path": "packages/dsh-ai-research",
+            "revision": "89161e2090d8f842b8e5bf4f722e1ed38406e27f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "16d05eef5d8613691e9517a431d2081a033ad0232ee14c375b4863fff41c41da",
+                "code": "89161e2090d8f842b8e5bf4f722e1ed38406e27f",
+                "maintenance": "d1effaeee963fbfbae09ed25d572dacdd0d8ea4076498b7fef2b3cbe9ed031ca"
+            }
+        }
+    }
+}

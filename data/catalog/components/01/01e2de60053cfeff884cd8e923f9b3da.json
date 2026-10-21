@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01e2de60053cfeff884cd8e923f9b3da",
+    "identity": "github:1340838917:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340838917:root",
+            "repository": "roymina/dsh-cad",
+            "path": "",
+            "revision": "df6860b0a3044a14e71522cd6c90bca87c2aeff4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "434769d7fc2cf2bee0049657fe8aa8f62c79b8771c8077960e25fb11f9260d6f",
+                "code": "df6860b0a3044a14e71522cd6c90bca87c2aeff4",
+                "maintenance": "2092e1585b9a2d7d793d987b08c72efd3499900dcd992fa0cbd13096e3e7966c"
+            }
+        }
+    }
+}

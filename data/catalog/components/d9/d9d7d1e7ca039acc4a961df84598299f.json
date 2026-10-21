@@ -1,0 +1,366 @@
+{
+    "schema_version": 3,
+    "id": "d9d7d1e7ca039acc4a961df84598299f",
+    "identity": "github:1399011094:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1399011094:root",
+            "repository_id": 1399011094,
+            "component_id": "root",
+            "repository": "121212165/dsh-plugin-task-forge",
+            "path": "",
+            "aliases": [],
+            "name": "Task Forge",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [
+                "任务书",
+                "交接",
+                "回读握手"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "2b69373ec08f1ff471839d98acc254f1ccff3a3d7d7e93a60570e93e31cd4679",
+                "code": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+                "maintenance": "f6c5933eea1a716b920874948178ab1e4b52c581f6f57ffca95d62131b5b420d"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1399011094-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:14:24.130Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1399011094-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/121212165/dsh-plugin-task-forge/blob/af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac/README.md",
+                    "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+                    "captured_at": "2026-10-20T03:14:24.130Z",
+                    "summary": "把需求整理成版本化任务书，通过交接包和回读握手管理跨窗口协作。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/121212165--dsh-plugin-task-forge/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1399011094-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/121212165/dsh-plugin-task-forge/blob/af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac/src/plugin.ts",
+                    "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+                    "captured_at": "2026-10-20T03:14:24.130Z",
+                    "summary": "核查 src/plugin.ts、src/handshake.ts；命令编译任务、导出交接包并记录台账；握手解析回读、缺口、STATUS 和版本，旧版本不得视为当前放行。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/121212165--dsh-plugin-task-forge/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "格式检查和 READY 不能证明语义理解无损；未验证跨窗口任务成功率或模型真实遵守情况。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "跨模型或 IDE 交接任务时，用户需要暴露接收方理解缺口并跟踪其持有版本。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1399011094-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399011094:root",
+                            "area": "code",
+                            "fingerprint": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:14:24.130Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "命令编译任务、导出交接包并记录台账；握手解析回读、缺口、STATUS 和版本，旧版本不得视为当前放行。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1399011094-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399011094:root",
+                            "area": "code",
+                            "fingerprint": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:14:24.130Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "将隐含假设和版本漂移显性化有价值；作者的无损说法不能由模板和状态字样单独证明。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1399011094-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399011094:root",
+                            "area": "code",
+                            "fingerprint": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:14:24.130Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "编译、全文重发、回读和补缺口增加模型与人工轮次；高交接频率才可能抵消成本。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1399011094-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399011094:root",
+                            "area": "code",
+                            "fingerprint": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:14:24.130Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "旧版握手拒绝放行、READY 带缺口按待输入处理值得借鉴；内容语义仍需验收者判断。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1399011094-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399011094:root",
+                            "area": "code",
+                            "fingerprint": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:14:24.130Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用一个有明确验收点的小任务试交接，人工比对遗漏和改版后的接收方状态。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1399011094-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399011094:root",
+                            "area": "code",
+                            "fingerprint": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:14:24.130Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "格式检查和 READY 不能证明语义理解无损；未验证跨窗口任务成功率或模型真实遵守情况。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1399011094-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399011094:root",
+                            "area": "code",
+                            "fingerprint": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:14:24.130Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "版本 0.2.0，依赖命令、工具、提示、模型及 agent 服务，跨 IDE 交接有额外配置。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1399011094-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399011094:root",
+                            "area": "code",
+                            "fingerprint": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:14:24.130Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:14:24.130Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "频繁跨模型交接者可用小任务试版本台账，人工核对遗漏及改版后接收状态。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "交接改版中的理解缺口和版本漂移任务明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "旧版握手拒绝放行比普通Markdown任务书更可追溯。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "回读和状态解析可查，READY不证明语义无损。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "全文重发、回读和补缺增加模型与人工轮次。"
+                    }
+                },
+                "score": 65,
+                "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1399011094-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1399011094:root",
+                        "area": "code",
+                        "fingerprint": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1399011094:root",
+            "repository": "121212165/dsh-plugin-task-forge",
+            "path": "",
+            "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+            "fingerprints": {
+                "directory": "2b69373ec08f1ff471839d98acc254f1ccff3a3d7d7e93a60570e93e31cd4679",
+                "code": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+                "maintenance": "f6c5933eea1a716b920874948178ab1e4b52c581f6f57ffca95d62131b5b420d"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "cdcff915670aa51e8fdc9b16b18d6826fd4f3049d66d9214e08ee1be99f0adf5"
+        },
+        "publication.metadata": "data/plugins/121212165--dsh-plugin-task-forge/META.json",
+        "publication.summaries": {
+            "text": "把需求整理成版本化任务书，通过交接包和回读握手管理跨窗口协作。",
+            "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+            "source_url": "https://github.com/121212165/dsh-plugin-task-forge/blob/af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+            "items": {
+                "用户命令": "任务编译、relay、ack 与缺口回答。",
+                "模型工具": "任务书写入工具。"
+            }
+        },
+        "publication.advice": {
+            "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+            "text": "先用一个有明确验收点的小任务试交接，人工比对遗漏和改版后的接收方状态。"
+        },
+        "registry": "data/plugins/121212165--dsh-plugin-task-forge",
+        "reports": "# Task Forge\n\n> 把需求整理成版本化任务书，通过交接包和回读握手管理跨窗口协作。\n\n## 固定范围与依据\n\n固定提交 [af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac](https://github.com/121212165/dsh-plugin-task-forge/blob/af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac/src/plugin.ts)；组件路径：仓库根。核查时间 2026-10-20T03:14:24.130Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/plugin.ts、src/handshake.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：跨模型或 IDE 交接任务时，用户需要暴露接收方理解缺口并跟踪其持有版本。\n- **亮点**：命令编译任务、导出交接包并记录台账；握手解析回读、缺口、STATUS 和版本，旧版本不得视为当前放行。\n- **思考**：将隐含假设和版本漂移显性化有价值；作者的无损说法不能由模板和状态字样单独证明。\n- **建议**：先用一个有明确验收点的小任务试交接，人工比对遗漏和改版后的接收方状态。\n\n## 场景与替代办法\n\n跨模型或 IDE 交接任务时，用户需要暴露接收方理解缺口并跟踪其持有版本。\n\n普通 Markdown 任务书更低成本；有多人多窗口且频繁改版时，版本台账更有增量。\n\n## 依赖与流程\n\n需要接收方配合协议、人工回答缺口与稳定台账；不是任意外部 AI 窗口都受同一运行时控制。\n\n编译并确认任务书、发送交接包、检查回读，补缺口后升版重新交接，最终按验收标准办结。\n\n## 成本与效果\n\n编译、全文重发、回读和补缺口增加模型与人工轮次；高交接频率才可能抵消成本。\n\n将隐含假设和版本漂移显性化有价值；作者的无损说法不能由模板和状态字样单独证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5eab1bd5043b0fef190f7aa00265784a11f2ca5828576e9051595989c52a4d74。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 138 | — | — | 2634 |\n| .ts | source | 8 | 1874 | 1533 | 195 | — |\n| .ts | test | 9 | 1957 | 1618 | 99 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **用户命令**：任务编译、relay、ack 与缺口回答。\n- **模型工具**：任务书写入工具。\n\n## 工程亮点\n\n旧版握手拒绝放行、READY 带缺口按待输入处理值得借鉴；内容语义仍需验收者判断。\n\n## 分发与兼容\n\n版本 0.2.0，依赖命令、工具、提示、模型及 agent 服务，跨 IDE 交接有额外配置。\n\n## 历史对照\n\n前次代码指纹为 af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac；本轮固定为 af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac。普通 Markdown 任务书更低成本；有多人多窗口且频繁改版时，版本台账更有增量。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：格式检查和 READY 不能证明语义理解无损；未验证跨窗口任务成功率或模型真实遵守情况。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用有意遗漏、旧版本、虚假 READY 和并发更新样本，核对协议能拦什么及仍需人工判断什么。\n",
+        "metadata": {
+            "repository": "121212165/dsh-plugin-task-forge",
+            "repository_id": 1399011094,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-10-19T09:50:28Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:1FA705:13C3D6:2135A9:6AD84914 and timestamp 2026-10-21 05:09:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:1468F2:21E75A:6AD84914 and timestamp 2026-10-21 05:09:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:145A4E:21D751:6AD84914 and timestamp 2026-10-21 05:09:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:265AC:1465B7:21C157:6AD84914 and timestamp 2026-10-21 05:09:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A121212165%2Fdsh-plugin-task-forge%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:0BD3:9DACA:1056A6:6AD84914 and timestamp 2026-10-21 05:09:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-task-forge",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-task-forge",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-task-forge",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+                "current_revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1399011094:root",
+            "repository": "121212165/dsh-plugin-task-forge",
+            "path": "",
+            "revision": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2b69373ec08f1ff471839d98acc254f1ccff3a3d7d7e93a60570e93e31cd4679",
+                "code": "af8cf4f67a14d7c55dbcf8c91171a1d4ae14c7ac",
+                "maintenance": "f6c5933eea1a716b920874948178ab1e4b52c581f6f57ffca95d62131b5b420d"
+            }
+        }
+    }
+}

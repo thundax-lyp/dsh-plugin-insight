@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9e6cbc8eeebd06703375df3dfe076609",
+    "identity": "github:1335781424:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335781424:root",
+            "repository": "futrime/webdsh",
+            "path": "",
+            "revision": "18906346882dad3a0e80203383fe871ec261ce53",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "acb1c42e1823cd24473bac29480ff716994ad75f70f6346c7a580b9c7384a98c",
+                "code": "18906346882dad3a0e80203383fe871ec261ce53",
+                "maintenance": "1f3076f3dbdd8bb27ac767f2d80adfb86f07c1d4c8604b4c22a56c8d52cd48ec"
+            }
+        }
+    }
+}

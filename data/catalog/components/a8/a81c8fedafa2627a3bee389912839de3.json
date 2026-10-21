@@ -1,0 +1,482 @@
+{
+    "schema_version": 3,
+    "id": "a81c8fedafa2627a3bee389912839de3",
+    "identity": "github:1336647931:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336647931:root",
+            "repository_id": 1336647931,
+            "component_id": "root",
+            "repository": "863683348/dsh-gov",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-gov",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "007b3ae95ee687842f0ab192c4f3e524b214b00f8eed0aa221b955e4791e0a6f",
+                "code": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+                "maintenance": "06bb17c760c7edb627c47a21469999aa09c5b503ffa363642dd996b0ec14ba93"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1336647931-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:48:08.412Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1336647931-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/863683348/dsh-gov/blob/bb061250a1dcead15edc202b4666c7d54f36da4a/README.md",
+                    "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+                    "captured_at": "2026-10-21T03:48:08.412Z",
+                    "summary": "提供工具调用策略、JSONL审计及按Agent记录的token配额提示。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-gov/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1336647931-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/863683348/dsh-gov/blob/bb061250a1dcead15edc202b4666c7d54f36da4a/lib/index.js",
+                    "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+                    "captured_at": "2026-10-21T03:48:08.412Z",
+                    "summary": "核查 lib/index.js、lib/policy.js、lib/quota.js；lib/index.js监听tools/pre-execute返回deny/ask或next，tools/result记录结果；policy.js按优先级及deny>ask>allow平局规则匹配；quota.js累计pre-step测量值，超过预算注入警告消息。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/863683348--dsh-gov/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合研究DSH集中工具权限与审计的维护者；要区分执行前策略拒绝与用量提醒。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js监听tools/pre-execute返回deny/ask或next，tools/result记录结果；policy.js按优先级及deny>ask>allow平局规则匹配；quota.js累计pre-step测量值，超过预算注入警告消息。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与依赖限定固定package.json、README及本轮META；仓库热度、包存在或结构校验不能证明运行可用。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次编写策略并核实宿主钩子；持续维护规则、审计文件及日志轮转，现金成本取决于实际模型而非此计数。人工要处理误拒绝、权限例外及日志缺口，治理规则同样需要保护其修改入口。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "可在独立Profile试验工具deny/ask与审计。先验证规则生效、日志写盘失败和运行中quota_set，配额当前只能当提示与估算，不能据此承诺费用封顶。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "执行前策略有可操作的控制价值；缺少真实组织部署、审计可靠性及费用对账数据。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "policy与quota纯逻辑分层使判定易解释；明确平局规则值得借鉴。默认allow、best-effort落盘和模型可调用规则管理工具意味着还需独立管理员边界；不是装上即获得合规。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "作者称企业治理套件；源码可确认增量是把实际执行前钩子、结果日志和Agent用量状态统一到gov工具及持久化目录。相对只写禁止提示，deny/ask返回确实位于工具执行链；但企业合规、不可篡改审计和硬费用控制没有因此成立。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "配额超过后返回enter消息而不是reject，不能硬停请求；hook仅在启动时defaultLimit>0或已有配额时注册，空初始状态中之后quota_set可能没有计量hook。totalTokens是会话测量值却作为delta反复相加，可能重复累计上下文压力；状态与日志写入失败均吞掉，不能承诺审计完整。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：将预算分成请求压力、实际计费用量与可执行拒绝三种状态，再绑定不可变调用ID，可减少误计量和提示被误当硬配额。以重复pre-step、写盘失败、运行中设置quota及跨Agent轨迹验证计数和阻断；若宿主没有可靠计费用量，保留压力指标。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:08.412Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cross_scan_execution_binding",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "在“安装前审查并限制工具执行”的共同场景中，gate_scan/guard提供启发式证据与BLOCK/WARN/PASS建议，依赖模型主动调用；gov则在tools/pre-execute返回deny/ask，存在实际执行链控制点，但匹配依据仍是工具/Agent/工作区规则，未绑定某次扫描的包摘要。两者组合不自动形成“扫描通过才可安装”的保证。gov默认allow且管理工具另需保护，quota也只是提示。待验证设计是由受独立权限保护的策略核检查固定包摘要、扫描覆盖状态、批准事件和当前执行目标；换包、未扫描、过期批准或未知结果时拒绝相关写入。新增代价为包目标识别、状态失效和合法操作误拦，需在固定宿主对照仅提示、仅规则和摘要绑定三组轨迹比较漏放/误拦与人工时间；本轮没有部署组合或执行这些实验。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source",
+                        "2026-10-21-03-github-1336663986-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336647931:root",
+                            "area": "code",
+                            "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                        },
+                        {
+                            "plugin_id": "github:1336663986:root",
+                            "area": "code",
+                            "fingerprint": "b75c3a1b768448ee84a6fa07735206e6f8945411"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:48:49.583Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:48:49.583Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+                "reviewed_at": "2026-10-21T03:48:08.412Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336647931:root",
+                        "area": "code",
+                        "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：策略与审计是已有治理模式。 mechanism=15：执行钩子与规则优先级有实际接线。 transferability=10：纯策略可复用，宿主语义需验证。 simplification=4：集中入口便利，策略和计量维护复杂。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 0
+                    },
+                    "rationale": "workflow=18：策略与审计衔接明确。 delivery=8：日志可丢、预算非硬停，交付保证有限。 reach=10：DSH维护者适用，企业隔离未证。 economics=0：用量非账单且可能重计，无经济保证。",
+                    "basis": "interpretation",
+                    "score": 36,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1336647931-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "集中执行策略有价值，但quota累加口径、动态hook注册及吞写盘错妨碍治理保证；先验策略和审计故障，不能作为费用上限。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "工具权限与审计及预算观察任务具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "pre-execute deny/ask胜过纯禁止提示，管理入口仍需保护。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "policy优先级和quota注入路径可查，totalTokens重复累加和日志吞错已知。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "策略例外、日志轮转和误拒处理重，当前审计完整性未保。"
+                    }
+                },
+                "score": 60,
+                "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1336647931-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336647931:root",
+                        "area": "code",
+                        "fingerprint": "bb061250a1dcead15edc202b4666c7d54f36da4a"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336647931:root",
+            "repository": "863683348/dsh-gov",
+            "path": "",
+            "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+            "fingerprints": {
+                "directory": "007b3ae95ee687842f0ab192c4f3e524b214b00f8eed0aa221b955e4791e0a6f",
+                "code": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+                "maintenance": "06bb17c760c7edb627c47a21469999aa09c5b503ffa363642dd996b0ec14ba93"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "297a882c627d97b641908a5fc8803bcafe6740f6bb20ee41aa54665c4c578bc7"
+        },
+        "publication.metadata": "data/plugins/863683348--dsh-gov/META.json",
+        "publication.summaries": {
+            "text": "提供工具调用策略、JSONL审计及按Agent记录的token配额提示。",
+            "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+            "source_url": "https://github.com/863683348/dsh-gov/blob/bb061250a1dcead15edc202b4666c7d54f36da4a/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+            "items": {
+                "模型工具": "gov规则、审计及配额管理",
+                "事件监听": "tools/pre-execute策略与tools/result审计、agent/pre-step提示",
+                "后台": "gov.json及audit.jsonl持久化"
+            }
+        },
+        "publication.advice": {
+            "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+            "text": "可在独立Profile试验工具deny/ask与审计。先验证规则生效、日志写盘失败和运行中quota_set，配额当前只能当提示与估算，不能据此承诺费用封顶。"
+        },
+        "registry": "data/plugins/863683348--dsh-gov",
+        "reports": "# dsh-gov\n\n> 提供工具调用策略、JSONL审计及按Agent记录的token配额提示。\n\n## 使用建议\n\n可在独立Profile试验工具deny/ask与审计。先验证规则生效、日志写盘失败和运行中quota_set，配额当前只能当提示与估算，不能据此承诺费用封顶。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。\n\n## 洞察短评\n\n- **用途**：适合研究DSH集中工具权限与审计的维护者；要区分执行前策略拒绝与用量提醒。\n- **亮点**：作者称企业治理套件；源码可确认增量是把实际执行前钩子、结果日志和Agent用量状态统一到gov工具及持久化目录。相对只写禁止提示，deny/ask返回确实位于工具执行链；但企业合规、不可篡改审计和硬费用控制没有因此成立。\n- **思考**：配额超过后返回enter消息而不是reject，不能硬停请求；hook仅在启动时defaultLimit>0或已有配额时注册，空初始状态中之后quota_set可能没有计量hook。totalTokens是会话测量值却作为delta反复相加，可能重复累计上下文压力；状态与日志写入失败均吞掉，不能承诺审计完整。\n- **建议**：待验证假设：将预算分成请求压力、实际计费用量与可执行拒绝三种状态，再绑定不可变调用ID，可减少误计量和提示被误当硬配额。以重复pre-step、写盘失败、运行中设置quota及跨Agent轨迹验证计数和阻断；若宿主没有可靠计费用量，保留压力指标。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是宿主原生权限和独立审计；本项目增加集中策略/查询层，未替代强认证、不可篡改日志或账单系统。\n\n### 能力、依赖与流程\n\nlib/index.js监听tools/pre-execute返回deny/ask或next，tools/result记录结果；policy.js按优先级及deny>ask>allow平局规则匹配；quota.js累计pre-step测量值，超过预算注入警告消息。\n\n- **模型工具**：gov规则、审计及配额管理\n- **事件监听**：tools/pre-execute策略与tools/result审计、agent/pre-step提示\n- **后台**：gov.json及audit.jsonl持久化\n\n宿主tools/systemPrompt/agents/tokenMeter、DSH消息与路径接口；状态在DSH_HOME/gov。需要验证具体宿主对deny/ask返回的执行语义。\n\n工具前匹配并记决策→deny/ask或执行→记录结果；请求步测量→累计→写盘→超限注入提醒；gov工具可管理规则、日志与配额。\n\n### 成本与效果\n\n首次编写策略并核实宿主钩子；持续维护规则、审计文件及日志轮转，现金成本取决于实际模型而非此计数。人工要处理误拒绝、权限例外及日志缺口，治理规则同样需要保护其修改入口。\n\n执行前策略有可操作的控制价值；缺少真实组织部署、审计可靠性及费用对账数据。\n\n### 工程亮点\n\npolicy与quota纯逻辑分层使判定易解释；明确平局规则值得借鉴。默认allow、best-effort落盘和模型可调用规则管理工具意味着还需独立管理员边界；不是装上即获得合规。\n\n源码依据：[lib/index.js](https://github.com/863683348/dsh-gov/blob/bb061250a1dcead15edc202b4666c7d54f36da4a/lib/index.js)、[lib/policy.js](https://github.com/863683348/dsh-gov/blob/bb061250a1dcead15edc202b4666c7d54f36da4a/lib/policy.js)、[lib/quota.js](https://github.com/863683348/dsh-gov/blob/bb061250a1dcead15edc202b4666c7d54f36da4a/lib/quota.js)。\n\n## 扫描结论与执行约束的比较\n\n在“安装前审查并限制工具执行”的共同场景中，gate_scan/guard提供启发式证据与BLOCK/WARN/PASS建议，依赖模型主动调用；gov则在tools/pre-execute返回deny/ask，存在实际执行链控制点，但匹配依据仍是工具/Agent/工作区规则，未绑定某次扫描的包摘要。两者组合不自动形成“扫描通过才可安装”的保证。gov默认allow且管理工具另需保护，quota也只是提示。待验证设计是由受独立权限保护的策略核检查固定包摘要、扫描覆盖状态、批准事件和当前执行目标；换包、未扫描、过期批准或未知结果时拒绝相关写入。新增代价为包目标识别、状态失效和合法操作误拦，需在固定宿主对照仅提示、仅规则和摘要绑定三组轨迹比较漏放/误拦与人工时间；本轮没有部署组合或执行这些实验。\n\n固定源码：[gov执行前策略](https://github.com/863683348/dsh-gov/blob/bb061250a1dcead15edc202b4666c7d54f36da4a/lib/index.js)、[gate主动扫描与提示](https://github.com/863683348/dsh-plugin-gate/blob/b75c3a1b768448ee84a6fa07735206e6f8945411/lib/index.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：将预算分成请求压力、实际计费用量与可执行拒绝三种状态，再绑定不可变调用ID，可减少误计量和提示被误当硬配额。以重复pre-step、写盘失败、运行中设置quota及跨Agent轨迹验证计数和阻断；若宿主没有可靠计费用量，保留压力指标。\n\n在固定宿主验证deny/ask是否真实阻止、gov自修改权限、日志磁盘故障、重复测量和新配额hook，记录实际轨迹；本轮未执行。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9f5819e4d3ab85280aa42f19a8a575d674c07961e00d2771eb75cea441e3a054。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 156 | — | — | 1421 |\n| .js | source | 4 | 493 | 377 | 88 | — |\n| .mjs | source | 1 | 31 | 24 | 4 | — |\n| .mjs | test | 3 | 166 | 147 | 4 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[863683348/dsh-gov](https://github.com/863683348/dsh-gov)\n- **版本号**：0.1.0（[固定提交 bb061250](https://github.com/863683348/dsh-gov/tree/bb061250a1dcead15edc202b4666c7d54f36da4a)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、lib/policy.js、lib/quota.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。\n- 下一步：在固定宿主验证deny/ask是否真实阻止、gov自修改权限、日志磁盘故障、重复测量和新配额hook，记录实际轨迹；本轮未执行。\n",
+        "metadata": {
+            "repository": "863683348/dsh-gov",
+            "repository_id": 1336647931,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-09-11T03:27:19Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-gov%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:15978F:234FEF:6AD84AA9 and timestamp 2026-10-21 05:16:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-gov%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:11EA2C:1407F7:21BF0E:6AD84AA9 and timestamp 2026-10-21 05:16:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-gov%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:1540DB:22EA5D:6AD84AAA and timestamp 2026-10-21 05:16:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-gov%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:14DD42:229281:6AD84AAA and timestamp 2026-10-21 05:16:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-gov%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:14CA01:2272AC:6AD84AAA and timestamp 2026-10-21 05:16:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-gov",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 152,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-gov",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-17T04:04:19.567Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-gov",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-08-17T04:04:19.843Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+                "current_revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336647931:root",
+            "repository": "863683348/dsh-gov",
+            "path": "",
+            "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "007b3ae95ee687842f0ab192c4f3e524b214b00f8eed0aa221b955e4791e0a6f",
+                "code": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+                "maintenance": "06bb17c760c7edb627c47a21469999aa09c5b503ffa363642dd996b0ec14ba93"
+            }
+        }
+    }
+}

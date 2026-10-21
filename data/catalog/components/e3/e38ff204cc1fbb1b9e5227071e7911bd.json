@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e38ff204cc1fbb1b9e5227071e7911bd",
+    "identity": "github:1339277921:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339277921:root",
+            "repository": "huaxiren6/DSH-QrPairing",
+            "path": "",
+            "revision": "f905d45eafa573f3e31ba4655821c38a54409b81",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "156d4f93f510a5d1fb9c4159e48848e8b838be04a0ae01b9077c393d2fa07646",
+                "code": "f905d45eafa573f3e31ba4655821c38a54409b81",
+                "maintenance": "9534ac55e9dc9d0861aa72376ac60c519dbb4a3b17bd34220b085746868e9e72"
+            }
+        }
+    }
+}

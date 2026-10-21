@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0ade91cfeaa2430e1f93f63eeaa7d259",
+    "identity": "github:1333963585:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333963585:root",
+            "repository": "xiaoyuyu6420/dsh-backup",
+            "path": "",
+            "revision": "3e8871a9c57d22333754e7ca9e67ef7cfbce08ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e1712de4d23cc559a3b3b2975572368e1e58afa7e7466ed305ec84605fba3551",
+                "code": "3e8871a9c57d22333754e7ca9e67ef7cfbce08ca",
+                "maintenance": "5b53efe4fb4a859fbe488e6fa638ebee5c12a758413d2a950c74dfa0cb1855cd"
+            }
+        }
+    }
+}

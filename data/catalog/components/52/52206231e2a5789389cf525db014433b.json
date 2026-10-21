@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "52206231e2a5789389cf525db014433b",
+    "identity": "github:1333814534:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333814534:root",
+            "repository": "JMOKSZ/dsh-lark-bridge",
+            "path": "",
+            "revision": "346aa43a10a2f59bb21f7098c0ca7f8cb0d3a30a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e1f6ce26caa31b94c3c7967f4ef289b72ced8aa33e4d0f0a77d127eb4cff8b2b",
+                "code": "346aa43a10a2f59bb21f7098c0ca7f8cb0d3a30a",
+                "maintenance": "66a8dc762c6211f274808752baaf1b3a9e78b914b73ac3279c319a2ef137446e"
+            }
+        }
+    }
+}

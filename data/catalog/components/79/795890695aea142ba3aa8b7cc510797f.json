@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "795890695aea142ba3aa8b7cc510797f",
+    "identity": "github:1344714002:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1344714002:root",
+            "repository_id": 1344714002,
+            "component_id": "root",
+            "repository": "988hj7tczd-oss/dsh-dep-vuln-scan",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-dep-vuln-scan",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "8470c002cdb09e0e3137ea45d353d998cacf6b56a7dc06d6e95e3484d6f81295",
+                "code": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                "maintenance": "48a74ca5b5d47ee77d1a6a33ab55f518701d172f8f709a508c8e7947f04e83c9"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-04-github-1344714002-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T04:14:36.982Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-04-github-1344714002-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/README.md",
+                    "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                    "captured_at": "2026-10-21T04:14:36.982Z",
+                    "summary": "读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-dep-vuln-scan/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-04-github-1344714002-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/index.ts",
+                    "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                    "captured_at": "2026-10-21T04:14:36.982Z",
+                    "summary": "核查 src/index.ts、src/tools/dep-scan.ts、src/lockfile-parsers.ts、src/osv-client.ts、src/semver.ts、src/report.ts、package.json；dep-scan发现锁文件，lockfile-parsers提取精确包版本，osv-client分块querybatch和详情并本地复核范围，report生成表格/修复命令与presentationMeta。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-dep-vuln-scan/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读index、扫描编排、parser、OSV归一/semver和report；未联网或复跑录制fixture。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者快速盘点锁定依赖的已知公告风险，交付包版本与漏洞表供人工修复；不评估实际可利用性。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "dep-scan发现锁文件，lockfile-parsers提取精确包版本，osv-client分块querybatch和详情并本地复核范围，report生成表格/修复命令与presentationMeta。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读index、扫描编排、parser、OSV归一/semver和report；未联网或复跑录制fixture。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "TS需构建，源码link依赖相邻dsh-src，发布包是否已替换必须另核；OSV网络为必需。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次准备兼容宿主/依赖，持续网络与解析复核、升级回归测试；OSV作者称无需key，本轮不作商业/现价保证；人工修复成本未测。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已知锁文件的初筛；检查跳过/错误及实际包清单，修复前核公告维护线并做项目回归，别直接执行生成命令。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "集中已知漏洞线索和依赖定位；不能证明无未知漏洞、无漏包或安全可升级。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "transport可注入、分块并发/重试与结构化errors便于复用；自写跨生态版本比较必须保守表达未知。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对手动逐生态查公告，增量是将多锁文件解析、批量OSV查询及可回放报告集成到DSH；漏洞数据库与版本事实属于OSV，插件不创造新漏洞发现。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "“确认存在”是否覆盖所有依赖和生态版本？pnpm/yarn行解析、requirements仅==、Maven属性等会跳过；自写semver不等于PyPI/Go/Maven完整排序，无法解析introduce/fixed可能误归类。最低fixed也不一定是当前维护线可安全升级目标，公告命中更不证明代码路径可利用。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：报告把解析覆盖/未知版本、生态专属比较和可利用性证据分层，可减少“零漏洞=安全”和跨版本线错误升级。由有限parser/semver推导，未实现完整分层。以预发布、非semver、peer后缀和多修复线对照官方锁解析/公告，测漏包与修复建议错误；未知不能按干净计。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344714002:root",
+                            "area": "code",
+                            "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:14:36.982Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T04:14:36.982Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                "reviewed_at": "2026-10-21T04:14:36.982Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1344714002:root",
+                        "area": "code",
+                        "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 小幅：OSV客户端与DSH适配；mechanism 小幅：批量/重试/范围核对常规；transferability 实质：注入transport与纯parser可复用；simplification 实质：多生态报告统一。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 小幅：辅助扫描不自动修复；delivery 实质：包/公告/修复表与回放；reach 实质：Agent无需逐站查询；economics 小幅：减少API重复，误建议修复成本未测。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344714002-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "有明确锁文件的团队可试已知漏洞初筛；核跳过包和生态版本排序，先读公告维护线再回归，勿直接执行最低fixed命令。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "锁定依赖公告盘点和包版本表交付清楚。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "多锁文件批量OSV报告少逐生态查询。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "分块query与自写解析可查，requirements仅==及复杂版本排序可能漏误。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需OSV网络和构建依赖，范围核对及升级回归成本仍由项目承担。"
+                    }
+                },
+                "score": 65,
+                "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-04-github-1344714002-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1344714002:root",
+                        "area": "code",
+                        "fingerprint": "db879fc01cd02b9f0821a87ba728a310ae08d9ac"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1344714002:root",
+            "repository": "988hj7tczd-oss/dsh-dep-vuln-scan",
+            "path": "",
+            "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+            "fingerprints": {
+                "directory": "8470c002cdb09e0e3137ea45d353d998cacf6b56a7dc06d6e95e3484d6f81295",
+                "code": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                "maintenance": "48a74ca5b5d47ee77d1a6a33ab55f518701d172f8f709a508c8e7947f04e83c9"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T04:06:46Z",
+            "analysis_sha256": "15933c388f93ca396e7f5772bae991fc453c5833025bc04c52ad80ba08c3a8b7"
+        },
+        "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-dep-vuln-scan/META.json",
+        "publication.summaries": {
+            "text": "读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。",
+            "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+            "source_url": "https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+            "items": {
+                "模型工具": "dep_vuln_scan只读查询及报告。"
+            }
+        },
+        "publication.advice": {
+            "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+            "text": "适合已知锁文件的初筛；检查跳过/错误及实际包清单，修复前核公告维护线并做项目回归，别直接执行生成命令。"
+        },
+        "registry": "data/plugins/988hj7tczd-oss--dsh-dep-vuln-scan",
+        "reports": "# dsh-dep-vuln-scan\n\n> 读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。\n\n## 使用建议\n\n适合已知锁文件的初筛；检查跳过/错误及实际包清单，修复前核公告维护线并做项目回归，别直接执行生成命令。\n\n核查状态：源码支持只读扫描与结构化错误；未调用OSV或跑目标测试，真实解析覆盖和漏洞确认未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：开发者快速盘点锁定依赖的已知公告风险，交付包版本与漏洞表供人工修复；不评估实际可利用性。\n- **亮点**：相对手动逐生态查公告，增量是将多锁文件解析、批量OSV查询及可回放报告集成到DSH；漏洞数据库与版本事实属于OSV，插件不创造新漏洞发现。\n- **思考**：“确认存在”是否覆盖所有依赖和生态版本？pnpm/yarn行解析、requirements仅==、Maven属性等会跳过；自写semver不等于PyPI/Go/Maven完整排序，无法解析introduce/fixed可能误归类。最低fixed也不一定是当前维护线可安全升级目标，公告命中更不证明代码路径可利用。\n- **建议**：待验证假设：报告把解析覆盖/未知版本、生态专属比较和可利用性证据分层，可减少“零漏洞=安全”和跨版本线错误升级。由有限parser/semver推导，未实现完整分层。以预发布、非semver、peer后缀和多修复线对照官方锁解析/公告，测漏包与修复建议错误；未知不能按干净计。\n\n## 场景与替代办法\n\n开发者快速盘点锁定依赖的已知公告风险，交付包版本与漏洞表供人工修复；不评估实际可利用性。\n\n参照OSV扫描/各包管理器审计与手工公告核对；未作召回率比较。\n\n## 能力清单\n\n- **模型工具**：dep_vuln_scan只读查询及报告。\n\n## 依赖与流程\n\ndep-scan发现锁文件，lockfile-parsers提取精确包版本，osv-client分块querybatch和详情并本地复核范围，report生成表格/修复命令与presentationMeta。\n\nDSH tools/fs/systemPrompt、OSV API、锁文件精确版本和构建依赖。\n\n发现锁→提取/去重包→分批查OSV→详情与范围核对→表格/汇总→人工决定升级；不写项目。\n\nTS需构建，源码link依赖相邻dsh-src，发布包是否已替换必须另核；OSV网络为必需。\n\n## 成本与效果\n\n首次准备兼容宿主/依赖，持续网络与解析复核、升级回归测试；OSV作者称无需key，本轮不作商业/现价保证；人工修复成本未测。\n\n集中已知漏洞线索和依赖定位；不能证明无未知漏洞、无漏包或安全可升级。\n\n## 核心贡献\n\n相对手动逐生态查公告，增量是将多锁文件解析、批量OSV查询及可回放报告集成到DSH；漏洞数据库与版本事实属于OSV，插件不创造新漏洞发现。\n\n## 关键质疑\n\n“确认存在”是否覆盖所有依赖和生态版本？pnpm/yarn行解析、requirements仅==、Maven属性等会跳过；自写semver不等于PyPI/Go/Maven完整排序，无法解析introduce/fixed可能误归类。最低fixed也不一定是当前维护线可安全升级目标，公告命中更不证明代码路径可利用。\n\n## 工程亮点\n\ntransport可注入、分块并发/重试与结构化errors便于复用；自写跨生态版本比较必须保守表达未知。\n\n固定源码依据：[src/index.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/index.ts)、[src/tools/dep-scan.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/tools/dep-scan.ts)、[src/lockfile-parsers.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/lockfile-parsers.ts)、[src/osv-client.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/osv-client.ts)、[src/semver.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/semver.ts)、[src/report.ts](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/src/report.ts)、[package.json](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/blob/db879fc01cd02b9f0821a87ba728a310ae08d9ac/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：报告把解析覆盖/未知版本、生态专属比较和可利用性证据分层，可减少“零漏洞=安全”和跨版本线错误升级。由有限parser/semver推导，未实现完整分层。以预发布、非semver、peer后缀和多修复线对照官方锁解析/公告，测漏包与修复建议错误；未知不能按干净计。\n\n固定多生态fixture与官方解析比对，涵盖非semver/多修复线/网络失败，另测真实OSV；本轮均未执行。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：686fba1385e400e7a30eaf11e746fa78d146506589171ee0e96e18be55c89c52。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 220 | — | — | 2990 |\n| .ts | source | 6 | 2106 | 1586 | 384 | — |\n| .ts | test | 1 | 580 | 501 | 42 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.1；版本日期：2026-08-24（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[db879fc0](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/tree/db879fc01cd02b9f0821a87ba728a310ae08d9ac)；本轮基准：2026-10-21T04:06:46Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：抽读index、扫描编排、parser、OSV归一/semver和report；未联网或复跑录制fixture。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "988hj7tczd-oss/dsh-dep-vuln-scan",
+            "repository_id": 1344714002,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-08-24T14:53:31Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:143D9A:21E8BD:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:1523DE:22E5ED:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:3A339B:13C901:216F05:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:14B4A4:227992:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-dep-vuln-scan%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:1F2B1B:14D1E0:227F6C:6AD84ACA and timestamp 2026-10-21 05:16:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-dep-vuln-scan",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 106,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-dep-vuln-scan",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-24T10:54:01.168Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-dep-vuln-scan",
+                    "error": null,
+                    "latest_version": "0.1.1",
+                    "latest_published_at": "2026-08-24T13:25:19.914Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                "current_revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1344714002:root",
+            "repository": "988hj7tczd-oss/dsh-dep-vuln-scan",
+            "path": "",
+            "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8470c002cdb09e0e3137ea45d353d998cacf6b56a7dc06d6e95e3484d6f81295",
+                "code": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+                "maintenance": "48a74ca5b5d47ee77d1a6a33ab55f518701d172f8f709a508c8e7947f04e83c9"
+            }
+        }
+    }
+}

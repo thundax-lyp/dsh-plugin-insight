@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c32246845f571faf6ac4642e280fb409",
+    "identity": "github:1335001737:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335001737:root",
+            "repository": "dshbox/cordis-rs",
+            "path": "",
+            "revision": "1754062cef67cfc119fc7a2084c0321a231b9092",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c9c8e79f8600a4ebbb5cc379b79c10a0012c1b329e94adfc7e6825fc052424f4",
+                "code": "1754062cef67cfc119fc7a2084c0321a231b9092",
+                "maintenance": "2a8005798e691e4ad6f41e2a734fe2fb1305954145ba6ce271c51f4076d72f6b"
+            }
+        }
+    }
+}

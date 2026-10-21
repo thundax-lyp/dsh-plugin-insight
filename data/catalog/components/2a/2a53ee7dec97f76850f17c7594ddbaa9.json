@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2a53ee7dec97f76850f17c7594ddbaa9",
+    "identity": "github:1424373214:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424373214:root",
+            "repository": "chenzhihan1751-cyber/dsh-plugin-porter",
+            "path": "",
+            "revision": "2e04cc4ef1c1ef896a1bff349bc18007c7e5187d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "473eb43fae6a5e3def550091f7e96a2f1274af42cd877b471ebcb09c07fc32a8",
+                "code": "2e04cc4ef1c1ef896a1bff349bc18007c7e5187d",
+                "maintenance": "840503d9bba4f558534d864da86e116c4d4e49874f95484bbfdaf9ead9393e96"
+            }
+        }
+    }
+}

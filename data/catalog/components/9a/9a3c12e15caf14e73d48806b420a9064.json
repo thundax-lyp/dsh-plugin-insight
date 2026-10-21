@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9a3c12e15caf14e73d48806b420a9064",
+    "identity": "github:1342961132:hookkit",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342961132:hookkit",
+            "repository": "CREAIT-nl/dsh-plugins",
+            "path": "hookkit",
+            "revision": "c6086194b046a24cdd782ddba46961151a1e5388",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "64dfe7b5e72a8d223568271f1fc05af3a66258953376ea878d6e8c991e8d22e8",
+                "code": "c6086194b046a24cdd782ddba46961151a1e5388",
+                "maintenance": "6968784152db5df6f5f613ff0291cbfd3b086d725430f3e564b9bb01021a5836"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cfb006e838ab995c0395db91996a4280",
+    "identity": "github:1334976642:dsh-cli-anything-aseprite",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334976642:dsh-cli-anything-aseprite",
+            "repository": "KongChengZhi/dsh-pixel-studio",
+            "path": "dsh-cli-anything-aseprite",
+            "revision": "52acee7d33ea1a787e878642f856efe05b6f4230",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8f571755e20e3ec6fd928bea15d9eecfdaa42523407c6e3b6a38d4dd656f4f3d",
+                "code": "52acee7d33ea1a787e878642f856efe05b6f4230",
+                "maintenance": "0b76381082e14572a5c19603a93b55e7adbd2c3a49f88277a638a8632c6f0889"
+            }
+        }
+    }
+}

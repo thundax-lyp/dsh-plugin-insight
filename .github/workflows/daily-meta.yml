@@ -39,7 +39,7 @@ jobs:
                     # Never execute package/scripts/workflows contributed on a reused branch.
                     while IFS= read -r file; do
                       case "$file" in
-                        README.md|data/catalog/SNAPSHOT.json|data/catalog/snapshot/metadata/*/*.json|data/plugins/*/META.json|data/plugins/*/INSIGHT.md|data/views/categories/*.md|data/views/columns/*.md) ;;
+                        README.md|data/catalog/index.jsonl|data/catalog/state.json|data/catalog/components/[0-9a-f][0-9a-f]/*.json|data/plugins/*/INSIGHT.md|data/views/categories/*.md|data/views/columns/*.md) ;;
                         *) echo "Unexpected file on META branch: $file" >&2; exit 1 ;;
                       esac
                     done < <(git diff --name-only origin/main..."origin/$existing")

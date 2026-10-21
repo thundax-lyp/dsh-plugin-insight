@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7f4ca98653dabe60ca847d91463a2e22",
+    "identity": "github:1338098865:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338098865:root",
+            "repository": "suiyideali/dsh-selection-toolbar",
+            "path": "",
+            "revision": "c23430dad7bad3ec7c5389d893385b092e1036b2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "08b787491698d89e076315fa563ebee4998595f9cf5f5221b3cba6156d200356",
+                "code": "c23430dad7bad3ec7c5389d893385b092e1036b2",
+                "maintenance": "d39adf26443eec0744527ba83aff9eb491943a14278360400483ad678216b24d"
+            }
+        }
+    }
+}

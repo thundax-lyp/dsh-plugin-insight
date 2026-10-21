@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2fdbe9c5286c28fd7a5e15268970fb53",
+    "identity": "github:1343925526:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343925526:root",
+            "repository": "yongshuai0314/dsh-readcache",
+            "path": "",
+            "revision": "f4657b76bb786059426ba275a7619804c30841c8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b2d03297b23120528ab9522826745ddce18544f19af0c7ef4b2532f2449dc244",
+                "code": "f4657b76bb786059426ba275a7619804c30841c8",
+                "maintenance": "447e180980eb58aa32838a06e8f2bd40955d410e4541ed163f087fc29f746592"
+            }
+        }
+    }
+}

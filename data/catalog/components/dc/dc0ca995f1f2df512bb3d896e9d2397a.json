@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dc0ca995f1f2df512bb3d896e9d2397a",
+    "identity": "github:1357731554:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357731554:root",
+            "repository": "fewoot/dsh-whale-particles",
+            "path": "",
+            "revision": "e8ac7eef66255be053b330b6dd1e4bb65d5ccb91",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a3c48aaa7f77800773722cf957893e7cbb1dd382cd1d2a81d7148576b26263fa",
+                "code": "e8ac7eef66255be053b330b6dd1e4bb65d5ccb91",
+                "maintenance": "5f56fa316c3867a3231c3885b83129a0ccdc54136562add2e1b6254e66b83df2"
+            }
+        }
+    }
+}

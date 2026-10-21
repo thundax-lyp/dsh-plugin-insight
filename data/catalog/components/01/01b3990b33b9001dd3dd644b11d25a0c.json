@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01b3990b33b9001dd3dd644b11d25a0c",
+    "identity": "github:1387206451:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1387206451:root",
+            "repository": "NativeDog1/dsh-boot-animation",
+            "path": "",
+            "revision": "24c711296cb4af2618fef4f65e81346a660fc67b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c334c3b7d6e216fbff61ac33901777594ab91a9809caa9e7a139ce70809f7442",
+                "code": "24c711296cb4af2618fef4f65e81346a660fc67b",
+                "maintenance": "464d3d8c60314b11a0d53e3f5ec82ea0e4ab7873bcb4a63cbf59ac8d40616af5"
+            }
+        }
+    }
+}

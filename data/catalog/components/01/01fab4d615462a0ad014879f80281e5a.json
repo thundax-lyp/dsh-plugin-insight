@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01fab4d615462a0ad014879f80281e5a",
+    "identity": "github:1341993123:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341993123:root",
+            "repository": "delaydai/dsh-jumpbar",
+            "path": "",
+            "revision": "3f453be4d1c0cce6c8494fd5ddfc661e7e3553b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6a96e5fb2d080e26b5915dbebd9194c735686ea297029186c29ba6633c7e96ab",
+                "code": "3f453be4d1c0cce6c8494fd5ddfc661e7e3553b8",
+                "maintenance": "c17d78e1fbd14b15fc0eeae6d3350654eb8cf3def46dffe7b79db797c486b19d"
+            }
+        }
+    }
+}

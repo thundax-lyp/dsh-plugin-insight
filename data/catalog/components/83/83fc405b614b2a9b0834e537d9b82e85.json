@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "83fc405b614b2a9b0834e537d9b82e85",
+    "identity": "github:1417162408:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417162408:root",
+            "repository": "SheepofSheep/dsh-doyourweb",
+            "path": "",
+            "revision": "91fa744511788246228da779776fa1675cc562a3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c7e9a58ce64ae53cb08936b6161670262746577f751b33e4484c5a95e71275fe",
+                "code": "91fa744511788246228da779776fa1675cc562a3",
+                "maintenance": "c56c9f07a8563c327d5e19064dff9ff578a59f540da7262c42d2ac38df88bccf"
+            }
+        }
+    }
+}

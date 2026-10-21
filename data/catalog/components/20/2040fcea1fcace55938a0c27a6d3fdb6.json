@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2040fcea1fcace55938a0c27a6d3fdb6",
+    "identity": "github:1085086903:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1085086903:root",
+            "repository": "EverMind-AI/EverOS",
+            "path": "",
+            "revision": "37c4f2b243b0a932593c7cf42f0eb96ce13b9d2d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5547a65af589fb4bc6018cd7fa1960191c880190124249c5009bc1a753a623fa",
+                "code": "37c4f2b243b0a932593c7cf42f0eb96ce13b9d2d",
+                "maintenance": "8c7fd6072b750b1809da227a4f9571db08bcf09f59d7eef93e427b8ec59097a0"
+            }
+        }
+    }
+}

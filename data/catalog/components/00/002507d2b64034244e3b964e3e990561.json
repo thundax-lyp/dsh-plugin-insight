@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "002507d2b64034244e3b964e3e990561",
+    "identity": "github:1395883371:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1395883371:root",
+            "repository": "MaudieHakimi/dsh-entry-shaper",
+            "path": "",
+            "revision": "ea9789be95b0cf4a6e098a4b009e38b2337a3ff5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a8e89709f782b33f67aa74f571f15f978609b364871ab5f8be13b32b2b0b50f7",
+                "code": "ea9789be95b0cf4a6e098a4b009e38b2337a3ff5",
+                "maintenance": "c52e02b2e896c4004049f2ab2318b47732b120df5a44d4ba06a18b1408b43dfa"
+            }
+        }
+    }
+}

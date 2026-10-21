@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8e357025a635d3d69178254109c2812f",
+    "identity": "github:1392290908:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392290908:root",
+            "repository": "OMSociety/dsh-ssh-tunnel",
+            "path": "",
+            "revision": "00d0082fe1575d8e3352157ec7b76c0b9ec46bb9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7a06eaf2344b9fdce750d3031be147b93f9ad86e84c47c69fa9a49e7871419b5",
+                "code": "00d0082fe1575d8e3352157ec7b76c0b9ec46bb9",
+                "maintenance": "b7eebd5effadb6f723bbf6e550fcdad68b1963f7a2c901db16448a0fc9caf085"
+            }
+        }
+    }
+}

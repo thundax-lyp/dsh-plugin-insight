@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "925311bc05e0c03405960046ae3ae72c",
+    "identity": "github:1335255544:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335255544:root",
+            "repository": "Semidia/dsh-plugin-help",
+            "path": "",
+            "revision": "76c87d2ef6fddc2d43c93eaad4ebfa0f25c86092",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "84d118cf336430ca7ff4de3035e2321107427303d36006d10fb8fdc835d4499f",
+                "code": "76c87d2ef6fddc2d43c93eaad4ebfa0f25c86092",
+                "maintenance": "f0be39ba08f72d1b17f9f9008f80c5649fd3b9dfb228744f226267588df00f60"
+            }
+        }
+    }
+}

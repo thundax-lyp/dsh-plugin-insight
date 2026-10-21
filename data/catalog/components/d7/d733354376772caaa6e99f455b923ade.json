@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d733354376772caaa6e99f455b923ade",
+    "identity": "github:1425167543:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425167543:root",
+            "repository": "kongkongya367-glitch/dsh-bingo-ren",
+            "path": "",
+            "revision": "e0c03e7119654a32fb9dc04e1f0f9f03d70813ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "12dd5cb3c5f5cf7350a6c89052590e6b3501205c93c8e32c3e2991bc43b144ca",
+                "code": "e0c03e7119654a32fb9dc04e1f0f9f03d70813ea",
+                "maintenance": "8a26a49fbac716121adf1fce125309d59c7405f1eb2ec904ba03b03be161a0dd"
+            }
+        }
+    }
+}

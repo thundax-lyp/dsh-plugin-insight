@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5df4b204ec419bddee325466c60d7869",
+    "identity": "github:1403822653:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403822653:root",
+            "repository": "tianjiedadi/dsh-openreelbench",
+            "path": "",
+            "revision": "11edc5ac5885562eb02caf0a3b6efc8e3f30b8dc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "af09690acdaab223081c09668f2874716af05d11eeeb6d30edf7c3efd6f18f2c",
+                "code": "11edc5ac5885562eb02caf0a3b6efc8e3f30b8dc",
+                "maintenance": "6f2d6f036d4fcb4f76af44505726627064028bd744f92374ad18125510535b6f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a972ecf9869b348e9c852b898ff05daa",
+    "identity": "github:1227673478:packages-dsh-pbfuzz",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1227673478:packages-dsh-pbfuzz",
+            "repository": "sgzeng/pbfuzz",
+            "path": "packages/dsh-pbfuzz",
+            "revision": "70d0b96dce14961ca184e10d96838902bee9bae1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "365a9b3987e11ef64f0654038943e6340ca2f2133a8aa5399b6220d3dd16b08b",
+                "code": "70d0b96dce14961ca184e10d96838902bee9bae1",
+                "maintenance": "c02b443ac1f954d8080d5cd5a6d161f9ab1e3e4d14d85dad9d29f87ac407df39"
+            }
+        }
+    }
+}

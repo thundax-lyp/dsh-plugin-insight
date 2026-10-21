@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ee08a57c0fea8339accecf50fe9e56d",
+    "identity": "github:1351201747:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351201747:root",
+            "repository": "luomeii/dsh-review-squad",
+            "path": "",
+            "revision": "0dbae773dfcd6aa106b410d4ab19306e97219859",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5c5e0b0c8ccf4cd977e4450de5c4f06001ccf293bf733d709a955e0a1b33f967",
+                "code": "0dbae773dfcd6aa106b410d4ab19306e97219859",
+                "maintenance": "d9c0ce256e4e357419344a220954286e3b2517a6765cbc5269f25fee91411cd8"
+            }
+        }
+    }
+}

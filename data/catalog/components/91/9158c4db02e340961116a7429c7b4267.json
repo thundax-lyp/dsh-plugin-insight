@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9158c4db02e340961116a7429c7b4267",
+    "identity": "github:1340690050:packages-data-asset-data-lineage",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340690050:packages-data-asset-data-lineage",
+            "repository": "liuhange789/data-asset-inspector",
+            "path": "packages/data-asset/data-lineage",
+            "revision": "57a7dd00c13ec7a6e0ec9745ee41d81b158e952a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "833b556c285ce29a2d8117b343b4b87fe9e53e866c63773b72b2f835d3d6db5e",
+                "code": "57a7dd00c13ec7a6e0ec9745ee41d81b158e952a",
+                "maintenance": "747c6ca2df0d31338acfd81ab5fafc9b54eda6d93ff8bfc48705387abfe92c5b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b741ef41d36b2f37a76cc62ea3404c8b",
+    "identity": "github:1340113876:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340113876:root",
+            "repository": "WODE25500/dsh-kubectl",
+            "path": "",
+            "revision": "7bb8623b7a55a997c418235b78cfae1443a23a73",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7bc5b0cbd44db6fb6965a0d493e0b42af14b42ec5b44ffff204e30e3c5ae7321",
+                "code": "7bb8623b7a55a997c418235b78cfae1443a23a73",
+                "maintenance": "d761ddc25391f285d224ac649ee481fdb6721ba015ae13083fb9d0ecaacd5ba4"
+            }
+        }
+    }
+}

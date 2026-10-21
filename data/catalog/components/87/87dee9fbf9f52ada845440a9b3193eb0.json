@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "87dee9fbf9f52ada845440a9b3193eb0",
+    "identity": "github:1333795662:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333795662:root",
+            "repository": "hellosky983/dsh-skillradar",
+            "path": "",
+            "revision": "0d12d7236fd47e9cfde2ad1e3212dc3bd676e29e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f4eb345d6282e8d67874694bff5449a65efe4408c43c98b95cc8a5ecdd0b47e8",
+                "code": "0d12d7236fd47e9cfde2ad1e3212dc3bd676e29e",
+                "maintenance": "76e91910eea31bfa8fa6511fb1e8f2bfc0805175cb0c4c6becbb61d37698f141"
+            }
+        }
+    }
+}

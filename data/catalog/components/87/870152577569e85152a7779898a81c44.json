@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "870152577569e85152a7779898a81c44",
+    "identity": "github:1353296006:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353296006:root",
+            "repository": "kenz1117/dsh-engram",
+            "path": "",
+            "revision": "9dbd3cb372f6dda874bfe349360a9f9a17e17f1e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4c6b42f0c979eaf55a173290c4d7e36ac70e30026b10cd076c124d96a22b9a44",
+                "code": "9dbd3cb372f6dda874bfe349360a9f9a17e17f1e",
+                "maintenance": "453316a1e3be1a5d9811d3ffdee21d09102b74773ba394c19a35a63beb59f823"
+            }
+        }
+    }
+}

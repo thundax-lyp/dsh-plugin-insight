@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2a41abd6d09ddd219841db8f67f4a4c4",
+    "identity": "github:1374986657:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374986657:root",
+            "repository": "Miaotofu01/Study-Mate",
+            "path": "",
+            "revision": "02770715096de7b616359b2981c906d59334621b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b4c21b595d7a3d8bcbfb8c2343e781e7cfb7727e7771b0ad8b4ab042cfa6de26",
+                "code": "02770715096de7b616359b2981c906d59334621b",
+                "maintenance": "f45c7a6688289bff305bac6cea5c05f821bd1ab003a8014eaa6663c3378836cf"
+            }
+        }
+    }
+}

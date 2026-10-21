@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cdbdd8b35bae09c27d44d4a8824f9342",
+    "identity": "github:1340497731:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340497731:root",
+            "repository": "ppy-web/dsh-plugin-xiaomi-mimo-tts",
+            "path": "",
+            "revision": "6bee1963ec65e506abc7b27d5f7e28eca1c1ecf1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fbc0c05683f699bdce9fff0515275a38758d3d5b31c96a5322b9cd59293d04e6",
+                "code": "6bee1963ec65e506abc7b27d5f7e28eca1c1ecf1",
+                "maintenance": "bdcba1957955922828c3941cef64c2ac0c52aafbbceb490717be20dff974a872"
+            }
+        }
+    }
+}

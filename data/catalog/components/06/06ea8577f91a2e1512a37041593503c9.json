@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "06ea8577f91a2e1512a37041593503c9",
+    "identity": "github:1348201595:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348201595:root",
+            "repository": "hehetoshang/dsh-talebook-plugin",
+            "path": "",
+            "revision": "8cf18c4a8e6f232bad96476aa423d0b5c1380f70",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "18a559cd6354815ea908854288b983f981a122082bea08f14ffa6cc3a477ba1d",
+                "code": "8cf18c4a8e6f232bad96476aa423d0b5c1380f70",
+                "maintenance": "dd072510b6079d664445b7710ed8eadf7f5af08d22e32e1513020711f5b7a79e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "78698dd23d9fd3ce85c45030532ac837",
+    "identity": "github:1352408894:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352408894:root",
+            "repository": "zmm863-commits/dsh-sticky-notes",
+            "path": "",
+            "revision": "e90222b52698e4be94260edae3a24cdadd2909d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bc4e6c4f27f28685675739a9a9f5cf772a5fca49ca0dacc3a4f24051ca10a613",
+                "code": "e90222b52698e4be94260edae3a24cdadd2909d7",
+                "maintenance": "bf115a12bfbc05c34f8201bc9c2e3fecc413f71fb64608e15553c6accf1fa34c"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "cf3ec927b6ec081551f2aab4b36ab61c",
+    "identity": "github:1334266810:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334266810:root",
+            "repository": "dream12347/dsh-session-manager",
+            "path": "",
+            "revision": "37d751721b28464b4985168243e06df73adb06bd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e40bba8098141d4ee09d06e287963320eed7b3caf41bd110a9f7820b455bf553",
+                "code": "37d751721b28464b4985168243e06df73adb06bd",
+                "maintenance": "62bc1dda15e7666614e882dfd22255f8a4e44b01ec0f75fbae06d17af46b009e"
+            }
+        }
+    }
+}

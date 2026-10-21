@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "5bd2b71b65d9bda66b5b6ebbe9f6b3e4",
+    "identity": "github:1335864240:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335864240:root",
+            "repository": "chouyong/dsh-effect-doctor",
+            "path": "",
+            "revision": "a138e421fd97bbc55796ef379fc22abcc47d3da2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c9241886fe9a87b64df86d5abdb933e730c5bb96d635fd811b90a9ac46bc0716",
+                "code": "a138e421fd97bbc55796ef379fc22abcc47d3da2",
+                "maintenance": "642b859af3974bb38a6b05f57dba46bc31f9915fe342062b09af0bd24f81eaa4"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0dc464bb2a9f25ea6c570502ed799aeb",
+    "identity": "github:1338018217:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338018217:root",
+            "repository": "Yuuhann1999/dsh-bloub-mood",
+            "path": "",
+            "revision": "c626528b3d6c32669c265d7144e85f60f48570d2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d220d599bfbadf464f4546a0c70a0ed8757139e974705b4c296e789a8a60725d",
+                "code": "c626528b3d6c32669c265d7144e85f60f48570d2",
+                "maintenance": "714bbb8a6c4316695194be84af189437522f17a34ed8ad187a3392ddc6747521"
+            }
+        }
+    }
+}

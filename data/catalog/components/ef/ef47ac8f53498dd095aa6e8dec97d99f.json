@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ef47ac8f53498dd095aa6e8dec97d99f",
+    "identity": "github:1336032961:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336032961:root",
+            "repository": "xiagaogaozi/dsh-subagent-pool",
+            "path": "",
+            "revision": "562fd9155fa1becfbe6a637b47b5389f53ad03c7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "85ffaad2c63e5849d7687df88ef5095755b9e492ae04944a6862287cffc694b4",
+                "code": "562fd9155fa1becfbe6a637b47b5389f53ad03c7",
+                "maintenance": "b160c2bd4b07545fde22885db9c5f55d49f5787e102d489ffd2886cb738d45df"
+            }
+        }
+    }
+}

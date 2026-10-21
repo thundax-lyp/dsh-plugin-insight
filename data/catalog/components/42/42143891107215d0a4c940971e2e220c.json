@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "42143891107215d0a4c940971e2e220c",
+    "identity": "github:1359930552:packages-composer-quick-actions",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359930552:packages-composer-quick-actions",
+            "repository": "lovvvve/dsh-quick-actions",
+            "path": "packages/composer-quick-actions",
+            "revision": "797f62cef9094dc26d96b27afcc4d4a87b13be17",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "612896ee316858e374afaf156af9eb804ba37cca976ca0395ab4d97577bc6f7f",
+                "code": "797f62cef9094dc26d96b27afcc4d4a87b13be17",
+                "maintenance": "530363b1ec4a22e171c58a36e9e36d65025d628b87956357b2dd652ce9cb8687"
+            }
+        }
+    }
+}

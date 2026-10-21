@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8284266c473815a611af17851930a77c",
+    "identity": "github:1395539365:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1395539365:root",
+            "repository": "XcodeFish/dsh-file-link-menu",
+            "path": "",
+            "revision": "6d2a65a6399a94d320ac7607159ca72c7ece144d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "419c798b0cdaf73fc4d3eeb638fc10e5ca2a9a280131a32512d3218ef93834ae",
+                "code": "6d2a65a6399a94d320ac7607159ca72c7ece144d",
+                "maintenance": "ea19bf5010c897a43ae6b1bde68d3bc93ec9c5ba80a0bd5068fc477b805d580c"
+            }
+        }
+    }
+}

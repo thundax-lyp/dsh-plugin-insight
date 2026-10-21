@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f409bcd455b39af76df70a4608d16e0a",
+    "identity": "github:1335295807:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335295807:root",
+            "repository": "ZIye1208/dsh-approval-voice",
+            "path": "",
+            "revision": "f0ce32461edc1d2041a3de563ad7158ac1b508b4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f839847659a7124b02941446d0134b1c174df44e66055f526ab95ca90e820be8",
+                "code": "f0ce32461edc1d2041a3de563ad7158ac1b508b4",
+                "maintenance": "f348da5aee21ee0036ca9363843f87503147d7fe935a0553558fbeb88011adbe"
+            }
+        }
+    }
+}

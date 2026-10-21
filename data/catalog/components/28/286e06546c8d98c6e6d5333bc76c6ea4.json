@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "286e06546c8d98c6e6d5333bc76c6ea4",
+    "identity": "github:1340230123:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340230123:root",
+            "repository": "LAU-MARS/dsh-cad",
+            "path": "",
+            "revision": "e39a009acb0285371a4a716185ffe79e9e4250b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "acc53a8bb2c5893f3133f4697c610ebfb6ffcae78678271a011643f6890f21e4",
+                "code": "e39a009acb0285371a4a716185ffe79e9e4250b8",
+                "maintenance": "3f41fb2c435b696692b1e6346a524c41585ad85b4cd1ba56189fded76c469915"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a70175f1fa297ead2740c8cf2fae307a",
+    "identity": "github:1355027695:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355027695:root",
+            "repository": "loveXbanshee/dsh-fleet",
+            "path": "",
+            "revision": "1619060ea904625d1a7ac50595c669fa70b571be",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aeab613692bc12bb9c08c3ec91acf0be6d49860b4825a223b29443c9665818fe",
+                "code": "1619060ea904625d1a7ac50595c669fa70b571be",
+                "maintenance": "d29cbbc73fc557afb57b0a60797ee0c89038da6433b469ad9529ee2f88ea52ad"
+            }
+        }
+    }
+}

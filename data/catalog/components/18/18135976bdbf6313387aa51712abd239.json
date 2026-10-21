@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "18135976bdbf6313387aa51712abd239",
+    "identity": "github:1403413591:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403413591:root",
+            "repository": "ltmroberthk915/dsh-session-telecom",
+            "path": "",
+            "revision": "dfb744130a11e5a5a1d09e95a4039c6235fa4e9a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "082e4ca60a2a6d81d4d5a997a7416616cc71a2941f9c63031acd41ae94020ba2",
+                "code": "dfb744130a11e5a5a1d09e95a4039c6235fa4e9a",
+                "maintenance": "1ea1776b1d248eac391abbf18e6466a172f83a90629a9fbf0b905d061cef90e6"
+            }
+        }
+    }
+}

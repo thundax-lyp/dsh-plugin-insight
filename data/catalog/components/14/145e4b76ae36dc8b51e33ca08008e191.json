@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "145e4b76ae36dc8b51e33ca08008e191",
+    "identity": "github:1355524476:plugins-dsh-plugin-canvas",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355524476:plugins-dsh-plugin-canvas",
+            "repository": "ijry/DeepSeek-Harness-Desktop-Ultra",
+            "path": "plugins/dsh-plugin-canvas",
+            "revision": "748806201eabfa13ef3ed9168e0f845410eeade5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dc64b28beddb8d25ff83b5c764d575323ffa06c78f1d6a07895e89f8addcb0af",
+                "code": "748806201eabfa13ef3ed9168e0f845410eeade5",
+                "maintenance": "9dc9c3fc32b33e2cca457220f6e1a4445cad1b1d9377d5a06647602cc39a85f6"
+            }
+        }
+    }
+}

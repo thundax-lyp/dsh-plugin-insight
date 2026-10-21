@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f708af0c3b5efc6d6515bc0ff28dcd5e",
+    "identity": "github:1345624269:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345624269:root",
+            "repository": "kongdexu/dsh-win-notify",
+            "path": "",
+            "revision": "74991d0bbcb6efed63d1caa824c6c19285732e55",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "aea82591544363077c1cd34498f3eb7b11e242eb7e440be7b21861bd0161b57c",
+                "code": "74991d0bbcb6efed63d1caa824c6c19285732e55",
+                "maintenance": "9ca943c2557113a223cb24d5c4a4d6c2e0c5bf09c5a79023121877f51c51bb9e"
+            }
+        }
+    }
+}

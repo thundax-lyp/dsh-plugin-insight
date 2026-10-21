@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "61e3d995f11705ea994309729ff088c3",
+    "identity": "github:1344411117:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344411117:root",
+            "repository": "ccll/dsh-activity-pane",
+            "path": "",
+            "revision": "1cfda0e86113719f33b863e95f54329e0187cf43",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "773596d5c7488151cc680f4dddae2a6fdafb840c4b5805451cb8766d15457b81",
+                "code": "1cfda0e86113719f33b863e95f54329e0187cf43",
+                "maintenance": "757911f04149c5b9f104de6d03d62090f1bdc644489626bf52077b312c6d1388"
+            }
+        }
+    }
+}

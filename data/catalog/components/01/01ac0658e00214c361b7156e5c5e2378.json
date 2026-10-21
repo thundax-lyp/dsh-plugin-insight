@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "01ac0658e00214c361b7156e5c5e2378",
+    "identity": "github:1333915049:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333915049:root",
+            "repository": "IAMLieutenant/dsh-tool-user-memory",
+            "path": "",
+            "revision": "42254d76de4f644691e29865f2b0971a54d170ad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d42cd323a49be54227e9ebf59c8d6cb7a442929a6bc71cb40be8776b30c09455",
+                "code": "42254d76de4f644691e29865f2b0971a54d170ad",
+                "maintenance": "3896d9d99564b5a1f0ef04ee9598168cf26cf0f90e9b2fcbeda3f375099180fe"
+            }
+        }
+    }
+}

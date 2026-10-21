@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a3283b4ee99dd00b04446f1607422c3c",
+    "identity": "github:1327532651:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1327532651:root",
+            "repository": "omdsh-dev/sandbox-micro",
+            "path": "",
+            "revision": "ebc8be539a4ed4e66157d1f8255c58a4db4e4dc4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "46030950112cb02192edae87ff45f553b872a22e4162fe48f0238e3ce15c26dd",
+                "code": "ebc8be539a4ed4e66157d1f8255c58a4db4e4dc4",
+                "maintenance": "54fb1fa5f333070feb91e1903e7127f4ddc0b5b3a3ef70b3402531149baf364b"
+            }
+        }
+    }
+}

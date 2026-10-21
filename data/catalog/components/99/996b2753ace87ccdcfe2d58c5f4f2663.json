@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "996b2753ace87ccdcfe2d58c5f4f2663",
+    "identity": "github:1356960582:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1356960582:root",
+            "repository_id": 1356960582,
+            "component_id": "root",
+            "repository": "3361805598-gif/dsh-usage-analytics",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-usage-analytics",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "e1b9e9a17921db33f9a05234e44472c904a9f11bc4cb68accaa2ff76dfd89f9e",
+                "code": "6b44b372e475188acd71feef81e8451b70c05483",
+                "maintenance": "b6bcf7a01fc253ae169f13a939100b735e24d1458a73dadd8ccab9eb3e130dce"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1356960582-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:06:37.068Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1356960582-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/3361805598-gif/dsh-usage-analytics/blob/6b44b372e475188acd71feef81e8451b70c05483/README.md",
+                    "revision": "6b44b372e475188acd71feef81e8451b70c05483",
+                    "captured_at": "2026-10-21T02:06:37.068Z",
+                    "summary": "在 DSH 设置页展示本机 Token、模型分布和技能调用状态。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/3361805598-gif--dsh-usage-analytics/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1356960582-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/3361805598-gif/dsh-usage-analytics/blob/6b44b372e475188acd71feef81e8451b70c05483/src/analytics/reducer.ts",
+                    "revision": "6b44b372e475188acd71feef81e8451b70c05483",
+                    "captured_at": "2026-10-21T02:06:37.068Z",
+                    "summary": "核查 src/analytics/reducer.ts、src/analytics/indexer.ts、src/analytics/summary.ts；reducer从durable事件提取数值用量与技能结果，跳过继承seed前缀；indexer串行排队，turn/end先flush后读持久日志替换会话索引，周期回填并清理90天事实。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/3361805598-gif--dsh-usage-analytics/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户按日周月回顾模型使用和技能调用，发现用量异常并追溯统计覆盖；交付是可重建的个人分析视图。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356960582:root",
+                            "area": "code",
+                            "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.068Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "reducer从durable事件提取数值用量与技能结果，跳过继承seed前缀；indexer串行排队，turn/end先flush后读持久日志替换会话索引，周期回填并清理90天事实。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356960582:root",
+                            "area": "code",
+                            "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.068Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356960582:root",
+                            "area": "code",
+                            "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.068Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356960582:root",
+                            "area": "code",
+                            "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.068Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "本地历史扫描、索引写入占计算和存储；人工为口径核对、宿主升级及异常缓存重建，无本次财务收益实测。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356960582:root",
+                            "area": "code",
+                            "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.068Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合个人用量复盘；先以少量原始日志核对重试和技能状态，勿把成功率作为技能业务质量。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356960582:root",
+                            "area": "code",
+                            "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.068Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可重建索引减少实时状态丢失造成的长期偏差；趋势能提示复核方向，不能替代账单与任务验收。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356960582:root",
+                            "area": "code",
+                            "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.068Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "reducer与indexer分离，队列序列化refresh/rebuild，持久读取避免将下一未flush回合混入；复用须保留seed去重与usage已知性。 源码依据：[src/analytics/reducer.ts](https://github.com/3361805598-gif/dsh-usage-analytics/blob/6b44b372e475188acd71feef81e8451b70c05483/src/analytics/reducer.ts#L65)、[src/analytics/indexer.ts](https://github.com/3361805598-gif/dsh-usage-analytics/blob/6b44b372e475188acd71feef81e8451b70c05483/src/analytics/indexer.ts#L16)、[src/analytics/summary.ts](https://github.com/3361805598-gif/dsh-usage-analytics/blob/6b44b372e475188acd71feef81e8451b70c05483/src/analytics/summary.ts#L47)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1356960582:root",
+                            "area": "code",
+                            "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:06:37.068Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:06:37.068Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "6b44b372e475188acd71feef81e8451b70c05483",
+                "reviewed_at": "2026-10-21T02:06:37.068Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1356960582:root",
+                        "area": "code",
+                        "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：本机分析为常见方案适配；mechanism：durable替换与终止去重有实质增量；transferability：事实索引模式可移植；simplification：保留最小事实支持重建。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow：改进复盘观察而非任务组织；delivery：统计页面而非成果验收；reach：降低原始日志阅读成本；economics：未识别已实现的成本结构变化。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1356960582-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "个人用量复盘可试用可重建索引；先对少量原始日志核对重试和技能结果，不将调用成功率当业务质量。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "日周月使用趋势及覆盖回查是明确任务。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "turn结束flush后重建及回填比纯实时统计更可追溯。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "reducer跳继承前缀与90天清理源码可查，财务收益未验。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "本地扫描和索引存储可控，主要维护宿主口径与异常重建。"
+                    }
+                },
+                "score": 70,
+                "revision": "6b44b372e475188acd71feef81e8451b70c05483",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1356960582-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1356960582:root",
+                        "area": "code",
+                        "fingerprint": "6b44b372e475188acd71feef81e8451b70c05483"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1356960582:root",
+            "repository": "3361805598-gif/dsh-usage-analytics",
+            "path": "",
+            "revision": "6b44b372e475188acd71feef81e8451b70c05483",
+            "fingerprints": {
+                "directory": "e1b9e9a17921db33f9a05234e44472c904a9f11bc4cb68accaa2ff76dfd89f9e",
+                "code": "6b44b372e475188acd71feef81e8451b70c05483",
+                "maintenance": "b6bcf7a01fc253ae169f13a939100b735e24d1458a73dadd8ccab9eb3e130dce"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "b553496d2d4bae642bf072542bce519c52c48152fc9fb72b12364d72da014c68"
+        },
+        "publication.metadata": "data/plugins/3361805598-gif--dsh-usage-analytics/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 设置页展示本机 Token、模型分布和技能调用状态。",
+            "revision": "6b44b372e475188acd71feef81e8451b70c05483",
+            "source_url": "https://github.com/3361805598-gif/dsh-usage-analytics/blob/6b44b372e475188acd71feef81e8451b70c05483/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "6b44b372e475188acd71feef81e8451b70c05483",
+            "items": {
+                "后台": "durable事件派生索引、90天裁剪与缓存重建",
+                "界面": "个人Token及模型/技能统计页"
+            }
+        },
+        "publication.advice": {
+            "revision": "6b44b372e475188acd71feef81e8451b70c05483",
+            "text": "适合个人用量复盘；先以少量原始日志核对重试和技能状态，勿把成功率作为技能业务质量。"
+        },
+        "registry": "data/plugins/3361805598-gif--dsh-usage-analytics",
+        "reports": "# dsh-usage-analytics\n\n> 在 DSH 设置页展示本机 Token、模型分布和技能调用状态。\n\n## 使用建议\n\n适合个人用量复盘；先以少量原始日志核对重试和技能状态，勿把成功率作为技能业务质量。\n\n**核查状态**：已实现机制有源码支持；贡献价值为条件性解释，未来设计假设未验证。本轮仅作固定版本源码核查，未安装、运行目标代码或验收宿主。\n\n- **用途**：用户按日周月回顾模型使用和技能调用，发现用量异常并追溯统计覆盖；交付是可重建的个人分析视图。\n- **亮点**：相对直接把实时事件累加，设计增量在以持久日志为真相重建派生索引，并对stream终止usage与assembled message去重；reasoning作为output子集不再加总，减少重复计费口径误读。\n- **思考**：统计成功不等于技能任务成功。显式skill-invocation一出现就记success，自动skill结果只检查工具错误，这些是调用状态而非业务完成质量。usage缺失虽保留known标记，字段缺失仍补0；比较总量需要同时看覆盖。\n- **建议**：适合个人用量复盘；先以少量原始日志核对重试和技能状态，勿把成功率作为技能业务质量。\n\n## 能力与限制\n\n参照手工读取durable日志及实时累加统计，不把其他未检查插件作为比较证据。\n\nreducer从durable事件提取数值用量与技能结果，跳过继承seed前缀；indexer串行排队，turn/end先flush后读持久日志替换会话索引，周期回填并清理90天事实。\n\n\nDSH sessionPersistence、sessions.flush、storageDomain、Web设置页面；README目标0.1.1-rc.2为声明兼容。\n\n启动读取派生表并裁剪旧事实，监听turn/end落源日志后重归集，每分钟回填，页面选择时区与窗口读取汇总；重建只清派生索引。\n\n本地历史扫描、索引写入占计算和存储；人工为口径核对、宿主升级及异常缓存重建，无本次财务收益实测。\n\n可重建索引减少实时状态丢失造成的长期偏差；趋势能提示复核方向，不能替代账单与任务验收。\n\n## 能力清单\n\n- **后台**：durable事件派生索引、90天裁剪与缓存重建\n- **界面**：个人Token及模型/技能统计页\n\n## 工程分析\n\nreducer与indexer分离，队列序列化refresh/rebuild，持久读取避免将下一未flush回合混入；复用须保留seed去重与usage已知性。 源码依据：[src/analytics/reducer.ts](https://github.com/3361805598-gif/dsh-usage-analytics/blob/6b44b372e475188acd71feef81e8451b70c05483/src/analytics/reducer.ts#L65)、[src/analytics/indexer.ts](https://github.com/3361805598-gif/dsh-usage-analytics/blob/6b44b372e475188acd71feef81e8451b70c05483/src/analytics/indexer.ts#L16)、[src/analytics/summary.ts](https://github.com/3361805598-gif/dsh-usage-analytics/blob/6b44b372e475188acd71feef81e8451b70c05483/src/analytics/summary.ts#L47)。\n\n## 未来设计假设（未验证）\n\n待验证假设：将技能“已载入/执行完成/业务验收”分层展示，并报告usage覆盖，可降低用户误读成功率。由显式调用直接记成功和工具结果判定推导，业务验收无法完全从日志自动提取。\n\n最小验证：一组显式技能加载失败、自动工具成功但业务失败、继承会话和流式重试记录，对照分层状态与原口径的误读率；无法取得验收事实时保持未知。\n\n## 核查说明\n\n- **仓库**：[3361805598-gif/dsh-usage-analytics](https://github.com/3361805598-gif/dsh-usage-analytics)\n- **版本号**：0.2.1（[固定提交 6b44b37](https://github.com/3361805598-gif/dsh-usage-analytics/tree/6b44b372e475188acd71feef81e8451b70c05483)）\n- **版本日期**：2026-09-07（固定提交日期，北京时间；不是包发布日期）\n- **实际范围**：固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。\n- **来源**：作者README与上述固定版本源码；未确认独立采用效果，目录收录与下载统计不作效果证据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d86c6380d627b350bef370804dd6991f537daf3309bc1ae74bd794c86de2d7a8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 166 | — | — | 1834 |\n| .tsx | source | 6 | 213 | 198 | 1 | — |\n| .js | source | 1 | 779 | 758 | 176 | — |\n| .mjs | source | 2 | 738 | 722 | 26 | — |\n| .ts | source | 14 | 814 | 719 | 19 | — |\n| .ts | test | 4 | 338 | 309 | 6 | — |\n\n排除 8 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n",
+        "metadata": {
+            "repository": "3361805598-gif/dsh-usage-analytics",
+            "repository_id": 1356960582,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-09-06T17:57:06Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:128E3:14CB9F:2262F6:6AD84A02 and timestamp 2026-10-21 05:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14B08A:224D18:6AD84A02 and timestamp 2026-10-21 05:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:15705F:230847:6AD84A02 and timestamp 2026-10-21 05:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:14156B:21B7CF:6AD84A02 and timestamp 2026-10-21 05:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:144102:21CD75:6AD84A02 and timestamp 2026-10-21 05:13:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-usage-analytics",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-usage-analytics",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-usage-analytics",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "6b44b372e475188acd71feef81e8451b70c05483",
+                "current_revision": "6b44b372e475188acd71feef81e8451b70c05483",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1356960582:root",
+            "repository": "3361805598-gif/dsh-usage-analytics",
+            "path": "",
+            "revision": "6b44b372e475188acd71feef81e8451b70c05483",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e1b9e9a17921db33f9a05234e44472c904a9f11bc4cb68accaa2ff76dfd89f9e",
+                "code": "6b44b372e475188acd71feef81e8451b70c05483",
+                "maintenance": "b6bcf7a01fc253ae169f13a939100b735e24d1458a73dadd8ccab9eb3e130dce"
+            }
+        }
+    }
+}

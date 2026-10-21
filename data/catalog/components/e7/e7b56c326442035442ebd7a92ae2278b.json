@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e7b56c326442035442ebd7a92ae2278b",
+    "identity": "github:1334913103:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334913103:root",
+            "repository": "BotonJ/dsh-plugin-sentinel",
+            "path": "",
+            "revision": "3dcff7a125d7151f2b75a8962c65425d0d9aa0b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3c6fa48bcd2e5c4fceefdfc7ddf9eefa4186292a0bd733c2d03b679804cbe8af",
+                "code": "3dcff7a125d7151f2b75a8962c65425d0d9aa0b8",
+                "maintenance": "17038abf04482bb1d8d7aa6ef1637e81fbf278372268ae33f3b5252a823f5bde"
+            }
+        }
+    }
+}

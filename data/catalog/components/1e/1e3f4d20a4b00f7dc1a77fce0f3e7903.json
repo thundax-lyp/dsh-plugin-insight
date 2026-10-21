@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1e3f4d20a4b00f7dc1a77fce0f3e7903",
+    "identity": "github:1357715936:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357715936:root",
+            "repository": "hwangjunjie/dsh-session-move",
+            "path": "",
+            "revision": "8be8e2517b580ceaa31abc0f80aab900a3fe4c6d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "adeeaeec79827c37eb301e27a8f6f2e78872ab454a634802efa9e351e0761d56",
+                "code": "8be8e2517b580ceaa31abc0f80aab900a3fe4c6d",
+                "maintenance": "b73f2b2903241c40ea0a6d2b8788c4ea694a237f67206ae519d0b9067860efed"
+            }
+        }
+    }
+}

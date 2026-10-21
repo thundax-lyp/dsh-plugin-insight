@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6c510bfe50d0e4708180d808888a35fc",
+    "identity": "github:1335708686:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335708686:root",
+            "repository": "asd13006/dsh-multi-lang-ui",
+            "path": "",
+            "revision": "e71fa6997a3b7bcaa2ff5a23fe5102faa6e69e17",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "26d95f231d4c5a4de37f236e7e4903e8ef924e730d2cea22a1f3a2515283418d",
+                "code": "e71fa6997a3b7bcaa2ff5a23fe5102faa6e69e17",
+                "maintenance": "692f91975f0af6f90a8f80dc1934350bbd153c722f85260941dbefdb9fabc0ba"
+            }
+        }
+    }
+}

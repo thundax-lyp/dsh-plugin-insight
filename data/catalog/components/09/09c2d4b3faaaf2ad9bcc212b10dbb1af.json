@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "09c2d4b3faaaf2ad9bcc212b10dbb1af",
+    "identity": "github:1334259243:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334259243:root",
+            "repository": "Yi-111-a/dsh-jingling",
+            "path": "",
+            "revision": "c0fdb376551f67f11c08fe74e05221a848c5d6bc",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0fec6caa70644c6725cb687d0d98aba1f25b3c27f299f3dbba8653a2a5d115a5",
+                "code": "c0fdb376551f67f11c08fe74e05221a848c5d6bc",
+                "maintenance": "d82a1703f4b2db4c9c3f7fafe8c1d27f54f6eb9621d834c56f24a19722dbb902"
+            }
+        }
+    }
+}

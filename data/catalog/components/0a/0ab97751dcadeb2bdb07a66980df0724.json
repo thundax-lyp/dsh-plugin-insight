@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ab97751dcadeb2bdb07a66980df0724",
+    "identity": "github:1347088753:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347088753:root",
+            "repository": "bbboy31/dsh-terminal-tabs",
+            "path": "",
+            "revision": "871bcfdb561b711733394bad56d82d28d74f4558",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ea7f530fee476dc885af46d0121a3e34e35d0be32b216bd7a9357a253876ab55",
+                "code": "871bcfdb561b711733394bad56d82d28d74f4558",
+                "maintenance": "22fc083546afc78cefa2c680764f18b39b60126c6f6aa6e02e6b4a4f4ee4363b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fca3ca704eba5d08b1ebc24b4b0706dc",
+    "identity": "github:1337528952:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337528952:root",
+            "repository": "zizhongfeiyang/dsh-settings-drawer",
+            "path": "",
+            "revision": "fda3b0fd9abb66ab9bc3e9296fa8aff1c42f0d2c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "27b2dd45c409941902100c729091a50b75aa4d170a7a0c4cec7b502a655fd317",
+                "code": "fda3b0fd9abb66ab9bc3e9296fa8aff1c42f0d2c",
+                "maintenance": "6cf4c56909c2a5941d6a31e8428cfa9b95ebf475e70751415a3c2a7d2b5f5f0c"
+            }
+        }
+    }
+}

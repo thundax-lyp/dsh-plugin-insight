@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "feeada220ad4c672cee0c2ea13ffc804",
+    "identity": "github:1337946330:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337946330:root",
+            "repository": "jack-ranbo/dsh-wsl-expose",
+            "path": "",
+            "revision": "d9e86c4ede6c8420829f1884e430fa248a8427b5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9d1d75793372ccef4344e0190a814cd1b7abd34b747a134483cd226638505068",
+                "code": "d9e86c4ede6c8420829f1884e430fa248a8427b5",
+                "maintenance": "dbb05dce522e8338005506031d43d7c310a525779458b146e4d8f05f5bcb6614"
+            }
+        }
+    }
+}

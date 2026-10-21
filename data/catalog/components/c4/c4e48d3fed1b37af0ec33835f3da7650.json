@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c4e48d3fed1b37af0ec33835f3da7650",
+    "identity": "github:1350742492:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350742492:root",
+            "repository": "LWLAymh/dsh-tool-emoji",
+            "path": "",
+            "revision": "8e3e77fbedfafff474f7c1d173b18d2d5a091057",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1ab7979be472dc52f2c2939cedcd6b852974d334027cbdddf8cdb307744d6316",
+                "code": "8e3e77fbedfafff474f7c1d173b18d2d5a091057",
+                "maintenance": "e4ac17564636a12c8beaf1dd76d44f25499d20404e75e9c38f3f7afaf8a94a4c"
+            }
+        }
+    }
+}

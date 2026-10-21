@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e0ade80820a87f7a7fcf96adbb71db16",
+    "identity": "github:1350595627:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350595627:root",
+            "repository": "lokih1028/dsh-prompt-optimizer",
+            "path": "",
+            "revision": "32a3b58820e76f5f433d3be089fd96e8c111611c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f24c48cd9928f4e70cf7e908b33be4af275240b39d070e806f05b355a0e32322",
+                "code": "32a3b58820e76f5f433d3be089fd96e8c111611c",
+                "maintenance": "707ad134544766ac08617f969585b44896f3081a1ae8c6cbcf6d4b87c1b02e9a"
+            }
+        }
+    }
+}

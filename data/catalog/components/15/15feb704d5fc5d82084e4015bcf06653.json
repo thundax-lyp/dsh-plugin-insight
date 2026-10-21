@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "15feb704d5fc5d82084e4015bcf06653",
+    "identity": "github:1343878096:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343878096:root",
+            "repository": "DevViking-Persike/dsh-subscriptions",
+            "path": "",
+            "revision": "1d6b468c7c0da08acfbada44fb0e14a271fae4e6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "89ada5a72be9c9136702500e94a4ae07d23e486ba94600f03975ba2d6a62fb75",
+                "code": "1d6b468c7c0da08acfbada44fb0e14a271fae4e6",
+                "maintenance": "0e348d22ef6dcb701d91f85dfdbddecfb687dd849b9f9654a40e3488032ff909"
+            }
+        }
+    }
+}

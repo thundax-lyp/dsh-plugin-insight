@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "891a12c9036d04a0d2afe85003dd60af",
+    "identity": "github:1337376275:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337376275:root",
+            "repository": "zmm863-commits/dsh-dice-game",
+            "path": "",
+            "revision": "3d6e2de1d726d002343d7ca0a08653fe95bf403c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2e9ab3da92e3f09327fbabd2d8cf278eebe94b691bef671aaebe93b634cb6410",
+                "code": "3d6e2de1d726d002343d7ca0a08653fe95bf403c",
+                "maintenance": "b379903a8b4e7f4633c0079750605da93c7a6c6fd4b187d24087aec7d4f0cdf3"
+            }
+        }
+    }
+}

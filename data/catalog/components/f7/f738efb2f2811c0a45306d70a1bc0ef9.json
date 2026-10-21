@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "f738efb2f2811c0a45306d70a1bc0ef9",
+    "identity": "github:1333623037:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333623037:root",
+            "repository": "BiBoyang/dsh-im-bridge",
+            "path": "",
+            "revision": "d5bcb1d27d1341b7d85a4f20917405c8e78ac8f9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b23dc488df85d2dc8f03ede1a2b5a2fdf6b847ce296df859d250e9ebdc89a6f2",
+                "code": "d5bcb1d27d1341b7d85a4f20917405c8e78ac8f9",
+                "maintenance": "d081401e8cba4dcbaf321232d5083a0976f615ab49362337dd2b35be24760129"
+            }
+        }
+    }
+}

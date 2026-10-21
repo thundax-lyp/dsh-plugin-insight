@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d8d9473b0899f1add6e18a77c51a152b",
+    "identity": "github:1340949246:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340949246:root",
+            "repository": "xie-tj/dsh-token-usage-ledger",
+            "path": "",
+            "revision": "4eb66faa05a04db48d1654db2494888e7d28d9ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "04945c5a4543c722a7ff458c1252af9a9c66edeeb09c55b8179c5eb8b8338c0e",
+                "code": "4eb66faa05a04db48d1654db2494888e7d28d9ea",
+                "maintenance": "3ed5f9f8f535655bba1c695675ac6c83312bcef948f95025526b400fb6ed082c"
+            }
+        }
+    }
+}

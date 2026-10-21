@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "406244bfdcd1ce3f0d641a38a50a0b6a",
+    "identity": "github:1424370249:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424370249:root",
+            "repository": "instpe/dsh-self-restart",
+            "path": "",
+            "revision": "0d5201573f2e41c4f915499662221da45609c8f9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bca93caad62e920f3913e77c1d354cc3bc4e2ed5b447abf6a96e3a414bfb76db",
+                "code": "0d5201573f2e41c4f915499662221da45609c8f9",
+                "maintenance": "2f2a0c6743069c9768ecc09a27307016488c99792a396f9c8878660138a24866"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7f77ad3f5e5f5f937ae8a04342df672a",
+    "identity": "github:1335614309:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335614309:root",
+            "repository": "GptsApp/dsh-stylevault",
+            "path": "",
+            "revision": "b627f3a40c86cee9016d3749368479c08b5443b9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0b279e43309ef6a9f377b483a9ecae44329bffd528af2e04ed742607689d0a74",
+                "code": "b627f3a40c86cee9016d3749368479c08b5443b9",
+                "maintenance": "9840af5b05cac2d3536ec05f34fdd1a0458d4a65d55bcdea2c9da5c6e563e6a0"
+            }
+        }
+    }
+}

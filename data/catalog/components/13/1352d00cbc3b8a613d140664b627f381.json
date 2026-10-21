@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1352d00cbc3b8a613d140664b627f381",
+    "identity": "github:1338234346:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338234346:root",
+            "repository": "Junkrat9527/dsh-autovision",
+            "path": "",
+            "revision": "d6e9b13d5155a920d2228c90a6d450e167616440",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "eee62ad31326edf42ea3ed2e4211db0907e2c7463eee221882f46be7e1212380",
+                "code": "d6e9b13d5155a920d2228c90a6d450e167616440",
+                "maintenance": "b27b6910995ce4abf689c45d2965ddd05f4d9e7114899b2378766786bc365ac0"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ee2f1140a6420d85a28935aeffca240",
+    "identity": "github:1387311017:packages-balance-widget",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1387311017:packages-balance-widget",
+            "repository": "Azhe0306/dsh-connectors",
+            "path": "packages/balance-widget",
+            "revision": "0e5a9012321db8f3e60184a06b1acc5eab0580c2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "81dae3ddfdc92fe21f5e0c9e86f7e5365cfb52b0b8e715531c3d053ff45c41ff",
+                "code": "0e5a9012321db8f3e60184a06b1acc5eab0580c2",
+                "maintenance": "c80214f3aa92406ddf614838479077089f06b6007d77414a0cbac16d714236b4"
+            }
+        }
+    }
+}

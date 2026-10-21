@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e685233ea1b85b9c6c16a2b18076659f",
+    "identity": "github:1335613953:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335613953:root",
+            "repository": "biliye/dsh-voice-call",
+            "path": "",
+            "revision": "5f4e99dc0169bad5eedee685d8bc701455cbcece",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d73c4007ecb7554e590810855b36a576c8132ef8c5c185e5b60e076ef3655818",
+                "code": "5f4e99dc0169bad5eedee685d8bc701455cbcece",
+                "maintenance": "fdf8925fbe2de02893e01f60f0504940afebd936c4f3269be3edc50f9fcdefc3"
+            }
+        }
+    }
+}

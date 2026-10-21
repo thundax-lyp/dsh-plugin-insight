@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9264923861aeb4ea2005172cb5a65788",
+    "identity": "github:1343391248:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343391248:root",
+            "repository": "open-dshai/dsh-employee",
+            "path": "",
+            "revision": "9dc94d47ace5aba62a882f3ec84c7c3de8cf5c26",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aabf46c5e1b58c2b87ae0202a6b4cc38af78e15c34b6dc715052a6a3132eb56c",
+                "code": "9dc94d47ace5aba62a882f3ec84c7c3de8cf5c26",
+                "maintenance": "4d07d53b66977d2b47b69c61afc5d061c17f3ac57b94832983576fcce1bbbc5d"
+            }
+        }
+    }
+}

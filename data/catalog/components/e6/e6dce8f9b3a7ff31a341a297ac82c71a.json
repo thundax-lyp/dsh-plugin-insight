@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6dce8f9b3a7ff31a341a297ac82c71a",
+    "identity": "github:1341054847:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341054847:root",
+            "repository": "sryimnoob123/dsh-tool-pwsh-safe",
+            "path": "",
+            "revision": "af74e2c208ab1315b4c8d0e902b31364cc188cc5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a4f77127dd675eec115e6bd8b9f206ff2e70df01c8f9af0937c9ed23ee62ec14",
+                "code": "af74e2c208ab1315b4c8d0e902b31364cc188cc5",
+                "maintenance": "2944f6c9b0af170211a5572eefbf6f5af6ecd154db340c6b2e9753c408f8d32a"
+            }
+        }
+    }
+}

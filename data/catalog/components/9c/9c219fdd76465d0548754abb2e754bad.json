@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9c219fdd76465d0548754abb2e754bad",
+    "identity": "github:1346800974:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346800974:root",
+            "repository": "Shizuku-keop/dsh-health",
+            "path": "",
+            "revision": "3cdfca19c34c9da2c72a3eb3a8d91375a8e624cd",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "13796123c7c6ecafcb1303a1dbad2c8bd047f0227d9e86068326afaf6392134f",
+                "code": "3cdfca19c34c9da2c72a3eb3a8d91375a8e624cd",
+                "maintenance": "39d30ed2edcaf59dfa0c5019365b2044458c050f5e0d2aee7e30136b6bd9c3b7"
+            }
+        }
+    }
+}

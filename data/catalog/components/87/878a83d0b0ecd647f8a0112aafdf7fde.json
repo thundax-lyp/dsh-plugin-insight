@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "878a83d0b0ecd647f8a0112aafdf7fde",
+    "identity": "github:1375472444:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375472444:root",
+            "repository": "hoyyang/dsh-glm-mode",
+            "path": "",
+            "revision": "81d0cfc857ead5863d1f2ed55f4fe97277db6f01",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7f6bdbac12285b47f3a6d2a985e09358e3507f8172e71a9b9371def15e230485",
+                "code": "81d0cfc857ead5863d1f2ed55f4fe97277db6f01",
+                "maintenance": "ab31057ec86134ab67990f5055d6aa6b2c3ffbadc92314dbfb1a3e6dd46a4b6e"
+            }
+        }
+    }
+}

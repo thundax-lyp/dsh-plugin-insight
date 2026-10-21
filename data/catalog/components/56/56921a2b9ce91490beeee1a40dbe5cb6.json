@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "56921a2b9ce91490beeee1a40dbe5cb6",
+    "identity": "github:1334498224:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334498224:root",
+            "repository": "Cavan-Ou/dsh-observation-journal",
+            "path": "",
+            "revision": "0fbbaf098d3cf462c4e315771b75d9a25b82ff10",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "06d83418f02d5a497ad71b784811725b09e16c1e4783be300dc8cb91561cb99c",
+                "code": "0fbbaf098d3cf462c4e315771b75d9a25b82ff10",
+                "maintenance": "46c5e95bd095cd3184235d3b6882374310e2201ee6ce4bc569946625e6703bce"
+            }
+        }
+    }
+}

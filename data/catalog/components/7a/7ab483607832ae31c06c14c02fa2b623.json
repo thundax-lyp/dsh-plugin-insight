@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7ab483607832ae31c06c14c02fa2b623",
+    "identity": "github:1380828882:dsh-look",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380828882:dsh-look",
+            "repository": "mengxiaoxian/lookover",
+            "path": "dsh-look",
+            "revision": "1b9629a08113b7fc30f424c0b1f97c54a2f5ccba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a631ee5b46dade43cfd8a1f693f70d2f11a0f3b2fc3fc147514ee11b375b11c4",
+                "code": "1b9629a08113b7fc30f424c0b1f97c54a2f5ccba",
+                "maintenance": "6277386d2bb550a27ca09b22de805713639576c7aeb146b0e42567d32d479734"
+            }
+        }
+    }
+}

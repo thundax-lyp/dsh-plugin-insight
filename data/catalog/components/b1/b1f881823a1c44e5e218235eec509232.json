@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b1f881823a1c44e5e218235eec509232",
+    "identity": "github:1147277275:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1147277275:root",
+            "repository": "yuukiLike/zeromd",
+            "path": "",
+            "revision": "2a38e4fb2cf488102d72cf95e0dd4529d208d03f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d613a4bbfc3606910bc3ae6d4ce99bd0a6bdde1cd3674aa4aa037c88ab2832fb",
+                "code": "2a38e4fb2cf488102d72cf95e0dd4529d208d03f",
+                "maintenance": "43fd5ea4671bf4f8033ad58342c81b2c8547cdbf3900c4a3c2e212a61718c58a"
+            }
+        }
+    }
+}

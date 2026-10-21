@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90ac972be5c09fb0331d4c2c9276f226",
+    "identity": "github:1333301957:packages-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333301957:packages-dsh",
+            "repository": "Jesse-njx/dsh-cowork",
+            "path": "packages/dsh",
+            "revision": "2ae5cf755c4294a1e988eebf3b12dd062425d84c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4d3fca785de5498e30c6598f43fe4449ce15062be041c0517ceee47b0688d650",
+                "code": "2ae5cf755c4294a1e988eebf3b12dd062425d84c",
+                "maintenance": "9931ea5b5c58a614ee9226bc20b44695db24a85468dddd552b598543b6135820"
+            }
+        }
+    }
+}

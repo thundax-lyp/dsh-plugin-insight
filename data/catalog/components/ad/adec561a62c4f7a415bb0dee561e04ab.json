@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "adec561a62c4f7a415bb0dee561e04ab",
+    "identity": "github:1290802262:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1290802262:root",
+            "repository": "GoalfyAI/goalfydata",
+            "path": "",
+            "revision": "9b9a98cdf80ebea03600e914321b56295dacf444",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8f9c476c0094a293e6d07b5c13d7de702ea3b22184f927d312876cc5a4cb729c",
+                "code": "9b9a98cdf80ebea03600e914321b56295dacf444",
+                "maintenance": "ae7ef3550b92235059243c02cf6219ceb9faecf1f05334f61e152274e782f96a"
+            }
+        }
+    }
+}

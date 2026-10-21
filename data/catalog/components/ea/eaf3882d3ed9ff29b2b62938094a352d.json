@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eaf3882d3ed9ff29b2b62938094a352d",
+    "identity": "github:1400550796:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1400550796:root",
+            "repository": "Noob-stupid/dsh-connection-card-host",
+            "path": "",
+            "revision": "c1e913b490d131a7a731b1dfb388f19d859a1cab",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "866cf059aa2c2cdd7d67058f7a9443154d9198a57442c76c2c684c7bac34f2ae",
+                "code": "c1e913b490d131a7a731b1dfb388f19d859a1cab",
+                "maintenance": "6966b15916b6819a28fc7769cfe9d01865482a232d58ce7b9b048fbb5794c740"
+            }
+        }
+    }
+}

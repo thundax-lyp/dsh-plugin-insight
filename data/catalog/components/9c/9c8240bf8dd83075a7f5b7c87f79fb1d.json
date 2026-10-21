@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9c8240bf8dd83075a7f5b7c87f79fb1d",
+    "identity": "github:1354495626:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354495626:root",
+            "repository": "hoyyang/dsh-concise",
+            "path": "",
+            "revision": "b7966c96fd4ab46f52369171baa9c58e7de3a4ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "30cbcc11d6b518409b966fc5225b5534263497937c73be7811a6a2445072c4e6",
+                "code": "b7966c96fd4ab46f52369171baa9c58e7de3a4ea",
+                "maintenance": "3d5a75f34114c3d28cb5c6d83379d07445da2d32db003914c04604cedd4dac26"
+            }
+        }
+    }
+}

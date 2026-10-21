@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8488008fff9ae398aac86bfe3366124e",
+    "identity": "github:1354931756:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354931756:root",
+            "repository": "GooDAnDReaDY/dsh-agent-loop-guard",
+            "path": "",
+            "revision": "a03ef42f6a0747a0445158884e6ceca78b33daad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fe37a4996dbe866f3fe1cf90190235265ee700cf144993f9de7be24326fb5eb3",
+                "code": "a03ef42f6a0747a0445158884e6ceca78b33daad",
+                "maintenance": "2876fd731a1df790d5d77485a003d59916491c33ec8f68b2cdbd179db5932e44"
+            }
+        }
+    }
+}

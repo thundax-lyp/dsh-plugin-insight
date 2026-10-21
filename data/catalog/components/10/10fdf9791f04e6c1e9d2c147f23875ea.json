@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "10fdf9791f04e6c1e9d2c147f23875ea",
+    "identity": "github:1338234244:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338234244:root",
+            "repository": "zilliztech/dsh-milvus",
+            "path": "",
+            "revision": "882e9fa485fded19273058c6336e356f59b82720",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "050f8341e2af631fd45de7726c8305875f8a361de70987d83d135d2493421b3f",
+                "code": "882e9fa485fded19273058c6336e356f59b82720",
+                "maintenance": "c83a7656e3df75b9614044ec8d1e589d7be6422c0dd3e9a9c8fe2846ceb66623"
+            }
+        }
+    }
+}

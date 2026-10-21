@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bb9efaeec73647decd862e376646ac16",
+    "identity": "github:1333807388:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333807388:root",
+            "repository": "yingjunnan/dsh-deepseek-quota",
+            "path": "",
+            "revision": "602950007fa28048fc0d75efee470324f1d0cc31",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "193fd31a3a51469665cfc046fb11dd943890561ea4502ce173071fb478c30995",
+                "code": "602950007fa28048fc0d75efee470324f1d0cc31",
+                "maintenance": "977f3b1012f7e85fa61c24582d7b6596dc677397af15833115cb326916d61e9a"
+            }
+        }
+    }
+}

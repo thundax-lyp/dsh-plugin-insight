@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ca2251d2422e3a3cdc6c59fd43227af",
+    "identity": "github:1348726578:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348726578:root",
+            "repository": "Mengshang-spec/dsh-third-party-api-balance-wallet",
+            "path": "",
+            "revision": "aaf6df7dac9e80d3f104bcfcbba34d34b5fc4249",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "23cf2fdabe0c10950c9cc0d273856cc2d97a6f81115bcb89cf5c0246e5f3aea0",
+                "code": "aaf6df7dac9e80d3f104bcfcbba34d34b5fc4249",
+                "maintenance": "257d7f49e613292348cc92ad092aeca5d8daa26aabce8159e8c3e9ef0746a0a5"
+            }
+        }
+    }
+}

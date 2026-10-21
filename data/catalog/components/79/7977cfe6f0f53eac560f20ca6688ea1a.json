@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7977cfe6f0f53eac560f20ca6688ea1a",
+    "identity": "github:1334231497:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334231497:root",
+            "repository": "zebbkira/dsh-skills-mcp-manager",
+            "path": "",
+            "revision": "ab57b1c4265e13008b108de460a71680f3366223",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ad07f72a614851ad759ab0abe5619e8b2fbc8ddf3b2a7a77defa3b8697a2cc68",
+                "code": "ab57b1c4265e13008b108de460a71680f3366223",
+                "maintenance": "d2616554250761fd2c30b16241f89455207e80731b949ad2d995704af4739ae4"
+            }
+        }
+    }
+}

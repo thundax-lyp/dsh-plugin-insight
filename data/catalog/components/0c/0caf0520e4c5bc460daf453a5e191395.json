@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0caf0520e4c5bc460daf453a5e191395",
+    "identity": "github:1411720323:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411720323:root",
+            "repository": "HEArtattaCK2332/dsh-text-explain",
+            "path": "",
+            "revision": "d82ab9eec3b02e433c351184395523216a59a426",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f21eee002bd014dc1cb3a547a6340ba18bda6a855c0d0f6c48ecc2027c029584",
+                "code": "d82ab9eec3b02e433c351184395523216a59a426",
+                "maintenance": "c8c30056296ec4d7e12a2268a9e119942f75ee8d11901cb2bd36536e54977c78"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c31bdd05f573b7a8235876240dde6dfc",
+    "identity": "github:1342961132:think-level",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342961132:think-level",
+            "repository": "CREAIT-nl/dsh-plugins",
+            "path": "think-level",
+            "revision": "c6086194b046a24cdd782ddba46961151a1e5388",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c52d07f2f7baa3c9c347bb4d2aee4eb4e3fa388d98c6dab848b250a71f85500f",
+                "code": "c6086194b046a24cdd782ddba46961151a1e5388",
+                "maintenance": "6968784152db5df6f5f613ff0291cbfd3b086d725430f3e564b9bb01021a5836"
+            }
+        }
+    }
+}

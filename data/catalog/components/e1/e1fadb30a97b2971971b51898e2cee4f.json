@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e1fadb30a97b2971971b51898e2cee4f",
+    "identity": "github:1341381943:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341381943:root",
+            "repository": "tonyd2wild/DeepSeek-Harness-Browser",
+            "path": "",
+            "revision": "909507039287ec65a8042f5c088719d81b1c3557",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1e56b2261fdbf0f79e8fd38c4a5fbd74ed1cafdddd267cd68a4ad0d8264992d2",
+                "code": "909507039287ec65a8042f5c088719d81b1c3557",
+                "maintenance": "8eb4cd6186af429c5001de95c8832d50d477e8a89af4929750d3eecccf3a73ca"
+            }
+        }
+    }
+}

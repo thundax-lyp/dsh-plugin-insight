@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "5e0ca6e9be9cb79b6418bf17497efc20",
+    "identity": "github:1416494723:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416494723:root",
+            "repository": "runcat-tommy/dsh-skill-mini-manager",
+            "path": "",
+            "revision": "1a1b1a6bbb295aa9f7201b4e8728c6ddbdd235a1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f188175366184713f57f7f7eb3a63e9874bfb078abd3fda2b3175e176facc3d8",
+                "code": "1a1b1a6bbb295aa9f7201b4e8728c6ddbdd235a1",
+                "maintenance": "56bcb1d15633db0084fb0cb9ed2f0840d7dba94c78b6bce2e3681042cedf8e7d"
+            }
+        }
+    }
+}

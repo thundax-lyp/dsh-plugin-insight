@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dc44b08b4b958bcac4231c98c6fe5094",
+    "identity": "github:1333390990:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333390990:root",
+            "repository": "Xplore-LAB/dsh-plugin-asmemory",
+            "path": "",
+            "revision": "04ef11c60d180dda8bf6bf8b2b6ce7f874034886",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "58875a8f3a8e5dc0514a583ee7634a4182c8dcdff64e0fd841c667a9b10e9021",
+                "code": "04ef11c60d180dda8bf6bf8b2b6ce7f874034886",
+                "maintenance": "34426da85d4cedbd6ce650487f8cecbe53680b54540c5611b252d361d305d3d2"
+            }
+        }
+    }
+}

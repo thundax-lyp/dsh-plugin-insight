@@ -1,0 +1,456 @@
+{
+    "schema_version": 3,
+    "id": "c62b3f103bf86d0b5cf481f3665f1158",
+    "identity": "github:1344715132:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1344715132:root",
+            "repository_id": 1344715132,
+            "component_id": "root",
+            "repository": "988hj7tczd-oss/dsh-workflow-templates",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-workflow-templates",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "6af3409464a07b6de2068ca72b1dcb8d3788a347b311028bb3b5ad74c95fef87",
+                "code": "26755f75a043418eeb3f59fa0a57a60542740abc",
+                "maintenance": "d9f83c4f448a8ca7196245d87a8b68ba7786183762c3ef015331d0b5e5525e3e"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-04-github-1344715132-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T04:16:39.867Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-04-github-1344715132-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/README.md",
+                    "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+                    "captured_at": "2026-10-21T04:16:39.867Z",
+                    "summary": "为 DSH 提供 Workflow 模板检索、静态校验和官方工具调用起点。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-workflow-templates/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-04-github-1344715132-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/src/index.ts",
+                    "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+                    "captured_at": "2026-10-21T04:16:39.867Z",
+                    "summary": "核查 src/index.ts、src/lib/catalog.ts、src/lib/validate.ts、src/lib/render.ts、src/tools/wf-template-run.ts、templates/code-review/pr-deep-review.js、package.json；catalog加载模板索引和搜索，validate轻量检查META/模块语句/return结构，wf_template_run组装payload并探测当前Agent的workflow工具可见性，只返回素材。",
+                    "artifact": "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-workflow-templates/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读index/catalog/validate/render/run及一个PR模板；未跑模板或官方引擎。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "明确需要多Agent编排的人选择高频模板并填参数，交付meta/script/args起点；不是自动执行工作流。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "catalog加载模板索引和搜索，validate轻量检查META/模块语句/return结构，wf_template_run组装payload并探测当前Agent的workflow工具可见性，只返回素材。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读index/catalog/validate/render/run及一个PR模板；未跑模板或官方引擎。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "TS构建与相邻dsh-src link前置；生产裸包名入口，源码相对入口不能等同成品安装。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次匹配工具/引擎版本，持续审模板输入和阶段产物；执行后模型/子代理费用另计，节省工时未测。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "只有明确要workflow时再选模板；先看完整脚本和参数，检查官方工具可见与阶段输出，再在隔离任务试。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少编排样板，不能替代任务分解、审批、运行错误处理或业务验收。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "catalog/render/validator分离、按调用Agent探测工具、扩展字段缺失只警告可借鉴；需要真实契约兼容证据。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对每次从零写编排脚本，增量是可检索的自写模板、参数提示与格式检查，并坚持由官方工具执行；引擎/子代理能力归DSH，参考结构不算插件原创引擎。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "模板校验通过是否保证官方合法和安全？轻量语法/return检查不执行真实schema或运行时序列化，未知顶层调用仅警告；run名称不代表执行。模板也会依赖工具和任务输入，不能把12个样例概括为通用流程保证。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：模板绑定宿主契约版本并用官方parser做兼容检查，再附每阶段输出断言，可减少静态通过但运行失败。由自写轻量校验与不加载官方schema推导，未实现。对计算return、未序列化对象、工具改名和失败阶段对照误接受/误拒绝及维护成本；新版本未知则标未验证。",
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1344715132:root",
+                            "area": "code",
+                            "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T04:16:39.867Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T04:16:39.867Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+                "reviewed_at": "2026-10-21T04:16:39.867Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1344715132:root",
+                        "area": "code",
+                        "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 小幅：既有编排模板形态；mechanism 小幅：catalog/轻量校验；transferability 实质：参数模板可复用但宿主契约限制；simplification 实质：检索到起点集中。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 实质：复用多阶段任务组织；delivery 小幅：脚本素材非完成结果；reach 小幅：降低编排起步门槛；economics 小幅：少重复写脚本，无运行成本测量。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-04-github-1344715132-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "明确需要多Agent编排者可试模板素材；先读完整脚本、参数和阶段产物，在隔离任务核官方工具与引擎兼容。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "已有编排需求者能获得meta/script/args起点。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "模板目录和payload组装省样板，run本身不执行。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "轻量校验与可见性探测已核，不证明官方schema和运行安全。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需审模板、引擎匹配和执行后模型预算，收益依赖任务分解。"
+                    }
+                },
+                "score": 59,
+                "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-04-github-1344715132-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1344715132:root",
+                        "area": "code",
+                        "fingerprint": "26755f75a043418eeb3f59fa0a57a60542740abc"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1344715132:root",
+            "repository": "988hj7tczd-oss/dsh-workflow-templates",
+            "path": "",
+            "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+            "fingerprints": {
+                "directory": "6af3409464a07b6de2068ca72b1dcb8d3788a347b311028bb3b5ad74c95fef87",
+                "code": "26755f75a043418eeb3f59fa0a57a60542740abc",
+                "maintenance": "d9f83c4f448a8ca7196245d87a8b68ba7786183762c3ef015331d0b5e5525e3e"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T04:06:46Z",
+            "analysis_sha256": "5023d95fe5cd3e3af57e1b416575073918c2f865796bc8dcccb2a0e24e270075"
+        },
+        "publication.metadata": "data/plugins/988hj7tczd-oss--dsh-workflow-templates/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 提供 Workflow 模板检索、静态校验和官方工具调用起点。",
+            "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+            "source_url": "https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+            "items": {
+                "模型工具": "wf_template_list/search/run/validate。"
+            }
+        },
+        "publication.advice": {
+            "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+            "text": "只有明确要workflow时再选模板；先看完整脚本和参数，检查官方工具可见与阶段输出，再在隔离任务试。"
+        },
+        "registry": "data/plugins/988hj7tczd-oss--dsh-workflow-templates",
+        "reports": "# dsh-workflow-templates\n\n> 为 DSH 提供 Workflow 模板检索、静态校验和官方工具调用起点。\n\n## 使用建议\n\n只有明确要workflow时再选模板；先看完整脚本和参数，检查官方工具可见与阶段输出，再在隔离任务试。\n\n核查状态：源码支持模板与起点装配；未执行官方workflow，静态有效不等于运行成功或合格交付。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：明确需要多Agent编排的人选择高频模板并填参数，交付meta/script/args起点；不是自动执行工作流。\n- **亮点**：相对每次从零写编排脚本，增量是可检索的自写模板、参数提示与格式检查，并坚持由官方工具执行；引擎/子代理能力归DSH，参考结构不算插件原创引擎。\n- **思考**：模板校验通过是否保证官方合法和安全？轻量语法/return检查不执行真实schema或运行时序列化，未知顶层调用仅警告；run名称不代表执行。模板也会依赖工具和任务输入，不能把12个样例概括为通用流程保证。\n- **建议**：待验证假设：模板绑定宿主契约版本并用官方parser做兼容检查，再附每阶段输出断言，可减少静态通过但运行失败。由自写轻量校验与不加载官方schema推导，未实现。对计算return、未序列化对象、工具改名和失败阶段对照误接受/误拒绝及维护成本；新版本未知则标未验证。\n\n## 场景与替代办法\n\n明确需要多Agent编排的人选择高频模板并填参数，交付meta/script/args起点；不是自动执行工作流。\n\n参照手写workflow与通用模板库；无端到端收益对照。\n\n## 能力清单\n\n- **模型工具**：wf_template_list/search/run/validate。\n\n## 依赖与流程\n\ncatalog加载模板索引和搜索，validate轻量检查META/模块语句/return结构，wf_template_run组装payload并探测当前Agent的workflow工具可见性，只返回素材。\n\nDSH tools与官方workflow引擎、各模板用到的Agent钩子/工具，开发构建依赖。\n\nlist/search→选模板→validate→run返回起点→用户/模型明确调用官方workflow→核产物；本插件不执行。\n\nTS构建与相邻dsh-src link前置；生产裸包名入口，源码相对入口不能等同成品安装。\n\n## 成本与效果\n\n首次匹配工具/引擎版本，持续审模板输入和阶段产物；执行后模型/子代理费用另计，节省工时未测。\n\n减少编排样板，不能替代任务分解、审批、运行错误处理或业务验收。\n\n## 核心贡献\n\n相对每次从零写编排脚本，增量是可检索的自写模板、参数提示与格式检查，并坚持由官方工具执行；引擎/子代理能力归DSH，参考结构不算插件原创引擎。\n\n## 关键质疑\n\n模板校验通过是否保证官方合法和安全？轻量语法/return检查不执行真实schema或运行时序列化，未知顶层调用仅警告；run名称不代表执行。模板也会依赖工具和任务输入，不能把12个样例概括为通用流程保证。\n\n## 工程亮点\n\ncatalog/render/validator分离、按调用Agent探测工具、扩展字段缺失只警告可借鉴；需要真实契约兼容证据。\n\n固定源码依据：[src/index.ts](https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/src/index.ts)、[src/lib/catalog.ts](https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/src/lib/catalog.ts)、[src/lib/validate.ts](https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/src/lib/validate.ts)、[src/lib/render.ts](https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/src/lib/render.ts)、[src/tools/wf-template-run.ts](https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/src/tools/wf-template-run.ts)、[templates/code-review/pr-deep-review.js](https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/templates/code-review/pr-deep-review.js)、[package.json](https://github.com/988hj7tczd-oss/dsh-workflow-templates/blob/26755f75a043418eeb3f59fa0a57a60542740abc/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：模板绑定宿主契约版本并用官方parser做兼容检查，再附每阶段输出断言，可减少静态通过但运行失败。由自写轻量校验与不加载官方schema推导，未实现。对计算return、未序列化对象、工具改名和失败阶段对照误接受/误拒绝及维护成本；新版本未知则标未验证。\n\n用官方parser和隔离引擎检查合法/非法return、工具改名、参数缺失与阶段失败；本轮不执行。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：fd0a9fbb9a7786a8bbefaee1d4b1f0cd30e45f04ba0df31c8367b81df4b6f636。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 375 | — | — | 4101 |\n| .ts | source | 9 | 985 | 774 | 143 | — |\n| .js | source | 12 | 435 | 314 | 72 | — |\n| .ts | test | 1 | 141 | 108 | 25 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.1；版本日期：2026-08-24（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[26755f75](https://github.com/988hj7tczd-oss/dsh-workflow-templates/tree/26755f75a043418eeb3f59fa0a57a60542740abc)；本轮基准：2026-10-21T04:06:46Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：抽读index/catalog/validate/render/run及一个PR模板；未跑模板或官方引擎。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "988hj7tczd-oss/dsh-workflow-templates",
+            "repository_id": 1344715132,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-08-24T14:53:53Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-workflow-templates%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:15A7C2:23688F:6AD84AE4 and timestamp 2026-10-21 05:17:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-workflow-templates%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:10742:1459CB:22129F:6AD84AE5 and timestamp 2026-10-21 05:17:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-workflow-templates%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:14C883:228A0E:6AD84AE5 and timestamp 2026-10-21 05:17:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-workflow-templates%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:9F47E:151BD0:22DB0E:6AD84AE5 and timestamp 2026-10-21 05:17:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fdsh-workflow-templates%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:0BD3:A4611:1104AE:6AD84AE5 and timestamp 2026-10-21 05:17:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-workflow-templates",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 404,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-workflow-templates",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-24T10:55:01.026Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-workflow-templates",
+                    "error": null,
+                    "latest_version": "0.1.1",
+                    "latest_published_at": "2026-08-24T11:11:15.682Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+                "current_revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1344715132:root",
+            "repository": "988hj7tczd-oss/dsh-workflow-templates",
+            "path": "",
+            "revision": "26755f75a043418eeb3f59fa0a57a60542740abc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6af3409464a07b6de2068ca72b1dcb8d3788a347b311028bb3b5ad74c95fef87",
+                "code": "26755f75a043418eeb3f59fa0a57a60542740abc",
+                "maintenance": "d9f83c4f448a8ca7196245d87a8b68ba7786183762c3ef015331d0b5e5525e3e"
+            }
+        }
+    }
+}

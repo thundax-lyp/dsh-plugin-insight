@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "67bed53696785a19a10114ef10c69619",
+    "identity": "github:1423380056:packages-dsh-live2d-mao",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423380056:packages-dsh-live2d-mao",
+            "repository": "xkk6663/dsh-live2d-mao",
+            "path": "packages/dsh-live2d-mao",
+            "revision": "0c33bcfd4ef8600c653dd5c4797861e160385c5a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6dda1dfe9bbe6c1d63f71c68a2b08814b94deb2ecc3c94cbebeabab79a4e4b7e",
+                "code": "0c33bcfd4ef8600c653dd5c4797861e160385c5a",
+                "maintenance": "a9acd9ac13b05f291748a7b6bae188c2ea5572e58eef8df66293a81f8cad707f"
+            }
+        }
+    }
+}

@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "14bc679111e258f7e971d18e8bab6a91",
+    "identity": "github:1391140767:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1391140767:root",
+            "repository_id": 1391140767,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-winshot",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-winshot",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "fce40bef12f087b5ce0565c271c0091bd1ec5dfae1ff9f35397f9dd882da23fd",
+                "code": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+                "maintenance": "66b4fbf798d769eaf6a0da1bd100e9564559c851cdf49810f941edb1d91400e9"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1391140767-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:50:39.843Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1391140767-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/README.md",
+                    "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+                    "captured_at": "2026-10-20T10:50:39.843Z",
+                    "summary": "把指定 Windows 窗口或控件区域截图保存为 WSL 文件。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/173787247--dsh-wsl-winshot/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1391140767-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/index.js",
+                    "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+                    "captured_at": "2026-10-20T10:50:39.843Z",
+                    "summary": "核查 index.js、lib/shot-exec.js、lib/shot.js、test/winshot.test.js、test/shot.test.js；shot-exec.js 定位pid或前台窗口、还原最小化窗口、测量矩形并可按控件或坐标裁剪，以CopyFromScreen存临时PNG后复制到WSL。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/173787247--dsh-wsl-winshot/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交 e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b，检查作者说明、入口、所列核心实现与测试内容；未执行测试或插件、未核实外部套件和独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "WSL Agent需要查看图像形式的Windows应用状态，以可读取PNG作为交付，再交由模型/人工分析。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140767:root",
+                            "area": "code",
+                            "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:39.843Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "shot-exec.js 定位pid或前台窗口、还原最小化窗口、测量矩形并可按控件或坐标裁剪，以CopyFromScreen存临时PNG后复制到WSL。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140767:root",
+                            "area": "code",
+                            "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:39.843Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交 e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b，检查作者说明、入口、所列核心实现与测试内容；未执行测试或插件、未核实外部套件和独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140767:root",
+                            "area": "code",
+                            "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:39.843Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定版本 package.json 与 cordis.patch.yml 提供 DSH bundle 接线；README 为作者安装说明，包存在不等于安装或宿主验收通过。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140767:root",
+                            "area": "code",
+                            "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:39.843Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无订阅；人工需保证可见与核对画面，PNG占存储，重试/清理也有负担，未测图片交接时间。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140767:root",
+                            "area": "code",
+                            "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:39.843Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140767:root",
+                            "area": "code",
+                            "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:39.843Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "跨系统图像交接清楚，但截图正确性受桌面状态支配，不能把文件成功保存当应用验证通过。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140767:root",
+                            "area": "code",
+                            "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:39.843Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "裁剪坐标在Windows侧计算可减少WSL坐标换算负担；复制后清理清楚，异常路径仍需清理保障；源码没有PrintWindow式独立渲染，需避免超出承诺。 源码：[index.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/index.js)、[lib/shot-exec.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/lib/shot-exec.js)、[lib/shot.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/lib/shot.js)、[test/winshot.test.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/test/winshot.test.js)、[test/shot.test.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/test/shot.test.js)。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140767:root",
+                            "area": "code",
+                            "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:50:39.843Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:50:39.843Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+                "reviewed_at": "2026-10-20T10:50:39.843Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1391140767:root",
+                        "area": "code",
+                        "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty 9：System.Drawing桌面采样适配；mechanism 8：窗口侧裁剪与跨系统复制有局部增量，未解决遮挡；transferability 5：文件交接可复用，受Public目录和桌面可见性限制；simplification 4：少手工传图，截图复核仍必要。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 9：统一采图到WSL的交接；delivery 8：PNG仍是观察材料；reach 5：让WSL Agent得到Windows图像，依赖交互桌面；economics 4：无采图耗时与失败成本对照。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1391140767-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需图像观察者可限完整可见前台窗口试截图，先核PNG身份，勿用于遮挡证据并清理Public临时图。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "跨系统交付可读PNG的需求明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "窗口裁剪及文件交接省手工搬运，不是独立窗口渲染。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "CopyFromScreen和首匹配已查，遮挡及DPI未实测。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需人工露出窗口和复核画面，临时文件和恢复最小化有副作用。"
+                    }
+                },
+                "score": 59,
+                "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1391140767-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1391140767:root",
+                        "area": "code",
+                        "fingerprint": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1391140767:root",
+            "repository": "173787247/dsh-wsl-winshot",
+            "path": "",
+            "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+            "fingerprints": {
+                "directory": "fce40bef12f087b5ce0565c271c0091bd1ec5dfae1ff9f35397f9dd882da23fd",
+                "code": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+                "maintenance": "66b4fbf798d769eaf6a0da1bd100e9564559c851cdf49810f941edb1d91400e9"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "1c20e32b8cb63f93bd7a3a34eccac7d6ee63e81fcf98a94c59b144646c881d30"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-winshot/META.json",
+        "publication.summaries": {
+            "text": "把指定 Windows 窗口或控件区域截图保存为 WSL 文件。",
+            "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+            "source_url": "https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+            "items": {
+                "模型工具": "win_shot_window"
+            }
+        },
+        "publication.advice": {
+            "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+            "text": "适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-winshot",
+        "reports": "# dsh-wsl-winshot\n\n> 把指定 Windows 窗口或控件区域截图保存为 WSL 文件。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-winshot](https://github.com/173787247/dsh-wsl-winshot)\n- **版本号**：0.1.0（[固定提交 e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b](https://github.com/173787247/dsh-wsl-winshot/tree/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持所述适配机制；贡献评价属于有固定源码依据的解释。尚未安装或运行，效果与宿主兼容未验证；新设计推演均未实现。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：WSL Agent需要查看图像形式的Windows应用状态，以可读取PNG作为交付，再交由模型/人工分析。\n- **亮点**：相对手动截图再传文件，贡献是窗口选择、裁剪与跨系统文件交接；图像来自桌面屏幕区域采样，并非独立窗口渲染，截图算法属System.Drawing。\n- **思考**：最重要的限制是被遮挡窗口是否仍能正确截图。CopyFromScreen只读取屏幕像素，不保证目标窗口内容；还原最小化窗口也改变桌面。按名裁剪取第一个匹配而非拒绝歧义，因此PNG存在不等于正确目标。\n- **建议**：适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。\n\n采用建议：适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。\n\n## 核心贡献\n\n相对手动截图再传文件，贡献是窗口选择、裁剪与跨系统文件交接；图像来自桌面屏幕区域采样，并非独立窗口渲染，截图算法属System.Drawing。\n\n## 关键质疑\n\n最重要的限制是被遮挡窗口是否仍能正确截图。CopyFromScreen只读取屏幕像素，不保证目标窗口内容；还原最小化窗口也改变桌面。按名裁剪取第一个匹配而非拒绝歧义，因此PNG存在不等于正确目标。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：截图结果附可见性/遮挡检查和明确目标句柄，使上层在遮挡时请求用户调整而非误分析图片；当前未实现可靠遮挡判断。\n\n同一测试窗口前台/遮挡/最小化与双屏DPI场景截图，对照已知图像和目标矩形；若遮挡时仍返回ok但图片是别窗，必须标非目标可信截图。\n\n## 场景与替代办法\n\nWSL Agent需要查看图像形式的Windows应用状态，以可读取PNG作为交付，再交由模型/人工分析。\n\n本次比较参照为上述人工命令、平台接口或本地脚本；没有独立同任务运行对照，不声称整体收益或首创。\n\n## 依赖与流程\n\nNode≥18、DSH、Windows交互桌面、PowerShell/UIA/System.Drawing必要；C盘Public临时目录与WSL挂载可读写，最终默认 ~/.dsh/shots。\n\n选窗口/控件→必要时还原→桌面采样→写Public临时PNG→复制WSL并尽力删除临时文件→人工/模型查看；失败可能留临时文件。\n\n## 成本与效果\n\n无订阅；人工需保证可见与核对画面，PNG占存储，重试/清理也有负担，未测图片交接时间。\n\n跨系统图像交接清楚，但截图正确性受桌面状态支配，不能把文件成功保存当应用验证通过。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c4d44a062bae716a33893b3b2f45c3806b9f7e11c6895e5cedbcd3a627970a3a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 119 | — | — | 472 |\n| .js | source | 4 | 319 | 273 | 18 | — |\n| .js | test | 2 | 118 | 105 | 5 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：win_shot_window\n\n## 工程亮点\n\n裁剪坐标在Windows侧计算可减少WSL坐标换算负担；复制后清理清楚，异常路径仍需清理保障；源码没有PrintWindow式独立渲染，需避免超出承诺。 源码：[index.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/index.js)、[lib/shot-exec.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/lib/shot-exec.js)、[lib/shot.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/lib/shot.js)、[test/winshot.test.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/test/winshot.test.js)、[test/shot.test.js](https://github.com/173787247/dsh-wsl-winshot/blob/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b/test/shot.test.js)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/shot-exec.js、lib/shot.js、test/winshot.test.js、test/shot.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交 e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b，检查作者说明、入口、所列核心实现与测试内容；未执行测试或插件、未核实外部套件和独立用户效果。\n- 下一步：同一测试窗口前台/遮挡/最小化与双屏DPI场景截图，对照已知图像和目标矩形；若遮挡时仍返回ok但图片是别窗，必须标非目标可信截图。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-winshot",
+            "repository_id": 1391140767,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-29T15:33:06Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:287071:13A27B:212E10:6AD849C2 and timestamp 2026-10-21 05:12:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:1484D3:2208EF:6AD849C3 and timestamp 2026-10-21 05:12:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C1:2F40AA:1461A3:21E540:6AD849C3 and timestamp 2026-10-21 05:12:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2EEE9E:13C8D1:2152C1:6AD849C3 and timestamp 2026-10-21 05:12:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-winshot%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:C61AA:15355B:22DBAC:6AD849C3 and timestamp 2026-10-21 05:12:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-wsl-winshot",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-winshot",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-winshot",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+                "current_revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1391140767:root",
+            "repository": "173787247/dsh-wsl-winshot",
+            "path": "",
+            "revision": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fce40bef12f087b5ce0565c271c0091bd1ec5dfae1ff9f35397f9dd882da23fd",
+                "code": "e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b",
+                "maintenance": "66b4fbf798d769eaf6a0da1bd100e9564559c851cdf49810f941edb1d91400e9"
+            }
+        }
+    }
+}

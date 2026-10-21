@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b735c1d7dbe35ee405187266034b297e",
+    "identity": "github:1291676455:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1291676455:root",
+            "repository": "wly8691-jpg/knowlp-rag",
+            "path": "",
+            "revision": "21a5e5778e4d3c0a0188445aac3a61a09d0f923f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b0eb2baa47fab6827743adb7ab5d73bfb8033f3ba3e589d9a2b79badce3402db",
+                "code": "21a5e5778e4d3c0a0188445aac3a61a09d0f923f",
+                "maintenance": "f65efbdb34cd119e2d65611087845039b82af1744f2404e0ad964beb3060a0e4"
+            }
+        }
+    }
+}

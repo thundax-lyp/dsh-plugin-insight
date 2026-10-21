@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a7924741d87a1e64ce27b3a5e431c0b5",
+    "identity": "github:1339252754:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339252754:root",
+            "repository": "SiriLee/dsh-approval-hotkeys",
+            "path": "",
+            "revision": "d6b16a1229a8dc23d83404e06173af067847c106",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c36f1b2382720cc1be7958c9e81a6de1b8f1913ad87436fc21497bb6d455027c",
+                "code": "d6b16a1229a8dc23d83404e06173af067847c106",
+                "maintenance": "0180af11380130d2c1be2f3fe8d3133a5f7d6e77488c18136c1b92bc1e3e047c"
+            }
+        }
+    }
+}

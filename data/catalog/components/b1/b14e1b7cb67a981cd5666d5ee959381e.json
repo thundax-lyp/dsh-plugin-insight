@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b14e1b7cb67a981cd5666d5ee959381e",
+    "identity": "github:552259791:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:552259791:root",
+            "repository": "alib8b8/aflare",
+            "path": "",
+            "revision": "1f33849400fa5b024d002bc1cdab749cb51a859b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "37be3f7f885a962a9dc7278f646d8a76a0a0165bab2d66c699b5b1564192de7c",
+                "code": "1f33849400fa5b024d002bc1cdab749cb51a859b",
+                "maintenance": "875074eaa0b1e7e5bfc2230ddf8c87b1a0a9c994a07046fc9c81bf69db82d978"
+            }
+        }
+    }
+}

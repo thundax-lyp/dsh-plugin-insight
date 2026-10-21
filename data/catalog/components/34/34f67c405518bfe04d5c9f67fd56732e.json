@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "34f67c405518bfe04d5c9f67fd56732e",
+    "identity": "github:1337116672:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337116672:root",
+            "repository": "ParticleLight/dsh-all-usage",
+            "path": "",
+            "revision": "610f9efb0e7c178030e13498a4af33e238517895",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "72f5db6bd39b0adbad0a42838845c989298e11344fcc6d2f37a9b6aef882f28a",
+                "code": "610f9efb0e7c178030e13498a4af33e238517895",
+                "maintenance": "70a2a03f2394f67d440d38f8d58e3f3f7409b27758636cb6ce6f4b4fb91b88f8"
+            }
+        }
+    }
+}

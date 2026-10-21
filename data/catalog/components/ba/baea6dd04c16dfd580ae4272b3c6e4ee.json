@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "baea6dd04c16dfd580ae4272b3c6e4ee",
+    "identity": "github:1353015972:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1353015972:root",
+            "repository": "weibaohui/experts-management",
+            "path": "",
+            "revision": "9bc0aedcca510556314cdcc6aa0283992de1e701",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e62be691c6d3d24c43d004329454e3cf66a703bb4e34e1c9332c344c1a59f79a",
+                "code": "9bc0aedcca510556314cdcc6aa0283992de1e701",
+                "maintenance": "86b7a49b5accc57134589f8d1feb65ee01a7f85f27b81d2013886f0e81716b27"
+            }
+        }
+    }
+}

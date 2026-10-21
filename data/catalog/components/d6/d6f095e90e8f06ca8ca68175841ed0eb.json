@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d6f095e90e8f06ca8ca68175841ed0eb",
+    "identity": "github:1340364712:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340364712:root",
+            "repository": "LittleBeaverStudio/agnes-media",
+            "path": "",
+            "revision": "d7a3710d29c130e4daa79e8092242b8a7ae9429a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "58b727b5f6ae7e9461f777ead01cba068a4764fede6cbeb07cd56b9217a4277a",
+                "code": "d7a3710d29c130e4daa79e8092242b8a7ae9429a",
+                "maintenance": "609d67381d2921edf6c86875c470387d1079a252910f0615bb31246964be7401"
+            }
+        }
+    }
+}

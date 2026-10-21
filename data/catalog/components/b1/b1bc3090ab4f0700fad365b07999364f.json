@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b1bc3090ab4f0700fad365b07999364f",
+    "identity": "github:1372697810:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372697810:root",
+            "repository": "EvoMap/evolver-dsh-plugin",
+            "path": "",
+            "revision": "bba59d18292e5386bd3a37b85631e77a4e47b2f5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "343d35abe81b2f77e7a956b5cd06a79f21f8038b1cf23825e0d0cd43b3710a84",
+                "code": "bba59d18292e5386bd3a37b85631e77a4e47b2f5",
+                "maintenance": "0e14ee357a29a76114b218f8d69b193388f3b942f6d5505a832912fbbb4072ef"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69e536b5d90b9174840872925c5912ba",
+    "identity": "github:1342829444:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342829444:root",
+            "repository": "ZekaiShi/evo-subagent",
+            "path": "",
+            "revision": "ba1761583a9e3f9f1303a5446778bff00f3cd33b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d4537acad12da30a375072afa0001dfcce7735ae1c5baf7e1ab06dcea32e8070",
+                "code": "ba1761583a9e3f9f1303a5446778bff00f3cd33b",
+                "maintenance": "4c72cd3c2b57916163b3c0896e719b7f73a9f01c04d6bbbe856d69b7ccfe039b"
+            }
+        }
+    }
+}

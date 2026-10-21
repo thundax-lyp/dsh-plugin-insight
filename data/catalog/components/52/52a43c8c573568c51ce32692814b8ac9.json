@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "52a43c8c573568c51ce32692814b8ac9",
+    "identity": "github:1342688050:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342688050:root",
+            "repository": "yaways/dsh-subagent-claude-code-wrapper",
+            "path": "",
+            "revision": "d3fb24a70e941abaae40e6626b94615d9a79459a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d44485a668aea9177093aa140549131741c3147ef4b5f811366692f73c8a53e9",
+                "code": "d3fb24a70e941abaae40e6626b94615d9a79459a",
+                "maintenance": "d335783bd2b1b7a29d6b3395277773f06bd2c70c7a733f01075774ebdf1babd5"
+            }
+        }
+    }
+}

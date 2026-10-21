@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "9044aa474e1ee2df8fc292b8d2f5becf",
+    "identity": "github:1333701094:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333701094:root",
+            "repository": "ChuanTianML/dsh-open-with",
+            "path": "",
+            "revision": "bfccd740dd86e02c77ee23193b9e8614af59416f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0f50836a4c79b2b89870f0264456c45f8786ce46e83157a17c48b053800af6eb",
+                "code": "bfccd740dd86e02c77ee23193b9e8614af59416f",
+                "maintenance": "434d6352924a19842ed4fdcc4d85369cd8d04154cecdef4f986d725271f0dd0b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7212196c7e33503866cb893cfa151b6d",
+    "identity": "github:1358120583:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358120583:root",
+            "repository": "HaoyueQin/dsh-git-review",
+            "path": "",
+            "revision": "448d65a3356be1100b7dfa8ca1bde063a02db94a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9646fc47789d4d55e317a4d83339f4aeb3d53392d73d9a4c27f4c91b94e2c275",
+                "code": "448d65a3356be1100b7dfa8ca1bde063a02db94a",
+                "maintenance": "380aeb5a87a49d984f0ef1acf30bfb18c8005a6d0f973999b4f0061af8355e29"
+            }
+        }
+    }
+}

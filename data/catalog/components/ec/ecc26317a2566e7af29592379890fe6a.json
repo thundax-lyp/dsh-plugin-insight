@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ecc26317a2566e7af29592379890fe6a",
+    "identity": "github:1347205473:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347205473:root",
+            "repository": "Jensen-Yao/dsh-model-palette",
+            "path": "",
+            "revision": "da520b4d458c2db35f6bced93600a6c9da79d610",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2c33bdabb2dbc3bd9b614cf0d57263f10837e2e7b0bd3b95799120d239117197",
+                "code": "da520b4d458c2db35f6bced93600a6c9da79d610",
+                "maintenance": "357062920cdd9b8a6e66beffb1df12d10b1c216ebbf428c5dd078933a9ca81c6"
+            }
+        }
+    }
+}

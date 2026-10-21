@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b6cc0a299486192ce31bb936732a72eb",
+    "identity": "github:1333771537:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333771537:root",
+            "repository": "zimai233/dsh-exam-countdown",
+            "path": "",
+            "revision": "54492515553fcf38a48f372e381bbf3252abcc38",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "77495d29ff6cbc99b0346c046f1c21e1a8e220db6ef41031a591522c683939dc",
+                "code": "54492515553fcf38a48f372e381bbf3252abcc38",
+                "maintenance": "12681043035545b47fb977c1f13718c847a8e80fadd1d419459fa873cd6a575a"
+            }
+        }
+    }
+}

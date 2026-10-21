@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2722fdfd0295d3f6fb2636185ef279bd",
+    "identity": "github:1337396477:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337396477:root",
+            "repository": "mekos2772/dsh-plugin-mimi",
+            "path": "",
+            "revision": "8040c248c05316bf2031e2f94d56afe606bf8aaf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "47b575d9da7c6ee5db71bcf13ce0a920decb6025cca1cdfabcd97ca18dddc462",
+                "code": "8040c248c05316bf2031e2f94d56afe606bf8aaf",
+                "maintenance": "49068c952ea5d275c23f012e61da0e98b650a64ab0e9eb79619a8cc999a57344"
+            }
+        }
+    }
+}

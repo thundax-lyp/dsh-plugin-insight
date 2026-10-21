@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "63a1d70c60cb3649ddfa7680a006f3f4",
+    "identity": "github:1349800125:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349800125:root",
+            "repository": "zhangguiping-xydt/dsh-session-lab",
+            "path": "",
+            "revision": "d9c10baf2489189d5d1a8b91a73855eb3497c8e8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "71f18397cd16a308d7ebadf984e1ac7d8ffbb9fdb5e9ab0e65c12af9c4197cb8",
+                "code": "d9c10baf2489189d5d1a8b91a73855eb3497c8e8",
+                "maintenance": "405d59fddd836b2b06749ef56efda9b5a4a4bbfbd2f69e9fbff2de74ae382722"
+            }
+        }
+    }
+}

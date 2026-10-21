@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "09b7dc6411c9f1dc617fbac4c569dc7f",
+    "identity": "github:1366204745:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366204745:root",
+            "repository": "a86582751/dsh-nexttavern",
+            "path": "",
+            "revision": "97cdcbcebc8b911e511a36465328eaea328e744d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0f4ca02d9313f4258e469d21a5b73ca8105cd271088709a251f6e68b9b1ad93b",
+                "code": "97cdcbcebc8b911e511a36465328eaea328e744d",
+                "maintenance": "fa88ec616673c7b04928ddedd38ec660264577d73b86081c9a884cd7c6e39a5c"
+            }
+        }
+    }
+}

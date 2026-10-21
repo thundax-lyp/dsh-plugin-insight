@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "330d08f52dc50189988aea992d7eb4b2",
+    "identity": "github:1340415952:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340415952:root",
+            "repository": "JohnXu22786/semantic-search",
+            "path": "",
+            "revision": "9ba4ad03e16cf88a7a5a33893dbe1bf983243a08",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b81e7472d80cc961cc309847b29952e0e4ee04f67d28e052e754f6a857609ee6",
+                "code": "9ba4ad03e16cf88a7a5a33893dbe1bf983243a08",
+                "maintenance": "bed114c5d564cb1640608bedfcd9b09d7866f13f3c393af3cfc04f74b3828d76"
+            }
+        }
+    }
+}

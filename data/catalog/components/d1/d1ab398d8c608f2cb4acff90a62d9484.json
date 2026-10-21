@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d1ab398d8c608f2cb4acff90a62d9484",
+    "identity": "github:1333918421:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333918421:root",
+            "repository": "moon09300731/dsh-approval-gate",
+            "path": "",
+            "revision": "8419bc3722a237a85c033565be6ac06074f05d92",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "98713c8e29942c5ded2bca818533805ecf2ffb3f742c944c75586895f2826dbf",
+                "code": "8419bc3722a237a85c033565be6ac06074f05d92",
+                "maintenance": "94f8d4724a3081d2a6b949e4584c3f037f97409c07247ba1d5b2fbe58feae556"
+            }
+        }
+    }
+}

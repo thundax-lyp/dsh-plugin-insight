@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "aaed32b472e09a873b8e4190b66f79d0",
+    "identity": "github:1411794440:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411794440:root",
+            "repository": "lion231226/dsh-peak-hours",
+            "path": "",
+            "revision": "2764dcf75dcbdf62e77ea0c3f731e1546b156026",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "968b9cc66185bd4913dc2b4e18f4941901ee8c45628f62bfb00fb2113dca56db",
+                "code": "2764dcf75dcbdf62e77ea0c3f731e1546b156026",
+                "maintenance": "54f5a57a28a4e420c0cb308d64ab4366d5cf1ca8ad4016a94ed1cc799a0e4773"
+            }
+        }
+    }
+}

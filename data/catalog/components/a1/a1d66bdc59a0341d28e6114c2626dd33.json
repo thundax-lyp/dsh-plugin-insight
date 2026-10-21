@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a1d66bdc59a0341d28e6114c2626dd33",
+    "identity": "github:1333611745:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333611745:root",
+            "repository": "yejiming/dsh-museai-tavern",
+            "path": "",
+            "revision": "caec6f9fc6e608e3c80befed1e81cfa15c9f910a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fcbac591da9b3c8779b30ad58f7d812ddc5ebe1ff3446ef2e9a4250b9496f7ae",
+                "code": "caec6f9fc6e608e3c80befed1e81cfa15c9f910a",
+                "maintenance": "68117af58a86706e0bf2f0f3d61d033d4f5c13d5d2c9023eaaad7c98231886f6"
+            }
+        }
+    }
+}

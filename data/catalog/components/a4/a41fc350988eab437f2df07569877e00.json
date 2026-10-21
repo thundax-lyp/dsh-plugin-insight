@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a41fc350988eab437f2df07569877e00",
+    "identity": "github:1281574939:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1281574939:root",
+            "repository": "Co-Engram/Co-Engram",
+            "path": "",
+            "revision": "4c8c968fef106c417334e7ed14c05b7d27c2baba",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "a9688700bd0311f5f34e4a6ae6d057cee56c8d80a0cbd154f221c1f94d030290",
+                "code": "4c8c968fef106c417334e7ed14c05b7d27c2baba",
+                "maintenance": "86ab2c0b6e58e7b6be77a55255613973f38d2f629ed0cef29813fe1ec5032429"
+            }
+        }
+    }
+}

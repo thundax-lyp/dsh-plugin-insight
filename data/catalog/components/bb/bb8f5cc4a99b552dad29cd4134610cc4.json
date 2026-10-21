@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bb8f5cc4a99b552dad29cd4134610cc4",
+    "identity": "github:1354232005:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354232005:root",
+            "repository": "pricklywiggles/dsh-circuit-breaker",
+            "path": "",
+            "revision": "8aa4ffeb0e3df25e186291be8ef8e1f9478a494a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "65e126f9d0168fe1d8efe5fa909a61b2a90cce8b5b9afa6eebcbe22a719fd959",
+                "code": "8aa4ffeb0e3df25e186291be8ef8e1f9478a494a",
+                "maintenance": "33ca1c9390b2b58989b484194407d4071b9c4f2399af2c9a026bf928deeeeca0"
+            }
+        }
+    }
+}

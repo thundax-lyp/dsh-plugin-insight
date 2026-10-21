@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "efa35f8195d4680de1c8f80c90a84c57",
+    "identity": "github:1334460196:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334460196:root",
+            "repository": "kanghelyu/dsh-deepseek-flow",
+            "path": "",
+            "revision": "87a4e8d43102c22f0e1f2b0cbd9af120de611310",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "81a707745ad4ce66838d1f2d7519f8bb5d7a7d25cad51a1a26ab228399652db2",
+                "code": "87a4e8d43102c22f0e1f2b0cbd9af120de611310",
+                "maintenance": "c4eaebe6ae7eb9e3ec500d0d51e27a89926878aa4ad9115c45fa68f3b363b06c"
+            }
+        }
+    }
+}

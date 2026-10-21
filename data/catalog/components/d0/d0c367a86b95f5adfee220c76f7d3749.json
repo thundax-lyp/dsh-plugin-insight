@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d0c367a86b95f5adfee220c76f7d3749",
+    "identity": "github:1334035119:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334035119:root",
+            "repository": "LeslieWylie/dsh-ops-kit",
+            "path": "",
+            "revision": "d4db8b308fb507ce0c176c551b29c917d68ce751",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "017a15063e51796f3259e12c0c1c5af66b9b8af86c904832813ce2c4d5e926be",
+                "code": "d4db8b308fb507ce0c176c551b29c917d68ce751",
+                "maintenance": "ecb209824ff4dd8bcfb6c81739f570cafeb407dde8faf2b85d7586beb940cb66"
+            }
+        }
+    }
+}

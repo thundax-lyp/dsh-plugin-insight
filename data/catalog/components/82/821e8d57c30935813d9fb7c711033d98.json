@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "821e8d57c30935813d9fb7c711033d98",
+    "identity": "github:1383807386:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1383807386:root",
+            "repository": "rasyidmmz/dsh-ai-memory",
+            "path": "",
+            "revision": "f7e07c45772c7241910a27830e2bd78e1b8302a0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b451fa7cd4a8883da12e0e41e6760d41f850ca565d2101ac6fb640c22e420922",
+                "code": "f7e07c45772c7241910a27830e2bd78e1b8302a0",
+                "maintenance": "d064bbb8e623d07554890c5c36b6d567d72fa5eea2983bf94dcfe7af089da871"
+            }
+        }
+    }
+}

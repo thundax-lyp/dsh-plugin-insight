@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ad8814f1ac31e4200662f6819a36225",
+    "identity": "github:1422373411:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422373411:root",
+            "repository": "zhz8888/dsh-android-emulator-helper",
+            "path": "",
+            "revision": "1cc1e07d079af08bdf594bd88627ca1d7c4c3e2c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "52d8ff8b26b35d0003a0a2ab14fcfca65af846a5d2f1828d08ea2c64e43bae35",
+                "code": "1cc1e07d079af08bdf594bd88627ca1d7c4c3e2c",
+                "maintenance": "aec67355ca088047cce503b1a3d411c2c7d069de6e98b3af54dca313f94937ab"
+            }
+        }
+    }
+}

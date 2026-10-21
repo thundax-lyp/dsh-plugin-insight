@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0b43676029a313f4fbc3da6bfcb836a8",
+    "identity": "github:1354188142:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354188142:root",
+            "repository": "linkbag/dsh-capyreporter",
+            "path": "",
+            "revision": "6091699592eaf3e60dd91745a2c1817d923611c2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24cf43990327ac32198ac6e921b4037d91838adfcc88fd8d5053c7c64efcaf19",
+                "code": "6091699592eaf3e60dd91745a2c1817d923611c2",
+                "maintenance": "1000e79f0a807dbd29b3326a996217661b7052755936e9f6f05cecc47ce28517"
+            }
+        }
+    }
+}

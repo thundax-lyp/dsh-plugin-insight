@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ef9f914ef6dd130a9e7ba12fa085bef6",
+    "identity": "github:1335840137:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335840137:root",
+            "repository": "JohnXu22786/safety-net",
+            "path": "",
+            "revision": "49ad74fa60953b5872c98230c3d8ca7e1ca07049",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f471ec41263627d122aaed3eacccf2bf1508478e94febb1203413e96b41179c2",
+                "code": "49ad74fa60953b5872c98230c3d8ca7e1ca07049",
+                "maintenance": "a189afda3ebc264266dfc52d8fc340d248dc899a90486a1e9b16ae0fa9e4ed4c"
+            }
+        }
+    }
+}

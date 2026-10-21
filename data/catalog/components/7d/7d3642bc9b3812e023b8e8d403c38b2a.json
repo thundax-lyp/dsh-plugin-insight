@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d3642bc9b3812e023b8e8d403c38b2a",
+    "identity": "github:1335620246:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335620246:root",
+            "repository": "KIDLi1412/dsh-token-heatmap",
+            "path": "",
+            "revision": "51b2529304bdefe63aa442b2a7dcf5f43fe7e988",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f53d6e502605cb9290dfe843ae196a321ce06d93437262072e46fb3df1af5c6d",
+                "code": "51b2529304bdefe63aa442b2a7dcf5f43fe7e988",
+                "maintenance": "93e86a1b9b31f08be62fa33fa7b22d3cb1564a5dc5c42828566795bba9367e7f"
+            }
+        }
+    }
+}

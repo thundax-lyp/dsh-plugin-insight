@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6818718c6867150a2c1110b0f76f6fca",
+    "identity": "github:1345803397:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345803397:root",
+            "repository": "kuun993/dsh-loop-engine",
+            "path": "",
+            "revision": "713ef1440a26744f3767d91eb928277c1dcc4c67",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "96b7b36139250ea2f65338d6d145a8d586625dd3a0da238c3ebb8af9a6711138",
+                "code": "713ef1440a26744f3767d91eb928277c1dcc4c67",
+                "maintenance": "3a19ad7dce15cae24a853247e6fbaccde9b269df112412a242c491cc6966ddf5"
+            }
+        }
+    }
+}

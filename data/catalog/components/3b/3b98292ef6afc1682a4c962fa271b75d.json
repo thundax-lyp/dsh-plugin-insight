@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b98292ef6afc1682a4c962fa271b75d",
+    "identity": "github:1340213946:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340213946:root",
+            "repository": "ffyuuu/dsh-llm-longcat",
+            "path": "",
+            "revision": "b07900eea661cd65465e8f529a8495697152879d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "39d85ad75165161d7b3f23df5c70e21494e4602b2f28e6122d683beacd679018",
+                "code": "b07900eea661cd65465e8f529a8495697152879d",
+                "maintenance": "91e4fbe62d76f4f85e8132c4aa38601f1e7926eacf2f572fe2918e0f2d37b9d4"
+            }
+        }
+    }
+}

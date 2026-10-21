@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8f4e94d5c78dfd13bcca81f98fc09067",
+    "identity": "github:1360354592:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360354592:root",
+            "repository": "langyo/dsh-mobile-upgrade",
+            "path": "",
+            "revision": "1f1e98f323ed39cfdeb77b21b4c4bf442f6c2e2d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2bf32d06064abaa9203d4730a470c5ed540274dd1af53be4e9285d395a3b8da4",
+                "code": "1f1e98f323ed39cfdeb77b21b4c4bf442f6c2e2d",
+                "maintenance": "9a012ba46610f173f5766eb1fa034840c078f150344f92ebe0141f03188ff555"
+            }
+        }
+    }
+}

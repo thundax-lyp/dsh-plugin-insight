@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d28910d819ee038177144c1b2355c98",
+    "identity": "github:1333885575:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333885575:root",
+            "repository": "tttwh/dsh-plugin-diraud",
+            "path": "",
+            "revision": "22b33376cf082d93affc5a5d05618cdf7992e025",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dc697f893ee9bb261a9932f704221ef0601987074320517e778a5d4020bd7aea",
+                "code": "22b33376cf082d93affc5a5d05618cdf7992e025",
+                "maintenance": "7f5ab84f049034f01d8109d4fbb1d03711fd98b321fa676f986becd7cde88fb9"
+            }
+        }
+    }
+}

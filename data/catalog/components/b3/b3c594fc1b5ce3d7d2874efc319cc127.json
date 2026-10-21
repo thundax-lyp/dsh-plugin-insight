@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b3c594fc1b5ce3d7d2874efc319cc127",
+    "identity": "github:1338440512:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338440512:root",
+            "repository": "EdwinDigital/dsh-web-search-microsoft-webiq",
+            "path": "",
+            "revision": "df953b5c6c36138b0cef52e2b3f21e1f73835b9c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5207fe59ddcb03040e2c934ab2be0f7957c1357a7cdcac5a60b60419d8e1d39f",
+                "code": "df953b5c6c36138b0cef52e2b3f21e1f73835b9c",
+                "maintenance": "a7ec0d71666ea02be026919fdabf43f54b260e92cd1d14a0aac0fe9cf0d0aa33"
+            }
+        }
+    }
+}

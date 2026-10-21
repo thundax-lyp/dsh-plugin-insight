@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "52da098346fbb71cd8b0e36d805855c9",
+    "identity": "github:1355547930:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355547930:root",
+            "repository": "PerryLink/dsh-cert-mcp",
+            "path": "",
+            "revision": "43a49b8436c56d14f3e9341c32d18c62f1999b1d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "50a545d339045a2256e3910b7bdb957632e76b7e2a17d642ecff93e0376f9943",
+                "code": "43a49b8436c56d14f3e9341c32d18c62f1999b1d",
+                "maintenance": "f427666524810d6559424245b31ac7f4cfe9819026e0533e268138892dd862d9"
+            }
+        }
+    }
+}

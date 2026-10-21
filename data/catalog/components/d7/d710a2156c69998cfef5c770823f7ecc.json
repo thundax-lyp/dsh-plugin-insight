@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d710a2156c69998cfef5c770823f7ecc",
+    "identity": "github:1349605301:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349605301:root",
+            "repository": "zuojinxin/dsh-provider-switch",
+            "path": "",
+            "revision": "332e9a0ed635a32306cd7b0cb824d0cee4354209",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "77268bf07847d42716fc455fa5a3531e2f6ce2282baa4fd24ca454447df1a1fb",
+                "code": "332e9a0ed635a32306cd7b0cb824d0cee4354209",
+                "maintenance": "b7ab8dc85cb472b61488e44d5dcd3c2fd17123e33e1e17488818fa18ec90cf6d"
+            }
+        }
+    }
+}

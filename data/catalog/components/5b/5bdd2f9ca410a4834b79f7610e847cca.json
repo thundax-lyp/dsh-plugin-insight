@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5bdd2f9ca410a4834b79f7610e847cca",
+    "identity": "github:1425751774:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425751774:root",
+            "repository": "zhengqiuyang/dsh-trust-panel",
+            "path": "",
+            "revision": "1265b95ef385e7f04c7c24c3fb066fc6f5d6129d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ae241158c2945356c72f4211ab879bac11fd5a917a0e83df2392163aaae414cf",
+                "code": "1265b95ef385e7f04c7c24c3fb066fc6f5d6129d",
+                "maintenance": "6948d6ecf13eb0a73d6c6e2c47dee4ca86433e962e90d9d8d08fc80484f07c74"
+            }
+        }
+    }
+}

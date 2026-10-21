@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c6ad5e0f162efde37dd105c6df846f8d",
+    "identity": "github:1364030337:adapter",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364030337:adapter",
+            "repository": "Zoria-Lind/dsh-ecolink",
+            "path": "adapter",
+            "revision": "b55e922b9824a87679ee0d223d35fdf8c2b8ae82",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24a2ce99d226ff501bb597b0d537b669ac7b769503a700813f0a6c3019e0a4eb",
+                "code": "b55e922b9824a87679ee0d223d35fdf8c2b8ae82",
+                "maintenance": "f57471fa60bd662da39f54458373c0567512f69f69473b9f54981121063e57ad"
+            }
+        }
+    }
+}

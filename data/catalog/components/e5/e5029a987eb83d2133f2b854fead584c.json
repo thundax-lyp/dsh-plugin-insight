@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5029a987eb83d2133f2b854fead584c",
+    "identity": "github:1344556169:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344556169:root",
+            "repository": "jinzheng8115/dsh-Minesweeper",
+            "path": "",
+            "revision": "d6726a5b5bac3f2265c98560af43a9faecc0e367",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "88cbf9b46b2ca2ae1139626a6a601a7fb51e4da5cf25518963d75dd79caaa2e5",
+                "code": "d6726a5b5bac3f2265c98560af43a9faecc0e367",
+                "maintenance": "9c3cec34bc873695b6577d6d2aee73bfb3e455aaecdcdce1ede70304296ca81b"
+            }
+        }
+    }
+}

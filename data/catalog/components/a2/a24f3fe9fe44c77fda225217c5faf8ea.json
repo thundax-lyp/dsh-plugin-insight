@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a24f3fe9fe44c77fda225217c5faf8ea",
+    "identity": "github:1405478991:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405478991:root",
+            "repository": "H2CO3w/dsh-theme-frost",
+            "path": "",
+            "revision": "78e2886d305befe993679b81c76e1bf802c54b1d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d07f1721ab7ff1db455bb828b4cba47e6b91f753a1bb065ced5054d3ea8a990e",
+                "code": "78e2886d305befe993679b81c76e1bf802c54b1d",
+                "maintenance": "522a247c3c9bbf7292996256c9bb7b370e50298443a856045d4ccea9a278116f"
+            }
+        }
+    }
+}

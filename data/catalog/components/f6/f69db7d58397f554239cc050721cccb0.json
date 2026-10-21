@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f69db7d58397f554239cc050721cccb0",
+    "identity": "github:1340549716:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340549716:root",
+            "repository": "whyzsm/dsh-clipfile",
+            "path": "",
+            "revision": "0c82ed8357858e7be1746caef919d62047c30dbf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e999f37174ff7199366b882510062152a31658013a92760224fdbb4d383425a6",
+                "code": "0c82ed8357858e7be1746caef919d62047c30dbf",
+                "maintenance": "4a0635cf1d137516000cc63297d0579a4edd24d871d0d4d0076223d541cee67e"
+            }
+        }
+    }
+}

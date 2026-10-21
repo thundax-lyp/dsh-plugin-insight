@@ -2,7 +2,8 @@
 import {
     readSnapshotStorage,
     writeSnapshotStorage,
-    migrateSnapshotStorage
+    migrateSnapshotStorage,
+    recoverSnapshotStorage
 } from '../../_shared/scripts/snapshot-storage.mjs';
 import { assembleRecommendation, unassessedRecommendation } from '../../_shared/scripts/recommendation.mjs';
 import { readWork, saveWork, migrateWork, workStorageFiles } from '../../_shared/scripts/work-storage.mjs';
@@ -34,7 +35,7 @@ import {
 } from './research-session.mjs';
 import { renderPublication } from './render-research.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
-export const SNAPSHOT = 'data/catalog/SNAPSHOT.json';
+export const SNAPSHOT = 'data/catalog/index.jsonl';
 const hash = (text) => createHash('sha256').update(text).digest('hex');
 const ajv = new Ajv({ strict: true, allErrors: true });
 addFormats(ajv);
@@ -179,7 +180,16 @@ export function bootstrap(root = ROOT) {
     result.limitations.push('首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。');
     result.catalog.runs = [];
     validateSnapshot(result, root);
-    writeSnapshotStorage(snapshotFile(root), result);
+    const file = snapshotFile(root);
+    mkdirSync(dirname(file), { recursive: true });
+    const fd = openSync(file + '.lock', 'wx', 0o600);
+    try {
+        if (existsSync(file)) throw Error('snapshot appeared during bootstrap');
+        writeSnapshotStorage(file, result);
+    } finally {
+        closeSync(fd);
+        unlinkSync(file + '.lock');
+    }
     return result;
 }
 export function startWork(input, path, limit = 40, root = ROOT, retryIds = []) {
@@ -637,14 +647,7 @@ export function renderSnapshot(root = ROOT, checkOnly = false) {
         ['README.md', result.readme],
         [snapshot.publication.catalog_page, result.catalog],
         ...result.details.map((d) => [d.path, d.content]),
-        ...result.categoryPages.map((d) => [d.path, d.content]),
-        [CATALOG, JSON.stringify(snapshot.catalog, null, 2) + '\n'],
-        [PUBLICATION, JSON.stringify(snapshot.publication, null, 2) + '\n'],
-        [REGISTRY, JSON.stringify(snapshot.registry, null, 2) + '\n'],
-        ...Object.entries(snapshot.metadata).map(([id, meta]) => [
-            `${snapshot.registry[id]}/META.json`,
-            JSON.stringify(meta, null, 2) + '\n'
-        ])
+        ...result.categoryPages.map((d) => [d.path, d.content])
     ];
     for (const [path, content] of outputs) {
         const full = local(root, path);
@@ -792,9 +795,24 @@ export async function main(args = process.argv.slice(2)) {
         console.log(JSON.stringify(assessRecommendations(read(need('input')), ROOT, v.apply)));
         if (v.apply) renderSnapshot();
     } else if (command === 'migrate-storage') {
-        readSnapshot(ROOT);
         const backup = need('backup');
-        console.log(JSON.stringify(migrateSnapshotStorage(snapshotFile(ROOT), backup)));
+        const file = snapshotFile(ROOT);
+        const fd = openSync(file + '.lock', 'wx', 0o600);
+        try {
+            console.log(JSON.stringify(migrateSnapshotStorage(file, backup)));
+        } finally {
+            closeSync(fd);
+            unlinkSync(file + '.lock');
+        }
+    } else if (command === 'recover-storage') {
+        const file = snapshotFile(ROOT);
+        const fd = openSync(file + '.lock', 'wx', 0o600);
+        try {
+            console.log(recoverSnapshotStorage(file));
+        } finally {
+            closeSync(fd);
+            unlinkSync(file + '.lock');
+        }
     } else if (command === 'bootstrap') {
         bootstrap();
         renderSnapshot();
@@ -837,7 +855,7 @@ export async function main(args = process.argv.slice(2)) {
     } else if (command === 'clean') cleanWork(need('work'), ROOT, v.apply);
     else
         throw Error(
-            'Usage: snapshot bootstrap|start|next|stage|block|plan|apply|render|validate|assess-recommendations|migrate-work|clean'
+            'Usage: snapshot bootstrap|start|next|stage|block|plan|apply|render|validate|assess-recommendations|migrate-storage|recover-storage|migrate-work|clean'
         );
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))

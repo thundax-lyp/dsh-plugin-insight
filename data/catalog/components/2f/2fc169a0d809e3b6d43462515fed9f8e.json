@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2fc169a0d809e3b6d43462515fed9f8e",
+    "identity": "github:1380813847:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380813847:root",
+            "repository": "konglong87/dsh-skills-input",
+            "path": "",
+            "revision": "bac908dde1fece72502655a5d9ce27ca5a860632",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b9890d85955dab1e4ab4bc77fe0d6ae3bb49cbdf7336642fe1a4c4eb8402fc7e",
+                "code": "bac908dde1fece72502655a5d9ce27ca5a860632",
+                "maintenance": "ea5c0b1b20d2f0b9dcf390e3a84c5a07089741b643c9d62d12d991ccf5905e2f"
+            }
+        }
+    }
+}

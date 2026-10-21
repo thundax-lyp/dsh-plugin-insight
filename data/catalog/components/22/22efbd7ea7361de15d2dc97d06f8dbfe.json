@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "22efbd7ea7361de15d2dc97d06f8dbfe",
+    "identity": "github:1333130619:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333130619:root",
+            "repository": "lhh010/dsh-minigames",
+            "path": "",
+            "revision": "927951bdc5d76ec6f61ed4fd821830abaae678ac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "61c7c51233dfacf8a4fbfc03f7e3f33d5b56c33c1d44257c2dd04b0a0008ac07",
+                "code": "927951bdc5d76ec6f61ed4fd821830abaae678ac",
+                "maintenance": "13c3bdc9e4b190de5d8a5ce1e1c1ff43e07316f0fa7af2737554fd6c3f6a3b34"
+            }
+        }
+    }
+}

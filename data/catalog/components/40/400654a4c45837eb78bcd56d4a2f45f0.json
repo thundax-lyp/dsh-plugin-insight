@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "400654a4c45837eb78bcd56d4a2f45f0",
+    "identity": "github:1399924095:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1399924095:root",
+            "repository": "ruanimal/dsh-bash-env",
+            "path": "",
+            "revision": "c971fd7ea4dc82c678af63780ada7fa9cb033d1a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dccb1a799250f469c240a5b2e573e849277daf8cd967c5313d248e8610f9a537",
+                "code": "c971fd7ea4dc82c678af63780ada7fa9cb033d1a",
+                "maintenance": "08288fc6dfae0166843c6feb141e97286696ffb3b9f24dd841e78f5c8649a0e1"
+            }
+        }
+    }
+}

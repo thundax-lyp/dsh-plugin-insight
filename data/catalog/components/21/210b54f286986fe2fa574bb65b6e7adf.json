@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "210b54f286986fe2fa574bb65b6e7adf",
+    "identity": "github:1338128752:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338128752:root",
+            "repository": "dataelement/dsh-plugin-coaligne",
+            "path": "",
+            "revision": "d438ba324eb1efde553926a1c47f62053992b646",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "08edcd296c2212fdea358c3b3a5567c5202b1f39b0821d2997be5d8c15a3e2e2",
+                "code": "d438ba324eb1efde553926a1c47f62053992b646",
+                "maintenance": "d9a17ea225cf04145910640723f1b4177ad4da6ce6249f4035ea262d0b3dbc8c"
+            }
+        }
+    }
+}

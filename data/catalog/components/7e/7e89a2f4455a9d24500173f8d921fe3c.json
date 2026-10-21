@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7e89a2f4455a9d24500173f8d921fe3c",
+    "identity": "github:1337906444:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337906444:root",
+            "repository": "sudoprivacy/dsh-shareone-plugin",
+            "path": "",
+            "revision": "75218d2e85b18fc70a92a0078f73f41cceb9a4fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "76168f72cb01c3f424d0322150afd370000e2fb32c0e20601c84498c0c9ae471",
+                "code": "75218d2e85b18fc70a92a0078f73f41cceb9a4fc",
+                "maintenance": "fc9d1501bc7bebe1ec0f209f0416f378b6b0d10898749f91273226e64d179d36"
+            }
+        }
+    }
+}

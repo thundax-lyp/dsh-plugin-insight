@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8eefcb47d5efe198b34d5f2391ef9269",
+    "identity": "github:1338576681:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338576681:root",
+            "repository": "tonytanglab/deepseek-harness-relay-mcp",
+            "path": "",
+            "revision": "5a2c9f5f1d47cb2bbaa64337cfddafe9c2363473",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "18b1087961641df3366af680f83f6851f950bf8e5ca2385dda3ec22730aa4146",
+                "code": "5a2c9f5f1d47cb2bbaa64337cfddafe9c2363473",
+                "maintenance": "83d148a8b10ede734ee6778d94ca35eede775ba101f5ed5eba74f984d8d9bbe4"
+            }
+        }
+    }
+}

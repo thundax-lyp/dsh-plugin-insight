@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a68327224f2bb69cac555667ad4f035c",
+    "identity": "github:1342063704:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342063704:root",
+            "repository": "xiyunyunyun/dsh-client-ui-seaglass",
+            "path": "",
+            "revision": "db8e029855338f4a44e87918dff7e4ffc25af50a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5bd8ca5d75bc25eb93f3c0f62de153b6f38325e367f75eda8b358330889610f1",
+                "code": "db8e029855338f4a44e87918dff7e4ffc25af50a",
+                "maintenance": "927c38c0dcdf95bc8f2adec43c798a5a29faba4de80e9782ed6880edbcacb774"
+            }
+        }
+    }
+}

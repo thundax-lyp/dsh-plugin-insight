@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b704740407f174e06b24565993ae8cb",
+    "identity": "github:1335892186:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335892186:root",
+            "repository": "yoiizesdev-crypto/DSH-Balance-display",
+            "path": "",
+            "revision": "32c7fc7b8bd40b52f81de82bb9b13464be3e4dc2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "95280f18bff95a15f0357e9cf27ad4b43992be5845ce8d43fa6865aa9b2e76c4",
+                "code": "32c7fc7b8bd40b52f81de82bb9b13464be3e4dc2",
+                "maintenance": "453b6286b9d346619a4c7885d14f9ada89d35affc5f0e9a66a4014e910edb4b4"
+            }
+        }
+    }
+}

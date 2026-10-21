@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "893b23b4eec667ee57dfad56295b77c4",
+    "identity": "github:1348613783:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348613783:root",
+            "repository": "GooDAnDReaDY/dsh-kanban",
+            "path": "",
+            "revision": "c20186b5233a2e0002b0ada8be6a74ddd5218d74",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8ed5a01ec8b96e6e080fab9978b1819072a7adbc01af059a6633094acdc42a11",
+                "code": "c20186b5233a2e0002b0ada8be6a74ddd5218d74",
+                "maintenance": "7d22f500fb76aa39a40390992784bdffd9c4be02057298c1c92fda41a64a0981"
+            }
+        }
+    }
+}

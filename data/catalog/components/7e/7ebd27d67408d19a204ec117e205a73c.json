@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7ebd27d67408d19a204ec117e205a73c",
+    "identity": "github:1378862279:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378862279:root",
+            "repository": "cq-guojia/dsh-task-dispatch-table",
+            "path": "",
+            "revision": "e91f5894e9a1762783c0d60beb1fb5d01f4363d9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cd46214e965afb12ce0c90322472d999b6ee01b77ddf9279c0a55015354da762",
+                "code": "e91f5894e9a1762783c0d60beb1fb5d01f4363d9",
+                "maintenance": "3a4c1e3fb8b28ea642ff589ed24718aed609b1b1ba495ac2af09537ad84d8969"
+            }
+        }
+    }
+}

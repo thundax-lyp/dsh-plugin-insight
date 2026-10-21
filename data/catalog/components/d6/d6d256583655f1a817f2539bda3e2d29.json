@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d6d256583655f1a817f2539bda3e2d29",
+    "identity": "github:1422654959:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422654959:root",
+            "repository": "Doctor-Pan-code/dsh-useof-skill-panel",
+            "path": "",
+            "revision": "d8f53276d426f1a926392522c631e3521197e717",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ac38973732bec737291f4cd9675d30ee9b15fe872979f562a503a0b6e64a2072",
+                "code": "d8f53276d426f1a926392522c631e3521197e717",
+                "maintenance": "549c954ef01800a8dff88c3060c805844802263334e5fee84fdc76f8723b5f83"
+            }
+        }
+    }
+}

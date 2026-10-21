@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "538238f25bcc3082c8b23df9537aa4b2",
+    "identity": "github:1352247306:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352247306:root",
+            "repository": "QuantumKuba/dsh-graphify-plugin",
+            "path": "",
+            "revision": "74a2c72b31abef95adf7afa53ec45d7dcb0ba47e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "944fd804fa63a7f4a6ded52cde2a33259d315c81653aed2a9d3b145ef620670e",
+                "code": "74a2c72b31abef95adf7afa53ec45d7dcb0ba47e",
+                "maintenance": "73f58340da64653396cab94d0ec20f172532b4b181fdf166add86d4af4d4cf14"
+            }
+        }
+    }
+}

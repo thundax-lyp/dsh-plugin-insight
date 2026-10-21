@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c2dd2f0d3aa8db39793e2854dc8a979f",
+    "identity": "github:1401121377:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401121377:root",
+            "repository": "chen112233usa/dsh-typesafe-ai-skill",
+            "path": "",
+            "revision": "15032004dfa106eedafa286102f280291566da5f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "96251d6aa260d5317bcd6ba03da4a0075f1bf683cd1e87c2e78b181f57fed6ac",
+                "code": "15032004dfa106eedafa286102f280291566da5f",
+                "maintenance": "eef998bfbc9d490fd6d9fb103b84d19d868876c18eea8039b0b77498905b9d15"
+            }
+        }
+    }
+}

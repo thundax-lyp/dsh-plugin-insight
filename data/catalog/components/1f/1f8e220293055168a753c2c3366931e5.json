@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1f8e220293055168a753c2c3366931e5",
+    "identity": "github:1387430987:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1387430987:root",
+            "repository": "zchuxi/dsh-restart-task",
+            "path": "",
+            "revision": "7732cce14cf34c23ab9de2b0b973ff205a393595",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5ba5e5df823905157c3c5239d113d2479abd6b552a6a9d8f426ea2513c171a9d",
+                "code": "7732cce14cf34c23ab9de2b0b973ff205a393595",
+                "maintenance": "d2676212e4bae35f1e56e93666bce6cb80a3aa07435742c696cb77e3bfa3751d"
+            }
+        }
+    }
+}

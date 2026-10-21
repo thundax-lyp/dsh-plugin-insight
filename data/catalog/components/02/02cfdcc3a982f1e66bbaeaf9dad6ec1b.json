@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "02cfdcc3a982f1e66bbaeaf9dad6ec1b",
+    "identity": "github:1334728658:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334728658:root",
+            "repository": "johnnycls/dsh-no-setup-mode",
+            "path": "",
+            "revision": "555f2e6ed266ca5590cc693c0067142322119d4a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5bb6a69baa834dfe4a66d2cc152bfc8ba7b3159251d5ece6785d779584adde93",
+                "code": "555f2e6ed266ca5590cc693c0067142322119d4a",
+                "maintenance": "f86b3da8f033a46577aae18d714184e196e1206ae562349493a78d34e39e2de5"
+            }
+        }
+    }
+}

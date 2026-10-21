@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c46e5ef4f32113cab44129800d25506",
+    "identity": "github:1340840315:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340840315:root",
+            "repository": "RadicalGitter/dsh-ui-translate",
+            "path": "",
+            "revision": "260083f023ec8494fbf59db7c4b9a237cf8e9648",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1024ebb2af1e9bc3bacdde2283212cf3e7c9359b5cd2f922a422a9033cf431c0",
+                "code": "260083f023ec8494fbf59db7c4b9a237cf8e9648",
+                "maintenance": "95ce74eca3382c5d78eea6e792d513079ede00b318c760317f62c738511b91f7"
+            }
+        }
+    }
+}

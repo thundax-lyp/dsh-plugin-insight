@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b4cf99f94b6040a6e568b5c11206d65",
+    "identity": "github:1291332881:packages-recowork-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1291332881:packages-recowork-dsh",
+            "repository": "recoluan/recowork",
+            "path": "packages/recowork-dsh",
+            "revision": "d3e7be85abaecb7f8623854c65ec296c42ce330f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a86d9141e41bf9960b9848cc3e01100ea49776ac5bd34b4e9a0a02980906fbad",
+                "code": "d3e7be85abaecb7f8623854c65ec296c42ce330f",
+                "maintenance": "2ceacef7bfef36e4df89b23a050b0a3cb2aea1b9fddd45a72f78a02e29166bbe"
+            }
+        }
+    }
+}

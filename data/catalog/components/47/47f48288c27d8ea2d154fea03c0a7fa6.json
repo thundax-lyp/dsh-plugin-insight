@@ -1,0 +1,362 @@
+{
+    "schema_version": 3,
+    "id": "47f48288c27d8ea2d154fea03c0a7fa6",
+    "identity": "github:1346196699:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1346196699:root",
+            "repository_id": 1346196699,
+            "component_id": "root",
+            "repository": "133563825as-ai/dsh-api-dashboard",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-api-dashboard",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "6cd20535c1bb7f181d1ad33ee41187c52beec825d47101dff81cdfe1122af46d",
+                "code": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+                "maintenance": "0b55ded12af442285c224598012da1dd7daa7c69a493adb3a615bb429e1ffefa"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1346196699-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:30:02.102Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1346196699-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/133563825as-ai/dsh-api-dashboard/blob/b57f9535c55aa39026931813e09834fa9f4f4d82/README.md",
+                    "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+                    "captured_at": "2026-10-20T04:30:02.102Z",
+                    "summary": "在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/133563825as-ai--dsh-api-dashboard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1346196699-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/133563825as-ai/dsh-api-dashboard/blob/b57f9535c55aa39026931813e09834fa9f4f4d82/src/index.js",
+                    "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+                    "captured_at": "2026-10-20T04:30:02.102Z",
+                    "summary": "核查 src/index.js、client/client.js；src/index.js 从凭据及平台接口取余额，以内置或自定义单价计算会话消耗，混合币种分别显示；客户端定时刷新看板。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/133563825as-ai--dsh-api-dashboard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "余额接口与参考价不等于最终账单，部分单价注释本身标明未核实；本轮未复跑作者Android验收或更新流程。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "同时使用多个供应商的用户需要观察额度和花费趋势，合格输出应能区分实际余额、估算与无法查询。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1346196699-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346196699:root",
+                            "area": "code",
+                            "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:02.102Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "src/index.js 从凭据及平台接口取余额，以内置或自定义单价计算会话消耗，混合币种分别显示；客户端定时刷新看板。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1346196699-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346196699:root",
+                            "area": "code",
+                            "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:02.102Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "余额接口与参考价不等于最终账单，部分单价注释本身标明未核实；本轮未复跑作者Android验收或更新流程。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1346196699-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346196699:root",
+                            "area": "code",
+                            "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:02.102Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "1.7.0，声明DSH 0.1及0.2部分范围，作者报告Android DSHA验收；桌面和旧宿主不能据此当作已验证。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1346196699-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346196699:root",
+                            "area": "code",
+                            "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:02.102Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "频繁刷新增加接口请求与电量/网络负担；首次配置及维护价格表、核对对账占人工时间。未量化可节省费用。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1346196699-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346196699:root",
+                            "area": "code",
+                            "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:02.102Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1346196699-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346196699:root",
+                            "area": "code",
+                            "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:02.102Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "集中显示和明确未知值有实用价值；估算若被当成收费真相，会把价格漂移和缓存差异隐藏起来。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1346196699-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346196699:root",
+                            "area": "code",
+                            "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:02.102Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "更新流程校验manifest、版本与兼容，备份替换并尝试回滚；一体化主模块同时承担计价与更新，后续维护面较大。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1346196699-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346196699:root",
+                            "area": "code",
+                            "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:30:02.102Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:30:02.102Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "多供应商用户可限可查询平台试额度看板，先对账和核对币种，自更新单独验备份回滚。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "统一观察多平台额度花费的任务具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "未知值和分币种显示减少切换，估算仍非账单。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "余额估价与更新源码可查，部分单价未核实且作者验收未复跑。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "价格维护、频繁刷新及自更新目录权限增加维护面。"
+                    }
+                },
+                "score": 65,
+                "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1346196699-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1346196699:root",
+                        "area": "code",
+                        "fingerprint": "b57f9535c55aa39026931813e09834fa9f4f4d82"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1346196699:root",
+            "repository": "133563825as-ai/dsh-api-dashboard",
+            "path": "",
+            "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+            "fingerprints": {
+                "directory": "6cd20535c1bb7f181d1ad33ee41187c52beec825d47101dff81cdfe1122af46d",
+                "code": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+                "maintenance": "0b55ded12af442285c224598012da1dd7daa7c69a493adb3a615bb429e1ffefa"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "16b5de47347ff9ef625d24384ed50cde3845958c49d61455c438f885c751bd0c"
+        },
+        "publication.metadata": "data/plugins/133563825as-ai--dsh-api-dashboard/META.json",
+        "publication.summaries": {
+            "text": "在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。",
+            "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+            "source_url": "https://github.com/133563825as-ai/dsh-api-dashboard/blob/b57f9535c55aa39026931813e09834fa9f4f4d82/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+            "items": {
+                "界面": "余额条、平台详情与子代理费用展示。",
+                "后台": "配置持久化和兼容检查后的自更新流程。"
+            }
+        },
+        "publication.advice": {
+            "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+            "text": "先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。"
+        },
+        "registry": "data/plugins/133563825as-ai--dsh-api-dashboard",
+        "reports": "# dsh-api-dashboard\n\n> 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。\n\n## 固定范围与依据\n\n固定提交 [b57f9535c55aa39026931813e09834fa9f4f4d82](https://github.com/133563825as-ai/dsh-api-dashboard/blob/b57f9535c55aa39026931813e09834fa9f4f4d82/src/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:30:02.102Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：src/index.js、client/client.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：同时使用多个供应商的用户需要观察额度和花费趋势，合格输出应能区分实际余额、估算与无法查询。\n- **亮点**：src/index.js 从凭据及平台接口取余额，以内置或自定义单价计算会话消耗，混合币种分别显示；客户端定时刷新看板。\n- **思考**：集中显示和明确未知值有实用价值；估算若被当成收费真相，会把价格漂移和缓存差异隐藏起来。\n- **建议**：先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。\n\n## 场景与替代办法\n\n同时使用多个供应商的用户需要观察额度和花费趋势，合格输出应能区分实际余额、估算与无法查询。\n\n此前未入档；厂商控制台是账务对照，插件减少切换多个页面。现有余额插件也需用同账号和刷新频率比较，未做效果排名。\n\n## 依赖与流程\n\n依赖宿主credentials、Web UI、供应商余额API及准确usage/价格；自更新另依赖GitHub、tar与可写安装目录。\n\n识别凭据与平台，读取余额，展示会话估算，用户核对并设置预警；查询失败应保留未知，更新失败检查备份而非盲目重复覆盖。\n\n## 成本与效果\n\n频繁刷新增加接口请求与电量/网络负担；首次配置及维护价格表、核对对账占人工时间。未量化可节省费用。\n\n集中显示和明确未知值有实用价值；估算若被当成收费真相，会把价格漂移和缓存差异隐藏起来。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e16045ade6c44a79f1e869e7578470944fcc30be61f7028a2cd0204495f203bf。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 1783 | — | — | 41793 |\n| .js | source | 3 | 7736 | 5617 | 2095 | — |\n| .mjs | test | 35 | 4043 | 3098 | 782 | — |\n| .mjs | source | 2 | 356 | 263 | 65 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：余额条、平台详情与子代理费用展示。\n- **后台**：配置持久化和兼容检查后的自更新流程。\n\n## 工程亮点\n\n更新流程校验manifest、版本与兼容，备份替换并尝试回滚；一体化主模块同时承担计价与更新，后续维护面较大。\n\n## 分发与兼容\n\n1.7.0，声明DSH 0.1及0.2部分范围，作者报告Android DSHA验收；桌面和旧宿主不能据此当作已验证。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；厂商控制台是账务对照，插件减少切换多个页面。现有余额插件也需用同账号和刷新频率比较，未做效果排名。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：余额接口与参考价不等于最终账单，部分单价注释本身标明未核实；本轮未复跑作者Android验收或更新流程。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：在少量脱敏账号上对账，覆盖缓存命中、子代理、未知价格和接口失败，确认货币未混算，并单独验证更新回滚。\n",
+        "metadata": {
+            "repository": "133563825as-ai/dsh-api-dashboard",
+            "repository_id": 1346196699,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 17,
+            "pushed_at": "2026-10-10T05:54:00Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:2EA514:14A73C:222368:6AD84937 and timestamp 2026-10-21 05:10:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:14B79A:223827:6AD84937 and timestamp 2026-10-21 05:10:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:14CFC9:2257E0:6AD84938 and timestamp 2026-10-21 05:10:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:265AC:146FA6:21D072:6AD84938 and timestamp 2026-10-21 05:10:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A133563825as-ai%2Fdsh-api-dashboard%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:1465C4:21F0D4:6AD84938 and timestamp 2026-10-21 05:10:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-api-dashboard",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 4179,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-api-dashboard",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-28T04:07:58.382Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-api-dashboard",
+                    "error": null,
+                    "latest_version": "1.7.0",
+                    "latest_published_at": "2026-10-10T05:55:20.672Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+                "current_revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1346196699:root",
+            "repository": "133563825as-ai/dsh-api-dashboard",
+            "path": "",
+            "revision": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6cd20535c1bb7f181d1ad33ee41187c52beec825d47101dff81cdfe1122af46d",
+                "code": "b57f9535c55aa39026931813e09834fa9f4f4d82",
+                "maintenance": "0b55ded12af442285c224598012da1dd7daa7c69a493adb3a615bb429e1ffefa"
+            }
+        }
+    }
+}

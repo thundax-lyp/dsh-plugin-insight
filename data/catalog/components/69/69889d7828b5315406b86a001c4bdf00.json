@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69889d7828b5315406b86a001c4bdf00",
+    "identity": "github:1346656880:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346656880:root",
+            "repository": "xuviga/dsh-plugin-mnemosyne",
+            "path": "",
+            "revision": "739a819850cfcdf7df1b484b10188aa7084ceb32",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "48a675c866cc4657f0e668126985e7a80fd424143a0498a3053f6339a6c21449",
+                "code": "739a819850cfcdf7df1b484b10188aa7084ceb32",
+                "maintenance": "3ac8420691d0ac8a6d510366fe764a1b66305d5faae565eb4c3e79094f1ffae9"
+            }
+        }
+    }
+}

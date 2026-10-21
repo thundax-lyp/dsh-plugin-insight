@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b9881d9f09daf1e36024060ba02d903d",
+    "identity": "github:1396855958:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396855958:root",
+            "repository": "Very12345/dsh-bash-windows",
+            "path": "",
+            "revision": "287b85c6c7e9c862f642b2e35bbb2039d8111f6e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d9e452be7ca1001007a85ebf08ded30b794e6f842255d28bbe29bb0aa6f97fab",
+                "code": "287b85c6c7e9c862f642b2e35bbb2039d8111f6e",
+                "maintenance": "345106ab008e899d66ffd0253b94bf29c1e3ae20e6a3828e48e2d48d4846fb5a"
+            }
+        }
+    }
+}

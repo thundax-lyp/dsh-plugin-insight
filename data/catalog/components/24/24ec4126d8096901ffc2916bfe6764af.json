@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "24ec4126d8096901ffc2916bfe6764af",
+    "identity": "github:1424621117:packages-local-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424621117:packages-local-plugin",
+            "repository": "Golden-Pigeon/dsh-remote",
+            "path": "packages/local-plugin",
+            "revision": "280fbba376882561295f7ff8654aa6ca3ce41de9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1643a19e92c6162376cb773c0d84adb8226c34fbb4c6f2506d7ffc860f108800",
+                "code": "280fbba376882561295f7ff8654aa6ca3ce41de9",
+                "maintenance": "c63a7dc1dd16d26f5b25072b8611d7376038d7b6fee441a95560a7a54671077b"
+            }
+        }
+    }
+}

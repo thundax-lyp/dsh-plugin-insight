@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94846b5679e51be274a8d11aa2d4540d",
+    "identity": "github:1412859552:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412859552:root",
+            "repository": "acdsh4869/dsh-aqua-theme",
+            "path": "",
+            "revision": "e31400b92d7f7f0a755486b875ba862a2e8d55ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3b07ef1d6e1083201817fe3626b3c3591237562c58a5460cb8d975c344500cd1",
+                "code": "e31400b92d7f7f0a755486b875ba862a2e8d55ea",
+                "maintenance": "e88f24eabe1b098503c5cf206b2ad51344b478577516b41f441c5cacbe16f60c"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7e89f71c464d23c276d67d62dd0b5889",
+    "identity": "github:1334118559:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334118559:root",
+            "repository": "Mars-Sea/dsh-commandcode-provider",
+            "path": "",
+            "revision": "cc26490f6651448293cb1773a15ef574e78d54ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b16823372f45063ae3de1ac0ac3cf2ba70810e9c106e6f736726a2086f595291",
+                "code": "cc26490f6651448293cb1773a15ef574e78d54ca",
+                "maintenance": "87ba73f87a4c60d5309b1fa0637ce7721f9e7c61f311bd57a7aa02c8cfd7dd16"
+            }
+        }
+    }
+}

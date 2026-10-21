@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ab9b821bcf3c9af7802998ee4613143c",
+    "identity": "github:1380205242:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380205242:plugin",
+            "repository": "Mrsirlila/dsh-pocket-reportModify-and-add",
+            "path": "plugin",
+            "revision": "20ab06e012f4edb6ccdde9329ed9b9ce31034043",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8312626bfb2a1b411c4d02a48673e66d2cbfbf3be36140e4f40f9604a3d5c747",
+                "code": "20ab06e012f4edb6ccdde9329ed9b9ce31034043",
+                "maintenance": "7015ea89190bedebd12e2cc85767664fb12af4b21e55122d4a40a77f4455ae70"
+            }
+        }
+    }
+}

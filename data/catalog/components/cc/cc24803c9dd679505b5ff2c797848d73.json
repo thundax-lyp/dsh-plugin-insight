@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cc24803c9dd679505b5ff2c797848d73",
+    "identity": "github:1334582459:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334582459:root",
+            "repository": "jorinyang/dsh-clawshell",
+            "path": "",
+            "revision": "80e2a54db6ef911286dc68f83202e9f41b3e1612",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5df863541d97a2ecdf4600b3f4768024e30521534c698ff1f7035972a3482990",
+                "code": "80e2a54db6ef911286dc68f83202e9f41b3e1612",
+                "maintenance": "818fd3b63479525bc65ce3aacef01395d6ac604976915b95c83e593e7f5d19a1"
+            }
+        }
+    }
+}

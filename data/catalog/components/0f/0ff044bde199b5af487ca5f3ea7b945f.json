@@ -1,0 +1,366 @@
+{
+    "schema_version": 3,
+    "id": "0ff044bde199b5af487ca5f3ea7b945f",
+    "identity": "github:1379204512:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1379204512:root",
+            "repository_id": 1379204512,
+            "component_id": "root",
+            "repository": "1225Sakura/oh-my-deepseekharness",
+            "path": "",
+            "aliases": [],
+            "name": "oh-my-dsh",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [
+                "多 Agent",
+                "MCP",
+                "编排"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "0966d4532078cb7d7abccf688281fe0693520aa9a6b617cd29b54d717d51dbeb",
+                "code": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+                "maintenance": "ede90675fe3306dfaeb13c9443f6a17d788c8feba30ee702e9172972cda310ac"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1379204512-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:15:08.112Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1379204512-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/README.md",
+                    "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+                    "captured_at": "2026-10-20T03:15:08.112Z",
+                    "summary": "为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1225sakura--oh-my-deepseekharness/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1379204512-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/index.js",
+                    "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+                    "captured_at": "2026-10-20T03:15:08.112Z",
+                    "summary": "核查 lib/index.js、lib/team.js；入口注入协议并注册资产、命令和 MCP，team 模块维护阶段、队员身份与邮箱；实际派发与合并仍由领队模型驱动。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1225sakura--oh-my-deepseekharness/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "作者报告的测试数未在本轮复跑；状态机与心跳不证明团队产出质量或自动协调收敛。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "复杂开发任务需要规划、委派与验证分工，用户希望复用一套宿主适配的编排约定。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:08.112Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "入口注入协议并注册资产、命令和 MCP，team 模块维护阶段、队员身份与邮箱；实际派发与合并仍由领队模型驱动。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:08.112Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "统一委派与恢复数据面可降低自建成本；多代理可能放大误解、冲突和预算超支。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:08.112Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "多角色和多轮评审增加模型、上下文与状态维护成本，不能以并行数量推断更快更省。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:08.112Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "能力探测、降级公告、终态限制和心跳只报告不自动杀有可借鉴性；集成面大意味着持续适配负担。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:08.112Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先验装探测与取消，再对单仓库小任务比较原生单 agent 和一条显式 team 流程。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:08.112Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "作者报告的测试数未在本轮复跑；状态机与心跳不证明团队产出质量或自动协调收敛。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:08.112Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "版本 0.4.9，要求较新的 DSH 服务组合，可选 AST/LSP 能力缺失时降级；不是零依赖协议包。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:15:08.112Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:15:08.112Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有复杂可拆分开发任务者可限单仓库试一条team流程，先验能力探测、取消并比较总费用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "复杂开发规划委派验证可复用组织流程。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "统一邮箱、阶段与恢复数据面减少自建，但原生单Agent仍是对照。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "协议和状态机源码可查，作者测试未复跑且不证明产出质量。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "多角色协调上下文与大集成面增加成本和适配负担。"
+                    }
+                },
+                "score": 60,
+                "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1379204512-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1379204512:root",
+                        "area": "code",
+                        "fingerprint": "f38d8a6cffca4d2beb97e3cdd53208794163b92f"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1379204512:root",
+            "repository": "1225Sakura/oh-my-deepseekharness",
+            "path": "",
+            "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+            "fingerprints": {
+                "directory": "0966d4532078cb7d7abccf688281fe0693520aa9a6b617cd29b54d717d51dbeb",
+                "code": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+                "maintenance": "ede90675fe3306dfaeb13c9443f6a17d788c8feba30ee702e9172972cda310ac"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "7818f71ebfae929796de4c60224712030956dab3a4a2ca0f7fa320db57c55909"
+        },
+        "publication.metadata": "data/plugins/1225sakura--oh-my-deepseekharness/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。",
+            "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+            "source_url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+            "items": {
+                "Skill": "编排和角色资产注册。",
+                "后台": "能力探测、团队心跳与内置 MCP server 接入。"
+            }
+        },
+        "publication.advice": {
+            "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+            "text": "先验装探测与取消，再对单仓库小任务比较原生单 agent 和一条显式 team 流程。"
+        },
+        "registry": "data/plugins/1225sakura--oh-my-deepseekharness",
+        "reports": "# oh-my-dsh\n\n> 为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。\n\n## 固定范围与依据\n\n固定提交 [f38d8a6cffca4d2beb97e3cdd53208794163b92f](https://github.com/1225Sakura/oh-my-deepseekharness/blob/f38d8a6cffca4d2beb97e3cdd53208794163b92f/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:15:08.112Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js、lib/team.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：复杂开发任务需要规划、委派与验证分工，用户希望复用一套宿主适配的编排约定。\n- **亮点**：入口注入协议并注册资产、命令和 MCP，team 模块维护阶段、队员身份与邮箱；实际派发与合并仍由领队模型驱动。\n- **思考**：统一委派与恢复数据面可降低自建成本；多代理可能放大误解、冲突和预算超支。\n- **建议**：先验装探测与取消，再对单仓库小任务比较原生单 agent 和一条显式 team 流程。\n\n## 场景与替代办法\n\n复杂开发任务需要规划、委派与验证分工，用户希望复用一套宿主适配的编排约定。\n\n原生单 agent 与有限手工委派是对照；只有复杂可拆分任务才值得增加协调层。\n\n## 依赖与流程\n\n依赖 DSH 核心服务、subagents、storage 与模型；MCP、代码智能和工作树路径各有失败边界。\n\n确认模式并规划、派发、收集结果、验证和整合；停滞时先看探测与阶段状态，必要时取消接管。\n\n## 成本与效果\n\n多角色和多轮评审增加模型、上下文与状态维护成本，不能以并行数量推断更快更省。\n\n统一委派与恢复数据面可降低自建成本；多代理可能放大误解、冲突和预算超支。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9938d986c1c18f783810771a7ef3df1251b41a3b9fbd0808e8f6487f7609fa33。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 170 | 21855 | — | — | 256566 |\n| .mjs | source | 17 | 2619 | 2171 | 300 | — |\n| .js | source | 29 | 5996 | 4382 | 1280 | — |\n| .js | test | 45 | 10002 | 8560 | 899 | — |\n| .mjs | example | 1 | 83 | 74 | 5 | — |\n| .mjs | test | 1 | 63 | 41 | 15 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Skill**：编排和角色资产注册。\n- **后台**：能力探测、团队心跳与内置 MCP server 接入。\n\n## 工程亮点\n\n能力探测、降级公告、终态限制和心跳只报告不自动杀有可借鉴性；集成面大意味着持续适配负担。\n\n## 分发与兼容\n\n版本 0.4.9，要求较新的 DSH 服务组合，可选 AST/LSP 能力缺失时降级；不是零依赖协议包。\n\n## 历史对照\n\n前次代码指纹为 f38d8a6cffca4d2beb97e3cdd53208794163b92f；本轮固定为 f38d8a6cffca4d2beb97e3cdd53208794163b92f。原生单 agent 与有限手工委派是对照；只有复杂可拆分任务才值得增加协调层。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：作者报告的测试数未在本轮复跑；状态机与心跳不证明团队产出质量或自动协调收敛。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：固定任务和预算，测试派发失败、心跳过期、取消、冲突合并和重复恢复，核对合格交付率及总费用。\n",
+        "metadata": {
+            "repository": "1225Sakura/oh-my-deepseekharness",
+            "repository_id": 1379204512,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 11,
+            "pushed_at": "2026-10-16T02:48:01Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:14B1C0:222D4E:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:14C887:224B78:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:24715:143129:219D61:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13AB3F:212370:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:3A339B:136D2F:20D506:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@sakura12/oh-my-deepseekharness",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 2379,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40sakura12%2Foh-my-deepseekharness",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-21T08:34:33.011Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/%40sakura12%2Foh-my-deepseekharness",
+                    "error": null,
+                    "latest_version": "0.4.9",
+                    "latest_published_at": "2026-10-15T16:34:04.379Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+                "current_revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1379204512:root",
+            "repository": "1225Sakura/oh-my-deepseekharness",
+            "path": "",
+            "revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0966d4532078cb7d7abccf688281fe0693520aa9a6b617cd29b54d717d51dbeb",
+                "code": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
+                "maintenance": "ede90675fe3306dfaeb13c9443f6a17d788c8feba30ee702e9172972cda310ac"
+            }
+        }
+    }
+}

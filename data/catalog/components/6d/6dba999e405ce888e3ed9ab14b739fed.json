@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6dba999e405ce888e3ed9ab14b739fed",
+    "identity": "github:1333210012:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333210012:root",
+            "repository": "humblebanana/dsh-record-replay",
+            "path": "",
+            "revision": "32d06f7db906914e278d1552728d1d63f191d6ad",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6f20f726cb38f33d433b2276a609c2a7cba62a256758452e538c44995575483c",
+                "code": "32d06f7db906914e278d1552728d1d63f191d6ad",
+                "maintenance": "871b742d9e14af6f32fbcdd7188850acd5423da69ea3f9adf69af5b38c86f7cb"
+            }
+        }
+    }
+}

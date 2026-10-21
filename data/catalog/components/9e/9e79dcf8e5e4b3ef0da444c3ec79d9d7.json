@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9e79dcf8e5e4b3ef0da444c3ec79d9d7",
+    "identity": "github:1425658524:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425658524:root",
+            "repository": "dadgrand/dsh-agent-teams-dashboard",
+            "path": "",
+            "revision": "5bebffc6f79414c113f31b77c88c28d696c3961b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "61711458b1eadf0c1bc81e3ea39feb87b824204d14179f7d5570acf1fb7a7cb4",
+                "code": "5bebffc6f79414c113f31b77c88c28d696c3961b",
+                "maintenance": "24afa265790b7684ef964d15f9630af47448dabf748e40284b06a9d1698897f4"
+            }
+        }
+    }
+}

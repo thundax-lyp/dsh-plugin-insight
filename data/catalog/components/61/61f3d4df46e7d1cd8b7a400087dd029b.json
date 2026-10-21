@@ -1,0 +1,451 @@
+{
+    "schema_version": 3,
+    "id": "61f3d4df46e7d1cd8b7a400087dd029b",
+    "identity": "github:1340280087:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1340280087:root",
+            "repository_id": 1340280087,
+            "component_id": "root",
+            "repository": "Andrew111888/dsh-plugin-balance",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-balance",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "8db221627320843bdbda8a4d6a695307b66a544f87341dc690ee1312291428ab",
+                "code": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+                "maintenance": "c4ec0e89bdc89313edb345b1f20a0f7fc678bea90ed6c6b5e0e5a6431e5c2901"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1340280087-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:08:47.078Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1340280087-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/README.md",
+                    "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+                    "captured_at": "2026-10-21T08:08:47.078Z",
+                    "summary": "在DSH输入框附近显示多供应商余额/套餐用量，并持久统计会话token及估算费用。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/andrew111888--dsh-plugin-balance/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1340280087-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/index.js",
+                    "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+                    "captured_at": "2026-10-21T08:08:47.078Z",
+                    "summary": "核查 lib/index.js、lib/client.js；host代理查询固定或自定义余额端点，服务端解析凭据/代理；session usage按请求样本替换累计并磁盘重放保存日/月/模型桶，client浮窗展示。费用使用静态价格、时段与汇率。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/andrew111888--dsh-plugin-balance/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "多模型用户希望区分账户额度、会话消耗与预计费用，合格账目应可与实际服务账单对照。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "host代理查询固定或自定义余额端点，服务端解析凭据/代理；session usage按请求样本替换累计并磁盘重放保存日/月/模型桶，client浮窗展示。费用使用静态价格、时段与汇率。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT网页插件，需DSH凭据/settings/session服务与供应商额度接口；OpenAI等端点可用性按账户另核。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次配置额度接口/代理，持续网络查询、重放存储和账目复核；无已证省费，人民币换算非实际结算。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先使用固定可信端点，并核对自定义目标与凭据绑定。以服务账单验算统计，金额仅作估算，不直接用于报销或财务结算。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "提高消耗可见性，未证明降低支出或跨供应商费用准确可比。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "usage游标/请求样本替换、迁移备份和有界缓存有用；通用凭据代理需要目标约束，价格/汇率需显式版本。 源码依据：[lib/index.js](https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/index.js)、[lib/client.js](https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/client.js)。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "增量是额度查询与持久会话用量同页展示，并处理流中多次usage样本覆盖；余额数据来自供应商，估价表不是计费真相。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "密钥不回浏览器是否等于不会发错目的地？custom请求允许客户端baseUrl/path，凭据由providerId对应设置解析，handler未见将地址绑定已注册provider或独立信任校验；可能把现有key发到自定义目标。账目重放与静态价格亦不能保证实际费用准确。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由服务端凭据代理推导，可把可用provider、目标origin和凭据ref绑定在Host配置，浏览器只传稳定ID，返回账单来源与价格版本。未验证；伪造baseUrl/重定向必须拒绝且不带key，账单样本误差应可解释。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340280087:root",
+                            "area": "code",
+                            "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:08:47.078Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:08:47.078Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+                "reviewed_at": "2026-10-21T08:08:47.078Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340280087:root",
+                        "area": "code",
+                        "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty余额与token聚合小档；mechanism请求样本折叠半档；transferability用量投影半档；simplification多源仪表半档。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow查看入口便利小档；delivery估算账目小档非计费保证；reach多供应商用户小档；economics预算可见性可能改善选择但未测小档。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1340280087-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "多模型余额用户应先将自定义目标绑定已注册provider并核信任；当前客户端baseUrl可搭配既有key，可能发错端点。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "区分账户额度与会话估费任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "代理与日月模型桶提高可见性，非账单保证。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核custom凭据解析与静态计价，目的地绑定缺口明确。"
+                    },
+                    "cost": {
+                        "score": 0,
+                        "rationale": "现有密钥外发到自定义目标的核心风险未控制，费用复核不能补救。"
+                    }
+                },
+                "score": 49,
+                "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1340280087-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340280087:root",
+                        "area": "code",
+                        "fingerprint": "96bb1592c949456aa37ccc3a296085f59df2ee9c"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1340280087:root",
+            "repository": "Andrew111888/dsh-plugin-balance",
+            "path": "",
+            "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+            "fingerprints": {
+                "directory": "8db221627320843bdbda8a4d6a695307b66a544f87341dc690ee1312291428ab",
+                "code": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+                "maintenance": "c4ec0e89bdc89313edb345b1f20a0f7fc678bea90ed6c6b5e0e5a6431e5c2901"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "996ffc75f4dbe51c576dd0a5103d750c26559cf1624d63a2096af834d1b4d35c"
+        },
+        "publication.metadata": "data/plugins/andrew111888--dsh-plugin-balance/META.json",
+        "publication.summaries": {
+            "text": "在DSH输入框附近显示多供应商余额/套餐用量，并持久统计会话token及估算费用。",
+            "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+            "source_url": "https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+            "items": {
+                "Host 路由": "余额代理、provider列表与用量统计。",
+                "事件监听": "会话usage折叠。",
+                "后台": "统计持久化与历史重放。",
+                "界面": "余额/用量浮窗。"
+            }
+        },
+        "publication.advice": {
+            "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+            "text": "先使用固定可信端点，并核对自定义目标与凭据绑定。以服务账单验算统计，金额仅作估算，不直接用于报销或财务结算。"
+        },
+        "registry": "data/plugins/andrew111888--dsh-plugin-balance",
+        "reports": "# dsh-plugin-balance\n\n> 在DSH输入框附近显示多供应商余额/套餐用量，并持久统计会话token及估算费用。\n\n## 使用建议\n\n先使用固定可信端点，并核对自定义目标与凭据绑定。以服务账单验算统计，金额仅作估算，不直接用于报销或财务结算。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：多模型用户希望区分账户额度、会话消耗与预计费用，合格账目应可与实际服务账单对照。\n- **亮点**：增量是额度查询与持久会话用量同页展示，并处理流中多次usage样本覆盖；余额数据来自供应商，估价表不是计费真相。\n- **思考**：密钥不回浏览器是否等于不会发错目的地？custom请求允许客户端baseUrl/path，凭据由providerId对应设置解析，handler未见将地址绑定已注册provider或独立信任校验；可能把现有key发到自定义目标。账目重放与静态价格亦不能保证实际费用准确。\n- **建议**：由服务端凭据代理推导，可把可用provider、目标origin和凭据ref绑定在Host配置，浏览器只传稳定ID，返回账单来源与价格版本。未验证；伪造baseUrl/重定向必须拒绝且不带key，账单样本误差应可解释。\n\n## 场景与替代办法\n\n多模型用户希望区分账户额度、会话消耗与预计费用，合格账目应可与实际服务账单对照。\n\n供应商原始账单权威但分散；宿主token视图更直接，插件聚合历史与额度并增加代理责任。\n\n## 能力清单\n\n- **Host 路由**：余额代理、provider列表与用量统计。\n- **事件监听**：会话usage折叠。\n- **后台**：统计持久化与历史重放。\n- **界面**：余额/用量浮窗。\n\n## 依赖与流程\n\nDSH credentials/llm/settings/sessions/webServer、供应商接口和可选HTTP代理；实际账单需完整计价和费用单位。\n\n同步provider→服务端解析key查余额→事件折叠/重放用量→落本地统计→按价格表估算→浮窗显示/人工对账。\n\n## 成本与效果\n\n首次配置额度接口/代理，持续网络查询、重放存储和账目复核；无已证省费，人民币换算非实际结算。\n\n提高消耗可见性，未证明降低支出或跨供应商费用准确可比。\n\n## 核心贡献\n\n增量是额度查询与持久会话用量同页展示，并处理流中多次usage样本覆盖；余额数据来自供应商，估价表不是计费真相。\n\n## 关键质疑\n\n密钥不回浏览器是否等于不会发错目的地？custom请求允许客户端baseUrl/path，凭据由providerId对应设置解析，handler未见将地址绑定已注册provider或独立信任校验；可能把现有key发到自定义目标。账目重放与静态价格亦不能保证实际费用准确。\n\n\n## 工程亮点\n\nusage游标/请求样本替换、迁移备份和有界缓存有用；通用凭据代理需要目标约束，价格/汇率需显式版本。 源码依据：[lib/index.js](https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/index.js)、[lib/client.js](https://github.com/Andrew111888/dsh-plugin-balance/blob/96bb1592c949456aa37ccc3a296085f59df2ee9c/lib/client.js)。\n\n## 未来设计假设（未验证）\n\n由服务端凭据代理推导，可把可用provider、目标origin和凭据ref绑定在Host配置，浏览器只传稳定ID，返回账单来源与价格版本。未验证；伪造baseUrl/重定向必须拒绝且不带key，账单样本误差应可解释。\n\n模拟供应商和密钥，用伪造目标/重定向核对无泄露；对流式多usage、重启重放、价格变化和多进程统计测去重与账单误差。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：ea916802b73d2e822f50bb4d1d2034dbf677dad0acc39cd1194681d6437e373e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 934 | — | — | 9558 |\n| .js | source | 2 | 3835 | 3512 | 216 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Andrew111888/dsh-plugin-balance](https://github.com/Andrew111888/dsh-plugin-balance)\n- **版本号**：1.4.4（[固定提交 96bb1592](https://github.com/Andrew111888/dsh-plugin-balance/tree/96bb1592c949456aa37ccc3a296085f59df2ee9c)）\n- **版本日期**：2026-08-26（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/index.js、lib/client.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：模拟供应商和密钥，用伪造目标/重定向核对无泄露；对流式多usage、重启重放、价格变化和多进程统计测去重与账单误差。\n",
+        "metadata": {
+            "repository": "Andrew111888/dsh-plugin-balance",
+            "repository_id": 1340280087,
+            "captured_at": "2026-10-21T08:02:29.226Z",
+            "window_start": "2026-09-21T08:02:29.226Z",
+            "stars": 6,
+            "pushed_at": "2026-08-26T13:03:52Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndrew111888%2Fdsh-plugin-balance%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D0CA:27DDDF:6B85FF:737AA7:6AD87199 and timestamp 2026-10-21 08:02:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndrew111888%2Fdsh-plugin-balance%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D236:502CD:6AFE64:72F4E5:6AD8719A and timestamp 2026-10-21 08:02:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndrew111888%2Fdsh-plugin-balance%20is%3Aissue%20created%3A2026-09-21T08%3A02%3A29.226Z..2026-10-21T08%3A02%3A29.226Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D5E6:274DC4:6ED388:76C8F3:6AD8719D and timestamp 2026-10-21 08:02:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndrew111888%2Fdsh-plugin-balance%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A02%3A29.226Z..2026-10-21T08%3A02%3A29.226Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D736:50F71:6A0B7C:71FDB9:6AD8719E and timestamp 2026-10-21 08:02:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndrew111888%2Fdsh-plugin-balance%20is%3Aissue%20updated%3A2026-09-21T08%3A02%3A29.226Z..2026-10-21T08%3A02%3A29.226Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E92:F5D0E:E48954:147C14F:6AD871A1 and timestamp 2026-10-21 08:02:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-plugin-balance",
+                "captured_at": "2026-10-21T08:02:42.023Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1271,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-balance",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-20T04:59:10.412Z",
+                    "captured_at": "2026-10-21T08:02:42.023Z",
+                    "source_url": "https://registry.npmjs.org/dsh-plugin-balance",
+                    "error": null,
+                    "latest_version": "1.4.4",
+                    "latest_published_at": "2026-08-26T13:03:05.744Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1340280087:root",
+            "repository": "Andrew111888/dsh-plugin-balance",
+            "path": "",
+            "revision": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8db221627320843bdbda8a4d6a695307b66a544f87341dc690ee1312291428ab",
+                "code": "96bb1592c949456aa37ccc3a296085f59df2ee9c",
+                "maintenance": "c4ec0e89bdc89313edb345b1f20a0f7fc678bea90ed6c6b5e0e5a6431e5c2901"
+            }
+        }
+    }
+}

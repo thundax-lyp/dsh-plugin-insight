@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f27c40e10a1dad5cd2c05607a8b98cc0",
+    "identity": "github:1337314617:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337314617:root",
+            "repository": "isheng-eqi/dsh-niulai-sound",
+            "path": "",
+            "revision": "ab48ef06568561400c1a09ec265d3488562b48a3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cb5fd0d57a9d1ab6125e529208aa220da025a422a6c0cd156dbaf51da831833a",
+                "code": "ab48ef06568561400c1a09ec265d3488562b48a3",
+                "maintenance": "9cd86c2f8ccf9d7f70342463cdc8d0f3bc4e23dcf8b8eb93e4c79b99fcbfbae4"
+            }
+        }
+    }
+}

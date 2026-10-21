@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a534e8f4055edc580ccb5a2584d97693",
+    "identity": "github:1335840982:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335840982:root",
+            "repository": "JohnXu22786/worktree-mgr",
+            "path": "",
+            "revision": "35d2ee736642b004c173c615cff1d6e9970f19dd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "9ba7ea2bd213ad5e92ed9971ce98c696eb1d08c96402d74e8ea351b37caac092",
+                "code": "35d2ee736642b004c173c615cff1d6e9970f19dd",
+                "maintenance": "90d7b3f3b7a2b1e0929f0bfd909de8d0ef6011b57de9823583e1130364baeb2a"
+            }
+        }
+    }
+}

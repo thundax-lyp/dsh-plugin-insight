@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "393a3264f235e974c1697211c1704bdc",
+    "identity": "github:1333107949:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333107949:root",
+            "repository": "bobleer/dsh-acp-for-bitfun",
+            "path": "",
+            "revision": "8dedce1ee1a463cfb21e2ac0d8518a8d3c67c5aa",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "92e127a264ab243c139c81379d2e9a18c6b4946684b8bf09d8adfa2f2df93c5c",
+                "code": "8dedce1ee1a463cfb21e2ac0d8518a8d3c67c5aa",
+                "maintenance": "7074425a14196b27d80f93065992a0cddb0cbc5bb53c5af80a9263613bad4913"
+            }
+        }
+    }
+}

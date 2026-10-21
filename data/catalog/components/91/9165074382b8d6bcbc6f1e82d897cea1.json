@@ -1,0 +1,402 @@
+{
+    "schema_version": 3,
+    "id": "9165074382b8d6bcbc6f1e82d897cea1",
+    "identity": "github:1381860693:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1381860693:root",
+            "repository_id": 1381860693,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-mail",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-mail",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "dace91b5d95631d5341d8dd2b87f10e125e9eccae34d68e5fb552f47f7ed2281",
+                "code": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+                "maintenance": "e959fc83cd6377ec2764dfd0067ccdfd924cff818c84e11252bde775d2d0daff"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-07-github-1381860693-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:01:51.540Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-07-github-1381860693-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-mail/blob/455e0eaa31a3aaca2f21b4b91ad588c1419a6abc/README.md",
+                    "revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+                    "captured_at": "2026-10-20T10:01:51.540Z",
+                    "summary": "通过notmuch或himalaya读取邮件列表、未读统计与搜索结果。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-mail/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-07-github-1381860693-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-mail/blob/455e0eaa31a3aaca2f21b4b91ad588c1419a6abc/index.js",
+                    "revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+                    "captured_at": "2026-10-20T10:01:51.540Z",
+                    "summary": "核查 index.js、lib/mail.js；mail_unread优先notmuch count和search，缺少时退回himalaya INBOX列表；其他工具封装限量查询。",
+                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-mail/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读入口与邮件查询实现，未访问邮箱或读取用户邮件。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "Agent需要查看本地邮件索引或收件箱摘要，减少手工搬运主题与发件人。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381860693:root",
+                            "area": "code",
+                            "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:51.540Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "mail_unread优先notmuch count和search，缺少时退回himalaya INBOX列表；其他工具封装限量查询。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381860693:root",
+                            "area": "code",
+                            "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:51.540Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读入口与邮件查询实现，未访问邮箱或读取用户邮件。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381860693:root",
+                            "area": "code",
+                            "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:51.540Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定版本包清单与作者说明已核对；需要已配置的notmuch索引或himalaya账号；邮件同步与认证由外部工具维护。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381860693:root",
+                            "area": "code",
+                            "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:51.540Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "邮件同步、索引和敏感摘要上下文成本为主，无处理效率或完整率实测。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381860693:root",
+                            "area": "code",
+                            "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:51.540Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先核对返回backend和note；使用himalaya时把结果理解为最近收件箱列表。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381860693:root",
+                            "area": "code",
+                            "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:51.540Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把两个邮件CLI整合到DSH的只读接口，降低检索入口切换；不提供发送或完整邮件工作流。 himalaya回退没有未读过滤，count来自最近收件箱样本；不能把mail_unread工具名当作未读总数语义。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381860693:root",
+                            "area": "code",
+                            "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:51.540Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "后端选择与固定命令参数可复用；回退状态应在结构字段中表达而非只靠说明文字。",
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381860693:root",
+                            "area": "code",
+                            "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:01:51.540Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:01:51.540Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+                "reviewed_at": "2026-10-20T10:01:51.540Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381860693:root",
+                        "area": "code",
+                        "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty：邮件CLI双后端适配；mechanism：固定查询与回退为常规组合，未读语义随后端改变；transferability：后端选择层可局部复用；simplification：统一入口但用户仍须管理索引和账号。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": null
+                    },
+                    "rationale": "workflow：减少邮件摘要复制；delivery：仍为邮件检索结果，无完整处理交付；reach：Agent访问现有CLI邮件能力；economics：缺索引维护、补查及处理时间比较。",
+                    "basis": "interpretation",
+                    "score": null,
+                    "evidence_ids": [
+                        "2026-10-20-07-github-1381860693-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已有notmuch用户可试只读邮件检索，先核backend；himalaya回退仅作最近收件箱样本，不作未读总量。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "会话内读取邮件索引摘要的任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "双CLI统一入口省搬运，不覆盖发送和完整邮件工作流。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已确认himalaya无未读过滤，工具名不能证明总数语义。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "外部同步索引和敏感摘要入模型需要持续管理。"
+                    }
+                },
+                "score": 59,
+                "revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-07-github-1381860693-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381860693:root",
+                        "area": "code",
+                        "fingerprint": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1381860693:root",
+            "repository": "173787247/dsh-wsl-mail",
+            "path": "",
+            "revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+            "fingerprints": {
+                "directory": "dace91b5d95631d5341d8dd2b87f10e125e9eccae34d68e5fb552f47f7ed2281",
+                "code": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+                "maintenance": "e959fc83cd6377ec2764dfd0067ccdfd924cff818c84e11252bde775d2d0daff"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T09:36:48.824Z",
+            "analysis_sha256": "2cf2412878a069480b23848bb14bd3bebd33733f5a09672b5b49ecc52e376e2f"
+        },
+        "publication.metadata": "data/plugins/173787247--dsh-wsl-mail/META.json",
+        "publication.summaries": {
+            "text": "通过notmuch或himalaya读取邮件列表、未读统计与搜索结果。",
+            "revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+            "source_url": "https://github.com/173787247/dsh-wsl-mail/blob/455e0eaa31a3aaca2f21b4b91ad588c1419a6abc/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+            "items": {
+                "模型工具": "邮件后端状态、未读/收件箱摘要、列表与notmuch搜索。"
+            }
+        },
+        "publication.advice": {
+            "revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+            "text": "先核对返回backend和note；使用himalaya时把结果理解为最近收件箱列表。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-mail",
+        "reports": "# dsh-wsl-mail\n\n> 通过notmuch或himalaya读取邮件列表、未读统计与搜索结果。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-mail](https://github.com/173787247/dsh-wsl-mail)\n- **版本号**：0.1.1（[固定提交 455e0eaa31a3aaca2f21b4b91ad588c1419a6abc](https://github.com/173787247/dsh-wsl-mail/tree/455e0eaa31a3aaca2f21b4b91ad588c1419a6abc)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：把两个邮件CLI整合到DSH的只读接口，降低检索入口切换；不提供发送或完整邮件工作流。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：Agent需要查看本地邮件索引或收件箱摘要，减少手工搬运主题与发件人。\n- **亮点**：把两个邮件CLI整合到DSH的只读接口，降低检索入口切换；不提供发送或完整邮件工作流。\n- **思考**：himalaya回退没有未读过滤，count来自最近收件箱样本；不能把mail_unread工具名当作未读总数语义。\n- **建议**：本次未形成新的创新假设；优先显式区分未读总量与最近邮件样本，避免错误摘要影响优先级。\n\n采用建议：先核对返回backend和note；使用himalaya时把结果理解为最近收件箱列表。\n\n## 核心贡献\n\n把两个邮件CLI整合到DSH的只读接口，降低检索入口切换；不提供发送或完整邮件工作流。\n\n## 关键质疑\n\nhimalaya回退没有未读过滤，count来自最近收件箱样本；不能把mail_unread工具名当作未读总数语义。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n本次未形成新的创新假设；优先显式区分未读总量与最近邮件样本，避免错误摘要影响优先级。\n\n构造已读和未读混合收件箱，对照notmuch与himalaya两条路径，核对总数、条数和陈旧索引。\n\n## 场景与替代办法\n\nAgent需要查看本地邮件索引或收件箱摘要，减少手工搬运主题与发件人。\n\n邮件客户端和原生CLI查询；插件便于只读取数，不替代索引维护。\n\n## 依赖与流程\n\n需要已配置的notmuch索引或himalaya账号；邮件同步与认证由外部工具维护。\n\n先查后端可用性，再读摘要或指定查询，重要邮件回原客户端确认。\n\n## 成本与效果\n\n邮件同步、索引和敏感摘要上下文成本为主，无处理效率或完整率实测。\n\n把两个邮件CLI整合到DSH的只读接口，降低检索入口切换；不提供发送或完整邮件工作流。 himalaya回退没有未读过滤，count来自最近收件箱样本；不能把mail_unread工具名当作未读总数语义。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5e4cd784d865db5609562d0299da62d5ae25ea861abf2a77ed5149d5c17f28b1。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 115 | — | — | 460 |\n| .js | source | 2 | 263 | 246 | 3 | — |\n| .js | test | 1 | 6 | 6 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：邮件后端状态、未读/收件箱摘要、列表与notmuch搜索。\n\n## 工程亮点\n\n后端选择与固定命令参数可复用；回退状态应在结构字段中表达而非只靠说明文字。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/mail.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读入口与邮件查询实现，未访问邮箱或读取用户邮件。 固定checkout的注册候选与关键主张定向抽读；未逐行完整审阅全部源码、测试、依赖及外部参照，未运行目标代码。评分仅针对文中明确的CLI/API/人工流程参照；跨场景迁移为解释性判断。\n- 下一步：构造已读和未读混合收件箱，对照notmuch与himalaya两条路径，核对总数、条数和陈旧索引。\n",
+        "metadata": {
+            "repository": "173787247/dsh-wsl-mail",
+            "repository_id": 1381860693,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-30T03:22:22Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mail%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:1CA4C8:14A3DE:223001:6AD8498C and timestamp 2026-10-21 05:11:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mail%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:B3C47:145768:21F59F:6AD8498C and timestamp 2026-10-21 05:11:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mail%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:A4F3B:1403FA:219780:6AD8498C and timestamp 2026-10-21 05:11:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mail%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:9F7A8:1084FD:6AD8498C and timestamp 2026-10-21 05:11:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mail%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:15589C:22DFDB:6AD8498C and timestamp 2026-10-21 05:11:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-wsl-mail",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-mail",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-wsl-mail",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+                "current_revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1381860693:root",
+            "repository": "173787247/dsh-wsl-mail",
+            "path": "",
+            "revision": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dace91b5d95631d5341d8dd2b87f10e125e9eccae34d68e5fb552f47f7ed2281",
+                "code": "455e0eaa31a3aaca2f21b4b91ad588c1419a6abc",
+                "maintenance": "e959fc83cd6377ec2764dfd0067ccdfd924cff818c84e11252bde775d2d0daff"
+            }
+        }
+    }
+}

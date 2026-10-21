@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a84376a2685f6dcd4fbf53fca6e795fe",
+    "identity": "github:1327795364:packages-dsh-tool-time",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-time",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-time",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5c3e6655084cfd627b779edd917e38b52bd716b847f6c09a9679d136ffc90182",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            }
+        }
+    }
+}

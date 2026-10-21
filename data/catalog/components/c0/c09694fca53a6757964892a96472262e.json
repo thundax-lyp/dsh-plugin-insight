@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c09694fca53a6757964892a96472262e",
+    "identity": "github:1351235525:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351235525:root",
+            "repository": "QWE13-ART/dsh-skill-folder",
+            "path": "",
+            "revision": "3bb71fafb46a949c513262569faa6ba83774da74",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "acfcf66215f5bd505fa74b13a207be3246e38ebfb2df463067d5d69de064f383",
+                "code": "3bb71fafb46a949c513262569faa6ba83774da74",
+                "maintenance": "2fd5f706907fc91ca8d4a2b3cc7362697ee19bee77e8d530f52baed924e83403"
+            }
+        }
+    }
+}

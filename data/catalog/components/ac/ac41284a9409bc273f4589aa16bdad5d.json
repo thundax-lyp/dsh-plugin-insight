@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ac41284a9409bc273f4589aa16bdad5d",
+    "identity": "github:1374219288:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374219288:root",
+            "repository": "liudapeng0311/dsh-pwa-launcher",
+            "path": "",
+            "revision": "11ed56fe9e3cdc3527409d1f14ff7671c7783635",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "30bfb6e39312d74f503bcce868404670211d04c8e25412ecce908034ed1d832c",
+                "code": "11ed56fe9e3cdc3527409d1f14ff7671c7783635",
+                "maintenance": "0ee0211b183f0d519182d0456798ce58db4ac99e21296fff211bb47c033935c0"
+            }
+        }
+    }
+}

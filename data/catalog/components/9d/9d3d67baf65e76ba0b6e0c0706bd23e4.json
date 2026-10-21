@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9d3d67baf65e76ba0b6e0c0706bd23e4",
+    "identity": "github:1391632888:packages-dsh-re-workbench",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391632888:packages-dsh-re-workbench",
+            "repository": "wxlei2004/dsh-plugins",
+            "path": "packages/dsh-re-workbench",
+            "revision": "763f8870bc6550278965f4353c38dd92a74d87f7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24a46863866a993b99a57a57e7bd32e1073b1c8e8396a94998a2929aa02474b6",
+                "code": "763f8870bc6550278965f4353c38dd92a74d87f7",
+                "maintenance": "d4304fea02b90af2841dd870093009a23e1b6c60b07dde9ee6138f57c1d14b5f"
+            }
+        }
+    }
+}

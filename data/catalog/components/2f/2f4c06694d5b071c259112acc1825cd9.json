@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2f4c06694d5b071c259112acc1825cd9",
+    "identity": "github:1342418573:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342418573:root",
+            "repository": "yanglingrise/dsh-erii-boot-splash",
+            "path": "",
+            "revision": "406f106b8294e80ddde95e24561f088fbfe843c0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6851f2db781cabe7cb7f81a19c12c5f3af6f803b3060bebd1ea40a79e74e49b0",
+                "code": "406f106b8294e80ddde95e24561f088fbfe843c0",
+                "maintenance": "774d946b03cb6f2208d246d5bfea0e7545a0c994c87189d5f9c7512da9df5853"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7eb1e3b07f9c66b0f93591161cfd4019",
+    "identity": "github:1330412774:skills-dsh-web-doctor-skill-md",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330412774:skills-dsh-web-doctor-skill-md",
+            "repository": "fakechris/dsh-harness-ops",
+            "path": "skills/dsh-web-doctor/SKILL.md",
+            "revision": "791d8ad59999103c7e6cfa56bb01dd822e4f5687",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "41509ed7560e1328e9cdf6ec8defc9c512eb688739f1fe267e24c2648d8f2bbf",
+                "code": "791d8ad59999103c7e6cfa56bb01dd822e4f5687",
+                "maintenance": "8ca14b80fb5a4b17f6c1feaf7651d630360a26f27fa95bb8d0615647a83d453f"
+            }
+        }
+    }
+}

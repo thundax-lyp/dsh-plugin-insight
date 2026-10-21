@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "302d3ca8f3586a358d9f8fa159e4d844",
+    "identity": "github:1417747466:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417747466:root",
+            "repository": "YangShen-SWE/dsh-plugin-chat-zoom",
+            "path": "",
+            "revision": "89629394691e43b0541ade7a764b5219a2a43e9a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3945fb2159bcb84d77779e9f508750d07e0359a0a66df17857816ac842bdf8f0",
+                "code": "89629394691e43b0541ade7a764b5219a2a43e9a",
+                "maintenance": "bd508bad20eb872aaa3c93a0fa21afc842650f813ca148805f2dfa733f4ca824"
+            }
+        }
+    }
+}

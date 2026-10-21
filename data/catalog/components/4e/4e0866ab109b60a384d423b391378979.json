@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e0866ab109b60a384d423b391378979",
+    "identity": "github:1359378749:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359378749:root",
+            "repository": "tr1v3r/dsh-quote-followup",
+            "path": "",
+            "revision": "9783fdf49ef1d893bb5ff815249c51e63cde6864",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2e17707ab2e1ae18a8be951f1e67bf4eaac1b082f727c26d2c8b3b6e56442687",
+                "code": "9783fdf49ef1d893bb5ff815249c51e63cde6864",
+                "maintenance": "eaac7b3ce9f7c2fb2b9b82630e81cfac24cba60f0ce80ecec79f247fbf675a79"
+            }
+        }
+    }
+}

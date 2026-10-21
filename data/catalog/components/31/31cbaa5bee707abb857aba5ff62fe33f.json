@@ -1,0 +1,439 @@
+{
+    "schema_version": 3,
+    "id": "31cbaa5bee707abb857aba5ff62fe33f",
+    "identity": "github:1409096911:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1409096911:root",
+            "repository_id": 1409096911,
+            "component_id": "root",
+            "repository": "571242/dsh-armor-switch",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-armor-switch",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "62083b4c9e6183d8d27c0cda411bc7100776db0aaa16cf3a4e535644d31cca4a",
+                "code": "24966edef55f27e795b095e94f5b61508a125e3f",
+                "maintenance": "f20a0e19c2b21e27eb1c932f5f614049ace03b73716573a4a3451cdf55c85c6c"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1409096911-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:16:21.990Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1409096911-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/571242/dsh-armor-switch/blob/24966edef55f27e795b095e94f5b61508a125e3f/README.md",
+                    "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+                    "captured_at": "2026-10-21T03:16:21.990Z",
+                    "summary": "提供运行时提示契约切换及可选的宿主、Profile文案维护和恢复操作。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/571242--dsh-armor-switch/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1409096911-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/571242/dsh-armor-switch/blob/24966edef55f27e795b095e94f5b61508a125e3f/src/index.js",
+                    "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+                    "captured_at": "2026-10-21T03:16:21.990Z",
+                    "summary": "核查 src/index.js、src/host-clean.js、src/profile-clean.js；src/index.js通过systemPrompt动态text注册契约和上下文；独立host-clean/profile-clean模块可改写宿主归档及配置，并维护恢复记录。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/571242--dsh-armor-switch/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合研究DSH提示装配与自有环境维护的开发者；提示开关、宿主改写和配置改写要分别核对。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "src/index.js通过systemPrompt动态text注册契约和上下文；独立host-clean/profile-clean模块可改写宿主归档及配置，并维护恢复记录。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需核对特定DSH版本及安装路径；维护涉及归档备份、重启和升级适配，现金无固定费用但人工恢复成本可能显著。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "只建议在可恢复的独立Profile中检查机制。先看改写清单和恢复记录，分别确认提示、归档及Profile状态；不要把UI关闭理解为全部回滚。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "集中切换与恢复信息有维护价值，但没有模型任务成功率的独立对照，不能保证减少拒答。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "动态text返回空串避免重复注册；源码分离preferences和维护模块。锚点、前缀与指纹验证比盲替换更可审计，但与宿主内部格式耦合仍高。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "作者主张减少过度自审；源码可确认的是把提示装配热切换、偏好持久化和可逆维护统一到UI。相对直接编辑提示，开关不需反复注册；host-clean的锚点及manifest为特定宿主字节修改提供恢复依据。它不能改变供应商模型规则或增加网络能力。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "提示文字优先权宣告不等于实际指令优先权，效果依赖模型；minimal完整预设会抑制这些注册。更关键的是主开关关闭不代表独立host-clean已还原，等长字节改写绑定宿主版本，升级或不完整恢复可能留下不同状态。 profile-clean的BLOCK_BODY还会设置danger-full-access、approval never及默认权限预设，实际作用不仅是文案维护，需独立核对执行权限变化。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：以纯只读差异预览和逐模块恢复状态代替单一总开关，可减少用户误判。用运行时开关、磁盘归档、新会话配置的组合场景测状态理解与恢复成功；不把解除模型限制当实验目标。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1409096911:root",
+                            "area": "code",
+                            "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:16:21.990Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:16:21.990Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+                "reviewed_at": "2026-10-21T03:16:21.990Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1409096911:root",
+                        "area": "code",
+                        "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：动态提示开关与定点补丁不是新模型能力。 mechanism=15：恢复manifest及动态section有具体实现。 transferability=5：依赖宿主内部归档，迁移性低。 simplification=4：集中开关简化局部操作，恢复仍复杂。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=9：统一维护入口但不是通用任务流程突破。 delivery=8：状态与恢复机制存在，未证模型收益。 reach=5：限定Desktop布局与特定版本。 economics=4：无改善收益对照，升级恢复人工成本高。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1409096911-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "仅供自有DSH提示装配研究；host/profile改写与主开关独立且可设全盘权限，先审清单和逐项恢复再考虑采用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "提示热切换和宿主维护适合特定开发者，非普通任务需求。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "集中恢复信息胜过手改，但提示优先权声明不改变模型层级。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "host-clean与profile-clean源码显示实际字节和权限修改，效果未验。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "绑定宿主版本、备份重启及danger-full-access/never变化恢复负担高。"
+                    }
+                },
+                "score": 46,
+                "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1409096911-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1409096911:root",
+                        "area": "code",
+                        "fingerprint": "24966edef55f27e795b095e94f5b61508a125e3f"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1409096911:root",
+            "repository": "571242/dsh-armor-switch",
+            "path": "",
+            "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+            "fingerprints": {
+                "directory": "62083b4c9e6183d8d27c0cda411bc7100776db0aaa16cf3a4e535644d31cca4a",
+                "code": "24966edef55f27e795b095e94f5b61508a125e3f",
+                "maintenance": "f20a0e19c2b21e27eb1c932f5f614049ace03b73716573a4a3451cdf55c85c6c"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "4aa642cd934ae692c44dbfed5986544de485374f2d48b4e77a1bc692b69b102b"
+        },
+        "publication.metadata": "data/plugins/571242--dsh-armor-switch/META.json",
+        "publication.summaries": {
+            "text": "提供运行时提示契约切换及可选的宿主、Profile文案维护和恢复操作。",
+            "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+            "source_url": "https://github.com/571242/dsh-armor-switch/blob/24966edef55f27e795b095e94f5b61508a125e3f/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+            "items": {
+                "界面": "运行时契约开关及维护状态",
+                "后台": "宿主与Profile修改及恢复记录"
+            }
+        },
+        "publication.advice": {
+            "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+            "text": "只建议在可恢复的独立Profile中检查机制。先看改写清单和恢复记录，分别确认提示、归档及Profile状态；不要把UI关闭理解为全部回滚。"
+        },
+        "registry": "data/plugins/571242--dsh-armor-switch",
+        "reports": "# dsh-armor-switch\n\n> 提供运行时提示契约切换及可选的宿主、Profile文案维护和恢复操作。\n\n## 使用建议\n\n只建议在可恢复的独立Profile中检查机制。先看改写清单和恢复记录，分别确认提示、归档及Profile状态；不要把UI关闭理解为全部回滚。\n\n**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。\n\n## 洞察短评\n\n- **用途**：适合研究DSH提示装配与自有环境维护的开发者；提示开关、宿主改写和配置改写要分别核对。\n- **亮点**：作者主张减少过度自审；源码可确认的是把提示装配热切换、偏好持久化和可逆维护统一到UI。相对直接编辑提示，开关不需反复注册；host-clean的锚点及manifest为特定宿主字节修改提供恢复依据。它不能改变供应商模型规则或增加网络能力。\n- **思考**：提示文字优先权宣告不等于实际指令优先权，效果依赖模型；minimal完整预设会抑制这些注册。更关键的是主开关关闭不代表独立host-clean已还原，等长字节改写绑定宿主版本，升级或不完整恢复可能留下不同状态。 profile-clean的BLOCK_BODY还会设置danger-full-access、approval never及默认权限预设，实际作用不仅是文案维护，需独立核对执行权限变化。\n- **建议**：待验证假设：以纯只读差异预览和逐模块恢复状态代替单一总开关，可减少用户误判。用运行时开关、磁盘归档、新会话配置的组合场景测状态理解与恢复成功；不把解除模型限制当实验目标。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是用户自定义系统提示和手动备份修改；该项目增加运行时控件及特定宿主字节维护，后者迁移负担更大。\n\n### 能力、依赖与流程\n\nsrc/index.js通过systemPrompt动态text注册契约和上下文；独立host-clean/profile-clean模块可改写宿主归档及配置，并维护恢复记录。\n\n- **界面**：运行时契约开关及维护状态\n- **后台**：宿主与Profile修改及恢复记录\n\n依赖systemPrompt、Schemastery及特定Desktop宿主布局；宿主维护涉及app.asar和Profile文件权限。\n\n加载提示注册→UI切换下一次装配→可选显式宿主/Profile维护→按不同生效时机重启或新建会话→依据manifest恢复。\n\n### 成本与效果\n\n首次需核对特定DSH版本及安装路径；维护涉及归档备份、重启和升级适配，现金无固定费用但人工恢复成本可能显著。\n\n集中切换与恢复信息有维护价值，但没有模型任务成功率的独立对照，不能保证减少拒答。\n\n### 工程亮点\n\n动态text返回空串避免重复注册；源码分离preferences和维护模块。锚点、前缀与指纹验证比盲替换更可审计，但与宿主内部格式耦合仍高。\n\n源码依据：[src/index.js](https://github.com/571242/dsh-armor-switch/blob/24966edef55f27e795b095e94f5b61508a125e3f/src/index.js)、[src/host-clean.js](https://github.com/571242/dsh-armor-switch/blob/24966edef55f27e795b095e94f5b61508a125e3f/src/host-clean.js)、[src/profile-clean.js](https://github.com/571242/dsh-armor-switch/blob/24966edef55f27e795b095e94f5b61508a125e3f/src/profile-clean.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：以纯只读差异预览和逐模块恢复状态代替单一总开关，可减少用户误判。用运行时开关、磁盘归档、新会话配置的组合场景测状态理解与恢复成功；不把解除模型限制当实验目标。\n\n只在复制环境核对各开关生效时机、minimal预设、宿主升级不匹配与逐字节恢复；本轮未改写宿主。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：78ff7da0f061ce6be43c80334318de3781749a7ef00e7f63d2c731733e79f723。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 1870 | — | — | 17815 |\n| .mjs | source | 1 | 396 | 279 | 73 | — |\n| .js | source | 6 | 2170 | 1546 | 479 | — |\n| .mjs | test | 2 | 317 | 308 | 2 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[571242/dsh-armor-switch](https://github.com/571242/dsh-armor-switch)\n- **版本号**：1.1.2（[固定提交 24966ede](https://github.com/571242/dsh-armor-switch/tree/24966edef55f27e795b095e94f5b61508a125e3f)）\n- **版本日期**：2026-10-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.js、src/host-clean.js、src/profile-clean.js、作者README与固定范围inventory；源码抽读不等于完整审计。\n- 未完成：目标插件执行、测试、安装、模型调用和真实宿主验收。\n- 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。\n- 下一步：只在复制环境核对各开关生效时机、minimal预设、宿主升级不匹配与逐字节恢复；本轮未改写宿主。\n",
+        "metadata": {
+            "repository": "571242/dsh-armor-switch",
+            "repository_id": 1409096911,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 2,
+            "pushed_at": "2026-10-10T19:36:05Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:157E0E:2320B5:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:148678:22143A:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:144F8A:21E6E7:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:1CA4C8:14C8F4:2270E3:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A571242%2Fdsh-armor-switch%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14D8AC:227C9D:6AD84A4E and timestamp 2026-10-21 05:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+                "current_revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1409096911:root",
+            "repository": "571242/dsh-armor-switch",
+            "path": "",
+            "revision": "24966edef55f27e795b095e94f5b61508a125e3f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "62083b4c9e6183d8d27c0cda411bc7100776db0aaa16cf3a4e535644d31cca4a",
+                "code": "24966edef55f27e795b095e94f5b61508a125e3f",
+                "maintenance": "f20a0e19c2b21e27eb1c932f5f614049ace03b73716573a4a3451cdf55c85c6c"
+            }
+        }
+    }
+}

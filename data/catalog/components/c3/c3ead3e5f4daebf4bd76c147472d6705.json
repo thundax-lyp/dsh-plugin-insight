@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c3ead3e5f4daebf4bd76c147472d6705",
+    "identity": "github:1331051647:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1331051647:root",
+            "repository": "wulusai2333/mimo-vision",
+            "path": "",
+            "revision": "9a6bacab4119158f1dbe4c24e70f14fb8b15fbec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0d295c7a3d6aff0b9838c4030d7f180021fcf14dfdee6f620d1a24c93e91dc90",
+                "code": "9a6bacab4119158f1dbe4c24e70f14fb8b15fbec",
+                "maintenance": "4f886e4d332ca5e7afb9503bc9335292a303f4215d576912d67aa88992d67460"
+            }
+        }
+    }
+}

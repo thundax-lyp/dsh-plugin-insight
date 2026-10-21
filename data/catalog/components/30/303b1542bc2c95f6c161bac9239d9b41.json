@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "303b1542bc2c95f6c161bac9239d9b41",
+    "identity": "github:1347469174:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347469174:root",
+            "repository": "Dayi-Z/dsh-learn-wiki",
+            "path": "",
+            "revision": "1d20bd537065f673247481952ba14e8534041d4d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2776e18ae2f82ad3ec4704c46486baaa7e192c9e0c47613f9fb71d3c53d668ea",
+                "code": "1d20bd537065f673247481952ba14e8534041d4d",
+                "maintenance": "9ca48105b18774b08560a27d0e48685da1350f956b07c9639a4380ee3a88aae5"
+            }
+        }
+    }
+}

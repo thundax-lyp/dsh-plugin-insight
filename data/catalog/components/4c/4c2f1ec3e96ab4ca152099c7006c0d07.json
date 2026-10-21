@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4c2f1ec3e96ab4ca152099c7006c0d07",
+    "identity": "github:1391155628:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391155628:root",
+            "repository": "MerkurevSergei/dsh-notion-oauth-ui",
+            "path": "",
+            "revision": "1eb772e1363327e12978e050d43fae93648cfb94",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dbad06c9f7de7256767194e2cff0a698dec0276369fbac8ef937c1809a63c73c",
+                "code": "1eb772e1363327e12978e050d43fae93648cfb94",
+                "maintenance": "ed4db72bf1919a020cff6213db5c15109e1f7f9b255058c2420306eea7dcf713"
+            }
+        }
+    }
+}

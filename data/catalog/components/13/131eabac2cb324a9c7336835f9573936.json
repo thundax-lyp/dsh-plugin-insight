@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "131eabac2cb324a9c7336835f9573936",
+    "identity": "github:1341307744:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341307744:root",
+            "repository": "PaoMoXML/dsh-paste-names",
+            "path": "",
+            "revision": "e7a38a16bcef75901d794203b203aafb76592c65",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dc336ba30d8cf0f8635160b15549dbd45fa725127244d0440f7127f0317ff932",
+                "code": "e7a38a16bcef75901d794203b203aafb76592c65",
+                "maintenance": "521ec6ee470091e7dc867b30e0faf767fbe760a48642ea1c2fff4c2108fcbb5a"
+            }
+        }
+    }
+}

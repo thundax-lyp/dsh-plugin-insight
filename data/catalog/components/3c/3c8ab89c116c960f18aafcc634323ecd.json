@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3c8ab89c116c960f18aafcc634323ecd",
+    "identity": "github:1368224871:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1368224871:root",
+            "repository": "y2zyyr/smart-session-title",
+            "path": "",
+            "revision": "f7887be5d44e1498f7c366852d5e74646b3f558e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "634323e27a9d2df3db1b52ee40e3a09ee96a8d3ab7c7a7154661b73f39916a33",
+                "code": "f7887be5d44e1498f7c366852d5e74646b3f558e",
+                "maintenance": "a755dc290351d9b300ace93203d46f9efb21142f0c5163e3057b4b57884f1ead"
+            }
+        }
+    }
+}

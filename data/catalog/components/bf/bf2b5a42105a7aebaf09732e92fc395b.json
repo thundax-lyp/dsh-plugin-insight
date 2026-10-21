@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bf2b5a42105a7aebaf09732e92fc395b",
+    "identity": "github:1346237400:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346237400:root",
+            "repository": "caseyyy/dsh-goal-planner",
+            "path": "",
+            "revision": "43257044b036e4b7a1a82891ed849c7fcfae0b96",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4a6f9626b9ef73aa6a579f5c7352f6ae2706160875b4e80297adea997851c21f",
+                "code": "43257044b036e4b7a1a82891ed849c7fcfae0b96",
+                "maintenance": "2ab1fda1bf34250b4e8af59bd3d8a81b8d8dbe43c1d8e484c9cfb229091fa6f2"
+            }
+        }
+    }
+}

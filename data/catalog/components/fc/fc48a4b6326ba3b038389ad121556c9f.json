@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fc48a4b6326ba3b038389ad121556c9f",
+    "identity": "github:1402532577:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402532577:root",
+            "repository": "YizhouLouisLu/dsh-select-ask",
+            "path": "",
+            "revision": "6fecd5254b31170b6b3d3271fe34ffaae6b085ce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f5578a1ddb97968c68a1b2bdaa64e2fb1f6feffb85f2ed71f6b9f397681dc0a4",
+                "code": "6fecd5254b31170b6b3d3271fe34ffaae6b085ce",
+                "maintenance": "f64e12f68355b8ddf3e8603d0b86696bc073aa88232f8c72797006ab4bca312a"
+            }
+        }
+    }
+}

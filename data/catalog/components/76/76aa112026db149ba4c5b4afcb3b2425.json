@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "76aa112026db149ba4c5b4afcb3b2425",
+    "identity": "github:1344739471:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344739471:root",
+            "repository": "yuyolin/dsh-decision-log",
+            "path": "",
+            "revision": "cb81668adfe1065c9f3a43160e8b9c0708757665",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc9480ddad0a1210fb4acc8d1ea4a58b52712f1594aa941a41b0638ccacdc381",
+                "code": "cb81668adfe1065c9f3a43160e8b9c0708757665",
+                "maintenance": "51aa6a49b057f8fb9c550fb088331dd9003adf70d24b37a8651e9e8b8dc7c13e"
+            }
+        }
+    }
+}

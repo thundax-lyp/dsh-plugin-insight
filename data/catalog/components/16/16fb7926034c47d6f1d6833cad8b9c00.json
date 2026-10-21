@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "16fb7926034c47d6f1d6833cad8b9c00",
+    "identity": "github:1373339129:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373339129:root",
+            "repository": "fengbinmov/dsh-git-panel",
+            "path": "",
+            "revision": "02fdde5d65d0e7e11211ba19c65eb7102a5bb793",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5cb9f1e8d8e436781cef6cbe7d4cf5037dbb44884f7e88aa58a63b277443440e",
+                "code": "02fdde5d65d0e7e11211ba19c65eb7102a5bb793",
+                "maintenance": "4906d4caf7c603adda65dba170043fa95a4fbc01737c836616ac29e4f7b16632"
+            }
+        }
+    }
+}

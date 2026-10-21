@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f4d318500fcc6bd06d632f0d91f2866e",
+    "identity": "github:1336419104:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336419104:root",
+            "repository": "XHR666/dsh-mpkg-wallpaper",
+            "path": "",
+            "revision": "62e07a3d845269f9943fed4029f6d8da5b8a0cf3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0b01609bfaad663b421c7c818f4408028b1ce5524e62a3b9f2c41c2509fbc8e8",
+                "code": "62e07a3d845269f9943fed4029f6d8da5b8a0cf3",
+                "maintenance": "ac62dde8fcbcb93cf48c5bfd245306fa1775b9e64343872352c4172479d1c140"
+            }
+        }
+    }
+}

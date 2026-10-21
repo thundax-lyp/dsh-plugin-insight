@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d9a186d429624f4adfced1fd9ad2ede",
+    "identity": "github:1336521251:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336521251:root",
+            "repository": "jasondu/dsh-ui-mobile",
+            "path": "",
+            "revision": "3ba0c08c8a1cb542861768f499f558d5a1df6b72",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "12e225013b38c8d3ada43d724f1c40f2ff59d720444fe84a0fc1b710d11c4111",
+                "code": "3ba0c08c8a1cb542861768f499f558d5a1df6b72",
+                "maintenance": "cf48736bef7e7c7c0f41fc74becd12b28c20b260ac052ecfc7cc728b31ccc40e"
+            }
+        }
+    }
+}

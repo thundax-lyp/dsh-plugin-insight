@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a149d5a39e71f1d91b9e125143f9c56",
+    "identity": "github:1334848871:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334848871:root",
+            "repository": "WhitePlusMS/dsh-git-graph",
+            "path": "",
+            "revision": "f4ae9a9b8ed40233f7322df5f967708be9e29316",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "be3f3d9343ebad2728ccc114a704966c1573c26a969c8457f0096c1324e73c48",
+                "code": "f4ae9a9b8ed40233f7322df5f967708be9e29316",
+                "maintenance": "24ecadb6d4f7d5a92bb04944297394b054e4fd7d6b32008ab7ff9b8026055bd8"
+            }
+        }
+    }
+}

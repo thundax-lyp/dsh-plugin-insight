@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "95f0145e2b7c2fd544109d62e71deb58",
+    "identity": "github:1343524246:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343524246:root",
+            "repository": "chenbin-dev/dsh-scan-mcp",
+            "path": "",
+            "revision": "5010ce4df9e96841dfb61701e4683e09a35e536a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fbfde11a197cb80d99409f20af70ff8d032bc0cfcc471096a9fad5ee258a116c",
+                "code": "5010ce4df9e96841dfb61701e4683e09a35e536a",
+                "maintenance": "60be3a7ffeb787f44e4ae72a1b6cf73d19474b5add69bd1826aa928b8a75fad3"
+            }
+        }
+    }
+}

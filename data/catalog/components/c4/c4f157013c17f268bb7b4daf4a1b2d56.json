@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c4f157013c17f268bb7b4daf4a1b2d56",
+    "identity": "github:1420522575:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420522575:root",
+            "repository": "windrover/dsh-prompt-optimizer",
+            "path": "",
+            "revision": "79de6d34ce9c7705da71cf07ab1cf39e80b1f596",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c1dc5c178185d6c1a0080ab2437fd65e0d40609c5b3d74826645b1b2e7750255",
+                "code": "79de6d34ce9c7705da71cf07ab1cf39e80b1f596",
+                "maintenance": "774952a4c6ebddd43c95b443c9ac3dadc54c4fe98ed01cac8fa54c93e9cc2e58"
+            }
+        }
+    }
+}

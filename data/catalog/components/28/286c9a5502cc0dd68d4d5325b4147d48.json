@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "286c9a5502cc0dd68d4d5325b4147d48",
+    "identity": "github:1365720440:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365720440:root",
+            "repository": "netori/galfree",
+            "path": "",
+            "revision": "dfc2ef6ea9ed67eefc56571de659a9619669e984",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7984c5d959571c0511f431baf1b5c8d10df039317ca8d548f530f52e47ff7ef3",
+                "code": "dfc2ef6ea9ed67eefc56571de659a9619669e984",
+                "maintenance": "df68a682a7afa6e47e1409410c4400d46939576a014292bf693efb80fe0a4d60"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c338b94c26961d684b66520ee5d3ee6c",
+    "identity": "github:1375530227:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375530227:root",
+            "repository": "let-mi-think/wechat-agent-router",
+            "path": "",
+            "revision": "9b2192ba6cf0ddfbe6db8f2ec83308696566c8bc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "72f2938bbb696f7422a49fc73e7cf75ed3ac7e2715afe5bf8a9a2e8507dc6dd5",
+                "code": "9b2192ba6cf0ddfbe6db8f2ec83308696566c8bc",
+                "maintenance": "0ac93b4aa8f85889da9e3924bacced66c07fc72e79e419c7d04c53519a4f7414"
+            }
+        }
+    }
+}

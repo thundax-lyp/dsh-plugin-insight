@@ -1,0 +1,449 @@
+{
+    "schema_version": 3,
+    "id": "eea3feda1e06a52a80dc40b04be6874c",
+    "identity": "github:1340492447:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1340492447:root",
+            "repository_id": 1340492447,
+            "component_id": "root",
+            "repository": "AKS1st/dock-git",
+            "path": "",
+            "aliases": [],
+            "name": "dock-git",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "c0f4b992380f881afa993ff3bc664b1d9ac2f6326c9101382f6b7a342487f8aa",
+                "code": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+                "maintenance": "5429bc8caff57742f3f7431ea78dddd365af5c320daee055dea460652edf0252"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1340492447-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:37:28.839Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1340492447-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AKS1st/dock-git/blob/961c203dd87a3dc2940f7c7a3df51d6a00e37b5e/README.md",
+                    "revision": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+                    "captured_at": "2026-10-21T05:37:28.839Z",
+                    "summary": "把Git图谱、差异与仓库写操作接入Dock。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-git/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1340492447-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dock-git/blob/961c203dd87a3dc2940f7c7a3df51d6a00e37b5e/src/index.ts",
+                    "revision": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+                    "captured_at": "2026-10-21T05:37:28.839Z",
+                    "summary": "核查 src/index.ts、src/git-ops.ts、src/client/index.ts；主机/wb-git解析会话仓库并校验路径/ref，git-ops直接spawn git argv；客户端注册侧栏和编辑视图。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/aks1st--dock-git/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "在聊天旁查看会话仓库并执行暂存、提交和分支操作。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "主机/wb-git解析会话仓库并校验路径/ref，git-ops直接spawn git argv；客户端注册侧栏和编辑视图。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "需维护Git版本/输出解析及远端凭据，网络与大仓库查询有延迟；无插件自有模型调用。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先在临时仓库核对hook与破坏操作，重要仓库保留团队既有检查。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "可减少上下文切换，但无操作错误率或提交效率数据。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "直接argv、环境去重定向与固定分隔符解析可复用；部分stdout上限不是完整进程资源治理。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把图谱、差异与受控参数的仓库操作组织进会话工作台，移除GIT_DIR/GIT_WORK_TREE避免环境改指仓库，读输出有部分容量限制。没有新版本控制协议。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "buildCommitArgs明确--no-verify，merge也跳过验证，可能绕过团队期待的提交钩子；这与终端默认提交不等价。runGit没有通用超时且stderr累计不设同等上限，远端卡住与异常输出需验；argv隔离不等于Git hooks/凭据副作用被隔离。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设：把操作将跳过哪些钩子、待影响ref与破坏性变更摘要列入确认，并支持默认遵守钩子，可减少流程偏差。以失败hook、远端卡住、hard reset样例测误接受和恢复耗时。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492447:root",
+                            "area": "code",
+                            "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:37:28.839Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:37:28.839Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+                "reviewed_at": "2026-10-21T05:37:28.839Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492447:root",
+                        "area": "code",
+                        "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty=9：成熟Git能力的图形接入。 mechanism=15：参数验证及输出解析具体。 transferability=10：可复用但绑定Git和Dock。 simplification=4：减少切换却引入另一操作面。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=18：读差异到操作闭环。 delivery=15：跳过hook限制团队交付可信度。 reach=10：适合Dock仓库用户。 economics=4：未比较效率和维护成本。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1340492447-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "聊天旁Git用户应先恢复团队预期的hook验证或明确策略；当前commit和merge跳过验证，不能按普通终端提交等价采用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "查看仓库及暂存提交分支任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "Dock集成Git减少上下文切换，未改变Git本身。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核argv隔离及--no-verify，未验hook和远端卡住恢复。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "绕过hook、缺通用timeout及远端凭据维护令团队采用负担高。"
+                    }
+                },
+                "score": 54,
+                "revision": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1340492447-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492447:root",
+                        "area": "code",
+                        "fingerprint": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1340492447:root",
+            "repository": "AKS1st/dock-git",
+            "path": "",
+            "revision": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+            "fingerprints": {
+                "directory": "c0f4b992380f881afa993ff3bc664b1d9ac2f6326c9101382f6b7a342487f8aa",
+                "code": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+                "maintenance": "5429bc8caff57742f3f7431ea78dddd365af5c320daee055dea460652edf0252"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "009728a115900594f10aaf98156ce40cacfd0ef352ffbafa8206d3dc13d5e610"
+        },
+        "publication.metadata": "data/plugins/aks1st--dock-git/META.json",
+        "publication.summaries": {
+            "text": "把Git图谱、差异与仓库写操作接入Dock。",
+            "revision": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+            "source_url": "https://github.com/AKS1st/dock-git/blob/961c203dd87a3dc2940f7c7a3df51d6a00e37b5e/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+            "items": {
+                "界面": "Git图谱、差异和操作视图",
+                "Host 路由": "/wb-git读写仓库操作"
+            }
+        },
+        "publication.advice": {
+            "revision": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+            "text": "先在临时仓库核对hook与破坏操作，重要仓库保留团队既有检查。"
+        },
+        "registry": "data/plugins/aks1st--dock-git",
+        "reports": "# dock-git\n\n> 把Git图谱、差异与仓库写操作接入Dock。\n\n## 使用建议\n\n先在临时仓库核对hook与破坏操作，重要仓库保留团队既有检查。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：在聊天旁查看会话仓库并执行暂存、提交和分支操作。\n- **亮点**：把图谱、差异与受控参数的仓库操作组织进会话工作台，移除GIT_DIR/GIT_WORK_TREE避免环境改指仓库，读输出有部分容量限制。没有新版本控制协议。\n- **思考**：buildCommitArgs明确--no-verify，merge也跳过验证，可能绕过团队期待的提交钩子；这与终端默认提交不等价。runGit没有通用超时且stderr累计不设同等上限，远端卡住与异常输出需验；argv隔离不等于Git hooks/凭据副作用被隔离。\n- **建议**：未验证假设：把操作将跳过哪些钩子、待影响ref与破坏性变更摘要列入确认，并支持默认遵守钩子，可减少流程偏差。以失败hook、远端卡住、hard reset样例测误接受和恢复耗时。\n\n## 场景与替代办法\n\n参照Git CLI与图形Git客户端；本项目的增量是Dock仓库视图与固定参数操作接线，Git算法和传输归系统git。\n\n## 能力清单\n\n- **界面**：Git图谱、差异和操作视图\n- **Host 路由**：/wb-git读写仓库操作\n\n## 依赖与流程\n\n主机/wb-git解析会话仓库并校验路径/ref，git-ops直接spawn git argv；客户端注册侧栏和编辑视图。\n\nDock workbench、宿主sessions/webServer/webRuntime及PATH中的Git；远端凭据和网络另需。\n\n解析仓库→读取状态/日志/差异→用户选操作→调用git→刷新视图；commit/push/reset均是真实副作用。\n\n## 成本与效果\n\n需维护Git版本/输出解析及远端凭据，网络与大仓库查询有延迟；无插件自有模型调用。\n\n可减少上下文切换，但无操作错误率或提交效率数据。\n\n## 核心贡献\n\n把图谱、差异与受控参数的仓库操作组织进会话工作台，移除GIT_DIR/GIT_WORK_TREE避免环境改指仓库，读输出有部分容量限制。没有新版本控制协议。\n\n## 关键质疑\n\nbuildCommitArgs明确--no-verify，merge也跳过验证，可能绕过团队期待的提交钩子；这与终端默认提交不等价。runGit没有通用超时且stderr累计不设同等上限，远端卡住与异常输出需验；argv隔离不等于Git hooks/凭据副作用被隔离。\n\n## 工程亮点\n\n直接argv、环境去重定向与固定分隔符解析可复用；部分stdout上限不是完整进程资源治理。\n\n源码依据：[src/index.ts](https://github.com/AKS1st/dock-git/blob/961c203dd87a3dc2940f7c7a3df51d6a00e37b5e/src/index.ts)、[src/git-ops.ts](https://github.com/AKS1st/dock-git/blob/961c203dd87a3dc2940f7c7a3df51d6a00e37b5e/src/git-ops.ts)、[src/client/index.ts](https://github.com/AKS1st/dock-git/blob/961c203dd87a3dc2940f7c7a3df51d6a00e37b5e/src/client/index.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：把操作将跳过哪些钩子、待影响ref与破坏性变更摘要列入确认，并支持默认遵守钩子，可减少流程偏差。以失败hook、远端卡住、hard reset样例测误接受和恢复耗时。\n\n隔离仓库核钩子行为、超时取消、输出上限和破坏操作确认；不向真实远端写入。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c4eecf3288dd34f73f00bc0c89cfc872ed36931613b61850efcbd9dd8f17edd2。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 6046 | 5381 | 656 | — |\n| .md | source | 2 | 132 | — | — | 1485 |\n| .mjs | source | 6 | 2405 | 2107 | 218 | — |\n| .tsx | source | 5 | 2539 | 2105 | 270 | — |\n| .ts | source | 13 | 4600 | 3290 | 1027 | — |\n\n排除 18 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AKS1st/dock-git](https://github.com/AKS1st/dock-git)\n- **版本号**：0.3.4（[固定提交 961c203d](https://github.com/AKS1st/dock-git/tree/961c203dd87a3dc2940f7c7a3df51d6a00e37b5e)）\n- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/git-ops.ts、src/client/index.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：隔离仓库核钩子行为、超时取消、输出上限和破坏操作确认；不向真实远端写入。\n",
+        "metadata": {
+            "repository": "AKS1st/dock-git",
+            "repository_id": 1340492447,
+            "captured_at": "2026-10-21T05:33:32.976Z",
+            "window_start": "2026-09-21T05:33:32.976Z",
+            "stars": 3,
+            "pushed_at": "2026-09-11T08:05:34Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D2D0:4C3CE:5161B9:576EB0:6AD84EAE and timestamp 2026-10-21 05:33:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D3C0:110ECF:50313F:563737:6AD84EAF and timestamp 2026-10-21 05:33:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A32.976Z..2026-10-21T05%3A33%3A32.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D660:26E19B:5100CD:570945:6AD84EB1 and timestamp 2026-10-21 05:33:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A32.976Z..2026-10-21T05%3A33%3A32.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D744:4E142:4F6E84:557A9D:6AD84EB2 and timestamp 2026-10-21 05:33:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A32.976Z..2026-10-21T05%3A33%3A32.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D816:1852C3:5449AA:5A54A3:6AD84EB3 and timestamp 2026-10-21 05:33:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dock-git",
+                "captured_at": "2026-10-21T05:33:39.484Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 866,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-git",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-23T06:01:26.171Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dock-git",
+                    "error": null,
+                    "latest_version": "0.3.4",
+                    "latest_published_at": "2026-09-11T08:20:26.590Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1340492447:root",
+            "repository": "AKS1st/dock-git",
+            "path": "",
+            "revision": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c0f4b992380f881afa993ff3bc664b1d9ac2f6326c9101382f6b7a342487f8aa",
+                "code": "961c203dd87a3dc2940f7c7a3df51d6a00e37b5e",
+                "maintenance": "5429bc8caff57742f3f7431ea78dddd365af5c320daee055dea460652edf0252"
+            }
+        }
+    }
+}

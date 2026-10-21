@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "90ad399d7b8981af50682c605facbee6",
+    "identity": "github:1334735991:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334735991:root",
+            "repository": "Boliban/dsh-enter-customizer",
+            "path": "",
+            "revision": "44f4ac629ec41374b4446479b7baddf2dda7f746",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "da70d31372b8a4e12117a51ca4c2f676a32af4b05e75b1fef5f6b058e133298a",
+                "code": "44f4ac629ec41374b4446479b7baddf2dda7f746",
+                "maintenance": "ffbce38b1992948fafb4b5014e9289ce592c6c0a539a9bcc72feaecf85190cfc"
+            }
+        }
+    }
+}

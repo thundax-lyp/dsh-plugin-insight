@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9a0cadeff29553317d02371cc2f57c5",
+    "identity": "github:1373228855:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1373228855:root",
+            "repository": "Iambatman1928/dsh-xingye",
+            "path": "",
+            "revision": "17dadd7546ed84c0741e27cf7a33028db22c41f9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cd12e6eb8b0f7a8b323188c450e1275973111215421e7290b9ca45e1e596c899",
+                "code": "17dadd7546ed84c0741e27cf7a33028db22c41f9",
+                "maintenance": "f774fd1957f819f6c5c2d2a8d6407c225e40460d29d37dc9eda8e313d41fed77"
+            }
+        }
+    }
+}

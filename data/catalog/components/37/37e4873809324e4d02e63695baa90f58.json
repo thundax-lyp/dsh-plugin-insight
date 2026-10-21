@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "37e4873809324e4d02e63695baa90f58",
+    "identity": "github:1418225356:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418225356:root",
+            "repository": "sunrulin123/dsh-community-web-ui",
+            "path": "",
+            "revision": "3819664438229a74f53f2079bfc47091992a4eb9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b87a4f2104f786177adf67e69dda7d2a0486d362418c706b81805a3bfdab9be7",
+                "code": "3819664438229a74f53f2079bfc47091992a4eb9",
+                "maintenance": "f614b3b2eec1d614b4e772bd8cc5e24e457c81a7f316e0bb7757c9157cde9cc2"
+            }
+        }
+    }
+}

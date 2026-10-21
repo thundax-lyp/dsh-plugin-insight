@@ -1,0 +1,362 @@
+{
+    "schema_version": 3,
+    "id": "6f9b717d543fdd78a383102a06fba252",
+    "identity": "github:1351903192:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1351903192:root",
+            "repository_id": 1351903192,
+            "component_id": "root",
+            "repository": "162568316/dsh-tokenrhythm-bill",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-tokenrhythm-bill",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "03c5fad745edcb339d0ff14d698b30d34f6f8bd8cd38438b91886b8b479db171",
+                "code": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+                "maintenance": "611bd07dbe94f80967fb9c29226990cf46aab1e816f719c04e18dde2c6ac56af"
+            },
+            "sources": [
+                {
+                    "id": "20261020-incremental40-r2-github-1351903192-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T04:34:38.110Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-incremental40-r2-github-1351903192-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/162568316/dsh-tokenrhythm-bill/blob/df72615bc5c8f6ccfe287b8a3cfef627923b2f1f/README.md",
+                    "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+                    "captured_at": "2026-10-20T04:34:38.110Z",
+                    "summary": "集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/162568316--dsh-tokenrhythm-bill/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-incremental40-r2-github-1351903192-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/162568316/dsh-tokenrhythm-bill/blob/df72615bc5c8f6ccfe287b8a3cfef627923b2f1f/lib/index.js",
+                    "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+                    "captured_at": "2026-10-20T04:34:38.110Z",
+                    "summary": "核查 lib/index.js、lib/client.js、lib/step.js、lib/tierflow.js；Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。",
+                    "artifact": "data/runs/2026-10-20-04/snapshots/162568316--dsh-tokenrhythm-bill/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "余额、套餐和模型列表依赖未统一的平台接口；Cookie过期或身份变化可能取错账户，未验证多账号切换与数据准确性。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351903192-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351903192:root",
+                            "area": "code",
+                            "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:38.110Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351903192-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351903192:root",
+                            "area": "code",
+                            "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:38.110Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "余额、套餐和模型列表依赖未统一的平台接口；Cookie过期或身份变化可能取错账户，未验证多账号切换与数据准确性。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351903192-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351903192:root",
+                            "area": "code",
+                            "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:38.110Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.7.2，Node>=20，多文件平台适配与Web Client；可选平台需显式启用，不能认为默认全接入。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351903192-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351903192:root",
+                            "area": "code",
+                            "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:38.110Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "模型探测是实际调用，即使输出1token也不代表免费；Cookie续期、账号维护和平台接口漂移占人工，未测总对账成本。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351903192-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351903192:root",
+                            "area": "code",
+                            "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:38.110Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351903192-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351903192:root",
+                            "area": "code",
+                            "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:38.110Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "同屏对齐到期额度和用量减少切换；平台金额聚合只有在身份、币种和冻结/限时口径一致时才有意义。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351903192-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351903192:root",
+                            "area": "code",
+                            "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:38.110Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "Host侧限制秘密返回并为状态文件设置权限，账号缓存有身份守卫；读取凭据文件与多平台登录流程增加长期兼容负担。",
+                    "evidence_ids": [
+                        "20261020-incremental40-r2-github-1351903192-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351903192:root",
+                            "area": "code",
+                            "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T04:34:38.110Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T04:34:38.110Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "多套餐用户可先接常用单平台对账，核账号和限时额度后按需探测模型，避免把探测当免费。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "额度有效期和模型清单对齐的任务具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "同屏多平台并区分身份期限较逐站查看便利。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "Host状态权限及身份守卫可查，多账号缓存和金额未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "Cookie续期、接口漂移和真实探测费用需持续管理。"
+                    }
+                },
+                "score": 65,
+                "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-incremental40-r2-github-1351903192-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351903192:root",
+                        "area": "code",
+                        "fingerprint": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1351903192:root",
+            "repository": "162568316/dsh-tokenrhythm-bill",
+            "path": "",
+            "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+            "fingerprints": {
+                "directory": "03c5fad745edcb339d0ff14d698b30d34f6f8bd8cd38438b91886b8b479db171",
+                "code": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+                "maintenance": "611bd07dbe94f80967fb9c29226990cf46aab1e816f719c04e18dde2c6ac56af"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T04:25:27.514Z",
+            "analysis_sha256": "d0e7db4a31ed814890db2e6d27894a99c13712f1ba24b603088c09530a5c38d5"
+        },
+        "publication.metadata": "data/plugins/162568316--dsh-tokenrhythm-bill/META.json",
+        "publication.summaries": {
+            "text": "集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。",
+            "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+            "source_url": "https://github.com/162568316/dsh-tokenrhythm-bill/blob/df72615bc5c8f6ccfe287b8a3cfef627923b2f1f/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+            "items": {
+                "Host 路由": "账户、余额、模型、探测与平台会话代理。",
+                "界面": "五页签费用中心及账号/平台切换。"
+            }
+        },
+        "publication.advice": {
+            "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+            "text": "先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。"
+        },
+        "registry": "data/plugins/162568316--dsh-tokenrhythm-bill",
+        "reports": "# dsh-tokenrhythm-bill\n\n> 集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。\n\n## 固定范围与依据\n\n固定提交 [df72615bc5c8f6ccfe287b8a3cfef627923b2f1f](https://github.com/162568316/dsh-tokenrhythm-bill/blob/df72615bc5c8f6ccfe287b8a3cfef627923b2f1f/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T04:34:38.110Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：lib/index.js、lib/client.js、lib/step.js、lib/tierflow.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。\n- **亮点**：Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。\n- **思考**：同屏对齐到期额度和用量减少切换；平台金额聚合只有在身份、币种和冻结/限时口径一致时才有意义。\n- **建议**：先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。\n\n## 场景与替代办法\n\n多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。\n\n此前未入档；平台控制台是对账依据，插件改善聚合入口，不替代账务真相或统一模型计费。\n\n## 依赖与流程\n\n需要平台账号、Cookie或key及宿主配置文件访问；依赖服务商接口和会话签名语义，网络失败不能当作余额为零。\n\n选择平台和账号，读取余额/模型，核对有效期，按需探测；401先重新确认身份和登录，再刷新，避免跨账号缓存混用。\n\n## 成本与效果\n\n模型探测是实际调用，即使输出1token也不代表免费；Cookie续期、账号维护和平台接口漂移占人工，未测总对账成本。\n\n同屏对齐到期额度和用量减少切换；平台金额聚合只有在身份、币种和冻结/限时口径一致时才有意义。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：69de678a011f77c05b0f0228b22790be54305b6da619db81042b698ef369f018。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 6 | 17110 | 12610 | 4123 | — |\n| .md | source | 2 | 299 | — | — | 23933 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：账户、余额、模型、探测与平台会话代理。\n- **界面**：五页签费用中心及账号/平台切换。\n\n## 工程亮点\n\nHost侧限制秘密返回并为状态文件设置权限，账号缓存有身份守卫；读取凭据文件与多平台登录流程增加长期兼容负担。\n\n## 分发与兼容\n\n0.7.2，Node>=20，多文件平台适配与Web Client；可选平台需显式启用，不能认为默认全接入。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；平台控制台是对账依据，插件改善聚合入口，不替代账务真相或统一模型计费。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：余额、套餐和模型列表依赖未统一的平台接口；Cookie过期或身份变化可能取错账户，未验证多账号切换与数据准确性。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用两个脱敏测试账号切换并模拟Cookie过期，核对限时/冻结金额和探测请求数，确认没有残留旧账号数据。\n",
+        "metadata": {
+            "repository": "162568316/dsh-tokenrhythm-bill",
+            "repository_id": 1351903192,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 4,
+            "pushed_at": "2026-10-18T15:32:59Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A162568316%2Fdsh-tokenrhythm-bill%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:2EA514:14AB99:222B73:6AD8494E and timestamp 2026-10-21 05:10:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A162568316%2Fdsh-tokenrhythm-bill%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:14A3AE:2234BE:6AD8494F and timestamp 2026-10-21 05:10:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A162568316%2Fdsh-tokenrhythm-bill%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:128E3:14A6C0:222503:6AD8494F and timestamp 2026-10-21 05:10:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A162568316%2Fdsh-tokenrhythm-bill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:14923F:22153D:6AD8494F and timestamp 2026-10-21 05:10:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A162568316%2Fdsh-tokenrhythm-bill%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:11B6:1468FA:21EE8B:6AD8494F and timestamp 2026-10-21 05:10:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-tokenrhythm-bill",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1667,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-tokenrhythm-bill",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-31T05:41:35.830Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-tokenrhythm-bill",
+                    "error": null,
+                    "latest_version": "0.6.1",
+                    "latest_published_at": "2026-10-09T05:49:02.654Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+                "current_revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1351903192:root",
+            "repository": "162568316/dsh-tokenrhythm-bill",
+            "path": "",
+            "revision": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "03c5fad745edcb339d0ff14d698b30d34f6f8bd8cd38438b91886b8b479db171",
+                "code": "df72615bc5c8f6ccfe287b8a3cfef627923b2f1f",
+                "maintenance": "611bd07dbe94f80967fb9c29226990cf46aab1e816f719c04e18dde2c6ac56af"
+            }
+        }
+    }
+}

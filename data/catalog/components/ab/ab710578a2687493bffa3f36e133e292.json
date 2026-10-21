@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ab710578a2687493bffa3f36e133e292",
+    "identity": "github:1367027262:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367027262:root",
+            "repository": "duanyunlun/dsh-session-actions",
+            "path": "",
+            "revision": "754a0f93296b2eb019f854ebdb5c8f8628107418",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2871ce46df577a85f64fe518dc4228077ab2065f9cc520075a8d3e29e3e23693",
+                "code": "754a0f93296b2eb019f854ebdb5c8f8628107418",
+                "maintenance": "339999c600c8494347fdb01ab19bcb53adf2078674a05c6b0fb58d4b9ae03763"
+            }
+        }
+    }
+}

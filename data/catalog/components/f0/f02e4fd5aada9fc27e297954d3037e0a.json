@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f02e4fd5aada9fc27e297954d3037e0a",
+    "identity": "github:1339557782:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339557782:root",
+            "repository": "wiyi/dsh-web-service-manager",
+            "path": "",
+            "revision": "4c8af2cede6355a7ccab175af92182ab12dfe19f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "103c1694a8ce111968b5eef36f8714f2197de828dc3295484d5110d4be325b90",
+                "code": "4c8af2cede6355a7ccab175af92182ab12dfe19f",
+                "maintenance": "6a72d65a3ed79ba3e01609f227e648f5275b7205ae957147f4e7473e667d9fa8"
+            }
+        }
+    }
+}

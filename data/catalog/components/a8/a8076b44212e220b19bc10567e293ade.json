@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8076b44212e220b19bc10567e293ade",
+    "identity": "github:1333675149:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333675149:root",
+            "repository": "qing3a/dsh-come",
+            "path": "",
+            "revision": "780c269a98181037168588661411f7e1dff67608",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d4667a8d3a9b1d65693d94eb3cdf6f9e9c4b8d5781b595b639754fef6d1a8a49",
+                "code": "780c269a98181037168588661411f7e1dff67608",
+                "maintenance": "4e431637ad7283cc21c4c215a2e81e3b95d3e98c2fa42c21052a4e373c52d08f"
+            }
+        }
+    }
+}

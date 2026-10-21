@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "20a70f8b70072681c3865f69c07c28a3",
+    "identity": "github:1356997103:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356997103:root",
+            "repository": "HrxSpace/dsh-session-sweeper",
+            "path": "",
+            "revision": "932f785e59cca741f39cc9e078b9cf87fa172810",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "71915a3e3e1157dbf38734f182902629e7ed5cc1e3bae7f29340b799feb26969",
+                "code": "932f785e59cca741f39cc9e078b9cf87fa172810",
+                "maintenance": "9217b3b1308b6291638bb85b129218d4ef12b58d564bef77442f71a76130bbba"
+            }
+        }
+    }
+}

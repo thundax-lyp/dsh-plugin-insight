@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "63470882423ac00badec630ed894ea86",
+    "identity": "github:1347957609:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347957609:root",
+            "repository": "bearice/dsh-keep-awake",
+            "path": "",
+            "revision": "41a478fb25a84f62320e6c0a8c5ac25a8b65f667",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2c710e05d6244842deff8b1758fa2dd332158179284029cd6724a59767523c7d",
+                "code": "41a478fb25a84f62320e6c0a8c5ac25a8b65f667",
+                "maintenance": "fac750e8b0d8a0a9b45f851d581f0df1d1e089058d9be93726b2038fc9fb9fcf"
+            }
+        }
+    }
+}

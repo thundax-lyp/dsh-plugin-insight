@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1f3266266ae75275abc9045e172bb4a0",
+    "identity": "github:1335686592:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335686592:root",
+            "repository": "zaiwenJ/dsh-cdp-browser",
+            "path": "",
+            "revision": "caecd3bded2ea29fd6258ef7e667f14d0c8444eb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fdeca4a698be6fbdeb19a54120c44f3af1017dbfd9195b4f0ea95d617f11774c",
+                "code": "caecd3bded2ea29fd6258ef7e667f14d0c8444eb",
+                "maintenance": "8a9d88c4bcd319ea330cb4960f912271244c106d83990f19d160cb3eb2879272"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7e379c94a392eacc53b6df8b00e64104",
+    "identity": "github:1348322768:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348322768:root",
+            "repository": "2877905731/dsh-think-autoexpand",
+            "path": "",
+            "revision": "877665c137325111bb84c304847687dd43ee56bf",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "eaee6e8592eb0f3a99789008a188ac5a45443087af8cb288d97d0910804528a0",
+                "code": "877665c137325111bb84c304847687dd43ee56bf",
+                "maintenance": "8e42c266825f20fa072fcc813a907902af1465170b795cbe033299e9379185e3"
+            }
+        }
+    }
+}

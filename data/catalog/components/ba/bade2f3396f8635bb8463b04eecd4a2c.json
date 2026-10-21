@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bade2f3396f8635bb8463b04eecd4a2c",
+    "identity": "github:1358087353:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358087353:root",
+            "repository": "roclee2692/dsh-model-groups",
+            "path": "",
+            "revision": "6ca692a48e7b5074398fa667fe558d09437f9cea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4f8ad7e044d6ab211c13560a09adb438c7fc9bdacca4206c0a259688c363762d",
+                "code": "6ca692a48e7b5074398fa667fe558d09437f9cea",
+                "maintenance": "2306412f928e11320cdf52f20b002e276c87d6c2ca588e6e6afea99bda51a7ec"
+            }
+        }
+    }
+}

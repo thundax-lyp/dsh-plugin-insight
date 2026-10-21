@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "751199bc6c35637ccb2487b772acf98a",
+    "identity": "github:1335078438:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335078438:root",
+            "repository": "aerince/dsh-models-dev-reasoning",
+            "path": "",
+            "revision": "c781d555bbe7f4343cb7750dd6e1f9e1b4876069",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bead03de9263ba37222973f8ed8903f1fd9d58ac5ea22c121abe2c5cb4c383dd",
+                "code": "c781d555bbe7f4343cb7750dd6e1f9e1b4876069",
+                "maintenance": "9e274fc767e58c9a86bf5c2cc5268e8ba1b852960a11e03199341d8318c58f1a"
+            }
+        }
+    }
+}

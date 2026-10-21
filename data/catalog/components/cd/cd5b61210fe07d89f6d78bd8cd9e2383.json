@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cd5b61210fe07d89f6d78bd8cd9e2383",
+    "identity": "github:1333279808:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333279808:root",
+            "repository": "chyra-moon/deepseek-harness-desktop",
+            "path": "",
+            "revision": "6b713292a88c77519143fccc8cc82e964788bf2b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1a974b4cac16c6d86a893df4cb8a5dfc19644f2fce9297d699b6ba921499e3e8",
+                "code": "6b713292a88c77519143fccc8cc82e964788bf2b",
+                "maintenance": "957b35eaf133c751b836674bf03ae4314c574cd0531daf029b59369e03f1af9b"
+            }
+        }
+    }
+}

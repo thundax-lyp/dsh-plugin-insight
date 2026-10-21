@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7fdaff9881ff83bd21e5df97654811af",
+    "identity": "github:1346243183:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346243183:root",
+            "repository": "melt502/DSH-Session-Reference-UX-Patch",
+            "path": "",
+            "revision": "9a0195c5cd0fa9f8c59d116a16e1589a77c78ac2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cb630034c15a48adc56ed7bfd9710ce43d68072cd41a00abd1017aef75854e36",
+                "code": "9a0195c5cd0fa9f8c59d116a16e1589a77c78ac2",
+                "maintenance": "1a432c139c6ca18beb634a3bdf77cb6cecce7fb4b3426681762d2b71ee38f363"
+            }
+        }
+    }
+}

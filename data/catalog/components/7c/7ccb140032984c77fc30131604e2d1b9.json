@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7ccb140032984c77fc30131604e2d1b9",
+    "identity": "github:1334951950:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334951950:root",
+            "repository": "tancheng33/dsh-egress-guard",
+            "path": "",
+            "revision": "dcb52e1239a70d03ee36db0e39ccbd5979b3da9f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a1f5766031b04ed3c822736ec1d1735f3e501ebf05b4cd12b77c2c4ed1e382fe",
+                "code": "dcb52e1239a70d03ee36db0e39ccbd5979b3da9f",
+                "maintenance": "d07c681bed2eb7083c2dedb830ba5bd0364b35811d0ff120e6a0858dee905427"
+            }
+        }
+    }
+}

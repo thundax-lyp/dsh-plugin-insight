@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a7c1c5d207976a1a02d6d0a8cedf1d4c",
+    "identity": "github:1339170873:file-drop",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339170873:file-drop",
+            "repository": "xing666173/dsh-vision-hub",
+            "path": "file-drop",
+            "revision": "17e42af2ae7176e9a6b43d1bcec674a60044aff6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9c4eb73ed711276e2266f69b6a3a08df66d8471835ec3f2f6ec6f63916d5d5af",
+                "code": "17e42af2ae7176e9a6b43d1bcec674a60044aff6",
+                "maintenance": "eac9b1a1105be809ab67225042249893a53e2f86e71f0f7cb96d70636acb297d"
+            }
+        }
+    }
+}

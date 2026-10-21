@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7597cac4e01399bb72cf662356baabd8",
+    "identity": "github:1401807080:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401807080:root",
+            "repository": "yuehancn/dsh-tool-protobuf",
+            "path": "",
+            "revision": "6a1183a12f1f132760bba937ead956cb5a83038c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cad38da723889e6837f0b3aa893c2dbc1a413cd35cb04ce2d4be9b60de8eaff5",
+                "code": "6a1183a12f1f132760bba937ead956cb5a83038c",
+                "maintenance": "ce202eebc460e2105e48973a6a5e14dbd2f0f3eb156915640aaaaf0e7e1e300b"
+            }
+        }
+    }
+}

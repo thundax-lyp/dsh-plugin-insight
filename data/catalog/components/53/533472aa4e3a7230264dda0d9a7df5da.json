@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "533472aa4e3a7230264dda0d9a7df5da",
+    "identity": "github:1333724968:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333724968:root",
+            "repository": "moyu-good/dsh-lark-bridge",
+            "path": "",
+            "revision": "c319bddf7f8afae4e45ca94e84c101ebbc0426de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7f2eb7dbf23cec6d5209ed250c0b54384dec80763c17a4cf7ae4495562a98f6e",
+                "code": "c319bddf7f8afae4e45ca94e84c101ebbc0426de",
+                "maintenance": "335b7f49d88db53f080bc7b3149eff6d9d2f74959f1aa76e80d5ac33838e76b7"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b2daf819c7c3237d246c84402ecd8c71",
+    "identity": "github:1268424426:adapters-dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1268424426:adapters-dsh-plugin",
+            "repository": "tinqiao-oss/engramory",
+            "path": "adapters/dsh/plugin",
+            "revision": "500cf5d49a19108196a420bd50e71ef0a3a80e7c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "609f3bbb959d64cee4b3a2b08736f749df23b82367521cf16c438ea3c1b86e66",
+                "code": "500cf5d49a19108196a420bd50e71ef0a3a80e7c",
+                "maintenance": "31a08a48ecf5962171407d22a39771422aed70e08c05ad4e444badedff9cf604"
+            }
+        }
+    }
+}

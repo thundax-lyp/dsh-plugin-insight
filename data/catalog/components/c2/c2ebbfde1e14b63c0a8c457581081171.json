@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c2ebbfde1e14b63c0a8c457581081171",
+    "identity": "github:1359262225:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359262225:root",
+            "repository": "loyalchiiina/dsh-todo-float-ball",
+            "path": "",
+            "revision": "4bce5ff67a9d1dbdadcbafaf94f9b1d46fa381da",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "11f3ca1dc68ddc3d095f2ecf883778e0d7f923e865a44585131429145cdfdf27",
+                "code": "4bce5ff67a9d1dbdadcbafaf94f9b1d46fa381da",
+                "maintenance": "f6fa90882bfa3cf48f589e0e4853eb433f5e738fceeee44d4992fe4b3adb3311"
+            }
+        }
+    }
+}

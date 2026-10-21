@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6f271944fdfd8f87994b6ebb56d7a5f1",
+    "identity": "github:1334082928:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334082928:root",
+            "repository": "hchao3335-maker/dsh-lan-gate",
+            "path": "",
+            "revision": "0c58b6099960bcdb5954295116b33a12c20b80a4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0898042de242aebaca1ef6ee7c00bd19ce52fd6f2462690b2279fc5450139713",
+                "code": "0c58b6099960bcdb5954295116b33a12c20b80a4",
+                "maintenance": "5b9de0706c12f1b9d3aaac483c28e05058f4982be71e7d43ec4acf4ce5b043cb"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4e57f98ed31ac26734e4643470d0d9ea",
+    "identity": "github:1358229295:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358229295:root",
+            "repository": "seolhw/dsh-guild",
+            "path": "",
+            "revision": "94d86de51b42cbd6ba402702cd91a541048881f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4f6b1aa82e8bd17e5f37790aab3376786dead68598319525ef8c70a59961eb3f",
+                "code": "94d86de51b42cbd6ba402702cd91a541048881f3",
+                "maintenance": "80a14f11f634329c969ea59f2d14cfea3a9c19b570bec03a9bb8b3ca9c9827f0"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ffe8f1a6e25e021190be4017c1681b36",
+    "identity": "github:1408794834:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408794834:root",
+            "repository": "Bancott/dsh-yexueqing-skin",
+            "path": "",
+            "revision": "d1241c23886a016076aedbcdcb33e93ae6551277",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "11a9b88e515e45eca4c226b06ee2ee760100e67244cdfe595e21117023f1cbbc",
+                "code": "d1241c23886a016076aedbcdcb33e93ae6551277",
+                "maintenance": "ff993ab5110580ef3fab15c6ca051ea86bef13afde639b822feb6d906aeaa816"
+            }
+        }
+    }
+}

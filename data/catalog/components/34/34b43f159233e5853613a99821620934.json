@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "34b43f159233e5853613a99821620934",
+    "identity": "github:1411197975:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411197975:root",
+            "repository": "xyrrrrr-r/dsh-eval-control",
+            "path": "",
+            "revision": "4573491c8c9631d9705a23aba1b41fcebe6a022a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7ace045f2984ed78d5d49862bcfbad9e3f492dfe6e136ac57df034ac16d7dc8a",
+                "code": "4573491c8c9631d9705a23aba1b41fcebe6a022a",
+                "maintenance": "c519fdd26b0b4c7656e10f59a9b929f741939ff0e4c43a645830fe8bfe109242"
+            }
+        }
+    }
+}

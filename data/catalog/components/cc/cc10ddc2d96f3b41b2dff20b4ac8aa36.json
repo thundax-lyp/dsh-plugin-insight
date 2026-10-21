@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cc10ddc2d96f3b41b2dff20b4ac8aa36",
+    "identity": "github:1346564235:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346564235:root",
+            "repository": "TARS-snail/dsh-notify",
+            "path": "",
+            "revision": "91ae9531f741f9c53edde80df89b2847e0721478",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e877b96c0fd2a0b56123f0f9c61b7036f95d9bdb2830d84c3dc364b1d707991b",
+                "code": "91ae9531f741f9c53edde80df89b2847e0721478",
+                "maintenance": "54dfd6a45124fe7ae15866cf234eac1e071efed2bc814cc4bc115f6659e6a8b2"
+            }
+        }
+    }
+}

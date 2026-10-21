@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "26ef0e6afa4a87f1c8e4f15acec3da7c",
+    "identity": "github:1361530579:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1361530579:root",
+            "repository": "leetom314/dsh-tiered-memory",
+            "path": "",
+            "revision": "5ee5a50b5d36536a88ae8077251ebd8837a2f686",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0f5caaf863dc7f9c590de9a50c71bf3b4f4b977f2322c58884597fa60b9e19b2",
+                "code": "5ee5a50b5d36536a88ae8077251ebd8837a2f686",
+                "maintenance": "0a0ff79d9ee651e95b994bffd633341d87deec3a778570df37b8a64270dc694f"
+            }
+        }
+    }
+}

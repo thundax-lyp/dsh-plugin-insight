@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "460db18b22ef3ea7fc5d4a9017cadb10",
+    "identity": "github:1375082940:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375082940:root",
+            "repository": "drscrewdriver/dsh-brief-sidebar",
+            "path": "",
+            "revision": "73ffe3995c0b7ee4538dbd12b55f34cd5bff7f83",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6404311e8077025019d94c29806a9deff9ff0390d11b863c3699d282e89de7ba",
+                "code": "73ffe3995c0b7ee4538dbd12b55f34cd5bff7f83",
+                "maintenance": "b43ccfea9184e9952b4f510b34d1ac42be767eee5eb6d5eff246b4a650b66146"
+            }
+        }
+    }
+}

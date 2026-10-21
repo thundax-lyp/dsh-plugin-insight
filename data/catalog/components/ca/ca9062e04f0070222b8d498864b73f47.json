@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ca9062e04f0070222b8d498864b73f47",
+    "identity": "github:1334594442:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334594442:root",
+            "repository": "TYEclipse/dsh-units",
+            "path": "",
+            "revision": "dc917ae6f838c4979eb2279c6782a999e5a78b31",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "849c313c45196c08f5a7d1a002a7ed346b271d71e68b6eb6dcd94e7fc7bfb6c1",
+                "code": "dc917ae6f838c4979eb2279c6782a999e5a78b31",
+                "maintenance": "52cc5c17571e3f4d3f97b2bc0109a939b677bfee4826cffcb956d3f68a229c0b"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1677e8111d20bef34010b70045339b14",
+    "identity": "github:1335456884:plugins-ddw-teams-panel",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335456884:plugins-ddw-teams-panel",
+            "repository": "ccch713/deepddw",
+            "path": "plugins/ddw-teams-panel",
+            "revision": "6065fa46283f2f4f309f66478dd54f880c57d3e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cd52358edfa0c7229b11ce0f0601478425a33ae82c1e39a216ef3f95909b170e",
+                "code": "6065fa46283f2f4f309f66478dd54f880c57d3e1",
+                "maintenance": "46c7591872a70db7099b4d697b1d64720276264a893a4fefd2f3c3c1508edbe1"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "abe90ec5df944f558c0e12af8bae3cf6",
+    "identity": "github:1359634202:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359634202:root",
+            "repository": "Beatther-c/dsh-api-client",
+            "path": "",
+            "revision": "641841d41a6fb2c0b24f3328188e0f717f7755e1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a96a2f3789cc36b9d192f7c807ae023875f3c949df21a43cc011f8c7c7692581",
+                "code": "641841d41a6fb2c0b24f3328188e0f717f7755e1",
+                "maintenance": "aba654406fe3499ae3083c3bdddb90eacd733ee1d8b985373919c6d2e5f7cb88"
+            }
+        }
+    }
+}

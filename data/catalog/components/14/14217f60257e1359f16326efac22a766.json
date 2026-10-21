@@ -1,0 +1,435 @@
+{
+    "schema_version": 3,
+    "id": "14217f60257e1359f16326efac22a766",
+    "identity": "github:1422359117:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1422359117:root",
+            "repository_id": 1422359117,
+            "component_id": "root",
+            "repository": "7gzgn/dsh-slipway",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-slipway",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "54fb1b3310f21370ae7ecc67e0209ac19d4eb78ff18d0b654d42797f7396ce59",
+                "code": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+                "maintenance": "a5aeadd8650309e4b5a3ea62327e1dbe7ff340fc9da983aa70e3291627a6bbda"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-03-github-1422359117-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:45:30.274Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-03-github-1422359117-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/7gzgn/dsh-slipway/blob/b28316be0beca1f05126c8ef1d3166e14a9bb784/README.md",
+                    "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+                    "captured_at": "2026-10-21T03:45:30.274Z",
+                    "summary": "将本地 DSH 插件文件发布到 GitHub，建立市场收录 PR 并回拉校验字节。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-slipway/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-03-github-1422359117-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/7gzgn/dsh-slipway/blob/b28316be0beca1f05126c8ef1d3166e14a9bb784/lib/index.js",
+                    "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+                    "captured_at": "2026-10-21T03:45:30.274Z",
+                    "summary": "核查 lib/index.js、lib/core.js、lib/publish.js、lib/github.js、bin/dsh-slipway.mjs、package.json；core按manifest files收集并检查入口/秘密，publish默认dryRun，核对token owner后逐文件Contents API PUT，设置topics、创建市场条目PR，verifyPublished按sha256和长度回拉比对。",
+                    "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-slipway/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读core/publish/github及工具CLI入口；未执行目标自检、测试或外部写入，不核实市场实际接纳规则。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "DSH插件作者把已核查工程发布到自己GitHub仓库并提交市场收录，交付上传记录、PR与逐文件回验；不替代测试或安装验收。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "core按manifest files收集并检查入口/秘密，publish默认dryRun，核对token owner后逐文件Contents API PUT，设置topics、创建市场条目PR，verifyPublished按sha256和长度回拉比对。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读core/publish/github及工具CLI入口；未执行目标自检、测试或外部写入，不核实市场实际接纳规则。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "仅GitHub发布，DSH0.2声明；不发布npm，需显式project/repo/category与中英文描述，PAT按作者配置读取。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次准备目标/许可证/描述和PAT，持续处理限额、逐文件提交、失败恢复与市场评审；现金取决于平台，人工回验与修复未测。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "插件作者先在工程副本演算并人工看完整文件清单；确认目标账号和发布范围，再在临时仓库验收部分失败恢复，正式发布后仍要测试安装。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "减少手工发布步骤与漏文件定位；仓库内容一致和收录PR存在不代表宿主兼容或插件质量。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "默认dryRun、token owner绑定、脱敏证据与哈希比对值得借鉴；原子性、删除语义和常见exports校验需补齐再用于可靠批量发布。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对手写建仓库/上传/市场PR脚本，增量是显式目标与自检、默认演算和阶段证据，并把线上字节回验纳入同一调用。GitHub API与哈希是既有能力，插件贡献在DSH作者发布流程组合；字节一致不证明可用。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "逐文件成功是否保证一个完整发布版本？每个PUT独立提交，没有同一树原子切换；中断会暴露混合内容，旧文件也不因本地删除自动移除。verify默认分支逐项读未固定最终commit，且verify:false允许跳过；preflight对exports值以startsWith点时跳过检查，常见./lib路径可能没有被真正校验。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：先构建带清单摘要的完整Git tree，统一提交到独立分支并固定commit回验，再更新发布入口，可减少部分上传与并发分支变化造成的混合版本。由逐文件PUT/浮动回读推导，未实现。对照中途第N文件失败、远端并发改动和本地删文件，验证最终树精确一致或保持旧版；代价是Git Data API与迁移复杂度。",
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422359117:root",
+                            "area": "code",
+                            "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:45:30.274Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:45:30.274Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+                "reviewed_at": "2026-10-21T03:45:30.274Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422359117:root",
+                        "area": "code",
+                        "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 小幅：GitHub发布API适配；mechanism 实质：阶段自检/回验组合但无原子发布；transferability 实质：manifest+哈希核验可迁移；simplification 实质：建仓库/条目PR/回验集中。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 实质：作者发布交接集中；delivery 实质：远端文件与市场PR证据；reach 小幅：降低API脚本门槛仍需PAT；economics 小幅：少重复操作，失败恢复成本未测。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-03-github-1422359117-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "插件发布流程整合有价值，但逐文件独立提交会暴露混合版本、删除不同步；先验证固定commit原子发布及失败恢复再正式用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "作者交付仓库和市场PR及回验目标明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "演算、owner检查和回拉哈希减少漏文件定位。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "Contents PUT与可跳verify源码可查，./exports预检被跳过。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "PAT、逐次提交和部分失败清理负担大，线上一致不等安装可用。"
+                    }
+                },
+                "score": 60,
+                "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-03-github-1422359117-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422359117:root",
+                        "area": "code",
+                        "fingerprint": "b28316be0beca1f05126c8ef1d3166e14a9bb784"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1422359117:root",
+            "repository": "7gzgn/dsh-slipway",
+            "path": "",
+            "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+            "fingerprints": {
+                "directory": "54fb1b3310f21370ae7ecc67e0209ac19d4eb78ff18d0b654d42797f7396ce59",
+                "code": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+                "maintenance": "a5aeadd8650309e4b5a3ea62327e1dbe7ff340fc9da983aa70e3291627a6bbda"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:36:14Z",
+            "analysis_sha256": "656f8fcfc3ecb9417069f31abb20c65bfbb9b26d2fa9df1a3bc33737969ccd50"
+        },
+        "publication.metadata": "data/plugins/7gzgn--dsh-slipway/META.json",
+        "publication.summaries": {
+            "text": "将本地 DSH 插件文件发布到 GitHub，建立市场收录 PR 并回拉校验字节。",
+            "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+            "source_url": "https://github.com/7gzgn/dsh-slipway/blob/b28316be0beca1f05126c8ef1d3166e14a9bb784/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+            "items": {
+                "模型工具": "slipway_publish与slipway_verify。"
+            }
+        },
+        "publication.advice": {
+            "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+            "text": "插件作者先在工程副本演算并人工看完整文件清单；确认目标账号和发布范围，再在临时仓库验收部分失败恢复，正式发布后仍要测试安装。"
+        },
+        "registry": "data/plugins/7gzgn--dsh-slipway",
+        "reports": "# dsh-slipway\n\n> 将本地 DSH 插件文件发布到 GitHub，建立市场收录 PR 并回拉校验字节。\n\n## 使用建议\n\n插件作者先在工程副本演算并人工看完整文件清单；确认目标账号和发布范围，再在临时仓库验收部分失败恢复，正式发布后仍要测试安装。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认计划、上传和回验流程；本轮未读token、未联网发布或建立PR，未来原子快照发布假设未验证。\n\n- **用途**：DSH插件作者把已核查工程发布到自己GitHub仓库并提交市场收录，交付上传记录、PR与逐文件回验；不替代测试或安装验收。\n- **亮点**：相对手写建仓库/上传/市场PR脚本，增量是显式目标与自检、默认演算和阶段证据，并把线上字节回验纳入同一调用。GitHub API与哈希是既有能力，插件贡献在DSH作者发布流程组合；字节一致不证明可用。\n- **思考**：逐文件成功是否保证一个完整发布版本？每个PUT独立提交，没有同一树原子切换；中断会暴露混合内容，旧文件也不因本地删除自动移除。verify默认分支逐项读未固定最终commit，且verify:false允许跳过；preflight对exports值以startsWith点时跳过检查，常见./lib路径可能没有被真正校验。\n- **建议**：待验证假设：先构建带清单摘要的完整Git tree，统一提交到独立分支并固定commit回验，再更新发布入口，可减少部分上传与并发分支变化造成的混合版本。由逐文件PUT/浮动回读推导，未实现。对照中途第N文件失败、远端并发改动和本地删文件，验证最终树精确一致或保持旧版；代价是Git Data API与迁移复杂度。\n\n## 当前插件分析\n\n### 场景与替代办法\n\nDSH插件作者把已核查工程发布到自己GitHub仓库并提交市场收录，交付上传记录、PR与逐文件回验；不替代测试或安装验收。\n\n参照手工Git推送+市场PR、逐文件API脚本；不把GitHub API功能算原创。\n\n### 能力、流程与依赖\n\ncore按manifest files收集并检查入口/秘密，publish默认dryRun，核对token owner后逐文件Contents API PUT，设置topics、创建市场条目PR，verifyPublished按sha256和长度回拉比对。\n\n- **模型工具**：slipway_publish与slipway_verify。\n\nNode文件API、GitHub认证Contents/PR等接口与市场YAML约定；真实发布依赖用户授权，活代码树只告警不等于隔离。\n\n显式参数→收集文件/检查→dry-run或核对owner→建/复用仓库→逐文件上传→topics→市场PR→回验；错误中止但已有远端写入不会回滚。\n\n仅GitHub发布，DSH0.2声明；不发布npm，需显式project/repo/category与中英文描述，PAT按作者配置读取。\n\n### 效果、成本与限制\n\n减少手工发布步骤与漏文件定位；仓库内容一致和收录PR存在不代表宿主兼容或插件质量。\n\n首次准备目标/许可证/描述和PAT，持续处理限额、逐文件提交、失败恢复与市场评审；现金取决于平台，人工回验与修复未测。\n\n逐文件成功是否保证一个完整发布版本？每个PUT独立提交，没有同一树原子切换；中断会暴露混合内容，旧文件也不因本地删除自动移除。verify默认分支逐项读未固定最终commit，且verify:false允许跳过；preflight对exports值以startsWith点时跳过检查，常见./lib路径可能没有被真正校验。\n\n### 核心贡献与工程亮点\n\n相对手写建仓库/上传/市场PR脚本，增量是显式目标与自检、默认演算和阶段证据，并把线上字节回验纳入同一调用。GitHub API与哈希是既有能力，插件贡献在DSH作者发布流程组合；字节一致不证明可用。\n\n默认dryRun、token owner绑定、脱敏证据与哈希比对值得借鉴；原子性、删除语义和常见exports校验需补齐再用于可靠批量发布。\n\n源码依据：[lib/index.js](https://github.com/7gzgn/dsh-slipway/blob/b28316be0beca1f05126c8ef1d3166e14a9bb784/lib/index.js)、[lib/core.js](https://github.com/7gzgn/dsh-slipway/blob/b28316be0beca1f05126c8ef1d3166e14a9bb784/lib/core.js)、[lib/publish.js](https://github.com/7gzgn/dsh-slipway/blob/b28316be0beca1f05126c8ef1d3166e14a9bb784/lib/publish.js)、[lib/github.js](https://github.com/7gzgn/dsh-slipway/blob/b28316be0beca1f05126c8ef1d3166e14a9bb784/lib/github.js)、[bin/dsh-slipway.mjs](https://github.com/7gzgn/dsh-slipway/blob/b28316be0beca1f05126c8ef1d3166e14a9bb784/bin/dsh-slipway.mjs)、[package.json](https://github.com/7gzgn/dsh-slipway/blob/b28316be0beca1f05126c8ef1d3166e14a9bb784/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：先构建带清单摘要的完整Git tree，统一提交到独立分支并固定commit回验，再更新发布入口，可减少部分上传与并发分支变化造成的混合版本。由逐文件PUT/浮动回读推导，未实现。对照中途第N文件失败、远端并发改动和本地删文件，验证最终树精确一致或保持旧版；代价是Git Data API与迁移复杂度。\n\n假GitHub/隔离仓库检查中断、并发head、删除文件、exports缺失、verify关闭与已有PR复用；本轮未执行。\n\n## 核查说明\n\n- 版本号：0.1.3；版本日期：2026-10-18（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[b28316be](https://github.com/7gzgn/dsh-slipway/tree/b28316be0beca1f05126c8ef1d3166e14a9bb784)；本次截止 2026-10-21T03:36:14Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读core/publish/github及工具CLI入口；未执行目标自检、测试或外部写入，不核实市场实际接纳规则。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2ceb6412e94b40e072f80c7f5b96c0ac98d7718aab0bb036e08e55f89e6b7715。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 150 | 122 | 13 | — |\n| .js | source | 4 | 1225 | 938 | 207 | — |\n| .md | source | 1 | 112 | — | — | 1217 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "metadata": {
+            "repository": "7gzgn/dsh-slipway",
+            "repository_id": 1422359117,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-18T00:11:47Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-slipway",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-slipway",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-slipway",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+                "current_revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1422359117:root",
+            "repository": "7gzgn/dsh-slipway",
+            "path": "",
+            "revision": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "54fb1b3310f21370ae7ecc67e0209ac19d4eb78ff18d0b654d42797f7396ce59",
+                "code": "b28316be0beca1f05126c8ef1d3166e14a9bb784",
+                "maintenance": "a5aeadd8650309e4b5a3ea62327e1dbe7ff340fc9da983aa70e3291627a6bbda"
+            }
+        }
+    }
+}

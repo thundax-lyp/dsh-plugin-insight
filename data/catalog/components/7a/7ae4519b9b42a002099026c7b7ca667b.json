@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7ae4519b9b42a002099026c7b7ca667b",
+    "identity": "github:1337155898:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337155898:root",
+            "repository": "yishengjun8/dsh-workspace-studio",
+            "path": "",
+            "revision": "f1741c3ee31572b437c2ec929fc8f40f77dc1646",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b8ee0f3142d9c6417ef679203d60989d88891493123c14b5e6bd9d9b62b38280",
+                "code": "f1741c3ee31572b437c2ec929fc8f40f77dc1646",
+                "maintenance": "3e847fec80f3728dc167d2a30397d52430ecb18b5832a9f6e12b741905eddd83"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a839ca7e45ff053f7ff98fcdb40b26d1",
+    "identity": "github:1347019975:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347019975:root",
+            "repository": "redfox-data/redfox-skill-gallery",
+            "path": "",
+            "revision": "6d93a165d51cbc8df3f5e05e7f9080e04227e9fc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "80ba1d4706c65da598b6c1b93fe558a4a67eccd7f2251da06053416ebc2fa5fb",
+                "code": "6d93a165d51cbc8df3f5e05e7f9080e04227e9fc",
+                "maintenance": "23709ee0e193d41728de4b2dbf4866505692de35ac5e374f01e4ab39c39747fc"
+            }
+        }
+    }
+}

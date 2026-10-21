@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "05704fe4dcd4dcdfb5a53e0864306304",
+    "identity": "github:1372450840:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1372450840:root",
+            "repository": "loyalchiiina/dsh-voice-alert",
+            "path": "",
+            "revision": "20cd0d4ae202bec15d5d78c40e3ad0b494a231eb",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "942f7a40bec67c23100e545bf28c44382bd1dbdc7fe02426cfe4f2e55fa5a587",
+                "code": "20cd0d4ae202bec15d5d78c40e3ad0b494a231eb",
+                "maintenance": "66c1998ab4b85fcfd7a48fcc6bcfc10ae7f892abd2601eae61656bd1b88040a5"
+            }
+        }
+    }
+}

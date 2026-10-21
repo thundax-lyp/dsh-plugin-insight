@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff8fc8e155d5e340fd15e87bc49b21b8",
+    "identity": "github:1335704056:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335704056:root",
+            "repository": "Cyning12/SpecWave",
+            "path": "",
+            "revision": "bdf05cb187303f396f5551933419210340372b59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "96266b84ecae726780fee34fd8d53ca14e3ecaa6e3e910ff5b8bd92133acd451",
+                "code": "bdf05cb187303f396f5551933419210340372b59",
+                "maintenance": "96a5290c2d26b136351ffd294ecebdf862ba2acfbe89f4a497d023d0fc65147b"
+            }
+        }
+    }
+}

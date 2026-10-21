@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ef2096204a275cbc6899f7f1933fcf4",
+    "identity": "github:1415225894:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415225894:root",
+            "repository": "ylw-ux/dsh-pins-fixtool",
+            "path": "",
+            "revision": "66341e68cf319dfce993a35939421b157b4a0590",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c0cf8c76f40231576051150d520eb804fc3905698e86b4b5c80671b4d6c190ed",
+                "code": "66341e68cf319dfce993a35939421b157b4a0590",
+                "maintenance": "b88b79981bc4956aef9f310b11021a507b896055f2fe9768bded670b2bd8d93b"
+            }
+        }
+    }
+}

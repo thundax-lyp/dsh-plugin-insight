@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "104fd28783defba4487e6701c86c319b",
+    "identity": "github:1339202237:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339202237:root",
+            "repository": "Odefined/dsh-mobile-webui",
+            "path": "",
+            "revision": "d1274d5803f5ec794db07b7a371d478bb5d1af12",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0d6148ba5221aca50f8b0c84cd0cf98e6fcef9b3d7c7de8bf5a4a54a0dc8129a",
+                "code": "d1274d5803f5ec794db07b7a371d478bb5d1af12",
+                "maintenance": "8616d50f5c7f59a31fcd57a231f4e459e057ded1729227ddf90b100ad084e15c"
+            }
+        }
+    }
+}

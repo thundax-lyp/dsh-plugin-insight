@@ -1,0 +1,449 @@
+{
+    "schema_version": 3,
+    "id": "78ca341c4cd3da45a7bedafe9930ea35",
+    "identity": "github:1414323673:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1414323673:root",
+            "repository_id": 1414323673,
+            "component_id": "root",
+            "repository": "AhYi8/dsh-agent-recycle-guard",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-agent-recycle-guard",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "12c8a7df9770948ac49d320c8b6052ad7a196505f1af73a3b828f291e86fd87b",
+                "code": "fd84079f98170d5066547c087c58c824b4e59d07",
+                "maintenance": "48ef41c8f366d9a7580c6104d6f1f7e68311f36bb7e62e3b3087f10b7fb550a4"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-06-github-1414323673-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T05:40:02.902Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-06-github-1414323673-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/README.md",
+                    "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+                    "captured_at": "2026-10-21T05:40:02.902Z",
+                    "summary": "检查DSH的Shell工具调用，将识别到的删除改写为回收站操作，无法安全处理时拒绝。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/ahyi8--dsh-agent-recycle-guard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-06-github-1414323673-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/lib/plugin.js",
+                    "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+                    "captured_at": "2026-10-21T05:40:02.902Z",
+                    "summary": "核查 lib/plugin.js、lib/runtime.js、guard/guard.py、guard/script_checks.py；pre-execute调用Python分析器并保存token决策；execute只对rewrite重新ctx.tools.execute，重新经过原调用链。Bash/PowerShell解析和有限脚本检查，回收后端Send2Trash/IFileOperation，无永久删除兜底。",
+                    "artifact": "data/runs/2026-10-21-06/snapshots/ahyi8--dsh-agent-recycle-guard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读lib/plugin.js、lib/runtime.js、guard/guard.py、guard/script_checks.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "Agent清理文件时减少误删损失，合格行为须保留原权限/沙箱且回收失败不永久删除。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "pre-execute调用Python分析器并保存token决策；execute只对rewrite重新ctx.tools.execute，重新经过原调用链。Bash/PowerShell解析和有限脚本检查，回收后端Send2Trash/IFileOperation，无永久删除兜底。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读lib/plugin.js、lib/runtime.js、guard/guard.py、guard/script_checks.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT插件，运行时可能建venv或下载校验uv/托管Python并补PyPI依赖；首次使用并非完全离线。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次下载/准备等待和依赖供应链核对，持续解析延迟、缓存/改写脚本与回收空间；误拒绝会增加拆命令成本。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "在可丢弃目录验证平台真实回收和恢复后采用。作为常见误删防护，继续保留宿主沙箱、备份和重要路径权限。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "将部分不可逆删除改为可恢复操作，收益依赖覆盖和恢复可用性，未有实际事故减少数据。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "按exec token关联、失败拒绝、重入原工具链和无永久兜底有价值；运行时引导与同用户竞态是边界。 源码依据：[lib/plugin.js](https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/lib/plugin.js)、[lib/runtime.js](https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/lib/runtime.js)、[guard/guard.py](https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/guard/guard.py)、[guard/script_checks.py](https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/guard/script_checks.py)。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相比提示“别rm”，增量是工具执行前实质检查、语义保留改写与失败关闭；Shell AST和系统回收机制来自现有组件，不构成通用程序安全证明。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "命中常见删除是否覆盖任意破坏？只处理command/cmd参数，脚本深度/大小/编码及动态加载有限，干净脚本可能仍间接删文件；同用户竞态、模块和外部程序内部操作不受全量保护。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "由静态改写与执行时展开分工推导，可返回覆盖范围收据，明确已检查语言/脚本及未检查加载边界，并配文件系统变更预览或沙箱作第二层。未验证；隐藏/动态删除样本应清楚标未覆盖而非安全承诺。",
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414323673:root",
+                            "area": "code",
+                            "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T05:40:02.902Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T05:40:02.902Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+                "reviewed_at": "2026-10-21T05:40:02.902Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1414323673:root",
+                        "area": "code",
+                        "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty工具删除保护组合小档；mechanism解析/重入/回执半档；transferability权限保留改写可迁移较高；simplification默认引导半档但准备复杂。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow删除变回收半档；delivery失败拒绝与恢复交付半档；reach多OS的Shell用户半档；economics潜在事故成本下降未实测小档。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-06-github-1414323673-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需常见误删保护者可先在可丢弃目录验真实回收与恢复；继续保留宿主沙箱和备份，核依赖来源及动态脚本漏检。",
+                "criteria": {
+                    "scenario": {
+                        "score": 30,
+                        "rationale": "Agent文件清理误删有清楚且重要的防护目标。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "命中删除改回收且失败不永久删除，比单纯提示更具体。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核重走原调用链和后端，未测平台覆盖与真实事故减少。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "Python依赖、解析延迟、空间及误拒绝需维护，覆盖有限。"
+                    }
+                },
+                "score": 72,
+                "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-06-github-1414323673-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1414323673:root",
+                        "area": "code",
+                        "fingerprint": "fd84079f98170d5066547c087c58c824b4e59d07"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1414323673:root",
+            "repository": "AhYi8/dsh-agent-recycle-guard",
+            "path": "",
+            "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+            "fingerprints": {
+                "directory": "12c8a7df9770948ac49d320c8b6052ad7a196505f1af73a3b828f291e86fd87b",
+                "code": "fd84079f98170d5066547c087c58c824b4e59d07",
+                "maintenance": "48ef41c8f366d9a7580c6104d6f1f7e68311f36bb7e62e3b3087f10b7fb550a4"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T05:26:52Z",
+            "analysis_sha256": "243acdf1acefbddb002fa6fcade28365e39717e1a0950807cd84b6ebd447a8e8"
+        },
+        "publication.metadata": "data/plugins/ahyi8--dsh-agent-recycle-guard/META.json",
+        "publication.summaries": {
+            "text": "检查DSH的Shell工具调用，将识别到的删除改写为回收站操作，无法安全处理时拒绝。",
+            "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+            "source_url": "https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+            "items": {
+                "事件监听": "tools pre-execute/execute/result检查、改写和缓存清理。",
+                "后台": "按需解析运行时准备及回收决策。"
+            }
+        },
+        "publication.advice": {
+            "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+            "text": "在可丢弃目录验证平台真实回收和恢复后采用。作为常见误删防护，继续保留宿主沙箱、备份和重要路径权限。"
+        },
+        "registry": "data/plugins/ahyi8--dsh-agent-recycle-guard",
+        "reports": "# dsh-agent-recycle-guard\n\n> 检查DSH的Shell工具调用，将识别到的删除改写为回收站操作，无法安全处理时拒绝。\n\n## 使用建议\n\n在可丢弃目录验证平台真实回收和恢复后采用。作为常见误删防护，继续保留宿主沙箱、备份和重要路径权限。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：Agent清理文件时减少误删损失，合格行为须保留原权限/沙箱且回收失败不永久删除。\n- **亮点**：相比提示“别rm”，增量是工具执行前实质检查、语义保留改写与失败关闭；Shell AST和系统回收机制来自现有组件，不构成通用程序安全证明。\n- **思考**：命中常见删除是否覆盖任意破坏？只处理command/cmd参数，脚本深度/大小/编码及动态加载有限，干净脚本可能仍间接删文件；同用户竞态、模块和外部程序内部操作不受全量保护。\n- **建议**：由静态改写与执行时展开分工推导，可返回覆盖范围收据，明确已检查语言/脚本及未检查加载边界，并配文件系统变更预览或沙箱作第二层。未验证；隐藏/动态删除样本应清楚标未覆盖而非安全承诺。\n\n## 场景与替代办法\n\nAgent清理文件时减少误删损失，合格行为须保留原权限/沙箱且回收失败不永久删除。\n\n备份/沙箱限制损失范围，提示约束较弱；插件补执行前改写但不能替代OS隔离。\n\n## 能力清单\n\n- **事件监听**：tools pre-execute/execute/result检查、改写和缓存清理。\n- **后台**：按需解析运行时准备及回收决策。\n\n## 依赖与流程\n\nDSH tools/shell、Python解析依赖、各系统回收实现及网络镜像；PowerShell与Bash语义分别处理。\n\n原策略判allow/ask后只读分析，allow继续、deny停止、rewrite提交新的原工具调用，系统回收回执与决策日志留存。\n\n## 成本与效果\n\n首次下载/准备等待和依赖供应链核对，持续解析延迟、缓存/改写脚本与回收空间；误拒绝会增加拆命令成本。\n\n将部分不可逆删除改为可恢复操作，收益依赖覆盖和恢复可用性，未有实际事故减少数据。\n\n## 核心贡献\n\n相比提示“别rm”，增量是工具执行前实质检查、语义保留改写与失败关闭；Shell AST和系统回收机制来自现有组件，不构成通用程序安全证明。\n\n## 关键质疑\n\n命中常见删除是否覆盖任意破坏？只处理command/cmd参数，脚本深度/大小/编码及动态加载有限，干净脚本可能仍间接删文件；同用户竞态、模块和外部程序内部操作不受全量保护。\n\n\n## 工程亮点\n\n按exec token关联、失败拒绝、重入原工具链和无永久兜底有价值；运行时引导与同用户竞态是边界。 源码依据：[lib/plugin.js](https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/lib/plugin.js)、[lib/runtime.js](https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/lib/runtime.js)、[guard/guard.py](https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/guard/guard.py)、[guard/script_checks.py](https://github.com/AhYi8/dsh-agent-recycle-guard/blob/fd84079f98170d5066547c087c58c824b4e59d07/guard/script_checks.py)。\n\n## 未来设计假设（未验证）\n\n由静态改写与执行时展开分工推导，可返回覆盖范围收据，明确已检查语言/脚本及未检查加载边界，并配文件系统变更预览或沙箱作第二层。未验证；隐藏/动态删除样本应清楚标未覆盖而非安全承诺。\n\n临时文件验证变量/通配符/跨盘/符号链接/权限拒绝/回收失败，动态导入示例确认未覆盖声明，核对重入审批而不在host直接删除。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d361513c449d8db6abaa04d1a374f70c7907c490edb50c4adcb5e32438daf40e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 4 | 465 | 406 | 45 | — |\n| .md | source | 1 | 86 | — | — | 2117 |\n| .mjs | test | 3 | 423 | 385 | 21 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AhYi8/dsh-agent-recycle-guard](https://github.com/AhYi8/dsh-agent-recycle-guard)\n- **版本号**：1.2.0（[固定提交 fd84079f](https://github.com/AhYi8/dsh-agent-recycle-guard/tree/fd84079f98170d5066547c087c58c824b4e59d07)）\n- **版本日期**：2026-10-12（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/plugin.js、lib/runtime.js、guard/guard.py、guard/script_checks.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/plugin.js、lib/runtime.js、guard/guard.py、guard/script_checks.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：临时文件验证变量/通配符/跨盘/符号链接/权限拒绝/回收失败，动态导入示例确认未覆盖声明，核对重入审批而不在host直接删除。\n",
+        "metadata": {
+            "repository": "AhYi8/dsh-agent-recycle-guard",
+            "repository_id": 1414323673,
+            "captured_at": "2026-10-21T05:34:47.435Z",
+            "window_start": "2026-09-21T05:34:47.435Z",
+            "stars": 0,
+            "pushed_at": "2026-10-12T09:03:10Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-agent-recycle-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A14E:28E3E1:AF02A8:FB1E83:6AD84EFA and timestamp 2026-10-21 05:34:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-agent-recycle-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3222:1889E9:6D5181:73610B:6AD84EFB and timestamp 2026-10-21 05:34:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-agent-recycle-guard%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A47.435Z..2026-10-21T05%3A34%3A47.435Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 331C:205F4D:5559F1:5B6AAC:6AD84EFC and timestamp 2026-10-21 05:34:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-agent-recycle-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A47.435Z..2026-10-21T05%3A34%3A47.435Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 344E:2766F5:535792:5967E4:6AD84EFD and timestamp 2026-10-21 05:34:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-agent-recycle-guard%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A47.435Z..2026-10-21T05%3A34%3A47.435Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 352C:2704E0:4FC04C:55D079:6AD84EFD and timestamp 2026-10-21 05:34:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-agent-recycle-guard",
+                "captured_at": "2026-10-21T05:34:56.006Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 876,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-agent-recycle-guard",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-11T12:27:23.263Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-agent-recycle-guard",
+                    "error": null,
+                    "latest_version": "1.2.1",
+                    "latest_published_at": "2026-10-13T02:41:01.536Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1414323673:root",
+            "repository": "AhYi8/dsh-agent-recycle-guard",
+            "path": "",
+            "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "12c8a7df9770948ac49d320c8b6052ad7a196505f1af73a3b828f291e86fd87b",
+                "code": "fd84079f98170d5066547c087c58c824b4e59d07",
+                "maintenance": "48ef41c8f366d9a7580c6104d6f1f7e68311f36bb7e62e3b3087f10b7fb550a4"
+            }
+        }
+    }
+}

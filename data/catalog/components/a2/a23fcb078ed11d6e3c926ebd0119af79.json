@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "a23fcb078ed11d6e3c926ebd0119af79",
+    "identity": "github:1156210476:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1156210476:root",
+            "repository": "wxkingstar/SpecFusion",
+            "path": "",
+            "revision": "54ff77ae5411f1a566df8e1be12ebbebf377bfcc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "18cd2d9903fa5799dd8f925ae4fbbb7c8d8943c7fb8f5bb5c86d3ad6961ad7bd",
+                "code": "54ff77ae5411f1a566df8e1be12ebbebf377bfcc",
+                "maintenance": "7d2f3b52f7a70d519b52473ed156c743268a1f12ac4298ca0eb18963053ea7ba"
+            }
+        }
+    }
+}

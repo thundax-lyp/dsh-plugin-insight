@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "04e8ec045773ff830d23b29cb1277984",
+    "identity": "github:1334302358:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334302358:root",
+            "repository": "fredalxin/dsh-solo-thinking",
+            "path": "",
+            "revision": "a77f3bb45ae8557df8a849e03ca0ed0b2d1a9e5d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6672b321edbca6174622acf09663679bd3406b152cc4481aeee57459cec2ce43",
+                "code": "a77f3bb45ae8557df8a849e03ca0ed0b2d1a9e5d",
+                "maintenance": "56806dd85d8689e71febe197f9620f9661428769831b3ca90a8363c68ab6b0af"
+            }
+        }
+    }
+}

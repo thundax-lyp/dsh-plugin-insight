@@ -1,0 +1,364 @@
+{
+    "schema_version": 3,
+    "id": "85e159fb80c6c8e531ec944d36939c7c",
+    "identity": "github:1354283280:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1354283280:root",
+            "repository_id": 1354283280,
+            "component_id": "root",
+            "repository": "1010n111/dsh-about",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-about",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [
+                "版本信息",
+                "设置页"
+            ],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "71ba55d1100f3dddbd4559f715d7d1d10156cc8eee570af43c257aed411d33b7",
+                "code": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+                "maintenance": "7a867daf7130a77783c038a1197298b90bd6a46230f2e9d865f477f1cb019db1"
+            },
+            "sources": [
+                {
+                    "id": "20261020-research40-github-1354283280-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T03:10:26.958Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "20261020-research40-github-1354283280-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1010n111/dsh-about/blob/febf7b0da6a2255ddfd84028c624ad9e4953dd83/README.md",
+                    "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+                    "captured_at": "2026-10-20T03:10:26.958Z",
+                    "summary": "在设置中显示当前 DSH 版本，并代理读取官方 GitHub 发布说明。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1010n111--dsh-about/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "20261020-research40-github-1354283280-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1010n111/dsh-about/blob/febf7b0da6a2255ddfd84028c624ad9e4953dd83/lib/index.js",
+                    "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+                    "captured_at": "2026-10-20T03:10:26.958Z",
+                    "summary": "核查 lib/index.js；宿主从 clientModules 路径反推包版本，注册只读 version/releases 路由，对 GitHub 响应缓存五分钟。",
+                    "artifact": "data/runs/2026-10-20-02/snapshots/1010n111--dsh-about/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "路径反推可能受安装布局影响；没有验证每种打包方式，发布说明也不是兼容验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要确认实际运行版本及更新内容的用户不必另外打开终端和发布页。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1354283280-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1354283280:root",
+                            "area": "code",
+                            "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:26.958Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "宿主从 clientModules 路径反推包版本，注册只读 version/releases 路由，对 GitHub 响应缓存五分钟。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1354283280-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1354283280:root",
+                            "area": "code",
+                            "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:26.958Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "能把当前版本与发布说明放在一起，但不会执行更新，也不证明新版本适合当前插件组合。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1354283280-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1354283280:root",
+                            "area": "code",
+                            "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:26.958Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无模型成本，联网发布信息受 GitHub 可用性影响；收益主要是少量查询便利。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1354283280-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1354283280:root",
+                            "area": "code",
+                            "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:26.958Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "失败返回明确状态、短时缓存可借鉴；解析双语正文依赖上游发布文本格式。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1354283280-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1354283280:root",
+                            "area": "code",
+                            "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:26.958Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1354283280-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1354283280:root",
+                            "area": "code",
+                            "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:26.958Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "路径反推可能受安装布局影响；没有验证每种打包方式，发布说明也不是兼容验收。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1354283280-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1354283280:root",
+                            "area": "code",
+                            "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:26.958Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包版本 0.0.4，依赖宿主 Web、文件和客户端模块服务。",
+                    "evidence_ids": [
+                        "20261020-research40-github-1354283280-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1354283280:root",
+                            "area": "code",
+                            "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T03:10:26.958Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T03:10:26.958Z",
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "常查版本的用户可试关于页聚合，先与dsh --version对照并检查离线和路径识别失败。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "查询运行版本与发布说明任务清楚但频率有限。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "少一次终端和网页切换，不增加权威信息。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "只读路由、路径反推和缓存源码可查，安装布局覆盖未验。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无模型费用，仅需维护GitHub API与布局兼容。"
+                    }
+                },
+                "score": 49,
+                "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "20261020-research40-github-1354283280-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1354283280:root",
+                        "area": "code",
+                        "fingerprint": "febf7b0da6a2255ddfd84028c624ad9e4953dd83"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1354283280:root",
+            "repository": "1010n111/dsh-about",
+            "path": "",
+            "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+            "fingerprints": {
+                "directory": "71ba55d1100f3dddbd4559f715d7d1d10156cc8eee570af43c257aed411d33b7",
+                "code": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+                "maintenance": "7a867daf7130a77783c038a1197298b90bd6a46230f2e9d865f477f1cb019db1"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T02:51:30Z",
+            "analysis_sha256": "c7382354f67bf7d3c6b952d9de0d1edd02d69e975fdc5823759b81ad9f68a809"
+        },
+        "publication.metadata": "data/plugins/1010n111--dsh-about/META.json",
+        "publication.summaries": {
+            "text": "在设置中显示当前 DSH 版本，并代理读取官方 GitHub 发布说明。",
+            "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+            "source_url": "https://github.com/1010n111/dsh-about/blob/febf7b0da6a2255ddfd84028c624ad9e4953dd83/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+            "items": {
+                "Host 路由": "只读版本和发布记录端点。"
+            }
+        },
+        "publication.advice": {
+            "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+            "text": "与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。"
+        },
+        "registry": "data/plugins/1010n111--dsh-about",
+        "reports": "# dsh-about\n\n> 在设置中显示当前 DSH 版本，并代理读取官方 GitHub 发布说明。\n\n## 固定范围与依据\n\n固定提交 [febf7b0da6a2255ddfd84028c624ad9e4953dd83](https://github.com/1010n111/dsh-about/blob/febf7b0da6a2255ddfd84028c624ad9e4953dd83/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:10:26.958Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：需要确认实际运行版本及更新内容的用户不必另外打开终端和发布页。\n- **亮点**：宿主从 clientModules 路径反推包版本，注册只读 version/releases 路由，对 GitHub 响应缓存五分钟。\n- **思考**：能把当前版本与发布说明放在一起，但不会执行更新，也不证明新版本适合当前插件组合。\n- **建议**：与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。\n\n## 场景与替代办法\n\n需要确认实际运行版本及更新内容的用户不必另外打开终端和发布页。\n\n终端版本命令加官方发布页更直接；该插件提供界面聚合，不增加权威信息。\n\n## 依赖与流程\n\n本地版本读取依赖安装布局；发布说明依赖 GitHub API 和网络。\n\n打开关于页读取版本与发布记录；网络错误和版本无法定位应分别排查。\n\n## 成本与效果\n\n无模型成本，联网发布信息受 GitHub 可用性影响；收益主要是少量查询便利。\n\n能把当前版本与发布说明放在一起，但不会执行更新，也不证明新版本适合当前插件组合。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1f9b5178ec4ff598850f0e0f06fc9430c10f5e8cc96d872953332b0d798e20dd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 4 | 1199 | 1004 | 131 | — |\n| .md | source | 1 | 96 | — | — | 928 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：只读版本和发布记录端点。\n\n## 工程亮点\n\n失败返回明确状态、短时缓存可借鉴；解析双语正文依赖上游发布文本格式。\n\n## 分发与兼容\n\n包版本 0.0.4，依赖宿主 Web、文件和客户端模块服务。\n\n## 历史对照\n\n前次代码指纹为 febf7b0da6a2255ddfd84028c624ad9e4953dd83；本轮固定为 febf7b0da6a2255ddfd84028c624ad9e4953dd83。终端版本命令加官方发布页更直接；该插件提供界面聚合，不增加权威信息。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：路径反推可能受安装布局影响；没有验证每种打包方式，发布说明也不是兼容验收。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：测试 pnpm、npx 和桌面布局，并模拟离线、限流和单语发布正文。\n",
+        "metadata": {
+            "repository": "1010n111/dsh-about",
+            "repository_id": 1354283280,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 3,
+            "pushed_at": "2026-09-04T06:24:32Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1010n111%2Fdsh-about%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:13E2DA:214CA5:6AD848FD and timestamp 2026-10-21 05:09:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1010n111%2Fdsh-about%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:149C07:220801:6AD848FD and timestamp 2026-10-21 05:09:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1010n111%2Fdsh-about%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:14C482:22440A:6AD848FD and timestamp 2026-10-21 05:09:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1010n111%2Fdsh-about%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:145A20:21DCBA:6AD848FD and timestamp 2026-10-21 05:09:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1010n111%2Fdsh-about%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:1535B9:22B0D6:6AD848FD and timestamp 2026-10-21 05:09:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-about",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-about",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-about",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+                "current_revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1354283280:root",
+            "repository": "1010n111/dsh-about",
+            "path": "",
+            "revision": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "71ba55d1100f3dddbd4559f715d7d1d10156cc8eee570af43c257aed411d33b7",
+                "code": "febf7b0da6a2255ddfd84028c624ad9e4953dd83",
+                "maintenance": "7a867daf7130a77783c038a1197298b90bd6a46230f2e9d865f477f1cb019db1"
+            }
+        }
+    }
+}

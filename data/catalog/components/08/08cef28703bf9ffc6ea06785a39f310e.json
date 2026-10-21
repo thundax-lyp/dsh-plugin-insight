@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "08cef28703bf9ffc6ea06785a39f310e",
+    "identity": "github:1349222256:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349222256:root",
+            "repository": "shimingming520/dsh-audiogen",
+            "path": "",
+            "revision": "c9f8eec30b682ab06751ff66342930bcfc3ce67a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1c5be23084586f5bdc4fb5bce567521437ed2164e77f487b2f2f4a81f71d78c3",
+                "code": "c9f8eec30b682ab06751ff66342930bcfc3ce67a",
+                "maintenance": "08d094496c4a789c615732413d52cdbed472176257973309701e20f4801d81d9"
+            }
+        }
+    }
+}

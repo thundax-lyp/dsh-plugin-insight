@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a4c174513fa4a53a6e1229915a9d799",
+    "identity": "github:1365617965:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365617965:root",
+            "repository": "kira905/dsh-butler-archive",
+            "path": "",
+            "revision": "58a760d799c42d0366988714c694c54ef0622794",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "100b984e103df98e345b1b06520e61d3dd0eab568377ee0e6a36737737fa2ae7",
+                "code": "58a760d799c42d0366988714c694c54ef0622794",
+                "maintenance": "ece6b6072085eb334fa1de78678ffdd9632d6ee4ef792c8e73f0b3aa3f9ceef1"
+            }
+        }
+    }
+}

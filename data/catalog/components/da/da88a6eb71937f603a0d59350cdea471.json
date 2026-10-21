@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da88a6eb71937f603a0d59350cdea471",
+    "identity": "github:1406654725:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406654725:root",
+            "repository": "JessenReinhart/dsh-time-context",
+            "path": "",
+            "revision": "7c4b481facab50ae73feaa503dcb2ddea39570b7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8680a0231e72172d111867f056e09acfdb819f20da6d3eb42052d54fa79b9f5e",
+                "code": "7c4b481facab50ae73feaa503dcb2ddea39570b7",
+                "maintenance": "96f78c39e60ea800866aaf48b4db7c62d38cc8431ac23a7251b44bf4d68e0419"
+            }
+        }
+    }
+}

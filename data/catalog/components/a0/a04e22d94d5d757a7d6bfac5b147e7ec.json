@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a04e22d94d5d757a7d6bfac5b147e7ec",
+    "identity": "github:1390421607:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1390421607:root",
+            "repository": "alvinunreal/openpets",
+            "path": "",
+            "revision": "87818fdd60c73a5165323b0e39b06e3be7fb00d6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fc64c636181bfd9a014fa1a68affd2e15e7efaee4c97d292928e46e6f6e7f903",
+                "code": "87818fdd60c73a5165323b0e39b06e3be7fb00d6",
+                "maintenance": "b6d13bfe1e79c9e3ebda9bf2dea78d1203106391690145bac0849c8fe6603c66"
+            }
+        }
+    }
+}

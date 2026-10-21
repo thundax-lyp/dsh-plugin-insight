@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1b229cfdcaae0f53c08554697f212d68",
+    "identity": "github:1362541416:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362541416:root",
+            "repository": "CAI-MH/dsh-agent-group-panel",
+            "path": "",
+            "revision": "95f49c4b3c0bd08922d3ea74800a3be30fa3eeb3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ea394fa8427b2b66e8e3a584fa53563aacdf61a890cc0b8018480a3484e1e001",
+                "code": "95f49c4b3c0bd08922d3ea74800a3be30fa3eeb3",
+                "maintenance": "17c8efbc1db41838cb9761981d84dc7c10d376c61b6ddd538bb01e928546f6c3"
+            }
+        }
+    }
+}

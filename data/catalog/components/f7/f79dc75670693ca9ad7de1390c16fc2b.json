@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f79dc75670693ca9ad7de1390c16fc2b",
+    "identity": "github:1335255760:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335255760:root",
+            "repository": "InkshadeWoods/dsh-tool-visual-primitives",
+            "path": "",
+            "revision": "0b290463ad84fbf01e622b53e2cf2a2c1fbd7d2e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9d4ca8a26e445c6d5b60aa9a743c398dde921c0166b29e4949450b498365f766",
+                "code": "0b290463ad84fbf01e622b53e2cf2a2c1fbd7d2e",
+                "maintenance": "f4a1e11fe0b8cce9f082121a5412177fe74d57d6d997bbbbbc2cb002cb265f46"
+            }
+        }
+    }
+}

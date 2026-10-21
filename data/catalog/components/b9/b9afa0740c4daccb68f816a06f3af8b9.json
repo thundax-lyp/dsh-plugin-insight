@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b9afa0740c4daccb68f816a06f3af8b9",
+    "identity": "github:1336239744:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336239744:root",
+            "repository": "enchangcui340-cloud/dsh-whale-balance",
+            "path": "",
+            "revision": "f903fb849e2bc2b8ca32578d93798f1b5daaa5b1",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fdf582e61eb627cb0a41c4120fc11b6a7e4e937296ac9553da5c28fe2053b0b4",
+                "code": "f903fb849e2bc2b8ca32578d93798f1b5daaa5b1",
+                "maintenance": "4adaf74e62cc6a5abbb187542e55c26ff73c25d0e3c3241a3e001188a54553fe"
+            }
+        }
+    }
+}

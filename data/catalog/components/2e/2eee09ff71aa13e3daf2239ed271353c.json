@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2eee09ff71aa13e3daf2239ed271353c",
+    "identity": "github:1350321862:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350321862:root",
+            "repository": "Yurzi/dsh-web-search-enhanced",
+            "path": "",
+            "revision": "c3a5beafc8d754badab447b5f61c91903d22bf73",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "65cee9c6edf69348b08388cfb14ebc3b68ff92b20d314686b86ae444e19b5ff3",
+                "code": "c3a5beafc8d754badab447b5f61c91903d22bf73",
+                "maintenance": "2b81b8b9fb836402d4525f020f5475185cd55edd6ddf7883bf1e78a3b284dbfc"
+            }
+        }
+    }
+}

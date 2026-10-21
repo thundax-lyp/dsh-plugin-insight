@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "67dcf8e4a49359547250a6f0b42456ea",
+    "identity": "github:1334335558:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334335558:root",
+            "repository": "lucas-ward/dsh-ci-context",
+            "path": "",
+            "revision": "7d814e3def47e257de0aa4b12e2d57572eb63d6a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "41abb237f8445a08314ecbde2bf1a1caf2f21eff361dd05b0766df967d8b978c",
+                "code": "7d814e3def47e257de0aa4b12e2d57572eb63d6a",
+                "maintenance": "b5cf587d5d4c207715b7d30ea29ee74dd3818e7cee75c95ed620c441e211b740"
+            }
+        }
+    }
+}

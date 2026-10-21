@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e20ebe486e780e21f4d66b360f093dd2",
+    "identity": "github:1337211821:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337211821:root",
+            "repository": "rison114514/dsh-endfield-ui",
+            "path": "",
+            "revision": "d9d5c722cdb63e8c78d455af5a4896f7c3817cc8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c9222c2a5516717ff7253d7f53b03c287a781c83e789ae18f80ebd5144a494d9",
+                "code": "d9d5c722cdb63e8c78d455af5a4896f7c3817cc8",
+                "maintenance": "e5a8a5e66c621be2e29318f0addec4bd22caf7fee09af4193926c6d5c18b6d6a"
+            }
+        }
+    }
+}

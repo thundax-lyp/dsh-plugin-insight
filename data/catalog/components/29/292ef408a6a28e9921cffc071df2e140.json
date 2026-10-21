@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "292ef408a6a28e9921cffc071df2e140",
+    "identity": "github:1335861169:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335861169:root",
+            "repository": "LeemanCheung/dsh-vibe-pack",
+            "path": "",
+            "revision": "501d6dc022b5862d50b609f2da545970110119a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8f50ca1971a64ce24e177e81424b92efd4b3c6c0e51ed79976db5708fd81265d",
+                "code": "501d6dc022b5862d50b609f2da545970110119a9",
+                "maintenance": "d203169bc3e793b78eb1d07f2831492a00e87ddf6c150d690a6dc64b57d9bcb8"
+            }
+        }
+    }
+}

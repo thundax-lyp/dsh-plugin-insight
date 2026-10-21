@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5ba2298dae3b588351b4942c52eb2ed",
+    "identity": "github:1421674394:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421674394:root",
+            "repository": "STLI69/coding-plan",
+            "path": "",
+            "revision": "af1608b977b399071dd9cadf2cbe735c62d609d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "823cb2167ea6b4e4bc384678d82e22db362d3bfff5b56fea9a7d55ec7d7dbc27",
+                "code": "af1608b977b399071dd9cadf2cbe735c62d609d7",
+                "maintenance": "98eabd8319666cb9545490601e9b5bf6c252db6fb61848c0473d32b27d561b94"
+            }
+        }
+    }
+}

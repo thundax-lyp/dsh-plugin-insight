@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d96c347b165f54a0df58dea538d78d7a",
+    "identity": "github:1335050295:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335050295:root",
+            "repository": "AlfredChaos/dsh-usage-panel",
+            "path": "",
+            "revision": "f77e7f4a6f158d0869cc7924f70fa6837de0428a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ebcd4f805290f03057fac29f35f0cbf174982e2998d2a2a8418d1722704ae5b7",
+                "code": "f77e7f4a6f158d0869cc7924f70fa6837de0428a",
+                "maintenance": "7386f163adc9f09f3a54fb9b9cd38862347775cdaf3b5e18e936e20056d4341b"
+            }
+        }
+    }
+}

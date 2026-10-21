@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "afe8d1420eb5ea8d6645f06a977e73bc",
+    "identity": "github:1194748811:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1194748811:root",
+            "repository": "hashgraph-online/hol-guard",
+            "path": "",
+            "revision": "4cf514673613ba184f89ea00838aa8bf0a2fdf63",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "340cc95d89bf831698da3db2799f4f741c37d1f8fb63e3f5b4d075117d5f39cc",
+                "code": "4cf514673613ba184f89ea00838aa8bf0a2fdf63",
+                "maintenance": "085c6707cc91b8eb7bd53cfcdef0e7efde9e6aac2ee170be9dd12000b96fd908"
+            }
+        }
+    }
+}

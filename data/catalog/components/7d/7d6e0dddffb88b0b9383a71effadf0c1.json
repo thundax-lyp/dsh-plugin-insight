@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7d6e0dddffb88b0b9383a71effadf0c1",
+    "identity": "github:1334754646:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334754646:root",
+            "repository": "sjh9714/dsh-movein",
+            "path": "",
+            "revision": "eac664961b233dcd636e2d6a51943d2258adb46d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "05b6cdf83cf3b535d32b7dedbd1e44739c2f754fda1fdc8ecfcab9e94276f023",
+                "code": "eac664961b233dcd636e2d6a51943d2258adb46d",
+                "maintenance": "b07f9bcf625fc36ebaafcfd30c0566ef5add5c7e11493504aab25dd148619881"
+            }
+        }
+    }
+}

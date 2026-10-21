@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d754950e3bc679652e0e952a42e927e6",
+    "identity": "github:1364210836:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1364210836:root",
+            "repository": "Mandarin715/dsh-autostart",
+            "path": "",
+            "revision": "4c6589403ac82aab405f55184d28353d297a3b30",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "877da606ff72e048fae1a33bfc4b345901670fd3bc9156c3a2b078a6cec3c444",
+                "code": "4c6589403ac82aab405f55184d28353d297a3b30",
+                "maintenance": "17087a04d7295770ed84ef6ca810e1198d8154d4f7f5993cfba7f7c56f85c495"
+            }
+        }
+    }
+}

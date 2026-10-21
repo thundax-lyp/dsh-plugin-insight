@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "6a5e1871876522bd9cae87a17adeb9a1",
+    "identity": "github:1344536006:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344536006:root",
+            "repository": "Frog755/dsh-hybrid-memory",
+            "path": "",
+            "revision": "738715b809b659d86b8bebd5a1b2bd1afbc09b64",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f0aa50c864d9a71ff3c14d05e37f7c2cf1f059f9cc81706d42aa1233a65b9743",
+                "code": "738715b809b659d86b8bebd5a1b2bd1afbc09b64",
+                "maintenance": "e56c05bf69795f00181d406dfd4511334cec47aba0a729a62f04d946eff73d12"
+            }
+        }
+    }
+}

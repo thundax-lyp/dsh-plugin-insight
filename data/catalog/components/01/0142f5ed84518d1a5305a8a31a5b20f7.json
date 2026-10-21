@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0142f5ed84518d1a5305a8a31a5b20f7",
+    "identity": "github:1333385247:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333385247:root",
+            "repository": "knqiufan/powercontext-dsh",
+            "path": "",
+            "revision": "36301aa0963cc471e204443df7aa604a0993b8b3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "525a22ee0f0e945adb11da47b94f30275621f8948ff21346c44adefd815bac25",
+                "code": "36301aa0963cc471e204443df7aa604a0993b8b3",
+                "maintenance": "3ef7873ea4f6abc8a0629c941bbe4a94597ad87c831108a8a644137e19a2c433"
+            }
+        }
+    }
+}

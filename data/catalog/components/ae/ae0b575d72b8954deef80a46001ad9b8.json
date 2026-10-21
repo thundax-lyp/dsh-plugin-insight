@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae0b575d72b8954deef80a46001ad9b8",
+    "identity": "github:1330188742:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330188742:root",
+            "repository": "dingyi222666/dsh-focus-chat",
+            "path": "",
+            "revision": "af0030b140581ec74ef448e601cf6adf6ae5d9df",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "78e49e8dd4c63158f2fd8a28551daaeaeadae0b9be248089cab47a00cc74c3fd",
+                "code": "af0030b140581ec74ef448e601cf6adf6ae5d9df",
+                "maintenance": "5cb868375216b536db684b421bb949a2a04107d51539aae64e6170a246504664"
+            }
+        }
+    }
+}

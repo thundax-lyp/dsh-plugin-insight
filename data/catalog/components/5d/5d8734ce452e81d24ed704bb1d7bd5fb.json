@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d8734ce452e81d24ed704bb1d7bd5fb",
+    "identity": "github:1423924911:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423924911:root",
+            "repository": "wjf1/dsh-portable",
+            "path": "",
+            "revision": "c5d0272ae471e6c6219f46540770e21c0cbe89c0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f6c7f96ed774a2564f39e48b95610c135c9d382903ae67171172bf0dccc1900c",
+                "code": "c5d0272ae471e6c6219f46540770e21c0cbe89c0",
+                "maintenance": "aeaece220e9e1db4b7b7cedfb8162c10a45d343fa96d02d975b1733ebf0227c1"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "84a5b91a8f68848c9cab7203448d69cc",
+    "identity": "github:1424831072:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424831072:root",
+            "repository": "EliteOtaku/dsh-opendesign-go",
+            "path": "",
+            "revision": "c1947b4b9bb03cd30731f03b7f92b92c74b5b867",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "839ebd923574b32928e0a70927453944184e9d2a55adbcd36cf0928c4e850eea",
+                "code": "c1947b4b9bb03cd30731f03b7f92b92c74b5b867",
+                "maintenance": "3f5e83c3eab2a6cd40ab7f5dc6e14fab5cdca059a3fb6e43db11b0f9328d2eee"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c1590fc9ea19e2e41a69eab6a88191b3",
+    "identity": "github:1334870180:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334870180:root",
+            "repository": "fuyue521/dsh-desktop-shortcut",
+            "path": "",
+            "revision": "6bd601ca32a6faba617fc57b34c77892138a5279",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e7504540bb59064d625536a765b9806eb0127ec873676390984dc946a9712a75",
+                "code": "6bd601ca32a6faba617fc57b34c77892138a5279",
+                "maintenance": "a4db23decefe335fb32eda3b1a07c3cab7d6401833a2719f8b27e6272ba71681"
+            }
+        }
+    }
+}

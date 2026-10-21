@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "272fd43bc7eb98d8b7bb7141c072bb45",
+    "identity": "github:1338343107:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338343107:root",
+            "repository": "kaieye/dsh-AIR",
+            "path": "",
+            "revision": "0639ad58e7d8a0a5817569e159f5d8c26c297af3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "61c55b9f60aa1f3950f9f4fdaa1f644288d330c4ba0adf4577f6bf9b1f9c8582",
+                "code": "0639ad58e7d8a0a5817569e159f5d8c26c297af3",
+                "maintenance": "ce06baf40a38aaf5de0503730b0b7e5d0d3acb5b23805ae730a35e6c7c4d2443"
+            }
+        }
+    }
+}

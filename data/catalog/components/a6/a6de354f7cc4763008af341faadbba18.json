@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a6de354f7cc4763008af341faadbba18",
+    "identity": "github:1275436512:plugins-dsh-ai-novel-writer",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1275436512:plugins-dsh-ai-novel-writer",
+            "repository": "EthanYoQ/AI-Novel-Writer",
+            "path": "plugins/dsh-ai-novel-writer",
+            "revision": "7e6b827fcced4f37184da834acc52ff9f222965a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "918c8773cef439744ba8662e8642ad7316b962dc4e1d5bfea2f7aa82011401e4",
+                "code": "7e6b827fcced4f37184da834acc52ff9f222965a",
+                "maintenance": "db1c003197d4b0970f09dcbba09cdad5fb4ad0461f0374766228ee6300e59bd8"
+            }
+        }
+    }
+}

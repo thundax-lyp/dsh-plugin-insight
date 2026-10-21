@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff426c7b965cb59015e543f39c1fbc6d",
+    "identity": "github:1354241970:packages-dsh-maintain",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354241970:packages-dsh-maintain",
+            "repository": "mzzsfy/dsh-plugin",
+            "path": "packages/dsh-maintain",
+            "revision": "ef78178469af825c662b6850afc3cbcde593d3b3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33b35758447799bb592c56adbe74a535741daef26ff79fce414597ff1205da87",
+                "code": "ef78178469af825c662b6850afc3cbcde593d3b3",
+                "maintenance": "1cffc0df00eb6f1f17f82160122dc9baba104fe94755a94c38be062ac0f6cb72"
+            }
+        }
+    }
+}

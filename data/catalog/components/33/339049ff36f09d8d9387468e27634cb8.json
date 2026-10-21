@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "339049ff36f09d8d9387468e27634cb8",
+    "identity": "github:1334361436:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334361436:root",
+            "repository": "cindyguyuehu123/dsh-webchatlike",
+            "path": "",
+            "revision": "365c7077b2c0125c9bbd8691ec7fbb5b8e8aa268",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f50b56a46fd39356e50b67f4bf46e8a6be2ad100aebc63ec0e029cf7d884cef3",
+                "code": "365c7077b2c0125c9bbd8691ec7fbb5b8e8aa268",
+                "maintenance": "a675d312f33840fa2fe3cf33151fb501f3081dd1043bfab17bee8093a572d70d"
+            }
+        }
+    }
+}

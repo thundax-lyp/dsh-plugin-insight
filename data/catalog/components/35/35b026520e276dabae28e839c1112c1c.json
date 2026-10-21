@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "35b026520e276dabae28e839c1112c1c",
+    "identity": "github:1335881873:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335881873:root",
+            "repository": "xulelenlp/dsh-web-artifact-designer",
+            "path": "",
+            "revision": "0a7f1e79d373625527e388a09a92e6651e8e9056",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "12dec323483fb4f6b82d1da05cf675d32f936e1b8b26846c5700af2ba93b66e1",
+                "code": "0a7f1e79d373625527e388a09a92e6651e8e9056",
+                "maintenance": "784aab2d754a726685d7a1de9186146e136c0058bee329e320ffd3e4a0c91959"
+            }
+        }
+    }
+}

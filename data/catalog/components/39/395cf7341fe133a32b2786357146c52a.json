@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "395cf7341fe133a32b2786357146c52a",
+    "identity": "github:1377932411:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1377932411:root",
+            "repository": "EIGHTfs/dsh-theme-mediascape",
+            "path": "",
+            "revision": "aa77f8bf6a0c9331647de5749362963cb241784a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2032cac31250f684c76cbd248365746880f67bcc59ae62ee7e3d84cad5ad4933",
+                "code": "aa77f8bf6a0c9331647de5749362963cb241784a",
+                "maintenance": "453d792eaa0238f03c43abaacf7f12f95462148890622eddff6b2ab53f9681c0"
+            }
+        }
+    }
+}

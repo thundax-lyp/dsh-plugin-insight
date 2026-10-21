@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "56206618e0152e83882d2d025b4ab157",
+    "identity": "github:1346870986:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346870986:root",
+            "repository": "SuCriss/dsh-leekbox",
+            "path": "",
+            "revision": "396d89cbeaaa2f23d91422b11b71d6062ae051a9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e52bd6f7aff45b68099cd24762ce92e71933796afbcf616e873541594f1f869a",
+                "code": "396d89cbeaaa2f23d91422b11b71d6062ae051a9",
+                "maintenance": "031a78b28a1ed2505f79c96cf3ee53204e71d754f29fa3e7a6a456c5e68febcf"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "891fc0912269f98a6b0256fcd3773497",
+    "identity": "github:1333116579:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333116579:root",
+            "repository": "Anionex/dsh-computer-use",
+            "path": "",
+            "revision": "1e9c8862e99ee86519799b8f30e335d22c078ee7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f9c815c3c6a8eee046c5b7ceb90573b4e8ca86bc67ffb204217f3749c26ae89a",
+                "code": "1e9c8862e99ee86519799b8f30e335d22c078ee7",
+                "maintenance": "acd423df16aa89635321d765a9e558ab225f052209ce1ee51c382b12040d33c5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "131644b5182ae783866ff101c2a95cb7",
+    "identity": "github:1338750747:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338750747:root",
+            "repository": "xuedai-mayi/dsh-wenshan",
+            "path": "",
+            "revision": "776632df652894d9fe026f4ab0c38da708d12fdc",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c48a311c62d773e2d2d667bcde09cb0c04e3bfab583e7d37671d91952e1e012b",
+                "code": "776632df652894d9fe026f4ab0c38da708d12fdc",
+                "maintenance": "974363a7bca9f3958a71ae44572436afc9f3da693a41fde9b1422e3268fe7a26"
+            }
+        }
+    }
+}

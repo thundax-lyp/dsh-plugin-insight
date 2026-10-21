@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "10067167038fd988692838c547915a2b",
+    "identity": "github:1379708344:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379708344:root",
+            "repository": "BetterZflyee/dsh-jev-adapter",
+            "path": "",
+            "revision": "211feceb88ecdc3ab500906d865a2152697c2a50",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b4dac86fe34e65a4124022bb7decc1d3c6d15834180e664d1685854f510bfb59",
+                "code": "211feceb88ecdc3ab500906d865a2152697c2a50",
+                "maintenance": "18b70a0cd181df1cd90073b894753531a0661049b771ce5887db1c8ba19716d0"
+            }
+        }
+    }
+}

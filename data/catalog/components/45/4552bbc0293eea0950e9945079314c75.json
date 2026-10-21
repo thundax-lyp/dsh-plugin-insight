@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4552bbc0293eea0950e9945079314c75",
+    "identity": "github:1397338210:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397338210:root",
+            "repository": "LinXueyuanStdio/dsh-git",
+            "path": "",
+            "revision": "896dd75a4cd2eddfb56383cd4cdfb95efd7fd313",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "36d1eef3200147a11ff7795b47c30413fd98cab49c04966cd869e4f44a0a79ed",
+                "code": "896dd75a4cd2eddfb56383cd4cdfb95efd7fd313",
+                "maintenance": "2d09b633fd272d2abc2f32e442cb38956829a5c54c6200a48bf96abb65a30d50"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1eb5ee292ca8d858dba76aae5d903263",
+    "identity": "github:1358804887:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358804887:root",
+            "repository": "Wedomizing/Dsh_genshin_nicole_skin",
+            "path": "",
+            "revision": "ff5dc2304ca1ee50755a11dd70346e71548c8619",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9090b1d084666c44209d9c0df968df7f6709a6f5a4175219fa368d6f7cf49fb8",
+                "code": "ff5dc2304ca1ee50755a11dd70346e71548c8619",
+                "maintenance": "8f419cf04e37360b22ecabefa6079dbca5e42106c9c7e054d56409161cb07999"
+            }
+        }
+    }
+}

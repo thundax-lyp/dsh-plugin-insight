@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "446ac93c7979d89f4eb2f505cd3bed1a",
+    "identity": "github:1366481148:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1366481148:root",
+            "repository": "el16z3c/dsh-think-ux",
+            "path": "",
+            "revision": "ce6745160e84f9036d9848fc84713537b0edb303",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f8fd0ebc6fabf2e510f541cba966a09ad9568adfdad25ca92dc144992610331e",
+                "code": "ce6745160e84f9036d9848fc84713537b0edb303",
+                "maintenance": "5f7cc3594c5467406dd214cf0e7396f37ce7241346feb5b6aa49500d2bbbe667"
+            }
+        }
+    }
+}

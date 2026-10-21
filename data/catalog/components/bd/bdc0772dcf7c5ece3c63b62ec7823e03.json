@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bdc0772dcf7c5ece3c63b62ec7823e03",
+    "identity": "github:1351168059:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351168059:root",
+            "repository": "bjzkhy/dsh-token-ledger-pro",
+            "path": "",
+            "revision": "6c86670c7890892e16095aa82ec5a9560a85bb17",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "489b1b7d535a9b34807afaa30bc8b691726660b88e3f69282ee7506e0149cb55",
+                "code": "6c86670c7890892e16095aa82ec5a9560a85bb17",
+                "maintenance": "1cb5513c0ea4ab01b25ca3deb622de3e7bc6a9f6b2a1fdae86a57cc4646578a1"
+            }
+        }
+    }
+}

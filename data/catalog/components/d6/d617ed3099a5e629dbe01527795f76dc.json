@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d617ed3099a5e629dbe01527795f76dc",
+    "identity": "github:1335905630:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335905630:root",
+            "repository": "loeanxi/dsh-cursor-acp",
+            "path": "",
+            "revision": "5170de77ffadeb170e3a460e558e7d35830fc585",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cb941c7eadd3120e27b992e2538fc69e5d8df74beb57fbcf76a78e245eda4324",
+                "code": "5170de77ffadeb170e3a460e558e7d35830fc585",
+                "maintenance": "f7750a3451ff16b73e909904f05b8a280aeaf2ba89e1035c85129989e098fe1e"
+            }
+        }
+    }
+}

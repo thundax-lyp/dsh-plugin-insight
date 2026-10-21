@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7cf38b39d34ef945b84a9a988cff7815",
+    "identity": "github:1378903547:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378903547:root",
+            "repository": "corlinniu/dsh-daily-chat",
+            "path": "",
+            "revision": "eb958d17a7a723a1909dfd5cc4adf48ea9b8eacf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0c43431e190e49af6dddb75bbbb1fd1e6e27dfba506efde84e4c90c5cf902078",
+                "code": "eb958d17a7a723a1909dfd5cc4adf48ea9b8eacf",
+                "maintenance": "445f8f18dc843ea81854a6add6b3fa71da122ec4578d0808dcd03e394928be0a"
+            }
+        }
+    }
+}

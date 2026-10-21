@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "faeced64175dc15d4fe27f264cde1d8d",
+    "identity": "github:1348456767:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348456767:root",
+            "repository": "hackernotfound/dsh-tacit",
+            "path": "",
+            "revision": "1bee76acf40c0538379f7a899413d4bbe300c911",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7acd7bc85c6b6d736f23839ca9e56a481b9e68dd5c1de302178268ed342b230d",
+                "code": "1bee76acf40c0538379f7a899413d4bbe300c911",
+                "maintenance": "b992b8f42f86bc5278f3ddf3a2c58b5ffc7202b5a1f5e0f5aba1c67dadbec25e"
+            }
+        }
+    }
+}

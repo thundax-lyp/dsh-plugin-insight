@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5d2a23077881ce20cb4a9099d7ca37e",
+    "identity": "github:1329031985:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1329031985:root",
+            "repository": "HuanLinOTO/dsh-plugin-yet-another-subagent",
+            "path": "",
+            "revision": "19652b998f449573e68eecc02c6134e01e9d74e4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "dec6f64e658bf60e645e98b259dc96293a2b3e1e2e7983ba205fbc891e528784",
+                "code": "19652b998f449573e68eecc02c6134e01e9d74e4",
+                "maintenance": "db62ad10c23b6b92059c4900b670b16d683f4babf776c3e676099bbc90e49c8b"
+            }
+        }
+    }
+}

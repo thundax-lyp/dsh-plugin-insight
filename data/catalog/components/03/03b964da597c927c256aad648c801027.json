@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "03b964da597c927c256aad648c801027",
+    "identity": "github:1386520510:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1386520510:root",
+            "repository": "jackControls/dsh-noBS-CAD-step",
+            "path": "",
+            "revision": "0581cfc2e0b28520d5903a6de004399fa77b839b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "51acd82d378537369eacd0fc8c02dddf1b48aef2bd268d2fbd9774d5561b325d",
+                "code": "0581cfc2e0b28520d5903a6de004399fa77b839b",
+                "maintenance": "712457f24f9ec6548b877f078e72338e9147e37e7822f05d2b4146a261cb3258"
+            }
+        }
+    }
+}

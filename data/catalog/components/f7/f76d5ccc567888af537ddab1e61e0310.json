@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f76d5ccc567888af537ddab1e61e0310",
+    "identity": "github:1349426066:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349426066:root",
+            "repository": "wodongx123/dsh-language-control",
+            "path": "",
+            "revision": "55c57b301e399e5b4003d35917e492c83a77da8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3673098e0023a89b019e36d41a8fbb6fdb7cf6c603d74d12265b0559e048d525",
+                "code": "55c57b301e399e5b4003d35917e492c83a77da8a",
+                "maintenance": "6c246082d51473e4a8294bfd937cc6f8e2185710abc5aecc510fd7cc24dfefd0"
+            }
+        }
+    }
+}

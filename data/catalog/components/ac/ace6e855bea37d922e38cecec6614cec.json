@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ace6e855bea37d922e38cecec6614cec",
+    "identity": "github:1024118326:packages-dsh-weknora",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1024118326:packages-dsh-weknora",
+            "repository": "Tencent/WeKnora",
+            "path": "packages/dsh-weknora",
+            "revision": "81f0dc2d3676048bc747ef02107ef6bfba2ae869",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "54f0a77824f33f70d020c37e0f8d48663238f8ca5d253232031124038ad3ad16",
+                "code": "81f0dc2d3676048bc747ef02107ef6bfba2ae869",
+                "maintenance": "eef5bc48617b96f3020a5b00a82625fdac518769180a9e88e93bd974febc218e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5f64096ae8ac7fa9e5bc0dd789bf293d",
+    "identity": "github:1357742493:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1357742493:root",
+            "repository": "swenbo1-web/dsh-web-search-button",
+            "path": "",
+            "revision": "06c0b1744d241ca0e16001dcc6ee5809cdf547f6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "13e3bec9112253f2b73a8a05950735bbf81d9887341d58d79435e4a1c873e705",
+                "code": "06c0b1744d241ca0e16001dcc6ee5809cdf547f6",
+                "maintenance": "95a937af0919c938df2d38f5ddb5aead6da2c044bd3a58144e45f5bbbe9fb43d"
+            }
+        }
+    }
+}

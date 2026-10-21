@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6724c4c4bb9f4d3d341777d295bf2356",
+    "identity": "github:1367133258:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367133258:root",
+            "repository": "kp-z/dsh-mermaid-comm",
+            "path": "",
+            "revision": "52a2e3dd5997abbdf9177d8c947eb8abe7300164",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e04d1740af1729372f871293032f01892ab080f807019234f35ec8a6e4ad9497",
+                "code": "52a2e3dd5997abbdf9177d8c947eb8abe7300164",
+                "maintenance": "849c964a991610967c326a6f2a0ca6880a454649a96c1b98d33f5b5b30b7bb33"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0462360c1f190e0f49d5eac97cdbc144",
+    "identity": "github:1339096594:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1339096594:root",
+            "repository": "NelsonLongxiang/dsh-open-a2a-net",
+            "path": "",
+            "revision": "64e449e4bdeb53d380d6573f7b603f22209eafa1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "496dc25f83bc5e52e6aefebd9f5bfd7f33d9bd385902e0964a2e33df8a7f9f8f",
+                "code": "64e449e4bdeb53d380d6573f7b603f22209eafa1",
+                "maintenance": "017d91899109fc028e19895d903de977bd88afc07903605333901da34167e1f5"
+            }
+        }
+    }
+}

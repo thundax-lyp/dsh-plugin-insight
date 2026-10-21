@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "247d4c3932ef1c2f5934e94b4e1c82ef",
+    "identity": "github:1336844228:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336844228:root",
+            "repository": "NOirBRight/dsh-llm-codex",
+            "path": "",
+            "revision": "b9fe83518db8ad69142404ec9778f8b38ec9fae3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ddb1009bee79f5e61ac13680670ff351126e41003973e1e02b7b077aa02ba122",
+                "code": "b9fe83518db8ad69142404ec9778f8b38ec9fae3",
+                "maintenance": "04f5473f1a45daddae12e3eaf1fff188fd23b611768db1488a167ef409545f34"
+            }
+        }
+    }
+}

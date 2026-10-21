@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e762379de522172fd3d467a99c577450",
+    "identity": "github:1336832417:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336832417:root",
+            "repository": "HUITianYi/dsh-whale-desktop-launcher",
+            "path": "",
+            "revision": "326075f04a5b22d9b6e1d9a85f2ba418333460c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3e205ebf4bb89bf91703ac4149c66fe81e62aa36e5e1f5e47cb756b28a0fc5c8",
+                "code": "326075f04a5b22d9b6e1d9a85f2ba418333460c4",
+                "maintenance": "cfeec93ec43ebc14b0fb0fb10acba19f11e5c95116ed984b082c675d0ec9ba64"
+            }
+        }
+    }
+}

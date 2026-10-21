@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "20ea4b93686ff729e3dc0be0e78630a0",
+    "identity": "github:1416520783:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416520783:root",
+            "repository": "ven314/dsh-conflict-doctor",
+            "path": "",
+            "revision": "b88f309a5ca2e007d29bca7ddc5727ff0059be8b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6218d24d1572b3021d70d9b1c066aa0c0443a60ddea77d79944a8b0a98661cea",
+                "code": "b88f309a5ca2e007d29bca7ddc5727ff0059be8b",
+                "maintenance": "699ceee1dfe22ff8b9e6ffa0b0869d73a5ec3712728958a2d8958c2ee98cd0a0"
+            }
+        }
+    }
+}

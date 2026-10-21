@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "505c6c8fa90c3f24f3ef8d38b3610490",
+    "identity": "github:1340065607:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340065607:root",
+            "repository": "WindyPro-rourou/dsh-code-studio",
+            "path": "",
+            "revision": "5f98b2c4f3ec61c06f204ec94c1646ea16c4eb84",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5451f24a02fe5d138c31251379433595a45b916bef8bb6d7fba397b0e516a4bf",
+                "code": "5f98b2c4f3ec61c06f204ec94c1646ea16c4eb84",
+                "maintenance": "d94519a185e8f29ee288e386a533c870cb94cd4056234563276cd2a327b84c0d"
+            }
+        }
+    }
+}

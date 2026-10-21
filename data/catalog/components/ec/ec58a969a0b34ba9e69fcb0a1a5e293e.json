@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ec58a969a0b34ba9e69fcb0a1a5e293e",
+    "identity": "github:1394748886:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394748886:root",
+            "repository": "NTOIOTN/dsh-expert-group",
+            "path": "",
+            "revision": "af0d46cf0b430c819284e8876476f42612a68b8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "21023d3748ca6fac42a8ef54a1cc1d5ec200653df3350eda0c0e3d8113adf4fd",
+                "code": "af0d46cf0b430c819284e8876476f42612a68b8a",
+                "maintenance": "71ad59122f1fa86611769efb5394d185a3a2cf65118f2b01f0598cd73e1be676"
+            }
+        }
+    }
+}

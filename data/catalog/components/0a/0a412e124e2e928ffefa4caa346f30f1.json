@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0a412e124e2e928ffefa4caa346f30f1",
+    "identity": "github:1397072926:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397072926:root",
+            "repository": "sknagato/dsh-plugin-fc-emulator",
+            "path": "",
+            "revision": "b68e2bbed136abc89d4141675047958b24542f7d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "519f36850080a48777fc4ce795f4a0ab07c201857801e200ba7c6925b9907dd4",
+                "code": "b68e2bbed136abc89d4141675047958b24542f7d",
+                "maintenance": "df1badc30631b8c5d1ff7b252a190734af5eb749e219631417de22bd21e13a9d"
+            }
+        }
+    }
+}

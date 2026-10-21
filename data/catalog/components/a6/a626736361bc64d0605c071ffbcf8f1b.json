@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a626736361bc64d0605c071ffbcf8f1b",
+    "identity": "github:1343015948:packages-dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343015948:packages-dsh-plugin",
+            "repository": "liwuzhan/agent-native-trade",
+            "path": "packages/dsh-plugin",
+            "revision": "629a99808dab3ae93f6242503ec1f0c5bdc2a527",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3e3e10346a21af2735558db6c47d9a914cfaadf4bffffa9172e0cbb27f07ca8e",
+                "code": "629a99808dab3ae93f6242503ec1f0c5bdc2a527",
+                "maintenance": "0f96d9bc6d89d50a8dc60d40a09eece9ac142089f2c69d79b83a441d7cd725f5"
+            }
+        }
+    }
+}

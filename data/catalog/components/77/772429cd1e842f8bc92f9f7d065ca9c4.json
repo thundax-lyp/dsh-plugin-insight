@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "772429cd1e842f8bc92f9f7d065ca9c4",
+    "identity": "github:1362151550:packages-memo-dsh-memo",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362151550:packages-memo-dsh-memo",
+            "repository": "zhangj1164/dsh-mega-plugins",
+            "path": "packages/memo/dsh-memo",
+            "revision": "76ef8c9216c1ae42579915eed0e310600e8c2f7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "db7aa46cd15e7608b7c1f57dcf09f84cbd3eac0b14a58ba74faa23c277a8abef",
+                "code": "76ef8c9216c1ae42579915eed0e310600e8c2f7f",
+                "maintenance": "9ea72a2176062ee89775bbff1e26d12f18488a364559ecfdae551af0626f5eed"
+            }
+        }
+    }
+}

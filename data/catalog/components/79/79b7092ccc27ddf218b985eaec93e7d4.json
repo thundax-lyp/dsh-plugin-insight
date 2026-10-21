@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "79b7092ccc27ddf218b985eaec93e7d4",
+    "identity": "github:1408925445:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408925445:root",
+            "repository": "NIRVANA-APOC/dsh-api-cost",
+            "path": "",
+            "revision": "baef5370c8b34311f646802f8f768ffe886a0848",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "349c3775f0bf20a8ea4dc882b6e3bd42c5e1d199e8a114ab38f84928c0deff70",
+                "code": "baef5370c8b34311f646802f8f768ffe886a0848",
+                "maintenance": "1320af9de61510ebcf32dcff39498fe7ff3584666ed04142cfa20ed7eb866335"
+            }
+        }
+    }
+}

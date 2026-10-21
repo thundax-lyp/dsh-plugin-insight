@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f979967710ad5f744f26ef61bd4ec27c",
+    "identity": "github:1335529457:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335529457:root",
+            "repository": "genius-alray/dsh-model-picker",
+            "path": "",
+            "revision": "3bae68611ef0c5fbf2dcee3de1418e53456e0c45",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "16c90e4b8463118d967a7f6ab531973e77067e33753e3b527636ed247df5e2fc",
+                "code": "3bae68611ef0c5fbf2dcee3de1418e53456e0c45",
+                "maintenance": "4c07fbeaca799cea8e949cb07d7ddd5b8aeccea7369e01295658a024748166e2"
+            }
+        }
+    }
+}

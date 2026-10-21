@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7171be9c3b593c4aee6cc83444577191",
+    "identity": "github:1341982879:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1341982879:root",
+            "repository": "pg527322814/dsh-bayes-predict",
+            "path": "",
+            "revision": "37ccf632ee7ea7e49574055491815c3079f155b4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c7291b9794388b101e7c980b0ddacce9653a439b64f61f9255e7fa7c0d9980ba",
+                "code": "37ccf632ee7ea7e49574055491815c3079f155b4",
+                "maintenance": "d03119755023687729b91c0bad6c0a0f5a1890af3154abace18b9113c2725cc2"
+            }
+        }
+    }
+}

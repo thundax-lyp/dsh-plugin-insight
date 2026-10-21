@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0d51e58f2feb5845382648c893b81fd0",
+    "identity": "github:1336116689:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336116689:root",
+            "repository": "bobby-sheng/dshget-data",
+            "path": "",
+            "revision": "cf15b1e9d0acb488b6790b17568a5ff718e136af",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "15d0794efcd9739ed499358e818d0facdd473ab8a678b7df3a6361a980adfebc",
+                "code": "cf15b1e9d0acb488b6790b17568a5ff718e136af",
+                "maintenance": "3c67a46efa1825e487d6ffc18552a03a7e575e73d9473afcae5c325b4af8e7f4"
+            }
+        }
+    }
+}

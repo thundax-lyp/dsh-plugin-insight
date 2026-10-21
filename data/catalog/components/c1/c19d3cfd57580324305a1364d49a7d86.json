@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "c19d3cfd57580324305a1364d49a7d86",
+    "identity": "github:1335780397:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335780397:root",
+            "repository": "chouyong/dsh-fork-diff",
+            "path": "",
+            "revision": "573b980623fe74a42b61dd85a49c12c84faabe2a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f6d5bb532a87cae43fb78576667ea2dc5502a370146d2b435b8f789322e755ad",
+                "code": "573b980623fe74a42b61dd85a49c12c84faabe2a",
+                "maintenance": "dd31bd56821eb80b1b32412bb8b2c515fa0f18850517158fdafd716b424d9aa0"
+            }
+        }
+    }
+}

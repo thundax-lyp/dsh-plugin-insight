@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "0a78eb27b636eb1125a23fa6743d5018",
+    "identity": "github:1333447648:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333447648:root",
+            "repository": "Sanqi-normal/dsh-webui-market-plugin",
+            "path": "",
+            "revision": "f0cfc501a9e66b3c77da37e346d311d092cb1e41",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "d2f3e36c92be862563e6cf4f000a2cc3bdb0bf617b58a27ba521c2e004dccb08",
+                "code": "f0cfc501a9e66b3c77da37e346d311d092cb1e41",
+                "maintenance": "9baf9f42b971d0ee750ae210b66fb44eed03e11a8656695a54be03e483ef34f5"
+            }
+        }
+    }
+}

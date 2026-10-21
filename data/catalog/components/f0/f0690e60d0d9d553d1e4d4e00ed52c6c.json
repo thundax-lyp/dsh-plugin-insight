@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f0690e60d0d9d553d1e4d4e00ed52c6c",
+    "identity": "github:1338618884:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338618884:root",
+            "repository": "zhifengjiang/dsh-hover-archive",
+            "path": "",
+            "revision": "430491ab1e36db6019a7d6d11b2f7506e5c2915d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a4ca76249d651b8597bb5258c9fcc54efaf5f44513f79360649687008b17cfd9",
+                "code": "430491ab1e36db6019a7d6d11b2f7506e5c2915d",
+                "maintenance": "66fca195c4eb142fe69ee8dbf8dfc5a680d26d75fea51cd95d524844a45952f4"
+            }
+        }
+    }
+}

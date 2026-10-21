@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c254c4aa15b9565cf7e470265b5948a0",
+    "identity": "github:1064776002:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1064776002:root",
+            "repository": "hellowind777/helloagents",
+            "path": "",
+            "revision": "79c0b482fd209f2e847218e1f1aee36b2ddb54e6",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "cc78db4403159483ce513561c5139649b85ce4b1bec47cda4702c53016f2e6bf",
+                "code": "79c0b482fd209f2e847218e1f1aee36b2ddb54e6",
+                "maintenance": "29b4ebdf26a846ec2188aa47e899d83859e54e500336235ef2b1b4f8435e9256"
+            }
+        }
+    }
+}

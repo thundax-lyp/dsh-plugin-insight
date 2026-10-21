@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8c6a8f937f53ab579d9221d25a49c79e",
+    "identity": "github:1335739077:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335739077:root",
+            "repository": "seven282/oss-prompt-optimizer",
+            "path": "",
+            "revision": "21f2f11c3066bbd783e8190156e6fd439d7f40e6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ee630b14576831de05dadc05ef6e7651b926f50a99470e81c4d49f8bbc074b19",
+                "code": "21f2f11c3066bbd783e8190156e6fd439d7f40e6",
+                "maintenance": "3241fa7ed40833d4ec7d9c9163ecf9be1e0ef6a438700e043bf86b70ec3bb04e"
+            }
+        }
+    }
+}

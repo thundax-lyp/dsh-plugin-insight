@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5c2abca7f2c12fea12399d9e70e36b23",
+    "identity": "github:1424420835:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424420835:root",
+            "repository": "AomiRaku/dsh-accountDisplayName-edit",
+            "path": "",
+            "revision": "fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3b2df430ca247a2ab946b6e5370beaebbe39a2b335364800b9fe05f82a9b48ca",
+                "code": "fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92",
+                "maintenance": "dff2cac53df8b87ab374338468dd1667bb95ff014244fd3ac0e0742cdb1dbce6"
+            }
+        }
+    }
+}

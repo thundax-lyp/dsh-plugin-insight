@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c14ab11d7a65c30fa52cf3ee78a5a70",
+    "identity": "github:1350609994:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350609994:root",
+            "repository": "Witherwithwinter/DeepSeek-Balance-Whale-Widget-Bowl",
+            "path": "",
+            "revision": "2154a5deb30039f9f5825677b653a825975fcee2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bbf214bb5fd6f4653f08d30964041ea190672832e852eda6a91d028c2009acb3",
+                "code": "2154a5deb30039f9f5825677b653a825975fcee2",
+                "maintenance": "a396b33da3a2b973a12ef8b8ae99da026dc6ff00cf51c88896c2879395b6510d"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "06732c7a7f8941d3e759c5a1803a11fc",
+    "identity": "github:1340431824:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340431824:root",
+            "repository": "callmesoul/deepseek-kanban-plugin",
+            "path": "",
+            "revision": "e5bd4f6d1e6aa856cf8e371d9844e166aeaf8325",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "277ce9fd853a409b1f10fa545d4b10ef73d083d99aba0cc0749b2c885068b9d5",
+                "code": "e5bd4f6d1e6aa856cf8e371d9844e166aeaf8325",
+                "maintenance": "822c8837463af99dfd6609c6a3299454dc775ff9b575088213ccbb2a1e6c0fca"
+            }
+        }
+    }
+}

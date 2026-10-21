@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f8ce55ba601e8d4b9307227eefdfa7ba",
+    "identity": "github:1350373794:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350373794:root",
+            "repository": "zmm863-commits/dsh-desktop-pack",
+            "path": "",
+            "revision": "e00824c3bc804e502168208fc8420195cc0fd2ee",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "dca4528dd3d2b7f28c4e25bae974716f815def47ca5e70b95781981576b0a029",
+                "code": "e00824c3bc804e502168208fc8420195cc0fd2ee",
+                "maintenance": "aeaa800d878958dcaa2087c466b7764eb8f221820a2a93ea8774d3081c6b64f0"
+            }
+        }
+    }
+}

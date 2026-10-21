@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "646c029f316e13b829ede628e430c70b",
+    "identity": "github:1331086179:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1331086179:root",
+            "repository": "omdsh-dev/dsh-kb-sieve",
+            "path": "",
+            "revision": "01aba653f576658974b70514573c1f6b7b4ce4df",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "6a63361d42d90e5eeb892b48cc98f0b0a1e945e3a37b0437c1096148bf98ff8b",
+                "code": "01aba653f576658974b70514573c1f6b7b4ce4df",
+                "maintenance": "9d4dcca3ebaf4bba5ed51d60d3a92676ce6b035f41e5f040dbe5062f6a07b02e"
+            }
+        }
+    }
+}

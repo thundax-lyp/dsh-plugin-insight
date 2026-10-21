@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ccd73f6315f7c8119a5ed5e7858d1a13",
+    "identity": "github:1423938822:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423938822:root",
+            "repository": "NingYuanLee/dsh-gui-auth-url",
+            "path": "",
+            "revision": "d5259b444beaf6b2f7412056d581cc392353c235",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0fe3a792831e3bc891ea24491606883ee519d944534a919b72a67e19fd09ce43",
+                "code": "d5259b444beaf6b2f7412056d581cc392353c235",
+                "maintenance": "1c9b2767431b1f06ec360b2411374a0a4c7f06004f449a2e3bcea36f89a69076"
+            }
+        }
+    }
+}

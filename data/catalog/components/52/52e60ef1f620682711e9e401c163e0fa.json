@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "52e60ef1f620682711e9e401c163e0fa",
+    "identity": "github:1402701528:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402701528:root",
+            "repository": "copylee711/dsh-remote-control",
+            "path": "",
+            "revision": "52b90ad6252838dac12cc039fe486f4de695fb72",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c030080c2d8b57931e83419788809819d27401001e5c2e61d670f562ada58e9d",
+                "code": "52b90ad6252838dac12cc039fe486f4de695fb72",
+                "maintenance": "dfc9a8ffd3c8572bdaf7c85998c693d2f71379e57057a83f986357a0bd947ce5"
+            }
+        }
+    }
+}

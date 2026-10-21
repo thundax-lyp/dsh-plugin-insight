@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "de7c9775e78aabe160a59951dd1498b2",
+    "identity": "github:1371571848:plugins-dsh-desktop-app",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1371571848:plugins-dsh-desktop-app",
+            "repository": "xswt442-cmd/dsh-xswt-tauriapp",
+            "path": "plugins/dsh-desktop-app",
+            "revision": "17fe025588bccc7107536f4d480e0e8df84e1525",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0273df2f89d1d827b797af29c4d1bfda21c7dd1f691a92a5695801ffaa8652b4",
+                "code": "17fe025588bccc7107536f4d480e0e8df84e1525",
+                "maintenance": "75a0b88315e6b83a544d4d88b7b6297fe853843b1820d1da05e49b001fa70955"
+            }
+        }
+    }
+}

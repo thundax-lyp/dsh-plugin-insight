@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cb07081432fb8c1d1a82fc548708ed3d",
+    "identity": "github:1360442483:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1360442483:root",
+            "repository": "azazo1/dsh-write-protect",
+            "path": "",
+            "revision": "a0cf9fabe051d33c92c577b90b2919cd9dd7045a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a29c1573f114bbe5268b566bef743357889a4e648576e7dd654352c90428fe17",
+                "code": "a0cf9fabe051d33c92c577b90b2919cd9dd7045a",
+                "maintenance": "0208da529b649d6eb304d9dc39441d35c25143a53d704dc76dce2dd03739c2d8"
+            }
+        }
+    }
+}

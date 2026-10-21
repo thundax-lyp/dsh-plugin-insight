@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e1a9ff2fd3dc575ab965328bf15bfcb5",
+    "identity": "github:1413208088:plugin-dsh-phone-pair-kit",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413208088:plugin-dsh-phone-pair-kit",
+            "repository": "Zoragyx/dsh-phone-pair",
+            "path": "plugin/dsh-phone-pair-kit",
+            "revision": "eac3b65aae9778af530f4a523dc18fda8253cec3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "91d91ec0299fd924522f2829e8ad251b642d2df7db04fa8e6ba723a90f0f1d73",
+                "code": "eac3b65aae9778af530f4a523dc18fda8253cec3",
+                "maintenance": "d812542d10fdb76d2d99ed84c2ad021da94086a0fba551db6f3b395360d837a6"
+            }
+        }
+    }
+}

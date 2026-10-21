@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "b25f5f5167f36c2886384f2d30bcff98",
+    "identity": "github:1335381999:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335381999:root",
+            "repository": "JAdpp/dsh-whale-galgame",
+            "path": "",
+            "revision": "046b848f244450e6e636335766276bf3343fe84b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "38f3380815505e31d9a4b3234f0978b0fc8bb09dd3406cc8c6445ee4201baebc",
+                "code": "046b848f244450e6e636335766276bf3343fe84b",
+                "maintenance": "b2e0c6ee8638ec67385a24d6a9608ea0649db2d6bc3639f6aa90e36e61c50b9a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4656544e1520621db61c104cbba4f92f",
+    "identity": "github:1349173222:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349173222:root",
+            "repository": "foggy-projects/foggy-deepseek-harness-plugin",
+            "path": "",
+            "revision": "26825e5fd1eae838277d4ce19a38f0cf9bf18988",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d83870748ba62c533ed00e665db1834c47bd3d732eda987a3edeadb93ce652ea",
+                "code": "26825e5fd1eae838277d4ce19a38f0cf9bf18988",
+                "maintenance": "2cb69ee573530a0ccd63e017c02fc9292d1d335b738b5ec3a13c37ded0697781"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "dacdad7a73cc47e4db039e18bfc21a14",
+    "identity": "github:1396447444:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396447444:root",
+            "repository": "YangShen-SWE/dsh-plugin-simple-pet",
+            "path": "",
+            "revision": "31e9f81123807f65c483423864f6220e661665c3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8aad29964b20b0a61f8266dcdbeefd5083593f690a5eef0ee438a8d4cd20e0db",
+                "code": "31e9f81123807f65c483423864f6220e661665c3",
+                "maintenance": "c3cf63bb65b0b7cb2720464bb77f3b9431695f4e08882f131d33cd360867c091"
+            }
+        }
+    }
+}

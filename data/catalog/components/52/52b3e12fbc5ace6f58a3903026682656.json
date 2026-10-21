@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "52b3e12fbc5ace6f58a3903026682656",
+    "identity": "github:1407275262:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407275262:root",
+            "repository": "CHENKEYI-MAKER/dsh-team-reporter",
+            "path": "",
+            "revision": "2e2f11f846025d0ab6be0d35e7dff1f86876a857",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1a88b12e81ba69da730849bfbe7914f58cdcf0e5b85c1f52c97649c9a4d3a181",
+                "code": "2e2f11f846025d0ab6be0d35e7dff1f86876a857",
+                "maintenance": "af6dbd11e5f187d742fbc03ef7ecc2a8ab7bf9424c81b76b66afd00ccd8d37ef"
+            }
+        }
+    }
+}

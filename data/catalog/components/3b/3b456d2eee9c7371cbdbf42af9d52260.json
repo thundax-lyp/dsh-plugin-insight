@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b456d2eee9c7371cbdbf42af9d52260",
+    "identity": "github:1345751453:packages-bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345751453:packages-bundle",
+            "repository": "ph4310822/dsh-edex-jarvis-ui",
+            "path": "packages/bundle",
+            "revision": "10409070015ecc8e2e70db2f673cb7ef467f1af4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "30bfe98a25338073f1d3bf9374395f3b3fa56331608b54d5c65e9e931cfdf3ad",
+                "code": "10409070015ecc8e2e70db2f673cb7ef467f1af4",
+                "maintenance": "f1281efe4aca6fb4d7da3b679d0290757204d2dcf31ad3353e1f31b93650667c"
+            }
+        }
+    }
+}

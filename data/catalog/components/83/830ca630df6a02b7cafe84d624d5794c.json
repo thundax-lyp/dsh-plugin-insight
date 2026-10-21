@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "830ca630df6a02b7cafe84d624d5794c",
+    "identity": "github:1335978605:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335978605:root",
+            "repository": "baisama-cloud/dsh-stt-input",
+            "path": "",
+            "revision": "2f751d5ea14a6bfa9513d4439a45880f4b7a97de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e7575742637696443f68c16b974305c379e2009dc9406bc4fad5ebfa283dc239",
+                "code": "2f751d5ea14a6bfa9513d4439a45880f4b7a97de",
+                "maintenance": "04a655bdc6962efc75341bb1e916d8620b594340ca4679ec6eaffaa0b2dfdd74"
+            }
+        }
+    }
+}

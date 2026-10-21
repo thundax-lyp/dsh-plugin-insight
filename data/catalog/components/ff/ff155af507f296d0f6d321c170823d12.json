@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ff155af507f296d0f6d321c170823d12",
+    "identity": "github:1333446374:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333446374:root",
+            "repository": "ysr666/dsh-vision-router",
+            "path": "",
+            "revision": "10e61413257c54072d1c4a413470a3e77af1dd24",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "852848b44f10829960e370ebe0105c7fb1a785f92df93262dd0b369962bc3de2",
+                "code": "10e61413257c54072d1c4a413470a3e77af1dd24",
+                "maintenance": "365bb5aa0ee6fc171018114f145f6e5eb11ccf2367e14e5dbd0f1335438b8ad3"
+            }
+        }
+    }
+}

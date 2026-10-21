@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6a979de9c1ff2b57166243875fe28f7",
+    "identity": "github:1335518420:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335518420:root",
+            "repository": "stuarthu/dsh-hot-reload",
+            "path": "",
+            "revision": "006d91589e8edab031e46dea936db0cc0f301e02",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b8629b8b3a5b7b1891090c1a1d6821c069be111a570133167138093e837521ee",
+                "code": "006d91589e8edab031e46dea936db0cc0f301e02",
+                "maintenance": "bda1ded41c9fb43d948fa827339e5ffcc0b61429fb078b90f09fec51f8203f94"
+            }
+        }
+    }
+}

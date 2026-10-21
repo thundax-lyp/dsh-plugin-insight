@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "23610678a31497759ed5e4d88b1d44c5",
+    "identity": "github:1367164350:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367164350:root",
+            "repository": "woodfood111/dsh-token-live",
+            "path": "",
+            "revision": "560556a8d78ffe9677999d630a1aefe06f4c7823",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "94a36dcc89e496229758813077dc1d6092c46a410aa970d3a159d026d85be9c2",
+                "code": "560556a8d78ffe9677999d630a1aefe06f4c7823",
+                "maintenance": "17b993e366cce5d0d5d5ff2d312dcd98e0c193400af803c78d3e8c282803cc8f"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "04deb895a48326685b17c81e1e2d0aa7",
+    "identity": "github:1392000686:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1392000686:root",
+            "repository": "Utmotc/dsh-balance-card",
+            "path": "",
+            "revision": "1b6ec3de842f163b3b6c9c16a58eae48e73641d9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ff5ba59bbf32216d48777b1973bea8a5c8821d83aa01fd19573abee2dd9c34e2",
+                "code": "1b6ec3de842f163b3b6c9c16a58eae48e73641d9",
+                "maintenance": "0fd4f5933a7c1f1226b546e538f6fcfda738ac54975a8bea0baa26215814bf9c"
+            }
+        }
+    }
+}

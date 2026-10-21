@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fd48fd3b349e8299841a836a667679bb",
+    "identity": "github:1407687922:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1407687922:root",
+            "repository": "OliYogSothoth/dsh-plugin-session-purge",
+            "path": "",
+            "revision": "c4d1f4864c988cb1dc340df53f264f9d0c6989c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ab0721aa7413dc1d9994a4729dabaa83ad0da6e2bf0f96ed770d1410722c4b1b",
+                "code": "c4d1f4864c988cb1dc340df53f264f9d0c6989c6",
+                "maintenance": "6c011270bcbb441a8ef1f1cf13e90c8e574392a046d0f3f4169a01e6995043e2"
+            }
+        }
+    }
+}

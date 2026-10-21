@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "738c0b44e2e67802480d477d33e96e46",
+    "identity": "github:1340233138:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340233138:root",
+            "repository": "GeekRicardo/claude-in-dsh",
+            "path": "",
+            "revision": "79c0ad822abb87fe83a1df3cd5ce642246ba9a37",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d66a4d52a1184b4756abf11abe0bf79f125b5aa35e4cf148fa2873061b2e348a",
+                "code": "79c0ad822abb87fe83a1df3cd5ce642246ba9a37",
+                "maintenance": "0bfec6862535dc580e6e168249f514017934e97471c6055bfa861de027795c1c"
+            }
+        }
+    }
+}

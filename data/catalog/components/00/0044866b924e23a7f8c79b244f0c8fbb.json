@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0044866b924e23a7f8c79b244f0c8fbb",
+    "identity": "github:1348551019:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348551019:root",
+            "repository": "T-Markus-Liang/dsh-webmcp",
+            "path": "",
+            "revision": "a9d1ad2914e483d5c28bd97d50f2df29a97cdad8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "af41bc9e5ea55a1c90b557a85288617518fed3bf7bff7c6aef96c128e06d13d8",
+                "code": "a9d1ad2914e483d5c28bd97d50f2df29a97cdad8",
+                "maintenance": "6b047938b10bb9f63b42ecab1d30fd396b93609c0eda499be8ee5147d83a5bdd"
+            }
+        }
+    }
+}

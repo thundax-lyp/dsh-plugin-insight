@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e37cf3eb91dbde26941d35873693e2f",
+    "identity": "github:1333777478:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333777478:root",
+            "repository": "Elohia/dsh-plugin-mm-vision",
+            "path": "",
+            "revision": "b69fa6ec8018e10b017645d5232f480f0f8354f3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6011a5a86fc2d5194bba30125a6ab562d1f3b136f96a6eeb955904e534aa98ce",
+                "code": "b69fa6ec8018e10b017645d5232f480f0f8354f3",
+                "maintenance": "104dd0430316179aec34d84606c894f40b232388e281dad6833df85959c31a4f"
+            }
+        }
+    }
+}

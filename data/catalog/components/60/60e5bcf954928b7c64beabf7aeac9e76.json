@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "60e5bcf954928b7c64beabf7aeac9e76",
+    "identity": "github:1418310908:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418310908:root",
+            "repository": "yfwu2020/dsh-opencode-go-second",
+            "path": "",
+            "revision": "251e97ccf8b139d60d0b8d23efce7c7c0a5296f1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c8347b2201f1bb6fa7501ff655d74cb8952053a2a485cd8317bed9c363ec55a3",
+                "code": "251e97ccf8b139d60d0b8d23efce7c7c0a5296f1",
+                "maintenance": "3323e02727492673e3f75afd5776848fcf672eb246b5f750cd97a9788db1b40e"
+            }
+        }
+    }
+}

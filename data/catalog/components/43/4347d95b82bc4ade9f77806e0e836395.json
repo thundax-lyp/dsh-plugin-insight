@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4347d95b82bc4ade9f77806e0e836395",
+    "identity": "github:1336864904:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336864904:root",
+            "repository": "Bob-Bo1/dsh-deepseek-balance",
+            "path": "",
+            "revision": "88940a6bf159218b5828c79e6ab3b94fd116324f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "036370ccce7d3c58fdd5668d884e3da772b9c210252933a5076227b6b5afb394",
+                "code": "88940a6bf159218b5828c79e6ab3b94fd116324f",
+                "maintenance": "086ae9f3a99edc19e45554aa7d6de6d18b53fe54260e25c6056483e140439050"
+            }
+        }
+    }
+}

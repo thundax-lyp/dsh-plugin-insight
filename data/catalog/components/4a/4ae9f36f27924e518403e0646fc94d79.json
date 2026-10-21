@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ae9f36f27924e518403e0646fc94d79",
+    "identity": "github:1370819070:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370819070:root",
+            "repository": "zhuto666/dsh-compact-agents",
+            "path": "",
+            "revision": "5e150976bd1f2c8f70d5461d1c04bc07ac70b839",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8684be997d596d13a029f4c4ca9723ba37452657383db31fbd22a303de8f43e6",
+                "code": "5e150976bd1f2c8f70d5461d1c04bc07ac70b839",
+                "maintenance": "82839467ee0a149ae3de4a38595bd5aa9d6e9a29a992e5ed48d6967cf73519c2"
+            }
+        }
+    }
+}

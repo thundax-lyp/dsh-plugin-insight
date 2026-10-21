@@ -338,7 +338,7 @@ export async function main(args = process.argv.slice(2)) {
         options: { input: { type: 'string' }, check: { type: 'boolean', default: false } }
     });
     if (!v.input) throw Error('--input is required');
-    if (existsSync(resolve(ROOT, 'data/catalog/SNAPSHOT.json'))) {
+    if (existsSync(resolve(ROOT, 'data/catalog/index.jsonl'))) {
         const { renderSnapshot } = await import('./snapshot-data.mjs');
         renderSnapshot(ROOT, v.check);
         return;

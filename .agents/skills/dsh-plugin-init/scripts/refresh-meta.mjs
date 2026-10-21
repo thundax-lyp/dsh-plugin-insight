@@ -63,7 +63,7 @@ export async function refresh(
         root = ROOT
     } = {}
 ) {
-    const snapshotPath = resolve(root, 'data/catalog/SNAPSHOT.json');
+    const snapshotPath = resolve(root, 'data/catalog/index.jsonl');
     const snapshot = existsSync(snapshotPath) ? readSnapshotStorage(snapshotPath) : null;
     if (publicationOnly && !snapshot) throw Error('publication-only refresh requires formal snapshot');
     const baseDigest = snapshot ? (await import('../../_shared/scripts/plugin-data.mjs')).digest(snapshot) : null;

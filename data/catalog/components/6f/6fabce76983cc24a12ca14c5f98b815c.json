@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6fabce76983cc24a12ca14c5f98b815c",
+    "identity": "github:1334588076:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334588076:root",
+            "repository": "Semidia/dsh-session-repair-ui",
+            "path": "",
+            "revision": "f08f3e931f36a8c0c1eb3ff5d5028bba0604dcba",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3609e8ebeb4c6901b15555c995f1a018906473de29164460e98e6ac989c153bd",
+                "code": "f08f3e931f36a8c0c1eb3ff5d5028bba0604dcba",
+                "maintenance": "78666fe63eaee41c32aa47f13cda2a6326c2f731bfc60b2a256ee3fda6c55db3"
+            }
+        }
+    }
+}

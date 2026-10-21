@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3416392afb72bea013c61daf9bf64bbe",
+    "identity": "github:249995750:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:249995750:root",
+            "repository": "reactive-resume/reactive-resume",
+            "path": "",
+            "revision": "a988406ee558629f17fbdd00907f4775c52c25b2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e3de00a389928698066d3fe0009ef1b982129707def93e1d3b15db8fa42c4989",
+                "code": "a988406ee558629f17fbdd00907f4775c52c25b2",
+                "maintenance": "b8a56fe0a0c275716e0effb75557f9cf3019d5ce824715d794e449108da29101"
+            }
+        }
+    }
+}

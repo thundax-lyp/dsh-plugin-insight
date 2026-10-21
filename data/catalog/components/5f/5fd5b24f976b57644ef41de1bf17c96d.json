@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5fd5b24f976b57644ef41de1bf17c96d",
+    "identity": "github:1318562243:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1318562243:root",
+            "repository": "h4dex/opc-nexus",
+            "path": "",
+            "revision": "0040c2521b4e974cfaef031c06ecafdce5ad0d17",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1ab0d8c27a9cc642eaa6485e4df962b161f4e2f3c83f7800efd9a527aa174788",
+                "code": "0040c2521b4e974cfaef031c06ecafdce5ad0d17",
+                "maintenance": "b1418f01f92a312bd30074d711c386c4c33451b351da2821e523a5be8f536bf9"
+            }
+        }
+    }
+}

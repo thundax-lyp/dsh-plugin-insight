@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "46e5db298c6345964bfe3e215c6bb65d",
+    "identity": "github:1400293410:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1400293410:root",
+            "repository": "orphiczhou/dsh-session-tree",
+            "path": "",
+            "revision": "a5348221d2937233d1283e2cad7816189803c50a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "173f9d2260e3d1a6433a675885590eabee633ebf4ea1284acc918cb386e1787d",
+                "code": "a5348221d2937233d1283e2cad7816189803c50a",
+                "maintenance": "33b9d8d6cfdb492f2c7c502d22a1e45dcbcf46da309e18da973473fdf5892932"
+            }
+        }
+    }
+}

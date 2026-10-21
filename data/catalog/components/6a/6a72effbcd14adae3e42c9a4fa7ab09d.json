@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6a72effbcd14adae3e42c9a4fa7ab09d",
+    "identity": "github:1352010280:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352010280:root",
+            "repository": "Pudge1996/dsh-task-feedback",
+            "path": "",
+            "revision": "9cddaacdb1bcdfbd8d9877256a0377a90247ad96",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e1001bf1b119369d1a7855dea74311ed5090aa2cadae3ecc6f2877599edb4ae2",
+                "code": "9cddaacdb1bcdfbd8d9877256a0377a90247ad96",
+                "maintenance": "3fb4d6cd203e82b03c117e75ee5cf5efb0be83e08d029b0c808eaac54489747a"
+            }
+        }
+    }
+}

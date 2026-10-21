@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1c5f497b3233533b3efa8230038414cd",
+    "identity": "github:1342413193:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342413193:root",
+            "repository": "oxgbl/dsh-no-cmd-launcher",
+            "path": "",
+            "revision": "510452643dd7b43390ef83bfd0862133be8195e8",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "95ca5e6cacc6cc170c78bc13e66f83845a6c9838cd8aaf530d6d9b37ce188d2e",
+                "code": "510452643dd7b43390ef83bfd0862133be8195e8",
+                "maintenance": "3f4a8a9aa7b64233cb151309037e6222f08cce69ea66cd103422798fe4b6ee72"
+            }
+        }
+    }
+}

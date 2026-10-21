@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2eec4bdf289377f97cbd4d9138c6e08e",
+    "identity": "github:1378217957:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378217957:root",
+            "repository": "Ryuu-64/dsh-session-tools",
+            "path": "",
+            "revision": "d552cfb6806e1319da807862876986573ba670b6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cba697f71059c36e10964296edf07388ef62a07a66377d31631a285852e3e86f",
+                "code": "d552cfb6806e1319da807862876986573ba670b6",
+                "maintenance": "f6abc75692ff8b96ff80b031fcb50eee601742d506c5fc22de33df0892967fda"
+            }
+        }
+    }
+}

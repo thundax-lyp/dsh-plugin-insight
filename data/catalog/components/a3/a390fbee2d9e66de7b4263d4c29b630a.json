@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a390fbee2d9e66de7b4263d4c29b630a",
+    "identity": "github:1404582909:plugins-dsh-fuxux",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1404582909:plugins-dsh-fuxux",
+            "repository": "abogitoff/fuxux-claude-plugin",
+            "path": "plugins/dsh-fuxux",
+            "revision": "9d6a3aa329d34aa63925429dacfffcbb8c61cbcf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f7f561197ac9566b55a71a43476668ca0cfb94ef7de44f1aefc1834bfa90230b",
+                "code": "9d6a3aa329d34aa63925429dacfffcbb8c61cbcf",
+                "maintenance": "b4fa1543c4d546b10124f19b5b59fd5d360e02d06418a3bde71ae9e6a2c793c9"
+            }
+        }
+    }
+}

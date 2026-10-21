@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "47711e7b3f6d4bb815cc355f4d0a7836",
+    "identity": "github:1346584763:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346584763:root",
+            "repository": "GroupWork888/dsh-plugin-archived-sessions",
+            "path": "",
+            "revision": "a7906c2320b3a0a0a0fefa4fc39c130e5e352931",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "18829876453f25b91aa1679a4d6dcd631c07af118e6f131db784ed13905eb6c7",
+                "code": "a7906c2320b3a0a0a0fefa4fc39c130e5e352931",
+                "maintenance": "2f4a8dc4c0aa0df85fc264ce9ac5f5e0d7e0ea346927e80ffdfa3072f3840407"
+            }
+        }
+    }
+}

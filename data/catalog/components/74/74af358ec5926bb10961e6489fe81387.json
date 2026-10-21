@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "74af358ec5926bb10961e6489fe81387",
+    "identity": "github:1347288808:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1347288808:root",
+            "repository": "kezan31/dsh-copy-tool",
+            "path": "",
+            "revision": "3bb9ad867038e340566e9b0d62bbe4fc8b448cd5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0986ad2dd0b6122d692121c1c99db1158b13c9a407cd9e837e95958da01fe8b4",
+                "code": "3bb9ad867038e340566e9b0d62bbe4fc8b448cd5",
+                "maintenance": "7f740f756be87b3d1139c32a4015e7a88639ce757ef6ba79ac48627e2a1f4aeb"
+            }
+        }
+    }
+}

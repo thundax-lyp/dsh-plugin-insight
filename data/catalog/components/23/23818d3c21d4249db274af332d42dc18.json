@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "23818d3c21d4249db274af332d42dc18",
+    "identity": "github:1343773044:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343773044:root",
+            "repository": "KelaoHu/dsh-lowtide",
+            "path": "",
+            "revision": "8ef7d254546a4c0e534d80b89a2ccb5d9b00410d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5dc42be63bb9b7cd919f104c531608f412fc209b55a53348300fd16db3c372d9",
+                "code": "8ef7d254546a4c0e534d80b89a2ccb5d9b00410d",
+                "maintenance": "5504edac86aa0db55b75b52615d5a0d289ff1a6e0026237479d8bf724d30f669"
+            }
+        }
+    }
+}

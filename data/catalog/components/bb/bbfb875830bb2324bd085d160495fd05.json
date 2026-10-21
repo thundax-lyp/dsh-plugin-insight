@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bbfb875830bb2324bd085d160495fd05",
+    "identity": "github:1355984543:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355984543:root",
+            "repository": "clown139880/dsh-live2d-avatar",
+            "path": "",
+            "revision": "505d51b78bff92bf72e2e2250f31bc2fc508287c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ce096eeb7c77fca4b9f4c51299dddf4d760d0e5c86f01113d2a88af97b3edb9b",
+                "code": "505d51b78bff92bf72e2e2250f31bc2fc508287c",
+                "maintenance": "a7cdf67a820c5887892ca7d0350a9ded920a10f3df7865f4cbfa726adb9a2d56"
+            }
+        }
+    }
+}

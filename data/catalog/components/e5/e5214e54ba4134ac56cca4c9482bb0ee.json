@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5214e54ba4134ac56cca4c9482bb0ee",
+    "identity": "github:1380999361:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380999361:root",
+            "repository": "HeShen-1/dsh-composer-enhance",
+            "path": "",
+            "revision": "3d8110ddb04ede85821fb637338dd251ca3917d9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0155ae855a644dc7f630c122fe2598b9f060244813a1cfc06d8437b14e3c778e",
+                "code": "3d8110ddb04ede85821fb637338dd251ca3917d9",
+                "maintenance": "72a24f9bd5bdc535674120446439af20a93575e875a738c5a9b5f8d0a95a9eb4"
+            }
+        }
+    }
+}

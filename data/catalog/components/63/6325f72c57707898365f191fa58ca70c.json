@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6325f72c57707898365f191fa58ca70c",
+    "identity": "github:1345565665:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345565665:root",
+            "repository": "fufengyuan/dsh-stool-plugin",
+            "path": "",
+            "revision": "076fa5531fe6d3f500707f2e24637914cf15608e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "256514d01c890bb7c4bb90f7e2187f829143ec338a8ba5f00fa51ac1026ae88a",
+                "code": "076fa5531fe6d3f500707f2e24637914cf15608e",
+                "maintenance": "f47070a2ae8c65abf9fc810c10bd95a1e4e69dc3e5fed59db96133027529d9de"
+            }
+        }
+    }
+}

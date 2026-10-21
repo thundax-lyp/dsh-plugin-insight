@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "7ff2d7b1aff24ea185a6f9e9b75e4f98",
+    "identity": "github:1421864404:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421864404:root",
+            "repository": "ls-open/dsh-git-composer",
+            "path": "",
+            "revision": "fdb4920443e3719f405a7cd600d5833080df2eee",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "e856f3b3e71fe18cb3d133588899bef2e2f3d440a74f0af2ea37f0bbe1da18d1",
+                "code": "fdb4920443e3719f405a7cd600d5833080df2eee",
+                "maintenance": "86c329ec1384092e8701397427e2fd384f7007f63821768dbccb1514e064bec3"
+            }
+        }
+    }
+}

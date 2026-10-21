@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3236c3ab8051ca2b93b275e4f8e4b8b6",
+    "identity": "github:1346087764:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346087764:root",
+            "repository": "a805026135/dsh-constellation",
+            "path": "",
+            "revision": "d50ecbcd68a59a05fb6da802f6d5c245e0224a61",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "8cab3fc02dc8e7a39b86381bfb181171d36e2a6cd6f915ea0489ae2c96cf3482",
+                "code": "d50ecbcd68a59a05fb6da802f6d5c245e0224a61",
+                "maintenance": "f03801d5a2de5f233729f76e6a254f0cd429737ea6ab05f4775a585a11928996"
+            }
+        }
+    }
+}

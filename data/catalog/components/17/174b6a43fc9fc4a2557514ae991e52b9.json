@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "174b6a43fc9fc4a2557514ae991e52b9",
+    "identity": "github:1330791921:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1330791921:root",
+            "repository": "turtle1999/turtle-ui",
+            "path": "",
+            "revision": "b08ed69e4c4edbd0dcaba556fa7b5ea6cd0f91e2",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4c2cea8f9bf8452ab86a2e1543a681d2a7a620323aab77fe114e7afe3cbf485c",
+                "code": "b08ed69e4c4edbd0dcaba556fa7b5ea6cd0f91e2",
+                "maintenance": "568ec2f7fd620c1b6183e8e58ece1c7d123ad821c8f686f5b30f5103a95a08a6"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6378ca2876190539e19164f77b4cbc45",
+    "identity": "github:1333292573:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333292573:root",
+            "repository": "HarcoChen/dsh-vsc-integration",
+            "path": "",
+            "revision": "8aa38282fd81473ff1a122665c08f27059ef871f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "3ce9ec9692c814571b86e3c27b8599b4c2c64569a11d402436070d13dbc0856b",
+                "code": "8aa38282fd81473ff1a122665c08f27059ef871f",
+                "maintenance": "4f396d5b6605d0cfb62e17cea0e25f722b95033ef428a4f60b01f12db5522efc"
+            }
+        }
+    }
+}

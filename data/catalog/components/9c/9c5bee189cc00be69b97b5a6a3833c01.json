@@ -1,0 +1,404 @@
+{
+    "schema_version": 3,
+    "id": "9c5bee189cc00be69b97b5a6a3833c01",
+    "identity": "github:1346023250:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1346023250:root",
+            "repository_id": 1346023250,
+            "component_id": "root",
+            "repository": "452926826/dsh-feishu-bot",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-feishu-bot",
+            "entry_type": "plugin",
+            "technical_category": "channels-remote",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "098f4a3b45260f6929f333a5a9732870622d2aae93c7c8b09d878aae6c144644",
+                "code": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                "maintenance": "175a582386ef3fb993062761320b16069f9d5a2e2a0a88db5a50cc2de7e77e2b"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1346023250-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:09:40.619Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1346023250-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/README.md",
+                    "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                    "captured_at": "2026-10-21T02:09:40.619Z",
+                    "summary": "通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-feishu-bot/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1346023250-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/src/index.ts",
+                    "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                    "captured_at": "2026-10-21T02:09:40.619Z",
+                    "summary": "核查 src/index.ts、src/approval.ts、src/controller.ts、src/state.ts；index.ts创建长连接bot、按chat选择项目会话并绑定ApprovalCoordinator；approval.ts按session到chat路由，pending按chat保存，一次批准/拒绝仅结算当前请求；state.ts串行落盘选择。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-feishu-bot/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要离开本机仍在飞书发起或接续DSH任务的个人/团队用户，交付是宿主会话最终回复与审批回路。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "index.ts创建长连接bot、按chat选择项目会话并绑定ApprovalCoordinator；approval.ts按session到chat路由，pending按chat保存，一次批准/拒绝仅结算当前请求；state.ts串行落盘选择。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需租户建应用权限、扫码发布及白名单；持续飞书网络和DSH模型调用费用、断连排查与凭据轮换成本，人工审批时间另计。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "免公开回调地址降低接入配置负担，移动审批有流程价值；安全授权、通知可靠性与办结率未本轮实测。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "审批发送失败返回undefined交给其他通道，abort清理pending；选择状态按chat隔离并临时文件rename，写队列缺失败恢复需检验。 [固定源码](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/src/index.ts#L1)。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023250:root",
+                            "area": "code",
+                            "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:09:40.619Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:09:40.619Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                "reviewed_at": "2026-10-21T02:09:40.619Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1346023250:root",
+                        "area": "code",
+                        "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty：扫码与会话审批闭环实质；mechanism：chat隔离和一次结算实质；transferability：IM远程桥接可迁移实质；simplification：免手抄凭据和公开回调实质。",
+                    "basis": "interpretation",
+                    "score": 51,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：远程发起审批交接实质；delivery：会话回复与通知实质；reach：移动飞书用户可达实质；economics：免回调运维小幅，任务成本未测。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1346023250-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "飞书远控和移动审批有价值，但状态队列拒绝后可能持续失败、手工凭据白名单路径不明；先验证拒绝、断连和持久恢复再采用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "离开本机发起接续任务及审批交付明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "长连接免公网回调并按chat审批，比复制消息有流程增量。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "approval协调和state写链已查，persist拒绝无catch恢复边界待验。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "应用scopes、凭据和远控profile权限维护重，异常接管不能省。"
+                    }
+                },
+                "score": 60,
+                "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1346023250-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1346023250:root",
+                        "area": "code",
+                        "fingerprint": "f4d521615a9ca7ff7cbe2953a2a84074a7768091"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1346023250:root",
+            "repository": "452926826/dsh-feishu-bot",
+            "path": "",
+            "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+            "fingerprints": {
+                "directory": "098f4a3b45260f6929f333a5a9732870622d2aae93c7c8b09d878aae6c144644",
+                "code": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                "maintenance": "175a582386ef3fb993062761320b16069f9d5a2e2a0a88db5a50cc2de7e77e2b"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "1c6863cd68464c05919792f7b2ac1331ca2fb562c732df6ec1b80a18e8496b43"
+        },
+        "publication.metadata": "data/plugins/452926826--dsh-feishu-bot/META.json",
+        "publication.summaries": {
+            "text": "通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。",
+            "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+            "source_url": "https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+            "items": {
+                "用户命令": "飞书/lp、/up、/np、/lc、/uc、/nc、/approve、/reject",
+                "后台": "飞书长连接、chat会话选择与审批桥接",
+                "Host 路由": "飞书绑定状态接口"
+            }
+        },
+        "publication.advice": {
+            "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+            "text": "远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。"
+        },
+        "registry": "data/plugins/452926826--dsh-feishu-bot",
+        "reports": "# dsh-feishu-bot\n\n> 通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。\n\n## 研究范围\n\n- **仓库**：[452926826/dsh-feishu-bot](https://github.com/452926826/dsh-feishu-bot)\n- **版本号**：0.1.4（[固定提交 f4d52161](https://github.com/452926826/dsh-feishu-bot/tree/f4d521615a9ca7ff7cbe2953a2a84074a7768091)）\n- **版本日期**：2026-09-01（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：需要离开本机仍在飞书发起或接续DSH任务的个人/团队用户，交付是宿主会话最终回复与审批回路。\n- **亮点**：相对只转发聊天文本，贡献为扫码建应用、持久化chat上下文和同源chat审批闭环；复用飞书Device Grant和SDK，不把这些上游能力算原创。\n- **思考**：远程入口是否保持正确授权与任务上下文？审批绑定发起chat是强支持；同一chat多个待审只能有一个，其他回退next。手工凭据未含扫码owner时默认允许集合可能为空，必须检查实际白名单；状态写队列在一次persist拒绝后未catch，后续then可能继续拒绝，恢复需另验。\n- **建议**：远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。\n\n采用建议：远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。\n\n## 核心贡献\n\n相对只转发聊天文本，贡献为扫码建应用、持久化chat上下文和同源chat审批闭环；复用飞书Device Grant和SDK，不把这些上游能力算原创。\n\n## 关键质疑\n\n[核查分支](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/src/state.ts#L23)。\n\n远程入口是否保持正确授权与任务上下文？审批绑定发起chat是强支持；同一chat多个待审只能有一个，其他回退next。手工凭据未含扫码owner时默认允许集合可能为空，必须检查实际白名单；状态写队列在一次persist拒绝后未catch，后续then可能继续拒绝，恢复需另验。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：将chat选择版本与任务审批ID绑定，并让持久化队列从单次失败恢复，可减少并发会话串线和故障后的长期不可写；新增状态机与过期审批处理。\n\n两个chat并发选择不同项目，注入一次state写盘失败并发起两个审批；核对后续状态可保存且只有发起chat批准匹配操作，否则否定假设。\n\n## 场景与替代办法\n\n需要离开本机仍在飞书发起或接续DSH任务的个人/团队用户，交付是宿主会话最终回复与审批回路。\n\n参照本机GUI或简单IM转发；此项目把身份接入、会话选择和审批串成远程流程，不能自动扩大授权。\n\n## 依赖与流程\n\n必要为飞书应用账号与权限、SDK长连接、宿主agents/sessions/approval与持久化；扫码owner权限和手工凭据路径不同。\n\n扫码或读凭据→建立WS→白名单过滤→chat选择会话→提交消息→必要时同chat审批→最终回复与通知；停用abort并断连。\n\n## 成本与效果\n\n首次需租户建应用权限、扫码发布及白名单；持续飞书网络和DSH模型调用费用、断连排查与凭据轮换成本，人工审批时间另计。\n\n免公开回调地址降低接入配置负担，移动审批有流程价值；安全授权、通知可靠性与办结率未本轮实测。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0c51036b2e01218eddb4fea76a849adc46478232ca6d264f3bd5931e3b0ddaa8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 6 | 535 | — | — | 7372 |\n| .js | source | 11 | 1192 | 1174 | 10 | — |\n| .mjs | source | 3 | 80 | 72 | 0 | — |\n| .ts | source | 9 | 1218 | 1105 | 1 | — |\n| .js | test | 10 | 560 | 509 | 3 | — |\n\n排除 9 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **用户命令**：飞书/lp、/up、/np、/lc、/uc、/nc、/approve、/reject\n- **后台**：飞书长连接、chat会话选择与审批桥接\n- **Host 路由**：飞书绑定状态接口\n\n## 工程亮点\n\n审批发送失败返回undefined交给其他通道，abort清理pending；选择状态按chat隔离并临时文件rename，写队列缺失败恢复需检验。 [固定源码](https://github.com/452926826/dsh-feishu-bot/blob/f4d521615a9ca7ff7cbe2953a2a84074a7768091/src/index.ts#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/approval.ts、src/controller.ts、src/state.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：两个chat并发选择不同项目，注入一次state写盘失败并发起两个审批；核对后续状态可保存且只有发起chat批准匹配操作，否则否定假设。\n",
+        "metadata": {
+            "repository": "452926826/dsh-feishu-bot",
+            "repository_id": 1346023250,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-09-01T04:27:48Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:17E195:13FD1A:21A06C:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:12770C:15178F:22B1F2:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:157442:230F23:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:142EE6:21CF5E:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-feishu-bot%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:14191D:21BE62:6AD84A16 and timestamp 2026-10-21 05:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-feishu-bot",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 919,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-feishu-bot",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-13T21:59:28.326Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-feishu-bot",
+                    "error": null,
+                    "latest_version": "0.19.16",
+                    "latest_published_at": "2026-08-25T15:59:34.405Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                "current_revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1346023250:root",
+            "repository": "452926826/dsh-feishu-bot",
+            "path": "",
+            "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "098f4a3b45260f6929f333a5a9732870622d2aae93c7c8b09d878aae6c144644",
+                "code": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+                "maintenance": "175a582386ef3fb993062761320b16069f9d5a2e2a0a88db5a50cc2de7e77e2b"
+            }
+        }
+    }
+}

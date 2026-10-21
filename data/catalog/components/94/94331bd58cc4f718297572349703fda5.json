@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "94331bd58cc4f718297572349703fda5",
+    "identity": "github:1334862425:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334862425:root",
+            "repository": "ZhijiangTang/dsh-handoff",
+            "path": "",
+            "revision": "e1cfb00c1e9af389fcfb8ce02c093fbfff63f763",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5a8c0a45bff64969e09fb7fe4798759e9471607b914e0ec9d81749a8e22a0ffa",
+                "code": "e1cfb00c1e9af389fcfb8ce02c093fbfff63f763",
+                "maintenance": "30b6b99cce9606aabe728688ccbe30e08d48cae188818e26f23bce51de068939"
+            }
+        }
+    }
+}

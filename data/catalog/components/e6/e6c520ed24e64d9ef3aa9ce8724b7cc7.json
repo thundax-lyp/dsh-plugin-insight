@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6c520ed24e64d9ef3aa9ce8724b7cc7",
+    "identity": "github:1422453527:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422453527:plugin",
+            "repository": "kipozannaki/DSH-Headroom-Plugin",
+            "path": "plugin",
+            "revision": "05aeeeeddb6cdd1f38abd79986cba014b6e8bcbf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fb2b045a971f66d7de113ef670b3aec52202af8bfa4a8bddc1ab78a5abb4f428",
+                "code": "05aeeeeddb6cdd1f38abd79986cba014b6e8bcbf",
+                "maintenance": "2e3304bff08a52ba4eb81f2b0825e2aa107e426dcb15f20bef09e3d72c0ae9ad"
+            }
+        }
+    }
+}

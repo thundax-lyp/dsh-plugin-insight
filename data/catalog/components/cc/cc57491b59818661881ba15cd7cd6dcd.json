@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cc57491b59818661881ba15cd7cd6dcd",
+    "identity": "github:1335564094:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335564094:root",
+            "repository": "FuzzySoul/dsh-chatvoice",
+            "path": "",
+            "revision": "3911aba9f7a008bd086b2c306c489dfc0ffbe1c6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "04506e001f1f81a4f0e03683dcef91dd0d012ac70d6bb28b98150f874f844721",
+                "code": "3911aba9f7a008bd086b2c306c489dfc0ffbe1c6",
+                "maintenance": "35032fcc577d23e5aedd9936d08637c516b9f6c35b2eda111025b9131a721064"
+            }
+        }
+    }
+}

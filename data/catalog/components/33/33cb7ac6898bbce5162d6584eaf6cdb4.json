@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "33cb7ac6898bbce5162d6584eaf6cdb4",
+    "identity": "github:1335011766:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335011766:root",
+            "repository": "Physicolor/dsh-widgets",
+            "path": "",
+            "revision": "293c02944c3bda2fad0979e43c45b8e48dbd6e63",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3a62d9488318317fd5ac8db5ada6a0b7e334a1fb16f6a53fb60c7d6cf41f59e2",
+                "code": "293c02944c3bda2fad0979e43c45b8e48dbd6e63",
+                "maintenance": "cfcf2266d344616859e62f4d50bc1e136374ac59cb74d1d1c3badf33ee6ffdc6"
+            }
+        }
+    }
+}

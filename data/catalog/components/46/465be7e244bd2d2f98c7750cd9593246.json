@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "465be7e244bd2d2f98c7750cd9593246",
+    "identity": "github:1335758624:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335758624:root",
+            "repository": "MichengAI/dsh-im-connect",
+            "path": "",
+            "revision": "6beacabbe024db0391c6b97c691de4e4bb0d3519",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5e815499d6ef682ff02763bc0d4f5b0eb9d28f10ee69fa2e7b69a9c716420273",
+                "code": "6beacabbe024db0391c6b97c691de4e4bb0d3519",
+                "maintenance": "d429cc48d276eae9c2cf3fe9e0b9c109cc108b15873ef9347d52f3bf2f379010"
+            }
+        }
+    }
+}

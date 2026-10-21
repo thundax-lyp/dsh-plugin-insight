@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3e7286ee04f0a3170f145c8d82055dda",
+    "identity": "github:1332215698:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332215698:root",
+            "repository": "shenjackyuanjie/dsh-cot-summary",
+            "path": "",
+            "revision": "f5ade3d0f386de04cabdcfbc285635cea27b9a5c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1b63c07419ad7bc0db5c94d5db2af9ea08b033674cde192f5d67733e94a22d3e",
+                "code": "f5ade3d0f386de04cabdcfbc285635cea27b9a5c",
+                "maintenance": "a37fb6296ca0c84226d29b33a07f1e6f76e3aa1767237a250db1b97fbe1f209e"
+            }
+        }
+    }
+}

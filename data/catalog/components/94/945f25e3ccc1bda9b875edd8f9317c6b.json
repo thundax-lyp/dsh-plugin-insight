@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "945f25e3ccc1bda9b875edd8f9317c6b",
+    "identity": "github:1350430536:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350430536:root",
+            "repository": "D2Moqi/dsh-openwiki",
+            "path": "",
+            "revision": "79b884f02b9697b92e35d5ebc2767563d8038330",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5a67f1813852a78a17ac6816231be33d5656d5b1d708536ce9edc3892dc1e5ca",
+                "code": "79b884f02b9697b92e35d5ebc2767563d8038330",
+                "maintenance": "913cda7f9320f0abc1df4e93e0c868f36bb3f8e185005a2f64ca3348864178d3"
+            }
+        }
+    }
+}

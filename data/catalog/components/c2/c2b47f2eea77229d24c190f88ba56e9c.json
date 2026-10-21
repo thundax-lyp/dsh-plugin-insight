@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c2b47f2eea77229d24c190f88ba56e9c",
+    "identity": "github:1375670680:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375670680:root",
+            "repository": "DPH-1121/dsh-wallhaven-wallpaper",
+            "path": "",
+            "revision": "4b3f5a166b1cfbc60c570a05f1cac055d73273b0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e1ddcaaf7f917fdcd9e5a39e79a783f0b9e554bac79d0fb436cfe80ea85bb001",
+                "code": "4b3f5a166b1cfbc60c570a05f1cac055d73273b0",
+                "maintenance": "8933da23fccb946b52265ee3c59e23558af8325704c0c1732c1de573a866039c"
+            }
+        }
+    }
+}

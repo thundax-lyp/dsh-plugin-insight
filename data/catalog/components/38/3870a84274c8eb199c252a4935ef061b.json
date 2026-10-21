@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3870a84274c8eb199c252a4935ef061b",
+    "identity": "github:1379507479:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379507479:root",
+            "repository": "donyue7/dsh-aoci-panel",
+            "path": "",
+            "revision": "b512e1fc7a894b5d306c5fdd311a057ce24d9dc8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a4f3b75ded251418a76d81016e51baa65db3a84c51fb6ed84362672fe5295fd",
+                "code": "b512e1fc7a894b5d306c5fdd311a057ce24d9dc8",
+                "maintenance": "0710eb38d3de0dda20b0f5a0baaca58f4851356141f0fd984b688bd0b48c827b"
+            }
+        }
+    }
+}

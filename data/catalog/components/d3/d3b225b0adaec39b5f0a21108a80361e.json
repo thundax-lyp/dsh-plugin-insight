@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d3b225b0adaec39b5f0a21108a80361e",
+    "identity": "github:1334195572:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334195572:root",
+            "repository": "muretai/muretai-dsh-skill",
+            "path": "",
+            "revision": "18d1f3820a865ec4c4542b537a5ec0ece367c8d7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "34a3ef4d9305c21afe5fe596c61dba9d5516c061f50e8312241ab553a5532fcb",
+                "code": "18d1f3820a865ec4c4542b537a5ec0ece367c8d7",
+                "maintenance": "2027a8975b458174ba8b3f19404336a8f729d7b4624d4d388c2836e6d4cb8ca9"
+            }
+        }
+    }
+}

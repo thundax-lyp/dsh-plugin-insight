@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e932e668c4fb16432292a11535b1f370",
+    "identity": "github:1343751705:dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343751705:dsh-plugin",
+            "repository": "seewhydee/dsh-emacs-bridge",
+            "path": "dsh-plugin",
+            "revision": "a31f494389d5d576abce05775c16281ca05c0fc2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc041cccbea7faed09d3eaf85b32ff33b8f9b75e3d6c9e226ba7492490f82708",
+                "code": "a31f494389d5d576abce05775c16281ca05c0fc2",
+                "maintenance": "6e02a1e7bfa2be3d68f1cf1bcb4ba6820282a67b3ec0790c800f9afbf744e76d"
+            }
+        }
+    }
+}

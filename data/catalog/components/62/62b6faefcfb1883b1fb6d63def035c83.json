@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "62b6faefcfb1883b1fb6d63def035c83",
+    "identity": "github:1362151550:packages-github-issue-dsh-github-issue",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362151550:packages-github-issue-dsh-github-issue",
+            "repository": "zhangj1164/dsh-mega-plugins",
+            "path": "packages/github-issue/dsh-github-issue",
+            "revision": "76ef8c9216c1ae42579915eed0e310600e8c2f7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "367984425cc0075e1b0469b67330d6353a3a2b839d60707c32db90dfb992d45b",
+                "code": "76ef8c9216c1ae42579915eed0e310600e8c2f7f",
+                "maintenance": "9ea72a2176062ee89775bbff1e26d12f18488a364559ecfdae551af0626f5eed"
+            }
+        }
+    }
+}

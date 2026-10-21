@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9cd294289025eae05b79eeb46030bfab",
+    "identity": "github:1333993082:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333993082:root",
+            "repository": "Zephyr-vibe/dsh-archived-sessions",
+            "path": "",
+            "revision": "6b8c6c50d76b52acdbd73b51159abd1d01430996",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "507dfea681edfcc031fd359d13f8add1ca591d6ac309e76ccc277b8d0ba0e670",
+                "code": "6b8c6c50d76b52acdbd73b51159abd1d01430996",
+                "maintenance": "fa88159123a0fd9ccf52533e1d0ff5f9e3672936241f06026d3372849561a44a"
+            }
+        }
+    }
+}

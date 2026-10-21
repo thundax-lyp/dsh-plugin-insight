@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "61e2b2f4d90b1a147e8db19bcf5244e3",
+    "identity": "github:1334965864:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334965864:root",
+            "repository": "Yiipu/dsh-agentmemory",
+            "path": "",
+            "revision": "335bb822f1885cea4b9e2f6627907de4ac778e93",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b134f9fba4a4663e854bc8b814c34d1814a0bd08c1679542fe76c0404099069f",
+                "code": "335bb822f1885cea4b9e2f6627907de4ac778e93",
+                "maintenance": "9ea34136ea0808b6b637594ad5d2170bb381a959aaf45c7ced1589f42a87a4ad"
+            }
+        }
+    }
+}

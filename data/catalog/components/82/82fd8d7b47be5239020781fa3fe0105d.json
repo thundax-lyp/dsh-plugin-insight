@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "82fd8d7b47be5239020781fa3fe0105d",
+    "identity": "github:1335264539:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335264539:root",
+            "repository": "yihefeikong-rgb/dsh-cc-haha-memory",
+            "path": "",
+            "revision": "049e71213044af0364e89262eb35510c4edaeb65",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "866f64954816df0d0a2d7257faa00d6b22fb94bceea9786131fc3d135d5628fb",
+                "code": "049e71213044af0364e89262eb35510c4edaeb65",
+                "maintenance": "0411fe7b107900c89edb0cd5e51e44b970c4e26892decd064a47390138d85578"
+            }
+        }
+    }
+}

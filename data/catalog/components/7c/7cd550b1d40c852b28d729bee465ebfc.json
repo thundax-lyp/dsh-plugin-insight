@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7cd550b1d40c852b28d729bee465ebfc",
+    "identity": "github:1342631584:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342631584:root",
+            "repository": "xiaxi626/dsh-skills-nexus",
+            "path": "",
+            "revision": "78a394a3cd4deeafcf06eed85c71a3e4e0221465",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "de5c29ffac645fbc32eede02de241861dc7dea3d511d54dc9db3beac3be3c2ec",
+                "code": "78a394a3cd4deeafcf06eed85c71a3e4e0221465",
+                "maintenance": "ed578bd1e27f14afef13dc60059cb8322bdfadc914a899c3e7a55194ce84e0c2"
+            }
+        }
+    }
+}

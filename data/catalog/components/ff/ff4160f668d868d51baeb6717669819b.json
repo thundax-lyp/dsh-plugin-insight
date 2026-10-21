@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ff4160f668d868d51baeb6717669819b",
+    "identity": "github:1349900532:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349900532:root",
+            "repository": "opdsh/unity-plugin",
+            "path": "",
+            "revision": "1cfcc6c33962152c8db22ada853179957d69c43b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "82a8aced104a9b0b2827a1a16bdffd2a96529b00c65a752419dc202676fb15cf",
+                "code": "1cfcc6c33962152c8db22ada853179957d69c43b",
+                "maintenance": "044d61164eaf94317b1bd328530cb3f926937c9ffc04c3194fc7fc02cd5edfdc"
+            }
+        }
+    }
+}

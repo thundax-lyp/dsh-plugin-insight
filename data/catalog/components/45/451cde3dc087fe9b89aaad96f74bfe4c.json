@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "451cde3dc087fe9b89aaad96f74bfe4c",
+    "identity": "github:1344751082:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344751082:root",
+            "repository": "bao-hp/dsh-check-update",
+            "path": "",
+            "revision": "6272ba5d36135ee374368390378836a59f414f16",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "926a9752afa2f09e459422e3daa8e3321310ee10f35ac369c388f06aec1261b9",
+                "code": "6272ba5d36135ee374368390378836a59f414f16",
+                "maintenance": "1c7280302e9cac49bb11815dd8e19a5351334f3dc19e2bb809dd1edc07e0036f"
+            }
+        }
+    }
+}

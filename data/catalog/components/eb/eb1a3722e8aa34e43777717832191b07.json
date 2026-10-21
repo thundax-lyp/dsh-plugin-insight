@@ -1,0 +1,403 @@
+{
+    "schema_version": 3,
+    "id": "eb1a3722e8aa34e43777717832191b07",
+    "identity": "github:1334023305:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334023305:root",
+            "repository_id": 1334023305,
+            "component_id": "root",
+            "repository": "1HelloMan1/dsh-usage-dashboard-plus",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-usage-dashboard-plus",
+            "entry_type": "plugin",
+            "technical_category": "observability-cost",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "33246bc293f916923614c1b758506f8492ee21bcb6cbf2416a59a338fb74dea8",
+                "code": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                "maintenance": "12dfe9df02f45090f517a1a8a4a31da57de9fb5a8989452c15c18f65b26388aa"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-20-08-github-1334023305-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
+                    "retrieved_at": "2026-10-20T10:48:31.612Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-20-08-github-1334023305-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/README.md",
+                    "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                    "captured_at": "2026-10-20T10:48:31.612Z",
+                    "summary": "在 DSH 侧栏和设置页展示账户余额、调用用量与分模型费用统计。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/1helloman1--dsh-usage-dashboard-plus/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-20-08-github-1334023305-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js",
+                    "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                    "captured_at": "2026-10-20T10:48:31.612Z",
+                    "summary": "核查 lib/index.js、lib/client.js；宿主读取会话压缩日志及外部 vision usage.jsonl，按模型/时间价格表聚合，并提供 usageDashboard 会话投影和浏览器看板。",
+                    "artifact": "data/runs/2026-10-20-08/snapshots/1helloman1--dsh-usage-dashboard-plus/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "多模型 DSH 用户希望知道账户余额及当天花费；合格交付是带价格口径的估算与可追查调用记录。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "宿主读取会话压缩日志及外部 vision usage.jsonl，按模型/时间价格表聚合，并提供 usageDashboard 会话投影和浏览器看板。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "看板自身主要占日志扫描、解压与存储资源；人工要校准模型名、价格和日志来源。没有因此节省模型费的因果证据。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "将辅助视觉成本纳入观察是明确便利；费用仅估算，不可自动视为财务结算。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "lib/index.js 把 zstd 解码、模型计费、外部日志和投影集中在宿主；token delta 过滤减少非文本块干扰。价格时间线可借鉴，但与当前业务日期的同步及庞大日志扫描成本需实测。 源码：[lib/index.js](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js)、[lib/client.js](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/client.js)。",
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334023305:root",
+                            "area": "code",
+                            "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-20T10:48:31.612Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-20T10:48:31.612Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                "reviewed_at": "2026-10-20T10:48:31.612Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334023305:root",
+                        "area": "code",
+                        "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty：常规观测集成；mechanism：旁路日志补统计盲区为局部增量；transferability：时间线价格可复用；simplification：统一入口但仍要对价。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：减少分散查账；delivery：提供跨调用统计；reach：降低看日志门槛；economics：看见成本不等于降低成本。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-10-20-08-github-1334023305-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "多模型用户可试用统一用量观察；先对账一天主调用与视觉日志并补未知模型价，不能当财务账本。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "多模型余额及当天花费是明确重复需求。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "把主日志与视觉旁路费用整合，仍与供应商余额用途重叠。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已查zstd日志聚合与价格表，去重和日界线未对账。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无需新增模型调用，仍需维护价格、模型映射和外部日志格式。"
+                    }
+                },
+                "score": 64,
+                "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-20-08-github-1334023305-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334023305:root",
+                        "area": "code",
+                        "fingerprint": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334023305:root",
+            "repository": "1HelloMan1/dsh-usage-dashboard-plus",
+            "path": "",
+            "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+            "fingerprints": {
+                "directory": "33246bc293f916923614c1b758506f8492ee21bcb6cbf2416a59a338fb74dea8",
+                "code": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                "maintenance": "12dfe9df02f45090f517a1a8a4a31da57de9fb5a8989452c15c18f65b26388aa"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-20T10:40:14Z",
+            "analysis_sha256": "58afa90a647f12f98a624cf1c25c48e16fab9c49b0b1f2edb164c8857486fb76"
+        },
+        "publication.metadata": "data/plugins/1helloman1--dsh-usage-dashboard-plus/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 侧栏和设置页展示账户余额、调用用量与分模型费用统计。",
+            "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+            "source_url": "https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+            "items": {
+                "界面": "侧栏余额与费用、设置页用量看板",
+                "后台": "主会话与外部视觉调用聚合"
+            }
+        },
+        "publication.advice": {
+            "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+            "text": "适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。"
+        },
+        "registry": "data/plugins/1helloman1--dsh-usage-dashboard-plus",
+        "reports": "# dsh-usage-dashboard-plus\n\n> 在 DSH 侧栏和设置页展示账户余额、调用用量与分模型费用统计。\n\n## 研究范围\n\n- **仓库**：[1HelloMan1/dsh-usage-dashboard-plus](https://github.com/1HelloMan1/dsh-usage-dashboard-plus)\n- **版本号**：0.2.5（[固定提交 ee53a4d](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/tree/ee53a4d07d212f02fe64ec64eb8a9a84163bd439)）\n- **版本日期**：2026-09-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献机制有固定源码支持；效果与采用收益为条件性解释，后续设计假设尚未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：多模型 DSH 用户希望知道账户余额及当天花费；合格交付是带价格口径的估算与可追查调用记录。\n- **亮点**：相对只看服务商余额，插件将会话用量、视觉旁路调用和模型分组放到一个入口，补足主模型账单看不到辅助调用的观察盲区；余额与日志费用来自不同路径，属于观测整合而非精确账务系统。\n- **思考**：同一条调用能否恰好计一次以及价格是否匹配路由最影响费用可信度。源码有默认与日期价格表，也给未识别模型 fallback 价格；未知模型被赋通用价不能当实际账单，外部日志格式/重复输入及本地日界线仍需对账。\n- **建议**：适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。\n\n采用建议：适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。\n\n## 核心贡献\n\n相对只看服务商余额，插件将会话用量、视觉旁路调用和模型分组放到一个入口，补足主模型账单看不到辅助调用的观察盲区；余额与日志费用来自不同路径，属于观测整合而非精确账务系统。\n\n## 关键质疑\n\n同一条调用能否恰好计一次以及价格是否匹配路由最影响费用可信度。源码有默认与日期价格表，也给未识别模型 fallback 价格；未知模型被赋通用价不能当实际账单，外部日志格式/重复输入及本地日界线仍需对账。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：在用量行保留 provider、请求身份与价格版本，并将未知价列成独立金额区间，可降低“看起来精确”的错账。推导自 fallback 与外部辅助调用合并；跨日志去重需要双方共享身份而非猜时间。\n\n以同一批含主调用、失败、视觉旁路和未知模型的请求，与服务商账单及原始 usage 对账；测漏记、重复与未知价覆盖率，若无法从日志稳定关联请求则只报告用量不报精确钱数。\n\n## 场景与替代办法\n\n多模型 DSH 用户希望知道账户余额及当天花费；合格交付是带价格口径的估算与可追查调用记录。\n\n参照服务商余额页和单会话 usage；未执行跨供应商真实账单对账。\n\n## 依赖与流程\n\n需要可读 DSH 日志、credentials/余额服务与客户端设置接口；视觉聚合依赖外部日志格式。价格表由维护者或用户更新，不能据内置日期判断仍是当前官网价。\n\n配置模型价格及可选外部日志，打开侧栏/设置看板；后台解压日志按日聚合并缓存余额；未知模型、读取失败与额度差异需回查原始记录。\n\n## 成本与效果\n\n看板自身主要占日志扫描、解压与存储资源；人工要校准模型名、价格和日志来源。没有因此节省模型费的因果证据。\n\n将辅助视觉成本纳入观察是明确便利；费用仅估算，不可自动视为财务结算。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f3900e75f80635b663324e429a58147d67e5854d7b92b485f0aae05d6bdeef58。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 194 | — | — | 1531 |\n| .js | source | 2 | 1600 | 1441 | 109 | — |\n| .mjs | test | 2 | 44 | 40 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：侧栏余额与费用、设置页用量看板\n- **后台**：主会话与外部视觉调用聚合\n\n## 工程亮点\n\nlib/index.js 把 zstd 解码、模型计费、外部日志和投影集中在宿主；token delta 过滤减少非文本块干扰。价格时间线可借鉴，但与当前业务日期的同步及庞大日志扫描成本需实测。 源码：[lib/index.js](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/index.js)、[lib/client.js](https://github.com/1HelloMan1/dsh-usage-dashboard-plus/blob/ee53a4d07d212f02fe64ec64eb8a9a84163bd439/lib/client.js)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。\n- 下一步：以同一批含主调用、失败、视觉旁路和未知模型的请求，与服务商账单及原始 usage 对账；测漏记、重复与未知价覆盖率，若无法从日志稳定关联请求则只报告用量不报精确钱数。\n",
+        "metadata": {
+            "repository": "1HelloMan1/dsh-usage-dashboard-plus",
+            "repository_id": 1334023305,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 3,
+            "pushed_at": "2026-09-14T08:15:12Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:C61AA:153A03:22E313:6AD849D6 and timestamp 2026-10-21 05:12:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:149947:223D98:6AD849D6 and timestamp 2026-10-21 05:12:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13DB04:216EC9:6AD849D6 and timestamp 2026-10-21 05:12:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:62F3D:A8EFA:6AD849D6 and timestamp 2026-10-21 05:12:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1HelloMan1%2Fdsh-usage-dashboard-plus%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14A895:223EBC:6AD849D7 and timestamp 2026-10-21 05:12:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-usage-dashboard-plus",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 1049,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-usage-dashboard-plus",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-14T09:38:39.270Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-usage-dashboard-plus",
+                    "error": null,
+                    "latest_version": "0.2.4",
+                    "latest_published_at": "2026-08-18T08:16:56.078Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                "current_revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334023305:root",
+            "repository": "1HelloMan1/dsh-usage-dashboard-plus",
+            "path": "",
+            "revision": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "33246bc293f916923614c1b758506f8492ee21bcb6cbf2416a59a338fb74dea8",
+                "code": "ee53a4d07d212f02fe64ec64eb8a9a84163bd439",
+                "maintenance": "12dfe9df02f45090f517a1a8a4a31da57de9fb5a8989452c15c18f65b26388aa"
+            }
+        }
+    }
+}

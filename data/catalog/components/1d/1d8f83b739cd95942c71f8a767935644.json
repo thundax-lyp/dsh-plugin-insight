@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1d8f83b739cd95942c71f8a767935644",
+    "identity": "github:1337055793:packages-dshline",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337055793:packages-dshline",
+            "repository": "riesbri/dshline",
+            "path": "packages/dshline",
+            "revision": "8b91e0efb088162fae3b919230378b66ed58d943",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "917041cb8ddaea2b6b136f16c1fa7b97ced69887a981dfaabcc81ff72557b338",
+                "code": "8b91e0efb088162fae3b919230378b66ed58d943",
+                "maintenance": "4914d0274844dba0427f5d49e8f6643ad44f0f76d08c97be939128c3d0d1fe2c"
+            }
+        }
+    }
+}

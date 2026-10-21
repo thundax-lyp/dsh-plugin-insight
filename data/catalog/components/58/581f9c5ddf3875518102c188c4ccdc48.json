@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "581f9c5ddf3875518102c188c4ccdc48",
+    "identity": "github:1335056021:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335056021:root",
+            "repository": "Solismuchengxue/dsh_plugin_swift_cycle",
+            "path": "",
+            "revision": "b6fe37686b1e5d5e99a2594c0cb0bc7cfab4636c",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "773cf93202e20b86d9527cec694e2e80a86d09b4e49b8cf7e8f6c9035c5188ec",
+                "code": "b6fe37686b1e5d5e99a2594c0cb0bc7cfab4636c",
+                "maintenance": "6a7542ac1c4dcf071a5c6cdcee3b92f2d28d70f5d2f70c4ff943390d285eac40"
+            }
+        }
+    }
+}

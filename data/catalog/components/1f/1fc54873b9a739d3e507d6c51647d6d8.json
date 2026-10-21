@@ -1,0 +1,459 @@
+{
+    "schema_version": 3,
+    "id": "1fc54873b9a739d3e507d6c51647d6d8",
+    "identity": "github:1418769012:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1418769012:root",
+            "repository_id": 1418769012,
+            "component_id": "root",
+            "repository": "5V1A-afk/dsh-sticker-pack",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-sticker-pack",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "0c8872d70dd3bf48c0120e4914e3209384283846010149f9dd5ed97abab57372",
+                "code": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+                "maintenance": "6eb93148b44347458141ee18496b1e964d42f3b3a5ec37b874acf51536e37b98"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1418769012-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:20:55.667Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1418769012-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md",
+                    "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+                    "captured_at": "2026-10-21T03:20:55.667Z",
+                    "summary": "订阅远端表情包清单，按上下文挑选图片，提供缓存、贴图概率与会话显示适配。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/5v1a-afk--dsh-sticker-pack/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1418769012-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js",
+                    "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+                    "captured_at": "2026-10-21T03:20:55.667Z",
+                    "summary": "核查 lib/index.js、lib/remote.js、lib/library.js；lib/index.js注册sticker_catalog与sticker_pick，宿主按轮掷骰并在工具执行再次检查；remote.js同步远端pack.json、限大小下载和缓存；library.js负责图册扫描与尺寸缓存。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/5v1a-afk--dsh-sticker-pack/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交列明模块源码抽读与完整组件静态inventory；未安装或执行插件及测试，未发送微信、未验证手机收件和独立采用。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合需要在日常聊天中引用团队共用表情素材的DSH用户；交付物是可显示的Markdown图或特定通道文件。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js注册sticker_catalog与sticker_pick，宿主按轮掷骰并在工具执行再次检查；remote.js同步远端pack.json、限大小下载和缓存；library.js负责图册扫描与尺寸缓存。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交列明模块源码抽读与完整组件静态inventory；未安装或执行插件及测试，未发送微信、未验证手机收件和独立采用。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package.json声明0.6.2和dsh bundle；npm dsh-sticker-pack本轮返回404，保留错误不当作下载量0或仓库不可用。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需配置可访问远端清单并确认素材使用权限；持续成本为网络和图片缓存空间、下载失败等待及标签维护。无固定软件收费依据，人工需检查不合适表情和渠道显示，缓存节省不等于零成本。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "需要共用表情素材时可先在非工作关键会话试。检查远端来源、等待上限和本机显示，微信必须实际确认收件；只看工具返回路径不能判定贴图成功。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "共用素材与懒下载减少手工同步，未有沟通满意度或用户采用的独立证据。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "remote限制清单2MiB、图片16MiB、16源及每源2000项，文件名从校验id派生；inflight合并请求，旧镜像降级避免完全空库。library按头部读取尺寸并有有界缓存，可借鉴关键回复路径的延迟预算，但截止与实际后台取消应分别检查。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "作者主张远端共用图册与正文贴图；可确认增量是把远端清单镜像、懒下载、按轮概率和重复规避连接到模型工具。相对模型手写随机图片路径，工具给出实际素材链接；宿主掷骰加工具第二道gate把是否提供图片从纯提示移到部分可执行控制，显示和微信传输仍依赖宿主及外部渠道。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "素材匹配依赖标签和上下文规则，贴图频率不等于交流质量。等待上限可设任意正数，Promise.race到期只停止等待而不必取消全部同步工作；GET带参数可以写设置，宿主路由鉴权与浏览器请求行为必须核对。微信把扩展名加.wechat绕到文件通道只是适配，作者也承认未在手机端确认。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：把概率决策、素材匹配理由、缓存命中和实际渲染结果记录到同一回合，可用失败显示率约束贴图而不只控制调用。固定一套回复比较纯概率与可见性反馈策略的显示成功、重复率、延迟和人工评价；若只增加日志而不改善交流，则否定。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418769012:root",
+                            "area": "code",
+                            "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:20:55.667Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:20:55.667Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+                "reviewed_at": "2026-10-21T03:20:55.667Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1418769012:root",
+                        "area": "code",
+                        "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty=9：远端素材库和随机表情是既有模式，增量在DSH接入。mechanism=15：限大小下载、镜像降级及按轮工具gate有具体实现。transferability=10：缓存与清单可复用，显示和微信路径耦合宿主。simplification=8：减少手写路径与同步素材，仍有渠道适配负担。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow=18：共用清单到聊天贴图形成明确流程。delivery=8：有实际路径但最终显示与手机收件未经验证。reach=10：远端清单可多人共享，依赖特定宿主与通道。economics=4：缓存可能节省下载，没有交流效果或净人工成本对照。",
+                    "basis": "interpretation",
+                    "score": 40,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1418769012-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需要团队共用表情者可在非关键会话试用；确认远端素材许可及显示，微信实际查收，等待超时未必取消下载。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "共用表情素材交付清楚，但沟通收益主观。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "远端镜像懒下载与按轮gate比手写随机路径可控。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "catalog/pick和二次概率门源码可查，微信手机显示作者亦未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需网络缓存和标签许可维护，GET可写设置需核路由鉴权。"
+                    }
+                },
+                "score": 51,
+                "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1418769012-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1418769012:root",
+                        "area": "code",
+                        "fingerprint": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1418769012:root",
+            "repository": "5V1A-afk/dsh-sticker-pack",
+            "path": "",
+            "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+            "fingerprints": {
+                "directory": "0c8872d70dd3bf48c0120e4914e3209384283846010149f9dd5ed97abab57372",
+                "code": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+                "maintenance": "6eb93148b44347458141ee18496b1e964d42f3b3a5ec37b874acf51536e37b98"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "29edcc3715e951b50f13ec8340cc8f3515f6bb53be406e5479a3ea6c13976a00"
+        },
+        "publication.metadata": "data/plugins/5v1a-afk--dsh-sticker-pack/META.json",
+        "publication.summaries": {
+            "text": "订阅远端表情包清单，按上下文挑选图片，提供缓存、贴图概率与会话显示适配。",
+            "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+            "source_url": "https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+            "items": {
+                "模型工具": "sticker_catalog素材目录与sticker_pick选图",
+                "Host 路由": "/sticker-pack素材、设置和图片路由",
+                "界面": "表情概率与等待上限设置",
+                "事件监听": "按会话回合维护贴图决策"
+            }
+        },
+        "publication.advice": {
+            "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+            "text": "需要共用表情素材时可先在非工作关键会话试。检查远端来源、等待上限和本机显示，微信必须实际确认收件；只看工具返回路径不能判定贴图成功。"
+        },
+        "registry": "data/plugins/5v1a-afk--dsh-sticker-pack",
+        "reports": "# dsh-sticker-pack\n\n> 订阅远端表情包清单，按上下文挑选图片，提供缓存、贴图概率与会话显示适配。\n\n## 使用建议\n\n需要共用表情素材时可先在非工作关键会话试。检查远端来源、等待上限和本机显示，微信必须实际确认收件；只看工具返回路径不能判定贴图成功。\n\n**核查状态**：贡献由固定提交源码支持；桌面显示、设置面板和微信最终收件效果未做真实宿主验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：适合需要在日常聊天中引用团队共用表情素材的DSH用户；交付物是可显示的Markdown图或特定通道文件。\n- **亮点**：作者主张远端共用图册与正文贴图；可确认增量是把远端清单镜像、懒下载、按轮概率和重复规避连接到模型工具。相对模型手写随机图片路径，工具给出实际素材链接；宿主掷骰加工具第二道gate把是否提供图片从纯提示移到部分可执行控制，显示和微信传输仍依赖宿主及外部渠道。\n- **思考**：素材匹配依赖标签和上下文规则，贴图频率不等于交流质量。等待上限可设任意正数，Promise.race到期只停止等待而不必取消全部同步工作；GET带参数可以写设置，宿主路由鉴权与浏览器请求行为必须核对。微信把扩展名加.wechat绕到文件通道只是适配，作者也承认未在手机端确认。\n- **建议**：待验证假设：把概率决策、素材匹配理由、缓存命中和实际渲染结果记录到同一回合，可用失败显示率约束贴图而不只控制调用。固定一套回复比较纯概率与可见性反馈策略的显示成功、重复率、延迟和人工评价；若只增加日志而不改善交流，则否定。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代为手工复制表情图片链接或固定本地图册；项目增加共用远端维护、缓存和宿主概率控制，不产生新素材。\n\n### 能力、依赖与流程\n\nlib/index.js注册sticker_catalog与sticker_pick，宿主按轮掷骰并在工具执行再次检查；remote.js同步远端pack.json、限大小下载和缓存；library.js负责图册扫描与尺寸缓存。\n\n- **模型工具**：sticker_catalog素材目录与sticker_pick选图\n- **Host 路由**：/sticker-pack素材、设置和图片路由\n- **界面**：表情概率与等待上限设置\n- **事件监听**：按会话回合维护贴图决策\n\n宿主tools为硬依赖，webServer和systemPrompt按需注入；Node fetch与可访问远端清单；微信路径另依赖外部dsh-wechat-plugin和实际渠道规则。\n\n按回合判定是否贴→模型查图册或选图→同步清单/使用旧镜像→懒下载图片→返回HTTP或本地路径；微信会话优先静图并生成.wechat文件副本，模型还需外部发送工具。\n\n### 成本与效果\n\n首次需配置可访问远端清单并确认素材使用权限；持续成本为网络和图片缓存空间、下载失败等待及标签维护。无固定软件收费依据，人工需检查不合适表情和渠道显示，缓存节省不等于零成本。\n\n共用素材与懒下载减少手工同步，未有沟通满意度或用户采用的独立证据。\n\n### 工程亮点\n\nremote限制清单2MiB、图片16MiB、16源及每源2000项，文件名从校验id派生；inflight合并请求，旧镜像降级避免完全空库。library按头部读取尺寸并有有界缓存，可借鉴关键回复路径的延迟预算，但截止与实际后台取消应分别检查。\n\n源码依据：[lib/index.js](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js)、[lib/remote.js](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/remote.js)、[lib/library.js](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/library.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：把概率决策、素材匹配理由、缓存命中和实际渲染结果记录到同一回合，可用失败显示率约束贴图而不只控制调用。固定一套回复比较纯概率与可见性反馈策略的显示成功、重复率、延迟和人工评价；若只增加日志而不改善交流，则否定。\n\n隔离宿主验证断网旧镜像、截止后后台请求、恶意清单、GET写设置及真实桌面显示；微信需单独确认手机收件，本轮未执行。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：dbf01ad5346f5159883462593564d2b3a2ba990cbaf35a1d4c3c9fd26e46945b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 4 | 3222 | 2176 | 864 | — |\n| .md | source | 2 | 780 | — | — | 11802 |\n| .js | test | 2 | 1024 | 840 | 129 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[5V1A-afk/dsh-sticker-pack](https://github.com/5V1A-afk/dsh-sticker-pack)\n- **版本号**：0.6.2（[固定提交 531f16a8](https://github.com/5V1A-afk/dsh-sticker-pack/tree/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、lib/remote.js、lib/library.js、README、package及固定组件inventory。\n- 未验证：目标代码、真实宿主、微信收件及独立采用。\n- 证据限制：固定提交列明模块源码抽读与完整组件静态inventory；未安装或执行插件及测试，未发送微信、未验证手机收件和独立采用。\n- 分发状态：package.json声明0.6.2和dsh bundle；npm dsh-sticker-pack本轮返回404，保留错误不当作下载量0或仓库不可用。\n- 下一步：隔离宿主验证断网旧镜像、截止后后台请求、恶意清单、GET写设置及真实桌面显示；微信需单独确认手机收件，本轮未执行。\n",
+        "metadata": {
+            "repository": "5V1A-afk/dsh-sticker-pack",
+            "repository_id": 1418769012,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 1,
+            "pushed_at": "2026-10-18T07:24:15Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A5V1A-afk%2Fdsh-sticker-pack%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:28E3E1:A85DF0:F18793:6AD84A82 and timestamp 2026-10-21 05:15:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A5V1A-afk%2Fdsh-sticker-pack%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:3FE178:A95BD7:F2C890:6AD84A82 and timestamp 2026-10-21 05:15:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A5V1A-afk%2Fdsh-sticker-pack%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:360622:A3A9CB:EBA4EF:6AD84A83 and timestamp 2026-10-21 05:15:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A5V1A-afk%2Fdsh-sticker-pack%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:F5D0E:AA3896:F37486:6AD84A83 and timestamp 2026-10-21 05:15:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A5V1A-afk%2Fdsh-sticker-pack%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:F5D0E:AA38E0:F37506:6AD84A83 and timestamp 2026-10-21 05:15:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-sticker-pack",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-sticker-pack",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-sticker-pack",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+                "current_revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1418769012:root",
+            "repository": "5V1A-afk/dsh-sticker-pack",
+            "path": "",
+            "revision": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0c8872d70dd3bf48c0120e4914e3209384283846010149f9dd5ed97abab57372",
+                "code": "531f16a8f0a4f0ed9d9868ab0b0f8960b0322781",
+                "maintenance": "6eb93148b44347458141ee18496b1e964d42f3b3a5ec37b874acf51536e37b98"
+            }
+        }
+    }
+}

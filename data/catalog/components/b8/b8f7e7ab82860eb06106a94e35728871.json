@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b8f7e7ab82860eb06106a94e35728871",
+    "identity": "github:1334869464:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334869464:root",
+            "repository": "ArvinQi/dsh-mcp",
+            "path": "",
+            "revision": "af4df165b30cc9a954670a6990dd2edca017c975",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5e824d418e7ac74451aa701921b052abdb6b1759670da7fb7085c0307468171c",
+                "code": "af4df165b30cc9a954670a6990dd2edca017c975",
+                "maintenance": "9476c9370f3cb276c8e537e6d1e8d9c913b1fc7ffdf3fda85790f8927c92d2f5"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "86d37b438c499b375234450931584f0b",
+    "identity": "github:1415361999:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415361999:root",
+            "repository": "liushQAQ/dsh-anywhere",
+            "path": "",
+            "revision": "3a2b7245f29199de142d40a85947c5b6baabc725",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "59ea08e64766d60c877a51fe90539a534706a296191910e406749873d6d5b0ed",
+                "code": "3a2b7245f29199de142d40a85947c5b6baabc725",
+                "maintenance": "5c0909f7d46357b517118e0ac5a76a98f717f1ddc7dddea75173816fd80c8c45"
+            }
+        }
+    }
+}

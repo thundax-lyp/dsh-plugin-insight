@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b99452c93e05a262c7d0663fda519aec",
+    "identity": "github:1365212510:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1365212510:root",
+            "repository": "GodCC6/dsh-updater",
+            "path": "",
+            "revision": "dd5f85e8f024b8d8e752dbfcaae93736d6562c99",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b80545eeac76fbac8c37c260d9d4b1d6527773e8540c637e11c214dcc9395c44",
+                "code": "dd5f85e8f024b8d8e752dbfcaae93736d6562c99",
+                "maintenance": "bee5ce6437ea35e03fc39ebf4b8743e018ece45649eed124be5ce744b282e1ab"
+            }
+        }
+    }
+}

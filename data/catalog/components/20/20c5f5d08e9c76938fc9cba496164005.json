@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "20c5f5d08e9c76938fc9cba496164005",
+    "identity": "github:1333708301:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333708301:root",
+            "repository": "Nexus-Aethra/DSHBox",
+            "path": "",
+            "revision": "07329b66116e9b5a057f6e65f4bf3621e45950f9",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0cc6cfe3a245e51d920a3477ce967c757d0680b7610ad6b3071fb283f23e2d04",
+                "code": "07329b66116e9b5a057f6e65f4bf3621e45950f9",
+                "maintenance": "a8315d5cc4142dde24aa854cccd72983c5a25f389bdcaf0b4813a508a13fc5fb"
+            }
+        }
+    }
+}

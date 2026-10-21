@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c19bebfda59657e17855ac37a9cb855e",
+    "identity": "github:1350858454:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350858454:root",
+            "repository": "haozheou/dsh-discipline-guard",
+            "path": "",
+            "revision": "4eaa4f2efb8eb991bfc81d0a6bcda31e3bf48a6d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a000f0b36c057e5ec6e35907ea727f325bc03acbcc86f88a495fdbae698b0bf6",
+                "code": "4eaa4f2efb8eb991bfc81d0a6bcda31e3bf48a6d",
+                "maintenance": "b28e5e50006798838529b86dcf2710c98f7168bb788078391e0c177255dfecf0"
+            }
+        }
+    }
+}

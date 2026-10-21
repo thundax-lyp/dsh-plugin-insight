@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f47497ede6e59d8b12ef0023e99b7ab2",
+    "identity": "github:1380218520:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1380218520:root",
+            "repository": "qaz040619/dsh-bluefatfish",
+            "path": "",
+            "revision": "ad5372f1baeba9543f6279a33adf90ec730c37e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f44200ede77c512d28d9e269ede3e4162845bc243818ae1e4f4819c38102cd9a",
+                "code": "ad5372f1baeba9543f6279a33adf90ec730c37e3",
+                "maintenance": "ad6f1596c2e245f268d1d932aed45545cf364bfb482eada6e925d622b03063a5"
+            }
+        }
+    }
+}

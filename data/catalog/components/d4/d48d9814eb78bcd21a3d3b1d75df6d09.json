@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d48d9814eb78bcd21a3d3b1d75df6d09",
+    "identity": "github:1371316958:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1371316958:root",
+            "repository": "enterhalf/dsh-session-colorful-unread-pin-jobs",
+            "path": "",
+            "revision": "c9c2cef31588ab18c3f2788ea102318e906c68dc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fda394abfb2594aebf39d643b48c86e3d832659de34c59d56118a2248c0365f8",
+                "code": "c9c2cef31588ab18c3f2788ea102318e906c68dc",
+                "maintenance": "cb8bff0e5122da63e361afd22e51e19ca775456d8f6009124cc722e72e0ea322"
+            }
+        }
+    }
+}

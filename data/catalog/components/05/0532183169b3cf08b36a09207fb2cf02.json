@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0532183169b3cf08b36a09207fb2cf02",
+    "identity": "github:1348141898:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348141898:root",
+            "repository": "GoldenZqqq/dsh-model-collapse",
+            "path": "",
+            "revision": "87bd5b96cdbd0583fe103e6703c074989ab71bdc",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "86277525fffb76a70a42e600c24efa3daa4552440b636ad14e06c40fad7017ba",
+                "code": "87bd5b96cdbd0583fe103e6703c074989ab71bdc",
+                "maintenance": "8a72914329c5c360c80f6689eb8560963f6cc3d8a063ef614efd41097c6d1527"
+            }
+        }
+    }
+}

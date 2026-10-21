@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6ad76e7beb3de047f7dc50cba45c8dcc",
+    "identity": "github:1349704040:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1349704040:root",
+            "repository": "trueRISCOacnt/maa-dsh-skill",
+            "path": "",
+            "revision": "c4b6f8068b8d286f6f6f05622d8c108dc4638d28",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "10a7b72ddde2b2fefd81c36d9ae4ae44ca4fa73ccc70f1bc8ae2fe43c51e735d",
+                "code": "c4b6f8068b8d286f6f6f05622d8c108dc4638d28",
+                "maintenance": "443108b783447ac9b1c9d9e80c9ee2219ec6d416898b3956836ac6a185d82393"
+            }
+        }
+    }
+}

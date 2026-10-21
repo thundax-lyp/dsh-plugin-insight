@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a277afcad182a412a0a677c2a242ba24",
+    "identity": "github:1335083155:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335083155:root",
+            "repository": "niuniuaba/dsh-subagent-vision",
+            "path": "",
+            "revision": "9c020425fcce1d75062ca061c2e226318ed52c69",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1b3a39a6afacda676b040a123806930944399ccb3c53608b9714df07d52d12e8",
+                "code": "9c020425fcce1d75062ca061c2e226318ed52c69",
+                "maintenance": "85e94ee72b76565600fec2919426a1218dad9d6b0c6c3fe57b71f7da14e4ac5c"
+            }
+        }
+    }
+}

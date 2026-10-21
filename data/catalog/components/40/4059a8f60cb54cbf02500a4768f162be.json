@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4059a8f60cb54cbf02500a4768f162be",
+    "identity": "github:1378442514:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378442514:root",
+            "repository": "EdwardXiao-bit/dsh-run-button",
+            "path": "",
+            "revision": "bae7ac02138420dc1cbbd96963122922794131ec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e8fad3846b41dd32ed1e5323fd4762fe190c8c49db5555fcdfd522cf8f9ca491",
+                "code": "bae7ac02138420dc1cbbd96963122922794131ec",
+                "maintenance": "222e5442ab65b5f3f91e81b0b37dc168e22f90edbb153504f9b2ded1f37a1e26"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "60769646650df978283690915e6055f8",
+    "identity": "github:1421896598:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1421896598:root",
+            "repository": "YUAN-OVO66/dsh-plugin-persona",
+            "path": "",
+            "revision": "7d70d93c2813ba3841d1dd2f35c6b48d1d1a5eb5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "49fab6c143b8853ff3f7e3cda97bf51b7a033dd7062429e8126c0741734b295c",
+                "code": "7d70d93c2813ba3841d1dd2f35c6b48d1d1a5eb5",
+                "maintenance": "2b2e1c7d35adc05ddb392b524150a3bbbf34218cd091d5d88d97949e3a72a226"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "549264106c6d799f2cc777cdd3f04566",
+    "identity": "github:1362950558:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362950558:root",
+            "repository": "vitas/dsh-model-pricing",
+            "path": "",
+            "revision": "1a22a334af2e2941f7a1378413a47a40df20eed4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e2019b48e5388672212948a817f358612e7a123e860e5d7b902de21a47a23e6e",
+                "code": "1a22a334af2e2941f7a1378413a47a40df20eed4",
+                "maintenance": "e9d0b987bcda01e38ddb64acbf20b42a43f6a6907cb78c3d385628c2f0c10600"
+            }
+        }
+    }
+}

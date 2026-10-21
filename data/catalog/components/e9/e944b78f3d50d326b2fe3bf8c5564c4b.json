@@ -1,0 +1,457 @@
+{
+    "schema_version": 3,
+    "id": "e944b78f3d50d326b2fe3bf8c5564c4b",
+    "identity": "github:1417227361:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1417227361:root",
+            "repository_id": 1417227361,
+            "component_id": "root",
+            "repository": "439436269-ctrl/dsh-peak-runner",
+            "path": "",
+            "aliases": [],
+            "name": "峰谷价任务执行器",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "d26264dee84a1d424ce5c18b1df7ee87b59e3b267b1580fbfe11de76f24a28eb",
+                "code": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                "maintenance": "a44e656ee82b9cd17d5ceb6d0a33e3f924be4478ae1b97977914f0f256e10efc"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-01-github-1417227361-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T02:11:09.678Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-01-github-1417227361-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/README.md",
+                    "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                    "captured_at": "2026-10-21T02:11:09.678Z",
+                    "summary": "根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-peak-runner/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-01-github-1417227361-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/index.js",
+                    "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                    "captured_at": "2026-10-21T02:11:09.678Z",
+                    "summary": "核查 lib/index.js、lib/scheduler.js、lib/queue.js、lib/runner.js、lib/tariff.js、lib/config.js；持久化storage domain整批任务文档，scheduler按UTC峰段/周末选择立即或setTimeout触发；runner逐任务调用ctx.llm.stream并组装文本，默认reasoning off。",
+                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-peak-runner/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查调度/队列/runner和配置，未执行时钟模拟、真实模型任务或核实最新费率；仅指出静态分支与README的差异。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "可等待的摘要/翻译批任务，用户接受推迟执行换取预期低价；合格交付是指定模型完成的文本和可靠任务状态，而非仅到时触发。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "持久化storage domain整批任务文档，scheduler按UTC峰段/周末选择立即或setTimeout触发；runner逐任务调用ctx.llm.stream并组装文本，默认reasoning off。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查调度/队列/runner和配置，未执行时钟模拟、真实模型任务或核实最新费率；仅指出静态分支与README的差异。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.1.0，声明DSH0.2.0-rc.2；三模型工具和system提示，未进行宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "等待时间是核心代价；首次需校准价格/时区/模型，持续维护规则并复核空输出和失败。现金收益取决于实际模型账单与重试，未核实作者“两倍”价格口径。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "时间可移的工作负载有调度价值；忙时延迟、路由回退和重试可能吞掉收益，未给实际节费比例。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "runner将BlockAssembler失败与空输出显式处理可借鉴；scheduler当前lead逻辑注释和代码不符。whole-document put简洁但扩展并发需序列化或版本冲突处理。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对用户手动等低价，贡献是价格日程与可查队列、取消、模型调用的组合。存储和LLM流来自宿主；插件按时间表改变执行时机，并未读取实时账单确认价格。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "最影响节费主张的是日程是否真正约束所用模型和任务启动。scheduler.shouldRunNow在“当前非峰段”直接run=true，未检查即将进入峰段，因此README承诺的峰前leadMinutes不成立；runner指定模型失败会发现任意可用模型，其价格不一定对应同日程。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：队列任务绑定实际provider/model和价格规则版本，并以预估最长运行时间判断是否跨峰，可能比按当前时刻判断更可靠。推导自模型回退与lead窗口缺口；新增负担是维护价格规则及期限/任务时长估计。",
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1417227361:root",
+                            "area": "code",
+                            "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T02:11:09.678Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                "reviewed_at": "2026-10-21T02:11:09.678Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1417227361:root",
+                        "area": "code",
+                        "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty：价格感知排程为既有办法的宿主适配。 mechanism：队列与时段约束仅部分实现，lead逻辑削弱增量。 transferability：队列/runner可复用，费率与路由强绑定。 simplification：一处组织提交/查询/取消，规则仍需人工校准。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：将手动等时段转为可查队列，但可靠触发待验。 delivery：交付批任务文本和状态，质量无新保证。 reach：降低非技术用户预约任务门槛，仍受宿主在线条件约束。 economics：延期换低价机制存在，但路由和lead缺口使实际收益未知。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-01-github-1417227361-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "可延后文本批任务有避峰潜力，但峰前lead窗口与指定模型回退不约束价格；先修正路由绑定并验证日程再采用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "可等待摘要翻译任务和价格日程目标清楚。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "自动排队取消比手等方便，当前无法支撑承诺节费。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "shouldRunNow和任意模型回退源码支持具体反例，无真实账单对照。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "等待、空输出复核和价表时区维护可能吞掉节省。"
+                    }
+                },
+                "score": 54,
+                "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-01-github-1417227361-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1417227361:root",
+                        "area": "code",
+                        "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1417227361:root",
+            "repository": "439436269-ctrl/dsh-peak-runner",
+            "path": "",
+            "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+            "fingerprints": {
+                "directory": "d26264dee84a1d424ce5c18b1df7ee87b59e3b267b1580fbfe11de76f24a28eb",
+                "code": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                "maintenance": "a44e656ee82b9cd17d5ceb6d0a33e3f924be4478ae1b97977914f0f256e10efc"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T01:54:44Z",
+            "analysis_sha256": "5dd3e6567814031d15b6705c91fb58e19224dfe96425e482a45ed5af10d5e445"
+        },
+        "publication.metadata": "data/plugins/439436269-ctrl--dsh-peak-runner/META.json",
+        "publication.summaries": {
+            "text": "根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。",
+            "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+            "source_url": "https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+            "items": {
+                "模型工具": "peak_run、peak_schedule、peak_cancel。",
+                "后台": "持久任务队列与自持定时器。"
+            }
+        },
+        "publication.advice": {
+            "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+            "text": "适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。"
+        },
+        "registry": "data/plugins/439436269-ctrl--dsh-peak-runner",
+        "reports": "# 峰谷价任务执行器\n\n> 根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。\n\n## 使用建议\n\n适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。\n\n核查状态：源码支持本文所述机制与有限集成贡献；效果、宿主兼容和独立采用未验证。未来设计假设仅为推演，未实现、未验证。 只执行研究工程的统计/装配与结构验证，未安装插件、运行目标代码/测试或做真实宿主验收。\n\n- **用途**：可等待的摘要/翻译批任务，用户接受推迟执行换取预期低价；合格交付是指定模型完成的文本和可靠任务状态，而非仅到时触发。\n- **亮点**：相对用户手动等低价，贡献是价格日程与可查队列、取消、模型调用的组合。存储和LLM流来自宿主；插件按时间表改变执行时机，并未读取实时账单确认价格。\n- **思考**：最影响节费主张的是日程是否真正约束所用模型和任务启动。scheduler.shouldRunNow在“当前非峰段”直接run=true，未检查即将进入峰段，因此README承诺的峰前leadMinutes不成立；runner指定模型失败会发现任意可用模型，其价格不一定对应同日程。\n- **建议**：适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。\n\n## 能力与限制\n\n参照手工预约/cron执行同模型与同任务；不对当前DeepSeek实际价格作核实性断言。\n\n持久化storage domain整批任务文档，scheduler按UTC峰段/周末选择立即或setTimeout触发；runner逐任务调用ctx.llm.stream并组装文本，默认reasoning off。\n\n\nNode>=22；DSH llm/storageDomain/systemPrompt/tools 0.2.0-rc.2系列；配置provider/model可用，价格时段必须适用于实际账户。宿主持续运行才能计时触发，法定节假日不能仅凭README假定已覆盖。\n\n提交prompts→当前时段判定→持久化队列→立即执行或挂定时器→逐项更新running/done/failed→用户查询/取消。重启、并发全量写和执行中断恢复未实测；单文档队列需关注状态丢更新。\n\n等待时间是核心代价；首次需校准价格/时区/模型，持续维护规则并复核空输出和失败。现金收益取决于实际模型账单与重试，未核实作者“两倍”价格口径。\n\n时间可移的工作负载有调度价值；忙时延迟、路由回退和重试可能吞掉收益，未给实际节费比例。\n\n## 能力清单\n\n- **模型工具**：peak_run、peak_schedule、peak_cancel。\n- **后台**：持久任务队列与自持定时器。\n\n## 工程分析\n\nrunner将BlockAssembler失败与空输出显式处理可借鉴；scheduler当前lead逻辑注释和代码不符。whole-document put简洁但扩展并发需序列化或版本冲突处理。\n\n0.1.0，声明DSH0.2.0-rc.2；三模型工具和system提示，未进行宿主验收。\n\n固定源码依据：[lib/scheduler.js L25–54](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/scheduler.js#L25-L54)；[lib/runner.js L22–47](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/runner.js#L22-L47)。上述贡献与关键质疑均限定于这些固定源码，不把测试文件存在当运行通过。\n\n## 未来设计假设（未验证）\n\n待验证假设：队列任务绑定实际provider/model和价格规则版本，并以预估最长运行时间判断是否跨峰，可能比按当前时刻判断更可靠。推导自模型回退与lead窗口缺口；新增负担是维护价格规则及期限/任务时长估计。\n\n最小验证与否定条件：不执行目标代码的本轮只静态发现边界；后续用固定时钟覆盖峰前10分钟、跨日、周末、假日与长任务，模拟目标不可用，要求实际路由与价格规则一致。对照手动排程统计合格文本/总费用/等待时间，若低价目标失配或任务跨峰成本上升则否定节费保证。\n\n## 核查说明\n\n- 版本依据：仓库：[439436269-ctrl/dsh-peak-runner](https://github.com/439436269-ctrl/dsh-peak-runner)；固定提交：[fe646bc9](https://github.com/439436269-ctrl/dsh-peak-runner/tree/fe646bc931b3853815a760d7eb6943d96e6cad8f)；版本号：0.1.0；版本日期：2026-10-13（固定提交日期，北京时间，非包发布日期）。\n- 已检查与未覆盖范围：核查调度/队列/runner和配置，未执行时钟模拟、真实模型任务或核实最新费率；仅指出静态分支与README的差异。\n- 证据限制：作者功能摘要来自固定版本README；未核实独立用户采用、同条件效果或端到端收益。版本、证据原文与inventory绑定保存在本项JSON；GitHub/npm统计仅作背景，不构成采用证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；版本号：0.1.0；版本日期：2026-10-13（固定提交日期，北京时间，非包发布日期）；组件：根；内容摘要：0bd11f2cdf24b20ef31eeaad917cee08b91d32005f356281b8d950786bee41f7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 98 | — | — | 800 |\n| .js | source | 8 | 880 | 528 | 286 | — |\n| .mjs | test | 3 | 318 | 250 | 32 | — |\n\n排除 0 项；解析错误 0 项。统计为固定Git范围，源码抽读不冒充全面审计；JS/TS与Markdown分别计量。默认排除为启发式，不能从LOC推算原创量或工时。\n\n",
+        "metadata": {
+            "repository": "439436269-ctrl/dsh-peak-runner",
+            "repository_id": 1417227361,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 0,
+            "pushed_at": "2026-10-13T14:53:23Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-peak-runner%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:1CA4C8:14C285:226531:6AD84A2A and timestamp 2026-10-21 05:14:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-peak-runner%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:A17BB:10BB75:6AD84A2A and timestamp 2026-10-21 05:14:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-peak-runner%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:90BBC:14B8E8:22561B:6AD84A2A and timestamp 2026-10-21 05:14:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-peak-runner%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:144569:21E326:6AD84A2B and timestamp 2026-10-21 05:14:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-peak-runner%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:149FA3:222ACC:6AD84A2B and timestamp 2026-10-21 05:14:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-peak-runner",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 24,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-peak-runner",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-13T14:33:10.038Z",
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/dsh-peak-runner",
+                    "error": null,
+                    "latest_version": "0.1.0",
+                    "latest_published_at": "2026-10-13T14:34:04.916Z",
+                    "latest_error": null
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                "current_revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1417227361:root",
+            "repository": "439436269-ctrl/dsh-peak-runner",
+            "path": "",
+            "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d26264dee84a1d424ce5c18b1df7ee87b59e3b267b1580fbfe11de76f24a28eb",
+                "code": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                "maintenance": "a44e656ee82b9cd17d5ceb6d0a33e3f924be4478ae1b97977914f0f256e10efc"
+            }
+        }
+    }
+}

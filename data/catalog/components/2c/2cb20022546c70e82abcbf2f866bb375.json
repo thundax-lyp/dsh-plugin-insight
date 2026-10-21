@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2cb20022546c70e82abcbf2f866bb375",
+    "identity": "github:1334309410:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334309410:root",
+            "repository": "Yts1919/dsh-vision-complete",
+            "path": "",
+            "revision": "9526ccd4ddeb50ba245b693f137ff4ee0432d5a4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "31985eb60069f1893ed472065bb2749737c16be94729ca61ef03c3cd4e9f76a3",
+                "code": "9526ccd4ddeb50ba245b693f137ff4ee0432d5a4",
+                "maintenance": "207d52e58e597fadb984de71bd023411a8089f8ddb855ac5e5187e8ed06c4ad6"
+            }
+        }
+    }
+}

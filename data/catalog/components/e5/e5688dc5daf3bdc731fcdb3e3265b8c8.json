@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5688dc5daf3bdc731fcdb3e3265b8c8",
+    "identity": "github:1397390853:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1397390853:root",
+            "repository": "oldHan2423/dsh-everything-find",
+            "path": "",
+            "revision": "d55ce4bdb314a1254fc8a999a99489f7d7f170de",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f0255d9e5d134deff200cd5a3fc2953e936d0fdf724eab6de30520d8b48c7777",
+                "code": "d55ce4bdb314a1254fc8a999a99489f7d7f170de",
+                "maintenance": "ebd4d44d25e4e1cbda57ccbadffef6a1b24caa9965ab52f973b4d17eb56f7002"
+            }
+        }
+    }
+}

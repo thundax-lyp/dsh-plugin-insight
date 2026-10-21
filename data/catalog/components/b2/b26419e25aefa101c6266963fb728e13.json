@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b26419e25aefa101c6266963fb728e13",
+    "identity": "github:1333515977:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333515977:root",
+            "repository": "Player-MINEPIG/dsh-llm-codex-oauth",
+            "path": "",
+            "revision": "465e4e4f76b1df2cd0d5d514666ecd09f60c70d3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "b2dfa4c5d1921ddc20343d73d8cb135870cc20c606fe1d120861b867685a02d0",
+                "code": "465e4e4f76b1df2cd0d5d514666ecd09f60c70d3",
+                "maintenance": "656785c7ebcb2cf10626c78caee1d8496be58472cdf7f9eebfb359d02e74025e"
+            }
+        }
+    }
+}

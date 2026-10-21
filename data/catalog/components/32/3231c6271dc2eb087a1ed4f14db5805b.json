@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "3231c6271dc2eb087a1ed4f14db5805b",
+    "identity": "github:1333193107:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333193107:root",
+            "repository": "Flyvhidbwo/dsh-vision-proxy",
+            "path": "",
+            "revision": "d4ac2622e8eb0d9f0121d99466c7946f1567fbf8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "4bb7fa23a74f10065fd683a9ada6868510e5f36ab4f9b9598d34299c46acb2b6",
+                "code": "d4ac2622e8eb0d9f0121d99466c7946f1567fbf8",
+                "maintenance": "60aa2f331bd051d04b075058c444026c2129e0edf65e76dfaa07c7323c0e3c6c"
+            }
+        }
+    }
+}

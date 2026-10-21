@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7c1202782c6255a41f5670cf6e473559",
+    "identity": "github:1394843776:packages-dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1394843776:packages-dsh-plugin",
+            "repository": "bwndlct/dsh-codex-bridge",
+            "path": "packages/dsh-plugin",
+            "revision": "a982638954b58f273f46cdcf33135ae966abbe4e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fb03885fb8c15a085db7b4dba77f8f31c63c3eac208dc25353467b055c39c865",
+                "code": "a982638954b58f273f46cdcf33135ae966abbe4e",
+                "maintenance": "95c3796d69549853df5dcc331d7a5fa4499b91e3249bae9a8cb07aa671543294"
+            }
+        }
+    }
+}

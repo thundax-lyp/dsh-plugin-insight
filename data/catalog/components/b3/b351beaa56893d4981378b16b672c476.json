@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b351beaa56893d4981378b16b672c476",
+    "identity": "github:1382161262:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1382161262:root",
+            "repository": "BinXie-lixiangdehua/dsh-devflow",
+            "path": "",
+            "revision": "5fb7f4bb491adffb767d6463b212645674e12ea0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "268244708638fe81f842f06100cb2edcd0f3d574afcecbbce914dea39fefe56a",
+                "code": "5fb7f4bb491adffb767d6463b212645674e12ea0",
+                "maintenance": "189afc3f3a0e4029c7fb00fc51cd54fa5248219dde5141f69b4ca05a20aec49f"
+            }
+        }
+    }
+}

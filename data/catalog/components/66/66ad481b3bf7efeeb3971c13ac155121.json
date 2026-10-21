@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "66ad481b3bf7efeeb3971c13ac155121",
+    "identity": "github:1337028251:packages-dsh-at-file",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337028251:packages-dsh-at-file",
+            "repository": "SIMON-WORLD/dsh-toolkit",
+            "path": "packages/dsh-at-file",
+            "revision": "7574d611e7568d28773d49aee7fac2cad3d13a27",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ab6121b184c733927363ebaadefd571063565605dcd29081511e8f8c2c4909d2",
+                "code": "7574d611e7568d28773d49aee7fac2cad3d13a27",
+                "maintenance": "7556f4b44a4d09b608b9b8b3eadf9466898180decb4bac9b2e3d79605450b1a8"
+            }
+        }
+    }
+}

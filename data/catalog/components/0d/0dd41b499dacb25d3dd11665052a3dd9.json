@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0dd41b499dacb25d3dd11665052a3dd9",
+    "identity": "github:1346204810:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1346204810:root",
+            "repository": "HellowVirgil/dsh-antv-ava",
+            "path": "",
+            "revision": "00597ab0d596cf0843c03d18ef92fe2f28f346f4",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c6559f7d77e13ed4e44e46aaa62f86cdf738d63f107f1de233eca40df373b2ad",
+                "code": "00597ab0d596cf0843c03d18ef92fe2f28f346f4",
+                "maintenance": "feeae5fc3d821ac4a9fb375457d45f90ac29b33e2f68d5cc924d8e023bf0b246"
+            }
+        }
+    }
+}

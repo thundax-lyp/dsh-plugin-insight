@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "fc49a040b2c8525a5aa6778da32bb837",
+    "identity": "github:1336046162:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336046162:root",
+            "repository": "heyadhithya/fullstack-expert",
+            "path": "",
+            "revision": "1419bb6f77e5f08fca41b6bdc75cc2dcdc49b6a5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "ae14981f462209a829c0d0db2bc13dc2438583bc527cdb45cbf056e3b31511ff",
+                "code": "1419bb6f77e5f08fca41b6bdc75cc2dcdc49b6a5",
+                "maintenance": "f5c102c01f1f7b8462aff93c35cea1b63bbbd6afe5eecea7c2898bdfb9b11659"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c24da639f935fd1695b8b9d5faf9b6c",
+    "identity": "github:1139909532:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1139909532:root",
+            "repository": "iamaanahmad/everything-kiro",
+            "path": "",
+            "revision": "1a6fd156c6308875a5bf9756fdbe4e0730e1fb19",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1bc6ef215a2c7551e418517d73af82a2a542da0d3c109b5d8be0d7a700494177",
+                "code": "1a6fd156c6308875a5bf9756fdbe4e0730e1fb19",
+                "maintenance": "704ae19b4bda44a907bd2e56b42eb6cd172b8a78784502ffe6719f16d516d971"
+            }
+        }
+    }
+}

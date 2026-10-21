@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e89bbdfa277f97f8d05971069061d21f",
+    "identity": "github:1333652151:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333652151:root",
+            "repository": "PC2005-cloud/dsh-pet",
+            "path": "",
+            "revision": "d296dbe51a7540641273de6d245461fe30b8e278",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "198964b00011ed35de4d0ba52e20f3232e1f8d05c221d77ff8681502a2fa9700",
+                "code": "d296dbe51a7540641273de6d245461fe30b8e278",
+                "maintenance": "b92715916e66e467d73d7adbd52095e6a9544372b3061ffa0b324ed05bc01e6f"
+            }
+        }
+    }
+}

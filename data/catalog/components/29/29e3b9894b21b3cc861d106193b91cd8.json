@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "29e3b9894b21b3cc861d106193b91cd8",
+    "identity": "github:1402807073:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402807073:root",
+            "repository": "Palpitate1388/dsh-market-sidebar",
+            "path": "",
+            "revision": "89c32d1022a224a523821d6a78530f46be5fdf97",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a9f049a8798e7eae6840cb1f54a699bd3ac4675c8efcbb3cdbe1d00b8ae98ab",
+                "code": "89c32d1022a224a523821d6a78530f46be5fdf97",
+                "maintenance": "fa90028d82768c0a37a3978c62774da0b8260a153c1e133e5488c38ab322a8f6"
+            }
+        }
+    }
+}

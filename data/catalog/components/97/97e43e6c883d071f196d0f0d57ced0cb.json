@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "97e43e6c883d071f196d0f0d57ced0cb",
+    "identity": "github:1420218167:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1420218167:root",
+            "repository": "rinsoraa/dsh-pulse-rail",
+            "path": "",
+            "revision": "01d876a12e5cbdfa058dbf5da8788d00383d151f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5b5c468da8d55dd5524162570885fbd0fd788f9efbdc464b5a6b59693a01756d",
+                "code": "01d876a12e5cbdfa058dbf5da8788d00383d151f",
+                "maintenance": "a483defc8a5543e0e17c3bfa8ed07ef84004535055885ba0e20ccb665be20c37"
+            }
+        }
+    }
+}

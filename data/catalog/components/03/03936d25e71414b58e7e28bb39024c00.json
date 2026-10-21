@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "03936d25e71414b58e7e28bb39024c00",
+    "identity": "github:1340370318:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1340370318:root",
+            "repository": "JohnXu22786/db-connector",
+            "path": "",
+            "revision": "5ac9a07546e29f7b515f9e1c57c037814d607297",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "47942202294c3c448824b62b203a8c1538c675477f6775c61f0586d4f7822056",
+                "code": "5ac9a07546e29f7b515f9e1c57c037814d607297",
+                "maintenance": "63ab9af6316a02cac5b168495c005650c72b764cff41f1ef64ad2fb63582fabd"
+            }
+        }
+    }
+}

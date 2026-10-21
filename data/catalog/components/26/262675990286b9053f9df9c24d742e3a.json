@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "262675990286b9053f9df9c24d742e3a",
+    "identity": "github:1375426828:packages-bundle-patent",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1375426828:packages-bundle-patent",
+            "repository": "ai-tools-mtl/Aurify",
+            "path": "packages/bundle-patent",
+            "revision": "bc0b5808f3005323a3968460ac5039fc03590e75",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e2a2b204deb84cfa0dfc665070b9489f51cab731644ec065f8b594fae856dce0",
+                "code": "bc0b5808f3005323a3968460ac5039fc03590e75",
+                "maintenance": "594eeae5e71ec8f01db8a94382bb6ba0a802f739927d86fc0c5d632859e736fe"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "adc7221ad673b355e41b5570b24da989",
+    "identity": "github:1402860558:plugins-dsh-math",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402860558:plugins-dsh-math",
+            "repository": "SixId666/dsh-math-plugin",
+            "path": "plugins/dsh-math",
+            "revision": "dca492bd2429c62740055e0e0d74541a6c07f7d1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d78f9256bef0ba672a2e1d9060c7c8c66122a01b81e6e065c267e757c24d9133",
+                "code": "dca492bd2429c62740055e0e0d74541a6c07f7d1",
+                "maintenance": "fc12a10e79066af5a21f432a13dc9bdc4b41ea7c5f58234656f14a2a18b24df8"
+            }
+        }
+    }
+}

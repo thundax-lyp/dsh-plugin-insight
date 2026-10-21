@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a35cd982c2f026cce734d6695793e45c",
+    "identity": "github:1338253574:packages-insurance-company-analyst",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338253574:packages-insurance-company-analyst",
+            "repository": "kevinchu1981/dsh-insurance-experts",
+            "path": "packages/insurance-company-analyst",
+            "revision": "8444a19d9852c2354090911ec49f35cb3a3b2f51",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "aebaaebc0558229ad1431fcf73f75e4162341ef1983970446db4cb5d60ceb8b8",
+                "code": "8444a19d9852c2354090911ec49f35cb3a3b2f51",
+                "maintenance": "0fb42d35c1e6afe4795a6c863d8c763297e82fd54e5edd07bbabef79d0750114"
+            }
+        }
+    }
+}

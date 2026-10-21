@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e9b259c93037a8429bd68a83cc772c1e",
+    "identity": "github:1337429978:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337429978:root",
+            "repository": "KyoMio/dsh-zen-remote",
+            "path": "",
+            "revision": "b9a9588afbe746d3444b7a1eff5aaa20b2732fb1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "10181f076f08a679c9e74777239ad6cddb9946b531a2da8cd7972b390f1ea81e",
+                "code": "b9a9588afbe746d3444b7a1eff5aaa20b2732fb1",
+                "maintenance": "f76b7ceb3a627b6a1c5a28b50e4c2c1e2f48be55f2337abfdaf8c6148489eb55"
+            }
+        }
+    }
+}

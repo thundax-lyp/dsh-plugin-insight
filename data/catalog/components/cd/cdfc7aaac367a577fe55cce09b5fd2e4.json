@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cdfc7aaac367a577fe55cce09b5fd2e4",
+    "identity": "github:1195243030:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1195243030:root",
+            "repository": "walkinglabs/learn-harness-engineering",
+            "path": "",
+            "revision": "95c42edf2563db22c400e36125270ba2059cc250",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2de95d1a90f703d4602d69b5b4b02898cc8948a36a61ef0b46479f9bc00a15bb",
+                "code": "95c42edf2563db22c400e36125270ba2059cc250",
+                "maintenance": "5c7b5f4362c7ada9ab48008c3f044e5ec85d2fd48ccd19e982ca5f6de84166f0"
+            }
+        }
+    }
+}

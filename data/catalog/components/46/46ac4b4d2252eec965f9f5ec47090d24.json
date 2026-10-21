@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "46ac4b4d2252eec965f9f5ec47090d24",
+    "identity": "github:1338044518:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338044518:root",
+            "repository": "staff-os/dsh-ragflow",
+            "path": "",
+            "revision": "e018a34027f6db0bf0315d7308178ea3a92ec998",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "708645f530f00f11ec84cd6f5d472eb3efbb756bc5bb1db9d53e728fd32ec0f1",
+                "code": "e018a34027f6db0bf0315d7308178ea3a92ec998",
+                "maintenance": "08396d4422ebaaffcf807faba1d7ae1759932239e5a8503f300f4d80ef1c2e85"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "33c1ee2731ab4473a5f5d950997f719a",
+    "identity": "github:1414233132:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414233132:root",
+            "repository": "shiinakaze/dsh-plugin-backup",
+            "path": "",
+            "revision": "bf62da4ef258c1418cfec4dd71bed610466798f8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7fdbc1591dd7c2d531712fe63676e97d02b81964c2c04c634a47db100f01e4bb",
+                "code": "bf62da4ef258c1418cfec4dd71bed610466798f8",
+                "maintenance": "c5d8f00b5649cd9e943339ea8ae3e3908607d2a44ea197be3a2495a18b3b9f6a"
+            }
+        }
+    }
+}

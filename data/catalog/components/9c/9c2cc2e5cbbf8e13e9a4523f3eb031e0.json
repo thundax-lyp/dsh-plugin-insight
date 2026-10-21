@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9c2cc2e5cbbf8e13e9a4523f3eb031e0",
+    "identity": "github:1358894164:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358894164:root",
+            "repository": "Rainier-Z/dsh-workspace-monitor",
+            "path": "",
+            "revision": "07f778248112eb28116872cbb8c449529e84ff8b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5fe9fbd9982a52ed6c4567e4dd7257849148259b4754f43c6d4f824c9bc84e69",
+                "code": "07f778248112eb28116872cbb8c449529e84ff8b",
+                "maintenance": "6f8d1a8f792f2d7483d06b83457c57835b22adc3d49c589a9b87c5d5f7f6bdbe"
+            }
+        }
+    }
+}

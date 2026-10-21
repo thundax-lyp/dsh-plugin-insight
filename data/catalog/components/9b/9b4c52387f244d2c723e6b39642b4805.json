@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9b4c52387f244d2c723e6b39642b4805",
+    "identity": "github:1370152104:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1370152104:root",
+            "repository": "he-yufeng/dsh-tool-radar",
+            "path": "",
+            "revision": "c116c11fa3d2c7ba5b003a649c1e0803a46107c5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e2cfaa6ac77c4d23913e0267cf1ee5e210d8163cede23723b5bb0f9210834e5b",
+                "code": "c116c11fa3d2c7ba5b003a649c1e0803a46107c5",
+                "maintenance": "8bc6d0bbb4e069a6f86c5c422c61478242d9e94da9adcbaedbf6d852eed5edf2"
+            }
+        }
+    }
+}

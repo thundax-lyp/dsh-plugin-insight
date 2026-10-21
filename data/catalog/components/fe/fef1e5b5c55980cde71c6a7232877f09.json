@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fef1e5b5c55980cde71c6a7232877f09",
+    "identity": "github:1334823850:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334823850:root",
+            "repository": "ZhenHuangLab/dsh-sync",
+            "path": "",
+            "revision": "d474556c55a85095169d55ab0ba976af568fae5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "034462d49084f0788600a315a5cf013646c16c84f07107ad5d3c4ba4db6cf41a",
+                "code": "d474556c55a85095169d55ab0ba976af568fae5b",
+                "maintenance": "25c6e82a28c50d7cc5322454948f0b4e70c0268a26b6800a9f4e34146a4e3823"
+            }
+        }
+    }
+}

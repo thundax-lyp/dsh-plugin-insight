@@ -1,0 +1,435 @@
+{
+    "schema_version": 3,
+    "id": "85ea98e874f625670a5406fa56efb60d",
+    "identity": "github:1414577411:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1414577411:root",
+            "repository_id": 1414577411,
+            "component_id": "root",
+            "repository": "AlyceStocking/dsh-harness-switch",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Harness Switch",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "3308e96d492a69e8d52b15cf4fcef4411c77198cd9e80a6b53dbf7cfb847a74d",
+                "code": "678b5a218f750c61c055bb113a4ff003948aa774",
+                "maintenance": "8f67a5b820973b39a82c95f671591497f58422cc758e82e1f64612d8620559eb"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-07-github-1414577411-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T08:11:39.713Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-07-github-1414577411-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AlyceStocking/dsh-harness-switch/blob/678b5a218f750c61c055bb113a4ff003948aa774/README.md",
+                    "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+                    "captured_at": "2026-10-21T08:11:39.713Z",
+                    "summary": "在 DSH 原生会话中切换原生适配与嵌入式 Kimi Code 执行核心。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/alycestocking--dsh-harness-switch/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-07-github-1414577411-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AlyceStocking/dsh-harness-switch/blob/678b5a218f750c61c055bb113a4ff003948aa774/index.js",
+                    "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+                    "captured_at": "2026-10-21T08:11:39.713Z",
+                    "summary": "核查 index.js、src/engine.js、cordis.patch.yml、package.json；外层adapter对embedded绑定生成本地kimi_harness_turn工具信封，prompt装配替换为传输说明；EngineManager将DSH session映射Kimi session并存home/cwd/固定上游commit/seen/pending/completed。引擎内部执行工具，审批/提问桥到DSH，历史增量导入，输出投影为原生工具卡。",
+                    "artifact": "data/runs/2026-10-21-07/snapshots/alycestocking--dsh-harness-switch/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "根index与src/engine.js核心映射/审批/取消/持久化及patch；vendor核心未全审，src与构建产物不自动等价，未操作真实Kimi会话。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "希望相同模型下比较/使用不同harness工具、Skills和压缩的开发者；合格交付是一次真实执行、正确审批和可恢复会话关联。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "外层adapter对embedded绑定生成本地kimi_harness_turn工具信封，prompt装配替换为传输说明；EngineManager将DSH session映射Kimi session并存home/cwd/固定上游commit/seen/pending/completed。引擎内部执行工具，审批/提问桥到DSH，历史增量导入，输出投影为原生工具卡。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "根index与src/engine.js核心映射/审批/取消/持久化及patch；vendor核心未全审，src与构建产物不自动等价，未操作真实Kimi会话。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "DSH bundle，README声明Node24.15/特定Desktop；vendor固定MIT来源与来源补丁需保留，settings/会话目录独立于包迁移。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "现金为所选Kimi/API模型及MCP动作；人工是模型绑定、权限差异、历史导入和未知pending复核，双引擎状态迁移有维护成本。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "明确需要Kimi内核且能核权限差异的开发者可评估；不能把DSH allowlist当对全部内部工具的第二道检查。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "在同原生UI使用另一执行体系，适合研究harness差异；未有同模型任务质量/成本实验。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "settings活跃turn时拒变更，session链接绑定home/cwd/engine commit防错复用，取消同时请求turn/compaction并等待；存completed结果有助重入，仍需断电/写错故障核查。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "避免把外部harness降格成模型文本：嵌入Kimi核心拥有提示/工具/权限/压缩，DSH保留会话UI与审批，外层不再执行同一真实工具第二次。贡献是执行所有权桥接；vendor Kimi内核明确上游固定提交，不将其能力或代码量算插件原创。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "切换后权限和历史是否仍具一致含义？Kimi判免审批动作不再经过DSH逐工具allowlist，审批桥仅覆盖Kimi提出的请求；同原生权限名称不意味着同策略。pending链接在调用前落盘能标未知，但副作用已发生而completed写失败仍需恢复协议，不能只因有messageId就认定exactly-once；跨模型历史导入是参考而非状态等价。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "给每harness显示可比较的权限能力清单，并为未知pending提供只读恢复/回执核查而非重新prompt，可能减少策略误判和重复工具副作用。固定同任务比较原生/embedded审批触发，再在工具完成后断写completed恢复，要求不自动重放；若不能核定原结果，应保持unknown并交人。",
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1414577411:root",
+                            "area": "code",
+                            "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T08:11:39.713Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T08:11:39.713Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+                "reviewed_at": "2026-10-21T08:11:39.713Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1414577411:root",
+                        "area": "code",
+                        "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "新颖性9：多harness桥接与嵌入引擎有先例；机制15：执行所有权/原生审批/会话映射组合明确；迁移性10：桥接设计可复用但绑定KimiSDK；简化8：避免双重工具执行，仍有双状态维护。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流18：执行职责交给另一内核且保留原宿主批准，分工实质改变；交付8：原生工具卡/结果，业务质量未验；覆盖5：需要Kimi配置与Node24/DSH目标用户；经济4：同模型下资源差异未测。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-07-github-1414577411-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "明确研究Kimi内核者可用临时会话试harness切换；内部工具不再逐次过DSH allowlist，先核实际策略差异及pending未知结果恢复。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "同模型比较不同工具Skills压缩体系的开发需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "原生UI内会话映射、审批桥和历史投影减少切换成本。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核固定上游与pending状态，权限语义不等价且无共同任务实验。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "双引擎状态和模型/API费高，重要副作用须独立策略与恢复核查。"
+                    }
+                },
+                "score": 60,
+                "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-07-github-1414577411-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1414577411:root",
+                        "area": "code",
+                        "fingerprint": "678b5a218f750c61c055bb113a4ff003948aa774"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1414577411:root",
+            "repository": "AlyceStocking/dsh-harness-switch",
+            "path": "",
+            "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+            "fingerprints": {
+                "directory": "3308e96d492a69e8d52b15cf4fcef4411c77198cd9e80a6b53dbf7cfb847a74d",
+                "code": "678b5a218f750c61c055bb113a4ff003948aa774",
+                "maintenance": "8f67a5b820973b39a82c95f671591497f58422cc758e82e1f64612d8620559eb"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T07:52:12Z",
+            "analysis_sha256": "0ae4b25f3bbcee0028a7b5a7a35cd64bc9b67666479edbc5526cd6d9a3c53614"
+        },
+        "publication.metadata": "data/plugins/alycestocking--dsh-harness-switch/META.json",
+        "publication.summaries": {
+            "text": "在 DSH 原生会话中切换原生适配与嵌入式 Kimi Code 执行核心。",
+            "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+            "source_url": "https://github.com/AlyceStocking/dsh-harness-switch/blob/678b5a218f750c61c055bb113a4ff003948aa774/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+            "items": {
+                "模型工具": "kimi_harness_turn为本地嵌入式执行传输入口。",
+                "Host 路由": "connection /harness-switch提供设置/模型/执行视图RPC。",
+                "事件监听": "原生prompt装配与Agent作用域接入传输adapter。",
+                "后台": "embedded Kimi执行核心管理会话/工具/Skills/MCP/压缩，上游归属明确。"
+            }
+        },
+        "publication.advice": {
+            "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+            "text": "明确需要Kimi内核且能核权限差异的开发者可评估；不能把DSH allowlist当对全部内部工具的第二道检查。"
+        },
+        "registry": "data/plugins/alycestocking--dsh-harness-switch",
+        "reports": "# DSH Harness Switch\n\n> 在 DSH 原生会话中切换原生适配与嵌入式 Kimi Code 执行核心。\n\n## 使用建议\n\n明确需要Kimi内核且能核权限差异的开发者可评估；不能把DSH allowlist当对全部内部工具的第二道检查。\n\n核查状态：传输/引擎分工、审批桥与持久关联源码支持；上游内核全部行为和跨harness恢复未运行验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：希望相同模型下比较/使用不同harness工具、Skills和压缩的开发者；合格交付是一次真实执行、正确审批和可恢复会话关联。\n- **亮点**：避免把外部harness降格成模型文本：嵌入Kimi核心拥有提示/工具/权限/压缩，DSH保留会话UI与审批，外层不再执行同一真实工具第二次。贡献是执行所有权桥接；vendor Kimi内核明确上游固定提交，不将其能力或代码量算插件原创。\n- **思考**：切换后权限和历史是否仍具一致含义？Kimi判免审批动作不再经过DSH逐工具allowlist，审批桥仅覆盖Kimi提出的请求；同原生权限名称不意味着同策略。pending链接在调用前落盘能标未知，但副作用已发生而completed写失败仍需恢复协议，不能只因有messageId就认定exactly-once；跨模型历史导入是参考而非状态等价。\n- **建议**：给每harness显示可比较的权限能力清单，并为未知pending提供只读恢复/回执核查而非重新prompt，可能减少策略误判和重复工具副作用。固定同任务比较原生/embedded审批触发，再在工具完成后断写completed恢复，要求不自动重放；若不能核定原结果，应保持unknown并交人。\n\n## 场景与替代办法\n\n希望相同模型下比较/使用不同harness工具、Skills和压缩的开发者；合格交付是一次真实执行、正确审批和可恢复会话关联。\n\nDSH原生工具循环、Kimi CLI独立运行或简单模型API适配；本项保留嵌入执行语义，不只是换系统提示。\n\n## 能力清单\n\n- **模型工具**：kimi_harness_turn为本地嵌入式执行传输入口。\n- **Host 路由**：connection /harness-switch提供设置/模型/执行视图RPC。\n- **事件监听**：原生prompt装配与Agent作用域接入传输adapter。\n- **后台**：embedded Kimi执行核心管理会话/工具/Skills/MCP/压缩，上游归属明确。\n\n## 依赖与流程\n\n外层adapter对embedded绑定生成本地kimi_harness_turn工具信封，prompt装配替换为传输说明；EngineManager将DSH session映射Kimi session并存home/cwd/固定上游commit/seen/pending/completed。引擎内部执行工具，审批/提问桥到DSH，历史增量导入，输出投影为原生工具卡。\n\nDSH llm/systemPrompt/tools/approval/userQuestions/attachments/connection、嵌入KimiSDK及配置/OAuth、可写storage；MCP与项目Skill按上游信任规则。\n\n绑定模型/harness→选原生session→外层本地信封→恢复/建Kimi session→增量历史→信任/工具审批→内部执行→回传/持久完成；取消清监听并保留状态。\n\nDSH bundle，README声明Node24.15/特定Desktop；vendor固定MIT来源与来源补丁需保留，settings/会话目录独立于包迁移。\n\n## 成本与效果\n\n现金为所选Kimi/API模型及MCP动作；人工是模型绑定、权限差异、历史导入和未知pending复核，双引擎状态迁移有维护成本。\n\n在同原生UI使用另一执行体系，适合研究harness差异；未有同模型任务质量/成本实验。\n\n## 核心贡献\n\n避免把外部harness降格成模型文本：嵌入Kimi核心拥有提示/工具/权限/压缩，DSH保留会话UI与审批，外层不再执行同一真实工具第二次。贡献是执行所有权桥接；vendor Kimi内核明确上游固定提交，不将其能力或代码量算插件原创。\n\n## 关键质疑\n\n切换后权限和历史是否仍具一致含义？Kimi判免审批动作不再经过DSH逐工具allowlist，审批桥仅覆盖Kimi提出的请求；同原生权限名称不意味着同策略。pending链接在调用前落盘能标未知，但副作用已发生而completed写失败仍需恢复协议，不能只因有messageId就认定exactly-once；跨模型历史导入是参考而非状态等价。\n\n## 工程亮点\n\nsettings活跃turn时拒变更，session链接绑定home/cwd/engine commit防错复用，取消同时请求turn/compaction并等待；存completed结果有助重入，仍需断电/写错故障核查。\n\n固定源码依据：[index.js](https://github.com/AlyceStocking/dsh-harness-switch/blob/678b5a218f750c61c055bb113a4ff003948aa774/index.js)、[src/engine.js](https://github.com/AlyceStocking/dsh-harness-switch/blob/678b5a218f750c61c055bb113a4ff003948aa774/src/engine.js)、[cordis.patch.yml](https://github.com/AlyceStocking/dsh-harness-switch/blob/678b5a218f750c61c055bb113a4ff003948aa774/cordis.patch.yml)、[package.json](https://github.com/AlyceStocking/dsh-harness-switch/blob/678b5a218f750c61c055bb113a4ff003948aa774/package.json)。\n\n## 未来设计假设（未验证）\n\n给每harness显示可比较的权限能力清单，并为未知pending提供只读恢复/回执核查而非重新prompt，可能减少策略误判和重复工具副作用。固定同任务比较原生/embedded审批触发，再在工具完成后断写completed恢复，要求不自动重放；若不能核定原结果，应保持unknown并交人。\n\n未运行目标；拟测审批拒绝/取消、切harness历史、工具副作用后落盘失败与重入，区分消息回执和业务完成。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bae5ff215b83c0b63a3373612f98ef4cbada26654384c24cfca9c7329bd88b8d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 8 | 1048 | 1008 | 14 | — |\n| .md | source | 1 | 131 | — | — | 2665 |\n| .mjs | source | 3 | 175 | 151 | 25 | — |\n| .js | test | 7 | 481 | 458 | 2 | — |\n| .mjs | test | 4 | 283 | 277 | 3 | — |\n\n排除 7 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.3.3；版本日期：2026-10-14（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[678b5a21](https://github.com/AlyceStocking/dsh-harness-switch/tree/678b5a218f750c61c055bb113a4ff003948aa774)；本轮基准：2026-10-21T07:52:12Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根index与src/engine.js核心映射/审批/取消/持久化及patch；vendor核心未全审，src与构建产物不自动等价，未操作真实Kimi会话。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "metadata": {
+            "repository": "AlyceStocking/dsh-harness-switch",
+            "repository_id": 1414577411,
+            "captured_at": "2026-10-21T08:01:10.745Z",
+            "window_start": "2026-09-21T08:01:10.745Z",
+            "stars": 0,
+            "pushed_at": "2026-10-14T02:01:41Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-harness-switch%20is%3Aissue%20updated%3A2026-09-21T08%3A01%3A10.745Z..2026-10-21T08%3A01%3A10.745Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 78A6:4C3CE:6A1409:720903:6AD87155 and timestamp 2026-10-21 08:01:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-harness-switch",
+                "captured_at": "2026-10-21T08:01:26.258Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": 39,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-harness-switch",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-14T01:58:59.347Z",
+                    "captured_at": "2026-10-21T08:01:26.258Z",
+                    "source_url": "https://registry.npmjs.org/dsh-harness-switch",
+                    "error": null,
+                    "latest_version": "0.3.3",
+                    "latest_published_at": "2026-10-14T02:01:07.736Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1414577411:root",
+            "repository": "AlyceStocking/dsh-harness-switch",
+            "path": "",
+            "revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3308e96d492a69e8d52b15cf4fcef4411c77198cd9e80a6b53dbf7cfb847a74d",
+                "code": "678b5a218f750c61c055bb113a4ff003948aa774",
+                "maintenance": "8f67a5b820973b39a82c95f671591497f58422cc758e82e1f64612d8620559eb"
+            }
+        }
+    }
+}

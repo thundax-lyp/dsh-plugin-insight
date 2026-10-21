@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "52c4ad43c872f4fb36047872bb82309a",
+    "identity": "github:1333497354:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333497354:root",
+            "repository": "liliuCourier/dsh-chat-outline",
+            "path": "",
+            "revision": "8596bc4e68d92c30f01648692f3aeb4d61e173a3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7760ec4150726b86ecc91881d7129b2152364524e42dee3686199475df8c0f86",
+                "code": "8596bc4e68d92c30f01648692f3aeb4d61e173a3",
+                "maintenance": "eed1fa6ecd23614a8fac5c7f86dd1a2e6fa354747a2499f3b661fbe28e8cfaa2"
+            }
+        }
+    }
+}

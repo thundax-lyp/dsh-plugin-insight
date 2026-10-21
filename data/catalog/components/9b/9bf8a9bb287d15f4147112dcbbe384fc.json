@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9bf8a9bb287d15f4147112dcbbe384fc",
+    "identity": "github:1344780395:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344780395:root",
+            "repository": "Godners-Code/dao-zang-skill",
+            "path": "",
+            "revision": "954ba79d82fe9d7f8729285d27ccdb8f046d3bf3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6dd9e1093819131be00ed3a7340056b37fb92b842e971c5d754db18b33879ef2",
+                "code": "954ba79d82fe9d7f8729285d27ccdb8f046d3bf3",
+                "maintenance": "351ba2316b38c016d411cfcc325f77b9c072d864fb341ad59bf142bf9db7dbc8"
+            }
+        }
+    }
+}

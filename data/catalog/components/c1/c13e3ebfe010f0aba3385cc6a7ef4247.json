@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c13e3ebfe010f0aba3385cc6a7ef4247",
+    "identity": "github:1402454452:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1402454452:root",
+            "repository": "YizhouLouisLu/dsh-math-copy",
+            "path": "",
+            "revision": "1af261d179d833b56ee5503374efeba5762f3b9e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f0307648b7de5fb313239051fd51a1022d517dd019bcb73b32e95a796529415e",
+                "code": "1af261d179d833b56ee5503374efeba5762f3b9e",
+                "maintenance": "ae0644acaccd04ed1b0e6bd8d0f13c7659dd15e06528c5d6c50a657cc9bad978"
+            }
+        }
+    }
+}

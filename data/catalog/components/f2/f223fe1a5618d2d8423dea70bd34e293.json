@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f223fe1a5618d2d8423dea70bd34e293",
+    "identity": "github:1345703103:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345703103:root",
+            "repository": "huangfuren/dsh-outline",
+            "path": "",
+            "revision": "6a90f4521734f1274b4a8ded3c353a41bdd2d971",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "29a63c7783622984c57a0eaaa791417387d4a992cdfffe7f7bfd3f457df39468",
+                "code": "6a90f4521734f1274b4a8ded3c353a41bdd2d971",
+                "maintenance": "aa851da12c6b2265c50ccc0a681511a2318626372944675168a3b6a24662527e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3783eb51033344e564c1dfe4fc7a71a8",
+    "identity": "github:1414018085:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1414018085:root",
+            "repository": "yiyunet/dsh-mcp-client-manager",
+            "path": "",
+            "revision": "6e7db78804c80e5a695cb375a5207c3d7f628b67",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a0825ece0c00ed67fae735fb2bbf013c0d1ea55827d11ef411db0ce619879272",
+                "code": "6e7db78804c80e5a695cb375a5207c3d7f628b67",
+                "maintenance": "e0a8005464fd729bc634b33c39621dab1cc53babbef71327cbe41da437f60ae6"
+            }
+        }
+    }
+}

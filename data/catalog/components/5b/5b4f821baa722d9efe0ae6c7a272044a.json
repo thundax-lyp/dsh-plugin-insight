@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5b4f821baa722d9efe0ae6c7a272044a",
+    "identity": "github:1337254139:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337254139:root",
+            "repository": "shengyvself/dsh-autoresume",
+            "path": "",
+            "revision": "ae42f768dc9d2beec0c2e2e48c6ffad591c02cd8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7863e7446cdfeffbb2f480a1e3a6df1b1de079c2858fa3ab2499b4d9cff66f09",
+                "code": "ae42f768dc9d2beec0c2e2e48c6ffad591c02cd8",
+                "maintenance": "55b09eb5589d50ceacd89a4bb78b1ebd857a1bf6db2153f1a0d27e77575e0a58"
+            }
+        }
+    }
+}

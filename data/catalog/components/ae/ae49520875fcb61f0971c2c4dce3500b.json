@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae49520875fcb61f0971c2c4dce3500b",
+    "identity": "github:1354766041:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354766041:root",
+            "repository": "Zhucy123/dsh-update",
+            "path": "",
+            "revision": "92b5873def89201e196f973534111815e772e84e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "32448ae24ac49dcd468485b16ac9f0700216a205f671d37008e862767bf7760b",
+                "code": "92b5873def89201e196f973534111815e772e84e",
+                "maintenance": "847a5e6d2e70107bce2f477ee0e2b77ad59d2471fcf93cc2c3670c2beda68012"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d41490aee056e0927425b969d46c4cca",
+    "identity": "github:1405800513:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1405800513:root",
+            "repository": "jiangzeyuan/dsh-rivermind",
+            "path": "",
+            "revision": "dbbecebfb8f0ef2ef684624af8fd6130eaf3c44b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a4dd37fa6a96675698027bf20424698d63f79d3de570e7c5cc3b6b19ea2c6d69",
+                "code": "dbbecebfb8f0ef2ef684624af8fd6130eaf3c44b",
+                "maintenance": "2dab8c9b73bdaaddc9b838e5e3c144d92c56532ef17106dbc59bd46fdc0d1f1c"
+            }
+        }
+    }
+}

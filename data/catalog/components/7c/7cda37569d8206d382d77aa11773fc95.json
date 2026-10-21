@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7cda37569d8206d382d77aa11773fc95",
+    "identity": "github:1332590097:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1332590097:root",
+            "repository": "SenmuuuuW/dsh-group-photo",
+            "path": "",
+            "revision": "9093b96be3390719c427b0fabb598a506c956124",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "f49c878e05ea2ed3682011f090848a471e543221565112f1500efbab86d8b19c",
+                "code": "9093b96be3390719c427b0fabb598a506c956124",
+                "maintenance": "b9c836cbe4771f154b9c4f5494d9d5c83cc62381a6f23b7b1e324fe5ea4271e5"
+            }
+        }
+    }
+}

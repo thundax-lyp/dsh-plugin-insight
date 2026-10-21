@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "ab3dc982f49260113a5181fa49e35a0f",
+    "identity": "github:1334073773:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334073773:root",
+            "repository": "SenmuuuuW/dsh-whale-report",
+            "path": "",
+            "revision": "a20003e6ddbd4352846bfbf6ad105127bfcc2ec4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "52b794aeb48448d3661f5b22cb7538de7391ff1abc2cf97e331c26ab7ab0c624",
+                "code": "a20003e6ddbd4352846bfbf6ad105127bfcc2ec4",
+                "maintenance": "8c345866d8c50a6e765cb0d934a69a8c95064893224697d1e85bd74b1bdd7240"
+            }
+        }
+    }
+}

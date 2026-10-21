@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e5f153c982b50995cd90854ad74b4de2",
+    "identity": "github:1401715564:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1401715564:root",
+            "repository": "Yum-wu/dsh-plugin-codemode",
+            "path": "",
+            "revision": "73202d195e328a22691849b45d063df944f2010a",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "69608dce2403c4a581134990b6fcb7e055ebabf739355adc220ba6ac6c4513bd",
+                "code": "73202d195e328a22691849b45d063df944f2010a",
+                "maintenance": "5b9acc9638550ba70aae3a8bc1edafb2f515661067c66ace37955fbc97a562f2"
+            }
+        }
+    }
+}

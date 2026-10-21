@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "662315925ce116543bce3d0489f83356",
+    "identity": "github:1122873619:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1122873619:root",
+            "repository": "kenryu42/cc-safety-net",
+            "path": "",
+            "revision": "d0fe79142860d694c233c31edaa82116844b2109",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "305d16801a6bb9034f6c6332feeb94e92a273a7e10ffeac7b7384424014c724f",
+                "code": "d0fe79142860d694c233c31edaa82116844b2109",
+                "maintenance": "b5243610a33ea6b7033024181a50104ab4cfde6882c8f18e4bb157fdd86d916b"
+            }
+        }
+    }
+}

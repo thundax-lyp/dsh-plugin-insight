@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3cb465376aeb207355b9705c0a416e87",
+    "identity": "github:1337096786:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1337096786:root",
+            "repository": "WFMinerva/dsh-turn-cost",
+            "path": "",
+            "revision": "c93651356309588d9098fb9af399621a58239024",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5d089e7cc996064146e5b3986106a233bf9ef8bfef2f1f736e955c518faf5167",
+                "code": "c93651356309588d9098fb9af399621a58239024",
+                "maintenance": "bd046a0cf4935d3b21d79440e3cf4a033500f0b881c886aad25db79eca987622"
+            }
+        }
+    }
+}

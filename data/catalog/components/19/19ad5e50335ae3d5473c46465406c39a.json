@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "19ad5e50335ae3d5473c46465406c39a",
+    "identity": "github:1359685090:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1359685090:root",
+            "repository": "ffseika0304/code-ownership-audit",
+            "path": "",
+            "revision": "7a21d60c84581c001963ae7f120c95bbb68520e3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e5d6af78c33a4763bf735a5f8275932eb61766ead7c471810cc771ac64cd1d1b",
+                "code": "7a21d60c84581c001963ae7f120c95bbb68520e3",
+                "maintenance": "c7fa648cca29b30d955144b275a882e1283a7b038a7ff715b74f111e8950dff1"
+            }
+        }
+    }
+}

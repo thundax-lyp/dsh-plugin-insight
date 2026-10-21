@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cd7022c082c0918fea9f9a6088581bd1",
+    "identity": "github:1334862254:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334862254:root",
+            "repository": "ZhijiangTang/dsh-dead-links",
+            "path": "",
+            "revision": "935c8d4664a8a97bb19efe3aacab95d091962c46",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5d50e9730eb248f4e81ab1384bd13430b4e5c36eb3c60a9fa315896cc396fdb7",
+                "code": "935c8d4664a8a97bb19efe3aacab95d091962c46",
+                "maintenance": "196d444ecf3fc0ceef83c087c3f543d316d006c7acd0665c09bf9c8c036a5a7c"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a04a4022b963fe8df90e69653ecbfd1",
+    "identity": "github:1345474537:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1345474537:root",
+            "repository": "aorucshiea/dsh-preset-switch",
+            "path": "",
+            "revision": "58c46caccd0faa706f919f656917ba62d2bba783",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "955afe5057d0bb551d5ab6f51a720e1dc855b36ee956c58f52892ffb58960398",
+                "code": "58c46caccd0faa706f919f656917ba62d2bba783",
+                "maintenance": "8d7936cdbc4981280632081d248fcbc946d73873962d0f53a7ce161ac33941be"
+            }
+        }
+    }
+}

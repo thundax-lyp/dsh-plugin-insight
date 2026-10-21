@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "147d552ad7004b14fd960f055bcc6eba",
+    "identity": "github:1415954749:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415954749:root",
+            "repository": "liushuchang-2012/dsh-skin-liquid-glass",
+            "path": "",
+            "revision": "398c5611e8c0537d434272deba17c98a8454c995",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ccf15a085f9f15ae030b2f2568a9b82fc222987e562e27ea8caf8ad006e1b204",
+                "code": "398c5611e8c0537d434272deba17c98a8454c995",
+                "maintenance": "f9261f612c279e28db25962785171dc5319ce040c4a929bb5a2b07f26cc96d8e"
+            }
+        }
+    }
+}

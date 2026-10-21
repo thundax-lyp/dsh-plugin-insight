@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "fe580ebc7a4133a7aa8f66641d1e597f",
+    "identity": "github:1378537609:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378537609:root",
+            "repository": "jgao9906-droid/dsh-task-toast",
+            "path": "",
+            "revision": "68739ae12aa7e8e00584aaea2003721264a50b5f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2345c9c3aee8c16a44cc6cd0eee714f9d5e77aa464ad0e618f96621069f0b236",
+                "code": "68739ae12aa7e8e00584aaea2003721264a50b5f",
+                "maintenance": "2de09f6651c04780a80739aba28110c46eb496a7d3b2013e22459de31de0c674"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9bd7c7d6f20631d494e9c378e9d9d1f1",
+    "identity": "github:1358311494:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358311494:root",
+            "repository": "Nicercz007-cloud/schedule",
+            "path": "",
+            "revision": "21d7d19a156af443704e0bf5f1be1a73366547d5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c9ca051a64dc6e9f792c0f92fa1ae0529eb21cc8381bb03f3c7b733e1e208796",
+                "code": "21d7d19a156af443704e0bf5f1be1a73366547d5",
+                "maintenance": "38656f7ddebc517af96278e994a3d41445a9cf5222a39f8e2f6d58b5e6d15e65"
+            }
+        }
+    }
+}

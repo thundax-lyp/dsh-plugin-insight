@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4b894ec460f44df860cd50898e521cb2",
+    "identity": "github:1351025098:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351025098:root",
+            "repository": "WODE25500/dsh-token-handoff",
+            "path": "",
+            "revision": "281638213424d4532b98947d31e63f81990bae27",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "69b8f8e673f003dbf47523a445cd28263360c557c032f33d4b693f3a33f8a617",
+                "code": "281638213424d4532b98947d31e63f81990bae27",
+                "maintenance": "f49da31bc13df7ddbfb3b7c64309e2ae7b9f2ab3b29f84ad304461701564b0b7"
+            }
+        }
+    }
+}

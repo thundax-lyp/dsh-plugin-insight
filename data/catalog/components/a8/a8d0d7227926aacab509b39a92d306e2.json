@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a8d0d7227926aacab509b39a92d306e2",
+    "identity": "github:1406822648:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1406822648:root",
+            "repository": "opdsh/dsh-gh-pages-artifacts",
+            "path": "",
+            "revision": "09caf06d55c3b86e28b62bca048b7221049ba5f5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a1ab7adce68b761fb86787244c77882f3674353f7a4bbe9dac9ad4122d1fa7d",
+                "code": "09caf06d55c3b86e28b62bca048b7221049ba5f5",
+                "maintenance": "eec8e0fc477fedaa889d65a8809269878c7ff2bfe657ea3f02077dccb100beae"
+            }
+        }
+    }
+}

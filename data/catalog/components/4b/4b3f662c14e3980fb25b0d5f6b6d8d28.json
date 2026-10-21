@@ -1,0 +1,458 @@
+{
+    "schema_version": 3,
+    "id": "4b3f662c14e3980fb25b0d5f6b6d8d28",
+    "identity": "github:1335807482:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335807482:root",
+            "repository_id": 1335807482,
+            "component_id": "root",
+            "repository": "534119219/chicheng-cron",
+            "path": "",
+            "aliases": [],
+            "name": "chicheng-cron",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "0089ac61ccb84ac2bd278a0cd734f7a7b4dbbfdcbd82e2b74de0135675ebfb17",
+                "code": "99a223edfa090afa2f1f05c77526a53a0f277961",
+                "maintenance": "85f6153f3bc737df0da2def276161c9f48903779eb09289687453ce43c53a96a"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-21-02-github-1335807482-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-21T03:10:47.856Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-21-02-github-1335807482-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/534119219/chicheng-cron/blob/99a223edfa090afa2f1f05c77526a53a0f277961/README.md",
+                    "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+                    "captured_at": "2026-10-21T03:10:47.856Z",
+                    "summary": "在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-cron/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-21-02-github-1335807482-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/534119219/chicheng-cron/blob/99a223edfa090afa2f1f05c77526a53a0f277961/lib/index.js",
+                    "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+                    "captured_at": "2026-10-21T03:10:47.856Z",
+                    "summary": "核查 lib/index.js、lib/client.js、cordis.patch.yml、package.json；lib/index.js解析cron并周期扫描，spawn shell/python/node或headless DSH；持久化任务与运行记录，输出限512KiB，运行后可推送、挂工作区与归档会话。",
+                    "artifact": "data/runs/2026-10-21-02/snapshots/534119219--chicheng-cron/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读cron解析、executeRun/spawn、持久化与UI接线；未运行任务或host，不核实任何推送服务实效。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要周期性本机脚本或Agent任务的人，在GUI配置时间、cwd、超时与通知，交付任务输出和运行记录；适用于允许错过时点且宿主持久在线的自动化。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "lib/index.js解析cron并周期扫描，spawn shell/python/node或headless DSH；持久化任务与运行记录，输出限512KiB，运行后可推送、挂工作区与归档会话。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读cron解析、executeRun/spawn、持久化与UI接线；未运行任务或host，不核实任何推送服务实效。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "web bundle，任务和历史在DSH_HOME/cron，Agent/Skill使用headless profile；Python需探测可用解释器。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "首次需配置工作目录、解释器、headless模型与时区；持续承担模型调用、失败重试、输出复核及历史文件清理。现金由模型和通知渠道决定；人工节省未测，任务断言会增加配置时间。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把周期执行和DSH会话管理集中起来，减少手工启动与找日志；不能保证漏跑补偿、幂等或业务成功。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "输出有界且标截断、任务存储用临时文件rename、调度与执行函数分离便于复用；需区分进程done与业务ok，避免通知和自动归档掩盖验收缺口。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对系统cron加独立日志脚本，增量是把DSH Skill/Agent与普通脚本放进一个有历史、输出查看和通知的界面，并整理headless会话。cron语法、进程执行与推送服务为既有机制；贡献是统一任务生命周期和DSH交接，而非新调度算法。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "进程退出0能否代表Agent任务成功？executeRun以退出码和timeout状态结算并触发成功归档，缺少业务产物断言；attach/archive通过开始时间定位会话的路径还需并发验证。超时直接child.kill不能证明整棵后代进程停止，且Web停机错过时点不补跑，关键任务不能只靠绿色历史。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设：每次调度生成显式runId并贯穿headless会话、产物与通知，增加任务定义中的输出断言，可减少误归档和“exit0但未交付”。由当前runId记录与基于时间找会话之间的缺口推导。对照并发两次同类Agent、exit0不写产物、超时生成子进程三类任务，验证归属准确率、漏交付率与残留；需要用户定义合格产物，不能自动猜验收。",
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335807482:root",
+                            "area": "code",
+                            "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-21T03:10:47.856Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-21T03:10:47.856Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+                "reviewed_at": "2026-10-21T03:10:47.856Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335807482:root",
+                        "area": "code",
+                        "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 小幅：cron与headless适配；mechanism 小幅：标准spawn和状态管理，未解决业务结算；transferability 实质：多任务统一记录结构可复用；simplification 实质：脚本与Agent共用配置历史。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 实质：从手动Agent到调度-通知-整理链；delivery 实质：运行输出与追踪，但未业务验收；reach 实质：GUI降低调度配置门槛；economics 小幅：可利用无人值守时间，未测重试总成本。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-21-02-github-1335807482-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "可重复可撤销的个人任务可先用只读日程试用；核对cwd、时区、超时和输出，关键产物另加完成检查。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "周期脚本与Agent任务界面化交付明确，允许漏时点。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "统一历史输出通知及DSH会话管理比系统cron更方便。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "spawn、512KiB限制与退出码结算已查，业务成功和进程树终止未验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "需解释器模型和通知配置，补偿幂等及历史清理仍由用户承担。"
+                    }
+                },
+                "score": 65,
+                "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-21-02-github-1335807482-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335807482:root",
+                        "area": "code",
+                        "fingerprint": "99a223edfa090afa2f1f05c77526a53a0f277961"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335807482:root",
+            "repository": "534119219/chicheng-cron",
+            "path": "",
+            "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+            "fingerprints": {
+                "directory": "0089ac61ccb84ac2bd278a0cd734f7a7b4dbbfdcbd82e2b74de0135675ebfb17",
+                "code": "99a223edfa090afa2f1f05c77526a53a0f277961",
+                "maintenance": "85f6153f3bc737df0da2def276161c9f48903779eb09289687453ce43c53a96a"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-21T03:00:27Z",
+            "analysis_sha256": "331e2ee466345f1c18a993b301943f679ee5eb4f997eb0d7a628679eb771ad35"
+        },
+        "publication.metadata": "data/plugins/534119219--chicheng-cron/META.json",
+        "publication.summaries": {
+            "text": "在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。",
+            "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+            "source_url": "https://github.com/534119219/chicheng-cron/blob/99a223edfa090afa2f1f05c77526a53a0f277961/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+            "items": {
+                "Host 路由": "任务配置、立即运行与历史输出API。",
+                "界面": "任务编辑和执行历史。",
+                "后台": "cron多类型调度、可选通知与会话整理。"
+            }
+        },
+        "publication.advice": {
+            "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+            "text": "适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。"
+        },
+        "registry": "data/plugins/534119219--chicheng-cron",
+        "reports": "# chicheng-cron\n\n> 在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。\n\n## 使用建议\n\n适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码支持多类型调度与记录；脚本执行、真实通知、会话归属及业务结果未验证。未来运行身份与交付断言是假设。\n\n- **用途**：需要周期性本机脚本或Agent任务的人，在GUI配置时间、cwd、超时与通知，交付任务输出和运行记录；适用于允许错过时点且宿主持久在线的自动化。\n- **亮点**：相对系统cron加独立日志脚本，增量是把DSH Skill/Agent与普通脚本放进一个有历史、输出查看和通知的界面，并整理headless会话。cron语法、进程执行与推送服务为既有机制；贡献是统一任务生命周期和DSH交接，而非新调度算法。\n- **思考**：进程退出0能否代表Agent任务成功？executeRun以退出码和timeout状态结算并触发成功归档，缺少业务产物断言；attach/archive通过开始时间定位会话的路径还需并发验证。超时直接child.kill不能证明整棵后代进程停止，且Web停机错过时点不补跑，关键任务不能只靠绿色历史。\n- **建议**：待验证假设：每次调度生成显式runId并贯穿headless会话、产物与通知，增加任务定义中的输出断言，可减少误归档和“exit0但未交付”。由当前runId记录与基于时间找会话之间的缺口推导。对照并发两次同类Agent、exit0不写产物、超时生成子进程三类任务，验证归属准确率、漏交付率与残留；需要用户定义合格产物，不能自动猜验收。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n需要周期性本机脚本或Agent任务的人，在GUI配置时间、cwd、超时与通知，交付任务输出和运行记录；适用于允许错过时点且宿主持久在线的自动化。\n\n参照系统cron+日志/通知脚本与手动headless DSH；不把外部通知适配归本插件。\n\n### 能力、流程与依赖\n\nlib/index.js解析cron并周期扫描，spawn shell/python/node或headless DSH；持久化任务与运行记录，输出限512KiB，运行后可推送、挂工作区与归档会话。\n\n- **Host 路由**：任务配置、立即运行与历史输出API。\n- **界面**：任务编辑和执行历史。\n- **后台**：cron多类型调度、可选通知与会话整理。\n\n持续运行的DSH Web与headless CLI、模型凭据、相关Skill；通知可选pushNotifier或messaging服务，具体可用性需宿主确认。\n\n保存cron及任务→计算触发点→spawn并捕获输出→写历史→可选推送→可选会话分组/成功归档；失败保留输出，停机时点不补跑。\n\nweb bundle，任务和历史在DSH_HOME/cron，Agent/Skill使用headless profile；Python需探测可用解释器。\n\n### 效果、成本与限制\n\n把周期执行和DSH会话管理集中起来，减少手工启动与找日志；不能保证漏跑补偿、幂等或业务成功。\n\n首次需配置工作目录、解释器、headless模型与时区；持续承担模型调用、失败重试、输出复核及历史文件清理。现金由模型和通知渠道决定；人工节省未测，任务断言会增加配置时间。\n\n进程退出0能否代表Agent任务成功？executeRun以退出码和timeout状态结算并触发成功归档，缺少业务产物断言；attach/archive通过开始时间定位会话的路径还需并发验证。超时直接child.kill不能证明整棵后代进程停止，且Web停机错过时点不补跑，关键任务不能只靠绿色历史。\n\n### 核心贡献与工程亮点\n\n相对系统cron加独立日志脚本，增量是把DSH Skill/Agent与普通脚本放进一个有历史、输出查看和通知的界面，并整理headless会话。cron语法、进程执行与推送服务为既有机制；贡献是统一任务生命周期和DSH交接，而非新调度算法。\n\n输出有界且标截断、任务存储用临时文件rename、调度与执行函数分离便于复用；需区分进程done与业务ok，避免通知和自动归档掩盖验收缺口。\n\n源码依据：[lib/index.js](https://github.com/534119219/chicheng-cron/blob/99a223edfa090afa2f1f05c77526a53a0f277961/lib/index.js)、[lib/client.js](https://github.com/534119219/chicheng-cron/blob/99a223edfa090afa2f1f05c77526a53a0f277961/lib/client.js)、[cordis.patch.yml](https://github.com/534119219/chicheng-cron/blob/99a223edfa090afa2f1f05c77526a53a0f277961/cordis.patch.yml)、[package.json](https://github.com/534119219/chicheng-cron/blob/99a223edfa090afa2f1f05c77526a53a0f277961/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：每次调度生成显式runId并贯穿headless会话、产物与通知，增加任务定义中的输出断言，可减少误归档和“exit0但未交付”。由当前runId记录与基于时间找会话之间的缺口推导。对照并发两次同类Agent、exit0不写产物、超时生成子进程三类任务，验证归属准确率、漏交付率与残留；需要用户定义合格产物，不能自动猜验收。\n\n隔离目录验证跨日时区、重启漏跑、并发Agent的会话归属、exit0无产物、子进程超时与通知失败；本轮不执行目标任务。\n\n## 核查说明\n\n- 版本号：0.1.1；版本日期：2026-08-26（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[99a223ed](https://github.com/534119219/chicheng-cron/tree/99a223edfa090afa2f1f05c77526a53a0f277961)；本次截止 2026-10-21T03:00:27Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读cron解析、executeRun/spawn、持久化与UI接线；未运行任务或host，不核实任何推送服务实效。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：44ab7acdce82b04a4772c49ca48c49930b1f0e4a72bd925d8b486d841e1eed6b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 113 | — | — | 1254 |\n| .md | example | 1 | 23 | — | — | 196 |\n| .js | source | 2 | 2623 | 2292 | 172 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "metadata": {
+            "repository": "534119219/chicheng-cron",
+            "repository_id": 1335807482,
+            "captured_at": "2026-10-21T05:08:56.162Z",
+            "window_start": "2026-09-21T05:08:56.162Z",
+            "stars": 7,
+            "pushed_at": "2026-08-26T12:47:03Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-cron%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:25685:A858AA:F12C51:6AD84A33 and timestamp 2026-10-21 05:14:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-cron%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:25685:A858FE:F12CC4:6AD84A33 and timestamp 2026-10-21 05:14:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-cron%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:39E13C:A29ECE:EA5D94:6AD84A34 and timestamp 2026-10-21 05:14:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-cron%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:F5D0E:A9CA4C:F2D4F6:6AD84A34 and timestamp 2026-10-21 05:14:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-cron%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:24642:A94C5E:F2A723:6AD84A34 and timestamp 2026-10-21 05:14:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "chicheng-cron",
+                "captured_at": "2026-10-21T05:08:56.162Z",
+                "window_start": "2026-09-21",
+                "window_end": "2026-10-20",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/chicheng-cron",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "source_url": "https://registry.npmjs.org/chicheng-cron",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            },
+            "code_update": {
+                "checked_at": "2026-10-21T05:08:56.162Z",
+                "baseline_revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+                "current_revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1335807482:root",
+            "repository": "534119219/chicheng-cron",
+            "path": "",
+            "revision": "99a223edfa090afa2f1f05c77526a53a0f277961",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0089ac61ccb84ac2bd278a0cd734f7a7b4dbbfdcbd82e2b74de0135675ebfb17",
+                "code": "99a223edfa090afa2f1f05c77526a53a0f277961",
+                "maintenance": "85f6153f3bc737df0da2def276161c9f48903779eb09289687453ce43c53a96a"
+            }
+        }
+    }
+}

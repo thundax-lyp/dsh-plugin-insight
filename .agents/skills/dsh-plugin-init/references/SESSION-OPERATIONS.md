@@ -21,7 +21,7 @@
 
 ## 正式快照存储迁移
 
-`npm run snapshot -- migrate-storage --backup data/runs/<round>/migration-originals/snapshot-storage-v1/SNAPSHOT.json` 将已有单文件迁为索引与独立条目。命令保存原始字节并核对完整语义摘要，持有正式锁且不改研究结论；已拆分状态重复调用只校验，不覆盖原件。迁移不改变 WORK 基线，具体存储不变量见数据契约。业务读取使用共享 snapshot-storage，不直接解析索引取得 catalog／reports。
+`npm run snapshot -- migrate-storage --backup data/runs/<round>/migration-originals/catalog-v2/SNAPSHOT.json` 将旧 v1／v2 正式快照迁为 JSONL 索引与按 MD5 ID 分桶的组件 JSON。命令保存旧索引及旧引用图原始字节并核对完整语义摘要，持有正式锁且不改研究结论；重复执行只校验，不覆盖备份。清理前核对该备份完整。迁移不改变 WORK 基线，格式与恢复步骤见数据契约；中断事务核实无活动写入者后用 `npm run snapshot -- recover-storage` 回滚。业务读取使用共享 snapshot-storage。
 
 ## 组件推荐迁移与复核
 

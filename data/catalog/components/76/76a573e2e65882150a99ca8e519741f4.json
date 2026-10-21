@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "76a573e2e65882150a99ca8e519741f4",
+    "identity": "github:1376559486:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1376559486:root",
+            "repository": "MitsukiJoe/dsh-better-ux",
+            "path": "",
+            "revision": "2f29a7f1d82c818d50b792cfee88ce191bc868bf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "49a6db50d1b6aeb3bdd25cb5a86a219a292a07c4a31e2ded0267a98b1975402a",
+                "code": "2f29a7f1d82c818d50b792cfee88ce191bc868bf",
+                "maintenance": "da146f9eba7d82d9c880f8fe25d407367dd23f036bd8c95c62d68121c2aa2e98"
+            }
+        }
+    }
+}

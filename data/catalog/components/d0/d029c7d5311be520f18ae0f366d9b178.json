@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d029c7d5311be520f18ae0f366d9b178",
+    "identity": "github:1335915951:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335915951:root",
+            "repository": "NEVSTOP-LAB/dsh-approval-mode",
+            "path": "",
+            "revision": "3d5f12b8ef5ea53cc916123e9fc1a293d342d7af",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9d01e0584c0c870ea79b78b3d26aa571f653ce6328c03272b3ee1d5e47cfdec6",
+                "code": "3d5f12b8ef5ea53cc916123e9fc1a293d342d7af",
+                "maintenance": "802f3c8b5c8680270b526e05538ce43cb7de2710222799e27f9de54b136e36aa"
+            }
+        }
+    }
+}

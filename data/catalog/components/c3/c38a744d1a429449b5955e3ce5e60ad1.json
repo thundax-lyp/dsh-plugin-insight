@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c38a744d1a429449b5955e3ce5e60ad1",
+    "identity": "github:1343431246:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343431246:root",
+            "repository": "1014029855/dsh-context-lens",
+            "path": "",
+            "revision": "ec30d563d1fc71c8ffd2e8846de67ff97f21cc8d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "fe9e7f93c7d79c8daf554174dd6b2a13f224ec0e526e3180f8bb4e6d48f5fa83",
+                "code": "ec30d563d1fc71c8ffd2e8846de67ff97f21cc8d",
+                "maintenance": "99070a25e91bd7476e63786a63a8ae88139da7e691e90d3f885a8b05385f0a92"
+            }
+        }
+    }
+}

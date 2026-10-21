@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f9ee1d1cb50c281d346bc479853a75b5",
+    "identity": "github:1393147073:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1393147073:root",
+            "repository": "bvbhu/dsh-quilt-compact",
+            "path": "",
+            "revision": "3221dbe80975b343bd610967da1d0fb85e9c14c7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9752e29f0349819797f46ddaca28b420568e09c6f28abe45eba31dfad92aeaa9",
+                "code": "3221dbe80975b343bd610967da1d0fb85e9c14c7",
+                "maintenance": "088272bdc31db1dc4b9e31c11a2cff41b1e18e4f039eabe5f1c553c4e9f7160f"
+            }
+        }
+    }
+}

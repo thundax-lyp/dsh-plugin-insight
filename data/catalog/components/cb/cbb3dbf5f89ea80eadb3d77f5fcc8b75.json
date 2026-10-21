@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "cbb3dbf5f89ea80eadb3d77f5fcc8b75",
+    "identity": "github:1350905532:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350905532:root",
+            "repository": "dingyi580/dsh-plugin-gemini-theme",
+            "path": "",
+            "revision": "c7c22fe81945cfdd6da91f5175785761e2b086c1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1362198f8e0ed6962789c5b5062b743479997f7837d02d8816828f36c78c4ec2",
+                "code": "c7c22fe81945cfdd6da91f5175785761e2b086c1",
+                "maintenance": "989273f6af86156128cac7c0c772e9b773769232a53a43e265fb2db10a4da61a"
+            }
+        }
+    }
+}

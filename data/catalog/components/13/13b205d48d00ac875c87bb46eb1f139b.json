@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "13b205d48d00ac875c87bb46eb1f139b",
+    "identity": "github:1336342622:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336342622:root",
+            "repository": "qq33357486/dsh-notification-sounds",
+            "path": "",
+            "revision": "2bb02d1bd72168bd060694f3b44783458292bb01",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "94a78200f85ea749fb97f2819755494856ae33fd7478e1e766b551b2bbd60203",
+                "code": "2bb02d1bd72168bd060694f3b44783458292bb01",
+                "maintenance": "35f79c24526e364bc4cd3b29375f7a64a621ce21ee1664370c560dc34972016a"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d895fcad526bcf03817f62cf84f2b360",
+    "identity": "github:1334024593:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334024593:root",
+            "repository": "aceice01/dsh-whale-pet",
+            "path": "",
+            "revision": "18fec904ec3b4fd3958b6fb8c2fa9c209679328f",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "0c238f2f31d69b8a289f3aeaa5515f0d58b3ab25c8c8b3bbe4387c62619226a3",
+                "code": "18fec904ec3b4fd3958b6fb8c2fa9c209679328f",
+                "maintenance": "1c4e2bdf996678a3b2c5044f22e1e4b6a32517db3431c5c4756f86011573e58e"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1845fb7c3dfd22fbe443be3622e65eee",
+    "identity": "github:1385964593:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1385964593:root",
+            "repository": "HaoKuo/dsh-notebook-studio",
+            "path": "",
+            "revision": "95c781d2b8782688e4dda115469f67ea1c775fb7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "20b674066554712780ca59dca3c7d9a14b319cbe2a182e1134edf4936ac4e333",
+                "code": "95c781d2b8782688e4dda115469f67ea1c775fb7",
+                "maintenance": "a8be54ae662d22c1c8533c315083659324afe258e8dcda15724de3fb5eb44d66"
+            }
+        }
+    }
+}

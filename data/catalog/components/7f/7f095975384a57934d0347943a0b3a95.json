@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7f095975384a57934d0347943a0b3a95",
+    "identity": "github:1338166229:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1338166229:root",
+            "repository": "GooDAnDReaDY/dsh-vision-bridge",
+            "path": "",
+            "revision": "fb93090239edb736a6eedfc4a79d0acaa519930a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24ac0d7a5451320380b0bca680771d8bec9eaf1de99ed56551eb18d5eaf50c67",
+                "code": "fb93090239edb736a6eedfc4a79d0acaa519930a",
+                "maintenance": "6db13a7665d4edf8701cfa6cbd5afd118ebdd0130dacff5bbc666364a2e54e96"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "17f4e285e057ae44f073a5341d194d77",
+    "identity": "github:1355536427:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1355536427:root",
+            "repository": "theinfluencecompany/dsh-realtimeavatar",
+            "path": "",
+            "revision": "35219461ef4fe7fdeac93be74704f8ab07f6be89",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "170d350edef1f328c8b97719947bb92bfc56166d8ab105e4db6c812ed4d486ea",
+                "code": "35219461ef4fe7fdeac93be74704f8ab07f6be89",
+                "maintenance": "f66d132526b46cc0cd6726fecd8fd2c68971daf1ff176490a56185fcf9303b35"
+            }
+        }
+    }
+}

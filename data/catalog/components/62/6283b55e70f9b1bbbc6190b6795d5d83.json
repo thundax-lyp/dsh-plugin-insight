@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6283b55e70f9b1bbbc6190b6795d5d83",
+    "identity": "github:1342073437:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342073437:root",
+            "repository": "Ruiming-cn/dsh-better-at",
+            "path": "",
+            "revision": "40bf87525838fc48fc3228b6e04c62711b1653ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0287784e77c2a6a1f73e094725c421e031ed474421874c58d5dab34f391507ec",
+                "code": "40bf87525838fc48fc3228b6e04c62711b1653ca",
+                "maintenance": "b2859d77501f4aba01924f81e7352ef02e16301c91afb45b134782fa33b3ca16"
+            }
+        }
+    }
+}

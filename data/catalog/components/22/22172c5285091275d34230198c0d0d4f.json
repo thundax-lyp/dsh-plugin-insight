@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "22172c5285091275d34230198c0d0d4f",
+    "identity": "github:1343908769:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343908769:root",
+            "repository": "Evhye38496/dsh-perfscope",
+            "path": "",
+            "revision": "aee2b9a15dcfa0c0b4de19bae2ea47a1af6e5c0a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "96b3629727533e2022843c2f74d29a3a8eeac68a319ab2c8e998c85a053be8dd",
+                "code": "aee2b9a15dcfa0c0b4de19bae2ea47a1af6e5c0a",
+                "maintenance": "9eaac30bfa273631ca7a041725a57e50f5fd4c1498d044798c25ed08be440c23"
+            }
+        }
+    }
+}

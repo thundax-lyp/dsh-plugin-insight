@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a79ee7539013802464c20cbbf0f1a48",
+    "identity": "github:1378767195:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378767195:root",
+            "repository": "lijiawei255/dsh-status-chime",
+            "path": "",
+            "revision": "fd799573efc3db5a30afe9e043fbcb766eb165ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5850bbfd8f56163eb6ce891e4be26e3391e3285ade6eb85353022058fd57a0d8",
+                "code": "fd799573efc3db5a30afe9e043fbcb766eb165ca",
+                "maintenance": "255fbce2d7db6b7ab1263466908e7d0916e4c93ae1512a58a8bbd6b07c893c75"
+            }
+        }
+    }
+}

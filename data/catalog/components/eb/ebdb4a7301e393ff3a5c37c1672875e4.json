@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ebdb4a7301e393ff3a5c37c1672875e4",
+    "identity": "github:1379693890:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379693890:root",
+            "repository": "alllllinnrann/dsh-inapp-browser",
+            "path": "",
+            "revision": "d8b355e5c8016e801fda4d49ffbcde85bf56e294",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3ddbb53c3906a9189f691b47d54f9fb6fe0adcda417c50f5a6f12e55f92243d9",
+                "code": "d8b355e5c8016e801fda4d49ffbcde85bf56e294",
+                "maintenance": "dd70a6d831b984c32a4bf46ef467d64eaf962f642ba234b4c631e86607c4863e"
+            }
+        }
+    }
+}

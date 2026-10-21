@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "984c831220223745e93459be2cba94da",
+    "identity": "github:1383421849:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1383421849:root",
+            "repository": "adithyanraj03/dsh-schedule-later",
+            "path": "",
+            "revision": "c8f3a1354893e80b2fc4af118ba2034bb3841bf8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8f9116c6752d24e039aaf67d76f432abfdd4173085f10ce6b90ed6967103f3e0",
+                "code": "c8f3a1354893e80b2fc4af118ba2034bb3841bf8",
+                "maintenance": "dc92df797b4a1de535b3fed5d5a4cb09a12da8b3e679f9d2cea4699534582a64"
+            }
+        }
+    }
+}

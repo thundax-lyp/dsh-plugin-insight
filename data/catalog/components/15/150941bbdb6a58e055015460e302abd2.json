@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "150941bbdb6a58e055015460e302abd2",
+    "identity": "github:1362412644:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1362412644:root",
+            "repository": "WiseXin/dsh-antigravity",
+            "path": "",
+            "revision": "6e04394904f86b1c8ec8bea49ed012de829f2cba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "22815c1aba339abbb4897afad98629b2375c68fa8fbe8b9d5b1cc013d2b270a5",
+                "code": "6e04394904f86b1c8ec8bea49ed012de829f2cba",
+                "maintenance": "d69794fd230bf1177ece05d0d12236449e8ba569b4bf5809cdb260580d0fd5df"
+            }
+        }
+    }
+}

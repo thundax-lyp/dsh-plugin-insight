@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ef9f78579bbbbc81a2e5327372e2d42",
+    "identity": "github:1328515202:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1328515202:root",
+            "repository": "Void0312Aurora/dsh-desktop-electron",
+            "path": "",
+            "revision": "71c904f57b3b80e553efd9bc02a9796f6a317c39",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "1320af37de2291c2af17c249e021bf555e53ceaebe2f5fdf79452b0c9c7c92e4",
+                "code": "71c904f57b3b80e553efd9bc02a9796f6a317c39",
+                "maintenance": "6112d587d50c4919a99242a9d00f7f5c25d6f675f9cf886da936008c49084c05"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bcb0ede214fdbba873227b70cd366e51",
+    "identity": "github:1408150863:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408150863:root",
+            "repository": "huhui-tech/dsh-host-notify",
+            "path": "",
+            "revision": "52911560abc9d7feeb3f3a68399bce11c071db20",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f229362593edaa7c1828faee0557f4bb4976bf4bdfd47b891543a5f89b21445d",
+                "code": "52911560abc9d7feeb3f3a68399bce11c071db20",
+                "maintenance": "8cd5e3b0779ef702696d6e46a94aeb465553ef08ccd1b3ba2606c8c91bdef472"
+            }
+        }
+    }
+}

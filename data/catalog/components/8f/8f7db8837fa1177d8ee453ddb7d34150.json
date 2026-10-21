@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "8f7db8837fa1177d8ee453ddb7d34150",
+    "identity": "github:1333476862:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333476862:root",
+            "repository": "Meredith2328/dsh-sticky-note",
+            "path": "",
+            "revision": "995ba55fccad4b5ce090c405d3afab9f22f8bfda",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "c5c79766dab50f00455433f01efa901005e588ddac49207a608fcc37fd20a421",
+                "code": "995ba55fccad4b5ce090c405d3afab9f22f8bfda",
+                "maintenance": "95ac4e9f93c8761bfc0f0b0bce7a1d2b3b6d1a21583937e7520f6be235932312"
+            }
+        }
+    }
+}

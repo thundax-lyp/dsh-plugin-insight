@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0b79801adda13b845998132d11fb1a82",
+    "identity": "github:1350628776:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1350628776:root",
+            "repository": "yx222yx/DSH-Feedback-Bridge",
+            "path": "",
+            "revision": "113d0f0e80b21b83dc70fc3c2e69eb2d9c4668d1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cf598e1e32868f743df0a9450bfd03db55700806161f0af01c2eb2553b3a1461",
+                "code": "113d0f0e80b21b83dc70fc3c2e69eb2d9c4668d1",
+                "maintenance": "bca1a3249725a826ce9d5c1b33134936357f5e0a06be68bab28c96f969e0a18a"
+            }
+        }
+    }
+}

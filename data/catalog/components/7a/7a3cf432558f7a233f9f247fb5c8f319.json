@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7a3cf432558f7a233f9f247fb5c8f319",
+    "identity": "github:1352158929:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352158929:root",
+            "repository": "ryasrk/dsh-awesome-skills",
+            "path": "",
+            "revision": "145af52e50207cca4d30c10c356dfb222d65270f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a89b6275496a850f8398226587b6c19af8822cb415c390181d511740909b4543",
+                "code": "145af52e50207cca4d30c10c356dfb222d65270f",
+                "maintenance": "e2be0d1a0002bd77a86718097fdb721894a3bdfdeadf5da7260401956df361ac"
+            }
+        }
+    }
+}

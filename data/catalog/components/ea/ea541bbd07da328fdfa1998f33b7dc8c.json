@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ea541bbd07da328fdfa1998f33b7dc8c",
+    "identity": "github:1334847244:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334847244:root",
+            "repository": "songyang0603/ds-spec-loop",
+            "path": "",
+            "revision": "c64ca429950a224d02a1f9471731428b636fecd3",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "87e85b3062833a701be5c65d8bf6b0824942b226dc030a19eec136be6f849c6f",
+                "code": "c64ca429950a224d02a1f9471731428b636fecd3",
+                "maintenance": "7b3e84f686965bfdb4ab3ac89582db7136284c0a85df517a17e8c80f188fc115"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ce141eef0e19bfbe7eb2a4c32739297",
+    "identity": "github:1384939555:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1384939555:root",
+            "repository": "ninglovegithub/dsh-workspace-combiner",
+            "path": "",
+            "revision": "cbc07068aa50841030ab6951c8b4b6a3fbc01581",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "974cf02f9db5d58ac121b0f178e4708b69659fbbee781fb4139fac8ba0ff5c6a",
+                "code": "cbc07068aa50841030ab6951c8b4b6a3fbc01581",
+                "maintenance": "d490760866165954d5bd267e71cb2c17957d4e656452b45ffacf018c497a9488"
+            }
+        }
+    }
+}

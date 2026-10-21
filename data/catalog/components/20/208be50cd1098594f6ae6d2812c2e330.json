@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "208be50cd1098594f6ae6d2812c2e330",
+    "identity": "github:1348126495:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348126495:root",
+            "repository": "Nzssm1/dsh-strategy-deployment-review",
+            "path": "",
+            "revision": "aa7824834b96f2a1b50d7ed86319ddbc113daf7d",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "2db6afa8398cc985a2a62c6b6eee1307ce5bca7d9ebb8bfb5a6ec330ee5d049a",
+                "code": "aa7824834b96f2a1b50d7ed86319ddbc113daf7d",
+                "maintenance": "3f9251bcf37db8509533e65947557613860521bb82df901f7c599ad45fbfa165"
+            }
+        }
+    }
+}

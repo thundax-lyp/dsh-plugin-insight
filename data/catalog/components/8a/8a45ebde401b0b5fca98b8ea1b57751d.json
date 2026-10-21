@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8a45ebde401b0b5fca98b8ea1b57751d",
+    "identity": "github:1333540697:packages-itranslation-bundle",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333540697:packages-itranslation-bundle",
+            "repository": "Yisan0429/dsh-itranslation",
+            "path": "packages/itranslation/bundle",
+            "revision": "47927236522b5957d391d82499f155e80a46551d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4acd239e21e55f7bc176533b25ff572a182bc06d9930f661720c935a59ccb9a0",
+                "code": "47927236522b5957d391d82499f155e80a46551d",
+                "maintenance": "f2cd89925cbc975c76303eb266d4aceb2e25b036de27bb23a3bd133bd670c3d9"
+            }
+        }
+    }
+}

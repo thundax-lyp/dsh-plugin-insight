@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4acc7d2d050143a59aca0b2fc2fc9bc9",
+    "identity": "github:1335810159:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1335810159:root",
+            "repository": "TaurusWood/dsh-plugin-appshot",
+            "path": "",
+            "revision": "84ae4d5eea25055437a25e474a591d048547eff7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b99e704cecc77c2997f78b8cd8c93e4faa946eede7cc813417b1f3427ed8f57c",
+                "code": "84ae4d5eea25055437a25e474a591d048547eff7",
+                "maintenance": "505469c666015c60c1aaf2543eb050ffc3bcd7d158adf893100bcf73acddf832"
+            }
+        }
+    }
+}

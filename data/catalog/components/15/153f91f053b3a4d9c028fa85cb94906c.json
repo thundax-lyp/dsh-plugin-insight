@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "153f91f053b3a4d9c028fa85cb94906c",
+    "identity": "github:1344997866:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344997866:root",
+            "repository": "ai-fu-cn/dsh-plugin-memos-code-retrospect",
+            "path": "",
+            "revision": "8dad4147f912beb2d7a38b97b966457d795508c5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f130c678cf92cd324ad43f38d6e09871cc0247ea983c55d8f5abcc69075ffdaf",
+                "code": "8dad4147f912beb2d7a38b97b966457d795508c5",
+                "maintenance": "838952dd96e4ef201d1801ca6ff64ffb6290f3aa119b56bf78cf75b1fb076e03"
+            }
+        }
+    }
+}

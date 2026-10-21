@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "588cc4c31bac36b8df346b31e0f46292",
+    "identity": "github:1344146713:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344146713:root",
+            "repository": "lemoncat7/dsh-ssh",
+            "path": "",
+            "revision": "aa12a0c604cdf5e349abb3558eda14d596dee10a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5d3be5a5863db0c1a8f9ccae026a0b3f75c7465fc7a879ebaf2e651afede15f6",
+                "code": "aa12a0c604cdf5e349abb3558eda14d596dee10a",
+                "maintenance": "b2267d871e92e3154aaa81f54a92e4abdd4af53f30472a06cb1104798b11e7b4"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e8f78812c3c711ee717e2748f731bbe5",
+    "identity": "github:1351060691:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1351060691:root",
+            "repository": "yanJ26/dsh-disk-browser",
+            "path": "",
+            "revision": "084d04e4b22bbc771e3ef6176fbd468c7ae875bf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "709be8031d85675798dd3b5fbd5fab5ed92167d9be4dc73690245f82be592546",
+                "code": "084d04e4b22bbc771e3ef6176fbd468c7ae875bf",
+                "maintenance": "3d16e8e7927f7d4cf3ccff9a2ced7142787a6c84b1daa24c302e74b93e13ff5c"
+            }
+        }
+    }
+}

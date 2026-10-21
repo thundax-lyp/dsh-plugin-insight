@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e672f58a6f426c648d5c6e5b056b8ec5",
+    "identity": "github:1354500956:packages-dsh-hardssh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1354500956:packages-dsh-hardssh",
+            "repository": "tiphareth0/dsh-hardssh",
+            "path": "packages/dsh-hardssh",
+            "revision": "de14f1ac1c43c403c9eefdb1decad5a37e4d2fae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "27e26ddc4488d0c2e5b9db075a475ce6ba337061c2081bf251831ed374f55a27",
+                "code": "de14f1ac1c43c403c9eefdb1decad5a37e4d2fae",
+                "maintenance": "9487d03dfe69b7490b8c6135b271f4670c21c139430caaf3956b251a9e0b2556"
+            }
+        }
+    }
+}

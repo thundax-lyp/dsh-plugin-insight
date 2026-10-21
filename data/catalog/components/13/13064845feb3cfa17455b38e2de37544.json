@@ -1,0 +1,22 @@
+{
+    "schema_version": 3,
+    "id": "13064845feb3cfa17455b38e2de37544",
+    "identity": "github:1334209493:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334209493:root",
+            "repository": "GooodWei/arcana",
+            "path": "",
+            "revision": "82f910c0b5e645c65c2a34be0b0e47035d0489a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "7bc213440ab4a98b12398eae7eb3d4c3b43a3af58a9d43a07f6e870403ca77f1",
+                "code": "82f910c0b5e645c65c2a34be0b0e47035d0489a7",
+                "maintenance": "0732809ca5c4f83b93e15b10f46d5cd2ad842b4ffe3207041cc78de838cb90f5"
+            }
+        }
+    }
+}

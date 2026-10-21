@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bfc389c6312eb699ae3ed6c9a0e9a365",
+    "identity": "github:1411842896:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1411842896:root",
+            "repository": "MacilyDots/dsh-session-inherit",
+            "path": "",
+            "revision": "c8cf6371afdaa186b1ba37d29be0d5a1ce086c62",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "30a9d958cf6d3ef10f9bb5645755dad9b06df4659e0ff6008f22f4f016659389",
+                "code": "c8cf6371afdaa186b1ba37d29be0d5a1ce086c62",
+                "maintenance": "a026ba6873fea8e2c6ed9db7f4532a73d594228778cada24a8ae73add50f2ddb"
+            }
+        }
+    }
+}

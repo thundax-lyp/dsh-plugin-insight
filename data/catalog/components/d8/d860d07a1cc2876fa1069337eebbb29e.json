@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d860d07a1cc2876fa1069337eebbb29e",
+    "identity": "github:1348386697:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1348386697:root",
+            "repository": "ktao732084-arch/dsh-vibegap",
+            "path": "",
+            "revision": "1bebe031bf1f4bc9c19e7ddd7b3ce4fb174cdf3b",
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "5a8407ba905321866cfd4a31370ba60973679edb08c44d5e74f0ed3c0a676313",
+                "code": "1bebe031bf1f4bc9c19e7ddd7b3ce4fb174cdf3b",
+                "maintenance": "ae9902b7b3f315ac5565280a6ecd8da71589a6b4943cf931eef4d74c8b6b1104"
+            }
+        }
+    }
+}

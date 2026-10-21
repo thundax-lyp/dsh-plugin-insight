@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "204e8a6958d0487575b743ce343a8849",
+    "identity": "github:1272251780:integrations-dsh-plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1272251780:integrations-dsh-plugin",
+            "repository": "geml-spec/geml",
+            "path": "integrations/dsh-plugin",
+            "revision": "9eaab9a171ed84088185b4c6b21401c9eeeaecf1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fb45a4bbb96e5574d003323393fd2284588fdf7e7a08b84affa5432ede2dbfd3",
+                "code": "9eaab9a171ed84088185b4c6b21401c9eeeaecf1",
+                "maintenance": "c8ebd9c5653b3bf9cf80aa62120bba0eb690030350ebaa1489d94be14be1cf08"
+            }
+        }
+    }
+}

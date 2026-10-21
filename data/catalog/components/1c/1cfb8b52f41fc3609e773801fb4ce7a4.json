@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1cfb8b52f41fc3609e773801fb4ce7a4",
+    "identity": "github:1369398336:packages-dsh-oidc",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1369398336:packages-dsh-oidc",
+            "repository": "ECNU/EduWork",
+            "path": "packages/dsh-oidc",
+            "revision": "4277582de87dc0a16eb67528225314e4591a369b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0e97341f6a172ac8d98ed6ddcb5c99b6a978fa424e2a76eca2bc387babdad526",
+                "code": "4277582de87dc0a16eb67528225314e4591a369b",
+                "maintenance": "66b250ae108f42287fee765980af40160c853dc5552a6dfd0b01af81f4fc0da2"
+            }
+        }
+    }
+}

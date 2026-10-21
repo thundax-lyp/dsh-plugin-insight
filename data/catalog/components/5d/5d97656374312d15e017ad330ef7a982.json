@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5d97656374312d15e017ad330ef7a982",
+    "identity": "github:1417111748:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1417111748:root",
+            "repository": "yzhclcl/dsh-omni-modal",
+            "path": "",
+            "revision": "da3767d1fa7007d398bef0723f17b91ea2defdf5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fd6c9a1c3a78a8165bd5f1d3e2f5ba80ac2a218f3548fa6dd866346a85e0585a",
+                "code": "da3767d1fa7007d398bef0723f17b91ea2defdf5",
+                "maintenance": "579e6f3d8cd760d37e9d8f1e2663912ff8e3a3a1c61a2f587be3bee09d350b65"
+            }
+        }
+    }
+}
