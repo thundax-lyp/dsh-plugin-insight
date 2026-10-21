@@ -1,0 +1,17 @@
+{
+  "id": "github:1374055714:root",
+  "repository": "3ChatAI-NCT/3chatai-deepseek-harness-plugin",
+  "path": "",
+  "revision": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+  "fingerprints": {
+    "directory": "a23d39ffb07a8f2ac5f35904fafa2be507b7a32b4ec7689d2383350e2417ad92",
+    "code": "d741956969f0adcd523c13d682e9ca8d7b313cb0",
+    "maintenance": "0f555bc35f44fba60ea0de1d0989bf129ebb1d036fef4875b365fb2503ff4a29"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "10631a8bf4bf73331a402013cbda9ab19ae54b5eda8ea4b7ab5349ed09990f4c"
+}

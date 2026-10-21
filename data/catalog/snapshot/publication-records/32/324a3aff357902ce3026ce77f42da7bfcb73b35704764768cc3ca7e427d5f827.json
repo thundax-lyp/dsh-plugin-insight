@@ -1,0 +1,17 @@
+{
+  "id": "github:1417227361:root",
+  "repository": "439436269-ctrl/dsh-peak-runner",
+  "path": "",
+  "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+  "fingerprints": {
+    "directory": "d26264dee84a1d424ce5c18b1df7ee87b59e3b267b1580fbfe11de76f24a28eb",
+    "code": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+    "maintenance": "a44e656ee82b9cd17d5ceb6d0a33e3f924be4478ae1b97977914f0f256e10efc"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "3b8d893676e533c6bd7a252c2b585e42e3176803a2f581372cc9c75e8baa5759"
+}

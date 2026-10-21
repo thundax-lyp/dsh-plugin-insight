@@ -1,0 +1,299 @@
+{
+  "id": "github:1414936636:root",
+  "repository_id": 1414936636,
+  "component_id": "root",
+  "repository": "439436269-ctrl/dsh-video-pipeline",
+  "path": "",
+  "aliases": [],
+  "name": "短视频 Skill 流水线",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "content-creation",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "c7169ab2fb395d70185b5524cd673cdae82e016c09918bb0cbb2786727b3e3a0",
+    "code": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+    "maintenance": "02d415947b1a8afcecd0794bd506803c6c3a132c87a3dd57db1616aaea43205c"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1414936636-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:11:11.897Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1414936636-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/README.md",
+      "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+      "captured_at": "2026-10-21T02:11:11.897Z",
+      "summary": "将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-video-pipeline/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1414936636-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/index.js",
+      "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+      "captured_at": "2026-10-21T02:11:11.897Z",
+      "summary": "核查 lib/index.js、lib/provider.js、lib/frontmatter.js、lib/placeholders.js、skills/video-pipeline/SKILL.md、skills/media-verify/SKILL.md、skills/quad-platform-publish/SKILL.md、package.json；插件在ctx.skills注册bundled provider，扫描SKILL.md/frontmatter，以rank600和resourceBase提供技能；加载正文替换占位符，enabledSkills限制暴露范围。业务编排通过文字规程指派原子Skill和确认门。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-video-pipeline/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查provider与三个代表Skill，未完整审计19项生产脚本或执行隐私门；正文含作者特定环境历史指令。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有短视频制作与平台账号的创作者，按工序组织一集从选题到发布的素材和结果；交付成片、核验记录及平台链接，不能把Skill注册成功当生产链跑通。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "插件在ctx.skills注册bundled provider，扫描SKILL.md/frontmatter，以rank600和resourceBase提供技能；加载正文替换占位符，enabledSkills限制暴露范围。业务编排通过文字规程指派原子Skill和确认门。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查provider与三个代表Skill，未完整审计19项生产脚本或执行隐私门；正文含作者特定环境历史指令。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "无runtime npm依赖只描述provider，不覆盖19项Skill执行依赖；同名本地Skill优先。第三方许可及导入/脱敏报告是作者材料，未执行隐私门。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次迁移账号、路径、工具环境和脚本占位符成本高；持续为模型/API额度、媒体计算、上传失败和人工审片。原始运营数据被剔除，无法复现作者产能或收益倍率。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可复用的是生产知识、交接产物和失败经验；市场播放/成交收益没有独立验证，打包完整不代表端到端可迁移。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "provider保留resourceBase并尊重本地Skill优先级，便于版本化分发；frontmatter自写子集需要持续对齐宿主。移植应把原作者历史账号指令改成用户自己的明确配置，不能当普遍规则。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对散落复制Skill，贡献是统一目录、资源基址和环境占位符，使一条制作流程可随包分发。核心生成、剪辑和平台上传依赖现有API/ffmpeg/脚本，第三方小红书代码有独立归属；不是新的媒体生成算法。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "“核验后才发布”在入口主要是Skill规程，不是工具层强制门禁；另一批量编排路径文档承认没有确认门。包内quad-platform-publish同时留“四平台/三平台”和4个/3个Agent的历史环境指令，移植者可能继承原作者账号风控与时序假设。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：把成片哈希、核验状态、用户批准平台集合和实际上传结果整理成一份manifest，并令发布适配器校验，可能把文字质量门变成可审计约束。由现有产物流和素材一致性要求推导；各平台脚本必须统一状态所有权，增加迁移成本。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1414936636:root",
+          "area": "code",
+          "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:11.897Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:11:11.897Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+    "reviewed_at": "2026-10-21T02:11:11.897Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1414936636:root",
+        "area": "code",
+        "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：可分发Skill集是工程集成，媒体算法归已有工具。 mechanism：资源基址和占位符解决迁移接线，发布约束仍为文字。 transferability：多工序产物约定可复用，但账号和脚本环境强依赖。 simplification：一包注册替代手工拷贝，未消除外部配置。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：显式分工与确认门连接制作到发布，端到端未验。 delivery：从零散素材转为成片/链接/回写的流程交付，非新生成能力。 reach：帮助已有工具的创作者组织流程，新手环境门槛仍高。 economics：并行和素材复用可能节省时间，缺少原始运营数据对照。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-01-github-1414936636-root-source"
+      ]
+    }
+  }
+}

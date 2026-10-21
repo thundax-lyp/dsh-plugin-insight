@@ -1,0 +1,4 @@
+{
+  "revision": "f4d521615a9ca7ff7cbe2953a2a84074a7768091",
+  "text": "远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。"
+}

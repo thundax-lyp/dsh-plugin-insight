@@ -1,0 +1,17 @@
+{
+  "id": "github:1334134226:root",
+  "repository": "3403473060/dsh-inline-images",
+  "path": "",
+  "revision": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+  "fingerprints": {
+    "directory": "8ea12e425b8c2822933da38aa2b1ab760905e4743e8728dd17351111fec762b9",
+    "code": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+    "maintenance": "7548a89e59b27a18df123631d1250894bda151d0d6a6755ee77e2f0a2d1ef365"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "849f42e45b8ddd5ffc02019a44b71abc19265a05533e7dcd6416e302ad63203c"
+}

@@ -1,0 +1,252 @@
+{
+  "id": "github:1335843750:root",
+  "repository_id": 1335843750,
+  "component_id": "root",
+  "repository": "263311487-ux/dsh-verify",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-verify",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "3986bffc85d4e2d5429c316a8d61a14d514213d23ef78dc7cde89e1e8155b6a4",
+    "code": "d969899808e51dcccd261588f667b18633020fca",
+    "maintenance": "3f43e42a18f1b0ead166c963e5e744baf32436e90d745af2cb67a2a67d893027"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1335843750-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:02:15.762Z",
+      "membership": "present"
+    },
+    {
+      "id": "2026-10-21-01-github-1335843750-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-21T02:02:15.762Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1335843750-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/README.md",
+      "revision": "d969899808e51dcccd261588f667b18633020fca",
+      "captured_at": "2026-10-21T02:02:15.762Z",
+      "summary": "通过 JSON 清单执行浏览器断言，提供 CLI、MCP 与 HTML 检查报告。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/263311487-ux--dsh-verify/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1335843750-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/verify.mjs",
+      "revision": "d969899808e51dcccd261588f667b18633020fca",
+      "captured_at": "2026-10-21T02:02:15.762Z",
+      "summary": "核查 bin/verify.mjs、mcp/server.mjs、dsh/plugin.mjs；bin/verify.mjs 将 JSON action 映射为 Playwright 操作、计算样式与像素比较，再汇总逐步结果；MCP 和 DSH 入口调用同一执行路径。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/263311487-ux--dsh-verify/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交的核心入口与说明抽读；未执行目标代码、测试、插件安装或真实宿主验收，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "给 Agent 生成的网页做可重复验收，交付物是具体浏览器断言结果及截图，而不是模型口头完成声明。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843750:root",
+          "area": "code",
+          "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:15.762Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "bin/verify.mjs 将 JSON action 映射为 Playwright 操作、计算样式与像素比较，再汇总逐步结果；MCP 和 DSH 入口调用同一执行路径。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843750:root",
+          "area": "code",
+          "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:15.762Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交的核心入口与说明抽读；未执行目标代码、测试、插件安装或真实宿主验收，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843750:root",
+          "area": "code",
+          "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:15.762Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "package.json 提供 dsh-verify 和 dsh-verify-mcp 二进制与 DSH bundle；依赖 Playwright、PNGJS 和 MCP SDK。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843750:root",
+          "area": "code",
+          "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:15.762Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需安装 Node20+、浏览器并编写规范；持续维护选择器和基线，浏览器资源及失败排查耗时另计；只有可选清单生成需要 LLM 费用。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843750:root",
+          "area": "code",
+          "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:15.762Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合已有明确浏览器验收条件的网页团队先试用；分别审查规范、首次基线和运行错误，保留结构化结果，不用 PASS 代表完整需求或独立审计。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843750:root",
+          "area": "code",
+          "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:15.762Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "确定性断言有助于把交付争议定位到具体样式或文本，但节省复核时间及真实缺陷检出率尚无本轮实验。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843750:root",
+          "area": "code",
+          "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:15.762Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "逐步异常记录保留 action 与 detail，浏览器和静态服务器在 finally 关闭；截图差异有阈值及差异图。首次创建基线通过的语义需要独立展示，HTML 的独立验收措辞强于实际作者独立性。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335843750:root",
+          "area": "code",
+          "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:02:15.762Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:02:15.762Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "d969899808e51dcccd261588f667b18633020fca",
+    "reviewed_at": "2026-10-21T02:02:15.762Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335843750:root",
+        "area": "code",
+        "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：相对Playwright为声明式适配，小幅；mechanism：沿用浏览器与像素比较，小幅；transferability：多Agent可共享规范，实质；simplification：统一入口和报告，实质，通用流程受action限制。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow：验收从口头转具体浏览器断言，实质；delivery：可保存逐项报告，实质；reach：JSON降低脚本门槛，实质；economics：可重复执行小幅，成本未测。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-01-github-1335843750-root-source"
+      ]
+    }
+  }
+}

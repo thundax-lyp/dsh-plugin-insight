@@ -1,0 +1,299 @@
+{
+  "id": "github:1406156934:dsh-task-monitor",
+  "repository_id": 1406156934,
+  "component_id": "dsh-task-monitor",
+  "repository": "3450892121/dsh-task-monitor",
+  "path": "dsh-task-monitor",
+  "aliases": [],
+  "name": "任务监控与 Git 操作面板",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "9b5faff67bc017f2aaf30ac7ed29f601905af1595f81164ed6b6f6ce87bc3d73",
+    "code": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791",
+    "maintenance": "f0705d4cad6674f376f1bb22a5365713d552e66326fd99d0ec86836b9522e166"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1406156934-dsh-task-monitor-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:11:07.377Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1406156934-dsh-task-monitor-author",
+      "kind": "author_claim",
+      "url": "https://github.com/3450892121/dsh-task-monitor/blob/e628e3ea76cf0f7f0a3489b93c9f00271daeb791/dsh-task-monitor/README.md",
+      "revision": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791",
+      "captured_at": "2026-10-21T02:11:07.377Z",
+      "summary": "在 DSH 右侧汇总任务活动，并提供 Git 提交、推送与 GitHub 发布入口。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3450892121--dsh-task-monitor--dsh-task-monitor/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1406156934-dsh-task-monitor-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/3450892121/dsh-task-monitor/blob/e628e3ea76cf0f7f0a3489b93c9f00271daeb791/dsh-task-monitor/index.js",
+      "revision": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791",
+      "captured_at": "2026-10-21T02:11:07.377Z",
+      "summary": "核查 dsh-task-monitor/index.js、dsh-task-monitor/client.js、dsh-task-monitor/package.json；宿主分类会话事件、读取工作区Git状态，经/taskmonitor本地POST路由供shell.overlay面板；同一实现还含commit/push/switch、GitHub登录建仓和令牌存储。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/3450892121--dsh-task-monitor--dsh-task-monitor/REVIEWED-SOURCE.json",
+      "limitations": [
+        "限定dsh-task-monitor组件，核查宿主路由/凭据/写Git与客户端；未创建仓库、写凭据或执行Git动作。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "DSH Desktop开发者查看会话活动、文件产出和Git状态，必要时手工提交/发布；合格交付物是可回查活动和已核实Git结果，活动计数不等于代码完成。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "宿主分类会话事件、读取工作区Git状态，经/taskmonitor本地POST路由供shell.overlay面板；同一实现还含commit/push/switch、GitHub登录建仓和令牌存储。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "限定dsh-task-monitor组件，核查宿主路由/凭据/写Git与客户端；未创建仓库、写凭据或执行Git动作。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "@local/dsh-task-monitor 0.8.0，private包，主要本地桌面配置；npm热度不适用。README结构描述与当前源码副作用不一致。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "初装涉及本地链接、宿主重启、Git和凭据；运行有Git查询、远端检查和代理探测成本。令牌虽mode0600仍为明文credential-store格式；需备份/清理职责。暂无人时或可靠性收益数据。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "仅在读懂当前Git/GitHub写副作用后于临时仓库验证；把监控活动当辅助线索，提交推送仍须核对差异、目标分支和结果。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "价值在减少会话与Git工具之间的切换；无法据此推导更高交付合格率。现有README边界不一致显著增加采用判断成本。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "工作区canonical路径注册检查、环回同站校验和push-failed-after-commit部分成功结果值得借鉴。tokenCanCreateRepo在删除失败时吞错，可能留下临时仓库；复制该探测方式前需改成无写验证或显式清理责任。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对翻聊天记录与终端，贡献是按会话聚合技能/MCP/文件/网页并连接Git工作流；将可见活动与工作区状态放到同一面板降低切换。没有发现活动记录自动约束代码验收的机制。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "最强质疑是“只读监控”边界与实际实现冲突：README安全段称不落盘、不外联、只有只读Git，但index.js:474-505写令牌并实际建/删临时仓库，1053-1103提供写Git和发布路由。环回/工作区检查存在，仍不能把显式UI写操作描述成无副作用。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：将监控视图与写操作能力分开激活，要求每次Git/GitHub操作显示目标仓库、将变文件和远端结果，可能既保留便利又使用户理解副作用。由当前读活动与写权限混在一套入口推导；增加设置和确认负担。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1406156934:dsh-task-monitor",
+          "area": "code",
+          "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:07.377Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:11:07.377Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791",
+    "reviewed_at": "2026-10-21T02:11:07.377Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1406156934:dsh-task-monitor",
+        "area": "code",
+        "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：活动面板与Git界面为常规组合，增量在会话接线。 mechanism：统一事件分类和工作区约束，但不解决业务完成判定。 transferability：分类思路可复用，强耦合宿主UI和事件名称。 simplification：减少切换入口，混合权限同时引入解释成本。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：会话活动连接到Git发布，改变操作路径但未改变验收责任。 delivery：提供活动汇总与Git结果，不证明代码质量。 reach：降低GUI用户使用Git门槛，凭据权限仍复杂。 economics：潜在少切换时间，远端探测和风险处置成本未测。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-01-github-1406156934-dsh-task-monitor-source"
+      ]
+    }
+  }
+}

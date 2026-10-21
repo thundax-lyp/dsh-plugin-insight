@@ -1,0 +1,52 @@
+{
+  "repository": "3274375092/dsh-voice",
+  "repository_id": 1334554745,
+  "captured_at": "2026-10-21T02:01:07.296Z",
+  "window_start": "2026-09-21T02:01:07.296Z",
+  "stars": 8,
+  "pushed_at": "2026-10-01T07:07:03Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A3274375092%2Fdsh-voice%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6D64:1A0B93:2D75B7:30BE17:6AD81CE4 and timestamp 2026-10-21 02:01:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A3274375092%2Fdsh-voice%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6E44:1054F6:2E5DE0:31A6DB:6AD81CE5 and timestamp 2026-10-21 02:01:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A3274375092%2Fdsh-voice%20is%3Aissue%20created%3A2026-09-21T02%3A01%3A07.296Z..2026-10-21T02%3A01%3A07.296Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6F58:275C9A:2EBFE9:320834:6AD81CE6 and timestamp 2026-10-21 02:01:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A3274375092%2Fdsh-voice%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T02%3A01%3A07.296Z..2026-10-21T02%3A01%3A07.296Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7068:272FB3:2E9C03:31E3E5:6AD81CE7 and timestamp 2026-10-21 02:01:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A3274375092%2Fdsh-voice%20is%3Aissue%20updated%3A2026-09-21T02%3A01%3A07.296Z..2026-10-21T02%3A01%3A07.296Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 716A:4E544:317DD6:34C5AF:6AD81CE8 and timestamp 2026-10-21 02:01:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "@nn12138/dsh-voice",
+    "captured_at": "2026-10-21T02:01:12.866Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 607,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40nn12138%2Fdsh-voice",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-14T21:29:18.960Z",
+      "captured_at": "2026-10-21T02:01:12.866Z",
+      "source_url": "https://registry.npmjs.org/%40nn12138%2Fdsh-voice",
+      "error": null
+    }
+  }
+}

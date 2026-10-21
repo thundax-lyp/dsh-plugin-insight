@@ -1,0 +1,245 @@
+{
+  "id": "github:1412141303:root",
+  "repository_id": 1412141303,
+  "component_id": "root",
+  "repository": "439436269-ctrl/dsh-session-path",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-session-path",
+  "entry_type": "plugin",
+  "technical_category": "sessions-messages",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "200c706ee0aac3b031c7841bdda8b4beb0301ff4b849e58735b177c755e5573a",
+    "code": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+    "maintenance": "42e389ff15c68ccee04746dd8b5a8ebab96884ea00d0d2e7ebc0475521ccec71"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1412141303-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:05:44.957Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1412141303-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/439436269-ctrl/dsh-session-path/blob/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607/README.md",
+      "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+      "captured_at": "2026-10-21T02:05:44.957Z",
+      "summary": "定位 DSH 会话日志并导出可读 Markdown 或 JSONL 交接文件。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-session-path/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1412141303-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/439436269-ctrl/dsh-session-path/blob/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607/lib/handoff.js",
+      "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+      "captured_at": "2026-10-21T02:05:44.957Z",
+      "summary": "核查 lib/handoff.js、lib/tools.js、lib/trust.js、lib/route.js；handoff.js读取压缩日志，将用户/助手文本及工具调用摘要映射为Markdown条目，或输出JSONL；route与trust限制HTTP读取路径来源。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-session-path/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "需要让另一个Agent接续已完成会话的用户，合格交付是可读、有会话身份和截断说明的记录。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412141303:root",
+          "area": "code",
+          "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:44.957Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "handoff.js读取压缩日志，将用户/助手文本及工具调用摘要映射为Markdown条目，或输出JSONL；route与trust限制HTTP读取路径来源。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412141303:root",
+          "area": "code",
+          "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:44.957Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412141303:root",
+          "area": "code",
+          "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:44.957Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412141303:root",
+          "area": "code",
+          "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:44.957Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次安装及适配日志代际；每次交接需读盘、解压并复核截断，导出长期保存还带隐私和磁盘清理成本，无新增外部模型费用。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412141303:root",
+          "area": "code",
+          "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:44.957Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "需要接续时优先检查Markdown导出及截断；JSONL预算语义与长日志内存问题确认前，不用作有界最新上下文保证。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412141303:root",
+          "area": "code",
+          "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:44.957Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少让Agent直接读压缩文件的失败有机制依据；接续任务成功率取决于工具结果、附件和被截断信息。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412141303:root",
+          "area": "code",
+          "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:44.957Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "Markdown区分上下文注入与用户原话，工具参数缩至240字；文件名清理sessionId。trust校验Host和Origin hostname，不能当完整用户鉴权。 [固定源码](https://github.com/439436269-ctrl/dsh-session-path/blob/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607/lib/handoff.js#L1)。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412141303:root",
+          "area": "code",
+          "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:05:44.957Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:05:44.957Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607",
+    "reviewed_at": "2026-10-21T02:05:44.957Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1412141303:root",
+        "area": "code",
+        "fingerprint": "9ffc7b3f1bfdeb67a7614ff23463c6844b47e607"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty：可读交接适配小幅；mechanism：日志投影与预算截断实质但格式不一致；transferability：有日志契约可复用实质；simplification：少人工解压实质。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow：跨会话交接实质；delivery：可读文件实质；reach：Agent可读取小幅；economics：减少人工搬运小幅，长日志成本未测。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-01-github-1412141303-root-source"
+      ]
+    }
+  }
+}

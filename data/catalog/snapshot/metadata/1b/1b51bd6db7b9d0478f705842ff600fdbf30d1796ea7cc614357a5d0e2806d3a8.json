@@ -1,0 +1,52 @@
+{
+  "repository": "2861292267/DSH-Official-WorkBuddy-Credit-Proxy",
+  "repository_id": 1387227102,
+  "captured_at": "2026-10-21T02:00:56.972Z",
+  "window_start": "2026-09-21T02:00:56.972Z",
+  "stars": 17,
+  "pushed_at": "2026-10-19T16:26:48Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A2861292267%2FDSH-Official-WorkBuddy-Credit-Proxy%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 64C4:4E2C1:2F9924:32E046:6AD81CDC and timestamp 2026-10-21 02:01:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A2861292267%2FDSH-Official-WorkBuddy-Credit-Proxy%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 659E:FADC5:2DF15A:313968:6AD81CDD and timestamp 2026-10-21 02:01:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A2861292267%2FDSH-Official-WorkBuddy-Credit-Proxy%20is%3Aissue%20created%3A2026-09-21T02%3A00%3A56.972Z..2026-10-21T02%3A00%3A56.972Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 666A:10E8A5:46047B:494B86:6AD81CDE and timestamp 2026-10-21 02:01:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A2861292267%2FDSH-Official-WorkBuddy-Credit-Proxy%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T02%3A00%3A56.972Z..2026-10-21T02%3A00%3A56.972Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6730:2704E0:2D3A21:308240:6AD81CDE and timestamp 2026-10-21 02:01:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A2861292267%2FDSH-Official-WorkBuddy-Credit-Proxy%20is%3Aissue%20updated%3A2026-09-21T02%3A00%3A56.972Z..2026-10-21T02%3A00%3A56.972Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 67F6:110ECF:2DBEE1:3104E1:6AD81CDF and timestamp 2026-10-21 02:01:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-rotakit",
+    "captured_at": "2026-10-21T02:01:03.890Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 577,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-rotakit",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-10-11T15:10:35.173Z",
+      "captured_at": "2026-10-21T02:01:03.890Z",
+      "source_url": "https://registry.npmjs.org/dsh-rotakit",
+      "error": null
+    }
+  }
+}

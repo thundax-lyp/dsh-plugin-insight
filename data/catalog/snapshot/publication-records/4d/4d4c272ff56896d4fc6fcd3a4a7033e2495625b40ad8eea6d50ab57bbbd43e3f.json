@@ -1,0 +1,17 @@
+{
+  "id": "github:1335286261:root",
+  "repository": "3361805598-gif/dsh-md-annotator",
+  "path": "",
+  "revision": "75f7f4d7c7cad205ed7cda7b687774e0db8a4254",
+  "fingerprints": {
+    "directory": "f68d246ddaee6060764a43363792072a505335fe49b6038a2cdf4beb585200c2",
+    "code": "75f7f4d7c7cad205ed7cda7b687774e0db8a4254",
+    "maintenance": "b42f91b9e10e419c00675c637105c3c52fbae4b197798758234602447db343bf"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T01:54:44Z",
+  "analysis_sha256": "01ad8971afd37f508938005a95cae923849cbd87245ff82f09067fc9c26bbb1b"
+}

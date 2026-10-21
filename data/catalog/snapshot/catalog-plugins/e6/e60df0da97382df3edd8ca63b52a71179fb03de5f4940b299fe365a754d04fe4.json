@@ -1,0 +1,299 @@
+{
+  "id": "github:1412162067:root",
+  "repository_id": 1412162067,
+  "component_id": "root",
+  "repository": "439436269-ctrl/dsh-scroll-piano",
+  "path": "",
+  "aliases": [],
+  "name": "滚动钢琴与消息小地图",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "c512281df11c270a143a990688cb5a14c96ed852e8f46d051ff6b400ab95ac62",
+    "code": "756fa15ba689f2cb0af38f20f4270c21f44f703d",
+    "maintenance": "a644691237daff019811fed5b6e3f6582064097bdda43a3b8abb10250a592c85"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-01-github-1412162067-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T02:11:10.736Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-01-github-1412162067-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/439436269-ctrl/dsh-scroll-piano/blob/756fa15ba689f2cb0af38f20f4270c21f44f703d/README.md",
+      "revision": "756fa15ba689f2cb0af38f20f4270c21f44f703d",
+      "captured_at": "2026-10-21T02:11:10.736Z",
+      "summary": "在聊天区边缘按鼠标位置演奏钢琴音，并预览和跳转用户消息。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-scroll-piano/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-01-github-1412162067-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/439436269-ctrl/dsh-scroll-piano/blob/756fa15ba689f2cb0af38f20f4270c21f44f703d/lib/index.js",
+      "revision": "756fa15ba689f2cb0af38f20f4270c21f44f703d",
+      "captured_at": "2026-10-21T02:11:10.736Z",
+      "summary": "核查 lib/index.js、lib/client.js、package.json；浏览器shell.overlay挂载UI，通过data-chat-flow子元素识别用户消息，把内容位置归一到竖条；pointermove纵坐标映射MIDI半音，Web Audio本地合成。ResizeObserver和MutationObserver保持面板开合时定位。",
+      "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-scroll-piano/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查浏览器声音、DOM刻度与observer接线；未测试声音、长会话虚拟列表或CPU/可访问性。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "希望长聊天浏览更有趣、快速回看自己消息的桌面用户；交付可定位的消息刻度和本地声音反馈，不能以趣味推导生产率提升。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "浏览器shell.overlay挂载UI，通过data-chat-flow子元素识别用户消息，把内容位置归一到竖条；pointermove纵坐标映射MIDI半音，Web Audio本地合成。ResizeObserver和MutationObserver保持面板开合时定位。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查浏览器声音、DOM刻度与observer接线；未测试声音、长会话虚拟列表或CPU/可访问性。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "浏览器半单文件实现，主入口无宿主服务；当前固定源码未做音频或目标UI验证。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "初装与调整音量成本低；持续耗浏览器监听、DOM遍历和音频资源，可能有注意力打断。无需模型调用，未测CPU/电量或导航收益。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "作为趣味和用户消息回看辅助试用；长会话和侧栏布局先核对刻度覆盖，办公环境先调低音量，不替代正式搜索。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "娱乐价值因人而异；导航能力可单独评价，不能把声音效果当效率改善证据。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "内容坐标归一化使刻度不随scrollTop漂移，observer只监听childList避免自身style回环，可借鉴到轻量消息导航。移植要重新确认data属性、虚拟列表和事件卸载。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对普通滚动条，增量是用户消息小地图和声音反馈在同一边缘交互组合；音色来自Web Audio合成而非模型。用稳定data属性避开hash类名使DOM接线更明确，但仍依赖宿主内部布局契约。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "最强质疑是附加反馈是否帮助导航还是打断阅读。实现确有刻度跳转和用户消息过滤，但只依赖当前DOM，虚拟化/长会话可能没有全部历史消息元素；音频浏览器权限、误触和全局监听开销也影响采用价值。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "探索性假设：把声音默认关、保留消息小地图，并比较位置预览对回找任务的帮助，可能保留导航增量同时降低打断。依据是声音和预览实现彼此独立；未证明用户需求，需以行为实验判断。",
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1412162067:root",
+          "area": "code",
+          "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+        }
+      ],
+      "reviewed_at": "2026-10-21T02:11:10.736Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T02:11:10.736Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "756fa15ba689f2cb0af38f20f4270c21f44f703d",
+    "reviewed_at": "2026-10-21T02:11:10.736Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1412162067:root",
+        "area": "code",
+        "fingerprint": "756fa15ba689f2cb0af38f20f4270c21f44f703d"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty：声音与消息地图为局部交互组合，均有成熟先例。 mechanism：位置归一与DOM监听改善导航接线，不改变信息检索能力。 transferability：小地图思路可迁移，当前DOM耦合明显。 simplification：共用边缘区组合功能，未证减少操作负担。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow：回看用户消息增加快捷入口，任务组织未根本变化。 delivery：提供消息定位和声音体验，不新增业务成果。 reach：视觉位置预览对普通用户易理解，无可访问性实测。 economics：对照原生滚动未识别现金/资源成本结构改善。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-01-github-1412162067-root-source"
+      ]
+    }
+  }
+}

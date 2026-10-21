@@ -1,0 +1,7 @@
+{
+  "revision": "17a02c085af35ab08ceb3075b003a981afa76d5c",
+  "items": {
+    "后台": "多账号调度、冷却和在途租约",
+    "Host 路由": "Chat、Responses和Messages兼容代理"
+  }
+}
