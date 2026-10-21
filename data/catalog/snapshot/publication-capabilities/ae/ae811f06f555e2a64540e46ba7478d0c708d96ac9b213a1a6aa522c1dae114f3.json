@@ -1,0 +1,9 @@
+{
+  "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+  "items": {
+    "事件监听": "顶层Agent、会话事件、问题/审批投影驱动提醒。",
+    "Host 路由": "认证Connection /yukimi状态/偏好/导航确认RPC。",
+    "界面": "Web主题与Windows独立桌宠/气泡。",
+    "后台": "Electron helper经命名管道同步状态与偏好。"
+  }
+}

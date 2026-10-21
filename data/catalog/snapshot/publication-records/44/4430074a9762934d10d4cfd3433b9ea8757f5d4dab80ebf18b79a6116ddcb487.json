@@ -1,0 +1,17 @@
+{
+  "id": "github:1340906871:dsh",
+  "repository": "Akimiya-z/codex-guard",
+  "path": "dsh",
+  "revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+  "fingerprints": {
+    "directory": "85b83f7ce26e363c4f4b2849ba15edc9734a1c3c43f22c2fdaea8d8c135f48f2",
+    "code": "87e138cdcca2e2929073bb913212dc06769087fc",
+    "maintenance": "7202b661eed029af699546116db2d42ce82dec5601fb2f4c26ff65191c52ba77"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "de47fffb213ece643f521dbd96bf4c34babcad4cb963c50ec8d8dd22388ae20d"
+}

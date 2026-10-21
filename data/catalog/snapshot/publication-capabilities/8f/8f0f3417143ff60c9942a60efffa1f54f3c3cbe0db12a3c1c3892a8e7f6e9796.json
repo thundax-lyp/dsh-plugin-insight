@@ -1,0 +1,10 @@
+{
+  "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+  "items": {
+    "模型工具": "11项顶层会话/域声明/消息/暂停/模型分派工具。",
+    "用户命令": "register、initialize、handoff、retire、pause、resume、pause-all七命令。",
+    "Host 路由": "popup菜单和命令执行/健康路径。",
+    "界面": "域操作弹窗菜单。",
+    "后台": "暂停消息JSONL存储与恢复投递。"
+  }
+}

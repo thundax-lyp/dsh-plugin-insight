@@ -1,0 +1,7 @@
+{
+  "revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
+  "items": {
+    "界面": "独立Windows WPF悬浮桌宠显示温度和硬件信息。",
+    "后台": "PowerShell辅助进程轮询LibreHardwareMonitor并随插件清理；条件式harness.handle分支不视为已确认的DSH工具注册。"
+  }
+}

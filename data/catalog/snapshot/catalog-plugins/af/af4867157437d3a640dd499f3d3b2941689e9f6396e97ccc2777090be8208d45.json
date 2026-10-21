@@ -1,0 +1,299 @@
+{
+  "id": "github:1335661970:root",
+  "repository_id": 1335661970,
+  "component_id": "root",
+  "repository": "AikenFra/dsh-alive",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-alive",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "1901cf049b38fcfce53e3664c621ddd4b6451dc5a280bd5ca27353615ad6b3f3",
+    "code": "d17acfa8689666d799c94e196020a3efed11ad0a",
+    "maintenance": "e51e3946e31c2d016ea30954adfb9b9eaa476d7752977be9a3437f0ecc8df2d8"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1335661970-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:03:51.879Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1335661970-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AikenFra/dsh-alive/blob/d17acfa8689666d799c94e196020a3efed11ad0a/README.md",
+      "revision": "d17acfa8689666d799c94e196020a3efed11ad0a",
+      "captured_at": "2026-10-21T08:03:51.879Z",
+      "summary": "在会话头部轮询本地 ping 接口，显示在线状态点。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/aikenfra--dsh-alive/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1335661970-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AikenFra/dsh-alive/blob/d17acfa8689666d799c94e196020a3efed11ad0a/dsh/index.js",
+      "revision": "d17acfa8689666d799c94e196020a3efed11ad0a",
+      "captured_at": "2026-10-21T08:03:51.879Z",
+      "summary": "核查 dsh/index.js、client/client.js、package.json、cordis.patch.yml；Host注册/dsh-alive/ping并返回200和时间戳；client挂header.utilities组件，首次及每15秒fetch，按HTTP ok更新online/offline，卸载清timer。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/aikenfra--dsh-alive/REVIEWED-SOURCE.json",
+      "limitations": [
+        "根dsh/index.js和client/client.js两条实现路径、README及包清单；未检查真实部署、模型上游或宿主原生连接提示是否重复。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "Web用户想知道浏览器能否连到当前Host，不必发一条模型消息探活；交付是HTTP可达性提示。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "Host注册/dsh-alive/ping并返回200和时间戳；client挂header.utilities组件，首次及每15秒fetch，按HTTP ok更新online/offline，卸载清timer。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "根dsh/index.js和client/client.js两条实现路径、README及包清单；未检查真实部署、模型上游或宿主原生连接提示是否重复。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "DSH Web bundle，Host可选注入webServer，client需要slots/React；不是桌面/模型网关健康服务。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金无模型调用；人工近于安装维护与理解状态范围，15秒轮询有少量HTTP/组件成本，挂起请求未限时。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "仅需Host连接提示时可评估；已有宿主连接指示或需要模型可用性监控者，先确认它是否提供额外信息。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "避免用模型调用检查本地HTTP；无法保证模型、工具、任务和认证链正常。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "两面代码很小、effect清理timer，alive标记阻止卸载后setState；缺少请求截止与新鲜度状态，HTTP错误与上游模型错误不应混用。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "以不调用LLM的本地探活替代发消息测服务，成本与提示语义简单；增量是宿主slot接入，不是端到端健康检查。只要明确信号范围，它可辅助区分页面到Host的连接。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "绿色是否被误解成DeepSeek模型在线？client只看r.ok，不核响应JSON或模型/API状态；Host存活而模型认证/限额/上游断网仍绿色。fetch无timeout/AbortController，连接挂住时旧online可长期保留，固定interval可能叠请求，所以README“挂了立刻变红”超过实现保证。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "把标签改为Host可达并附最近成功时间，给每次fetch明确截止且显示stale，可能减少错误健康判断。用Host正常但模型失败、HTTP挂起和代理返回200 HTML案例，要求不声称模型在线且超时进入未知；若仍保留旧绿色则假设失败。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1335661970:root",
+          "area": "code",
+          "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:51.879Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:03:51.879Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "d17acfa8689666d799c94e196020a3efed11ad0a",
+    "reviewed_at": "2026-10-21T08:03:51.879Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1335661970:root",
+        "area": "code",
+        "fingerprint": "d17acfa8689666d799c94e196020a3efed11ad0a"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 0,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "新颖性0：HTTP ping状态点是成熟模式；机制0：未见突破探活限制的新机制；迁移性5：轻量slot/endpoint可复用；简化4：不经模型即可测HTTP。",
+      "basis": "interpretation",
+      "score": 9,
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "工作流0：无任务组织变化；交付0：只状态提示；覆盖5：不必理解日志的Web用户；经济4：相较模型探活少token，仍有轮询请求且无实测基线。",
+      "basis": "interpretation",
+      "score": 9,
+      "evidence_ids": [
+        "2026-10-21-07-github-1335661970-root-source"
+      ]
+    }
+  }
+}

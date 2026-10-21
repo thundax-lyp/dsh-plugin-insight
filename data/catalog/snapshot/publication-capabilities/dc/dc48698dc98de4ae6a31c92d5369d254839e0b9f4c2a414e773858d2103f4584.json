@@ -1,0 +1,9 @@
+{
+  "revision": "b5c056e1b50fb3446a153bae7ecf2d923f6f7923",
+  "items": {
+    "模型工具": "GitHub探测、PR/Issue/文件与GET API读取。",
+    "Skill": "GitHub只读路由使用指导。",
+    "界面": "路由/token/缓存设置。",
+    "后台": "只读内容回退和本地fetch缓存。"
+  }
+}

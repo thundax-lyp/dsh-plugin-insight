@@ -1,0 +1,299 @@
+{
+  "id": "github:1368192539:root",
+  "repository_id": 1368192539,
+  "component_id": "root",
+  "repository": "Amer-CN/zcode-usage-stats",
+  "path": "",
+  "aliases": [],
+  "name": "zcode-usage-stats",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "c7632ea61cf5d6858da5b12c8277220953e2f11c2e331ce3a24ddade07a1a3df",
+    "code": "9a4381658e754515dac50611da461970462032ec",
+    "maintenance": "2ab301dcea39e5bf7fe3563c038371e100458d981258dac690c8b2b3f8bfb882"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1368192539-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:03:05.843Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1368192539-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/README.md",
+      "revision": "9a4381658e754515dac50611da461970462032ec",
+      "captured_at": "2026-10-21T08:03:05.843Z",
+      "summary": "扫描历史会话用量并在设置页展示趋势、模型分布与活跃热力图。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/amer-cn--zcode-usage-stats/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1368192539-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/Amer-CN/zcode-usage-stats/blob/9a4381658e754515dac50611da461970462032ec/lib/index.mjs",
+      "revision": "9a4381658e754515dac50611da461970462032ec",
+      "captured_at": "2026-10-21T08:03:05.843Z",
+      "summary": "核查 lib/index.mjs、build/body.js；sessionPersistence全量枚举/逐日志读事件，assistant/message usage按turn:step去重，模型回退request/context；内存/磁盘缓存SWR，精确GET路由显式调用connection.requestRejection。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/amer-cn--zcode-usage-stats/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "本地回顾各模型token使用与活跃天数，不用于核账或产出质量评价。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "sessionPersistence全量枚举/逐日志读事件，assistant/message usage按turn:step去重，模型回退request/context；内存/磁盘缓存SWR，精确GET路由显式调用connection.requestRejection。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "历史规模决定磁盘读取和内存，20秒deadline主要控制调度不取消已开始读取；无模型/API费，需维护事件兼容与缓存迁移。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合本地用量回顾；先核事件口径、缓存新鲜度和扫描warning，勿把token活动当生产成果。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "提供历史可见性，无账单对账、节约金额或效率收益验证。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "宿主信任栅栏缺失时拒绝、日志handle finally关闭、inflight合并扫描、同step去重值得复用；生成bundle重复代码不算原创统计。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "把已有持久化事件变成多粒度可读视图，并用SWR缓解重复扫描等待。视觉与本地聚合为主要增量，模型用量语义归宿主。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "去重只在turn/step都是数字时成立，同一步若多条usage不同将取首条；完整性依赖宿主事件契约。磁盘缓存固定web目录可能跨profile复用错误历史，空/部分扫描与真实低用量需看warnings。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：缓存键绑定profile/事件契约并输出扫描覆盖与usage去重依据，可避免错范围趋势。用两profile、重复/修正usage、失败日志及大历史对比总量与coverage；不能对齐原事件则不作预算依据。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1368192539:root",
+          "area": "code",
+          "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:03:05.843Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:03:05.843Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "9a4381658e754515dac50611da461970462032ec",
+    "reviewed_at": "2026-10-21T08:03:05.843Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1368192539:root",
+        "area": "code",
+        "fingerprint": "9a4381658e754515dac50611da461970462032ec"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：常规历史可视化。 mechanism=8：缓存与去重有限机制。 transferability=5：宿主事件/缓存路径耦合。 simplification=4：少重复扫描但全量成本仍在。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow=9：观察入口非任务组织。 delivery=0：活动记录不是业务成果。 reach=5：DSH历史用户有限便利。 economics=0：不直接改变消费结构。",
+      "basis": "interpretation",
+      "score": 14,
+      "evidence_ids": [
+        "2026-10-21-07-github-1368192539-root-source"
+      ]
+    }
+  }
+}

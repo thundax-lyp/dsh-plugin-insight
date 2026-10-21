@@ -1,0 +1,5 @@
+{
+  "text": "把已接入 DSH 的模型组成候选队列，失败时重试、轮换并记录会话隔离。",
+  "revision": "3221de6a1c9a02333f78e48449fcc272e1b430c0",
+  "source_url": "https://github.com/Airisey/dsh-model-failover/blob/3221de6a1c9a02333f78e48449fcc272e1b430c0/README.md"
+}

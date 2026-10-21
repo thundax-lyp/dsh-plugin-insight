@@ -1,0 +1,9 @@
+{
+  "revision": "8f473567166944bf9ea94afaad294ced49034691",
+  "items": {
+    "模型工具": "code_check类型诊断",
+    "用户命令": "/code-review提示驱动本地审查",
+    "事件监听": "fs/observed编辑后防抖检查",
+    "后台": "tsc缓存和子进程生命周期"
+  }
+}

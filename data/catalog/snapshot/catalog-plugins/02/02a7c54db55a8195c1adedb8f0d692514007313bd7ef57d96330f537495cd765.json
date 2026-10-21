@@ -1,0 +1,299 @@
+{
+  "id": "github:1374454334:root",
+  "repository_id": 1374454334,
+  "component_id": "root",
+  "repository": "AlyceStocking/hover-glossary",
+  "path": "",
+  "aliases": [],
+  "name": "hover-glossary",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "0b02761cc9b36e7103051c390650f911f7e7eaf4c342aecaae28118ad203c69c",
+    "code": "620b85d4291e6983cc2d1205ff76f4833978f38b",
+    "maintenance": "8956b53400f3a188f5e051e5680f2b64697bf210bc3d2f3b9871d5bd84267c68"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1374454334-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:14:17.206Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1374454334-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AlyceStocking/hover-glossary/blob/620b85d4291e6983cc2d1205ff76f4833978f38b/README.md",
+      "revision": "620b85d4291e6983cc2d1205ff76f4833978f38b",
+      "captured_at": "2026-10-21T08:14:17.206Z",
+      "summary": "在已发送聊天正文中悬停词语，显示内置的一对多释义。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/alycestocking--hover-glossary/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1374454334-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AlyceStocking/hover-glossary/blob/620b85d4291e6983cc2d1205ff76f4833978f38b/lib/index.js",
+      "revision": "620b85d4291e6983cc2d1205ff76f4833978f38b",
+      "captured_at": "2026-10-21T08:14:17.206Z",
+      "summary": "核查 lib/index.js、lib/client.js、src/lexicon.mjs、cordis.patch.yml、package.json；当前Host入口no-op，词库与Lexicon内联client；鼠标caret API找单一文本节点/字符矩形，限制用户/助手正文并排除交互区域。NFKC/大小写归一、中文最长词与英文词边界匹配后排序显示多条释义，离开/滚动清气泡并卸载监听。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/alycestocking--hover-glossary/REVIEWED-SOURCE.json",
+      "limitations": [
+        "当前lib Host/client、patch与Lexicon纯函数；legacy plugin/host-service仅核为非当前入口，不确认任何动态Skill/工具注册。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "读中英文技术聊天时快速查固定术语/缩写含义，保留上下文；交付是词库条目展示，不是上下文语义判断。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "当前Host入口no-op，词库与Lexicon内联client；鼠标caret API找单一文本节点/字符矩形，限制用户/助手正文并排除交互区域。NFKC/大小写归一、中文最长词与英文词边界匹配后排序显示多条释义，离开/滚动清气泡并卸载监听。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "当前lib Host/client、patch与Lexicon纯函数；legacy plugin/host-service仅核为非当前入口，不确认任何动态Skill/工具注册。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "纯client bundle，词库来自src/seed-data构建内联；重启重新加载固定词库，非在线词典或持久自定义词条服务。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "现金无模型/API；人工维护释义/权重、重建/安装和宿主DOM契约；鼠标监听与词库内存有小额资源成本未测。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "固定术语查阅需求可评估；需要权威领域解释或上下文消歧时仍回原来源，不以首条释义作唯一结论。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "减少离开聊天查术语，保留本地性；无正确率和阅读时间实测。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "纯函数归一/最长词索引可测试复用，气泡内容按纯字符串呈现，caret矩形避免行尾空白误弹，effect清理事件；DOM节点边界是明确能力限度。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "把归一化、一对多释义和最长词查询封装到本地悬停，避免每次术语检索模型请求；复用相同纯Lexicon源码构建client减少漂移。增量是低成本阅读入口，词库覆盖与条目权威性不由算法保证。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "多个释义怎样避免“最高weight就是当前意思”的误读？排序是静态weight而非上下文消歧；跨DOM样式节点拆词不匹配，英文短语只首词命中，可能漏词或给不适用义项。README把旧浏览器验证和Desktop入口检查分开，本轮不能将其升级为当前悬停已验收。legacy host-service/Skill文件存在也不等于当前注册能力。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "为义项标注来源/适用领域与当前上下文不确定性，并对跨节点词用只读范围合并，可能在不调用模型下减少误解。固定同缩写不同领域和加粗拆词案例，比较用户选义正确率与误弹；若只多显示解释而选义不改善，则不能称语义辅助升级。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1374454334:root",
+          "area": "code",
+          "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:14:17.206Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:14:17.206Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "620b85d4291e6983cc2d1205ff76f4833978f38b",
+    "reviewed_at": "2026-10-21T08:14:17.206Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1374454334:root",
+        "area": "code",
+        "fingerprint": "620b85d4291e6983cc2d1205ff76f4833978f38b"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 0,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "新颖性0：本地悬停词典与最长匹配为既有机制；机制8：混排/全角/字符矩形等宿主适配具体；迁移性10：纯Lexicon可共享Node与浏览器；简化8：无需模型/服务即可查询，词库维护仍在。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 0,
+        "delivery": 0,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "工作流0：只阅读入口不改变责任；交付0：已有释义呈现不构成新业务产物；覆盖5：想少切页面的聊天读者；经济4：省模型查词请求有机制但收益未测。",
+      "basis": "interpretation",
+      "score": 9,
+      "evidence_ids": [
+        "2026-10-21-07-github-1374454334-root-source"
+      ]
+    }
+  }
+}

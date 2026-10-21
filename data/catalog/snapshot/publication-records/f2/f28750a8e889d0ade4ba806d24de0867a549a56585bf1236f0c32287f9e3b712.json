@@ -1,0 +1,17 @@
+{
+  "id": "github:1335381015:root",
+  "repository": "AmeKrance/anan-thermal-monitor",
+  "path": "",
+  "revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
+  "fingerprints": {
+    "directory": "f14de009f1efc45775acccb778704e9b2bb74b35eb41b2455f891fb61dc5a67b",
+    "code": "13ed26da20da08eecc300fb9963bea3dd4634205",
+    "maintenance": "3dd19b689ba7c8e62e3ee364f339337c540ba8aa6961e82d16f7488b93f0d378"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "44a268586838835e3e5a2c97054424f3315d1e7534fbaeba5feb9b28a23f72cc"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1425006726:root",
+  "repository": "1373700184/dsh-subagent",
+  "path": "",
+  "revision": "679dd4fb7838fcb473c8b368e20aa24a43af99aa",
+  "fingerprints": {
+    "directory": "50e81ec5d07ce68cc1b966b7133361f50c76d01a3efc452a4ce483bf668d0af0",
+    "code": "679dd4fb7838fcb473c8b368e20aa24a43af99aa",
+    "maintenance": "a13bf5058f0c56b3baff25670833fbacce3d6873d8d156a601e4617cfb14cbc0"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "b3ec7eb4c56bb2594ebae3424f0d7a37a24720d831c7e40a476b0940541d8b07"
+}
