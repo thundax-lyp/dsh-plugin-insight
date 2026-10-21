@@ -120,7 +120,7 @@ MIT DSH bundle，依赖宿主schemastery/llm/tools/systemPrompt；命令硬编�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AbnerAI/dsh-monitor/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AbnerAI/dsh-monitor/issues?q=is%3Aissue+created%3A2026-09-21T05%3A34%3A26.816Z..2026-10-21T05%3A34%3A26.816Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AbnerAI/dsh-monitor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AbnerAI/dsh-monitor/issues?q=is%3Aissue+created%3A2026-09-21T05%3A34%3A26.816Z..2026-10-21T05%3A34%3A26.816Z)
 
 暂未获取：近30天关闭。
 

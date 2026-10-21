@@ -92,7 +92,7 @@ export function renderIssueActivity(metadata, repository) {
         });
     });
     return template('ISSUES', {
-        metrics: metrics.join(' · '),
+        metrics: metrics.join(' '),
         notice: missing.length
             ? template('ISSUES-MISSING', { fields: missing.map(([label]) => label).join('、') })
             : '',
