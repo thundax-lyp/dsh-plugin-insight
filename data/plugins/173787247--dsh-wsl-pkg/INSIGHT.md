@@ -125,10 +125,6 @@ cargo实际参数为tree -d 1，不能仅据描述确认它按深度1工作；np
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+created%3A2026-09-20T09%3A42%3A16.691Z..2026-10-20T09%3A42%3A16.691Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T09%3A42%3A16.691Z..2026-10-20T09%3A42%3A16.691Z)
-
-
-
-统计日期：2026-10-20。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/173787247/dsh-wsl-pkg/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

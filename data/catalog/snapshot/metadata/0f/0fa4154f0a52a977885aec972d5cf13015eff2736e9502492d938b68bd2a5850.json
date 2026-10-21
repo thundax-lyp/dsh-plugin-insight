@@ -1,0 +1,24 @@
+{
+  "repository": "3450892121/dsh-task-monitor",
+  "repository_id": 1406156934,
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
+  "stars": 1,
+  "pushed_at": "2026-10-11T06:55:31Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791",
+    "current_revision": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
+  }
+}

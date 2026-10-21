@@ -1,8 +1,8 @@
 {
   "repository": "3361805598-gif/dsh-usage-analytics",
   "repository_id": 1356960582,
-  "captured_at": "2026-10-21T02:01:14.267Z",
-  "window_start": "2026-09-21T02:01:14.267Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 2,
   "pushed_at": "2026-09-06T17:57:06Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7564:4DAEE:2D7986:30C32E:6AD81CEC and timestamp 2026-10-21 02:01:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:128E3:14CB9F:2262F6:6AD84A02 and timestamp 2026-10-21 05:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7726:103C86:2F8741:32D1C2:6AD81CED and timestamp 2026-10-21 02:01:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14B08A:224D18:6AD84A02 and timestamp 2026-10-21 05:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20created%3A2026-09-21T02%3A01%3A14.267Z..2026-10-21T02%3A01%3A14.267Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 781C:1FA872:2EBDE9:320760:6AD81CEE and timestamp 2026-10-21 02:01:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:15705F:230847:6AD84A02 and timestamp 2026-10-21 05:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T02%3A01%3A14.267Z..2026-10-21T02%3A01%3A14.267Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7944:26CA49:305E11:33A683:6AD81CEE and timestamp 2026-10-21 02:01:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:14156B:21B7CF:6AD84A02 and timestamp 2026-10-21 05:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20updated%3A2026-09-21T02%3A01%3A14.267Z..2026-10-21T02%3A01%3A14.267Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7A1E:5146D:2F194B:3262D5:6AD81CEF and timestamp 2026-10-21 02:01:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3361805598-gif%2Fdsh-usage-analytics%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:144102:21CD75:6AD84A02 and timestamp 2026-10-21 05:13:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-usage-analytics",
-    "captured_at": "2026-10-21T02:01:19.934Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": null,
@@ -44,9 +44,17 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-21T02:01:19.934Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-usage-analytics",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "6b44b372e475188acd71feef81e8451b70c05483",
+    "current_revision": "6b44b372e475188acd71feef81e8451b70c05483",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

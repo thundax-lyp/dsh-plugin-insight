@@ -1,42 +1,21 @@
 {
   "repository": "AIcivilization/dsh-model",
   "repository_id": 1410395082,
-  "captured_at": "2026-10-21T04:12:04.484Z",
-  "window_start": "2026-09-21T04:12:04.484Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 2,
   "pushed_at": "2026-10-18T14:41:51Z",
   "issues": {
-    "open": null,
-    "closed": null,
-    "created_30d": null,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
   },
-  "errors": [
-    {
-      "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-model%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F300:268135:47664A:4C5F12:6AD83B96 and timestamp 2026-10-21 04:12:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-model%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F3EC:1A0B93:42EA25:47E33C:6AD83B96 and timestamp 2026-10-21 04:12:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-model%20is%3Aissue%20created%3A2026-09-21T04%3A12%3A04.484Z..2026-10-21T04%3A12%3A04.484Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F4F0:1852C3:46D797:4BD09E:6AD83B97 and timestamp 2026-10-21 04:12:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-model%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T04%3A12%3A04.484Z..2026-10-21T04%3A12%3A04.484Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F5BC:E6488:55E8C6:5AE4C7:6AD83B98 and timestamp 2026-10-21 04:12:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-model%20is%3Aissue%20updated%3A2026-09-21T04%3A12%3A04.484Z..2026-10-21T04%3A12%3A04.484Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F6C6:26516E:44156B:490E15:6AD83B99 and timestamp 2026-10-21 04:12:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-model",
-    "captured_at": "2026-10-21T04:12:09.886Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": 2009,
@@ -44,9 +23,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-10-08T14:12:04.163Z",
-      "captured_at": "2026-10-21T04:12:09.886Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-model",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "2a1158693225c1e9297dfddfc6b7abbfa7b106e7",
+    "current_revision": "2a1158693225c1e9297dfddfc6b7abbfa7b106e7",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

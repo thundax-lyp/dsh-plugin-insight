@@ -1,8 +1,8 @@
 {
   "repository": "3403473060/dsh-inline-images",
   "repository_id": 1334134226,
-  "captured_at": "2026-10-21T02:01:16.226Z",
-  "window_start": "2026-09-21T02:01:16.226Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 5,
   "pushed_at": "2026-08-14T12:04:10Z",
   "issues": {
@@ -15,28 +15,28 @@
   "errors": [
     {
       "target": "open",
-      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7828:275C9A:2EC4C3:320D74:6AD81CEE and timestamp 2026-10-21 02:01:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:E4386:151CC3:22AC3B:6AD849F6 and timestamp 2026-10-21 05:13:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed",
-      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 796E:27305C:2EFA87:324205:6AD81CEF and timestamp 2026-10-21 02:01:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14AEA3:224982:6AD849F6 and timestamp 2026-10-21 05:13:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "created_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20created%3A2026-09-21T02%3A01%3A16.226Z..2026-10-21T02%3A01%3A16.226Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7A58:4B1BC:2EB654:31FF2C:6AD81CEF and timestamp 2026-10-21 02:01:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13E03E:2178A9:6AD849F6 and timestamp 2026-10-21 05:13:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T02%3A01%3A16.226Z..2026-10-21T02%3A01%3A16.226Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7B4C:1054F6:2E6572:31AF10:6AD81CF0 and timestamp 2026-10-21 02:01:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:90BBC:14B092:22466E:6AD849F6 and timestamp 2026-10-21 05:13:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     },
     {
       "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20updated%3A2026-09-21T02%3A01%3A16.226Z..2026-10-21T02%3A01%3A16.226Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7C18:4DAEE:2D7CC4:30C699:6AD81CF1 and timestamp 2026-10-21 02:01:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+      "message": "GitHub request failed for search/issues?q=repo%3A3403473060%2Fdsh-inline-images%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C1:2F40AA:14713E:21FBF7:6AD849F6 and timestamp 2026-10-21 05:13:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
     }
   ],
   "npm": {
     "package_name": "dsh-inline-images",
-    "captured_at": "2026-10-21T02:01:21.650Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": null,
@@ -44,9 +44,17 @@
     "error": "HTTP 404",
     "publication": {
       "first_published_at": null,
-      "captured_at": "2026-10-21T02:01:21.650Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-inline-images",
       "error": "HTTP 404"
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+    "current_revision": "79f8ba778441c86738dedba574f5911fd2b5b2be",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

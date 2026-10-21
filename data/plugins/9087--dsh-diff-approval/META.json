@@ -1,30 +1,21 @@
 {
   "repository": "9087/dsh-diff-approval",
   "repository_id": 1335980444,
-  "captured_at": "2026-10-21T03:41:00.672Z",
-  "window_start": "2026-09-21T03:41:00.672Z",
+  "captured_at": "2026-10-21T05:08:56.162Z",
+  "window_start": "2026-09-21T05:08:56.162Z",
   "stars": 14,
   "pushed_at": "2026-10-19T16:28:35Z",
   "issues": {
-    "open": 0,
-    "closed": 6,
-    "created_30d": 0,
-    "closed_30d": null,
-    "updated_30d": null
+    "open": 1,
+    "closed": 0,
+    "created_30d": 1,
+    "closed_30d": 0,
+    "updated_30d": 1
   },
-  "errors": [
-    {
-      "target": "closed_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A41%3A00.672Z..2026-10-21T03%3A41%3A00.672Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6C3C:26CA49:41B12F:4642C2:6AD83451 and timestamp 2026-10-21 03:41:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    },
-    {
-      "target": "updated_30d",
-      "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20updated%3A2026-09-21T03%3A41%3A00.672Z..2026-10-21T03%3A41%3A00.672Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6D4A:26CA49:41B1EB:464382:6AD83452 and timestamp 2026-10-21 03:41:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-    }
-  ],
+  "errors": [],
   "npm": {
     "package_name": "dsh-diff-approval",
-    "captured_at": "2026-10-21T03:41:06.861Z",
+    "captured_at": "2026-10-21T05:08:56.162Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": 5714,
@@ -32,9 +23,17 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-16T16:05:19.437Z",
-      "captured_at": "2026-10-21T03:41:06.861Z",
+      "captured_at": "2026-10-21T05:08:56.162Z",
       "source_url": "https://registry.npmjs.org/dsh-diff-approval",
       "error": null
     }
+  },
+  "code_update": {
+    "checked_at": "2026-10-21T05:08:56.162Z",
+    "baseline_revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+    "current_revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+    "script_changed": false,
+    "changed_files": [],
+    "error": null
   }
 }

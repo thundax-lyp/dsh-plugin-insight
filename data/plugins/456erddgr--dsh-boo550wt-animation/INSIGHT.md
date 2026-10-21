@@ -7,7 +7,7 @@
 分析版本：[aeac4c9](https://github.com/456erddgr/dsh-boo550wt-animation/tree/aeac4c96f33b7947e19b44c36c421185ec2cda1a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation)
 <!-- END META -->
 
 **使用建议**：只想个性化启动画面的人可在可恢复profile试用；先验证Esc和坏视频退出，尤其检查超长或无效时长素材，别把maxSeconds当已验证硬限。
@@ -142,10 +142,6 @@ maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation/issues?q=is%3Aissue+created%3A2026-09-21T03%3A08%3A41.123Z..2026-10-21T03%3A08%3A41.123Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T03%3A08%3A41.123Z..2026-10-21T03%3A08%3A41.123Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/456erddgr/dsh-boo550wt-animation/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

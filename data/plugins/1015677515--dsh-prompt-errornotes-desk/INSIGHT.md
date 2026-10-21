@@ -7,7 +7,7 @@
 分析版本：[fab9373](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/tree/fab9373ac396e430316b09693b654051583e9713)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk)
 <!-- END META -->
 
 **使用建议**：已有用户应重点检查先引用标记再真正认错的消息，先只保留少量能复现的教训，并确认禁用或删除后的注入变化。
@@ -71,6 +71,6 @@ parseConfession 与 parseConfessionAt 分离定位与校验，队列按内容去
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [GitHub Issues](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

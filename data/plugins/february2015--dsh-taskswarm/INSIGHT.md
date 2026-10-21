@@ -252,10 +252,6 @@ inventory 检出11个字面量工具名候选、14个 tswarm 命令名候选及�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+created%3A2026-09-20T06%3A34%3A20.397Z..2026-10-20T06%3A34%3A20.397Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T06%3A34%3A20.397Z..2026-10-20T06%3A34%3A20.397Z)
-
-
-
-统计日期：2026-10-20。
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/february2015/dsh-taskswarm/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
