@@ -1,0 +1,31 @@
+{
+  "repository": "5V1A-afk/dsh-sticker-pack",
+  "repository_id": 1418769012,
+  "captured_at": "2026-10-21T03:19:34.297Z",
+  "window_start": "2026-09-21T03:19:34.297Z",
+  "stars": 1,
+  "pushed_at": "2026-10-18T07:24:15Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-sticker-pack",
+    "captured_at": "2026-10-21T03:19:41.379Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-sticker-pack",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T03:19:41.379Z",
+      "source_url": "https://registry.npmjs.org/dsh-sticker-pack",
+      "error": "HTTP 404"
+    }
+  }
+}

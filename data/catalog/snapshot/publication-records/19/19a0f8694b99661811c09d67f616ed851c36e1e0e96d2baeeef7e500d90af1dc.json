@@ -1,0 +1,17 @@
+{
+  "id": "github:1422328385:root",
+  "repository": "456erddgr/dsh-boo550wt-animation",
+  "path": "",
+  "revision": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+  "fingerprints": {
+    "directory": "6c5f38d7eb4cf3bdc130b0a38b3a1683c71f8324739cb6ef44d1a12faadebb47",
+    "code": "aeac4c96f33b7947e19b44c36c421185ec2cda1a",
+    "maintenance": "f187ede4e704aba7aa3a90e134a9ec68e8ef9b91db748731963768061d69b9c8"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "e9e6499001da3255e93ff3f91c82d87a51509abb0983b93855bb6562f5c25840"
+}

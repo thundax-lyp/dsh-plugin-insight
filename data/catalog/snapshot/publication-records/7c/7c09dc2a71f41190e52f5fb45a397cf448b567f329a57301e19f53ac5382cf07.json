@@ -1,0 +1,17 @@
+{
+  "id": "github:1422216012:root",
+  "repository": "544244857/dsh-image2-plugin",
+  "path": "",
+  "revision": "fc44d3feb4be5b7b4d0e0c20bd2b4d09c925dc1e",
+  "fingerprints": {
+    "directory": "b08e16feb254c9a71e71af1df23bacca1ba4cd40d42eddf2f7d69b0d18ab92b1",
+    "code": "fc44d3feb4be5b7b4d0e0c20bd2b4d09c925dc1e",
+    "maintenance": "080c6061df2cd8cba1f71e0fa0a3329a628d05336466f3925a4a709a325fb8aa"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "e5f2a59c15b3198027c9a35d02794fbe4f985284b3eb31eabeac26f2c5e8c132"
+}

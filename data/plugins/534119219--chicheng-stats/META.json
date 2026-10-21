@@ -1,0 +1,52 @@
+{
+  "repository": "534119219/chicheng-stats",
+  "repository_id": 1335725068,
+  "captured_at": "2026-10-21T03:09:10.843Z",
+  "window_start": "2026-09-21T03:09:10.843Z",
+  "stars": 7,
+  "pushed_at": "2026-08-26T15:05:24Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7348:3BA9DC:786EB9:AC27FF:6AD82CD9 and timestamp 2026-10-21 03:09:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 752C:3E2FA6:7CBCE5:B1B4D9:6AD82CDB and timestamp 2026-10-21 03:09:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20created%3A2026-09-21T03%3A09%3A10.843Z..2026-10-21T03%3A09%3A10.843Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 79E2:3E2FA6:7CC1D4:B1BC0B:6AD82CDF and timestamp 2026-10-21 03:09:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A09%3A10.843Z..2026-10-21T03%3A09%3A10.843Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7D96:1ADA16:78C594:ACD215:6AD82CE2 and timestamp 2026-10-21 03:09:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-stats%20is%3Aissue%20updated%3A2026-09-21T03%3A09%3A10.843Z..2026-10-21T03%3A09%3A10.843Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7F3E:38A53A:7BE931:B149BA:6AD82CE4 and timestamp 2026-10-21 03:09:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "chicheng-stats",
+    "captured_at": "2026-10-21T03:09:25.271Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/chicheng-stats",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T03:09:25.271Z",
+      "source_url": "https://registry.npmjs.org/chicheng-stats",
+      "error": "HTTP 404"
+    }
+  }
+}

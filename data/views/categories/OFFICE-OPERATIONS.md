@@ -11,6 +11,8 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把会话副产物移入可还原回收站，并提供项目结项归类、归档与清理清单。 | 先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。 |
+| [chicheng-cron](#plugin-1335807482-root) | 在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。 | 适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。 |
+| [chicheng-push](#plugin-1335382133-root) | 在 DSH 配置多种推送渠道，并通过进程内服务或 HTTP 接口发送通知。 | 有多个任务插件要发通知时可先接一个非敏感测试渠道；检查每渠道结果、令牌文件权限和远程接口范围，再发正式任务摘要，避免把秘密内容直接推到群里。 |
 | [dsh-crypto-portfolio](#plugin-1342742812-root) | 以 DSH 插件启动 Python 资产看板，汇集链上钱包和交易所账户数据。 | 先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。 |
 | [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 为 DSH 提供桌面控件读取、操作与审计面板。 | 适合控件可访问性良好的Windows应用；先对照审批模式检查实际放行条件，在无敏感数据的应用里验证动作和后置状态。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | 把实现Companion协议的手机或设备接入DSH，提供设备列表、健康查询和动作调用。 | 先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。 |
@@ -41,6 +43,28 @@
 - **亮点**：Host在turn/end后台派生Python清运；cleanup.py按规则移动文件并写manifest，项目open时跳过自动清理，结项时分类与归档。
 - **思考**：可逆移动及清单降低首次误收损失；规则覆盖面广且会过期真删，不应替代项目引用和保留策略。
 - **建议**：先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。
+
+<a id="plugin-1335807482-root"></a>
+
+## [chicheng-cron](../../plugins/534119219--chicheng-cron/INSIGHT.md)
+
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-cron)
+
+- **用途**：需要周期性本机脚本或Agent任务的人，在GUI配置时间、cwd、超时与通知，交付任务输出和运行记录；适用于允许错过时点且宿主持久在线的自动化。
+- **亮点**：相对系统cron加独立日志脚本，增量是把DSH Skill/Agent与普通脚本放进一个有历史、输出查看和通知的界面，并整理headless会话。cron语法、进程执行与推送服务为既有机制；贡献是统一任务生命周期和DSH交接，而非新调度算法。
+- **思考**：进程退出0能否代表Agent任务成功？executeRun以退出码和timeout状态结算并触发成功归档，缺少业务产物断言；attach/archive通过开始时间定位会话的路径还需并发验证。超时直接child.kill不能证明整棵后代进程停止，且Web停机错过时点不补跑，关键任务不能只靠绿色历史。
+- **建议**：待验证假设：每次调度生成显式runId并贯穿headless会话、产物与通知，增加任务定义中的输出断言，可减少误归档和“exit0但未交付”。由当前runId记录与基于时间找会话之间的缺口推导。对照并发两次同类Agent、exit0不写产物、超时生成子进程三类任务，验证归属准确率、漏交付率与残留；需要用户定义合格产物，不能自动猜验收。
+
+<a id="plugin-1335382133-root"></a>
+
+## [chicheng-push](../../plugins/534119219--chicheng-push/INSIGHT.md)
+
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-push)
+
+- **用途**：其他DSH插件或脚本在任务结束时向个人设备/群组发送标题与内容，交付每渠道发送结果，用户仍需确认消息被接收与处理。
+- **亮点**：相对每个定时任务内各写Webhook脚本，贡献是集中管理DSH通知配置，用进程内服务和HTTP复用同一发送入口与每渠道错误结果。渠道实现明确参考qinglong notify，不能把成熟渠道协议算作原创；插件增量是DSH配置、服务与调用者接线。
+- **思考**：返回ok是否等于用户可靠收到？sender多以HTTP和渠道业务码判断接受，并无统一送达回执或持久重试；串行多渠道可能累积12秒超时。publicChannel返回完整config，令牌还明文存channels.json，fence信任边界必须与远程访问配置一起检查，不能因“只在本机”就省略敏感字段范围。
+- **建议**：待验证假设：为调用方提供幂等通知ID与持久发送账本，按“已提交/平台接受/确认收到”分层，允许失败渠道重试，可减少任务重试引发的重复提醒。由每渠道results但无持久投递状态推导，当前未实现。用成功后连接断开、部分渠道失败和调用方重放对照，测重复率、漏发与等待时间；不支持回执的平台必须保持unknown，不能伪造已读。
 
 <a id="plugin-1342742812-root"></a>
 

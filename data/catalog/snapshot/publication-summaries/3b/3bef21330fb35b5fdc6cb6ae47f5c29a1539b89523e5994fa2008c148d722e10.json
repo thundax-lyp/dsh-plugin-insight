@@ -1,0 +1,5 @@
+{
+  "text": "为会话压缩请求指定主模型和备用模型，在失败时切换摘要路由。",
+  "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
+  "source_url": "https://github.com/643048695/dsh-compaction-route/blob/6039b260d96652ce4af606f850cd1a179cd9d4f7/README.md"
+}

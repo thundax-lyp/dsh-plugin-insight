@@ -1,0 +1,5 @@
+{
+  "text": "按角色为子代理分配模型候补池，提供故障切换、路由可见性及fork窗口裁剪。",
+  "revision": "e6064904e116910c4c1aa403d40505304653ee23",
+  "source_url": "https://github.com/643048695/dsh-subagent-role-router/blob/e6064904e116910c4c1aa403d40505304653ee23/README.md"
+}

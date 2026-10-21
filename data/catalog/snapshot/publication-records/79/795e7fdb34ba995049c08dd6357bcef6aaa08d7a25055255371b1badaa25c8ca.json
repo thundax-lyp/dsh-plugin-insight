@@ -1,0 +1,18 @@
+{
+  "id": "github:1334395883:root",
+  "repository": "609476965/dsh-LorebookMD",
+  "path": "",
+  "revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+  "fingerprints": {
+    "directory": "5d4b742eb4cd96ee2dbf062bb365f26ed2ddfc1ede8b41a394f48d6f7ee2c71a",
+    "code": "4bc4110efbfb4888286b81aaf53191705dade9dd",
+    "maintenance": "877e4e26b19cc137b0551742618bd7d0848c67fd4a7ce3943b9f475ea998b9ba"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+    "https://github.com/0xsline/awesome-deepseek-harness"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "5e8248b7d474b2ac7f1fc75d15560e18bb5f1aef10fedb7d7210ba17fc6466ad"
+}

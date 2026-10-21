@@ -1,0 +1,17 @@
+{
+  "id": "github:1394489199:root",
+  "repository": "6mt/dsh-plugin-loopback-trust",
+  "path": "",
+  "revision": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+  "fingerprints": {
+    "directory": "e03d38a0e4f277dfd1a3d4eb6fe99be00bd050a4ddacfc235cadac179d05f902",
+    "code": "838ddf0d79fb977be896c6cb5dcd0bba68015832",
+    "maintenance": "c30e4e323dda92d714b4224614962d1e1d4c1df39017e5daad2eb370f85016b8"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "51ac87676b9649d810161ed87eb1be4fbf0cdda00ef2216ed7b0e733c7372e35"
+}

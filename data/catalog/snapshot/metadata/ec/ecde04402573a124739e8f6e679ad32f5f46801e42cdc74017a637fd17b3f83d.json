@@ -1,0 +1,52 @@
+{
+  "repository": "6mt/dsh-plugin-loopback-trust",
+  "repository_id": 1394489199,
+  "captured_at": "2026-10-21T03:10:12.273Z",
+  "window_start": "2026-09-21T03:10:12.273Z",
+  "stars": 0,
+  "pushed_at": "2026-10-14T04:26:19Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A6mt%2Fdsh-plugin-loopback-trust%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BC06:208D3:7D8AD6:B2F98A:6AD82D17 and timestamp 2026-10-21 03:10:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A6mt%2Fdsh-plugin-loopback-trust%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BDC8:38A53A:7C3BEA:B1C123:6AD82D18 and timestamp 2026-10-21 03:10:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A6mt%2Fdsh-plugin-loopback-trust%20is%3Aissue%20created%3A2026-09-21T03%3A10%3A12.273Z..2026-10-21T03%3A10%3A12.273Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C31C:25685:7D0207:B23E26:6AD82D1C and timestamp 2026-10-21 03:10:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A6mt%2Fdsh-plugin-loopback-trust%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A10%3A12.273Z..2026-10-21T03%3A10%3A12.273Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C6BE:F5216:7998B8:AEBDA5:6AD82D1F and timestamp 2026-10-21 03:10:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A6mt%2Fdsh-plugin-loopback-trust%20is%3Aissue%20updated%3A2026-09-21T03%3A10%3A12.273Z..2026-10-21T03%3A10%3A12.273Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C84A:3E2FA6:7D292D:B25030:6AD82D20 and timestamp 2026-10-21 03:10:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-plugin-loopback-trust",
+    "captured_at": "2026-10-21T03:10:25.102Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-loopback-trust",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T03:10:25.102Z",
+      "source_url": "https://registry.npmjs.org/dsh-plugin-loopback-trust",
+      "error": "HTTP 404"
+    }
+  }
+}

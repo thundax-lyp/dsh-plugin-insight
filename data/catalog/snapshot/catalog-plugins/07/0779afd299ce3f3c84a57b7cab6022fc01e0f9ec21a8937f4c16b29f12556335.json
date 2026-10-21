@@ -1,0 +1,299 @@
+{
+  "id": "github:1421306160:root",
+  "repository_id": 1421306160,
+  "component_id": "root",
+  "repository": "643048695/dsh-subagent-role-router",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-subagent-role-router",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "467b7e2b135d623d40ba59d18c281e955630747b41751211220dc7d48015ea6f",
+    "code": "e6064904e116910c4c1aa403d40505304653ee23",
+    "maintenance": "ba327209d46d64eb3643e51a665cc3453f29f40d4da2e01e83058affb4976edf"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1421306160-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:28.201Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1421306160-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/643048695/dsh-subagent-role-router/blob/e6064904e116910c4c1aa403d40505304653ee23/README.md",
+      "revision": "e6064904e116910c4c1aa403d40505304653ee23",
+      "captured_at": "2026-10-21T03:16:28.201Z",
+      "summary": "按角色为子代理分配模型候补池，提供故障切换、路由可见性及fork窗口裁剪。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/643048695--dsh-subagent-role-router/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1421306160-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/643048695/dsh-subagent-role-router/blob/e6064904e116910c4c1aa403d40505304653ee23/lib/index.js",
+      "revision": "e6064904e116910c4c1aa403d40505304653ee23",
+      "captured_at": "2026-10-21T03:16:28.201Z",
+      "summary": "核查 lib/index.js、lib/fork-window.js；lib/index.js包装子代理派发，按角色候补池负载和冷却选择模型，监听request-error有限切换并注入真实路由；fork-window.js重映射最近完整轮次事件及先前摘要，无法保持引用时回退。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/643048695--dsh-subagent-role-router/REVIEWED-SOURCE.json",
+      "limitations": [
+        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "适合多供应商并行子代理任务，需要区分角色、分摊额度及排查实际模型路由的开发者。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js包装子代理派发，按角色候补池负载和冷却选择模型，监听request-error有限切换并注入真实路由；fork-window.js重映射最近完整轮次事件及先前摘要，无法保持引用时回退。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次按角色配置模型与供应商、检查故障码；持续成本含失败切换token、并发溢出、冷却和漏上下文返工，人工需查路由日志，维护受宿主内部接口影响。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "多模型子代理场景可先在隔离任务试。核对候补池不是排队限流，并用依赖早期信息的任务检查fork裁剪；遇到语义缺失先关闭裁剪。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "有助于额度分配与路由可见性；作者体积改善不能外推业务成功率，未有独立实测。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "租约释放兼顾同步抛错与result promise完成；故障切换限定子代理并豁免团队。事件seq、replace及sourceEventSeqs重映射失败回退值得借鉴，但包装宿主对象带来版本耦合。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "作者提供角色路由与故障切换；更具体的增量是将派发时候补工位、运行中sticky切换及可见路由结合，并通过prepareContinuable包装减少fork种子体积。相对手动指定模型，减少并行管理；轮次裁剪是上下文取舍，不是无损压缩算法。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "候补工位不是并发上限，全部忙时会共享最少占用路由，全部冷却也会继续派发。切掉早期完整轮次即使事件协议合法，仍可能丢失未总结目标或授权；测试通过结构不变量也不证明任务语义保留。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：fork窗口同时保留可追溯的任务目标与未完成依赖，可在降低种子体积时减少任务偏移。对相同长会话比较完整历史、最近N轮和目标依赖窗口的启动延迟、任务成功及信息遗漏；不将未测结果计作贡献。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1421306160:root",
+          "area": "code",
+          "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.201Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:28.201Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "e6064904e116910c4c1aa403d40505304653ee23",
+    "reviewed_at": "2026-10-21T03:16:28.201Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1421306160:root",
+        "area": "code",
+        "fingerprint": "e6064904e116910c4c1aa403d40505304653ee23"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 18,
+        "mechanism": 23,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty=18：候补池、切换及窗口裁剪组合有一定增量。 mechanism=23：租约、冷却、路由可见和事件重映射机制深入。 transferability=10：部分纯逻辑可复用，但宿主包装耦合。 simplification=8：减少手配路由，增加状态与裁剪理解成本。",
+      "basis": "interpretation",
+      "score": 59,
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 26,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow=26：派发、故障恢复和路由追踪衔接较完整。 delivery=15：能说明实际模型，语义裁剪收益待验。 reach=10：多供应商并行用户明确，团队等分支受限。 economics=4：有分摊额度机制但无净成本对照。",
+      "basis": "interpretation",
+      "score": 55,
+      "evidence_ids": [
+        "2026-10-21-02-github-1421306160-root-source"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1416950630:root",
+  "repository": "58catmiao/dsh-sciwork",
+  "path": "",
+  "revision": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+  "fingerprints": {
+    "directory": "66df9f880edff0523d975e9d294304203e7c86d420feefc487a4d7024a5e98b3",
+    "code": "21c6e9d5f8f48cd03363305d9fa3c641f8d0f808",
+    "maintenance": "d4dc1562434aa41d1f4862793f58e60d32d869b74e07c445bbb0ee45e35646d8"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "53fbf792202e2cc15392622cf764fbba73f0bba2a332ce372b964084bdbd6136"
+}

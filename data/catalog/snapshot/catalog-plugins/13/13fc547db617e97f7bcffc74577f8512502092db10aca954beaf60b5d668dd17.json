@@ -1,0 +1,299 @@
+{
+  "id": "github:1351594249:root",
+  "repository_id": 1351594249,
+  "component_id": "root",
+  "repository": "6pofx/dsh-tool-explorer",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-tool-explorer",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "5bb94f4bbac71c02fe516f3eec57067830067e947eaf53fc0f6410ef011816c8",
+    "code": "63ea4c8192f715c3157af69e71fef67915db8af1",
+    "maintenance": "9a054f18f9e321417eaebccc95267bf501aa43870f3a051d6bdd74b9da64e17f"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1351594249-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:16:28.560Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1351594249-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/6pofx/dsh-tool-explorer/blob/63ea4c8192f715c3157af69e71fef67915db8af1/README.md",
+      "revision": "63ea4c8192f715c3157af69e71fef67915db8af1",
+      "captured_at": "2026-10-21T03:16:28.560Z",
+      "summary": "在DSH设置页浏览管理Skills与MCP，支持安装、编辑、开关、连接测试及跨工具配置导入。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/6pofx--dsh-tool-explorer/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1351594249-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/6pofx/dsh-tool-explorer/blob/63ea4c8192f715c3157af69e71fef67915db8af1/src/routes.ts",
+      "revision": "63ea4c8192f715c3157af69e71fef67915db8af1",
+      "captured_at": "2026-10-21T03:16:28.560Z",
+      "summary": "核查 src/routes.ts、src/mcp.ts、src/skills-install.ts、src/skills-trash.ts、src/patch-text.ts；routes.ts提供同源写入接口；mcp.ts经profile patch CRUD和可选expectedHash围栏写配置；skills-install.ts下载仓库快照、用文件夹哈希比较并备份替换；skills-trash.ts保留可恢复条目。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/6pofx--dsh-tool-explorer/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "维护多个Skill和MCP的DSH用户需要从配置文件转向统一管理，合格交付是配置正确生效、变更冲突被发现、删除可恢复，而非仅列表显示成功。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "routes.ts提供同源写入接口；mcp.ts经profile patch CRUD和可选expectedHash围栏写配置；skills-install.ts下载仓库快照、用文件夹哈希比较并备份替换；skills-trash.ts保留可恢复条目。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "发布host与client代码及本地MCP补丁脚本；README说明宿主升级后要重新应用本地补丁，不能把此额外维护遗漏。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次要核查Skill来源、MCP命令与密钥配置；日常有升级补丁和配置复核成本。网络下载及MCP/模型服务费用沿用所选服务，未实测节省工时。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合经常管理多套Skills与MCP且能备份profile的用户试用。先在临时profile验证导入、并发改配置、删除恢复与失败更新，升级DSH后检查本地补丁状态。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "统一管理可减少跨文件定位和误删后的人工重建；仍需区分配置已写、服务已连与业务任务完成，未提供实际任务合格率。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "同源写入检查、哈希围栏、垃圾箱放在Skill根外均值得借鉴，避免watcher误发现删除项。维护代价是跨宿主设置API和配置方言，以及非事务目录/lock更新；复用时应明确恢复边界。 源码依据：[src/routes.ts](https://github.com/6pofx/dsh-tool-explorer/blob/63ea4c8192f715c3157af69e71fef67915db8af1/src/routes.ts)、[src/mcp.ts](https://github.com/6pofx/dsh-tool-explorer/blob/63ea4c8192f715c3157af69e71fef67915db8af1/src/mcp.ts)、[src/skills-install.ts](https://github.com/6pofx/dsh-tool-explorer/blob/63ea4c8192f715c3157af69e71fef67915db8af1/src/skills-install.ts)、[src/skills-trash.ts](https://github.com/6pofx/dsh-tool-explorer/blob/63ea4c8192f715c3157af69e71fef67915db8af1/src/skills-trash.ts)、[src/patch-text.ts](https://github.com/6pofx/dsh-tool-explorer/blob/63ea4c8192f715c3157af69e71fef67915db8af1/src/patch-text.ts)。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对手工编辑多个配置、复制Skill目录，增量是将发现、编辑、生效与恢复组织到一处，并对模型/用户调用开关分轴管理。README承认参考已有Skill管理插件，垃圾箱与配置管理是成熟机制的场景组合，不是新的分布式配置算法。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "界面中的“可恢复管理”能否覆盖全部失败？更新路径先复制备份、删除本地目录，再复制新内容；只有新内容复制异常分支回滚，备份阶段及后续lock写入不在同一事务，不能推断任意中断均原子恢复。MCP expectedHash在undefined时跳过围栏，也不能将可选冲突检测解释为所有写入都受保护。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由磁盘Skill、lock与宿主热加载分阶段更新推导，可增加带预期哈希的变更计划与事务日志，先暂存完整目录再原子切换，并在重启时完成/回滚lock。相对当前异常捕获，它覆盖进程终止窗口；未验证。对复制后、目录切换后、lock写入前注入终止，若无法恢复一致版本则不成立。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1351594249:root",
+          "area": "code",
+          "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:16:28.560Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:16:28.560Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "63ea4c8192f715c3157af69e71fef67915db8af1",
+    "reviewed_at": "2026-10-21T03:16:28.560Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1351594249:root",
+        "area": "code",
+        "fingerprint": "63ea4c8192f715c3157af69e71fef67915db8af1"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty是既有管理模式组合小档；mechanism哈希围栏与恢复整合半档；transferability模块化管理半档；simplification统一多来源入口半档，未证实事务正确性。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 15,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow配置生命周期整合半档；delivery增加可恢复管理半档；reach降低手编配置门槛半档；economics节省定位工作未测小档。",
+      "basis": "interpretation",
+      "score": 47,
+      "evidence_ids": [
+        "2026-10-21-02-github-1351594249-root-source"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "github:1422488467:root",
+  "repository": "7gzgn/dsh-inpage-translator",
+  "path": "",
+  "revision": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+  "fingerprints": {
+    "directory": "57b75f220246279e9136a4f5cf24fa91f716e25f11d519ba3e5866c039410465",
+    "code": "4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190",
+    "maintenance": "cc6dffadf427fdb38c0bed5e84d7fdf14b5cd88a6cc385f995445a388b3968ba"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "ffeac77c67cf9d96e32064035ff3b3a540466e8d98d026c85fe51cf060df7516"
+}

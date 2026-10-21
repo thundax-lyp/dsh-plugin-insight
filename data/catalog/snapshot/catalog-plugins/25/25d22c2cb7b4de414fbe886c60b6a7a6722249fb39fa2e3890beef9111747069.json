@@ -1,0 +1,299 @@
+{
+  "id": "github:1422380986:root",
+  "repository_id": 1422380986,
+  "component_id": "root",
+  "repository": "7gzgn/dsh-file-handover",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-file-handover",
+  "entry_type": "plugin",
+  "technical_category": "tools-integration",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "977967b55df886f57debbd1a0fba50995c151c8f87b1d441b9e1a63ba21a9c74",
+    "code": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f",
+    "maintenance": "1501738525f78f042eebff42ae44cfc173a24f48415da0386e5b28ff09c3cbeb"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1422380986-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:20:04.352Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1422380986-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/README.md",
+      "revision": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f",
+      "captured_at": "2026-10-21T03:20:04.352Z",
+      "summary": "将显式指定的本地文件填入Windows原生文件对话框，逐项回读后再确认。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/7gzgn--dsh-file-handover/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1422380986-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.js",
+      "revision": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f",
+      "captured_at": "2026-10-21T03:20:04.352Z",
+      "summary": "核查 lib/handover.js、lib/handover.ps1、lib/plan.js、lib/index.js；handover.js校验路径与文件后spawn PowerShell；handover.ps1枚举#32770且含文件名控件1148的窗口，通过剪贴板/Win32/UIA填写并比对，不能回读时拒绝点击确认。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/7gzgn--dsh-file-handover/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "浏览器上传或桌面应用打开文件时，Agent已触发系统对话框，需要可靠递交指定文件；合格结果还要由应用回读实际收到的文件，不能只看对话框关闭。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "handover.js校验路径与文件后spawn PowerShell；handover.ps1枚举#32770且含文件名控件1148的窗口，通过剪贴板/Win32/UIA填写并比对，不能回读时拒绝点击确认。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "发布Node与ASCII PowerShell脚本，仅Windows原生文件对话框，不支持自绘选择器；命令行bin不是DSH用户命令注册。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无外部服务费；每次PowerShell冷启动、轮询和重试增加等待，首次需确认桌面会话与目标窗口；误投文件的人工恢复成本未量化。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合单一明确文件对话框的Windows任务先试用。先dryRun检查窗口PID与标题，再填文件，最后在接收应用核对文件名和大小；多窗口并存先收敛到唯一目标。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "有望减少IME路径污染与假成功，但不保证应用真的接收或上传文件，作者事故回放不是本轮复现。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "Node编排与GUI后端分离、未回读则拒绝确认、返回每次实际值值得借鉴。结构控件ID比本地化标题稳定，但跨应用目标绑定仍是复用前提；剪贴板也会触及用户当前系统状态。 源码依据：[lib/handover.js](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.js)、[lib/handover.ps1](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1)、[lib/plan.js](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/plan.js)、[lib/index.js](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/index.js)。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对盲打路径和Enter，增量是将等窗口、结构识别、输入、逐字回读与确认组成可诊断调用，绕过中文输入法污染。Win32/UIA与剪贴板均为系统能力，插件贡献在前置校验与失败保留现场。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "显式文件路径是否也意味着显式目标窗口？源码在所有#32770窗口中选择第一个含文件名控件者，expectTitle仅可选且不绑定调用方PID/句柄；记录pid不等于校验归属。因此单窗口场景有力，多文件对话框并存时仍可能递给错误应用，不能把“只点选中对话框”泛化为“选中了正确对话框”。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由候选窗口诊断与目标归属缺口推导，可要求触发方先给PID/句柄与创建时间，递文件只接受该窗口，候选不唯一时停下。未验证假设是减少跨应用误投，而不显著增加单窗流程成本。并行打开两个同标题对话框，若仍不能稳定绑定触发窗口则否定。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1422380986:root",
+          "area": "code",
+          "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:20:04.352Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:20:04.352Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f",
+    "reviewed_at": "2026-10-21T03:20:04.352Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1422380986:root",
+        "area": "code",
+        "fingerprint": "e1c6158dbd4a4ec5c3057305d7d9c445edb9799f"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 15,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty为系统API组合小档；mechanism回读门禁半档；transferability跨原生应用半档；simplification隐藏IME与重试复杂性半档。",
+      "basis": "interpretation",
+      "score": 42,
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow文件交接局部便利小档；delivery可靠交接回执小档；reach降低GUI自动化门槛半档；economics潜在减少重试尚未测小档。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-02-github-1422380986-root-source"
+      ]
+    }
+  }
+}

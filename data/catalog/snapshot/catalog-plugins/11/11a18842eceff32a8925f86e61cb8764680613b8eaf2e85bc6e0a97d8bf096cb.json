@@ -1,0 +1,299 @@
+{
+  "id": "github:1425006726:root",
+  "repository_id": 1425006726,
+  "component_id": "root",
+  "repository": "1373700184/dsh-subagent",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-subagent",
+  "entry_type": "plugin",
+  "technical_category": "agent-workflow",
+  "business_category": "software-delivery",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "50e81ec5d07ce68cc1b966b7133361f50c76d01a3efc452a4ce483bf668d0af0",
+    "code": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849",
+    "maintenance": "6114193a34680d3dc047846742a976079994fc0366a31a637f9b2d043ce3ccba"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-02-github-1425006726-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:10:45.185Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-02-github-1425006726-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/1373700184/dsh-subagent/blob/f5b8d34882618c9cab7bdf012e7d04f72a7ae849/README.md",
+      "revision": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849",
+      "captured_at": "2026-10-21T03:10:45.185Z",
+      "summary": "把 Qoder 与 QoderCN 命令行注册为 DSH 子代理，提供委派、模型回退和进度查询。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/1373700184--dsh-subagent/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-02-github-1425006726-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/1373700184/dsh-subagent/blob/f5b8d34882618c9cab7bdf012e7d04f72a7ae849/lib/index.js",
+      "revision": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849",
+      "captured_at": "2026-10-21T03:10:45.185Z",
+      "summary": "核查 lib/index.js、src/client.js、cordis.patch.yml、package.json；lib/index.js 的 QoderJsonProvider 把文本提示经 stdin 交给一次性 CLI，将 stream-json result 折叠为宿主结果；ActivityLedger 与状态工具、探测路由共享运行 ID，模型链按首次事件与失败结算切换。",
+      "artifact": "data/runs/2026-10-21-02/snapshots/1373700184--dsh-subagent/REVIEWED-SOURCE.json",
+      "limitations": [
+        "抽读提供方、Run、状态账本、前端与bundle；未运行CLI、未核实订阅收费或完整进程树清理。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "已有 Qoder 订阅的开发者在 DSH 父任务里分派具有完整输入的独立代码任务，交付最终文本与可查询运行记录。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "lib/index.js 的 QoderJsonProvider 把文本提示经 stdin 交给一次性 CLI，将 stream-json result 折叠为宿主结果；ActivityLedger 与状态工具、探测路由共享运行 ID，模型链按首次事件与失败结算切换。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "抽读提供方、Run、状态账本、前端与bundle；未运行CLI、未核实订阅收费或完整进程树清理。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "package 与 cordis.patch 提供 web 客户端及两个 dsh-tool-subagent 绑定；只有 qoder-json driver，NO_START_CAPABILITIES 不承诺续话或结构化输出。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首次需各CLI安装登录、版本与权限检查；每任务需要补写上下文和人工验收，模型回退可能重复消耗额度。现金取决于外部订阅，人工时间没有同条件测量；内存账本24次运行、每次200事件会截断，长期审计另需存档。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "已有 Qoder 订阅且能用隔离目录的开发者可先试只读任务；设置单次硬超时，确认权限模式，并检查最终文件或答案，先别让模型回退承担不可重复的写操作。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "价值是把外部订阅执行接回父任务和进度界面；是否省钱或提速取决于上下文交接、重试和复核成本，源码不能证明收益。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "QoderJsonProvider 与 QoderJsonRun 分离，ActivityLedger 设明确上限，stderr留4096字符，ctx.effect管理注册；可复用运行ID和账本结构，但复用时需修订全程deadline、末尾无换行JSON及进程树取消语义。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对手工在 Qoder CLI 与 DSH 之间搬运任务，新增的是 qoder-json 提供方适配、斜杠委派入口、有界动作账本及模型链尝试记录。子进程结果与取消句柄复用 @deepseek-ai/dsh-subagent helpers，不能把上游结算机制算作本插件原创；同一运行 ID 贯穿父侧查询与前端，减少定位运行的手工交接。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "模型回退是否真的限制整次任务等待？start 中 deadline 只限制 firstEvent 的等待和失败后的切换；一旦任何 JSON 事件使 firstEvent ready，代码直接 await run.handle().result，而 timeoutSeconds 默认不设。因此先输出元数据再卡住的 CLI 可能超过 allowedWaitSeconds，静默提醒不等于总预算终止。默认 bypass_permissions、POSIX 只杀直接子进程，也要求隔离目录与结果验收。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "待验证假设：将等待预算拆成首事件、业务进度、最终交付三个阶段，并把任务输出契约与 deadline 一起交给 Run，可减少“有活动但无限等待”。依据是当前 firstEvent 与最终结果有不同生命周期；新增的是明确的业务阶段与统一截止，并非现有能力。用仅吐元数据、持续心跳但无结果、正常完成三类伪 CLI 对照，观察超时是否覆盖全过程、取消后是否残留子进程、合格任务是否误杀；若完成率下降且无等待收益，否定该设计。",
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1425006726:root",
+          "area": "code",
+          "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:10:45.185Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:10:45.185Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849",
+    "reviewed_at": "2026-10-21T03:10:45.185Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1425006726:root",
+        "area": "code",
+        "fingerprint": "f5b8d34882618c9cab7bdf012e7d04f72a7ae849"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 4
+      },
+      "rationale": "novelty 小幅：Qoder协议适配已有CLI与DSH接口；mechanism 小幅：事件折叠与回退但预算非全程；transferability 实质：Provider/Run分离可借鉴给同协议CLI；simplification 小幅：统一状态查询，未改变执行原理。",
+      "basis": "interpretation",
+      "score": 31,
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 10,
+        "economics": 4
+      },
+      "rationale": "workflow 实质：父会话内分派与查询替代手工搬运；delivery 小幅：最终文本与运行记录，未增加验收；reach 实质：订阅CLI进入DSH；economics 小幅：额度来源可切换但无任务成本对照。",
+      "basis": "interpretation",
+      "score": 40,
+      "evidence_ids": [
+        "2026-10-21-02-github-1425006726-root-source"
+      ]
+    }
+  }
+}

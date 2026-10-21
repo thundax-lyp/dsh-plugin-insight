@@ -1,0 +1,17 @@
+{
+  "id": "github:1351594249:root",
+  "repository": "6pofx/dsh-tool-explorer",
+  "path": "",
+  "revision": "63ea4c8192f715c3157af69e71fef67915db8af1",
+  "fingerprints": {
+    "directory": "5bb94f4bbac71c02fe516f3eec57067830067e947eaf53fc0f6410ef011816c8",
+    "code": "63ea4c8192f715c3157af69e71fef67915db8af1",
+    "maintenance": "9a054f18f9e321417eaebccc95267bf501aa43870f3a051d6bdd74b9da64e17f"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "7c594eb4aec70b5cd420ea7d9b922611f55d229b7eae700368ab81da2da5e740"
+}

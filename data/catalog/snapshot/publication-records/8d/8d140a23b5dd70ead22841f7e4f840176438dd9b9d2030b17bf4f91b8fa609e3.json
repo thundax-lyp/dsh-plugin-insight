@@ -1,0 +1,17 @@
+{
+  "id": "github:841979943:root",
+  "repository": "566001/dsh-wrapup-guard",
+  "path": "",
+  "revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
+  "fingerprints": {
+    "directory": "aec96ead201ab506071707c6ea51367168705a8437e0924b2e642c9ef520b7e4",
+    "code": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
+    "maintenance": "e398ee4545dddcd815e7caf8d9c8c81909379a1db1a02a3cbca60e1e1e92338f"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T03:00:27Z",
+  "analysis_sha256": "5e3a3efef5a3c78d73c20c256b648f65719a39fd952886198b6ba89111de77fb"
+}
