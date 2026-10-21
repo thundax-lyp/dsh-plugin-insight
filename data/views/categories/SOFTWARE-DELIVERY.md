@@ -12,11 +12,15 @@
 | --- | --- | --- |
 | [agent-clinic](#plugin-1417442557-root) | 读取本地Agent会话与配置，生成带证据定位的诊断报告，并匹配可复核的改进处方。 | 先离线扫描少量会话并回读证据行，确认隐私与指纹保存策略；处方涉及配置修改时先备份并单独验证。 |
 | [agent-development-constraints](#plugin-1404700411-root) | 将开发教训整理为项目约束库，提供提炼、精简流程及DSH约束提示和查询工具。 | 适合有重复事故且愿意维护规则检查的团队先选少量规则试用。 |
+| [AgentDebugX](#plugin-1296792947-integrations-dsh-agentdebugx) | 按需将DSH当前或选定历史会话接入AgentDebugX诊断，并保存可关联的轨迹与报告。 | 先在脱敏历史会话验证映射和诊断准确性；保留原始轨迹并审查持久化范围，deep结论需独立证据。 |
 | [ai-look-up](#plugin-1401618027-root) | 监测重复命令、连续失败与目标漂移，向会话注入复盘提示并可调用审查模型。 | 先在非关键任务关闭第三通道，观察重复调用提醒的误报和冷却，再决定是否为审查增加预算。 |
 | [Crossfire 针锋](#plugin-1399279897-root) | 在 DSH 对定稿成果组织只读红队评审，并由用户逐条认定或驳回缺陷。 | 有具体定稿要验的人先选少量维度；核对每条证据，保留驳回理由与成果版本，再决定复审，不把认定数当客观质量。 |
+| [dock-editor](#plugin-1340492335-root) | 把受限文本读写与CodeMirror编辑接入Dock文件查看器。 | 适合工作区小文本的辅助编辑；先验证保存冲突与关闭恢复，再处理重要文件。 |
+| [dock-files](#plugin-1340492214-root) | 为Dock提供文件树、viewer分派、文件变更与上传下载通道。 | 先用隔离工作区核对根目录与删除/传输行为，再接入重要文件。 |
+| [dock-git](#plugin-1340492447-root) | 把Git图谱、差异与仓库写操作接入Dock。 | 先在临时仓库核对hook与破坏操作，重要仓库保留团队既有检查。 |
 | [DSH Verification Receipt](#plugin-1333370288-root) | 在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。 | 先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。 |
 | [dsh-a11y-scan](#plugin-1344715270-root) | 调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。 | 适合已有axe后端的前端团队在本地构建产物先试用。 |
-| [dsh-ai-armor](#plugin-1425045401-root) | 打包堆栈定位、Git溯源与二分、配置检查、Shell命令构造和MyBatis Plus静态审计工具。 | 适合逐项使用本地排错工具。 |
+| [dsh-ai-armor](#plugin-1425045401-root) | 聚合 Git 排错、堆栈解码、配置检查、Shell 调用与 SQL 静态审计工具。 | 可按具体只读诊断工具需求评估；二分执行与静态扫描需分别授权和隔离，不能因本地工具或零依赖而当作无副作用。 |
 | [dsh-asciinema](#plugin-1344714509-root) | 录制DSH工具输出为带时间轴的数据文件，提供文本提取和自包含离线HTML回放。 | 适合记录普通非敏感工具文本供本插件回放。 |
 | [dsh-autocompact](#plugin-1324229194-dsh-autocompact) | 为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。 | 长会话且了解模型窗口时可试。 |
 | [dsh-cache-bricks](#plugin-1386463441-root) | 可视化 DSH 模型请求、缓存命中率、活动与历史请求对比。 | 适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。 |
@@ -59,12 +63,13 @@
 | [dsh-slipway](#plugin-1422359117-root) | 将本地 DSH 插件文件发布到 GitHub，建立市场收录 PR 并回拉校验字节。 | 插件作者先在工程副本演算并人工看完整文件清单；确认目标账号和发布范围，再在临时仓库验收部分失败恢复，正式发布后仍要测试安装。 |
 | [dsh-snapshot-manager](#plugin-1412896722-root) | 在DSH轮次边界保存增量文件快照，支持恢复文件并分叉到对应对话切点重新开始。 | 先在可丢弃项目测试快照和dryRun。 |
 | [dsh-spring-admin-kit](#plugin-1412897663-root) | 为Spring Boot、MyBatis Plus、Thymeleaf和LayUI后台开发注册Excel导入导出及模板规则Skill。 | 适合相同技术栈先在小功能试用。 |
-| [dsh-subagent](#plugin-1425006726-root) | 把 Qoder、OpenCode、Pi 等外部 CLI 注册为 DSH 子代理，提供模型回退与进度查询。 | 已有对应CLI且能隔离工作目录的人先试只读任务；为每驱动设置硬超时，检查错误事件、最终输出和取消后进程，不让自动回退承担不可重复写入。 |
+| [dsh-subagent](#plugin-1425006726-root) | 把 Qoder、OpenCode、Pi 等外部 CLI 接到 DSH 子代理并显示运行状态。 | 已有对应CLI且可隔离工作目录者可评估；不可重复写入任务应先解决回退幂等、全程超时和进程树取消，不能因preset叫“自由”而放宽验收。 |
 | [dsh-subagent-role-router](#plugin-1421306160-root) | 按角色为子代理分配模型候补池，提供故障切换、路由可见性及fork窗口裁剪。 | 多模型子代理场景可先在隔离任务试。 |
 | [dsh-tech-lead（旧组件）](#plugin-1345209661-packages-dsh-tech-lead) | 为 DSH 提供只读工程治理工具，检查任务分级、计划、证据、门禁、上下文及变更预览。 | 新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。 |
 | [dsh-tool-budget](#plugin-1350325873-root) | 按运行中的Agent限制工具调用总次数，支持包含与排除规则并在超额时拦截。 | 先按一类任务观察正常调用分布，再设阈值；长后台任务查询可排除，但排除列表应保持有限。 |
-| [dsh-trellis](#plugin-1335559646-root) | 在 DSH 以任务阶段、步骤状态和验收门禁组织开发，并提供任务看板与可选规划保护。 | 复杂且多人验收的开发任务可先在测试项目试；核对未批准写入、真实人工确认和局部Git文件清单，再决定开哪些项目，简单修改保持较轻流程。 |
+| [dsh-trellis](#plugin-1335559646-root) | 在 DSH 用阶段、任务步骤和产物组织开发，提供看板与可选规划保护。 | 已有阶段化工程习惯的项目可列为任务组织候选；如需不可伪造的人类签署或强制只读，当前机制不足以单独承担。 |
 | [dsh-undo-plugin](#plugin-1338526178-packages-bundle-rollback) | 为 DSH 组合消息级文件与会话回滚、归档管理、工具卡片及轨迹折叠界面。 | 只在备份过且无子模块的独立Git工作区先试，核对安装后的七个依赖版本；用可丢弃修改测试文件和分叉上下文是否一起回到目标点，再考虑日常使用。 |
+| [dsh-vercel](#plugin-1425044910-root) | 将Vercel官方MCP接入DSH，提供OAuth、按Agent限额加载工具及结果检索与管理界面。 | 适合已有Vercel账户者从只读项目查询核查。 |
 | [dsh-verify](#plugin-1335843750-root) | 通过 JSON 清单执行浏览器断言，提供 CLI、MCP 与 HTML 检查报告。 | 适合已有明确浏览器验收条件的网页团队先试用；分别审查规范、首次基线和运行错误，保留结构化结果，不用 PASS 代表完整需求或独立审计。 |
 | [dsh-which](#plugin-1423215529-root) | 解释命令的 PATH 解析结果、被遮蔽副本及环境异常，可选探测版本。 | 先只查询并对照当前 shell 的解析结果，必要时对可信二进制启用版本探测。 |
 | [dsh-workflow-templates](#plugin-1344715132-root) | 为 DSH 提供 Workflow 模板检索、静态校验和官方工具调用起点。 | 只有明确要workflow时再选模板；先看完整脚本和参数，检查官方工具可见与阶段输出，再在隔离任务试。 |
@@ -118,6 +123,17 @@
 - **思考**：“记录→规则→enforcement”闭环是否完整？通用约束主要是上下文注入，不能阻止违规则代码；确定性hook只覆盖脱敏规则。index顶部只读/无写注释与writeProbe和配置文件写入不一致，说明治理材料也需核查当前实现。无证据证明15条阈值或固定token节省普适。
 - **建议**：由规则已有检查字段推导，可为每条规则绑定可执行检查与触发覆盖计数，按误报/漏报决定保留、降级或删除，提示仅承担解释。未验证假设是减少规则膨胀且提高实际拦截。以历史已知事故和新任务回放比较纯提示与检查绑定，若重复错误/维护时间不改善则否定。
 
+<a id="plugin-1296792947-integrations-dsh-agentdebugx"></a>
+
+## [AgentDebugX](../../plugins/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/INSIGHT.md)
+
+[![GitHub ★ 66](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=66&color=yellow&logo=github&style=flat)](https://github.com/AgentDebugX/AgentDebugX) · [![npm 30d 792](https://img.shields.io/static/v1?label=npm+30d&message=792&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-agentdebugx)
+
+- **用途**：开发者追查Agent失败需要将原始会话与诊断结论对应，不能把诊断者意见当真实根因。
+- **亮点**：组件贡献是DSH持久会话映射、按需桥接和诊断事件可追溯；Detect-Attribute-Recover与DeepDebug算法归AgentDebugX核心，本组件不包含全部上游CLI能力。
+- **思考**：映射成功能否保证根因正确？丢弃不完整末帧和只取完成边界会排除正在失败的信息；deep默认可由产生轨迹的同模型判断，非独立验证。保存轨迹也引入敏感上下文持久化。
+- **建议**：由稳定边界和诊断事件推导，可附映射覆盖率/被排除事件清单，配独立模型与人工标签对照，区分观察与归因置信度。未验证；带已知故障的轨迹比较漏诊/误归因，覆盖率提升应改善准确率才成立。
+
 <a id="plugin-1401618027-root"></a>
 
 ## [ai-look-up](../../plugins/1344738825--ai-look-up/INSIGHT.md)
@@ -139,6 +155,39 @@
 - **亮点**：相对开放多Agent讨论，贡献是把红队挑错与用户裁决分离，专家只能读与报告、不能自结案，复审只核旧账。子代理与模型能力来自DSH，插件增量是评审职责/状态和可裁决缺陷材料，而非“多人一定更准”。
 - **思考**：只读红队与用户认定是否保证评审有效？工具白名单依赖宿主真实限制，模型仍可引用错误证据；collect拆句/去噪会改变缺陷表达。没有Agent裁决工具不等于RPC能密码学证明人点击，受信浏览器会话与owner检查是另一保证；用户采纳也不是缺陷真值。
 - **建议**：待验证假设：每缺陷绑定固定成果摘要、引用原文和可证伪断言，成果变化自动要求复审，可减少“旧版本挑错”和拆句丢条件。由当前缺陷/轮次/人裁决分层推导，未实现完整版本证据闭环。对照修复改版本、错误引用、复审未修复三类盲审，测有效缺陷率/裁决一致性与复核工时；裁决者独立于红队模型。
+
+<a id="plugin-1340492335-root"></a>
+
+## [dock-editor](../../plugins/aks1st--dock-editor/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-editor) · [![npm 30d 903](https://img.shields.io/static/v1?label=npm+30d&message=903&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-editor)
+
+- **用途**：在聊天旁查看和编辑会话工作区的小型文本文件，外部绝对路径只读。
+- **亮点**：将编辑权限和显示状态接起来：读取最多256KiB并识别NUL二进制，截断或外部只读文件禁保存，写端独立realpath约束会话工作区。核心编辑能力归CodeMirror，项目贡献在宿主接线和有限文本操作。
+- **思考**：fs.write最终直接writeFile且没有原内容/mtime版本比较；外部程序或另一视图修改后，保存可能覆盖新内容。关闭提示不能解决并发写；读取允许任意绝对路径，工作区约束只适用于写入，不能将其描述为完整读隔离。
+- **建议**：未验证假设：保存请求附读取时内容摘要并在冲突时提供重新载入/差异视图，可减少静默覆盖。以两个编辑者交错保存及外部修改样本比较覆盖率和恢复工时，冲突必须保留双方内容。
+
+<a id="plugin-1340492214-root"></a>
+
+## [dock-files](../../plugins/aks1st--dock-files/INSIGHT.md)
+
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-files) · [![npm 30d 1384](https://img.shields.io/static/v1?label=npm+30d&message=1%2C384&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-files)
+
+- **用途**：需要从会话工作区浏览文件、在Dock打开并管理文件的用户。
+- **亮点**：将文件资源入口、可扩展viewer和传输反馈组成文件域，使工作台扩展无需重复文件树与路径打开逻辑。服务端真实文件副作用而非模型提示；复制来的辅助方法不计独创。
+- **思考**：多数请求sessionCwdOf在会话缺失时退到process.cwd，而流式上传严格要求会话；openBridge的probePath请求未带sessionId，可能按另一根目录探测并回退原生打开。任务在内存中，暂停恢复不是进程重启续传；递归删除具有实际副作用。
+- **建议**：未验证假设：每个探测与变更携带明确会话资源根、缺失即拒绝，可减少跨工作区误判。以不同cwd会话、失效session、绝对/资源URL、重启传输矩阵检查目标一致性和误操作率。
+
+<a id="plugin-1340492447-root"></a>
+
+## [dock-git](../../plugins/aks1st--dock-git/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-git) · [![npm 30d 866](https://img.shields.io/static/v1?label=npm+30d&message=866&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-git)
+
+- **用途**：在聊天旁查看会话仓库并执行暂存、提交和分支操作。
+- **亮点**：把图谱、差异与受控参数的仓库操作组织进会话工作台，移除GIT_DIR/GIT_WORK_TREE避免环境改指仓库，读输出有部分容量限制。没有新版本控制协议。
+- **思考**：buildCommitArgs明确--no-verify，merge也跳过验证，可能绕过团队期待的提交钩子；这与终端默认提交不等价。runGit没有通用超时且stderr累计不设同等上限，远端卡住与异常输出需验；argv隔离不等于Git hooks/凭据副作用被隔离。
+- **建议**：未验证假设：把操作将跳过哪些钩子、待影响ref与破坏性变更摘要列入确认，并支持默认遵守钩子，可减少流程偏差。以失败hook、远端卡住、hard reset样例测误接受和恢复耗时。
 
 <a id="plugin-1333370288-root"></a>
 
@@ -168,10 +217,10 @@
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AAAlenwow/dsh-ai-armor)
 
-- **用途**：Java后台开发者在Agent修改后排查常见错误，需要快速取得定位线索；合格交付是可复现原因与修复验证，不能仅以静态finding判定生产根因。
-- **亮点**：相对Agent手工拼Git/转义/扫描命令，增量是将常见排错动作结构化聚合；Git二分与系统Shell能力归上游，正则审计不是完整程序分析。
-- **思考**：README“不执行任何代码”与bisect实现不一致：工具会写临时脚本并执行用户repro、多次切换Git提交，开头还bisect reset。它与只读扫描的副作用不同，不能以全本地或无第三方包推断无风险。SQL正则也可能误报/漏报动态条件。
-- **建议**：由混合只读/执行工具推导，可给每项声明副作用等级，二分在独立工作树中跑固定repro并保留每步结果。未验证；在已有bisect/脏工作区及repro超时情形检查原仓库是否保持，若不能则否定隔离收益。
+- **用途**：Java后台开发者在Agent修改后取得回归定位与常见配置/SQL线索；合格交付应是可复现原因及修复验证，而非扫描命中就认定根因。
+- **亮点**：相对Agent临时拼接Git命令和静态扫描脚本，增量是把常见排错动作组织成可调用工具并返回结构化线索；二分算法属于Git，模式扫描不是完整程序分析。根组件是五组工具的分发聚合，不能由“8工具”推导新的端到端修复工作流。
+- **思考**：统一“armor”是否掩盖工具性质差异？bisect会先reset已有二分、切提交并执行repro，结束reset不撤销repro文件或外部副作用；MAX_STEPS常量未参与控制。POSIX构造计算了cdPart却未用于invocation，cwd仅在note中承诺，PowerShell cwd用JSON字符串不等于可靠PowerShell字面量。SQL正则只检查WHERE字样，动态条件可漏报。
+- **建议**：按副作用声明分层工具，将二分放入独立工作树并固定repro摘要/逐步结果，可能减少诊断工具破坏现场；同时对Shell调用用结构化argv和工作目录字段替代生成命令文本。以已有bisect、脏仓库、repro写文件及含$的cwd反例对照，要求原仓库不变且执行目录正确，否则否定隔离和语义保真收益。
 
 <a id="plugin-1344714509-root"></a>
 
@@ -641,10 +690,10 @@
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent) · [![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent)
 
-- **用途**：已有外部CLI环境的开发者在DSH父任务中委派独立代码任务，显式交接上下文并核对最终文本/文件。
-- **亮点**：相对手动在各CLI间搬运任务，增量是把三种JSON协议统一到DSH子代理结果、状态查询和模型链；新增DRIVERS/sink抽象减少每类CLI重复生命周期代码。子代理句柄/结算复用DSH上游helper，CLI模型能力属于外部工具，不能算插件原创或由数量推导质量。
-- **思考**：同一完成状态是否有一致保证？本版本OpenCode/Pi仍在usesResultEvent=false且exitCode=0时判completed，错误事件只记录不必然改变结算；Qoder依赖result。deadline仍仅控制firstEvent等待与失败后切换，首JSON后等待结果可超过allowedWaitSeconds。副作用失败后自动换模型、默认放权和只杀直接子进程要求独立验收。
-- **建议**：待验证假设：为每驱动定义错误终态与产物断言，并把绝对截止传播到Run，可减少“exit0但错误”和有活动无限等的误报。依据是当前usesResultEvent分叉与首事件后直接await，尚未实现。对照错误后exit0、心跳但无结果、无换行终帧和正常交付，测误报完成、超时覆盖与取消残留；若统一规则伤害合法CLI语义，应返回驱动特定状态而非假装一致。
+- **用途**：已有各CLI账号环境的开发者把可独立验收的任务委派出去，父侧取得最终文本、进度和文件变化；上下文必须显式交接。
+- **亮点**：相比在多个终端搬运任务，插件统一委派句柄、驱动事件与父侧状态，并把外部模型链嵌入DSH。DRIVERS/sink分离减少生命周期重复；外部CLI能力与宿主子代理helper归上游，后端数量和“免费”preset名称都不证明质量或低成本。
+- **思考**：归一的completed是否可靠？OpenCode/Pi的usesResultEvent=false使exit0且无timeout即可完成，error事件仅记账；首JSON后直接await handle.result，allowedWaitSeconds不是全程硬截止。POSIX取消仅杀直接子进程，末尾无换行stdout没有flush。默认bypass_permissions并自动失败换模型时，任务副作用可能重复。
+- **建议**：给各驱动定义终态错误契约和产物断言，将绝对截止传播至Run，可能减少exit0误成功与有心跳无限等。固定样例覆盖error后exit0、无换行终帧、持续心跳无结果与正常交付，比较误成功率及取消残留；若统一契约误判合法协议，则返回驱动特有状态而非强装统一完成。
 
 <a id="plugin-1421306160-root"></a>
 
@@ -685,10 +734,10 @@
 
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis) · [![npm 30d 1538](https://img.shields.io/static/v1?label=npm+30d&message=1%2C538&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis)
 
-- **用途**：多阶段开发团队把方案、实现、验证与归档组织成项目任务，交付任务状态及对应文件；小修改可继续使用人工计划和Git/CI。
-- **亮点**：相对分散TODO和口头批准，贡献在于以task.json.steps集中状态、分阶段推进并在完结/归档前核验步骤与Git；看板只把推进意图交给Agent，不直接绕过状态机。项目明确借鉴Trellis阶段思想，Git与DSH工具裁剪属于既有机制；插件增量是项目/会话绑定、受控任务操作和DSH呈现。
-- **思考**：verifiedBy=human是否真的证明人批准？task.js检查模型传入的verified=true及verifiedBy枚举，未把该值绑定到独立的人类批准事件，因此是记录规则而非不可伪造签署。规划保护只deny指定write/edit和任务工具，其余子代理/shell类副作用不构成全面沙箱；modified_files又由调用方声明，局部Git干净不证明变更全集完整。
-- **建议**：待验证假设：用宿主原生的人类批准事件ID绑定步骤、方案摘要和版本，并在提交验收时核对真实变更集合，可减少模型自签和漏报文件。由verifiedBy自报与modified_files自选的缺口推导，当前未实现。以伪造human标记、批准后改方案、漏列修改文件三类反例对照，要求均拒绝而合法批准可通过；代价是宿主事件依赖与人工批准时间，若小任务成本明显上升应按任务复杂度启用。
+- **用途**：面向多阶段特性、修复与重构任务，交付方案产物、实现记录和步骤验收状态；简单修改可继续用Git/CI与短计划。
+- **亮点**：借鉴Trellis阶段思想，把任务状态、阶段产物与会话绑定集中到DSH；相较散落TODO，完结前统一检查步骤与Git，并给规划期保留受限文档写口。真正增量是可读写的工作流状态和宿主集成；Git及沙箱能力归上游，状态完成不等于业务验收。
+- **思考**：人工门禁是否可信？applyStepUpdate仍接受调用方verifiedBy=human，没有独立批准事件证据；规划保护是工具名denylist，bash/pwsh和其他插件工具保留，不能构成全面只读。modified_files由调用方声明可放行清单外修改；产物白名单控制写入路径却不证明内容已审。因此三个门槛约束记录格式，未证明真实批准/变更全集/结果正确。
+- **建议**：以宿主批准事件ID绑定方案摘要、步骤与提交版本，再核对实际Git变更全集，可能把自报验收转成可追溯验收。以伪造human、批准后改方案、遗漏修改文件的反例验证全部被拒且合法流程通过；若仍可直接改JSON绕过，则需要明确其仅为协作约束而非安全边界。
 
 <a id="plugin-1338526178-packages-bundle-rollback"></a>
 
@@ -700,6 +749,17 @@
 - **亮点**：相对git reset只还原文件、会话继续携带旧工具记忆，以及单纯新建聊天，贡献是私有Git快照与按消息边界分叉对齐。私有GIT_DIR/INDEX保护用户仓库索引，journal记录副作用阶段；bundle同时调整归档namespace所有权，因此是跨插件工作流组合而非单个撤销按钮。
 - **思考**：文件恢复、会话fork和归档能否构成一个可恢复的逻辑动作？rollback-undo/src/index.ts先记录restoring，再并发fork/restore，并对部分失败补偿，但这些系统并非单个原子事务。ShadowGit明确拒绝submodule，且只保存Git支持的路径；外部数据库/API副作用不在快照中。正常路径源码充分，崩溃窗口恢复仍须实际故障实验。
 - **建议**：只在备份过且无子模块的独立Git工作区先试，核对安装后的七个依赖版本；用可丢弃修改测试文件和分叉上下文是否一起回到目标点，再考虑日常使用。外部服务写入仍需单独处理。
+
+<a id="plugin-1425044910-root"></a>
+
+## [dsh-vercel](../../plugins/adenxie--dsh-vercel/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AdenXie/dsh-vercel) · [![npm 30d 暂未获取](https://img.shields.io/static/v1?label=npm+30d&message=%E6%9A%82%E6%9C%AA%E8%8E%B7%E5%8F%96&color=lightgrey&logo=npm&style=flat)](https://www.npmjs.com/package/@adenxie/dsh-vercel)
+
+- **用途**：Agent执行Vercel项目查询与部署协作，大工具目录需控制提示开销且保持账号/项目范围。
+- **亮点**：相对全量MCP注入，主要增量是目录搜索/加载预算、子Agent继承限制及保留宿主调用链；平台能力归Vercel，附带官方skills不计插件原创。
+- **思考**：字符压缩能否保持成功率和授权语义？精简schema及按需加载会增搜索回合；实测字符数不等于token/总费用节省。嵌套工具沿宿主执行接口，但本轮未验证宿主审批与策略实际拦截。
+- **建议**：由预算与已加载集合推导，可按任务阶段/失败信号自适应装载，并显示最终项目归属与调用预算收据。未验证；同任务比全量目录总token、成功率、越scope拒绝和额外回合，若成本转移抵消收益则否定。
 
 <a id="plugin-1335843750-root"></a>
 

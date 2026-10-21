@@ -1,0 +1,52 @@
+{
+  "repository": "Aik358/dsh-anchored-monitor",
+  "repository_id": 1337467566,
+  "captured_at": "2026-10-21T05:34:56.681Z",
+  "window_start": "2026-09-21T05:34:56.681Z",
+  "stars": 13,
+  "pushed_at": "2026-09-05T09:09:17Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-anchored-monitor%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3A92:1889E9:6D5541:736525:6AD84F02 and timestamp 2026-10-21 05:34:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-anchored-monitor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3BA0:1889E9:6D55F1:7365F0:6AD84F02 and timestamp 2026-10-21 05:34:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-anchored-monitor%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A56.681Z..2026-10-21T05%3A34%3A56.681Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3CB6:26EC63:50394E:5644F1:6AD84F03 and timestamp 2026-10-21 05:35:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-anchored-monitor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A56.681Z..2026-10-21T05%3A34%3A56.681Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3D9A:44870:540949:5A1627:6AD84F04 and timestamp 2026-10-21 05:35:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-anchored-monitor%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A56.681Z..2026-10-21T05%3A34%3A56.681Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3E94:272681:50AB03:56B903:6AD84F05 and timestamp 2026-10-21 05:35:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "@a9i5k4/dsh-anchored-monitor",
+    "captured_at": "2026-10-21T05:35:01.606Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 987,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40a9i5k4%2Fdsh-anchored-monitor",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-17T17:47:08.100Z",
+      "captured_at": "2026-10-21T05:35:01.606Z",
+      "source_url": "https://registry.npmjs.org/%40a9i5k4%2Fdsh-anchored-monitor",
+      "error": null
+    }
+  }
+}

@@ -10,6 +10,7 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [dsh-ark9canvas](#plugin-1352959121-root) | 为DSH提供多渠道图片工作台、批量任务和Agent生图审批队列，生成结果保存为本地路径。 | 先用无付费的模拟接口检查审批和路径范围，再以明确预算少量试用。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频上传到抖音或B站投稿页并填写内容，默认私密且停在发布前。 | 适合固定抖音/B站工作流的创作者在非公开测试稿先检查。 |
 | [dsh-image2-tool](#plugin-1422216012-root) | 通过兼容图片接口生成或编辑图片，将结果保存到会话目录并支持内联预览。 | 适合已能确认中转服务支持的图片任务。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 管理提示词预设并导入酒馆角色卡、世界书及正则资料，按需注入对话上下文。 | 已有酒馆资料的写作者可先导入副本。 |
@@ -20,6 +21,17 @@
 | [dsh-wsl-media](#plugin-1381725238-root) | 在DSH中调用本地媒体与文档CLI，进行探测、转写、OCR及格式处理。 | 先配置小范围目录，逐项确认依赖；把OCR和ASR文本与原件抽查，避免复用同名输出。 |
 | [No AI Style](#plugin-1418493685-root) | 以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。 | 先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。 |
 | [短视频 Skill 流水线](#plugin-1414936636-root) | 将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。 | 适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。 |
+
+<a id="plugin-1352959121-root"></a>
+
+## [dsh-ark9canvas](../../plugins/aik358--dsh-ark9canvas/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-ark9canvas) · [![npm 30d 877](https://img.shields.io/static/v1?label=npm+30d&message=877&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas)
+
+- **用途**：按调用计费的图片任务需要人在生成前核对提示与参数，并跟踪部分成功和超时后台任务。
+- **亮点**：把Agent审批、人工工作台、批量结果和文件路径交付串联；图片模型与参考工作台尺寸公式归上游/参照设计。增量是流程接线和任务账目，非生成算法。
+- **思考**：“没有人点头就不计费”覆盖哪条路径？仅Agent工具走队列，面板generate路由loopback检查后直接执行，未见在handler另校验用户决策；loopback不等于用户身份。超时也可能后台继续生成；参考路径读取可能将本机文件发渠道。
+- **建议**：由审批与独立generate入口推导，可用Host端一次性授权绑定提示摘要、渠道、参考文件白名单及最大预算，每条付费路径均验证。未验证；改变参数/换渠道/重放授权/绕过UI直接调用都应拒绝，计费任务和授权一一对应。
 
 <a id="plugin-1422396858-root"></a>
 

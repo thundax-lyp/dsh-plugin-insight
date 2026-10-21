@@ -1,16 +1,16 @@
 # dsh-subagent
 
-> 把 Qoder、OpenCode、Pi 等外部 CLI 注册为 DSH 子代理，提供模型回退与进度查询。
+> 把 Qoder、OpenCode、Pi 等外部 CLI 接到 DSH 子代理并显示运行状态。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[a0b1147](https://github.com/1373700184/dsh-subagent/tree/a0b1147ed7a752c119c79d2d73e3adc2161b3588)
+分析版本：[6889bdd](https://github.com/1373700184/dsh-subagent/tree/6889bdd592d47f7c0f25ee56545e884abdc8927d)
 
 <!-- BEGIN META -->
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent) · [![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent)
 <!-- END META -->
 
-**使用建议**：已有对应CLI且能隔离工作目录的人先试只读任务；为每驱动设置硬超时，检查错误事件、最终输出和取消后进程，不让自动回退承担不可重复写入。
+**使用建议**：已有对应CLI且可隔离工作目录者可评估；不可重复写入任务应先解决回退幂等、全程超时和进程树取消，不能因preset叫“自由”而放宽验收。
 
 **核查状态**：已检查源码，未进行真实宿主验证。
 
@@ -33,79 +33,80 @@
 
 ### 使用判断
 
-- **用途**：已有外部CLI环境的开发者在DSH父任务中委派独立代码任务，显式交接上下文并核对最终文本/文件。
+- **用途**：已有各CLI账号环境的开发者把可独立验收的任务委派出去，父侧取得最终文本、进度和文件变化；上下文必须显式交接。
 
-- **建议**：待验证假设：为每驱动定义错误终态与产物断言，并把绝对截止传播到Run，可减少“exit0但错误”和有活动无限等的误报。依据是当前usesResultEvent分叉与首事件后直接await，尚未实现。对照错误后exit0、心跳但无结果、无换行终帧和正常交付，测误报完成、超时覆盖与取消残留；若统一规则伤害合法CLI语义，应返回驱动特定状态而非假装一致。
+- **建议**：给各驱动定义终态错误契约和产物断言，将绝对截止传播至Run，可能减少exit0误成功与有心跳无限等。固定样例覆盖error后exit0、无换行终帧、持续心跳无结果与正常交付，比较误成功率及取消残留；若统一契约误判合法协议，则返回驱动特有状态而非强装统一完成。
 
-已有对应CLI且能隔离工作目录的人先试只读任务；为每驱动设置硬超时，检查错误事件、最终输出和取消后进程，不让自动回退承担不可重复写入。
+已有对应CLI且可隔离工作目录者可评估；不可重复写入任务应先解决回退幂等、全程超时和进程树取消，不能因preset叫“自由”而放宽验收。
 
-核查状态：当前固定源码支持三JSON驱动、账本与委派接线；所有11类结论和两轴评分重新复核，未运行CLI、宿主或计费对照。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+核查状态：三协议适配、命令和preset由源码确认；完成语义、硬截止、费用与产物质量未实测。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
 
-参照各CLI直接执行和DSH通用SubagentProvider；不对CLI模型能力或价格作外部优劣判断。
+直接在终端运行CLI再粘贴结果；本项统一委派监督但没有继承上下文或共享事务。
 
 <a id="detail-section-3"></a>
 
 ### 能力、流程与成本
 
-- **模型工具**：qoder/qodercn/opencode/pi委派绑定及状态查询。
-- **用户命令**：各提供方斜杠委派入口。
-- **Host 路由**：CLI模型探测、刷新与活动读取。
-- **界面**：Web参数设置和动作进度面板。
-- **后台**：三JSON驱动的一次性执行与模型回退。
+- **Agent/Preset**：patch定义free-subagents指挥preset，组合现有宿主工具。
+- **模型工具**：四个外部CLI委派工具由上游tool-subagent绑定，另有free_subagent_status运行查询。
+- **用户命令**：按provider名称commands.register，向父会话发送委派followup。
+- **Host 路由**：设置页CLI探测RPC。
+- **界面**：配置页及工具调用进度呈现。
+- **后台**：外部CLI子进程执行、事件账本和模型链回退。
 
 **流程与依赖**
 
-lib/index.js以DRIVERS表适配qoder-json/opencode-json/pi-json，外部进程stdin接提示，各事件映射到sink与有界ledger；Provider复用宿主句柄，客户端按runId查状态，patch绑定四个委派工具。
+Provider/Run复用DSH子代理helper，DRIVERS把qoder-json/opencode-json/pi-json归一到sink；stdin传任务，一次性进程收集JSON行。模型链按首事件等待决定切换，有界内存账本支撑状态查询；patch还注册四个委派工具和free-subagents preset。
 
-DSH subagents/tools/commands及连接服务，本机各CLI、Pi node launcher和登录环境；权限与模型支持由具体驱动决定。
+DSH subagents/commands/tools/web client服务、对应已安装登录CLI和工作目录权限；缺二进制在启动/探测阶段暴露。
 
-完整任务提示→指定提供方→按模型链spawn对应CLI→事件sink/账本→终结结果或失败→父Agent验收；静默可通知父侧，不能视为总预算终止。
+用户命令或父工具委派→显式prompt→启动CLI→按首事件/失败切模型→最终文本回父侧→人工核对变更；状态查询显示截断账本。
 
-bundle绑定qoder/qodercn/opencode/pi；三driver均一次性，不继承父上下文、不承诺续话/结构化输出能力；README部分默认说明与实际patch须分别核对。
+bundle默认四委派工具并带自由子代理preset；README安装段仍说两个工具，报告以固定patch为准。三驱动一次性，不继承父上下文、不提供续话或结构化输出保证。
 
 **效果与成本**
 
-首次安装登录各CLI、配置版本和权限；每次补写上下文、失败回退及结果复核可能增加额度与人工。24次运行/200事件账本有截断，无长期审计或单位任务成本测量。
+现金由各CLI订阅/API、回退次数决定，内置credits/rates不是结算凭证；人工包括登录、版本适配、补齐上下文和结果验收。有界24次运行/200事件的内存账本不能长期审计。
 
-价值是统一外部执行与父侧可见性；费用/速度/质量受CLI、上下文交接与重试影响，进度活动不能证明交付。
+核心是统一外部执行的可见性与委派接口，省时省钱和编码质量必须按具体任务测量。
 
-- **思考**：同一完成状态是否有一致保证？本版本OpenCode/Pi仍在usesResultEvent=false且exitCode=0时判completed，错误事件只记录不必然改变结算；Qoder依赖result。deadline仍仅控制firstEvent等待与失败后切换，首JSON后等待结果可超过allowedWaitSeconds。副作用失败后自动换模型、默认放权和只杀直接子进程要求独立验收。
+- **思考**：归一的completed是否可靠？OpenCode/Pi的usesResultEvent=false使exit0且无timeout即可完成，error事件仅记账；首JSON后直接await handle.result，allowedWaitSeconds不是全程硬截止。POSIX取消仅杀直接子进程，末尾无换行stdout没有flush。默认bypass_permissions并自动失败换模型时，任务副作用可能重复。
 
 <a id="detail-section-4"></a>
 
 ### 工程贡献
 
-- **亮点**：相对手动在各CLI间搬运任务，增量是把三种JSON协议统一到DSH子代理结果、状态查询和模型链；新增DRIVERS/sink抽象减少每类CLI重复生命周期代码。子代理句柄/结算复用DSH上游helper，CLI模型能力属于外部工具，不能算插件原创或由数量推导质量。
+- **亮点**：相比在多个终端搬运任务，插件统一委派句柄、驱动事件与父侧状态，并把外部模型链嵌入DSH。DRIVERS/sink分离减少生命周期重复；外部CLI能力与宿主子代理helper归上游，后端数量和“免费”preset名称都不证明质量或低成本。
 
-相对手动在各CLI间搬运任务，增量是把三种JSON协议统一到DSH子代理结果、状态查询和模型链；新增DRIVERS/sink抽象减少每类CLI重复生命周期代码。子代理句柄/结算复用DSH上游helper，CLI模型能力属于外部工具，不能算插件原创或由数量推导质量。
+相比在多个终端搬运任务，插件统一委派句柄、驱动事件与父侧状态，并把外部模型链嵌入DSH。DRIVERS/sink分离减少生命周期重复；外部CLI能力与宿主子代理helper归上游，后端数量和“免费”preset名称都不证明质量或低成本。
 
-Provider/Run和DRIVERS/sink分离、有界ledger及stderr尾部便于借鉴；复用应增加驱动终结契约、末尾无换行处理、全程deadline与进程树取消。
+驱动事件与运行账本解耦，stderr保留尾部并有配置探测；slash命令只是发followup让父Agent调用工具，不保证已开始执行。首次事件、最终事件和退出码的区别值得保留而非用单状态掩盖。
 
-固定源码依据：[lib/index.js](https://github.com/1373700184/dsh-subagent/blob/a0b1147ed7a752c119c79d2d73e3adc2161b3588/lib/index.js)、[src/client.js](https://github.com/1373700184/dsh-subagent/blob/a0b1147ed7a752c119c79d2d73e3adc2161b3588/src/client.js)、[cordis.patch.yml](https://github.com/1373700184/dsh-subagent/blob/a0b1147ed7a752c119c79d2d73e3adc2161b3588/cordis.patch.yml)、[package.json](https://github.com/1373700184/dsh-subagent/blob/a0b1147ed7a752c119c79d2d73e3adc2161b3588/package.json)。
+固定源码依据：[lib/index.js](https://github.com/1373700184/dsh-subagent/blob/6889bdd592d47f7c0f25ee56545e884abdc8927d/lib/index.js)、[lib/client.js](https://github.com/1373700184/dsh-subagent/blob/6889bdd592d47f7c0f25ee56545e884abdc8927d/lib/client.js)、[cordis.patch.yml](https://github.com/1373700184/dsh-subagent/blob/6889bdd592d47f7c0f25ee56545e884abdc8927d/cordis.patch.yml)、[package.json](https://github.com/1373700184/dsh-subagent/blob/6889bdd592d47f7c0f25ee56545e884abdc8927d/package.json)。
 
 <a id="detail-section-5"></a>
 
 ### 主要限制
 
-同一完成状态是否有一致保证？本版本OpenCode/Pi仍在usesResultEvent=false且exitCode=0时判completed，错误事件只记录不必然改变结算；Qoder依赖result。deadline仍仅控制firstEvent等待与失败后切换，首JSON后等待结果可超过allowedWaitSeconds。副作用失败后自动换模型、默认放权和只杀直接子进程要求独立验收。
+归一的completed是否可靠？OpenCode/Pi的usesResultEvent=false使exit0且无timeout即可完成，error事件仅记账；首JSON后直接await handle.result，allowedWaitSeconds不是全程硬截止。POSIX取消仅杀直接子进程，末尾无换行stdout没有flush。默认bypass_permissions并自动失败换模型时，任务副作用可能重复。
 
 <a id="detail-section-6"></a>
 
 ### 核查说明与分析版本
 
-- 版本号：0.7.2；版本日期：2026-10-21（固定提交日期，北京时间，非包发布日期）。
-- 固定提交：[a0b1147e](https://github.com/1373700184/dsh-subagent/tree/a0b1147ed7a752c119c79d2d73e3adc2161b3588)；本轮基准：2026-10-21T04:06:46Z。
+- 版本号：0.7.4；版本日期：2026-10-21（固定提交日期，北京时间，非包发布日期）。
+- 固定提交：[6889bdd5](https://github.com/1373700184/dsh-subagent/tree/6889bdd592d47f7c0f25ee56545e884abdc8927d)；本轮基准：2026-10-21T05:26:52Z。
 - 已检查：上述源码路径、README、包清单及组件inventory。
-- 范围：抽读Provider/Run、三驱动、账本、探测、前端与patch；未跑CLI、目标测试或宿主，不核实订阅额度和真实费用。
+- 范围：根组件Provider、Run、三驱动、回退、账本、探测、客户端注册与preset patch；逐ID复核正式旧11项finding/证据及评分，不核账号额度或外部CLI实现。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
 <a id="detail-section-7"></a>
 
 ## 未来设计假设（未验证）
 
-待验证假设：为每驱动定义错误终态与产物断言，并把绝对截止传播到Run，可减少“exit0但错误”和有活动无限等的误报。依据是当前usesResultEvent分叉与首事件后直接await，尚未实现。对照错误后exit0、心跳但无结果、无换行终帧和正常交付，测误报完成、超时覆盖与取消残留；若统一规则伤害合法CLI语义，应返回驱动特定状态而非假装一致。
+给各驱动定义终态错误契约和产物断言，将绝对截止传播至Run，可能减少exit0误成功与有心跳无限等。固定样例覆盖error后exit0、无换行终帧、持续心跳无结果与正常交付，比较误成功率及取消残留；若统一契约误判合法协议，则返回驱动特有状态而非强装统一完成。
 
-隔离宿主对三协议覆盖错误后exit0、仅元数据卡住、无换行终帧、取消后子进程与失败回退重复写入；本轮不执行目标代码。
+未运行CLI或测试；提出终态、deadline、取消树和重复副作用对照样例，独立检查产物后再判断完成。
 
 <a id="detail-section-8"></a>
 
@@ -116,7 +117,7 @@ Provider/Run和DRIVERS/sink分离、有界ledger及stderr尾部便于借鉴；�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 3 | 1703 | 1532 | 119 | — |
+| .js | source | 3 | 1757 | 1585 | 120 | — |
 | .md | source | 1 | 96 | — | — | 1391 |
 | .mjs | source | 1 | 30 | 28 | 0 | — |
 
@@ -124,7 +125,7 @@ Provider/Run和DRIVERS/sink分离、有界ledger及stderr尾部便于借鉴；�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+created%3A2026-09-21T04%3A10%3A21.209Z..2026-10-21T04%3A10%3A21.209Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T04%3A10%3A21.209Z..2026-10-21T04%3A10%3A21.209Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+created%3A2026-09-21T05%3A33%3A11.857Z..2026-10-21T05%3A33%3A11.857Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T05%3A33%3A11.857Z..2026-10-21T05%3A33%3A11.857Z)
 
 
 
