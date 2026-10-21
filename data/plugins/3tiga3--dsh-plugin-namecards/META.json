@@ -1,0 +1,31 @@
+{
+  "repository": "3Tiga3/dsh-plugin-namecards",
+  "repository_id": 1424219088,
+  "captured_at": "2026-10-21T02:01:34.845Z",
+  "window_start": "2026-09-21T02:01:34.845Z",
+  "stars": 1,
+  "pushed_at": "2026-10-19T15:22:55Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-plugin-namecards",
+    "captured_at": "2026-10-21T02:01:46.539Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 860,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-namecards",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-10-18T12:15:18.580Z",
+      "captured_at": "2026-10-21T02:01:46.539Z",
+      "source_url": "https://registry.npmjs.org/dsh-plugin-namecards",
+      "error": null
+    }
+  }
+}

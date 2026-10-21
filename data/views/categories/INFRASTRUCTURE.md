@@ -13,10 +13,12 @@
 | [DSH Telemetry Redactor](#plugin-1333368566-root) | 在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。 | 先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 读取Agent-Body运行时文件，在宿主HTTP路由展示器官体征、心跳、愈合账本与脉冲。 | 先限制在本地受控宿主使用，检查缺失数据能否报503，并核对脉冲文本的展示边界后再接入多人环境。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 | 先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。 |
-| [dsh-armory](#plugin-1413052822-root) | 在 DSH 中管理 MCP、技能、专家、市场和工具使用账本，支持全局与项目作用域。 | 已有多个 MCP 和跨项目隔离需求时可先在独立项目试用导入预览、重名冲突和重连；保存后核对实际工具可见性，再扩大使用范围。 |
+| [dsh-armory](#plugin-1413052822-root) | 在 DSH 中管理 MCP、技能、专家、插件市场及工具账本，支持项目作用域与授权引导。 | 已有多个MCP时在独立项目试用导入和作用域隔离，核对实际工具与来源登记；OAuth与市场安装新增路径需单独验收，不依据零调用账本批量停用工具。 |
+| [DSH-Official-WorkBuddy-Credit-Proxy](#plugin-1387227102-root) | 将本机 WorkBuddy、CodeBuddy 账号接入 DSH 模型池，并提供多协议代理与积分面板。 | 仅在本人账号和明确上游使用条件下隔离试用，先验证真实客户端工具闭环与协议降级；不要只凭响应200扩大使用。 |
 | [dsh-organism](#plugin-1366089972-workspace-plugins-dsh-organism) | 把插件组织为可观测器官，提供心跳、反射、自愈账本和工具schema按需门控。 | 适合愿意维护统一器官协议的实验环境；先只开启观测，再逐条批准恢复路径，验证重复故障不会重复副作用。 |
 | [dsh-plugin-adapter](#plugin-1374274469-root) | 把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。 | 适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。 | 适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。 |
+| [dsh-plugin-manager](#plugin-1334267268-root) | 给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。 | 需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。 |
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。 | 先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。 |
 | [dsh-progress-viz-plugin](#plugin-1334481905-plugin) | 监听 DSH 会话语义事件并输出进度 JSON，供外部看板展示。 | 适合看长任务活动；先验证同会话空闲后继续工作的显示，关键任务以实际产物和会话结果验收。 |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。 | 先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。 |
@@ -55,10 +57,11 @@
 | [dsh-wsl-tray](#plugin-1351853903-root) | 为 WSL 内的 DSH Web 安装或报告 Windows 托盘与快捷方式启动入口。 | 适合已使用 dsh-wsl-kit 的 Windows 用户；显式设置 kitPath，先从快捷方式实际启动一次，再依赖托盘恢复，不把生成脚本成功当启动成功。 |
 | [dsh-wsl-vllm](#plugin-1381832640-root) | 为 DSH 提供本机或 Docker vLLM 服务状态与对话补全工具。 | 适合已有 vLLM 服务的人做少量文本任务试用；先查 reachable 和 model，长提示自行拆分，不把 status.ok 当服务健康或完整回答保证。 |
 | [dsh-wsl-wslconfig](#plugin-1351854461-root) | 只读解析 Windows .wslconfig，给出网络模式、内存与 DSH 中继提示。 | 适合查配置的辅助入口；先确认实际Windows用户路径，网络问题仍要测端口，修改和 wsl --shutdown 由用户评估后执行。 |
+| [dsh-zspace](#plugin-1406500233-root) | 将极空间 NAS 文件管理与容器诊断能力接入 DSH，自动选择直连或中转。 | 先用只读列表、stat及测试文件评估；重要写入和删除固定通道并核对结果，网络失败后确认实际状态再重试。 |
 | [Forge 用量计费](#plugin-1363429979-plugin-usage-billing) | 从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。 | 先选择一个模型和一天真实账单，逐项核对 token、缓存计价、币种和未计价行。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听工具结果和会话事件，生成不保存观察明文的哈希链 JSONL 证据回执。 | 用非敏感任务先验证链的追加、手工篡改检测和重启检查，再决定审计留存周期。 |
 | [Quota 用量仪表](#plugin-1400927706-root) | 累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。 | 先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。 |
-| [元冰可 AI 资源治理平台](#plugin-1416699252-root) | 将组织、权限、MCP、模型与用量管理整合为可独立运行或接入 DSH 的治理平台。 | 仅在确有多用户资源治理需求时试部署，先验证最小权限、备份恢复和一条完整业务链。 |
+| [元冰可 AI 资源治理平台](#plugin-1416699252-root) | 以 Cordis 插件树整合组织、权限、模型、MCP 与数字员工资源治理。 | 适合已有明确多用户治理需求的团队先部署隔离环境；以最小权限、一条业务链和备份恢复作为采用门槛。 |
 | [模型信息补全](#plugin-1358816037-root) | 从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。 | 先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。 |
 
 <a id="plugin-1333368566-root"></a>
@@ -98,12 +101,23 @@
 
 ## [dsh-armory](../../plugins/2026heshao--dsh-armory/INSIGHT.md)
 
-[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) · [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory)
+[![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) · [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory)
 
-- **用途**：面向同时维护多个项目 MCP 与技能的 DSH 用户，期望可追溯地导入配置、查看连接和控制项目工具暴露。
-- **亮点**：作者声明从 Imzl-zl/dsh-mcp-manager-ui 的 MCP 看板 fork 并扩展，不能将原看板功能全部算新贡献。相对手改配置和每会话建连接，workspace-runtime.js 将 pending/entry/disposing 三态与 effect 引用所有权结合，解决同名注册和异步 teardown 重建窗口；同时把市场浏览、导入预览和操作诊断放进一个管理流程。
-- **思考**：看板写入成功是否等于存活会话已使用新配置？lib/index.js 把配置写盘与 reconcile 放在不同阶段，避免慢 teardown 阻塞写锁，但对齐失败只报告诊断；因此落盘和运行态可能短暂不一致。反例是正常重载时状态会收敛，这个边界不证明所有更新失败，却要求用户不能只凭保存提示验收。
-- **建议**：已有多个 MCP 和跨项目隔离需求时可先在独立项目试用导入预览、重名冲突和重连；保存后核对实际工具可见性，再扩大使用范围。不要仅凭零调用账本批量停用偶发必需工具。
+- **用途**：同时维护多项目MCP和第三方技能的用户，希望集中导入、辨认安装来源并隔离会话工具。
+- **亮点**：作者声明fork自Imzl-zl MCP看板，原面板不计原创。可识别贡献是项目共享连接所有权与异步释放占位、统一导入准入，以及在静态header宿主前补OAuth授权流程；目录规模并非已安装能力数量。
+- **思考**：安装来源账本是否能作为可靠审计真相？wb-install-state的writeAtomic先写staging再rm正式文件再rename，存在删除后失败窗口；record是读改写且该模块未串行化，并发调用可能丢登记。登记失败不影响安装，故安装成功与来源已登记不能等同；共享连接也须区分配置落盘与运行收敛。
+- **建议**：已有多个MCP时在独立项目试用导入和作用域隔离，核对实际工具与来源登记；OAuth与市场安装新增路径需单独验收，不依据零调用账本批量停用工具。
+
+<a id="plugin-1387227102-root"></a>
+
+## [DSH-Official-WorkBuddy-Credit-Proxy](../../plugins/2861292267--dsh-official-workbuddy-credit-proxy/INSIGHT.md)
+
+[![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=yellow&logo=github&style=flat)](https://github.com/2861292267/DSH-Official-WorkBuddy-Credit-Proxy) · [![npm 30d 577](https://img.shields.io/static/v1?label=npm+30d&message=577&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-rotakit)
+
+- **用途**：已有本人账号、希望在兼容客户端复用接入和故障转移的用户，交付为经过同一调度器的模型响应。
+- **亮点**：作者明确基于XDTrees账号池及其他MIT代码，不能把凭据解密和原池轮转归为新贡献。可识别增量是三协议共用调度及针对工具调用/流事件的兼容投影，隔离协议错误与选号逻辑。
+- **思考**：协议翻译是否语义无损？inputToMessages对工具call/result重排和补缺失结果，有利于上游接受；但input_image变成文本占位，数组输出抽文本，toolsToChat仅过滤function类型，自由格式工具声明未因此完整支持。HTTP200和模型正文不代表完整工具闭环兼容。
+- **建议**：仅在本人账号和明确上游使用条件下隔离试用，先验证真实客户端工具闭环与协议降级；不要只凭响应200扩大使用。
 
 <a id="plugin-1366089972-workspace-plugins-dsh-organism"></a>
 
@@ -137,6 +151,17 @@
 - **亮点**：相对目录链接加手工安装，实际贡献是把发现开放性与安装冲突预检、profile快照和启动恢复连接起来；guard.js关注补丁组合结果而非单条静态扫描，能解释插件会修改谁的加载行。不是执行安全认证。
 - **思考**：核心是“重启成功”如何判定：作者README已明确加载到商城位置不证明整棵树组合完成，guard launch的稳定窗口才补上部分后续失败；进程稳定也不保证业务插件可用。静态预检对动态副作用的边界不能被“验证插件”徽章掩盖。
 - **建议**：适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。
+
+<a id="plugin-1334267268-root"></a>
+
+## [dsh-plugin-manager](../../plugins/2768651338--dsh-plugin-manager/INSIGHT.md)
+
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/2768651338/dsh-plugin-manager) · [![npm 30d 923](https://img.shields.io/static/v1?label=npm+30d&message=923&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@txc2768651338/dsh-plugin-manager)
+
+- **用途**：维护多个DSH插件但不熟悉模块名的用户，需要辨认当前Loader行并安全启停，保留已有手写补丁。
+- **亮点**：相对官方安装卸载服务，明确增量是可解释目录、行级启停与可编辑备注；独立命名空间保留官方服务。保留注释和表达式的局部编辑比普通解析再序列化更适合既有手写配置，但非通用YAML编辑器。
+- **思考**：写盘accepted是否代表插件已激活？setEnabled返回写入结果，实际热加载依赖宿主HMR与fiber状态；保留表达式和系统行限制是强支持，但Loader异步失败仍可能发生。目录说明数量也不等于插件可安装兼容。
+- **建议**：需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。
 
 <a id="plugin-1374274543-root"></a>
 
@@ -556,6 +581,17 @@
 - **思考**：关键是配置文本能否代表运行网络模式。文件可能尚未应用、找错用户或超过2000字符；读取异常被吞，仍ok:true。静态mirrored/NAT建议不能替代实际端点探测，NAT也不能一概判不可达。
 - **建议**：适合查配置的辅助入口；先确认实际Windows用户路径，网络问题仍要测端口，修改和 wsl --shutdown 由用户评估后执行。
 
+<a id="plugin-1406500233-root"></a>
+
+## [dsh-zspace](../../plugins/439436269-ctrl--dsh-zspace/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-zspace) · [![npm 30d 1242](https://img.shields.io/static/v1?label=npm+30d&message=1%2C242&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-zspace)
+
+- **用途**：已有极空间NAS的用户在本地或远程网络用会话管理文件与诊断容器；交付是核实后的文件状态和设备状态。
+- **亮点**：相对手工NAS界面或单WebDAV连接，将跨网络桌面中转与局域网直连封装为同一模型工具面；容器健康用真实进程列表区别于表面running，避免把探针没运行解释为健康。
+- **思考**：自动回退对读取和写入并不等价。router将remove/move/copy/upload等均路由，WebDAV请求已生效但响应超时仍可能在relay重试，存在结果未知后重复副作用；两通道删除回收站语义也不同。confirm=true是参数条件，不能代替用户意图确认或幂等保证。
+- **建议**：先用只读列表、stat及测试文件评估；重要写入和删除固定通道并核对结果，网络失败后确认实际状态再重试。
+
 <a id="plugin-1363429979-plugin-usage-billing"></a>
 
 ## [Forge 用量计费](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md)
@@ -595,10 +631,10 @@
 
 [![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/01men/ybkkasi)
 
-- **用途**：已有多个 AI 资源和使用部门的团队需要资产归属、权限及审计，而非单一聊天增强。
-- **亮点**：Cordis 插件树装配业务域，REST gate 汇集权限声明；同时提供独立宿主与实验性 DSH 接入。
-- **思考**：权限归属和资源生命周期有明确组织价值，但小团队用配置文件可能更经济。
-- **建议**：仅在确有多用户资源治理需求时试部署，先验证最小权限、备份恢复和一条完整业务链。
+- **用途**：面向已拥有多部门 AI 服务的管理员，交付可追溯的资源归属、授权与访问审计；小型单用户环境的替代办法是配置文件和现成网关。
+- **亮点**：相对各业务路由各写鉴权，贡献是将权限点、路由声明和审计主体收敛成共享接口。rest-gate 中 guarded 在处理器前判断权限，changeLog 缺 audit 时拒绝静默丢记录；这是可核查的治理集成增量，Cordis 插件化本身归上游。
+- **思考**：最强支持是 guarded 和 changeLog 的集中实现；关键缺口是 gate 只消费 principal，不证明每个业务入口都由可信中间件赋值，也不证明所有写路由都使用 gate。console.read 蕴含 console.login 的镜像规则还要求前后端同步。若存在绕过入口，统一治理主张需进一步收窄。
+- **建议**：适合已有明确多用户治理需求的团队先部署隔离环境；以最小权限、一条业务链和备份恢复作为采用门槛。
 
 <a id="plugin-1358816037-root"></a>
 
@@ -613,4 +649,4 @@
 
 ## 更新时间
 
-2026-10-20
+2026-10-21

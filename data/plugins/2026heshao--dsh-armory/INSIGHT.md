@@ -1,16 +1,16 @@
 # dsh-armory
 
-> 在 DSH 中管理 MCP、技能、专家、市场和工具使用账本，支持全局与项目作用域。
+> 在 DSH 中管理 MCP、技能、专家、插件市场及工具账本，支持项目作用域与授权引导。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[fe18654](https://github.com/2026heshao/dsh-armory/tree/fe186548b391524d52a29efc263cde6a886a18b2)
+分析版本：[f16a670](https://github.com/2026heshao/dsh-armory/tree/f16a67086f5aabde5e3f213227a421f4701355b4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) · [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory)
+[![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) · [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory)
 <!-- END META -->
 
-**使用建议**：已有多个 MCP 和跨项目隔离需求时可先在独立项目试用导入预览、重名冲突和重连；保存后核对实际工具可见性，再扩大使用范围。不要仅凭零调用账本批量停用偶发必需工具。
+**使用建议**：已有多个MCP时在独立项目试用导入和作用域隔离，核对实际工具与来源登记；OAuth与市场安装新增路径需单独验收，不依据零调用账本批量停用工具。
 
 **核查状态**：已检查源码，未进行真实宿主验证。
 
@@ -22,9 +22,8 @@
   - [工程贡献](#detail-section-4)
   - [主要限制](#detail-section-5)
   - [核查说明与分析版本](#detail-section-6)
-  - [源码索引](#detail-section-7)
-- [未来设计假设（未验证）](#detail-section-8)
-- [辅助信息](#detail-section-9)
+- [未来设计假设（未验证）](#detail-section-7)
+- [辅助信息](#detail-section-8)
 
 <a id="detail-section-1"></a>
 
@@ -34,87 +33,81 @@
 
 ### 使用判断
 
-源码支持配置准入与作用域共享连接的工程贡献；市场规模、使用账本的节省量及真实热重载兼容尚未独立验证；行为回放假设为未来设计。
+已实现机制由固定源码支持；效果未独立实测，未来假设未验证。
 
 [重点创新推演与最小验证](#innovation)
 
-- **用途**：面向同时维护多个项目 MCP 与技能的 DSH 用户，期望可追溯地导入配置、查看连接和控制项目工具暴露。
+- **用途**：同时维护多项目MCP和第三方技能的用户，希望集中导入、辨认安装来源并隔离会话工具。
 
-采用建议：已有多个 MCP 和跨项目隔离需求时可先在独立项目试用导入预览、重名冲突和重连；保存后核对实际工具可见性，再扩大使用范围。不要仅凭零调用账本批量停用偶发必需工具。
+采用建议：已有多个MCP时在独立项目试用导入和作用域隔离，核对实际工具与来源登记；OAuth与市场安装新增路径需单独验收，不依据零调用账本批量停用工具。
 
-参照原 MCP 管理 UI、手改 profile YAML 以及每会话独立启动服务；贡献是管理流程和作用域生命周期组合，未核对全球同类首创性。
+参照声明上游看板、手改配置和每会话建连接；贡献为配置准入、共享运行时与安装流程组合，未核实全球同类先例。
 
 <a id="detail-section-3"></a>
 
 ### 能力、流程与成本
 
-- **Host 路由**：Typert管理面提供MCP配置、导入预览及运行诊断
-- **后台**：项目MCP共享连接及会话工具作用域投射
+- **Host 路由**：MCP/技能/专家/插件管理与授权入口
+- **后台**：项目共享MCP连接、导入准入和安装来源登记
 
 **流程与依赖**
 
-需要 DSH 的 loader、MCP 注册表、scope 和配置写链；每个市场服务另有程序/账号/权限。项目配置 .dsh/mcp.json、profile patch 与主目录客户端导入来源构成不同状态域，升级需保留备份并核对范围。
+依赖宿主loader、scope、MCP注册表与pluginManager；市场接口、外部程序和OAuth服务器各有权限及兼容要求，临时loopback授权需可访问。
 
-扫描来源→预览并选择导入→整批准入和冲突报告→串行写配置→异步对齐连接→面板读状态/工具。对齐失败保留诊断，由用户重连或修正配置；配置已写入的事实不会因 teardown 失败自动撤销。
+浏览市场/导入→凭据或OAuth→准入去重→串行写配置→异步对齐连接或宿主安装→登记来源→面板查状态；登记/对齐失败需分别处理。
 
 **效果与成本**
 
-首次需整理作用域、环境变量和各 MCP 凭据；持续有第三方服务费用、外部程序生命周期与坏配置恢复的人力，工具 schema token 是估算而非真实账单。未核算采用前后完整任务成本。
+首次配置作用域、凭据和各服务程序；持续第三方API费用、凭据刷新、目录变化和坏配置恢复人力；schema token估算不是实付账单。
 
-配置可视化和集中导入减少分散编辑，项目单连接减少重复进程的机制成立；能否节约上下文与排障时间仍取决于日志覆盖、真实调用分布和服务器行为。
+集中浏览和共享连接减少分散配置与重复进程的机制成立；是否节省上下文和维护时间取决于真实调用、服务端与日志覆盖，未本轮实测。
 
-- **思考**：看板写入成功是否等于存活会话已使用新配置？lib/index.js 把配置写盘与 reconcile 放在不同阶段，避免慢 teardown 阻塞写锁，但对齐失败只报告诊断；因此落盘和运行态可能短暂不一致。反例是正常重载时状态会收敛，这个边界不证明所有更新失败，却要求用户不能只凭保存提示验收。
+- **思考**：安装来源账本是否能作为可靠审计真相？wb-install-state的writeAtomic先写staging再rm正式文件再rename，存在删除后失败窗口；record是读改写且该模块未串行化，并发调用可能丢登记。登记失败不影响安装，故安装成功与来源已登记不能等同；共享连接也须区分配置落盘与运行收敛。
 
 <a id="detail-section-4"></a>
 
 ### 工程贡献
 
-- **亮点**：作者声明从 Imzl-zl/dsh-mcp-manager-ui 的 MCP 看板 fork 并扩展，不能将原看板功能全部算新贡献。相对手改配置和每会话建连接，workspace-runtime.js 将 pending/entry/disposing 三态与 effect 引用所有权结合，解决同名注册和异步 teardown 重建窗口；同时把市场浏览、导入预览和操作诊断放进一个管理流程。
+- **亮点**：作者声明fork自Imzl-zl MCP看板，原面板不计原创。可识别贡献是项目共享连接所有权与异步释放占位、统一导入准入，以及在静态header宿主前补OAuth授权流程；目录规模并非已安装能力数量。
 
-作者声明从 Imzl-zl/dsh-mcp-manager-ui 的 MCP 看板 fork 并扩展，不能将原看板功能全部算新贡献。相对手改配置和每会话建连接，workspace-runtime.js 将 pending/entry/disposing 三态与 effect 引用所有权结合，解决同名注册和异步 teardown 重建窗口；同时把市场浏览、导入预览和操作诊断放进一个管理流程。
+作者声明fork自Imzl-zl MCP看板，原面板不计原创。可识别贡献是项目共享连接所有权与异步释放占位、统一导入准入，以及在静态header宿主前补OAuth授权流程；目录规模并非已安装能力数量。
 
-lib/import-admission.js 将表达式规范和整批重名检查集中为幂等准入层，值得迁移到配置导入边界。workspace-runtime.js 以 app root WeakMap 隔离共享连接并保留 disposing 占位，避免旧连接未退完便重建；移植需匹配 cordis effect 和 dsh-scope，不是独立通用池。
+准入层幂等整批去重，effect作为唯一引用所有者，disposing占位避免重名重建窗口；安装来源存储的rm后rename不能被注释“原子写”直接证明原子替换。 [固定源码](https://github.com/2026heshao/dsh-armory/blob/f16a67086f5aabde5e3f213227a421f4701355b4/lib/workspace-runtime.js#L1)。
 
 <a id="detail-section-5"></a>
 
 ### 主要限制
 
-看板写入成功是否等于存活会话已使用新配置？lib/index.js 把配置写盘与 reconcile 放在不同阶段，避免慢 teardown 阻塞写锁，但对齐失败只报告诊断；因此落盘和运行态可能短暂不一致。反例是正常重载时状态会收敛，这个边界不证明所有更新失败，却要求用户不能只凭保存提示验收。
+[核查分支](https://github.com/2026heshao/dsh-armory/blob/f16a67086f5aabde5e3f213227a421f4701355b4/lib/wb-install-state.js#L86)。
+
+安装来源账本是否能作为可靠审计真相？wb-install-state的writeAtomic先写staging再rm正式文件再rename，存在删除后失败窗口；record是读改写且该模块未串行化，并发调用可能丢登记。登记失败不影响安装，故安装成功与来源已登记不能等同；共享连接也须区分配置落盘与运行收敛。
 
 <a id="detail-section-6"></a>
 
 ### 核查说明与分析版本
 
-- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/import-admission.js、lib/workspace-runtime.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 lib/workspace-runtime.js、lib/import-admission.js、lib/mcp-oauth.js、lib/wb-install-state.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：抽读准入、配置写入和项目运行时核心代码及作者说明，未遍历全部市场条目、未联网安装任何 MCP、未将静态规模声明当可安装数量。
-- 下一步：固定两个项目各两会话，导入同名不同服务器并连续改配置，注入慢 teardown 和启动失败；检查连接数、隔离工具与落盘/运行指纹，比较手工重启所需人工步骤。若对账提示不能定位未收敛会话，则否定新假设。
+- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。
+- 下一步：两个来源并发安装不同条目，在rm与rename之间注入失败，再比对宿主bundle、配置、运行工具和来源登记；若仍丢登记且无法恢复或重复安装则否定假设。
 
 **分析版本**
 
 - **仓库**：[2026heshao/dsh-armory](https://github.com/2026heshao/dsh-armory)
-- **版本号**：1.10.0（[固定提交 fe186548](https://github.com/2026heshao/dsh-armory/tree/fe186548b391524d52a29efc263cde6a886a18b2)）
+- **版本号**：2.0.0（[固定提交 f16a6708](https://github.com/2026heshao/dsh-armory/tree/f16a67086f5aabde5e3f213227a421f4701355b4)）
 - **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-7"></a>
-
-### 源码索引
-
-- [lib/index.js](https://github.com/2026heshao/dsh-armory/blob/fe186548b391524d52a29efc263cde6a886a18b2/lib/index.js)
-- [lib/import-admission.js](https://github.com/2026heshao/dsh-armory/blob/fe186548b391524d52a29efc263cde6a886a18b2/lib/import-admission.js)
-- [lib/workspace-runtime.js](https://github.com/2026heshao/dsh-armory/blob/fe186548b391524d52a29efc263cde6a886a18b2/lib/workspace-runtime.js)
-
-<a id="detail-section-8"></a>
 
 ## 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
-待验证假设：为每次配置变更显示“已落盘指纹/会话已应用指纹”，并能只重试未收敛作用域。它从已有 configFingerprint 与分离式 reconcile 推导，可把恢复责任从猜测重启改成明确对账；新增负担是维护代次状态与过期诊断。
+待验证假设：给安装操作分配幂等ID并在安装/运行/来源三态间对账，可定位已安装未登记或配置未生效；新增负担为恢复日志与状态所有权，不能只加成功徽章。
 
-固定两个项目各两会话，导入同名不同服务器并连续改配置，注入慢 teardown 和启动失败；检查连接数、隔离工具与落盘/运行指纹，比较手工重启所需人工步骤。若对账提示不能定位未收敛会话，则否定新假设。
+两个来源并发安装不同条目，在rm与rename之间注入失败，再比对宿主bundle、配置、运行工具和来源登记；若仍丢登记且无法恢复或重复安装则否定假设。
 
-<a id="detail-section-9"></a>
+<a id="detail-section-8"></a>
 
 ## 辅助信息
 
@@ -123,19 +116,19 @@ lib/import-admission.js 将表达式规范和整批重名检查集中为幂等�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 16 | 2690 | — | — | 48853 |
+| .md | source | 25 | 5360 | — | — | 91981 |
 | .mjs | source | 1 | 123 | 97 | 23 | — |
-| .js | source | 18 | 15748 | 12571 | 2930 | — |
-| .mjs | test | 28 | 4469 | 3280 | 844 | — |
+| .js | source | 24 | 19937 | 15827 | 3701 | — |
+| .mjs | test | 40 | 8316 | 6216 | 1540 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory/issues?q=is%3Aissue+created%3A2026-09-20T10%3A44%3A50.459Z..2026-10-20T10%3A44%3A50.459Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T10%3A44%3A50.459Z..2026-10-20T10%3A44%3A50.459Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory/issues?q=is%3Aissue+is%3Aopen) · [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory/issues?q=is%3Aissue+created%3A2026-09-21T02%3A00%3A25.205Z..2026-10-21T02%3A00%3A25.205Z) · [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T02%3A00%3A25.205Z..2026-10-21T02%3A00%3A25.205Z)
 
 
 
-统计日期：2026-10-20。
+统计日期：2026-10-21。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

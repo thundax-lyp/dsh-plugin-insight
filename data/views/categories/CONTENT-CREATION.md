@@ -15,6 +15,7 @@
 | [dsh-redstone-music](#plugin-1401037852-root) | 在 DSH 中渲染音乐采样并生成、部署 Minecraft 红石音乐数据包。 | 适合已有 Minecraft 音乐环境的创作者；先用短片段验证采样、时序和世界备份恢复，再构建长曲。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 在DSH中调用本地媒体与文档CLI，进行探测、转写、OCR及格式处理。 | 先配置小范围目录，逐项确认依赖；把OCR和ASR文本与原件抽查，避免复用同名输出。 |
 | [No AI Style](#plugin-1418493685-root) | 以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。 | 先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。 |
+| [短视频 Skill 流水线](#plugin-1414936636-root) | 将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。 | 适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。 |
 
 <a id="plugin-1399694663-root"></a>
 
@@ -71,6 +72,17 @@
 - **思考**：权限模式与事实优先级值得采用；提示词约束不是保真保证，仍由作者承担复核。
 - **建议**：先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。
 
+<a id="plugin-1414936636-root"></a>
+
+## [短视频 Skill 流水线](../../plugins/439436269-ctrl--dsh-video-pipeline/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-video-pipeline) · [![npm 30d 465](https://img.shields.io/static/v1?label=npm+30d&message=465&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-video-pipeline)
+
+- **用途**：已有短视频制作与平台账号的创作者，按工序组织一集从选题到发布的素材和结果；交付成片、核验记录及平台链接，不能把Skill注册成功当生产链跑通。
+- **亮点**：相对散落复制Skill，贡献是统一目录、资源基址和环境占位符，使一条制作流程可随包分发。核心生成、剪辑和平台上传依赖现有API/ffmpeg/脚本，第三方小红书代码有独立归属；不是新的媒体生成算法。
+- **思考**：“核验后才发布”在入口主要是Skill规程，不是工具层强制门禁；另一批量编排路径文档承认没有确认门。包内quad-platform-publish同时留“四平台/三平台”和4个/3个Agent的历史环境指令，移植者可能继承原作者账号风控与时序假设。
+- **建议**：适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。
+
 ## 更新时间
 
-2026-10-20
+2026-10-21
