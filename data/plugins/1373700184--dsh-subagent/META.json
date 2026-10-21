@@ -1,10 +1,10 @@
 {
   "repository": "1373700184/dsh-subagent",
   "repository_id": 1425006726,
-  "captured_at": "2026-10-21T03:39:49.720Z",
-  "window_start": "2026-09-21T03:39:49.720Z",
+  "captured_at": "2026-10-21T04:10:21.209Z",
+  "window_start": "2026-09-21T04:10:21.209Z",
   "stars": 0,
-  "pushed_at": "2026-10-21T03:15:18Z",
+  "pushed_at": "2026-10-21T04:07:11Z",
   "issues": {
     "open": 0,
     "closed": 0,
@@ -15,7 +15,7 @@
   "errors": [],
   "npm": {
     "package_name": "dsh-subagent",
-    "captured_at": "2026-10-21T03:39:56.108Z",
+    "captured_at": "2026-10-21T04:10:28.545Z",
     "window_start": "2026-09-21",
     "window_end": "2026-10-20",
     "downloads_30d": 22,
@@ -23,7 +23,7 @@
     "error": null,
     "publication": {
       "first_published_at": "2026-08-20T02:03:50.907Z",
-      "captured_at": "2026-10-21T03:39:56.108Z",
+      "captured_at": "2026-10-21T04:10:28.545Z",
       "source_url": "https://registry.npmjs.org/dsh-subagent",
       "error": null
     }

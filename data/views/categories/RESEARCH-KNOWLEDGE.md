@@ -15,9 +15,12 @@
 | [dsh-fact-check](#plugin-1380181057-root) | 为 DSH 提供多源网页事实核查 Skill，含来源路由和可选 Jev 判据工具。 | 经常做资料核查的人可先用低风险题目检查来源和正文；保留未核实，遇到转载、封闭生态或无反证时别自动升置信，重要结论由人复核。 |
 | [dsh-inpage-translator](#plugin-1422488467-root) | 在DSH浏览器页面注入翻译按钮，用宿主模型分块翻译可见文本并支持还原。 | 适合普通公开网页阅读时先试用。 |
 | [dsh-ls125-uv-probe](#plugin-1381989584-root) | 为 LS125 UVALED-X3 紫外探头提供 UART 协议、抓取分析工具与 STM32F103 主机固件的技能包。 | 已有对应硬件的工程人员可把它当复核起点，先只读轮询并对照原表，核对电气连接、CRC与单位后再试清零；不直接将示例读数用于要求校准证明的交付。 |
+| [dsh-math-olympiad](#plugin-1344714964-root) | 提供竞赛数学求解、独立验证及信心/弃权输出的技能流程，可选编译PDF。 | 适合学习和初步证明检查。 |
 | [dsh-obsidian-board](#plugin-1415116420-root) | 将本地 Obsidian 笔记库接入 DSH 三栏问答面板，提供本地关键词检索和可点击引用。 | 已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。 |
+| [dsh-openviking-enhance](#plugin-1401255267-root) | 在DSH显示OpenViking Studio、会话记忆提交状态及按会话查询的召回内容。 | 适合已有OpenViking的本机用户先观察。 |
 | [dsh-plugin-academic-writing](#plugin-1336663456-root) | 提供论文结构、标题、摘要、引文格式和措辞检查等确定性写作辅助。 | 适合用来起草骨架和初筛格式。 |
 | [dsh-plugin-education](#plugin-1336663611-root) | 提供教案、测验结构校验、量规、学习卡片、可读性及成绩统计辅助。 | 适合生成初稿和整理已有成绩。 |
+| [dsh-plugin-roundtable 圆桌会议](#plugin-1342524723-root) | 在 DSH 以拓扑视图组织多角色专家协作、讨论、汇聚与用户决策。 | 有明确讨论目标的人先用少数专家；定预算并读原文分歧，核对真实状态和消息路径，再扩大阵容，别让会议代替最终验收。 |
 | [dsh-plugin-tavily](#plugin-1334654243-root) | 把Tavily搜索与页面提取接入宿主web服务，提供参数设置、额度状态与引擎切换。 | 先确认安装后的默认引擎和查询数据去向，用少量已知问题核对来源；额度错误时处理key，不期待自动换引擎掩盖失败。 |
 | [dsh-plugin-verify](#plugin-1336684054-root) | 提供工作区关键词证据检索、配置检查及URL、npm和GitHub只读探测。 | 适合把它当检索和体检辅助。 |
 | [dsh-sciwork](#plugin-1416950630-root) | 提供科研模式预设、本地科研库面板、文献和数据管理及投稿前检查流程。 | 适合愿意使用目录式科研库的用户。 |
@@ -25,8 +28,10 @@
 | [dsh-search](#plugin-1423253220-root) | 把 DeepSeek Search/Fetch 接口接入 DSH，支持结构化搜索与正文抓取。 | 需要结构化公开网页材料的用户可评估；版本、价格和API字段回读原文，登录态或交互站点另用浏览器，先核实账户计费口径。 |
 | [dsh-trend-radar](#plugin-1336582509-root) | 采集插件目录与GitHub主题快照，分析新增、Star变化和分类分布，并输出趋势面板。 | 适合对限定样本做探索性观察。 |
 | [dsh-vision](#plugin-1335664137-root) | 为纯文本模型接入多通道识图，提供图片面板、视觉工具和会话证据记忆。 | 已有可用视觉通道且愿意核对原图时可试。 |
+| [dsh-web-tools](#plugin-1335219884-root) | 将多个Web搜索和提取服务以及社交平台接到DSH标准搜索接口，提供路由和故障切换。 | 适合已有多搜索服务的用户先用固定研究问题对照。 |
 | [dsh-websearch](#plugin-1340340493-root) | 为 DSH 提供聚合网页搜索 provider，合并多个后端结果并支持过滤、缓存和故障降级。 | 先选少量可访问后端，用常见中文与时效问题核对出处、耗时和全部调用预算；逐步增加有独立增益的服务。 |
 | [dsh-weekly-panel](#plugin-1400385991-packages-dsh-weekly-panel) | 在 DSH 侧栏展示插件周榜、免费模型状态和标明来源性质的推荐位。 | 想在DSH里查看中文榜单可先试只读面板；看清数据日期与赞助/互推标识，复制安装命令后仍要检查插件自身要求。 |
+| [dsh-weknora-archive](#plugin-1412897932-root) | 提取DSH会话并生成启发式总结，增量上传到用户配置的WeKnora知识库。 | 先审阅脱敏摘要并在测试WeKnora使用固定库ID。 |
 | [dsh-wsl-fetch](#plugin-1362694736-root) | 为DSH网页抓取注册代理感知的HTTP提供者，限制重定向、响应大小与返回文本。 | 先用公开小页面确认代理生效，保留抓取截断标志；不要把URL过滤当作完整网络访问隔离。 |
 | [dsh-wsl-obscura](#plugin-1358313559-root) | 封装Obscura浏览器CLI，提供状态、网页抓取与MCP接入提示。 | 从无eval、无私网访问的小页面开始，核对正文和截断，不把MCP提示当已接通服务。 |
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 连接Windows或WSL的Obsidian笔记库，提供搜索、读取、写入与打开笔记。 | 明确指定测试vault并备份，避免在正在编辑的重要笔记上直接写入；检查符号链接。 |
@@ -95,6 +100,17 @@
 - **思考**：样本设备实验能否支持该型号所有探头？PROTOCOL有字段对照、清零和排除实验，提供比单段演示更强的作者证据；但文中“完整原始证据”指向另一技能的case文件，当前分发未含全部原始轮次，偏移16–17含义也未知。21帧正确不能覆盖批次、固件、漂移和长时间计时溢出。
 - **建议**：已有对应硬件的工程人员可把它当复核起点，先只读轮询并对照原表，核对电气连接、CRC与单位后再试清零；不直接将示例读数用于要求校准证明的交付。
 
+<a id="plugin-1344714964-root"></a>
+
+## [dsh-math-olympiad](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-math-olympiad) · [![npm 30d 108](https://img.shields.io/static/v1?label=npm+30d&message=108&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-math-olympiad)
+
+- **用途**：适合希望把竞赛题求解与证明质疑分开的学习者；输出是证明、验证结论和有边界的信心。
+- **亮点**：作者强调对抗验证与诚实弃权；本项贡献是将Pólya启发、具体失败模式、最多两轮修正和弃权写成可执行提示流程，另有可靠路径挂载。不是形式化证明器，也没有代码强制保证验证器隔离或验证结果正确；数学方法归公开参照，非本项目新定理。
+- **思考**：high由模型验证器零缺口决定，并没有校准数据，故不能把标签称统计校准的正确概率。隔离与只传证明是Skill纪律，locator没有调度器 enforcing；smoke的stub传参结构不证明真实宿主不共享历史。用开放问题特化作红旗有启发价值，不能替代逐步证明检查。
+- **建议**：未验证假设：将求解者/验证者输入和具体缺口保存为可审阅记录，并用已知真伪题评估high标签，可减少错而自信。对正确证明、隐含条件错误和无解题比较错误接受率、弃权率及额外模型费用；若高信心未改善，取消校准表述。
+
 <a id="plugin-1415116420-root"></a>
 
 ## [dsh-obsidian-board](../../plugins/2026heshao--dsh-obsidian-board/INSIGHT.md)
@@ -105,6 +121,17 @@
 - **亮点**：相对在Obsidian关键词搜索后复制到聊天，插件把查找、回答和原文核对放在三栏；BM25和中文bigram是成熟方法，具体增量是笔记标题/标签/别名、收集语料降权以及attempt切换时重置输出偏移，减少来源库与模型回退造成的使用断点。不能将算法名称或作者万条笔记耗时认作本次实测。
 - **思考**：最影响价值的是引用能否覆盖真正支持结论的笔记。BM25更适合词面匹配，固定0.45收集语料降权能让自有笔记优先，却可能压低用户此刻正要找的外部材料。可点击[n]只证明可回看，不证明检索召回或引用蕴含关系；同义改写与外部资料问题是最强反例。
 - **建议**：已有结构清楚的Markdown笔记库可先用已知答案测试原词、同义改写和外部资料问题，逐条点引用核对；涉及敏感笔记时先确认所选模型通道允许发送检索片段。
+
+<a id="plugin-1401255267-root"></a>
+
+## [dsh-openviking-enhance](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/A2chitect/dsh-openviking-enhance) · [![npm 30d 631](https://img.shields.io/static/v1?label=npm+30d&message=631&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-openviking-enhance)
+
+- **用途**：使用OpenViking记忆服务的用户需要知道会话何时入库和能检索什么；合格结果是提交/失败状态可追溯，不能把可检索内容当模型实际采用内容。
+- **亮点**：相比切到独立Studio，增量是在会话旁汇总记忆写入与查询状态，保留失败和具体viking路径；不实现OpenViking提取算法，也不负责记忆写入。
+- **思考**：Memory recall是否就是该轮真实用过的证据？代码基于最近消息重新search，结果受查询截断、缓存和服务当前状态影响，且加入resources来源；它是可重做的查询观察，不是历史召回收据。分数颜色也不代表事实可信度或模型采用。
+- **建议**：由重新查询与真实使用差异推导，可由原记忆插件输出不可变召回收据，绑定查询、结果版本及注入状态，面板分别展示历史实际召回与当前重新检索。未验证；以记忆更新前后同会话检查是否仍能还原原轮证据，若不能则否定。
 
 <a id="plugin-1336663456-root"></a>
 
@@ -127,6 +154,17 @@
 - **亮点**：作者定位教学工具包；可确认增量是把结构化准备和基础计算作为确定工具交给模型调用，减少反复排版和数值汇总。相对纯模型生成，形式校验可重复；并没有自动理解题意、确认答案或评估学生真实能力。
 - **思考**：validateQuiz只检查结构和答案索引范围，合法索引也可能指向错误答案。readability把Flesch启发式分数映射A1-A2至C2，没有语言测评校准；中文只看句长。index参数对象重复定义items，后定义的grade通用对象覆盖quiz详细schema，削弱工具层字段约束。
 - **建议**：待验证假设：让工具输出结构有效、答案已核、教学适配三种独立状态，可减少valid被误读为题目正确。用格式合法但答案错误、文化背景依赖和多语阅读样本，比较教师漏检与改稿时间；不把可读性分数当能力认证。
+
+<a id="plugin-1342524723-root"></a>
+
+## [dsh-plugin-roundtable 圆桌会议](../../plugins/9931666--dsh-plugin-roundtable/INSIGHT.md)
+
+[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/9931666/dsh-plugin-roundtable) · [![npm 30d 1464](https://img.shields.io/static/v1?label=npm+30d&message=1%2C464&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-roundtable)
+
+- **用途**：复杂问题需要多角色观点和分歧记录，主持人组织专家并把需拍板事项交用户，交付会议记录与结论材料。
+- **亮点**：相对一个聊天内模拟角色，增量是持久专家会话、显式通信/预算与用户操作队列，并把状态图与真实子代理状态区分。模型/子代理归DSH，插件主要贡献在协作调度和可追踪材料，不是由专家数推导决策更好。
+- **思考**：汇聚和预算是否保留关键分歧并控制全部成本？aggregator按发言顺序每条160字、整体4000字符前截，后来的重要反证可能不进入摘要；预算含估计token与真实计量不同，不能当精确账单硬上限。图中骨架通道也不表示真实传输，持久写入原子不等于所有多文件事实同事务。
+- **建议**：待验证假设：摘要按主张/证据/分歧覆盖选取并保留被截反证索引，预算区分实际/估计/在途开销，可减少后发异议被淹没和账单误解。由当前截断与估计计量推导，未实现。把关键反证放末尾、专家长输出与预算边界三组对照，测主持人采纳反证率及真实费用偏差；新增摘要模型成本要单列。
 
 <a id="plugin-1334654243-root"></a>
 
@@ -205,6 +243,17 @@
 - **思考**：Web桥接依赖已登录Chrome及页面结构，零API现金不等于零维护成本。auto档根据视觉模型自己给出的complexity决定是否深查，漏判可能跳过必要第二遍；JSON解析失败回退文本且默认simple，不能据此宣称可靠升级。
 - **建议**：待验证假设：用OCR密度与用户任务类型等确定信号补充complexity自报，可降低密集界面漏升级。对固定标注截图比较漏字率、额外调用和延迟；若召回改善不足以抵消双遍开销，则保持人工深查。
 
+<a id="plugin-1335219884-root"></a>
+
+## [dsh-web-tools](../../plugins/a3boy--dsh-web-tools/INSIGHT.md)
+
+[![GitHub ★ 38](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=38&color=yellow&logo=github&style=flat)](https://github.com/A3Boy/dsh-web-tools)
+
+- **用途**：研究Agent单一搜索配额或服务失败时需继续检索，合格结果还要遵守日期、域名等条件，不能仅以有返回值验收。
+- **亮点**：相对最低公分母代理，增量是区分显式硬过滤与软偏好，并在统一接口下编译原生参数与故障链。搜索内容与原生抓取能力属于外部供应商，插件贡献在约束适配和可用性组织。
+- **思考**：故障切换后语义是否仍等价？不同provider日期/域名/内容提取接口能力不齐，确定性hint不保证用户自然语言约束完全识别；社交路径还依赖登录浏览器和页面。可用性提高不等于召回正确或证据独立性增加。
+- **建议**：由硬软条件和异构后端推导，可在路由前比较每个后端的能力矩阵，不支持硬约束则明确拒绝/标注，返回实际应用条件。未验证；用相同日期和域名任务注入429后比较切换前后的违规结果，若仍静默放宽则否定。
+
 <a id="plugin-1340340493-root"></a>
 
 ## [dsh-websearch](../../plugins/240xu--dsh-websearch/INSIGHT.md)
@@ -226,6 +275,17 @@
 - **亮点**：相对打开外部周报页面，本组件把中文榜单与安装命令复制放入DSH流内面板，并对上游不可用保留带stale标记的缓存。loopback防护与槽位写法作者归于dsh-workbench-lite，周报的策展与模型探测属于仓库其他工具；本组件增量是单上游数据桥、面板展示与降级。
 - **思考**：“免费模型可用”和“值得装”是否会被读者理解为本机可用与质量保证？面板只消费latest.json，不执行本地模型或插件验收；缓存30分钟叠加周报更新周期，会使成功读取仍展示旧状态。star排序、赞助位与模型极短补全都不证明本地长期可靠，复制命令也不是已安装。
 - **建议**：待验证假设：每个条目附固定版本、探测出口地区和数据年龄的小型证据卡，可降低从榜单热度直接推导本机可用的误判。当前只有摘要与stale信息，新增卡片未实现。用同一榜单让用户判断安装前置条件，对照有无卡片的误判率与阅读耗时；若字段缺失导致卡片装饰化，则先要求上游提供可追溯探测记录。
+
+<a id="plugin-1412897932-root"></a>
+
+## [dsh-weknora-archive](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/AAAlenwow/dsh-weknora-archive)
+
+- **用途**：团队想将完成会话变成可检索知识，需要避免重复、保留更新且明确上传范围；合格归档还要确认远端解析成功与敏感信息处理。
+- **亮点**：相对手动复制聊天到知识库，增量是把会话发现、去重与结构化总结接到写入端；检索与embedding来自WeKnora，不由本插件提供。
+- **思考**：dry_run是否真无外部写入？目标库解析在dryRun分支前，找不到库就调用createKnowledgeBase，因此预览也可能新建库。标题短ID去重还会把已归档但继续增长的会话当跳过，增量是新会话而非内容更新；上传成功也不证明解析成功。
+- **建议**：由预览提前建库与标题去重推导，可先构造纯只读计划，确认后以完整session ID+内容摘要幂等写入，新增解析状态验收。未验证；空库dry-run和同会话追加消息对照，若仍写库/漏更新则否定。
 
 <a id="plugin-1362694736-root"></a>
 

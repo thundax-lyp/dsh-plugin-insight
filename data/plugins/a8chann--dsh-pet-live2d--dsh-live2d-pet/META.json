@@ -1,0 +1,52 @@
+{
+  "repository": "A8Chann/dsh-pet-live2d",
+  "repository_id": 1378097401,
+  "captured_at": "2026-10-21T04:11:45.128Z",
+  "window_start": "2026-09-21T04:11:45.128Z",
+  "stars": 45,
+  "pushed_at": "2026-10-20T03:41:40Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DDB4:26F45E:4326EF:481F72:6AD83B82 and timestamp 2026-10-21 04:11:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DED4:5146D:457AD2:4A7442:6AD83B83 and timestamp 2026-10-21 04:11:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20created%3A2026-09-21T04%3A11%3A45.128Z..2026-10-21T04%3A11%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DFBE:D423A:44AE04:49A630:6AD83B84 and timestamp 2026-10-21 04:11:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T04%3A11%3A45.128Z..2026-10-21T04%3A11%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E0FC:27DDDF:461C70:4B1481:6AD83B85 and timestamp 2026-10-21 04:11:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20updated%3A2026-09-21T04%3A11%3A45.128Z..2026-10-21T04%3A11%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E1C8:4F1F4:44363A:492D35:6AD83B86 and timestamp 2026-10-21 04:11:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-pet-live2d",
+    "captured_at": "2026-10-21T04:11:50.338Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 7358,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-pet-live2d",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-09-21T15:19:30.741Z",
+      "captured_at": "2026-10-21T04:11:50.338Z",
+      "source_url": "https://registry.npmjs.org/dsh-pet-live2d",
+      "error": null
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "repository": "AAAlenwow/dsh-spring-admin-kit",
+  "repository_id": 1412897663,
+  "captured_at": "2026-10-21T04:11:45.493Z",
+  "window_start": "2026-09-21T04:11:45.493Z",
+  "stars": 0,
+  "pushed_at": "2026-10-10T07:23:36Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-spring-admin-kit%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE08:274DC4:471018:4C08EA:6AD83B83 and timestamp 2026-10-21 04:11:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-spring-admin-kit%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF22:26F45E:432799:482030:6AD83B83 and timestamp 2026-10-21 04:11:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-spring-admin-kit%20is%3Aissue%20created%3A2026-09-21T04%3A11%3A45.493Z..2026-10-21T04%3A11%3A45.493Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E012:4E2C1:45D0E7:4AC796:6AD83B84 and timestamp 2026-10-21 04:11:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-spring-admin-kit%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T04%3A11%3A45.493Z..2026-10-21T04%3A11%3A45.493Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E11A:4F1F4:4435B6:492CA7:6AD83B85 and timestamp 2026-10-21 04:11:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-spring-admin-kit%20is%3Aissue%20updated%3A2026-09-21T04%3A11%3A45.493Z..2026-10-21T04%3A11%3A45.493Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E20A:25D4C9:4A29DA:4F2076:6AD83B86 and timestamp 2026-10-21 04:11:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-spring-admin-kit",
+    "captured_at": "2026-10-21T04:11:50.509Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-spring-admin-kit",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T04:11:50.509Z",
+      "source_url": "https://registry.npmjs.org/dsh-spring-admin-kit",
+      "error": "HTTP 404"
+    }
+  }
+}

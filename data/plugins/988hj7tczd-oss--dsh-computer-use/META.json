@@ -1,0 +1,31 @@
+{
+  "repository": "988hj7tczd-oss/dsh-computer-use",
+  "repository_id": 1335236592,
+  "captured_at": "2026-10-21T04:10:21.854Z",
+  "window_start": "2026-09-21T04:10:21.854Z",
+  "stars": 58,
+  "pushed_at": "2026-10-05T07:12:59Z",
+  "issues": {
+    "open": 2,
+    "closed": 9,
+    "created_30d": 2,
+    "closed_30d": 1,
+    "updated_30d": 3
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-computer-use",
+    "captured_at": "2026-10-21T04:10:29.458Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 3633,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-computer-use",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-15T16:49:23.206Z",
+      "captured_at": "2026-10-21T04:10:29.458Z",
+      "source_url": "https://registry.npmjs.org/dsh-computer-use",
+      "error": null
+    }
+  }
+}
