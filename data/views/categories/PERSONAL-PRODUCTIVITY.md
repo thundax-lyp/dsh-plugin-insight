@@ -18,6 +18,7 @@
 | [dsh-about](#plugin-1354283280-root) | 在设置中显示当前 DSH 版本，并代理读取官方 GitHub 发布说明。 | 与实际 dsh --version 对照后使用，路径识别失败时保留未知而不据此判断升级成功。 |
 | [dsh-activity-heatmap](#plugin-1334318461-root) | 在 DSH 侧栏展示活动热力图、Token 用量、缓存命中和估算花费。 | 适合个人趋势观察；先与少量原始usage和实际账单核对，不用于财务结算或绩效评价。 |
 | [dsh-at-skill](#plugin-1346023186-root) | 为 DSH 增加 @name 技能候选和发送前确定性技能加载。 | Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。 |
+| [dsh-auto-shutdown](#plugin-1425073734-root) | 在Windows设置中启用一次性触发，在根会话轮次结束后安排关机并提供取消倒计时。 | 先用作者提供的dryrun路径在临时环境检查事件和复位，不直接在有未保存任务的主机启用。 |
 | [dsh-boo550wt-animation](#plugin-1422328385-root) | 在 DSH 启动时覆盖播放视频，提供跳过、淡出和同源媒体读取。 | 只想个性化启动画面的人可在可恢复profile试用；先验证Esc和坏视频退出，尤其检查超长或无效时长素材，别把maxSeconds当已验证硬限。 |
 | [dsh-chat-width](#plugin-1339332869-root) | 为旧版DSH网页添加可拖拽并记忆的聊天内容宽度控制，在内置同功能版本上自动让位。 | 新版DSH优先使用内置把手。 |
 | [dsh-chatgpt-style](#plugin-1421963463-root) | 调整DSH聊天排版与语义标注，并在发送框旁提供思考或快速档位切换。 | 先检查长文、流式输出、代码块、公式和输入法，再验证禁用能还原；供应商未声明推理档位时使用原生模型菜单。 |
@@ -33,17 +34,22 @@
 | [dsh-harness-chat-control](#plugin-1357066651-root) | 为 DSH 会话提供引用、侧聊、会话编辑及侧聊模型与历史控制。 | 适合经常引用局部问题开侧聊的用户；先验证编辑与重载后的引用一致性，再将其纳入重要讨论记录。 |
 | [dsh-inline-images](#plugin-1334134226-root) | 把助手消息中的本地图片路径改写成可在对话正文展示的图片，并提供灯箱与尺寸设置。 | 限同机 Web 环境小范围试用，先检查图片展示、重启后历史链接和文件服务权限；敏感图片或远程访问需先明确可读范围。 |
 | [dsh-language-guard](#plugin-1424475406-root) | 以系统提示片段和周期提醒约束回复语言，支持语言命令与界面语言跟随。 | 有稳定语言偏好可先试B档。 |
+| [dsh-memory-setup](#plugin-1337350700-root) | 保存工作区偏好、约定与纠错教训，支持知识检索、快照和上下文注入。 | 适合在单个非敏感项目先试。 |
 | [dsh-mimotts](#plugin-1397477851-root) | 把定稿助手回复交给MiMo TTS合成语音，提供消息播放按钮、内联播放器与语音历史。 | 先用无敏感信息的短文本验证读音、取消和历史，再配置音色；听到语音不应代替核对原始技术结论。 |
 | [dsh-neo-skin](#plugin-1335557891-root) | 通过主题覆盖层为 DSH Web 提供新粗野主义配色和可切换外观方案。 | 先在测试配置中切换深浅主题、关闭插件并刷新，确认能完整恢复原生样式。 |
 | [dsh-perlica-ding](#plugin-1335704653-root) | 根据计划、执行、等待回应和错误状态播放分级提示音，普通问答保持安静。 | 先用测试音和短任务核查四种状态，调整音量及去抖，不将完成音当验收。 |
 | [dsh-pinned-sessions](#plugin-1407379611-root) | 在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。 | 已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。 |
 | [dsh-plugin-crypto-ticker](#plugin-1389061748-root) | 在 DSH 侧栏显示加密货币价格、涨跌与走势图，支持多来源降级。 | 适合参考性看盘；先检查当前来源和逐币 stale 状态，遇到来源切换时到交易平台复核价格。 |
+| [dsh-plugin-local-life](#plugin-1336663652-root) | 提供预算、分账、单价、折扣、单位、账本和分期等日常计算辅助。 | 适合日常计算草稿。 |
 | [dsh-plugin-namecards](#plugin-1424219088-root) | 为 DSH 插件列表添加本地名片、中文备注、图标、文件夹和收藏。 | 插件较多且愿意维护个人目录的用户可评估；启停前核对真实包名，导出备份后再迁移布局。 |
+| [dsh-plugin-session-colors](#plugin-1394188597-root) | 在 DSH 侧栏为会话选择颜色，并将颜色映射保存到宿主。 | 会话多的人可先给独名会话少量标色；刷新后确认持久保存，同名或离线改色要核对，别用颜色承载关键任务状态。 |
+| [dsh-profile-stylist](#plugin-1422500224-root) | 借助宿主模型生成资料草稿，并通过浏览器填写 GitHub 或 Gitee 个人资料。 | 要修改GitHub或Gitee自己资料的人先生成草稿并检查账号；小范围填一个字段后重新打开资料页确认，头像和批量字段待验证后再用。 |
 | [dsh-prompt-polish](#plugin-1336538202-root) | 在输入栏调用宿主模型重写草稿，支持策略、语言、上下文与人工确认采纳。 | 先不带历史改写普通草稿，对照检查否定、数字和交付限制；需要上下文时再开启，并人工决定是否采用。 |
 | [dsh-session-path](#plugin-1412141303-root) | 定位 DSH 会话日志并导出可读 Markdown 或 JSONL 交接文件。 | 需要接续时优先检查Markdown导出及截断；JSONL预算语义与长日志内存问题确认前，不用作有界最新上下文保证。 |
 | [dsh-session-turn-eta](#plugin-1368581082-root) | 根据DSH会话的轮次与步骤历史估计当前轮剩余时间，并在输入框下显示进度。 | 适合把进度当粗略等待提示的用户先试用。 |
 | [dsh-side-session](#plugin-1355639507-root) | 从命令菜单创建可继续的旁会话，并跳转到原生子会话聊天视图。 | 先测试主会话忙碌、双击和连续创建，确认旁会话可恢复且不会跳错子会话。 |
 | [dsh-spotlight](#plugin-1333136466-root) | 以键盘命令面板统一查找原生命令、近期会话和插件入口。 | 先用常用的十条命令与十个会话检查搜索命中和导航，再决定是否替代原生入口。 |
+| [dsh-starter-zh](#plugin-1336658798-root) | 在DSH会话中提供中文欢迎、五阶段学习路径、场景插件建议和新手自查清单。 | 适合希望中文概览的新用户先阅读路径。 |
 | [dsh-status-rotator](#plugin-1333328839-root) | 为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。 | 先只开静态文案，确认设置能保存且与原生状态共存，再逐步启用弹幕和动画。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 订阅远端表情包清单，按上下文挑选图片，提供缓存、贴图概率与会话显示适配。 | 需要共用表情素材时可先在非工作关键会话试。 |
 | [dsh-text-inject](#plugin-1389458393-root) | 从独立Markdown文件加载系统提示和上下文块，提供设置页编辑、热加载与历史备份。 | 先用少量无冲突规则验证每轮实际上下文，并确认删除与恢复生效；需要关键词门控时先核实当前版本，不能仅照README。 |
@@ -160,6 +166,17 @@
 - **亮点**：相对只给输入补全，将匹配token的Skill在模型步骤前确定性加载；同时遵循next拒绝决定、用户可调用过滤与会话cwd/scope查找，保持宿主作用域。
 - **思考**：文本token不携带来源身份。与subagent/plugin同名或用户仅讨论@名称时，宿主仍可加载匹配Skill。客户端会话缓存只在connection/reset清理，Skill变更后候选与宿主即时查找可能不同；“确定性”不等于用户意图准确。
 - **建议**：Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。
+
+<a id="plugin-1425073734-root"></a>
+
+## [dsh-auto-shutdown](../../plugins/873360545--dsh-auto-shutdown/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/873360545/dsh-auto-shutdown)
+
+- **用途**：Windows用户让Agent运行任务后离开，希望结束时关机；合格行为是仅在授权会话真正到达合适终点、其它工作可保存时安排一次，并能可靠取消。
+- **亮点**：相对人工守候后关机，增量是将root轮次边界、单次锁存和原生取消窗口组合为可配置交接；系统关机命令是既有能力，插件贡献在触发条件与用户干预入口。
+- **思考**：“一次且重启不再触发”是否保证？disarm捕获settings写入错误后仍继续scheduleShutdown，持久开关可能仍为true；turn-stopping也不证明业务任务成功或待保存数据完成。fired只在当前进程防重复，不能把它当跨重启事务锁。
+- **建议**：由持久复位与外部关机分离推导，可在复位失败时停止安排关机，并将触发限定为用户选定会话与显式完成标记，保留可观察的计划ID。未验证假设是减少错误时机关机；模拟设置写失败、失败轮、其它应用未保存和重启，若仍出现未经条件满足的计划则否定。
 
 <a id="plugin-1422328385-root"></a>
 
@@ -326,6 +343,17 @@
 - **思考**：提示层约束无法保证模型推理和回答始终遵守语言要求；多处注入增加token，D档提醒进入既有user/message还可能影响任务上下文。mapPreference把所有zh主标签映成zh-CN，繁体偏好需manual，不能宣称自动精确跟随。
 - **建议**：待验证假设：按实际语言漂移触发提醒，比固定每N轮更省上下文。用混合代码、多语引文和长会话对照漂移率、错误提醒与token；若识别器误判引用导致额外约束，则否定。
 
+<a id="plugin-1337350700-root"></a>
+
+## [dsh-memory-setup](../../plugins/863683348--dsh-memory-setup/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-memory-setup) · [![npm 30d 158](https://img.shields.io/static/v1?label=npm+30d&message=158&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-memory-setup)
+
+- **用途**：适合反复在同一工作区工作、愿意审阅长期记忆的用户；记忆正确性要靠来源与复核。
+- **亮点**：作者定位可审计个人记忆层；实际增量是把偏好、项目约定、纠错复盘与知识库整合成可导出JSON，并让宿主上下文自动读取。相对手写AGENTS，新增结构化更新、快照与相似教训合并；不会自动证明被记住的教训正确或改善长期任务。
+- **思考**：README的nothing leaves your machine只适用于未启用外部embedding：kb-tools会把查询或条目发到配置端点。上下文memCtx、focusQuery与30秒节流是插件级状态，多个工作区同时使用时须验证是否会串用或延迟刷新。自动按hits提升为约定会强化重复但错误的教训，evidence可为null，不能把频次当真值。
+- **建议**：待验证假设：将上下文缓存按工作区隔离，并在教训晋升前要求独立证据状态，可减少跨项目污染及错误固化。用两个工作区不同约定、快速交替和重复错误教训轨迹比较注入命中与误晋升；若证据门槛阻碍有效记忆，保留人工确认通道。
+
 <a id="plugin-1397477851-root"></a>
 
 ## [dsh-mimotts](../../plugins/1497105876--dsh-mimotts/INSIGHT.md)
@@ -381,6 +409,17 @@
 - **思考**：“多标签共享请求”只在缓存命中后成立：apply 的 fetch 路由在缓存过期时直接 await build，没有共享 in-flight Promise；同时到来的标签可能重复请求。collect 只需至少一个有效币就接受来源，因此不能把一次源成功理解为所有币均刷新；逐币 stale 才是边界。
 - **建议**：适合参考性看盘；先检查当前来源和逐币 stale 状态，遇到来源切换时到交易平台复核价格。
 
+<a id="plugin-1336663652-root"></a>
+
+## [dsh-plugin-local-life](../../plugins/863683348--dsh-plugin-local-life/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-local-life) · [![npm 30d 857](https://img.shields.io/static/v1?label=npm+30d&message=857&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-local-life)
+
+- **用途**：适合把已有购物、分账或账本数字交给确定函数处理；不是本地商家、实时价格或交通信息服务。
+- **亮点**：作者定位日常算术工具；实际增量是把常用生活计算封成统一DSH入口并返回文字/结构结果，减少模型自由心算。相比手工计算器，模型可整理输入；不是新的预算方法或自动记账平台。
+- **思考**：unitConvert先将输入单位转小写，而UNIT_FACTORS.volume保存L大写键，导致L/升与ml等组合可能因l找不到而拒绝。splitBill仅在舍入差额绝对值>0.01时修正，账单10元三人各3.33的0.01差额可能保留，不能保证分摊和精确等于总额。出行清单是静态模板，不是现行规则核实。
+- **建议**：待验证假设：用规范化单位注册表与最小货币单位整数分配，可减少别名不一致和分账差额。对L/l/升别名、10元三人和带小费加权分账做守恒核对，再比较人工纠错；未验证，不将浮点计算称精确账务。
+
 <a id="plugin-1424219088-root"></a>
 
 ## [dsh-plugin-namecards](../../plugins/3tiga3--dsh-plugin-namecards/INSIGHT.md)
@@ -391,6 +430,28 @@
 - **亮点**：相对官方平铺列表，将个人解释与上游包元数据分离，允许用户本地维护备注和分组；导出含图标与布局便于迁移，不需要修改每个插件源文件。
 - **思考**：名片覆盖可能遮蔽上游身份和说明，特别是同名备注；启停不是单纯展示操作，实际效果仍由官方manager与重启决定。HTTP仅检查loopback不能等同完整浏览器来源隔离，仍需核查部署代理的边界。
 - **建议**：插件较多且愿意维护个人目录的用户可评估；启停前核对真实包名，导出备份后再迁移布局。
+
+<a id="plugin-1394188597-root"></a>
+
+## [dsh-plugin-session-colors](../../plugins/7vw58n3ftvq7cn89v--dsh-plugin-session-colors/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7vw58n3ftvq7cn89v/dsh-plugin-session-colors)
+
+- **用途**：并行处理多个会话的用户用颜色辅助定位；颜色是个人标记，不是任务状态或授权证明。
+- **亮点**：相对仅凭标题找会话，贡献是持久颜色映射与低干扰悬停入口，宿主存储让多个浏览器共享读取。配色标签与乐观UI是常规设计，DSH增量是没有会话行slot时的DOM匹配与写入接线。
+- **思考**：看到的颜色是否一定属于那一会话且已保存？同名会话按DOM序消费，排序/虚拟列表变化可错配；set先publish本地再PUT，失败只warn，没有待写队列重放，后续sync读宿主可能覆盖未保存颜色。因此“离线查看”和“离线修改可靠同步”不能混为一谈。
+- **建议**：待验证假设：使用宿主稳定sessionId行标记代替标题，并为本地修改保存带版本的pending队列，可减少同名错色与断线丢修改。由标题序匹配和只warn失败推导，未实现。以同名排序、虚拟滚动、断网修改和两浏览器竞争对照，测错绑/丢写与冲突；宿主无稳定slot时应明确有限保证而非偷偷推断。
+
+<a id="plugin-1422500224-root"></a>
+
+## [dsh-profile-stylist](../../plugins/7gzgn--dsh-profile-stylist/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/7gzgn/dsh-profile-stylist)
+
+- **用途**：用户修改自己代码托管账号的昵称、简介、链接与头像，先审草稿再填表，交付站点保存结果需回读确认。
+- **亮点**：相对通用浏览器Agent临时猜选择器，增量是显式两站字段档案、先草稿后应用和头像素材/Canvas路径，把资料编辑组织成较窄操作。模型文案、浏览器登录与站点保存为上游能力，不能算插件独有保证。
+- **思考**：点击保存是否等于正确账号资料已保存？confirm仅工具布尔参数，不是用户批准事件；脚本btn.click后置saved=true，未独立回读站点持久字段。浏览器当前登录谁就写谁，缺少预期账号绑定；DOM选择器验证注释也不能保证站点改版后行为。
+- **建议**：待验证假设：应用计划绑定预期账号ID与字段/头像摘要，写后重新读取资料并逐字段核对，可减少错账号和点击成功但保存失败。由当前登录态依赖与saved点击标记推导，未实现。用切换账号、站点校验拒绝、部分字段成功三类对照，测误报成功和回滚负担；账号身份不可验证时应停在草稿。
 
 <a id="plugin-1336538202-root"></a>
 
@@ -446,6 +507,17 @@
 - **亮点**：客户端注入 sessions、commands 和 pluginInventory，挂载面板并通过原生 commandUi 注册 /spotlight。
 - **思考**：复用原生命令注册表可降低双份清单漂移；命令数量增加并不自动提升检索体验。
 - **建议**：先用常用的十条命令与十个会话检查搜索命中和导航，再决定是否替代原生入口。
+
+<a id="plugin-1336658798-root"></a>
+
+## [dsh-starter-zh](../../plugins/863683348--dsh-starter-zh/INSIGHT.md)
+
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-starter-zh) · [![npm 30d 135](https://img.shields.io/static/v1?label=npm+30d&message=135&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-starter-zh)
+
+- **用途**：中文新用户已启动DSH但不知道profile、安装与开发次序，需要可跟随的入门路径；合格结果是自己完成基础操作，而不是读完欢迎文字。
+- **亮点**：相对离开会话查零散文档，增量是把中文教学次序与场景索引放进Agent工具，让用户能边问边学。核心是内容策划和入口聚合，不是环境诊断或自动化教学评估。
+- **思考**：自查与推荐是否随真实环境变化？starter.js是静态条目与字符串输出，清单并未检测已完成步骤，推荐也不核实插件当前兼容或安装状态。README生态规模与空白主张没有独立验证，因此不据此证明新手需求或推荐正确性。
+- **建议**：由静态清单推导，可增加用户主动触发的只读环境检查，把步骤标为“已观察/待用户完成/无法判断”，只给当前版本适用的下一步。未验证假设是减少无效命令和入门卡点。随机新手任务对照静态清单，若首次成功率与求助时间不改善则否定。
 
 <a id="plugin-1333328839-root"></a>
 

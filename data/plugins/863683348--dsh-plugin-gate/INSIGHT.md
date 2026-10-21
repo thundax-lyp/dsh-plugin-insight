@@ -1,0 +1,140 @@
+# dsh-plugin-gate
+
+> 对插件目录或npm包做静态风险扫描，并提供危险命令、路径及扫描差异检查。
+
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+
+分析版本：[b75c3a1](https://github.com/863683348/dsh-plugin-gate/tree/b75c3a1b768448ee84a6fa07735206e6f8945411)
+
+<!-- BEGIN META -->
+[![GitHub ★ 0](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=0&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-gate) · [![npm 30d 1535](https://img.shields.io/static/v1?label=npm+30d&message=1%2C535&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-gate)
+<!-- END META -->
+
+**使用建议**：适合作安装前静态检查。逐条读命中、截断与OSV未知，别把PASS当安全认证；要真正拦操作，先验证执行前绑定机制。
+
+**核查状态**：已检查源码，未进行真实宿主验证。
+
+**本文目录**
+
+- [当前插件分析](#detail-section-1)
+  - [场景与替代办法](#detail-section-2)
+  - [能力、依赖与流程](#detail-section-3)
+  - [成本与效果](#detail-section-4)
+  - [工程亮点](#detail-section-5)
+  - [使用判断](#detail-section-6)
+  - [能力、流程与成本](#detail-section-7)
+  - [工程贡献](#detail-section-8)
+  - [核查说明与分析版本](#detail-section-9)
+- [未来设计假设（未验证）](#detail-section-10)
+- [辅助信息](#detail-section-11)
+
+<a id="detail-section-1"></a>
+
+## 当前插件分析
+
+<a id="detail-section-2"></a>
+
+### 场景与替代办法
+
+替代是人工源码审阅、包扫描器与宿主权限；本项目提供DSH静态工具入口，未替代执行隔离。
+
+<a id="detail-section-3"></a>
+
+### 能力、依赖与流程
+
+lib/index.js注册gate_scan/guard/diff/report和提示section；scan.js只读遍历目录或内存tar包并跑签名，protect.js按命令模式和字符串路径返回BLOCK/WARN/PASS，未在入口注册tools/pre-execute钩子。
+
+- **模型工具**：gate_scan、gate_guard、gate_diff、gate_report
+
+宿主tools/fs/systemPrompt与Schemastery；npm扫描需registry下载，OSV可选联网；扫描上限与排除规则限制覆盖。
+
+主动gate_scan→读取有界源码或包→签名/依赖线索→人工复核→另行安装；危险命令先gate_guard只返回建议，是否执行仍在宿主链。
+
+<a id="detail-section-4"></a>
+
+### 成本与效果
+
+首次核扫描范围、允许主机与OSV配置；运行消耗目录读取、tar下载及API等待。现金无固定服务费依据，人工需审误报与漏扫，BLOCK复核成本与安全收益不能用签名数量替代。
+
+有辅助代码审阅价值，无独立恶意样本评测、阻断率或真实部署证据。
+
+<a id="detail-section-5"></a>
+
+### 工程亮点
+
+扫描层与规则、tar解析、保护判定分离；文档/注释降级减少误报但不是语义分析。返回具体文件行和范围比只给分数更可复核，字符串路径判断须补真实目标解析。
+
+源码依据：[lib/index.js](https://github.com/863683348/dsh-plugin-gate/blob/b75c3a1b768448ee84a6fa07735206e6f8945411/lib/index.js)、[lib/scan.js](https://github.com/863683348/dsh-plugin-gate/blob/b75c3a1b768448ee84a6fa07735206e6f8945411/lib/scan.js)、[lib/protect.js](https://github.com/863683348/dsh-plugin-gate/blob/b75c3a1b768448ee84a6fa07735206e6f8945411/lib/protect.js)。
+
+<a id="detail-section-6"></a>
+
+### 使用判断
+
+- **用途**：适合安装前收集风险线索及审阅危险操作；扫描结论不等于宿主执行层已经阻断。
+
+- **建议**：待验证假设：把扫描摘要绑定固定包摘要和待执行目标，再由独立执行前策略检查，可减少扫描后换包或漏调用；仅把两个工具装一起不足以成立。用相同包、换包、未扫描、路径别名和取消轨迹验证是否错误放行，必须先核宿主钩子契约。
+
+适合作安装前静态检查。逐条读命中、截断与OSV未知，别把PASS当安全认证；要真正拦操作，先验证执行前绑定机制。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。
+
+<a id="detail-section-7"></a>
+
+### 能力、流程与成本
+
+- **模型工具**：gate_scan、gate_guard、gate_diff、gate_report
+
+- **思考**：gate_guard需模型主动调用并遵守结果，入口未接执行前拦截，因此不保证rm等命令会被宿主挡住。evaluatePath只规范斜线和尾分隔符，不解析..或符号链接；根匹配也只是字符串启发式。PASS表示没命中所扫模式，不能推出依赖安全或无恶意；OSV只查有限精确直接版本并可离线降级。
+
+<a id="detail-section-8"></a>
+
+### 工程贡献
+
+- **亮点**：作者称安装安全闸门；可确认增量是给模型一个带逐行证据、扫描边界和差异输出的静态检查工具，扫描不执行目标代码。相比仅凭README安装，增加可审阅证据；所谓gate主要是工具结果与模型指引，不是不可绕过的安装拦截器。
+
+<a id="detail-section-9"></a>
+
+### 核查说明与分析版本
+
+- **仓库**：[863683348/dsh-plugin-gate](https://github.com/863683348/dsh-plugin-gate)
+- **版本号**：1.3.2（[固定提交 b75c3a1b](https://github.com/863683348/dsh-plugin-gate/tree/b75c3a1b768448ee84a6fa07735206e6f8945411)）
+- **版本日期**：2026-09-11（固定提交日期，北京时间；不是包发布日期）
+
+- 已检查：lib/index.js、lib/scan.js、lib/protect.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。
+- 未验证：插件执行、测试、安装、真实宿主与独立采用。
+- 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。
+- 下一步：固定宿主验证不调用guard时行为、包摘要变化、..和符号链接、截断、文档示例误报及OSV失效；本轮不执行扫描或破坏命令。
+
+<a id="detail-section-10"></a>
+
+## 未来设计假设（未验证）
+
+待验证假设：把扫描摘要绑定固定包摘要和待执行目标，再由独立执行前策略检查，可减少扫描后换包或漏调用；仅把两个工具装一起不足以成立。用相同包、换包、未扫描、路径别名和取消轨迹验证是否错误放行，必须先核宿主钩子契约。
+
+固定宿主验证不调用guard时行为、包摘要变化、..和符号链接、截断、文档示例误报及OSV失效；本轮不执行扫描或破坏命令。
+
+<details>
+<summary>工程统计</summary>
+
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：63706daf06d359dfbe973094deeee249dfc9b1c59abdb5bfbcf425fca985fc9d。sloc 0.3.2，TypeScript 5.9.3。
+
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 5 | 285 | — | — | 2702 |
+| .js | source | 8 | 2169 | 1804 | 267 | — |
+| .mjs | source | 1 | 117 | 103 | 7 | — |
+| .mjs | test | 7 | 865 | 784 | 36 | — |
+
+排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
+
+</details>
+
+<a id="detail-section-11"></a>
+
+## 辅助信息
+
+**活跃度**
+
+Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-gate/issues) 查看。
+
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
