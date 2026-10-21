@@ -1,0 +1,7 @@
+{
+  "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+  "items": {
+    "事件监听": "root agent/turn-stopping触发一次性计划。",
+    "界面": "通用设置开关和原生取消倒计时窗口。"
+  }
+}

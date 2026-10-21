@@ -1,0 +1,8 @@
+{
+  "revision": "989e8a5e7ac32b0864f5a7c2167ca5e242d55f43",
+  "items": {
+    "模型工具": "memory_setup/status/update/project/review及快照、导入导出、知识检索工具",
+    "后台": "工作区JSON记忆、备份及可选embedding",
+    "事件监听": "上下文记忆刷新"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "text": "让 DSH Agent 排程宿主重启，由独立 helper 等待、重拉、体检并可投递继续提示。",
+  "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+  "source_url": "https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/README.md"
+}

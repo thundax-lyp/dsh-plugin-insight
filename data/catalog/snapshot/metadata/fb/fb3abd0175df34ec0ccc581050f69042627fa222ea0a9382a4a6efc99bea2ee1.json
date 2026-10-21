@@ -1,0 +1,52 @@
+{
+  "repository": "863683348/dsh-plugin-gate",
+  "repository_id": 1336663986,
+  "captured_at": "2026-10-21T03:40:39.312Z",
+  "window_start": "2026-09-21T03:40:39.312Z",
+  "stars": 0,
+  "pushed_at": "2026-09-11T03:26:29Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-gate%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4CE2:274DC4:41CCED:465E0A:6AD83439 and timestamp 2026-10-21 03:40:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-gate%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E1E:27305C:403590:44C4DF:6AD8343A and timestamp 2026-10-21 03:40:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-gate%20is%3Aissue%20created%3A2026-09-21T03%3A40%3A39.312Z..2026-10-21T03%3A40%3A39.312Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4F60:10E070:3FE0B5:447275:6AD8343B and timestamp 2026-10-21 03:40:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-gate%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A40%3A39.312Z..2026-10-21T03%3A40%3A39.312Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5092:10E8A5:601630:64A5E9:6AD8343C and timestamp 2026-10-21 03:40:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-plugin-gate%20is%3Aissue%20updated%3A2026-09-21T03%3A40%3A39.312Z..2026-10-21T03%3A40%3A39.312Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 51C6:19A250:3F718E:440103:6AD8343D and timestamp 2026-10-21 03:40:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-plugin-gate",
+    "captured_at": "2026-10-21T03:40:45.748Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1535,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-gate",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-19T15:29:41.027Z",
+      "captured_at": "2026-10-21T03:40:45.748Z",
+      "source_url": "https://registry.npmjs.org/dsh-plugin-gate",
+      "error": null
+    }
+  }
+}

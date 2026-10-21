@@ -1,0 +1,5 @@
+{
+  "text": "对插件目录或npm包做静态风险扫描，并提供危险命令、路径及扫描差异检查。",
+  "revision": "b75c3a1b768448ee84a6fa07735206e6f8945411",
+  "source_url": "https://github.com/863683348/dsh-plugin-gate/blob/b75c3a1b768448ee84a6fa07735206e6f8945411/README.md"
+}

@@ -1,0 +1,52 @@
+{
+  "repository": "82c86b8z86-stack/dsh-engineering-workflow",
+  "repository_id": 1335988605,
+  "captured_at": "2026-10-21T03:40:14.469Z",
+  "window_start": "2026-09-21T03:40:14.469Z",
+  "stars": 5,
+  "pushed_at": "2026-10-11T02:28:33Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": null,
+    "closed_30d": null,
+    "updated_30d": null
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BAE:1054F6:3F4A3E:43DA80:6AD83420 and timestamp 2026-10-21 03:40:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2CC2:275C9A:4084A2:4514A5:6AD83420 and timestamp 2026-10-21 03:40:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "created_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20created%3A2026-09-21T03%3A40%3A14.469Z..2026-10-21T03%3A40%3A14.469Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2DDC:103C86:40D256:456313:6AD83421 and timestamp 2026-10-21 03:40:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T03%3A40%3A14.469Z..2026-10-21T03%3A40%3A14.469Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2EEE:1127A1:42BFC1:474F8B:6AD83422 and timestamp 2026-10-21 03:40:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "updated_30d",
+      "message": "GitHub request failed for search/issues?q=repo%3A82c86b8z86-stack%2Fdsh-engineering-workflow%20is%3Aissue%20updated%3A2026-09-21T03%3A40%3A14.469Z..2026-10-21T03%3A40%3A14.469Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3026:5146D:3FD29F:446395:6AD83423 and timestamp 2026-10-21 03:40:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-engineering-workflow",
+    "captured_at": "2026-10-21T03:40:19.852Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": null,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-engineering-workflow",
+    "error": "HTTP 404",
+    "publication": {
+      "first_published_at": null,
+      "captured_at": "2026-10-21T03:40:19.852Z",
+      "source_url": "https://registry.npmjs.org/dsh-engineering-workflow",
+      "error": "HTTP 404"
+    }
+  }
+}

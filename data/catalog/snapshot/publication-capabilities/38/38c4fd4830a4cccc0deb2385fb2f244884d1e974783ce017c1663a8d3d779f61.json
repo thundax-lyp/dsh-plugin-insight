@@ -1,0 +1,8 @@
+{
+  "revision": "bb061250a1dcead15edc202b4666c7d54f36da4a",
+  "items": {
+    "模型工具": "gov规则、审计及配额管理",
+    "事件监听": "tools/pre-execute策略与tools/result审计、agent/pre-step提示",
+    "后台": "gov.json及audit.jsonl持久化"
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "id": "github:1333954586:root",
+  "repository_id": 1333954586,
+  "component_id": "root",
+  "repository": "940842546/dsh-usage-billing",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-usage-billing",
+  "entry_type": "plugin",
+  "technical_category": "observability-cost",
+  "business_category": "infrastructure",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "943c500f7028da87e45d4e996bb448718cb33551c3b7158e2cb36933cde7cfa5",
+    "code": "d16e2445a8021814765fec14912507da6cafecae",
+    "maintenance": "565135ed7ae06a0318cd4a513002907e19ec1428bbcc8dfbc7f7f06527a0945a"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-03-github-1333954586-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T03:46:48.177Z",
+      "membership": "present"
+    },
+    {
+      "id": "2026-10-21-03-github-1333954586-root-directory-1",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+      "retrieved_at": "2026-10-21T03:46:48.177Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-03-github-1333954586-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/README.md",
+      "revision": "d16e2445a8021814765fec14912507da6cafecae",
+      "captured_at": "2026-10-21T03:46:48.177Z",
+      "summary": "统计DSH的DeepSeek模型调用与估算消费，提供预算提醒、历史回填、导出和余额展示。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/940842546--dsh-usage-billing/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-03-github-1333954586-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/lib/index.js",
+      "revision": "d16e2445a8021814765fec14912507da6cafecae",
+      "captured_at": "2026-10-21T03:46:48.177Z",
+      "summary": "核查 lib/index.js、lib/client.js；index.js监听llm/stream并从会话日志回填，按模型名子串和北京时间时段选配置价格，聚合日/会话统计；读官方余额端点并经client展示与CSV/JSON导出。",
+      "artifact": "data/runs/2026-10-21-03/snapshots/940842546--dsh-usage-billing/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "自管DSH用户想按会话理解模型花费，合格结果是token来源、计价版本与官方账单可对齐，估算与实际扣费必须区分。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "index.js监听llm/stream并从会话日志回填，按模型名子串和北京时间时段选配置价格，聚合日/会话统计；读官方余额端点并经client展示与CSV/JSON导出。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "免构建host/client包，全局统计文件与temp恢复副本；README承认多实例互相覆盖并建议单实例，心跳告警不是并发写锁。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "读取日志、存储与定时余额HTTP有资源成本；首次需核对价格/时区与模型映射，持续对账和维护价格有人工成本。无实际预算改善证据。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "适合本机单实例做大致用量观察。先把模型映射和价格与实际账单核对，未知项单独检查；告警只提醒，不会自动阻止超预算调用。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "可帮助定位高消费会话和观察预算，不能保证供应商最终扣费、未来续航天数或财务准确性。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "历史回填、阈值去重提醒、聚合与导出便于对账；temp副本是恢复手段而非原子多实例存储。把未知转换0和模型子串归类值得改造，复用计费逻辑需版本化与显式unknown。 源码依据：[lib/index.js](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/lib/index.js)、[lib/client.js](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/lib/client.js)。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "相对只看单次token，增量是把历史、时间价格段、预算阈值和会话组织为持续消费视图。它是本地估算与观测，不是供应商账单或费用硬上限。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "缺失价格或usage会不会显示得像免费？classifyModel仅用flash/pro子串，其余other；recordUsage找不到价格回落hit/miss/out全0，num也将非数值回为0。因此真实未知模型可能有调用但估费为0，不能据此结算或宣称免费。当前官方价格未在本轮独立核实，内置规则只能作为固定版本作者配置。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "由可配置价格与未知归零推导，可将“已计价/未计价/usage缺失”分账，价格表绑定生效日期与来源，并用官方账单差额校准。未验证假设是减少被低估的预算决策。用未知模型、缺usage、调价跨界和缓存字段缺失事件对照账单，若仍把未知金额合入零则否定。",
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1333954586:root",
+          "area": "code",
+          "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+        }
+      ],
+      "reviewed_at": "2026-10-21T03:46:48.177Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T03:46:48.177Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "d16e2445a8021814765fec14912507da6cafecae",
+    "reviewed_at": "2026-10-21T03:46:48.177Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1333954586:root",
+        "area": "code",
+        "fingerprint": "d16e2445a8021814765fec14912507da6cafecae"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 10,
+        "simplification": 8
+      },
+      "rationale": "novelty常规计费观测适配小档；mechanism时间价格与回填小档；transferability统计逻辑半档；simplification会话消费视图半档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 18,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 4
+      },
+      "rationale": "workflow用量与预算管理半档；delivery估费报告小档；reach DeepSeek自管用户小档；economics可见成本不等于改成本结构取小档。",
+      "basis": "interpretation",
+      "score": 35,
+      "evidence_ids": [
+        "2026-10-21-03-github-1333954586-root-source"
+      ]
+    }
+  }
+}

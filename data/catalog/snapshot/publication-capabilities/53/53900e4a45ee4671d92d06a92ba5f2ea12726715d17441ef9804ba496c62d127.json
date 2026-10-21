@@ -1,0 +1,7 @@
+{
+  "revision": "c47863413886ffac9b66ee13a9ab276ab195d5d9",
+  "items": {
+    "模型工具": "term_rec、term_play、term_cat录制/回放/文本提取。",
+    "事件监听": "按会话捕获tool/result及可选输入并处理生命周期。"
+  }
+}

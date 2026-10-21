@@ -1,0 +1,7 @@
+{
+  "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+  "items": {
+    "界面": "待审改动面板与逐块keep/revert交互。",
+    "事件监听": "采集工具结果及FS intent前置基线。"
+  }
+}

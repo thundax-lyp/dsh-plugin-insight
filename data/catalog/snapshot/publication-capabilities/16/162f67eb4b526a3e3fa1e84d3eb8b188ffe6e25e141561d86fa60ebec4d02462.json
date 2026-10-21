@@ -1,0 +1,8 @@
+{
+  "revision": "6aabf70615a191a14c7a1e25141b4d15560f3a47",
+  "items": {
+    "模型工具": "focus set/get/append/summary/clear",
+    "事件监听": "agent/pre-step自动焦点板注入及focus/write投影",
+    "界面": "只读焦点板面板"
+  }
+}

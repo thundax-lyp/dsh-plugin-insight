@@ -1,0 +1,7 @@
+{
+  "revision": "89eb6995cc2ccd3f49b7c12ae74ad2464354c312",
+  "items": {
+    "事件监听": "tools/pre-execute命令审查及会话降级告知。",
+    "后台": "规则/Jev判断、缓存和持久降级状态。"
+  }
+}
