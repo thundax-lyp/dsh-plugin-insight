@@ -4,8 +4,7 @@ node_modules/
 # Local research process, checkpoints and raw evidence are not versioned.
 /data/runs/
 
-# New per-run manifests are local process artifacts.
-# Existing tracked compatibility inputs remain until their callers are migrated.
+# Per-run manifests are local process artifacts, including legacy audit copies.
 /data/manifests/
 
 # Rebuildable scratch space.

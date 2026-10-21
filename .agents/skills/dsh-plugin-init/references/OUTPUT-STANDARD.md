@@ -42,7 +42,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 - [0xsline/awesome-deepseek-harness](https://github.com/0xsline/awesome-deepseek-harness)
 
 子页面职责：推荐页展开人群、采用理由、思考、条件与试用方法；分类索引页链接各分类，完整分类页按插件名字母顺序呈现短评；
-单插件详情承担完整采用分析和证据引用；Git 内运行清单说明来源版本、范围、状态、摘要与复现命令。
+单插件详情承担完整采用分析和证据引用；本地运行清单记录轮次范围、检查点与复现命令；当前来源、版本和研究依据由组件记录及必要证据保存。
 本轮原始采集、观察、断点和报告先暂存在 `data/runs/`；支撑当前结论的分析和证据在最终合并时落入正式快照，其他过程副本不要求永久保留。
 工程执行另从根 AGENTS 路由到规范、Skill 和脚本，不进入生成的读者导航。
 
@@ -71,7 +71,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 必要证据 | `data/catalog/evidence/<前缀>/<sha256>.json` | 按内容复用的证据正文 |
 | 本轮工作记录 | `data/runs/<round>/WORK.json` | v2保存固定基线与过程文件摘要索引；合并后可按引用清理 |
 | 当前详情展示 | `data/plugins/<plugin-slug>/INSIGHT.md` | 从快照 reports 原文生成，包含最新 Issue 信息 |
-| 旧运行清单 | `data/manifests/<round>.json` | 新文件由 .gitignore 忽略；已跟踪且仍被当前工具或详情引用的文件暂留，解除依赖后删除 |
+| 本地兼容运行清单 | `data/manifests/<round>.json` | Git 忽略；仅供旧流程或本地审计，当前页面不得依赖它 |
 | 本地来源输入与问题 | `data/runs/<round>/INPUT.json`、`INPUT-PROBLEMS.json` | Git 忽略；固定目录解析、身份核实结果与未解决边界 |
 | 本地会话与进度 | `data/runs/<round>/SESSION.json` | Git 忽略；v2为指向同轮WORK的兼容入口；实际会话头、状态和检查点独立存储 |
 | 本地单插件观察 | `data/runs/<round>/observations/<plugin-slug>.json` | Git 忽略；批次只含本项，历史多项批次可用 MULTI-PLUGIN.json |
@@ -102,7 +102,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 - 最终合并前，将当前快照仍需引用的分析、证据和 META 落入正式位置并校验，不能留下指向待清理 runs 的有效引用。
 - 合并结果回读、当前引用完整且可独立生成页面后，本轮无引用副本可以清理；永久归档不是交付条件。活动锁、未合并记录和未知文件不能当作已合并副本清理。
 - Git 跟踪正式当前状态的变迁；不生成逐插件历史导航。历史 manifest 仅供首次迁移和可选追溯，不成为当前生成或新研究前置条件。
-- `.gitignore` 忽略新增的 `data/manifests/` 过程文件；已跟踪文件不会因此退出 Git。清理旧文件须核对引用并通过后续提交删除，不使用强制添加继续累积历史 manifest。每日 META 更新只暂存当前数据和页面，不暂存该目录。
+- `.gitignore` 忽略新增的 `data/manifests/` 过程文件；现有历史清单核对引用后退出跟踪并可保留本地副本，不使用强制添加继续累积 manifest。每日 META 更新只暂存当前数据和页面，不暂存该目录。
 - 现有 `maintain:runs` 只清理它支持的旧重复视图，不能充当新模型的合并后清理器。新清理流程须先预览引用与合并状态，再执行并回读；本次不执行清理。
 
 ## 研究清单与断点
