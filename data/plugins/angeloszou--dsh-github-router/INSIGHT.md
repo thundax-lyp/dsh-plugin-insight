@@ -1,0 +1,136 @@
+# dsh-github-router
+
+> 为DSH提供只读GitHub工具，在API、gh、git、页面和可选镜像之间路由并汇报分段来源。
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+
+分析版本：[b5c056e](https://github.com/AngelosZou/dsh-github-router/tree/b5c056e1b50fb3446a153bae7ecf2d923f6f7923)
+
+<!-- BEGIN META -->
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-github-router) [![npm 30d 1,620](https://img.shields.io/static/v1?label=npm+30d&message=1%2C620&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-github-router) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-github-router)
+<!-- END META -->
+
+**使用建议**：适合经常遇连接失败的只读仓库分析，先禁镜像并核对token范围和分段版本；缺块不能当不存在讨论或变更。
+
+**核查状态**：已检查源码，未进行真实宿主验证。
+
+**本文目录**
+
+- [当前插件分析](#detail-section-1)
+  - [使用判断](#detail-section-2)
+  - [能力、流程与成本](#detail-section-3)
+  - [工程贡献](#detail-section-4)
+  - [主要限制](#detail-section-5)
+  - [核查说明与分析版本](#detail-section-6)
+- [未来设计假设（未验证）](#detail-section-7)
+- [辅助信息](#detail-section-8)
+
+<a id="detail-section-1"></a>
+
+## 当前插件分析
+
+<a id="detail-section-2"></a>
+
+### 使用判断
+
+- **用途**：受TLS/代理限制的开发者读取PR/Issue/文件，需要少重复连接且知道内容来自哪个版本/通道。
+
+- **建议**：由分段route与head SHA推导，可把聚合结果绑定共同head/base commit和读取时间窗，不一致时标混合快照而不拼成单一事实。未验证；PR读取中更新head、route缺权限及缓存旧值时应检测差异，比较总回合与完整率。
+
+适合经常遇连接失败的只读仓库分析，先禁镜像并核对token范围和分段版本；缺块不能当不存在讨论或变更。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+原生GitHub API/gh较直接，插件补多通道失败恢复但增加解释内容一致性的责任。
+
+<a id="detail-section-3"></a>
+
+### 能力、流程与成本
+
+- **模型工具**：GitHub探测、PR/Issue/文件与GET API读取。
+- **Skill**：GitHub只读路由使用指导。
+- **界面**：路由/token/缓存设置。
+- **后台**：只读内容回退和本地fetch缓存。
+
+**流程与依赖**
+
+DSH tools/subprocess/skills/systemPrompt与GitHub网络，gh认证和git可选；私有仓库及镜像权限不同。
+
+调用业务读取→API/代理→gh→git/HTML→可选mirror→聚合route/截断/限额→用户核对版本；无写GitHub命令。
+
+**效果与成本**
+
+首次token/代理/路由配置，持续API限额、fetch缓存和多路回退时间；少Shell回合不等于总网络/模型成本更低。
+
+可减少重复网络排障，完整可比结果与节省时间未实测。
+
+- **思考**：多路成功能否保证同一PR快照完整？API元数据、git ref、HTML和缓存可能采于不同时间，截断/权限差异也会留下缺块。只读GitHub仍会写本地缓存/使用token并将请求路径暴露可选镜像，不能泛称无副作用。
+
+<a id="detail-section-4"></a>
+
+### 工程贡献
+
+- **亮点**：相对Agent反复修Shell网络，增量是把失败转移到有界、结构化的单工具路由及来源矩阵；GitHub内容、gh/git能力来自上游，宿主外执行不是突破网络本身。
+
+相对Agent反复修Shell网络，增量是把失败转移到有界、结构化的单工具路由及来源矩阵；GitHub内容、gh/git能力来自上游，宿主外执行不是突破网络本身。
+
+只读argv、token解析与默认镜像关闭、分段失败矩阵值得借鉴；按调用构建cache/远端快照一致性需核验。 源码依据：[lib/index.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/index.js)、[lib/tools/api.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/tools/api.js)、[lib/core/runtime.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/core/runtime.js)、[lib/routes/api.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/routes/api.js)、[lib/routes/gh.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/routes/gh.js)、[lib/routes/git.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/routes/git.js)、[lib/routes/mirror.js](https://github.com/AngelosZou/dsh-github-router/blob/b5c056e1b50fb3446a153bae7ecf2d923f6f7923/lib/routes/mirror.js)。
+
+<a id="detail-section-5"></a>
+
+### 主要限制
+
+多路成功能否保证同一PR快照完整？API元数据、git ref、HTML和缓存可能采于不同时间，截断/权限差异也会留下缺块。只读GitHub仍会写本地缓存/使用token并将请求路径暴露可选镜像，不能泛称无副作用。
+
+<a id="detail-section-6"></a>
+
+### 核查说明与分析版本
+
+- **仓库**：[AngelosZou/dsh-github-router](https://github.com/AngelosZou/dsh-github-router)
+- **版本号**：0.4.1（[固定提交 b5c056e1](https://github.com/AngelosZou/dsh-github-router/tree/b5c056e1b50fb3446a153bae7ecf2d923f6f7923)）
+- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）
+
+- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/tools/api.js、lib/core/runtime.js、lib/routes/api.js、lib/routes/gh.js、lib/routes/git.js、lib/routes/mirror.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：抽读lib/index.js、lib/tools/api.js、lib/core/runtime.js、lib/routes/api.js、lib/routes/gh.js、lib/routes/git.js、lib/routes/mirror.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
+- 下一步：模拟API失败、分页截断、head变化和镜像不一致，核对无写verb/token外发、返回每段缺失与固定SHA，不用真实账号验证。
+
+<a id="detail-section-7"></a>
+
+## 未来设计假设（未验证）
+
+由分段route与head SHA推导，可把聚合结果绑定共同head/base commit和读取时间窗，不一致时标混合快照而不拼成单一事实。未验证；PR读取中更新head、route缺权限及缓存旧值时应检测差异，比较总回合与完整率。
+
+模拟API失败、分页截断、head变化和镜像不一致，核对无写verb/token外发、返回每段缺失与固定SHA，不用真实账号验证。
+
+<details>
+<summary>工程统计</summary>
+
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：46c8db749785021b56245e8a09681e057f3c69aad6ead0eff7bae27a3b90bfa9。sloc 0.3.2，TypeScript 5.9.3。
+
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .md | source | 6 | 856 | — | — | 7733 |
+| .js | source | 26 | 4360 | 3591 | 580 | — |
+| .mjs | source | 1 | 54 | 40 | 9 | — |
+| .js | test | 11 | 1562 | 1378 | 109 | — |
+
+排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
+
+</details>
+
+<a id="detail-section-8"></a>
+
+## 辅助信息
+
+**活跃度**
+
+[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-github-router/issues?q=is%3Aissue+created%3A2026-09-21T08%3A02%3A49.576Z..2026-10-21T08%3A02%3A49.576Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-github-router/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A02%3A49.576Z..2026-10-21T08%3A02%3A49.576Z)
+
+暂未获取：Issue 未关闭。
+
+统计日期：2026-10-21。
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

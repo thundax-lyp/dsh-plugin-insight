@@ -1,0 +1,4 @@
+{
+  "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+  "text": "适合确需同时操作多个可信仓库者，先用临时目录核对read-only与workspace-write，并检查显示的全部授权根。跨仓库提交和回滚仍分别验收。"
+}

@@ -1,0 +1,9 @@
+{
+  "revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
+  "items": {
+    "模型工具": "afaccess_status诊断门控状态。",
+    "事件监听": "tools/pre-execute按preset审查指定shell工具。",
+    "Host 路由": "审批queue/decide桥。",
+    "界面": "风险审批面板。"
+  }
+}

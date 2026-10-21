@@ -10,14 +10,17 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [Almost Full Access](#plugin-1336031182-root) | 为 DSH Shell 执行增加规则/模型审查和人工审批的中间权限模式。 | 仅在可接受启发式审查且能核对上下文时评估；不要以“Almost”名称当越过沙箱的安全许可，跨工作区缓存应先解决。 |
 | [ANet DSH 适配组件](#plugin-1302597978-deploy-plugins-dist-dsh) | 以 Skill 与 MCP 启动器将 DSH 接到本地 ANet 节点。 | 已有受信ANet场景者可把它当连接器评估；没有节点/身份或无法确认外部能力边界时，不据此推荐发送业务数据或支付。 |
 | [chicheng-gate](#plugin-1334862230-root) | 在 DSH Web 管理远程访问、frpc 隧道、面板密码门禁与移动端界面。 | 仅适合了解DSH远程控制范围、能维护网络的人在隔离环境先检查；先设置密码，验证HTTP和WebSocket都被挡住，再考虑外网，并单独确认加密传输及升级后的补丁恢复。 |
 | [chicheng-stats](#plugin-1335725068-root) | 在 DSH 汇总请求用量、展示趋势和模型明细，并支持历史会话扫描。 | 想查看DSH资源分布的人可先对一个已知会话核对请求数和token；Desktop先确认是否有历史回填，平台余额和本地统计分开看，不用它直接结算费用。 |
 | [dock](#plugin-1340492184-root) | 向扩展提供活动栏、浮窗、编辑视图、状态和设置注册服务的客户端工作台。 | 先与少量扩展验证打开、关闭和重载；将布局持久化与文件保存分别验收。 |
 | [DSH Telemetry Redactor](#plugin-1333368566-root) | 在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。 | 先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。 |
 | [dsh-agent-recycle-guard](#plugin-1414323673-root) | 检查DSH的Shell工具调用，将识别到的删除改写为回收站操作，无法安全处理时拒绝。 | 在可丢弃目录验证平台真实回收和恢复后采用。 |
+| [dsh-alive](#plugin-1335661970-root) | 在会话头部轮询本地 ping 接口，显示在线状态点。 | 仅需Host连接提示时可评估；已有宿主连接指示或需要模型可用性监控者，先确认它是否提供额外信息。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 读取Agent-Body运行时文件，在宿主HTTP路由展示器官体征、心跳、愈合账本与脉冲。 | 先限制在本地受控宿主使用，检查缺失数据能否报503，并核对脉冲文本的展示边界后再接入多人环境。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 | 先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。 |
+| [dsh-ark-coding-provider](#plugin-1421741516-root) | 将方舟Coding Plan聊天、模型目录、账户轮换与额度管理接入DSH。 | 适合已有方舟订阅者先做隔离模型/工具链测试；作者容量实测不等于本轮验证，也不代表服务今后不变。 |
 | [dsh-armor-switch](#plugin-1409096911-root) | 提供运行时提示契约切换及可选的宿主、Profile文案维护和恢复操作。 | 只建议在可恢复的独立Profile中检查机制。 |
 | [dsh-armory](#plugin-1413052822-root) | 在 DSH 中管理 MCP、技能、专家、插件市场及工具账本，支持项目作用域与授权引导。 | 已有多个MCP时在独立项目试用导入和作用域隔离，核对实际工具与来源登记；OAuth与市场安装新增路径需单独验收，不依据零调用账本批量停用工具。 |
 | [dsh-capability-index](#plugin-1335594781-root) | 扫描已启用工具，结合规则与语义召回向Agent上下文提示可能适用的插件能力。 | 更适合作为工具发现设计样本阅读。 |
@@ -36,6 +39,8 @@
 | [dsh-permissions](#plugin-1335349535-root) | 为DSH工具调用配置hard、deny、ask、allow权限规则，提供工作区作用域和可视化编辑。 | 适合将它作为宿主沙箱之上的附加规则层先试用。 |
 | [dsh-plugin-adapter](#plugin-1374274469-root) | 把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。 | 适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。 |
 | [dsh-plugin-audit](#plugin-1336223158-root) | 同步插件目录与元数据，生成健康评分、静态扫描报告和榜单。 | 适合作为候选体检面板。 |
+| [dsh-plugin-balance](#plugin-1340280087-root) | 在DSH输入框附近显示多供应商余额/套餐用量，并持久统计会话token及估算费用。 | 先使用固定可信端点，并核对自定义目标与凭据绑定。 |
+| [dsh-plugin-console](#plugin-1336720864-root) | 在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。 | 适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。 |
 | [dsh-plugin-gate](#plugin-1336663986-root) | 对插件目录或npm包做静态风险扫描，并提供危险命令、路径及扫描差异检查。 | 适合作安装前静态检查。 |
 | [dsh-plugin-loopback-trust](#plugin-1394489199-root) | 为反向代理域名访问的DSH网页恢复宿主设置持久化。 | 仅适合已经配置访问控制的自管反代管理员核查后试用。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。 | 适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。 |
@@ -55,6 +60,7 @@
 | [dsh-token-billing](#plugin-1335139860-root) | 为 DSH 提供按供应商、模型、时段与用量计算的实时费用与账本统计。 | 适合需要多路由费用参考的用户；先对照供应商账单核实缓存、峰谷和币种口径，再据看板调整预算。 |
 | [dsh-tool-explorer](#plugin-1351594249-root) | 在DSH设置页浏览管理Skills与MCP，支持安装、编辑、开关、连接测试及跨工具配置导入。 | 适合经常管理多套Skills与MCP且能备份profile的用户试用。 |
 | [dsh-ui-auth](#plugin-1343420855-root) | 为 DSH Web 提供登录、用户管理和认证网关，并支持 TOTP、Passkey 与会话隔离。 | 先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。 |
+| [dsh-update-checker](#plugin-1334836615-root) | 检查 DSH 与插件版本，提供备份、更新、回滚及重启入口。 | 可用于梳理更新管理方案；实际启用写更新前先核同源授权、备份范围与脚本执行，重要部署不把版本回读相等当功能验收。 |
 | [dsh-usage-billing](#plugin-1333954586-root) | 统计DSH的DeepSeek模型调用与估算消费，提供预算提醒、历史回填、导出和余额展示。 | 适合本机单实例做大致用量观察。 |
 | [dsh-usage-dashboard-plus](#plugin-1334023305-root) | 在 DSH 侧栏和设置页展示账户余额、调用用量与分模型费用统计。 | 适合用量观察；先用自己账单核对一天数据，并为未知模型补价，再据此设预算。 |
 | [dsh-vps](#plugin-1377159975-root) | 在VPS部署DSH并提供登录网关、HTTPS、远程安装和升级回滚管理页面。 | 适合能维护Linux服务器的管理员在测试VPS验证。 |
@@ -96,6 +102,18 @@
 | [Quota 用量仪表](#plugin-1400927706-root) | 累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。 | 先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。 |
 | [元冰可 AI 资源治理平台](#plugin-1416699252-root) | 以 Cordis 插件树组织企业 AI 资源、身份权限、模型与数字员工治理。 | 已有多用户治理需求的团队先在隔离环境跑一条业务链；核对拒绝、例外入口与备份恢复，再扩部门和资源，避免把启动健康当业务验收。 |
 | [模型信息补全](#plugin-1358816037-root) | 从 models.dev 为自定义模型补齐缺失能力，并保留人工确认与未声明状态。 | 先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。 |
+| [模型接力](#plugin-1415863200-root) | 把已接入 DSH 的模型组成候选队列，失败时重试、轮换并记录会话隔离。 | 已有多模型且主要做可复核任务时可评估；涉及不可重复动作或不希望插件代发用户消息时，应先明确自动续轮范围和来源。 |
+
+<a id="plugin-1336031182-root"></a>
+
+## [Almost Full Access](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Alnita-M/dsh-Almost_Full_Access) [![npm 30d 820](https://img.shields.io/static/v1?label=npm+30d&message=820&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-almost-full-access) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-almost-full-access)
+
+- **用途**：操作者希望普通操作少打断、不可逆/系统操作仍需确认；合格交付必须是在正确会话、目录和权限上下文对具体命令作决定。
+- **亮点**：把高频可逆动作和系统风险分层，确定性风险不能被LLM降成safe，审查失败转人工、abort拒绝，比完全依靠提示审命令有明确控制路径。增量是权限中间策略，仍是工具名和文本启发式，不能替代OS沙箱。
+- **思考**：同命令是否在不同上下文仍同风险？llmVerdictCache与remembered均以commandHash为键，未含session/workspace/workdir；同一相对脚本命令在另项目指向不同文件，缓存safe或记住批准可能跨场景复用。规则判风险可先拦，但仅模糊分支复用仍缺上下文。并且非列名工具、工具内执行与审查子代理不在同一门控保证内。
+- **建议**：将决定键绑定会话、规范cwd/workspace、工具和脚本内容摘要，并在环境/内容改变时失效，可能减少同文本异副作用的复用。两个工作区同名脚本一安全一写系统路径，交替执行并更改脚本内容，要求重新审查；若缓存仍命中则否定上下文绑定。
 
 <a id="plugin-1302597978-deploy-plugins-dist-dsh"></a>
 
@@ -163,6 +181,17 @@
 - **思考**：命中常见删除是否覆盖任意破坏？只处理command/cmd参数，脚本深度/大小/编码及动态加载有限，干净脚本可能仍间接删文件；同用户竞态、模块和外部程序内部操作不受全量保护。
 - **建议**：由静态改写与执行时展开分工推导，可返回覆盖范围收据，明确已检查语言/脚本及未检查加载边界，并配文件系统变更预览或沙箱作第二层。未验证；隐藏/动态删除样本应清楚标未覆盖而非安全承诺。
 
+<a id="plugin-1335661970-root"></a>
+
+## [dsh-alive](../../plugins/aikenfra--dsh-alive/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AikenFra/dsh-alive) [![npm 30d 848](https://img.shields.io/static/v1?label=npm+30d&message=848&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-alive) [![最新发布 2026-09-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-alive)
+
+- **用途**：Web用户想知道浏览器能否连到当前Host，不必发一条模型消息探活；交付是HTTP可达性提示。
+- **亮点**：以不调用LLM的本地探活替代发消息测服务，成本与提示语义简单；增量是宿主slot接入，不是端到端健康检查。只要明确信号范围，它可辅助区分页面到Host的连接。
+- **思考**：绿色是否被误解成DeepSeek模型在线？client只看r.ok，不核响应JSON或模型/API状态；Host存活而模型认证/限额/上游断网仍绿色。fetch无timeout/AbortController，连接挂住时旧online可长期保留，固定interval可能叠请求，所以README“挂了立刻变红”超过实现保证。
+- **建议**：把标签改为Host可达并附最近成功时间，给每次fetch明确截止且显示stale，可能减少错误健康判断。用Host正常但模型失败、HTTP挂起和代理返回200 HTML案例，要求不声称模型在线且超时进入未知；若仍保留旧绿色则假设失败。
+
 <a id="plugin-1366089972-workspace-plugins-dsh-anatomy-panel"></a>
 
 ## [dsh-anatomy-panel](../../plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/INSIGHT.md)
@@ -184,6 +213,17 @@
 - **亮点**：src/index.js 从凭据及平台接口取余额，以内置或自定义单价计算会话消耗，混合币种分别显示；客户端定时刷新看板。
 - **思考**：集中显示和明确未知值有实用价值；估算若被当成收费真相，会把价格漂移和缓存差异隐藏起来。
 - **建议**：先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。
+
+<a id="plugin-1421741516-root"></a>
+
+## [dsh-ark-coding-provider](../../plugins/akiyuki1130--dsh-ark-coding-provider/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Akiyuki1130/dsh-ark-coding-provider)
+
+- **用途**：有方舟订阅的DSH用户使用其兼容端点与多账户管理。
+- **亮点**：把协议细节、账户冷却与凭据/官方quota入口组合，避免简单兼容URL配置遗漏系统指令和多轮工具语义；不是新LLM协议或模型能力。
+- **思考**：轮换以“任何chunk已发出”为保守界限，可避免重复输出，但不保证所有传输失败恢复；模型能力来自固定表与作者探测，不是每次discovery都重测容量。可配置apiBase会把key发往所填端点，CLI/账号生命周期仍是额外信任依赖。
+- **建议**：未验证假设：将模型能力记录绑定探测日期/端点，并在兼容性漂移时显式降级，能减少静态目录误承诺。用系统指令、工具回灌、图片、半流中断及额度失败矩阵核语义与重放边界；无安全重放证据时不做输出后自动重试。
 
 <a id="plugin-1409096911-root"></a>
 
@@ -382,6 +422,28 @@
 - **亮点**：作者提出生态体检及高危否决；实际增量是把有界同步、历史Star信号、静态发现和本地榜单连起来，便于维护者优先排查。相对只看Star，增加安全线索；高分仍主要是维护和包装代理信号，不是插件运行质量。
 - **思考**：guessPackageName按仓库短名探测npm，可能把同名其他作者包绑定给仓库。scanner读取HEAD树后再取contents默认分支，没有固定commit绑定，多请求间可能混版本；有限入口抽样不能代表全仓库。评分中的README长度/推送/Star不能证明安全或采用，扫描失败为空材料不能等同零问题。
 - **建议**：待验证假设：先核实包仓身份并把所有被扫文件固定到同一SHA，再让报告显式显示未覆盖项，可减少误归因和虚假安全感。用同名异仓npm、移动HEAD和隐藏深层脚本样本比较误关联与漏报；无完整覆盖时只输出初筛状态。
+
+<a id="plugin-1340280087-root"></a>
+
+## [dsh-plugin-balance](../../plugins/andrew111888--dsh-plugin-balance/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/Andrew111888/dsh-plugin-balance) [![npm 30d 1,271](https://img.shields.io/static/v1?label=npm+30d&message=1%2C271&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-balance) [![最新发布 2026-08-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-balance)
+
+- **用途**：多模型用户希望区分账户额度、会话消耗与预计费用，合格账目应可与实际服务账单对照。
+- **亮点**：增量是额度查询与持久会话用量同页展示，并处理流中多次usage样本覆盖；余额数据来自供应商，估价表不是计费真相。
+- **思考**：密钥不回浏览器是否等于不会发错目的地？custom请求允许客户端baseUrl/path，凭据由providerId对应设置解析，handler未见将地址绑定已注册provider或独立信任校验；可能把现有key发到自定义目标。账目重放与静态价格亦不能保证实际费用准确。
+- **建议**：由服务端凭据代理推导，可把可用provider、目标origin和凭据ref绑定在Host配置，浏览器只传稳定ID，返回账单来源与价格版本。未验证；伪造baseUrl/重定向必须拒绝且不带key，账单样本误差应可解释。
+
+<a id="plugin-1336720864-root"></a>
+
+## [dsh-plugin-console](../../plugins/alexyin-tongji--dsh-plugin-console/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AlexYin-Tongji/dsh-plugin-console) [![npm 30d 1,126](https://img.shields.io/static/v1?label=npm+30d&message=1%2C126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-console) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-console)
+
+- **用途**：维护DSH Web profile插件，安装更新前确认目标和回退路径。
+- **亮点**：把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。
+- **思考**：canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。
+- **建议**：未验证假设：将canary明确分为兼容探针与可选OS级最小权限运行，并记录外部副作用，可降低对“隔离试运行”的误解。用写绝对路径、读环境、网络请求和初始化冲突样例分别核边界；若无法隔离就只声明兼容验证。
 
 <a id="plugin-1336663986-root"></a>
 
@@ -591,6 +653,17 @@
 - **亮点**：包装 HTTP 与 upgrade 入口，现代网关按会话处理认证；宿主能力缺失时 fail-closed。
 - **思考**：统一入口与关闭式失败路径是有效机制；全接口安全仍依赖覆盖、宿主升级和反代配置。
 - **建议**：先在隔离环境逐一测试 HTTP、WebSocket 和多用户访问，不把安装成功当成公网安全保证。
+
+<a id="plugin-1334836615-root"></a>
+
+## [dsh-update-checker](../../plugins/airmetro--dsh-update-checker/INSIGHT.md)
+
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/Airmetro/dsh-update-checker) [![npm 30d 7,523](https://img.shields.io/static/v1?label=npm+30d&message=7%2C523&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-update-checker) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-update-checker)
+
+- **用途**：本地DSH操作者集中维护Host和插件版本；合格交付是依赖与profile一致、失败可恢复且新实例实际可用。
+- **亮点**：相较只报新版本，把包布局、profile持久声明与回滚一起处理，避免更新后install又拉回旧版；实例ID检查比仅端口200更能辨识新进程。增量是部署维护闭环设计，npm/GitHub版本号不证明依赖兼容或功能验收。
+- **思考**：更新入口是否具充分的授权与供应链保证？writeGate只核remoteAddress回环与confirm=true，未在该函数见Origin/Host或JSON Content-Type检查；浏览器跨站请求仍来自loopback，需核完整入口才能保证写操作不可被诱发。ghRequest对匹配GitHub域关闭证书校验，又可安装构建脚本；可用性兼容取舍削弱真实性保证，备份不能撤销安装脚本的外部副作用。
+- **建议**：使用一次性本地操作凭证/同源检查，加签名或内容摘要固定更新物，并把安装脚本副作用与包文件回滚分开显示，可能降低误触与“已回滚即一切恢复”的误判。对跨站text/plain confirm请求、代理替换包、原位同步失败及脚本写外部文件案例，验证明确拒绝或保留未知副作用；未拒绝则否定安全闭环。
 
 <a id="plugin-1333954586-root"></a>
 
@@ -1042,6 +1115,17 @@
 - **亮点**：Host 拉取并缓存能力目录，构造缺失字段操作，通过 settings.mutate 带版本写入；模型保存可单独调整。
 - **思考**：不凭会思考就编造离散档位是合理边界；默认值仍是用户假设而非外部事实。
 - **建议**：先核对一个提供商的官方能力，备份配置再补齐，未匹配模型保持显式人工确认。
+
+<a id="plugin-1415863200-root"></a>
+
+## [模型接力](../../plugins/airisey--dsh-model-failover/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Airisey/dsh-model-failover)
+
+- **用途**：已有多模型渠道的用户希望额度/上游故障时继续任务；合格交付是任务正确完成，而不是某个模型开始输出。
+- **亮点**：相较盲目重试整条请求，明确“已提交内容”的边界，避免在模型开始产出后静默换人；分开候选故障和整轮截断，隔离按会话/模板而非全局误伤。贡献是失败恢复取舍与宿主集成，不能把字节产出当任务完成。
+- **思考**：自动“继续”是否仍是用户授权的同一任务？轮级hook对全部DSH模型生效，构造source.kind=user，看起来与人亲发相同；一次错误可能发生在已有工具副作用后，重启一轮并不具任务幂等。adapter将非空text/tool delta当提交能减少混流，却不能证明答案合格；隔离跨日清空也不代表凭证/配额已恢复。
+- **建议**：把续轮标成插件来源并绑定原turn、错误种类与已完成工具副作用账本，要求未知副作用先查结果而非重发，可能减少重复执行和授权混淆。对工具已成功但响应丢失、纯文本截断、用户停止和用户新输入对照，测重复动作与不当续轮率；若只多发继续且无副作用状态，则不能称业务恢复。
 
 ## 更新时间
 

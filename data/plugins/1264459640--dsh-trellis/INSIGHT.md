@@ -4,7 +4,7 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[335d8db](https://github.com/1264459640/dsh-trellis/tree/335d8dbd0fafa670a279fd054ff7333269da5d7e)
+分析版本：[b6b1d52](https://github.com/1264459640/dsh-trellis/tree/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis) [![npm 30d 1,538](https://img.shields.io/static/v1?label=npm+30d&message=1%2C538&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis)
@@ -68,7 +68,7 @@ DSH Cordis bundle/client与peer依赖见固定package，allowlist主动启用；
 
 减少任务和产物散落、促进交接；前提是团队真实维护步骤并核验产物，不能把完成标记或Git干净当质量结论。
 
-- **思考**：人工门禁是否可信？applyStepUpdate仍接受调用方verifiedBy=human，没有独立批准事件证据；规划保护是工具名denylist，bash/pwsh和其他插件工具保留，不能构成全面只读。modified_files由调用方声明可放行清单外修改；产物白名单控制写入路径却不证明内容已审。因此三个门槛约束记录格式，未证明真实批准/变更全集/结果正确。
+- **思考**：人工门禁是否可信？applyStepUpdate仍接受调用方verifiedBy=human，没有独立批准事件证据；规划保护是工具名denylist，bash/pwsh和其他插件工具保留，不能构成全面只读。modified_files由调用方声明可放行清单外修改；产物白名单控制写入路径却不证明内容已审，git status超时或异常还会以warning放行。因此三个门槛约束记录格式，未证明真实批准/变更全集/结果正确。
 
 <a id="detail-section-4"></a>
 
@@ -80,22 +80,22 @@ DSH Cordis bundle/client与peer依赖见固定package，allowlist主动启用；
 
 task更新按合并状态验证规划阶段不能标in_progress；更新数据不再顺带改会话绑定，避免过期更新覆盖新绑定。artifact只允许任务内预定Markdown名且经dshFs/sandbox写入；trust.js明确仿上游同源规则并非认证层。
 
-固定源码依据：[lib/index.js](https://github.com/1264459640/dsh-trellis/blob/335d8dbd0fafa670a279fd054ff7333269da5d7e/lib/index.js)、[lib/task.js](https://github.com/1264459640/dsh-trellis/blob/335d8dbd0fafa670a279fd054ff7333269da5d7e/lib/task.js)、[lib/readonly.js](https://github.com/1264459640/dsh-trellis/blob/335d8dbd0fafa670a279fd054ff7333269da5d7e/lib/readonly.js)、[lib/artifact.js](https://github.com/1264459640/dsh-trellis/blob/335d8dbd0fafa670a279fd054ff7333269da5d7e/lib/artifact.js)、[lib/git.js](https://github.com/1264459640/dsh-trellis/blob/335d8dbd0fafa670a279fd054ff7333269da5d7e/lib/git.js)、[lib/trust.js](https://github.com/1264459640/dsh-trellis/blob/335d8dbd0fafa670a279fd054ff7333269da5d7e/lib/trust.js)、[package.json](https://github.com/1264459640/dsh-trellis/blob/335d8dbd0fafa670a279fd054ff7333269da5d7e/package.json)。
+固定源码依据：[lib/index.js](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/index.js)、[lib/task.js](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/task.js)、[lib/readonly.js](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/readonly.js)、[lib/artifact.js](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/artifact.js)、[lib/git.js](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/git.js)、[lib/trust.js](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/trust.js)、[package.json](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/package.json)。
 
 <a id="detail-section-5"></a>
 
 ### 主要限制
 
-人工门禁是否可信？applyStepUpdate仍接受调用方verifiedBy=human，没有独立批准事件证据；规划保护是工具名denylist，bash/pwsh和其他插件工具保留，不能构成全面只读。modified_files由调用方声明可放行清单外修改；产物白名单控制写入路径却不证明内容已审。因此三个门槛约束记录格式，未证明真实批准/变更全集/结果正确。
+人工门禁是否可信？applyStepUpdate仍接受调用方verifiedBy=human，没有独立批准事件证据；规划保护是工具名denylist，bash/pwsh和其他插件工具保留，不能构成全面只读。modified_files由调用方声明可放行清单外修改；产物白名单控制写入路径却不证明内容已审，git status超时或异常还会以warning放行。因此三个门槛约束记录格式，未证明真实批准/变更全集/结果正确。
 
 <a id="detail-section-6"></a>
 
 ### 核查说明与分析版本
 
 - 版本号：0.4.1；版本日期：2026-10-21（固定提交日期，北京时间，非包发布日期）。
-- 固定提交：[335d8dbd](https://github.com/1264459640/dsh-trellis/tree/335d8dbd0fafa670a279fd054ff7333269da5d7e)；本轮基准：2026-10-21T05:26:52Z。
+- 固定提交：[b6b1d526](https://github.com/1264459640/dsh-trellis/tree/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f)；本轮基准：2026-10-21T07:52:12Z。
 - 已检查：上述源码路径、README、包清单及组件inventory。
-- 范围：根组件入口、任务持久化、产物白名单、规划过滤、Git检查、Web信任规则及看板接线；复核正式快照全部11个finding和双轴评分，不做版本差异报告；未审计全部文件。
+- 范围：根组件入口、任务持久化、产物白名单、规划过滤、Git检查、Web信任规则及看板接线；未审计全部文件，未运行宿主；不将状态字段视为独立验收。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
 <a id="detail-section-7"></a>
@@ -115,7 +115,7 @@ task更新按合并状态验证规划阶段不能标in_progress；更新数据�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 138 | 8705 | — | — | 139011 |
+| .md | source | 138 | 8731 | — | — | 139514 |
 | .md | test | 2 | 293 | — | — | 5524 |
 | .mjs | source | 3 | 728 | 571 | 106 | — |
 | .js | source | 15 | 8011 | 6060 | 1601 | — |
@@ -125,7 +125,7 @@ task更新按合并状态验证规划阶段不能标in_progress；更新数据�
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+created%3A2026-09-21T05%3A33%3A14.295Z..2026-10-21T05%3A33%3A14.295Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T05%3A33%3A14.295Z..2026-10-21T05%3A33%3A14.295Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+created%3A2026-09-21T07%3A58%3A49.419Z..2026-10-21T07%3A58%3A49.419Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T07%3A58%3A49.419Z..2026-10-21T07%3A58%3A49.419Z)
 
 
 

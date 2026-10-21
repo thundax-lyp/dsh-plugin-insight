@@ -1,0 +1,133 @@
+# dsh-dictation-hotkey
+
+> 为DSH网页输入框提供按住或切换式语音热键，复用宿主转写并可选择填入或发送。
+
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+
+分析版本：[8428219](https://github.com/AndyYang12345/dsh-dictation-hotkey/tree/8428219e3e23acd6387548ca7b5e900b081d160c)
+
+<!-- BEGIN META -->
+[![npm 30d 97](https://img.shields.io/static/v1?label=npm+30d&message=97&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-dictation-hotkey) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-dictation-hotkey)
+<!-- END META -->
+
+**使用建议**：建议先关闭自动发送，用慢转写和会话切换样例验证落点。敏感文本检查后再发，实际识别provider与音频处理位置另核。
+
+**核查状态**：已检查源码，未进行真实宿主验证。
+
+**本文目录**
+
+- [当前插件分析](#detail-section-1)
+  - [使用判断](#detail-section-2)
+  - [能力、流程与成本](#detail-section-3)
+  - [工程贡献](#detail-section-4)
+  - [主要限制](#detail-section-5)
+  - [核查说明与分析版本](#detail-section-6)
+- [未来设计假设（未验证）](#detail-section-7)
+- [辅助信息](#detail-section-8)
+
+<a id="detail-section-1"></a>
+
+## 当前插件分析
+
+<a id="detail-section-2"></a>
+
+### 使用判断
+
+- **用途**：需要快捷语音输入的用户，合格结果是文字进入预期会话且可在发送前检查。
+
+- **建议**：由录音seat与异步结果分离推导，可将transcript绑定录音开始时会话/draft代次，目标变更则先入待确认缓冲，持有abort token。未验证；识别延迟期间切会话/改草稿/失焦应不误发，允许用户选择落点。
+
+建议先关闭自动发送，用慢转写和会话切换样例验证落点。敏感文本检查后再发，实际识别provider与音频处理位置另核。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+宿主麦克风已有识别，插件补按键和插入便利，未替代人工校对。
+
+<a id="detail-section-3"></a>
+
+### 能力、流程与成本
+
+- **界面**：输入框热键录音与配置。
+- **事件监听**：键盘/失焦和录音状态。
+
+**流程与依赖**
+
+DSH speech Remote与inputActions、浏览器getUserMedia/AudioWorklet、HTTPS/本机权限；识别服务缺失明确报错。
+
+按键→采集→松键编码→调用转写→目标draft插入→可选submit；识别为空/失败给诊断，禁用清监听和录音。
+
+**效果与成本**
+
+首次麦克风权限与hotkey配置，持续CPU识别/可选provider费用、误识别修正；复用引擎不代表零资源成本。
+
+减少点击语音按钮，效果依赖识别率和热键冲突，未测输入速度。
+
+- **思考**：异步识别文字归属是否稳定？返回后取this.active()可能是新挂载会话，旧span冲突又以当前span回退；切会话期间可能插到新目标。cancel处理capture但转写传新AbortController未保存，不能据取消录音声称已取消推理。
+
+<a id="detail-section-4"></a>
+
+### 工程贡献
+
+- **亮点**：相对点麦克风，增量是热键录音状态机、原生draft插入与诊断；识别引擎归DSH语音bundle，无独立模型能力增量。
+
+相对点麦克风，增量是热键录音状态机、原生draft插入与诊断；识别引擎归DSH语音bundle，无独立模型能力增量。
+
+录音/键盘/设置分层、失焦取消和原生insertText保留草稿结构可借鉴；跨会话异步绑定不足应验证。 源码依据：[host/index.js](https://github.com/AndyYang12345/dsh-dictation-hotkey/blob/8428219e3e23acd6387548ca7b5e900b081d160c/host/index.js)、[client/src/controller.js](https://github.com/AndyYang12345/dsh-dictation-hotkey/blob/8428219e3e23acd6387548ca7b5e900b081d160c/client/src/controller.js)、[client/src/audio.js](https://github.com/AndyYang12345/dsh-dictation-hotkey/blob/8428219e3e23acd6387548ca7b5e900b081d160c/client/src/audio.js)、[client/src/index.js](https://github.com/AndyYang12345/dsh-dictation-hotkey/blob/8428219e3e23acd6387548ca7b5e900b081d160c/client/src/index.js)。
+
+<a id="detail-section-5"></a>
+
+### 主要限制
+
+异步识别文字归属是否稳定？返回后取this.active()可能是新挂载会话，旧span冲突又以当前span回退；切会话期间可能插到新目标。cancel处理capture但转写传新AbortController未保存，不能据取消录音声称已取消推理。
+
+<a id="detail-section-6"></a>
+
+### 核查说明与分析版本
+
+- **仓库**：[AndyYang12345/dsh-dictation-hotkey](https://github.com/AndyYang12345/dsh-dictation-hotkey)
+- **版本号**：0.3.0（[固定提交 8428219e](https://github.com/AndyYang12345/dsh-dictation-hotkey/tree/8428219e3e23acd6387548ca7b5e900b081d160c)）
+- **版本日期**：2026-10-13（固定提交日期，北京时间；不是包发布日期）
+
+- 已检查：作者 README、包清单、源码路径 host/index.js、client/src/controller.js、client/src/audio.js、client/src/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：抽读host/index.js、client/src/controller.js、client/src/audio.js、client/src/index.js；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
+- 下一步：延迟识别中切会话/新建/改草稿/取消、组合键冲突和拒绝麦克风，检查无错误目标提交和音轨泄漏。
+
+<a id="detail-section-7"></a>
+
+## 未来设计假设（未验证）
+
+由录音seat与异步结果分离推导，可将transcript绑定录音开始时会话/draft代次，目标变更则先入待确认缓冲，持有abort token。未验证；识别延迟期间切会话/改草稿/失焦应不误发，允许用户选择落点。
+
+延迟识别中切会话/新建/改草稿/取消、组合键冲突和拒绝麦克风，检查无错误目标提交和音轨泄漏。
+
+<details>
+<summary>工程统计</summary>
+
+统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：09a5018d226d9cbdbef8429a8202e3de2fb9643cd7ea5693af632ab0e972f667。sloc 0.3.2，TypeScript 5.9.3。
+
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .mjs | source | 3 | 575 | 474 | 65 | — |
+| .md | source | 3 | 327 | — | — | 2628 |
+| .js | source | 7 | 1242 | 984 | 189 | — |
+
+排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。
+
+</details>
+
+<a id="detail-section-8"></a>
+
+## 辅助信息
+
+**活跃度**
+
+[![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AndyYang12345/dsh-dictation-hotkey/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A02%3A43.519Z..2026-10-21T08%3A02%3A43.519Z)
+
+暂未获取：Issue 未关闭、近30天新建。
+
+统计日期：2026-10-21。
+
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

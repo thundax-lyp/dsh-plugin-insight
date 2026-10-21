@@ -18,23 +18,28 @@
 | [dock-editor](#plugin-1340492335-root) | 把受限文本读写与CodeMirror编辑接入Dock文件查看器。 | 适合工作区小文本的辅助编辑；先验证保存冲突与关闭恢复，再处理重要文件。 |
 | [dock-files](#plugin-1340492214-root) | 为Dock提供文件树、viewer分派、文件变更与上传下载通道。 | 先用隔离工作区核对根目录与删除/传输行为，再接入重要文件。 |
 | [dock-git](#plugin-1340492447-root) | 把Git图谱、差异与仓库写操作接入Dock。 | 先在临时仓库核对hook与破坏操作，重要仓库保留团队既有检查。 |
+| [DSH Harness Switch](#plugin-1414577411-root) | 在 DSH 原生会话中切换原生适配与嵌入式 Kimi Code 执行核心。 | 明确需要Kimi内核且能核权限差异的开发者可评估；不能把DSH allowlist当对全部内部工具的第二道检查。 |
 | [DSH Verification Receipt](#plugin-1333370288-root) | 在每轮持久化结束时保存工具次数和验证形态信号的本地 JSONL 回执。 | 先对照一次明确成功和一次失败的测试任务，逐项比对回执与真实命令结果。 |
 | [dsh-a11y-scan](#plugin-1344715270-root) | 调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。 | 适合已有axe后端的前端团队在本地构建产物先试用。 |
 | [dsh-ai-armor](#plugin-1425045401-root) | 聚合 Git 排错、堆栈解码、配置检查、Shell 调用与 SQL 静态审计工具。 | 可按具体只读诊断工具需求评估；二分执行与静态扫描需分别授权和隔离，不能因本地工具或零依赖而当作无副作用。 |
 | [dsh-asciinema](#plugin-1344714509-root) | 录制DSH工具输出为带时间轴的数据文件，提供文本提取和自包含离线HTML回放。 | 适合记录普通非敏感工具文本供本插件回放。 |
 | [dsh-autocompact](#plugin-1324229194-dsh-autocompact) | 为会话与模型设置自动压缩阈值，保留近期上下文并调用宿主压缩后端。 | 长会话且了解模型窗口时可试。 |
+| [dsh-better-sidebar-N23](#plugin-1352600211-root) | 提供文件编辑预览、Git、终端和可扩展页签的会话工作台。 | 先在匹配宿主和隔离项目核实际lib、文件写权限与PTY清理；别仅用较新的src安全修复判断运行版本。 |
 | [dsh-cache-bricks](#plugin-1386463441-root) | 可视化 DSH 模型请求、缓存命中率、活动与历史请求对比。 | 适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。 |
 | [dsh-capmap-viz](#plugin-1356896576-dsh-capmap-viz) | 在 DSH 中把 CapMap 文档渲染为语义图谱、能力面板和状态看板。 | 适合已有CapMap规范的团队先在工作区副本浏览；核对看板关联与原文，初始化会写文档并安装Skill，先审阅预期文件，不能用状态标签代替验收证据。 |
+| [dsh-codex-guard](#plugin-1340906871-dsh) | 在DSH中调用codex-guard CLI，返回提交前卫生检查报告。 | 先在隔离仓库核对实际扫描目录与CLI版本；报告入口不能替代提交前硬性检查。 |
 | [dsh-dep-vuln-scan](#plugin-1344714002-root) | 读取依赖锁文件并查询 OSV，生成漏洞、严重度和修复建议报告。 | 适合已知锁文件的初筛；检查跳过/错误及实际包清单，修复前核公告维护线并做项目回归，别直接执行生成命令。 |
 | [dsh-diff-approval](#plugin-1335980444-root) | 汇总Agent成功文件改动供逐文件或逐块保留、回退，并支持导入本地版本控制差异。 | 适合经常逐块审阅Agent改动的开发者在临时仓库试用。 |
-| [dsh-domain-bridge](#plugin-1424063534-plugins-dsh-domain-bridge) | 为 DSH 顶层会话提供域寻址、消息投递、分级暂停与模型分派。 | 适合确有顶层会话分工的项目；先用无副作用消息验证暂停与恢复，正式任务自行加完成确认和幂等标识。 |
+| [dsh-domain-bridge](#plugin-1424063534-plugins-dsh-domain-bridge) | 为 DSH 顶层会话提供域寻址、职责交接、分级暂停和模型选择。 | 确有顶层会话分工时可评估；先明确谁负责确认任务接受与完成，不能仅凭delivered回执或暂停标记承担业务验收与系统禁用保证。 |
 | [dsh-engineering-workflow](#plugin-1335988605-root) | 为 DSH 安装工程工作流预设及六个 Skill，覆盖需求、计划、TDD、子代理和验证。 | 对流程一致性有需求的团队先用非关键新会话试；备份同名预设定制，明确哪些步骤由宿主强制、哪些靠Skill遵循，再按任务复杂度使用。 |
 | [dsh-folderwatch](#plugin-1423215448-root) | 监测目录快照差异，把外部文件变化批量排队或唤醒原会话处理。 | 先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。 |
+| [dsh-github-router](#plugin-1339462797-root) | 为DSH提供只读GitHub工具，在API、gh、git、页面和可选镜像之间路由并汇报分段来源。 | 适合经常遇连接失败的只读仓库分析，先禁镜像并核对token范围和分段版本；缺块不能当不存在讨论或变更。 |
 | [dsh-hdc-bridge](#plugin-1333258432-root) | 在 DSH 中连接鸿蒙设备，构建调试应用并查询版本化开发知识。 | 已有鸿蒙环境的开发者可在测试设备评估；先验证构建产物与设备身份，再评价闭环是否省时。 |
 | [dsh-jev-guard](#plugin-1378138611-root) | 在 DSH 命令执行前结合静态规则与 Jev 判定，返回放行、改写、拒绝或人工升级。 | 作为已有沙箱和审批的补充先在隔离项目试；检查实际覆盖的工具、网络故障和降级提示，核对脚本变更后是否重新判断，不把allow当无风险。 |
 | [dsh-leak-guard](#plugin-1422091204-root) | 在 DSH 通过本地规则扫描指定文件或目录中的凭据，并返回脱敏发现。 | 适合发布前补查明显秘密；显式传项目路径，查看所有跳过项，再检查真实打包文件与Git历史，别把ok当无泄露保证。 |
 | [dsh-ledger-memory](#plugin-1412857520-root) | 为 DSH 项目维护台账、活动日志、上下文压缩与跨会话交接。 | 适合频繁压缩和接班的长期项目；先在可恢复项目副本上验证一轮压缩后的约束和原文回读，再决定是否让它维护正式台账。 |
 | [dsh-lighthouse](#plugin-1422364992-root) | 汇总本地作品、GitHub、npm 与 DSH 市场状态，提供工具、面板和报告卡片。 | 维护多个作品的人可先录入少量明确身份条目；核对npm包、市场项和PR来源，再用异常排序安排人工检查，不以下载/星数认定真实采用。 |
+| [dsh-local-memory](#plugin-1390103795-root) | 聚合Hindsight项目记忆库，发现缺失记忆项目并调用上游引擎播种。 | 只在已隔离配置的Hindsight上试；先检查同名项目库归属和跨库结果授权，别把“本地daemon”当完全离线。 |
 | [dsh-lsp-cpp](#plugin-1344713526-dsh-lsp-cpp) | 为DSH配置clangd的C/C++语言服务路由和文件扩展映射。 | 已有clangd项目可先试。 |
 | [dsh-lsp-csharp](#plugin-1344713526-dsh-lsp-csharp) | 为DSH配置OmniSharp或自定义C#语言服务的导航路由。 | 先按本机OmniSharp分发形式设置命令，再在真实csproj检查定义和引用；单文件示例不能代表解决方案。 |
 | [dsh-lsp-go](#plugin-1344713526-dsh-lsp-go) | 为DSH配置gopls的Go代码导航路由。 | 已有Go模块可试。 |
@@ -47,12 +52,16 @@
 | [dsh-lsp-rust](#plugin-1344713526-dsh-lsp-rust) | 为DSH配置rust-analyzer的Rust代码导航路由。 | 先核rustup组件与Cargo工程，再用真实trait和跨crate符号试；不要只看可执行路径。 |
 | [dsh-lsp-swift](#plugin-1344713526-dsh-lsp-swift) | 为DSH配置SourceKit-LSP的Swift代码导航路由。 | 先确认所选工具链并构建测试工程，再分别检查四操作；尤其看引用/实现是否被跳过。 |
 | [dsh-lsp-ts](#plugin-1344713526-dsh-lsp-ts) | 为DSH配置TypeScript/JavaScript语言服务及四类文件映射。 | 先在真实tsconfig项目核普通与React文件；需要新模块扩展时显式配置并测试失败回退，别只跑单文件样例。 |
+| [dsh-model-everything](#plugin-1423488109-root) | 提供建模技能和确定性模型审查工具，检查状态机、结构、数据及报告对照。 | 适合有明确不变式和建模能力的团队；先用已知缺陷校准模型忠实度，读verdict及跳过/截断，不把报告ok当源码正确。 |
 | [dsh-modernize-code](#plugin-1344714334-root) | 提供遗留代码预检、静态热区评估和分阶段迁移规划技能及Python工具。 | 适合先生成迁移评估材料。 |
+| [dsh-multi-folder](#plugin-1334119885-root) | 为DSH工作区配置次级目录，在原工具和会话权限模式下读写执行，并补充目录提示与文件菜单。 | 适合确需同时操作多个可信仓库者，先用临时目录核对read-only与workspace-write，并检查显示的全部授权根。 |
 | [dsh-mysql](#plugin-1337916824-root) | 管理多套MySQL连接，为会话提供选库入口及查询、表结构、数据写入和DDL工具。 | 先连接脱敏测试库和数据库端只读账号，核对选库与结果；确需写入时分别启用行写和DDL，并准备备份与人工复核。 |
 | [dsh-plugin-focus](#plugin-1336084195-root) | 将任务目标、约束与决策保存为工作区焦点板，并注入会话及展示面板。 | 适合单任务工作区先试。 |
 | [dsh-plugin-orchd](#plugin-1422240642-root) | 在DSH右侧栏只读展示当前项目的orchd任务、依赖图、想法和审查时间线。 | 适合已有orchd项目先在副本试用。 |
 | [dsh-pr-description](#plugin-1344714177-root) | 分析分支差异并生成PR标题和Markdown描述，可选确认及调用gh创建PR。 | 适合先生成本地草稿。 |
 | [dsh-project-memory](#plugin-1339316901-root) | 为项目保存任务、文档、代码符号与经验记录，支持跨会话检索和按条件注入。 | 先在一个可丢弃项目中测试旧结论纠错和跨项目隔离，再决定是否长期启用。 |
+| [dsh-python-env](#plugin-1335843541-root) | 为DSH提供工作区Python虚拟环境发现、创建、安装、卸包和删除工具，并处理镜像/代理回退。 | 适合可信项目依赖的环境管理，先核对允许根、包规格和索引。 |
+| [dsh-qa-suite-N23](#plugin-1353726715-root) | 组合后台TypeScript诊断工具与提示驱动的本地多镜头代码审查命令。 | 先核多项目下诊断归属；审查命令是提示流程，重要问题须代码复现，置信度不是准确率。 |
 | [dsh-reaper](#plugin-1423215373-root) | 盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。 | 先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。 |
 | [dsh-repeat-stop](#plugin-1339262076-root) | 拦截同一Agent连续出现的同工具同参数调用，提供可配置阈值与排除规则。 | 先在短任务记录触发次数，按轮询工具配置排除；被拦后检查输入和错误原因，不通过无意义改参数规避限制。 |
 | [dsh-session-diff](#plugin-1372976273-root) | 在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。 | 适合快速检查当前会话的常规write/edit；跨会话、shell改动和大文件仍用Git或专门差异工具复核。 |
@@ -63,7 +72,7 @@
 | [dsh-slipway](#plugin-1422359117-root) | 将本地 DSH 插件文件发布到 GitHub，建立市场收录 PR 并回拉校验字节。 | 插件作者先在工程副本演算并人工看完整文件清单；确认目标账号和发布范围，再在临时仓库验收部分失败恢复，正式发布后仍要测试安装。 |
 | [dsh-snapshot-manager](#plugin-1412896722-root) | 在DSH轮次边界保存增量文件快照，支持恢复文件并分叉到对应对话切点重新开始。 | 先在可丢弃项目测试快照和dryRun。 |
 | [dsh-spring-admin-kit](#plugin-1412897663-root) | 为Spring Boot、MyBatis Plus、Thymeleaf和LayUI后台开发注册Excel导入导出及模板规则Skill。 | 适合相同技术栈先在小功能试用。 |
-| [dsh-subagent](#plugin-1425006726-root) | 把 Qoder、OpenCode、Pi 等外部 CLI 接到 DSH 子代理并显示运行状态。 | 已有对应CLI且可隔离工作目录者可评估；不可重复写入任务应先解决回退幂等、全程超时和进程树取消，不能因preset叫“自由”而放宽验收。 |
+| [dsh-subagent](#plugin-1425006726-root) | 把 Qoder、OpenCode、Pi、CodeBuddy 等 CLI 接到 DSH 子代理。 | 已有对应CLI且可隔离工作目录者可评估；不可重复写入任务应先解决回退幂等、全程超时和进程树取消，不能因preset叫“自由”而放宽验收。 |
 | [dsh-subagent-role-router](#plugin-1421306160-root) | 按角色为子代理分配模型候补池，提供故障切换、路由可见性及fork窗口裁剪。 | 多模型子代理场景可先在隔离任务试。 |
 | [dsh-tech-lead（旧组件）](#plugin-1345209661-packages-dsh-tech-lead) | 为 DSH 提供只读工程治理工具，检查任务分级、计划、证据、门禁、上下文及变更预览。 | 新采用者先核对根项目推荐的dsh-themis迁移路线，不优先安装这个旧组件；已有使用者可把它作为输入一致性检查，并保留真实测试和人工评审，先验证旧协议返回与现有调用方兼容。 |
 | [dsh-tool-budget](#plugin-1350325873-root) | 按运行中的Agent限制工具调用总次数，支持包含与排除规则并在超额时拦截。 | 先按一类任务观察正常调用分布，再设阈值；长后台任务查询可排除，但排除列表应保持有限。 |
@@ -73,6 +82,7 @@
 | [dsh-verify](#plugin-1335843750-root) | 通过 JSON 清单执行浏览器断言，提供 CLI、MCP 与 HTML 检查报告。 | 适合已有明确浏览器验收条件的网页团队先试用；分别审查规范、首次基线和运行错误，保留结构化结果，不用 PASS 代表完整需求或独立审计。 |
 | [dsh-which](#plugin-1423215529-root) | 解释命令的 PATH 解析结果、被遮蔽副本及环境异常，可选探测版本。 | 先只查询并对照当前 shell 的解析结果，必要时对可信二进制启用版本探测。 |
 | [dsh-workflow-templates](#plugin-1344715132-root) | 为 DSH 提供 Workflow 模板检索、静态校验和官方工具调用起点。 | 只有明确要workflow时再选模板；先看完整脚本和参数，检查官方工具可见与阶段输出，再在隔离任务试。 |
+| [dsh-worktable（01_content）](#plugin-1336092482-01-content) | 在侧栏提供项目抽屉、分栏窗格、会话绑定与项目产物挂载。 | 先用隔离项目验证绑定、结果归属、关闭撤销和终端；本地文件和完整Shell权限须与使用环境匹配。 |
 | [dsh-wrapup-guard](#plugin-841979943-root) | 提供任务收尾工具，运行项目检查并记录连续三轮无问题的检查状态。 | 可把它当收尾提醒与日志工具。 |
 | [dsh-wsl-compose](#plugin-1381842592-root) | 封装Docker Compose状态、容器列表和日志，并可在配置允许及参数确认后执行up或down。 | 先仅开放ps/logs并配置明确根目录，在测试项目验证路径；需要up/down时先人工审阅Compose文件并保留运行状态。 |
 | [dsh-wsl-cred](#plugin-1350379113-root) | 读取Git凭据助手与远端类型，给出WSL使用Windows Git Credential Manager的排障提示。 | 先确认工具工作目录和远端协议，只读查看配置后再人工修改；不要为了验证把token贴进会话。 |
@@ -90,10 +100,12 @@
 | [dsh-wsl-workspace](#plugin-1334205011-root) | 在DSH界面添加WSL工作区，让会话的命令和文件工具使用Linux路径与发行版环境。 | 适合已有WSL项目的Windows开发者先在临时目录试用。 |
 | [dsh-wsl-workspace](#plugin-1351853812-root) | 列出 WSL 发行版并检查 Linux 工作区路径与 /mnt 放置情况。 | 适合首次选工作区时快速排查；符号链接或特殊挂载需手动核对真实路径和文件系统，迁移仓库前另行备份与确认。 |
 | [dsh-zero-residence](#plugin-1366089972-workspace-plugins-dsh-zero-residence) | 把长会话内容压缩为可回查指针，提供账本、召回、强制压缩和异步命令入口。 | 先在可恢复会话副本试压缩，验证关键证据能原样回查；异步命令只用于允许的测试任务，并确认宿主权限与取消边界。 |
+| [embedded-workbench](#plugin-1276714299-root) | 提供嵌入式C/C++开发技能库，并在DSH首个模型步骤注入计划核查与上下文预算提示。 | 适合有固件经验者把技能当核对清单使用。 |
 | [ETeams](#plugin-1372993989-root) | 为 DeepSeek Harness 提供领队拆解、成员子会话接力和任务看板。 | 适合可拆分且验收条件清晰的任务；先用无外部副作用的任务验证重启、唤醒失败和重复汇报处理，再评估长期使用。 |
 | [harness-github](#plugin-1343702731-root) | 为 DSH 提供 GitHub PR、Issue、CI、发布读取与经审批的写操作工具。 | 已有GitHub流程的人先读公开仓库，再在临时repo试写；逐次核对审批对象和远端结果，提交/推送/合并应分别按团队规则处理。 |
 | [helmd](#plugin-1334304098-packages-helmd) | 提供安全分析预设、领域工具和按需参考，并将Case证据与结论保存在磁盘。 | 适合授权样本分析时借鉴Case工作流。 |
 | [IDE Hub](#plugin-1397817235-root) | 汇总多种编码工具的本地会话、用量与规则，并提供项目规则统一分发入口。 | 先只盘点两个实际使用的 IDE，再对一个测试项目 dry-run 规则分发并检查差异。 |
+| [logicprobe](#plugin-1331586818-root) | 以工具和技能检查设计声称、状态机、数据模型与依赖图，生成可比较的结构化核验报告。 | 适合有明确状态/迁移模型的设计审查，先用已知缺陷验证反例与覆盖；读verdict并检查truncated，不能将pass写成源码已证正确。 |
 | [oh-my-dsh](#plugin-1379204512-root) | 为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。 | 先验装探测与取消，再对单仓库小任务比较原生单 agent 和一条显式 team 流程。 |
 | [Plan Lattice](#plugin-1334504487-root) | 从原生会话事实恢复长任务连续性，并提供显式启用的递归工作图控制。 | 先对照原生行为测试压缩和重启恢复，再单独评估显式完整控制，避免将两模式效果混为一谈。 |
 | [SSH 只读日志工具](#plugin-1346017360-root) | 通过预配置 SSH 别名读取或搜索有界远端日志，作为 MCP 工具接入 DSH。 | 适合已建立只读SSH权限的团队先用测试服务器验证；根目录不能单靠字符串约束当隔离，生产环境以服务端账号权限兜底。 |
@@ -189,6 +201,17 @@
 - **思考**：buildCommitArgs明确--no-verify，merge也跳过验证，可能绕过团队期待的提交钩子；这与终端默认提交不等价。runGit没有通用超时且stderr累计不设同等上限，远端卡住与异常输出需验；argv隔离不等于Git hooks/凭据副作用被隔离。
 - **建议**：未验证假设：把操作将跳过哪些钩子、待影响ref与破坏性变更摘要列入确认，并支持默认遵守钩子，可减少流程偏差。以失败hook、远端卡住、hard reset样例测误接受和恢复耗时。
 
+<a id="plugin-1414577411-root"></a>
+
+## [DSH Harness Switch](../../plugins/alycestocking--dsh-harness-switch/INSIGHT.md)
+
+[![npm 30d 39](https://img.shields.io/static/v1?label=npm+30d&message=39&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-harness-switch) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-harness-switch)
+
+- **用途**：希望相同模型下比较/使用不同harness工具、Skills和压缩的开发者；合格交付是一次真实执行、正确审批和可恢复会话关联。
+- **亮点**：避免把外部harness降格成模型文本：嵌入Kimi核心拥有提示/工具/权限/压缩，DSH保留会话UI与审批，外层不再执行同一真实工具第二次。贡献是执行所有权桥接；vendor Kimi内核明确上游固定提交，不将其能力或代码量算插件原创。
+- **思考**：切换后权限和历史是否仍具一致含义？Kimi判免审批动作不再经过DSH逐工具allowlist，审批桥仅覆盖Kimi提出的请求；同原生权限名称不意味着同策略。pending链接在调用前落盘能标未知，但副作用已发生而completed写失败仍需恢复协议，不能只因有messageId就认定exactly-once；跨模型历史导入是参考而非状态等价。
+- **建议**：给每harness显示可比较的权限能力清单，并为未知pending提供只读恢复/回执核查而非重新prompt，可能减少策略误判和重复工具副作用。固定同任务比较原生/embedded审批触发，再在工具完成后断写completed恢复，要求不自动重放；若不能核定原结果，应保持unknown并交人。
+
 <a id="plugin-1333370288-root"></a>
 
 ## [DSH Verification Receipt](../../plugins/030611--dsh-verification-receipt/INSIGHT.md)
@@ -244,6 +267,17 @@
 - **思考**：测量阈值只是压力信号，不保证压缩能保留任务语义；不可拆的大消息或配对范围使选区返回undefined，仍可能溢出。会话命令覆盖在内存里，重启不应被理解为持久配置；默认配置与临时覆盖须区分。
 - **建议**：待验证假设：在保留token预算之外加入用户目标/未完成工具依赖的保护标签，可改善压缩后任务恢复。对含长工具结果的同一会话比较答案一致性、压缩次数与保留体积；不假设保留更多一定更好。
 
+<a id="plugin-1352600211-root"></a>
+
+## [dsh-better-sidebar-N23](../../plugins/all3ncn--dsh-better-sidebar-n23/INSIGHT.md)
+
+[![npm 30d 1,164](https://img.shields.io/static/v1?label=npm+30d&message=1%2C164&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23)
+
+- **用途**：开发者在DSH旁操作项目文件和持续终端，扩展作者挂自定义Tab/viewer。
+- **亮点**：fork在成熟工作台上将拖动中对中心布局的重排推迟至释放，并补新模块服务兼容，属于局部性能/兼容增量；不把继承工具数量当作新机制。
+- **思考**：UPSTREAM明确src领先健壮性、lib领先外壳，runtime以lib为准。实际lib fs.write只校验绝对路径并写临时rename，没有工作区containment；sessionCwd还接受clientCwd后备，因此“按会话布局/终端归属”不能推导文件能力隔离。信任fence也声明非身份认证。
+- **建议**：未验证假设：重建可追溯src/lib单一产物，并把所有文件副作用绑定规范会话根和显式外部读写能力，可减少版本错认与越范围操作。对源/产物注册、跨工作区/软链和两会话PTY做矩阵；无法一致重建时限制发布承诺。
+
 <a id="plugin-1386463441-root"></a>
 
 ## [dsh-cache-bricks](../../plugins/3289192-bot--dsh-cache-bricks/INSIGHT.md)
@@ -265,6 +299,17 @@
 - **亮点**：相对通用Obsidian链接图，具体增量是把方案/测试/能力和切片sidecar分层，生成依赖可开工与验证门视图；D3图布局、文件watch与Cordis接线来自上游。业务增量是将文档规范变成日常检查入口，不是自动验收系统。
 - **思考**：最关键的质疑是看板的“验证门”是否真实绑定方案证据。queries.ts 把同主题测试也视作关联，可能用另一方案的已验证测试消除警报；状态来自人工标签，不读取运行验收。图谱可导航不能证明实施完毕。
 - **建议**：适合已有CapMap规范的团队先在工作区副本浏览；核对看板关联与原文，初始化会写文档并安装Skill，先审阅预期文件，不能用状态标签代替验收证据。
+
+<a id="plugin-1340906871-dsh"></a>
+
+## [dsh-codex-guard](../../plugins/akimiya-z--codex-guard--dsh/INSIGHT.md)
+
+[![GitHub ★ 136](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=136&color=yellow&logo=github&style=flat)](https://github.com/Akimiya-z/codex-guard)
+
+- **用途**：开发者让Agent检查当前仓库的TODO、秘密及提交主题，报告仍需人工判断。
+- **亮点**：本组件的增量是可被模型发现的CLI适配和跨平台argv安全调用。未在此组件实现检测算法，不能将整仓规则、Action流程或CLI迭代计为本组件技术贡献。
+- **思考**：工作目录固定process.cwd而不是工具会话工作区，可能检查另一个仓库；npx未锁版本，固定dsh提交并不能固定检测语义。退出码1被普通字符串返回，是否允许提交仍由外部流程决定。
+- **建议**：未验证假设：显式绑定会话仓库和CLI摘要、以结构化findings/exitStatus返回并由独立策略决定提交放行，可减少检查错目标与报告被忽略。用两个cwd仓库、阻断/干净/CLI崩溃样例核目标和状态；若不能稳定区分，不接硬闸门。
 
 <a id="plugin-1344714002-root"></a>
 
@@ -292,12 +337,12 @@
 
 ## [dsh-domain-bridge](../../plugins/1lany2a--dsh-domain-role--plugins-dsh-domain-bridge/INSIGHT.md)
 
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1Lany2a/dsh-domain-role) [![npm 30d 372](https://img.shields.io/static/v1?label=npm+30d&message=372&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-domain-bridge) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-domain-bridge)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/1Lany2a/dsh-domain-role) [![npm 30d 372](https://img.shields.io/static/v1?label=npm+30d&message=372&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-domain-bridge) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-domain-bridge)
 
-- **用途**：多个顶层会话按项目领域分工，需要明确负责人和暂停期间可追踪消息；交付是有回执的任务交接。
-- **亮点**：相对宿主子树内通讯及人工搬运，实际补上顶层会话寻址和职责声明；把在线事实、暂停政策、终结生命周期分开，避免将暂停误作离线。不是全局调度器，约束只覆盖插件介导路径。
-- **思考**：“落盘队列”是否等于可靠交接最关键。messaging.js 的 delivered 表示投递成功，不是收件方完成；rewriteInbox 用固定 .tmp 重写，不能从原子 rename 推出多写者事务保证。暂停也拦不住 GUI 或宿主直接 resume，因此不能承诺系统级停机。
-- **建议**：适合确有顶层会话分工的项目；先用无副作用消息验证暂停与恢复，正式任务自行加完成确认和幂等标识。
+- **用途**：多个顶层会话按项目/领域分工，由域声明定位负责人，在暂停期间保留待交接消息；合格交付应含任务接受与完成确认。
+- **亮点**：相较宿主父子树内通信与人工转发，补充顶层职责声明、受政策约束的交接及可查询回执；把在线事实、暂停政策、生命周期分开，避免暂停等同离线。真正增量是协作寻址与责任入口，非通用可靠队列或系统级暂停。
+- **思考**：落盘能否保证交接不丢不重？若多个进程共享stateDir，append的追加与updateInboxStatus的整文件.tmp重写之间未见跨进程锁或版本条件，可能覆盖其他写者的新消息；投递后再落delivered也有崩溃窗口。暂停文件坏读降级paused=false虽报告error，仍可能放行。delivered只指消息送入，不是收件方接受任务或完成，GUI/宿主直接恢复又不受此政策控制。
+- **建议**：将消息业务ID与收件方接受/完成回执绑定，以单写者队列或版本条件提交状态，可能降低恢复重投的重复执行。用投递后进程中断、状态更新同时追加、并发撤回及坏政策文件反例，核对每业务ID最多执行一次且未知状态不自动重发；若只有投递日志而无收件幂等，则不能称办结保证。
 
 <a id="plugin-1335988605-root"></a>
 
@@ -320,6 +365,17 @@
 - **亮点**：周期扫描与快照差分作为主路径，fs.watch 只提示加速；批量去抖、冷却和短时自身写入账本抑制回声。
 - **思考**：准确变化摘要比轮询提示更利于交接；通知到达并不保证后续任务成功。
 - **建议**：先以 queue 模式监听小目录，统计漏报、重复和自身写入抑制，再开放自动唤醒。
+
+<a id="plugin-1339462797-root"></a>
+
+## [dsh-github-router](../../plugins/angeloszou--dsh-github-router/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-github-router) [![npm 30d 1,620](https://img.shields.io/static/v1?label=npm+30d&message=1%2C620&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-github-router) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-github-router)
+
+- **用途**：受TLS/代理限制的开发者读取PR/Issue/文件，需要少重复连接且知道内容来自哪个版本/通道。
+- **亮点**：相对Agent反复修Shell网络，增量是把失败转移到有界、结构化的单工具路由及来源矩阵；GitHub内容、gh/git能力来自上游，宿主外执行不是突破网络本身。
+- **思考**：多路成功能否保证同一PR快照完整？API元数据、git ref、HTML和缓存可能采于不同时间，截断/权限差异也会留下缺块。只读GitHub仍会写本地缓存/使用token并将请求路径暴露可选镜像，不能泛称无副作用。
+- **建议**：由分段route与head SHA推导，可把聚合结果绑定共同head/base commit和读取时间窗，不一致时标混合快照而不拼成单一事实。未验证；PR读取中更新head、route缺权限及缓存旧值时应检测差异，比较总回合与完整率。
 
 <a id="plugin-1333258432-root"></a>
 
@@ -375,6 +431,17 @@
 - **亮点**：相对作者逐个打开仓库/市场/PR，贡献是用显式作品名册组织采集并按待处理状态呈现，多入口共享结果减少口径漂移。平台指标是既有API，增量在跨源作品身份关联、报告与DSH界面，不是新采用度量。
 - **思考**：“有人用/留言”能否从面板指标直接判断？collectGitHub把open_issues_count作为留言，包含PR；下载也不是用户数。市场按work.name匹配、npm亦由名册name查询，同名未核实身份可误关联；API数字客观不等于解释正确，采集失败和缓存年龄还需保留。
 - **建议**：待验证假设：每个指标保存明确对象ID、时间窗口、来源与含义，并把身份不匹配转unknown，可减少跨源同名误关联与热度冒充采用。依据是name关联和混合指标口径，未实现完整证据卡。以同名npm、仓库PR充当issues、缓存过期三类对照，测误判与排障时间；缺独立采用证据时明确未知。
+
+<a id="plugin-1390103795-root"></a>
+
+## [dsh-local-memory](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md)
+
+[![npm 30d 155](https://img.shields.io/static/v1?label=npm+30d&message=155&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-local-memory) [![最新发布 2026-09-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-local-memory)
+
+- **用途**：多项目开发者保留按项目的记忆库，同时主动跨库搜索和补建Git历史。
+- **亮点**：在上游平级banks之上增加“有哪些项目应有记忆”的负空间视图，并以聚合读取保留原库结构。主动跨库查看拓宽可见性，但不提供新的授权隔离或记忆推理算法。
+- **思考**：库ID用basename，两个不同根的同名repo映到同库，按项目隔离并非路径级保证；只读fan-out也会把多个项目内容交给同一调用者。播种复用入口不证明上游版本/配置生成相同结果。
+- **建议**：未验证假设：以规范项目身份映射库、显式记录碰撞与跨库授权范围，可保留聚合视角而减少混库。用两同名repo、别名/移动、部分daemon失败核归属与越范围内容；发现碰撞不应静默播种。
 
 <a id="plugin-1344713526-dsh-lsp-cpp"></a>
 
@@ -508,6 +575,17 @@
 - **思考**：README单文件无需tsconfig的smoke不能代表monorepo、paths别名或JS配置解析。默认表未含.mts/.cts/.mjs/.cjs，用户可扩展但失败fallback只保留默认四类，覆盖后的故障路由会变。TS版本选择也需与工程匹配。
 - **建议**：未验证假设：按项目配置和模块扩展预检路由，再保留覆盖后的fallback，可减少ESM/CJS与React文件漏路由。用四默认扩展和.mts/.mjs、别名monorepo比较路由及定义查询。
 
+<a id="plugin-1423488109-root"></a>
+
+## [dsh-model-everything](../../plugins/amethystluna--dsh-model-everything/INSIGHT.md)
+
+[![npm 30d 415](https://img.shields.io/static/v1?label=npm+30d&message=415&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model-everything) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model-everything)
+
+- **用途**：开发者把设计/代码中的行为断言抽象成模型，寻找反例并回到源码核验。
+- **亮点**：把自然语言主张拆成可执行模型和可复算报告，并在工具输出保留未决/未查信息，优于纯通盘模型推理的不可重算结论。算法属成熟模型检查范式，增量在DSH多域集成与报告契约，不能声称新形式化证明方法。
+- **思考**：核心瓶颈是模型与实现一致性：自洽且检查通过的模型可能漏代码路径。model_verify的ok表示成功运行而不是通过，须读verdict；modelPath解析process.cwd且execute不接会话cwd，不能把描述的“即会话工作区”当普遍保证。当前gate schema默认true且bundle patch enabled:true，实际是否注入仍取决于部署覆盖与开关；消息注入不强制模型调用核查工具。
+- **建议**：未验证假设：给每个模型状态/转移绑定源码指纹与可重放测试轨迹，在报告中审计抽取覆盖，可减少对错误模型的强结论。用已知实现缺陷、故意遗漏分支、两cwd同名模型及状态上限对比错误接受率/建模工时；只提高内部一致而不改善源码缺陷发现则否定收益。
+
 <a id="plugin-1344714334-root"></a>
 
 ## [dsh-modernize-code](../../plugins/988hj7tczd-oss--dsh-modernize-code/INSIGHT.md)
@@ -518,6 +596,17 @@
 - **亮点**：贡献是将预检、热区、路线图和逐块回滚纪律串联，脚本把部分检查变成可重复材料；相对直接让模型大改代码，明确保留未答问题和验证点。不是自动AST迁移器，模式匹配不代表死代码证明或业务优先级。
 - **思考**：工具称只读是指不改项目代码，实际上默认写PREFLIGHT.md与legacy-hotspots.md。preflight的测试能力主要查测试文件/runner存在，不等于构建或测试真的通过。runScript创建超时controller却不接工具exec.signal，用户取消传播需核；环境就绪和静态命中不能替代迁移回归。
 - **建议**：未验证假设：把每个迁移热区绑定可观察行为与回归证据，再按人工确认的业务影响排序，可降低正则热点驱动无价值重构。用有测试/无测试及高命中低业务影响项目比较返工率、回滚次数和工时；不以命中减少等同业务改善。
+
+<a id="plugin-1334119885-root"></a>
+
+## [dsh-multi-folder](../../plugins/angeloszou--dsh-multi-folder/INSIGHT.md)
+
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder) [![npm 30d 2,077](https://img.shields.io/static/v1?label=npm+30d&message=2%2C077&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-multi-folder) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-multi-folder)
+
+- **用途**：跨源码/测试/文档仓库任务需要同会话操作多个明确授权目录，主cwd与各目录身份仍须可追踪。
+- **亮点**：相对仅把目录路径写提示，增量是扩展原工具实际可写/执行根并保留模式与后台job接线；不产生多仓库事务，git分支/主cwd仍由宿主与工具负责。
+- **思考**：等同主工作区权限是否覆盖每条路径？仅截获特定工具，显式escalation交回默认pipeline，新宿主工具/API需适配；配置文件名将非字母数字折叠并小写，不同workspace可能碰名，共享/错配目录需验证。目录配置权限不是每次操作确认。
+- **建议**：由re-root policy与路径配置推导，可用canonical路径hash作存储键、显示授权根变更收据并将所有工具统一交宿主多根policy。未验证；碰撞路径、符号链接、后台任务和配置删除时应保持授权归属且无旧根继续写。
 
 <a id="plugin-1337916824-root"></a>
 
@@ -573,6 +662,28 @@
 - **亮点**：session 事件同步任务，工具负责索引和检索；when 触发与 guard 收窄限制经验注入。
 - **思考**：任务与文件关联有助于定位；错误经验也会持久化，引用存在不代表当前结论正确。
 - **建议**：先在一个可丢弃项目中测试旧结论纠错和跨项目隔离，再决定是否长期启用。
+
+<a id="plugin-1335843541-root"></a>
+
+## [dsh-python-env](../../plugins/angeloszou--dsh-python-env/INSIGHT.md)
+
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-python-env) [![npm 30d 1,346](https://img.shields.io/static/v1?label=npm+30d&message=1%2C346&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-python-env) [![最新发布 2026-09-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-python-env)
+
+- **用途**：项目Python依赖因Shell网络/临时目录限制安装失败，需要可追踪环境和明确写权限。
+- **亮点**：相对手写Shell pip，增量是环境发现、权限模式核对、依赖故障分类与安装过程收据；venv/pip和软件供给来自上游，不是新的隔离机制。
+- **思考**：“工作区内”是否真的限制所有写入？路径guard是词法resolve/relative，未核realpath；packages普通字符串直接入pip argv，除editable外未拒绝--target等选项，包构建代码亦可在host权限执行。检查mode防只读，不等于OS沙箱或保证全局环境绝不受影响。
+- **建议**：由host执行补偿控制推导，可将包规格收窄为解析过的依赖表达式，禁止路径/全局改写选项，realpath核对并在受限执行环境装包。未验证；symlink、恶意requirements选项和构建脚本越界样本应被阻止，正常包安装成功率/维护成本另测。
+
+<a id="plugin-1353726715-root"></a>
+
+## [dsh-qa-suite-N23](../../plugins/all3ncn--dsh-qa-suite-n23/INSIGHT.md)
+
+[![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@all3cn/dsh-qa-suite-n23) [![最新发布 2026-09-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-02&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@all3cn/dsh-qa-suite-n23)
+
+- **用途**：开发者编辑TS后取诊断，或主动组织本地代码审查并人工确认问题。
+- **亮点**：组合确定性诊断与模型审查两个入口，提供局部开发便利；未见二者以诊断证据约束审查放行的共同机制，不能把合包视新质量闸门。
+- **思考**：code_check优先runtime.roots()[0]最近全局项目而非当前会话，已有缓存时不再用调用方cwd，可能把A项目诊断回给B。多镜头和80阈值只在提示中，由模型执行与自评分，不是可校准质量保障。
+- **建议**：未验证假设：按会话/项目绑定诊断，并把诊断版本与审查范围作为输入证据，可减少错项目与泛化审查。交错两项目编辑/调用，注入真实缺陷对比问题接受率、漏报与总token；未改善则保留独立工具。
 
 <a id="plugin-1423215373-root"></a>
 
@@ -736,7 +847,7 @@
 
 - **用途**：面向多阶段特性、修复与重构任务，交付方案产物、实现记录和步骤验收状态；简单修改可继续用Git/CI与短计划。
 - **亮点**：借鉴Trellis阶段思想，把任务状态、阶段产物与会话绑定集中到DSH；相较散落TODO，完结前统一检查步骤与Git，并给规划期保留受限文档写口。真正增量是可读写的工作流状态和宿主集成；Git及沙箱能力归上游，状态完成不等于业务验收。
-- **思考**：人工门禁是否可信？applyStepUpdate仍接受调用方verifiedBy=human，没有独立批准事件证据；规划保护是工具名denylist，bash/pwsh和其他插件工具保留，不能构成全面只读。modified_files由调用方声明可放行清单外修改；产物白名单控制写入路径却不证明内容已审。因此三个门槛约束记录格式，未证明真实批准/变更全集/结果正确。
+- **思考**：人工门禁是否可信？applyStepUpdate仍接受调用方verifiedBy=human，没有独立批准事件证据；规划保护是工具名denylist，bash/pwsh和其他插件工具保留，不能构成全面只读。modified_files由调用方声明可放行清单外修改；产物白名单控制写入路径却不证明内容已审，git status超时或异常还会以warning放行。因此三个门槛约束记录格式，未证明真实批准/变更全集/结果正确。
 - **建议**：以宿主批准事件ID绑定方案摘要、步骤与提交版本，再核对实际Git变更全集，可能把自报验收转成可追溯验收。以伪造human、批准后改方案、遗漏修改文件的反例验证全部被拒且合法流程通过；若仍可直接改JSON绕过，则需要明确其仅为协作约束而非安全边界。
 
 <a id="plugin-1338526178-packages-bundle-rollback"></a>
@@ -793,6 +904,17 @@
 - **亮点**：相对每次从零写编排脚本，增量是可检索的自写模板、参数提示与格式检查，并坚持由官方工具执行；引擎/子代理能力归DSH，参考结构不算插件原创引擎。
 - **思考**：模板校验通过是否保证官方合法和安全？轻量语法/return检查不执行真实schema或运行时序列化，未知顶层调用仅警告；run名称不代表执行。模板也会依赖工具和任务输入，不能把12个样例概括为通用流程保证。
 - **建议**：待验证假设：模板绑定宿主契约版本并用官方parser做兼容检查，再附每阶段输出断言，可减少静态通过但运行失败。由自写轻量校验与不加载官方schema推导，未实现。对计算return、未序列化对象、工具改名和失败阶段对照误接受/误拒绝及维护成本；新版本未知则标未验证。
+
+<a id="plugin-1336092482-01-content"></a>
+
+## [dsh-worktable（01_content）](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md)
+
+[![GitHub ★ 772](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=772&color=yellow&logo=github&style=flat)](https://github.com/Aisland-SJL/dsh-worktable)
+
+- **用途**：开发者把多个项目、会话和本地预览组织在同一工作台，需人工验收各项目产物。
+- **亮点**：将会话产物交接绑定到具体项目窗格，避免按共享目录盲读结果的常见歧义；这是身份与交接机制的增量，终端/浏览器/原生会话能力分别来自宿主与上游。
+- **思考**：manifest隔离不等于文件沙箱：主机file/write直接pathResolve用户路径，写端无本组件工作区containment；终端继承process.env且执行完整shell，路由未见本包独立信任检查。多个项目主动指同一产物仍能互改，挂载身份正确不能证明内容独立。
+- **建议**：未验证假设：把产物能力绑定规范根/目标摘要和生成版本，在挂载前核引用，可同时减少错挂与旧内容覆盖。用同目录两项目、改绑/关闭、同名结果和迟到完成核身份/内容一致性；未拒迟到产物则不做自动验收。
 
 <a id="plugin-841979943-root"></a>
 
@@ -981,6 +1103,17 @@
 - **思考**：可追溯指针比不可逆摘要更利于复核；如果模型频繁回读或遗失指针，省下的输入可能被额外轮次抵消。
 - **建议**：先在可恢复会话副本试压缩，验证关键证据能原样回查；异步命令只用于允许的测试任务，并确认宿主权限与取消边界。
 
+<a id="plugin-1276714299-root"></a>
+
+## [embedded-workbench](../../plugins/amethystluna--embedded-workbench/INSIGHT.md)
+
+[![GitHub ★ 21](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21&color=yellow&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench) [![npm 30d 2,906](https://img.shields.io/static/v1?label=npm+30d&message=2%2C906&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench)
+
+- **用途**：固件开发者处理RTOS、中断、HardFault或Keil构建问题，需要工程知识和可查证计划；合格交付仍是目标固件构建/测试结果。
+- **亮点**：相对散落提示文档，增量是领域经验按触发场景组织并纳入宿主技能目录，首步核查提示用持久历史避免重复。宿主技能发现与会话能力、编译工具来自上游，未证领域经验独创或普遍有效。
+- **思考**：“Gate”是否真正阻止未验证计划？源码只追加用户消息，未挂exit_plan_mode执行guard；技能可能要求核查，但依赖模型遵循。路径/API事实核查亦不能证明中断时序或固件行为，不能把文档纪律当编译/硬件验证。
+- **建议**：由首步注入与事实/行为分流推导，可将每项计划声称绑定证据类型和有效期，计划审批前显示未核查清单，由用户决定而非隐式“已验”。未验证；故意加入不存在API和时序错误计划，对照仅提示测漏报与人工负担。
+
 <a id="plugin-1372993989-root"></a>
 
 ## [ETeams](../../plugins/2507483326--dsh-eteams/INSIGHT.md)
@@ -1024,6 +1157,17 @@
 - **亮点**：注册盘点、迁移、导出和 hub-init 命令，从本地状态读取信息，规则本体与各 IDE 指针分开维护。
 - **思考**：统一索引和单份规则可减少查找及漂移；跨 IDE 的规则优先级仍需分别验收。
 - **建议**：先只盘点两个实际使用的 IDE，再对一个测试项目 dry-run 规则分发并检查差异。
+
+<a id="plugin-1331586818-root"></a>
+
+## [logicprobe](../../plugins/amethystluna--logicprobe/INSIGHT.md)
+
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AmethystLuna/logicprobe) [![npm 30d 2,967](https://img.shields.io/static/v1?label=npm+30d&message=2%2C967&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-logicprobe) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-logicprobe)
+
+- **用途**：开发者希望在实现前找出状态/协议/迁移设计错误，合格交付是有来源且覆盖充分的模型和可定位反例。
+- **亮点**：把事实核查、可执行抽象模型、结构图和回归差异组织成统一审查流程；相对仅LLM口头评审有确定性检查与机器定位。外部UPPAAL/TLA+/PRISM/SPIN仍是独立验证器，导出不等于已运行。
+- **思考**：模型通过能否证明代码设计正确？提取模型可能遗漏真实并发、I/O或调度，有限搜索截断及不完整narrative要单列；concurrency scan只路由不证明。最强支持是确定性引擎，关键缺口是源码到模型保真度而非工具数量。
+- **建议**：由hash/coverage/差异报告推导，可将源码断言和模型边映射到可复核证据，遇源码变化自动标过期，抽样与执行轨迹对账。未验证；植入源码独有分支后模型仍pass但映射应报警，否则无法弥合抽象缺口。
 
 <a id="plugin-1379204512-root"></a>
 

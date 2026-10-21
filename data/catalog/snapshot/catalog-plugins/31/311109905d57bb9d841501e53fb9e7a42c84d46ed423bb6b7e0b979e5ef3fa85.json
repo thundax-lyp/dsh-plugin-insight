@@ -1,0 +1,299 @@
+{
+  "id": "github:1341694685:root",
+  "repository_id": 1341694685,
+  "component_id": "root",
+  "repository": "AliceLJY/dsh-thumb",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-thumb",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "781d0c581dc5de0fda468e08f4df167729b05f8253ca14bfc8af12fa6742a90e",
+    "code": "cde135922e5fdd8729b163c634dd811294555d36",
+    "maintenance": "3768b9507875bdc0f788f1448b6e20ec3d29b0f82167413b25d730d43b181844"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1341694685-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:01:27.475Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1341694685-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/README.md",
+      "revision": "cde135922e5fdd8729b163c634dd811294555d36",
+      "captured_at": "2026-10-21T08:01:27.475Z",
+      "summary": "为窄屏DSH提供覆盖式会话抽屉、单列设置与紧凑阅读样式。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1341694685-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AliceLJY/dsh-thumb/blob/cde135922e5fdd8729b163c634dd811294555d36/src/index.js",
+      "revision": "cde135922e5fdd8729b163c634dd811294555d36",
+      "captured_at": "2026-10-21T08:01:27.475Z",
+      "summary": "核查 src/index.js、src/client.js；客户端按语义CSS后缀唯一定位列并打data-thumb属性，窄屏CSS作用于自有属性；MutationObserver/resize维护标记，overlay遮罩调用官方layout.toggleSidebar，点击会话后收起。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "手机或窄平板切换会话后阅读聊天，避免侧栏持续挤压正文。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "客户端按语义CSS后缀唯一定位列并打data-thumb属性，窄屏CSS作用于自有属性；MutationObserver/resize维护标记，overlay遮罩调用官方layout.toggleSidebar，点击会话后收起。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "无模型/API费用；DOM监听和CSS兼容需随宿主维护，作者不承诺维护；缩小字体和按钮有可读性/触达取舍。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "手机用户可先核会话切换、设置和相邻trace视图；需要更大点击目标时调整密度。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "作者报告393px视口原生正文113px，属于固定环境材料；本轮未复测宽度、触达或阅读效率。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "语义后缀集中定位和自有data属性将易变选择器收束，官方toggle优于模拟点击；语义改名仍会失效，不是稳定宿主契约。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "针对窄屏侧栏挤占的明确失败路径，将覆盖抽屉、关闭动作与阅读密度组合，改善的是同一界面任务的可用空间。常见响应式设计，不构成新布局算法或业务分工。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "定位依赖宿主内部语义类名，唯一匹配校验避免误写但不能保证升级兼容；紧凑按钮24px牺牲触达尺寸，更多正文空间不自动等于更好移动可用性。作者单设备测量不能外推所有手机。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：以官方布局槽位承载抽屉，并按触控目标与正文空间双预算调密度，可减少兼容修补和误触。用多个窄屏、trace/设置、触屏任务比较误触、阅读与切会话耗时；空间增益若伴误触上升则停止缩小按钮。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1341694685:root",
+          "area": "code",
+          "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:01:27.475Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:01:27.475Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "cde135922e5fdd8729b163c634dd811294555d36",
+    "reviewed_at": "2026-10-21T08:01:27.475Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1341694685:root",
+        "area": "code",
+        "fingerprint": "cde135922e5fdd8729b163c634dd811294555d36"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：常规响应式布局的特定故障适配。 mechanism=8：定位与官方关闭有限机制。 transferability=5：内部DOM耦合限制迁移。 simplification=4：合并抽屉和阅读空间有局部简化。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 0,
+        "reach": 10,
+        "economics": 0
+      },
+      "rationale": "workflow=9：入口可用性改善非新组织。 delivery=0：输出仍为原会话内容。 reach=10：明确窄屏人群，收益未复测。 economics=0：未改变费用与责任。",
+      "basis": "interpretation",
+      "score": 19,
+      "evidence_ids": [
+        "2026-10-21-07-github-1341694685-root-source"
+      ]
+    }
+  }
+}

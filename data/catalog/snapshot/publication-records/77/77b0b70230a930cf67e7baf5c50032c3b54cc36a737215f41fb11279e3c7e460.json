@@ -1,0 +1,17 @@
+{
+  "id": "github:1366370702:root",
+  "repository": "AlienGene/dsh-llm-balance-siderbar",
+  "path": "",
+  "revision": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+  "fingerprints": {
+    "directory": "ad28f9ebd94789ab2feea223a1d912d2f2c176a5d5c34f660efb3e17860748da",
+    "code": "b35aa1e8501051ab3541cea2f43f0609b214f9a1",
+    "maintenance": "279ee6ead00bc770641b74e31d328dc745c3894e8ad7165eabebe4641efd52c9"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "d7a04a7ef7ec2fb4d27ec140e0047a9c2a1c14580ccfa9ae076cb878f10a0e86"
+}

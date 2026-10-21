@@ -1,0 +1,9 @@
+{
+  "revision": "ca9694b4d232ff47eefec07e395b23eef0766831",
+  "items": {
+    "模型工具": "可选terminal_create/send/read/wait等持续终端工具",
+    "Host 路由": "/sidebar文件/Git/任务及终端WebSocket",
+    "界面": "双面板工作台与扩展Tab/viewer",
+    "后台": "会话PTY生命周期与客户端betterSidebar服务"
+  }
+}

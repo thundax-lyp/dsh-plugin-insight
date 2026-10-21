@@ -1,0 +1,299 @@
+{
+  "id": "github:1342948215:root",
+  "repository_id": 1342948215,
+  "component_id": "root",
+  "repository": "AlexPeng07/dsh-custom-plugin",
+  "path": "",
+  "aliases": [],
+  "name": "dsh-custom-plugin",
+  "entry_type": "plugin",
+  "technical_category": "interface-input",
+  "business_category": "personal-productivity",
+  "tags": [],
+  "availability": "unknown",
+  "research_depth": "source",
+  "fingerprints": {
+    "directory": "8af455eacd6817c7a63836b1ab2650b6bfe5e2fb9a515cdd5ba253a852fc898d",
+    "code": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+    "maintenance": "e5a361f62616d9eaf65515518a0c6140c7447dc8bdb4701b2874c50d64bfdfd9"
+  },
+  "sources": [
+    {
+      "id": "2026-10-21-07-github-1342948215-root-directory-0",
+      "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+      "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+      "retrieved_at": "2026-10-21T08:13:58.508Z",
+      "membership": "present"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "2026-10-21-07-github-1342948215-root-author",
+      "kind": "author_claim",
+      "url": "https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.md",
+      "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+      "captured_at": "2026-10-21T08:13:58.508Z",
+      "summary": "组合外观、项目文件夹、提示库、会话导出、搜索与用量观察。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+      ]
+    },
+    {
+      "id": "2026-10-21-07-github-1342948215-root-source",
+      "kind": "source_inspection",
+      "url": "https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/index.ts",
+      "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+      "captured_at": "2026-10-21T08:13:58.508Z",
+      "summary": "核查 src/index.ts、src/routes.ts、src/host-service.ts、src/backup.ts、src/state.ts、src/client/index.ts；主机CustomPluginHost串行状态操作，事件折叠usage，路由提供状态/时间线/导出/备份/搜索/余额及Mermaid；客户端官方slots挂便利界面，状态保存DSH_HOME。",
+      "artifact": "data/runs/2026-10-21-07/snapshots/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json",
+      "limitations": [
+        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "scenario",
+      "topic": "positioning",
+      "basis": "interpretation",
+      "text": "希望集中管理本地会话资料和个性化设置的DSH用户。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "mechanism",
+      "topic": "mechanism",
+      "basis": "supported",
+      "text": "主机CustomPluginHost串行状态操作，事件折叠usage，路由提供状态/时间线/导出/备份/搜索/余额及Mermaid；客户端官方slots挂便利界面，状态保存DSH_HOME。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "scope",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "distribution",
+      "topic": "engineering",
+      "basis": "supported",
+      "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "cost",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "首配和多功能状态迁移、模型提示另计token；扫描历史/导出有I/O，外观GPU与CDN网络，人工确认备份替换和导出隐私。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "adoption",
+      "topic": "adoption",
+      "basis": "interpretation",
+      "text": "按实际需要启用，先核备份恢复、密钥存储来源与导出内容；用量/余额提示不替代账单。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "value",
+      "topic": "business_value",
+      "basis": "interpretation",
+      "text": "集中便利与secret-free备份有实现，无节约工时或任务质量提升验证。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "engineering",
+      "topic": "engineering",
+      "basis": "interpretation",
+      "text": "状态加载失败保持只读、防未加载默认覆盖、applyEdit错误恢复内存和备份严格形状有实质设计；功能组合需持续跟宿主API。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "contribution",
+      "topic": "technical_innovation",
+      "basis": "interpretation",
+      "text": "将用户便利数据归为统一可备份状态，并把凭据从公开state投影剥离；价值在本地操作一致性，Mermaid/计价/外观来自成熟方法，不视为新的交付机制。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "critical_question",
+      "topic": "limitations",
+      "basis": "interpretation",
+      "text": "credentialStore.set失败时明确退回state.apiKey明文，saveStateFile普通JSON写入未显式0600；“备份无密钥/前端不返回”不等于磁盘不落密钥。扫描/计价依赖宿主usage与价格，不能把消费数字当项目真实成本或成果。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    },
+    {
+      "id": "innovation_hypothesis",
+      "topic": "technical_innovation",
+      "basis": "unverified",
+      "text": "未验证假设：凭据写失败默认拒绝持久化并给可选明确本地权限方案，可避免用户误以为已用系统密钥库。以凭据不可用、只读状态、备份/导出及重启核秘密落点和恢复行为；发现秘密进入备份即否定。",
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ],
+      "dependencies": [
+        {
+          "plugin_id": "github:1342948215:root",
+          "area": "code",
+          "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+        }
+      ],
+      "reviewed_at": "2026-10-21T08:13:58.508Z",
+      "status": "current"
+    }
+  ],
+  "last_checked_at": "2026-10-21T08:13:58.508Z",
+  "innovation_scores": {
+    "rubric": "innovation-v1",
+    "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+    "reviewed_at": "2026-10-21T08:13:58.508Z",
+    "status": "current",
+    "dependencies": [
+      {
+        "plugin_id": "github:1342948215:root",
+        "area": "code",
+        "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
+      }
+    ],
+    "technical": {
+      "criteria": {
+        "novelty": 9,
+        "mechanism": 8,
+        "transferability": 5,
+        "simplification": 4
+      },
+      "rationale": "novelty=9：常见便利功能组合。 mechanism=8：状态一致性有局部实现。 transferability=5：宿主数据耦合限制迁移。 simplification=4：统一备份少重复设置但功能多。",
+      "basis": "interpretation",
+      "score": 26,
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ]
+    },
+    "business": {
+      "criteria": {
+        "workflow": 9,
+        "delivery": 8,
+        "reach": 5,
+        "economics": 0
+      },
+      "rationale": "workflow=9：集中入口非业务分工重组。 delivery=8：增加可携备份/导出但格式常规。 reach=5：原DSH用户有限便利。 economics=0：无结构性经济改善。",
+      "basis": "interpretation",
+      "score": 22,
+      "evidence_ids": [
+        "2026-10-21-07-github-1342948215-root-source"
+      ]
+    }
+  }
+}

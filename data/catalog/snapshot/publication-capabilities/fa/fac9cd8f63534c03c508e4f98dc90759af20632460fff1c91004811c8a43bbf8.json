@@ -1,0 +1,10 @@
+{
+  "revision": "45045e44ffebecceca4f68ab4351895148bbc696",
+  "items": {
+    "Skill": "本地Hindsight记忆运维说明",
+    "模型工具": "memory_banks/recall_all/projects/seed",
+    "Host 路由": "/local-memory/api项目与记忆操作",
+    "后台": "项目扫描和播种进程管理",
+    "界面": "本地记忆设置与检索"
+  }
+}

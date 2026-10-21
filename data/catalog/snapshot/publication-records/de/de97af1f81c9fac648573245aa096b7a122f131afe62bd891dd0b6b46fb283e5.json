@@ -1,0 +1,17 @@
+{
+  "id": "github:1347749203:root",
+  "repository": "Amengclass/dsh-settings-hub",
+  "path": "",
+  "revision": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+  "fingerprints": {
+    "directory": "1e85f6244f75d9cbe58d52724fc8bb9e5a4a2285f2b80a5547dac7d6ef03914d",
+    "code": "2c89559685a14375dcc6cc318ffc1c7c728a14c6",
+    "maintenance": "f2e51703fd946d983b4fa65e67008f4b312ce11e5b43d666f136e0456477e349"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "6eb1b71cba5bc28cc14650c5ea216377b92a1ae3e46834a035df852a64b107ad"
+}

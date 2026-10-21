@@ -1,0 +1,43 @@
+{
+  "repository": "AngelosZou/dsh-github-router",
+  "repository_id": 1339462797,
+  "captured_at": "2026-10-21T08:02:49.576Z",
+  "window_start": "2026-09-21T08:02:49.576Z",
+  "stars": 3,
+  "pushed_at": "2026-09-28T16:05:40Z",
+  "issues": {
+    "open": null,
+    "closed": null,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [
+    {
+      "target": "open",
+      "message": "GitHub request failed for search/issues?q=repo%3AAngelosZou%2Fdsh-github-router%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5A0C:39E13C:DBD3B7:13D5491:6AD871AB and timestamp 2026-10-21 08:02:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    },
+    {
+      "target": "closed",
+      "message": "GitHub request failed for search/issues?q=repo%3AAngelosZou%2Fdsh-github-router%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5B40:1B0790:DEF26E:141FBA9:6AD871AC and timestamp 2026-10-21 08:02:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+    }
+  ],
+  "npm": {
+    "package_name": "dsh-github-router",
+    "captured_at": "2026-10-21T08:03:00.883Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1620,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-github-router",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-19T18:51:14.430Z",
+      "captured_at": "2026-10-21T08:03:00.883Z",
+      "source_url": "https://registry.npmjs.org/dsh-github-router",
+      "error": null,
+      "latest_version": "0.4.1",
+      "latest_published_at": "2026-09-28T16:10:44.109Z",
+      "latest_error": null
+    }
+  }
+}

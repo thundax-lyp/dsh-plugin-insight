@@ -1,0 +1,4 @@
+{
+  "revision": "45045e44ffebecceca4f68ab4351895148bbc696",
+  "text": "只在已隔离配置的Hindsight上试；先检查同名项目库归属和跨库结果授权，别把“本地daemon”当完全离线。"
+}

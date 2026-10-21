@@ -1,0 +1,17 @@
+{
+  "id": "github:1415822787:root",
+  "repository": "AirPineApplea/feiyu-memory",
+  "path": "",
+  "revision": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+  "fingerprints": {
+    "directory": "eedb9737f3229b7e2ca687d108830d3f6aa24ba8522643aa107ff2b5f1345e56",
+    "code": "37a81b92947b10d7376ed764d8ff6392e8969e93",
+    "maintenance": "6a094d1e7073dc3661642e1a00abe474909712e16e2afe5d1ce69a65ecf12f1b"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "b00cbbb26f4a3c0c90b32197963749a70183fc3ee5cdecf589e5e7e27acdedcd"
+}

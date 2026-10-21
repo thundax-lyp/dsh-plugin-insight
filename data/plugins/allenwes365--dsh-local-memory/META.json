@@ -1,0 +1,34 @@
+{
+  "repository": "AllenWES365/dsh-local-memory",
+  "repository_id": 1390103795,
+  "captured_at": "2026-10-21T08:00:59.954Z",
+  "window_start": "2026-09-21T08:00:59.954Z",
+  "stars": 0,
+  "pushed_at": "2026-09-27T05:00:18Z",
+  "issues": {
+    "open": 0,
+    "closed": 0,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-local-memory",
+    "captured_at": "2026-10-21T08:01:18.763Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 155,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-local-memory",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-09-17T11:43:13.050Z",
+      "captured_at": "2026-10-21T08:01:18.763Z",
+      "source_url": "https://registry.npmjs.org/dsh-local-memory",
+      "error": null,
+      "latest_version": "0.3.1",
+      "latest_published_at": "2026-09-18T12:20:21.815Z",
+      "latest_error": null
+    }
+  }
+}

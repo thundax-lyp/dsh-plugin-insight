@@ -1,0 +1,34 @@
+{
+  "repository": "AngelosZou/dsh-python-env",
+  "repository_id": 1335843541,
+  "captured_at": "2026-10-21T08:03:08.828Z",
+  "window_start": "2026-09-21T08:03:08.828Z",
+  "stars": 4,
+  "pushed_at": "2026-09-21T06:57:57Z",
+  "issues": {
+    "open": 0,
+    "closed": 1,
+    "created_30d": 0,
+    "closed_30d": 0,
+    "updated_30d": 0
+  },
+  "errors": [],
+  "npm": {
+    "package_name": "dsh-python-env",
+    "captured_at": "2026-10-21T08:03:25.798Z",
+    "window_start": "2026-09-21",
+    "window_end": "2026-10-20",
+    "downloads_30d": 1346,
+    "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-python-env",
+    "error": null,
+    "publication": {
+      "first_published_at": "2026-08-16T14:05:22.416Z",
+      "captured_at": "2026-10-21T08:03:25.798Z",
+      "source_url": "https://registry.npmjs.org/dsh-python-env",
+      "error": null,
+      "latest_version": "0.1.2",
+      "latest_published_at": "2026-09-21T07:08:54.279Z",
+      "latest_error": null
+    }
+  }
+}

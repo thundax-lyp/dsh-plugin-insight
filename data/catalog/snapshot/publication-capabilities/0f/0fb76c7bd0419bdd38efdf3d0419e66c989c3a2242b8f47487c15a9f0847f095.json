@@ -1,0 +1,9 @@
+{
+  "revision": "b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f",
+  "items": {
+    "模型工具": "状态、任务创建/更新/跳过/归档、产物更新及UI设置工具。",
+    "Host 路由": "Trellis状态/看板/会话绑定API，含浏览器同源信任检查。",
+    "事件监听": "system-prompt/assemble与agent/pre-step注入阶段上下文和工具裁剪。",
+    "界面": "Web任务状态与看板；具体静态交互未运行。"
+  }
+}

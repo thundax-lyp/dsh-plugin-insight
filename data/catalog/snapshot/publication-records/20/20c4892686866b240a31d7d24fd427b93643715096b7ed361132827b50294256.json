@@ -1,0 +1,17 @@
+{
+  "id": "github:1424063534:plugins-dsh-domain-bridge",
+  "repository": "1Lany2a/dsh-domain-role",
+  "path": "plugins/dsh-domain-bridge",
+  "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+  "fingerprints": {
+    "directory": "6ba8337d6e8511604fcdb010861be486c29f966292d8321fb7acc45424f431aa",
+    "code": "8ef0119937f5f9d18a0628a891dd086db6522834",
+    "maintenance": "c242075cc105d25ad2f125912d4df7b9c4cb4b472d2a040ebfc8e8e2a3cc2cd7"
+  },
+  "source_urls": [
+    "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+  ],
+  "status": "complete",
+  "checked_at": "2026-10-21T07:52:12Z",
+  "analysis_sha256": "a83b84cb35588c37dedb7cff8c4a18090f616188738f4bb9e208ac02e40ba114"
+}
